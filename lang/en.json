@@ -1,0 +1,9 @@
+{
+  "menus": {
+    "contracts": "Contracts",
+    "partners": "Partenrs"
+  },
+  "title": {
+    "index": "Contract management service"
+  }
+}
