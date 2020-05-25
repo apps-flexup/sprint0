@@ -116,7 +116,10 @@ export default {
       const res = this.$store.getters['partners/all']
       setTimeout(() => {
         this.items = res.filter((item) => {
-          return ((item.name || '').toLowerCase().includes((v || '').toLowerCase()) > -1
+          const tmp = (item.name || '')
+            .toLowerCase()
+            .includes((v || '').toLowerCase())
+          return tmp > -1
         })
         this.isLoading = false
       }, 500)
