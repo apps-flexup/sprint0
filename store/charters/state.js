@@ -2,19 +2,19 @@ export default () => ({
   items: [
     {
       id: 1,
-      name: 'plop'
+      name: 'charter 1'
     },
     {
       id: 2,
-      name: 'toto'
+      name: 'charter 2'
     },
     {
       id: 3,
-      name: 'fred'
+      name: 'charter 3'
     },
     {
       id: 4,
-      name: 'grog'
+      name: 'charter 4'
     }
   ]
 })

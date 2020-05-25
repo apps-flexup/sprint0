@@ -2,12 +2,14 @@
   .fv-contract-nav
     p {{ $options.name }}
     v-row
-      v-col(cols="12")
-        v-btn(v-if="showPrevious" @click="previous") Previous
-        v-spacer
-        v-btn(v-if="showNext"  @click="next") Next
+        v-col(cols="4")
+          v-btn(v-if="previous" @click="showPrevious") Previous {{ previous }}
+        v-col(cols="4")
+          v-spacer
+        v-col(cols="4")
+          v-btn(v-if="next" @click="showNext") Next {{ next }}
     v-row
-      v-col(cols="4") {{ first}}
+      v-col(cols="4") {{ first }}
       v-col(cols="4") {{ current }}
       v-col(cols="4") {{ last }}
 </template>
@@ -35,8 +37,26 @@ export default {
       }
     }
   },
+  data() {
+    return {
+      next: 2,
+      previous: 0
+    }
+  },
   mounted() {
     console.log('Composant ', this.$options.name)
+  },
+  methods: {
+    showPrevious() {
+      this.previous--
+      this.next--
+      console.log('Coucou previous', this.previous)
+    },
+    showNext() {
+      this.previous++
+      this.next++
+      console.log('Coucou next', this.next)
+    }
   }
 }
 </script>

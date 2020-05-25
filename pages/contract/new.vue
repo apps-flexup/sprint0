@@ -1,6 +1,6 @@
 <template lang="pug">
   .contract-new
-    p {{ $options.name }}
+    fv-contract-new
 </template>
 
 <script>

@@ -10,7 +10,7 @@
         </v-card-text>
         <v-card-actions>
           <v-spacer />
-          <v-btn color="primary" nuxt to="/contract">
+          <v-btn color="primary" nuxt to="/contract/new">
             {{ $t('menu.contracts') }}
           </v-btn>
         </v-card-actions>

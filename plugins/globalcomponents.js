@@ -8,6 +8,8 @@ import FvContractStep4 from '@/components/FvContractStep4'
 import FvContractStep5 from '@/components/FvContractStep5'
 import FvContractStep6 from '@/components/FvContractStep6'
 import FvContractNav from '@/components/FvContractNav'
+import FvContractStepper from '@/components/FvContractStepper'
+import FvFieldDate from '@/components/FvFieldDate'
 
 // Déclarations composants utilitaires
 Vue.component('fv-contract-new', FvContractNew)
@@ -18,3 +20,5 @@ Vue.component('fv-contract-step4', FvContractStep4)
 Vue.component('fv-contract-step5', FvContractStep5)
 Vue.component('fv-contract-step6', FvContractStep6)
 Vue.component('fv-contract-nav', FvContractNav)
+Vue.component('fv-contract-stepper', FvContractStepper)
+Vue.component('fv-field-date', FvFieldDate)
