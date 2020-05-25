@@ -18,8 +18,6 @@
             readonly=''
             :value='fromDateDisp'
             v-on='on'
-            clearable='true'
-            outlined=''
           )
         v-date-picker(
           locale='en-in'
