@@ -8,18 +8,23 @@
           :items="items"
           :loading="isLoading"
           :search-input.sync="search"
-          prepend-icon="mdi-plus"
+          append-icon="mdi-plus"
           label="Partenaire"
           placeholder="Saisir au moins une lettre"
           item-text="name"
           item-value="id"
+          clearable=''
+          outlined=''
+          @click:append='addPartner'
         )
     v-row
       v-col(cols="6")
-        v-textField(
+        v-text-field(
           v-model="label"
           label="Label"
           placeholder="Saisissez un label pour le contrat"
+          clearable=''
+          outlined=''
         )
       v-col(cols="6")
         v-select(
@@ -28,6 +33,8 @@
           item-text="name"
           item-value="id"
           label="Charter"
+          clearable=''
+          outlined=''
         )
     v-row
       v-col(cols="6")
@@ -35,12 +42,16 @@
           :dateRef="dteSignature"
           label="Date signature"
           @date:changed="dateSignatureChanged"
+          clearable=''
+          outlined=''
         )
       v-col(cols="6")
         fv-field-date(
           :dateRef="dteEffect"
           label="Date effective"
           @date:changed="dateEffectChanged"
+          clearable=''
+          outlined=''
         )
     v-row
       v-col(cols="6")
@@ -48,11 +59,15 @@
           :dateRef="dteEnd"
           label="Date fin"
           @date:changed="dateEndChanged"
+          clearable=''
+          outlined=''
         )
       v-col(cols="6")
         v-textField(
           v-model="duree"
           label="Durée"
+          readonly=''
+          outlined=''
         )
     v-row
       v-col(cols="6")
@@ -62,6 +77,8 @@
           item-text="name"
           item-value="id"
           label="Type de contrat"
+          clearable=''
+          outlined=''
         )
 </template>
 
@@ -102,6 +119,9 @@ export default {
     console.log('Composant ', this.$options.name)
   },
   methods: {
+    addPartner() {
+      console.log('Add new partner')
+    },
     dateSignatureChanged(payload) {
       this.dteSignature = payload
     },
@@ -116,10 +136,8 @@ export default {
       const res = this.$store.getters['partners/all']
       setTimeout(() => {
         this.items = res.filter((item) => {
-          const tmp = (item.name || '')
-            .toLowerCase()
-            .includes((v || '').toLowerCase())
-          return tmp > -1
+          const name = item.name || ''
+          return name.toLowerCase().includes((v || '').toLowerCase()) > -1
         })
         this.isLoading = false
       }, 500)
