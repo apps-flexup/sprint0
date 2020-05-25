@@ -5,10 +5,8 @@
         v-model='fromDateMenu'
         :close-on-content-click='true'
         :nudge-right='40'
-        lazy=''
         transition='scale-transition'
         offset-y=''
-        full-width=''
         max-width='290px'
         min-width='290px'
       )
