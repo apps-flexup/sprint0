@@ -1,8 +1,15 @@
 <template lang="pug">
   .fv-contract-step1
-    h1 Détails
+    fv-etape(etape='1')
     v-row
       v-col(cols="6")
+        fv-auto-complete(
+          :items="items"
+          append-icon="mdi-plus"
+          label="Partenaire"
+          placeholder="Saisir au moins une lettre"
+
+        )
         v-autocomplete(
           v-model="partner"
           :items="items"
@@ -133,7 +140,7 @@ export default {
     },
     partnerList(v) {
       this.isLoading = true
-      const res = this.$store.getters['partners/all']
+      const res = this.$store.getters['contacts/all']
       setTimeout(() => {
         this.items = res.filter((item) => {
           const name = item.name || ''

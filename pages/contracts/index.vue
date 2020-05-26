@@ -1,15 +1,10 @@
 <template lang="pug">
   .contract-index
-    p {{ $options.name }}
+    fv-contract-list
 </template>
 
 <script>
 export default {
-  computed: {
-    machin() {
-      return 42
-    }
-  },
   mounted() {
     console.log('Composant ', this.$options.name)
   }
