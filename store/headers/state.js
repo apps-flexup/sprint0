@@ -88,5 +88,43 @@ export default () => ({
       sortable: true,
       value: 'statusStr'
     }
+  ],
+  offers: [
+    {
+      text: "Nom de l'offre",
+      align: 'start',
+      sortable: true,
+      value: 'name'
+    },
+    {
+      text: 'Label',
+      align: 'start',
+      sortable: true,
+      value: 'label'
+    },
+    {
+      text: 'Produit(s)',
+      align: 'start',
+      sortable: true,
+      value: 'products'
+    },
+    {
+      text: 'Prix',
+      align: 'end',
+      sortable: true,
+      value: 'price'
+    },
+    {
+      text: 'Unité de prix',
+      align: 'center',
+      sortable: true,
+      value: 'unitStr'
+    },
+    {
+      text: 'Statut',
+      align: 'start',
+      sortable: true,
+      value: 'statusStr'
+    }
   ]
 })
