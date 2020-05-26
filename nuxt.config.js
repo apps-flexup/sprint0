@@ -20,6 +20,9 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
+  env: {
+    baseURL: process.env.BASE_URL
+  },
   /*
    ** Customize the progress-bar color
    */
@@ -31,7 +34,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/globalcomponents'],
+  plugins: ['~/plugins/globalcomponents', '~/plugins/data'],
   /*
    ** Nuxt.js dev-modules
    */
