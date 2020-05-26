@@ -9,7 +9,6 @@
         v-col(cols="4")
           v-btn(v-if="next" @click="showNext") Next {{ next }}
     v-row
-      v-col(cols="4") {{ first }}
       v-col(cols="4") {{ current }}
       v-col(cols="4") {{ last }}
 </template>
@@ -18,19 +17,13 @@
 export default {
   name: 'FvContractNav',
   props: {
-    first: {
-      type: Number,
-      default() {
-        return 1
-      }
-    },
     current: {
       type: Number,
       default() {
         return 1
       }
     },
-    last: {
+    nbSteps: {
       type: Number,
       default() {
         return 1
