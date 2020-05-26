@@ -126,5 +126,49 @@ export default () => ({
       sortable: true,
       value: 'statusStr'
     }
+  ],
+  orders: [
+    {
+      text: 'Date de commande',
+      align: 'start',
+      sortable: true,
+      value: 'date'
+    },
+    {
+      text: 'Offre',
+      align: 'start',
+      sortable: true,
+      value: 'offer'
+    },
+    {
+      text: 'Status',
+      align: 'start',
+      sortable: true,
+      value: 'status'
+    },
+    {
+      text: 'Date de début',
+      align: 'start',
+      sortable: true,
+      value: 'startDate'
+    },
+    {
+      text: 'Date de fin',
+      align: 'start',
+      sortable: true,
+      value: 'endDate'
+    },
+    {
+      text: 'Quantité',
+      align: 'end',
+      sortable: true,
+      value: 'quantity'
+    },
+    {
+      text: 'Prix',
+      align: 'end',
+      sortable: true,
+      value: 'price'
+    }
   ]
 })
