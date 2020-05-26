@@ -1,6 +1,5 @@
 <template lang="pug">
   .fv-etapes
-    p {{ $options.name }}
     h3 {{ `Étape ${etape}` }}
     h2 {{ libEtape }}
 </template>

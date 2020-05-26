@@ -4,9 +4,14 @@ export default (ctx, inject) => {
   const repo = createRepository(ctx.$axios)
 
   const repos = {
+    charters: repo('charters'),
+    products: repo('products'),
+    etapes: repo('etapes'),
+    contractHeaders: repo('contract-headers'),
+    productHeaders: repo('product-headers'),
     contracts: repo('contracts'),
-    contract_types: repo('contract_types'),
-    partners: repo('partners')
+    contractTypes: repo('contract-types'),
+    contacts: repo('contacts')
   }
 
   inject('repos', repos)

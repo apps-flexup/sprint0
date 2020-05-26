@@ -1,0 +1,228 @@
+{
+  "charters": [
+    {
+      "id": 1,
+      "name": "charter 1"
+    },
+    {
+      "id": 2,
+      "name": "charter 2"
+    },
+    {
+      "id": 3,
+      "name": "charter 3"
+    },
+    {
+      "id": 4,
+      "name": "charter 4"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Produit 1",
+      "quantity": 1,
+      "price": 2000,
+      "currency": "€",
+      "unit": "unité",
+      "status": "2"
+    },
+    {
+      "id": 2,
+      "name": "Produit 2",
+      "quantity": 1,
+      "price": 100.23,
+      "currency": "€",
+      "unit": "unité",
+      "status": "4"
+    }
+  ],
+  "etapes": [
+    "Détail",
+    "Produits",
+    "Offres",
+    "Structure",
+    "Commandes",
+    "Paiement"
+  ],
+  "contract-headers": [
+    {
+      "text": "Date d'effet",
+      "align": "start",
+      "sortable": true,
+      "value": "dteEffect"
+    },
+    {
+      "text": "Date de signature",
+      "align": "start",
+      "sortable": true,
+      "value": "dteSignature"
+    },
+    {
+      "text": "Date de fin",
+      "align": "start",
+      "sortable": true,
+      "value": "dteEnd"
+    },
+    {
+      "text": "Partenaire",
+      "align": "start",
+      "sortable": true,
+      "value": "partnerName"
+    },
+    {
+      "text": "Type de partenariat",
+      "align": "start",
+      "sortable": true,
+      "value": "contractType"
+    },
+    {
+      "text": "Structure",
+      "align": "start",
+      "sortable": true,
+      "value": "structureName"
+    },
+    {
+      "text": "Offre",
+      "align": "start",
+      "sortable": true,
+      "value": "offers.length"
+    },
+    {
+      "text": "Commande",
+      "align": "start",
+      "sortable": true,
+      "value": "commandes.length"
+    }
+  ],
+  "product-headers": [
+    {
+      "text": "nom du produit",
+      "align": "start",
+      "sortable": true,
+      "value": "name"
+    },
+    {
+      "text": "Quantité",
+      "align": "end",
+      "sortable": true,
+      "value": "quantity"
+    },
+    {
+      "text": "Prix",
+      "align": "end",
+      "sortable": true,
+      "value": "price"
+    },
+    {
+      "text": "Unité de prix",
+      "align": "center",
+      "sortable": true,
+      "value": "unitStr"
+    },
+    {
+      "text": "Statut",
+      "align": "start",
+      "sortable": true,
+      "value": "statusStr"
+    }
+  ],
+  "contracts": [
+    {
+      "id": 1,
+      "dteEffect": "10/02/2020",
+      "dteEnd": "10/02/2022",
+      "dteSignature": "05/02/2020",
+      "partnerName": "partner 1",
+      "contractType": "Bail",
+      "structure": 2,
+      "structureName": "20% Base, 80% Equity",
+      "offers": [
+        {
+          "id": 2,
+          "name": "offre 1"
+        },
+        {
+          "id": 3,
+          "name": "itération 3"
+        }
+      ],
+      "commandes": [
+        {
+          "id": 2,
+          "name": "itération 1"
+        },
+        {
+          "id": 4,
+          "name": "itération 1"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "dteEffect": "12/02/2020",
+      "dteEnd": "13/02/2022",
+      "dteSignature": "11/02/2020",
+      "partnerName": "partner 5",
+      "contractType": "Financement",
+      "structure": 2,
+      "structureName": "50% Base, 50% Equity",
+      "offers": [
+        {
+          "id": 2,
+          "name": "offre 1"
+        },
+        {
+          "id": 3,
+          "name": "itération 3"
+        }
+      ],
+      "commandes": [
+        {
+          "id": 2,
+          "name": "itération 1"
+        },
+        {
+          "id": 4,
+          "name": "itération 1"
+        }
+      ]
+    }
+  ],
+  "contrat-types": [
+    {
+      "id": 1,
+      "name": "contract type 1"
+    },
+    {
+      "id": 2,
+      "name": "contract type 2"
+    },
+    {
+      "id": 3,
+      "name": "contract type 3"
+    },
+    {
+      "id": 4,
+      "name": "contract type 4"
+    }
+  ],
+  "contact": [
+    {
+      "id": 1,
+      "name": "plop"
+    },
+    {
+      "id": 2,
+      "name": "toto"
+    },
+    {
+      "id": 3,
+      "name": "fred"
+    },
+    {
+      "id": 4,
+      "name": "grog"
+    }
+  ]
+}
