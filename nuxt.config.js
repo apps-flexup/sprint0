@@ -60,7 +60,7 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    baseURL: process.env.baseURL || 'https://api.tchoo.xyz',
+    baseURL: process.env.BASE_URL,
     headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
     responseType: 'json'
   },
