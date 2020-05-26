@@ -11,7 +11,13 @@
         fv-contract-step4(v-if="step === 4")
         fv-contract-step5(v-if="step === 5")
         fv-contract-step6(v-if="step === 6")
-        fv-contract-nav
+        fv-contract-nav(
+          :current="step"
+          :nbSteps="etapes.length"
+          @previousStep="moveTo"
+          @nextStep="moveTo"
+          @submitSteps="submitSteps"
+        )
 </template>
 
 <script>
@@ -21,8 +27,23 @@ export default {
       step: 1
     }
   },
+  computed: {
+    etapes() {
+      const res = this.$store.getters['headers/etapes']
+      return res
+    }
+  },
   mounted() {
     console.log('Composant ', this.$options.name)
+  },
+  methods: {
+    moveTo(v) {
+      console.log('Current step: ', v)
+      this.step = v
+    },
+    submitSteps() {
+      console.log('Submit steps')
+    }
   }
 }
 </script>
