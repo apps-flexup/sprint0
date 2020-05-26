@@ -189,7 +189,7 @@
       ]
     }
   ],
-  "contrat-types": [
+  "contract-types": [
     {
       "id": 1,
       "name": "contract type 1"
@@ -207,7 +207,7 @@
       "name": "contract type 4"
     }
   ],
-  "contact": [
+  "contacts": [
     {
       "id": 1,
       "name": "plop"
