@@ -3,7 +3,7 @@
     p {{ $options.name }}
     v-row
       v-col(cols="2")
-        fv-contract-stepper
+        fv-contract-stepper(:step="step")
       v-col(cols="10")
         fv-contract-step1(v-if="step === 1")
         fv-contract-step2(v-if="step === 2")
