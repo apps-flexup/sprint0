@@ -11,7 +11,7 @@ export default {
   name: 'FvContractStepper',
   computed: {
     steps() {
-      const res = this.$store.getters['settings/etapes']
+      const res = this.$store.getters['headers/etapes']
       return res
     }
   },

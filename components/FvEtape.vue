@@ -18,7 +18,8 @@ export default {
   },
   computed: {
     libEtape() {
-      const res = this.$store.getters['settings/etapes'][this.etape]
+      const indice = parseInt(this.etape) - 1
+      const res = this.$store.getters['headers/etape'](indice)
       return res
     }
   },

@@ -1,6 +1,6 @@
 <template lang="pug">
   .fv-contract-step1
-    fv-etape(etape='1')
+    fv-etape(:etape='etape')
     v-row
       v-col(cols="6")
         fv-auto-complete(
@@ -94,6 +94,7 @@ export default {
   name: 'FvContractStep1',
   data() {
     return {
+      etape: 1,
       partner: null,
       charter: null,
       contractType: null,
