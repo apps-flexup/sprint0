@@ -78,5 +78,23 @@ export default () => ({
       id: 4,
       name: 'contract type 4'
     }
+  ],
+  structures: [
+    {
+      id: 1,
+      name: 'Base 40% + Equity 60%'
+    },
+    {
+      id: 2,
+      name: 'Base 30% + Equity 70%'
+    },
+    {
+      id: 3,
+      name: 'Base 60% + Equity 40%'
+    },
+    {
+      id: 4,
+      name: 'Base 50% + Equity 50%'
+    }
   ]
 })

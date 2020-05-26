@@ -8,5 +8,10 @@ export default {
     if (!state.typeContrat) return []
     const res = JSON.parse(JSON.stringify(state.typeContrat))
     return res
+  },
+  structures(state) {
+    if (!state.structures) return []
+    const res = JSON.parse(JSON.stringify(state.structures))
+    return res
   }
 }
