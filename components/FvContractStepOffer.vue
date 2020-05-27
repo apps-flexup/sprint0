@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  name: 'FvContractStep4',
+  name: 'FvContractStepOfferS',
   props: {
     etape: {
       type: Object,

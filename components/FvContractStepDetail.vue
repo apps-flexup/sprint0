@@ -90,7 +90,7 @@
 
 <script>
 export default {
-  name: 'FvContractStep1',
+  name: 'FvContractStepDetail',
   props: {
     etape: {
       type: Object,
