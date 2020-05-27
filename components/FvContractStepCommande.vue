@@ -1,6 +1,5 @@
 <template lang="pug">
   .fv-contract-step5
-    p {{ $options.name }}
     v-row
       v-col(cols="12")
         v-data-table.elevation-2(
@@ -15,6 +14,14 @@
 <script>
 export default {
   name: 'FvContractStep5',
+  props: {
+    etape: {
+      type: Object,
+      default() {
+        return 5
+      }
+    }
+  },
   data() {
     return {
       selected: []

@@ -1,6 +1,5 @@
 <template lang="pug">
-  .fv-contract-step4
-    p {{ $options.name }}
+  .fv-contract-step4(v-if="etape.id === 4")
     v-select(
       v-model="structContract"
       :items="structContractList"
@@ -15,6 +14,14 @@
 <script>
 export default {
   name: 'FvContractStep4',
+  props: {
+    etape: {
+      type: Object,
+      default() {
+        return 4
+      }
+    }
+  },
   data() {
     return {
       structContract: null

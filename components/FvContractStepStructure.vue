@@ -1,6 +1,5 @@
 <template lang="pug">
-  .fv-contract-step2
-    p {{ $options.name }}
+  .fv-contract-step3(v-if="etape.id === 3")
     v-row
       v-col(cols="12")
         v-data-table.elevation-2(
@@ -14,7 +13,15 @@
 
 <script>
 export default {
-  name: 'FvContractStep2',
+  name: 'FvContractStep3',
+  props: {
+    etape: {
+      type: Object,
+      default() {
+        return 3
+      }
+    }
+  },
   data() {
     return {
       selected: []
@@ -22,11 +29,11 @@ export default {
   },
   computed: {
     headers() {
-      const res = this.$store.getters['headers/products']
+      const res = this.$store.getters['headers/offers']
       return res
     },
     items() {
-      const res = this.$store.getters['products/all']
+      const res = this.$store.getters['offers/all']
       return res
     }
   },
@@ -36,7 +43,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.fv-contract-step2 {
+.fv-contract-step3 {
   background-color: inherit;
 }
 </style>

@@ -1,35 +1,69 @@
 <template lang="pug">
   .fv-contract-new
-    p {{ $options.name }}
     v-row
-      v-col(cols="2")
-        fv-contract-stepper(:step="step")
-      v-col(cols="10")
-        fv-contract-step1(v-if="step === 1")
-        fv-contract-step2(v-if="step === 2")
-        fv-contract-step3(v-if="step === 3")
-        fv-contract-step4(v-if="step === 4")
-        fv-contract-step5(v-if="step === 5")
-        fv-contract-step6(v-if="step === 6")
+      v-col(cols="12")
         fv-contract-nav(
           :current="step"
-          :nbSteps="etapes.length"
-          @previousStep="moveTo"
-          @nextStep="moveTo"
-          @submitSteps="submitSteps"
+          :steps="steps"
+          @moveTo="moveTo"
         )
+    v-row
+      v-col(cols="2")
+        fv-contract-stepper(:steps="steps" :current="step")
+      v-col(cols="10")
+        pre {{ etape.composant }}
+        component(:is="etape.composant")
 </template>
 
 <script>
 export default {
   data() {
     return {
-      step: 1
+      step: 1,
+      steps: [
+        {
+          id: 1,
+          name: 'Détail',
+          composant: 'fv-contract-step-detail',
+          resume: 'fv-contract-summary-step-detail'
+        },
+        {
+          id: 2,
+          name: 'Produits',
+          composant: 'fv-contract-step-produit',
+          resume: 'fv-contract-summary-step-produit'
+        },
+        {
+          id: 3,
+          name: 'Offres',
+          composant: 'fv-contract-step-offer',
+          resume: 'fv-contract-summary-step-offer'
+        },
+        {
+          id: 4,
+          name: 'Structure',
+          composant: 'fv-contract-step-structure',
+          resume: 'fv-contract-summary-step-structure'
+        },
+        {
+          id: 5,
+          name: 'Commandes',
+          composant: 'fv-contract-step-commande',
+          resume: 'fv-contract-summary-step-commande'
+        },
+        {
+          id: 6,
+          name: 'Paiement',
+          composant: 'fv-contract-step-paiement',
+          resume: 'fv-contract-summary-paiement'
+        }
+      ]
     }
   },
   computed: {
-    etapes() {
-      const res = this.$store.getters['headers/etapes']
+    etape() {
+      const indice = parseInt(this.step)
+      const res = this.steps.find((v) => parseInt(v.id) === indice)
       return res
     }
   },
@@ -43,6 +77,9 @@ export default {
     },
     submitSteps() {
       console.log('Submit steps')
+    },
+    wizard(payload) {
+      console.log('wizard :', payload)
     }
   }
 }

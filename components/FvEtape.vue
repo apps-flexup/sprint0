@@ -1,7 +1,7 @@
 <template lang="pug">
   .fv-etapes
-    h3 {{ `Étape ${etape}` }}
-    h2 {{ libEtape }}
+    h3  {{ `Étape ${etape}` }}
+    h2  {{ libEtape }}
 </template>
 
 <script>
@@ -9,9 +9,9 @@ export default {
   name: 'FvEtape',
   props: {
     etape: {
-      type: Number,
+      type: Object,
       default() {
-        return 1
+        return {}
       }
     }
   },

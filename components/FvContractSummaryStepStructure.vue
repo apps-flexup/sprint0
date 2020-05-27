@@ -1,18 +1,23 @@
 <template lang="pug">
-  .fv-contract-step6
+  .fv-contract-summary-step5
     p {{ $options.name }}
 </template>
 
 <script>
 export default {
-  name: 'FvContractStep6',
+  name: 'FvContractSummaryStepStructure',
+  computed: {
+    machin() {
+      return 42
+    }
+  },
   mounted() {
     console.log('Composant ', this.$options.name)
   }
 }
 </script>
 <style lang="scss" scoped>
-.fv-contract-step6 {
+.fv-contract-summary-step5 {
   background-color: inherit;
 }
 </style>
