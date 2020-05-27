@@ -14,6 +14,7 @@ import FvContractStep6 from '@/components/FvContractStep6'
 import FvContractStepper from '@/components/FvContractStepper'
 import FvFieldDate from '@/components/FvFieldDate'
 import FvEtape from '@/components/FvEtape'
+import FvPaymentSummaryCard from '@/components/FvPaymentSummaryCard'
 
 // Déclarations composants utilitaires
 Vue.component('fv-auto-complete', FvAutoComplete)
@@ -30,3 +31,4 @@ Vue.component('fv-contract-step6', FvContractStep6)
 Vue.component('fv-contract-stepper', FvContractStepper)
 Vue.component('fv-field-date', FvFieldDate)
 Vue.component('fv-etape', FvEtape)
+Vue.component('fv-payment-summary-card', FvPaymentSummaryCard)
