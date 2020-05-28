@@ -1,7 +1,8 @@
-<template lang="pug">
-  .fv-etapes
-    h3  {{ `Étape ${etape}` }}
-    h2  {{ libEtape }}
+<template lang="html">
+  <div class="fv-etapes">
+    <h3>{{ `Étape ${etape}` }}</h3>
+    <h2>{{ libEtape }}</h2>
+  </div>
 </template>
 
 <script>
