@@ -1,35 +1,31 @@
 <template lang="pug">
-  .fv-contract-step4(v-if="etape.id === 4")
-    v-select(
-      v-model="structContract"
-      :items="structContractList"
-      item-text="name"
-      item-value="id"
-      label="Type de structure"
-      clearable=''
-      outlined=''
-    )
+  .fv-contract-step3
+    p {{ $options.name }}
+    v-row
+      v-col(cols="12")
+        v-data-table.elevation-2(
+          v-model="selected"
+          :headers="headers"
+          :items="items"
+          item-key="id"
+          show-select
+        )
 </template>
-
 <script>
 export default {
-  name: 'FvContractStepOfferS',
-  props: {
-    etape: {
-      type: Object,
-      default() {
-        return 4
-      }
-    }
-  },
+  name: 'FvContractStep3',
   data() {
     return {
-      structContract: null
+      selected: []
     }
   },
   computed: {
-    structContractList() {
-      const res = this.$store.getters['contracts/structures']
+    headers() {
+      const res = this.$store.getters['headers/offers']
+      return res
+    },
+    items() {
+      const res = this.$store.getters['offers/all']
       return res
     }
   },
@@ -39,7 +35,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.fv-contract-step4 {
+.fv-contract-step3 {
   background-color: inherit;
 }
 </style>

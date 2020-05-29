@@ -6,15 +6,7 @@
 
 <script>
 export default {
-  name: 'FvContractSummaryStep',
-  computed: {
-    machin() {
-      return 42
-    }
-  },
-  mounted() {
-    console.log('Composant ', this.$options.name)
-  }
+  name: 'FvContractSummaryStepOffer'
 }
 </script>
 <style lang="scss" scoped>

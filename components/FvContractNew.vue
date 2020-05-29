@@ -11,8 +11,7 @@
       v-col(cols="2")
         fv-contract-stepper(:steps="steps" :current="step")
       v-col(cols="10")
-        pre {{ etape.composant }}
-        component(:is="etape.composant")
+        component(:is="etape.composant" :etape='etape')
 </template>
 
 <script>
@@ -30,8 +29,8 @@ export default {
         {
           id: 2,
           name: 'Produits',
-          composant: 'fv-contract-step-produit',
-          resume: 'fv-contract-summary-step-produit'
+          composant: 'fv-contract-step-product',
+          resume: 'fv-contract-summary-step-product'
         },
         {
           id: 3,

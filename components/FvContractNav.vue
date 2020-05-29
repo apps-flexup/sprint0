@@ -10,12 +10,12 @@
           text=''
           @click='step--'
         )
-          | $('button.previous')
+          | Previous
       v-col(
         cols="8"
         align='left'
       )
-        fv-etape(:etape='step')
+        fv-etape(:etape='etape')
       v-col(
         cols="2"
         align='right'
@@ -27,7 +27,7 @@
           depressed=''
           @click='step++'
         )
-          | $('button.next')
+          | Next
         v-btn(
           v-else
           :disabled='step <= nbSteps'
@@ -50,9 +50,7 @@ export default {
     },
     steps: {
       type: Array,
-      default() {
-        return 1
-      }
+      required: true
     }
   },
   computed: {
@@ -64,15 +62,12 @@ export default {
         this.$emit('moveTo', v)
       }
     },
-    centerBloc() {
-      const res = this.steps.find((e) => {
-        return e.id === this.step
-      })
-      return res
-    },
     nbSteps() {
       const res = this.steps.length
-      console.table(res)
+      return res
+    },
+    etape() {
+      const res = this.steps.find((v) => parseInt(v.id) === this.step)
       return res
     }
   },

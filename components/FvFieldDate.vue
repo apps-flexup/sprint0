@@ -1,32 +1,31 @@
 <template lang="pug">
   .fv-field-date
-    v-layout(row='' wrap='')
-      v-menu(
-        v-model='fromDateMenu'
-        :close-on-content-click='true'
-        :nudge-right='40'
-        transition='scale-transition'
-        offset-y=''
-        max-width='290px'
-        min-width='290px'
-      )
-        template(v-slot:activator='{ on }')
-          v-text-field(
-            label='From Date'
-            readonly=''
-            :value='fromDateDisp'
-            v-on='on'
-            clearable=''
-            outlined=''
-          )
-        v-date-picker(
-          locale='en-in'
-          :min='minDate'
-          :max='maxDate'
-          v-model='dte'
-          no-title=''
-          @input='fromDateMenu = false'
+    v-menu(
+      v-model='fromDateMenu'
+      :close-on-content-click='true'
+      :nudge-right='40'
+      transition='scale-transition'
+      offset-y=''
+      max-width='290px'
+      min-width='290px'
+    )
+      template(v-slot:activator='{ on }')
+        v-text-field(
+          readonly=''
+          :value='fromDateDisp'
+          :label='label'
+          v-on='on'
+          clearable=''
+          outlined=''
         )
+      v-date-picker(
+        locale='en-in'
+        :min='minDate'
+        :max='maxDate'
+        v-model='dte'
+        no-title=''
+        @input='fromDateMenu = false'
+      )
 </template>
 
 <script>

@@ -1,19 +1,20 @@
 <template lang="pug">
-  .fv-contract-step3(v-if="etape.id === 3")
+  .fv-contract-step4(v-if="etape.id === 4")
     v-row
-      v-col(cols="12")
-        v-data-table.elevation-2(
-          v-model="selected"
-          :headers="headers"
-          :items="items"
-          item-key="id"
-          show-select
-        )
+      v-select(
+        v-model="structContract"
+        :items="structContractList"
+        item-text="name"
+        item-value="id"
+        label="Type de structure"
+        clearable=''
+        outlined=''
+      )
 </template>
 
 <script>
 export default {
-  name: 'FvContractStep3',
+  name: 'FvContractStep4',
   props: {
     etape: {
       type: Object,
@@ -32,8 +33,8 @@ export default {
       const res = this.$store.getters['headers/offers']
       return res
     },
-    items() {
-      const res = this.$store.getters['offers/all']
+    structContractList() {
+      const res = this.$store.getters['contracts/structures']
       return res
     }
   },

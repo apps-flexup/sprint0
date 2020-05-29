@@ -1,13 +1,12 @@
 <template lang="pug">
   .fv-contract-stepper
-    h1 les cartes
     v-card.my-3(
       v-for="(etape, index) in steps" :key="index"
       max-width='400'
     )
       v-list-item(two-line='')
         v-list-item-content
-          v-list-item-title.subtitle-1 [] {{ etape.id }}- {{ etape.name }}
+          v-list-item-title.subtitle-1 {{ etape.id }}- {{ etape.name }}
       v-list-item(
         v-if="active(etape.id)"
       )

@@ -69,7 +69,7 @@
   },
   "bit": {
     "env": {
-      "compiler": "bit.envs/bundlers/vue@2.6.21",
+      "compiler": "wurielle.pristine/bundlers/vue@0.0.3",
       "tester": "bit.envs/testers/jest@22.4.3"
     },
     "componentsDefaultDirectory": "components/{name}",
