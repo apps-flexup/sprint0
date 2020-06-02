@@ -25,7 +25,8 @@ export default {
   },
   data() {
     return {
-      selected: []
+      selected: [],
+      structContract: undefined
     }
   },
   computed: {
