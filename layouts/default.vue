@@ -78,14 +78,24 @@ export default {
           to: '/'
         },
         {
-          icon: 'mdi-chart-bubble',
+          icon: 'mdi-briefcase-check',
           title: 'Contrats',
           to: '/contracts'
         },
         {
-          icon: 'mdi-chart-bubble',
+          icon: 'mdi-file-plus',
           title: 'Nouveau Contrats',
           to: '/contracts/new'
+        },
+        {
+          icon: 'mdi-account-group',
+          title: 'Partenaires',
+          to: '/partners'
+        },
+        {
+          icon: 'mdi-account-arrow-right',
+          title: 'Nouveau Partenaires',
+          to: '/partners/new'
         }
       ],
       miniVariant: false,

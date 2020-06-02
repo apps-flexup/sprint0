@@ -9,5 +9,15 @@
     "text": {
       "index": "sous titre"
     }
+  },
+  "table": {
+    "partners": {
+      "metrics": {
+        "contracts": "aucun contrat | une contrat | {n} contrats",
+        "offers": "aucune offre | une offre | {n} offres",
+        "orders": "aucun ordre | une ordre | {n} ordres",
+        "commandes": "aucune commande | une commande | {n} commandes"
+      }
+    }
   }
 }
