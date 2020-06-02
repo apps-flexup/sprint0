@@ -3,12 +3,14 @@ import Vue from 'vue'
 import FvAutoComplete from '@/components/FvAutoComplete'
 import FvContractList from '@/components/FvContractList'
 import FvContractListSearch from '@/components/FvContractListSearch'
+import FvNav from '@/components/FvNav'
 import FvContractNav from '@/components/FvContractNav'
 import FvContractNew from '@/components/FvContractNew'
 import FvContractStepCommande from '@/components/FvContractStepCommande'
 import FvContractStepDetail from '@/components/FvContractStepDetail'
 import FvContractStepOffer from '@/components/FvContractStepOffer'
 import FvContractStepPaiement from '@/components/FvContractStepPaiement'
+import FvStepper from '@/components/FvStepper'
 import FvContractStepper from '@/components/FvContractStepper'
 import FvContractStepProduct from '@/components/FvContractStepProduct'
 import FvContractStepStructure from '@/components/FvContractStepStructure'
@@ -38,6 +40,7 @@ import FvPartnerModal from '@/components/FvPartnerModal'
 Vue.component('fv-auto-complete', FvAutoComplete)
 Vue.component('fv-contract-list', FvContractList)
 Vue.component('fv-contract-list-search', FvContractListSearch)
+Vue.component('fv-nav', FvNav)
 Vue.component('fv-contract-nav', FvContractNav)
 Vue.component('fv-contract-new', FvContractNew)
 Vue.component('fv-contract-step-detail', FvContractStepDetail)
@@ -61,6 +64,7 @@ Vue.component(
   'fv-contract-summary-step-paiement',
   FvContractSummaryStepPaiement
 )
+Vue.component('fv-stepper', FvStepper)
 Vue.component('fv-contract-stepper', FvContractStepper)
 Vue.component('fv-etape', FvEtape)
 Vue.component('fv-field-date', FvFieldDate)

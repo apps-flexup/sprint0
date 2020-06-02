@@ -9,7 +9,7 @@
         )
     v-row
       v-col(cols="2")
-        fv-contract-stepper(:steps="steps" :current="step")
+        fv-stepper(:steps="steps" :current="step")
       v-col(cols="10")
         component(:is="etape.composant" :etape='etape')
 </template>
