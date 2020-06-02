@@ -22,8 +22,9 @@
     }
   },
   "forms": {
+    "title": "Step {n}",
     "contracts": {
-      "steps": {
+      "step": {
         "1": "Detail",
         "2": "Products",
         "3": "Offers",

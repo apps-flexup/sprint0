@@ -6,7 +6,7 @@
     )
       v-list-item(two-line='')
         v-list-item-content
-          v-list-item-title.subtitle-1 {{ etape.id }}- {{ etape.name }}
+          v-list-item-title.subtitle-1 {{ etape.id }}- {{ $t(etape.name) }}
       v-list-item(
         v-if="active(etape.id)"
       )

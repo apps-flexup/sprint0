@@ -1,5 +1,21 @@
-<template functional lang="pug">
+<template lang="pug">
   .fv-etapes
-    h3 {{ `Étape ${props.etape.id}` }}
-    h2 {{ "$t(`${props.etape.name}`)" }}
+    h3 {{ $tc('forms.title', etape.id) }}
+    h2 {{ $t(etape.name) }}
 </template>
+
+<script>
+export default {
+  props: {
+    etape: {
+      type: Object,
+      default() {
+        return {
+          id: -175,
+          name: 'blabalbal'
+        }
+      }
+    }
+  }
+}
+</script>

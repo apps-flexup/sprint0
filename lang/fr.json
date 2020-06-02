@@ -26,8 +26,9 @@
     }
   },
   "forms": {
+    "title": "Étape {n}",
     "contracts": {
-      "steps": {
+      "step": {
         "1": "Détail",
         "2": "Produits",
         "3": "Offres",
