@@ -5,5 +5,20 @@
   },
   "title": {
     "index": "Contract management service"
+  },
+  "table": {
+    "partners": {
+      "next": {
+        "payment": "Next settlement",
+        "days-remaining": "none | one day | {n} days"
+      },
+      "metrics": {
+        "contracts": "no contract | one contract | {n} contracts",
+        "products": "no product | one product | {n} products",
+        "offers": "no offer | one offer | {n} offers",
+        "orders": "no order | one order | {n} orders",
+        "commandes": "no order | one order | {n} orders"
+      }
+    }
   }
 }

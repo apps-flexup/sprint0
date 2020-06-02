@@ -4,17 +4,25 @@
     v-row(v-for="item in items" :key="item.id")
       v-col(cols="3")
         span.name {{ item.name }}
-        <br />
+        br
         span.address {{ item.address }} {{ item.zip }} {{ item.city }}
       v-col(cols="2")
-        span.metrics {{ item.metrics.contracts }} inflexion contracts
+        span.metrics
+        | {{ $tc('table.partners.metrics.contracts', item.metrics.contracts) }}
       v-col(cols="2")
-        span.metrics {{ item.metrics.products }} inflexion produits
+        span.metrics
+        | {{ $tc('table.partners.metrics.products', item.metrics.products) }}
       v-col(cols="2")
-        span.metrics {{ item.metrics.commandes }} inflexion commandes
-      v-col(cols="3")
-        span {{ item.metrics.next.daysRemaining }} inflexion jours
-        span {{ item.metrics.next.amount }}  {{ item.metrics.next.currency }}
+        span.metrics
+        | {{ $tc('table.partners.metrics.commandes', item.metrics.commandes) }}
+      v-col(cols="3")(v-if='item.metrics.next.amount > 0')
+        span.next {{ $t('table.partners.next.payment') }}
+        br
+        span.settlement
+        | {{ $tc('table.partners.next.days-remaining', item.metrics.next.daysRemaining ) }}&nbsp;
+        span.amount {{ item.metrics.next.amount }}&nbsp;{{ item.metrics.next.currency }}
+      v-col(v-else cols="3")
+        span.next Nothing
 </template>
 <script>
 export default {
@@ -45,6 +53,12 @@ export default {
   }
   .metrics {
     font-weight: 400;
+  }
+  .next {
+    font-weight: lighter;
+  }
+  .amount {
+    font-weight: bold;
   }
 }
 </style>

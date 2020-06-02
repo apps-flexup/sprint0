@@ -12,8 +12,13 @@
   },
   "table": {
     "partners": {
+      "next": {
+        "payment": "Prochain Paiement",
+        "days-remaining": "Aucun | un jour | {n} jours"
+      },
       "metrics": {
-        "contracts": "aucun contrat | une contrat | {n} contrats",
+        "contracts": "aucun contrat | un contrat | {n} contrats",
+        "products": "aucun produit | un produit | {n} produits",
         "offers": "aucune offre | une offre | {n} offres",
         "orders": "aucun ordre | une ordre | {n} ordres",
         "commandes": "aucune commande | une commande | {n} commandes"
