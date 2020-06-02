@@ -11,7 +11,7 @@
       v-col(cols="2")
         fv-stepper(:steps="steps" :current="step")
       v-col(cols="10")
-        component(:is="etape.composant" :etape='etape')
+        pre component(:is="etape.composant" :etape='etape') {{ etape.composant }}
 </template>
 
 <script>

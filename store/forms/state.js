@@ -34,7 +34,7 @@ export default () => ({
       id: 6,
       name: 'forms.contracts.step.6',
       composant: 'fv-contract-step-paiement',
-      resume: 'fv-contract-summary-paiement'
+      resume: 'fv-contract-summary-step-paiement'
     }
   ],
   partners: [
