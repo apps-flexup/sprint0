@@ -11,7 +11,8 @@
       v-col(cols="2")
         fv-stepper(:steps="steps" :current="step")
       v-col(cols="10")
-        pre component(:is="etape.composant" :etape='etape') {{ etape.composant }}
+        pre component(:is="etape.composant" :etape='etape')
+        pre {{ etape.composant }}
 </template>
 
 <script>
@@ -43,15 +44,7 @@ export default {
     },
     submitSteps() {
       console.log('Submit steps')
-    },
-    wizard(payload) {
-      console.log('wizard :', payload)
     }
   }
 }
 </script>
-<style lang="scss" scoped>
-.fv-partner-new {
-  background-color: inherit;
-}
-</style>
