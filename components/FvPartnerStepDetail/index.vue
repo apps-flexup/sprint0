@@ -1,5 +1,5 @@
 <template lang="pug">
-  fv-partner-step-detail
+  .fv-partner-step-detail
     v-row
       v-col(cols="6")
         span plop
