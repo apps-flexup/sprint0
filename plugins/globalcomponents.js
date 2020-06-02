@@ -43,7 +43,7 @@ Vue.component('fv-contract-step-structure', FvContractStepStructure)
 Vue.component('fv-contract-step-commande', FvContractStepCommande)
 Vue.component('fv-contract-step-paiement', FvContractStepPaiement)
 Vue.component('fv-contract-summary-step-detail', FvContractSummaryStepDetail)
-Vue.component('fv-contract-summary-step-produit', FvContractSummaryStepProduct)
+Vue.component('fv-contract-summary-step-product', FvContractSummaryStepProduct)
 Vue.component('fv-contract-summary-step-offer', FvContractSummaryStepOffer)
 Vue.component(
   'fv-contract-summary-step-structure',
