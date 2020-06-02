@@ -10,7 +10,6 @@ import FvContractStepDetail from '@/components/FvContractStepDetail'
 import FvContractStepOffer from '@/components/FvContractStepOffer'
 import FvContractStepPaiement from '@/components/FvContractStepPaiement'
 import FvStepper from '@/components/FvStepper'
-import FvContractStepper from '@/components/FvContractStepper'
 import FvContractStepProduct from '@/components/FvContractStepProduct'
 import FvContractStepStructure from '@/components/FvContractStepStructure'
 import FvContractSummaryStepCommande from '@/components/FvContractSummaryStepCommande'
@@ -63,7 +62,6 @@ Vue.component(
   FvContractSummaryStepPaiement
 )
 Vue.component('fv-stepper', FvStepper)
-Vue.component('fv-contract-stepper', FvContractStepper)
 Vue.component('fv-etape', FvEtape)
 Vue.component('fv-field-date', FvFieldDate)
 Vue.component('fv-partner-dialog', FvPartnerDialog)
