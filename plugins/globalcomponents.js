@@ -4,7 +4,6 @@ import FvAutoComplete from '@/components/FvAutoComplete'
 import FvContractList from '@/components/FvContractList'
 import FvContractListSearch from '@/components/FvContractListSearch'
 import FvNav from '@/components/FvNav'
-import FvContractNav from '@/components/FvContractNav'
 import FvContractNew from '@/components/FvContractNew'
 import FvContractStepCommande from '@/components/FvContractStepCommande'
 import FvContractStepDetail from '@/components/FvContractStepDetail'
@@ -41,7 +40,6 @@ Vue.component('fv-auto-complete', FvAutoComplete)
 Vue.component('fv-contract-list', FvContractList)
 Vue.component('fv-contract-list-search', FvContractListSearch)
 Vue.component('fv-nav', FvNav)
-Vue.component('fv-contract-nav', FvContractNav)
 Vue.component('fv-contract-new', FvContractNew)
 Vue.component('fv-contract-step-detail', FvContractStepDetail)
 Vue.component('fv-contract-step-product', FvContractStepProduct)

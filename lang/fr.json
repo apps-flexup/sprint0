@@ -36,6 +36,13 @@
         "5": "Commandes",
         "6": "Paiement"
       }
+    },
+    "partners": {
+      "step": {
+        "1": "Détail",
+        "2": "Produits",
+        "3": "Offres"
+      }
     }
   }
 }

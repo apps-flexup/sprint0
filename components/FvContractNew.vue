@@ -2,7 +2,7 @@
   .fv-contract-new
     v-row
       v-col(cols="12")
-        fv-contract-nav(
+        fv-nav(
           :current="step"
           :steps="steps"
           @moveTo="moveTo"
