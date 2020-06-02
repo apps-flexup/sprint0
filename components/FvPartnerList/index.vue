@@ -15,7 +15,7 @@
       v-col(cols="2")
         span.metrics
         | {{ $tc('table.partners.metrics.commandes', item.metrics.commandes) }}
-      v-col(cols="3")(v-if='item.metrics.next.amount > 0')
+      v-col(v-if='item.metrics.next.amount > 0' cols="3")
         span.next {{ $t('table.partners.next.payment') }}
         br
         span.settlement
