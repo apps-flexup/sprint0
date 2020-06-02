@@ -18,48 +18,14 @@
 export default {
   data() {
     return {
-      step: 1,
-      steps: [
-        {
-          id: 1,
-          name: 'Détail',
-          composant: 'fv-contract-step-detail',
-          resume: 'fv-contract-summary-step-detail'
-        },
-        {
-          id: 2,
-          name: 'Produits',
-          composant: 'fv-contract-step-product',
-          resume: 'fv-contract-summary-step-product'
-        },
-        {
-          id: 3,
-          name: 'Offres',
-          composant: 'fv-contract-step-offer',
-          resume: 'fv-contract-summary-step-offer'
-        },
-        {
-          id: 4,
-          name: 'Structure',
-          composant: 'fv-contract-step-structure',
-          resume: 'fv-contract-summary-step-structure'
-        },
-        {
-          id: 5,
-          name: 'Commandes',
-          composant: 'fv-contract-step-commande',
-          resume: 'fv-contract-summary-step-commande'
-        },
-        {
-          id: 6,
-          name: 'Paiement',
-          composant: 'fv-contract-step-paiement',
-          resume: 'fv-contract-summary-paiement'
-        }
-      ]
+      step: 1
     }
   },
   computed: {
+    steps() {
+      const res = this.$store.getters['forms/contracts']
+      return res
+    },
     etape() {
       const indice = parseInt(this.step)
       const res = this.steps.find((v) => parseInt(v.id) === indice)

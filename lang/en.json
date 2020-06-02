@@ -20,5 +20,17 @@
         "commandes": "no order | one order | {n} orders"
       }
     }
+  },
+  "forms": {
+    "contracts": {
+      "steps": {
+        "1": "Detail",
+        "2": "Products",
+        "3": "Offers",
+        "4": "Structure",
+        "5": "Orders",
+        "6": "Payment"
+      }
+    }
   }
 }

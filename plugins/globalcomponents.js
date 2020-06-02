@@ -28,6 +28,9 @@ import FvPartnerNew from '@/components/FvPartnerNew'
 import FvPartnerStepDetail from '@/components/FvPartnerStepDetail'
 import FvPartnerStepOffer from '@/components/FvPartnerStepOffer'
 import FvPartnerStepProduct from '@/components/FvPartnerStepProduct'
+import FvPartnerSummaryStepDetail from '@/components/FvPartnerSummaryStepDetail'
+import FvPartnerSummaryStepOffer from '@/components/FvPartnerSummaryStepOffer'
+import FvPartnerSummaryStepProduct from '@/components/FvPartnerSummaryStepProduct'
 import FvPartnerForm from '@/components/FvPartnerForm'
 import FvPartnerModal from '@/components/FvPartnerModal'
 
@@ -70,4 +73,7 @@ Vue.component('fv-partner-new', FvPartnerNew)
 Vue.component('fv-partner-step-detail', FvPartnerStepDetail)
 Vue.component('fv-partner-step-offer', FvPartnerStepOffer)
 Vue.component('fv-partner-step-product', FvPartnerStepProduct)
+Vue.component('fv-partner-summary-step-detail', FvPartnerSummaryStepDetail)
+Vue.component('fv-partner-summary-step-offer', FvPartnerSummaryStepOffer)
+Vue.component('fv-partner-summary-step-product', FvPartnerSummaryStepProduct)
 Vue.component('fv-payment-summary-card', FvPaymentSummaryCard)

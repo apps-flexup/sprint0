@@ -24,5 +24,17 @@
         "commandes": "aucune commande | une commande | {n} commandes"
       }
     }
+  },
+  "forms": {
+    "contracts": {
+      "steps": {
+        "1": "Détail",
+        "2": "Produits",
+        "3": "Offres",
+        "4": "Structure",
+        "5": "Commandes",
+        "6": "Paiement"
+      }
+    }
   }
 }
