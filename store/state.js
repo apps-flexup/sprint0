@@ -1,4 +1,7 @@
 export default () => ({
+  locale: 'fr',
+  locales: ['en', 'fr'],
+  fallbackLocale: 'en',
   items: [],
   etape: {
     contrats: 0,

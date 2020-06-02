@@ -3,13 +3,13 @@
     v-flex(xs12='' sm8='' md6='')
       v-card
         v-card-title.headline
-          | {{ $t(&apos;title.index&apos;) }}
+          | {{ $t('title.index') }}
         v-card-text
-          p {{ $t(&apos;text.title&apos;) }}.
+          p {{ $t('title.text.index') }}.
         v-card-actions
           v-btn(color='primary' nuxt='' to='/contracts')
-            | {{ $t(&apos;menu.contracts&apos;) }}
+            | {{ $t('menus.contracts') }}
           v-spacer
             v-btn(color='primary' nuxt='' to='/contracts/new')
-              | {{ $t(&apos;menu.contracts&apos;) }}
+              | {{ $t('menus.contractnew') }}
 </template>

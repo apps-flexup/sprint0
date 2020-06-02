@@ -1,19 +1,13 @@
 <template lang="pug">
-  v-dialog.fv-partner-dialog(
-    v-model="show"
-    max-width="50%"
-  )
+  .fv-partner-step-detail
     p {{ $options.name }}
-    h1 Hello les gars
-    pre plop plop plop
 </template>
-
 <script>
 export default {
-  name: 'FvPartnerDialog',
-  props: {
-    show: {
-      type: Boolean
+  name: 'FvPartnerStepDetail',
+  computed: {
+    machin() {
+      return 42
     }
   },
   mounted() {
@@ -22,7 +16,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.fv-partner-dialog {
+.fv-partner-step-detail {
   background-color: inherit;
 }
 </style>

@@ -1,9 +1,13 @@
 {
   "menus": {
     "contracts": "Contrats",
+    "contractnew": "Ajouter Contrat",
     "partners": "Partenaires"
   },
   "title": {
-    "index": "Service de gestion des contrats"
+    "index": "Service de gestion des contrats",
+    "text": {
+      "index": "sous titre"
+    }
   }
 }

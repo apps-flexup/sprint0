@@ -45,7 +45,6 @@ export default {
     },
     active(v) {
       const res = parseInt(this.current) > parseInt(v)
-      console.log('v: ', v)
       return res
     }
   }

@@ -5,23 +5,30 @@ import FvContractList from '@/components/FvContractList'
 import FvContractListSearch from '@/components/FvContractListSearch'
 import FvContractNav from '@/components/FvContractNav'
 import FvContractNew from '@/components/FvContractNew'
-import FvContractStepDetail from '@/components/FvContractStepDetail'
-import FvContractStepProduct from '@/components/FvContractStepProduct'
-import FvContractStepOffer from '@/components/FvContractStepOffer'
-import FvContractStepStructure from '@/components/FvContractStepStructure'
 import FvContractStepCommande from '@/components/FvContractStepCommande'
+import FvContractStepDetail from '@/components/FvContractStepDetail'
+import FvContractStepOffer from '@/components/FvContractStepOffer'
 import FvContractStepPaiement from '@/components/FvContractStepPaiement'
-import FvContractSummaryStepDetail from '@/components/FvContractSummaryStepDetail'
-import FvContractSummaryStepProduct from '@/components/FvContractSummaryStepProduct'
-import FvContractSummaryStepOffer from '@/components/FvContractSummaryStepOffer'
-import FvContractSummaryStepStructure from '@/components/FvContractSummaryStepStructure'
-import FvContractSummaryStepCommande from '@/components/FvContractSummaryStepCommande'
-import FvContractSummaryStepPaiement from '@/components/FvContractSummaryStepPaiement'
 import FvContractStepper from '@/components/FvContractStepper'
-import FvFieldDate from '@/components/FvFieldDate'
+import FvContractStepProduct from '@/components/FvContractStepProduct'
+import FvContractStepStructure from '@/components/FvContractStepStructure'
+import FvContractSummaryStepCommande from '@/components/FvContractSummaryStepCommande'
+import FvContractSummaryStepDetail from '@/components/FvContractSummaryStepDetail'
+import FvContractSummaryStepOffer from '@/components/FvContractSummaryStepOffer'
+import FvContractSummaryStepPaiement from '@/components/FvContractSummaryStepPaiement'
+import FvContractSummaryStepProduct from '@/components/FvContractSummaryStepProduct'
+import FvContractSummaryStepStructure from '@/components/FvContractSummaryStepStructure'
 import FvEtape from '@/components/FvEtape'
-import FvPaymentSummaryCard from '@/components/FvPaymentSummaryCard'
+import FvFieldDate from '@/components/FvFieldDate'
 import FvPartnerDialog from '@/components/FvPartnerDialog'
+import FvPaymentSummaryCard from '@/components/FvPaymentSummaryCard'
+import FvPartnerEdit from '@/components/FvPartnerEdit'
+import FvPartnerNew from '@/components/FvPartnerNew'
+import FvPartnerStepDetail from '@/components/FvPartnerStepDetail'
+import FvPartnerStepOffer from '@/components/FvPartnerStepOffer'
+import FvPartnerStepProduct from '@/components/FvPartnerStepProduct'
+import FvPartnerForm from '@/components/FvPartnerForm'
+import FvPartnerModal from '@/components/FvPartnerModal'
 
 // Déclarations composants utilitaires
 Vue.component('fv-auto-complete', FvAutoComplete)
@@ -51,7 +58,14 @@ Vue.component(
   FvContractSummaryStepPaiement
 )
 Vue.component('fv-contract-stepper', FvContractStepper)
-Vue.component('fv-field-date', FvFieldDate)
 Vue.component('fv-etape', FvEtape)
-Vue.component('fv-payment-summary-card', FvPaymentSummaryCard)
+Vue.component('fv-field-date', FvFieldDate)
 Vue.component('fv-partner-dialog', FvPartnerDialog)
+Vue.component('fv-partner-edit', FvPartnerEdit)
+Vue.component('fv-partner-form', FvPartnerForm)
+Vue.component('fv-partner-modal', FvPartnerModal)
+Vue.component('fv-partner-new', FvPartnerNew)
+Vue.component('fv-partner-step-detail', FvPartnerStepDetail)
+Vue.component('fv-partner-step-offer', FvPartnerStepOffer)
+Vue.component('fv-partner-step-product', FvPartnerStepProduct)
+Vue.component('fv-payment-summary-card', FvPaymentSummaryCard)

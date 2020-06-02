@@ -34,9 +34,13 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
+  // router: {
+  //   middleware: ['i18n']
+  // },
   plugins: [
     '~/plugins/globalcomponents',
     '~/plugins/data',
+    '~/plugins/i18n',
     '~/plugins/directives'
   ],
   /*
@@ -44,21 +48,13 @@ export default {
    */
   buildModules: [
     '@nuxt/typescript-build',
-    // Doc: https://github.com/nuxt-community/stylelint-module
     '@nuxtjs/stylelint-module',
     '@nuxtjs/vuetify'
   ],
   /*
    ** Nuxt.js modules
    */
-  modules: [
-    // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
-    'nuxt-i18n',
-    '@nuxtjs/pwa',
-    // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv'
-  ],
+  modules: ['@nuxtjs/axios', '@nuxtjs/pwa', '@nuxtjs/dotenv'],
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options

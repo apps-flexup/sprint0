@@ -80,13 +80,13 @@ export default () => ({
       text: 'Unité de prix',
       align: 'center',
       sortable: true,
-      value: 'unitStr'
+      value: 'dimension'
     },
     {
       text: 'Statut',
       align: 'start',
       sortable: true,
-      value: 'statusStr'
+      value: 'status'
     }
   ],
   offers: [

@@ -7,6 +7,7 @@ export default () => ({
       price: 2000,
       currency: '€',
       unit: 'unité',
+      dimension: '€/mois',
       status: '2'
     },
     {
@@ -16,6 +17,7 @@ export default () => ({
       price: 100.23,
       currency: '€',
       unit: 'unité',
+      dimension: '€/mois',
       status: '4'
     }
   ]

@@ -1,6 +1,6 @@
 <template lang="pug">
   .fv-contract-step-detail
-    fv-partner-dialog(:show='show')
+    fv-partner-dialog(:show='showDialog')
     .fv-contract-step1(v-if="etape.id === 1")
       v-row
         v-col(cols="6")
@@ -64,7 +64,6 @@
         v-col(cols="6")
           v-textField(
             v-model="duree"
-            label="Durée"
             readonly=''
             outlined=''
           )
@@ -94,11 +93,10 @@ export default {
   },
   data() {
     return {
-      show: false,
+      showDialog: false,
       partner: null,
       charter: null,
       contractType: null,
-      duree: null,
       label: null,
       isLoading: false,
       search: null,
@@ -116,6 +114,14 @@ export default {
     charterList() {
       const res = this.$store.getters['charters/all']
       return res
+    },
+    duree: {
+      get() {
+        return '220 secondes'
+      },
+      set(v) {
+        console.log('Valeur de durée :', v)
+      }
     }
   },
   watch: {
@@ -129,7 +135,7 @@ export default {
   methods: {
     addPartner() {
       console.log('Add new partner')
-      this.show = true
+      this.showDialog = true
     },
     dateSignatureChanged(payload) {
       this.dteSignature = payload
