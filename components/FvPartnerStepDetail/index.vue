@@ -48,7 +48,7 @@ export default {
   name: 'FvPartnerStepDetail',
   computed: {
     formesJuridiques() {
-      const res = this.$store.getters['formesJuridiques']
+      const res = this.$store.getters['contracts/formesJuridiques']
       return res
     }
   },

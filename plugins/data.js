@@ -5,13 +5,15 @@ export default (ctx, inject) => {
 
   const repos = {
     charters: repo('charters'),
-    products: repo('products'),
-    etapes: repo('etapes'),
+    contacts: repo('contacts'),
     contractHeaders: repo('contract-headers'),
-    productHeaders: repo('product-headers'),
     contracts: repo('contracts'),
     contractTypes: repo('contract-types'),
-    contacts: repo('contacts')
+    currencies: repo('currencies'),
+    etapes: repo('etapes'),
+    productHeaders: repo('product-headers'),
+    products: repo('products'),
+    structures: repo('structures')
   }
 
   inject('repos', repos)

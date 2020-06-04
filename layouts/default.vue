@@ -96,6 +96,11 @@ export default {
           icon: 'mdi-account-arrow-right',
           title: 'Nouveau Partenaires',
           to: '/partners/new'
+        },
+        {
+          icon: 'mdi-dashboard',
+          title: 'Dashboard',
+          to: '/dashboard'
         }
       ],
       miniVariant: false,

@@ -13,5 +13,9 @@ export default {
     if (!state.structures) return []
     const res = JSON.parse(JSON.stringify(state.structures))
     return res
+  },
+  formesJuridiques(state) {
+    const res = state.formesJuridiques
+    return res
   }
 }

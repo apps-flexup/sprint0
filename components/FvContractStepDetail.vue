@@ -17,14 +17,6 @@
             outlined=''
             @click:append='addPartner'
           )
-      v-row
-        v-col(cols="6")
-          v-text-field(
-            v-model="label"
-            label="Label"
-            clearable=''
-            outlined=''
-          )
         v-col(cols="6")
           v-select(
             v-model="charter"
@@ -112,7 +104,10 @@ export default {
       return res
     },
     charterList() {
-      const res = this.$store.getters['charters/all']
+      const idA = 1
+      const idB = 2
+      // TODO : Selection asynchrone, requierant account et partner id
+      const res = this.$store.getters['charters/get'](idA, idB)
       return res
     },
     duree: {
