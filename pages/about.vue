@@ -1,25 +1,7 @@
 <template lang="pug">
   v-layout(column='' justify-center='' align-center='')
     v-flex(xs12='' sm8='' md6='')
-      v-card.mt-5
-        v-card-title.headline
-          | Achat
-        v-card-actions
-          v-btn(color='primary' nuxt='' to='/achats')
-            | {{ $t('menus.achats') }}
-          v-spacer
-          v-btn(color='primary' nuxt='' to='/achats/new')
-            | {{ $t('menus.achatnew') }}
-      v-card.mt-5
-        v-card-title.headline
-          | Orders
-        v-card-actions
-          v-btn(color='primary' nuxt='' to='/orders')
-            | {{ $t('menus.orders') }}
-          v-spacer
-          v-btn(color='primary' nuxt='' to='/orders/new')
-            | {{ $t('menus.ordernew') }}
-      v-card.mt-5
+      v-card
         v-card-title.headline
           | {{ $t('title.index') }}
         v-card-actions
@@ -28,7 +10,7 @@
           v-spacer
           v-btn(color='primary' nuxt='' to='/contracts/new')
             | {{ $t('menus.contractnew') }}
-      v-card.mt-5
+      v-card
         v-card-title.headline
           | {{ $t('pages.partners') }}
         v-card-actions
