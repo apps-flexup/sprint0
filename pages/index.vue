@@ -3,6 +3,18 @@
     v-flex(xs12='' sm8='' md6='')
       v-card.mt-5
         v-card-title.headline
+          | Simulation
+        v-card-actions
+          v-btn(color='primary' nuxt='' to='/simulations')
+            | simulations
+          v-btn(color='primary' nuxt='' to='/simulations/employes')
+            | employes
+          v-btn(color='primary' nuxt='' to='/simulations/charges')
+            | charges
+          v-btn(color='primary' nuxt='' to='/simulations/produits')
+            | produits
+      v-card.mt-5
+        v-card-title.headline
           | Achat
         v-card-actions
           v-btn(color='primary' nuxt='' to='/achats')

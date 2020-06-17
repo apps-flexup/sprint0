@@ -1,4 +1,74 @@
 {
+  "employes": [
+    {
+      "id": 1,
+      "ordre": 1,
+      "job": "ouvrier"
+    },
+    {
+      "id": 2,
+      "ordre": 2,
+      "job": "moe",
+      "pct": 10
+    },
+    {
+      "id": 3,
+      "ordre": 3,
+      "job": "ETAM",
+      "pct": 5
+    },
+    {
+      "id": 4,
+      "ordre": 4,
+      "job": "cadre",
+      "pct": 2
+    },
+    {
+      "id": 5,
+      "ordre": 5,
+      "job": "manager",
+      "qte": 40
+    },
+    {
+      "id": 6,
+      "ordre": 6,
+      "job": "dirigeant",
+      "qte": 5
+    },
+    {
+      "id": 7,
+      "ordre": 7,
+      "job": "PDG",
+      "qte": 1
+    },
+    {
+      "id": 8,
+      "job": "all",
+      "qte": 2000
+    }
+  ],
+  "accounts": [
+    {
+      "id": 1,
+      "avatar": "/static/avatar-0.png",
+      "name": "truc"
+    },
+    {
+      "id": 2,
+      "avatar": "/static/avatar-1.png",
+      "name": "Marcel F."
+    },
+    {
+      "id": 3,
+      "avatar": "/static/avatar-2.png",
+      "name": "Brian M."
+    },
+    {
+      "id": 4,
+      "avatar": "/static/avatar-3.png",
+      "name": "Paul R."
+    }
+  ],
   "charters": [
     {
       "id": 1,

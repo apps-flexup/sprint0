@@ -16,21 +16,19 @@
 <script>
 export default {
   name: 'FvContractList',
-  created() {
-    this.$store.dispatch('contracts/getContracts')
-  },
   computed: {
     headers() {
       const res = this.$store.getters['headers/contracts']
       return res
     },
     items() {
-      const res = this.$store.state.contracts.items
+      const res = this.$store.getters['contracts/all']
       return res
     }
   },
   mounted() {
     console.log('Composant ', this.$options.name)
+    this.$store.dispatch('contracts/get')
   }
 }
 </script>

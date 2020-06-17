@@ -34,6 +34,7 @@ import FvPartnerSummaryStepProduct from '@/components/FvPartnerSummaryStepProduc
 import FvPartnerForm from '@/components/FvPartnerForm'
 import FvPartnerModal from '@/components/FvPartnerModal'
 import FvUserAccounts from '@/components/FvUserAccounts'
+import FvAccountAvatar from '@/components/FvAccountAvatar'
 
 // Déclarations composants utilitaires
 Vue.component('fv-auto-complete', FvAutoComplete)
@@ -79,3 +80,4 @@ Vue.component('fv-partner-summary-step-offer', FvPartnerSummaryStepOffer)
 Vue.component('fv-partner-summary-step-product', FvPartnerSummaryStepProduct)
 Vue.component('fv-payment-summary-card', FvPaymentSummaryCard)
 Vue.component('fv-user-accounts', FvUserAccounts)
+Vue.component('fv-account-avatar', FvAccountAvatar)
