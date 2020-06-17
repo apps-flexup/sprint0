@@ -8,7 +8,7 @@
         v-btn(
           :disabled='step === 1'
           text=''
-          @click='step--'
+          @click.prevent='step--'
         )
           | Previous
       v-col(
@@ -25,7 +25,7 @@
           :disabled='step === nbSteps'
           color='primary'
           depressed=''
-          @click='step++'
+          @click.prevent='step++'
         )
           | Next
         v-btn(
@@ -33,7 +33,7 @@
           :disabled='step <= nbSteps'
           color='primary'
           depressed=''
-          @click='submit'
+          @click.prevent='submit'
         )
           | $('button.submit')
 </template>

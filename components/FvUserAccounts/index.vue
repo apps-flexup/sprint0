@@ -17,15 +17,15 @@
               v-img(:src='account.avatar')
             v-list-item-content
               v-list-item-title(v-text='account.name')
-            v-list-item-avatar
-              v-avatar(color="indigo" size="36")
-                span.white--text.headline 36
-            v-list-item-avatar
-              v-avatar(color="teal" size="48")
-                span.white--text.headline 48
-            v-list-item-avatar
-              v-avatar(color="orange" size="62")
-                span.white--text.headline 62
+            //- v-list-item-avatar
+            //-   v-avatar(color="indigo" size="36")
+            //-     span.white--text.headline 36
+            //- v-list-item-avatar
+            //-   v-avatar(color="teal" size="48")
+            //-     span.white--text.headline 48
+            //- v-list-item-avatar
+            //-   v-avatar(color="orange" size="62")
+            //-     span.white--text.headline 62
 </template>
 
 <script>

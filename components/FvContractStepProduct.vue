@@ -39,6 +39,8 @@ export default {
   },
   mounted() {
     console.log('Composant ', this.$options.name)
+    this.$store.dispatch('headers/getProductHeaders')
+    this.$store.dispatch('products/get')
   }
 }
 </script>

@@ -27,6 +27,7 @@ export default {
       return res
     },
     etape() {
+      if (this.steps.length < 1) return 1
       const indice = parseInt(this.step)
       const res = this.steps.find((v) => parseInt(v.id) === indice)
       return res
@@ -34,11 +35,13 @@ export default {
   },
   mounted() {
     console.log('Composant ', this.$options.name)
+    this.$store.dispatch('forms/getContract')
+    this.$store.dispatch('contracts/get')
   },
   methods: {
     moveTo(v) {
       console.log('Current step: ', v)
-      this.step = v
+      this.step = v > 0 ? v : this.step
     },
     submitSteps() {
       console.log('Submit steps')

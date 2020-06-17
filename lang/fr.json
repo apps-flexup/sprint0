@@ -27,14 +27,14 @@
   },
   "forms": {
     "title": "Étape {n}",
+    "duration": "- | 1 seconde | {n} secondes",
     "contracts": {
       "step": {
+        "0": "-",
         "1": "Détail",
         "2": "Produits",
-        "3": "Offres",
-        "4": "Structure",
-        "5": "Commandes",
-        "6": "Paiement"
+        "3": "Structure",
+        "4": "Pre-visualisation"
       }
     },
     "partners": {

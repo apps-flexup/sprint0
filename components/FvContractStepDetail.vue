@@ -112,7 +112,13 @@ export default {
     },
     duree: {
       get() {
-        return '220 secondes'
+        // 1 date de signature
+        // 2 date effective
+        // A date fin
+        // const debut = signature || effective
+        // const res = fin - debut
+        const res = 0
+        return this.$tc('forms.duration', res)
       },
       set(v) {
         console.log('Valeur de durée :', v)

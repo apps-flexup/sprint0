@@ -1,5 +1,5 @@
 <template lang="pug">
-  .fv-contract-step4(v-if="etape.id === 4")
+  .fv-contract-step4(v-if="etape.id === 3")
     v-row
       v-select(
         v-model="structContract"
@@ -30,10 +30,6 @@ export default {
     }
   },
   computed: {
-    headers() {
-      const res = this.$store.getters['headers/offers']
-      return res
-    },
     structContractList() {
       const res = this.$store.getters['contracts/structures']
       return res
@@ -41,6 +37,7 @@ export default {
   },
   mounted() {
     console.log('Composant ', this.$options.name)
+    this.$store.dispatch('contracts/getStructures')
   }
 }
 </script>

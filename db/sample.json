@@ -1,72 +1,104 @@
 {
-  "employes": [
-    {
-      "id": 1,
-      "ordre": 1,
-      "job": "ouvrier"
-    },
-    {
-      "id": 2,
-      "ordre": 2,
-      "job": "moe",
-      "pct": 10
-    },
-    {
-      "id": 3,
-      "ordre": 3,
-      "job": "ETAM",
-      "pct": 5
-    },
-    {
-      "id": 4,
-      "ordre": 4,
-      "job": "cadre",
-      "pct": 2
-    },
-    {
-      "id": 5,
-      "ordre": 5,
-      "job": "manager",
-      "qte": 40
-    },
-    {
-      "id": 6,
-      "ordre": 6,
-      "job": "dirigeant",
-      "qte": 5
-    },
-    {
-      "id": 7,
-      "ordre": 7,
-      "job": "PDG",
-      "qte": 1
-    },
-    {
-      "id": 8,
-      "job": "all",
-      "qte": 2000
-    }
-  ],
   "accounts": [
     {
       "id": 1,
+      "id_user": 1,
       "avatar": "/static/avatar-0.png",
-      "name": "truc"
+      "name": "plop",
+      "address": "12 rue de la poupée qui tousse",
+      "city": "Braniole de turbeuse",
+      "zip": "1574788",
+      "country": "france",
+      "metrics": {
+        "contracts": 2,
+        "products": 0,
+        "commandes": 5,
+        "next": {
+          "daysRemaining": 5,
+          "amount": 45,
+          "currency": "EUR"
+        }
+      }
     },
     {
       "id": 2,
+      "id_user": 2,
       "avatar": "/static/avatar-1.png",
-      "name": "Marcel F."
+      "name": "toto",
+      "address": "12 rue de la poupée qui tousse",
+      "city": "Braniole de turbeuse",
+      "zip": "1574788",
+      "country": "france",
+      "metrics": {
+        "contracts": 1,
+        "products": 1,
+        "commandes": 1,
+        "next": {
+          "daysRemaining": 5,
+          "amount": 45,
+          "currency": "EUR"
+        }
+      }
     },
     {
       "id": 3,
+      "id_user": 3,
       "avatar": "/static/avatar-2.png",
-      "name": "Brian M."
+      "name": "fred",
+      "address": "12 rue de la marjolaine",
+      "city": "Courtanche sur Mer",
+      "zip": "66789",
+      "country": "france",
+      "metrics": {
+        "contracts": 0,
+        "products": 0,
+        "commandes": 0,
+        "next": {
+          "daysRemaining": 1,
+          "amount": 45.55,
+          "currency": "EUR"
+        }
+      }
+    },
+    {
+      "id": 5,
+      "id_user": 3,
+      "avatar": "/static/avatar-6.png",
+      "name": "Pierre",
+      "address": "21 rue de la marjolaine",
+      "city": "Flombard les gazeuses",
+      "zip": "897012",
+      "country": "france",
+      "metrics": {
+        "contracts": 0,
+        "products": 0,
+        "commandes": 0,
+        "next": {
+          "daysRemaining": 1,
+          "amount": 45.55,
+          "currency": "EUR"
+        }
+      }
     },
     {
       "id": 4,
+      "id_user": 4,
       "avatar": "/static/avatar-3.png",
-      "name": "Paul R."
+      "name": "grog",
+      "address": "19 avenue de la venue",
+      "city": "Ploutoire les bois",
+      "zip": "7478518",
+      "country": "france",
+      "metrics": {
+        "contracts": 2,
+        "products": 5,
+        "commandes": 5,
+        "next": {
+          "daysRemaining": 0,
+          "amount": 0,
+          "currency": "EUR"
+        }
+      }
     }
   ],
   "charters": [
@@ -158,19 +190,39 @@
   "contract-types": [
     {
       "id": 1,
-      "name": "contract type 1"
+      "name": "Consulting"
     },
     {
       "id": 2,
-      "name": "contract type 2"
+      "name": "IT Development"
     },
     {
       "id": 3,
-      "name": "contract type 3"
+      "name": "Funding"
     },
     {
       "id": 4,
-      "name": "contract type 4"
+      "name": "Supply"
+    },
+    {
+      "id": 5,
+      "name": "Work"
+    },
+    {
+      "id": 6,
+      "name": "Royalties"
+    },
+    {
+      "id": 7,
+      "name": "Rental"
+    },
+    {
+      "id": 9,
+      "name": "Stage"
+    },
+    {
+      "id": 10,
+      "name": "Annual IT subscriptions"
     }
   ],
   "contracts": [
@@ -253,13 +305,83 @@
       "name": "US Dollar"
     }
   ],
-  "etapes": [
-    "Détail",
-    "Produits",
-    "Offres",
-    "Structure",
-    "Commandes",
-    "Paiement"
+  "employes": [
+    {
+      "id": 1,
+      "job": "ouvrier",
+      "ordre": 1
+    },
+    {
+      "id": 2,
+      "job": "moe",
+      "ordre": 2,
+      "pct": 10
+    },
+    {
+      "id": 3,
+      "job": "ETAM",
+      "ordre": 3,
+      "pct": 5
+    },
+    {
+      "id": 4,
+      "job": "cadre",
+      "ordre": 4,
+      "pct": 2
+    },
+    {
+      "id": 5,
+      "job": "manager",
+      "ordre": 5,
+      "qte": 40
+    },
+    {
+      "id": 6,
+      "job": "dirigeant",
+      "ordre": 6,
+      "qte": 5
+    },
+    {
+      "id": 7,
+      "job": "PDG",
+      "ordre": 7,
+      "qte": 1
+    },
+    {
+      "id": 8,
+      "job": "all",
+      "qte": 2000
+    }
+  ],
+  "formesJuridiques": [
+    {
+      "id": 1,
+      "name": "EI"
+    },
+    {
+      "id": 2,
+      "name": "EURL"
+    },
+    {
+      "id": 3,
+      "name": "SARL"
+    },
+    {
+      "id": 4,
+      "name": "SNC"
+    },
+    {
+      "id": 5,
+      "name": "SAS"
+    },
+    {
+      "id": 6,
+      "name": "SASU"
+    },
+    {
+      "id": 7,
+      "name": "SA"
+    }
   ],
   "product-headers": [
     {
@@ -316,19 +438,187 @@
   "structures": [
     {
       "id": 1,
-      "name": "Base 40% + Equity 60%"
+      "name": "Base 40% + Equity 60%",
+      "schema": [
+        {
+          "name": "base",
+          "value": 0.4
+        },
+        {
+          "name": "Equity",
+          "value": 0.6
+        }
+      ]
     },
     {
       "id": 2,
-      "name": "Base 30% + Equity 70%"
+      "name": "Base 30% + Equity 70%",
+      "schema": [
+        {
+          "name": "base",
+          "value": 0.3
+        },
+        {
+          "name": "Equity",
+          "value": 0.7
+        }
+      ]
     },
     {
       "id": 3,
-      "name": "Base 60% + Equity 40%"
+      "name": "Base 60% + Equity 40%",
+      "schema": [
+        {
+          "name": "base",
+          "value": 0.6
+        },
+        {
+          "name": "Equity",
+          "value": 0.4
+        }
+      ]
     },
     {
       "id": 4,
-      "name": "Base 50% + Equity 50%"
+      "name": "Base 50% + Equity 50%",
+      "schema": [
+        {
+          "name": "base",
+          "value": 0.5
+        },
+        {
+          "name": "Equity",
+          "value": 0.5
+        }
+      ]
+    }
+  ],
+  "offer-headers": [
+    {
+      "text": "Nom de l'offre",
+      "align": "start",
+      "sortable": true,
+      "value": "name"
+    },
+   {
+      "text": "Label",
+      "align": "start",
+      "sortable": true,
+      "value": "label"
+    },
+   {
+      "text": "Produit(s)",
+      "align": "start",
+      "sortable": true,
+      "value": "products"
+    },
+   {
+      "text": "Prix",
+      "align": "end",
+      "sortable": true,
+      "value": "price"
+    },
+   {
+      "text": "Unité de prix",
+      "align": "center",
+      "sortable": true,
+      "value": "unitStr"
+    },
+   {
+      "text": "Statut",
+      "align": "start",
+      "sortable": true,
+      "value": "statusStr"
+    }
+  ],
+  "order-headers": [
+    {
+      "text": "Date de commande",
+      "align": "start",
+      "sortable": true,
+      "value": "date"
+    },
+    {
+      "text": "Offre",
+      "align": "start",
+      "sortable": true,
+      "value": "offer"
+    },
+   {
+      "text": "Status",
+      "align": "start",
+      "sortable": true,
+      "value": "status"
+    },
+   {
+      "text": "Date de début",
+      "align": "start",
+      "sortable": true,
+      "value": "startDate"
+    },
+   {
+      "text": "Date de fin",
+      "align": "start",
+      "sortable": true,
+      "value": "endDate"
+    },
+   {
+      "text": "Quantité",
+      "align": "end",
+      "sortable": true,
+      "value": "quantity"
+    },
+   {
+      "text": "Prix",
+      "align": "end",
+      "sortable": true,
+      "value": "price"
+    }
+  ],
+  "contract-steps": [
+    {
+      "id": 1,
+      "name": "forms.contracts.step.1",
+      "composant": "fv-contract-step-detail",
+      "resume": "fv-contract-summary-step-detail"
+    },
+    {
+      "id": 2,
+      "name": "forms.contracts.step.2",
+      "composant": "fv-contract-step-product",
+      "resume": "fv-contract-summary-step-product"
+    },
+    {
+      "id": 3,
+      "name": "forms.contracts.step.3",
+      "composant": "fv-contract-step-structure",
+      "resume": "fv-contract-summary-step-structure"
+    },
+    {
+      "id": 4,
+      "name": "forms.contracts.step.4",
+      "composant": "fv-contract-step-visualisation",
+      "resume": "fv-contract-summary-step-visualisation"
+    }
+  ],
+  "partner-steps": [
+    {
+      "id": 1,
+      "name": "forms.partners.step.1",
+      "composant": "fv-partner-step-detail",
+      "resume": "fv-partner-summary-step-detail"
+    },
+    {
+      "id": 2,
+      "name": "forms.partners.step.2",
+      "composant": "fv-partner-step-product",
+      "resume": "fv-partner-summary-step-product"
+    },
+    {
+      "id": 3,
+      "name": "forms.partners.step.3",
+      "composant": "fv-partner-step-offer",
+      "resume": "fv-partner-summary-step-offer"
     }
   ]
 }

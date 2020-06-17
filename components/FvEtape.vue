@@ -12,7 +12,7 @@ export default {
       default() {
         return {
           id: -175,
-          name: 'blabalbal'
+          name: 'forms.contracts.step.0'
         }
       }
     }
