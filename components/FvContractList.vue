@@ -16,13 +16,16 @@
 <script>
 export default {
   name: 'FvContractList',
+  created() {
+    this.$store.dispatch('contracts/getContracts')
+  },
   computed: {
     headers() {
       const res = this.$store.getters['headers/contracts']
       return res
     },
     items() {
-      const res = this.$store.getters['contracts/all']
+      const res = this.$store.state.contracts.items
       return res
     }
   },
