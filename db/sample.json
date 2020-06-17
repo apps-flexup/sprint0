@@ -1,5 +1,5 @@
 {
-  "accounts": [
+  "contacts": [
     {
       "id": 1,
       "id_user": 1,
@@ -64,7 +64,7 @@
       "id": 5,
       "id_user": 3,
       "avatar": "/static/avatar-6.png",
-      "name": "Pierre",
+      "name": "pierre",
       "address": "21 rue de la marjolaine",
       "city": "Flombard les gazeuses",
       "zip": "897012",
@@ -117,24 +117,6 @@
     {
       "id": 4,
       "name": "charter 4"
-    }
-  ],
-  "contacts": [
-    {
-      "id": 1,
-      "name": "plop"
-    },
-    {
-      "id": 2,
-      "name": "toto"
-    },
-    {
-      "id": 3,
-      "name": "fred"
-    },
-    {
-      "id": 4,
-      "name": "grog"
     }
   ],
   "contract-headers": [
