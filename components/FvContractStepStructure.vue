@@ -21,15 +21,32 @@ export default {
       default() {
         return 3
       }
+    },
+    values: {
+      type: Object,
+      default() {
+        return {
+          selected: []
+        }
+      }
     }
   },
   data() {
     return {
-      selected: [],
-      structContract: undefined
+      local_selected: []
     }
   },
   computed: {
+    selected: {
+      get() {
+        const res = this.local_selected || this.values.selected
+        return res
+      },
+      set(v) {
+        console.log('set', v)
+        this.$emit('wizard', { structContract: v })
+      }
+    },
     structContractList() {
       const res = this.$store.getters['contracts/structures']
       return res
@@ -41,6 +58,7 @@ export default {
   }
 }
 </script>
+
 <style lang="scss" scoped>
 .fv-contract-step3 {
   background-color: inherit;

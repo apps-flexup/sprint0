@@ -1,6 +1,5 @@
 <template lang="pug">
   .fv-contract-step3
-    p {{ $options.name }}
     v-row
       v-col(cols="12")
         v-data-table.elevation-2(
@@ -14,9 +13,27 @@
 <script>
 export default {
   name: 'FvContractStep3',
+  props: {
+    etape: {
+      type: Object,
+      default() {
+        return {
+          id: 1
+        }
+      }
+    },
+    values: {
+      type: Object,
+      default() {
+        return {
+          offers: []
+        }
+      }
+    }
+  },
   data() {
     return {
-      selected: []
+      local_selected: []
     }
   },
   computed: {
@@ -27,10 +44,23 @@ export default {
     items() {
       const res = this.$store.getters['offers/all']
       return res
+    },
+    selected: {
+      get() {
+        return this.local_selected || this.values.offers || []
+      },
+      set(v) {
+        console.log('set', v)
+        this.local_selected = v
+        const res = v.map((i) => i.id)
+        this.$emit('wizard', { offers: res })
+      }
     }
   },
   mounted() {
     console.log('Composant ', this.$options.name)
+    this.$store.dispatch('headers/getOfferHeaders')
+    this.$store.dispatch('offers/get')
   }
 }
 </script>

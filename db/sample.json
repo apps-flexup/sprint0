@@ -397,7 +397,7 @@
       "value": "statusStr"
     }
   ],
-  "products": [
+  "offers": [
     {
       "currency": "€",
       "id": 1,
@@ -567,8 +567,8 @@
     {
       "id": 2,
       "name": "forms.contracts.step.2",
-      "composant": "fv-contract-step-product",
-      "resume": "fv-contract-summary-step-product"
+      "composant": "fv-contract-step-offer",
+      "resume": "fv-contract-summary-step-offer"
     },
     {
       "id": 3,

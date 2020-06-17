@@ -79,26 +79,102 @@ export default {
     etape: {
       type: Object,
       default() {
-        return 1
+        return {
+          id: 1
+        }
+      }
+    },
+    values: {
+      type: Object,
+      default() {
+        return {
+          partner: null,
+          charter: null,
+          contractType: null,
+          dteSignature: null,
+          dteEffect: null,
+          dteEnd: null
+        }
       }
     }
   },
   data() {
     return {
       showDialog: false,
-      partner: null,
-      charter: null,
-      contractType: null,
-      label: null,
+      // partner: null,
+      // charter: null,
+      // contractType: null,
       isLoading: false,
       search: null,
-      dteSignature: null,
-      dteEffect: null,
-      dteEnd: null,
-      items: []
+      // dteSignature: null,
+      // dteEffect: null,
+      // dteEnd: null,
+      items: [],
+      payload: {
+        partner: null,
+        charter: null,
+        contractType: null,
+        dteSignature: null,
+        dteEffect: null,
+        dteEnd: null
+      }
     }
   },
   computed: {
+    partner: {
+      get() {
+        return this.payload.partner || this.values.partner
+      },
+      set(v) {
+        this.payload.partner = v
+        this.$emit('wizard', this.payload)
+      }
+    },
+    charter: {
+      get() {
+        return this.payload.charter || this.values.charter
+      },
+      set(v) {
+        this.payload.charter = v
+        this.$emit('wizard', this.payload)
+      }
+    },
+    contractType: {
+      get() {
+        return this.payload.contractType || this.values.contractType
+      },
+      set(v) {
+        this.payload.contractType = v
+        this.$emit('wizard', this.payload)
+      }
+    },
+    dteSignature: {
+      get() {
+        return this.payload.dteSignature || this.values.dteSignature
+      },
+      set(v) {
+        this.payload.dteSignature = v
+        this.$emit('wizard', this.payload)
+      }
+    },
+    dteEffect: {
+      get() {
+        return this.payload.dteEffect || this.values.dteEffect
+      },
+      set(v) {
+        this.payload.dteEffect = v
+        this.$emit('wizard', this.payload)
+      }
+    },
+    dteEnd: {
+      get() {
+        return this.payload.dteEnd || this.values.dteEnd
+      },
+      set(v) {
+        this.payload.dteEnd = v
+        this.$emit('wizard', this.payload)
+      }
+    },
     contractTypeList() {
       const res = this.$store.getters['contracts/types']
       return res
