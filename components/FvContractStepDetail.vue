@@ -176,7 +176,7 @@ export default {
       }
     },
     contractTypeList() {
-      const res = this.$store.getters['contracts/types']
+      const res = this.$store.getters['contracts/getTypes'](1)
       return res
     },
     charterList() {

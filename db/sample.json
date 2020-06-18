@@ -172,7 +172,24 @@
   "contract-types": [
     {
       "id": 1,
-      "name": "Consulting"
+      "name": "Consulting",
+      "categories": [
+        6,
+        7,
+        9,
+        8
+      ],
+      "id_account": null
+    },
+    {
+      "id": 11,
+      "name": "Consulting",
+      "categories": [
+        9,
+        8,
+        31
+      ],
+      "id_account": 1
     },
     {
       "id": 2,
@@ -398,23 +415,444 @@
     }
   ],
   "offers": [
-    {
-      "currency": "€",
-      "id": 1,
-      "name": "Produit 1",
-      "price": 2000,
-      "quantity": 1,
-      "status": "2",
-      "unit": "unité"
+  {
+    "id": 1,
+    "name": {
+      "en": "Goat milk"
     },
-    {
-      "currency": "€",
+    "description": {
+      "en": "True Goat milk"
+    },
+    "reference": "EKWOHX",
+    "price": 100.0,
+    "elasticity": 20.0,
+    "currency": "EUR",
+    "unit": "m³",
+    "dimension": "volume",
+    "status": "draft",
+    "category_id": 25,
+    "account_id": 3,
+    "params": {
+      "offerinfo": "goat milk is offered still"
+    },
+    "active": true,
+    "offer_at_client": true,
+    "offer_at_supplier": true,
+    "offer_shipping": true,
+    "offer_remote": true,
+    "category": {
+      "id": 25,
+      "name": {
+        "en": "Milk",
+        "fr": "Lait"
+      },
+      "description": {
+        "en": "Milk",
+        "fr": "Catégorie Lait"
+      },
+      "sort_order": 0,
+      "parent_id": 21,
+      "dimension": "volume",
+      "unit": "l",
+      "status": "active",
+      "orderable": true,
+      "active": true,
+      "allow_at_client": false,
+      "allow_at_supplier": true,
+      "allow_shipping": true,
+      "allow_remote": false,
+      "other_parent": [],
+      "offers_count": 6
+    },
+    "evaluation_avg": 6.5,
+    "favorite": true,
+    "illustration_url": "https://placeimg.com/640/480?id=1"
+  },
+  {
+    "id": 2,
+    "name": {
+      "en": "my beautifiul offer"
+    },
+    "description": {
+      "en": "description of offer which is really beuatyful"
+    },
+    "reference": "LLGVXJ",
+    "price": 100.0,
+    "elasticity": 0.0,
+    "currency": "EUR",
+    "unit": "day",
+    "dimension": "duration",
+    "status": "draft",
+    "category_id": 2,
+    "account_id": 5,
+    "params": {
+      "identifiant_service": {
+        "fr": "blabla725-924"
+      }
+    },
+    "active": true,
+    "offer_at_client": true,
+    "offer_at_supplier": true,
+    "offer_shipping": true,
+    "offer_remote": true,
+    "category": {
       "id": 2,
-      "name": "Produit 2",
-      "price": 100.23,
-      "quantity": 1,
-      "status": "4",
-      "unit": "unité"
+      "name": {
+        "en": "Services",
+        "fr": "Services (en français)"
+      },
+      "description": {
+        "en": "Services category",
+        "fr": "Catégorie chapeau pour les services (en français)"
+      },
+      "sort_order": 0,
+      "parent_id": 1,
+      "dimension": "duration",
+      "unit": "day",
+      "status": "active",
+      "orderable": true,
+      "active": false,
+      "allow_at_client": true,
+      "allow_at_supplier": true,
+      "allow_shipping": true,
+      "allow_remote": false,
+      "other_parent": [],
+      "offers_count": 1
+    },
+    "evaluation_avg": 6.5,
+    "favorite": false,
+    "illustration_url": "https://placeimg.com/640/480?id=2"
+  },
+  {
+    "id": 3,
+    "name": {
+      "en": "7 familly game",
+      "fr": "Le jeu des 7 famille"
+    },
+    "description": {
+      "en": "description of offer fab",
+      "fr": "description of Le jeu des 7 famille"
+    },
+    "reference": "BAVAFC",
+    "price": 10.0,
+    "elasticity": 0.0,
+    "currency": "EUR",
+    "unit": "h",
+    "dimension": null,
+    "status": "draft",
+    "category_id": 44,
+    "account_id": 1,
+    "params": {
+      "game_name": {
+        "en": "Tintin version",
+        "fr": "version Tintin"
+      },
+      "quantity_of_cards": 52
+    },
+    "active": true,
+    "offer_at_client": true,
+    "offer_at_supplier": true,
+    "offer_shipping": true,
+    "offer_remote": true,
+    "category": {
+      "id": 44,
+      "name": {
+        "en": "Card Games",
+        "fr": "Jeux de cartes"
+      },
+      "description": {
+        "en": "English",
+        "fr": "French"
+      },
+      "sort_order": 0,
+      "parent_id": 43,
+      "dimension": "number",
+      "unit": "Nr",
+      "status": "active",
+      "orderable": true,
+      "active": true,
+      "allow_at_client": true,
+      "allow_at_supplier": true,
+      "allow_shipping": true,
+      "allow_remote": false,
+      "other_parent": [],
+      "offers_count": 1
+    },
+    "evaluation_avg": 6.5,
+    "favorite": true,
+    "illustration_url": "https://placeimg.com/640/480?id=3"
+  },
+  {
+    "id": 4,
+    "name": {
+      "en": "name of offer php"
+    },
+    "description": {
+      "en": "description of offer php"
+    },
+    "reference": "EICMNB",
+    "price": 100.0,
+    "elasticity": 20.0,
+    "currency": "EUR",
+    "unit": "h",
+    "dimension": null,
+    "status": "draft",
+    "category_id": 52,
+    "account_id": 1,
+    "params": {
+      "plop": 2525,
+      "condition": {
+        "en": "default conditionvg"
+      }
+    },
+    "active": true,
+    "offer_at_client": true,
+    "offer_at_supplier": true,
+    "offer_shipping": true,
+    "offer_remote": true,
+    "category": {
+      "id": 52,
+      "name": {
+        "en": "Development",
+        "fr": "Développement"
+      },
+      "description": {
+        "en": "English",
+        "fr": "French"
+      },
+      "sort_order": 0,
+      "parent_id": 51,
+      "dimension": null,
+      "unit": null,
+      "status": "active",
+      "orderable": true,
+      "active": true,
+      "allow_at_client": false,
+      "allow_at_supplier": false,
+      "allow_shipping": false,
+      "allow_remote": false,
+      "other_parent": [],
+      "offers_count": 1
+    },
+    "evaluation_avg": 6.5,
+    "favorite": true,
+    "illustration_url": "https://placeimg.com/640/480?id=4"
+  },
+  {
+    "id": 6,
+    "name": {
+      "en": "My nice baby sitter"
+    },
+    "description": {
+      "en": "this is a category for baby sitting"
+    },
+    "reference": "EUXSKQ",
+    "price": 12.75,
+    "elasticity": 20.0,
+    "currency": "EUR",
+    "unit": null,
+    "dimension": null,
+    "status": "draft",
+    "category_id": 8,
+    "account_id": 5,
+    "params": {
+      "nbr_enfants": 5
+    },
+    "active": true,
+    "offer_at_client": true,
+    "offer_at_supplier": true,
+    "offer_shipping": true,
+    "offer_remote": true,
+    "category": {
+      "id": 8,
+      "name": {
+        "en": "Baby sitting",
+        "fr": "Baby sitting"
+      },
+      "description": {
+        "en": "English",
+        "fr": "French"
+      },
+      "sort_order": 1,
+      "parent_id": 6,
+      "dimension": "duration",
+      "unit": "hr",
+      "status": "active",
+      "orderable": true,
+      "active": true,
+      "allow_at_client": true,
+      "allow_at_supplier": true,
+      "allow_shipping": false,
+      "allow_remote": false,
+      "other_parent": [],
+      "offers_count": 2
+    },
+    "evaluation_avg": 6.5,
+    "favorite": true,
+    "illustration_url": "https://placeimg.com/640/480?id=6"
+  },
+  {
+    "id": 5,
+    "name": {
+      "en": "Baby Sitting"
+    },
+    "description": {
+      "en": "Your child/children are between 3 and 13 years old, we provide caring services."
+    },
+    "reference": "FXBTDE",
+    "price": 10.0,
+    "elasticity": 0.0,
+    "currency": "EUR",
+    "unit": "h",
+    "dimension": null,
+    "status": "draft",
+    "category_id": 8,
+    "account_id": 5,
+    "params": {
+      "nbr_enfants": 3
+    },
+    "active": true,
+    "offer_at_client": true,
+    "offer_at_supplier": true,
+    "offer_shipping": true,
+    "offer_remote": true,
+    "category": {
+      "id": 8,
+      "name": {
+        "en": "Baby sitting",
+        "fr": "Baby sitting"
+      },
+      "description": {
+        "en": "English",
+        "fr": "French"
+      },
+      "sort_order": 1,
+      "parent_id": 6,
+      "dimension": "duration",
+      "unit": "hr",
+      "status": "active",
+      "orderable": true,
+      "active": true,
+      "allow_at_client": true,
+      "allow_at_supplier": true,
+      "allow_shipping": false,
+      "allow_remote": false,
+      "other_parent": [],
+      "offers_count": 2
+    },
+    "evaluation_avg": 6.5,
+    "favorite": true,
+    "illustration_url": "https://placeimg.com/640/480?id=5"
+  },
+  {
+    "id": 7,
+    "name": {
+      "en": "baby sitter home service"
+    },
+    "description": {
+      "en": "description of offer 187 service actuellement !!!!"
+    },
+    "reference": "WUDCSQ",
+    "price": 7.75,
+    "elasticity": 50.0,
+    "currency": "EUR",
+    "unit": "hr",
+    "dimension": "duration",
+    "status": "draft",
+    "category_id": 9,
+    "account_id": 5,
+    "params": {
+      "nbr_enfants": 3
+    },
+    "active": true,
+    "offer_at_client": true,
+    "offer_at_supplier": true,
+    "offer_shipping": true,
+    "offer_remote": true,
+    "category": {
+      "id": 9,
+      "name": {
+        "en": "Babysitting for babies",
+        "fr": "Babysitter pour les bébés"
+      },
+      "description": {
+        "en": "English",
+        "fr": "French"
+      },
+      "sort_order": 0,
+      "parent_id": 8,
+      "dimension": "duration",
+      "unit": "hr",
+      "status": "active",
+      "orderable": true,
+      "active": true,
+      "allow_at_client": true,
+      "allow_at_supplier": true,
+      "allow_shipping": false,
+      "allow_remote": false,
+      "other_parent": [],
+      "offers_count": 1
+    },
+    "evaluation_avg": 6.5,
+    "favorite": true,
+    "illustration_url": "https://placeimg.com/640/480?id=7"
+  },
+  {
+    "id": 8,
+    "name": {
+      "fr": "Travaux de batiment"
+    },
+    "description": {
+      "fr": "Travaux de batiment"
+    },
+    "reference": "IHMKFU",
+    "price": 50.0,
+    "elasticity": 0.0,
+    "currency": "EUR",
+    "unit": "hr",
+    "dimension": "duration",
+    "status": "draft",
+    "category_id": 3,
+    "account_id": 1,
+    "params": {
+      "iso_9000": true,
+      "certification": {
+        "en": "BATIMENT"
+      },
+      "distance_maximum": 250
+    },
+    "active": true,
+    "offer_at_client": true,
+    "offer_at_supplier": true,
+    "offer_shipping": false,
+    "offer_remote": true,
+    "category": {
+      "id": 3,
+      "name": {
+        "en": "Building work",
+        "fr": "Travaux Bâtiment"
+      },
+      "description": {
+        "en": "English",
+        "fr": "French"
+      },
+      "sort_order": 0,
+      "parent_id": 2,
+      "dimension": "duration",
+      "unit": "hr",
+      "status": "active",
+      "orderable": true,
+      "active": true,
+      "allow_at_client": true,
+      "allow_at_supplier": false,
+      "allow_shipping": true,
+      "allow_remote": false,
+      "other_parent": [],
+      "offers_count": 1
+    },
+      "evaluation_avg": 6.5,
+      "favorite": false,
+      "illustration_url": "https://placeimg.com/640/480?id=8"
     }
   ],
   "structures": [

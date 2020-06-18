@@ -1,6 +1,8 @@
 <template lang="pug">
   .fv-contract-step3
     v-row
+      v-col(cols="12") {{ values.contractType }}
+    v-row
       v-col(cols="12")
         v-data-table.elevation-2(
           v-model="selected"
@@ -26,7 +28,8 @@ export default {
       type: Object,
       default() {
         return {
-          offers: []
+          offers: [],
+          contractType: null
         }
       }
     }
@@ -43,7 +46,9 @@ export default {
     },
     items() {
       const res = this.$store.getters['offers/all']
-      return res
+      const id = parseInt(this.values.contractType)
+      const filteredRes = res.filter((v) => parseInt(v.contractType) === id)
+      return filteredRes
     },
     selected: {
       get() {

@@ -58,14 +58,12 @@ export default {
   },
   methods: {
     moveTo(v) {
-      console.log('Current step: ', v)
       this.step = v > 0 ? v : this.step
     },
     submitSteps() {
       console.log('Submit steps')
     },
     wizard(payload) {
-      console.log('wizard :', payload)
       const values = this.values
       const res = Object.assign(values, payload)
       this.values = res

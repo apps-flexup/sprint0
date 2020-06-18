@@ -2,7 +2,7 @@
   .fv-contract-step4(v-if="etape.id === 3")
     v-row
       v-select(
-        v-model="structContract"
+        v-model="selected"
         :items="structContractList"
         item-text="name"
         item-value="id"
@@ -43,7 +43,7 @@ export default {
         return res
       },
       set(v) {
-        console.log('set', v)
+        this.local_selected = v
         this.$emit('wizard', { structContract: v })
       }
     },
