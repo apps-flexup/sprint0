@@ -17,23 +17,7 @@ import FvContractSummaryStepOffer from '@/components/FvContractSummaryStepOffer'
 import FvContractSummaryStepPaiement from '@/components/FvContractSummaryStepPaiement'
 import FvContractSummaryStepStructure from '@/components/FvContractSummaryStepStructure'
 import FvEtape from '@/components/FvEtape'
-import FvFieldDate from '@/components/FvFieldDate'
-import FvPartnerDialog from '@/components/FvPartnerDialog'
 import FvPaymentSummaryCard from '@/components/FvPaymentSummaryCard'
-import FvPartnerEdit from '@/components/FvPartnerEdit'
-import FvPartnerList from '@/components/FvPartnerList'
-import FvPartnerNew from '@/components/FvPartnerNew'
-import FvPartnerStepDetail from '@/components/FvPartnerStepDetail'
-import FvPartnerStepOffer from '@/components/FvPartnerStepOffer'
-import FvPartnerStepProduct from '@/components/FvPartnerStepProduct'
-import FvPartnerSummaryStepDetail from '@/components/FvPartnerSummaryStepDetail'
-import FvPartnerSummaryStepOffer from '@/components/FvPartnerSummaryStepOffer'
-import FvPartnerForm from '@/components/FvPartnerForm'
-import FvPartnerModal from '@/components/FvPartnerModal'
-import FvUserAccounts from '@/components/FvUserAccounts'
-import FvAccountAvatar from '@/components/FvAccountAvatar'
-import FvContractSummaryVisualisation from '@/components/FvContractSummaryVisualisation'
-import FvContractStepVisualisation from '@/components/FvContractStepVisualisation'
 
 // Déclarations composants utilitaires
 Vue.component('fv-auto-complete', FvAutoComplete)
@@ -62,23 +46,4 @@ Vue.component(
 )
 Vue.component('fv-stepper', FvStepper)
 Vue.component('fv-etape', FvEtape)
-Vue.component('fv-field-date', FvFieldDate)
-Vue.component('fv-partner-dialog', FvPartnerDialog)
-Vue.component('fv-partner-edit', FvPartnerEdit)
-Vue.component('fv-partner-form', FvPartnerForm)
-Vue.component('fv-partner-list', FvPartnerList)
-Vue.component('fv-partner-modal', FvPartnerModal)
-Vue.component('fv-partner-new', FvPartnerNew)
-Vue.component('fv-partner-step-detail', FvPartnerStepDetail)
-Vue.component('fv-partner-step-offer', FvPartnerStepOffer)
-Vue.component('fv-partner-step-product', FvPartnerStepProduct)
-Vue.component('fv-partner-summary-step-detail', FvPartnerSummaryStepDetail)
-Vue.component('fv-partner-summary-step-offer', FvPartnerSummaryStepOffer)
 Vue.component('fv-payment-summary-card', FvPaymentSummaryCard)
-Vue.component('fv-user-accounts', FvUserAccounts)
-Vue.component('fv-account-avatar', FvAccountAvatar)
-Vue.component(
-  'fv-contract-summary-step-visualisation',
-  FvContractSummaryVisualisation
-)
-Vue.component('fv-contract-step-visualisation', FvContractStepVisualisation)

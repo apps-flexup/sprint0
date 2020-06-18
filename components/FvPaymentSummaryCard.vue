@@ -1,22 +1,56 @@
-<template functional lang="pug">
-  v-card.fv-payment-summary-card(
-    outlined
-  )
-    v-row
-      v-col(cols="6")
-        v-card-title {{ props.payment.payType }}
-        v-card-subtitle.display-1 {{ props.payment.percentage }}%
-      v-col(cols="6")
-        v-card-title {{ props.payment.total * props.payment.percentage / 100 }} {{ props.payment.currency }}
-        v-card-subtitle Sur {{ props.payment.total }} {{ props.payment.currency }}
-    v-row
-      v-col(cols="12" align='center')
-        v-card-title.body-2 Date du paiement
-        v-card-subtitle.title {{ props.payment.message }}
+<template lang="pug">
+  .fv-payment-summary-card
+    v-card(
+      outlined
+    )
+      v-row
+        v-col(cols="8")
+          v-card-title {{ payType }}
+          v-card-subtitle.display-1 {{ percentage }}%
+        v-spacer
+        v-col(cols="3")
+          v-card-title {{ total * percentage / 100 }}€
+          v-card-subtitle Sur {{ total }}€
+      v-row
+        v-col(cols="12")
+          v-card-title.body-2 Date du paiement
+          v-card-subtitle.title(v-if="payDate !== ''") {{ payDate }}
+          v-card-subtitle.title(v-else) Investi dans le projet
 </template>
+
+<script>
+export default {
+  name: 'FvPaymentSummaryCard',
+  props: {
+    payType: {
+      type: String,
+      default() {
+        return 'Base (simple)'
+      }
+    },
+    percentage: {
+      type: Number,
+      required: true
+    },
+    total: {
+      type: Number,
+      required: true
+    },
+    payDate: {
+      type: String,
+      default() {
+        return ''
+      }
+    }
+  },
+  mounted() {
+    console.log('Composant ', this.$options.name)
+  }
+}
+</script>
+
 <style lang="scss" scoped>
 .fv-payment-summary-card {
-  border-radius: 25px;
-  background-color: rgba(124, 155, 127, 0.822);
+  background-color: inherit;
 }
 </style>
