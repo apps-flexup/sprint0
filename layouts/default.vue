@@ -79,7 +79,7 @@ export default {
         },
         {
           icon: 'mdi-account-arrow-right',
-          title: 'Nouveau Partenaires',
+          title: 'Nouveau Contact',
           to: '/contacts/new'
         },
         {

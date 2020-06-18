@@ -141,8 +141,8 @@
     {
       "align": "start",
       "sortable": true,
-      "text": "Partenaire",
-      "value": "partnerName"
+      "text": "Contact",
+      "value": "contactName"
     },
     {
       "align": "start",
@@ -251,7 +251,7 @@
           "name": "itération 3"
         }
       ],
-      "partnerName": "partner 1",
+      "contactName": "contact 1",
       "structure": 2,
       "structureName": "20% Base, 80% Equity"
     },
@@ -281,7 +281,7 @@
           "name": "itération 3"
         }
       ],
-      "partnerName": "partner 5",
+      "contactName": "contact 5",
       "structure": 2,
       "structureName": "50% Base, 50% Equity"
     }
@@ -1021,24 +1021,24 @@
       "resume": "fv-contract-summary-step-visualisation"
     }
   ],
-  "partner-steps": [
+  "contact-steps": [
     {
       "id": 1,
-      "name": "forms.partners.step.1",
-      "composant": "fv-partner-step-detail",
-      "resume": "fv-partner-summary-step-detail"
+      "name": "forms.contacts.step.1",
+      "composant": "fv-contact-step-detail",
+      "resume": "fv-contact-summary-step-detail"
     },
     {
       "id": 2,
-      "name": "forms.partners.step.2",
-      "composant": "fv-partner-step-product",
-      "resume": "fv-partner-summary-step-product"
+      "name": "forms.contacts.step.2",
+      "composant": "fv-contact-step-product",
+      "resume": "fv-contact-summary-step-product"
     },
     {
       "id": 3,
-      "name": "forms.partners.step.3",
-      "composant": "fv-partner-step-offer",
-      "resume": "fv-partner-summary-step-offer"
+      "name": "forms.contacts.step.3",
+      "composant": "fv-contact-step-offer",
+      "resume": "fv-contact-summary-step-offer"
     }
   ]
 }
