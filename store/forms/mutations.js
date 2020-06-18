@@ -5,7 +5,7 @@ export default {
   setContractSteps(state, items) {
     state.contracts = items
   },
-  setPartnerSteps(state, items) {
-    state.partners = items
+  setContactSteps(state, items) {
+    state.contacts = items
   }
 }

@@ -6,10 +6,10 @@ export default {
       .index()
       .then((data) => commit('setContractSteps', data))
   },
-  getPartner({ commit }) {
+  getContact({ commit }) {
     // charger les formes juridiques
     this.$repos.partnerSteps
       .index()
-      .then((data) => commit('setPartnerSteps', data))
+      .then((data) => commit('setContactSteps', data))
   }
 }

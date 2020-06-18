@@ -1,10 +1,10 @@
 <template lang="pug">
-  .fv-partner-modal
+  .fv-contact-modal
     p {{ $options.name }}
 </template>
 <script>
 export default {
-  name: 'FvPartnerModal',
+  name: 'FvContactModal',
   computed: {
     machin() {
       return 42
@@ -16,7 +16,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.fv-partner-modal {
+.fv-contact-modal {
   background-color: inherit;
 }
 </style>

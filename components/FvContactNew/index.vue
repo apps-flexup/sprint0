@@ -1,5 +1,5 @@
 <template lang="pug">
-  .fv-partner-new
+  .fv-contact-new
     v-row
       v-col(cols="12")
         fv-nav(
@@ -24,7 +24,7 @@ export default {
   },
   computed: {
     steps() {
-      const res = this.$store.getters['forms/partners']
+      const res = this.$store.getters['forms/contacts']
       return res
     },
     etape() {

@@ -4,9 +4,9 @@ export default {
     const res = JSON.parse(JSON.stringify(state.contracts))
     return res
   },
-  partners(state) {
-    if (!state.partners) return []
-    const res = JSON.parse(JSON.stringify(state.partners))
+  contacts(state) {
+    if (!state.contacts) return []
+    const res = JSON.parse(JSON.stringify(state.contacts))
     return res
   }
 }
