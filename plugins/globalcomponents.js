@@ -2,6 +2,7 @@ import Vue from 'vue'
 // Importation des composants utilitaires
 import FvAutoComplete from '@/components/FvAutoComplete'
 import FvContactEdit from '~/components/FvContactEdit'
+import FvContactForm from '~/components/FvContactForm'
 import FvContactList from '~/components/FvContactList'
 import FvContractList from '@/components/FvContractList'
 import FvContractListSearch from '@/components/FvContractListSearch'
@@ -29,7 +30,6 @@ import FvPartnerStepOffer from '@/components/FvPartnerStepOffer'
 import FvPartnerStepProduct from '@/components/FvPartnerStepProduct'
 import FvPartnerSummaryStepDetail from '@/components/FvPartnerSummaryStepDetail'
 import FvPartnerSummaryStepOffer from '@/components/FvPartnerSummaryStepOffer'
-import FvPartnerForm from '@/components/FvPartnerForm'
 import FvPartnerModal from '@/components/FvPartnerModal'
 import FvUserAccounts from '@/components/FvUserAccounts'
 import FvAccountAvatar from '@/components/FvAccountAvatar'
@@ -39,6 +39,7 @@ import FvContractStepVisualisation from '@/components/FvContractStepVisualisatio
 // Déclarations composants utilitaires
 Vue.component('fv-auto-complete', FvAutoComplete)
 Vue.component('fv-contact-edit', FvContactEdit)
+Vue.component('fv-contact-form', FvContactForm)
 Vue.component('fv-contact-list', FvContactList)
 Vue.component('fv-contract-list', FvContractList)
 Vue.component('fv-contract-list-search', FvContractListSearch)
@@ -68,7 +69,6 @@ Vue.component('fv-etape', FvEtape)
 Vue.component('fv-field-date', FvFieldDate)
 Vue.component('fv-offer-list', FvOfferList)
 Vue.component('fv-partner-dialog', FvPartnerDialog)
-Vue.component('fv-partner-form', FvPartnerForm)
 Vue.component('fv-partner-modal', FvPartnerModal)
 Vue.component('fv-partner-new', FvPartnerNew)
 Vue.component('fv-partner-step-detail', FvPartnerStepDetail)
