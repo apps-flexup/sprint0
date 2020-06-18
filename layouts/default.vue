@@ -88,6 +88,11 @@ export default {
           to: '/offers'
         },
         {
+          icon: 'mdi-file-document',
+          title: 'Documents',
+          to: '/documents'
+        },
+        {
           icon: 'mdi-dashboard',
           title: 'Dashboard',
           to: '/dashboard'
