@@ -1,16 +1,15 @@
 <template lang="pug">
-  .fv-partner-summary-step3
+  .fv-contact-summary-step1
     p {{ $options.name }}
-    pre Affichage des Offre
 </template>
 
 <script>
 export default {
-  name: 'FvPartnerSummaryStepOffer'
+  name: 'FvContactSummaryStepDetail'
 }
 </script>
 <style lang="scss" scoped>
-.fv-partner-summary-step3 {
+.fv-contact-summary-step1 {
   background-color: inherit;
 }
 </style>

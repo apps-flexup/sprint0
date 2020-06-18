@@ -29,8 +29,8 @@ import FvOfferList from '@/components/FvOfferList'
 import FvPartnerDialog from '@/components/FvPartnerDialog'
 import FvPaymentSummaryCard from '@/components/FvPaymentSummaryCard'
 import FvContactStepProduct from '@/components/FvContactStepProduct'
-import FvPartnerSummaryStepDetail from '@/components/FvPartnerSummaryStepDetail'
-import FvPartnerSummaryStepOffer from '@/components/FvPartnerSummaryStepOffer'
+import FvContactSummaryStepDetail from '~/components/FvContactSummaryStepDetail'
+import FvContactSummaryStepOffer from '@/components/FvContactSummaryStepOffer'
 import FvUserAccounts from '@/components/FvUserAccounts'
 import FvAccountAvatar from '@/components/FvAccountAvatar'
 import FvContractSummaryVisualisation from '@/components/FvContractSummaryVisualisation'
@@ -45,6 +45,9 @@ Vue.component('fv-contact-modal', FvContactModal)
 Vue.component('fv-contact-new', FvContactNew)
 Vue.component('fv-contact-step-detail', FvContactStepDetail)
 Vue.component('fv-contact-step-offer', FvContactStepOffer)
+Vue.component('fv-contact-step-product', FvContactStepProduct)
+Vue.component('fv-contact-summary-step-detail', FvContactSummaryStepDetail)
+Vue.component('fv-contact-summary-step-offer', FvContactSummaryStepOffer)
 Vue.component('fv-contract-list', FvContractList)
 Vue.component('fv-contract-list-search', FvContractListSearch)
 Vue.component('fv-contract-new', FvContractNew)
@@ -73,9 +76,6 @@ Vue.component('fv-etape', FvEtape)
 Vue.component('fv-field-date', FvFieldDate)
 Vue.component('fv-offer-list', FvOfferList)
 Vue.component('fv-partner-dialog', FvPartnerDialog)
-Vue.component('fv-partner-step-product', FvContactStepProduct)
-Vue.component('fv-partner-summary-step-detail', FvPartnerSummaryStepDetail)
-Vue.component('fv-partner-summary-step-offer', FvPartnerSummaryStepOffer)
 Vue.component('fv-payment-summary-card', FvPaymentSummaryCard)
 Vue.component('fv-user-accounts', FvUserAccounts)
 Vue.component('fv-account-avatar', FvAccountAvatar)

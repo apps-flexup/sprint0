@@ -1,4 +1,0 @@
-# FvPartnerSummaryStepOffer
-
-## Builder @id
-## Doc
