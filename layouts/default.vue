@@ -93,7 +93,7 @@ export default {
           to: '/documents'
         },
         {
-          icon: 'mdi-dashboard',
+          icon: 'mdi-desktop-mac-dashboard',
           title: 'Dashboard',
           to: '/dashboard'
         }
