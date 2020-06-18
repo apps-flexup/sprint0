@@ -83,6 +83,11 @@ export default {
           to: '/partners/new'
         },
         {
+          icon: 'mdi-tag',
+          title: 'Offers',
+          to: '/offers'
+        },
+        {
           icon: 'mdi-dashboard',
           title: 'Dashboard',
           to: '/dashboard'
