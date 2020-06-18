@@ -8,18 +8,18 @@
         span.address {{ item.address }} {{ item.zip }} {{ item.city }}
       v-col(cols="2")
         span.metrics
-        | {{ $tc('table.partners.metrics.contracts', item.metrics.contracts) }}
+        | {{ $tc('table.contacts.metrics.contracts', item.metrics.contracts) }}
       v-col(cols="2")
         span.metrics
-        | {{ $tc('table.partners.metrics.products', item.metrics.products) }}
+        | {{ $tc('table.contacts.metrics.products', item.metrics.products) }}
       v-col(cols="2")
         span.metrics
-        | {{ $tc('table.partners.metrics.commandes', item.metrics.commandes) }}
+        | {{ $tc('table.contacts.metrics.commandes', item.metrics.commandes) }}
       v-col(v-if='item.metrics.next.amount > 0' cols="3")
-        span.next {{ $t('table.partners.next.payment') }}
+        span.next {{ $t('table.contacts.next.payment') }}
         br
         span.settlement
-        | {{ $tc('table.partners.next.days-remaining', item.metrics.next.daysRemaining ) }}&nbsp;
+        | {{ $tc('table.contacts.next.days-remaining', item.metrics.next.daysRemaining ) }}&nbsp;
         span.amount {{ item.metrics.next.amount }}&nbsp;{{ item.metrics.next.currency }}
       v-col(v-else cols="3")
         span.next Nothing

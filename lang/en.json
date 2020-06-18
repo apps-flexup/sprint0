@@ -1,13 +1,13 @@
 {
   "menus": {
     "contracts": "Contracts",
-    "partners": "Partenrs"
+    "contacts": "Contacts"
   },
   "title": {
     "index": "Contract management service"
   },
   "table": {
-    "partners": {
+    "contacts": {
       "next": {
         "payment": "Next settlement",
         "days-remaining": "none | one day | {n} days"
@@ -33,7 +33,7 @@
         "4": "Pre render contract"
       }
     },
-    "partners": {
+    "contacts": {
       "step": {
         "1": "Detail",
         "2": "Products",
