@@ -1,5 +1,5 @@
 <template lang="pug">
-  .fv-partner-stepProduct(v-if="etape.id === 2")
+  .fv-contact-stepProduct(v-if="etape.id === 2")
     v-row
       v-col(cols="12")
         v-data-table.elevation-2(
@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  name: 'FvPartnerStepProduct',
+  name: 'FvContactStepProduct',
   props: {
     etape: {
       type: Object,
@@ -43,7 +43,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.fv-partner-stepProduct {
+.fv-contact-stepProduct {
   background-color: inherit;
 }
 </style>

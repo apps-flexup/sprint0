@@ -8,6 +8,10 @@ import FvContactModal from '~/components/FvContactModal'
 import FvContactNew from '~/components/FvContactNew'
 import FvContactStepDetail from '~/components/FvContactStepDetail'
 import FvContactStepOffer from '~/components/FvContactStepOffer'
+import FvContactStepProduct from '~/components/FvContactStepProduct'
+import FvContactSummaryStepDetail from '~/components/FvContactSummaryStepDetail'
+import FvContactSummaryStepOffer from '@/components/FvContactSummaryStepOffer'
+import FvContactSummaryStepProduct from '@/components/FvContactSummaryStepProduct'
 import FvContractList from '@/components/FvContractList'
 import FvContractListSearch from '@/components/FvContractListSearch'
 import FvContractNew from '@/components/FvContractNew'
@@ -28,9 +32,6 @@ import FvFieldDate from '@/components/FvFieldDate'
 import FvOfferList from '@/components/FvOfferList'
 import FvPartnerDialog from '@/components/FvPartnerDialog'
 import FvPaymentSummaryCard from '@/components/FvPaymentSummaryCard'
-import FvContactStepProduct from '@/components/FvContactStepProduct'
-import FvContactSummaryStepDetail from '~/components/FvContactSummaryStepDetail'
-import FvContactSummaryStepOffer from '@/components/FvContactSummaryStepOffer'
 import FvUserAccounts from '@/components/FvUserAccounts'
 import FvAccountAvatar from '@/components/FvAccountAvatar'
 import FvContractSummaryVisualisation from '@/components/FvContractSummaryVisualisation'
@@ -48,6 +49,7 @@ Vue.component('fv-contact-step-offer', FvContactStepOffer)
 Vue.component('fv-contact-step-product', FvContactStepProduct)
 Vue.component('fv-contact-summary-step-detail', FvContactSummaryStepDetail)
 Vue.component('fv-contact-summary-step-offer', FvContactSummaryStepOffer)
+Vue.component('fv-contact-summary-step-product', FvContactSummaryStepProduct)
 Vue.component('fv-contract-list', FvContractList)
 Vue.component('fv-contract-list-search', FvContractListSearch)
 Vue.component('fv-contract-new', FvContractNew)
