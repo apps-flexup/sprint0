@@ -74,8 +74,8 @@ export default {
         },
         {
           icon: 'mdi-account-group',
-          title: 'Partenaires',
-          to: '/partners'
+          title: 'Contacts',
+          to: '/contacts'
         },
         {
           icon: 'mdi-account-arrow-right',

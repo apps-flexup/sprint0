@@ -1,5 +1,5 @@
 <template lang="pug">
-  .fv-partner-list
+  .fv-contact-list
     p {{ $options.name }}
     v-row.partner-list-item(v-for="item in items" :key="item.id")
       v-col(cols="3")
@@ -26,7 +26,7 @@
 </template>
 <script>
 export default {
-  name: 'FvPartnerList',
+  name: 'FvContactList',
   computed: {
     headers() {
       const res = this.$store.getters['headers/contacts']
@@ -34,16 +34,18 @@ export default {
     },
     items() {
       const res = this.$store.getters['contacts/all']
+      console.log('res: ', res)
       return res
     }
   },
   mounted() {
     console.log('Composant ', this.$options.name)
+    this.$store.dispatch('contacts/get')
   }
 }
 </script>
 <style lang="scss" scoped>
-.fv-partner-list {
+.fv-contact-list {
   .name {
     font-weight: bold;
   }

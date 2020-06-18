@@ -1,6 +1,6 @@
 <template lang="pug">
-  .partner-index
-    fv-partner-list
+  .contacts-index
+    fv-contact-list
 </template>
 
 <script>
@@ -11,7 +11,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.partner-index {
+.contacts-index {
   background-color: inherit;
 }
 </style>
