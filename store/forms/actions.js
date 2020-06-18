@@ -8,7 +8,7 @@ export default {
   },
   getContact({ commit }) {
     // charger les formes juridiques
-    this.$repos.partnerSteps
+    this.$repos.contactSteps
       .index()
       .then((data) => commit('setContactSteps', data))
   }

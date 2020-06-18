@@ -28,7 +28,7 @@ export default {
     return {
       step: 1,
       values: {
-        partner: null,
+        contact: null,
         charter: null,
         contractType: null,
         dteSignature: null,

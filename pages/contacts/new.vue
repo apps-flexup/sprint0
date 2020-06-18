@@ -1,6 +1,6 @@
 <template lang="pug">
-  .partner-new
-    fv-partner-new
+  .contact-new
+    fv-contact-new
 </template>
 
 <script>
