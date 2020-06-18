@@ -1,10 +1,10 @@
 <template lang="pug">
-  .fv-partner-step-product
+  .fv-contact-step-product
     p {{ $options.name }}
 </template>
 <script>
 export default {
-  name: 'FvPartnerStepProduct',
+  name: 'FvContactStepProduct',
   computed: {
     machin() {
       return 42
@@ -16,7 +16,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.fv-partner-step-product {
+.fv-contact-step-product {
   background-color: inherit;
 }
 </style>

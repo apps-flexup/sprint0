@@ -28,7 +28,7 @@ import FvFieldDate from '@/components/FvFieldDate'
 import FvOfferList from '@/components/FvOfferList'
 import FvPartnerDialog from '@/components/FvPartnerDialog'
 import FvPaymentSummaryCard from '@/components/FvPaymentSummaryCard'
-import FvPartnerStepProduct from '@/components/FvPartnerStepProduct'
+import FvContactStepProduct from '@/components/FvContactStepProduct'
 import FvPartnerSummaryStepDetail from '@/components/FvPartnerSummaryStepDetail'
 import FvPartnerSummaryStepOffer from '@/components/FvPartnerSummaryStepOffer'
 import FvUserAccounts from '@/components/FvUserAccounts'
@@ -73,7 +73,7 @@ Vue.component('fv-etape', FvEtape)
 Vue.component('fv-field-date', FvFieldDate)
 Vue.component('fv-offer-list', FvOfferList)
 Vue.component('fv-partner-dialog', FvPartnerDialog)
-Vue.component('fv-partner-step-product', FvPartnerStepProduct)
+Vue.component('fv-partner-step-product', FvContactStepProduct)
 Vue.component('fv-partner-summary-step-detail', FvPartnerSummaryStepDetail)
 Vue.component('fv-partner-summary-step-offer', FvPartnerSummaryStepOffer)
 Vue.component('fv-payment-summary-card', FvPaymentSummaryCard)
