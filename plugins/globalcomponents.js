@@ -1,6 +1,7 @@
 import Vue from 'vue'
 // Importation des composants utilitaires
 import FvAutoComplete from '@/components/FvAutoComplete'
+import FvContactDialog from '@/components/FvContactDialog'
 import FvContactEdit from '~/components/FvContactEdit'
 import FvContactForm from '~/components/FvContactForm'
 import FvContactList from '~/components/FvContactList'
@@ -30,7 +31,6 @@ import FvStepper from '@/components/FvStepper'
 import FvEtape from '@/components/FvEtape'
 import FvFieldDate from '@/components/FvFieldDate'
 import FvOfferList from '@/components/FvOfferList'
-import FvPartnerDialog from '@/components/FvPartnerDialog'
 import FvPaymentSummaryCard from '@/components/FvPaymentSummaryCard'
 import FvUserAccounts from '@/components/FvUserAccounts'
 import FvAccountAvatar from '@/components/FvAccountAvatar'
@@ -39,6 +39,7 @@ import FvContractStepVisualisation from '@/components/FvContractStepVisualisatio
 
 // Déclarations composants utilitaires
 Vue.component('fv-auto-complete', FvAutoComplete)
+Vue.component('fv-contact-dialog', FvContactDialog)
 Vue.component('fv-contact-edit', FvContactEdit)
 Vue.component('fv-contact-form', FvContactForm)
 Vue.component('fv-contact-list', FvContactList)
@@ -77,7 +78,6 @@ Vue.component('fv-stepper', FvStepper)
 Vue.component('fv-etape', FvEtape)
 Vue.component('fv-field-date', FvFieldDate)
 Vue.component('fv-offer-list', FvOfferList)
-Vue.component('fv-partner-dialog', FvPartnerDialog)
 Vue.component('fv-payment-summary-card', FvPaymentSummaryCard)
 Vue.component('fv-user-accounts', FvUserAccounts)
 Vue.component('fv-account-avatar', FvAccountAvatar)

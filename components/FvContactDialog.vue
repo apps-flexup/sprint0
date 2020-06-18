@@ -1,5 +1,5 @@
 <template lang="pug">
-  v-dialog.fv-partner-dialog(
+  v-dialog.fv-contact-dialog(
     v-model="show"
     max-width="50%"
   )
@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: 'FvPartnerDialog',
+  name: 'FvContactDialog',
   props: {
     show: {
       type: Boolean
@@ -22,7 +22,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.fv-partner-dialog {
+.fv-contact-dialog {
   background-color: inherit;
 }
 </style>
