@@ -1,7 +1,7 @@
 <template lang="pug">
   .fv-partner-list
     p {{ $options.name }}
-    v-row(v-for="item in items" :key="item.id")
+    v-row.partner-list-item(v-for="item in items" :key="item.id")
       v-col(cols="3")
         span.name {{ item.name }}
         br

@@ -12,6 +12,7 @@ export default {
   getTypes: (state) => (idAccount) => {
     const id = parseInt(idAccount)
     if (!state.items) return []
+    const src = {}
     const arr = JSON.parse(JSON.stringify(state.typeContrat))
     const res = arr.reduce((acc, v) => {
       // Exclusion
@@ -30,7 +31,7 @@ export default {
         // }
         acc[v.name] = payload
       }
-    }, {})
+    }, src)
     return res
   },
   structures(state) {
