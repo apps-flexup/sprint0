@@ -80,7 +80,7 @@ export default {
         {
           icon: 'mdi-account-arrow-right',
           title: 'Nouveau Partenaires',
-          to: '/partners/new'
+          to: '/contacts/new'
         },
         {
           icon: 'mdi-tag',

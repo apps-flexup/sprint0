@@ -12,11 +12,11 @@
             | {{ $t('menus.contractnew') }}
       v-card
         v-card-title.headline
-          | {{ $t('pages.partners') }}
+          | {{ $t('pages.contacts') }}
         v-card-actions
-          v-btn(color='primary' nuxt='' to='/partners')
-            | {{ $t('menus.partners') }}
+          v-btn(color='primary' nuxt='' to='/contacts')
+            | {{ $t('menus.contacts') }}
           v-spacer
-          v-btn(color='primary' nuxt='' to='/partners/new')
-            | {{ $t('menus.partnernew') }}
+          v-btn(color='primary' nuxt='' to='/contacts/new')
+            | {{ $t('menus.contactnew') }}
 </template>

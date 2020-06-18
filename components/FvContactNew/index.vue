@@ -16,7 +16,7 @@
 
 <script>
 export default {
-  name: 'FvPartnerNew',
+  name: 'FvContactNew',
   data() {
     return {
       step: 1

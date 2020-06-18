@@ -1,5 +1,5 @@
 <template lang="pug">
-  .partner-item
+  .contact-item
     p {{ $options.name }}
 </template>
 
@@ -11,7 +11,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.partner-item {
+.contact-item {
   background-color: inherit;
 }
 </style>
