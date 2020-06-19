@@ -1,6 +1,5 @@
 export default function({ $axios, redirect }) {
   $axios.onRequest((config) => {
-    console.log('def :', process.env)
     console.log('Making request to ' + config.url)
   })
 

@@ -21,7 +21,7 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
   env: {
-    baseURL: process.env.BASE_URL
+    baseURL: process.env.API_URL
   },
   /*
    ** Customize the progress-bar color
@@ -73,10 +73,10 @@ export default {
       'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,OPTIONS',
       'Access-Control-Allow-Headers': 'Content-Type',
       Accept: 'application/json'
-    },
+    }
     // responseType: 'json',
-    proxyHeaders: true,
-    proxy: true
+    // proxyHeaders: true,
+    // proxy: true
   },
   auth: {
     strategies: {
