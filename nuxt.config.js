@@ -34,9 +34,6 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  // router: {
-  //   middleware: ['i18n']
-  // },
   plugins: [
     '~/plugins/globalcomponents',
     '~/plugins/data',

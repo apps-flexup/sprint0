@@ -59,8 +59,13 @@ export default {
       items: [
         {
           icon: 'mdi-apps',
-          title: 'Welcome',
+          title: 'Accueil',
           to: '/'
+        },
+        {
+          icon: 'mdi-apps',
+          title: 'work',
+          to: '/work'
         },
         {
           icon: 'mdi-briefcase-check',
