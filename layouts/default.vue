@@ -79,16 +79,26 @@ export default {
         },
         {
           icon: 'mdi-account-group',
-          title: 'Partenaires',
-          to: '/partners'
+          title: 'Contacts',
+          to: '/contacts'
         },
         {
           icon: 'mdi-account-arrow-right',
-          title: 'Nouveau Partenaires',
-          to: '/partners/new'
+          title: 'Nouveau Contact',
+          to: '/contacts/new'
         },
         {
-          icon: 'mdi-dashboard',
+          icon: 'mdi-tag',
+          title: 'Offers',
+          to: '/offers'
+        },
+        {
+          icon: 'mdi-file-document',
+          title: 'Documents',
+          to: '/documents'
+        },
+        {
+          icon: 'mdi-desktop-mac-dashboard',
           title: 'Dashboard',
           to: '/dashboard'
         }

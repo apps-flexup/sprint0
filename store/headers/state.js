@@ -26,7 +26,7 @@ export default () => ({
   //     text: 'Partenaire',
   //     align: 'start',
   //     sortable: true,
-  //     value: 'partnerName'
+  //     value: 'contactName'
   //   },
   //   {
   //     text: 'Type de partenariat',

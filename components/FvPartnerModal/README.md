@@ -1,3 +1,0 @@
-# FvPartnerModal
-## Builder @id
-## Doc

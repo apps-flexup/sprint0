@@ -1,11 +1,11 @@
 <template lang="pug">
   .fv-contract-step-detail
-    fv-partner-dialog(:show='showDialog')
+    fv-contact-dialog(:show='showDialog')
     .fv-contract-step1(v-if="etape.id === 1")
       v-row
         v-col(cols="6")
           v-autocomplete(
-            v-model="partner"
+            v-model="contact"
             :items="items"
             :loading="isLoading"
             :search-input.sync="search"
@@ -15,7 +15,7 @@
             item-value="id"
             clearable=''
             outlined=''
-            @click:append='addPartner'
+            @click:append='addContact'
           )
         v-col(cols="6")
           v-select(
@@ -88,7 +88,7 @@ export default {
       type: Object,
       default() {
         return {
-          partner: null,
+          contact: null,
           charter: null,
           contractType: null,
           dteSignature: null,
@@ -101,7 +101,7 @@ export default {
   data() {
     return {
       showDialog: false,
-      // partner: null,
+      // contact: null,
       // charter: null,
       // contractType: null,
       isLoading: false,
@@ -111,7 +111,7 @@ export default {
       // dteEnd: null,
       items: [],
       payload: {
-        partner: null,
+        contact: null,
         charter: null,
         contractType: null,
         dteSignature: null,
@@ -121,12 +121,12 @@ export default {
     }
   },
   computed: {
-    partner: {
+    contact: {
       get() {
-        return this.payload.partner || this.values.partner
+        return this.payload.contact || this.values.contact
       },
       set(v) {
-        this.payload.partner = v
+        this.payload.contact = v
         this.$emit('wizard', this.payload)
       }
     },
@@ -182,7 +182,7 @@ export default {
     charterList() {
       const idA = 1
       const idB = 2
-      // TODO : Selection asynchrone, requierant account et partner id
+      // TODO : Selection asynchrone, requierant account et contact id
       const res = this.$store.getters['charters/get'](idA, idB)
       return res
     },
@@ -203,7 +203,7 @@ export default {
   },
   watch: {
     search(val) {
-      val && val !== this.partner && this.partnerList(val)
+      val && val !== this.contact && this.contactList(val)
     }
   },
   mounted() {
@@ -211,8 +211,8 @@ export default {
     this.$store.dispatch('contacts/get')
   },
   methods: {
-    addPartner() {
-      console.log('Add new partner')
+    addContact() {
+      console.log('Add new contact')
       this.showDialog = true
     },
     dateSignatureChanged(payload) {
@@ -224,7 +224,7 @@ export default {
     dateEndChanged(payload) {
       this.dteEnd = payload
     },
-    partnerList(v) {
+    contactList(v) {
       this.isLoading = true
       const res = this.$store.getters['contacts/all']
       setTimeout(() => {

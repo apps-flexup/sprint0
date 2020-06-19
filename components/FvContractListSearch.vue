@@ -17,7 +17,7 @@
             v-list-item-content
               v-list-item-title(v-html='data.item.name')
               v-list-item-subtitle(v-html='data.item.group')
-      v-col(cols="2") partners
+      v-col(cols="2") contacts
       v-col(cols="2") type de partenariat
       v-col(cols="2") Structure
       v-col(cols="2") calendrier date

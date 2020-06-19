@@ -1,4 +1,0 @@
-# FvPartnerSummaryStepDetail
-
-## Builder @id
-## Doc

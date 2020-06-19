@@ -2,7 +2,7 @@
   "menus": {
     "contracts": "Contrats",
     "contractnew": "Ajouter Contrat",
-    "partners": "Partenaires"
+    "contacts": "Contacts"
   },
   "title": {
     "index": "Service de gestion des contrats",
@@ -11,7 +11,7 @@
     }
   },
   "table": {
-    "partners": {
+    "contacts": {
       "next": {
         "payment": "Prochain Paiement",
         "days-remaining": "Aucun | un jour | {n} jours"
@@ -37,7 +37,7 @@
         "4": "Pre-visualisation"
       }
     },
-    "partners": {
+    "contacts": {
       "step": {
         "1": "Détail",
         "2": "Produits",
