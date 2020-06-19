@@ -5,7 +5,7 @@
   "author": "Jonathan Beardstone",
   "private": true,
   "scripts": {
-    "db": "json-server -w -p 3004 db/sample.json",
+    "db": "json-server -w -p 3008 db/sample.json",
     "all": "concurrently \"yarn db\" \"yarn dev\"",
     "dev": "nuxt-ts",
     "build": "nuxt-ts build",
@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@nuxt/typescript-runtime": "^0.4.0",
+    "@nuxtjs/auth": "^4.9.1",
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/dotenv": "^1.4.0",
     "@nuxtjs/pwa": "^3.0.0-0",

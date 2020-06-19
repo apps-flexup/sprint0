@@ -41,6 +41,7 @@ export default {
     '~/plugins/globalcomponents',
     '~/plugins/data',
     '~/plugins/i18n',
+    // '~/plugins/auth',
     '~/plugins/directives'
   ],
   /*
@@ -54,7 +55,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/axios', '@nuxtjs/pwa', '@nuxtjs/dotenv'],
+  modules: ['@nuxtjs/axios', '@nuxtjs/auth', '@nuxtjs/pwa', '@nuxtjs/dotenv'],
   i18n: {
     locales: ['en', 'fr'],
     defaultLocale: 'en',
@@ -68,8 +69,38 @@ export default {
    */
   axios: {
     baseURL: process.env.BASE_URL,
-    headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
-    responseType: 'json'
+    responseType: 'json',
+    headers: {
+      origin: '*',
+      'Content-type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type',
+      Accept: 'application/json'
+    },
+    // responseType: 'json',
+    proxyHeaders: true,
+    proxy: true
+  },
+  auth: {
+    strategies: {
+      keycloak: {
+        _scheme: 'oauth2',
+        client_id: process.env.KEYCLOAK_CLIENT_ID,
+        authorization_endpoint: process.env.OAUTH_ENDPOINT,
+        // userinfo_endpoint: 'https://keycloak.jbeardst.one/auth/realms/dev/protocol/openid-connect/userinfo',
+        access_type: 'public',
+        access_token_endpoint: process.env.OAUTH_ENDPOINT_TOKEN
+      },
+      redirect: {
+        login: '/login',
+        callback: '/callback',
+        home: '/'
+      }
+    }
+  },
+  router: {
+    middleware: ['auth']
   },
   /*
    ** vuetify module configuration
