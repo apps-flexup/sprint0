@@ -35,10 +35,10 @@ export default {
    ** Plugins to load before mounting the App
    */
   plugins: [
+    '~/plugins/axios',
     '~/plugins/globalcomponents',
     '~/plugins/data',
     '~/plugins/i18n',
-    // '~/plugins/auth',
     '~/plugins/directives'
   ],
   /*
@@ -65,11 +65,10 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    baseURL: process.env.baseURL,
     responseType: 'json',
     headers: {
       origin: '*',
-      'Content-type': 'application/json',
+      'Content-type': 'applications/json',
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,OPTIONS',
       'Access-Control-Allow-Headers': 'Content-Type',
@@ -85,7 +84,6 @@ export default {
         _scheme: 'oauth2',
         client_id: process.env.KEYCLOAK_CLIENT_ID,
         authorization_endpoint: process.env.OAUTH_ENDPOINT,
-        // userinfo_endpoint: 'https://keycloak.jbeardst.one/auth/realms/dev/protocol/openid-connect/userinfo',
         access_type: 'public',
         access_token_endpoint: process.env.OAUTH_ENDPOINT_TOKEN
       },

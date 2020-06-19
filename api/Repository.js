@@ -1,24 +1,29 @@
 export default ($axios) => (resource) => ({
   async index() {
+    console.log()
     const res = await $axios.$get(`/${resource}`)
     return res
   },
-  show(id) {
-    return $axios.$get(`/${resource}/${id}`)
+  async show(id) {
+    const res = await $axios.$get(`/${resource}/${id}`)
+    return res
   },
-  create(payload) {
+  async create(payload) {
     delete payload.id
-    return $axios.$post(`/${resource}`, payload)
+    const res = await $axios.$post(`/${resource}`, payload)
+    return res
   },
-  update(payload) {
+  async update(payload) {
     const id = parseInt(payload.id)
     // on supprime: id, created_at et updated_at
     delete payload.id
     delete payload.created_at
     delete payload.updated_at
-    return $axios.$put(`/${resource}/${id}`, payload)
+    const res = await $axios.$put(`/${resource}/${id}`, payload)
+    return res
   },
-  delete(id) {
-    return $axios.$delete(`/${resource}/${id}`)
+  async delete(id) {
+    const res = await $axios.$delete(`/${resource}/${id}`)
+    return res
   }
 })

@@ -46,7 +46,6 @@ export default {
     },
     etape() {
       if (this.steps.length < 1) return 1
-      debugger
       const indice = parseInt(this.step)
       const res = this.steps.find((v) => parseInt(v.id) === indice)
       return res
