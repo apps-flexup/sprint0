@@ -37,6 +37,7 @@
       </v-btn>
       <v-toolbar-title v-text="title" />
       <v-spacer />
+      <fv-user-accounts />
     </v-app-bar>
     <v-content>
       <v-container>

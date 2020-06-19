@@ -1,4 +1,137 @@
 {
+  "accounts": [
+    {
+      "country_id": 77,
+      "id": 1,
+      "name": "fred",
+      "offers_count": 0,
+      "params": {},
+      "parent_id": null,
+      "roles": [
+        "customer",
+        "supplier"
+      ],
+      "roles_methods": null,
+      "supplier": false,
+      "user_id": 1
+    },
+    {
+      "country_id": 77,
+      "id": 2,
+      "name": "fabrizio",
+      "offers_count": 7,
+      "params": {},
+      "parent_id": null,
+      "roles": [
+        "customer"
+      ],
+      "roles_methods": null,
+      "supplier": false,
+      "user_id": 2
+    },
+    {
+      "country_id": 77,
+      "id": 3,
+      "name": "Johanna (supplier)",
+      "offers_count": 0,
+      "params": {},
+      "parent_id": null,
+      "roles": [
+        "supplier"
+      ],
+      "roles_methods": null,
+      "supplier": false,
+      "user_id": 3
+    },
+    {
+      "country_id": 77,
+      "id": 4,
+      "name": "Compte supplier 3",
+      "offers_count": 0,
+      "params": {},
+      "parent_id": null,
+      "roles": [
+        "supplier"
+      ],
+      "roles_methods": null,
+      "supplier": false,
+      "user_id": 1
+    },
+    {
+      "country_id": 77,
+      "id": 5,
+      "name": "Compte supplier 2",
+      "offers_count": 0,
+      "params": {},
+      "parent_id": null,
+      "roles": [
+        "supplier",
+        "admin"
+      ],
+      "roles_methods": null,
+      "supplier": false,
+      "user_id": 1
+    },
+    {
+      "country_id": 77,
+      "id": 6,
+      "name": "Compte administration",
+      "offers_count": 0,
+      "params": {},
+      "parent_id": null,
+      "roles": [
+        "admin",
+        "supplier"
+      ],
+      "roles_methods": null,
+      "supplier": false,
+      "user_id": 1
+    },
+    {
+      "country_id": 77,
+      "id": 7,
+      "name": "Johanna (customer)",
+      "offers_count": 0,
+      "params": {},
+      "parent_id": null,
+      "roles": [
+        "customer",
+        "partner"
+      ],
+      "roles_methods": null,
+      "supplier": false,
+      "user_id": 3
+    },
+    {
+      "country_id": 77,
+      "id": 8,
+      "name": "Partenaire",
+      "offers_count": 0,
+      "params": {},
+      "parent_id": null,
+      "roles": [
+        "partner"
+      ],
+      "roles_methods": null,
+      "supplier": false,
+      "user_id": 2
+    },
+    {
+      "country_id": 77,
+      "id": 9,
+      "name": "Achats et Ventes professionnels",
+      "offers_count": 0,
+      "params": {},
+      "parent_id": null,
+      "roles": [
+        "supplier",
+        "customer"
+      ],
+      "roles_methods": null,
+      "supplier": false,
+      "user_id": 2
+    }
+  ],
   "contacts": [
     {
       "id": 1,

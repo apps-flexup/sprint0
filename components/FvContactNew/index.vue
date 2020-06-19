@@ -28,6 +28,7 @@ export default {
       return res
     },
     etape() {
+      if (this.steps.length < 1) return 1
       const indice = parseInt(this.step)
       const res = this.steps.find((v) => parseInt(v.id) === indice)
       return res
@@ -35,6 +36,7 @@ export default {
   },
   mounted() {
     console.log('Composant ', this.$options.name)
+    this.$store.dispatch('form/getContact')
   },
   methods: {
     moveTo(v) {

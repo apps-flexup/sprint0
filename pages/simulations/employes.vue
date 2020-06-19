@@ -34,9 +34,7 @@ export default {
   },
   mounted() {
     console.log('Composant ', this.$options.name)
-    this.$axios
-      .$get('http://127.0.0.1:3004/employes')
-      .then((res) => (this.employes = res))
+    this.$repos.employes.index().then((res) => (this.employes = res))
   }
 }
 </script>

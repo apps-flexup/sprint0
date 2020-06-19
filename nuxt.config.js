@@ -36,6 +36,7 @@ export default {
    */
   plugins: [
     '~/plugins/axios',
+    '~/plugins/auth',
     '~/plugins/globalcomponents',
     '~/plugins/data',
     '~/plugins/i18n',
