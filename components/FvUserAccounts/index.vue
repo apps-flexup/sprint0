@@ -5,7 +5,7 @@
       v-bind='attrs'
       v-on='on'
     )
-      | blahblah
+      | Connexion
     .d-flex.justify-center.align-center(v-else)
       v-menu(
         :key='text'
@@ -16,7 +16,7 @@
             v-bind='attrs'
             v-on='on'
           )
-            | blahblah
+            | -User-
         v-list
           v-list-item(
             v-for='account in accounts'
@@ -32,7 +32,7 @@
                 v-btn(
                   @click="logout"
                   color="primary"
-                )
+                ) Déconnexion
                 //- v-list-item-avatar
                 //-   v-avatar(color="indigo" size="36")
                 //-     span.white--text.headline 36
@@ -58,7 +58,6 @@ export default {
   },
   computed: {
     accounts() {
-      console.log('plop :', this.$auth)
       const res = this.$store.getters['accounts/all']
       return res
     }

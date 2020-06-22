@@ -5,7 +5,7 @@ export default function({ $auth }) {
     console.warn('!plop')
     return
   }
-  const usr = $auth.user
+  const usr = $auth.fetchUser()
   const username = $auth.user.username
   debugger
   console.log('username :', username)
@@ -18,7 +18,7 @@ export default function({ $auth }) {
 //   // -H "Accept: application/json" \
 //   // -H "Authorization: Bearer $ACCESS_TOKEN" | jq .
 // })
-// export default async function ({ app }) {
+// export default async function ({ app }) {git p
 //   console.log('auth executed')
 //   if (!app.$auth.loggedIn) {
 //     return
