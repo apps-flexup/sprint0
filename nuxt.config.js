@@ -68,7 +68,7 @@ export default {
   axios: {
     responseType: 'json',
     headers: {
-      Origin: 'http://127.0.0.1:3000',
+      Origin: 'https://sprint0.netlify.app/',
       'Content-type': 'applications/json',
       'Access-Control-Allow-Origin': process.env.API_URL + '/*',
       'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,OPTIONS',
