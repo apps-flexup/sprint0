@@ -70,7 +70,7 @@ export default {
     headers: {
       Origin: 'https://sprint0.netlify.app/',
       'Content-type': 'applications/json',
-      'Access-Control-Allow-Origin': 'https://sprint0.netlify.app/*',
+      'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,OPTIONS',
       'Access-Control-Allow-Headers': 'Content-Type',
       Accept: 'application/json'
