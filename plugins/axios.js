@@ -1,7 +1,7 @@
 export default function({ $axios, redirect }) {
   $axios.onRequest((config) => {
     console.log('End request to ', $axios.defaults)
-    console.warn(config)
+    console.log(config)
   })
 
   $axios.onError((error) => {

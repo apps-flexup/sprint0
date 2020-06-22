@@ -68,16 +68,8 @@ export default {
   axios: {
     responseType: 'json',
     headers: {
-      Origin: 'https://sprint0.netlify.app/',
-      'Content-type': 'applications/json',
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type',
       Accept: 'application/json'
     }
-    //   responseType: 'json',
-    //   proxyHeaders: true
-    //   // proxy: true
   },
   auth: {
     strategies: {
