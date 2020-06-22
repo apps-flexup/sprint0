@@ -1,6 +1,5 @@
 export default ($axios) => (resource) => ({
   async index() {
-    console.log()
     const res = await $axios.$get(`/${resource}`)
     return res
   },

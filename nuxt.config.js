@@ -66,38 +66,38 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    responseType: 'json',
-    headers: {
-      origin: '*',
-      'Content-type': 'applications/json',
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type',
-      Accept: 'application/json'
-    }
-    // responseType: 'json',
-    // proxyHeaders: true,
-    // proxy: true
+    responseType: 'json'
+    // headers: {
+    //   origin: '*',
+    //   'Content-type': 'applications/json',
+    //   'Access-Control-Allow-Origin': '*',
+    //   'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,OPTIONS',
+    //   'Access-Control-Allow-Headers': 'Content-Type',
+    //   Accept: 'application/json'
+    // }
+    //   responseType: 'json',
+    //   proxyHeaders: true
+    //   // proxy: true
   },
-  auth: {
-    strategies: {
-      keycloak: {
-        _scheme: 'oauth2',
-        client_id: process.env.KEYCLOAK_CLIENT_ID,
-        authorization_endpoint: process.env.OAUTH_ENDPOINT,
-        access_type: 'public',
-        access_token_endpoint: process.env.OAUTH_ENDPOINT_TOKEN
-      },
-      redirect: {
-        login: '/login',
-        callback: '/callback',
-        home: '/'
-      }
-    }
-  },
-  router: {
-    middleware: ['auth']
-  },
+  // auth: {
+  //   strategies: {
+  //     keycloak: {
+  //       _scheme: 'oauth2',
+  //       client_id: process.env.KEYCLOAK_CLIENT_ID,
+  //       authorization_endpoint: process.env.OAUTH_ENDPOINT,
+  //       access_type: 'public',
+  //       access_token_endpoint: process.env.OAUTH_ENDPOINT_TOKEN
+  //     },
+  //     redirect: {
+  //       login: '/login',
+  //       callback: '/callback',
+  //       home: '/'
+  //     }
+  //   }
+  // },
+  // router: {
+  //   middleware: ['auth']
+  // },
   /*
    ** vuetify module configuration
    ** https://github.com/nuxt-community/vuetify-module

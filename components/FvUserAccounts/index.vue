@@ -59,7 +59,6 @@ export default {
   computed: {
     accounts() {
       console.log('plop :', this.$auth)
-      debugger
       const res = this.$store.getters['accounts/all']
       return res
     }
