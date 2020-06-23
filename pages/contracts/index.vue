@@ -1,6 +1,7 @@
 <template lang="pug">
   .contract-index
     fv-contract-list
+    v-btn(color='primary' nuxt='' to='/contracts/new') Nouveau
 </template>
 
 <script>
