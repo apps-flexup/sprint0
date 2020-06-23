@@ -1,6 +1,5 @@
 <template lang="pug">
   .fv-product-list
-    p {{ $options.name }}
     //- fv-product-list-search(
     //-   :products="items"
     //- )

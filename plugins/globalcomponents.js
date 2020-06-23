@@ -34,9 +34,12 @@ import FvFieldDate from '@/components/FvFieldDate'
 import FvUserAccounts from '@/components/FvUserAccounts'
 import FvContractSummaryVisualisation from '@/components/FvContractSummaryVisualisation'
 import FvContractStepVisualisation from '@/components/FvContractStepVisualisation'
+import FvCountryList from '@/components/FvCountryList'
 import FvProductList from '@/components/FvProductList'
 import FvOfferListSearch from '@/components/FvOfferListSearch'
 import FvOfferList from '@/components/FvOfferList'
+import FvOrderListSearch from '@/components/FvOrderListSearch'
+import FvOrderList from '@/components/FvOrderList'
 
 Vue.component('fv-account-avatar', FvAccountAvatar)
 
@@ -86,6 +89,10 @@ Vue.component(
   FvContractSummaryVisualisation
 )
 Vue.component('fv-contract-step-visualisation', FvContractStepVisualisation)
+Vue.component('fv-country-list', FvCountryList)
 Vue.component('fv-product-list', FvProductList)
 Vue.component('fv-offer-list-search', FvOfferListSearch)
 Vue.component('fv-offer-list', FvOfferList)
+Vue.component('fv-order-list-search', FvOrderListSearch)
+Vue.component('fv-order-list', FvOrderList)
+Vue.component('fv-country-list', FvCountryList)

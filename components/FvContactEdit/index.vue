@@ -1,6 +1,41 @@
 <template lang="pug">
-  .fv-contact-edit
-    p {{ $options.name }}
+  v-form.fv-contact-edit
+    v-row
+      v-col(cols="6")
+        v-text-field(
+          v-model="name"
+          outlined=''
+        )
+      v-col(cols="6")
+        v-select(
+          v-model="juridicalStatus"
+          outlined=''
+        )
+    v-row
+      v-col(cols="6")
+        v-text-field(
+          v-model="address"
+          outlined=''
+        )
+      v-col(cols="6")
+        v-text-field(
+          v-model="complément"
+          outlined=''
+        )
+    v-row
+      v-col(cols="6")
+        v-text-field(
+          v-model="zip"
+          outlined=''
+        )
+      v-col(cols="6")
+        v-text-field(
+          v-model="city"
+          outlined=''
+        )
+    v-row
+      v-col(cols="6")
+        fv-country-list
 </template>
 <script>
 export default {

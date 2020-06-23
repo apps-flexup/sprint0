@@ -1,9 +1,11 @@
 <template lang="pug">
-  .fv-contact-step-offer
+  .fv-country-list
+    p {{ $options.name }}
 </template>
+
 <script>
 export default {
-  name: 'FvContactStepOffer',
+  name: 'FvCountryList',
   computed: {
     machin() {
       return 42
@@ -15,7 +17,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.fv-contact-step-offer {
+.fv-country-list {
   background-color: inherit;
 }
 </style>

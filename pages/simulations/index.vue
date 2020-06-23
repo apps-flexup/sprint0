@@ -1,6 +1,5 @@
 <template lang="pug">
   .page-simulation
-    p {{ $options.name }}
     ul
       li employés
       li charges

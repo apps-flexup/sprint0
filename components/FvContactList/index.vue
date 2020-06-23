@@ -1,6 +1,5 @@
 <template lang="pug">
   .fv-contact-list
-    p {{ $options.name }}
     v-row.contact-list-item(v-for="item in items" :key="item.id")
       v-col(cols="3")
         span.name {{ item.name }}

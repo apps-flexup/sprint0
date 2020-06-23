@@ -1,8 +1,5 @@
 <template lang="pug">
-  .fv-offer-list
-    fv-offer-list-search(
-      :offers="items"
-    )
+  .fv-order-list
     v-row
       v-col(cols="12")
         v-data-table.elevation-2(
@@ -14,27 +11,27 @@
 
 <script>
 export default {
-  name: 'FvOfferList',
+  name: 'FvOrderList',
   computed: {
     headers() {
-      const res = this.$store.getters['headers/offers']
+      const res = this.$store.getters['headers/orders']
       return res
     },
     items() {
-      const res = this.$store.getters['offers/all']
+      const res = this.$store.getters['orders/all']
       return res
     }
   },
   mounted() {
     console.log('Composant ', this.$options.name)
-    this.$store.dispatch('offers/get')
-    this.$store.dispatch('headers/getOfferHeaders')
+    this.$store.dispatch('orders/get')
+    this.$store.dispatch('headers/getOrderHeaders')
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.fv-offer-list {
+.fv-order-list {
   background-color: inherit;
 }
 </style>

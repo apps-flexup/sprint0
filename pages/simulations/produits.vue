@@ -1,6 +1,5 @@
 <template lang="pug">
   .page-produits
-    p {{ $options.name }}
     ul
       li employés
       li charges

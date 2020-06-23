@@ -1,6 +1,5 @@
 <template lang="pug">
   .fv-contract-summary-visualisation
-    p {{ $options.name }}
 </template>
 
 <script>
