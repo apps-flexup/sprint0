@@ -4,6 +4,17 @@
     .fv-contract-step1(v-if="etape.id === 1")
       v-row
         v-col(cols="6")
+          v-select(
+            v-model="contractType"
+            :items="contractTypeList"
+            item-text="name"
+            item-value="id"
+            label="Type de contrat"
+            clearable=''
+            outlined=''
+          )
+      v-row
+        v-col(cols="6")
           v-autocomplete(
             v-model="contact"
             :items="items"
@@ -57,17 +68,6 @@
           v-textField(
             v-model="duree"
             readonly=''
-            outlined=''
-          )
-      v-row
-        v-col(cols="6")
-          v-select(
-            v-model="contractType"
-            :items="contractTypeList"
-            item-text="name"
-            item-value="id"
-            label="Type de contrat"
-            clearable=''
             outlined=''
           )
 </template>
