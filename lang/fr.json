@@ -1,9 +1,4 @@
 {
-  "menus": {
-    "contracts": "Contrats",
-    "contractnew": "Ajouter Contrat",
-    "contacts": "Contacts"
-  },
   "title": {
     "index": "Service de gestion des contrats",
     "text": {
@@ -44,5 +39,15 @@
         "3": "Offres"
       }
     }
+  },
+  "menu" : {
+    "home": "Acceuil",
+    "orders": "Commandes",
+    "contracts": "Contrats",
+    "products": "Produits",
+    "contacts": "Contacts",
+    "third-party": "Tiers",
+    "documents": "Documents",
+    "dashboard": "Tableau de bord"
   }
 }

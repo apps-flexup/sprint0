@@ -1,8 +1,4 @@
 {
-  "menus": {
-    "contracts": "Contracts",
-    "contacts": "Contacts"
-  },
   "title": {
     "index": "Contract management service"
   },
@@ -40,5 +36,15 @@
         "3": "Offers"
       }
     }
+  },
+  "menu" : {
+    "home": "Home",
+    "orders": "Orders",
+    "contracts": "Contracts",
+    "products": "Products",
+    "contacts": "Contacts",
+    "third-party": "Third party",
+    "documents": "Documents",
+    "dashboard": "Dashboard"
   }
 }

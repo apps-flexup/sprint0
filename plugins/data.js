@@ -17,7 +17,9 @@ export default (ctx, inject) => {
     orderHeaders: repo('order-headers'),
     contactSteps: repo('contact-steps'),
     productHeaders: repo('product-headers'),
+    products: repo('products'),
     offers: repo('offers'),
+    menu: repo('menu'),
     structures: repo('structures')
   }
 
