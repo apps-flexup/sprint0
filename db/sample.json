@@ -1343,43 +1343,43 @@
   ],
   "order-headers": [
     {
-      "text": "Date de commande",
+      "text": "headers.orders.orderDate",
       "align": "start",
       "sortable": true,
       "value": "date"
     },
     {
-      "text": "Offre",
+      "text": "headers.orders.offer",
       "align": "start",
       "sortable": true,
       "value": "offer"
     },
     {
-      "text": "Status",
+      "text": "headers.orders.status",
       "align": "start",
       "sortable": true,
       "value": "status"
     },
     {
-      "text": "Date de début",
+      "text": "headers.orders.startDate",
       "align": "start",
       "sortable": true,
       "value": "startDate"
     },
     {
-      "text": "Date de fin",
+      "text": "headers.orders.endDate",
       "align": "start",
       "sortable": true,
       "value": "endDate"
     },
     {
-      "text": "Quantité",
+      "text": "headers.orders.quantity",
       "align": "end",
       "sortable": true,
       "value": "quantity"
     },
     {
-      "text": "Prix",
+      "text": "headers.orders.price",
       "align": "end",
       "sortable": true,
       "value": "price"

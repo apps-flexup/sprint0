@@ -69,6 +69,15 @@
       "structure": "Structure",
       "offer": "Offer",
       "order": "Order"
+    },
+    "orders": {
+      "orderDate": "Order date",
+      "offer": "Offer",
+      "status": "Status",
+      "startDate": "Start date",
+      "endDate": "End date",
+      "quantity": "Quantity",
+      "price": "Price"
     }
   }
 }
