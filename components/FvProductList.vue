@@ -17,8 +17,16 @@ export default {
   name: 'FvProductList',
   computed: {
     headers() {
-      const res = this.$store.getters['headers/products'](this.$i18n)
-      console.log('On get les headers: ', res)
+      let res = this.$store.getters['headers/products']
+      res = res.map((element) => {
+        const translated = this.$i18n.t(element.text)
+        return {
+          text: translated,
+          align: element.align,
+          sortable: element.sortable,
+          value: element.value
+        }
+      })
       return res
     },
     items() {
