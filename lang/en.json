@@ -84,7 +84,7 @@
       "price": "Price"
     },
     "offers": {
-      "nameOfTheOffer": "Name of the offer",
+      "name": "Name of the offer",
       "label": "Label",
       "products": "Product(s)",
       "price": "Price",

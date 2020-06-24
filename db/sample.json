@@ -1305,7 +1305,7 @@
   ],
   "offer-headers": [
     {
-      "text": "headers.offers.nameOfTheOffer",
+      "text": "headers.offers.name",
       "align": "start",
       "sortable": true,
       "value": "name"

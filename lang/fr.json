@@ -87,7 +87,7 @@
       "price": "Prix"
     },
     "offers": {
-      "nameOfTheOffer": "Nom de l'offre",
+      "name": "Nom de l'offre",
       "label": "Label",
       "products": "Produit(s)",
       "price": "Prix",
