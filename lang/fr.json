@@ -49,5 +49,20 @@
     "third-party": "Tiers",
     "documents": "Documents",
     "dashboard": "Tableau de bord"
+  },
+  "buttons": {
+    "create": {
+      "product": "CRÉER PRODUIT"
+    }
+  },
+  "headers": {
+    "products": {
+      "name": "Nom du produit",
+      "quantity": "Quantité",
+      "price": "Prix",
+      "priceUnit": "Unité de prix",
+      "status": "Statut"
+    }
   }
+
 }

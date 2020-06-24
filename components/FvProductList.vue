@@ -17,7 +17,8 @@ export default {
   name: 'FvProductList',
   computed: {
     headers() {
-      const res = this.$store.getters['headers/products']
+      const res = this.$store.getters['headers/products'](this.$i18n)
+      console.log('On get les headers: ', res)
       return res
     },
     items() {

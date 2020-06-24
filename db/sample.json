@@ -519,31 +519,31 @@
     {
       "align": "start",
       "sortable": true,
-      "text": "nom du produit",
+      "text": "headers.products.name",
       "value": "name"
     },
     {
       "align": "end",
       "sortable": true,
-      "text": "Quantité",
+      "text": "headers.products.quantity",
       "value": "quantity"
     },
     {
       "align": "end",
       "sortable": true,
-      "text": "Prix",
+      "text": "headers.products.price",
       "value": "price"
     },
     {
       "align": "center",
       "sortable": true,
-      "text": "Unité de prix",
+      "text": "headers.products.priceUnit",
       "value": "unitStr"
     },
     {
       "align": "start",
       "sortable": true,
-      "text": "Statut",
+      "text": "headers.products.status",
       "value": "statusStr"
     }
   ],

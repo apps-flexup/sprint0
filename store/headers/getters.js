@@ -9,9 +9,18 @@ export default {
     const res = JSON.parse(JSON.stringify(state.contacts))
     return res
   },
-  products(state) {
+  products: (state) => (i18n) => {
     if (!state.products) return []
-    const res = JSON.parse(JSON.stringify(state.products))
+    let res = JSON.parse(JSON.stringify(state.products))
+    res = res.map((element) => {
+      const translated = i18n.t(element.text)
+      return {
+        text: translated,
+        align: element.align,
+        sortable: element.sortable,
+        value: element.value
+      }
+    })
     return res
   },
   offers(state) {
