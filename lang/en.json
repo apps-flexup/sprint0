@@ -27,6 +27,14 @@
         "2": "Offre",
         "3": "Structure",
         "4": "Pre render contract"
+      },
+      "detail": {
+        "partner": "Partner",
+        "charter": "Charter",
+        "dateOfSignature": "Date of signature",
+        "effectiveDate": "Effective date",
+        "endDate":"End date",
+        "typeOfContract": "Type of contract"
       }
     },
     "contacts": {
