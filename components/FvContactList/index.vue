@@ -29,7 +29,7 @@ export default {
   computed: {
     headers() {
       const res = this.$store.getters['headers/contacts']
-      return res
+      return this.$translateHeaders(res)
     },
     items() {
       const res = this.$store.getters['contacts/all']
