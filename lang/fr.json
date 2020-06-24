@@ -52,8 +52,12 @@
   },
   "buttons": {
     "create": {
-      "product": "CRÉER PRODUIT"
-    }
+      "product": "CRÉER PRODUIT",
+      "contract": "CRÉER CONTRAT"
+    },
+    "submit": "Envoyer",
+    "previous": "Précédent",
+    "next": "Suivant"
   },
   "headers": {
     "products": {

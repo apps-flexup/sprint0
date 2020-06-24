@@ -10,7 +10,7 @@
           text=''
           @click.prevent='step--'
         )
-          | Previous
+          | {{ $t('buttons.previous') }}
       v-col(
         cols="8"
         align='left'
@@ -27,7 +27,7 @@
           depressed=''
           @click.prevent='step++'
         )
-          | Next
+          | {{ $t('buttons.next') }}
         v-btn(
           v-else
           :disabled='step <= nbSteps'
@@ -35,7 +35,7 @@
           depressed=''
           @click.prevent='submit'
         )
-          | $('button.submit')
+          | {{ $t('buttons.submit') }}
 </template>
 
 <script>
