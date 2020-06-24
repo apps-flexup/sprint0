@@ -40,6 +40,7 @@ export default {
     '~/plugins/globalcomponents',
     '~/plugins/data',
     '~/plugins/i18n',
+    '~/plugins/utils',
     '~/plugins/directives'
   ],
   /*

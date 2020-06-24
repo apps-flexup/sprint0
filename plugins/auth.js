@@ -1,5 +1,4 @@
 export default function({ $auth }) {
-  console.log('On passe ici', $auth)
   if (!$auth) return
   if (!$auth.loggedIn) {
     console.warn('!plop')
