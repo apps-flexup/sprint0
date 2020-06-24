@@ -62,7 +62,16 @@
       "price": "Prix",
       "priceUnit": "Unité de prix",
       "status": "Statut"
+    },
+    "contracts": {
+      "effectiveDate": "Date effective",
+      "dateOfSignature": "Date de signature",
+      "endDate": "Date de fin",
+      "contact": "Contact",
+      "typeOfPartnership": "Type de partnenariat",
+      "structure": "Structure",
+      "offer": "Offre",
+      "order": "Commande"
     }
   }
-
 }

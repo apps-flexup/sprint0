@@ -19,7 +19,7 @@ export default {
   computed: {
     headers() {
       const res = this.$store.getters['headers/contracts']
-      return res
+      return this.$translateHeaders(res)
     },
     items() {
       const res = this.$store.getters['contracts/all']

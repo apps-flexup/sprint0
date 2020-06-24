@@ -340,49 +340,49 @@
     {
       "align": "start",
       "sortable": true,
-      "text": "Date d'effet",
+      "text": "headers.contracts.effectiveDate",
       "value": "dteEffect"
     },
     {
       "align": "start",
       "sortable": true,
-      "text": "Date de signature",
+      "text": "headers.contracts.dateOfSignature",
       "value": "dteSignature"
     },
     {
       "align": "start",
       "sortable": true,
-      "text": "Date de fin",
+      "text": "headers.contracts.endDate",
       "value": "dteEnd"
     },
     {
       "align": "start",
       "sortable": true,
-      "text": "Contact",
+      "text": "headers.contracts.contact",
       "value": "contactName"
     },
     {
       "align": "start",
       "sortable": true,
-      "text": "Type de partenariat",
+      "text": "headers.contracts.typeOfPartnership",
       "value": "contractType"
     },
     {
       "align": "start",
       "sortable": true,
-      "text": "Structure",
+      "text": "headers.contracts.structure",
       "value": "structureName"
     },
     {
       "align": "start",
       "sortable": true,
-      "text": "Offre",
+      "text": "headers.contracts.offer",
       "value": "offers.length"
     },
     {
       "align": "start",
       "sortable": true,
-      "text": "Commande",
+      "text": "headers.contracts.order",
       "value": "commandes.length"
     }
   ],
