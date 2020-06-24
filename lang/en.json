@@ -24,9 +24,20 @@
       "step": {
         "0": "-",
         "1": "Detail",
-        "2": "Offre",
+        "2": "Offers",
         "3": "Structure",
         "4": "Pre render contract"
+      },
+      "detail": {
+        "partner": "Partner",
+        "charter": "Charter",
+        "dateOfSignature": "Date of signature",
+        "effectiveDate": "Effective date",
+        "endDate":"End date",
+        "typeOfContract": "Type of contract"
+      },
+      "structure": {
+        "structureType": "Structure type"
       }
     },
     "contacts": {

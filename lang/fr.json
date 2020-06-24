@@ -30,6 +30,17 @@
         "2": "Offres",
         "3": "Structure",
         "4": "Pre-visualisation"
+      },
+      "detail": {
+        "partner": "Partenaire",
+        "charter": "Chartre",
+        "dateOfSignature": "Date de signature",
+        "effectiveDate": "Date effective",
+        "endDate":"Date de fin",
+        "typeOfContract": "Type de contract"
+      },
+      "structure": {
+        "structureType": "Type de structure"
       }
     },
     "contacts": {
