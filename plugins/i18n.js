@@ -13,7 +13,7 @@ export default ({ app, store }) => {
     }
   })
 
-  app.i18n.path = (link) => {
-    return `/${link}`
-  }
+  // app.i18n.path = (link) => {
+  //   return `/${link}`
+  // }
 }

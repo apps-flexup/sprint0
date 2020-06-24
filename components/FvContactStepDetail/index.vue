@@ -11,7 +11,7 @@
         v-select(
           :items="$store.getters['formesJuridiques']"
           item-value="id"
-          item-text="name"
+          item-text="libelle"
           outlined=''
           clearable=''
         )
