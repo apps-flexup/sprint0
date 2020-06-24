@@ -38,6 +38,9 @@
         "effectiveDate": "Date effective",
         "endDate":"Date de fin",
         "typeOfContract": "Type de contract"
+      },
+      "structure": {
+        "structureType": "Type de structure"
       }
     },
     "contacts": {

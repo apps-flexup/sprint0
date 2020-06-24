@@ -6,7 +6,7 @@
         :items="structContractList"
         item-text="name"
         item-value="id"
-        label="Type de structure"
+        :label="$t('forms.contracts.structure.structureType')"
         clearable=''
         outlined=''
       )
