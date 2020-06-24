@@ -78,6 +78,14 @@
       "endDate": "End date",
       "quantity": "Quantity",
       "price": "Price"
+    },
+    "offers": {
+      "nameOfTheOffer": "Name of the offer",
+      "label": "Label",
+      "products": "Product(s)",
+      "price": "Price",
+      "priceUnit": "Price unit",
+      "status": "Status"
     }
   }
 }

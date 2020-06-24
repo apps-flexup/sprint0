@@ -1305,37 +1305,37 @@
   ],
   "offer-headers": [
     {
-      "text": "Nom de l'offre",
+      "text": "headers.offers.nameOfTheOffer",
       "align": "start",
       "sortable": true,
       "value": "name"
     },
     {
-      "text": "Label",
+      "text": "headers.offers.label",
       "align": "start",
       "sortable": true,
       "value": "label"
     },
     {
-      "text": "Produit(s)",
+      "text": "headers.offers.products",
       "align": "start",
       "sortable": true,
       "value": "products"
     },
     {
-      "text": "Prix",
+      "text": "headers.offers.price",
       "align": "end",
       "sortable": true,
       "value": "price"
     },
     {
-      "text": "Unité de prix",
+      "text": "headers.offers.priceUnit",
       "align": "center",
       "sortable": true,
       "value": "unitStr"
     },
     {
-      "text": "Statut",
+      "text": "headers.offers.status",
       "align": "start",
       "sortable": true,
       "value": "statusStr"

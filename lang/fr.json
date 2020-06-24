@@ -81,6 +81,14 @@
       "endDate": "Date de fin",
       "quantity": "Quantité",
       "price": "Prix"
+    },
+    "offers": {
+      "nameOfTheOffer": "Nom de l'offre",
+      "label": "Label",
+      "products": "Produit(s)",
+      "price": "Prix",
+      "priceUnit": "Unité prix",
+      "status": "Statut"
     }
   }
 }
