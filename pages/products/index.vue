@@ -2,19 +2,13 @@
   .products
     v-row(align="center")
       v-spacer
-      fv-create-button(
-        :text="$t('buttons.create.product')"
-        @click="dialog = true"
+      fv-modal-and-button(
+        :buttonText="$t('buttons.create.product')"
+        component="fv-new-product-form"
+        @close="close"
+        @save="save"
       )
     fv-product-list
-    fv-modal(
-      :dialog="dialog"
-      :title="title"
-      component="fv-new-product-form"
-      :values="values"
-      @close="close"
-      @save="save"
-    )
 </template>
 
 <script>
@@ -42,13 +36,11 @@ export default {
   },
   methods: {
     close() {
-      console.log('close modal')
-      this.dialog = false
+      // Reset form ?
     },
     save(payload) {
       console.log('save modal with values: ', payload)
       this.$store.dispatch('products/add', payload)
-      this.dialog = false
     }
   }
 }
