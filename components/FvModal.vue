@@ -3,7 +3,7 @@
     v-dialog(
       v-model='dialog'
       persistent
-      max-width='600px'
+      max-width='50%'
     )
       v-card
         v-card-title
