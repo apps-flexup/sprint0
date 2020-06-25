@@ -31,6 +31,7 @@ import FvContractSummaryStepStructure from '@/components/FvContractSummaryStepSt
 import FvCreateButton from '@/components/FvCreateButton'
 import FvModal from '@/components/FvModal'
 import FvNav from '@/components/FvNav'
+import FvNewPartnerForm from '@/components/FvNewPartnerForm'
 import FvNewProductForm from '@/components/FvNewProductForm'
 import FvStepper from '@/components/FvStepper'
 import FvEtape from '@/components/FvEtape'
@@ -86,6 +87,7 @@ Vue.component(
 Vue.component('fv-create-button', FvCreateButton)
 Vue.component('fv-modal', FvModal)
 Vue.component('fv-nav', FvNav)
+Vue.component('fv-new-partner-form', FvNewPartnerForm)
 Vue.component('fv-new-product-form', FvNewProductForm)
 Vue.component('fv-stepper', FvStepper)
 Vue.component('fv-etape', FvEtape)
