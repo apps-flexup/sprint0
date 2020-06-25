@@ -1,20 +1,15 @@
 <template lang="pug">
   .fv-contract-step-detail
     fv-contact-dialog(:show='showDialog')
-    fv-modal(
-      :dialog="dialog"
-      :title="dialogTitle"
-      :subtitle="dialogSubtitle"
-      component="fv-new-partner-form"
-      :values="dialogValues"
-      @close="modalClosed"
-      @save="modalSaved"
-    )
     v-row
       v-spacer
-      fv-create-button(
-        :text="$t('buttons.create.partner')"
-        @click="addPartnerClicked"
+      fv-modal-and-button(
+        :buttonText="$t('buttons.create.partner')"
+        :title="$t('forms.partners.new.title')"
+        :subtitle="$t('forms.partners.new.subtitle')"
+        component="fv-new-partner-form"
+        @close="modalClosed"
+        @save="modalSaved"
       )
     .fv-contract-step1(v-if="etape.id === 1")
       v-row
@@ -137,18 +132,6 @@ export default {
         dteSignature: null,
         dteEffect: null,
         dteEnd: null
-      },
-      dialog: false,
-      dialogTitle: this.$i18n.t('forms.partners.new.title'),
-      dialogSubtitle: this.$i18n.t('forms.partners.new.subtitle'),
-      dialogValues: {
-        name: null,
-        juridicalStatus: null,
-        siret: null,
-        address: null,
-        complement: null,
-        zip: null,
-        city: null
       }
     }
   },
@@ -267,15 +250,10 @@ export default {
         this.isLoading = false
       }, 500)
     },
-    addPartnerClicked() {
-      this.dialog = true
-    },
     modalClosed() {
-      this.dialog = false
       console.log('close')
     },
     modalSaved(payload) {
-      this.dialog = false
       console.log('saved: ', payload)
     }
   }

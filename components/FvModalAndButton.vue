@@ -7,8 +7,8 @@
       fv-modal(
         :dialog="dialog"
         :title="title"
+        :subtitle="subtitle"
         :component="component"
-        :values="values"
         @close="close"
         @save="save"
       )
@@ -40,12 +40,6 @@ export default {
       type: String,
       default() {
         return 'Beautiful title'
-      }
-    },
-    values: {
-      type: Object,
-      default() {
-        return {}
       }
     }
   },

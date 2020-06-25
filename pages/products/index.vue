@@ -4,6 +4,7 @@
       v-spacer
       fv-modal-and-button(
         :buttonText="$t('buttons.create.product')"
+        :title="$t('forms.products.new.title')"
         component="fv-new-product-form"
         @close="close"
         @save="save"
@@ -13,19 +14,6 @@
 
 <script>
 export default {
-  data() {
-    return {
-      dialog: false,
-      title: this.$i18n.t('forms.products.new.title'),
-      values: {
-        name: null,
-        quantity: null,
-        price: null,
-        unitStr: null,
-        statusStr: null
-      }
-    }
-  },
   methods: {
     close() {
       // Reset form ?
