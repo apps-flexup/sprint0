@@ -40,6 +40,7 @@ export default {
     '~/plugins/globalcomponents',
     '~/plugins/data',
     '~/plugins/i18n',
+    '~/plugins/utils',
     '~/plugins/directives'
   ],
   /*
@@ -54,13 +55,13 @@ export default {
    ** Nuxt.js modules
    */
   modules: ['@nuxtjs/axios', '@nuxtjs/auth', '@nuxtjs/pwa', '@nuxtjs/dotenv'],
-  i18n: {
-    locales: ['en', 'fr'],
-    defaultLocale: 'en',
-    vueI18n: {
-      fallbackLocale: 'en'
-    }
-  },
+  // i18n: {
+  //   locales: ['en', 'fr'],
+  //   defaultLocale: 'en',
+  //   vueI18n: {
+  //     fallbackLocale: 'en'
+  //   }
+  // },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options

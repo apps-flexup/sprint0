@@ -1,9 +1,10 @@
 <template lang="pug">
   .fv-user-accounts
     v-btn.mx-2(
-      v-if="!$auth.loggedIn"
-      v-bind='attrs'
+      v-if="!loggedIn"
+      v-bind='$attrs'
       v-on='on'
+      @click="login"
     )
       | Connexion
     .d-flex.justify-center.align-center(v-else)
@@ -47,18 +48,13 @@
 <script>
 export default {
   name: 'FvUserAccounts',
-  data() {
-    return {
-      btns: [
-        ['Removed', '0'],
-        ['Large', 'lg'],
-        ['Custom', 'b-xl']
-      ]
-    }
-  },
   computed: {
     accounts() {
       const res = this.$store.getters['accounts/all']
+      return res
+    },
+    loggedIn() {
+      const res = this.$auth.loggedIn
       return res
     }
   },
@@ -69,12 +65,10 @@ export default {
   methods: {
     logout() {
       this.$auth.logout()
+    },
+    login() {
+      this.$auth.login()
     }
   }
 }
 </script>
-<style lang="scss" scoped>
-.fv-user-accounts {
-  background-color: inherit;
-}
-</style>

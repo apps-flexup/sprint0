@@ -1,7 +1,7 @@
 <template lang="pug">
   .contract-index
     fv-contract-list
-    v-btn(color='primary' nuxt='' to='/contracts/new') Nouveau
+    v-btn(color='primary' nuxt='' to='/contracts/new') {{ $t('buttons.create.contract') }}
 </template>
 
 <script>

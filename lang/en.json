@@ -24,9 +24,20 @@
       "step": {
         "0": "-",
         "1": "Detail",
-        "2": "Offre",
+        "2": "Offers",
         "3": "Structure",
         "4": "Pre render contract"
+      },
+      "detail": {
+        "partner": "Partner",
+        "charter": "Charter",
+        "dateOfSignature": "Date of signature",
+        "effectiveDate": "Effective date",
+        "endDate":"End date",
+        "type": "Type of contract"
+      },
+      "structure": {
+        "structureType": "Structure type"
       }
     },
     "contacts": {
@@ -46,5 +57,50 @@
     "third-party": "Third party",
     "documents": "Documents",
     "dashboard": "Dashboard"
+  },
+  "buttons": {
+    "create": {
+      "product": "CREATE PRODUCT",
+      "contract": "CREATE CONTRACT"
+    },
+    "submit": "Submit",
+    "previous": "Previous",
+    "next": "Next"
+  },
+  "headers": {
+    "products": {
+      "name": "Product name",
+      "quantity": "Quantity",
+      "price": "Price",
+      "priceUnit": "Price unit",
+      "status": "Status"
+    },
+    "contracts": {
+      "effectiveDate": "Effective date",
+      "dateOfSignature": "Date of signature",
+      "endDate": "End date",
+      "contact": "Contact",
+      "type": "Type of partnership",
+      "structure": "Structure",
+      "offer": "Offer",
+      "order": "Order"
+    },
+    "orders": {
+      "order_date": "Order date",
+      "offer": "Offer",
+      "status": "Status",
+      "startDate": "Start date",
+      "endDate": "End date",
+      "quantity": "Quantity",
+      "price": "Price"
+    },
+    "offers": {
+      "name": "Name of the offer",
+      "label": "Label",
+      "products": "Product(s)",
+      "price": "Price",
+      "priceUnit": "Price unit",
+      "status": "Status"
+    }
   }
 }

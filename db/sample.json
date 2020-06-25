@@ -1,4 +1,88 @@
 {
+  "menu": [
+    {
+      "icon": "mdi-apps",
+      "title": "menu.home",
+      "to": "/"
+    },
+    {
+      "icon": "mdi-apps",
+      "title": "menu.orders",
+      "to": "/orders"
+    },
+    {
+      "icon": "mdi-briefcase-check",
+      "title": "menu.contracts",
+      "to": "/contracts"
+    },
+    {
+      "icon": "mdi-account-group",
+      "title": "menu.contacts",
+      "to": "/contacts"
+    },
+    {
+      "icon": "mdi-tag",
+      "title": "menu.third-party",
+      "to": "/tiers"
+    },
+    {
+      "icon": "mdi-file-document",
+      "title": "menu.documents",
+      "to": "/documents"
+    },
+    {
+      "icon": "mdi-desktop-mac-dashboard",
+      "title": "menu.dashboard",
+      "to": "/dashboard"
+    }
+  ],
+  "menu-old": [
+    {
+      "icon": "mdi-apps",
+      "title": "Accueil",
+      "to": "/"
+    },
+    {
+      "icon": "mdi-apps",
+      "title": "work",
+      "to": "/work"
+    },
+    {
+      "icon": "mdi-briefcase-check",
+      "title": "Contrats",
+      "to": "/contracts"
+    },
+    {
+      "icon": "mdi-file-plus",
+      "title": "Nouveau Contrats",
+      "to": "/contracts/new"
+    },
+    {
+      "icon": "mdi-account-group",
+      "title": "Contacts",
+      "to": "/contacts"
+    },
+    {
+      "icon": "mdi-account-arrow-right",
+      "title": "Nouveau Contact",
+      "to": "/contacts/new"
+    },
+    {
+      "icon": "mdi-tag",
+      "title": "Offers",
+      "to": "/offers"
+    },
+    {
+      "icon": "mdi-file-document",
+      "title": "Documents",
+      "to": "/documents"
+    },
+    {
+      "icon": "mdi-desktop-mac-dashboard",
+      "title": "Dashboard",
+      "to": "/dashboard"
+    }
+  ],
   "accounts": [
     {
       "country_id": 77,
@@ -256,49 +340,49 @@
     {
       "align": "start",
       "sortable": true,
-      "text": "Date d'effet",
+      "text": "headers.contracts.effectiveDate",
       "value": "dteEffect"
     },
     {
       "align": "start",
       "sortable": true,
-      "text": "Date de signature",
+      "text": "headers.contracts.dateOfSignature",
       "value": "dteSignature"
     },
     {
       "align": "start",
       "sortable": true,
-      "text": "Date de fin",
+      "text": "headers.contracts.endDate",
       "value": "dteEnd"
     },
     {
       "align": "start",
       "sortable": true,
-      "text": "Contact",
+      "text": "headers.contracts.contact",
       "value": "contactName"
     },
     {
       "align": "start",
       "sortable": true,
-      "text": "Type de partenariat",
+      "text": "headers.contracts.type",
       "value": "contractType"
     },
     {
       "align": "start",
       "sortable": true,
-      "text": "Structure",
+      "text": "headers.contracts.structure",
       "value": "structureName"
     },
     {
       "align": "start",
       "sortable": true,
-      "text": "Offre",
+      "text": "headers.contracts.offer",
       "value": "offers.length"
     },
     {
       "align": "start",
       "sortable": true,
-      "text": "Commande",
+      "text": "headers.contracts.order",
       "value": "commandes.length"
     }
   ],
@@ -488,501 +572,674 @@
   "formesJuridiques": [
     {
       "id": 1,
-      "name": "EI"
+      "sigle": "AE",
+      "libelle": "Auto-entrepreneur"
     },
     {
       "id": 2,
-      "name": "EURL"
+      "sigle": "EARL",
+      "libelle": "Entreprise agricole à responsabilité limitée"
     },
     {
       "id": 3,
-      "name": "SARL"
+      "sigle": "EI",
+      "libelle": "Entreprise individuelle"
     },
     {
       "id": 4,
-      "name": "SNC"
+      "sigle": "EIRL",
+      "libelle": "Entreprise individuelle à responsabilité limitée"
     },
     {
       "id": 5,
-      "name": "SAS"
+      "sigle": "EURL",
+      "libelle": "Entreprise unipersonnelle à responsabilité limitée"
     },
     {
       "id": 6,
-      "name": "SASU"
+      "sigle": "GAEC",
+      "libelle": "Groupement agricole d’exploitation en commun"
     },
     {
       "id": 7,
-      "name": "SA"
+      "sigle": "GEIE",
+      "libelle": "Groupement européen d’intérêt économique"
+    },
+    {
+      "id": 8,
+      "sigle": "GIE",
+      "libelle": "Groupement d’intérêt économique"
+    },
+    {
+      "id": 9,
+      "sigle": "ME",
+      "libelle": "Micro-entrepreneur"
+    },
+    {
+      "id": 10,
+      "sigle": "SARL",
+      "libelle": "Société à responsabilité limitée"
+    },
+    {
+      "id": 11,
+      "sigle": "SA",
+      "libelle": "Société anonyme"
+    },
+    {
+      "id": 12,
+      "sigle": "SAS",
+      "libelle": "Société par actions simplifiée"
+    },
+    {
+      "id": 13,
+      "sigle": "SASU",
+      "libelle": "Société par actions simplifiée unipersonnelle"
+    },
+    {
+      "id": 14,
+      "sigle": "SC",
+      "libelle": "Société civile"
+    },
+    {
+      "id": 15,
+      "sigle": "SCA",
+      "libelle": "Société en commandite par actions"
+    },
+    {
+      "id": 16,
+      "sigle": "SCI",
+      "libelle": "Société civile immobilière"
+    },
+    {
+      "id": 17,
+      "sigle": "SCIC",
+      "libelle": "Société coopérative d’intérêt collectif"
+    },
+    {
+      "id": 18,
+      "sigle": "SCICV",
+      "libelle": "Société civile immobilière à capital variable"
+    },
+    {
+      "id": 19,
+      "sigle": "SCM",
+      "libelle": "Société civile de moyens"
+    },
+    {
+      "id": 20,
+      "sigle": "SCOP",
+      "libelle": "Société coopérative ouvrière de production"
+    },
+    {
+      "id": 21,
+      "sigle": "SCP",
+      "libelle": "Société civile professionnelle"
+    },
+    {
+      "id": 22,
+      "sigle": "SCS",
+      "libelle": "Société en commandite simple"
+    },
+    {
+      "id": 23,
+      "sigle": "SEL",
+      "libelle": "Société d’exercice libéral"
+    },
+    {
+      "id": 24,
+      "sigle": "SELAFA",
+      "libelle": "Société d’exercice libéral à forme anonyme"
+    },
+    {
+      "id": 25,
+      "sigle": "SELARL",
+      "libelle": "Société d’exercice libéral à responsabilité limitée"
+    },
+    {
+      "id": 26,
+      "sigle": "SELAS",
+      "libelle": "Société d’exercice libéral par actions simplifiée"
+    },
+    {
+      "id": 27,
+      "sigle": "SELCA",
+      "libelle": "Société d’exercice libéral en commandite par actions"
+    },
+    {
+      "id": 28,
+      "sigle": "SEM",
+      "libelle": "Société d’économie mixte"
+    },
+    {
+      "id": 29,
+      "sigle": "SEML",
+      "libelle": "Société d’économie mixte locale"
+    },
+    {
+      "id": 30,
+      "sigle": "SEP",
+      "libelle": "Société en participation"
+    },
+    {
+      "id": 31,
+      "sigle": "SICA",
+      "libelle": "Société d’intérêt collectif agricole"
+    },
+    {
+      "id": 32,
+      "sigle": "SMHF",
+      "libelle": "Société micro-holding familiale"
+    },
+    {
+      "id": 33,
+      "sigle": "SNC",
+      "libelle": "Société en nom collectif "
+    },
+    {
+      "id": 34,
+      "sigle": "SPFPL",
+      "libelle": "Société de participations financières de professions libérales"
+    },
+    {
+      "id": 35,
+      "sigle": "SUP",
+      "libelle": "Societas unius personae (société européenne unipersonnelle à responsabilité limitée)"
     }
   ],
   "product-headers": [
     {
       "align": "start",
       "sortable": true,
-      "text": "nom du produit",
+      "text": "headers.products.name",
       "value": "name"
     },
     {
       "align": "end",
       "sortable": true,
-      "text": "Quantité",
+      "text": "headers.products.quantity",
       "value": "quantity"
     },
     {
       "align": "end",
       "sortable": true,
-      "text": "Prix",
+      "text": "headers.products.price",
       "value": "price"
     },
     {
       "align": "center",
       "sortable": true,
-      "text": "Unité de prix",
+      "text": "headers.products.priceUnit",
       "value": "unitStr"
     },
     {
       "align": "start",
       "sortable": true,
-      "text": "Statut",
+      "text": "headers.products.status",
       "value": "statusStr"
     }
   ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Appartement Paris 8",
+      "quantity": 1,
+      "price": "3000€",
+      "unitStr": "€/month",
+      "statusStr": "4-Confirmé"
+    },
+    {
+      "id": 2,
+      "name": "Appartement Paris 19",
+      "quantity": 1,
+      "price": "3000€",
+      "unitStr": "€/month",
+      "statusStr": "4-Confirmé"
+    },
+    {
+      "id": 3,
+      "name": "Appartement Paris 12",
+      "quantity": 1,
+      "price": "3000€",
+      "unitStr": "€/month",
+      "statusStr": "4-Confirmé"
+    }
+  ],
   "offers": [
-  {
-    "id": 1,
-    "name": {
-      "en": "Goat milk"
-    },
-    "description": {
-      "en": "True Goat milk"
-    },
-    "reference": "EKWOHX",
-    "price": 100.0,
-    "elasticity": 20.0,
-    "currency": "EUR",
-    "unit": "m³",
-    "dimension": "volume",
-    "status": "draft",
-    "category_id": 25,
-    "account_id": 3,
-    "params": {
-      "offerinfo": "goat milk is offered still"
-    },
-    "active": true,
-    "offer_at_client": true,
-    "offer_at_supplier": true,
-    "offer_shipping": true,
-    "offer_remote": true,
-    "category": {
-      "id": 25,
+    {
+      "id": 1,
       "name": {
-        "en": "Milk",
-        "fr": "Lait"
+        "en": "Goat milk"
       },
       "description": {
-        "en": "Milk",
-        "fr": "Catégorie Lait"
+        "en": "True Goat milk"
       },
-      "sort_order": 0,
-      "parent_id": 21,
+      "reference": "EKWOHX",
+      "price": 100,
+      "elasticity": 20,
+      "currency": "EUR",
+      "unit": "m³",
       "dimension": "volume",
-      "unit": "l",
-      "status": "active",
-      "orderable": true,
+      "status": "draft",
+      "category_id": 25,
+      "account_id": 3,
+      "params": {
+        "offerinfo": "goat milk is offered still"
+      },
       "active": true,
-      "allow_at_client": false,
-      "allow_at_supplier": true,
-      "allow_shipping": true,
-      "allow_remote": false,
-      "other_parent": [],
-      "offers_count": 6
+      "offer_at_client": true,
+      "offer_at_supplier": true,
+      "offer_shipping": true,
+      "offer_remote": true,
+      "category": {
+        "id": 25,
+        "name": {
+          "en": "Milk",
+          "fr": "Lait"
+        },
+        "description": {
+          "en": "Milk",
+          "fr": "Catégorie Lait"
+        },
+        "sort_order": 0,
+        "parent_id": 21,
+        "dimension": "volume",
+        "unit": "l",
+        "status": "active",
+        "orderable": true,
+        "active": true,
+        "allow_at_client": false,
+        "allow_at_supplier": true,
+        "allow_shipping": true,
+        "allow_remote": false,
+        "other_parent": [],
+        "offers_count": 6
+      },
+      "evaluation_avg": 6.5,
+      "favorite": true,
+      "illustration_url": "https://placeimg.com/640/480?id=1"
     },
-    "evaluation_avg": 6.5,
-    "favorite": true,
-    "illustration_url": "https://placeimg.com/640/480?id=1"
-  },
-  {
-    "id": 2,
-    "name": {
-      "en": "my beautifiul offer"
-    },
-    "description": {
-      "en": "description of offer which is really beuatyful"
-    },
-    "reference": "LLGVXJ",
-    "price": 100.0,
-    "elasticity": 0.0,
-    "currency": "EUR",
-    "unit": "day",
-    "dimension": "duration",
-    "status": "draft",
-    "category_id": 2,
-    "account_id": 5,
-    "params": {
-      "identifiant_service": {
-        "fr": "blabla725-924"
-      }
-    },
-    "active": true,
-    "offer_at_client": true,
-    "offer_at_supplier": true,
-    "offer_shipping": true,
-    "offer_remote": true,
-    "category": {
+    {
       "id": 2,
       "name": {
-        "en": "Services",
-        "fr": "Services (en français)"
+        "en": "my beautifiul offer"
       },
       "description": {
-        "en": "Services category",
-        "fr": "Catégorie chapeau pour les services (en français)"
+        "en": "description of offer which is really beuatyful"
       },
-      "sort_order": 0,
-      "parent_id": 1,
-      "dimension": "duration",
+      "reference": "LLGVXJ",
+      "price": 100,
+      "elasticity": 0,
+      "currency": "EUR",
       "unit": "day",
-      "status": "active",
-      "orderable": true,
-      "active": false,
-      "allow_at_client": true,
-      "allow_at_supplier": true,
-      "allow_shipping": true,
-      "allow_remote": false,
-      "other_parent": [],
-      "offers_count": 1
-    },
-    "evaluation_avg": 6.5,
-    "favorite": false,
-    "illustration_url": "https://placeimg.com/640/480?id=2"
-  },
-  {
-    "id": 3,
-    "name": {
-      "en": "7 familly game",
-      "fr": "Le jeu des 7 famille"
-    },
-    "description": {
-      "en": "description of offer fab",
-      "fr": "description of Le jeu des 7 famille"
-    },
-    "reference": "BAVAFC",
-    "price": 10.0,
-    "elasticity": 0.0,
-    "currency": "EUR",
-    "unit": "h",
-    "dimension": null,
-    "status": "draft",
-    "category_id": 44,
-    "account_id": 1,
-    "params": {
-      "game_name": {
-        "en": "Tintin version",
-        "fr": "version Tintin"
-      },
-      "quantity_of_cards": 52
-    },
-    "active": true,
-    "offer_at_client": true,
-    "offer_at_supplier": true,
-    "offer_shipping": true,
-    "offer_remote": true,
-    "category": {
-      "id": 44,
-      "name": {
-        "en": "Card Games",
-        "fr": "Jeux de cartes"
-      },
-      "description": {
-        "en": "English",
-        "fr": "French"
-      },
-      "sort_order": 0,
-      "parent_id": 43,
-      "dimension": "number",
-      "unit": "Nr",
-      "status": "active",
-      "orderable": true,
-      "active": true,
-      "allow_at_client": true,
-      "allow_at_supplier": true,
-      "allow_shipping": true,
-      "allow_remote": false,
-      "other_parent": [],
-      "offers_count": 1
-    },
-    "evaluation_avg": 6.5,
-    "favorite": true,
-    "illustration_url": "https://placeimg.com/640/480?id=3"
-  },
-  {
-    "id": 4,
-    "name": {
-      "en": "name of offer php"
-    },
-    "description": {
-      "en": "description of offer php"
-    },
-    "reference": "EICMNB",
-    "price": 100.0,
-    "elasticity": 20.0,
-    "currency": "EUR",
-    "unit": "h",
-    "dimension": null,
-    "status": "draft",
-    "category_id": 52,
-    "account_id": 1,
-    "params": {
-      "plop": 2525,
-      "condition": {
-        "en": "default conditionvg"
-      }
-    },
-    "active": true,
-    "offer_at_client": true,
-    "offer_at_supplier": true,
-    "offer_shipping": true,
-    "offer_remote": true,
-    "category": {
-      "id": 52,
-      "name": {
-        "en": "Development",
-        "fr": "Développement"
-      },
-      "description": {
-        "en": "English",
-        "fr": "French"
-      },
-      "sort_order": 0,
-      "parent_id": 51,
-      "dimension": null,
-      "unit": null,
-      "status": "active",
-      "orderable": true,
-      "active": true,
-      "allow_at_client": false,
-      "allow_at_supplier": false,
-      "allow_shipping": false,
-      "allow_remote": false,
-      "other_parent": [],
-      "offers_count": 1
-    },
-    "evaluation_avg": 6.5,
-    "favorite": true,
-    "illustration_url": "https://placeimg.com/640/480?id=4"
-  },
-  {
-    "id": 6,
-    "name": {
-      "en": "My nice baby sitter"
-    },
-    "description": {
-      "en": "this is a category for baby sitting"
-    },
-    "reference": "EUXSKQ",
-    "price": 12.75,
-    "elasticity": 20.0,
-    "currency": "EUR",
-    "unit": null,
-    "dimension": null,
-    "status": "draft",
-    "category_id": 8,
-    "account_id": 5,
-    "params": {
-      "nbr_enfants": 5
-    },
-    "active": true,
-    "offer_at_client": true,
-    "offer_at_supplier": true,
-    "offer_shipping": true,
-    "offer_remote": true,
-    "category": {
-      "id": 8,
-      "name": {
-        "en": "Baby sitting",
-        "fr": "Baby sitting"
-      },
-      "description": {
-        "en": "English",
-        "fr": "French"
-      },
-      "sort_order": 1,
-      "parent_id": 6,
       "dimension": "duration",
-      "unit": "hr",
-      "status": "active",
-      "orderable": true,
+      "status": "draft",
+      "category_id": 2,
+      "account_id": 5,
+      "params": {
+        "identifiant_service": {
+          "fr": "blabla725-924"
+        }
+      },
       "active": true,
-      "allow_at_client": true,
-      "allow_at_supplier": true,
-      "allow_shipping": false,
-      "allow_remote": false,
-      "other_parent": [],
-      "offers_count": 2
-    },
-    "evaluation_avg": 6.5,
-    "favorite": true,
-    "illustration_url": "https://placeimg.com/640/480?id=6"
-  },
-  {
-    "id": 5,
-    "name": {
-      "en": "Baby Sitting"
-    },
-    "description": {
-      "en": "Your child/children are between 3 and 13 years old, we provide caring services."
-    },
-    "reference": "FXBTDE",
-    "price": 10.0,
-    "elasticity": 0.0,
-    "currency": "EUR",
-    "unit": "h",
-    "dimension": null,
-    "status": "draft",
-    "category_id": 8,
-    "account_id": 5,
-    "params": {
-      "nbr_enfants": 3
-    },
-    "active": true,
-    "offer_at_client": true,
-    "offer_at_supplier": true,
-    "offer_shipping": true,
-    "offer_remote": true,
-    "category": {
-      "id": 8,
-      "name": {
-        "en": "Baby sitting",
-        "fr": "Baby sitting"
+      "offer_at_client": true,
+      "offer_at_supplier": true,
+      "offer_shipping": true,
+      "offer_remote": true,
+      "category": {
+        "id": 2,
+        "name": {
+          "en": "Services",
+          "fr": "Services (en français)"
+        },
+        "description": {
+          "en": "Services category",
+          "fr": "Catégorie chapeau pour les services (en français)"
+        },
+        "sort_order": 0,
+        "parent_id": 1,
+        "dimension": "duration",
+        "unit": "day",
+        "status": "active",
+        "orderable": true,
+        "active": false,
+        "allow_at_client": true,
+        "allow_at_supplier": true,
+        "allow_shipping": true,
+        "allow_remote": false,
+        "other_parent": [],
+        "offers_count": 1
       },
-      "description": {
-        "en": "English",
-        "fr": "French"
-      },
-      "sort_order": 1,
-      "parent_id": 6,
-      "dimension": "duration",
-      "unit": "hr",
-      "status": "active",
-      "orderable": true,
-      "active": true,
-      "allow_at_client": true,
-      "allow_at_supplier": true,
-      "allow_shipping": false,
-      "allow_remote": false,
-      "other_parent": [],
-      "offers_count": 2
+      "evaluation_avg": 6.5,
+      "favorite": false,
+      "illustration_url": "https://placeimg.com/640/480?id=2"
     },
-    "evaluation_avg": 6.5,
-    "favorite": true,
-    "illustration_url": "https://placeimg.com/640/480?id=5"
-  },
-  {
-    "id": 7,
-    "name": {
-      "en": "baby sitter home service"
-    },
-    "description": {
-      "en": "description of offer 187 service actuellement !!!!"
-    },
-    "reference": "WUDCSQ",
-    "price": 7.75,
-    "elasticity": 50.0,
-    "currency": "EUR",
-    "unit": "hr",
-    "dimension": "duration",
-    "status": "draft",
-    "category_id": 9,
-    "account_id": 5,
-    "params": {
-      "nbr_enfants": 3
-    },
-    "active": true,
-    "offer_at_client": true,
-    "offer_at_supplier": true,
-    "offer_shipping": true,
-    "offer_remote": true,
-    "category": {
-      "id": 9,
-      "name": {
-        "en": "Babysitting for babies",
-        "fr": "Babysitter pour les bébés"
-      },
-      "description": {
-        "en": "English",
-        "fr": "French"
-      },
-      "sort_order": 0,
-      "parent_id": 8,
-      "dimension": "duration",
-      "unit": "hr",
-      "status": "active",
-      "orderable": true,
-      "active": true,
-      "allow_at_client": true,
-      "allow_at_supplier": true,
-      "allow_shipping": false,
-      "allow_remote": false,
-      "other_parent": [],
-      "offers_count": 1
-    },
-    "evaluation_avg": 6.5,
-    "favorite": true,
-    "illustration_url": "https://placeimg.com/640/480?id=7"
-  },
-  {
-    "id": 8,
-    "name": {
-      "fr": "Travaux de batiment"
-    },
-    "description": {
-      "fr": "Travaux de batiment"
-    },
-    "reference": "IHMKFU",
-    "price": 50.0,
-    "elasticity": 0.0,
-    "currency": "EUR",
-    "unit": "hr",
-    "dimension": "duration",
-    "status": "draft",
-    "category_id": 3,
-    "account_id": 1,
-    "params": {
-      "iso_9000": true,
-      "certification": {
-        "en": "BATIMENT"
-      },
-      "distance_maximum": 250
-    },
-    "active": true,
-    "offer_at_client": true,
-    "offer_at_supplier": true,
-    "offer_shipping": false,
-    "offer_remote": true,
-    "category": {
+    {
       "id": 3,
       "name": {
-        "en": "Building work",
-        "fr": "Travaux Bâtiment"
+        "en": "7 familly game",
+        "fr": "Le jeu des 7 famille"
       },
       "description": {
-        "en": "English",
-        "fr": "French"
+        "en": "description of offer fab",
+        "fr": "description of Le jeu des 7 famille"
       },
-      "sort_order": 0,
-      "parent_id": 2,
-      "dimension": "duration",
-      "unit": "hr",
-      "status": "active",
-      "orderable": true,
+      "reference": "BAVAFC",
+      "price": 10,
+      "elasticity": 0,
+      "currency": "EUR",
+      "unit": "h",
+      "dimension": null,
+      "status": "draft",
+      "category_id": 44,
+      "account_id": 1,
+      "params": {
+        "game_name": {
+          "en": "Tintin version",
+          "fr": "version Tintin"
+        },
+        "quantity_of_cards": 52
+      },
       "active": true,
-      "allow_at_client": true,
-      "allow_at_supplier": false,
-      "allow_shipping": true,
-      "allow_remote": false,
-      "other_parent": [],
-      "offers_count": 1
+      "offer_at_client": true,
+      "offer_at_supplier": true,
+      "offer_shipping": true,
+      "offer_remote": true,
+      "category": {
+        "id": 44,
+        "name": {
+          "en": "Card Games",
+          "fr": "Jeux de cartes"
+        },
+        "description": {
+          "en": "English",
+          "fr": "French"
+        },
+        "sort_order": 0,
+        "parent_id": 43,
+        "dimension": "number",
+        "unit": "Nr",
+        "status": "active",
+        "orderable": true,
+        "active": true,
+        "allow_at_client": true,
+        "allow_at_supplier": true,
+        "allow_shipping": true,
+        "allow_remote": false,
+        "other_parent": [],
+        "offers_count": 1
+      },
+      "evaluation_avg": 6.5,
+      "favorite": true,
+      "illustration_url": "https://placeimg.com/640/480?id=3"
     },
+    {
+      "id": 4,
+      "name": {
+        "en": "name of offer php"
+      },
+      "description": {
+        "en": "description of offer php"
+      },
+      "reference": "EICMNB",
+      "price": 100,
+      "elasticity": 20,
+      "currency": "EUR",
+      "unit": "h",
+      "dimension": null,
+      "status": "draft",
+      "category_id": 52,
+      "account_id": 1,
+      "params": {
+        "plop": 2525,
+        "condition": {
+          "en": "default conditionvg"
+        }
+      },
+      "active": true,
+      "offer_at_client": true,
+      "offer_at_supplier": true,
+      "offer_shipping": true,
+      "offer_remote": true,
+      "category": {
+        "id": 52,
+        "name": {
+          "en": "Development",
+          "fr": "Développement"
+        },
+        "description": {
+          "en": "English",
+          "fr": "French"
+        },
+        "sort_order": 0,
+        "parent_id": 51,
+        "dimension": null,
+        "unit": null,
+        "status": "active",
+        "orderable": true,
+        "active": true,
+        "allow_at_client": false,
+        "allow_at_supplier": false,
+        "allow_shipping": false,
+        "allow_remote": false,
+        "other_parent": [],
+        "offers_count": 1
+      },
+      "evaluation_avg": 6.5,
+      "favorite": true,
+      "illustration_url": "https://placeimg.com/640/480?id=4"
+    },
+    {
+      "id": 6,
+      "name": {
+        "en": "My nice baby sitter"
+      },
+      "description": {
+        "en": "this is a category for baby sitting"
+      },
+      "reference": "EUXSKQ",
+      "price": 12.75,
+      "elasticity": 20,
+      "currency": "EUR",
+      "unit": null,
+      "dimension": null,
+      "status": "draft",
+      "category_id": 8,
+      "account_id": 5,
+      "params": {
+        "nbr_enfants": 5
+      },
+      "active": true,
+      "offer_at_client": true,
+      "offer_at_supplier": true,
+      "offer_shipping": true,
+      "offer_remote": true,
+      "category": {
+        "id": 8,
+        "name": {
+          "en": "Baby sitting",
+          "fr": "Baby sitting"
+        },
+        "description": {
+          "en": "English",
+          "fr": "French"
+        },
+        "sort_order": 1,
+        "parent_id": 6,
+        "dimension": "duration",
+        "unit": "hr",
+        "status": "active",
+        "orderable": true,
+        "active": true,
+        "allow_at_client": true,
+        "allow_at_supplier": true,
+        "allow_shipping": false,
+        "allow_remote": false,
+        "other_parent": [],
+        "offers_count": 2
+      },
+      "evaluation_avg": 6.5,
+      "favorite": true,
+      "illustration_url": "https://placeimg.com/640/480?id=6"
+    },
+    {
+      "id": 5,
+      "name": {
+        "en": "Baby Sitting"
+      },
+      "description": {
+        "en": "Your child/children are between 3 and 13 years old, we provide caring services."
+      },
+      "reference": "FXBTDE",
+      "price": 10,
+      "elasticity": 0,
+      "currency": "EUR",
+      "unit": "h",
+      "dimension": null,
+      "status": "draft",
+      "category_id": 8,
+      "account_id": 5,
+      "params": {
+        "nbr_enfants": 3
+      },
+      "active": true,
+      "offer_at_client": true,
+      "offer_at_supplier": true,
+      "offer_shipping": true,
+      "offer_remote": true,
+      "category": {
+        "id": 8,
+        "name": {
+          "en": "Baby sitting",
+          "fr": "Baby sitting"
+        },
+        "description": {
+          "en": "English",
+          "fr": "French"
+        },
+        "sort_order": 1,
+        "parent_id": 6,
+        "dimension": "duration",
+        "unit": "hr",
+        "status": "active",
+        "orderable": true,
+        "active": true,
+        "allow_at_client": true,
+        "allow_at_supplier": true,
+        "allow_shipping": false,
+        "allow_remote": false,
+        "other_parent": [],
+        "offers_count": 2
+      },
+      "evaluation_avg": 6.5,
+      "favorite": true,
+      "illustration_url": "https://placeimg.com/640/480?id=5"
+    },
+    {
+      "id": 7,
+      "name": {
+        "en": "baby sitter home service"
+      },
+      "description": {
+        "en": "description of offer 187 service actuellement !!!!"
+      },
+      "reference": "WUDCSQ",
+      "price": 7.75,
+      "elasticity": 50,
+      "currency": "EUR",
+      "unit": "hr",
+      "dimension": "duration",
+      "status": "draft",
+      "category_id": 9,
+      "account_id": 5,
+      "params": {
+        "nbr_enfants": 3
+      },
+      "active": true,
+      "offer_at_client": true,
+      "offer_at_supplier": true,
+      "offer_shipping": true,
+      "offer_remote": true,
+      "category": {
+        "id": 9,
+        "name": {
+          "en": "Babysitting for babies",
+          "fr": "Babysitter pour les bébés"
+        },
+        "description": {
+          "en": "English",
+          "fr": "French"
+        },
+        "sort_order": 0,
+        "parent_id": 8,
+        "dimension": "duration",
+        "unit": "hr",
+        "status": "active",
+        "orderable": true,
+        "active": true,
+        "allow_at_client": true,
+        "allow_at_supplier": true,
+        "allow_shipping": false,
+        "allow_remote": false,
+        "other_parent": [],
+        "offers_count": 1
+      },
+      "evaluation_avg": 6.5,
+      "favorite": true,
+      "illustration_url": "https://placeimg.com/640/480?id=7"
+    },
+    {
+      "id": 8,
+      "name": {
+        "fr": "Travaux de batiment"
+      },
+      "description": {
+        "fr": "Travaux de batiment"
+      },
+      "reference": "IHMKFU",
+      "price": 50,
+      "elasticity": 0,
+      "currency": "EUR",
+      "unit": "hr",
+      "dimension": "duration",
+      "status": "draft",
+      "category_id": 3,
+      "account_id": 1,
+      "params": {
+        "iso_9000": true,
+        "certification": {
+          "en": "BATIMENT"
+        },
+        "distance_maximum": 250
+      },
+      "active": true,
+      "offer_at_client": true,
+      "offer_at_supplier": true,
+      "offer_shipping": false,
+      "offer_remote": true,
+      "category": {
+        "id": 3,
+        "name": {
+          "en": "Building work",
+          "fr": "Travaux Bâtiment"
+        },
+        "description": {
+          "en": "English",
+          "fr": "French"
+        },
+        "sort_order": 0,
+        "parent_id": 2,
+        "dimension": "duration",
+        "unit": "hr",
+        "status": "active",
+        "orderable": true,
+        "active": true,
+        "allow_at_client": true,
+        "allow_at_supplier": false,
+        "allow_shipping": true,
+        "allow_remote": false,
+        "other_parent": [],
+        "offers_count": 1
+      },
       "evaluation_avg": 6.5,
       "favorite": false,
       "illustration_url": "https://placeimg.com/640/480?id=8"
@@ -1048,37 +1305,37 @@
   ],
   "offer-headers": [
     {
-      "text": "Nom de l'offre",
+      "text": "headers.offers.name",
       "align": "start",
       "sortable": true,
       "value": "name"
     },
-   {
-      "text": "Label",
+    {
+      "text": "headers.offers.label",
       "align": "start",
       "sortable": true,
       "value": "label"
     },
-   {
-      "text": "Produit(s)",
+    {
+      "text": "headers.offers.products",
       "align": "start",
       "sortable": true,
       "value": "products"
     },
-   {
-      "text": "Prix",
+    {
+      "text": "headers.offers.price",
       "align": "end",
       "sortable": true,
       "value": "price"
     },
-   {
-      "text": "Unité de prix",
+    {
+      "text": "headers.offers.priceUnit",
       "align": "center",
       "sortable": true,
       "value": "unitStr"
     },
-   {
-      "text": "Statut",
+    {
+      "text": "headers.offers.status",
       "align": "start",
       "sortable": true,
       "value": "statusStr"
@@ -1086,43 +1343,43 @@
   ],
   "order-headers": [
     {
-      "text": "Date de commande",
+      "text": "headers.orders.order_date",
       "align": "start",
       "sortable": true,
       "value": "date"
     },
     {
-      "text": "Offre",
+      "text": "headers.orders.offer",
       "align": "start",
       "sortable": true,
       "value": "offer"
     },
-   {
-      "text": "Status",
+    {
+      "text": "headers.orders.status",
       "align": "start",
       "sortable": true,
       "value": "status"
     },
-   {
-      "text": "Date de début",
+    {
+      "text": "headers.orders.startDate",
       "align": "start",
       "sortable": true,
       "value": "startDate"
     },
-   {
-      "text": "Date de fin",
+    {
+      "text": "headers.orders.endDate",
       "align": "start",
       "sortable": true,
       "value": "endDate"
     },
-   {
-      "text": "Quantité",
+    {
+      "text": "headers.orders.quantity",
       "align": "end",
       "sortable": true,
       "value": "quantity"
     },
-   {
-      "text": "Prix",
+    {
+      "text": "headers.orders.price",
       "align": "end",
       "sortable": true,
       "value": "price"
@@ -1172,6 +1429,282 @@
       "name": "forms.contacts.step.3",
       "composant": "fv-contact-step-offer",
       "resume": "fv-contact-summary-step-offer"
+    }
+  ],
+  "orders": [
+    {
+      "id": 2,
+      "account_id": 1,
+      "reference": "MRBQCH",
+      "status": "pending",
+      "currency": "EUR",
+      "total": 0,
+      "order_date": null,
+      "params": {},
+      "order_items": [
+        {
+          "id": 2,
+          "order_id": 2,
+          "offer_id": 2,
+          "status": "draft",
+          "price": 100,
+          "quantity": 25,
+          "dimension": "duration",
+          "unit": "day",
+          "currency": "EUR",
+          "params": {}
+        }
+      ],
+      "amount": 2500
+    },
+    {
+      "id": 1,
+      "account_id": 3,
+      "reference": "JQAJAG",
+      "status": "suspended",
+      "currency": "EUR",
+      "total": 0,
+      "order_date": null,
+      "params": {},
+      "order_items": [
+        {
+          "id": 1,
+          "order_id": 1,
+          "offer_id": 1,
+          "status": "draft",
+          "price": 100,
+          "quantity": 15,
+          "dimension": "volume",
+          "unit": "m³",
+          "currency": "EUR",
+          "params": {
+            "params": {
+              "orderinfo": "I want with strawberry flavour"
+            }
+          }
+        }
+      ],
+      "amount": 1500
+    },
+    {
+      "id": 3,
+      "account_id": 6,
+      "reference": "UEKBIJ",
+      "status": "inactive",
+      "currency": "EUR",
+      "total": 0,
+      "order_date": null,
+      "params": {},
+      "order_items": [
+        {
+          "id": 3,
+          "order_id": 3,
+          "offer_id": 3,
+          "status": "draft",
+          "price": 10,
+          "quantity": 15,
+          "dimension": null,
+          "unit": null,
+          "currency": "EUR",
+          "params": {}
+        }
+      ],
+      "amount": 150
+    },
+    {
+      "id": 4,
+      "account_id": 1,
+      "reference": "DGFHPM",
+      "status": "active",
+      "currency": "EUR",
+      "total": 0,
+      "order_date": null,
+      "params": {},
+      "order_items": [
+        {
+          "id": 4,
+          "order_id": 4,
+          "offer_id": 1,
+          "status": "draft",
+          "price": 100,
+          "quantity": 12,
+          "dimension": "volume",
+          "unit": "m³",
+          "currency": "EUR",
+          "params": {
+            "params": {
+              "orderinfo": "order info 2"
+            }
+          }
+        }
+      ],
+      "amount": 1200
+    },
+    {
+      "id": 5,
+      "account_id": 1,
+      "reference": "OPIJJG",
+      "status": "active",
+      "currency": "EUR",
+      "total": 0,
+      "order_date": null,
+      "params": {},
+      "order_items": [
+        {
+          "id": 5,
+          "order_id": 5,
+          "offer_id": 4,
+          "status": "draft",
+          "price": 100,
+          "quantity": 25,
+          "dimension": null,
+          "unit": null,
+          "currency": "EUR",
+          "params": {}
+        }
+      ],
+      "amount": 2500
+    },
+    {
+      "id": 6,
+      "account_id": 5,
+      "reference": "URUOSR",
+      "status": "pending",
+      "currency": "EUR",
+      "total": 0,
+      "order_date": null,
+      "params": {},
+      "order_items": [
+        {
+          "id": 6,
+          "order_id": 6,
+          "offer_id": 4,
+          "status": "draft",
+          "price": 100,
+          "quantity": 25,
+          "dimension": null,
+          "unit": "h",
+          "currency": "EUR",
+          "params": {
+            "params": {
+              "plop": 15
+            }
+          }
+        }
+      ],
+      "amount": 2500
+    },
+    {
+      "id": 7,
+      "account_id": 5,
+      "reference": "EQEGXE",
+      "status": "pending",
+      "currency": "EUR",
+      "total": 0,
+      "order_date": null,
+      "params": {},
+      "order_items": [
+        {
+          "id": 7,
+          "order_id": 7,
+          "offer_id": 4,
+          "status": "draft",
+          "price": 100,
+          "quantity": 25,
+          "dimension": null,
+          "unit": "h",
+          "currency": "EUR",
+          "params": {
+            "params": {
+              "plop": 15
+            }
+          }
+        }
+      ],
+      "amount": 2500
+    },
+    {
+      "id": 8,
+      "account_id": 5,
+      "reference": "LJCTCI",
+      "status": "pending",
+      "currency": "EUR",
+      "total": 0,
+      "order_date": null,
+      "params": {},
+      "order_items": [
+        {
+          "id": 8,
+          "order_id": 8,
+          "offer_id": 4,
+          "status": "draft",
+          "price": 100,
+          "quantity": 25,
+          "dimension": null,
+          "unit": "h",
+          "currency": "EUR",
+          "params": {
+            "params": {
+              "plop": 15
+            }
+          }
+        }
+      ],
+      "amount": 2500
+    },
+    {
+      "id": 9,
+      "account_id": 1,
+      "reference": "VSCAMT",
+      "status": "pending",
+      "currency": "EUR",
+      "total": 0,
+      "order_date": null,
+      "params": {},
+      "order_items": [
+        {
+          "id": 9,
+          "order_id": 9,
+          "offer_id": 8,
+          "status": "draft",
+          "price": 50,
+          "quantity": 2,
+          "dimension": "duration",
+          "unit": "hr",
+          "currency": "EUR",
+          "params": {
+            "params": {
+              "iso_9000": false
+            }
+          }
+        }
+      ],
+      "amount": 100
+    },
+    {
+      "id": 10,
+      "account_id": 1,
+      "reference": "VKPAEP",
+      "status": "pending",
+      "currency": "EUR",
+      "total": 0,
+      "order_date": null,
+      "params": {},
+      "order_items": [
+        {
+          "id": 10,
+          "order_id": 10,
+          "offer_id": 9,
+          "status": "draft",
+          "price": 3.75,
+          "quantity": 10,
+          "dimension": "number",
+          "unit": "Nr",
+          "currency": "EUR",
+          "params": {}
+        }
+      ],
+      "amount": 37.5
     }
   ]
 }

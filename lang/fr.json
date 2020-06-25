@@ -30,6 +30,17 @@
         "2": "Offres",
         "3": "Structure",
         "4": "Pre-visualisation"
+      },
+      "detail": {
+        "partner": "Partenaire",
+        "charter": "Chartre",
+        "dateOfSignature": "Date de signature",
+        "effectiveDate": "Date effective",
+        "endDate":"Date de fin",
+        "type": "Type de contract"
+      },
+      "structure": {
+        "structureType": "Type de structure"
       }
     },
     "contacts": {
@@ -49,5 +60,50 @@
     "third-party": "Tiers",
     "documents": "Documents",
     "dashboard": "Tableau de bord"
+  },
+  "buttons": {
+    "create": {
+      "product": "CRÉER PRODUIT",
+      "contract": "CRÉER CONTRAT"
+    },
+    "submit": "Envoyer",
+    "previous": "Précédent",
+    "next": "Suivant"
+  },
+  "headers": {
+    "products": {
+      "name": "Nom du produit",
+      "quantity": "Quantité",
+      "price": "Prix",
+      "priceUnit": "Unité de prix",
+      "status": "Statut"
+    },
+    "contracts": {
+      "effectiveDate": "Date effective",
+      "dateOfSignature": "Date de signature",
+      "endDate": "Date de fin",
+      "contact": "Contact",
+      "type": "Type de partnenariat",
+      "structure": "Structure",
+      "offer": "Offre",
+      "order": "Commande"
+    },
+    "orders": {
+      "order_date": "Date de commande",
+      "offer": "Offre",
+      "status": "Statut",
+      "startDate": "Date de début",
+      "endDate": "Date de fin",
+      "quantity": "Quantité",
+      "price": "Prix"
+    },
+    "offers": {
+      "name": "Nom de l'offre",
+      "label": "Label",
+      "products": "Produit(s)",
+      "price": "Prix",
+      "priceUnit": "Unité prix",
+      "status": "Statut"
+    }
   }
 }

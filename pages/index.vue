@@ -3,10 +3,10 @@
     v-row
       v-col(cols="6")
         v-btn(color='primary' nuxt='' to='/contracts/new')
-          | {{ $t('menus.contractnew') }}
+          | Nouveau contrat
       v-col(cols="6")
         v-btn(color='primary' nuxt='' to='/partners/new')
-          | {{ $t('menus.partnernew') }}
+          | Nouveau partenaire
 </template>
 
 <script>

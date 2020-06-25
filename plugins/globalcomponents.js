@@ -1,5 +1,6 @@
 import Vue from 'vue'
 // Importation des composants utilitaires
+import FvMenuList from '@/components/FvMenuList'
 import FvAccountAvatar from '@/components/FvAccountAvatar'
 import FvAutoComplete from '@/components/FvAutoComplete'
 import FvContactDialog from '@/components/FvContactDialog'
@@ -41,9 +42,9 @@ import FvOfferList from '@/components/FvOfferList'
 import FvOrderListSearch from '@/components/FvOrderListSearch'
 import FvOrderList from '@/components/FvOrderList'
 
-Vue.component('fv-account-avatar', FvAccountAvatar)
-
 // Déclarations composants utilitaires
+Vue.component('fv-menu-list', FvMenuList)
+Vue.component('fv-account-avatar', FvAccountAvatar)
 Vue.component('fv-auto-complete', FvAutoComplete)
 Vue.component('fv-contact-dialog', FvContactDialog)
 Vue.component('fv-contact-edit', FvContactEdit)

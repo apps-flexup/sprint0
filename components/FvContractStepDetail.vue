@@ -21,7 +21,7 @@
             :loading="isLoading"
             :search-input.sync="search"
             append-icon="mdi-plus"
-            label="Partenaire"
+            :label="$t('forms.contracts.detail.partner')"
             item-text="name"
             item-value="id"
             clearable=''
@@ -34,7 +34,7 @@
             :items="charterList"
             item-text="name"
             item-value="id"
-            label="Charter"
+            :label="$t('forms.contracts.detail.charter')"
             clearable=''
             outlined=''
           )
@@ -42,7 +42,7 @@
         v-col(cols="6")
           fv-field-date(
             :dateRef="dteSignature"
-            label="Date signature"
+            :label="$t('forms.contracts.detail.dateOfSignature')"
             @date:changed="dateSignatureChanged"
             clearable=''
             outlined=''
@@ -50,7 +50,7 @@
         v-col(cols="6")
           fv-field-date(
             :dateRef="dteEffect"
-            label="Date effective"
+            :label="$t('forms.contracts.detail.effectiveDate')"
             @date:changed="dateEffectChanged"
             clearable=''
             outlined=''
@@ -59,7 +59,7 @@
         v-col(cols="6")
           fv-field-date(
             :dateRef="dteEnd"
-            label="Date fin"
+            :label="$t('forms.contracts.detail.endDate')"
             @date:changed="dateEndChanged"
             clearable=''
             outlined=''
@@ -68,6 +68,17 @@
           v-textField(
             v-model="duree"
             readonly=''
+            outlined=''
+          )
+      v-row
+        v-col(cols="6")
+          v-select(
+            v-model="contractType"
+            :items="contractTypeList"
+            item-text="name"
+            item-value="id"
+            :label="$t('forms.contracts.detail.type')"
+            clearable=''
             outlined=''
           )
 </template>
@@ -101,14 +112,8 @@ export default {
   data() {
     return {
       showDialog: false,
-      // contact: null,
-      // charter: null,
-      // contractType: null,
       isLoading: false,
       search: null,
-      // dteSignature: null,
-      // dteEffect: null,
-      // dteEnd: null,
       items: [],
       payload: {
         contact: null,

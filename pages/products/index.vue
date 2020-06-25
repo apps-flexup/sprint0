@@ -5,7 +5,7 @@
       v-btn(
         x-large
         color="#FCB71C"
-      ) Create product
+      ) {{ $t('buttons.create.product') }}
     fv-product-list
 </template>
 
