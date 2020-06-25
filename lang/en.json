@@ -46,6 +46,16 @@
         "2": "Products",
         "3": "Offers"
       }
+    },
+    "products": {
+      "new": {
+        "title": "New product",
+        "name": "Product name",
+        "quantity": "Quantity",
+        "priceWithoutTax": "Price without tax",
+        "priceUnit":"Price unit",
+        "status": "Status"
+      }
     }
   },
   "menu" : {

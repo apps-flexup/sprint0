@@ -77,7 +77,7 @@
             :items="contractTypeList"
             item-text="name"
             item-value="id"
-            :label="$t('forms.contracts.detail.type')"
+            :label="$t(forms.contracts.detail.type)"
             clearable=''
             outlined=''
           )

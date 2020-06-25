@@ -23,7 +23,7 @@ export default {
   data() {
     return {
       dialog: false,
-      title: 'New product',
+      title: this.$i18n.t('forms.products.new.title'),
       values: {
         name: null,
         quantity: null,

@@ -4,33 +4,33 @@
       v-col(cols='6')
         v-text-field(
           v-model="values.name"
-          label='Nom du produit'
+          :label="$t('forms.products.new.name')"
           outlined=''
         )
       v-col(cols='6')
         v-text-field(
           v-model="values.quantity"
-          label='Quantité'
+          :label="$t('forms.products.new.quantity')"
           outlined=''
         )
     v-row
       v-col(cols='6')
         v-text-field(
           v-model="values.priceWithoutTax"
-          label='Prix excl taxe'
+          :label="$t('forms.products.new.priceWithoutTax')"
           outlined=''
         )
       v-col(cols='6')
         v-text-field(
           v-model="values.priceUnit"
-          label='Unité de prix'
+          :label="$t('forms.products.new.priceUnit')"
           outlined=''
         )
     v-row
       v-col(cols='6')
         v-text-field(
           v-model="values.status"
-          label='Status'
+          :label="$t('forms.products.new.status')"
           outlined=''
         )
 </template>
