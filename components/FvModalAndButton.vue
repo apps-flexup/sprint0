@@ -30,12 +30,6 @@ export default {
         return ''
       }
     },
-    dialog: {
-      type: Boolean,
-      default() {
-        return false
-      }
-    },
     subtitle: {
       type: String,
       default() {
@@ -53,6 +47,11 @@ export default {
       default() {
         return {}
       }
+    }
+  },
+  data() {
+    return {
+      dialog: false
     }
   },
   methods: {
