@@ -8,6 +8,8 @@
       v-card
         v-card-title
           span.headline {{ this.title }}
+        v-card-subtitle
+          span {{ this.subtitle }}
         v-card-text
           v-container
             component(
@@ -34,6 +36,12 @@ export default {
       type: Boolean,
       default() {
         return false
+      }
+    },
+    subtitle: {
+      type: String,
+      default() {
+        return ''
       }
     },
     title: {
