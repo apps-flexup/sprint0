@@ -16,6 +16,11 @@
       "to": "/contracts"
     },
     {
+      "icon": "mdi-flask-empty",
+      "title": "menu.products",
+      "to": "/products"
+    },
+    {
       "icon": "mdi-account-group",
       "title": "menu.contacts",
       "to": "/contacts"
