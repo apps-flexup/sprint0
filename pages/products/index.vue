@@ -2,11 +2,10 @@
   .products
     v-row(align="center")
       v-spacer
-      v-btn(
-        x-large
-        color="#FCB71C"
+      fv-create-button(
+        :text="$t('buttons.create.product')"
         @click="dialog = true"
-      ) {{ $t('buttons.create.product') }}
+      )
     fv-product-list
     fv-modal(
       :dialog="dialog"
