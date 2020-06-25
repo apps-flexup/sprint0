@@ -115,5 +115,9 @@
       "priceUnit": "Unité prix",
       "status": "Statut"
     }
+  },
+  "modal": {
+    "close": "Fermer",
+    "save": "Sauvegarder"
   }
 }

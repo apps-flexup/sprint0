@@ -18,8 +18,8 @@
             )
         v-card-actions
           v-spacer
-          v-btn(color='blue darken-1' text='' @click='close') Close
-          v-btn(color='blue darken-1' text='' @click='save') Save
+          v-btn(color='blue darken-1' text='' @click='close') {{ $t('modal.close') }}
+          v-btn(color='blue darken-1' text='' @click='save') {{ $t('modal.save') }}
 </template>
 
 <script>

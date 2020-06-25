@@ -112,5 +112,9 @@
       "priceUnit": "Price unit",
       "status": "Status"
     }
+  },
+  "modal": {
+    "close": "Close",
+    "save": "Save"
   }
 }
