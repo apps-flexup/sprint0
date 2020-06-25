@@ -26,9 +26,9 @@ export default {
       values: {
         name: null,
         quantity: null,
-        priceWithoutTax: null,
-        priceUnit: null,
-        status: null
+        price: null,
+        unitStr: null,
+        statusStr: null
       }
     }
   },
@@ -47,6 +47,7 @@ export default {
     },
     save(payload) {
       console.log('save modal with values: ', payload)
+      this.$store.dispatch('products/add', payload)
       this.dialog = false
     }
   }

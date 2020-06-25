@@ -16,20 +16,20 @@
     v-row
       v-col(cols='6')
         v-text-field(
-          v-model="values.priceWithoutTax"
+          v-model="values.price"
           :label="$t('forms.products.new.priceWithoutTax')"
           outlined=''
         )
       v-col(cols='6')
         v-text-field(
-          v-model="values.priceUnit"
+          v-model="values.unitStr"
           :label="$t('forms.products.new.priceUnit')"
           outlined=''
         )
     v-row
       v-col(cols='6')
         v-text-field(
-          v-model="values.status"
+          v-model="values.statusStr"
           :label="$t('forms.products.new.status')"
           outlined=''
         )
