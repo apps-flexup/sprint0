@@ -28,7 +28,12 @@ import FvContractSummaryStepDetail from '@/components/FvContractSummaryStepDetai
 import FvContractSummaryStepOffer from '@/components/FvContractSummaryStepOffer'
 import FvContractSummaryStepPaiement from '@/components/FvContractSummaryStepPaiement'
 import FvContractSummaryStepStructure from '@/components/FvContractSummaryStepStructure'
+import FvCreateButton from '@/components/FvCreateButton'
+import FvModal from '@/components/FvModal'
+import FvModalAndButton from '@/components/FvModalAndButton'
 import FvNav from '@/components/FvNav'
+import FvNewPartnerForm from '@/components/FvNewPartnerForm'
+import FvNewProductForm from '@/components/FvNewProductForm'
 import FvStepper from '@/components/FvStepper'
 import FvEtape from '@/components/FvEtape'
 import FvFieldDate from '@/components/FvFieldDate'
@@ -80,7 +85,12 @@ Vue.component(
   'fv-contract-summary-step-paiement',
   FvContractSummaryStepPaiement
 )
+Vue.component('fv-create-button', FvCreateButton)
+Vue.component('fv-modal', FvModal)
+Vue.component('fv-modal-and-button', FvModalAndButton)
 Vue.component('fv-nav', FvNav)
+Vue.component('fv-new-partner-form', FvNewPartnerForm)
+Vue.component('fv-new-product-form', FvNewProductForm)
 Vue.component('fv-stepper', FvStepper)
 Vue.component('fv-etape', FvEtape)
 Vue.component('fv-field-date', FvFieldDate)

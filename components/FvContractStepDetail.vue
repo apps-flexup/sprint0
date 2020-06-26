@@ -1,6 +1,16 @@
 <template lang="pug">
   .fv-contract-step-detail
     fv-contact-dialog(:show='showDialog')
+    v-row
+      v-spacer
+      fv-modal-and-button(
+        :buttonText="$t('buttons.create.partner')"
+        :title="$t('forms.partners.new.title')"
+        :subtitle="$t('forms.partners.new.subtitle')"
+        component="fv-new-partner-form"
+        @close="modalClosed"
+        @save="modalSaved"
+      )
     .fv-contract-step1(v-if="etape.id === 1")
       v-row
         v-col(cols="6")
@@ -239,6 +249,12 @@ export default {
         })
         this.isLoading = false
       }, 500)
+    },
+    modalClosed() {
+      console.log('close')
+    },
+    modalSaved(payload) {
+      console.log('saved: ', payload)
     }
   }
 }

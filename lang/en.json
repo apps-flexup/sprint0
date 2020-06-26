@@ -46,6 +46,29 @@
         "2": "Products",
         "3": "Offers"
       }
+    },
+    "products": {
+      "new": {
+        "title": "New product",
+        "name": "Product name",
+        "quantity": "Quantity",
+        "priceWithoutTax": "Price without tax",
+        "priceUnit":"Price unit",
+        "status": "Status"
+      }
+    },
+    "partners": {
+      "new": {
+        "title": "New partner",
+        "subtitle": "Specify your partner's information",
+        "name": "Partner name",
+        "juridicalStatus": "Juridical status",
+        "siret": "SIRET",
+        "address":"Address",
+        "complement": "Complement",
+        "zip": "ZIP",
+        "city": "City"
+      }
     }
   },
   "menu" : {
@@ -61,7 +84,8 @@
   "buttons": {
     "create": {
       "product": "CREATE PRODUCT",
-      "contract": "CREATE CONTRACT"
+      "contract": "CREATE CONTRACT",
+      "partner": "CREATE PARTNER"
     },
     "submit": "Submit",
     "previous": "Previous",
@@ -102,5 +126,9 @@
       "priceUnit": "Price unit",
       "status": "Status"
     }
+  },
+  "modal": {
+    "close": "Close",
+    "save": "Save"
   }
 }

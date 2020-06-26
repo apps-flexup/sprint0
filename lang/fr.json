@@ -49,6 +49,29 @@
         "2": "Produits",
         "3": "Offres"
       }
+    },
+    "products": {
+      "new": {
+        "title": "Nouveau produit",
+        "name": "Nom du produit",
+        "quantity": "Quantité",
+        "priceWithoutTax": "Prix excluant les taxes",
+        "priceUnit":"Unité de prix",
+        "status": "Statut"
+      }
+    },
+    "partners": {
+      "new": {
+        "title": "Nouveau partenaire",
+        "subtitle": "Précisez les informations de votre partenaire",
+        "name": "Nom du partenaire",
+        "juridicalStatus": "Status juridique",
+        "siret": "SIRET",
+        "address":"Adresse",
+        "complement": "Complément",
+        "zip": "Code postal",
+        "city": "Ville"
+      }
     }
   },
   "menu" : {
@@ -64,7 +87,8 @@
   "buttons": {
     "create": {
       "product": "CRÉER PRODUIT",
-      "contract": "CRÉER CONTRAT"
+      "contract": "CRÉER CONTRAT",
+      "partner": "CRÉER PARTENAIRE"
     },
     "submit": "Envoyer",
     "previous": "Précédent",
@@ -105,5 +129,9 @@
       "priceUnit": "Unité prix",
       "status": "Statut"
     }
+  },
+  "modal": {
+    "close": "Fermer",
+    "save": "Sauvegarder"
   }
 }

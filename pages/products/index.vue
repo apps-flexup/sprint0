@@ -2,22 +2,26 @@
   .products
     v-row(align="center")
       v-spacer
-      v-btn(
-        x-large
-        color="#FCB71C"
-      ) {{ $t('buttons.create.product') }}
+      fv-modal-and-button(
+        :buttonText="$t('buttons.create.product')"
+        :title="$t('forms.products.new.title')"
+        component="fv-new-product-form"
+        @close="close"
+        @save="save"
+      )
     fv-product-list
 </template>
 
 <script>
 export default {
-  computed: {
-    machin() {
-      return 42
+  methods: {
+    close() {
+      // Reset form ?
+    },
+    save(payload) {
+      console.log('save modal with values: ', payload)
+      this.$store.dispatch('products/add', payload)
     }
-  },
-  mounted() {
-    console.log('Composant ', this.$options.name)
   }
 }
 </script>
