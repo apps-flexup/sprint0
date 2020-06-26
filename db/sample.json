@@ -91,10 +91,7 @@
       "offers_count": 0,
       "params": {},
       "parent_id": null,
-      "roles": [
-        "customer",
-        "supplier"
-      ],
+      "roles": ["customer", "supplier"],
       "roles_methods": null,
       "supplier": false,
       "user_id": 1
@@ -106,9 +103,7 @@
       "offers_count": 7,
       "params": {},
       "parent_id": null,
-      "roles": [
-        "customer"
-      ],
+      "roles": ["customer"],
       "roles_methods": null,
       "supplier": false,
       "user_id": 2
@@ -120,9 +115,7 @@
       "offers_count": 0,
       "params": {},
       "parent_id": null,
-      "roles": [
-        "supplier"
-      ],
+      "roles": ["supplier"],
       "roles_methods": null,
       "supplier": false,
       "user_id": 3
@@ -134,9 +127,7 @@
       "offers_count": 0,
       "params": {},
       "parent_id": null,
-      "roles": [
-        "supplier"
-      ],
+      "roles": ["supplier"],
       "roles_methods": null,
       "supplier": false,
       "user_id": 1
@@ -148,10 +139,7 @@
       "offers_count": 0,
       "params": {},
       "parent_id": null,
-      "roles": [
-        "supplier",
-        "admin"
-      ],
+      "roles": ["supplier", "admin"],
       "roles_methods": null,
       "supplier": false,
       "user_id": 1
@@ -163,10 +151,7 @@
       "offers_count": 0,
       "params": {},
       "parent_id": null,
-      "roles": [
-        "admin",
-        "supplier"
-      ],
+      "roles": ["admin", "supplier"],
       "roles_methods": null,
       "supplier": false,
       "user_id": 1
@@ -178,10 +163,7 @@
       "offers_count": 0,
       "params": {},
       "parent_id": null,
-      "roles": [
-        "customer",
-        "partner"
-      ],
+      "roles": ["customer", "partner"],
       "roles_methods": null,
       "supplier": false,
       "user_id": 3
@@ -193,9 +175,7 @@
       "offers_count": 0,
       "params": {},
       "parent_id": null,
-      "roles": [
-        "partner"
-      ],
+      "roles": ["partner"],
       "roles_methods": null,
       "supplier": false,
       "user_id": 2
@@ -207,10 +187,7 @@
       "offers_count": 0,
       "params": {},
       "parent_id": null,
-      "roles": [
-        "supplier",
-        "customer"
-      ],
+      "roles": ["supplier", "customer"],
       "roles_methods": null,
       "supplier": false,
       "user_id": 2
@@ -364,7 +341,7 @@
     {
       "align": "start",
       "sortable": true,
-      "text": "headers.contracts.type",
+      "text": "headers.contracts.name",
       "value": "contractType"
     },
     {
@@ -390,22 +367,13 @@
     {
       "id": 1,
       "name": "Consulting",
-      "categories": [
-        6,
-        7,
-        9,
-        8
-      ],
+      "categories": [6, 7, 9, 8],
       "id_account": null
     },
     {
       "id": 11,
       "name": "Consulting",
-      "categories": [
-        9,
-        8,
-        31
-      ],
+      "categories": [9, 8, 31],
       "id_account": 1
     },
     {
@@ -1245,64 +1213,6 @@
       "illustration_url": "https://placeimg.com/640/480?id=8"
     }
   ],
-  "structures": [
-    {
-      "id": 1,
-      "name": "Base 40% + Equity 60%",
-      "schema": [
-        {
-          "name": "base",
-          "value": 0.4
-        },
-        {
-          "name": "Equity",
-          "value": 0.6
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "name": "Base 30% + Equity 70%",
-      "schema": [
-        {
-          "name": "base",
-          "value": 0.3
-        },
-        {
-          "name": "Equity",
-          "value": 0.7
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "name": "Base 60% + Equity 40%",
-      "schema": [
-        {
-          "name": "base",
-          "value": 0.6
-        },
-        {
-          "name": "Equity",
-          "value": 0.4
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "name": "Base 50% + Equity 50%",
-      "schema": [
-        {
-          "name": "base",
-          "value": 0.5
-        },
-        {
-          "name": "Equity",
-          "value": 0.5
-        }
-      ]
-    }
-  ],
   "offer-headers": [
     {
       "text": "headers.offers.name",
@@ -1383,6 +1293,64 @@
       "align": "end",
       "sortable": true,
       "value": "price"
+    }
+  ],
+  "structures": [
+    {
+      "id": 1,
+      "name": "Base 40% + Equity 60%",
+      "schema": [
+        {
+          "name": "base",
+          "value": 0.4
+        },
+        {
+          "name": "Equity",
+          "value": 0.6
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Base 30% + Equity 70%",
+      "schema": [
+        {
+          "name": "base",
+          "value": 0.3
+        },
+        {
+          "name": "Equity",
+          "value": 0.7
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Base 60% + Equity 40%",
+      "schema": [
+        {
+          "name": "base",
+          "value": 0.6
+        },
+        {
+          "name": "Equity",
+          "value": 0.4
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Base 50% + Equity 50%",
+      "schema": [
+        {
+          "name": "base",
+          "value": 0.5
+        },
+        {
+          "name": "Equity",
+          "value": 0.5
+        }
+      ]
     }
   ],
   "contract-steps": [
