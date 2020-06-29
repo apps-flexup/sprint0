@@ -84,7 +84,8 @@ export default {
       redirect: {
         login: '/login',
         callback: '/callback',
-        home: '/'
+        home: '/',
+        logout: process.env.OAUTH_ENDPOINT_LOGOUT
       }
     },
     plugins: ['~/plugins/auth.js']
