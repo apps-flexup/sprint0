@@ -3,7 +3,7 @@
     v-btn(
       x-large
       color="#FCB71C"
-      @click="click"
+      @click.prevent="click"
     ) {{ this.text }}
 </template>
 
@@ -20,7 +20,7 @@ export default {
   },
   methods: {
     click() {
-      this.$emit('click')
+      this.$emit('button:click')
     }
   }
 }

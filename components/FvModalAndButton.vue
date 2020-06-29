@@ -9,8 +9,8 @@
         :title="title"
         :subtitle="subtitle"
         :component="component"
-        @close="close"
-        @save="save"
+        @modal:close="close"
+        @modal:save="save"
       )
 </template>
 

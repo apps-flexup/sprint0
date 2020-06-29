@@ -47,6 +47,9 @@ import FvOfferList from '@/components/FvOfferList'
 import FvOrderListSearch from '@/components/FvOrderListSearch'
 import FvOrderList from '@/components/FvOrderList'
 import FvPartnerList from '@/components/FvPartnerList'
+import FvModalSlot from '@/components/FvModalSlot'
+import FvPartnerModal from '@/components/FvPartnerModal'
+import FvSpeedDial from '@/components/FvSpeedDial'
 
 // Déclarations composants utilitaires
 Vue.component('fv-menu-list', FvMenuList)
@@ -109,3 +112,6 @@ Vue.component('fv-order-list-search', FvOrderListSearch)
 Vue.component('fv-order-list', FvOrderList)
 Vue.component('fv-country-list', FvCountryList)
 Vue.component('fv-partner-list', FvPartnerList)
+Vue.component('fv-modal-slot', FvModalSlot)
+Vue.component('fv-partner-modal', FvPartnerModal)
+Vue.component('fv-speed-dial', FvSpeedDial)

@@ -5,11 +5,15 @@
       persistent
       max-width='50%'
     )
+      v-toolbar()
+        v-app-bar-nav-icon
+        v-toolbar-title {{ this.title }}
+        v-spacer
+        v-btn(icon @click.prevent="close")
+          v-icon mdi-close
       v-card
-        v-card-title
-          span.headline {{ this.title }}
-        v-card-subtitle
-          span {{ this.subtitle }}
+        v-card-subtitle(v-if="this.subtitle")
+          span.headline {{ this.subtitle }}
         v-card-text
           v-container
             component(
@@ -62,10 +66,10 @@ export default {
   },
   methods: {
     close() {
-      this.$emit('close')
+      this.$emit('modal:close')
     },
     save() {
-      this.$emit('save', this.values)
+      this.$emit('modal:save', this.values)
     }
   }
 }

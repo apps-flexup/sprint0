@@ -18,7 +18,7 @@
         v-icon mdi-minus
       v-toolbar-title(v-text="title")
       v-spacer
-    v-content
+    v-main
       v-container
         nuxt
     v-footer(:fixed="fixed" app)

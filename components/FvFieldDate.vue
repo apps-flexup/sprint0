@@ -2,7 +2,7 @@
   .fv-field-date
     v-menu(
       v-model='fromDateMenu'
-      :close-on-content-click='true'
+      close-on-content-click=''
       :nudge-right='40'
       transition='scale-transition'
       offset-y=''

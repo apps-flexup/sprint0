@@ -8,8 +8,8 @@
         :title="$t('forms.partners.new.title')"
         :subtitle="$t('forms.partners.new.subtitle')"
         component="fv-new-partner-form"
-        @close="modalClosed"
-        @save="modalSaved"
+        @modal:close="modalClosed"
+        @modal:save="modalSaved"
       )
     .fv-contract-step1(v-if="etape.id === 1")
       v-row

@@ -6,7 +6,13 @@
           :headers='headers'
           :items='items'
           item-key='id'
+          @click:row='selected'
         )
+          template(v-slot:item.actions='{ item }')
+            v-icon.mr-2(small='' @click.stop='selected(item)')
+              | mdi-pencil
+            v-icon(small='' @click.stop='deleteItem(item)')
+              | mdi-delete
 </template>
 
 <script>
@@ -15,6 +21,7 @@ export default {
   computed: {
     headers() {
       const res = this.$store.getters['headers/partners']
+      res.push({ text: 'Actions', value: 'actions', sortable: false })
       return this.$translateHeaders(res)
     },
     items() {
@@ -26,11 +33,27 @@ export default {
     console.log('Composant ', this.$options.name)
     this.$store.dispatch('partners/get')
     this.$store.dispatch('headers/getPartnerHeaders')
+  },
+  methods: {
+    selected(v) {
+      this.$emit('list:selected', v)
+    },
+    deleteItem(v) {
+      console.log('delete :', v)
+    }
   }
 }
 </script>
 <style lang="scss" scoped>
-.fv-partner-list {
-  background-color: inherit;
+.v-data-table {
+  .v-data-table__wrapper {
+    table {
+      tbody {
+        tr:hover {
+          background-color: darkgray;
+        }
+      }
+    }
+  }
 }
 </style>
