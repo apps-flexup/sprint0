@@ -46,6 +46,7 @@ import FvOfferListSearch from '@/components/FvOfferListSearch'
 import FvOfferList from '@/components/FvOfferList'
 import FvOrderListSearch from '@/components/FvOrderListSearch'
 import FvOrderList from '@/components/FvOrderList'
+import FvPartnerList from '@/components/FvPartnerList'
 
 // Déclarations composants utilitaires
 Vue.component('fv-menu-list', FvMenuList)
@@ -107,3 +108,4 @@ Vue.component('fv-offer-list', FvOfferList)
 Vue.component('fv-order-list-search', FvOrderListSearch)
 Vue.component('fv-order-list', FvOrderList)
 Vue.component('fv-country-list', FvCountryList)
+Vue.component('fv-partner-list', FvPartnerList)

@@ -14,6 +14,11 @@ export default {
     const res = JSON.parse(JSON.stringify(state.products))
     return res
   },
+  partners(state) {
+    if (!state.partners) return []
+    const res = JSON.parse(JSON.stringify(state.partners))
+    return res
+  },
   offers(state) {
     if (!state.offers) return []
     const res = JSON.parse(JSON.stringify(state.offers))

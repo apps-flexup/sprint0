@@ -46,6 +46,12 @@
           :label="$t('forms.partners.new.city')"
           outlined=''
         )
+      v-col(cols='6')
+        v-text-field(
+          v-model="values.country"
+          :label="$t('forms.partners.new.country')"
+          outlined=''
+        )
 </template>
 
 <script>

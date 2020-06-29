@@ -27,8 +27,8 @@
     },
     {
       "icon": "mdi-tag",
-      "title": "menu.third-party",
-      "to": "/tiers"
+      "title": "menu.partners",
+      "to": "/partners"
     },
     {
       "icon": "mdi-file-document",
@@ -1679,5 +1679,50 @@
       ],
       "amount": 37.5
     }
-  ]
+  ],
+  "partner-headers": [
+    {
+      "text": "headers.partners.name",
+      "align": "start",
+      "sortable": true,
+      "value": "name"
+    },
+    {
+      "text": "headers.partners.siret",
+      "align": "start",
+      "sortable": true,
+      "value": "siret"
+    },
+    {
+      "text": "headers.partners.juridicalStatus",
+      "align": "start",
+      "sortable": true,
+      "value": "juridicalStatus"
+    },
+    {
+      "text": "headers.partners.address",
+      "align": "start",
+      "sortable": true,
+      "value": "address"
+    },
+    {
+      "text": "headers.partners.zip",
+      "align": "start",
+      "sortable": true,
+      "value": "zip"
+    },
+    {
+      "text": "headers.partners.city",
+      "align": "start",
+      "sortable": true,
+      "value": "city"
+    },
+    {
+      "text": "headers.partners.country",
+      "align": "start",
+      "sortable": true,
+      "value": "country"
+    }
+  ],
+  "partners": []
 }

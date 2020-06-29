@@ -8,6 +8,9 @@ export default {
   setProductHeaders(state, items) {
     state.products = items
   },
+  setPartnerHeaders(state, items) {
+    state.partners = items
+  },
   setOfferHeaders(state, items) {
     state.offers = items
   },

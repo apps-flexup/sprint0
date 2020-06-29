@@ -1,6 +1,7 @@
 export default () => ({
   contracts: [],
   products: [],
+  partners: [],
   offers: [],
   orders: []
   // contracts: [

@@ -70,7 +70,8 @@
         "address":"Adresse",
         "complement": "Complément",
         "zip": "Code postal",
-        "city": "Ville"
+        "city": "Ville",
+        "country": "Pays"
       }
     }
   },
@@ -80,7 +81,7 @@
     "contracts": "Contrats",
     "products": "Produits",
     "contacts": "Contacts",
-    "third-party": "Tiers",
+    "partners": "Partneraires",
     "documents": "Documents",
     "dashboard": "Tableau de bord"
   },
@@ -128,6 +129,15 @@
       "price": "Prix",
       "priceUnit": "Unité prix",
       "status": "Statut"
+    },
+    "partners": {
+      "name": "Nom",
+      "siret": "SIRET",
+      "juridicalStatus": "Statut juridique",
+      "address": "Adresse",
+      "zip": "Code postal",
+      "city": "Ville",
+      "country": "Pays"
     }
   },
   "modal": {
