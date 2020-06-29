@@ -16,13 +16,21 @@
 <script>
 export default {
   name: 'FvContractList',
+  props: {
+    contracts: {
+      type: Array,
+      default() {
+        return this.$store.getters['contracts/all']
+      }
+    }
+  },
   computed: {
     headers() {
       const res = this.$store.getters['headers/contracts']
       return this.$translateHeaders(res)
     },
     items() {
-      const res = this.$store.getters['contracts/all']
+      const res = this.contracts
       return res
     }
   },

@@ -9,6 +9,8 @@
           @click:row='selected'
         )
           template(v-slot:item.actions='{ item }')
+            v-icon.mr-2(small='' @click.stop='showContract(item)')
+              | mdi-briefcase
             v-icon.mr-2(small='' @click.stop='selected(item)')
               | mdi-pencil
             v-icon(small='' @click.stop='deleteItem(item)')
@@ -35,11 +37,16 @@ export default {
     this.$store.dispatch('headers/getPartnerHeaders')
   },
   methods: {
+    showContract(v) {
+      const res = v.account_id
+      this.$router.push(`/partners/contracts/${res}`)
+    },
     selected(v) {
       this.$emit('list:selected', v)
     },
     deleteItem(v) {
       console.log('delete :', v)
+      this.$store.dispatch('partners/remove', v)
     }
   }
 }

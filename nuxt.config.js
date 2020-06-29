@@ -36,7 +36,6 @@ export default {
    */
   plugins: [
     '~/plugins/axios',
-    '~/plugins/auth',
     '~/plugins/globalcomponents',
     '~/plugins/data',
     '~/plugins/i18n',
@@ -79,6 +78,7 @@ export default {
         client_id: process.env.KEYCLOAK_CLIENT_ID,
         authorization_endpoint: process.env.OAUTH_ENDPOINT,
         access_type: 'public',
+        userinfo_endpoint: process.env.OAUTH_USER_ENDPOINT,
         access_token_endpoint: process.env.OAUTH_ENDPOINT_TOKEN
       },
       redirect: {
@@ -86,7 +86,8 @@ export default {
         callback: '/callback',
         home: '/'
       }
-    }
+    },
+    plugins: ['~/plugins/auth.js']
   },
   router: {
     middleware: ['auth']
@@ -120,5 +121,6 @@ export default {
      ** You can extend webpack config here
      */
     // extend(config, ctx) {}
+    transpile: ['@nuxtjs/auth']
   }
 }

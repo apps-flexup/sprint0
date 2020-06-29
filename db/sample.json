@@ -463,6 +463,7 @@
       "dteEnd": "10/02/2022",
       "dteSignature": "05/02/2020",
       "id": 1,
+      "account_id": "2ae5fcf8-9ed5-480a-89c8-a2f946e72140",
       "offers": [
         {
           "id": 2,
@@ -493,6 +494,7 @@
       "dteEnd": "13/02/2022",
       "dteSignature": "11/02/2020",
       "id": 2,
+      "account_id": "2ae5fcf8-9ed5-480a-89c8-a2f946e72140",
       "offers": [
         {
           "id": 2,
@@ -1758,20 +1760,20 @@
   ],
   "partners": [
     {
-      "id": 1,
       "id_user": 1,
       "avatar": "/static/avatar-0.png",
       "name": "plop",
       "address": "12 rue de la poupée qui tousse",
       "city": "Braniole de turbeuse",
-      "zip": "1574788",
-      "country": "france"
+      "zip": "15774",
+      "country": "france",
+      "id": 1
     },
     {
       "id_user": 2,
       "avatar": "/static/avatar-1.png",
-      "name": "toto",
-      "address": "12 rue de la poupée qui tousse zerzerzer",
+      "name": "toto la riflette",
+      "address": "98 rue des trucs",
       "city": "Braniole de turbeuse",
       "zip": "1574788",
       "country": "france",
@@ -1808,7 +1810,11 @@
       "country": "france"
     },
     {
-      "name": "plop",
+      "name": "plip",
+      "address": "25 rue de tata janine\n12 etage\nporte gauche",
+      "zip": "98760103",
+      "city": "Choublon les croigneuses",
+      "country": "France",
       "id": 6
     }
   ]

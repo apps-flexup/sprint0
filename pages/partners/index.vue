@@ -38,7 +38,7 @@ export default {
     },
     selectedPartner(e) {
       console.log('partenaire selectionné', e)
-      this.selected = e
+      this.selected = JSON.parse(JSON.stringify(e))
       this.showModal = true
     }
   }
