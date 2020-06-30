@@ -1,11 +1,7 @@
-<template>
-  <div>
-    <h3>Login</h3>
-    <button type="primary" @click="login()">Login via Keycloak</button>
-    <pre>
-      [{{ $auth.user }}]
-    </pre>
-  </div>
+<template lang="pug">
+  div.align-center
+    h3 Login
+    v-btn(@click.stop="login" color="primary") Login via Keycloak
 </template>
 
 <script>
