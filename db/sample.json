@@ -1817,5 +1817,120 @@
       "country": "France",
       "id": 6
     }
-  ]
+  ],
+  "donnees": {
+    "nodes": [
+      {
+        "node": 0,
+        "name": "Inflows"
+      },
+      {
+        "node": 1,
+        "name": "Initial treasury"
+      },
+      {
+        "node": 2,
+        "name": "Total treasury"
+      },
+      {
+        "node": 3,
+        "name": "Unaffiliated"
+      },
+      {
+        "node": 4,
+        "name": "Base outflows"
+      },
+      {
+        "node": 5,
+        "name": "Base Reserve"
+      },
+      {
+        "node": 6,
+        "name": "Flex outflows"
+      },
+      {
+        "node": 7,
+        "name": "Flex Reserve"
+      },
+      {
+        "node": 8,
+        "name": "SuperFlex outflows"
+      },
+      {
+        "node": 9,
+        "name": "Payables"
+      },
+      {
+        "node": 10,
+        "name": "Final Treasury"
+      }
+    ],
+    "links": [
+      {
+        "source": 0,
+        "target": 2,
+        "value": 8
+      },
+      {
+        "source": 1,
+        "target": 2,
+        "value": 6
+      },
+      {
+        "source": 2,
+        "target": 3,
+        "value": 2
+      },
+      {
+        "source": 2,
+        "target": 4,
+        "value": 2
+      },
+      {
+        "source": 2,
+        "target": 5,
+        "value": 2
+      },
+      {
+        "source": 2,
+        "target": 6,
+        "value": 2
+      },
+      {
+        "source": 2,
+        "target": 7,
+        "value": 2
+      },
+      {
+        "source": 2,
+        "target": 8,
+        "value": 2
+      },
+      {
+        "source": 2,
+        "target": 10,
+        "value": 2
+      },
+      {
+        "source": 3,
+        "target": 9,
+        "value": 2
+      },
+      {
+        "source": 4,
+        "target": 9,
+        "value": 2
+      },
+      {
+        "source": 6,
+        "target": 9,
+        "value": 2
+      },
+      {
+        "source": 8,
+        "target": 9,
+        "value": 2
+      }
+    ]
+  }
 }
