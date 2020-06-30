@@ -82,11 +82,21 @@ export default {
         userinfo_endpoint: process.env.OAUTH_USER_ENDPOINT,
         access_token_endpoint: process.env.OAUTH_ENDPOINT_TOKEN
       },
-      redirect: {
-        login: '/login',
-        callback: '/callback',
-        home: '/',
-        logout: process.env.OAUTH_ENDPOINT_LOGOUT
+      endpoints: {
+        login: {
+          url: '/login',
+          method: 'post',
+          propertyName: 'token'
+        },
+        logout: {
+          url: process.env.OAUTH_ENDPOINT_LOGOUT,
+          method: 'post'
+        },
+        user: {
+          url: '/profile',
+          method: 'get',
+          propertyName: 'user'
+        }
       }
     },
     plugins: ['~/plugins/auth.js']
