@@ -1,8 +1,10 @@
 <template lang="pug">
   .fv-dashboard
     v-row
-      v-col(cols="12")
+      v-col(cols="9")
         fv-user-info
+      v-col(cols="3")
+        pre dev {{ $auth.hasScope('dev') }}
     v-row
       v-col(cols="3")
         v-card

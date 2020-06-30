@@ -2,25 +2,41 @@
   .products
     v-row(align="center")
       v-spacer
-      fv-modal-and-button(
-        :buttonText="$t('buttons.create.product')"
-        :title="$t('forms.products.new.title')"
-        component="fv-new-product-form"
-        @close="close"
-        @save="save"
+      fv-create-button(
+        :text="$t('buttons.create.product')"
+        @button:click='showModal = true'
       )
-    fv-product-list
+      fv-product-modal(
+        :show="showModal"
+        :product='selected'
+        @modal:close="close"
+        @modal:save="save"
+      )
+    fv-product-list(@list:selected="selectedProduct")
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      selected: {},
+      showModal: false
+    }
+  },
   methods: {
     close() {
-      // Reset form ?
+      this.selected = {}
+      this.showModal = false
     },
-    save(payload) {
-      console.log('save modal with values: ', payload)
-      this.$store.dispatch('products/add', payload)
+    save(e) {
+      this.showModal = false
+      this.$store.dispatch('products/add', e)
+      this.selected = {}
+    },
+    selectedProduct(e) {
+      console.log('produit selectionné', e)
+      this.selected = JSON.parse(JSON.stringify(e))
+      this.showModal = true
     }
   }
 }

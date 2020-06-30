@@ -1,5 +1,4 @@
 const translateHeaders = (i18n) => (items) => {
-  console.log('PLop')
   const res = items.map((item) => {
     const translated = i18n.t(item.text)
     return {
@@ -13,6 +12,6 @@ const translateHeaders = (i18n) => (items) => {
 }
 
 export default (ctx, inject) => {
-  const t = translateHeaders(ctx.app.i18n)
-  inject('translateHeaders', t)
+  const headers = translateHeaders(ctx.app.i18n)
+  inject('translateHeaders', headers)
 }

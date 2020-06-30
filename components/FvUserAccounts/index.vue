@@ -1,7 +1,7 @@
 <template lang="pug">
   .fv-user-accounts
     v-btn.mx-2(
-      v-if="!loggedIn"
+      v-if="!$auth.loggedIn"
       v-bind='$attrs'
       v-on='on'
       @click="login"
@@ -16,11 +16,12 @@
             v-bind='attrs'
             v-on='on'
           )
-            | {{ $auth.user.preferred_username }}
+            | {{ $auth.user.preferred_username }} {{ $activeAccount.get() }}
         v-list
           v-list-item(
             v-for='account in accounts'
             :key='account.id'
+            @click.stop="setCurrentAccount(account)"
           )
             v-list-item-avatar
               img(:src='account.avatar')
@@ -58,6 +59,11 @@ export default {
     },
     login() {
       this.$auth.login()
+    },
+    setCurrentAccount(a) {
+      // envoyer dans le store l'account qui va bien
+      console.log('Selected Account ', a.id)
+      this.$activeAccount.set(a.id)
     }
   }
 }

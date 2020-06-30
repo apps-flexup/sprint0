@@ -1,15 +1,19 @@
 <template lang="pug">
   .fv-product-list
-    //- fv-product-list-search(
-    //-   :products="items"
-    //- )
     v-row
       v-col(cols="12")
         v-data-table.elevation-2(
           :headers='headers'
           :items='items'
           item-key='id'
+          @click:row='selected'
         )
+          template(v-slot:item.actions='{ item }')
+            v-icon.mr-2(small='' @click.stop='selected(item)')
+              | mdi-pencil
+            v-icon(small='' @click.stop='deleteItem(item)')
+              | mdi-delete
+
 </template>
 
 <script>
@@ -18,6 +22,7 @@ export default {
   computed: {
     headers() {
       const res = this.$store.getters['headers/products']
+      res.push({ text: 'headers.actions', value: 'actions', sortable: false })
       return this.$translateHeaders(res)
     },
     items() {
@@ -29,6 +34,15 @@ export default {
     console.log('Composant ', this.$options.name)
     this.$store.dispatch('products/get')
     this.$store.dispatch('headers/getProductHeaders')
+  },
+  methods: {
+    selected(v) {
+      this.$emit('list:selected', v)
+    },
+    deleteItem(v) {
+      console.log('delete :', v)
+      this.$store.dispatch('products/remove', v)
+    }
   }
 }
 </script>

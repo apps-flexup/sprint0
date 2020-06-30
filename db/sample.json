@@ -116,7 +116,7 @@
       ],
       "roles_methods": null,
       "supplier": false,
-      "user_id": "2ae5fcf8-9ed5-480a-89c8-a2f946e72140"
+      "user_id": "bcecf237-eec9-43c2-b881-2242c554485f"
     },
     {
       "country_id": 77,
@@ -174,7 +174,7 @@
       ],
       "roles_methods": null,
       "supplier": false,
-      "user_id": "7bee39f1-e72b-40c7-ac6a-2a22297c68a6"
+      "user_id": "bcecf237-eec9-43c2-b881-2242c554485f"
     },
     {
       "country_id": 77,
@@ -803,12 +803,12 @@
       "statusStr": "4-Confirmé"
     },
     {
-      "id": 3,
       "name": "Appartement Paris 12",
       "quantity": 1,
-      "price": "3000€",
+      "price": "3100€",
       "unitStr": "€/month",
-      "statusStr": "4-Confirmé"
+      "statusStr": "4-Confirmé",
+      "id": 3
     }
   ],
   "offers": [

@@ -1,6 +1,7 @@
 export default function({ $auth }) {
-  if (!$auth) return
   if (!$auth.loggedIn) {
+    // effacement des stores..
+    // $store.dispatch('accounts/clear')
     return
   }
   const username = $auth.user.preferred_username
