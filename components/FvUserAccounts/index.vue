@@ -9,7 +9,6 @@
       | Connexion
     .d-flex.justify-center.align-center(v-else)
       v-menu(
-        :key='text'
         offset-y=''
       )
         template(v-slot:activator='{ attrs, on }')
@@ -17,14 +16,14 @@
             v-bind='attrs'
             v-on='on'
           )
-            | -User-
+            | {{ $auth.user.preferred_username }}
         v-list
           v-list-item(
             v-for='account in accounts'
             :key='account.id'
           )
             v-list-item-avatar
-              v-img(:src='account.avatar')
+              img(:src='account.avatar')
             v-list-item-content
               v-list-item-title {{ account.name }}
           v-list-item
@@ -34,15 +33,6 @@
                   @click="logout"
                   color="primary"
                 ) Déconnexion
-                //- v-list-item-avatar
-                //-   v-avatar(color="indigo" size="36")
-                //-     span.white--text.headline 36
-                //- v-list-item-avatar
-                //-   v-avatar(color="teal" size="48")
-                //-     span.white--text.headline 48
-                //- v-list-item-avatar
-                //-   v-avatar(color="orange" size="62")
-                //-     span.white--text.headline 62
 </template>
 
 <script>
@@ -60,7 +50,7 @@ export default {
   },
   mounted() {
     console.log('Composant ', this.$options.name)
-    this.$store.dispatch('contacts/get')
+    this.$store.dispatch('accounts/get')
   },
   methods: {
     logout() {

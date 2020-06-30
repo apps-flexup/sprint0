@@ -96,6 +96,7 @@
     "next": "Suivant"
   },
   "headers": {
+    "actions": "Actions",
     "products": {
       "name": "Nom du produit",
       "quantity": "Quantité",

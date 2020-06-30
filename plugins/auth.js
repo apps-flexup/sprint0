@@ -5,5 +5,4 @@ export default function({ $auth }) {
   }
   const username = $auth.user.preferred_username
   console.log('username :', username)
-  console.table($auth.user)
 }

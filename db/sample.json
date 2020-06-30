@@ -102,7 +102,7 @@
       ],
       "roles_methods": null,
       "supplier": false,
-      "user_id": 1
+      "user_id": "2ae5fcf8-9ed5-480a-89c8-a2f946e72140"
     },
     {
       "country_id": 77,
@@ -116,7 +116,8 @@
       ],
       "roles_methods": null,
       "supplier": false,
-      "user_id": 2
+      "user_id": 2,
+      "user_id": "2ae5fcf8-9ed5-480a-89c8-a2f946e72140"
     },
     {
       "country_id": 77,
@@ -130,7 +131,7 @@
       ],
       "roles_methods": null,
       "supplier": false,
-      "user_id": 3
+      "user_id": "2ae5fcf8-9ed5-480a-89c8-a2f946e72140"
     },
     {
       "country_id": 77,
@@ -144,7 +145,7 @@
       ],
       "roles_methods": null,
       "supplier": false,
-      "user_id": 1
+      "user_id": "2ae5fcf8-9ed5-480a-89c8-a2f946e72140"
     },
     {
       "country_id": 77,
@@ -159,7 +160,7 @@
       ],
       "roles_methods": null,
       "supplier": false,
-      "user_id": 1
+      "user_id": "2ae5fcf8-9ed5-480a-89c8-a2f946e72140"
     },
     {
       "country_id": 77,
@@ -174,7 +175,7 @@
       ],
       "roles_methods": null,
       "supplier": false,
-      "user_id": 1
+      "user_id": "7bee39f1-e72b-40c7-ac6a-2a22297c68a6"
     },
     {
       "country_id": 77,
@@ -189,7 +190,7 @@
       ],
       "roles_methods": null,
       "supplier": false,
-      "user_id": 3
+      "user_id": "7bee39f1-e72b-40c7-ac6a-2a22297c68a6"
     },
     {
       "country_id": 77,
@@ -203,7 +204,7 @@
       ],
       "roles_methods": null,
       "supplier": false,
-      "user_id": 2
+      "user_id": "7bee39f1-e72b-40c7-ac6a-2a22297c68a6"
     },
     {
       "country_id": 77,
@@ -218,14 +219,14 @@
       ],
       "roles_methods": null,
       "supplier": false,
-      "user_id": 2
+      "user_id": "7bee39f1-e72b-40c7-ac6a-2a22297c68a6"
     }
   ],
   "contacts": [
     {
       "id": 1,
       "id_user": 1,
-      "avatar": "/static/avatar-0.png",
+      "avatar": "static/images/avatar-0.png",
       "name": "plop",
       "address": "12 rue de la poupée qui tousse",
       "city": "Braniole de turbeuse",
@@ -245,7 +246,7 @@
     {
       "id": 2,
       "id_user": 2,
-      "avatar": "/static/avatar-1.png",
+      "avatar": "static/images/avatar-1.png",
       "name": "toto",
       "address": "12 rue de la poupée qui tousse",
       "city": "Braniole de turbeuse",
@@ -265,7 +266,7 @@
     {
       "id": 3,
       "id_user": 3,
-      "avatar": "/static/avatar-2.png",
+      "avatar": "static/images/avatar-2.png",
       "name": "fred",
       "address": "12 rue de la marjolaine",
       "city": "Courtanche sur Mer",
@@ -285,7 +286,7 @@
     {
       "id": 5,
       "id_user": 3,
-      "avatar": "/static/avatar-6.png",
+      "avatar": "static/images/avatar-6.png",
       "name": "pierre",
       "address": "21 rue de la marjolaine",
       "city": "Flombard les gazeuses",
@@ -305,7 +306,7 @@
     {
       "id": 4,
       "id_user": 4,
-      "avatar": "/static/avatar-3.png",
+      "avatar": "static/images/avatar-3.png",
       "name": "grog",
       "address": "19 avenue de la venue",
       "city": "Ploutoire les bois",
@@ -463,7 +464,7 @@
       "dteEnd": "10/02/2022",
       "dteSignature": "05/02/2020",
       "id": 1,
-      "account_id": "2ae5fcf8-9ed5-480a-89c8-a2f946e72140",
+      "account_id": 2,
       "offers": [
         {
           "id": 2,
@@ -494,7 +495,7 @@
       "dteEnd": "13/02/2022",
       "dteSignature": "11/02/2020",
       "id": 2,
-      "account_id": "2ae5fcf8-9ed5-480a-89c8-a2f946e72140",
+      "account_id": 2,
       "offers": [
         {
           "id": 2,
@@ -1761,7 +1762,7 @@
   "partners": [
     {
       "id_user": 1,
-      "avatar": "/static/avatar-0.png",
+      "avatar": "static/images/avatar-0.png",
       "name": "plop",
       "address": "12 rue de la poupée qui tousse",
       "city": "Braniole de turbeuse",
@@ -1771,7 +1772,7 @@
     },
     {
       "id_user": 2,
-      "avatar": "/static/avatar-1.png",
+      "avatar": "static/images/avatar-1.png",
       "name": "toto la riflette",
       "address": "98 rue des trucs",
       "city": "Braniole de turbeuse",
@@ -1782,7 +1783,7 @@
     {
       "id": 3,
       "id_user": 3,
-      "avatar": "/static/avatar-2.png",
+      "avatar": "static/images/avatar-2.png",
       "name": "fred",
       "address": "12 rue de la marjolaine",
       "city": "Courtanche sur Mer",
@@ -1792,7 +1793,7 @@
     {
       "id": 5,
       "id_user": 3,
-      "avatar": "/static/avatar-6.png",
+      "avatar": "static/images/avatar-6.png",
       "name": "pierre",
       "address": "21 rue de la marjolaine",
       "city": "Flombard les gazeuses",
@@ -1802,7 +1803,7 @@
     {
       "id": 4,
       "id_user": 4,
-      "avatar": "/static/avatar-3.png",
+      "avatar": "static/images/avatar-3.png",
       "name": "grog",
       "address": "19 avenue de la venue",
       "city": "Ploutoire les bois",

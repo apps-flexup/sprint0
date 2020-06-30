@@ -1,6 +1,9 @@
 <template lang="pug">
   .fv-dashboard
     v-row
+      v-col(cols="12")
+        fv-user-info
+    v-row
       v-col(cols="3")
         v-card
           v-card-title

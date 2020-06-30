@@ -50,6 +50,7 @@ import FvPartnerList from '@/components/FvPartnerList'
 import FvModalSlot from '@/components/FvModalSlot'
 import FvPartnerModal from '@/components/FvPartnerModal'
 import FvSpeedDial from '@/components/FvSpeedDial'
+import FvUserInfo from '@/components/FvUserInfo'
 
 // Déclarations composants utilitaires
 Vue.component('fv-menu-list', FvMenuList)
@@ -115,3 +116,4 @@ Vue.component('fv-partner-list', FvPartnerList)
 Vue.component('fv-modal-slot', FvModalSlot)
 Vue.component('fv-partner-modal', FvPartnerModal)
 Vue.component('fv-speed-dial', FvSpeedDial)
+Vue.component('fv-user-info', FvUserInfo)

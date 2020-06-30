@@ -93,6 +93,7 @@
     "next": "Next"
   },
   "headers": {
+    "actions": "Actions",
     "products": {
       "name": "Product name",
       "quantity": "Quantity",

@@ -23,7 +23,7 @@ export default {
   computed: {
     headers() {
       const res = this.$store.getters['headers/partners']
-      res.push({ text: 'Actions', value: 'actions', sortable: false })
+      res.push({ text: 'headers.actions', value: 'actions', sortable: false })
       return this.$translateHeaders(res)
     },
     items() {
