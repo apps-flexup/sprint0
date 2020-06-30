@@ -1,5 +1,5 @@
 <template lang="pug">
-  div.align-center
+  div.text-md-center
     h3 Login
     v-btn(@click.stop="login" color="primary") Login via Keycloak
 </template>
