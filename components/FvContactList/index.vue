@@ -32,7 +32,7 @@ export default {
       return this.$translateHeaders(res)
     },
     items() {
-      const res = this.$store.getters['contacts/all']
+      const res = this.$activeAccount.contacts()
       console.log('res: ', res)
       return res
     }

@@ -30,6 +30,14 @@ const activeAccount = (store) => ({
     const res = store.getters['orders/all']
     return res
   },
+  partners() {
+    const res = store.getters['partners/all']
+    return res
+  },
+  products() {
+    const res = store.getters['products/all']
+    return res
+  },
   hasRole(role) {
     const res = store.$auth.user
     console.log('role :', role, ', res :', res)

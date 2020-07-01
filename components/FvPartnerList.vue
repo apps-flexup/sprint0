@@ -27,7 +27,7 @@ export default {
       return this.$translateHeaders(res)
     },
     items() {
-      const res = this.$store.getters['partners/all']
+      const res = this.$activeAccount.partners()
       return res
     }
   },

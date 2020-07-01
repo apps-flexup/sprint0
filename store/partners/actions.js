@@ -2,7 +2,7 @@
 export default {
   get({ commit }) {
     // charger les contracts
-    this.$repos.partners.index().then((data) => commit('set', data))
+    this.$repos.partners.indexAccount().then((data) => commit('set', data))
   },
   remove({ commit }, partner) {
     // charger les contracts

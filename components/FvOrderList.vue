@@ -18,7 +18,7 @@ export default {
       return this.$translateHeaders(res)
     },
     items() {
-      const res = this.$store.getters['orders/all']
+      const res = this.$activeAccount.orders()
       return res
     }
   },
