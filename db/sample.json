@@ -224,7 +224,7 @@
   "contacts": [
     {
       "id": 1,
-      "id_user": 1,
+      "account_id": 1,
       "avatar": "static/images/avatar-0.png",
       "name": "plop",
       "address": "12 rue de la poupée qui tousse",
@@ -244,7 +244,7 @@
     },
     {
       "id": 2,
-      "id_user": 2,
+      "account_id": 2,
       "avatar": "static/images/avatar-1.png",
       "name": "toto",
       "address": "12 rue de la poupée qui tousse",
@@ -264,7 +264,7 @@
     },
     {
       "id": 3,
-      "id_user": 3,
+      "account_id": 3,
       "avatar": "static/images/avatar-2.png",
       "name": "fred",
       "address": "12 rue de la marjolaine",
@@ -284,7 +284,7 @@
     },
     {
       "id": 5,
-      "id_user": 3,
+      "account_id": 3,
       "avatar": "static/images/avatar-6.png",
       "name": "pierre",
       "address": "21 rue de la marjolaine",
@@ -304,7 +304,7 @@
     },
     {
       "id": 4,
-      "id_user": 4,
+      "account_id": 4,
       "avatar": "static/images/avatar-3.png",
       "name": "grog",
       "address": "19 avenue de la venue",
@@ -401,7 +401,7 @@
         9,
         8
       ],
-      "id_account": null
+      "account_id": null
     },
     {
       "id": 11,
@@ -411,7 +411,7 @@
         8,
         31
       ],
-      "id_account": 1
+      "account_id": 1
     },
     {
       "id": 2,
@@ -854,7 +854,8 @@
       "quantity": 1,
       "price": "3000€",
       "unitStr": "€/month",
-      "statusStr": "4-Confirmé"
+      "statusStr": "4-Confirmé",
+      "account_id": 1
     },
     {
       "id": 2,
@@ -862,15 +863,17 @@
       "quantity": 1,
       "price": "3000€",
       "unitStr": "€/month",
-      "statusStr": "4-Confirmé"
+      "statusStr": "4-Confirmé",
+      "account_id": 1
     },
     {
+      "id": 3,
       "name": "Appartement Paris 12",
       "quantity": 1,
       "price": "3100€",
       "unitStr": "€/month",
       "statusStr": "4-Confirmé",
-      "id": 3
+      "account_id": 1
     }
   ],
   "offers": [

@@ -4,6 +4,9 @@ export default {
     // charger les contracts
     this.$repos.partners.indexAccount().then((data) => commit('set', data))
   },
+  clear({ commit }) {
+    commit('set', [])
+  },
   remove({ commit }, partner) {
     // charger les contracts
     this.$repos.partners

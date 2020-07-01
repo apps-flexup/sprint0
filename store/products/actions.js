@@ -4,6 +4,9 @@ export default {
     // charger les produits
     this.$repos.products.indexAccount().then((data) => commit('set', data))
   },
+  clear({ commit }) {
+    commit('set', [])
+  },
   remove({ commit }, product) {
     // charger les contracts
     this.$repos.products
