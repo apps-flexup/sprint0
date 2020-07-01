@@ -81,22 +81,6 @@ export default {
         access_type: 'public',
         userinfo_endpoint: process.env.OAUTH_USER_ENDPOINT,
         access_token_endpoint: process.env.OAUTH_ENDPOINT_TOKEN
-      },
-      endpoints: {
-        login: {
-          url: '/login',
-          method: 'post',
-          propertyName: 'token'
-        },
-        logout: {
-          url: process.env.OAUTH_ENDPOINT_LOGOUT,
-          method: 'post'
-        },
-        user: {
-          url: '/profile',
-          method: 'get',
-          propertyName: 'user'
-        }
       }
     },
     plugins: ['~/plugins/auth.js']

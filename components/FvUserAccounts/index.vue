@@ -58,7 +58,7 @@ export default {
       this.$auth.logout()
     },
     login() {
-      this.$auth.login()
+      this.$auth.loginWith('keycloak')
     },
     setCurrentAccount(a) {
       // envoyer dans le store l'account qui va bien
