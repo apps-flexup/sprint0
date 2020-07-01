@@ -21,7 +21,7 @@ export default {
         commit('add', res)
       })
     } else {
-      this.$repos.partners.create(partner).then((res) => {
+      this.$repos.partners.createAccount(partner).then((res) => {
         commit('add', res)
       })
     }

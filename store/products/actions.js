@@ -21,7 +21,7 @@ export default {
         commit('add', res)
       })
     } else {
-      this.$repos.products.create(product).then((res) => {
+      this.$repos.products.createAccount(product).then((res) => {
         commit('add', res)
       })
     }

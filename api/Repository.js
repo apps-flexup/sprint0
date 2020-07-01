@@ -5,7 +5,6 @@ export default ($axios, store) => (resource) => ({
   },
   async indexAccount() {
     const accountId = store.getters['accounts/selected']
-    console.log('valeur account :', accountId)
     const res = await $axios.$get(`/${resource}?account_id=${accountId}`)
     console.log(`${resource} (${accountId})`, res)
     return res
@@ -14,9 +13,23 @@ export default ($axios, store) => (resource) => ({
     const res = await $axios.$get(`/${resource}/${id}`)
     return res
   },
+  async showAccount(id) {
+    const accountId = store.getters['accounts/selected']
+    const res = await $axios.$get(`/${resource}/${id}`)
+    console.log(`${resource} (${accountId})`, res)
+    return res
+  },
   async create(payload) {
     delete payload.id
     const res = await $axios.$post(`/${resource}`, payload)
+    return res
+  },
+  async createAccount(payload) {
+    delete payload.id
+    const accountId = store.getters['accounts/selected']
+    payload.account_id = accountId
+    const res = await $axios.$post(`/${resource}`, payload)
+    console.log(`${resource} (${accountId})`, res)
     return res
   },
   async update(payload) {

@@ -880,10 +880,12 @@
     {
       "id": 1,
       "name": {
-        "en": "Goat milk"
+        "en": "Goat milk",
+        "fr": "Lait de chêvre"
       },
       "description": {
-        "en": "True Goat milk"
+        "en": "True Goat milk",
+        "fr": "Le vrai lait de chèvre"
       },
       "reference": "EKWOHX",
       "price": 100,
@@ -1825,7 +1827,7 @@
   ],
   "partners": [
     {
-      "id_user": 1,
+      "account_id": 1,
       "avatar": "static/images/avatar-0.png",
       "name": "plop",
       "address": "12 rue de la poupée qui tousse",
@@ -1835,7 +1837,7 @@
       "id": 1
     },
     {
-      "id_user": 2,
+      "account_id": 2,
       "avatar": "static/images/avatar-1.png",
       "name": "toto la riflette",
       "address": "98 rue des trucs",
@@ -1846,7 +1848,7 @@
     },
     {
       "id": 3,
-      "id_user": 3,
+      "account_id": 3,
       "avatar": "static/images/avatar-2.png",
       "name": "fred",
       "address": "12 rue de la marjolaine",
@@ -1856,7 +1858,7 @@
     },
     {
       "id": 5,
-      "id_user": 3,
+      "account_id": 3,
       "avatar": "static/images/avatar-6.png",
       "name": "pierre",
       "address": "21 rue de la marjolaine",
@@ -1866,7 +1868,7 @@
     },
     {
       "id": 4,
-      "id_user": 4,
+      "account_id": 4,
       "avatar": "static/images/avatar-3.png",
       "name": "grog",
       "address": "19 avenue de la venue",
@@ -1880,7 +1882,17 @@
       "zip": "98760103",
       "city": "Choublon les croigneuses",
       "country": "France",
-      "id": 6
+      "id": 6,
+      "account_id": 1
+    },
+    {
+      "name": "truc",
+      "address": "25 rue des grandes rues\nappartement 404",
+      "zip": "15479",
+      "city": "Flobert les gorgeues",
+      "country": "France",
+      "account_id": 5,
+      "id": 7
     }
   ],
   "donnees": {
