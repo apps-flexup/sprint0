@@ -9,10 +9,7 @@ export default {
   clear({ commit }) {
     commit('clear')
   },
-  setCurrent({ commit, dispatch }, id) {
+  setCurrent({ commit }, id) {
     commit('setCurrent', id)
-    dispatch('contracts/getContracts', {}, { root: true })
-    dispatch('partners/get', {}, { root: true })
-    dispatch('products/get', {}, { root: true })
   }
 }

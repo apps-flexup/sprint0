@@ -24,7 +24,6 @@ export default {
   },
   mounted() {
     console.log('Composant ', this.$options.name)
-    this.$store.dispatch('orders/get')
     this.$store.dispatch('headers/getOrderHeaders')
   }
 }

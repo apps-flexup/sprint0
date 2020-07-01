@@ -21,18 +21,19 @@ export default {
   name: 'FvProductList',
   computed: {
     headers() {
-      const res = this.$store.getters['headers/products']
-      res.push({ text: 'headers.actions', value: 'actions', sortable: false })
+      const res = this.$activeAccount.headersProducts()
+      // const res = this.$store.getters['headers/products']
+      // res.push({ text: 'headers.actions', value: 'actions', sortable: false })
       return this.$translateHeaders(res)
     },
     items() {
-      const res = this.$store.getters['products/all']
+      const res = this.$activeAccount.products()
       return res
     }
   },
   mounted() {
     console.log('Composant ', this.$options.name)
-    this.$store.dispatch('products/get')
+    // this.$store.dispatch('products/get')
     this.$store.dispatch('headers/getProductHeaders')
   },
   methods: {
