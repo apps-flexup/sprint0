@@ -80,17 +80,6 @@
             readonly=''
             outlined=''
           )
-      v-row
-        v-col(cols="6")
-          v-select(
-            v-model="contractType"
-            :items="contractTypeList"
-            item-text="name"
-            item-value="id"
-            :label="$t('forms.contracts.detail.type')"
-            clearable=''
-            outlined=''
-          )
 </template>
 
 <script>

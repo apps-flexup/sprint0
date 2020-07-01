@@ -8,7 +8,7 @@
         v-spacer
         v-btn(
           icon=''
-          @click="close"
+          @click.stop="close"
         )
           v-icon mdi-close
     template(
@@ -22,12 +22,12 @@
       v-btn(
         color='blue darken-1'
         text=''
-        @click='close'
+        @click.stop='close'
       ) {{ $t('modal.close') }}
       v-btn(
         color='blue darken-1'
         text=''
-        @click='save'
+        @click.stop='save'
       ) {{ $t('modal.save') }}
 </template>
 

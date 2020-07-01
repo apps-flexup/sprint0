@@ -14,7 +14,7 @@
             h2.title sous-titre
           v-card-actions
             v-btn(
-              @click="buttonClick"
+              @click.stop="buttonClick"
               color="primary"
               full-width
             ) Go
@@ -30,7 +30,7 @@
               li attribut commercial 1
           v-card-actions
             v-btn(
-              @click="buttonClick"
+              @click.stop="buttonClick"
               color="primary"
             ) Go
       v-col(cols="3")

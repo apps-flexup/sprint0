@@ -2,7 +2,7 @@
   .fv-modal-and-button
       fv-create-button(
         :text="buttonText"
-        @click="dialog = true"
+        @click.stop="dialog = true"
       )
       fv-modal(
         :dialog="dialog"

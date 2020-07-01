@@ -4,7 +4,7 @@
       v-if="!$auth.loggedIn"
       v-bind='$attrs'
       v-on='on'
-      @click="login"
+      @click.stop="login"
     )
       | Connexion
     .d-flex.justify-center.align-center(v-else)
@@ -31,7 +31,7 @@
             v-list-item-content
               v-list-item-title
                 v-btn(
-                  @click="logout"
+                  @click.stop="logout"
                   color="primary"
                 ) Déconnexion
 </template>
