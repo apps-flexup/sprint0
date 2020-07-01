@@ -1,7 +1,7 @@
 import createRepository from '~/api/Repository'
 
 export default (ctx, inject) => {
-  const repo = createRepository(ctx.$axios)
+  const repo = createRepository(ctx.$axios, ctx.store)
 
   const repos = {
     accounts: repo('accounts'),

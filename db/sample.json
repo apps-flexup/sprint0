@@ -508,6 +508,68 @@
       "contactName": "contact 5",
       "structure": 2,
       "structureName": "50% Base, 50% Equity"
+    },
+    {
+      "commandes": [
+        {
+          "id": 2,
+          "name": "itération 1"
+        },
+        {
+          "id": 4,
+          "name": "itération 1"
+        }
+      ],
+      "contractType": "Bail",
+      "dteEffect": "08/02/2020",
+      "dteEnd": "19/02/2022",
+      "dteSignature": "15/02/2020",
+      "id": 3,
+      "account_id": 1,
+      "offers": [
+        {
+          "id": 2,
+          "name": "offre 1"
+        },
+        {
+          "id": 3,
+          "name": "itération 3"
+        }
+      ],
+      "contactName": "contact 3",
+      "structure": 2,
+      "structureName": "20% Base, 80% Equity"
+    },
+    {
+      "commandes": [
+        {
+          "id": 2,
+          "name": "itération 1"
+        },
+        {
+          "id": 4,
+          "name": "itération 1"
+        }
+      ],
+      "contractType": "Financement",
+      "dteEffect": "12/02/2020",
+      "dteEnd": "13/02/2022",
+      "dteSignature": "11/02/2020",
+      "id": 4,
+      "account_id": 5,
+      "offers": [
+        {
+          "id": 2,
+          "name": "offre 1"
+        },
+        {
+          "id": 3,
+          "name": "itération 3"
+        }
+      ],
+      "contactName": "contact 4",
+      "structure": 2,
+      "structureName": "50% Base, 50% Equity"
     }
   ],
   "currencies": [

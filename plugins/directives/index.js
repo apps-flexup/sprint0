@@ -3,9 +3,14 @@ import Vue from 'vue'
 Vue.directive('to-currency', (el, binding, vnode) => {
   const locale = vnode.context.$i18n.locale
   const valeur = binding.value
-  console.table(valeur)
-  console.log('directive locale ', locale)
-  const res = 'resultat' // createElement('h1', 'TO CURRENCY')
+  const options = {
+    style: 'currency',
+    currency: valeur.currency
+  }
+  const valueToDisplay = new Intl.NumberFormat(locale, options).format(
+    valeur.amount
+  )
+  const res = `${valueToDisplay}`
   el.innerHTML = res
 })
 

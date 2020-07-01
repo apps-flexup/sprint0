@@ -20,7 +20,7 @@ export default {
     contracts: {
       type: Array,
       default() {
-        return this.$store.getters['contracts/all']
+        return []
       }
     }
   },
@@ -30,7 +30,7 @@ export default {
       return this.$translateHeaders(res)
     },
     items() {
-      const res = this.contracts
+      const res = this.$activeAccount.contracts()
       return res
     }
   },
@@ -41,8 +41,3 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
-.fv-contract-list {
-  background-color: inherit;
-}
-</style>

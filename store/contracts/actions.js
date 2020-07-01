@@ -1,6 +1,5 @@
 // Action de base
 export default {
-  // $nuxt.$store.dispatch('contracts/get')
   get({ dispatch }) {
     dispatch('contracts/getContracts', {}, { root: true })
     dispatch('contracts/getContractTypes', {}, { root: true })
@@ -9,7 +8,7 @@ export default {
   },
   getContracts({ commit }) {
     // charger les contracts
-    this.$repos.contracts.index().then((data) => commit('set', data))
+    this.$repos.contracts.indexAccount().then((data) => commit('set', data))
   },
   getContractTypes({ commit }) {
     // charger les contrat-types

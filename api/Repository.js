@@ -1,6 +1,13 @@
-export default ($axios) => (resource) => ({
+export default ($axios, store) => (resource) => ({
   async index() {
     const res = await $axios.$get(`/${resource}`)
+    return res
+  },
+  async indexAccount() {
+    const accountId = store.getters['accounts/selected']
+    console.log('valeur account :', accountId)
+    const res = await $axios.$get(`/${resource}?account_id=${accountId}`)
+    console.log('res:', res)
     return res
   },
   async show(id) {

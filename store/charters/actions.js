@@ -5,6 +5,6 @@ export default {
   },
   getCharters({ commit }) {
     // charger les chartres
-    this.$repos.charters.index().then((data) => commit('set', data))
+    this.$repos.charters.indexAccount().then((data) => commit('set', data))
   }
 }

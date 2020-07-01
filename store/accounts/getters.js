@@ -1,16 +1,17 @@
 export default {
   all(state) {
-    if (!state.items) return []
+    if (!state.items.length) return []
     const res = JSON.parse(JSON.stringify(state.items))
     return res
   },
-  selected(state) {
+  first(state) {
     if (!state.items.length) return null
-    if (!state.current) {
-      const first = state.items[0]
-      return first.id
-    }
-    const res = JSON.parse(JSON.stringify(state.current))
+    const res = JSON.parse(JSON.stringify(state.items[0]))
+    return res.id
+  },
+  selected(state, getters) {
+    if (!state.current) return null
+    const res = JSON.parse(JSON.stringify(state.current)) || getters.first()
     return res
   }
 }

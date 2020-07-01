@@ -1,10 +1,34 @@
 const activeAccount = (store) => ({
   get() {
-    const res = store.getters['accounts/selected']
+    let res = store.getters['accounts/selected']
+    if (!res) {
+      res = store.getters['accounts/first']
+      this.set(res)
+    }
     return res
   },
   set(accountId) {
     store.dispatch('accounts/setCurrent', accountId)
+  },
+  contracts() {
+    const res = store.getters['contracts/all']
+    return res
+  },
+  charters() {
+    const res = store.getters['charters/all']
+    return res
+  },
+  contacts() {
+    const res = store.getters['contacts/all']
+    return res
+  },
+  offers() {
+    const res = store.getters['offers/all']
+    return res
+  },
+  orders() {
+    const res = store.getters['orders/all']
+    return res
   },
   hasRole(role) {
     const res = store.$auth.user

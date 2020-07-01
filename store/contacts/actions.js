@@ -2,6 +2,6 @@
 export default {
   get({ commit }) {
     // charger les contracts
-    this.$repos.contacts.index().then((data) => commit('set', data))
+    this.$repos.contacts.indexAccount().then((data) => commit('set', data))
   }
 }

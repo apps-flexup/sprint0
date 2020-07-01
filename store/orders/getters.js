@@ -1,7 +1,7 @@
+// Action de base
 export default {
-  all(state) {
-    if (!state.items) return []
-    const res = JSON.parse(JSON.stringify(state.items))
-    return res
+  get({ commit }) {
+    // charger les contrat-types
+    this.$repos.orders.indexAccount().then((data) => commit('set', data))
   }
 }

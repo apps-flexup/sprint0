@@ -112,6 +112,7 @@
       "type": "Type de partnenariat",
       "structure": "Structure",
       "offer": "Offre",
+      "name": "Nom",
       "order": "Commande"
     },
     "orders": {
