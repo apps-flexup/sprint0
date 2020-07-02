@@ -13,7 +13,6 @@
               | mdi-pencil
             v-icon(small='' @click.stop='deleteItem(item)')
               | mdi-delete
-
 </template>
 
 <script>
@@ -33,7 +32,6 @@ export default {
   },
   mounted() {
     console.log('Composant ', this.$options.name)
-    // this.$store.dispatch('products/get')
     this.$store.dispatch('headers/getProductHeaders')
   },
   methods: {

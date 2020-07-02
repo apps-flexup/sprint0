@@ -50,11 +50,13 @@
     "products": {
       "new": {
         "title": "New product",
+        "category": "Category",
+        "periodicity": "Periodicity",
         "name": "Product name",
-        "quantity": "Quantity",
-        "priceWithoutTax": "Price without tax",
-        "priceUnit":"Price unit",
-        "status": "Status"
+        "unit":"Unit",
+        "amount": "Amount",
+        "currency": "Currency",
+        "elasticity": "Elasticity"
       }
     },
     "partners": {
@@ -92,7 +94,7 @@
     "dashboard": "Dashboard"
   },
   "buttons": {
-    "create": {
+    "create" : {
       "product": "CREATE PRODUCT",
       "contract": "CREATE CONTRACT",
       "partner": "CREATE PARTNER"
@@ -107,7 +109,7 @@
       "name": "Product name",
       "quantity": "Quantity",
       "price": "Price",
-      "priceUnit": "Price unit",
+      "unit": "Price unit",
       "status": "Status"
     },
     "contracts": {
@@ -132,10 +134,11 @@
     },
     "offers": {
       "name": "Name of the offer",
+      "elasticity": "Elasticity",
       "label": "Label",
       "products": "Product(s)",
       "price": "Price",
-      "priceUnit": "Price unit",
+      "unit": "Price unit",
       "status": "Status"
     },
     "partners": {

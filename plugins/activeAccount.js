@@ -59,10 +59,40 @@ const activeAccount = (ctx) => ({
     res.push({ text: 'headers.actions', value: 'actions', sortable: false })
     return res
   },
+  headersOffers() {
+    const res = ctx.store.getters['headers/offers']
+    res.push({ text: 'headers.actions', value: 'actions', sortable: false })
+    return res
+  },
   hasRole(role) {
     const res = ctx.store.$auth.user
     console.log('role :', role, ', res :', res)
     return true
+  },
+  addProduct(newProduct) {
+    const product = {
+      category_id: newProduct.category_id,
+      periodicity: newProduct.periodicity,
+      name: newProduct.name
+    }
+    const dimension = 'dimension'
+    const offer = {
+      dimension,
+      name: newProduct.name,
+      unit: newProduct.unit,
+      price: newProduct.amount,
+      elasticity: newProduct.elasticity,
+      status: 'draft',
+      currency: newProduct.currency
+    }
+    ctx.$repos.products.createAccount(product).then((prod) => {
+      offer.product_id = prod.id
+      ctx.$repos.offers.createAccount(offer).then((res) => {
+        ctx.store.dispatch('products/get')
+        ctx.store.dispatch('offers/get')
+        return res
+      })
+    })
   }
 })
 

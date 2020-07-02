@@ -28,10 +28,12 @@ export default {
       this.selected = {}
       this.showModal = false
     },
-    save(e) {
+    save(product) {
+      this.$nuxt.$loading.start()
       this.showModal = false
-      this.$store.dispatch('products/add', e)
+      this.$activeAccount.addProduct(product)
       this.selected = {}
+      this.$nuxt.$loading.finish()
     },
     selectedProduct(e) {
       console.log('produit selectionné', e)

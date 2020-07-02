@@ -9,7 +9,7 @@
         fv-product-form(:values="product")
       v-card-actions
         v-spacer
-        v-btn(@click.stop="submitProduct") {{ $t('buttons.submit') }}
+        v-btn(@click.stop="submit") {{ $t('buttons.submit') }}
 </template>
 
 <script>
@@ -23,14 +23,14 @@ export default {
     console.log('Composant ', this.$options.name)
   },
   methods: {
-    submitProduct() {
+    submit() {
+      this.$nuxt.$loading.start()
       console.log('résultat :', this.product)
+      this.$activeAccount.addProduct(this.product).then((_res) => {
+        this.$nuxt.$loading.finish()
+        this.router.push('/products')
+      })
     }
   }
 }
 </script>
-<style lang="scss" scoped>
-.page-product-new {
-  background-color: inherit;
-}
-</style>

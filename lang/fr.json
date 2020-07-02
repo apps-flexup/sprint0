@@ -53,11 +53,13 @@
     "products": {
       "new": {
         "title": "Nouveau produit",
+        "category": "Catégorie",
+        "periodicity": "Périodicité",
         "name": "Nom du produit",
-        "quantity": "Quantité",
-        "priceWithoutTax": "Prix excluant les taxes",
-        "priceUnit":"Unité de prix",
-        "status": "Statut"
+        "unit":"Unité",
+        "amount": "Montant",
+        "currency": "Devise",
+        "elasticity": "Élasticité"
       }
     },
     "partners": {
@@ -110,7 +112,7 @@
       "name": "Nom du produit",
       "quantity": "Quantité",
       "price": "Prix",
-      "priceUnit": "Unité de prix",
+      "unit": "Unité",
       "status": "Statut"
     },
     "contracts": {
@@ -135,10 +137,11 @@
     },
     "offers": {
       "name": "Nom de l'offre",
+      "elasticity": "Élasticité",
       "label": "Label",
       "products": "Produit(s)",
       "price": "Prix",
-      "priceUnit": "Unité prix",
+      "unit": "Unité prix",
       "status": "Statut"
     },
     "partners": {

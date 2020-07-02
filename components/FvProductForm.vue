@@ -3,34 +3,47 @@
     v-row
       v-col(cols='6')
         v-text-field(
+          v-model="values.category_id"
+          :label="$t('forms.products.new.category')"
+          outlined=''
+        )
+      v-col(cols='6')
+        v-text-field(
+          v-model="values.periodicity"
+          :label="$t('forms.products.new.periodicity')"
+          outlined=''
+        )
+    v-row
+      v-col(cols='6')
+        v-text-field(
           v-model="values.name"
           :label="$t('forms.products.new.name')"
           outlined=''
         )
       v-col(cols='6')
         v-text-field(
-          v-model="values.quantity"
-          :label="$t('forms.products.new.quantity')"
+          v-model="values.unit"
+          :label="$t('forms.products.new.unit')"
           outlined=''
         )
     v-row
-      v-col(cols='6')
+      v-col(cols="6")
         v-text-field(
           v-model="values.price"
-          :label="$t('forms.products.new.priceWithoutTax')"
+          :label="$t('forms.products.new.amount')"
           outlined=''
         )
-      v-col(cols='6')
+      v-col(cols="6")
         v-text-field(
-          v-model="values.unitStr"
-          :label="$t('forms.products.new.priceUnit')"
+          v-model="values.currency"
+          :label="$t('forms.products.new.currency')"
           outlined=''
         )
     v-row
-      v-col(cols='6')
+      v-col(cols="6")
         v-text-field(
-          v-model="values.statusStr"
-          :label="$t('forms.products.new.status')"
+          v-model="values.elasticity"
+          :label="$t('forms.products.new.elasticity')"
           outlined=''
         )
 </template>
@@ -44,11 +57,6 @@ export default {
       default() {
         return {}
       }
-    }
-  },
-  computed: {
-    machin() {
-      return 42
     }
   },
   mounted() {

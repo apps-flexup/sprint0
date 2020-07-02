@@ -219,6 +219,15 @@
       "roles_methods": null,
       "supplier": false,
       "user_id": "7bee39f1-e72b-40c7-ac6a-2a22297c68a6"
+    },
+    {
+      "name": "Jbeardstone Company Ltd SARL GmBh",
+      "title": "Mr",
+      "lastname": "La riflette",
+      "firstname": "Toto",
+      "email": "toto@lariflette.com",
+      "user_id": "61d4b5f7-8887-474f-b982-253b78ca95f8",
+      "id": 10
     }
   ],
   "contacts": [
@@ -837,7 +846,7 @@
     {
       "align": "center",
       "sortable": true,
-      "text": "headers.products.priceUnit",
+      "text": "headers.products.unit",
       "value": "unitStr"
     },
     {
@@ -874,14 +883,6 @@
       "unitStr": "€/month",
       "statusStr": "4-Confirmé",
       "account_id": 1
-    },
-    {
-      "name": "des trucs",
-      "quantity": "25",
-      "price": "56465",
-      "unitStr": "m",
-      "account_id": 3,
-      "id": 4
     }
   ],
   "offers": [
@@ -1335,16 +1336,10 @@
       "value": "name"
     },
     {
-      "text": "headers.offers.label",
+      "text": "headers.offers.elasticity",
       "align": "start",
       "sortable": true,
-      "value": "label"
-    },
-    {
-      "text": "headers.offers.products",
-      "align": "start",
-      "sortable": true,
-      "value": "products"
+      "value": "elasticity"
     },
     {
       "text": "headers.offers.price",
@@ -1353,16 +1348,16 @@
       "value": "price"
     },
     {
-      "text": "headers.offers.priceUnit",
+      "text": "headers.offers.unit",
       "align": "center",
       "sortable": true,
-      "value": "unitStr"
+      "value": "unit"
     },
     {
       "text": "headers.offers.status",
       "align": "start",
       "sortable": true,
-      "value": "statusStr"
+      "value": "status"
     }
   ],
   "order-headers": [
