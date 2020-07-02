@@ -1,10 +1,13 @@
 <template lang="pug">
   .page-product-new
-    p {{ $options.name }}
-    h1 {{ $t('products.new.title') }}
-    fv-product-form(:values="product")
-    v-row
-      v-col(cols="12")
+    v-card(
+      max-width="800px"
+      justify-center
+    )
+      v-card-title {{ $t('products.new.title') }}
+      v-card-text
+        fv-product-form(:values="product")
+      v-card-actions
         v-spacer
         v-btn(@click.stop="submitProduct") {{ $t('buttons.submit') }}
 </template>
