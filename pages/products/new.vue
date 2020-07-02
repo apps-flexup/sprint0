@@ -6,8 +6,7 @@
     v-row
       v-col(cols="12")
         v-spacer
-        v-btn(@click.stop="submitProduct" )
-
+        v-btn(@click.stop="submitProduct") {{ $t('buttons.submit') }}
 </template>
 
 <script>
