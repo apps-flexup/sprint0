@@ -30,7 +30,7 @@
       v-col(cols="6")
         v-text-field(
           v-model="values.price"
-          :label="$t('forms.products.new.amount')"
+          :label="$t('forms.products.new.price')"
           outlined=''
         )
       v-col(cols="6")

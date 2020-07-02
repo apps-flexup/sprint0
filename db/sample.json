@@ -242,6 +242,15 @@
       "email": "toto@lariflette.com",
       "user_id": "61d4b5f7-8887-474f-b982-253b78ca95f8",
       "id": 10
+    },
+    {
+      "name": "mon 1er compte",
+      "title": "Mr",
+      "lastname": "Jean",
+      "firstname": "Bon",
+      "email": "jeanbon@gmail.com",
+      "user_id": "105092c4-0558-460b-99ba-4063d3a75731",
+      "id": 11
     }
   ],
   "contacts": [
@@ -846,28 +855,22 @@
       "value": "name"
     },
     {
-      "align": "end",
+      "align": "start",
       "sortable": true,
-      "text": "headers.products.quantity",
-      "value": "quantity"
+      "text": "headers.products.category",
+      "value": "category_id"
     },
     {
-      "align": "end",
+      "align": "start",
       "sortable": true,
-      "text": "headers.products.price",
-      "value": "price"
-    },
-    {
-      "align": "center",
-      "sortable": true,
-      "text": "headers.products.unit",
-      "value": "unitStr"
+      "text": "headers.products.periodicity",
+      "value": "periodicity"
     },
     {
       "align": "start",
       "sortable": true,
       "text": "headers.products.status",
-      "value": "statusStr"
+      "value": "status"
     }
   ],
   "products": [
@@ -899,18 +902,12 @@
       "account_id": 1
     },
     {
-      "category_id": "azeae",
-      "periodicity": "azeaze",
-      "name": "azeaze",
-      "account_id": 10,
+      "category_id": "super category",
+      "periodicity": "souvent",
+      "name": "beau produit",
+      "status": "draft",
+      "account_id": 11,
       "id": 4
-    },
-    {
-      "category_id": "jlipo",
-      "periodicity": "rgsrgd",
-      "name": "aazcqsc d",
-      "account_id": 10,
-      "id": 5
     }
   ],
   "offers": [
@@ -1376,6 +1373,40 @@
       "product_id": 5,
       "account_id": 10,
       "id": 10
+    },
+    {
+      "dimension": "dimension",
+      "name": "testes",
+      "unit": "333",
+      "elasticity": "Moi",
+      "status": "draft",
+      "currency": "213",
+      "product_id": 6,
+      "account_id": 10,
+      "id": 11
+    },
+    {
+      "dimension": "dimension",
+      "name": "Joli nom",
+      "unit": "kg",
+      "elasticity": "20",
+      "status": "draft",
+      "currency": "EUR",
+      "product_id": 6,
+      "account_id": 10,
+      "id": 12
+    },
+    {
+      "dimension": "dimension",
+      "name": "beau produit",
+      "unit": "m",
+      "price": "100",
+      "elasticity": "5",
+      "status": "draft",
+      "currency": "EUR",
+      "product_id": 4,
+      "account_id": 11,
+      "id": 13
     }
   ],
   "offer-headers": [
@@ -1973,14 +2004,6 @@
       "country": "France",
       "account_id": 10,
       "id": 10
-    },
-    {
-      "account_id": 10,
-      "id": 11
-    },
-    {
-      "account_id": 10,
-      "id": 12
     }
   ],
   "donnees": {

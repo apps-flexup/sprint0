@@ -73,14 +73,15 @@ const activeAccount = (ctx) => ({
     const product = {
       category_id: newProduct.category_id,
       periodicity: newProduct.periodicity,
-      name: newProduct.name
+      name: newProduct.name,
+      status: 'draft'
     }
     const dimension = 'dimension'
     const offer = {
       dimension,
       name: newProduct.name,
       unit: newProduct.unit,
-      price: newProduct.amount,
+      price: newProduct.price,
       elasticity: newProduct.elasticity,
       status: 'draft',
       currency: newProduct.currency

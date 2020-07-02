@@ -57,7 +57,7 @@
         "periodicity": "Périodicité",
         "name": "Nom du produit",
         "unit":"Unité",
-        "amount": "Montant",
+        "price": "Prix",
         "currency": "Devise",
         "elasticity": "Élasticité"
       }
@@ -128,9 +128,8 @@
     "actions": "Actions",
     "products": {
       "name": "Nom du produit",
-      "quantity": "Quantité",
-      "price": "Prix",
-      "unit": "Unité",
+      "category": "Categorie",
+      "periodicity": "Périodicité",
       "status": "Statut"
     },
     "contracts": {
