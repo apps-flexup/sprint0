@@ -38,15 +38,14 @@ export default {
     selectedProduct(e) {
       console.log('produit selectionné', e)
       this.selected = JSON.parse(JSON.stringify(e))
-      this.$repos.offers.show(this.selected.id).then((offer) => {
-        console.log('Offer associated', offer)
-        this.selected.unit = offer.unit
-        this.selected.price = offer.price
-        this.selected.currency = offer.currency
-        this.selected.elasticity = offer.elasticity
-        console.log('Selected: ', this.selected)
-        this.showModal = true
-      })
+      const offer = this.$store.getters['offers/getForProduct'](
+        this.selected.id
+      )
+      this.selected.unit = offer[0].unit
+      this.selected.price = offer[0].price
+      this.selected.currency = offer[0].currency
+      this.selected.elasticity = offer[0].elasticity
+      this.showModal = true
     }
   }
 }
