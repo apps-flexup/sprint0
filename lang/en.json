@@ -70,6 +70,15 @@
         "city": "City",
         "country": "Country"
       }
+    },
+    "accounts": {
+      "new": {
+        "name": "Account name",
+        "title": "Title",
+        "lastname": "Lastname",
+        "firstname": "Firstname",
+        "email": "Email"
+      }
     }
   },
   "menu" : {

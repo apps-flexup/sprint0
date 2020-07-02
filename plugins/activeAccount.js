@@ -1,77 +1,73 @@
-const activeAccount = (store, redirect) => ({
+const activeAccount = (ctx) => ({
   clear() {
-    store.dispatch('accounts/clear', {}, { root: true })
-    store.dispatch('contracts/clear', {}, { root: true })
-    store.dispatch('contacts/clear', {}, { root: true })
-    store.dispatch('charters/clear', {}, { root: true })
-    store.dispatch('offers/clear', {}, { root: true })
-    store.dispatch('orders/clear', {}, { root: true })
-    store.dispatch('partners/clear', {}, { root: true })
-    store.dispatch('products/clear', {}, { root: true })
+    ctx.store.dispatch('accounts/clear', {}, { root: true })
+    ctx.store.dispatch('contracts/clear', {}, { root: true })
+    ctx.store.dispatch('contacts/clear', {}, { root: true })
+    ctx.store.dispatch('charters/clear', {}, { root: true })
+    ctx.store.dispatch('offers/clear', {}, { root: true })
+    ctx.store.dispatch('orders/clear', {}, { root: true })
+    ctx.store.dispatch('partners/clear', {}, { root: true })
+    ctx.store.dispatch('products/clear', {}, { root: true })
   },
   get() {
-    let res = store.getters['accounts/selected']
-    if (!res) {
-      res = store.getters['accounts/first']
-      if (!res) redirect('/account/new')
-      this.set(res)
-    }
+    const res = ctx.store.getters['accounts/selected']
     return res
   },
   set(accountId) {
-    store.dispatch('accounts/setCurrent', accountId)
-    store.dispatch('contracts/getContracts', {}, { root: true })
-    store.dispatch('partners/get', {}, { root: true })
-    store.dispatch('products/get', {}, { root: true })
-    store.dispatch('contacts/get', {}, { root: true })
-    store.dispatch('charters/get', {}, { root: true })
-    store.dispatch('offers/get', {}, { root: true })
-    store.dispatch('orders/get', {}, { root: true })
-    store.dispatch('partners/get', {}, { root: true })
-    store.dispatch('products/get', {}, { root: true })
+    if (accountId === -1) return
+    ctx.store.dispatch('accounts/setCurrent', accountId)
+    ctx.store.dispatch('contracts/getContracts', {}, { root: true })
+    ctx.store.dispatch('partners/get', {}, { root: true })
+    ctx.store.dispatch('products/get', {}, { root: true })
+    ctx.store.dispatch('contacts/get', {}, { root: true })
+    ctx.store.dispatch('charters/get', {}, { root: true })
+    ctx.store.dispatch('offers/get', {}, { root: true })
+    ctx.store.dispatch('orders/get', {}, { root: true })
+    ctx.store.dispatch('partners/get', {}, { root: true })
+    ctx.store.dispatch('products/get', {}, { root: true })
   },
   contracts() {
-    const res = store.getters['contracts/all']
+    const res = ctx.store.getters['contracts/all']
     return res
   },
   charters() {
-    const res = store.getters['charters/all']
+    const res = ctx.store.getters['charters/all']
     return res
   },
   contacts() {
-    const res = store.getters['contacts/all']
+    const res = ctx.store.getters['contacts/all']
     return res
   },
   orders() {
-    const res = store.getters['orders/all']
+    const res = ctx.store.getters['orders/all']
     return res
   },
   offers() {
-    const res = store.getters['offers/all']
+    const res = ctx.store.getters['offers/all']
     return res
   },
   partners() {
-    const res = store.getters['partners/all']
+    const res = ctx.store.getters['partners/all']
     return res
   },
   products() {
-    const res = store.getters['products/all']
+    const res = ctx.store.getters['products/all']
     return res
   },
   headersProducts() {
-    const res = store.getters['headers/products']
+    const res = ctx.store.getters['headers/products']
     res.push({ text: 'headers.actions', value: 'actions', sortable: false })
     return res
   },
   hasRole(role) {
-    const res = store.$auth.user
+    const res = ctx.store.$auth.user
     console.log('role :', role, ', res :', res)
     return true
   }
 })
 
 export default (ctx, inject) => {
-  const account = activeAccount(ctx.app.store, ctx.redirect)
+  const account = activeAccount(ctx)
 
   inject('activeAccount', account)
 }

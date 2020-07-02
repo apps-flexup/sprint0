@@ -8,5 +8,8 @@ export default {
   },
   setCurrent(state, id) {
     state.current = id
+  },
+  add(state, item) {
+    state.items.push(item)
   }
 }

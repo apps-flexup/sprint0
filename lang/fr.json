@@ -73,6 +73,15 @@
         "city": "Ville",
         "country": "Pays"
       }
+    },
+    "accounts": {
+      "new": {
+        "name": "Nom du compte",
+        "title": "Titre",
+        "lastname": "Nom",
+        "firstname": "Prénom",
+        "email": "Email"
+      }
     }
   },
   "menu" : {

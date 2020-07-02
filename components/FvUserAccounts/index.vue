@@ -2,8 +2,6 @@
   .fv-user-accounts
     v-btn.mx-2(
       v-if="!$auth.loggedIn"
-      v-bind='$attrs'
-      v-on='on'
       @click.stop="login"
     )
       | Connexion
@@ -16,7 +14,7 @@
             v-bind='attrs'
             v-on='on'
           )
-            | {{ $auth.user.preferred_username }} {{ $activeAccount.get() }}
+            | {{ $auth.user.preferred_username }}
         v-list
           v-list-item(
             v-for='account in accounts'
@@ -51,7 +49,6 @@ export default {
   },
   mounted() {
     console.log('Composant ', this.$options.name)
-    this.$store.dispatch('accounts/get')
   },
   methods: {
     logout() {
@@ -62,7 +59,6 @@ export default {
     },
     setCurrentAccount(a) {
       // envoyer dans le store l'account qui va bien
-      console.log('Selected Account ', a.id)
       this.$activeAccount.set(a.id)
     }
   }
