@@ -35,12 +35,14 @@ export default {
     this.$store.dispatch('headers/getProductHeaders')
   },
   methods: {
-    selected(v) {
-      this.$emit('list:selected', v)
+    selected(product) {
+      this.$emit('list:selected', product)
     },
-    deleteItem(v) {
-      console.log('delete :', v)
-      this.$store.dispatch('products/remove', v)
+    deleteItem(product) {
+      console.log('delete :', product)
+      this.$store.dispatch('products/remove', product)
+      const offer = this.$store.getters['offers/getForProduct'](product.id)
+      this.$store.dispatch('offers/remove', offer[0])
     }
   }
 }
