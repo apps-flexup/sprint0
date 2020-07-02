@@ -14,7 +14,7 @@
     template(
       slot='form'
     )
-      fv-new-product-form(:values="product")
+      fv-product-form(:values="product")
     template(
       slot='actions'
     )

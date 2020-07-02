@@ -142,5 +142,15 @@
   "modal": {
     "close": "Close",
     "save": "Save"
+  },
+  "accounts": {
+    "new": {
+      "title": "Welcome to FlexUp, let's create your first account"
+    }
+  },
+  "products": {
+    "new": {
+      "title": "Let's create your first product"
+    }
   }
 }

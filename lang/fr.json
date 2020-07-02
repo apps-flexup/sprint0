@@ -81,7 +81,7 @@
     "contracts": "Contrats",
     "products": "Produits",
     "contacts": "Contacts",
-    "partners": "Partneraires",
+    "partners": "Partenaires",
     "documents": "Documents",
     "dashboard": "Tableau de bord"
   },
@@ -145,5 +145,15 @@
   "modal": {
     "close": "Fermer",
     "save": "Sauvegarder"
+  },
+  "accounts": {
+    "new": {
+      "title": "Bienvenue sur FlexUp, créons votre premier compte"
+    }
+  },
+  "products": {
+    "new": {
+      "title": "Créons votre premier produit"
+    }
   }
 }

@@ -33,7 +33,7 @@ import FvModal from '@/components/FvModal'
 import FvModalAndButton from '@/components/FvModalAndButton'
 import FvNav from '@/components/FvNav'
 import FvNewPartnerForm from '@/components/FvNewPartnerForm'
-import FvNewProductForm from '@/components/FvNewProductForm'
+import FvProductForm from '@/components/FvProductForm'
 import FvStepper from '@/components/FvStepper'
 import FvEtape from '@/components/FvEtape'
 import FvFieldDate from '@/components/FvFieldDate'
@@ -96,7 +96,7 @@ Vue.component('fv-modal', FvModal)
 Vue.component('fv-modal-and-button', FvModalAndButton)
 Vue.component('fv-nav', FvNav)
 Vue.component('fv-new-partner-form', FvNewPartnerForm)
-Vue.component('fv-new-product-form', FvNewProductForm)
+Vue.component('fv-product-form', FvProductForm)
 Vue.component('fv-stepper', FvStepper)
 Vue.component('fv-etape', FvEtape)
 Vue.component('fv-field-date', FvFieldDate)

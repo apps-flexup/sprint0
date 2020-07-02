@@ -1,5 +1,5 @@
 <template lang="pug">
-  .fv-new-product-form
+  .fv-product-form
     v-row
       v-col(cols='6')
         v-text-field(
@@ -37,7 +37,7 @@
 
 <script>
 export default {
-  name: 'FvNewProductForm',
+  name: 'FvProductForm',
   props: {
     values: {
       type: Object,
@@ -56,8 +56,3 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
-.fv-new-product-form {
-  background-color: inherit;
-}
-</style>

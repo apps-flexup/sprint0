@@ -1,4 +1,4 @@
-const activeAccount = (store) => ({
+const activeAccount = (store, redirect) => ({
   clear() {
     store.dispatch('accounts/clear', {}, { root: true })
     store.dispatch('contracts/clear', {}, { root: true })
@@ -13,6 +13,7 @@ const activeAccount = (store) => ({
     let res = store.getters['accounts/selected']
     if (!res) {
       res = store.getters['accounts/first']
+      if (!res) redirect('/account/new')
       this.set(res)
     }
     return res
@@ -70,7 +71,7 @@ const activeAccount = (store) => ({
 })
 
 export default (ctx, inject) => {
-  const account = activeAccount(ctx.app.store)
+  const account = activeAccount(ctx.app.store, ctx.redirect)
 
   inject('activeAccount', account)
 }

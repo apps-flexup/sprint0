@@ -874,6 +874,14 @@
       "unitStr": "€/month",
       "statusStr": "4-Confirmé",
       "account_id": 1
+    },
+    {
+      "name": "des trucs",
+      "quantity": "25",
+      "price": "56465",
+      "unitStr": "m",
+      "account_id": 3,
+      "id": 4
     }
   ],
   "offers": [
