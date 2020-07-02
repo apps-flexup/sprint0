@@ -86,6 +86,7 @@
   "menu" : {
     "home": "Home",
     "orders": "Orders",
+    "offers": "Offers",
     "contracts": "Contracts",
     "products": "Products",
     "contacts": "Contacts",

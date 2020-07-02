@@ -7,10 +7,9 @@ export default {
       // Si data.length > 0
       if (data.length > 0) {
         // if (this.$auth.user.last_account ^ data.length > 0) {
-        console.log('dernier compte actif')
-        // commit('setCurrent', parseInt(this.$auth.user.last_account))
-        const account = data[0]
-        commit('setCurrent', parseInt(account.id))
+        const account = parseInt(data[0].id)
+        console.log('dernier compte actif', account)
+        this.$activeAccount.set(account)
       } else {
         console.log('pas de compte')
         this.app.router.push('account/new')
