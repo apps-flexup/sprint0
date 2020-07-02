@@ -40,6 +40,9 @@ export default {
     },
     deleteItem(offer) {
       console.log('delete :', offer)
+      this.$repos.products.show(offer.product_id).then((product) => {
+        this.$store.dispatch('products/remove', product)
+      })
       this.$store.dispatch('offers/remove', offer)
     }
   }
