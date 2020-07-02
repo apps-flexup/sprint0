@@ -1,4 +1,4 @@
-export default function({ $auth, store, redirect, app}) {
+export default function({ $auth, store }) {
   if (!$auth.loggedIn) {
     // effacement des stores..
     // $store.dispatch('accounts/clear')
