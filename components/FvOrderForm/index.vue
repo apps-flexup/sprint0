@@ -89,7 +89,7 @@ export default {
     partnerSelected(partnerId) {
       this.order.partner_id = partnerId
       // const res = this.$activeAccount.partners().filter((v) => v.id === partner_id)
-      this.$repos.contacts.show(partnerId).then((res) => {
+      this.$repos.partners.show(partnerId).then((res) => {
         this.partnerAddress = res
       })
     },
