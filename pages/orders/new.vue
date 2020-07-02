@@ -1,6 +1,6 @@
 <template lang="pug">
-  .achat
-    p {{ $options.name }}
+  .page-order-new
+    fv-order-form
 </template>
 
 <script>
@@ -15,8 +15,3 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
-.achat {
-  background-color: inherit;
-}
-</style>

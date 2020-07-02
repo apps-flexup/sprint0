@@ -52,6 +52,10 @@ import FvPartnerModal from '@/components/FvPartnerModal'
 import FvProductModal from '@/components/FvProductModal'
 import FvSpeedDial from '@/components/FvSpeedDial'
 import FvUserInfo from '@/components/FvUserInfo'
+import FvOrderForm from '@/components/FvOrderForm'
+import FvStructureAutocomplete from '@/components/FvStructureAutocomplete'
+import FvPartnerAutocomplete from '@/components/FvPartnerAutocomplete'
+import FvProductAutocomplete from '@/components/FvProductAutocomplete'
 
 // Déclarations composants utilitaires
 Vue.component('fv-menu-list', FvMenuList)
@@ -119,3 +123,7 @@ Vue.component('fv-partner-modal', FvPartnerModal)
 Vue.component('fv-product-modal', FvProductModal)
 Vue.component('fv-speed-dial', FvSpeedDial)
 Vue.component('fv-user-info', FvUserInfo)
+Vue.component('fv-order-form', FvOrderForm)
+Vue.component('fv-structure-autocomplete', FvStructureAutocomplete)
+Vue.component('fv-partner-autocomplete', FvPartnerAutocomplete)
+Vue.component('fv-product-autocomplete', FvProductAutocomplete)

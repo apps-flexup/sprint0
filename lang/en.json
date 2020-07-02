@@ -81,6 +81,23 @@
         "firstname": "Firstname",
         "email": "Email"
       }
+    },
+    "offers": {
+      "new": {
+        "dimension": "Dimension",
+        "name": "Offer name",
+        "unit": "Unit",
+        "price": "Price",
+        "elasticity": "Elasticity",
+        "currency": "Currency"
+      }
+    },
+    "orders": {
+      "new": {
+        "partner": "Partner",
+        "product": "Product",
+        "structure": "Structure"
+      }
     }
   },
   "menu" : {

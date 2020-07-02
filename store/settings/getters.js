@@ -7,6 +7,6 @@ export default {
   menu(state) {
     if (!state.menu) return []
     const res = JSON.parse(JSON.stringify(state.menu))
-    return res
+    return res.filter((m) => m.active)
   }
 }
