@@ -908,6 +908,20 @@
       "status": "draft",
       "account_id": 11,
       "id": 4
+    },
+    {
+      "periodicity": "iii",
+      "name": "uu",
+      "status": "draft",
+      "account_id": 10,
+      "id": 5
+    },
+    {
+      "periodicity": "sans",
+      "name": "fbv  hbd",
+      "status": "draft",
+      "account_id": 10,
+      "id": 6
     }
   ],
   "offers": [
@@ -1376,17 +1390,6 @@
     },
     {
       "dimension": "dimension",
-      "name": "testes",
-      "unit": "333",
-      "elasticity": "Moi",
-      "status": "draft",
-      "currency": "213",
-      "product_id": 6,
-      "account_id": 10,
-      "id": 11
-    },
-    {
-      "dimension": "dimension",
       "name": "Joli nom",
       "unit": "kg",
       "elasticity": "20",
@@ -1407,6 +1410,28 @@
       "product_id": 4,
       "account_id": 11,
       "id": 13
+    },
+    {
+      "dimension": "dimension",
+      "name": "uu",
+      "unit": "uu",
+      "price": "88",
+      "elasticity": "10",
+      "status": "draft",
+      "product_id": 5,
+      "account_id": 10,
+      "id": 14
+    },
+    {
+      "dimension": "dimension",
+      "name": "fbv  hbd",
+      "unit": "gdh n",
+      "price": "57878",
+      "elasticity": "55",
+      "status": "draft",
+      "product_id": 6,
+      "account_id": 10,
+      "id": 15
     }
   ],
   "offer-headers": [
@@ -2632,7 +2657,7 @@
       "id": 22,
       "name": {
         "en": "Creamery",
-        "fr": "Fruits \u0026 Légumes"
+        "fr": "Fruits & Légumes"
       },
       "description": {
         "en": "English",
@@ -2848,7 +2873,7 @@
       "id": 42,
       "name": {
         "en": "Games toys",
-        "fr": "Jeux \u0026 Jouets"
+        "fr": "Jeux & Jouets"
       },
       "description": {
         "en": "English",

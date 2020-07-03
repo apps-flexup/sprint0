@@ -115,7 +115,8 @@
     "create" : {
       "product": "CREATE PRODUCT",
       "contract": "CREATE CONTRACT",
-      "partner": "CREATE PARTNER"
+      "partner": "CREATE PARTNER",
+      "offer": "CREATE OFFER"
     },
     "submit": "Submit",
     "previous": "Previous",

@@ -58,6 +58,7 @@ import FvPartnerAutocomplete from '@/components/FvPartnerAutocomplete'
 import FvProductAutocomplete from '@/components/FvProductAutocomplete'
 import FvCategoryAutocomplete from '@/components/FvCategoryAutocomplete'
 import FvCurrencyAutocomplete from '@/components/FvCurrencyAutocomplete'
+import FvUnitAutocomplete from '@/components/FvUnitAutocomplete'
 import FvProductItem from '@/components/FvProductItem'
 
 // Déclarations composants utilitaires
@@ -133,4 +134,5 @@ Vue.component('fv-partner-autocomplete', FvPartnerAutocomplete)
 Vue.component('fv-product-autocomplete', FvProductAutocomplete)
 Vue.component('fv-category-autocomplete', FvCategoryAutocomplete)
 Vue.component('fv-currency-autocomplete', FvCurrencyAutocomplete)
+Vue.component('fv-unit-autocomplete', FvUnitAutocomplete)
 Vue.component('fv-product-item', FvProductItem)

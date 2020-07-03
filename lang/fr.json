@@ -118,7 +118,8 @@
     "create": {
       "product": "CRÉER PRODUIT",
       "contract": "CRÉER CONTRAT",
-      "partner": "CRÉER PARTENAIRE"
+      "partner": "CRÉER PARTENAIRE",
+      "offer": "CRÉER OFFRE"
     },
     "submit": "Envoyer",
     "previous": "Précédent",

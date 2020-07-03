@@ -41,7 +41,7 @@ export default {
     return res
   },
   formesJuridiques(state) {
-    const res = state.formesJuridiques
+    const res = JSON.parse(JSON.stringify(state.formesJuridiques))
     return res
   }
 }

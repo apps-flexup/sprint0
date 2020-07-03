@@ -11,10 +11,6 @@
       outlined=''
       @change="selected"
     )
-      template(v-slot:item="data")
-        slot(name="item")
-      template(v-slot:selection="data")
-        slot(name="selection")
 </template>
 
 <script>

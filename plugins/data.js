@@ -24,7 +24,8 @@ export default (ctx, inject) => {
     partners: repo('partners'),
     productHeaders: repo('product-headers'),
     products: repo('products'),
-    structures: repo('structures')
+    structures: repo('structures'),
+    units: repo('units')
   }
 
   inject('repos', repos)

@@ -22,7 +22,7 @@
           outlined=''
         )
       v-col(cols='6')
-        v-text-field(
+        fv-unit-autocomplete(
           v-model="values.unit"
           :label="$t('forms.products.new.unit')"
           outlined=''

@@ -1,6 +1,5 @@
 <template lang="pug">
   .fv-category-autocomplete
-    p {{ $options.name }}
     v-autocomplete(
       v-model="element"
       :items="filteredItems"

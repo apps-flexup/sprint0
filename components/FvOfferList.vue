@@ -8,7 +8,8 @@
         v-data-table.elevation-2(
           :headers='headers'
           :items='items'
-          item-key='id'
+          item-key='id',
+          @click:row='selected'
         )
           template(v-slot:item.actions='{ item }')
             v-icon.mr-2(small='' @click.stop='selected(item)')
@@ -48,9 +49,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.fv-offer-list {
-  background-color: inherit;
-}
-</style>

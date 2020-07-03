@@ -15,20 +15,22 @@ Vue.directive('to-currency', (el, binding, vnode) => {
 })
 
 // Pour la traduction des i18n
-const instantTranslate = (tableau, language) => {
+const instantTranslate = (tableau, language, fallback) => {
   if (typeof tableau === 'string') return tableau
   const langues = Object.keys(tableau)
-  // if (tableau.hasOwnProperty(language)) {
   if (Object.prototype.hasOwnProperty.call(tableau, language)) {
     return tableau[language]
+  } else if (Object.prototype.hasOwnProperty.call(tableau, fallback)) {
+    return tableau[fallback]
   }
   return tableau[langues[0]]
 }
 Vue.directive('to-locale', (el, binding, vnode) => {
   // const locale = vnode.context.$store.getters['settings/locale']
   const locale = vnode.context.$i18n.locale
+  const fallbackLocale = vnode.context.$i18n.fallbackLocale
   const res = binding.value
-  let valeur = instantTranslate(res, locale)
+  let valeur = instantTranslate(res, locale, fallbackLocale)
   // let valeur = vnode.context.$instantTranslate(binding.value)
   if (typeof valeur !== 'string') {
     if (valeur === undefined) valeur = 'Translation Impossible'
