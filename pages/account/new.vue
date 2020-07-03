@@ -57,6 +57,7 @@ export default {
   },
   mounted() {
     console.log('Composant ', this.$options.name)
+    this.account.lastname = this.$auth.family_name
   },
   methods: {
     createAccount() {

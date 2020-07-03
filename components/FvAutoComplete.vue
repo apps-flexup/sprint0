@@ -51,7 +51,7 @@ export default {
   },
   methods: {
     filterList() {
-      // console.log('Filtrage', this.items)
+      console.log('Filtrage', this.items)
       this.isLoading = true
       setTimeout(() => {
         this.filteredItems = this.items.filter((item) => {

@@ -16,32 +16,36 @@
           outlined=''
         )
     v-row
-      v-col.md-2.sm-3.lg-2.xl-2(cols='2')
+      v-col.md-4.sm-4.lg-4.xl-4(cols='4')
         v-text-field(
           v-model="values.zip"
           :label="$t('forms.partners.new.zip')"
           outlined=''
       )
-      v-col.md-6.sm-6.lg-7.xl-6(cols='6')
+      v-col.md-8.sm-8.lg-8.xl-8(cols='8')
         v-text-field(
           v-model="values.city"
           :label="$t('forms.partners.new.city')"
           outlined=''
         )
-      v-col.md-4.sm-3.lg-3.xl-4(cols='4')
-        v-text-field(
+    v-row
+      v-col.md-10.sm-10.lg-10.xl-10(cols='10')
+        fv-country-autocomplete(
           v-model="values.country"
           :label="$t('forms.partners.new.country')"
           outlined=''
+          @country:selected="countrySelected"
         )
     v-row
-      v-col.md-6.sm-6.lg-6.xl-6(cols='6')
-        v-text-field(
+      v-col.md-12.sm-12.lg-12.xl-12(cols='12')
+        fv-forme-juridique-autocomplete(
           v-model="values.juridicalStatus"
           :label="$t('forms.partners.new.juridicalStatus')"
           outlined=''
+          @formejuridiques:selected="formejuridiquesSelected"
         )
-      v-col.md-6.sm-6.lg-6.xl-6(cols='6')
+    v-row
+      v-col.md-12.sm-12.lg-12.xl-12(cols='12')
         v-text-field(
           v-model="values.siret"
           :label="$t('forms.partners.new.siret')"
@@ -62,11 +66,17 @@ export default {
   },
   mounted() {
     console.log('Composant ', this.$options.name)
+  },
+  methods: {
+    formejuridiquesSelected(v) {
+      console.log('selection forme juridique', v)
+      this.$emit('formeJuridiques:autocomplete', v)
+      this.values.juridicalStatus = v
+    },
+    countrySelected(v) {
+      this.values.country = v
+      this.$emit('country:autocomplete', v)
+    }
   }
 }
 </script>
-<style lang="scss" scoped>
-.fv-new-partner-form {
-  background-color: inherit;
-}
-</style>

@@ -251,6 +251,15 @@
       "email": "jeanbon@gmail.com",
       "user_id": "105092c4-0558-460b-99ba-4063d3a75731",
       "id": 11
+    },
+    {
+      "name": "Ingrid",
+      "title": "Mme",
+      "lastname": "Dietrichsen",
+      "firstname": "Ingrid",
+      "email": "Ingrid.dietrichsen@flexup.org",
+      "user_id": "0a0f9b23-afe5-4c06-8ce3-70d180123154",
+      "id": 12
     }
   ],
   "contacts": [
@@ -674,177 +683,177 @@
     {
       "id": 1,
       "sigle": "AE",
-      "libelle": "Auto-entrepreneur"
+      "name": "Auto-entrepreneur"
     },
     {
       "id": 2,
       "sigle": "EARL",
-      "libelle": "Entreprise agricole à responsabilité limitée"
+      "name": "Entreprise agricole à responsabilité limitée"
     },
     {
       "id": 3,
       "sigle": "EI",
-      "libelle": "Entreprise individuelle"
+      "name": "Entreprise individuelle"
     },
     {
       "id": 4,
       "sigle": "EIRL",
-      "libelle": "Entreprise individuelle à responsabilité limitée"
+      "name": "Entreprise individuelle à responsabilité limitée"
     },
     {
       "id": 5,
       "sigle": "EURL",
-      "libelle": "Entreprise unipersonnelle à responsabilité limitée"
+      "name": "Entreprise unipersonnelle à responsabilité limitée"
     },
     {
       "id": 6,
       "sigle": "GAEC",
-      "libelle": "Groupement agricole d’exploitation en commun"
+      "name": "Groupement agricole d’exploitation en commun"
     },
     {
       "id": 7,
       "sigle": "GEIE",
-      "libelle": "Groupement européen d’intérêt économique"
+      "name": "Groupement européen d’intérêt économique"
     },
     {
       "id": 8,
       "sigle": "GIE",
-      "libelle": "Groupement d’intérêt économique"
+      "name": "Groupement d’intérêt économique"
     },
     {
       "id": 9,
       "sigle": "ME",
-      "libelle": "Micro-entrepreneur"
+      "name": "Micro-entrepreneur"
     },
     {
       "id": 10,
       "sigle": "SARL",
-      "libelle": "Société à responsabilité limitée"
+      "name": "Société à responsabilité limitée"
     },
     {
       "id": 11,
       "sigle": "SA",
-      "libelle": "Société anonyme"
+      "name": "Société anonyme"
     },
     {
       "id": 12,
       "sigle": "SAS",
-      "libelle": "Société par actions simplifiée"
+      "name": "Société par actions simplifiée"
     },
     {
       "id": 13,
       "sigle": "SASU",
-      "libelle": "Société par actions simplifiée unipersonnelle"
+      "name": "Société par actions simplifiée unipersonnelle"
     },
     {
       "id": 14,
       "sigle": "SC",
-      "libelle": "Société civile"
+      "name": "Société civile"
     },
     {
       "id": 15,
       "sigle": "SCA",
-      "libelle": "Société en commandite par actions"
+      "name": "Société en commandite par actions"
     },
     {
       "id": 16,
       "sigle": "SCI",
-      "libelle": "Société civile immobilière"
+      "name": "Société civile immobilière"
     },
     {
       "id": 17,
       "sigle": "SCIC",
-      "libelle": "Société coopérative d’intérêt collectif"
+      "name": "Société coopérative d’intérêt collectif"
     },
     {
       "id": 18,
       "sigle": "SCICV",
-      "libelle": "Société civile immobilière à capital variable"
+      "name": "Société civile immobilière à capital variable"
     },
     {
       "id": 19,
       "sigle": "SCM",
-      "libelle": "Société civile de moyens"
+      "name": "Société civile de moyens"
     },
     {
       "id": 20,
       "sigle": "SCOP",
-      "libelle": "Société coopérative ouvrière de production"
+      "name": "Société coopérative ouvrière de production"
     },
     {
       "id": 21,
       "sigle": "SCP",
-      "libelle": "Société civile professionnelle"
+      "name": "Société civile professionnelle"
     },
     {
       "id": 22,
       "sigle": "SCS",
-      "libelle": "Société en commandite simple"
+      "name": "Société en commandite simple"
     },
     {
       "id": 23,
       "sigle": "SEL",
-      "libelle": "Société d’exercice libéral"
+      "name": "Société d’exercice libéral"
     },
     {
       "id": 24,
       "sigle": "SELAFA",
-      "libelle": "Société d’exercice libéral à forme anonyme"
+      "name": "Société d’exercice libéral à forme anonyme"
     },
     {
       "id": 25,
       "sigle": "SELARL",
-      "libelle": "Société d’exercice libéral à responsabilité limitée"
+      "name": "Société d’exercice libéral à responsabilité limitée"
     },
     {
       "id": 26,
       "sigle": "SELAS",
-      "libelle": "Société d’exercice libéral par actions simplifiée"
+      "name": "Société d’exercice libéral par actions simplifiée"
     },
     {
       "id": 27,
       "sigle": "SELCA",
-      "libelle": "Société d’exercice libéral en commandite par actions"
+      "name": "Société d’exercice libéral en commandite par actions"
     },
     {
       "id": 28,
       "sigle": "SEM",
-      "libelle": "Société d’économie mixte"
+      "name": "Société d’économie mixte"
     },
     {
       "id": 29,
       "sigle": "SEML",
-      "libelle": "Société d’économie mixte locale"
+      "name": "Société d’économie mixte locale"
     },
     {
       "id": 30,
       "sigle": "SEP",
-      "libelle": "Société en participation"
+      "name": "Société en participation"
     },
     {
       "id": 31,
       "sigle": "SICA",
-      "libelle": "Société d’intérêt collectif agricole"
+      "name": "Société d’intérêt collectif agricole"
     },
     {
       "id": 32,
       "sigle": "SMHF",
-      "libelle": "Société micro-holding familiale"
+      "name": "Société micro-holding familiale"
     },
     {
       "id": 33,
       "sigle": "SNC",
-      "libelle": "Société en nom collectif "
+      "name": "Société en nom collectif "
     },
     {
       "id": 34,
       "sigle": "SPFPL",
-      "libelle": "Société de participations financières de professions libérales"
+      "name": "Société de participations financières de professions libérales"
     },
     {
       "id": 35,
       "sigle": "SUP",
-      "libelle": "Societas unius personae (société européenne unipersonnelle à responsabilité limitée)"
+      "name": "Societas unius personae (société européenne unipersonnelle à responsabilité limitée)"
     }
   ],
   "product-headers": [
@@ -922,6 +931,12 @@
       "status": "draft",
       "account_id": 10,
       "id": 6
+    },
+    {
+      "name": "Consultancy",
+      "status": "draft",
+      "account_id": 12,
+      "id": 7
     }
   ],
   "offers": [
@@ -1432,6 +1447,16 @@
       "product_id": 6,
       "account_id": 10,
       "id": 15
+    },
+    {
+      "dimension": "dimension",
+      "name": "Consultancy",
+      "price": "850",
+      "elasticity": "15",
+      "status": "draft",
+      "product_id": 7,
+      "account_id": 12,
+      "id": 16
     }
   ],
   "offer-headers": [
@@ -3069,7 +3094,7 @@
       "symbole": "year",
       "base": "year",
       "default": true,
-      "unit_per_base": 1.0
+      "unit_per_base": 1
     },
     {
       "id": 2,
@@ -3077,7 +3102,7 @@
       "symbole": "Gb/s",
       "base": "Gb/s",
       "default": true,
-      "unit_per_base": 1000000000.0
+      "unit_per_base": 1000000000
     },
     {
       "id": 3,
@@ -3085,7 +3110,7 @@
       "symbole": "byte",
       "base": "byte",
       "default": true,
-      "unit_per_base": 1.0
+      "unit_per_base": 1
     },
     {
       "id": 4,
@@ -3093,7 +3118,7 @@
       "symbole": "hr",
       "base": "hr",
       "default": true,
-      "unit_per_base": 1.0
+      "unit_per_base": 1
     },
     {
       "id": 5,
@@ -3101,7 +3126,7 @@
       "symbole": "m",
       "base": "m",
       "default": true,
-      "unit_per_base": 1.0
+      "unit_per_base": 1
     },
     {
       "id": 6,
@@ -3109,7 +3134,7 @@
       "symbole": "km/hr",
       "base": "km/hr",
       "default": true,
-      "unit_per_base": 1.0
+      "unit_per_base": 1
     },
     {
       "id": 7,
@@ -3117,7 +3142,7 @@
       "symbole": "Unit",
       "base": "Unit",
       "default": true,
-      "unit_per_base": 1.0
+      "unit_per_base": 1
     },
     {
       "id": 8,
@@ -3125,7 +3150,7 @@
       "symbole": "l",
       "base": "l",
       "default": true,
-      "unit_per_base": 1.0
+      "unit_per_base": 1
     },
     {
       "id": 9,
@@ -3133,7 +3158,7 @@
       "symbole": "kg",
       "base": "kg",
       "default": true,
-      "unit_per_base": 1.0
+      "unit_per_base": 1
     },
     {
       "id": 10,
@@ -3141,7 +3166,7 @@
       "symbole": "work",
       "base": "work",
       "default": true,
-      "unit_per_base": 1.0
+      "unit_per_base": 1
     },
     {
       "id": 11,
@@ -3149,7 +3174,7 @@
       "symbole": "month",
       "base": "year",
       "default": false,
-      "unit_per_base": 12.0
+      "unit_per_base": 12
     },
     {
       "id": 12,
@@ -3165,7 +3190,7 @@
       "symbole": "byte/s",
       "base": "Gb/s",
       "default": false,
-      "unit_per_base": 1.0
+      "unit_per_base": 1
     },
     {
       "id": 14,
@@ -3173,7 +3198,7 @@
       "symbole": "kb/s",
       "base": "Gb/s",
       "default": false,
-      "unit_per_base": 1000.0
+      "unit_per_base": 1000
     },
     {
       "id": 15,
@@ -3181,7 +3206,7 @@
       "symbole": "Mb/s",
       "base": "Gb/s",
       "default": false,
-      "unit_per_base": 1000000.0
+      "unit_per_base": 1000000
     },
     {
       "id": 16,
@@ -3189,7 +3214,7 @@
       "symbole": "Tb/s",
       "base": "Gb/s",
       "default": false,
-      "unit_per_base": 1000000000000.0
+      "unit_per_base": 1000000000000
     },
     {
       "id": 17,
@@ -3205,7 +3230,7 @@
       "symbole": "GB",
       "base": "byte",
       "default": false,
-      "unit_per_base": 1000000000.0
+      "unit_per_base": 1000000000
     },
     {
       "id": 19,
@@ -3213,7 +3238,7 @@
       "symbole": "kB",
       "base": "byte",
       "default": false,
-      "unit_per_base": 1000.0
+      "unit_per_base": 1000
     },
     {
       "id": 20,
@@ -3221,7 +3246,7 @@
       "symbole": "MB",
       "base": "byte",
       "default": false,
-      "unit_per_base": 1000000.0
+      "unit_per_base": 1000000
     },
     {
       "id": 21,
@@ -3229,7 +3254,7 @@
       "symbole": "TB",
       "base": "byte",
       "default": false,
-      "unit_per_base": 1000000000000.0
+      "unit_per_base": 1000000000000
     },
     {
       "id": 22,
@@ -3237,7 +3262,7 @@
       "symbole": "day",
       "base": "hr",
       "default": false,
-      "unit_per_base": 24.0
+      "unit_per_base": 24
     },
     {
       "id": 23,
@@ -3277,7 +3302,7 @@
       "symbole": "week",
       "base": "hr",
       "default": false,
-      "unit_per_base": 168.0
+      "unit_per_base": 168
     },
     {
       "id": 28,
@@ -3285,7 +3310,7 @@
       "symbole": "year",
       "base": "hr",
       "default": false,
-      "unit_per_base": 8766.0
+      "unit_per_base": 8766
     },
     {
       "id": 29,
@@ -3317,7 +3342,7 @@
       "symbole": "km",
       "base": "m",
       "default": false,
-      "unit_per_base": 1000.0
+      "unit_per_base": 1000
     },
     {
       "id": 33,
@@ -3341,7 +3366,7 @@
       "symbole": "nautical mile",
       "base": "m",
       "default": false,
-      "unit_per_base": 1852.0
+      "unit_per_base": 1852
     },
     {
       "id": 36,
@@ -3357,7 +3382,7 @@
       "symbole": "Nr",
       "base": "m",
       "default": false,
-      "unit_per_base": 1.0
+      "unit_per_base": 1
     },
     {
       "id": 38,
@@ -3469,7 +3494,7 @@
       "symbole": "m³",
       "base": "l",
       "default": false,
-      "unit_per_base": 1000.0
+      "unit_per_base": 1000
     },
     {
       "id": 52,
@@ -3525,7 +3550,7 @@
       "symbole": "mg",
       "base": "kg",
       "default": false,
-      "unit_per_base": 1.0e-06
+      "unit_per_base": 0.000001
     },
     {
       "id": 59,
@@ -3533,7 +3558,7 @@
       "symbole": "t",
       "base": "kg",
       "default": false,
-      "unit_per_base": 1000.0
+      "unit_per_base": 1000
     }
   ],
   "countries": [

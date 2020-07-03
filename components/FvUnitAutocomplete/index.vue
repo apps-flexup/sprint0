@@ -1,22 +1,34 @@
 <template lang="pug">
   .fv-unit-autocomplete
-    fv-auto-complete(
-      v-model="this.unit"
-      :items="items"
+    v-autocomplete(
+      v-model="element"
+      :items="filteredItems"
+      :loading="isLoading"
+      :search-input.sync="search"
       :label="$t('forms.products.new.unit')"
-      @autocomplete:selected="selected"
+      item-text="name"
+      item-value="id"
+      clearable=''
+      outlined=''
+      @change="selected"
     )
+      template(v-slot:item="data")
+        v-list-item-content
+          v-list-item-title {{ `${data.item.symbole} (${data.item.dimension})` }}
+      template(v-slot:selection="data")
+        div {{ `${data.item.symbole} (${data.item.dimension})` }}
 </template>
 
 <script>
 export default {
   name: 'FvUnitAutocomplete',
-  props: {
-    unit: {
-      type: Number,
-      default() {
-        return null
-      }
+  inheritAttrs: true,
+  data() {
+    return {
+      element: null,
+      isLoading: false,
+      search: null,
+      filteredItems: []
     }
   },
   computed: {
@@ -25,22 +37,31 @@ export default {
       return res
     }
   },
+  watch: {
+    search(val) {
+      // console.log('search :', val)
+      val && val !== this.element && this.filterList(val)
+    }
+  },
   mounted() {
     console.log('Composant ', this.$options.name)
     this.$store.dispatch('units/get')
   },
   methods: {
+    filterList() {
+      this.isLoading = true
+      setTimeout(() => {
+        this.filteredItems = this.items.filter((item) => {
+          // console.log('cherche :', v, ', item :', item)
+          const name = item.symbole || ''
+          // return name.toLowerCase().includes((v || '').toLowerCase()) > -1
+          return name
+        })
+        this.isLoading = false
+      }, 500)
+    },
     selected(v) {
-      if (v) {
-        const dimension = this.$store.getters['units/find'](v)
-        const payload = {
-          dimension,
-          unit: v
-        }
-        this.$emit('unit:selected', payload)
-      } else {
-        this.$emit('unit:selected', v)
-      }
+      this.$emit('unit:selected', v)
     }
   }
 }

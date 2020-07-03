@@ -1,9 +1,9 @@
 <template lang="pug">
   .fv-formejuridique-autocomplete
     fv-auto-complete(
-      v-model="this.formejuridique"
+      v-model="formejuridique"
       :items="items"
-      :label="$t('forms.orders.new.formejuridique')"
+      :label="$t('forms.partners.new.juridicalStatus')"
       @autocomplete:selected="selected"
     )
 </template>

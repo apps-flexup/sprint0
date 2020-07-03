@@ -35,9 +35,9 @@ export default {
     },
     filterFunction: {
       type: Function,
-      default(v) {
+      default() {
         return this.items.filter((item) => {
-          console.log('cherche :', v, ', item :', item)
+          // console.log('cherche :', v, ', item :', item)
           const name = item.name || ''
           // return name.toLowerCase().includes((v || '').toLowerCase()) > -1
           return name

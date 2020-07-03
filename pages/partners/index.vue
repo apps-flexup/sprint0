@@ -33,6 +33,7 @@ export default {
     },
     save(e) {
       this.showModal = false
+      console.log('e: ', e)
       this.$store.dispatch('partners/add', e)
       this.selected = {}
     },

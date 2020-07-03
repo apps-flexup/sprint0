@@ -47,12 +47,12 @@ export default {
     this.$store.dispatch('categories/get')
   },
   methods: {
-    filterList(v) {
+    filterList() {
       // console.log('Filtrage', this.items)
       this.isLoading = true
       setTimeout(() => {
         this.filteredItems = this.items.filter((item) => {
-          console.log('cherche :', v, ', item :', item)
+          // console.log('cherche :', v, ', item :', item)
           const name = item.name || ''
           // return name.toLowerCase().includes((v || '').toLowerCase()) > -1
           return name
