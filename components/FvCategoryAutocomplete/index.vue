@@ -3,6 +3,7 @@
     v-autocomplete(
       v-model="element"
       :items="filteredItems"
+      :filter="filterList"
       :loading="isLoading"
       :search-input.sync="search"
       :label="$t('forms.products.new.category')"
@@ -26,20 +27,13 @@ export default {
     return {
       element: null,
       isLoading: false,
-      search: null,
-      filteredItems: []
+      search: null
     }
   },
   computed: {
-    items() {
+    filteredItems() {
       const res = this.$store.getters['categories/all']
       return res
-    }
-  },
-  watch: {
-    search(val) {
-      // console.log('search :', val)
-      val && val !== this.element && this.filterList(val)
     }
   },
   mounted() {
@@ -47,18 +41,17 @@ export default {
     this.$store.dispatch('categories/get')
   },
   methods: {
-    filterList() {
-      // console.log('Filtrage', this.items)
-      this.isLoading = true
-      setTimeout(() => {
-        this.filteredItems = this.items.filter((item) => {
-          // console.log('cherche :', v, ', item :', item)
-          const name = item.name || ''
-          // return name.toLowerCase().includes((v || '').toLowerCase()) > -1
-          return name
+    filterList(item, v, _it) {
+      const name = JSON.parse(JSON.stringify(item.name || {}))
+      const nameValues = Object.keys(name)
+        .map((k) => {
+          return item.name[k]
         })
-        this.isLoading = false
-      }, 500)
+        .join(' ')
+        .toLowerCase()
+      const res =
+        (nameValues || '').toLowerCase().includes((v || '').toLowerCase()) > -1
+      return res
     },
     selected(v) {
       this.$emit('category:selected', v)

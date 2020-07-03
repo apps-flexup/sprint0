@@ -64,10 +64,12 @@ export default {
   methods: {
     categorySelected(v) {
       console.log('category :', v)
+      this.values.category_id = v
       this.$emit('category:autocomplete', v)
     },
     currencySelected(v) {
       console.log('currency :', v)
+      this.values.currency = v
       this.$emit('currency:autocomplete', v)
     }
   }

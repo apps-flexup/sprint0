@@ -21,12 +21,15 @@ export default {
   computed: {
     headers() {
       const res = this.$activeAccount.headersProducts()
-      // const res = this.$store.getters['headers/products']
-      // res.push({ text: 'headers.actions', value: 'actions', sortable: false })
       return this.$translateHeaders(res)
     },
     items() {
       const res = this.$activeAccount.products()
+      res.forEach((product) => {
+        this.$repos.categories.show(product.category_id).then((category) => {
+          product.category_id = category.name.fr
+        })
+      })
       return res
     }
   },

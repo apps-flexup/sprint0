@@ -26,10 +26,10 @@ export default {
     submit() {
       this.$nuxt.$loading.start()
       console.log('résultat :', this.product)
-      this.$activeAccount.addProduct(this.product).then((_res) => {
-        this.$nuxt.$loading.finish()
-        this.router.push('/products')
-      })
+      const payload = this.product
+      this.$activeAccount.addProduct(payload)
+      this.$nuxt.$loading.finish()
+      this.$router.push('/products')
     }
   }
 }

@@ -20,7 +20,6 @@ const activeAccount = (ctx) => ({
     ctx.store.dispatch('charters/get', {}, { root: true })
     ctx.store.dispatch('contacts/get', {}, { root: true })
     ctx.store.dispatch('contracts/getContracts', {}, { root: true })
-    ctx.store.dispatch('currencies/get', {}, { root: true })
     ctx.store.dispatch('offers/get', {}, { root: true })
     ctx.store.dispatch('orders/get', {}, { root: true })
     ctx.store.dispatch('partners/get', {}, { root: true })
@@ -94,10 +93,9 @@ const activeAccount = (ctx) => ({
     }
     ctx.$repos.products.createAccount(product).then((prod) => {
       offer.product_id = prod.id
-      ctx.$repos.offers.createAccount(offer).then((res) => {
+      ctx.$repos.offers.createAccount(offer).then(() => {
         ctx.store.dispatch('products/get')
         ctx.store.dispatch('offers/get')
-        return res
       })
     })
   }

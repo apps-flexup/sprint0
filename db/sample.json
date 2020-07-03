@@ -55,53 +55,6 @@
       "active": false
     }
   ],
-  "menu-old": [
-    {
-      "icon": "mdi-apps",
-      "title": "Accueil",
-      "to": "/"
-    },
-    {
-      "icon": "mdi-apps",
-      "title": "work",
-      "to": "/work"
-    },
-    {
-      "icon": "mdi-briefcase-check",
-      "title": "Contrats",
-      "to": "/contracts"
-    },
-    {
-      "icon": "mdi-file-plus",
-      "title": "Nouveau Contrats",
-      "to": "/contracts/new"
-    },
-    {
-      "icon": "mdi-account-group",
-      "title": "Contacts",
-      "to": "/contacts"
-    },
-    {
-      "icon": "mdi-account-arrow-right",
-      "title": "Nouveau Contact",
-      "to": "/contacts/new"
-    },
-    {
-      "icon": "mdi-tag",
-      "title": "Offers",
-      "to": "/offers"
-    },
-    {
-      "icon": "mdi-file-document",
-      "title": "Documents",
-      "to": "/documents"
-    },
-    {
-      "icon": "mdi-desktop-mac-dashboard",
-      "title": "Dashboard",
-      "to": "/dashboard"
-    }
-  ],
   "accounts": [
     {
       "country_id": 77,
@@ -235,40 +188,31 @@
       "user_id": "7bee39f1-e72b-40c7-ac6a-2a22297c68a6"
     },
     {
-      "name": "Jbeardstone Company Ltd SARL GmBh",
-      "title": "Mr",
-      "lastname": "La riflette",
-      "firstname": "Toto",
-      "email": "toto@lariflette.com",
-      "user_id": "61d4b5f7-8887-474f-b982-253b78ca95f8",
+      "name": "jeanbon",
+      "title": null,
+      "lastname": "Bon",
+      "firstname": "Jean",
+      "email": "jeanbon@gmail.com",
+      "user_id": "8a4fb33f-0864-464f-b085-65afdedf0d77",
       "id": 10
     },
     {
-      "name": "mon 1er compte",
-      "title": "Mr",
-      "lastname": "Jean",
-      "firstname": "Bon",
+      "name": "jeanbon2",
+      "title": null,
+      "lastname": "Bon",
+      "firstname": "Jean",
       "email": "jeanbon@gmail.com",
-      "user_id": "105092c4-0558-460b-99ba-4063d3a75731",
+      "user_id": "8a4fb33f-0864-464f-b085-65afdedf0d77",
       "id": 11
     },
     {
-      "name": "Ingrid",
-      "title": "Mme",
-      "lastname": "Dietrichsen",
-      "firstname": "Ingrid",
-      "email": "Ingrid.dietrichsen@flexup.org",
-      "user_id": "0a0f9b23-afe5-4c06-8ce3-70d180123154",
-      "id": 12
-    },
-    {
-      "name": "username",
+      "name": "fredl",
       "title": "M.",
-      "lastname": "last name",
-      "firstname": "first name",
-      "email": "demo1@t98.re",
-      "user_id": "8788f602-93b9-4b0c-9f43-21784b83188d",
-      "id": 13
+      "lastname": "lasnier",
+      "firstname": "frédéric",
+      "email": "frederic.lasnier@flexup.org",
+      "user_id": "61d4b5f7-8887-474f-b982-253b78ca95f8",
+      "id": 12
     }
   ],
   "contacts": [
@@ -920,32 +864,12 @@
       "account_id": 1
     },
     {
-      "category_id": "super category",
+      "category_id": 17,
       "periodicity": "souvent",
-      "name": "beau produit",
-      "status": "draft",
-      "account_id": 11,
-      "id": 4
-    },
-    {
-      "periodicity": "iii",
-      "name": "uu",
+      "name": "Minute",
       "status": "draft",
       "account_id": 10,
       "id": 5
-    },
-    {
-      "periodicity": "sans",
-      "name": "fbv  hbd",
-      "status": "draft",
-      "account_id": 10,
-      "id": 6
-    },
-    {
-      "name": "Consultancy",
-      "status": "draft",
-      "account_id": 12,
-      "id": 7
     }
   ],
   "offers": [
@@ -1392,80 +1316,14 @@
     },
     {
       "dimension": "dimension",
-      "name": "azeaze",
-      "unit": "zae",
-      "elasticity": "141",
+      "name": "Minute",
+      "price": "150",
+      "elasticity": "1",
       "status": "draft",
-      "currency": "vbvb",
-      "product_id": 4,
-      "account_id": 10,
-      "id": 9
-    },
-    {
-      "dimension": "dimension",
-      "name": "aazcqsc d",
-      "unit": "sdfd",
-      "elasticity": "74",
-      "status": "draft",
-      "currency": "fgfg",
+      "currency": 49,
       "product_id": 5,
       "account_id": 10,
       "id": 10
-    },
-    {
-      "dimension": "dimension",
-      "name": "Joli nom",
-      "unit": "kg",
-      "elasticity": "20",
-      "status": "draft",
-      "currency": "EUR",
-      "product_id": 6,
-      "account_id": 10,
-      "id": 12
-    },
-    {
-      "dimension": "dimension",
-      "name": "beau produit",
-      "unit": "m",
-      "price": "100",
-      "elasticity": "5",
-      "status": "draft",
-      "currency": "EUR",
-      "product_id": 4,
-      "account_id": 11,
-      "id": 13
-    },
-    {
-      "dimension": "dimension",
-      "name": "uu",
-      "unit": "uu",
-      "price": "88",
-      "elasticity": "10",
-      "status": "draft",
-      "product_id": 5,
-      "account_id": 10,
-      "id": 14
-    },
-    {
-      "dimension": "dimension",
-      "name": "fbv  hbd",
-      "unit": "gdh n",
-      "price": "57878",
-      "elasticity": "55",
-      "status": "draft",
-      "product_id": 6,
-      "account_id": 10,
-      "id": 15
-    },
-    {
-      "dimension": "dimension",
-      "name": "Consultancy",
-      "price": "850",
-      "elasticity": "15",
-      "status": "draft",
-      "product_id": 7,
-      "account_id": 12,
-      "id": 16
     }
   ],
   "offer-headers": [
@@ -3584,9 +3442,7 @@
         "id": 13,
         "name": "UN",
         "description": "UN member state",
-        "countries_count": 193,
-        "created_at": "2020-02-28T18:15:00.482+01:00",
-        "updated_at": "2020-02-28T18:15:00.482+01:00"
+        "countries_count": 193
       },
       "continent": null,
       "currencies": [
@@ -3596,9 +3452,7 @@
           "iso3": "EUR",
           "ison": 978,
           "minor": 2,
-          "active": true,
-          "created_at": "2020-02-28T18:15:02.439+01:00",
-          "updated_at": "2020-04-24T17:12:18.607+02:00"
+          "active": true
         }
       ],
       "languages": [
@@ -3607,9 +3461,7 @@
           "iso2": "fr",
           "name": null,
           "native": null,
-          "active": true,
-          "created_at": "2020-02-28T18:14:59.904+01:00",
-          "updated_at": "2020-02-28T18:15:00.377+01:00"
+          "active": true
         }
       ]
     },
@@ -3626,9 +3478,7 @@
         "id": 13,
         "name": "UN",
         "description": "UN member state",
-        "countries_count": 193,
-        "created_at": "2020-02-28T18:15:00.482+01:00",
-        "updated_at": "2020-02-28T18:15:00.482+01:00"
+        "countries_count": 193
       },
       "continent": null,
       "currencies": [
@@ -3638,9 +3488,7 @@
           "iso3": "EUR",
           "ison": 978,
           "minor": 2,
-          "active": true,
-          "created_at": "2020-02-28T18:15:02.439+01:00",
-          "updated_at": "2020-04-24T17:12:18.607+02:00"
+          "active": true
         }
       ],
       "languages": [
@@ -3649,27 +3497,21 @@
           "iso2": "nl",
           "name": null,
           "native": null,
-          "active": false,
-          "created_at": "2020-02-28T18:15:00.162+01:00",
-          "updated_at": "2020-02-28T18:15:00.162+01:00"
+          "active": false
         },
         {
           "id": 32,
           "iso2": "de",
           "name": null,
           "native": null,
-          "active": true,
-          "created_at": "2020-02-28T18:14:59.847+01:00",
-          "updated_at": "2020-02-28T18:15:00.385+01:00"
+          "active": true
         },
         {
           "id": 47,
           "iso2": "fr",
           "name": null,
           "native": null,
-          "active": true,
-          "created_at": "2020-02-28T18:14:59.904+01:00",
-          "updated_at": "2020-02-28T18:15:00.377+01:00"
+          "active": true
         }
       ]
     },
@@ -3686,9 +3528,7 @@
         "id": 13,
         "name": "UN",
         "description": "UN member state",
-        "countries_count": 193,
-        "created_at": "2020-02-28T18:15:00.482+01:00",
-        "updated_at": "2020-02-28T18:15:00.482+01:00"
+        "countries_count": 193
       },
       "continent": null,
       "currencies": [
@@ -3698,9 +3538,7 @@
           "iso3": "EUR",
           "ison": 978,
           "minor": 2,
-          "active": true,
-          "created_at": "2020-02-28T18:15:02.439+01:00",
-          "updated_at": "2020-04-24T17:12:18.607+02:00"
+          "active": true
         }
       ],
       "languages": [
@@ -3709,9 +3547,7 @@
           "iso2": "it",
           "name": null,
           "native": null,
-          "active": true,
-          "created_at": "2020-02-28T18:14:59.985+01:00",
-          "updated_at": "2020-02-28T18:15:00.388+01:00"
+          "active": true
         }
       ]
     },
@@ -3728,9 +3564,7 @@
         "id": 13,
         "name": "UN",
         "description": "UN member state",
-        "countries_count": 193,
-        "created_at": "2020-02-28T18:15:00.482+01:00",
-        "updated_at": "2020-02-28T18:15:00.482+01:00"
+        "countries_count": 193
       },
       "continent": null,
       "currencies": [
@@ -3740,9 +3574,7 @@
           "iso3": "EUR",
           "ison": 978,
           "minor": 2,
-          "active": true,
-          "created_at": "2020-02-28T18:15:02.439+01:00",
-          "updated_at": "2020-04-24T17:12:18.607+02:00"
+          "active": true
         }
       ],
       "languages": [
@@ -3751,9 +3583,7 @@
           "iso2": "de",
           "name": null,
           "native": null,
-          "active": true,
-          "created_at": "2020-02-28T18:14:59.847+01:00",
-          "updated_at": "2020-02-28T18:15:00.385+01:00"
+          "active": true
         }
       ]
     },
@@ -3770,9 +3600,7 @@
         "id": 13,
         "name": "UN",
         "description": "UN member state",
-        "countries_count": 193,
-        "created_at": "2020-02-28T18:15:00.482+01:00",
-        "updated_at": "2020-02-28T18:15:00.482+01:00"
+        "countries_count": 193
       },
       "continent": null,
       "currencies": [
@@ -3782,9 +3610,7 @@
           "iso3": "GBP",
           "ison": 826,
           "minor": 2,
-          "active": false,
-          "created_at": "2020-02-28T18:15:02.448+01:00",
-          "updated_at": "2020-04-24T17:12:15.457+02:00"
+          "active": false
         },
         {
           "id": 149,
@@ -3792,9 +3618,7 @@
           "iso3": "USD",
           "ison": 840,
           "minor": 2,
-          "active": true,
-          "created_at": "2020-02-28T18:15:02.862+01:00",
-          "updated_at": "2020-04-24T17:12:18.611+02:00"
+          "active": true
         }
       ],
       "languages": [
@@ -3803,9 +3627,7 @@
           "iso2": "en",
           "name": null,
           "native": null,
-          "active": true,
-          "created_at": "2020-02-28T18:14:59.865+01:00",
-          "updated_at": "2020-02-28T18:15:00.381+01:00"
+          "active": true
         }
       ]
     },
@@ -3822,9 +3644,7 @@
         "id": 13,
         "name": "UN",
         "description": "UN member state",
-        "countries_count": 193,
-        "created_at": "2020-02-28T18:15:00.482+01:00",
-        "updated_at": "2020-02-28T18:15:00.482+01:00"
+        "countries_count": 193
       },
       "continent": null,
       "currencies": [
@@ -3834,9 +3654,7 @@
           "iso3": "EUR",
           "ison": 978,
           "minor": 2,
-          "active": true,
-          "created_at": "2020-02-28T18:15:02.439+01:00",
-          "updated_at": "2020-04-24T17:12:18.607+02:00"
+          "active": true
         }
       ],
       "languages": [
@@ -3845,45 +3663,35 @@
           "iso2": "oc",
           "name": null,
           "native": null,
-          "active": false,
-          "created_at": "2020-02-28T18:15:00.183+01:00",
-          "updated_at": "2020-02-28T18:15:00.183+01:00"
+          "active": false
         },
         {
           "id": 51,
           "iso2": "gl",
           "name": null,
           "native": null,
-          "active": false,
-          "created_at": "2020-02-28T18:14:59.916+01:00",
-          "updated_at": "2020-02-28T18:14:59.916+01:00"
+          "active": false
         },
         {
           "id": 22,
           "iso2": "ca",
           "name": null,
           "native": null,
-          "active": false,
-          "created_at": "2020-02-28T18:14:59.811+01:00",
-          "updated_at": "2020-02-28T18:14:59.811+01:00"
+          "active": false
         },
         {
           "id": 41,
           "iso2": "eu",
           "name": null,
           "native": null,
-          "active": false,
-          "created_at": "2020-02-28T18:14:59.878+01:00",
-          "updated_at": "2020-02-28T18:14:59.878+01:00"
+          "active": false
         },
         {
           "id": 39,
           "iso2": "es",
           "name": null,
           "native": null,
-          "active": true,
-          "created_at": "2020-02-28T18:14:59.872+01:00",
-          "updated_at": "2020-02-28T18:15:00.392+01:00"
+          "active": true
         }
       ]
     }
