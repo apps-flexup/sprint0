@@ -3061,5 +3061,797 @@
       "other_parent": [],
       "offers_count": 0
     }
+  ],
+  "units": [
+    {
+      "id": 1,
+      "dimension": "age",
+      "symbole": "year",
+      "base": "year",
+      "default": true,
+      "unit_per_base": 1.0
+    },
+    {
+      "id": 2,
+      "dimension": "bandwith",
+      "symbole": "Gb/s",
+      "base": "Gb/s",
+      "default": true,
+      "unit_per_base": 1000000000.0
+    },
+    {
+      "id": 3,
+      "dimension": "data",
+      "symbole": "byte",
+      "base": "byte",
+      "default": true,
+      "unit_per_base": 1.0
+    },
+    {
+      "id": 4,
+      "dimension": "duration",
+      "symbole": "hr",
+      "base": "hr",
+      "default": true,
+      "unit_per_base": 1.0
+    },
+    {
+      "id": 5,
+      "dimension": "length",
+      "symbole": "m",
+      "base": "m",
+      "default": true,
+      "unit_per_base": 1.0
+    },
+    {
+      "id": 6,
+      "dimension": "speed",
+      "symbole": "km/hr",
+      "base": "km/hr",
+      "default": true,
+      "unit_per_base": 1.0
+    },
+    {
+      "id": 7,
+      "dimension": "unit",
+      "symbole": "Unit",
+      "base": "Unit",
+      "default": true,
+      "unit_per_base": 1.0
+    },
+    {
+      "id": 8,
+      "dimension": "volume",
+      "symbole": "l",
+      "base": "l",
+      "default": true,
+      "unit_per_base": 1.0
+    },
+    {
+      "id": 9,
+      "dimension": "weight",
+      "symbole": "kg",
+      "base": "kg",
+      "default": true,
+      "unit_per_base": 1.0
+    },
+    {
+      "id": 10,
+      "dimension": "word",
+      "symbole": "work",
+      "base": "work",
+      "default": true,
+      "unit_per_base": 1.0
+    },
+    {
+      "id": 11,
+      "dimension": "age",
+      "symbole": "month",
+      "base": "year",
+      "default": false,
+      "unit_per_base": 12.0
+    },
+    {
+      "id": 12,
+      "dimension": "bandwith",
+      "symbole": "bit/s",
+      "base": "Gb/s",
+      "default": false,
+      "unit_per_base": 0.125
+    },
+    {
+      "id": 13,
+      "dimension": "bandwith",
+      "symbole": "byte/s",
+      "base": "Gb/s",
+      "default": false,
+      "unit_per_base": 1.0
+    },
+    {
+      "id": 14,
+      "dimension": "bandwith",
+      "symbole": "kb/s",
+      "base": "Gb/s",
+      "default": false,
+      "unit_per_base": 1000.0
+    },
+    {
+      "id": 15,
+      "dimension": "bandwith",
+      "symbole": "Mb/s",
+      "base": "Gb/s",
+      "default": false,
+      "unit_per_base": 1000000.0
+    },
+    {
+      "id": 16,
+      "dimension": "bandwith",
+      "symbole": "Tb/s",
+      "base": "Gb/s",
+      "default": false,
+      "unit_per_base": 1000000000000.0
+    },
+    {
+      "id": 17,
+      "dimension": "data",
+      "symbole": "bit",
+      "base": "byte",
+      "default": false,
+      "unit_per_base": 0.125
+    },
+    {
+      "id": 18,
+      "dimension": "data",
+      "symbole": "GB",
+      "base": "byte",
+      "default": false,
+      "unit_per_base": 1000000000.0
+    },
+    {
+      "id": 19,
+      "dimension": "data",
+      "symbole": "kB",
+      "base": "byte",
+      "default": false,
+      "unit_per_base": 1000.0
+    },
+    {
+      "id": 20,
+      "dimension": "data",
+      "symbole": "MB",
+      "base": "byte",
+      "default": false,
+      "unit_per_base": 1000000.0
+    },
+    {
+      "id": 21,
+      "dimension": "data",
+      "symbole": "TB",
+      "base": "byte",
+      "default": false,
+      "unit_per_base": 1000000000000.0
+    },
+    {
+      "id": 22,
+      "dimension": "duration",
+      "symbole": "day",
+      "base": "hr",
+      "default": false,
+      "unit_per_base": 24.0
+    },
+    {
+      "id": 23,
+      "dimension": "duration",
+      "symbole": "min",
+      "base": "hr",
+      "default": false,
+      "unit_per_base": 0.0166666666666667
+    },
+    {
+      "id": 24,
+      "dimension": "duration",
+      "symbole": "month",
+      "base": "hr",
+      "default": false,
+      "unit_per_base": 730.5
+    },
+    {
+      "id": 25,
+      "dimension": "duration",
+      "symbole": "quarter",
+      "base": "hr",
+      "default": false,
+      "unit_per_base": 2191.5
+    },
+    {
+      "id": 26,
+      "dimension": "duration",
+      "symbole": "sec",
+      "base": "hr",
+      "default": false,
+      "unit_per_base": 0.000277777777777778
+    },
+    {
+      "id": 27,
+      "dimension": "duration",
+      "symbole": "week",
+      "base": "hr",
+      "default": false,
+      "unit_per_base": 168.0
+    },
+    {
+      "id": 28,
+      "dimension": "duration",
+      "symbole": "year",
+      "base": "hr",
+      "default": false,
+      "unit_per_base": 8766.0
+    },
+    {
+      "id": 29,
+      "dimension": "length",
+      "symbole": "cm",
+      "base": "m",
+      "default": false,
+      "unit_per_base": 0.100000001490116
+    },
+    {
+      "id": 30,
+      "dimension": "length",
+      "symbole": "foot",
+      "base": "m",
+      "default": false,
+      "unit_per_base": 0.304800003767014
+    },
+    {
+      "id": 31,
+      "dimension": "length",
+      "symbole": "inch",
+      "base": "m",
+      "default": false,
+      "unit_per_base": 0.0254
+    },
+    {
+      "id": 32,
+      "dimension": "length",
+      "symbole": "km",
+      "base": "m",
+      "default": false,
+      "unit_per_base": 1000.0
+    },
+    {
+      "id": 33,
+      "dimension": "length",
+      "symbole": "mile",
+      "base": "m",
+      "default": false,
+      "unit_per_base": 1609.344
+    },
+    {
+      "id": 34,
+      "dimension": "length",
+      "symbole": "mm",
+      "base": "m",
+      "default": false,
+      "unit_per_base": 0.00100000004749745
+    },
+    {
+      "id": 35,
+      "dimension": "length",
+      "symbole": "nautical mile",
+      "base": "m",
+      "default": false,
+      "unit_per_base": 1852.0
+    },
+    {
+      "id": 36,
+      "dimension": "length",
+      "symbole": "yard",
+      "base": "m",
+      "default": false,
+      "unit_per_base": 0.914399981498718
+    },
+    {
+      "id": 37,
+      "dimension": "number",
+      "symbole": "Nr",
+      "base": "m",
+      "default": false,
+      "unit_per_base": 1.0
+    },
+    {
+      "id": 38,
+      "dimension": "speed",
+      "symbole": "m/s",
+      "base": "km/hr",
+      "default": false,
+      "unit_per_base": 3.59999990463257
+    },
+    {
+      "id": 39,
+      "dimension": "speed",
+      "symbole": "mile/hr",
+      "base": "km/hr",
+      "default": false,
+      "unit_per_base": 1.609344
+    },
+    {
+      "id": 40,
+      "dimension": "unit",
+      "symbole": "dozen",
+      "base": "Unit",
+      "default": false,
+      "unit_per_base": 0.0833333333333333
+    },
+    {
+      "id": 41,
+      "dimension": "unit",
+      "symbole": "tens",
+      "base": "Unit",
+      "default": false,
+      "unit_per_base": 0.1
+    },
+    {
+      "id": 42,
+      "dimension": "volume",
+      "symbole": "barrel",
+      "base": "l",
+      "default": false,
+      "unit_per_base": 158.987289428711
+    },
+    {
+      "id": 43,
+      "dimension": "volume",
+      "symbole": "cl",
+      "base": "l",
+      "default": false,
+      "unit_per_base": 0.00999999977648258
+    },
+    {
+      "id": 44,
+      "dimension": "volume",
+      "symbole": "dl",
+      "base": "l",
+      "default": false,
+      "unit_per_base": 0.100000001490116
+    },
+    {
+      "id": 45,
+      "dimension": "volume",
+      "symbole": "fl oz (UK)",
+      "base": "l",
+      "default": false,
+      "unit_per_base": 0.028413062915206
+    },
+    {
+      "id": 46,
+      "dimension": "volume",
+      "symbole": "fl oz (US)",
+      "base": "l",
+      "default": false,
+      "unit_per_base": 0.029573529958725
+    },
+    {
+      "id": 47,
+      "dimension": "volume",
+      "symbole": "ft³",
+      "base": "l",
+      "default": false,
+      "unit_per_base": 28.3168468475342
+    },
+    {
+      "id": 48,
+      "dimension": "volume",
+      "symbole": "gal (UK)",
+      "base": "l",
+      "default": false,
+      "unit_per_base": 4.5460901260376
+    },
+    {
+      "id": 49,
+      "dimension": "volume",
+      "symbole": "gal (US)",
+      "base": "l",
+      "default": false,
+      "unit_per_base": 3.7854118347168
+    },
+    {
+      "id": 50,
+      "dimension": "volume",
+      "symbole": "inch³",
+      "base": "l",
+      "default": false,
+      "unit_per_base": 0.0163870640099049
+    },
+    {
+      "id": 51,
+      "dimension": "volume",
+      "symbole": "m³",
+      "base": "l",
+      "default": false,
+      "unit_per_base": 1000.0
+    },
+    {
+      "id": 52,
+      "dimension": "volume",
+      "symbole": "ml",
+      "base": "l",
+      "default": false,
+      "unit_per_base": 0.00100000004749745
+    },
+    {
+      "id": 53,
+      "dimension": "volume",
+      "symbole": "pint (UK)",
+      "base": "l",
+      "default": false,
+      "unit_per_base": 0.5682612657547
+    },
+    {
+      "id": 54,
+      "dimension": "volume",
+      "symbole": "pint (US dry)",
+      "base": "l",
+      "default": false,
+      "unit_per_base": 0.4731764793396
+    },
+    {
+      "id": 55,
+      "dimension": "volume",
+      "symbole": "pint (US liquid)",
+      "base": "l",
+      "default": false,
+      "unit_per_base": 0.550610482692719
+    },
+    {
+      "id": 56,
+      "dimension": "volume",
+      "symbole": "yard³",
+      "base": "l",
+      "default": false,
+      "unit_per_base": 764.554870605469
+    },
+    {
+      "id": 57,
+      "dimension": "weight",
+      "symbole": "g",
+      "base": "kg",
+      "default": false,
+      "unit_per_base": 0.001
+    },
+    {
+      "id": 58,
+      "dimension": "weight",
+      "symbole": "mg",
+      "base": "kg",
+      "default": false,
+      "unit_per_base": 1.0e-06
+    },
+    {
+      "id": 59,
+      "dimension": "weight",
+      "symbole": "t",
+      "base": "kg",
+      "default": false,
+      "unit_per_base": 1000.0
+    }
+  ],
+  "countries": [
+    {
+      "id": 77,
+      "name": "France",
+      "iso2": "FR",
+      "iso3": "FRA",
+      "ison": 250,
+      "active": true,
+      "sovereignty_id": 13,
+      "continent_id": null,
+      "sovereignty": {
+        "id": 13,
+        "name": "UN",
+        "description": "UN member state",
+        "countries_count": 193,
+        "created_at": "2020-02-28T18:15:00.482+01:00",
+        "updated_at": "2020-02-28T18:15:00.482+01:00"
+      },
+      "continent": null,
+      "currencies": [
+        {
+          "id": 49,
+          "name": "Euro",
+          "iso3": "EUR",
+          "ison": 978,
+          "minor": 2,
+          "active": true,
+          "created_at": "2020-02-28T18:15:02.439+01:00",
+          "updated_at": "2020-04-24T17:12:18.607+02:00"
+        }
+      ],
+      "languages": [
+        {
+          "id": 47,
+          "iso2": "fr",
+          "name": null,
+          "native": null,
+          "active": true,
+          "created_at": "2020-02-28T18:14:59.904+01:00",
+          "updated_at": "2020-02-28T18:15:00.377+01:00"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "name": "Belgium",
+      "iso2": "BE",
+      "iso3": "BEL",
+      "ison": 56,
+      "active": true,
+      "sovereignty_id": 13,
+      "continent_id": null,
+      "sovereignty": {
+        "id": 13,
+        "name": "UN",
+        "description": "UN member state",
+        "countries_count": 193,
+        "created_at": "2020-02-28T18:15:00.482+01:00",
+        "updated_at": "2020-02-28T18:15:00.482+01:00"
+      },
+      "continent": null,
+      "currencies": [
+        {
+          "id": 49,
+          "name": "Euro",
+          "iso3": "EUR",
+          "ison": 978,
+          "minor": 2,
+          "active": true,
+          "created_at": "2020-02-28T18:15:02.439+01:00",
+          "updated_at": "2020-04-24T17:12:18.607+02:00"
+        }
+      ],
+      "languages": [
+        {
+          "id": 114,
+          "iso2": "nl",
+          "name": null,
+          "native": null,
+          "active": false,
+          "created_at": "2020-02-28T18:15:00.162+01:00",
+          "updated_at": "2020-02-28T18:15:00.162+01:00"
+        },
+        {
+          "id": 32,
+          "iso2": "de",
+          "name": null,
+          "native": null,
+          "active": true,
+          "created_at": "2020-02-28T18:14:59.847+01:00",
+          "updated_at": "2020-02-28T18:15:00.385+01:00"
+        },
+        {
+          "id": 47,
+          "iso2": "fr",
+          "name": null,
+          "native": null,
+          "active": true,
+          "created_at": "2020-02-28T18:14:59.904+01:00",
+          "updated_at": "2020-02-28T18:15:00.377+01:00"
+        }
+      ]
+    },
+    {
+      "id": 111,
+      "name": "Italy",
+      "iso2": "IT",
+      "iso3": "ITA",
+      "ison": 380,
+      "active": true,
+      "sovereignty_id": 13,
+      "continent_id": null,
+      "sovereignty": {
+        "id": 13,
+        "name": "UN",
+        "description": "UN member state",
+        "countries_count": 193,
+        "created_at": "2020-02-28T18:15:00.482+01:00",
+        "updated_at": "2020-02-28T18:15:00.482+01:00"
+      },
+      "continent": null,
+      "currencies": [
+        {
+          "id": 49,
+          "name": "Euro",
+          "iso3": "EUR",
+          "ison": 978,
+          "minor": 2,
+          "active": true,
+          "created_at": "2020-02-28T18:15:02.439+01:00",
+          "updated_at": "2020-04-24T17:12:18.607+02:00"
+        }
+      ],
+      "languages": [
+        {
+          "id": 72,
+          "iso2": "it",
+          "name": null,
+          "native": null,
+          "active": true,
+          "created_at": "2020-02-28T18:14:59.985+01:00",
+          "updated_at": "2020-02-28T18:15:00.388+01:00"
+        }
+      ]
+    },
+    {
+      "id": 84,
+      "name": "Germany",
+      "iso2": "DE",
+      "iso3": "DEU",
+      "ison": 276,
+      "active": true,
+      "sovereignty_id": 13,
+      "continent_id": null,
+      "sovereignty": {
+        "id": 13,
+        "name": "UN",
+        "description": "UN member state",
+        "countries_count": 193,
+        "created_at": "2020-02-28T18:15:00.482+01:00",
+        "updated_at": "2020-02-28T18:15:00.482+01:00"
+      },
+      "continent": null,
+      "currencies": [
+        {
+          "id": 49,
+          "name": "Euro",
+          "iso3": "EUR",
+          "ison": 978,
+          "minor": 2,
+          "active": true,
+          "created_at": "2020-02-28T18:15:02.439+01:00",
+          "updated_at": "2020-04-24T17:12:18.607+02:00"
+        }
+      ],
+      "languages": [
+        {
+          "id": 32,
+          "iso2": "de",
+          "name": null,
+          "native": null,
+          "active": true,
+          "created_at": "2020-02-28T18:14:59.847+01:00",
+          "updated_at": "2020-02-28T18:15:00.385+01:00"
+        }
+      ]
+    },
+    {
+      "id": 235,
+      "name": "United Kingdom of Great Britain and Northern Ireland (the)",
+      "iso2": "GB",
+      "iso3": "GBR",
+      "ison": 826,
+      "active": true,
+      "sovereignty_id": 13,
+      "continent_id": null,
+      "sovereignty": {
+        "id": 13,
+        "name": "UN",
+        "description": "UN member state",
+        "countries_count": 193,
+        "created_at": "2020-02-28T18:15:00.482+01:00",
+        "updated_at": "2020-02-28T18:15:00.482+01:00"
+      },
+      "continent": null,
+      "currencies": [
+        {
+          "id": 52,
+          "name": "Pound Sterling",
+          "iso3": "GBP",
+          "ison": 826,
+          "minor": 2,
+          "active": false,
+          "created_at": "2020-02-28T18:15:02.448+01:00",
+          "updated_at": "2020-04-24T17:12:15.457+02:00"
+        },
+        {
+          "id": 149,
+          "name": "US Dollar",
+          "iso3": "USD",
+          "ison": 840,
+          "minor": 2,
+          "active": true,
+          "created_at": "2020-02-28T18:15:02.862+01:00",
+          "updated_at": "2020-04-24T17:12:18.611+02:00"
+        }
+      ],
+      "languages": [
+        {
+          "id": 37,
+          "iso2": "en",
+          "name": null,
+          "native": null,
+          "active": true,
+          "created_at": "2020-02-28T18:14:59.865+01:00",
+          "updated_at": "2020-02-28T18:15:00.381+01:00"
+        }
+      ]
+    },
+    {
+      "id": 210,
+      "name": "Spain",
+      "iso2": "ES",
+      "iso3": "ESP",
+      "ison": 724,
+      "active": true,
+      "sovereignty_id": 13,
+      "continent_id": null,
+      "sovereignty": {
+        "id": 13,
+        "name": "UN",
+        "description": "UN member state",
+        "countries_count": 193,
+        "created_at": "2020-02-28T18:15:00.482+01:00",
+        "updated_at": "2020-02-28T18:15:00.482+01:00"
+      },
+      "continent": null,
+      "currencies": [
+        {
+          "id": 49,
+          "name": "Euro",
+          "iso3": "EUR",
+          "ison": 978,
+          "minor": 2,
+          "active": true,
+          "created_at": "2020-02-28T18:15:02.439+01:00",
+          "updated_at": "2020-04-24T17:12:18.607+02:00"
+        }
+      ],
+      "languages": [
+        {
+          "id": 120,
+          "iso2": "oc",
+          "name": null,
+          "native": null,
+          "active": false,
+          "created_at": "2020-02-28T18:15:00.183+01:00",
+          "updated_at": "2020-02-28T18:15:00.183+01:00"
+        },
+        {
+          "id": 51,
+          "iso2": "gl",
+          "name": null,
+          "native": null,
+          "active": false,
+          "created_at": "2020-02-28T18:14:59.916+01:00",
+          "updated_at": "2020-02-28T18:14:59.916+01:00"
+        },
+        {
+          "id": 22,
+          "iso2": "ca",
+          "name": null,
+          "native": null,
+          "active": false,
+          "created_at": "2020-02-28T18:14:59.811+01:00",
+          "updated_at": "2020-02-28T18:14:59.811+01:00"
+        },
+        {
+          "id": 41,
+          "iso2": "eu",
+          "name": null,
+          "native": null,
+          "active": false,
+          "created_at": "2020-02-28T18:14:59.878+01:00",
+          "updated_at": "2020-02-28T18:14:59.878+01:00"
+        },
+        {
+          "id": 39,
+          "iso2": "es",
+          "name": null,
+          "native": null,
+          "active": true,
+          "created_at": "2020-02-28T18:14:59.872+01:00",
+          "updated_at": "2020-02-28T18:15:00.392+01:00"
+        }
+      ]
+    }
   ]
 }

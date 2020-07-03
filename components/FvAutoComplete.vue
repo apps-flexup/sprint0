@@ -5,6 +5,7 @@
       :items="filteredItems"
       :loading="isLoading"
       :search-input.sync="search"
+      :label="label"
       item-text="name"
       item-value="id"
       clearable=''
@@ -22,6 +23,12 @@ export default {
       type: Array,
       default() {
         return []
+      }
+    },
+    label: {
+      type: String,
+      default() {
+        return ''
       }
     }
   },

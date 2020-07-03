@@ -4,7 +4,6 @@
       v-col(cols='6')
         fv-category-autocomplete(
           v-model="values.category_id"
-          :label="$t('forms.products.new.category')"
           outlined=''
           @category:selected="categorySelected"
         )
@@ -24,7 +23,6 @@
       v-col(cols='6')
         fv-unit-autocomplete(
           v-model="values.unit"
-          :label="$t('forms.products.new.unit')"
           outlined=''
         )
     v-row
@@ -37,7 +35,6 @@
       v-col(cols="6")
         fv-currency-autocomplete(
           v-model="values.currency"
-          :label="$t('forms.products.new.currency')"
           outlined=''
           @currency:selected="currencySelected"
         )

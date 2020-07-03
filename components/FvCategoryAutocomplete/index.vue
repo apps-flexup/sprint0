@@ -5,6 +5,7 @@
       :items="filteredItems"
       :loading="isLoading"
       :search-input.sync="search"
+      :label="$t('forms.products.new.category')"
       item-value="id"
       clearable=''
       outlined=''

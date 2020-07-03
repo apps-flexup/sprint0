@@ -3,7 +3,7 @@
     fv-auto-complete(
       v-model="this.unit"
       :items="items"
-      :label="$t('forms.orders.new.unit')"
+      :label="$t('forms.products.new.unit')"
       @autocomplete:selected="selected"
     )
 </template>
