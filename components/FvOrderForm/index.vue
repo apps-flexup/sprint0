@@ -1,6 +1,5 @@
 <template lang="pug">
   .fv-offer-form
-    p {{ $options.name }}
     v-row
       v-col(cols="6")
         fv-partner-autocomplete(
@@ -18,10 +17,11 @@
             )
               v-icon mdi-plus
       v-col(cols="6")
-        .partner-address {{ this.partnerAddress }}
+        v-card.partner-address(v-if="partnerAddress.libAdd")
+          v-card-title {{ $t('form.orders.new.defaults.address') }}
+          v-card-text {{ partnerAddress.libAdd }}
     v-row
       v-col(cols="8")
-        pre ajouter produit
         fv-product-autocomplete(
           v-model="order.product_id"
           :label="$t('forms.orders.new.product')"
@@ -36,7 +36,6 @@
             )
               v-icon mdi-plus
       v-col(cols="4")
-        pre ajouter structure
         fv-structure-autocomplete(
           v-model='order.structure_id'
           @structures:selected="structureSelected"
@@ -46,7 +45,7 @@
         v-for="orderItem in orderItems" :key="orderItem.id"
         cols="12"
       )
-        p {{ orderItem }}
+        fv-product-item(:item="orderItem")
     v-row
       v-col(cols="6")
         pre ici les totaux
@@ -65,7 +64,7 @@
 
 <script>
 export default {
-  name: 'FvOfferForm',
+  name: 'FvOrderForm',
   data() {
     return {
       order: {},
@@ -88,9 +87,13 @@ export default {
     },
     partnerSelected(partnerId) {
       this.order.partner_id = partnerId
+      this.partnerAddress = {}
       // const res = this.$activeAccount.partners().filter((v) => v.id === partner_id)
       this.$repos.partners.show(partnerId).then((res) => {
-        this.partnerAddress = res
+        this.partnerAddress = {
+          ...res,
+          libAdd: `${res.address} ${res.city} ${res.country}`
+        }
       })
     },
     productSelected(productId) {

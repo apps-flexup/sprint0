@@ -6,10 +6,18 @@ export default {
   },
   getForProduct: (state) => (productId) => {
     if (!state.items) return null
-    const offer = state.items.filter((item) => {
+    const offers = state.items.filter((item) => {
       return item.product_id === productId
     })
-    const res = JSON.parse(JSON.stringify(offer))
+    const res = JSON.parse(JSON.stringify(offers))
+    return res
+  },
+  category: (state) => (categoryId) => {
+    if (!state.items) return null
+    const offers = state.items.filter((item) => {
+      return item.product_id === categoryId
+    })
+    const res = JSON.parse(JSON.stringify(offers))
     return res
   }
 }

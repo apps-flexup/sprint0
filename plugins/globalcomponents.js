@@ -56,6 +56,8 @@ import FvOrderForm from '@/components/FvOrderForm'
 import FvStructureAutocomplete from '@/components/FvStructureAutocomplete'
 import FvPartnerAutocomplete from '@/components/FvPartnerAutocomplete'
 import FvProductAutocomplete from '@/components/FvProductAutocomplete'
+import FvCategoryAutocomplete from '@/components/FvCategoryAutocomplete'
+import FvProductItem from '@/components/FvProductItem'
 
 // Déclarations composants utilitaires
 Vue.component('fv-menu-list', FvMenuList)
@@ -126,4 +128,7 @@ Vue.component('fv-user-info', FvUserInfo)
 Vue.component('fv-order-form', FvOrderForm)
 Vue.component('fv-structure-autocomplete', FvStructureAutocomplete)
 Vue.component('fv-partner-autocomplete', FvPartnerAutocomplete)
+Vue.component('fv-partner-autocomplete', FvPartnerAutocomplete)
 Vue.component('fv-product-autocomplete', FvProductAutocomplete)
+Vue.component('fv-category-autocomplete', FvCategoryAutocomplete)
+Vue.component('fv-product-item', FvProductItem)

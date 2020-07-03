@@ -2,10 +2,11 @@
   .fv-product-form
     v-row
       v-col(cols='6')
-        v-text-field(
+        fv-category-autocomplete(
           v-model="values.category_id"
           :label="$t('forms.products.new.category')"
           outlined=''
+          @category:autocomplete="categorySelected"
         )
       v-col(cols='6')
         v-text-field(
@@ -61,6 +62,12 @@ export default {
   },
   mounted() {
     console.log('Composant ', this.$options.name)
+  },
+  methods: {
+    categorySelected(v) {
+      console.log('categorie', v)
+      this.$emit('category:autocomplete', v)
+    }
   }
 }
 </script>

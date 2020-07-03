@@ -5,24 +5,25 @@ export default (ctx, inject) => {
 
   const repos = {
     accounts: repo('accounts'),
+    categories: repo('categories'),
     charters: repo('charters'),
     contacts: repo('contacts'),
+    contactSteps: repo('contact-steps'),
     contractHeaders: repo('contract-headers'),
     contracts: repo('contracts'),
     contractSteps: repo('contract-steps'),
     contractTypes: repo('contract-types'),
     currencies: repo('currencies'),
     formesJuridiques: repo('formesJuridiques'),
+    menu: repo('menu'),
     offerHeaders: repo('offer-headers'),
+    offers: repo('offers'),
     orderHeaders: repo('order-headers'),
-    contactSteps: repo('contact-steps'),
-    partners: repo('partners'),
+    orders: repo('orders'),
     partnerHeaders: repo('partner-headers'),
+    partners: repo('partners'),
     productHeaders: repo('product-headers'),
     products: repo('products'),
-    offers: repo('offers'),
-    orders: repo('orders'),
-    menu: repo('menu'),
     structures: repo('structures')
   }
 

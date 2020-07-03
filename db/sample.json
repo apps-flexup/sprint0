@@ -2120,5 +2120,921 @@
         "value": 2
       }
     ]
-  }
+  },
+  "categories": [
+    {
+      "id": 1,
+      "name": {
+        "en": "All (root)",
+        "fr": "Tous (catégorie racine)",
+        "it": "Tutti (radice)"
+      },
+      "description": {
+        "en": "This is the root of the cateogory tree. Offers cannot be posted here.",
+        "fr": "Ceci est la racine de l'arborescence des catégories. Il n'est pas possible de publier des offres dans cette catégorie.",
+        "it": "Questa è la radice dell'albero delle categorie."
+      },
+      "sort_order": 0,
+      "parent_id": null,
+      "dimension": null,
+      "unit": null,
+      "status": "active",
+      "orderable": false,
+      "active": true,
+      "allow_at_client": true,
+      "allow_at_supplier": true,
+      "allow_shipping": true,
+      "allow_remote": false,
+      "other_parent": [],
+      "offers_count": 0
+    },
+    {
+      "id": 2,
+      "name": {
+        "en": "Services",
+        "fr": "Services (en français)"
+      },
+      "description": {
+        "en": "Services category",
+        "fr": "Catégorie chapeau pour les services (en français)"
+      },
+      "sort_order": 0,
+      "parent_id": 1,
+      "dimension": "duration",
+      "unit": "day",
+      "status": "active",
+      "orderable": true,
+      "active": false,
+      "allow_at_client": true,
+      "allow_at_supplier": true,
+      "allow_shipping": true,
+      "allow_remote": false,
+      "other_parent": [],
+      "offers_count": 1
+    },
+    {
+      "id": 3,
+      "name": {
+        "en": "Building work",
+        "fr": "Travaux Bâtiment"
+      },
+      "description": {
+        "en": "English",
+        "fr": "French"
+      },
+      "sort_order": 0,
+      "parent_id": 2,
+      "dimension": "duration",
+      "unit": "hr",
+      "status": "active",
+      "orderable": true,
+      "active": true,
+      "allow_at_client": true,
+      "allow_at_supplier": false,
+      "allow_shipping": true,
+      "allow_remote": false,
+      "other_parent": [],
+      "offers_count": 1
+    },
+    {
+      "id": 4,
+      "name": {
+        "en": "Plumbing",
+        "fr": "Plomberie"
+      },
+      "description": {
+        "en": "English",
+        "fr": "French"
+      },
+      "sort_order": 0,
+      "parent_id": 3,
+      "dimension": null,
+      "unit": null,
+      "status": "active",
+      "orderable": true,
+      "active": true,
+      "allow_at_client": true,
+      "allow_at_supplier": true,
+      "allow_shipping": true,
+      "allow_remote": false,
+      "other_parent": [],
+      "offers_count": 0
+    },
+    {
+      "id": 5,
+      "name": {
+        "en": "Locksmith",
+        "fr": "Serrurerie"
+      },
+      "description": {
+        "en": "English",
+        "fr": "French"
+      },
+      "sort_order": 5,
+      "parent_id": 3,
+      "dimension": null,
+      "unit": null,
+      "status": "active",
+      "orderable": true,
+      "active": false,
+      "allow_at_client": true,
+      "allow_at_supplier": true,
+      "allow_shipping": true,
+      "allow_remote": false,
+      "other_parent": [],
+      "offers_count": 0
+    },
+    {
+      "id": 6,
+      "name": {
+        "en": "Home Services",
+        "fr": "Services à domiciles"
+      },
+      "description": {
+        "en": "English",
+        "fr": "French"
+      },
+      "sort_order": 3,
+      "parent_id": 2,
+      "dimension": "duration",
+      "unit": "hr",
+      "status": "active",
+      "orderable": true,
+      "active": true,
+      "allow_at_client": true,
+      "allow_at_supplier": false,
+      "allow_shipping": false,
+      "allow_remote": false,
+      "other_parent": [],
+      "offers_count": 0
+    },
+    {
+      "id": 7,
+      "name": {
+        "en": "Household",
+        "fr": "Ménage"
+      },
+      "description": {
+        "en": "English",
+        "fr": "French"
+      },
+      "sort_order": 0,
+      "parent_id": 6,
+      "dimension": null,
+      "unit": null,
+      "status": "active",
+      "orderable": true,
+      "active": true,
+      "allow_at_client": true,
+      "allow_at_supplier": true,
+      "allow_shipping": true,
+      "allow_remote": false,
+      "other_parent": [],
+      "offers_count": 0
+    },
+    {
+      "id": 8,
+      "name": {
+        "en": "Baby sitting",
+        "fr": "Baby sitting"
+      },
+      "description": {
+        "en": "English",
+        "fr": "French"
+      },
+      "sort_order": 1,
+      "parent_id": 6,
+      "dimension": "duration",
+      "unit": "hr",
+      "status": "active",
+      "orderable": true,
+      "active": true,
+      "allow_at_client": true,
+      "allow_at_supplier": true,
+      "allow_shipping": false,
+      "allow_remote": false,
+      "other_parent": [],
+      "offers_count": 3
+    },
+    {
+      "id": 9,
+      "name": {
+        "en": "Babysitting for babies",
+        "fr": "Babysitter pour les bébés"
+      },
+      "description": {
+        "en": "English",
+        "fr": "French"
+      },
+      "sort_order": 0,
+      "parent_id": 8,
+      "dimension": "duration",
+      "unit": "hr",
+      "status": "active",
+      "orderable": true,
+      "active": true,
+      "allow_at_client": true,
+      "allow_at_supplier": true,
+      "allow_shipping": false,
+      "allow_remote": false,
+      "other_parent": [],
+      "offers_count": 1
+    },
+    {
+      "id": 10,
+      "name": {
+        "en": "Personal services",
+        "fr": "Services à la personne"
+      },
+      "description": {
+        "en": "English",
+        "fr": "French"
+      },
+      "sort_order": 2,
+      "parent_id": 2,
+      "dimension": null,
+      "unit": null,
+      "status": "active",
+      "orderable": true,
+      "active": true,
+      "allow_at_client": true,
+      "allow_at_supplier": true,
+      "allow_shipping": true,
+      "allow_remote": false,
+      "other_parent": [],
+      "offers_count": 0
+    },
+    {
+      "id": 11,
+      "name": {
+        "en": "Sick guard",
+        "fr": "Garde malades"
+      },
+      "description": {
+        "en": "English",
+        "fr": "French"
+      },
+      "sort_order": 0,
+      "parent_id": 10,
+      "dimension": "duration",
+      "unit": "hr",
+      "status": "active",
+      "orderable": true,
+      "active": true,
+      "allow_at_client": false,
+      "allow_at_supplier": false,
+      "allow_shipping": true,
+      "allow_remote": true,
+      "other_parent": [],
+      "offers_count": 1
+    },
+    {
+      "id": 12,
+      "name": {
+        "en": "grocery shopping",
+        "fr": "Courses"
+      },
+      "description": {
+        "en": "English",
+        "fr": "French"
+      },
+      "sort_order": 1,
+      "parent_id": 10,
+      "dimension": null,
+      "unit": null,
+      "status": "active",
+      "orderable": true,
+      "active": true,
+      "allow_at_client": true,
+      "allow_at_supplier": true,
+      "allow_shipping": true,
+      "allow_remote": false,
+      "other_parent": [],
+      "offers_count": 0
+    },
+    {
+      "id": 13,
+      "name": {
+        "en": "Painting",
+        "fr": "Peinture"
+      },
+      "description": {
+        "en": "English",
+        "fr": "French"
+      },
+      "sort_order": 4,
+      "parent_id": 3,
+      "dimension": null,
+      "unit": null,
+      "status": "active",
+      "orderable": true,
+      "active": true,
+      "allow_at_client": true,
+      "allow_at_supplier": true,
+      "allow_shipping": true,
+      "allow_remote": false,
+      "other_parent": [],
+      "offers_count": 0
+    },
+    {
+      "id": 14,
+      "name": {
+        "en": "Glaziery",
+        "fr": "Vitrerie"
+      },
+      "description": {
+        "en": "English",
+        "fr": "French"
+      },
+      "sort_order": 3,
+      "parent_id": 3,
+      "dimension": "unit",
+      "unit": "Unit",
+      "status": "active",
+      "orderable": true,
+      "active": true,
+      "allow_at_client": true,
+      "allow_at_supplier": true,
+      "allow_shipping": true,
+      "allow_remote": false,
+      "other_parent": [],
+      "offers_count": 0
+    },
+    {
+      "id": 15,
+      "name": {
+        "en": "Restoration",
+        "fr": "Restauration"
+      },
+      "description": {
+        "en": "English",
+        "fr": "French"
+      },
+      "sort_order": 0,
+      "parent_id": 14,
+      "dimension": null,
+      "unit": null,
+      "status": "active",
+      "orderable": true,
+      "active": true,
+      "allow_at_client": true,
+      "allow_at_supplier": true,
+      "allow_shipping": true,
+      "allow_remote": false,
+      "other_parent": [],
+      "offers_count": 0
+    },
+    {
+      "id": 16,
+      "name": {
+        "en": "Pose",
+        "fr": "Pose"
+      },
+      "description": {
+        "en": "English",
+        "fr": "French"
+      },
+      "sort_order": 2,
+      "parent_id": 14,
+      "dimension": null,
+      "unit": null,
+      "status": "active",
+      "orderable": true,
+      "active": true,
+      "allow_at_client": true,
+      "allow_at_supplier": true,
+      "allow_shipping": true,
+      "allow_remote": false,
+      "other_parent": [],
+      "offers_count": 0
+    },
+    {
+      "id": 17,
+      "name": {
+        "en": "Removal",
+        "fr": "Dépose"
+      },
+      "description": {
+        "en": "English",
+        "fr": "French"
+      },
+      "sort_order": 1,
+      "parent_id": 14,
+      "dimension": null,
+      "unit": null,
+      "status": "active",
+      "orderable": true,
+      "active": false,
+      "allow_at_client": true,
+      "allow_at_supplier": true,
+      "allow_shipping": true,
+      "allow_remote": false,
+      "other_parent": [],
+      "offers_count": 0
+    },
+    {
+      "id": 18,
+      "name": {
+        "en": "Opening doors",
+        "fr": "Ouverture de portes"
+      },
+      "description": {
+        "en": "English",
+        "fr": "French"
+      },
+      "sort_order": 0,
+      "parent_id": 5,
+      "dimension": null,
+      "unit": null,
+      "status": "active",
+      "orderable": true,
+      "active": true,
+      "allow_at_client": true,
+      "allow_at_supplier": true,
+      "allow_shipping": true,
+      "allow_remote": false,
+      "other_parent": [],
+      "offers_count": 0
+    },
+    {
+      "id": 19,
+      "name": {
+        "en": "Products",
+        "fr": "Produits"
+      },
+      "description": {
+        "en": "English",
+        "fr": "French"
+      },
+      "sort_order": 1,
+      "parent_id": 1,
+      "dimension": null,
+      "unit": null,
+      "status": "active",
+      "orderable": true,
+      "active": true,
+      "allow_at_client": false,
+      "allow_at_supplier": false,
+      "allow_shipping": false,
+      "allow_remote": false,
+      "other_parent": [],
+      "offers_count": 0
+    },
+    {
+      "id": 20,
+      "name": {
+        "en": "Food",
+        "fr": "Alimentaires"
+      },
+      "description": {
+        "en": "English",
+        "fr": "French"
+      },
+      "sort_order": 0,
+      "parent_id": 19,
+      "dimension": null,
+      "unit": null,
+      "status": "active",
+      "orderable": true,
+      "active": true,
+      "allow_at_client": true,
+      "allow_at_supplier": true,
+      "allow_shipping": true,
+      "allow_remote": false,
+      "other_parent": [],
+      "offers_count": 0
+    },
+    {
+      "id": 21,
+      "name": {
+        "en": "Dairy products",
+        "fr": "Crèmerie"
+      },
+      "description": {
+        "en": "English",
+        "fr": "French"
+      },
+      "sort_order": 0,
+      "parent_id": 20,
+      "dimension": null,
+      "unit": null,
+      "status": "active",
+      "orderable": true,
+      "active": false,
+      "allow_at_client": true,
+      "allow_at_supplier": true,
+      "allow_shipping": true,
+      "allow_remote": false,
+      "other_parent": [],
+      "offers_count": 0
+    },
+    {
+      "id": 22,
+      "name": {
+        "en": "Creamery",
+        "fr": "Fruits \u0026 Légumes"
+      },
+      "description": {
+        "en": "English",
+        "fr": "French"
+      },
+      "sort_order": 2,
+      "parent_id": 21,
+      "dimension": null,
+      "unit": null,
+      "status": "active",
+      "orderable": true,
+      "active": true,
+      "allow_at_client": true,
+      "allow_at_supplier": true,
+      "allow_shipping": true,
+      "allow_remote": false,
+      "other_parent": [],
+      "offers_count": 0
+    },
+    {
+      "id": 23,
+      "name": {
+        "en": "Grocery",
+        "fr": "Epicerie"
+      },
+      "description": {
+        "en": "English",
+        "fr": "French"
+      },
+      "sort_order": 3,
+      "parent_id": 20,
+      "dimension": null,
+      "unit": null,
+      "status": "active",
+      "orderable": true,
+      "active": true,
+      "allow_at_client": true,
+      "allow_at_supplier": true,
+      "allow_shipping": true,
+      "allow_remote": false,
+      "other_parent": [],
+      "offers_count": 0
+    },
+    {
+      "id": 24,
+      "name": {
+        "en": "Butchery",
+        "fr": "Boucherie"
+      },
+      "description": {
+        "en": "English",
+        "fr": "French"
+      },
+      "sort_order": 2,
+      "parent_id": 20,
+      "dimension": null,
+      "unit": null,
+      "status": "active",
+      "orderable": true,
+      "active": true,
+      "allow_at_client": true,
+      "allow_at_supplier": true,
+      "allow_shipping": true,
+      "allow_remote": false,
+      "other_parent": [],
+      "offers_count": 0
+    },
+    {
+      "id": 25,
+      "name": {
+        "en": "Milk",
+        "fr": "Lait"
+      },
+      "description": {
+        "en": "Milk",
+        "fr": "Catégorie Lait"
+      },
+      "sort_order": 0,
+      "parent_id": 21,
+      "dimension": "volume",
+      "unit": "l",
+      "status": "active",
+      "orderable": true,
+      "active": true,
+      "allow_at_client": false,
+      "allow_at_supplier": true,
+      "allow_shipping": true,
+      "allow_remote": false,
+      "other_parent": [],
+      "offers_count": 6
+    },
+    {
+      "id": 26,
+      "name": {
+        "en": "Cheese",
+        "fr": "Fromage"
+      },
+      "description": {
+        "en": "English",
+        "fr": "French"
+      },
+      "sort_order": 1,
+      "parent_id": 21,
+      "dimension": "number",
+      "unit": "Nr",
+      "status": "active",
+      "orderable": true,
+      "active": true,
+      "allow_at_client": false,
+      "allow_at_supplier": false,
+      "allow_shipping": true,
+      "allow_remote": false,
+      "other_parent": [],
+      "offers_count": 1
+    },
+    {
+      "id": 38,
+      "name": {
+        "en": "Electricity",
+        "fr": "Electricité"
+      },
+      "description": {
+        "en": "English",
+        "fr": "French"
+      },
+      "sort_order": 2,
+      "parent_id": 3,
+      "dimension": "length",
+      "unit": "m",
+      "status": "active",
+      "orderable": true,
+      "active": true,
+      "allow_at_client": true,
+      "allow_at_supplier": false,
+      "allow_shipping": false,
+      "allow_remote": false,
+      "other_parent": [],
+      "offers_count": 0
+    },
+    {
+      "id": 39,
+      "name": {
+        "en": "Masonry",
+        "fr": "Maçonnerie"
+      },
+      "description": {
+        "en": "English Masonry",
+        "fr": "French"
+      },
+      "sort_order": 1,
+      "parent_id": 3,
+      "dimension": "volume",
+      "unit": "m³",
+      "status": "active",
+      "orderable": true,
+      "active": true,
+      "allow_at_client": true,
+      "allow_at_supplier": false,
+      "allow_shipping": false,
+      "allow_remote": false,
+      "other_parent": [],
+      "offers_count": 0
+    },
+    {
+      "id": 40,
+      "name": {
+        "en": "Floor tile",
+        "fr": "Carrelage"
+      },
+      "description": {
+        "en": "English",
+        "fr": "French"
+      },
+      "sort_order": 0,
+      "parent_id": 39,
+      "dimension": null,
+      "unit": null,
+      "status": "active",
+      "orderable": true,
+      "active": true,
+      "allow_at_client": true,
+      "allow_at_supplier": true,
+      "allow_shipping": true,
+      "allow_remote": false,
+      "other_parent": [],
+      "offers_count": 0
+    },
+    {
+      "id": 41,
+      "name": {
+        "en": "Cultural",
+        "fr": "Culture"
+      },
+      "description": {
+        "en": "English",
+        "fr": "French"
+      },
+      "sort_order": 1,
+      "parent_id": 19,
+      "dimension": null,
+      "unit": null,
+      "status": "active",
+      "orderable": true,
+      "active": true,
+      "allow_at_client": false,
+      "allow_at_supplier": false,
+      "allow_shipping": false,
+      "allow_remote": false,
+      "other_parent": [],
+      "offers_count": 0
+    },
+    {
+      "id": 42,
+      "name": {
+        "en": "Games toys",
+        "fr": "Jeux \u0026 Jouets"
+      },
+      "description": {
+        "en": "English",
+        "fr": "French"
+      },
+      "sort_order": 0,
+      "parent_id": 41,
+      "dimension": null,
+      "unit": null,
+      "status": "active",
+      "orderable": true,
+      "active": true,
+      "allow_at_client": true,
+      "allow_at_supplier": true,
+      "allow_shipping": true,
+      "allow_remote": false,
+      "other_parent": [],
+      "offers_count": 0
+    },
+    {
+      "id": 43,
+      "name": {
+        "en": "Board Games",
+        "fr": "Jeux de société"
+      },
+      "description": {
+        "en": "English",
+        "fr": "French"
+      },
+      "sort_order": 0,
+      "parent_id": 42,
+      "dimension": null,
+      "unit": null,
+      "status": "active",
+      "orderable": true,
+      "active": true,
+      "allow_at_client": true,
+      "allow_at_supplier": true,
+      "allow_shipping": true,
+      "allow_remote": false,
+      "other_parent": [],
+      "offers_count": 0
+    },
+    {
+      "id": 44,
+      "name": {
+        "en": "Card Games",
+        "fr": "Jeux de cartes"
+      },
+      "description": {
+        "en": "English",
+        "fr": "French"
+      },
+      "sort_order": 0,
+      "parent_id": 43,
+      "dimension": "number",
+      "unit": "Nr",
+      "status": "active",
+      "orderable": true,
+      "active": true,
+      "allow_at_client": true,
+      "allow_at_supplier": true,
+      "allow_shipping": true,
+      "allow_remote": false,
+      "other_parent": [],
+      "offers_count": 1
+    },
+    {
+      "id": 50,
+      "name": {
+        "en": "Business services",
+        "fr": "Services aux entreprises"
+      },
+      "description": {
+        "en": "English",
+        "fr": "French"
+      },
+      "sort_order": 1,
+      "parent_id": 2,
+      "dimension": null,
+      "unit": null,
+      "status": "active",
+      "orderable": true,
+      "active": true,
+      "allow_at_client": false,
+      "allow_at_supplier": false,
+      "allow_shipping": false,
+      "allow_remote": false,
+      "other_parent": [],
+      "offers_count": 0
+    },
+    {
+      "id": 51,
+      "name": {
+        "en": "IT",
+        "fr": "Informatique"
+      },
+      "description": {
+        "en": "English",
+        "fr": "French"
+      },
+      "sort_order": 0,
+      "parent_id": 50,
+      "dimension": null,
+      "unit": null,
+      "status": "active",
+      "orderable": true,
+      "active": true,
+      "allow_at_client": false,
+      "allow_at_supplier": false,
+      "allow_shipping": false,
+      "allow_remote": false,
+      "other_parent": [],
+      "offers_count": 0
+    },
+    {
+      "id": 52,
+      "name": {
+        "en": "Development",
+        "fr": "Développement"
+      },
+      "description": {
+        "en": "English",
+        "fr": "French"
+      },
+      "sort_order": 0,
+      "parent_id": 51,
+      "dimension": null,
+      "unit": null,
+      "status": "active",
+      "orderable": true,
+      "active": true,
+      "allow_at_client": false,
+      "allow_at_supplier": false,
+      "allow_shipping": false,
+      "allow_remote": false,
+      "other_parent": [],
+      "offers_count": 1
+    },
+    {
+      "id": 53,
+      "name": {
+        "en": "Farm products",
+        "fr": "Produits de la ferme"
+      },
+      "description": {
+        "en": "English",
+        "fr": "French"
+      },
+      "sort_order": 1,
+      "parent_id": 20,
+      "dimension": null,
+      "unit": null,
+      "status": "active",
+      "orderable": true,
+      "active": true,
+      "allow_at_client": true,
+      "allow_at_supplier": true,
+      "allow_shipping": true,
+      "allow_remote": false,
+      "other_parent": [],
+      "offers_count": 0
+    },
+    {
+      "id": 54,
+      "name": {
+        "en": "Weekly basket",
+        "fr": "Panier hebdomadaire"
+      },
+      "description": {
+        "en": "English",
+        "fr": "French"
+      },
+      "sort_order": 0,
+      "parent_id": 53,
+      "dimension": null,
+      "unit": null,
+      "status": "active",
+      "orderable": true,
+      "active": true,
+      "allow_at_client": true,
+      "allow_at_supplier": true,
+      "allow_shipping": true,
+      "allow_remote": false,
+      "other_parent": [],
+      "offers_count": 0
+    }
+  ]
 }
