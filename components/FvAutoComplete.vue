@@ -11,6 +11,8 @@
       outlined=''
       @change="selected"
     )
+      slot(name="item")
+      slot(name="selection")
 </template>
 
 <script>

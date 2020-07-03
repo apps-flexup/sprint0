@@ -35,10 +35,11 @@
           outlined=''
         )
       v-col(cols="6")
-        v-text-field(
+        fv-currency-autocomplete(
           v-model="values.currency"
           :label="$t('forms.products.new.currency')"
           outlined=''
+          @currency:selected="currencySelected"
         )
     v-row
       v-col(cols="6")
@@ -65,8 +66,12 @@ export default {
   },
   methods: {
     categorySelected(v) {
-      console.log('categorie', v)
+      console.log('category :', v)
       this.$emit('category:autocomplete', v)
+    },
+    currencySelected(v) {
+      console.log('currency :', v)
+      this.$emit('currency:autocomplete', v)
     }
   }
 }

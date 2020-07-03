@@ -1,9 +1,10 @@
 const activeAccount = (ctx) => ({
   clear() {
     ctx.store.dispatch('accounts/clear', {}, { root: true })
-    ctx.store.dispatch('contracts/clear', {}, { root: true })
-    ctx.store.dispatch('contacts/clear', {}, { root: true })
     ctx.store.dispatch('charters/clear', {}, { root: true })
+    ctx.store.dispatch('contacts/clear', {}, { root: true })
+    ctx.store.dispatch('contracts/clear', {}, { root: true })
+    ctx.store.dispatch('currencies/clear', {}, { root: true })
     ctx.store.dispatch('offers/clear', {}, { root: true })
     ctx.store.dispatch('orders/clear', {}, { root: true })
     ctx.store.dispatch('partners/clear', {}, { root: true })
@@ -16,14 +17,15 @@ const activeAccount = (ctx) => ({
   set(accountId) {
     if (accountId === -1) return
     ctx.store.dispatch('accounts/setCurrent', accountId)
-    ctx.store.dispatch('contracts/getContracts', {}, { root: true })
-    ctx.store.dispatch('partners/get', {}, { root: true })
-    ctx.store.dispatch('products/get', {}, { root: true })
-    ctx.store.dispatch('contacts/get', {}, { root: true })
     ctx.store.dispatch('charters/get', {}, { root: true })
+    ctx.store.dispatch('contacts/get', {}, { root: true })
+    ctx.store.dispatch('contracts/getContracts', {}, { root: true })
+    ctx.store.dispatch('currencies/get', {}, { root: true })
     ctx.store.dispatch('offers/get', {}, { root: true })
     ctx.store.dispatch('orders/get', {}, { root: true })
     ctx.store.dispatch('partners/get', {}, { root: true })
+    ctx.store.dispatch('partners/get', {}, { root: true })
+    ctx.store.dispatch('products/get', {}, { root: true })
     ctx.store.dispatch('products/get', {}, { root: true })
   },
   contracts() {
@@ -36,6 +38,10 @@ const activeAccount = (ctx) => ({
   },
   contacts() {
     const res = ctx.store.getters['contacts/all']
+    return res
+  },
+  currencies() {
+    const res = ctx.store.getters['currencies/all']
     return res
   },
   orders() {

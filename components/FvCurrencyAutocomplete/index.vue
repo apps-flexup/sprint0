@@ -1,18 +1,19 @@
 <template lang="pug">
-  .fv-structure-autocomplete
+  .fv-currency-autocomplete
+    p {{ $options.name }}
     fv-auto-complete(
-      v-model="this.structure"
+      v-model="this.currency"
       :items="items"
-      :label="$t('forms.orders.new.structure')"
+      :label="$t('forms.orders.new.currency')"
       @autocomplete:selected="selected"
     )
 </template>
 
 <script>
 export default {
-  name: 'FvStructureAutocomplete',
+  name: 'FvCurrencyAutocomplete',
   props: {
-    structure: {
+    currency: {
       type: Number,
       default() {
         return null
@@ -21,17 +22,17 @@ export default {
   },
   computed: {
     items() {
-      const res = this.$store.getters['contracts/structures']
+      const res = this.$activeAccount.currencies()
       return res
     }
   },
   mounted() {
     console.log('Composant ', this.$options.name)
-    this.$store.dispatch('contracts/getStructures')
   },
   methods: {
     selected(v) {
-      this.$emit('structures:selected', v)
+      // TODO convertir avec ISO3
+      this.$emit('currency:selected', v)
     }
   }
 }

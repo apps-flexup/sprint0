@@ -7,6 +7,11 @@
       :label="$t('forms.orders.new.category')"
       @autocomplete:selected="selected"
     )
+      template(v-slot:item="data")
+        pre {{ JSON.stringify(data.item) }}
+        pre plop
+      template(v-slot:selection="data")
+        p pouet
 </template>
 
 <script>
@@ -28,6 +33,7 @@ export default {
   },
   mounted() {
     console.log('Composant ', this.$options.name)
+    this.$store.dispatch('categories/get')
   },
   methods: {
     selected(v) {
