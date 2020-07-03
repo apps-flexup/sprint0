@@ -6,7 +6,7 @@
           v-model="values.category_id"
           :label="$t('forms.products.new.category')"
           outlined=''
-          @category:autocomplete="categorySelected"
+          @category:selected="categorySelected"
         )
       v-col(cols='6')
         v-text-field(

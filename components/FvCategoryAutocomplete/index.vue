@@ -1,28 +1,33 @@
 <template lang="pug">
   .fv-category-autocomplete
     p {{ $options.name }}
-    fv-auto-complete(
-      v-model="this.category"
-      :items="items"
-      :label="$t('forms.orders.new.category')"
-      @autocomplete:selected="selected"
+    v-autocomplete(
+      v-model="element"
+      :items="filteredItems"
+      :loading="isLoading"
+      :search-input.sync="search"
+      item-value="id"
+      clearable=''
+      outlined=''
+      @change="selected"
     )
       template(v-slot:item="data")
-        pre {{ JSON.stringify(data.item) }}
-        pre plop
+        v-list-item-content
+          v-list-item-title(v-to-locale="data.item.name")
       template(v-slot:selection="data")
-        p pouet
+        div(v-to-locale="data.item.name")
 </template>
 
 <script>
 export default {
   name: 'FvCategoryAutocomplete',
-  props: {
-    category: {
-      type: Number,
-      default() {
-        return null
-      }
+  inheritAttrs: true,
+  data() {
+    return {
+      element: null,
+      isLoading: false,
+      search: null,
+      filteredItems: []
     }
   },
   computed: {
@@ -31,11 +36,30 @@ export default {
       return res
     }
   },
+  watch: {
+    search(val) {
+      // console.log('search :', val)
+      val && val !== this.element && this.filterList(val)
+    }
+  },
   mounted() {
     console.log('Composant ', this.$options.name)
     this.$store.dispatch('categories/get')
   },
   methods: {
+    filterList(v) {
+      // console.log('Filtrage', this.items)
+      this.isLoading = true
+      setTimeout(() => {
+        this.filteredItems = this.items.filter((item) => {
+          console.log('cherche :', v, ', item :', item)
+          const name = item.name || ''
+          // return name.toLowerCase().includes((v || '').toLowerCase()) > -1
+          return name
+        })
+        this.isLoading = false
+      }, 500)
+    },
     selected(v) {
       this.$emit('category:selected', v)
     }
