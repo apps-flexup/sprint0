@@ -79,7 +79,12 @@
         "title": "Title",
         "lastname": "Lastname",
         "firstname": "Firstname",
-        "email": "Email"
+        "email": "Email",
+        "titles": {
+          "mr": "Mr",
+          "ms": "Ms",
+          "miss": "Mrs"
+        }
       }
     },
     "offers": {

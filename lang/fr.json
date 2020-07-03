@@ -82,7 +82,12 @@
         "title": "Titre",
         "lastname": "Nom",
         "firstname": "Prénom",
-        "email": "Email"
+        "email": "Email",
+        "titles": {
+          "mr": "M.",
+          "ms": "Mme",
+          "miss": "Mlle"
+        }
       }
     },
     "offers": {

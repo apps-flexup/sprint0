@@ -15,7 +15,8 @@
             )
         v-row
           v-col(cols="2")
-            v-text-field(
+            v-select(
+              :items="titres"
               v-model="account.title"
               :label="$t('forms.accounts.new.title')"
             )
@@ -55,9 +56,24 @@ export default {
       }
     }
   },
+  computed: {
+    titres() {
+      const res = [
+        'forms.accounts.new.titles.mr',
+        'forms.accounts.new.titles.ms',
+        'forms.accounts.new.titles.miss'
+      ]
+      return res.map((v) => {
+        return this.$t(v)
+      })
+    }
+  },
   mounted() {
     console.log('Composant ', this.$options.name)
-    this.account.lastname = this.$auth.family_name
+    this.account.name = this.$auth.user.preferred_username
+    this.account.email = this.$auth.user.email
+    this.account.lastname = this.$auth.user.family_name
+    this.account.firstname = this.$auth.user.given_name
   },
   methods: {
     createAccount() {

@@ -12,7 +12,7 @@ export default {
         this.$activeAccount.set(account)
       } else {
         console.log('pas de compte')
-        this.app.router.push('account/new')
+        this.app.router.push('/account/new')
       }
     })
   },
