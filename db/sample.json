@@ -870,6 +870,20 @@
       "status": "draft",
       "account_id": 10,
       "id": 5
+    },
+    {
+      "category_id": 2,
+      "name": "test",
+      "status": "draft",
+      "account_id": 10,
+      "id": 6
+    },
+    {
+      "category_id": "Services (en français)",
+      "name": "test",
+      "status": "draft",
+      "account_id": 10,
+      "id": 7
     }
   ],
   "offers": [
@@ -1324,6 +1338,23 @@
       "product_id": 5,
       "account_id": 10,
       "id": 10
+    },
+    {
+      "dimension": "dimension",
+      "name": "test",
+      "status": "draft",
+      "product_id": 6,
+      "account_id": 10,
+      "id": 11
+    },
+    {
+      "dimension": "dimension",
+      "name": "test",
+      "status": "draft",
+      "currency": 49,
+      "product_id": 7,
+      "account_id": 10,
+      "id": 12
     }
   ],
   "offer-headers": [

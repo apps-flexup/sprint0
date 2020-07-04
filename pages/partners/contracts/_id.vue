@@ -1,7 +1,7 @@
 <template lang="pug">
   .contract-index
+    h1 {{ $options.name }}
     pre {{ params }}
-    fv-contract-list(:contracts='contracts')
 </template>
 
 <script>
@@ -17,8 +17,3 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
-.contract-index {
-  background-color: inherit;
-}
-</style>
