@@ -34,7 +34,7 @@
       "icon": "mdi-account-group",
       "title": "menu.contacts",
       "to": "/contacts",
-      "active": false
+      "active": true
     },
     {
       "icon": "mdi-tag",
@@ -68,6 +68,7 @@
         "supplier"
       ],
       "roles_methods": null,
+      "avatar": "/images/avatar-0.png",
       "supplier": false,
       "user_id": "2ae5fcf8-9ed5-480a-89c8-a2f946e72140"
     },
@@ -82,6 +83,7 @@
         "customer"
       ],
       "roles_methods": null,
+      "avatar": "/images/avatar-1.png",
       "supplier": false,
       "user_id": "bcecf237-eec9-43c2-b881-2242c554485f"
     },
@@ -97,6 +99,7 @@
       ],
       "roles_methods": null,
       "supplier": false,
+      "avatar": "/images/avatar-2.png",
       "user_id": "2ae5fcf8-9ed5-480a-89c8-a2f946e72140"
     },
     {
@@ -111,6 +114,7 @@
       ],
       "roles_methods": null,
       "supplier": false,
+      "avatar": "/images/avatar-3.png",
       "user_id": "2ae5fcf8-9ed5-480a-89c8-a2f946e72140"
     },
     {
@@ -126,6 +130,7 @@
       ],
       "roles_methods": null,
       "supplier": false,
+      "avatar": "/images/avatar-4.png",
       "user_id": "2ae5fcf8-9ed5-480a-89c8-a2f946e72140"
     },
     {
@@ -141,6 +146,7 @@
       ],
       "roles_methods": null,
       "supplier": false,
+      "avatar": "/images/avatar-5.png",
       "user_id": "bcecf237-eec9-43c2-b881-2242c554485f"
     },
     {
@@ -156,6 +162,7 @@
       ],
       "roles_methods": null,
       "supplier": false,
+      "avatar": "/images/avatar-1.png",
       "user_id": "7bee39f1-e72b-40c7-ac6a-2a22297c68a6"
     },
     {
@@ -170,6 +177,7 @@
       ],
       "roles_methods": null,
       "supplier": false,
+      "avatar": "/images/avatar-2.png",
       "user_id": "7bee39f1-e72b-40c7-ac6a-2a22297c68a6"
     },
     {
@@ -185,6 +193,7 @@
       ],
       "roles_methods": null,
       "supplier": false,
+      "avatar": "/images/avatar-3.png",
       "user_id": "7bee39f1-e72b-40c7-ac6a-2a22297c68a6"
     },
     {
@@ -193,6 +202,7 @@
       "lastname": "Bon",
       "firstname": "Jean",
       "email": "jeanbon@gmail.com",
+      "avatar": "/images/avatar-4.png",
       "user_id": "8a4fb33f-0864-464f-b085-65afdedf0d77",
       "id": 10
     },
@@ -202,6 +212,7 @@
       "lastname": "Bon",
       "firstname": "Jean",
       "email": "jeanbon@gmail.com",
+      "avatar": "/images/avatar-5.png",
       "user_id": "8a4fb33f-0864-464f-b085-65afdedf0d77",
       "id": 11
     },
@@ -211,6 +222,7 @@
       "lastname": "lasnier",
       "firstname": "frédéric",
       "email": "frederic.lasnier@flexup.org",
+      "avatar": "/images/avatar-0.png",
       "user_id": "61d4b5f7-8887-474f-b982-253b78ca95f8",
       "id": 12
     }
@@ -219,7 +231,7 @@
     {
       "id": 1,
       "account_id": 1,
-      "avatar": "static/images/avatar-0.png",
+      "avatar": "/images/avatar-0.png",
       "name": "plop",
       "address": "12 rue de la poupée qui tousse",
       "city": "Braniole de turbeuse",
@@ -239,7 +251,7 @@
     {
       "id": 2,
       "account_id": 2,
-      "avatar": "static/images/avatar-1.png",
+      "avatar": "/images/avatar-1.png",
       "name": "toto",
       "address": "12 rue de la poupée qui tousse",
       "city": "Braniole de turbeuse",
@@ -259,7 +271,7 @@
     {
       "id": 3,
       "account_id": 3,
-      "avatar": "static/images/avatar-2.png",
+      "avatar": "/images/avatar-2.png",
       "name": "fred",
       "address": "12 rue de la marjolaine",
       "city": "Courtanche sur Mer",
@@ -279,7 +291,7 @@
     {
       "id": 5,
       "account_id": 3,
-      "avatar": "static/images/avatar-6.png",
+      "avatar": "/images/avatar-6.png",
       "name": "pierre",
       "address": "21 rue de la marjolaine",
       "city": "Flombard les gazeuses",
@@ -299,7 +311,7 @@
     {
       "id": 4,
       "account_id": 4,
-      "avatar": "static/images/avatar-3.png",
+      "avatar": "/images/avatar-3.png",
       "name": "grog",
       "address": "19 avenue de la venue",
       "city": "Ploutoire les bois",
@@ -1860,7 +1872,7 @@
   "partners": [
     {
       "account_id": 1,
-      "avatar": "static/images/avatar-0.png",
+      "avatar": "/images/avatar-0.png",
       "name": "plop",
       "address": "12 rue de la poupée qui tousse",
       "city": "Braniole de turbeuse",
@@ -1870,7 +1882,7 @@
     },
     {
       "account_id": 2,
-      "avatar": "static/images/avatar-1.png",
+      "avatar": "/images/avatar-1.png",
       "name": "toto la riflette",
       "address": "98 rue des trucs",
       "city": "Braniole de turbeuse",
@@ -1881,7 +1893,7 @@
     {
       "id": 3,
       "account_id": 3,
-      "avatar": "static/images/avatar-2.png",
+      "avatar": "/images/avatar-2.png",
       "name": "fred",
       "address": "12 rue de la marjolaine",
       "city": "Courtanche sur Mer",
@@ -1891,7 +1903,7 @@
     {
       "id": 5,
       "account_id": 3,
-      "avatar": "static/images/avatar-6.png",
+      "avatar": "/images/avatar-6.png",
       "name": "pierre",
       "address": "21 rue de la marjolaine",
       "city": "Flombard les gazeuses",
@@ -1901,7 +1913,7 @@
     {
       "id": 4,
       "account_id": 4,
-      "avatar": "static/images/avatar-3.png",
+      "avatar": "/images/avatar-3.png",
       "name": "grog",
       "address": "19 avenue de la venue",
       "city": "Ploutoire les bois",

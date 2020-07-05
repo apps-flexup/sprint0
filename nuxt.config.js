@@ -27,7 +27,14 @@ export default {
     name: 'Flexup - Sprint 0',
     short_name: 'sprint0',
     lang: 'en',
-    display: 'standalone'
+    start_url: '/',
+    icons: [
+      {
+        src: '/logo.svg',
+        sizes: '150x150'
+      }
+    ]
+    // display: 'standalone'
   },
   workbox: {
     runtimeCaching: [
