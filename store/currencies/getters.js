@@ -19,7 +19,6 @@ export default {
     if (!state.items || !id) return null
     const items = JSON.parse(JSON.stringify(state.items))
     const res = items.find((item) => parseInt(item.id) === parseInt(id)) || null
-    console.table(res)
     const symbole = state.symboles[res.iso3]
     return {
       ...res,

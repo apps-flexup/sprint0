@@ -18,17 +18,13 @@ const translateHeaders = (i18n) => (items) => {
   return res
 }
 
-export const filterUnitAutocomplete = (item, v, it) => {
-  console.log('item ', item)
-  console.log('it :', it)
+export const filterUnitAutocomplete = (item, v, _it) => {
   const nameValues = `${item.dimension} ${item.symbole} ${item.base}`
   const res = String.prototype.filtreAutocomplete.call(nameValues, v)
   return res
 }
 
-export const filterCurrencyAutocomplete = (item, v, it) => {
-  console.log('item ', item)
-  console.log('it :', it)
+export const filterCurrencyAutocomplete = (item, v, _it) => {
   const nameValues = `${item.iso3} ${item.name} ${item.symbole}`
   const res = String.prototype.filtreAutocomplete.call(nameValues, v)
   return res

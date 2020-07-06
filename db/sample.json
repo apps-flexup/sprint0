@@ -2198,7 +2198,6 @@
       "quantity": 1,
       "price": "3100",
       "dimension": "duration",
-      "unit": null,
       "status": "4-Confirmé",
       "currency": "EUR",
       "category_id": 55,

@@ -58,7 +58,6 @@ export default {
   },
   methods: {
     categorySelected(v) {
-      console.log('category :', v)
       this.values.category_id = v
       this.$emit('category:autocomplete', v)
     },
@@ -67,11 +66,14 @@ export default {
       this.$emit('currency:autocomplete', v)
     },
     unitSelected(v) {
-      console.log('unit :', v)
       const unit = this.$store.getters['units/find'](v)
-      this.values.dimension = unit.dimension
-      this.values.unit = unit.unit
-      this.$emit('unit:autocomplete', v)
+      this.values.dimension = unit ? unit.dimension : null
+      this.values.unit = unit ? unit.unit : null
+      const payload = {
+        dimension: this.values.dimension,
+        unit: this.values.unit
+      }
+      this.$emit('unit:autocomplete', payload)
     }
   }
 }

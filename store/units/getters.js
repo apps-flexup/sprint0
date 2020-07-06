@@ -5,13 +5,13 @@ export default {
     return res
   },
   find: (state) => (id) => {
-    if (!state.current) return null
+    if (!state.items || !id) return null
     const recordId = parseInt(id)
-    const res = state.items.find((v) => v.id === recordId)
+    const res = state.items.find((v) => parseInt(v.id) === recordId)
     return res
   },
   findByDimension: (state) => (dimension, unit) => {
-    if (!state.current) return null
+    if (!state.items || !dimension || !unit) return null
     // const recordId = parseInt(id)
     const res = state.items.find(
       (v) => v.dimension === dimension && v.unit === unit
