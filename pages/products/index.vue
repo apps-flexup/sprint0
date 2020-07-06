@@ -37,14 +37,7 @@ export default {
     },
     selectedProduct(e) {
       this.selected = JSON.parse(JSON.stringify(e))
-      const offer = this.$store.getters['offers/getForProduct'](
-        this.selected.id
-      )
-      console.log('produit selectionné', offer)
-      // this.selected.unit = offer[0].unit
-      // this.selected.price = offer[0].price
-      // this.selected.currency = offer[0].currency
-      // this.selected.elasticity = offer[0].elasticity
+      console.log('produit selectionné', e)
       this.showModal = true
     }
   }

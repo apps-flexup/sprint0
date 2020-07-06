@@ -9,5 +9,13 @@ export default {
     const recordId = parseInt(id)
     const res = state.items.find((v) => v.id === recordId)
     return res
+  },
+  findByDimension: (state) => (dimension, unit) => {
+    if (!state.current) return null
+    // const recordId = parseInt(id)
+    const res = state.items.find(
+      (v) => v.dimension === dimension && v.unit === unit
+    )
+    return res
   }
 }

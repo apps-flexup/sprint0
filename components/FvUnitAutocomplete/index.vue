@@ -20,13 +20,19 @@
 </template>
 
 <script>
-import { filterListAutocomplete } from '~/plugins/utils'
+import { filterUnitAutocomplete } from '~/plugins/utils'
 export default {
   name: 'FvUnitAutocomplete',
   inheritAttrs: true,
-  promps: {
-    element: {
-      type: Number,
+  props: {
+    unit: {
+      type: String,
+      default() {
+        return null
+      }
+    },
+    dimension: {
+      type: String,
       default() {
         return null
       }
@@ -44,17 +50,15 @@ export default {
     },
     unitId: {
       get() {
-        return this.element
+        const res = this.$store.getters['units/findByDimension'](
+          this.dimension,
+          this.unit
+        )
+        return res ? res.id : null
       },
       set(v) {
         this.$emit('unit:selected', v)
       }
-    }
-  },
-  watch: {
-    search(val) {
-      // console.log('search :', val)
-      val && val !== this.element && this.filterList(val)
     }
   },
   mounted() {
@@ -66,7 +70,7 @@ export default {
       this.$emit('unit:selected', v)
     },
     filter(item, v, it) {
-      return filterListAutocomplete(item, v, it)
+      return filterUnitAutocomplete(item, v, it)
     }
   }
 }

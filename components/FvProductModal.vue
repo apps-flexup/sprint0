@@ -60,8 +60,3 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
-.fv-product-modal {
-  background-color: inherit;
-}
-</style>

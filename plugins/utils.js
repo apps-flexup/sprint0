@@ -1,14 +1,3 @@
-// Object.prototype.flatI8n = function() {
-//   const obj = this
-//   const nameValues = Object.keys(obj)
-//     .map((k) => {
-//       return obj[k]
-//     })
-//     .join(' ')
-//     .toLowerCase()
-//   return nameValues
-// }
-
 /* eslint no-extend-native: ["error", { "exceptions": ["String"] }] */
 String.prototype.filtreAutocomplete = function(filtre) {
   const str = (this || '').toLowerCase()
@@ -29,18 +18,18 @@ const translateHeaders = (i18n) => (items) => {
   return res
 }
 
-export const filterListAutocomplete = (item, v, it) => {
+export const filterUnitAutocomplete = (item, v, it) => {
   console.log('item ', item)
   console.log('it :', it)
   const nameValues = `${item.dimension} ${item.symbole} ${item.base}`
-  // const name = JSON.parse(JSON.stringify(item.name || {}))
-  // // const nameValues = Object.prototype.flatI18n.call()
-  // const nameValues = Object.keys(name)
-  //   .map((k) => {
-  //     return item.name[k]
-  //   })
-  //   .join(' ')
-  //   .toLowerCase()
+  const res = String.prototype.filtreAutocomplete.call(nameValues, v)
+  return res
+}
+
+export const filterCurrencyAutocomplete = (item, v, it) => {
+  console.log('item ', item)
+  console.log('it :', it)
+  const nameValues = `${item.iso3} ${item.name} ${item.symbole}`
   const res = String.prototype.filtreAutocomplete.call(nameValues, v)
   return res
 }

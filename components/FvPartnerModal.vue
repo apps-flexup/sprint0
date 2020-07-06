@@ -61,8 +61,3 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
-.fv-partner-modal {
-  background-color: inherit;
-}
-</style>

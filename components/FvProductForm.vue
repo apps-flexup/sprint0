@@ -22,7 +22,8 @@
         )
       v-col(cols='6')
         fv-unit-autocomplete(
-          element="values.unit"
+          :dimension="values.dimension"
+          :unit="values.unit"
           outlined=''
           @unit:selected="unitSelected"
         )
@@ -35,16 +36,9 @@
         )
       v-col(cols="6")
         fv-currency-autocomplete(
-          v-model="values.currency"
+          :currency="values.currency"
           outlined=''
           @currency:selected="currencySelected"
-        )
-    v-row
-      v-col(cols="6")
-        v-text-field(
-          v-model="values.elasticity"
-          :label="$t('forms.products.new.elasticity')"
-          outlined=''
         )
 </template>
 
@@ -69,13 +63,14 @@ export default {
       this.$emit('category:autocomplete', v)
     },
     currencySelected(v) {
-      console.log('currency :', v)
       this.values.currency = v
       this.$emit('currency:autocomplete', v)
     },
     unitSelected(v) {
       console.log('unit :', v)
-      this.values.unit = v
+      const unit = this.$store.getters['units/find'](v)
+      this.values.dimension = unit.dimension
+      this.values.unit = unit.unit
       this.$emit('unit:autocomplete', v)
     }
   }
