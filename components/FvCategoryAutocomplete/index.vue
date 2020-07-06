@@ -38,7 +38,7 @@ export default {
   },
   mounted() {
     console.log('Composant ', this.$options.name)
-    this.$store.dispatch('categories/get')
+    // this.$store.dispatch('categories/get')
   },
   methods: {
     filterList(item, v, _it) {

@@ -53,7 +53,7 @@ export default {
   },
   mounted() {
     console.log('Composant ', this.$options.name)
-    this.$store.dispatch('countries/get')
+    // this.$store.dispatch('countries/get')
   },
   methods: {
     filterList() {

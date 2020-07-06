@@ -225,6 +225,15 @@
       "avatar": "/images/avatar-0.png",
       "user_id": "61d4b5f7-8887-474f-b982-253b78ca95f8",
       "id": 12
+    },
+    {
+      "name": "grog",
+      "title": null,
+      "lastname": "grog",
+      "firstname": "grog",
+      "email": "gregory.mevelec@flexup.org",
+      "user_id": "105092c4-0558-460b-99ba-4063d3a75731",
+      "id": 13
     }
   ],
   "contacts": [
@@ -832,7 +841,7 @@
       "align": "start",
       "sortable": true,
       "text": "headers.products.category",
-      "value": "category_id"
+      "value": "category"
     },
     {
       "align": "start",
@@ -853,8 +862,10 @@
       "name": "Appartement Paris 8",
       "quantity": 1,
       "price": "3000€",
-      "unitStr": "€/month",
-      "statusStr": "4-Confirmé",
+      "dimension": "duration",
+      "unit": "month",
+      "status": "4-Confirmé",
+      "category_id": 55,
       "account_id": 1
     },
     {
@@ -862,8 +873,10 @@
       "name": "Appartement Paris 19",
       "quantity": 1,
       "price": "3000€",
-      "unitStr": "€/month",
-      "statusStr": "4-Confirmé",
+      "dimension": "duration",
+      "unit": "month",
+      "status": "4-Confirmé",
+      "category_id": 55,
       "account_id": 1
     },
     {
@@ -871,8 +884,10 @@
       "name": "Appartement Paris 12",
       "quantity": 1,
       "price": "3100€",
-      "unitStr": "€/month",
-      "statusStr": "4-Confirmé",
+      "dimension": "duration",
+      "unit": "month",
+      "status": "4-Confirmé",
+      "category_id": 55,
       "account_id": 1
     },
     {
@@ -896,6 +911,26 @@
       "status": "draft",
       "account_id": 10,
       "id": 7
+    },
+    {
+      "name": "test",
+      "status": "draft",
+      "account_id": -1,
+      "id": 8
+    },
+    {
+      "category_id": 2,
+      "name": "apaprtement",
+      "status": "draft",
+      "account_id": 13,
+      "id": 9
+    },
+    {
+      "category_id": 2,
+      "name": "apaprtement",
+      "status": "draft",
+      "account_id": 13,
+      "id": 10
     }
   ],
   "offers": [
@@ -1367,6 +1402,30 @@
       "product_id": 7,
       "account_id": 10,
       "id": 12
+    },
+    {
+      "dimension": "dimension",
+      "name": "test",
+      "status": "draft",
+      "product_id": 8,
+      "account_id": -1,
+      "id": 13
+    },
+    {
+      "dimension": "dimension",
+      "name": "apaprtement",
+      "status": "draft",
+      "product_id": 9,
+      "account_id": 13,
+      "id": 14
+    },
+    {
+      "dimension": "dimension",
+      "name": "apaprtement",
+      "status": "draft",
+      "product_id": 10,
+      "account_id": 13,
+      "id": 15
     }
   ],
   "offer-headers": [
@@ -2995,6 +3054,30 @@
       "allow_remote": false,
       "other_parent": [],
       "offers_count": 0
+    },
+    {
+      "id": 55,
+      "name": {
+        "en": "Flat rental",
+        "fr": "Location appartement"
+      },
+      "description": {
+        "en": "English",
+        "fr": "French"
+      },
+      "sort_order": 0,
+      "parent_id": 2,
+      "dimension": "duration",
+      "unit": "month",
+      "status": "active",
+      "orderable": true,
+      "active": true,
+      "allow_at_client": false,
+      "allow_at_supplier": true,
+      "allow_shipping": false,
+      "allow_remote": false,
+      "other_parent": [],
+      "offers_count": 1
     }
   ],
   "units": [
@@ -3737,6 +3820,246 @@
           "active": true
         }
       ]
+    }
+  ],
+  "team": [
+    {
+      "id": "1",
+      "title": "M",
+      "name": "Nastri",
+      "first-name": "Fabrizio",
+      "function": "C.E.O",
+      "dte_in": "",
+      "dte_out": "",
+      "pro_email": "fabrizio.nastri",
+      "perso_email": "fabrizio_nastri@hotmail.com",
+      "phone": "+330664115752",
+      "address": "10 Rue saint Paul",
+      "zip": "75004",
+      "city": "Paris",
+      "country": "France",
+      "responsable": ""
+    },
+    {
+      "id": "2",
+      "title": "M",
+      "name": "Lasnier",
+      "first-name": "Frédéric",
+      "function": "C.T.O.",
+      "dte_in": "",
+      "dte_out": "",
+      "pro_email": "frederic.lasnier",
+      "perso_email": "fredlasnier@gmail.com",
+      "phone": "+33661394822",
+      "address": "10 Rue saint Paul",
+      "zip": "75004",
+      "city": "Paris",
+      "country": "France",
+      "responsable": "1"
+    },
+    {
+      "id": "3",
+      "title": "Mme",
+      "name": "Beck",
+      "first-name": "Anne-Charlotte",
+      "function": "COM",
+      "dte_in": "",
+      "dte_out": "",
+      "pro_email": "anne-charlotte.beck",
+      "perso_email": "ac.beck@inspir-communication.com",
+      "phone": "+33613600865",
+      "address": "",
+      "zip": "",
+      "city": "",
+      "country": "",
+      "responsable": "1"
+    },
+    {
+      "id": "4",
+      "title": "Mme",
+      "name": "Dietrichsen",
+      "first-name": "Ingrid",
+      "function": "Business Dev",
+      "dte_in": "",
+      "dte_out": "",
+      "pro_email": "ingrid.dietrichsen",
+      "perso_email": "dietrichsen34@gmail.com",
+      "phone": "+27727114909",
+      "address": "Rue Georges Dimitrov",
+      "zip": "95870",
+      "city": "Bezons",
+      "country": "France",
+      "responsable": "1"
+    },
+    {
+      "id": "5",
+      "title": "M",
+      "name": "SilvaPimenta",
+      "first-name": "Leandro",
+      "function": "IT",
+      "dte_in": "",
+      "dte_out": "",
+      "pro_email": "leandro.pimenta",
+      "perso_email": "leandro.s.pimenta@gmail.com",
+      "phone": "+33695103999",
+      "address": "",
+      "zip": "",
+      "city": "",
+      "country": "",
+      "responsable": "2"
+    },
+    {
+      "id": "6",
+      "title": "M",
+      "name": "Mevelec",
+      "first-name": "Grégory",
+      "function": "IT",
+      "dte_in": "",
+      "dte_out": "",
+      "pro_email": "gregory.mevelec",
+      "perso_email": "gregory.mevelec@gmail.com",
+      "phone": "+33659214114",
+      "address": "",
+      "zip": "",
+      "city": "",
+      "country": "",
+      "responsable": "2"
+    },
+    {
+      "id": "7",
+      "title": "M",
+      "name": "Burbidge",
+      "first-name": "Thomas",
+      "function": "COM",
+      "dte_in": "",
+      "dte_out": "",
+      "pro_email": "thomas.burbidge",
+      "perso_email": "tburbidge@labcompagnie.com",
+      "phone": "+33615805344",
+      "address": "",
+      "zip": "75000",
+      "city": "Paris",
+      "country": "France",
+      "responsable": "1"
+    },
+    {
+      "id": "8",
+      "title": "Mlle",
+      "name": "Baudry",
+      "first-name": "Coralie",
+      "function": "IT (stage)",
+      "dte_in": "",
+      "dte_out": "",
+      "pro_email": "",
+      "perso_email": "coralie.bdy@gmail.com",
+      "phone": "+33689174959",
+      "address": "",
+      "zip": "",
+      "city": "",
+      "country": "",
+      "responsable": "2"
+    },
+    {
+      "id": "9",
+      "title": "M",
+      "name": "Ehya-Obiang",
+      "first-name": "Emmanuel",
+      "function": "Général",
+      "dte_in": "",
+      "dte_out": "",
+      "pro_email": "emmanuel.ehya",
+      "perso_email": "em.ehya@gmail.com",
+      "phone": "+33671839992",
+      "address": "",
+      "zip": "",
+      "city": "",
+      "country": "",
+      "responsable": "1"
+    },
+    {
+      "id": "10",
+      "title": "M",
+      "name": "Riou",
+      "first-name": "Fabien",
+      "function": "UX-UI",
+      "dte_in": "",
+      "dte_out": "",
+      "pro_email": "fabien.riou",
+      "perso_email": "fabien.riou92@gmail.com",
+      "phone": "+33787609389",
+      "address": "",
+      "zip": "",
+      "city": "",
+      "country": "",
+      "responsable": "2"
+    },
+    {
+      "id": "11",
+      "title": "Mme",
+      "name": "LeQuere",
+      "first-name": "Astrid",
+      "function": "UX-UI",
+      "dte_in": "",
+      "dte_out": "",
+      "pro_email": "astrid.lequere",
+      "perso_email": "    astrid.lequere@gmail.com",
+      "phone": "",
+      "address": "",
+      "zip": "",
+      "city": "",
+      "country": "",
+      "responsable": "2"
+    },
+    {
+      "id": "12",
+      "title": "M",
+      "name": "Petit",
+      "first-name": "Killian",
+      "function": "Business Dev (stage)",
+      "dte_in": "",
+      "dte_out": "",
+      "pro_email": "killian.petit",
+      "perso_email": "petit.kcm@hotmail.fr",
+      "phone": "+33750813776",
+      "address": "67 Avenue des sablons",
+      "zip": "91170",
+      "city": "Viry-Chatillon",
+      "country": "France ",
+      "responsable": "4"
+    },
+    {
+      "id": "13",
+      "title": "M",
+      "name": "Guillermond",
+      "first-name": "Ylios",
+      "function": "Advisory (stage)",
+      "dte_in": "",
+      "dte_out": "",
+      "pro_email": "ylios.guillermond",
+      "perso_email": "ylios.guillermond@gmail.com",
+      "phone": "+33782954782",
+      "address": "15 Allée les Carignan",
+      "zip": "83390",
+      "city": "Toulon",
+      "country": "France",
+      "responsable": "2"
+    },
+    {
+      "id": "14",
+      "title": "M",
+      "name": "Diochon",
+      "first-name": "Jérémie",
+      "function": "Business Dev (stage)",
+      "dte_in": "",
+      "dte_out": "",
+      "pro_email": "jeremie.diochon",
+      "perso_email": "jeremiedcpro@gmail.com",
+      "phone": "+33623681514",
+      "address": "52 Rue des vignes",
+      "zip": "91560",
+      "city": "Crosne",
+      "country": "France",
+      "responsable": "4"
     }
   ]
 }

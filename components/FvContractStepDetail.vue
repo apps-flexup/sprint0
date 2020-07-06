@@ -212,7 +212,7 @@ export default {
   },
   mounted() {
     console.log('Composant ', this.$options.name)
-    this.$store.dispatch('contacts/get')
+    // this.$store.dispatch('contacts/get')
   },
   methods: {
     addContact() {

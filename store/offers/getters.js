@@ -4,8 +4,9 @@ export default {
     const res = JSON.parse(JSON.stringify(state.items))
     return res
   },
-  getForProduct: (state) => (productId) => {
+  getForProduct: (state) => (id) => {
     if (!state.items) return null
+    const productId = parseInt(id)
     const offers = state.items.filter((item) => {
       return item.product_id === productId
     })

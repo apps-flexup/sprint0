@@ -37,6 +37,13 @@ export default {
       right: true,
       title: 'Flexup - Sprint 0'
     }
+  },
+  mounted() {
+    // charger tous les éléments unitaires de configuration
+    this.$store.dispatch('categories/get')
+    this.$store.dispatch('units/get')
+    this.$store.dispatch('currencies/get')
+    this.$store.dispatch('countries/get')
   }
 }
 </script>

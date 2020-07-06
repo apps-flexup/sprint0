@@ -54,7 +54,7 @@ export default {
   mounted() {
     console.log('Composant ', this.$options.name)
     this.$store.dispatch('forms/getContract')
-    this.$store.dispatch('contracts/get')
+    // this.$store.dispatch('contracts/get')
   },
   methods: {
     moveTo(v) {

@@ -27,7 +27,6 @@ export default {
   },
   mounted() {
     console.log('Composant ', this.$options.name)
-    this.$store.dispatch('currencies/get')
   },
   methods: {
     selected(v) {

@@ -8,6 +8,10 @@
           item-key='id'
           @click:row='selected'
         )
+          template(v-slot:item.category='{ item }')
+            div(v-to-category="item.category_id")
+          template(v-slot:item.status='{ item }')
+            div le truc avec des couleurs {{ item.status }}
           template(v-slot:item.actions='{ item }')
             v-icon.mr-2(small='' @click.stop='selected(item)')
               | mdi-pencil
@@ -25,11 +29,6 @@ export default {
     },
     items() {
       const res = this.$activeAccount.products()
-      res.forEach((product) => {
-        this.$repos.categories.show(product.category_id).then((category) => {
-          product.category_id = category.name.fr
-        })
-      })
       return res
     }
   },
@@ -50,8 +49,3 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
-.fv-product-list {
-  background-color: inherit;
-}
-</style>
