@@ -55,7 +55,6 @@ export default {
       this.$emit('modal:close')
     },
     save() {
-      console.log('save partner: ', this.partner)
       this.$emit('modal:save', this.partner)
     }
   }

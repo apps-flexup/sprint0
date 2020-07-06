@@ -2,7 +2,9 @@
 export default {
   get({ commit }) {
     // charger les produits
-    this.$repos.products.indexAccount().then((data) => commit('set', data))
+    this.$repos.products
+      .indexWithAccountId()
+      .then((data) => commit('set', data))
   },
   clear({ commit }) {
     commit('set', [])
@@ -21,7 +23,7 @@ export default {
         commit('add', res)
       })
     } else {
-      this.$repos.products.createAccount(product).then((res) => {
+      this.$repos.products.createWithAccountId(product).then((res) => {
         commit('add', res)
       })
     }

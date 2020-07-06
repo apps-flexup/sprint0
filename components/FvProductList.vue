@@ -41,7 +41,6 @@ export default {
       this.$emit('list:selected', product)
     },
     deleteItem(product) {
-      console.log('delete :', product)
       this.$store.dispatch('products/remove', product)
       const offer = this.$store.getters['offers/getForProduct'](product.id)
       this.$store.dispatch('offers/remove', offer[0])

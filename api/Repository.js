@@ -3,7 +3,7 @@ export default ($axios, store) => (resource) => ({
     const res = await $axios.$get(`/${resource}`)
     return res
   },
-  async indexAccount() {
+  async indexWithAccountId() {
     const accountId = store.getters['accounts/selected']
     const res = await $axios.$get(`/${resource}?account_id=${accountId}`)
     console.log(`${resource} (${accountId})`, res)
@@ -18,7 +18,7 @@ export default ($axios, store) => (resource) => ({
     const res = await $axios.$post(`/${resource}`, payload)
     return res
   },
-  async createAccount(payload) {
+  async createWithAccountId(payload) {
     delete payload.id
     const accountId = store.getters['accounts/selected']
     payload.account_id = accountId

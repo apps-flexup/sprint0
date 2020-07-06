@@ -48,8 +48,3 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
-.fv-contract-list-search {
-  background-color: inherit;
-}
-</style>

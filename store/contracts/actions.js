@@ -8,7 +8,9 @@ export default {
   },
   getContracts({ commit }) {
     // charger les contracts
-    this.$repos.contracts.indexAccount().then((data) => commit('set', data))
+    this.$repos.contracts
+      .indexWithAccountId()
+      .then((data) => commit('set', data))
   },
   getContractTypes({ commit }) {
     // charger les contrat-types

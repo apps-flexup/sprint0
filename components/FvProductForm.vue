@@ -68,7 +68,7 @@ export default {
     unitSelected(v) {
       const unit = this.$store.getters['units/find'](v)
       this.values.dimension = unit ? unit.dimension : null
-      this.values.unit = unit ? unit.unit : null
+      this.values.unit = unit ? unit.symbole : null
       const payload = {
         dimension: this.values.dimension,
         unit: this.values.unit

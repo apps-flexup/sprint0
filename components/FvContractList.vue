@@ -36,7 +36,6 @@ export default {
   },
   mounted() {
     console.log('Composant ', this.$options.name)
-    // this.$store.dispatch('contracts/get')
     this.$store.dispatch('headers/getContractHeaders')
   }
 }

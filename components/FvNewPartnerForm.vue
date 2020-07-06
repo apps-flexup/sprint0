@@ -69,7 +69,6 @@ export default {
   },
   methods: {
     formejuridiquesSelected(v) {
-      console.log('selection forme juridique', v)
       this.$emit('formeJuridiques:autocomplete', v)
       this.values.juridicalStatus = v
     },

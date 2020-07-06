@@ -8,6 +8,8 @@ export default {
   },
   getCharters({ commit }) {
     // charger les chartres
-    this.$repos.charters.indexAccount().then((data) => commit('set', data))
+    this.$repos.charters
+      .indexWithAccountId()
+      .then((data) => commit('set', data))
   }
 }

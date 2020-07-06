@@ -2,7 +2,9 @@
 export default {
   get({ commit }) {
     // charger les contracts
-    this.$repos.partners.indexAccount().then((data) => commit('set', data))
+    this.$repos.partners
+      .indexWithAccountId()
+      .then((data) => commit('set', data))
   },
   clear({ commit }) {
     commit('set', [])
@@ -21,7 +23,7 @@ export default {
         commit('add', res)
       })
     } else {
-      this.$repos.partners.createAccount(partner).then((res) => {
+      this.$repos.partners.createWithAccountId(partner).then((res) => {
         commit('add', res)
       })
     }

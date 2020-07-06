@@ -25,7 +25,6 @@ export default {
   methods: {
     submit() {
       this.$nuxt.$loading.start()
-      console.log('résultat :', this.product)
       const payload = this.product
       this.$activeAccount.addProduct(payload)
       this.$nuxt.$loading.finish()

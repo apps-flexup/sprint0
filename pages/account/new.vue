@@ -40,7 +40,7 @@
             pre Chargement image avatar
       v-card-actions
         v-spacer
-        v-btn(@click.stop="createAccount" block='') {{ $t('buttons.submit') }}
+        v-btn(@click.stop="createWithAccountId" block='') {{ $t('buttons.submit') }}
 </template>
 
 <script>
@@ -76,7 +76,7 @@ export default {
     this.account.firstname = this.$auth.user.given_name
   },
   methods: {
-    createAccount() {
+    createWithAccountId() {
       this.$store.dispatch('accounts/add', this.account)
       this.$router.push('/products/new')
     }

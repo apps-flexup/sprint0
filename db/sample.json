@@ -13914,6 +13914,27 @@
       "name": "apaprtement",
       "product_id": 10,
       "status": "draft"
+    },
+    {
+      "currency": "GBP",
+      "dimension": "weight",
+      "name": "Un truc genre banane",
+      "price": "9",
+      "status": "draft",
+      "product_id": 11,
+      "account_id": 1,
+      "id": 16
+    },
+    {
+      "currency": "AUD",
+      "dimension": "weight",
+      "name": "un truc du genre des pommes",
+      "price": "2.5",
+      "status": "draft",
+      "unit": "kg",
+      "product_id": 12,
+      "account_id": 3,
+      "id": 17
     }
   ],
   "order-headers": [
@@ -14411,9 +14432,10 @@
       "currency": "EUR",
       "dimension": "duration",
       "name": "Appartement Paris 8",
-      "price": "125",
+      "price": "1250",
       "quantity": 1,
       "status": "4-Confirmé",
+      "unit": "month",
       "id": 1
     },
     {
@@ -14421,22 +14443,24 @@
       "category_id": 55,
       "currency": "EUR",
       "dimension": "duration",
-      "id": 2,
       "name": "Appartement Paris 19",
       "price": "300",
       "quantity": 1,
-      "status": "4-Confirmé"
+      "status": "4-Confirmé",
+      "unit": "month",
+      "id": 2
     },
     {
       "account_id": 1,
       "category_id": 55,
       "currency": "EUR",
       "dimension": "duration",
-      "id": 3,
       "name": "Appartement Paris 12",
       "price": "3100",
       "quantity": 1,
-      "status": "4-Confirmé"
+      "status": "4-Confirmé",
+      "unit": "month",
+      "id": 3
     },
     {
       "account_id": 10,
@@ -14470,6 +14494,28 @@
       "id": 10,
       "name": "apaprtement",
       "status": "draft"
+    },
+    {
+      "category_id": 22,
+      "currency": "GBP",
+      "dimension": "weight",
+      "name": "Un truc genre banane",
+      "price": "9",
+      "status": "draft",
+      "account_id": 1,
+      "unit": "kg",
+      "id": 11
+    },
+    {
+      "category_id": 22,
+      "currency": "AUD",
+      "dimension": "weight",
+      "name": "un truc du genre des pommes",
+      "price": "2.5",
+      "status": "draft",
+      "unit": "kg",
+      "account_id": 3,
+      "id": 12
     }
   ],
   "structures": [

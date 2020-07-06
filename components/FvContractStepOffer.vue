@@ -55,7 +55,6 @@ export default {
         return this.local_selected || this.values.offers || []
       },
       set(v) {
-        console.log('set', v)
         this.local_selected = v
         const res = v.map((i) => i.id)
         this.$emit('wizard', { offers: res })

@@ -12,9 +12,8 @@ export default {
   },
   findByDimension: (state) => (dimension, unit) => {
     if (!state.items || !dimension || !unit) return null
-    // const recordId = parseInt(id)
     const res = state.items.find(
-      (v) => v.dimension === dimension && v.unit === unit
+      (v) => v.dimension === dimension && v.symbole === unit
     )
     return res
   }
