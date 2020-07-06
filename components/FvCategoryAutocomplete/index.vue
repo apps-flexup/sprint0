@@ -1,11 +1,10 @@
 <template lang="pug">
   .fv-category-autocomplete
     v-autocomplete(
-      v-model="element"
+      v-model="categoryId"
       :items="filteredItems"
       :filter="filterList"
       :loading="isLoading"
-      :search-input.sync="search"
       :label="$t('forms.products.new.category')"
       item-value="id"
       clearable=''
@@ -23,17 +22,31 @@
 export default {
   name: 'FvCategoryAutocomplete',
   inheritAttrs: true,
+  props: {
+    element: {
+      type: Number,
+      default() {
+        return null
+      }
+    }
+  },
   data() {
     return {
-      element: null,
-      isLoading: false,
-      search: null
+      isLoading: false
     }
   },
   computed: {
     filteredItems() {
       const res = this.$store.getters['categories/all']
       return res
+    },
+    categoryId: {
+      get() {
+        return this.element
+      },
+      set(v) {
+        this.$emit('category:selected', v)
+      }
     }
   },
   mounted() {
@@ -43,14 +56,14 @@ export default {
   methods: {
     filterList(item, v, _it) {
       const name = JSON.parse(JSON.stringify(item.name || {}))
+      // const nameValues = Object.prototype.flatI18n.call()
       const nameValues = Object.keys(name)
         .map((k) => {
           return item.name[k]
         })
         .join(' ')
         .toLowerCase()
-      const res =
-        (nameValues || '').toLowerCase().includes((v || '').toLowerCase()) > -1
+      const res = String.prototype.filtreAutocomplete.call(nameValues, v)
       return res
     },
     selected(v) {

@@ -861,7 +861,7 @@
       "id": 1,
       "name": "Appartement Paris 8",
       "quantity": 1,
-      "price": "3000€",
+      "price": "3000",
       "dimension": "duration",
       "unit": "month",
       "status": "4-Confirmé",
@@ -869,15 +869,15 @@
       "account_id": 1
     },
     {
-      "id": 2,
       "name": "Appartement Paris 19",
       "quantity": 1,
-      "price": "3000€",
+      "price": "3000",
       "dimension": "duration",
       "unit": "month",
       "status": "4-Confirmé",
       "category_id": 55,
-      "account_id": 1
+      "account_id": 1,
+      "id": 2
     },
     {
       "id": 3,

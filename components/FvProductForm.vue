@@ -3,7 +3,7 @@
     v-row
       v-col(cols='6')
         fv-category-autocomplete(
-          v-model="values.category_id"
+          :element="values.category_id"
           outlined=''
           @category:selected="categorySelected"
         )
