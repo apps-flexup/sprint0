@@ -1,10 +1,10 @@
 <template lang="pug">
   .fv-unit-autocomplete
     v-autocomplete(
-      v-model="element"
-      :items="filteredItems"
+      v-model="unitId"
+      :items="items"
+      :filter="filter"
       :loading="isLoading"
-      :search-input.sync="search"
       :label="$t('forms.products.new.unit')"
       item-text="name"
       item-value="id"
@@ -20,21 +20,35 @@
 </template>
 
 <script>
+import { filterListAutocomplete } from '~/plugins/utils'
 export default {
   name: 'FvUnitAutocomplete',
   inheritAttrs: true,
+  promps: {
+    element: {
+      type: Number,
+      default() {
+        return null
+      }
+    }
+  },
   data() {
     return {
-      element: null,
-      isLoading: false,
-      search: null,
-      filteredItems: []
+      isLoading: false
     }
   },
   computed: {
     items() {
       const res = this.$store.getters['units/all']
       return res
+    },
+    unitId: {
+      get() {
+        return this.element
+      },
+      set(v) {
+        this.$emit('unit:selected', v)
+      }
     }
   },
   watch: {
@@ -48,20 +62,11 @@ export default {
     // this.$store.dispatch('units/get')
   },
   methods: {
-    filterList() {
-      this.isLoading = true
-      setTimeout(() => {
-        this.filteredItems = this.items.filter((item) => {
-          // console.log('cherche :', v, ', item :', item)
-          const name = item.symbole || ''
-          // return name.toLowerCase().includes((v || '').toLowerCase()) > -1
-          return name
-        })
-        this.isLoading = false
-      }, 500)
-    },
     selected(v) {
       this.$emit('unit:selected', v)
+    },
+    filter(item, v, it) {
+      return filterListAutocomplete(item, v, it)
     }
   }
 }

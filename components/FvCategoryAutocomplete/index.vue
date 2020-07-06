@@ -2,7 +2,7 @@
   .fv-category-autocomplete
     v-autocomplete(
       v-model="categoryId"
-      :items="filteredItems"
+      :items="items"
       :filter="filterList"
       :loading="isLoading"
       :label="$t('forms.products.new.category')"
@@ -36,7 +36,7 @@ export default {
     }
   },
   computed: {
-    filteredItems() {
+    items() {
       const res = this.$store.getters['categories/all']
       return res
     },

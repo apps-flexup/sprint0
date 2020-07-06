@@ -22,8 +22,9 @@
         )
       v-col(cols='6')
         fv-unit-autocomplete(
-          v-model="values.unit"
+          element="values.unit"
           outlined=''
+          @unit:selected="unitSelected"
         )
     v-row
       v-col(cols="6")
@@ -71,6 +72,11 @@ export default {
       console.log('currency :', v)
       this.values.currency = v
       this.$emit('currency:autocomplete', v)
+    },
+    unitSelected(v) {
+      console.log('unit :', v)
+      this.values.unit = v
+      this.$emit('unit:autocomplete', v)
     }
   }
 }
