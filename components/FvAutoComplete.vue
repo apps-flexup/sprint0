@@ -42,7 +42,6 @@ export default {
   },
   watch: {
     search(val) {
-      // console.log('search :', val)
       val && val !== this.element && this.filterList(val)
     }
   },
@@ -51,7 +50,6 @@ export default {
   },
   methods: {
     filterList() {
-      console.log('Filtrage', this.items)
       this.isLoading = true
       setTimeout(() => {
         this.filteredItems = this.items.filter((item) => {

@@ -33,12 +33,10 @@ export default {
     },
     save(e) {
       this.showModal = false
-      console.log('e: ', e)
       this.$store.dispatch('partners/add', e)
       this.selected = {}
     },
     selectedPartner(e) {
-      console.log('partenaire selectionné', e)
       this.selected = JSON.parse(JSON.stringify(e))
       this.showModal = true
     }

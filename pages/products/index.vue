@@ -37,7 +37,6 @@ export default {
     },
     selectedProduct(e) {
       this.selected = JSON.parse(JSON.stringify(e))
-      console.log('produit selectionné', e)
       this.showModal = true
     }
   }

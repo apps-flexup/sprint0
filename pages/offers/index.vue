@@ -39,7 +39,6 @@ export default {
       this.$nuxt.$loading.finish()
     },
     selectedOffer(offer) {
-      console.log('Selected offer: ', offer)
       this.selected = JSON.parse(JSON.stringify(offer))
       let product = {}
       this.$repos.products.show(offer.product_id).then((res) => {
@@ -53,8 +52,3 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
-.offers {
-  background-color: inherit;
-}
-</style>

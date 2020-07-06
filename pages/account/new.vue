@@ -77,15 +77,9 @@ export default {
   },
   methods: {
     createAccount() {
-      console.log('créer nouveau compte')
       this.$store.dispatch('accounts/add', this.account)
       this.$router.push('/products/new')
     }
   }
 }
 </script>
-<style lang="scss" scoped>
-.page-account-new {
-  background-color: inherit;
-}
-</style>

@@ -8,10 +8,8 @@ export default {
       if (data.length > 0) {
         // if (this.$auth.user.last_account ^ data.length > 0) {
         const account = parseInt(data[0].id)
-        console.log('dernier compte actif', account)
         this.$activeAccount.set(account)
       } else {
-        console.log('pas de compte')
         this.app.router.push('/account/new')
       }
     })
