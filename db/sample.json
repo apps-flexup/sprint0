@@ -13474,7 +13474,7 @@
       },
       "price": 100,
       "reference": "EKWOHX",
-      "status": "draft",
+      "status": "reserved",
       "unit": "m³"
     },
     {
@@ -13563,7 +13563,7 @@
       "currency": "EUR",
       "description": {
         "en": "description of offer fab",
-        "fr": "description of Le jeu des 7 famille"
+        "fr": "description of Le jeu des 7 familles"
       },
       "dimension": null,
       "elasticity": 0,
@@ -13573,7 +13573,7 @@
       "illustration_url": "https://placeimg.com/640/480?id=3",
       "name": {
         "en": "7 familly game",
-        "fr": "Le jeu des 7 famille"
+        "fr": "Le jeu des 7 familles"
       },
       "offer_at_client": true,
       "offer_at_supplier": true,
@@ -13588,7 +13588,7 @@
       },
       "price": 10,
       "reference": "BAVAFC",
-      "status": "draft",
+      "status": "active",
       "unit": "h"
     },
     {
@@ -13615,7 +13615,7 @@
         "other_parent": [],
         "parent_id": 51,
         "sort_order": 0,
-        "status": "active",
+        "status": "suspended",
         "unit": null
       },
       "category_id": 52,
@@ -13644,7 +13644,7 @@
       },
       "price": 100,
       "reference": "EICMNB",
-      "status": "draft",
+      "status": "archived",
       "unit": "h"
     },
     {
@@ -13671,7 +13671,7 @@
         "other_parent": [],
         "parent_id": 6,
         "sort_order": 1,
-        "status": "active",
+        "status": "inactive",
         "unit": "hr"
       },
       "category_id": 8,
@@ -13697,7 +13697,7 @@
       },
       "price": 12.75,
       "reference": "EUXSKQ",
-      "status": "draft",
+      "status": "suspended",
       "unit": null
     },
     {
@@ -13860,7 +13860,7 @@
       },
       "price": 50,
       "reference": "IHMKFU",
-      "status": "draft",
+      "status": "suspended",
       "unit": "hr"
     },
     {
@@ -13930,7 +13930,7 @@
       "dimension": "weight",
       "name": "un truc du genre des pommes",
       "price": "2.5",
-      "status": "draft",
+      "status": "inactive",
       "unit": "kg",
       "product_id": 12,
       "account_id": 3,
@@ -14452,14 +14452,59 @@
     },
     {
       "account_id": 1,
-      "category_id": 55,
-      "currency": "EUR",
-      "dimension": "duration",
-      "name": "Appartement Paris 12",
-      "price": "3100",
-      "quantity": 1,
-      "status": "4-Confirmé",
-      "unit": "month",
+      "active": true,
+      "category": {
+        "active": true,
+        "allow_at_client": true,
+        "allow_at_supplier": true,
+        "allow_remote": false,
+        "allow_shipping": true,
+        "description": {
+          "en": "English",
+          "fr": "French"
+        },
+        "dimension": "number",
+        "id": 44,
+        "name": {
+          "en": "Card Games",
+          "fr": "Jeux de cartes"
+        },
+        "offers_count": 1,
+        "orderable": true,
+        "other_parent": [],
+        "parent_id": 43,
+        "sort_order": 0,
+        "status": "active",
+        "unit": "Nr"
+      },
+      "description": {
+        "en": "description of offer fab",
+        "fr": "description of Le jeu des 7 famille"
+      },
+      "dimension": "unit",
+      "elasticity": 0,
+      "evaluation_avg": 6.5,
+      "favorite": true,
+      "illustration_url": "https://placeimg.com/640/480?id=3",
+      "name": {
+        "en": "7 familly game",
+        "fr": "Le jeu des 7 famille"
+      },
+      "offer_at_client": true,
+      "offer_at_supplier": true,
+      "offer_remote": true,
+      "offer_shipping": true,
+      "params": {
+        "game_name": {
+          "en": "Tintin version",
+          "fr": "version Tintin"
+        },
+        "quantity_of_cards": 52
+      },
+      "price": 10,
+      "reference": "BAVAFC",
+      "status": "draft",
+      "unit": "Unit",
       "id": 3
     },
     {
@@ -14590,7 +14635,7 @@
       "name": "Nastri",
       "perso_email": "fabrizio_nastri@hotmail.com",
       "phone": "+330664115752",
-      "pro_email": "fabrizio.nastri",
+      "pro_email": "fabrizio.nastri@flexup.org",
       "responsable": "",
       "title": "M",
       "zip": "75004"
@@ -14608,7 +14653,7 @@
       "name": "Lasnier",
       "perso_email": "fredlasnier@gmail.com",
       "phone": "+33661394822",
-      "pro_email": "frederic.lasnier",
+      "pro_email": "frederic.lasnier@flexup.org",
       "responsable": "1",
       "title": "M",
       "zip": "75004"
@@ -14626,7 +14671,7 @@
       "name": "Beck",
       "perso_email": "ac.beck@inspir-communication.com",
       "phone": "+33613600865",
-      "pro_email": "anne-charlotte.beck",
+      "pro_email": "anne-charlotte.beck@flexup.org",
       "responsable": "1",
       "title": "Mme",
       "zip": ""
@@ -14643,7 +14688,7 @@
       "name": "Dietrichsen",
       "perso_email": "dietrichsen34@gmail.com",
       "phone": "+27727114909",
-      "pro_email": "ingrid.dietrichsen",
+      "pro_email": "ingrid.dietrichsen@flexup.org",
       "responsable": "1",
       "title": "Mme",
       "zip": "95870"
@@ -14661,7 +14706,7 @@
       "name": "SilvaPimenta",
       "perso_email": "leandro.s.pimenta@gmail.com",
       "phone": "+33695103999",
-      "pro_email": "leandro.pimenta",
+      "pro_email": "leandro.pimenta@flexup.org",
       "responsable": "2",
       "title": "M",
       "zip": ""
@@ -14679,7 +14724,7 @@
       "name": "Mevelec",
       "perso_email": "gregory.mevelec@gmail.com",
       "phone": "+33659214114",
-      "pro_email": "gregory.mevelec",
+      "pro_email": "gregory.mevelec@flexup.org",
       "responsable": "2",
       "title": "M",
       "zip": ""
@@ -14697,7 +14742,7 @@
       "name": "Burbidge",
       "perso_email": "tburbidge@labcompagnie.com",
       "phone": "+33615805344",
-      "pro_email": "thomas.burbidge",
+      "pro_email": "thomas.burbidge@flexup.org",
       "responsable": "1",
       "title": "M",
       "zip": "75000"
@@ -14714,7 +14759,7 @@
       "name": "Baudry",
       "perso_email": "coralie.bdy@gmail.com",
       "phone": "+33689174959",
-      "pro_email": "",
+      "pro_email": "@flexup.org",
       "responsable": "2",
       "title": "Mlle",
       "zip": ""
@@ -14731,7 +14776,7 @@
       "name": "Ehya-Obiang",
       "perso_email": "em.ehya@gmail.com",
       "phone": "+33671839992",
-      "pro_email": "emmanuel.ehya",
+      "pro_email": "emmanuel.ehya@flexup.org",
       "responsable": "1",
       "title": "M",
       "zip": ""
@@ -14749,7 +14794,7 @@
       "name": "Riou",
       "perso_email": "fabien.riou92@gmail.com",
       "phone": "+33787609389",
-      "pro_email": "fabien.riou",
+      "pro_email": "fabien.riou@flexup.org",
       "responsable": "2",
       "title": "M",
       "zip": ""
@@ -14767,7 +14812,7 @@
       "name": "LeQuere",
       "perso_email": "    astrid.lequere@gmail.com",
       "phone": "",
-      "pro_email": "astrid.lequere",
+      "pro_email": "astrid.lequere@flexup.org",
       "responsable": "2",
       "title": "Mme",
       "zip": ""
@@ -14784,7 +14829,7 @@
       "name": "Petit",
       "perso_email": "petit.kcm@hotmail.fr",
       "phone": "+33750813776",
-      "pro_email": "killian.petit",
+      "pro_email": "killian.petit@flexup.org",
       "responsable": "4",
       "title": "M",
       "zip": "91170"
@@ -14801,7 +14846,7 @@
       "name": "Guillermond",
       "perso_email": "ylios.guillermond@gmail.com",
       "phone": "+33782954782",
-      "pro_email": "ylios.guillermond",
+      "pro_email": "ylios.guillermond@flexup.org",
       "responsable": "2",
       "title": "M",
       "zip": "83390"
@@ -14819,7 +14864,7 @@
       "name": "Diochon",
       "perso_email": "jeremiedcpro@gmail.com",
       "phone": "+33623681514",
-      "pro_email": "jeremie.diochon",
+      "pro_email": "jeremie.diochon@flexup.org",
       "responsable": "4",
       "title": "M",
       "zip": "91560"

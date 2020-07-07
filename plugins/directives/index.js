@@ -1,5 +1,19 @@
 import Vue from 'vue'
 
+Vue.directive('to-unit', (el, binding, _vnode) => {
+  // const locale = vnode.context.$i18n.locale
+  // const fallbackLocale = vnode.context.$i18n.fallbackLocale
+  const unit = binding.value.unit
+  const dimension = binding.value.dimension
+  // const unitToDisplay = vnode.context.$store.getters['units/findByDimension'](
+  //   dimension,
+  //   unit
+  // )
+  // const res = `${unitToDisplay.symbole} ${unit} (${dimension})`
+  const res = `${unit} (${dimension})`
+  el.innerHTML = res
+})
+
 Vue.directive('to-currency', (el, binding, vnode) => {
   const locale = vnode.context.$i18n.locale
   const valeur = binding.value

@@ -8,9 +8,14 @@
         v-data-table.elevation-2(
           :headers='headers'
           :items='items'
-          item-key='id',
-          @click:row='selected'
+          item-key='id'
         )
+          template(v-slot:item.name='{ item }')
+            div(v-to-locale="item.name")
+          template(v-slot:item.unit='{ item }')
+            div(v-to-unit="item")
+          template(v-slot:item.status='{ item }')
+            fv-status-progress-atom(:status="item.status")
           template(v-slot:item.actions='{ item }')
             v-icon.mr-2(small='' @click.stop='selected(item)')
               | mdi-pencil
