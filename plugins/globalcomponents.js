@@ -3,6 +3,7 @@ import Vue from 'vue'
 import FvMenuList from '@/components/FvMenuList'
 import FvAccountAvatar from '@/components/FvAccountAvatar'
 import FvAutoComplete from '@/components/FvAutoComplete'
+import FvContactCard from '@/components/FvContactCard'
 import FvContactDialog from '@/components/FvContactDialog'
 import FvContactEdit from '~/components/FvContactEdit'
 import FvContactForm from '~/components/FvContactForm'
@@ -68,6 +69,7 @@ Vue.component('fv-menu-list', FvMenuList)
 Vue.component('fv-account-avatar', FvAccountAvatar)
 Vue.component('fv-auto-complete', FvAutoComplete)
 Vue.component('fv-contact-dialog', FvContactDialog)
+Vue.component('fv-contact-card', FvContactCard)
 Vue.component('fv-contact-edit', FvContactEdit)
 Vue.component('fv-contact-form', FvContactForm)
 Vue.component('fv-contact-list', FvContactList)
