@@ -40,7 +40,6 @@ const instantTranslate = (tableau, language, fallback) => {
   return tableau[langues[0]]
 }
 Vue.directive('to-locale', (el, binding, vnode) => {
-  // const locale = vnode.context.$store.getters['settings/locale']
   const locale = vnode.context.$i18n.locale
   const fallbackLocale = vnode.context.$i18n.fallbackLocale
   const res = binding.value

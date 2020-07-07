@@ -10,9 +10,9 @@
       template(v-slot:label)
         span Période
       template(v-slot:item="{ item }")
-        div(v-to-locale="item.text")
+        div {{ $t(item.text) }}
       template(v-slot:selection="{ item }")
-        div(v-to-locale="item.text")
+        div {{ $t(item.text) }}
 </template>
 
 <script>
