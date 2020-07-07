@@ -1,4 +1,13 @@
 {
+  "frequences": {
+    "periods": {
+      "day": "jour",
+      "week": "semaine",
+      "month": "mois",
+      "quarter": "trimestre",
+      "year": "année"
+    }
+  },
   "title": {
     "index": "Service de gestion des contrats",
     "text": {
@@ -36,7 +45,7 @@
         "charter": "Chartre",
         "dateOfSignature": "Date de signature",
         "effectiveDate": "Date effective",
-        "endDate":"Date de fin",
+        "endDate": "Date de fin",
         "type": "Type de contract"
       },
       "structure": {
@@ -56,7 +65,7 @@
         "category": "Catégorie",
         "periodicity": "Périodicité",
         "name": "Nom du produit",
-        "unit":"Unité",
+        "unit": "Unité",
         "price": "Prix",
         "currency": "Devise",
         "elasticity": "Élasticité"
@@ -69,7 +78,7 @@
         "name": "Nom du partenaire",
         "juridicalStatus": "Statut juridique",
         "siret": "SIRET",
-        "address":"Adresse",
+        "address": "Adresse",
         "complement": "Complément",
         "zip": "Code postal",
         "city": "Ville",
@@ -108,7 +117,7 @@
       }
     }
   },
-  "menu" : {
+  "menu": {
     "home": "Accueil",
     "orders": "Commandes",
     "offers": "Offres",

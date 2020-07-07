@@ -1,4 +1,13 @@
 {
+  "frequences": {
+    "periods": {
+      "day": "day",
+      "week": "week",
+      "month": "month",
+      "quarter": "quarter",
+      "year": "year"
+    }
+  },
   "title": {
     "index": "Contract management service"
   },

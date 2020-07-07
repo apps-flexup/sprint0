@@ -64,6 +64,7 @@ import FvCountryAutocomplete from '@/components/FvCountryAutocomplete'
 import FvFormeJuridiqueAutocomplete from '@/components/FvFormeJuridiqueAutocomplete'
 import FvProductItem from '@/components/FvProductItem'
 import FvStatusProgressAtom from '@/components/FvStatusProgressAtom'
+import FvFrequence from '@/components/FvFrequence'
 
 // Déclarations composants utilitaires
 Vue.component('fv-menu-list', FvMenuList)
@@ -144,3 +145,4 @@ Vue.component('fv-unit-autocomplete', FvUnitAutocomplete)
 Vue.component('fv-forme-juridique-autocomplete', FvFormeJuridiqueAutocomplete)
 Vue.component('fv-product-item', FvProductItem)
 Vue.component('fv-status-progress-atom', FvStatusProgressAtom)
+Vue.component('fv-frequence', FvFrequence)
