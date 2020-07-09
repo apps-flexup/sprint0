@@ -13,7 +13,6 @@
           v-list-item-title {{ `${data.item.symbole} (${data.item.dimension})` }}
       template(v-slot:selection="data")
         div {{ `${data.item.symbole} (${data.item.dimension})` }}
-
 </template>
 
 <script>
