@@ -18,6 +18,18 @@ const translateHeaders = (i18n) => (items) => {
   return res
 }
 
+export const filterCategoryAutocomplete = (item, v, _it) => {
+  const name = JSON.parse(JSON.stringify(item.name || {}))
+  const nameValues = Object.keys(name)
+    .map((k) => {
+      return item.name[k]
+    })
+    .join(' ')
+    .toLowerCase()
+  const res = String.prototype.filtreAutocomplete.call(nameValues, v)
+  return res
+}
+
 export const filterUnitAutocomplete = (item, v, _it) => {
   const nameValues = `${item.dimension} ${item.symbole} ${item.base}`
   const res = String.prototype.filtreAutocomplete.call(nameValues, v)

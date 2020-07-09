@@ -15,6 +15,8 @@
 </template>
 
 <script>
+import { filterCategoryAutocomplete } from '~/plugins/utils'
+
 export default {
   name: 'FvCategoryAutocomplete',
   inheritAttrs: true,
@@ -41,16 +43,8 @@ export default {
     console.log('Composant ', this.$options.name)
   },
   methods: {
-    filterList(item, v, _it) {
-      const name = JSON.parse(JSON.stringify(item.name || {}))
-      const nameValues = Object.keys(name)
-        .map((k) => {
-          return item.name[k]
-        })
-        .join(' ')
-        .toLowerCase()
-      const res = String.prototype.filtreAutocomplete.call(nameValues, v)
-      return res
+    filterList(item, v, it) {
+      return filterCategoryAutocomplete(item, v, it)
     },
     selected(v) {
       this.$emit('category:selected', v)
