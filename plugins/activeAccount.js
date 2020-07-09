@@ -64,7 +64,9 @@ const activeAccount = (ctx) => ({
     res.push({ header: 'autocomplete.partners.flexup' })
     const data = await ctx.$axios.$get('/partners')
     data.forEach((item) => {
-      if (!partnerIds.includes(item.id)) res.push(item)
+      const tmp = item
+      tmp.avatar = require('~/static/logo.svg')
+      if (!partnerIds.includes(res.id)) res.push(tmp)
     })
     return res
   },

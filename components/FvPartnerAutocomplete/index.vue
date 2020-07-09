@@ -12,22 +12,20 @@
       @change="selected"
     )
       template(v-slot:label)
-        div Partenaire
+        div {{ $t('forms.orders.new.partner') }}
       template(v-slot:item="data")
-        template(v-if="data.item.header")
-          v-list-item-content(v-locale="data.item")
-        template(v-else)
-          fv-partner-item(
-            :partner="data.item"
-            :v-bind="data.attrs"
-            :v-on="data.on"
-          )
+        template(v-if="typeof data.item !== 'object'")
+          v-list-item-content(v-text="data.item")
+        template(v-else='')
+          v-list-item-avatar
+            v-img(:src="data.item.avatar")
+          v-list-item-content
+            div {{ data.item.name }}
       template(v-slot:selection="data")
-          fv-partner-item(
-            :partner="data.item"
-            :v-bind="data.attrs"
-            :v-on="data.on"
-          )
+          v-list-item-avatar
+            v-img(:src="data.item.avatar")
+          v-list-item-content
+            div {{ data.item.name }}
       template(v-slot:no-data)
         div Aucune donnée disponible
 </template>
@@ -63,6 +61,7 @@ export default {
   mounted() {
     console.log('Composant ', this.$options.name)
     this.$activeAccount.allPartners().then((data) => {
+      console.log('Les partenaires :', data)
       this.items = data
     })
   },

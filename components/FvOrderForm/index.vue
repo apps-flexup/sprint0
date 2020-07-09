@@ -5,18 +5,8 @@
       v-col(cols="6")
         fv-partner-autocomplete(
           v-model="order.partner_id"
-          outlined=''
-          clearable=''
           @partners:selected='partnerSelected'
         )
-          template(v-slot:label='')
-            p {{ $t('forms.orders.new.partner') }}
-          template(v-slot:append-outer='')
-            v-btn(
-              icon
-              @click="newPartner"
-            )
-              v-icon mdi-plus
       v-col(cols="6")
         .partner-address {{ this.partnerAddress }}
     v-row

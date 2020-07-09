@@ -114,6 +114,13 @@
         "elasticity": "Elasticity",
         "currency": "Currency"
       }
+    },
+    "orders": {
+      "new": {
+        "partner": "Partnaire",
+        "structure": "Structure",
+        "product": "Produit"
+      }
     }
   },
   "menu": {

@@ -1,12 +1,24 @@
 <template lang="pug">
   .fv-structure-autocomplete
-    fv-auto-complete(
+    fv-autocomplete(
       v-model="this.structure"
       :items="items"
-      :label="$t('forms.orders.new.structure')"
       @autocomplete:selected="selected"
     )
-</template>
+      template(v-slot:label)
+        div {{ $t('forms.orders.new.structure') }}
+      template(v-slot:item="data")
+        template(v-if="typeof data.item !== 'object'")
+          v-list-item-content(v-text="data.item")
+        template(v-else='')
+          v-list-item-content
+            div {{ data.item.name }}
+      template(v-slot:selection="data")
+          v-list-item-content
+            div {{ data.item.name }}
+      template(v-slot:no-data)
+        div Aucune donnée disponible
+  </template>
 
 <script>
 export default {

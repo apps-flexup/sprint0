@@ -111,6 +111,13 @@
         "price": "Price",
         "elasticity": "Elasticity",
         "currency": "Currency"
+      },
+      "orders": {
+        "new": {
+          "partner": "Partner",
+          "structure": "Structure",
+          "product": "Product"
+        }
       }
     }
   },

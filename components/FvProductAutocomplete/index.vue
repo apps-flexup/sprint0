@@ -1,7 +1,7 @@
 <template lang="pug">
   .fv-product-autocomplete
     p {{ $options.name }}
-    fv-auto-complete(
+    fv-autocomplete(
       v-model="this.product"
       :items="items"
       :label="$t('forms.orders.new.product')"
