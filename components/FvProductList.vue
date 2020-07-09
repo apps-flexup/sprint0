@@ -38,6 +38,7 @@ export default {
   },
   methods: {
     selected(product) {
+      console.log('selected: ', product)
       this.$emit('list:selected', product)
     },
     deleteItem(product) {

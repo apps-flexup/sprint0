@@ -64,6 +64,9 @@ Vue.directive('to-category', (el, binding, vnode) => {
   const fallbackLocale = vnode.context.$i18n.fallbackLocale
   const res = binding.value
   const category = vnode.context.$store.getters['categories/find'](res)
-  const valeur = instantTranslate(category.name, locale, fallbackLocale)
+  let valeur = null
+  if (category) {
+    valeur = instantTranslate(category.name, locale, fallbackLocale)
+  }
   el.innerHTML = valeur
 })

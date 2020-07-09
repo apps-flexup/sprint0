@@ -1,14 +1,10 @@
 <template lang="pug">
   .fv-category-autocomplete
-    v-autocomplete(
-      v-model="categoryId"
+    fv-autocomplete(
+      :element="categoryId"
       :items="items"
       :filter="filterList"
-      :loading="isLoading"
-      item-value="id"
-      clearable=''
-      outlined=''
-      @change="selected"
+      @autocomplete:selected="selected"
     )
       template(v-slot:label)
         div {{ $t('forms.products.new.category') }}
@@ -16,15 +12,18 @@
         v-list-item-content
           v-list-item-title(v-to-locale="data.item.name")
       template(v-slot:selection="data")
-        div(v-to-locale="data.item.name")
+        v-list-item-content
+          v-list-item-title(v-to-locale="data.item.name")
 </template>
 
 <script>
+import { filterCategoryAutocomplete } from '~/plugins/utils'
+
 export default {
   name: 'FvCategoryAutocomplete',
   inheritAttrs: true,
   props: {
-    element: {
+    categoryId: {
       type: Number,
       default() {
         return null
@@ -40,31 +39,14 @@ export default {
     items() {
       const res = this.$store.getters['categories/all']
       return res
-    },
-    categoryId: {
-      get() {
-        return this.element
-      },
-      set(v) {
-        this.$emit('category:selected', v)
-      }
     }
   },
   mounted() {
     console.log('Composant ', this.$options.name)
   },
   methods: {
-    filterList(item, v, _it) {
-      const name = JSON.parse(JSON.stringify(item.name || {}))
-      // const nameValues = Object.prototype.flatI18n.call()
-      const nameValues = Object.keys(name)
-        .map((k) => {
-          return item.name[k]
-        })
-        .join(' ')
-        .toLowerCase()
-      const res = String.prototype.filtreAutocomplete.call(nameValues, v)
-      return res
+    filterList(item, v, it) {
+      return filterCategoryAutocomplete(item, v, it)
     },
     selected(v) {
       this.$emit('category:selected', v)

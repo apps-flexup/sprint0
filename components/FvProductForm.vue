@@ -3,8 +3,7 @@
     v-row
       v-col(cols='6')
         fv-category-autocomplete(
-          :element="values.category_id"
-          outlined=''
+          :categoryId="values.category_id"
           @category:selected="categorySelected"
         )
       v-col(cols='6')
@@ -24,7 +23,6 @@
         fv-unit-autocomplete(
           :dimension="values.dimension"
           :unit="values.unit"
-          outlined=''
           @unit:selected="unitSelected"
         )
     v-row
@@ -37,7 +35,6 @@
       v-col(cols="6")
         fv-currency-autocomplete(
           :currency="values.currency"
-          outlined=''
           @currency:selected="currencySelected"
         )
 </template>
