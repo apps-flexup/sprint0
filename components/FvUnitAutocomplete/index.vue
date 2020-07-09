@@ -1,6 +1,7 @@
 <template lang="pug">
   .fv-unit-autocomplete
     fv-autocomplete(
+      :element="unitId"
       :items="items"
       :filter="filter"
       @autocomplete:selected="selected"

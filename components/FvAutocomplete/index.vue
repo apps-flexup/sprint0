@@ -1,6 +1,7 @@
 <template lang="pug">
   .fv-autocomplete
     v-autocomplete(
+      v-model="elementId"
       :items="items"
       :filter="filter"
       :loading="isLoading"

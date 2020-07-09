@@ -1,6 +1,7 @@
 <template lang="pug">
   .fv-currency-autocomplete
     fv-autocomplete(
+      :element="currencyId"
       :items="items"
       :filter="filter"
       @autocomplete:selected="selected"
