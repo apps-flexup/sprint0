@@ -28,6 +28,12 @@ export default {
   name: 'FvAutocomplete',
   inheritAttrs: true,
   props: {
+    element: {
+      type: Number,
+      default() {
+        return null
+      }
+    },
     items: {
       type: Array,
       default() {
@@ -50,6 +56,18 @@ export default {
   data() {
     return {
       isLoading: false
+    }
+  },
+  computed: {
+    elementId: {
+      get() {
+        console.log('get element')
+        return this.element
+      },
+      set(v) {
+        console.log('set element: ', v)
+        this.$emit('autocomplete:selected', v)
+      }
     }
   },
   mounted() {
