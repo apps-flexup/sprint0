@@ -1,22 +1,18 @@
 <template lang="pug">
   .fv-unit-autocomplete
-    v-autocomplete(
-      v-model="unitId"
+    fv-autocomplete(
       :items="items"
       :filter="filter"
-      :loading="isLoading"
-      :label="$t('forms.products.new.unit')"
-      item-text="name"
-      item-value="id"
-      clearable=''
-      outlined=''
-      @change="selected"
+      @autocomplete:selected="selected"
     )
+      template(v-slot:label)
+        p {{ $t('forms.products.new.unit') }}
       template(v-slot:item="data")
         v-list-item-content
           v-list-item-title {{ `${data.item.symbole} (${data.item.dimension})` }}
       template(v-slot:selection="data")
         div {{ `${data.item.symbole} (${data.item.dimension})` }}
+
 </template>
 
 <script>

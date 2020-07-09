@@ -1,16 +1,12 @@
 <template lang="pug">
   .fv-currency-autocomplete
-    v-autocomplete(
-      v-model="currencyId"
+    fv-autocomplete(
       :items="items"
       :filter="filter"
-      :loading="isLoading"
-      :label="$t('forms.products.new.currency')"
-      item-value="id"
-      clearable=''
-      outlined=''
-      @change="selected"
+      @autocomplete:selected="selected"
     )
+      template(v-slot:label)
+        p {{ $t('forms.products.new.currency') }}
       template(v-slot:item="data")
         v-list-item-content
           v-list-item-title {{ `${data.item.name} ${data.item.symbole} (${data.item.iso3})` }}

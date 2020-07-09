@@ -1,17 +1,12 @@
 <template lang="pug">
   .fv-country-autocomplete
-    v-autocomplete(
-      v-model="element"
-      :items="filteredItems"
-      :loading="isLoading"
-      :search-input.sync="search"
-      :label="$t('forms.partners.new.country')"
-      item-text="name"
-      item-value="id"
-      clearable=''
-      outlined=''
-      @change="selected"
+    fv-autocomplete(
+      :items="items"
+      :filter="filterList"
+      @autocomplete:selected="selected"
     )
+      template(v-slot:label)
+        p {{ $t('forms.partners.new.country') }}
       template(v-slot:item="data")
         v-list-item-content
           v-list-item-title {{ data.item.name }}
@@ -20,53 +15,24 @@
 </template>
 
 <script>
+import { filterCountryAutocomplete } from '~/plugins/utils'
+
 export default {
   name: 'FvCountryAutocomplete',
   inheritAttrs: true,
-  // props: {
-  //   element: {
-  //     type: Number,
-  //     default() {
-  //       return null
-  //     }
-  //   }
-  // },
-  data() {
-    return {
-      element: null,
-      isLoading: false,
-      search: null,
-      filteredItems: []
-    }
-  },
   computed: {
     items() {
       const res = this.$store.getters['countries/all']
       return res
     }
   },
-  watch: {
-    search(val) {
-      // console.log('search :', val)
-      val && val !== this.element && this.filterList(val)
-    }
-  },
   mounted() {
     console.log('Composant ', this.$options.name)
-    // this.$store.dispatch('countries/get')
   },
   methods: {
-    filterList() {
-      this.isLoading = true
-      setTimeout(() => {
-        this.filteredItems = this.items.filter((item) => {
-          // console.log('cherche :', v, ', item :', item)
-          const name = item.name || ''
-          // return name.toLowerCase().includes((v || '').toLowerCase()) > -1
-          return name
-        })
-        this.isLoading = false
-      }, 500)
+    filterList(item, v, it) {
+      console.log(item)
+      return filterCountryAutocomplete(item, v, it)
     },
     selected(v) {
       this.$emit('country:selected', v)

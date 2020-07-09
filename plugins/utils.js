@@ -25,7 +25,19 @@ export const filterUnitAutocomplete = (item, v, _it) => {
 }
 
 export const filterCurrencyAutocomplete = (item, v, _it) => {
+  const nameValues = `${item.iso2} ${item.iso3} ${item.name}`
+  const res = String.prototype.filtreAutocomplete.call(nameValues, v)
+  return res
+}
+
+export const filterCountryAutocomplete = (item, v, _it) => {
   const nameValues = `${item.iso3} ${item.name} ${item.symbole}`
+  const res = String.prototype.filtreAutocomplete.call(nameValues, v)
+  return res
+}
+
+export const filterFormeJuridiqueAutocomplete = (item, v, _it) => {
+  const nameValues = `${item.name} ${item.sigle}`
   const res = String.prototype.filtreAutocomplete.call(nameValues, v)
   return res
 }

@@ -1,0 +1,76 @@
+<template lang="pug">
+  .fv-autocomplete
+    v-autocomplete(
+      :items="items"
+      :filter="filter"
+      :loading="isLoading"
+      item-value="id"
+      clearable=''
+      outlined=''
+      @change="selected"
+    )
+      template(v-slot:label)
+        slot(name="label")
+      template(v-slot:item="data")
+        slot(
+          name="item"
+          v-bind:item="data.item"
+        )
+      template(v-slot:selection="data")
+        slot(
+          name="selection"
+          v-bind:item="data.item"
+        )
+</template>
+
+<script>
+export default {
+  name: 'FvAutocomplete',
+  inheritAttrs: true,
+  props: {
+    element: {
+      type: Number,
+      default() {
+        return null
+      }
+    },
+    items: {
+      type: Array,
+      default() {
+        return []
+      }
+    },
+    filter: {
+      type: Function,
+      default() {
+        return null
+      }
+    }
+  },
+  data() {
+    return {
+      isLoading: false
+    }
+  },
+  computed: {
+    elementId: {
+      get() {
+        console.log('get element')
+        return this.element
+      },
+      set(v) {
+        console.log('set element: ', v)
+        this.$emit('autocomplete:selected', v)
+      }
+    }
+  },
+  mounted() {
+    console.log('Composant', this.$options.name)
+  },
+  methods: {
+    selected(v) {
+      this.$emit('autocomplete:selected', v)
+    }
+  }
+}
+</script>

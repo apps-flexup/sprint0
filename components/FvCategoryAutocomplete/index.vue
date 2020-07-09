@@ -1,16 +1,12 @@
 <template lang="pug">
   .fv-category-autocomplete
-    v-autocomplete(
-      v-model="categoryId"
+    fv-autocomplete(
       :items="items"
       :filter="filterList"
-      :loading="isLoading"
-      :label="$t('forms.products.new.category')"
-      item-value="id"
-      clearable=''
-      outlined=''
-      @change="selected"
+      @autocomplete:selected="selected"
     )
+      template(v-slot:label)
+        p {{ $t('forms.products.new.category') }}
       template(v-slot:item="data")
         v-list-item-content
           v-list-item-title(v-to-locale="data.item.name")
@@ -39,14 +35,6 @@ export default {
     items() {
       const res = this.$store.getters['categories/all']
       return res
-    },
-    categoryId: {
-      get() {
-        return this.element
-      },
-      set(v) {
-        this.$emit('category:selected', v)
-      }
     }
   },
   mounted() {
@@ -55,7 +43,6 @@ export default {
   methods: {
     filterList(item, v, _it) {
       const name = JSON.parse(JSON.stringify(item.name || {}))
-      // const nameValues = Object.prototype.flatI18n.call()
       const nameValues = Object.keys(name)
         .map((k) => {
           return item.name[k]
