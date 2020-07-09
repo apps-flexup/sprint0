@@ -55,6 +55,19 @@ const activeAccount = (ctx) => ({
     const res = ctx.store.getters['partners/all']
     return res
   },
+  async allPartners() {
+    const partners = await this.partners()
+    const partnerIds = await ctx.store.getters['partners/ids']
+    const res = []
+    res.push({ header: 'autocomplete.partners.mine' })
+    partners.forEach((item) => res.push(item))
+    res.push({ header: 'autocomplete.partners.flexup' })
+    const data = await ctx.$axios.$get('/partners')
+    data.forEach((item) => {
+      if (!partnerIds.includes(item.id)) res.push(item)
+    })
+    return res
+  },
   products() {
     const res = ctx.store.getters['products/all']
     return res

@@ -5,12 +5,13 @@
       :items="items"
       :filter="filterList"
       :loading="isLoading"
-      :label="$t('forms.products.new.category')"
       item-value="id"
       clearable=''
       outlined=''
       @change="selected"
     )
+      template(v-slot:label)
+        div {{ $t('forms.products.new.category') }}
       template(v-slot:item="data")
         v-list-item-content
           v-list-item-title(v-to-locale="data.item.name")

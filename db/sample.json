@@ -1222,7 +1222,7 @@
     {
       "account_id": 3,
       "address": "21 rue de la marjolaine",
-      "avatar": "/images/avatar-6.png",
+      "avatar": "/images/avatar-5.png",
       "city": "Flombard les gazeuses",
       "country": "france",
       "id": 5,
@@ -14336,7 +14336,7 @@
     {
       "account_id": 3,
       "address": "21 rue de la marjolaine",
-      "avatar": "/images/avatar-6.png",
+      "avatar": "/images/avatar-5.png",
       "city": "Flombard les gazeuses",
       "country": "france",
       "id": 5,
@@ -14677,6 +14677,7 @@
       "zip": ""
     },
     {
+      "avatar": "https://ca.slack-edge.com/T0104D6U68N-U011EGA6G9G-1d7eee75f6e4-192",
       "address": "Rue Georges Dimitrov",
       "city": "Bezons",
       "country": "France",

@@ -3,7 +3,7 @@
     v-row
       v-col(cols="6")
         fv-partner-autocomplete(
-          v-model="order.partner_id"
+          :partner="order.partner_id"
           outlined=''
           clearable=''
           @partners:selected='partnerSelected'

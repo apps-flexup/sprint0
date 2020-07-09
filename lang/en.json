@@ -1,11 +1,11 @@
 {
   "frequences": {
     "periods": {
-      "day": "day",
-      "week": "week",
-      "month": "month",
-      "quarter": "quarter",
-      "year": "year"
+      "days": "day",
+      "weeks": "week",
+      "months": "month",
+      "quarters": "quarter",
+      "years": "year"
     }
   },
   "title": {
@@ -195,6 +195,12 @@
   "products": {
     "new": {
       "title": "Let's create your first product"
+    }
+  },
+  "autocomplete": {
+    "partners": {
+      "mine": "My partners",
+      "flexup": "Flexup partners"
     }
   }
 }

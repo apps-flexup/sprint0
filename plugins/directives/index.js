@@ -1,5 +1,11 @@
 import Vue from 'vue'
 
+Vue.directive('locale', (el, binding, vnode) => {
+  const res = binding.value
+  const t = vnode.context.$i18n.$t
+  el.innerHTML = t(res)
+})
+
 Vue.directive('to-unit', (el, binding, _vnode) => {
   // const locale = vnode.context.$i18n.locale
   // const fallbackLocale = vnode.context.$i18n.fallbackLocale

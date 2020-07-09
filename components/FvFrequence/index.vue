@@ -1,14 +1,16 @@
 <template lang="pug">
   .fv-frequence
     p {{ $options.name }}
-    p periode : {{ periode }}
+    p(v-if="periode") periode : {{ $t(`frequences.periods.${periode}`) }}
     v-select(
       v-model="periode"
       :items="periodes"
       item-value="offset"
+      clearable=''
+      outlined=''
     )
       template(v-slot:label)
-        span Période
+        div Période
       template(v-slot:item="{ item }")
         div {{ $t(item.text) }}
       template(v-slot:selection="{ item }")
@@ -20,30 +22,30 @@ export default {
   name: 'FvFrequence',
   data() {
     return {
-      periode: {},
+      periode: null,
       periodes: [
         {
-          text: 'frequences.periods.day',
+          text: 'frequences.periods.days',
           offset: 'days'
         },
         {
-          text: 'frequences.periods.week',
+          text: 'frequences.periods.weeks',
           offset: 'weeks'
         },
         {
-          text: 'frequences.periods.month',
+          text: 'frequences.periods.months',
           offset: 'months'
         },
         {
-          text: 'frequences.periods.quarter',
+          text: 'frequences.periods.quarters',
           offset: 'quarters'
         },
         {
-          text: 'frequences.periods.year',
+          text: 'frequences.periods.years',
           offset: 'years'
         },
         {
-          text: 'frequences.periods.day',
+          text: 'frequences.periods.days',
           offset: 'days'
         }
       ]
