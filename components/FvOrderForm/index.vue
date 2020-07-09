@@ -1,26 +1,27 @@
 <template lang="pug">
-  .fv-offer-form
+  .fv-order-form
     p {{ $options.name }}
     v-row
       v-col(cols="6")
         fv-partner-autocomplete(
-          v-model="order.partner_id"
-          @partners:selected='partnerSelected'
+          v-model="partnerId"
+          @partner:selected='partnerSelected'
         )
       v-col(cols="6")
-        .partner-address {{ this.partnerAddress }}
+        fv-partner-card(
+          v-if="partnerId"
+          :partner="selectedPartner"
+        )
     v-row
       v-col(cols="8")
-        pre ajouter produit
-        fv-product-autocomplete(
-          v-model="order.product_id"
-          :label="$t('forms.orders.new.product')"
-          outlined=''
-          clearable=''
-          @products:selected="productSelected"
+        pre ajouter produit [{{ partnerId }}]
+        fv-offer-autocomplete(
+          v-if="partnerId"
+          :partnerId="partnerId"
+          @offers:selected="offerSelected"
         )
-          template(slot="append-outer")
-            v-btn(
+        //-   template(slot="append-outer")
+        //-     v-btn(
               icon
               @click="newProduct"
             )
@@ -55,12 +56,22 @@
 
 <script>
 export default {
-  name: 'FvOfferForm',
+  name: 'FvOrderForm',
   data() {
     return {
       order: {},
       orderItems: [],
-      partnerAddress: {}
+      selectedPartner: {}
+    }
+  },
+  computed: {
+    partnerId: {
+      get() {
+        const res = this.selectedPartner
+        if (!res) return null
+        if (!Object.prototype.hasOwnProperty.call(res, 'id')) return null
+        return res.account_id
+      }
     }
   },
   mounted() {
@@ -76,17 +87,14 @@ export default {
     structureSelected(structureId) {
       this.order.structure_id = structureId
     },
-    partnerSelected(partnerId) {
-      this.order.partner_id = partnerId
-      // const res = this.$activeAccount.partners().filter((v) => v.id === partner_id)
-      this.$repos.contacts.show(partnerId).then((res) => {
-        this.partnerAddress = res
-      })
+    partnerSelected(partner) {
+      this.selectedPartner = partner
     },
-    productSelected(productId) {
-      this.$repos.offers.show(productId).then((res) => {
-        this.orderItems.push(res)
-      })
+    offerSelected(offerId) {
+      console.log('offer selected: ', offerId)
+      // this.$repos.offers.show(productId).then((res) => {
+      //   this.orderItems.push(res)
+      // })
     }
   }
 }

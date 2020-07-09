@@ -18,7 +18,8 @@ export default ($axios, store) => (resource) => ({
     const res = await $axios.$post(`/${resource}`, payload)
     return res
   },
-  async createWithAccountId(payload) {
+  async createWithAccountId(inputPayload) {
+    const payload = inputPayload
     delete payload.id
     const accountId = store.getters['accounts/selected']
     payload.account_id = accountId

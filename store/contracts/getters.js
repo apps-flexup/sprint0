@@ -24,5 +24,13 @@ export default {
   formesJuridiques(state) {
     const res = JSON.parse(JSON.stringify(state.formesJuridiques))
     return res
+  },
+  formesJuridiquesById: (state) => (formesJuridiquesId) => {
+    if (!state.formesJuridiques) return []
+    const id = parseInt(formesJuridiquesId)
+    console.log('id :', id)
+    const res = state.formesJuridiques.find((v) => v.id === id)
+    console.log('store res: ', res)
+    return res
   }
 }

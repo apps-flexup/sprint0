@@ -115,6 +115,7 @@
       "orders": {
         "new": {
           "partner": "Partner",
+          "offer": "Offer",
           "structure": "Structure",
           "product": "Product"
         }

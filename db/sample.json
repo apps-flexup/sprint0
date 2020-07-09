@@ -13920,22 +13920,6 @@
       "status": "draft"
     },
     {
-      "account_id": 13,
-      "dimension": "dimension",
-      "id": 14,
-      "name": "apaprtement",
-      "product_id": 9,
-      "status": "draft"
-    },
-    {
-      "account_id": 13,
-      "dimension": "dimension",
-      "id": 15,
-      "name": "apaprtement",
-      "product_id": 10,
-      "status": "draft"
-    },
-    {
       "currency": "GBP",
       "dimension": "weight",
       "name": "Un truc genre banane",
@@ -13955,6 +13939,28 @@
       "product_id": 12,
       "account_id": 3,
       "id": 17
+    },
+    {
+      "currency": "EUR",
+      "dimension": "duration",
+      "name": "Appt ",
+      "price": "1752",
+      "status": "draft",
+      "unit": "month",
+      "product_id": 13,
+      "account_id": 13,
+      "id": 18
+    },
+    {
+      "currency": "EUR",
+      "dimension": "weight",
+      "name": "Cerises",
+      "price": "4.98",
+      "status": "draft",
+      "unit": "kg",
+      "product_id": 14,
+      "account_id": 13,
+      "id": 19
     }
   ],
   "order-headers": [
@@ -14545,22 +14551,6 @@
       "status": "draft"
     },
     {
-      "account_id": 13,
-      "category_id": 2,
-      "currency": "EUR",
-      "id": 9,
-      "name": "apaprtement",
-      "status": "draft"
-    },
-    {
-      "account_id": 13,
-      "category_id": 2,
-      "currency": "EUR",
-      "id": 10,
-      "name": "apaprtement",
-      "status": "draft"
-    },
-    {
       "category_id": 22,
       "currency": "GBP",
       "dimension": "weight",
@@ -14581,6 +14571,28 @@
       "unit": "kg",
       "account_id": 3,
       "id": 12
+    },
+    {
+      "category_id": 55,
+      "currency": "EUR",
+      "dimension": "duration",
+      "name": "Appt ",
+      "price": "1752",
+      "status": "draft",
+      "unit": "month",
+      "account_id": 13,
+      "id": 13
+    },
+    {
+      "category_id": 22,
+      "currency": "EUR",
+      "dimension": "weight",
+      "name": "Cerises",
+      "price": "4.98",
+      "status": "draft",
+      "unit": "kg",
+      "account_id": 13,
+      "id": 14
     }
   ],
   "structures": [

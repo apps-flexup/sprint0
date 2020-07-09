@@ -1,53 +1,59 @@
 <template lang="pug">
-  .fv-product-autocomplete
+  .fv-offer-autocomplete
     p {{ $options.name }}
     fv-autocomplete(
-      v-model="this.product"
       :items="items"
+      :filter="filter"
       @autocomplete:selected="selected"
     )
       template(v-slot:label)
-        div {{ $t('forms.orders.new.product') }}
+        div {{ $t('forms.orders.new.offer') }}
       template(v-slot:item="data")
         template(v-if="typeof data.item !== 'object'")
           v-list-item-content(v-text="data.item")
         template(v-else='')
           v-list-item-avatar
-            v-img(:src="data.item.avatar")
+            v-img(:src="data.item.illustration_url")
           v-list-item-content
-            div {{ data.item.name }}
+            v-list-item-title(v-to-locale="data.item.name")
       template(v-slot:selection="data")
           v-list-item-avatar
-            v-img(:src="data.item.avatar")
+            v-img(:src="data.item.illustration_url")
           v-list-item-content
-            div {{ data.item.name }}
+            v-list-item-title(v-to-locale="data.item.name")
       template(v-slot:no-data)
         div Aucune donnée disponible
 </template>
 
 <script>
+import { filterOfferAutocomplete } from '~/plugins/utils'
 export default {
-  name: 'FvProductAutocomplete',
+  name: 'FvOfferAutocomplete',
   props: {
-    product: {
+    partnerId: {
       type: Number,
       default() {
         return null
       }
     }
   },
-  computed: {
-    items() {
-      const res = this.$activeAccount.products()
-      return res
+  data() {
+    return {
+      items: []
     }
   },
   mounted() {
     console.log('Composant ', this.$options.name)
+    const id = parseInt(this.partnerId)
+    const url = `${this.$axios.defaults.baseURL}/offers?account_id=${id}`
+    this.$axios.$get(url).then((res) => (this.items = res))
   },
   methods: {
     selected(v) {
-      this.$emit('products:selected', v)
+      this.$emit('offers:selected', v)
+    },
+    filter(item, queryText, itemText) {
+      return filterOfferAutocomplete(item, queryText, itemText)
     }
   }
 }

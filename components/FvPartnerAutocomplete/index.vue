@@ -15,7 +15,7 @@
         div {{ $t('forms.orders.new.partner') }}
       template(v-slot:item="data")
         template(v-if="typeof data.item !== 'object'")
-          v-list-item-content(v-text="data.item")
+          v-list-item-content(v-locale="data.item")
         template(v-else='')
           v-list-item-avatar
             v-img(:src="data.item.avatar")
@@ -53,21 +53,19 @@ export default {
         return this.partner
       },
       set(v) {
-        if (v) this.$emit('partner:selected', v.id)
-        else this.$emit('partner:selected', null)
+        this.selected(v)
       }
     }
   },
   mounted() {
     console.log('Composant ', this.$options.name)
     this.$activeAccount.allPartners().then((data) => {
-      console.log('Les partenaires :', data)
       this.items = data
     })
   },
   methods: {
     selected(v) {
-      this.$emit('category:selected', v)
+      this.$emit('partner:selected', v)
     },
     filter(item, queryText, _itemText) {
       if (Object.prototype.hasOwnProperty.call(item, 'header')) return true

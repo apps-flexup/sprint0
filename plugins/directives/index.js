@@ -1,5 +1,12 @@
 import Vue from 'vue'
 
+Vue.directive('partner', (el, binding, vnode) => {
+  const res = parseInt(binding.value)
+  vnode.context.$repos.accounts.show(res).then((partner) => {
+    el.innerHTML = partner.name
+  })
+})
+
 Vue.directive('locale', (el, binding, vnode) => {
   const res = binding.value
   const t = vnode.context.$i18n.$t

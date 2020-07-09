@@ -61,6 +61,7 @@ import FvCategoryAutocomplete from '@/components/FvCategoryAutocomplete'
 import FvCurrencyAutocomplete from '@/components/FvCurrencyAutocomplete'
 import FvUnitAutocomplete from '@/components/FvUnitAutocomplete'
 import FvCountryAutocomplete from '@/components/FvCountryAutocomplete'
+import FvOfferAutocomplete from '@/components/FvOfferAutocomplete'
 import FvFormeJuridiqueAutocomplete from '@/components/FvFormeJuridiqueAutocomplete'
 import FvProductItem from '@/components/FvProductItem'
 import FvStatusProgressAtom from '@/components/FvStatusProgressAtom'
@@ -69,6 +70,7 @@ import FvPartnerItem from '@/components/FvPartnerItem'
 import FvOrderStepSelectPartner from '~/components/FvOrderStepSelectPartner'
 import FvOrderStepSelectOffers from '~/components/FvOrderStepSelectOffers'
 import FvOrderStepResume from '~/components/FvOrderStepResume'
+import FvPartnerCard from '~/components/FvPartnerCard'
 
 // Déclarations composants utilitaires
 Vue.component('fv-autocomplete', FvAutocomplete)
@@ -144,6 +146,7 @@ Vue.component('fv-product-autocomplete', FvProductAutocomplete)
 Vue.component('fv-category-autocomplete', FvCategoryAutocomplete)
 Vue.component('fv-currency-autocomplete', FvCurrencyAutocomplete)
 Vue.component('fv-country-autocomplete', FvCountryAutocomplete)
+Vue.component('fv-offer-autocomplete', FvOfferAutocomplete)
 Vue.component('fv-unit-autocomplete', FvUnitAutocomplete)
 Vue.component('fv-forme-juridique-autocomplete', FvFormeJuridiqueAutocomplete)
 Vue.component('fv-product-item', FvProductItem)
@@ -153,3 +156,4 @@ Vue.component('fv-partner-item', FvPartnerItem)
 Vue.component('fv-order-step-select-partner', FvOrderStepSelectPartner)
 Vue.component('fv-order-step-select-offers', FvOrderStepSelectOffers)
 Vue.component('fv-order-step-resume', FvOrderStepResume)
+Vue.component('fv-partner-card', FvPartnerCard)
