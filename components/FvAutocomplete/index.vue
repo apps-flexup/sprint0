@@ -4,7 +4,7 @@
       :items="items"
       :filter="filter"
       :loading="isLoading"
-      item-value="id"
+      :item-value="itemValue"
       clearable=''
       outlined=''
       @change="selected"
@@ -32,6 +32,12 @@ export default {
       type: Array,
       default() {
         return []
+      }
+    },
+    itemValue: {
+      type: String,
+      default() {
+        return 'id'
       }
     },
     filter: {
