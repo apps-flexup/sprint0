@@ -1,65 +1,33 @@
 <template lang="pug">
   .fv-offer-form
-    v-row
-      v-col(cols="6")
-        fv-partner-autocomplete(
-          :partner="order.partner_id"
-          outlined=''
-          clearable=''
-          @partners:selected='partnerSelected'
-        )
-          template(v-slot:label='')
-            p {{ $t('forms.orders.new.partner') }}
-          template(v-slot:append-outer='')
-            v-btn(
-              icon
-              @click="newPartner"
-            )
-              v-icon mdi-plus
-      v-col(cols="6")
-        v-card.partner-address(v-if="partnerAddress.libAdd")
-          v-card-title {{ $t('form.orders.new.defaults.address') }}
-          v-card-text {{ partnerAddress.libAdd }}
-    v-row
-      v-col(cols="8")
-        fv-product-autocomplete(
-          v-model="order.product_id"
-          :label="$t('forms.orders.new.product')"
-          outlined=''
-          clearable=''
-          @products:selected="productSelected"
-        )
-          template(slot="append-outer")
-            v-btn(
-              icon
-              @click="newProduct"
-            )
-              v-icon mdi-plus
-      v-col(cols="4")
-        fv-structure-autocomplete(
-          v-model='order.structure_id'
-          @structures:selected="structureSelected"
-        )
-    v-row
-      v-col(
-        v-for="orderItem in orderItems" :key="orderItem.id"
-        cols="12"
-      )
-        fv-product-item(:item="orderItem")
-    v-row
-      v-col(cols="6")
-        pre ici les totaux
-        div total ht : mnt dev (utiliser directive)
-        div total tva(s) : mnt dev (utiliser directive)
-        div total ttc : mnt dev (utiliser directive)
-        div total / seniorité : mnt dev (utiliser directive)
-      v-col(cols="6")
-        pre ici les trucs de la livraison
-    v-row
-      v-col(cols="6")
-        pre envoyer devis par mail
-      v-col(cols="6")
-        pre generer pdf
+    v-row(justify="space-around")
+      v-col(cols="12")
+        v-slider(v-model="steps" label="Steps" min="2" max="20")
+      v-switch(v-model="vertical" label="Vertical")
+      v-switch(v-model="altLabels" label="altLabels")
+      v-switch(v-model="editable" label="Editable")
+    v-stepper(v-model="e1" :vertical="vertical" :alt-labels="altLabels")
+      template(v-if="vertical")
+        template(v-for="n in steps")
+          v-stepper-step(:key="`${n}-step`" :complete="e1 > n" :step="n" :editable="editable")
+            | Step {{ n }}
+          v-stepper-content(:key="`${n}-content`" :step="n")
+            v-card.mb-12(color="grey lighten-1" height="200px")
+            v-btn(color="primary" @click="nextStep(n)")
+              | Continue
+            v-btn(text="") Cancel
+      template(v-else="")
+        v-stepper-header
+          template(v-for="n in steps")
+            v-stepper-step(:key="`${n}-step`" :complete="e1 > n" :step="n" :editable="editable")
+              | Step {{ n }}
+            v-divider(v-if="n !== steps" :key="n")
+        v-stepper-items
+          v-stepper-content(v-for="n in steps" :key="`${n}-content`" :step="n")
+            v-card.mb-12(color="grey lighten-1" height="200px")
+            v-btn(color="primary" @click="nextStep(n)")
+              | Continue
+            v-btn(text="") Cancel
 </template>
 
 <script>
@@ -67,6 +35,13 @@ export default {
   name: 'FvOrderForm',
   data() {
     return {
+      e1: 1,
+      steps: 2,
+      vertical: false,
+      altLabels: false,
+      editable: true,
+      stepperOrientation: false,
+      orderSteps: [],
       order: {},
       orderItems: [],
       partnerAddress: {}
@@ -74,7 +49,7 @@ export default {
   },
   mounted() {
     console.log('Composant ', this.$options.name)
-    this.$store.dispatch('contracts/getStructures')
+    this.$repos.orderSteps.index().then((res) => (this.orderSteps = res))
   },
   methods: {
     newPartner() {

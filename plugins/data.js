@@ -9,6 +9,7 @@ export default (ctx, inject) => {
     charters: repo('charters'),
     contacts: repo('contacts'),
     contactSteps: repo('contact-steps'),
+    orderSteps: repo('order-steps'),
     contractHeaders: repo('contract-headers'),
     contracts: repo('contracts'),
     contractSteps: repo('contract-steps'),

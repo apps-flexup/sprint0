@@ -133,7 +133,9 @@
       "product": "CRÉER PRODUIT",
       "contract": "CRÉER CONTRAT",
       "partner": "CRÉER PARTENAIRE",
-      "offer": "CRÉER OFFRE"
+      "offer": "CRÉER OFFRE",
+      "order": "CRÉER COMMANDE"
+
     },
     "submit": "Envoyer",
     "previous": "Précédent",

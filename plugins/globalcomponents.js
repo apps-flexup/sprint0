@@ -66,6 +66,9 @@ import FvProductItem from '@/components/FvProductItem'
 import FvStatusProgressAtom from '@/components/FvStatusProgressAtom'
 import FvFrequence from '@/components/FvFrequence'
 import FvPartnerItem from '@/components/FvPartnerItem'
+import FvOrderStepSelectPartner from '~/components/FvOrderStepSelectPartner'
+import FvOrderStepSelectOffers from '~/components/FvOrderStepSelectOffers'
+import FvOrderStepResume from '~/components/FvOrderStepResume'
 
 // Déclarations composants utilitaires
 Vue.component('fv-autocomplete', FvAutocomplete)
@@ -147,3 +150,6 @@ Vue.component('fv-product-item', FvProductItem)
 Vue.component('fv-status-progress-atom', FvStatusProgressAtom)
 Vue.component('fv-frequence', FvFrequence)
 Vue.component('fv-partner-item', FvPartnerItem)
+Vue.component('fv-order-step-select-partner', FvOrderStepSelectPartner)
+Vue.component('fv-order-step-select-offers', FvOrderStepSelectOffers)
+Vue.component('fv-order-step-resume', FvOrderStepResume)

@@ -44,6 +44,7 @@ export default {
     this.$store.dispatch('units/get')
     this.$store.dispatch('currencies/get')
     this.$store.dispatch('countries/get')
+    this.$store.dispatch('contracts/getStructures')
   }
 }
 </script>

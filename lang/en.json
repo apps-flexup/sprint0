@@ -130,7 +130,8 @@
       "product": "CREATE PRODUCT",
       "contract": "CREATE CONTRACT",
       "partner": "CREATE PARTNER",
-      "offer": "CREATE OFFER"
+      "offer": "CREATE OFFER",
+      "order": "CREATE ORDER"
     },
     "submit": "Submit",
     "previous": "Previous",

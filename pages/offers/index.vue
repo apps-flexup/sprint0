@@ -1,17 +1,17 @@
 <template lang="pug">
   .offers
-    v-row(align="center")
-      v-spacer
-      fv-create-button(
-        :text="$t('buttons.create.offer')"
-        @button:click='showModal = true'
-      )
-      fv-product-modal(
-        :show="showModal"
-        :product='selected'
-        @modal:close="close"
-        @modal:save="save"
-      )
+    v-row
+      v-col(cols="12")
+        fv-create-button.text-right(
+          :text="$t('buttons.create.offer')"
+          @button:click='showModal = true'
+        )
+        fv-product-modal(
+          :show="showModal"
+          :product='selected'
+          @modal:close="close"
+          @modal:save="save"
+        )
     fv-offer-list(@list:selected="selectedOffer")
 </template>
 
