@@ -1162,19 +1162,19 @@
     {
       "composant": "fv-order-step-select-partner",
       "id": 1,
-      "name": "forms.orders.step.1",
+      "name": "forms.orders.step.0",
       "resume": "fv-order-summary-step-select-partner"
     },
     {
       "composant": "fv-order-step-select-offers",
       "id": 2,
-      "name": "forms.orders.step.2",
+      "name": "forms.orders.step.1",
       "resume": "fv-order-summary-step-select-offers"
     },
     {
       "composant": "fv-order-step-resume",
       "id": 3,
-      "name": "forms.orders.step.3",
+      "name": "forms.orders.step.2",
       "resume": "fv-order-summary-step-resume"
     }
   ],

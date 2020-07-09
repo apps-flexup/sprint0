@@ -29,6 +29,13 @@
   "forms": {
     "title": "Step {n}",
     "duration": "- | 1 second | {n} seconds",
+    "orders": {
+      "step": {
+        "0": "Select partner",
+        "1": "Select offers",
+        "2": "Summary"
+      }
+    },
     "contracts": {
       "step": {
         "0": "-",
@@ -104,13 +111,6 @@
         "price": "Price",
         "elasticity": "Elasticity",
         "currency": "Currency"
-      }
-    },
-    "orders": {
-      "new": {
-        "partner": "Partner",
-        "product": "Product",
-        "structure": "Structure"
       }
     }
   },

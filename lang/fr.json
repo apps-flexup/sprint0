@@ -32,7 +32,13 @@
   "forms": {
     "title": "Étape {n}",
     "duration": "- | 1 seconde | {n} secondes",
-    "contracts": {
+    "orders": {
+      "step": {
+        "0": "Sélectionner partenaire",
+        "1": "Sélectionner offres",
+        "2": "Récapitulatif"
+      }
+    },    "contracts": {
       "step": {
         "0": "-",
         "1": "Détail",
@@ -107,13 +113,6 @@
         "price": "Price",
         "elasticity": "Elasticity",
         "currency": "Currency"
-      }
-    },
-    "orders": {
-      "new": {
-        "partner": "Partenaire",
-        "product": "Produit",
-        "structure": "Structure"
       }
     }
   },
