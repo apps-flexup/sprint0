@@ -9,7 +9,7 @@
         )
       v-col(cols="6")
         v-select(
-          :items="$store.getters['formesJuridiques']"
+          :items="$store.getters['legalStructure']"
           item-value="id"
           item-text="libelle"
           outlined=''
@@ -47,8 +47,8 @@
 export default {
   name: 'FvContactStepDetail',
   computed: {
-    formesJuridiques() {
-      const res = this.$store.getters['contracts/formesJuridiques']
+    legalStructure() {
+      const res = this.$store.getters['contracts/legalStructures']
       return res
     }
   },

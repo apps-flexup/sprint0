@@ -10,22 +10,15 @@
       v-col(cols="6")
         fv-partner-card(
           v-if="partnerId"
-          :partner="selectedPartner"
+          :partner="partner"
         )
     v-row
       v-col(cols="8")
-        pre ajouter produit [{{ partnerId }}]
         fv-offer-autocomplete(
-          v-if="partnerId"
+          :disabled="!partnerId"
           :partnerId="partnerId"
           @offers:selected="offerSelected"
         )
-        //-   template(slot="append-outer")
-        //-     v-btn(
-              icon
-              @click="newProduct"
-            )
-              v-icon mdi-plus
       v-col(cols="4")
         pre ajouter structure
         fv-structure-autocomplete(
@@ -61,17 +54,16 @@ export default {
     return {
       order: {},
       orderItems: [],
-      selectedPartner: {}
+      partnerId: null
     }
   },
   computed: {
-    partnerId: {
-      get() {
-        const res = this.selectedPartner
-        if (!res) return null
-        if (!Object.prototype.hasOwnProperty.call(res, 'id')) return null
-        return res.account_id
-      }
+    partner() {
+      let res = []
+      this.$activeAccount.getPartner(this.partnerId).then((data) =>
+        res = data
+      )
+      return res
     }
   },
   mounted() {
@@ -87,12 +79,13 @@ export default {
     structureSelected(structureId) {
       this.order.structure_id = structureId
     },
-    partnerSelected(partner) {
-      this.selectedPartner = partner
+    partnerSelected(partnerId) {
+      console.log('patner selected: ', partnerId)
+      this.partnerId = partnerId
     },
     offerSelected(offerId) {
       console.log('offer selected: ', offerId)
-      // this.$repos.offers.show(productId).then((res) => {
+      // this.$repos.offers.show(offerId).then((res) => {
       //   this.orderItems.push(res)
       // })
     }

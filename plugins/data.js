@@ -16,7 +16,7 @@ export default (ctx, inject) => {
     contractTypes: repo('contract-types'),
     countries: repo('countries'),
     currencies: repo('currencies'),
-    formesJuridiques: repo('formesJuridiques'),
+    legalStructure: repo('legalStructure'),
     menu: repo('menu'),
     offerHeaders: repo('offer-headers'),
     offers: repo('offers'),

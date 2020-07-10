@@ -1,21 +1,17 @@
 <template lang="pug">
   .fv-partner-autocomplete
     p {{ $options.name }}
-    v-autocomplete(
-      v-model="partnerId"
+    fv-autocomplete(
+      :element="partnerId"
       :items="items"
-      :loading="isLoading"
       :filter="filter"
-      clearable=''
-      outlined=''
-      return-object
-      @change="selected"
+      @autocomplete:selected="selected"
     )
       template(v-slot:label)
         div {{ $t('forms.orders.new.partner') }}
       template(v-slot:item="data")
         template(v-if="typeof data.item !== 'object'")
-          v-list-item-content(v-locale="data.item")
+          v-list-item-content {{ $t(data.item) }}
         template(v-else='')
           v-list-item-avatar
             v-img(:src="data.item.avatar")
@@ -34,7 +30,7 @@
 export default {
   name: 'FvPartnerAutocomplete',
   props: {
-    partner: {
+    partnerId: {
       type: Number,
       default() {
         return null
@@ -43,18 +39,7 @@ export default {
   },
   data() {
     return {
-      isLoading: false,
       items: []
-    }
-  },
-  computed: {
-    partnerId: {
-      get() {
-        return this.partner
-      },
-      set(v) {
-        this.selected(v)
-      }
     }
   },
   mounted() {

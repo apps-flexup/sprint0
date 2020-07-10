@@ -185,7 +185,7 @@
     "partners": {
       "name": "Name",
       "siret": "SIRET",
-      "juridicalStatus": "Juridical status",
+      "legalStructure": "Legal structure",
       "address": "Address",
       "zip": "ZIP",
       "city": "City",

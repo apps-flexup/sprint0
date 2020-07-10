@@ -188,7 +188,7 @@
     "partners": {
       "name": "Nom",
       "siret": "SIRET",
-      "juridicalStatus": "Statut juridique",
+      "legalStructure": "Statut juridique",
       "address": "Adresse",
       "zip": "Code postal",
       "city": "Ville",

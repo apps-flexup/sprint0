@@ -22,17 +22,17 @@ export default {
   name: 'FvFormeJuridiqueAutocomplete',
   computed: {
     items() {
-      const res = this.$store.getters['contracts/formesJuridiques']
+      const res = this.$store.getters['contracts/legalStructures']
       return res
     }
   },
   mounted() {
     console.log('Composant ', this.$options.name)
-    this.$store.dispatch('contracts/getFormesJuridiques')
+    this.$store.dispatch('contracts/getLegalStructure')
   },
   methods: {
     selected(v) {
-      this.$emit('formejuridiques:selected', v)
+      this.$emit('legalstructure:selected', v)
     },
     filter(item, v, it) {
       console.log('ok 1')

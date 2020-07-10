@@ -28,17 +28,6 @@ export default {
     },
     items() {
       const res = this.$activeAccount.partners()
-      res.forEach((item) => {
-        this.$repos.countries.show(item.country).then((country) => {
-          item.country = country.name
-        })
-        this.$repos.formesJuridiques
-          .show(item.juridicalStatus)
-          .then((juridicalStatus) => {
-            item.juridicalStatus = juridicalStatus.name
-          })
-        return item
-      })
       return res
     }
   },

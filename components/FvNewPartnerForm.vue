@@ -39,10 +39,10 @@
     v-row
       v-col.md-12.sm-12.lg-12.xl-12(cols='12')
         fv-forme-juridique-autocomplete(
-          v-model="values.juridicalStatus"
-          :label="$t('forms.partners.new.juridicalStatus')"
+          v-model="values.legal_structure_id"
+          :label="$t('forms.partners.new.legalStructure')"
           outlined=''
-          @formejuridiques:selected="formejuridiquesSelected"
+          @legalstructure:selected="legalStructureSelected"
         )
     v-row
       v-col.md-12.sm-12.lg-12.xl-12(cols='12')
@@ -68,8 +68,8 @@ export default {
     console.log('Composant ', this.$options.name)
   },
   methods: {
-    formejuridiquesSelected(v) {
-      this.$emit('formeJuridiques:autocomplete', v)
+    legalstructureSelected(v) {
+      this.$emit('legalstructure:autocomplete', v)
       this.values.juridicalStatus = v
     },
     countrySelected(v) {

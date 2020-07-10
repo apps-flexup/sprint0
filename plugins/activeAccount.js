@@ -55,6 +55,23 @@ const activeAccount = (ctx) => ({
     const res = ctx.store.getters['partners/all']
     return res
   },
+  async getPartner(partnerId) {
+    if (!partnerId) return null
+    const id = parseInt(partnerId)
+    const url = `/partners?id=${id}`
+    const partner = await ctx.$axios.$get(url)
+    if (!partner) return null
+    const countryId = parseInt(partner.country_id) || null
+    const legalStructureId = parseInt(partner.legal_structure_id) || null
+    const country = await ctx.store.getters['countries/find'](countryId)
+    const legalStructure = await ctx.store.getters['contracts/getLegalStructureById'](legalStructureId)
+    const res = {
+      ...partner,
+      country: country,
+      legalStructure: legalStructure
+    }
+    return res
+  },
   async allPartners() {
     const partners = await this.partners()
     const partnerIds = await ctx.store.getters['partners/ids']

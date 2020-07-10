@@ -6,9 +6,9 @@
       :filter="filter"
       :loading="isLoading"
       :item-value="itemValue"
+      :disabled="disabled"
       clearable=''
       outlined=''
-      @change="selected"
     )
       template(v-slot:label)
         slot(name="label")
@@ -52,6 +52,12 @@ export default {
       default() {
         return null
       }
+    },
+    disabled: {
+      type: Boolean,
+      default() {
+        return false
+      }
     }
   },
   data() {
@@ -73,11 +79,6 @@ export default {
   },
   mounted() {
     console.log('Composant', this.$options.name)
-  },
-  methods: {
-    selected(v) {
-      this.$emit('autocomplete:selected', v)
-    }
   }
 }
 </script>

@@ -143,6 +143,7 @@
     {
       "avatar": "/images/avatar-4.png",
       "email": "jeanbon@gmail.com",
+      "country_id": 77,
       "firstname": "Jean",
       "id": 10,
       "lastname": "Bon",
@@ -153,6 +154,7 @@
     {
       "avatar": "/images/avatar-5.png",
       "email": "jeanbon@gmail.com",
+      "country_id": 77,
       "firstname": "Jean",
       "id": 11,
       "lastname": "Bon",
@@ -163,6 +165,7 @@
     {
       "avatar": "/images/avatar-0.png",
       "email": "frederic.lasnier@flexup.org",
+      "country_id": 77,
       "firstname": "frédéric",
       "id": 12,
       "lastname": "lasnier",
@@ -172,6 +175,7 @@
     },
     {
       "email": "gregory.mevelec@flexup.org",
+      "country_id": 77,
       "firstname": "grog",
       "id": 13,
       "lastname": "grog",
@@ -1184,7 +1188,7 @@
       "address": "12 rue de la poupée qui tousse",
       "avatar": "/images/avatar-0.png",
       "city": "Braniole de turbeuse",
-      "country": "france",
+      "country_id": 77,
       "id": 1,
       "metrics": {
         "commandes": 5,
@@ -1204,7 +1208,7 @@
       "address": "12 rue de la poupée qui tousse",
       "avatar": "/images/avatar-1.png",
       "city": "Braniole de turbeuse",
-      "country": "france",
+      "country_id": 77,
       "id": 2,
       "metrics": {
         "commandes": 1,
@@ -1224,7 +1228,7 @@
       "address": "12 rue de la marjolaine",
       "avatar": "/images/avatar-2.png",
       "city": "Courtanche sur Mer",
-      "country": "france",
+      "country_id": 77,
       "id": 3,
       "metrics": {
         "commandes": 0,
@@ -1244,7 +1248,7 @@
       "address": "21 rue de la marjolaine",
       "avatar": "/images/avatar-5.png",
       "city": "Flombard les gazeuses",
-      "country": "france",
+      "country_id": 77,
       "id": 5,
       "metrics": {
         "commandes": 0,
@@ -1264,7 +1268,7 @@
       "address": "19 avenue de la venue",
       "avatar": "/images/avatar-3.png",
       "city": "Ploutoire les bois",
-      "country": "france",
+      "country_id": 77,
       "id": 4,
       "metrics": {
         "commandes": 5,
@@ -13176,7 +13180,7 @@
       "qte": 2000
     }
   ],
-  "formesJuridiques": [
+  "legalStructure": [
     {
       "id": 1,
       "name": "Auto-entrepreneur",
@@ -13961,6 +13965,17 @@
       "product_id": 14,
       "account_id": 13,
       "id": 19
+    },
+    {
+      "currency": "EUR",
+      "dimension": "length",
+      "name": "Charpentier",
+      "price": "150",
+      "status": "draft",
+      "unit": "m",
+      "product_id": 15,
+      "account_id": 1,
+      "id": 20
     }
   ],
   "order-headers": [
@@ -14299,13 +14314,14 @@
     {
       "align": "start",
       "sortable": true,
-      "text": "headers.partners.juridicalStatus",
-      "value": "juridicalStatus"
+      "text": "headers.partners.legalStructure",
+      "value": "legal_structure_id"
     },
     {
       "align": "start",
       "sortable": true,
       "text": "headers.partners.address",
+      "city": "Courtanche sur Mer",
       "value": "address"
     },
     {
@@ -14333,10 +14349,10 @@
       "address": "12 rue de la poupée qui tousse",
       "avatar": "/images/avatar-0.png",
       "city": "Braniole de turbeuse",
-      "country": 157,
+      "country_id": 157,
       "name": "plop",
       "zip": "15774",
-      "juridicalStatus": 13,
+      "legal_structure_id": 13,
       "id": 1
     },
     {
@@ -14344,7 +14360,7 @@
       "address": "98 rue des trucs",
       "avatar": "/images/avatar-1.png",
       "city": "Braniole de turbeuse",
-      "country": "france",
+      "country_id": 77,
       "id": 2,
       "name": "toto la riflette",
       "zip": "1574788"
@@ -14354,7 +14370,7 @@
       "address": "12 rue de la marjolaine",
       "avatar": "/images/avatar-2.png",
       "city": "Courtanche sur Mer",
-      "country": "france",
+      "country_id": 77,
       "id": 3,
       "name": "fred",
       "zip": "66789"
@@ -14364,7 +14380,7 @@
       "address": "21 rue de la marjolaine",
       "avatar": "/images/avatar-5.png",
       "city": "Flombard les gazeuses",
-      "country": "france",
+      "country_id": 77,
       "id": 5,
       "name": "pierre",
       "zip": "897012"
@@ -14374,7 +14390,7 @@
       "address": "19 avenue de la venue",
       "avatar": "/images/avatar-3.png",
       "city": "Ploutoire les bois",
-      "country": "france",
+      "country_id": 77,
       "id": 4,
       "name": "grog",
       "zip": "7478518"
@@ -14383,16 +14399,17 @@
       "account_id": 1,
       "address": "25 rue de tata janine\n12 etage\nporte gauche",
       "city": "Choublon les croigneuses",
-      "country": "France",
-      "id": 6,
+      "country_id": 77,
       "name": "plip",
-      "zip": "98760103"
+      "zip": "98760103",
+      "legal_structure_id": 6,
+      "id": 6
     },
     {
       "account_id": 5,
       "address": "25 rue des grandes rues\nappartement 404",
       "city": "Flobert les gorgeues",
-      "country": "France",
+      "country_id": 77,
       "id": 7,
       "name": "truc",
       "zip": "15479"
@@ -14401,7 +14418,7 @@
       "account_id": 10,
       "address": "12 rue de la poupée qui tousse",
       "city": "Paris",
-      "country": "France",
+      "country_id": 77,
       "id": 8,
       "name": "La riflette Toto",
       "zip": "75800"
@@ -14410,7 +14427,7 @@
       "account_id": 10,
       "address": "89 rue des avenues",
       "city": "Une Ville",
-      "country": "France",
+      "country_id": 77,
       "id": 9,
       "name": "Marcel Flombard",
       "zip": "9876541"
@@ -14419,10 +14436,20 @@
       "account_id": 10,
       "address": "9 rue des longs champs",
       "city": "Founiard la glaneuse",
-      "country": "France",
+      "country_id": 77,
       "id": 10,
       "name": "Si c'estait possible",
       "zip": "060"
+    },
+    {
+      "name": "ABC",
+      "address": "10 rue ABC",
+      "zip": "75001",
+      "city": "Paris",
+      "country_id": 77,
+      "legal_structure_id": 2,
+      "account_id": 1,
+      "id": 11
     }
   ],
   "product-headers": [
@@ -14475,63 +14502,6 @@
       "status": "4-Confirmé",
       "unit": "month",
       "id": 2
-    },
-    {
-      "account_id": 1,
-      "active": true,
-      "category": {
-        "active": true,
-        "allow_at_client": true,
-        "allow_at_supplier": true,
-        "allow_remote": false,
-        "allow_shipping": true,
-        "description": {
-          "en": "English",
-          "fr": "French"
-        },
-        "dimension": "number",
-        "id": 44,
-        "name": {
-          "en": "Card Games",
-          "fr": "Jeux de cartes"
-        },
-        "offers_count": 1,
-        "orderable": true,
-        "other_parent": [],
-        "parent_id": 43,
-        "sort_order": 0,
-        "status": "active",
-        "unit": "Nr"
-      },
-      "description": {
-        "en": "description of offer fab",
-        "fr": "description of Le jeu des 7 famille"
-      },
-      "dimension": "unit",
-      "elasticity": 0,
-      "evaluation_avg": 6.5,
-      "favorite": true,
-      "illustration_url": "https://placeimg.com/640/480?id=3",
-      "name": {
-        "en": "7 familly game",
-        "fr": "Le jeu des 7 famille"
-      },
-      "offer_at_client": true,
-      "offer_at_supplier": true,
-      "offer_remote": true,
-      "offer_shipping": true,
-      "params": {
-        "game_name": {
-          "en": "Tintin version",
-          "fr": "version Tintin"
-        },
-        "quantity_of_cards": 52
-      },
-      "price": 10,
-      "reference": "BAVAFC",
-      "status": "draft",
-      "unit": "Unit",
-      "id": 3
     },
     {
       "account_id": 10,
@@ -14593,6 +14563,18 @@
       "unit": "kg",
       "account_id": 13,
       "id": 14
+    },
+    {
+      "category_id": 3,
+      "currency": "EUR",
+      "dimension": "length",
+      "name": "Charpentier",
+      "periodicity": "souvent2",
+      "price": "150",
+      "status": "draft",
+      "unit": "m",
+      "account_id": 1,
+      "id": 15
     }
   ],
   "structures": [
@@ -14658,7 +14640,7 @@
       "avatar": "https://ca.slack-edge.com/T0104D6U68N-UV3DH0S2E-f0f93eb6283d-192",
       "address": "10 Rue saint Paul",
       "city": "Paris",
-      "country": "France",
+      "country_id": 77,
       "dte_in": "",
       "dte_out": "",
       "first_name": "Fabrizio",
@@ -14676,7 +14658,7 @@
       "avatar": "https://ca.slack-edge.com/T0104D6U68N-U0101P17BAQ-e1409da03aac-192",
       "address": "10 Rue saint Paul",
       "city": "Paris",
-      "country": "France",
+      "country_id": 77,
       "dte_in": "",
       "dte_out": "",
       "first_name": "Frédéric",
@@ -14712,7 +14694,7 @@
       "avatar": "https://ca.slack-edge.com/T0104D6U68N-U011EGA6G9G-1d7eee75f6e4-192",
       "address": "Rue Georges Dimitrov",
       "city": "Bezons",
-      "country": "France",
+      "country_id": 77,
       "dte_in": "",
       "dte_out": "",
       "first_name": "Ingrid",
@@ -14766,7 +14748,7 @@
       "avatar": "https://ca.slack-edge.com/T0104D6U68N-U011PTQPFL0-900db372c894-192",
       "address": "",
       "city": "Paris",
-      "country": "France",
+      "country_id": 77,
       "dte_in": "",
       "dte_out": "",
       "first_name": "Thomas",
@@ -14870,7 +14852,7 @@
     {
       "address": "15 Allée les Carignan",
       "city": "Toulon",
-      "country": "France",
+      "country_id": 77,
       "dte_in": "",
       "dte_out": "",
       "first_name": "Ylios",
@@ -14888,7 +14870,7 @@
       "avatar": "https://ca.slack-edge.com/T0104D6U68N-U015V1T4ZK3-1991f05cb03b-192",
       "address": "52 Rue des vignes",
       "city": "Crosne",
-      "country": "France",
+      "country_id": 77,
       "dte_in": "",
       "dte_out": "",
       "first_name": "Jérémie",

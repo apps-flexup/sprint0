@@ -21,16 +21,14 @@ export default {
     const res = JSON.parse(JSON.stringify(state.structures))
     return res
   },
-  formesJuridiques(state) {
-    const res = JSON.parse(JSON.stringify(state.formesJuridiques))
+  legalStructures(state) {
+    const res = JSON.parse(JSON.stringify(state.legalStructure))
     return res
   },
-  formesJuridiquesById: (state) => (formesJuridiquesId) => {
-    if (!state.formesJuridiques) return []
-    const id = parseInt(formesJuridiquesId)
-    console.log('id :', id)
-    const res = state.formesJuridiques.find((v) => v.id === id)
-    console.log('store res: ', res)
+  getLegalStructureById: (state) => (legalStructureId) => {
+    if (!state.legalStructure) return null
+    const id = parseInt(legalStructureId)
+    const res = state.legalStructure.find((v) => parseInt(v.id) === id)
     return res
   }
 }

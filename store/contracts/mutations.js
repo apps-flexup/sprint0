@@ -5,8 +5,8 @@ export default {
   setContractTypes(state, items) {
     state.typeContrat = items
   },
-  setFormesJuridiques(state, items) {
-    state.formesJuridiques = items
+  setLegalStructures(state, items) {
+    state.legalStructures = items
   },
   setStructures(state, items) {
     state.structures = items

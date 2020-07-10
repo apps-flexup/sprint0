@@ -4,6 +4,7 @@
     fv-autocomplete(
       :items="items"
       :filter="filter"
+      :disabled="disabled"
       @autocomplete:selected="selected"
     )
       template(v-slot:label)
@@ -35,6 +36,12 @@ export default {
       default() {
         return null
       }
+    },
+    disabled: {
+      type: Boolean,
+      default() {
+        return false
+      }
     }
   },
   data() {
@@ -50,6 +57,7 @@ export default {
   },
   methods: {
     selected(v) {
+      console.log('In offer autocomplete: ', v)
       this.$emit('offers:selected', v)
     },
     filter(item, queryText, itemText) {
