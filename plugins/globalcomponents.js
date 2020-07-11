@@ -55,7 +55,7 @@ import FvSpeedDial from '@/components/FvSpeedDial'
 import FvUserInfo from '@/components/FvUserInfo'
 import FvOrderForm from '@/components/FvOrderForm'
 import FvOrderForPartner from '@/components/FvOrderForPartner'
-import FvOrderItemList from '@/components/FvOrderItemList'
+import FvOrderLineList from '@/components/FvOrderLineList'
 import FvStructureAutocomplete from '@/components/FvStructureAutocomplete'
 import FvPartnerAutocomplete from '@/components/FvPartnerAutocomplete'
 import FvProductAutocomplete from '@/components/FvProductAutocomplete'
@@ -143,7 +143,7 @@ Vue.component('fv-speed-dial', FvSpeedDial)
 Vue.component('fv-user-info', FvUserInfo)
 Vue.component('fv-order-form', FvOrderForm)
 Vue.component('fv-order-for-partner', FvOrderForPartner)
-Vue.component('fv-order-item-list', FvOrderItemList)
+Vue.component('fv-order-line-list', FvOrderLineList)
 Vue.component('fv-structure-autocomplete', FvStructureAutocomplete)
 Vue.component('fv-partner-autocomplete', FvPartnerAutocomplete)
 Vue.component('fv-product-autocomplete', FvProductAutocomplete)

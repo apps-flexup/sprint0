@@ -24,8 +24,9 @@
         fv-structure-autocomplete(
           @structures:selected="structureSelected"
         )
-    fv-order-item-list(
-      :orderItems="orderItems"
+    fv-order-line-list(
+      :orderLines="orderLines"
+      @orderLines:delete="deleteOrderLine"
     )
 </template>
 
@@ -34,7 +35,7 @@ export default {
   name: 'FvOrderForPartner',
   data() {
     return {
-      orderItems: [],
+      orderLines: [],
       partnerId: null
     }
   },
@@ -59,8 +60,11 @@ export default {
       console.log('offer selected: ', offerId)
       if (!offerId) return
       this.$repos.offers.show(offerId).then((res) => {
-        this.orderItems.push(res)
+        this.orderLines.push(res)
       })
+    },
+    deleteOrderLine(orderLine) {
+      console.log('Delete order line here: ', orderLine)
     }
   }
 }

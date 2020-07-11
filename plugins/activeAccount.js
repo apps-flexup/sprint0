@@ -109,6 +109,11 @@ const activeAccount = (ctx) => ({
     res.push({ text: 'headers.actions', value: 'actions', sortable: false })
     return res
   },
+  headersOrders() {
+    const res = ctx.store.getters['headers/orders']
+    res.push({ text: 'headers.actions', value: 'actions', sortable: false })
+    return res
+  },
   hasRole(role) {
     const res = ctx.store.$auth.user
     console.log('role :', role, ', res :', res)
