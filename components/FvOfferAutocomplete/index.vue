@@ -49,6 +49,13 @@ export default {
       items: []
     }
   },
+  watch: {
+    partnerId() {
+      const id = parseInt(this.partnerId)
+      const url = `${this.$axios.defaults.baseURL}/offers?account_id=${id}`
+      this.$axios.$get(url).then((res) => (this.items = res))
+    }
+  },
   mounted() {
     console.log('Composant ', this.$options.name)
     const id = parseInt(this.partnerId)
@@ -57,7 +64,6 @@ export default {
   },
   methods: {
     selected(v) {
-      console.log('In offer autocomplete: ', v)
       this.$emit('offers:selected', v)
     },
     filter(item, queryText, itemText) {

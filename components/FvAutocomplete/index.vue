@@ -68,11 +68,9 @@ export default {
   computed: {
     elementId: {
       get() {
-        console.log('get element')
         return this.element
       },
       set(v) {
-        console.log('set element: ', v)
         this.$emit('autocomplete:selected', v)
       }
     }

@@ -32,8 +32,7 @@ export default {
     }
   },
   watch: {
-    partnerId(v) {
-      console.log('Prop changed: ', v)
+    partnerId() {
       this.$activeAccount.getPartner(this.partnerId).then((res) => {
         this.partner = res
       })
