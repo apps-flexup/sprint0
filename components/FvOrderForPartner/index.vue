@@ -54,7 +54,10 @@ export default {
     },
     partnerSelected(partnerId) {
       console.log('partner selected: ', partnerId)
-      this.partnerId = partnerId
+      if (this.partnerId !== partnerId) {
+        this.partnerId = partnerId
+        this.orderLines = []
+      }
     },
     offerSelected(offerId) {
       console.log('offer selected: ', offerId)
