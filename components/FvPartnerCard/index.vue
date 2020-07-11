@@ -1,11 +1,9 @@
 <template lang="pug">
   .fv-partner-card
-    h1 {{ partner }}
-    v-card
+    v-card(v-if="partner")
       v-list-item
         v-list-item-avatar
           v-img(
-            v-if="partner.avatar"
             :src="partner.avatar"
             :alt="`${partner.name}`"
           )
@@ -28,16 +26,24 @@ export default {
       }
     }
   },
-  computed: {
-    partner() {
-      const id = parseInt(this.partnerId)
-      const res = this.$store.getters['accounts/findById'](id)
-      console.log(this.$options.name, 'partner: ', res)
-      return res
+  data() {
+    return {
+      partner: null
+    }
+  },
+  watch: {
+    partnerId(v) {
+      console.log('Prop changed: ', v)
+      this.$activeAccount.getPartner(this.partnerId).then((res) => {
+        this.partner = res
+      })
     }
   },
   mounted() {
     console.log('Composant ', this.$options.name)
+    this.$activeAccount.getPartner(this.partnerId).then((res) => {
+      this.partner = res
+    })
   }
 }
 </script>

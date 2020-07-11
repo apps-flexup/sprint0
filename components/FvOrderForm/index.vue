@@ -71,7 +71,7 @@ export default {
       this.order.structure_id = structureId
     },
     partnerSelected(partnerId) {
-      console.log('patner selected: ', partnerId)
+      console.log('partner selected: ', partnerId)
       this.partnerId = partnerId
     },
     offerSelected(offerId) {
