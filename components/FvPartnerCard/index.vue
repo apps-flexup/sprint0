@@ -3,6 +3,7 @@
     v-card(v-if="partner")
       v-list-item
         v-list-item-avatar
+          // TODO Get flexup avatar in api endpoint
           v-img(
             :src="partner.avatar"
             :alt="`${partner.name}`"
