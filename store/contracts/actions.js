@@ -3,7 +3,7 @@ export default {
   get({ dispatch }) {
     dispatch('contracts/getContracts', {}, { root: true })
     dispatch('contracts/getContractTypes', {}, { root: true })
-    dispatch('contracts/getLegalStructure', {}, { root: true })
+    dispatch('contracts/getLegalStructures', {}, { root: true })
     dispatch('contracts/getStructures', {}, { root: true })
   },
   getContracts({ commit }) {
@@ -18,7 +18,7 @@ export default {
       .index()
       .then((data) => commit('setContractTypes', data))
   },
-  getLegalStructure({ commit }) {
+  getLegalStructures({ commit }) {
     // charger les formes juridiques
     this.$repos.legalStructure
       .index()

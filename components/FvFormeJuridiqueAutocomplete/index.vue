@@ -28,7 +28,7 @@ export default {
   },
   mounted() {
     console.log('Composant ', this.$options.name)
-    this.$store.dispatch('contracts/getLegalStructure')
+    this.$store.dispatch('contracts/getLegalStructures')
   },
   methods: {
     selected(v) {

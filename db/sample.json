@@ -13180,7 +13180,7 @@
       "qte": 2000
     }
   ],
-  "legalStructure": [
+  "legal-structure": [
     {
       "id": 1,
       "name": "Auto-entrepreneur",
@@ -14315,7 +14315,7 @@
       "align": "start",
       "sortable": true,
       "text": "headers.partners.legalStructure",
-      "value": "legal_structure_id"
+      "value": "legal_structure"
     },
     {
       "align": "start",
@@ -14353,6 +14353,48 @@
       "name": "plop",
       "zip": "15774",
       "legal_structure_id": 13,
+      "country": {
+        "active": true,
+        "continent": null,
+        "continent_id": null,
+        "currencies": [
+          {
+            "active": true,
+            "id": 49,
+            "iso3": "EUR",
+            "ison": 978,
+            "minor": 2,
+            "name": "Euro"
+          }
+        ],
+        "id": 157,
+        "iso2": "NL",
+        "iso3": "NLD",
+        "ison": 528,
+        "languages": [
+          {
+            "active": false,
+            "id": 114,
+            "iso2": "nl",
+            "name": null,
+            "native": null
+          }
+        ],
+        "name": "Netherlands (the)",
+        "sovereignty": {
+          "countries_count": 193,
+          "description": "UN member state",
+          "id": 13,
+          "name": "UN"
+        },
+        "sovereignty_id": 13
+      },
+      "legalStructure": {
+        "id": 13,
+        "name": "Société par actions simplifiée unipersonnelle",
+        "sigle": "SASU"
+      },
+      "siret": "1231231312",
       "id": 1
     },
     {

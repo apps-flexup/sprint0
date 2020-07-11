@@ -45,7 +45,7 @@ export default {
     this.$store.dispatch('currencies/get')
     this.$store.dispatch('countries/get')
     this.$store.dispatch('contracts/getStructures')
-    this.$store.dispatch('contracts/getLegalStructure')
+    this.$store.dispatch('contracts/getLegalStructures')
   }
 }
 </script>

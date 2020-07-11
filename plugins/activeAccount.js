@@ -20,11 +20,11 @@ const activeAccount = (ctx) => ({
     ctx.store.dispatch('charters/get', {}, { root: true })
     ctx.store.dispatch('contacts/get', {}, { root: true })
     ctx.store.dispatch('contracts/getContracts', {}, { root: true })
+    ctx.store.dispatch('contracts/getLegalStructures', {}, { root: true })
+    ctx.store.dispatch('currencies/get', {}, { root: true })
     ctx.store.dispatch('offers/get', {}, { root: true })
     ctx.store.dispatch('orders/get', {}, { root: true })
     ctx.store.dispatch('partners/get', {}, { root: true })
-    ctx.store.dispatch('partners/get', {}, { root: true })
-    ctx.store.dispatch('products/get', {}, { root: true })
     ctx.store.dispatch('products/get', {}, { root: true })
   },
   contracts() {
@@ -51,24 +51,32 @@ const activeAccount = (ctx) => ({
     const res = ctx.store.getters['offers/all']
     return res
   },
-  partners() {
-    const res = ctx.store.getters['partners/all']
+  async partners() {
+    const partnerIds = ctx.store.getters['partners/ids']
+    const res = []
+    for (let i = 0; i < partnerIds.length; i++) {
+      const partner = await this.getPartner(partnerIds[i])
+      res.push(partner)
+    }
     return res
   },
   async getPartner(partnerId) {
     if (!partnerId) return null
     const id = parseInt(partnerId)
     const url = `/partners?id=${id}`
-    const partner = await ctx.$axios.$get(url)
+    let partner = await ctx.$axios.$get(url)
+    partner = partner[0]
     if (!partner) return null
     const countryId = parseInt(partner.country_id) || null
     const legalStructureId = parseInt(partner.legal_structure_id) || null
     const country = await ctx.store.getters['countries/find'](countryId)
-    const legalStructure = await ctx.store.getters['contracts/getLegalStructureById'](legalStructureId)
+    const legalStructure = await ctx.store.getters[
+      'contracts/getLegalStructureById'
+    ](legalStructureId)
     const res = {
       ...partner,
-      country: country,
-      legalStructure: legalStructure
+      country,
+      legalStructure
     }
     return res
   },

@@ -10,7 +10,7 @@
       v-col(cols="6")
         fv-partner-card(
           v-if="partnerId"
-          :partner="partner"
+          :partnerId="partnerId"
         )
     v-row
       v-col(cols="8")
@@ -55,15 +55,6 @@ export default {
       order: {},
       orderItems: [],
       partnerId: null
-    }
-  },
-  computed: {
-    partner() {
-      let res = []
-      this.$activeAccount.getPartner(this.partnerId).then((data) =>
-        res = data
-      )
-      return res
     }
   },
   mounted() {

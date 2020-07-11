@@ -21,21 +21,21 @@
 export default {
   name: 'FvPartnerCard',
   props: {
-    partner: {
-      type: Object,
+    partnerId: {
+      type: Number,
       default() {
         return null
       }
     }
   },
-  // computed: {
-  //   partner() {
-  //     const id = parseInt(this.partnerId)
-  //     const res = this.$store.getters['accounts/findById'](id)
-  //     console.log(this.$options.name, 'partner: ', res)
-  //     return res
-  //   }
-  // },
+  computed: {
+    partner() {
+      const id = parseInt(this.partnerId)
+      const res = this.$store.getters['accounts/findById'](id)
+      console.log(this.$options.name, 'partner: ', res)
+      return res
+    }
+  },
   mounted() {
     console.log('Composant ', this.$options.name)
   }

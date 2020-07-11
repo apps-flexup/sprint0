@@ -22,13 +22,14 @@ export default {
     return res
   },
   legalStructures(state) {
-    const res = JSON.parse(JSON.stringify(state.legalStructure))
+    const res = JSON.parse(JSON.stringify(state.legalStructures))
+    console.log('Get legal structures: ', res)
     return res
   },
   getLegalStructureById: (state) => (legalStructureId) => {
-    if (!state.legalStructure) return null
+    if (!state.legalStructures) return null
     const id = parseInt(legalStructureId)
-    const res = state.legalStructure.find((v) => parseInt(v.id) === id)
+    const res = state.legalStructures.find((v) => parseInt(v.id) === id)
     return res
   }
 }
