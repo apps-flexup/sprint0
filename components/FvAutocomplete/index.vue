@@ -22,6 +22,8 @@
           name="selection"
           v-bind:item="data.item"
         )
+      template(v-slot:append-item)
+        slot(name="append-item")
 </template>
 
 <script>

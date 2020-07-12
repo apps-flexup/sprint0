@@ -27,6 +27,20 @@ Vue.directive('to-unit', (el, binding, _vnode) => {
   el.innerHTML = res
 })
 
+Vue.directive('to-currency-quantity', (el, binding, vnode) => {
+  const locale = vnode.context.$i18n.locale
+  const valeur = binding.value
+  const options = {
+    style: 'currency',
+    currency: valeur.currency
+  }
+  const valueToDisplay = new Intl.NumberFormat(locale, options).format(
+    valeur.amount()
+  )
+  const res = `${valueToDisplay}`
+  el.innerHTML = res
+})
+
 Vue.directive('to-currency', (el, binding, vnode) => {
   const locale = vnode.context.$i18n.locale
   const valeur = binding.value
@@ -37,12 +51,13 @@ Vue.directive('to-currency', (el, binding, vnode) => {
   const valueToDisplay = new Intl.NumberFormat(locale, options).format(
     valeur.amount
   )
-  const res = `${valueToDisplay}`
+  const res = `${valueToDisplay} ${valeur}`
   el.innerHTML = res
 })
 
 // Pour la traduction des i18n
 const instantTranslate = (tableau, language, fallback) => {
+  if (!tableau) return 'check instantTranslate (undefined string)'
   if (typeof tableau === 'string') return tableau
   const langues = Object.keys(tableau)
   if (Object.prototype.hasOwnProperty.call(tableau, language)) {

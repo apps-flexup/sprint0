@@ -13978,6 +13978,32 @@
       "id": 20
     }
   ],
+  "order-line-headers": [
+    {
+      "align": "start",
+      "sortable": true,
+      "text": "headers.orders.offer",
+      "value": "offer"
+    },
+    {
+      "align": "start",
+      "sortable": true,
+      "text": "headers.orders.status",
+      "value": "status"
+    },
+    {
+      "align": "end",
+      "sortable": true,
+      "text": "headers.orders.quantity",
+      "value": "quantity"
+    },
+    {
+      "align": "end",
+      "sortable": true,
+      "text": "headers.orders.price",
+      "value": "price"
+    }
+  ],
   "order-headers": [
     {
       "align": "start",

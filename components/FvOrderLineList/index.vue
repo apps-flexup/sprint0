@@ -9,13 +9,19 @@
           item-key='id'
         )
           template(v-slot:item.offer='{ item }')
-            div(v-to-locale="item.name")
+            div(v-to-locale="item.offer")
           template(v-slot:item.unit='{ item }')
             div(v-to-unit="item")
+          template(v-slot:item.quantity='{ item }')
+            v-text-field(
+              v-model="item.quantity"
+            )
+          template(v-slot:item.price='{ item }')
+            div(v-to-currency-quantity="item")
           template(v-slot:item.status='{ item }')
             fv-status-progress-atom(:status="item.status")
           template(v-slot:item.actions='{ item }')
-            v-icon(small='' @click.stop='deleteOrderLine')
+            v-icon(small='' @click.stop='deleteOrderLine(item)')
               | mdi-delete
 
 </template>
@@ -33,13 +39,13 @@ export default {
   },
   computed: {
     headers() {
-      const res = this.$activeAccount.headersOrders()
+      const res = this.$activeAccount.headersOrderLines()
       return this.$translateHeaders(res)
     }
   },
   mounted() {
     console.log('Composant ', this.$options.name)
-    this.$store.dispatch('headers/getOrderHeaders')
+    this.$store.dispatch('headers/getOrderLineHeaders')
   },
   methods: {
     deleteOrderLine(v) {
@@ -48,8 +54,3 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
-.fv-order-item-list {
-  background-color: inherit;
-}
-</style>

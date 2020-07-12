@@ -24,6 +24,9 @@
             div {{ data.item.name }}
       template(v-slot:no-data)
         div Aucune donnée disponible
+      template(v-slot:append-item)
+        v-list-item-content
+          v-btn(@click="addPartner" color="primary") Add new Partner
 </template>
 
 <script>
@@ -56,6 +59,9 @@ export default {
       if (Object.prototype.hasOwnProperty.call(item, 'header')) return true
       const res = item.name.toLowerCase().includes(queryText.toLowerCase())
       return res
+    },
+    addPartner() {
+      console.log('Ajouter nouveau partenaire')
     }
   }
 }

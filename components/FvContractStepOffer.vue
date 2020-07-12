@@ -64,12 +64,6 @@ export default {
   mounted() {
     console.log('Composant ', this.$options.name)
     this.$store.dispatch('headers/getOfferHeaders')
-    // this.$store.dispatch('offers/get')
   }
 }
 </script>
-<style lang="scss" scoped>
-.fv-contract-step3 {
-  background-color: inherit;
-}
-</style>

@@ -29,5 +29,11 @@ export default {
     this.$repos.orderHeaders
       .index()
       .then((data) => commit('setOrderHeaders', data))
+  },
+  getOrderLineHeaders({ commit }) {
+    // charger les structures
+    this.$repos.orderLineHeaders
+      .index()
+      .then((data) => commit('setOrderLineHeaders', data))
   }
 }

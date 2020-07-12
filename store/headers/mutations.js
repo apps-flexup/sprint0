@@ -16,5 +16,8 @@ export default {
   },
   setOrderHeaders(state, items) {
     state.orders = items
+  },
+  setOrderLineHeaders(state, items) {
+    state.orderLines = items
   }
 }

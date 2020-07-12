@@ -29,6 +29,11 @@ export default {
     const res = JSON.parse(JSON.stringify(state.orders))
     return res
   },
+  orderLines(state) {
+    if (!state.orderLines) return []
+    const res = JSON.parse(JSON.stringify(state.orderLines))
+    return res
+  },
   etapes(state) {
     if (!state.etapes) return []
     const res = JSON.parse(JSON.stringify(state.etapes))

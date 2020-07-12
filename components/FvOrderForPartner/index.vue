@@ -63,17 +63,29 @@ export default {
       console.log('offer selected: ', offerId)
       if (!offerId) return
       this.$repos.offers.show(offerId).then((res) => {
-        this.orderLines.push(res)
+        // TODO On ne push pas une ligne d'ordre, on doit traduire dans le format adequate
+        const offer = JSON.parse(JSON.stringify(res))
+        const payload = {
+          offer_id: offer.id,
+          offer: offer.name || 'absence de description',
+          status: 'draft',
+          quantity: 1,
+          dimension: offer.dimension,
+          unit: offer.unit,
+          currency: offer.currency,
+          amount() {
+            const res = parseFloat(this.quantity) * parseFloat(this.price)
+            return res
+          },
+          price: offer.price
+        }
+        this.orderLines.push(payload)
       })
     },
     deleteOrderLine(orderLine) {
       console.log('Delete order line here: ', orderLine)
+      this.orderLines.filter((v) => v)
     }
   }
 }
 </script>
-<style lang="scss" scoped>
-.fv-order-for-partner {
-  background-color: inherit;
-}
-</style>
