@@ -70,6 +70,7 @@ export default {
           offer: offer.name || 'absence de description',
           status: 'draft',
           quantity: 1,
+          pas: 1,
           dimension: offer.dimension,
           unit: offer.unit,
           currency: offer.currency,

@@ -13986,12 +13986,6 @@
       "value": "offer"
     },
     {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.orders.status",
-      "value": "status"
-    },
-    {
       "align": "end",
       "sortable": true,
       "text": "headers.orders.quantity",
@@ -14002,6 +13996,12 @@
       "sortable": true,
       "text": "headers.orders.price",
       "value": "price"
+    },
+    {
+      "align": "start",
+      "sortable": true,
+      "text": "headers.orders.status",
+      "value": "status"
     }
   ],
   "order-headers": [
@@ -14036,7 +14036,7 @@
       "value": "endDate"
     },
     {
-      "align": "end",
+      "align": "right",
       "sortable": true,
       "text": "headers.orders.quantity",
       "value": "quantity"

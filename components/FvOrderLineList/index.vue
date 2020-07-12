@@ -8,22 +8,41 @@
           :items='orderLines'
           item-key='id'
         )
-          template(v-slot:item.offer='{ item }')
+          template(v-slot:item.offer="{ item }")
             div(v-to-locale="item.offer")
-          template(v-slot:item.unit='{ item }')
+          template(v-slot:item.unit="{ item }")
             div(v-to-unit="item")
-          template(v-slot:item.quantity='{ item }')
+          template(v-slot:item.quantity="{ item }")
             v-text-field(
               v-model="item.quantity"
             )
-          template(v-slot:item.price='{ item }')
+              template(v-slot:append)
+                v-btn(
+                  icon
+                  @click.stop="item.quantity = item.quantity - 1"
+                )
+                  v-icon mdi-minus
+              template(v-slot:prepend)
+                v-btn(
+                  icon
+                  @click.stop="item.quantity = item.quantity + 1"
+                )
+                  v-icon mdi-plus
+            //- v-icon(
+            //-   slot="append"
+            //-   color="red"
+            //- ) mdi-plus
+            //- v-icon(
+            //-   slot="prepend"
+            //-   color="green"
+            //- ) mdi-minus
+          template(v-slot:item.price="{ item }")
             div(v-to-currency-quantity="item")
-          template(v-slot:item.status='{ item }')
+          template(v-slot:item.status="{ item }")
             fv-status-progress-atom(:status="item.status")
-          template(v-slot:item.actions='{ item }')
-            v-icon(small='' @click.stop='deleteOrderLine(item)')
+          template(v-slot:item.actions="{ item }")
+            v-icon(small='' @click.stop="deleteOrderLine(item)")
               | mdi-delete
-
 </template>
 
 <script>

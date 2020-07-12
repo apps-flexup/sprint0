@@ -8,16 +8,16 @@
           item-key='id'
           @click:row='selected'
         )
-          template(v-slot:item.legal_structure='{item}')
+          template(v-slot:item.legal_structure="{item}")
             div {{ item.legalStructure.name }}
-          template(v-slot:item.country='{item}')
+          template(v-slot:item.country="{item}")
             div {{ item.country.name }}
-          template(v-slot:item.actions='{ item }')
-            v-icon.mr-2(small='' @click.stop='showContract(item)')
+          template(v-slot:item.actions="{ item }")
+            v-icon.mr-2(small='' @click.stop="showContract(item)")
               | mdi-briefcase
-            v-icon.mr-2(small='' @click.stop='selected(item)')
+            v-icon.mr-2(small='' @click.stop="selected(item)")
               | mdi-pencil
-            v-icon(small='' @click.stop='deleteItem(item)')
+            v-icon(small='' @click.stop="deleteItem(item)")
               | mdi-delete
 </template>
 

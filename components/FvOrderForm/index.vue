@@ -22,9 +22,18 @@
 <script>
 export default {
   name: 'FvOrderForm',
-  data() {
-    return {
-      order: {}
+  props: {
+    orderList: {
+      type: Array,
+      default() {
+        return []
+      }
+    }
+  },
+  computed: {
+    orderDetail() {
+      const res = []
+      return res
     }
   },
   mounted() {

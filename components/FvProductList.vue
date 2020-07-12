@@ -8,14 +8,14 @@
           item-key='id'
           @click:row='selected'
         )
-          template(v-slot:item.category='{ item }')
+          template(v-slot:item.category="{ item }")
             div(v-to-category="item.category_id")
-          template(v-slot:item.status='{ item }')
+          template(v-slot:item.status="{ item }")
             div le truc avec des couleurs {{ item.status }}
-          template(v-slot:item.actions='{ item }')
-            v-icon.mr-2(small='' @click.stop='selected(item)')
+          template(v-slot:item.actions="{ item }")
+            v-icon.mr-2(small='' @click.stop="selected(item)")
               | mdi-pencil
-            v-icon(small='' @click.stop='deleteItem(item)')
+            v-icon(small='' @click.stop="deleteItem(item)")
               | mdi-delete
 </template>
 
