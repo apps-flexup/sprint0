@@ -22,3 +22,19 @@ $ yarn generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+TODO: Product form:
+
+- Remove Price + currency
+- Remove periodicity
+
+TODO: Offer form:
+
+- Select product (autocomplete)
+- Price + Currency
+- Dimension + Unit (prefill with product info)
+- Status = draft
+
+TODO: Order form:
+
+- Add periodicity (hidden per default)
