@@ -24,6 +24,10 @@
         "orders": "no order | one order | {n} orders",
         "commandes": "no order | one order | {n} orders"
       }
+    },
+    "offers": {
+      "title": "My offers",
+      "search": "Search"
     }
   },
   "forms": {

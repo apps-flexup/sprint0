@@ -18,6 +18,12 @@ const translateHeaders = (i18n) => (items) => {
   return res
 }
 
+export const filterOffersDataTable = (item, v, _it) => {
+  const nameValues = `${item}`
+  const res = String.prototype.filtreAutocomplete.call(nameValues, v)
+  return res
+}
+
 export const filterCategoryAutocomplete = (item, v, _it) => {
   const name = JSON.parse(JSON.stringify(item.name || {}))
   const nameValues = Object.keys(name)
