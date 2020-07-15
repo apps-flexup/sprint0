@@ -13831,63 +13831,6 @@
       "unit": "hr"
     },
     {
-      "account_id": 1,
-      "active": true,
-      "category": {
-        "active": true,
-        "allow_at_client": true,
-        "allow_at_supplier": false,
-        "allow_remote": false,
-        "allow_shipping": true,
-        "description": {
-          "en": "English",
-          "fr": "French"
-        },
-        "dimension": "duration",
-        "id": 3,
-        "name": {
-          "en": "Building work",
-          "fr": "Travaux Bâtiment"
-        },
-        "offers_count": 1,
-        "orderable": true,
-        "other_parent": [],
-        "parent_id": 2,
-        "sort_order": 0,
-        "status": "active",
-        "unit": "hr"
-      },
-      "category_id": 3,
-      "currency": "EUR",
-      "description": {
-        "fr": "Travaux de batiment"
-      },
-      "dimension": "duration",
-      "elasticity": 0,
-      "evaluation_avg": 6.5,
-      "favorite": false,
-      "id": 8,
-      "illustration_url": "https://placeimg.com/640/480?id=8",
-      "name": {
-        "fr": "Travaux de batiment"
-      },
-      "offer_at_client": true,
-      "offer_at_supplier": true,
-      "offer_remote": true,
-      "offer_shipping": false,
-      "params": {
-        "certification": {
-          "en": "BATIMENT"
-        },
-        "distance_maximum": 250,
-        "iso_9000": true
-      },
-      "price": 50,
-      "reference": "IHMKFU",
-      "status": "suspended",
-      "unit": "hr"
-    },
-    {
       "account_id": 10,
       "currency": 49,
       "dimension": "dimension",
@@ -13924,16 +13867,6 @@
       "status": "draft"
     },
     {
-      "currency": "GBP",
-      "dimension": "weight",
-      "name": "Un truc genre banane",
-      "price": "9",
-      "status": "draft",
-      "product_id": 11,
-      "account_id": 1,
-      "id": 16
-    },
-    {
       "currency": "AUD",
       "dimension": "weight",
       "name": "un truc du genre des pommes",
@@ -13967,15 +13900,28 @@
       "id": 19
     },
     {
-      "currency": "EUR",
-      "dimension": "length",
-      "name": "Charpentier",
-      "price": "150",
-      "status": "draft",
-      "unit": "m",
       "product_id": 15,
+      "name": "Appartement Paris 19",
+      "price": "123",
+      "unit": "month",
+      "dimension": "duration",
+      "status": "draft",
       "account_id": 1,
+      "category_id": 22,
+      "productId": 2,
+      "currency": "EUR",
       "id": 20
+    },
+    {
+      "product_id": 15,
+      "name": "Bananes",
+      "price": "123",
+      "currency": "USD",
+      "unit": "Gb/s",
+      "dimension": "bandwith",
+      "status": "draft",
+      "account_id": 1,
+      "id": 21
     }
   ],
   "order-line-headers": [
@@ -14549,7 +14495,7 @@
       "name": "Appartement Paris 8",
       "price": "1250",
       "quantity": 1,
-      "status": "4-Confirmé",
+      "status": "active",
       "unit": "month",
       "id": 1
     },
@@ -14561,7 +14507,7 @@
       "name": "Appartement Paris 19",
       "price": "300",
       "quantity": 1,
-      "status": "4-Confirmé",
+      "status": "inactive",
       "unit": "month",
       "id": 2
     },
@@ -14581,17 +14527,6 @@
       "id": 6,
       "name": "test",
       "status": "draft"
-    },
-    {
-      "category_id": 22,
-      "currency": "GBP",
-      "dimension": "weight",
-      "name": "Un truc genre banane",
-      "price": "9",
-      "status": "draft",
-      "account_id": 1,
-      "unit": "kg",
-      "id": 11
     },
     {
       "category_id": 22,
@@ -14627,14 +14562,11 @@
       "id": 14
     },
     {
-      "category_id": 3,
-      "currency": "EUR",
-      "dimension": "length",
-      "name": "Charpentier",
-      "periodicity": "souvent2",
-      "price": "150",
+      "category_id": 22,
+      "name": "Bananes",
+      "unit": "Gb/s",
+      "dimension": "bandwith",
       "status": "draft",
-      "unit": "m",
       "account_id": 1,
       "id": 15
     }

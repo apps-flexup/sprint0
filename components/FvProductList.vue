@@ -19,8 +19,8 @@
       )
         template(v-slot:item.category="{ item }")
           div(v-to-category="item.category_id")
-        template(v-slot:item.status="{ item }")
-          div le truc avec des couleurs {{ item.status }}
+        template(v-slot:item.status='{ item }')
+          fv-status-progress-atom(:status="item.status")
         template(v-slot:item.actions="{ item }")
           v-icon.mr-2(small='' @click.stop="selected(item)")
             | mdi-pencil
