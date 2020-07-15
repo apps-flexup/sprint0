@@ -13433,6 +13433,12 @@
       "value": "currency"
     },
     {
+      "align": "end",
+      "sortable": true,
+      "text": "headers.offers.vat",
+      "value": "vat"
+    },
+    {
       "align": "center",
       "sortable": true,
       "text": "headers.offers.unit",
@@ -13593,7 +13599,6 @@
       "elasticity": 0,
       "evaluation_avg": 6.5,
       "favorite": true,
-      "id": 3,
       "illustration_url": "https://placeimg.com/640/480?id=3",
       "name": {
         "en": "7 familly game",
@@ -13613,7 +13618,9 @@
       "price": 10,
       "reference": "BAVAFC",
       "status": "active",
-      "unit": "h"
+      "unit": "h",
+      "vat": "20.5",
+      "id": 3
     },
     {
       "account_id": 1,
@@ -13651,7 +13658,6 @@
       "elasticity": 20,
       "evaluation_avg": 6.5,
       "favorite": true,
-      "id": 4,
       "illustration_url": "https://placeimg.com/640/480?id=4",
       "name": {
         "en": "name of offer php"
@@ -13669,7 +13675,9 @@
       "price": 100,
       "reference": "EICMNB",
       "status": "archived",
-      "unit": "h"
+      "unit": "h",
+      "vat": "12",
+      "id": 4
     },
     {
       "account_id": 5,
@@ -13910,6 +13918,7 @@
       "category_id": 22,
       "productId": 2,
       "currency": "EUR",
+      "vat": "20",
       "id": 20
     },
     {
@@ -13921,6 +13930,7 @@
       "dimension": "bandwith",
       "status": "draft",
       "account_id": 1,
+      "vat": "12",
       "id": 21
     }
   ],

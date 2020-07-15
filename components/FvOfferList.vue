@@ -19,6 +19,8 @@
       )
         template(v-slot:item.name='{ item }')
           div(v-to-locale="item.name")
+        template(v-slot:item.vat='{ item }')
+          div {{ item.vat }}%
         template(v-slot:item.unit='{ item }')
           div(v-to-unit="item")
         template(v-slot:item.status='{ item }')

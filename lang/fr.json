@@ -120,7 +120,8 @@
         "name": "Nom de l'offre",
         "unit": "Unité",
         "price": "Prix",
-        "currency": "Devise"
+        "currency": "Devise",
+        "vat": "TVA"
       }
     },
     "orders": {
@@ -191,6 +192,7 @@
       "products": "Produit(s)",
       "price": "Prix",
       "currency": "Devise",
+      "vat": "TVA",
       "unit": "Unité",
       "status": "Statut"
     },

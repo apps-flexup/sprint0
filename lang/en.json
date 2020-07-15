@@ -119,7 +119,8 @@
         "unit": "Unit",
         "price": "Price",
         "elasticity": "Elasticity",
-        "currency": "Currency"
+        "currency": "Currency",
+        "vat": "VAT"
       },
       "orders": {
         "new": {
@@ -189,6 +190,7 @@
       "products": "Product(s)",
       "price": "Price",
       "currency": "Currency",
+      "vat": "VAT",
       "unit": "Unit",
       "status": "Status"
     },

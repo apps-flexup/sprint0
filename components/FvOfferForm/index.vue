@@ -30,6 +30,14 @@
         )
     v-row
       v-col(cols='6')
+        v-text-field(
+          v-model="vat"
+          :label="$t('forms.offers.new.vat')"
+          outlined=''
+          @input="vatChanged"
+          suffix="%"
+        )
+      v-col(cols='6')
         fv-unit-autocomplete(
           :dimension="dimension"
           :unit="unit"
@@ -55,6 +63,7 @@ export default {
       name: null,
       price: null,
       currency: null,
+      vat: null,
       unit: null,
       dimension: null
     }
@@ -112,6 +121,13 @@ export default {
       const res = Object.assign(this.localOffer, payload)
       this.$emit('offer:changed', res)
     },
+    vatChanged() {
+      const payload = {
+        vat: this.vat
+      }
+      const res = Object.assign(this.localOffer, payload)
+      this.$emit('offer:changed', res)
+    },
     unitSelected(v) {
       const unit = this.$store.getters['units/find'](v)
       this.dimension = unit ? unit.dimension : null
@@ -130,6 +146,7 @@ export default {
       this.price = this.offer.price
       this.currency = this.offer.currency
       this.unit = this.offer.unit
+      this.vat = this.offer.vat
       this.dimension = this.offer.dimension
       this.localOffer = this.offer
     },
@@ -138,6 +155,7 @@ export default {
       this.name = null
       this.price = null
       this.currency = null
+      this.vat = null
       this.unit = null
       this.dimension = null
       this.localOffer = {}
