@@ -71,6 +71,7 @@ export default {
           status: 'draft',
           quantity: 1,
           pas: 1,
+          vat: offer.vat,
           dimension: offer.dimension,
           unit: offer.unit,
           currency: offer.currency,

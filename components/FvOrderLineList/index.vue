@@ -28,16 +28,13 @@
                   @click.stop="item.quantity = item.quantity + 1"
                 )
                   v-icon mdi-plus
-            //- v-icon(
-            //-   slot="append"
-            //-   color="red"
-            //- ) mdi-plus
-            //- v-icon(
-            //-   slot="prepend"
-            //-   color="green"
-            //- ) mdi-minus
           template(v-slot:item.price="{ item }")
             div(v-to-currency-quantity="item")
+          template(v-slot:item.vat='{ item }')
+            v-text-field(
+              v-model="item.vat"
+              suffix="%"
+            )
           template(v-slot:item.status="{ item }")
             fv-status-progress-atom(:status="item.status")
           template(v-slot:item.actions="{ item }")

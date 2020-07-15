@@ -13954,6 +13954,12 @@
       "value": "price"
     },
     {
+      "align": "end",
+      "sortable": true,
+      "text": "headers.orders.vat",
+      "value": "vat"
+    },
+    {
       "align": "start",
       "sortable": true,
       "text": "headers.orders.status",
