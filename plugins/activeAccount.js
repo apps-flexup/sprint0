@@ -99,6 +99,16 @@ const activeAccount = (ctx) => ({
     const res = ctx.store.getters['products/all']
     return res
   },
+  async getProduct(productId) {
+    if (!productId) return null
+    const id = parseInt(productId)
+    const url = `/products?id=${id}`
+    let product = await ctx.$axios.$get(url)
+    product = product[0]
+    if (!product) return null
+    console.log('ReturnedProduct: ', product)
+    return product
+  },
   headersProducts() {
     const res = ctx.store.getters['headers/products']
     res.push({ text: 'headers.actions', value: 'actions', sortable: false })
@@ -138,6 +148,25 @@ const activeAccount = (ctx) => ({
       }
       ctx.$repos.products.createWithAccountId(product).then((_prod) => {
         ctx.store.dispatch('products/get')
+      })
+    }
+  },
+  addOffer(newOffer) {
+    if (Object.prototype.hasOwnProperty.call(newOffer, 'id')) {
+      // update de l'offre
+      ctx.store.dispatch('offers/add', newOffer)
+    } else {
+      const offer = {
+        product_id: newOffer.productId,
+        name: newOffer.name,
+        price: newOffer.price,
+        currency: newOffer.currency,
+        unit: newOffer.unit,
+        dimension: newOffer.dimension,
+        status: 'draft'
+      }
+      ctx.$repos.offers.createWithAccountId(offer).then((_off) => {
+        ctx.store.dispatch('offers/get')
       })
     }
   }

@@ -2,7 +2,7 @@
   .fv-product-autocomplete
     p {{ $options.name }}
     fv-autocomplete(
-      v-model="this.product"
+      :element="product"
       :items="items"
       @autocomplete:selected="selected"
     )

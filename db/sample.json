@@ -13421,16 +13421,16 @@
       "value": "name"
     },
     {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.offers.elasticity",
-      "value": "elasticity"
-    },
-    {
       "align": "end",
       "sortable": true,
       "text": "headers.offers.price",
       "value": "price"
+    },
+    {
+      "align": "end",
+      "sortable": true,
+      "text": "headers.offers.currency",
+      "value": "currency"
     },
     {
       "align": "center",

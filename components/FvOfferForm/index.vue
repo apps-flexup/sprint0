@@ -1,0 +1,145 @@
+<template lang="pug">
+  .fv-order-form
+    p {{ $options.name }}
+    v-row
+      v-col(cols="12")
+        fv-product-autocomplete(
+          :product="productId"
+          @products:selected="productSelected"
+        )
+    v-row
+      v-col(cols="12")
+        v-text-field(
+          v-model="name"
+          :label="$t('forms.offers.new.name')"
+          outlined=''
+          @input="nameChanged"
+        )
+    v-row
+      v-col(cols="6")
+        v-text-field(
+          v-model="price"
+          :label="$t('forms.offers.new.price')"
+          outlined=''
+          @input="priceChanged"
+        )
+      v-col(cols="6")
+        fv-currency-autocomplete(
+          :currency="currency"
+          @currency:selected="currencySelected"
+        )
+    v-row
+      v-col(cols='6')
+        fv-unit-autocomplete(
+          :dimension="dimension"
+          :unit="unit"
+          @unit:selected="unitSelected"
+        )
+</template>
+
+<script>
+export default {
+  name: 'FvOfferForm',
+  props: {
+    offer: {
+      type: Object,
+      default() {
+        return {}
+      }
+    }
+  },
+  data() {
+    return {
+      localOffer: {},
+      productId: null,
+      name: null,
+      price: null,
+      currency: null,
+      unit: null,
+      dimension: null
+    }
+  },
+  watch: {
+    offer() {
+      if (Object.entries(this.offer).length === 0) {
+        this.clearOffer()
+      } else {
+        this.fillFieldsWithOffer()
+      }
+    }
+  },
+  mounted() {
+    console.log('Composant ', this.$options.name)
+    this.fillFieldsWithOffer()
+  },
+  methods: {
+    productSelected(v) {
+      this.$activeAccount.getProduct(v).then((product) => {
+        this.productId = product.id
+        this.unit = product ? product.unit : null
+        this.dimension = product ? product.dimension : null
+        this.name = product ? product.name : null
+        const payload = {
+          productId: this.productId,
+          unit: this.unit,
+          dimension: this.dimension,
+          name: this.name
+        }
+        const res = Object.assign(this.localOffer, payload)
+        this.$emit('offer:changed', res)
+      })
+    },
+    nameChanged() {
+      const payload = {
+        name: this.name
+      }
+      const res = Object.assign(this.localOffer, payload)
+      this.$emit('offer:changed', res)
+    },
+    priceChanged() {
+      const payload = {
+        price: this.price
+      }
+      const res = Object.assign(this.localOffer, payload)
+      this.$emit('offer:changed', res)
+    },
+    currencySelected(v) {
+      this.currency = v
+      const payload = {
+        currency: this.currency
+      }
+      const res = Object.assign(this.localOffer, payload)
+      this.$emit('offer:changed', res)
+    },
+    unitSelected(v) {
+      const unit = this.$store.getters['units/find'](v)
+      this.dimension = unit ? unit.dimension : null
+      this.unit = unit ? unit.symbole : null
+      const payload = {
+        unit: this.unit,
+        dimension: this.dimension
+      }
+      const res = Object.assign(this.localOffer, payload)
+      this.$emit('offer:changed', res)
+    },
+    fillFieldsWithOffer() {
+      if (!this.offer) return
+      this.productId = this.offer.product_id
+      this.name = this.offer.name
+      this.price = this.offer.price
+      this.currency = this.offer.currency
+      this.unit = this.offer.unit
+      this.dimension = this.offer.dimension
+      this.localOffer = this.offer
+    },
+    clearOffer() {
+      this.productId = null
+      this.price = null
+      this.currency = null
+      this.unit = null
+      this.dimension = null
+      this.localOffer = {}
+    }
+  }
+}
+</script>

@@ -12,5 +12,18 @@ export default {
   },
   clear({ commit }) {
     commit('set', [])
+  },
+  add({ commit }, offer) {
+    // charger les contracts
+    if (Object.prototype.hasOwnProperty.call(offer, 'id')) {
+      this.$repos.offers.update(offer).then((res) => {
+        commit('remove', res)
+        commit('add', res)
+      })
+    } else {
+      this.$repos.offers.createWithAccountId(offer).then((res) => {
+        commit('add', res)
+      })
+    }
   }
 }

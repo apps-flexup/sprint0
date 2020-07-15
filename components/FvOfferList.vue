@@ -9,6 +9,7 @@
           :headers='headers'
           :items='items'
           item-key='id'
+          @click:row='selected'
         )
           template(v-slot:item.name='{ item }')
             div(v-to-locale="item.name")
@@ -45,9 +46,6 @@ export default {
       this.$emit('list:selected', offer)
     },
     deleteItem(offer) {
-      this.$repos.products.show(offer.product_id).then((product) => {
-        this.$store.dispatch('products/remove', product)
-      })
       this.$store.dispatch('offers/remove', offer)
     }
   }

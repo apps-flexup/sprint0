@@ -6,11 +6,12 @@
           :text="$t('buttons.create.offer')"
           @button:click='showModal = true'
         )
-        fv-product-modal(
+        fv-offer-modal(
           :show="showModal"
-          :product='selected'
+          :offer='offer'
           @modal:close="close"
           @modal:save="save"
+          @offer:changed="offerChanged"
         )
     fv-offer-list(@list:selected="selectedOffer")
 </template>
@@ -19,7 +20,7 @@
 export default {
   data() {
     return {
-      selected: {},
+      offer: {},
       showModal: false
     }
   },
@@ -28,26 +29,23 @@ export default {
   },
   methods: {
     close() {
-      this.selected = {}
+      this.offer = {}
       this.showModal = false
     },
-    save(product) {
+    save() {
       this.$nuxt.$loading.start()
       this.showModal = false
-      this.$activeAccount.addProduct(product)
-      this.selected = {}
+      this.$activeAccount.addOffer(this.offer)
+      this.offer = {}
       this.$nuxt.$loading.finish()
     },
     selectedOffer(offer) {
-      this.selected = JSON.parse(JSON.stringify(offer))
-      let product = {}
-      this.$repos.products.show(offer.product_id).then((res) => {
-        product = res
-      })
-      this.selected.category_id = product.category_id
-      this.selected.periodicity = product.periodicity
-      this.selected.currency = product.currency
+      this.offer = JSON.parse(JSON.stringify(offer))
+      console.log('SelectedOffer: ', offer)
       this.showModal = true
+    },
+    offerChanged(offer) {
+      this.offer = offer
     }
   }
 }
