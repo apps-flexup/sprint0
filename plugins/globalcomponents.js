@@ -74,6 +74,7 @@ import FvOrderStepSelectPartner from '~/components/FvOrderStepSelectPartner'
 import FvOrderStepSelectOffers from '~/components/FvOrderStepSelectOffers'
 import FvOrderStepResume from '~/components/FvOrderStepResume'
 import FvPartnerCard from '~/components/FvPartnerCard'
+import FvTotalByVat from '~/components/FvTotalByVat'
 
 // Déclarations composants utilitaires
 Vue.component('fv-autocomplete', FvAutocomplete)
@@ -163,3 +164,4 @@ Vue.component('fv-order-step-select-partner', FvOrderStepSelectPartner)
 Vue.component('fv-order-step-select-offers', FvOrderStepSelectOffers)
 Vue.component('fv-order-step-resume', FvOrderStepResume)
 Vue.component('fv-partner-card', FvPartnerCard)
+Vue.component('fv-total-by-vat', FvTotalByVat)

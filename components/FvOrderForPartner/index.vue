@@ -28,6 +28,9 @@
       :orderLines="orderLines"
       @orderLines:delete="deleteOrderLine"
     )
+    fv-total-by-vat(
+      :orderLines="orderLines"
+    )
 </template>
 
 <script>
