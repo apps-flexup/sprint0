@@ -105,6 +105,7 @@
     },
     "offers": {
       "new": {
+        "title": "New offer",
         "dimension": "Dimension",
         "name": "Offer name",
         "unit": "Unit",
@@ -179,7 +180,8 @@
       "label": "Label",
       "products": "Product(s)",
       "price": "Price",
-      "unit": "Price unit",
+      "currency": "Currency",
+      "unit": "Unit",
       "status": "Status"
     },
     "partners": {
