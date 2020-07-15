@@ -1,8 +1,8 @@
 <template lang="pug">
   .products
-    v-row(align="center")
-      v-spacer
-      fv-create-button(
+    v-row
+      v-col(cols="12")
+        fv-create-button.text-right(
         :text="$t('buttons.create.product')"
         @button:click='showModal = true'
       )
