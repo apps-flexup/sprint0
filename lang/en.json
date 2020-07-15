@@ -28,6 +28,10 @@
     "offers": {
       "title": "My offers",
       "search": "Search"
+    },
+    "products": {
+      "title": "My products",
+      "search": "Search"
     }
   },
   "forms": {

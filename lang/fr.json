@@ -31,6 +31,10 @@
     "offers": {
       "title": "Mes offres",
       "search": "Rechercher"
+    },
+    "products": {
+      "title": "Mes Produits",
+      "search": "Rechercher"
     }
   },
   "forms": {

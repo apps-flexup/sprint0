@@ -62,7 +62,6 @@ export default {
       this.$store.dispatch('offers/remove', offer)
     },
     filterFunction(item, queryText, itemText) {
-      console.log('Item: ', item)
       return filterOffersDataTable(item, queryText, itemText)
     }
   }
