@@ -74,7 +74,8 @@ export default {
   },
   methods: {
     productSelected(v) {
-      this.$activeAccount.getProduct(v).then((product) => {
+      // this.$activeAccount.getProduct(v).then((product) => {
+      this.$repos.products.show(v).then((product) => {
         this.productId = product ? product.id : null
         this.unit = product ? product.unit : null
         this.dimension = product ? product.dimension : null
@@ -134,6 +135,7 @@ export default {
     },
     clearOffer() {
       this.productId = null
+      this.name = null
       this.price = null
       this.currency = null
       this.unit = null
