@@ -75,7 +75,7 @@ export default {
   methods: {
     productSelected(v) {
       this.$activeAccount.getProduct(v).then((product) => {
-        this.productId = product.id
+        this.productId = product ? product.id : null
         this.unit = product ? product.unit : null
         this.dimension = product ? product.dimension : null
         this.name = product ? product.name : null
