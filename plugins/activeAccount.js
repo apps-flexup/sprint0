@@ -130,30 +130,14 @@ const activeAccount = (ctx) => ({
       ctx.store.dispatch('products/add', newProduct)
     } else {
       const product = {
-        category_id: newProduct.category_id,
-        currency: newProduct.currency,
-        dimension: newProduct.dimension,
+        category_id: newProduct.categoryId,
         name: newProduct.name,
-        periodicity: newProduct.periodicity,
-        price: newProduct.price,
-        status: 'draft',
-        unit: newProduct.unit
-      }
-      const offer = {
-        currency: newProduct.currency,
+        unit: newProduct.unit,
         dimension: newProduct.dimension,
-        elasticity: newProduct.elasticity,
-        name: newProduct.name,
-        price: newProduct.price,
-        status: 'draft',
-        unit: newProduct.unit
+        status: 'draft'
       }
-      ctx.$repos.products.createWithAccountId(product).then((prod) => {
-        offer.product_id = prod.id
-        ctx.$repos.offers.createWithAccountId(offer).then(() => {
-          ctx.store.dispatch('products/get')
-          ctx.store.dispatch('offers/get')
-        })
+      ctx.$repos.products.createWithAccountId(product).then((_prod) => {
+        ctx.store.dispatch('products/get')
       })
     }
   }

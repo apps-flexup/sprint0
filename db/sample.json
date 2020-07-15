@@ -14536,12 +14536,6 @@
     {
       "align": "start",
       "sortable": true,
-      "text": "headers.products.periodicity",
-      "value": "periodicity"
-    },
-    {
-      "align": "start",
-      "sortable": true,
       "text": "headers.products.status",
       "value": "status"
     }

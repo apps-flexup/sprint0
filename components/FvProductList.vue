@@ -43,8 +43,6 @@ export default {
     },
     deleteItem(product) {
       this.$store.dispatch('products/remove', product)
-      const offer = this.$store.getters['offers/getForProduct'](product.id)
-      this.$store.dispatch('offers/remove', offer[0])
     }
   }
 }

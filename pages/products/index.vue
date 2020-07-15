@@ -8,9 +8,10 @@
       )
       fv-product-modal(
         :show="showModal"
-        :product='selected'
+        :product='product'
         @modal:close="close"
         @modal:save="save"
+        @product:changed="productChanged"
       )
     fv-product-list(@list:selected="selectedProduct")
 </template>
@@ -19,25 +20,28 @@
 export default {
   data() {
     return {
-      selected: {},
+      product: {},
       showModal: false
     }
   },
   methods: {
     close() {
-      this.selected = {}
+      this.product = {}
       this.showModal = false
     },
-    save(product) {
+    save() {
       this.$nuxt.$loading.start()
       this.showModal = false
-      this.$activeAccount.addProduct(product)
-      this.selected = {}
+      this.$activeAccount.addProduct(this.product)
+      this.product = {}
       this.$nuxt.$loading.finish()
     },
     selectedProduct(e) {
-      this.selected = JSON.parse(JSON.stringify(e))
+      this.product = JSON.parse(JSON.stringify(e))
       this.showModal = true
+    },
+    productChanged(product) {
+      this.product = product
     }
   }
 }

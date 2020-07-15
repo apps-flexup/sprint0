@@ -14,7 +14,10 @@
     template(
       slot='form'
     )
-      fv-product-form(:values="product")
+      fv-product-form(
+        :product="product"
+        @product:changed="productChanged"
+      )
     template(
       slot='actions'
     )
@@ -55,7 +58,10 @@ export default {
       this.$emit('modal:close')
     },
     save() {
-      this.$emit('modal:save', this.product)
+      this.$emit('modal:save')
+    },
+    productChanged(product) {
+      this.$emit('product:changed', product)
     }
   }
 }
