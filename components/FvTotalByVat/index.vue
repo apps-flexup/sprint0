@@ -1,13 +1,11 @@
 <template lang="pug">
   .fv-total-by-vat
-    v-row
-      v-col(cols="6")
-        pre ici les totaux
-        v-row(
-          v-for="(v, k) in totals" :key="k"
-        )
-          v-col(cols="6")
-            pre Key: {{ k }}, Value: {{ v }}
+    pre ici les totaux
+    v-row(
+      v-for="(v, k) in totals" :key="k"
+    )
+      v-col(cols="12")
+        pre Key: {{ k }}, Value: {{ v }}
 </template>
 
 <script>

@@ -28,9 +28,11 @@
       :orderLines="orderLines"
       @orderLines:delete="deleteOrderLine"
     )
-    fv-total-by-vat(
-      :orderLines="orderLines"
-    )
+    v-row
+      v-col(cols="12")
+        fv-total-by-vat.text-right(
+          :orderLines="orderLines"
+        )
 </template>
 
 <script>
