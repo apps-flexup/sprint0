@@ -90,8 +90,9 @@ export default {
       })
     },
     deleteOrderLine(orderLine) {
-      console.log('Delete order line here: ', orderLine)
-      this.orderLines.filter((v) => v)
+      this.orderLines = this.orderLines.filter(
+        (v) => v.offer_id !== orderLine.offer_id
+      )
     }
   }
 }
