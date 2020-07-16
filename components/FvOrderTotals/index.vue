@@ -7,14 +7,17 @@
           div {{ $t('forms.orders.new.totals.withoutVat') }}
         v-col(cols="6")
           div.text-right(v-to-preferred-currency="totalWithoutVat")
-      v-list-item(
+      v-divider
+      div(
         v-for="(v, k) in totalsByVat" :key="k"
       )
-        v-col(cols="6")
-          div.left {{ $t('forms.orders.new.totals.vat')}} {{ k }}% {{ $t('forms.orders.new.totals.of') }}
-          div.right(v-to-preferred-currency="v.total")
-        v-col(cols="6")
-          div.text-right(v-to-preferred-currency="v.vatTotal")
+        v-list-item
+          v-col(cols="6")
+            div.left {{ $t('forms.orders.new.totals.vat')}} {{ k }}% {{ $t('forms.orders.new.totals.of') }}
+            div.right(v-to-preferred-currency="v.total")
+          v-col(cols="6")
+            div.text-right(v-to-preferred-currency="v.vatTotal")
+        v-divider
       v-list-item
         v-col(cols="6")
           div {{ $t('forms.orders.new.totals.total') }}
