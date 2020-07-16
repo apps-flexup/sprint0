@@ -127,7 +127,13 @@
           "partner": "Partner",
           "offer": "Offer",
           "structure": "Structure",
-          "product": "Product"
+          "product": "Product",
+          "totals": {
+            "withoutVat": "Subtotal without VAT",
+            "total": "Total",
+            "vat": "VAT",
+            "of": "of"
+          }
         }
       }
     }

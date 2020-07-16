@@ -29,13 +29,16 @@
       @orderLines:delete="deleteOrderLine"
     )
     v-row
-      v-col(cols="12")
-        fv-total-by-vat.text-right(
+      v-spacer
+      v-col(cols="5")
+        fv-order-totals(
           :orderLines="orderLines"
         )
 </template>
 
 <script>
+import { convertToPreferredCurrency } from '~/plugins/utils'
+
 export default {
   name: 'FvOrderForPartner',
   data() {
@@ -70,6 +73,10 @@ export default {
       this.$repos.offers.show(offerId).then((res) => {
         // TODO On ne push pas une ligne d'ordre, on doit traduire dans le format adequate
         const offer = JSON.parse(JSON.stringify(res))
+        const priceConverted = convertToPreferredCurrency(
+          offer.price,
+          offer.currency
+        )
         const payload = {
           offer_id: offer.id,
           offer: offer.name || 'absence de description',
@@ -79,12 +86,12 @@ export default {
           vat: offer.vat,
           dimension: offer.dimension,
           unit: offer.unit,
-          currency: offer.currency,
+          currency: priceConverted.currency,
           amount() {
             const res = parseFloat(this.quantity) * parseFloat(this.price)
             return res
           },
-          price: offer.price
+          price: priceConverted.price
         }
         this.orderLines.push(payload)
       })

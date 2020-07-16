@@ -129,7 +129,13 @@
         "partner": "Partnaire",
         "offer": "Offre",
         "structure": "Structure",
-        "product": "Produit"
+        "product": "Produit",
+        "totals": {
+          "withoutVat": "Total hors taxes",
+          "total": "Total",
+          "vat": "TVA",
+          "of": "de"
+        }
       }
     }
   },

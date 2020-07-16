@@ -51,7 +51,20 @@ Vue.directive('to-currency', (el, binding, vnode) => {
   const valueToDisplay = new Intl.NumberFormat(locale, options).format(
     valeur.amount
   )
-  const res = `${valueToDisplay} ${valeur}`
+  const res = `${valueToDisplay}`
+  el.innerHTML = res
+})
+
+Vue.directive('to-preferred-currency', (el, binding, vnode) => {
+  const locale = vnode.context.$i18n.locale
+  const valeur = binding.value
+  // TODO: Get preferred currency
+  const options = {
+    style: 'currency',
+    currency: 'EUR'
+  }
+  const valueToDisplay = new Intl.NumberFormat(locale, options).format(valeur)
+  const res = `${valueToDisplay}`
   el.innerHTML = res
 })
 
