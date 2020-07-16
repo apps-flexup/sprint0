@@ -37,8 +37,6 @@
 </template>
 
 <script>
-import { convertToPreferredCurrency } from '~/plugins/utils'
-
 export default {
   name: 'FvOrderForPartner',
   data() {
@@ -73,10 +71,6 @@ export default {
       this.$repos.offers.show(offerId).then((res) => {
         // TODO On ne push pas une ligne d'ordre, on doit traduire dans le format adequate
         const offer = JSON.parse(JSON.stringify(res))
-        const priceConverted = convertToPreferredCurrency(
-          offer.price,
-          offer.currency
-        )
         const payload = {
           offer_id: offer.id,
           offer: offer.name || 'absence de description',
@@ -86,12 +80,12 @@ export default {
           vat: offer.vat,
           dimension: offer.dimension,
           unit: offer.unit,
-          currency: priceConverted.currency,
+          currency: offer.currency,
           amount() {
             const res = parseFloat(this.quantity) * parseFloat(this.price)
             return res
           },
-          price: priceConverted.price
+          price: offer.price
         }
         this.orderLines.push(payload)
       })

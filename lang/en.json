@@ -188,7 +188,8 @@
       "endDate": "End date",
       "quantity": "Quantity",
       "price": "Price",
-      "vat": "VAT"
+      "vat": "VAT",
+      "total": "Total"
     },
     "offers": {
       "name": "Name of the offer",

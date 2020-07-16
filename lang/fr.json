@@ -190,7 +190,8 @@
       "endDate": "Date de fin",
       "quantity": "Quantité",
       "price": "Prix",
-      "vat": "TVA"
+      "vat": "TVA",
+      "total": "Total"
     },
     "offers": {
       "name": "Nom de l'offre",

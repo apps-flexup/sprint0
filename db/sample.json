@@ -13956,6 +13956,12 @@
     {
       "align": "end",
       "sortable": true,
+      "text": "headers.orders.total",
+      "value": "total"
+    },
+    {
+      "align": "end",
+      "sortable": true,
       "text": "headers.orders.vat",
       "value": "vat"
     },

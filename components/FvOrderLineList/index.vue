@@ -29,6 +29,8 @@
                 )
                   v-icon mdi-plus
           template(v-slot:item.price="{ item }")
+            div(v-to-preferred-currency="item.price")
+          template(v-slot:item.total="{ item }")
             div(v-to-currency-quantity="item")
           template(v-slot:item.vat='{ item }')
             v-text-field(
