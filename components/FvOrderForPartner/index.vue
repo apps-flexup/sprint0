@@ -1,52 +1,87 @@
 <template lang="pug">
   .fv-order-for-partner
     p {{ $options.name }}
-    v-row
-      v-col(cols="6")
-        fv-partner-autocomplete(
-          v-model="partnerId"
-          @partner:selected='partnerSelected'
+    v-card.mainCard
+      v-row
+        v-spacer
+        v-btn(
+          icon
+          @click.prevent="remove"
+          x-large
         )
-      v-col(cols="6")
-        fv-partner-card(
-          v-if="partnerId"
-          :partnerId="partnerId"
-        )
-    v-row
-      v-col(cols="8")
-        fv-offer-autocomplete(
-          :disabled="!partnerId"
-          :partnerId="partnerId"
-          @offers:selected="offerSelected"
-        )
-      v-col(cols="4")
-        pre ajouter structure
-        fv-structure-autocomplete(
-          @structures:selected="structureSelected"
-        )
-    fv-order-line-list(
-      :orderLines="orderLines"
-      @orderLines:delete="deleteOrderLine"
-    )
-    v-row
-      v-spacer
-      v-col(cols="5")
-        fv-order-totals(
-          :orderLines="orderLines"
-        )
+          v-icon mdi-close
+      v-row
+        v-col(cols="6")
+          fv-partner-autocomplete(
+            :partnerId="partnerId"
+            @partner:selected='partnerSelected'
+          )
+        v-col(cols="6")
+          fv-partner-card(
+            v-if="partnerId"
+            :partnerId="partnerId"
+          )
+      v-row
+        v-col(cols="8")
+          fv-offer-autocomplete(
+            :disabled="!partnerId"
+            :partnerId="partnerId"
+            @offers:selected="offerSelected"
+          )
+        v-col(cols="4")
+          pre ajouter structure
+          fv-structure-autocomplete(
+            @structures:selected="structureSelected"
+          )
+      fv-order-line-list(
+        :orderLines="orderLines"
+        @orderLines:delete="deleteOrderLine"
+      )
+      v-row
+        v-spacer
+        v-col(cols="5")
+          fv-order-totals(
+            :orderLines="orderLines"
+          )
 </template>
 
 <script>
 export default {
   name: 'FvOrderForPartner',
+  props: {
+    i: {
+      type: Number,
+      default() {
+        return null
+      }
+    },
+    order: {
+      type: Object,
+      default() {
+        return {}
+      }
+    }
+  },
   data() {
     return {
-      orderLines: [],
-      partnerId: null
+      localOrder: {},
+      partnerId: null,
+      orderLines: []
+    }
+  },
+  watch: {
+    order() {
+      console.log('Order changed: ', this.order)
+      if (Object.entries(this.order).length === 0) {
+        this.clearOrder()
+      } else {
+        this.fillFieldsWithOrder()
+      }
     }
   },
   mounted() {
     console.log('Composant ', this.$options.name)
+    this.fillFieldsWithOrder()
   },
   methods: {
     newPartner() {
@@ -64,6 +99,7 @@ export default {
         this.partnerId = partnerId
         this.orderLines = []
       }
+      this.$emit('order:partnerSelected', this.i, this.partnerId)
     },
     offerSelected(offerId) {
       console.log('offer selected: ', offerId)
@@ -88,13 +124,34 @@ export default {
           price: offer.price
         }
         this.orderLines.push(payload)
+        this.$emit('order:orderLinesChanged', this.i, this.orderLines)
       })
     },
     deleteOrderLine(orderLine) {
       this.orderLines = this.orderLines.filter(
         (v) => v.offer_id !== orderLine.offer_id
       )
+      this.$emit('order:orderLinesChanged', this.i, this.orderLines)
+    },
+    remove() {
+      this.$emit('order:remove', this.i)
+    },
+    fillFieldsWithOrder() {
+      if (!this.order) return
+      this.partnerId = this.order.partnerId
+      this.orderLines = this.order.orderLines
+      this.localOrder = this.order
+    },
+    clearOrder() {
+      this.partnerId = null
+      this.orderLines = []
+      this.localOrder = {}
     }
   }
 }
 </script>
+<style lang="scss" scoped>
+.mainCard {
+  padding: 10px;
+}
+</style>
