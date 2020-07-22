@@ -16,7 +16,7 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style scoped>
 .fv-currency-input {
   background-color: inherit;
 }

@@ -27,9 +27,14 @@
 </template>
 
 <script>
+import { VAutocomplete } from 'vuetify/lib'
+
 export default {
   name: 'FvAutocomplete',
   inheritAttrs: true,
+  components: {
+    VAutocomplete
+  },
   props: {
     element: {
       type: Number,

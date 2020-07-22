@@ -4,19 +4,17 @@
       x-large
       color="#FCB71C"
       @click.prevent="click"
-    ) {{ this.text }}
+    )
+      slot
 </template>
 
 <script>
+import { VBtn } from 'vuetify/lib'
+
 export default {
   name: 'FvCreateButton',
-  props: {
-    text: {
-      type: String,
-      default() {
-        return 'Beautiful button'
-      }
-    }
+  components: {
+    VBtn
   },
   methods: {
     click() {
@@ -25,7 +23,7 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style scoped>
 .fv-create-button {
   background-color: inherit;
 }
