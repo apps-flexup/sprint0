@@ -9,7 +9,6 @@ import { withA11y } from "@storybook/addon-a11y";
 
 // -- in the event that you are using vuex, this line adds it as a dependency to vue
 Vue.use(Vuex)
-Vue.use(Vuetify)
 // -- removes all productionTip logs from the console when running storybook
 Vue.config.productionTip = false
 // -- overrides nuxt-link native functionality in order to avoid navigating to an actual page
@@ -36,23 +35,10 @@ addDecorator(withInfo)
 // -- adds the knob tab to your story, this allows you to play around with your component
 addDecorator(withKnobs)
 
-// -- adds vuetify
-addDecorator(() => ({
-  vuetify: new Vuetify(),
-  components: { VApp },
-  template: `
-    <v-app>
-      <div>
-          <story/>
-      </div>
-    </v-app>
-  `,
-}))
-
 addDecorator(withA11y);
 
 // -- tells storybook where to look for stories
 configure(function () {
-  const req = require.context('../components', true, /\.stories\.js$/)
+  const req = require.context('../components/FvCreateButton', true, /\.stories\.js$/)
   req.keys().forEach(filename => req(filename))
 }, module)

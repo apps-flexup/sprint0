@@ -23,8 +23,3 @@ export default {
   }
 }
 </script>
-<style scoped>
-.fv-create-button {
-  background-color: inherit;
-}
-</style>

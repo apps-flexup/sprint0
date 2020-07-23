@@ -25,6 +25,7 @@
     }
   },
   "dependencies": {
+    "@babel/runtime-corejs3": "^7.10.5",
     "@nuxt/typescript-runtime": "^0.4.0",
     "@nuxtjs/auth": "^4.9.1",
     "@nuxtjs/axios": "^5.3.6",
@@ -39,6 +40,7 @@
     "@storybook/addon-viewport": "^5.3.19",
     "@storybook/vue": "^5.3.19",
     "babel-preset-vue": "^2.0.2",
+    "core-js": "^3.6.5",
     "css-loader": "^3.6.0",
     "dotenv": "^8.2.0",
     "luxon": "^1.24.1",
