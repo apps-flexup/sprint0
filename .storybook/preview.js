@@ -7,7 +7,7 @@ import { action } from '@storybook/addon-actions'
 import { withA11y } from "@storybook/addon-a11y";
 
 import Vuetify from 'vuetify'
-import { VApp, VContainer, VBtn } from 'vuetify/lib'
+import { VApp, VContainer, VBtn, VAutocomplete } from 'vuetify/lib'
 import colors from 'vuetify/es5/util/colors'
 import 'vuetify/dist/vuetify.css';
 
@@ -30,7 +30,8 @@ const vuetifyOptions = {
   components: {
     VApp,
     VContainer,
-    VBtn
+    VBtn,
+    VAutocomplete
   }
 }
 
@@ -78,6 +79,6 @@ addDecorator(withA11y);
 
 // -- tells storybook where to look for stories
 configure(function () {
-  const req = require.context('../components/FvCreateButton', true, /\.stories\.js$/)
+  const req = require.context('../components/', true, /\.stories\.js$/)
   req.keys().forEach(filename => req(filename))
 }, module)
