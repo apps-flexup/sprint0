@@ -12,12 +12,24 @@ storiesOf('Atoms|FvAutocomplete', module)
           default: text('Label', 'Autocomplete', 'Slots')
         },
         items: {
-          default: array('Items', ['item1', 'item2'])
+          default: array('Items', ['item1', 'item2'], ',', 'Props')
         }
       },
       components: { FvAutocomplete },
-      template: `<FvAutocomplete>
-        {{ label }}
+      methods: {
+        filter(item, queryText, _itemText) {
+          return item.includes(queryText)
+        },
+        selected(_v) {}
+      },
+      template: `<FvAutocomplete
+        :items="items"
+        :filter="filter"
+        @autocomplete:selected="selected"
+      >
+        <template v-slot:label>
+          {{ label }}
+        </template>
       </FvAutocomplete>`
     }),
     {

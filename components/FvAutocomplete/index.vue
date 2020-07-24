@@ -17,11 +17,13 @@
           name="item"
           v-bind:item="data.item"
         )
+          v-list-item-content(v-text="data.item")
       template(v-slot:selection="data")
         slot(
           name="selection"
           v-bind:item="data.item"
         )
+          v-list-item-content(v-text="data.item")
       template(v-slot:append-item)
         slot(name="append-item")
 </template>
