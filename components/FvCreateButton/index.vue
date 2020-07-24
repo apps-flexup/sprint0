@@ -9,13 +9,13 @@
 </template>
 
 <script>
-import { VBtn } from 'vuetify/lib'
+// import { VBtn } from 'vuetify/lib'
 
 export default {
   name: 'FvCreateButton',
-  components: {
-    VBtn
-  },
+  // components: {
+  //   VBtn
+  // },
   methods: {
     click() {
       this.$emit('button:click')

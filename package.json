@@ -13,7 +13,8 @@
     "start": "nuxt-ts start",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "test": "jest",
-    "storybook": "start-storybook"
+    "storybook": "start-storybook",
+    "storybook-build": "storybook:build"
   },
   "lint-staged": {
     "*.{js,vue}": "yarn lint",
@@ -55,7 +56,8 @@
     "style-loader": "^1.2.1",
     "stylus-loader": "^3.0.2",
     "vue-loader": "^15.9.3",
-    "vue-style-loader": "^4.1.2"
+    "vue-style-loader": "^4.1.2",
+    "vuetify": "2.3.4"
   },
   "devDependencies": {
     "@nuxt/typescript-build": "^0.6.0",
