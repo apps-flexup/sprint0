@@ -41,9 +41,9 @@ addDecorator(() => ({
   vuetify: new Vuetify(vuetifyOptions),
   template: `
   <v-app>
-    <v-content>
+    <v-main>
       <story/>
-    </v-content>
+    </v-main>
   </v-app>`
 }))
 
