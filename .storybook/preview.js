@@ -11,6 +11,8 @@ import { VApp, VContainer, VBtn, VAutocomplete } from 'vuetify/lib'
 import colors from 'vuetify/es5/util/colors'
 import 'vuetify/dist/vuetify.css';
 
+import VueI18n from 'vue-i18n'
+
 const vuetifyOptions = {
   theme: {
     customVariables: ['~/assets/variables.scss'],
@@ -37,8 +39,20 @@ const vuetifyOptions = {
 
 Vue.use(Vuetify)
 
+Vue.use(VueI18n)
+
+const i18n = new VueI18n({
+  locale: 'fr',
+  fallbackLocale: 'en',
+  messages: {
+    fr: require('@/lang/fr.json'),
+    en: require('@/lang/en.json')
+  }
+})
+
 addDecorator(() => ({
   vuetify: new Vuetify(vuetifyOptions),
+  i18n,
   template: `
   <v-app>
     <v-main>

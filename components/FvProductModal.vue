@@ -22,11 +22,9 @@
       slot='actions'
     )
       v-spacer
-      v-btn(
-        color='blue darken-1'
-        text=''
-        @click.stop='close'
-      ) {{ $t('modal.close') }}
+      fv-close-modal-button(
+        @button:close="close"
+      )
       v-btn(
         color='blue darken-1'
         text=''
