@@ -25,11 +25,9 @@
       fv-close-modal-button(
         @button:close="close"
       )
-      v-btn(
-        color='blue darken-1'
-        text=''
-        @click.stop='save'
-      ) {{ $t('modal.save') }}
+      fv-save-modal-button(
+        @button:save="save"
+      )
 </template>
 
 <script>

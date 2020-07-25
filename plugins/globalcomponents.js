@@ -68,6 +68,7 @@ import FvCountryAutocomplete from '@/components/FvCountryAutocomplete'
 import FvOfferAutocomplete from '@/components/FvOfferAutocomplete'
 import FvFormeJuridiqueAutocomplete from '@/components/FvFormeJuridiqueAutocomplete'
 import FvProductItem from '@/components/FvProductItem'
+import FvSaveModalButton from '@/components/FvSaveModalButton'
 import FvStatusProgressAtom from '@/components/FvStatusProgressAtom'
 import FvFrequence from '@/components/FvFrequence'
 import FvPartnerItem from '@/components/FvPartnerItem'
@@ -159,6 +160,7 @@ Vue.component('fv-offer-autocomplete', FvOfferAutocomplete)
 Vue.component('fv-unit-autocomplete', FvUnitAutocomplete)
 Vue.component('fv-forme-juridique-autocomplete', FvFormeJuridiqueAutocomplete)
 Vue.component('fv-product-item', FvProductItem)
+Vue.component('fv-save-modal-button', FvSaveModalButton)
 Vue.component('fv-status-progress-atom', FvStatusProgressAtom)
 Vue.component('fv-frequence', FvFrequence)
 Vue.component('fv-partner-item', FvPartnerItem)
