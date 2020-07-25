@@ -1,9 +1,8 @@
 <template lang="pug">
   .fv-modal-and-button
       fv-create-button(
-        :text="buttonText"
         @click.stop="dialog = true"
-      )
+      ) {{ buttonText }}
       fv-modal(
         :dialog="dialog"
         :title="title"

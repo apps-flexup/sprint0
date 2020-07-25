@@ -3,9 +3,8 @@
     v-row
       v-col(cols="12")
         fv-create-button.text-right(
-        :text="$t('buttons.create.product')"
         @button:click='showModal = true'
-      )
+      ) {{ $t('buttons.create.product') }}
       fv-product-modal(
         :show="showModal"
         :product='product'

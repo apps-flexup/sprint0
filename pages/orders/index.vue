@@ -3,9 +3,8 @@
     v-row
       v-col(cols="12")
         fv-create-button.text-right(
-          :text="$t('buttons.create.order')"
           @button:click='createOrder'
-        )
+        ) {{ $t('buttons.create.order') }}
     fv-order-list
 </template>
 

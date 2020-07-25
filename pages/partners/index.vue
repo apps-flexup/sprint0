@@ -3,9 +3,8 @@
     v-row(align="center")
       v-spacer
       fv-create-button(
-        :text="$t('buttons.create.partner')"
         @button:click='showModal = true'
-      )
+      ) {{ $t('buttons.create.partner') }}
       fv-partner-modal(
         :show="showModal"
         :partner='selected'
