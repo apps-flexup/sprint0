@@ -9,7 +9,7 @@ export default {
   name: 'FvContractSummaryStepOffer'
 }
 </script>
-<style lang="scss" scoped>
+<style scoped>
 .fv-contract-summary-step3 {
   background-color: inherit;
 }

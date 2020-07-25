@@ -59,7 +59,7 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style scoped>
 .fv-modal-and-button {
   background-color: inherit;
 }

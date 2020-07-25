@@ -32,6 +32,7 @@ import FvContractSummaryStepPaiement from '@/components/FvContractSummaryStepPai
 import FvContractSummaryStepStructure from '@/components/FvContractSummaryStepStructure'
 import FvCreateButton from '@/components/FvCreateButton'
 import FvModal from '@/components/FvModal'
+import FvModalActions from '@/components/FvModalActions'
 import FvModalAndButton from '@/components/FvModalAndButton'
 import FvNav from '@/components/FvNav'
 import FvNewPartnerForm from '@/components/FvNewPartnerForm'
@@ -120,6 +121,7 @@ Vue.component(
 )
 Vue.component('fv-create-button', FvCreateButton)
 Vue.component('fv-modal', FvModal)
+Vue.component('fv-modal-actions', FvModalActions)
 Vue.component('fv-modal-and-button', FvModalAndButton)
 Vue.component('fv-nav', FvNav)
 Vue.component('fv-new-partner-form', FvNewPartnerForm)

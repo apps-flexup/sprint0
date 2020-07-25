@@ -42,7 +42,7 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style scoped>
 .fv-contract-step5 {
   background-color: inherit;
 }

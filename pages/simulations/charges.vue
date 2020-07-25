@@ -19,7 +19,7 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style scoped>
 .page-charges {
   background-color: inherit;
 }

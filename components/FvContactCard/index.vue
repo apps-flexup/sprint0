@@ -41,19 +41,10 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style scoped>
 .fv-contact-card {
   background-color: inherit;
 }
-// .communication {
-//   content: "";
-//   display: block;
-//   background: url("icon.jpg") no-repeat;
-//   width: 20px;
-//   height: 20px;
-//   float: left;
-//   margin: 0 6px 0 0;
-// }
 .phone:before {
   content: 'Telephone';
 }

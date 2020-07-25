@@ -80,7 +80,7 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style scoped>
 .fv-field-date {
   background-color: inherit;
 }

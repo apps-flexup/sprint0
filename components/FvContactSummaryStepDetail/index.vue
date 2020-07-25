@@ -8,7 +8,7 @@ export default {
   name: 'FvContactSummaryStepDetail'
 }
 </script>
-<style lang="scss" scoped>
+<style scoped>
 .fv-contact-summary-step1 {
   background-color: inherit;
 }

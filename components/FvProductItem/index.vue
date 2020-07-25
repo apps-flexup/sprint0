@@ -24,7 +24,7 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style scoped>
 .fv-product-item {
   background-color: inherit;
 }

@@ -50,7 +50,7 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style scoped>
 .fv-stepper {
   background-color: inherit;
   .active {

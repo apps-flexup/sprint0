@@ -11,7 +11,7 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style scoped>
 .fv-user-info {
   background-color: inherit;
 }

@@ -22,11 +22,9 @@
       slot='actions'
     )
       v-spacer
-      fv-close-modal-button(
-        @button:close="close"
-      )
-      fv-save-modal-button(
-        @button:save="save"
+      fv-modal-actions(
+        @modal:actions:close="close"
+        @modal:actions:save="save"
       )
 </template>
 

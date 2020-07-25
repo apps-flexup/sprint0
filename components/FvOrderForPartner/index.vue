@@ -150,7 +150,7 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style scoped>
 .mainCard {
   padding: 10px;
 }

@@ -5,13 +5,12 @@ import { withKnobs } from '@storybook/addon-knobs'
 import { withInfo } from 'storybook-addon-vue-info'
 import { action } from '@storybook/addon-actions'
 import { withA11y } from "@storybook/addon-a11y";
-
 import Vuetify from 'vuetify'
 import { VApp, VContainer, VBtn, VAutocomplete } from 'vuetify/lib'
 import colors from 'vuetify/es5/util/colors'
 import 'vuetify/dist/vuetify.css';
-
 import VueI18n from 'vue-i18n'
+import '~/plugins/globalcomponents'
 
 const vuetifyOptions = {
   theme: {

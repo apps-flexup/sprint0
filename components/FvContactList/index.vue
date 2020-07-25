@@ -43,7 +43,7 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style scoped>
 .fv-contact-list {
   .name {
     font-weight: bold;

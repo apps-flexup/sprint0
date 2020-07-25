@@ -10,7 +10,7 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style scoped>
 .contacts-index {
   background-color: inherit;
 }

@@ -23,9 +23,8 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style>
 .team-list {
   max-width: 900px;
-  // height: 500px;
 }
 </style>

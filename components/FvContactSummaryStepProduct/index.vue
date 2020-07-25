@@ -42,7 +42,7 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style scoped>
 .fv-contact-stepProduct {
   background-color: inherit;
 }

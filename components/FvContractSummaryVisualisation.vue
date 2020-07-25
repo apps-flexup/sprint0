@@ -15,7 +15,7 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style scoped>
 .fv-contract-summary-visualisation {
   background-color: inherit;
 }

@@ -81,7 +81,7 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style scoped>
 .fv-nav {
   background-color: inherit;
 }

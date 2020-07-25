@@ -61,7 +61,7 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style scoped>
 .fv-frequence {
   background-color: inherit;
 }

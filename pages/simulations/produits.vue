@@ -18,7 +18,7 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style scoped>
 .page-produits {
   background-color: inherit;
 }

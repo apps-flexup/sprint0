@@ -21,7 +21,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .orders {
   background-color: inherit;
 }

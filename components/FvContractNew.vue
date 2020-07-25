@@ -71,7 +71,7 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style scoped>
 .fv-contract-new {
   background-color: inherit;
 }
