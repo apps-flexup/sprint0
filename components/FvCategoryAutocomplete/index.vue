@@ -42,6 +42,7 @@ export default {
     }
   },
   mounted() {
+    this.$store.dispatch('categories/get')
     console.log('Composant ', this.$options.name)
   },
   methods: {

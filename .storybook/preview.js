@@ -1,5 +1,4 @@
 import Vue from 'vue'
-import Vuex from 'vuex'
 import { configure, addDecorator, addParameters } from '@storybook/vue'
 import { withKnobs } from '@storybook/addon-knobs'
 import { withInfo } from 'storybook-addon-vue-info'
@@ -11,6 +10,7 @@ import colors from 'vuetify/es5/util/colors'
 import 'vuetify/dist/vuetify.css';
 import VueI18n from 'vue-i18n'
 import '~/plugins/globalcomponents'
+import '~/plugins/directives'
 
 const vuetifyOptions = {
   theme: {
@@ -60,8 +60,6 @@ addDecorator(() => ({
   </v-app>`
 }))
 
-// -- in the event that you are using vuex, this line adds it as a dependency to vue
-Vue.use(Vuex)
 // -- removes all productionTip logs from the console when running storybook
 Vue.config.productionTip = false
 // -- overrides nuxt-link native functionality in order to avoid navigating to an actual page
