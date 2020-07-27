@@ -27,6 +27,7 @@ export default {
     }
   },
   mounted() {
+    this.$store.dispatch('countries/get')
     console.log('Composant ', this.$options.name)
   },
   methods: {
