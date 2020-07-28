@@ -35,7 +35,6 @@ export default {
       this.$emit('legalstructure:selected', v)
     },
     filter(item, v, it) {
-      console.log('ok 1')
       return filterFormeJuridiqueAutocomplete(item, v, it)
     }
   }

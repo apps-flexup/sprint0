@@ -23,7 +23,6 @@ export default {
   },
   legalStructures(state) {
     const res = JSON.parse(JSON.stringify(state.legalStructures))
-    console.log('Get legal structures: ', res)
     return res
   },
   getLegalStructureById: (state) => (legalStructureId) => {
