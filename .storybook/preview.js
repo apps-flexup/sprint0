@@ -11,6 +11,8 @@ import 'vuetify/dist/vuetify.css';
 import VueI18n from 'vue-i18n'
 import '~/plugins/globalcomponents'
 import '~/plugins/directives'
+import activeAccount from '~/.storybook/activeAccount'
+import store from '~/.storybook/store'
 
 const vuetifyOptions = {
   theme: {
@@ -78,7 +80,7 @@ addParameters({
   options: {
     theme,
     sortStoriesByKind: true,
-  },
+  }
 });
 
 // -- adds the info tab to your story
@@ -87,6 +89,9 @@ addDecorator(withInfo)
 addDecorator(withKnobs)
 
 addDecorator(withA11y);
+
+Vue.prototype.$store = store
+Vue.prototype.$activeAccount = activeAccount
 
 // -- tells storybook where to look for stories
 configure(function () {

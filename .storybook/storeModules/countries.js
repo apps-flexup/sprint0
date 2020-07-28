@@ -1,8 +1,8 @@
-import getters from '@/store/categories/getters'
-import mutations from '@/store/categories/mutations'
-import state from '@/store/categories/state'
+import getters from '@/store/countries/getters'
+import mutations from '@/store/countries/mutations'
+import state from '@/store/countries/state'
 
-const moduleCategories = {
+const moduleCountries = {
   namespaced: true,
   actions: {
     get({ commit }) {
@@ -485,4 +485,4 @@ const moduleCategories = {
   mutations: mutations,
   state: state
 }
-export default moduleCategories
+export default moduleCountries

@@ -39,6 +39,7 @@ export default {
     },
     currencyId: {
       get() {
+        console.log('Find by iso: ', this.currency)
         const currency = this.$store.getters['currencies/findIso'](
           this.currency
         )
@@ -50,6 +51,7 @@ export default {
     }
   },
   mounted() {
+    this.$store.dispatch('currencies/get')
     console.log('Composant ', this.$options.name)
   },
   methods: {
