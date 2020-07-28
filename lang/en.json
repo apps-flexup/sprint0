@@ -88,7 +88,7 @@
         "title": "New partner",
         "subtitle": "Specify your partner's information",
         "name": "Partner name",
-        "juridicalStatus": "Juridical status",
+        "legalStructure": "Legal structure",
         "siret": "SIRET",
         "address":"Address",
         "complement": "Complement",

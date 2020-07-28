@@ -67,7 +67,7 @@ import FvCurrencyAutocomplete from '@/components/FvCurrencyAutocomplete'
 import FvUnitAutocomplete from '@/components/FvUnitAutocomplete'
 import FvCountryAutocomplete from '@/components/FvCountryAutocomplete'
 import FvOfferAutocomplete from '@/components/FvOfferAutocomplete'
-import FvFormeJuridiqueAutocomplete from '@/components/FvFormeJuridiqueAutocomplete'
+import FvLegalStructureAutocomplete from '~/components/FvLegalStructureAutocomplete'
 import FvProductItem from '@/components/FvProductItem'
 import FvSaveModalButton from '@/components/FvSaveModalButton'
 import FvStatusProgressAtom from '@/components/FvStatusProgressAtom'
@@ -160,7 +160,7 @@ Vue.component('fv-currency-autocomplete', FvCurrencyAutocomplete)
 Vue.component('fv-country-autocomplete', FvCountryAutocomplete)
 Vue.component('fv-offer-autocomplete', FvOfferAutocomplete)
 Vue.component('fv-unit-autocomplete', FvUnitAutocomplete)
-Vue.component('fv-forme-juridique-autocomplete', FvFormeJuridiqueAutocomplete)
+Vue.component('fv-legal-structure-autocomplete', FvLegalStructureAutocomplete)
 Vue.component('fv-product-item', FvProductItem)
 Vue.component('fv-save-modal-button', FvSaveModalButton)
 Vue.component('fv-status-progress-atom', FvStatusProgressAtom)

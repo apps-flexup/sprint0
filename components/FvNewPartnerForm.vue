@@ -38,7 +38,7 @@
         )
     v-row
       v-col.md-12.sm-12.lg-12.xl-12(cols='12')
-        fv-forme-juridique-autocomplete(
+        fv-legal-structure-autocomplete(
           v-model="values.legal_structure_id"
           :label="$t('forms.partners.new.legalStructure')"
           outlined=''

@@ -1,22 +1,22 @@
 import { storiesOf } from '@storybook/vue'
 import { withKnobs } from '@storybook/addon-knobs'
-import FvFormeJuridiqueAutocomplete from './index.vue'
+import FvLegalStructureAutocomplete from './index.vue'
 
-storiesOf('Atoms|FvFormeJuridiqueAutocomplete', module)
+storiesOf('Atoms|FvLegalStructureAutocomplete', module)
   .addDecorator(withKnobs)
   .add(
     'Common',
     () => ({
-      components: { FvFormeJuridiqueAutocomplete },
+      components: { FvLegalStructureAutocomplete },
       methods: {
         selected(_v) {}
       },
       template: `
       <div>
-        <FvFormeJuridiqueAutocomplete
+        <FvLegalStructureAutocomplete
           @legalstructure:selected="selected"
         >
-        </FvFormeJuridiqueAutocomplete>
+        </FvLegalStructureAutocomplete>
       </div>`
     }),
     {

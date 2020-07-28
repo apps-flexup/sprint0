@@ -1,12 +1,12 @@
 <template lang="pug">
-  .fv-formejuridique-autocomplete
+  .fv-legal-structure-autocomplete
     fv-autocomplete(
       :items="items"
       :filter="filter"
       @autocomplete:selected="selected"
     )
       template(v-slot:label)
-        p {{ $t('forms.partners.new.juridicalStatus') }}
+        p {{ $t('forms.partners.new.legalStructure') }}
       template(v-slot:item="data")
         v-list-item-content
           v-list-item-title {{ `${data.item.name} (${data.item.sigle})` }}
@@ -16,10 +16,10 @@
 </template>
 
 <script>
-import { filterFormeJuridiqueAutocomplete } from '~/plugins/utils'
+import { filterLegalStructureAutocomplete } from '~/plugins/utils'
 
 export default {
-  name: 'FvFormeJuridiqueAutocomplete',
+  name: 'FvLegalStructureAutocomplete',
   computed: {
     items() {
       const res = this.$store.getters['contracts/legalStructures']
@@ -35,7 +35,7 @@ export default {
       this.$emit('legalstructure:selected', v)
     },
     filter(item, v, it) {
-      return filterFormeJuridiqueAutocomplete(item, v, it)
+      return filterLegalStructureAutocomplete(item, v, it)
     }
   }
 }
