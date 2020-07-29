@@ -58,6 +58,7 @@ export default {
     }
   },
   mounted() {
+    this.$store.dispatch('units/get')
     console.log('Composant ', this.$options.name)
   },
   methods: {
