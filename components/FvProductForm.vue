@@ -8,11 +8,10 @@
         )
     v-row
       v-col(cols='6')
-        v-text-field(
-          v-model="name"
+        fv-text-field(
           :label="$t('forms.products.new.name')"
           outlined=''
-          @input="nameChanged"
+          @textField:changed="nameChanged"
         )
       v-col(cols='6')
         fv-unit-autocomplete(
@@ -64,9 +63,10 @@ export default {
       const res = Object.assign(this.localProduct, payload)
       this.$emit('product:changed', res)
     },
-    nameChanged() {
+    nameChanged(name) {
+      console.log('Name changed: ', name)
       const payload = {
-        name: this.name
+        name
       }
       const res = Object.assign(this.localProduct, payload)
       this.$emit('product:changed', res)

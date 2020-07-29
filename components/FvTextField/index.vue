@@ -31,14 +31,14 @@ export default {
       model: null
     }
   },
+  mounted() {
+    console.log('Composant', this.$options.name)
+  },
   methods: {
     inputChanged() {
       console.log('input changed: ', this.model)
       this.$emit('textField:changed', this.model)
     }
-  },
-  mounted() {
-    console.log('Composant', this.$options.name)
   }
 }
 </script>
