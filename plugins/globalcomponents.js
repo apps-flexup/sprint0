@@ -55,6 +55,7 @@ import FvModalSlot from '@/components/FvModalSlot'
 import FvPartnerModal from '@/components/FvPartnerModal'
 import FvProductModal from '@/components/FvProductModal'
 import FvSpeedDial from '@/components/FvSpeedDial'
+import FvTextField from '@/components/FvTextField'
 import FvUserInfo from '@/components/FvUserInfo'
 import FvOrderForm from '@/components/FvOrderForm'
 import FvOrderForPartner from '@/components/FvOrderForPartner'
@@ -148,6 +149,7 @@ Vue.component('fv-modal-slot', FvModalSlot)
 Vue.component('fv-partner-modal', FvPartnerModal)
 Vue.component('fv-product-modal', FvProductModal)
 Vue.component('fv-speed-dial', FvSpeedDial)
+Vue.component('fv-text-field', FvTextField)
 Vue.component('fv-user-info', FvUserInfo)
 Vue.component('fv-order-form', FvOrderForm)
 Vue.component('fv-order-for-partner', FvOrderForPartner)
