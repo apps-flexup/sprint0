@@ -25,6 +25,7 @@ export default {
     }
   },
   mounted() {
+    console.log('Dialog: ', this.dialog)
     console.log('Composant ', this.$options.name)
   }
 }
