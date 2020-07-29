@@ -14,6 +14,7 @@ import '~/plugins/directives'
 import activeAccount from '~/.storybook/activeAccount'
 import store from '~/.storybook/store'
 import axios from 'axios'
+import "@mdi/font/css/materialdesignicons.css";
 
 const vuetifyOptions = {
   theme: {

@@ -22,10 +22,9 @@
         template(v-slot:item.status='{ item }')
           fv-status-progress-atom(:status="item.status")
         template(v-slot:item.actions="{ item }")
-          v-icon.mr-2(small='' @click.stop="selected(item)")
-            | mdi-pencil
-          v-icon(small='' @click.stop="deleteItem(item)")
-            | mdi-delete
+          v-row
+            fv-edit-action(@edit:clicked="selected(item)")
+            fv-delete-action(@delete:clicked="deleteItem(item)")
 </template>
 
 <script>

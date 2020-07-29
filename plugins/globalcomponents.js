@@ -38,6 +38,8 @@ import FvNav from '@/components/FvNav'
 import FvNewPartnerForm from '@/components/FvNewPartnerForm'
 import FvProductForm from '@/components/FvProductForm'
 import FvStepper from '@/components/FvStepper'
+import FvDeleteAction from '@/components/FvDeleteAction'
+import FvEditAction from '@/components/FvEditAction'
 import FvEtape from '@/components/FvEtape'
 import FvFieldDate from '@/components/FvFieldDate'
 import FvUserAccounts from '@/components/FvUserAccounts'
@@ -128,6 +130,8 @@ Vue.component('fv-nav', FvNav)
 Vue.component('fv-new-partner-form', FvNewPartnerForm)
 Vue.component('fv-product-form', FvProductForm)
 Vue.component('fv-stepper', FvStepper)
+Vue.component('fv-delete-action', FvDeleteAction)
+Vue.component('fv-edit-action', FvEditAction)
 Vue.component('fv-etape', FvEtape)
 Vue.component('fv-field-date', FvFieldDate)
 Vue.component('fv-user-accounts', FvUserAccounts)
