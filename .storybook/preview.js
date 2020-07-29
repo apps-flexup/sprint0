@@ -13,6 +13,7 @@ import '~/plugins/globalcomponents'
 import '~/plugins/directives'
 import activeAccount from '~/.storybook/activeAccount'
 import store from '~/.storybook/store'
+import axios from 'axios'
 
 const vuetifyOptions = {
   theme: {
@@ -92,6 +93,7 @@ addDecorator(withA11y);
 
 Vue.prototype.$store = store
 Vue.prototype.$activeAccount = activeAccount
+Vue.prototype.$axios = axios
 
 // -- tells storybook where to look for stories
 configure(function () {

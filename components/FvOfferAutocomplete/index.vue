@@ -51,16 +51,15 @@ export default {
   },
   watch: {
     partnerId() {
-      const id = parseInt(this.partnerId)
-      const url = `${this.$axios.defaults.baseURL}/offers?account_id=${id}`
-      this.$axios.$get(url).then((res) => (this.items = res))
+      const res = this.$store.getters['offers/getForAccount'](this.partnerId)
+      this.items = res
     }
   },
   mounted() {
     console.log('Composant ', this.$options.name)
-    const id = parseInt(this.partnerId)
-    const url = `${this.$axios.defaults.baseURL}/offers?account_id=${id}`
-    this.$axios.$get(url).then((res) => (this.items = res))
+    this.$store.dispatch('offers/getAll')
+    const res = this.$store.getters['offers/getForAccount'](this.partnerId)
+    this.items = res
   },
   methods: {
     selected(v) {
