@@ -11,7 +11,7 @@
         fv-text-field(
           :label="$t('forms.products.new.name')"
           outlined=''
-          @textField:changed="nameChanged"
+          @input="nameChanged"
         )
       v-col(cols='6')
         fv-unit-autocomplete(

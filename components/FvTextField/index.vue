@@ -4,14 +4,14 @@
       v-model="model"
       :label="label"
       :outlined="outlined"
+      :append-outer-icon="appendOuterIcon"
       @input="inputChanged"
     )
 </template>
 
 <script>
 export default {
-  name: 'FvAutocomplete',
-  inheritAttrs: true,
+  name: 'FvTextField',
   props: {
     label: {
       type: String,
@@ -19,16 +19,28 @@ export default {
         return 'Default label'
       }
     },
+    appendOuterIcon: {
+      type: String,
+      default() {
+        return ''
+      }
+    },
     outlined: {
       type: Boolean,
       default() {
         return true
       }
+    },
+    value: {
+      type: String,
+      default() {
+        return ''
+      }
     }
   },
   data() {
     return {
-      model: null
+      model: this.value
     }
   },
   mounted() {
@@ -36,8 +48,7 @@ export default {
   },
   methods: {
     inputChanged() {
-      console.log('input changed: ', this.model)
-      this.$emit('textField:changed', this.model)
+      this.$emit('input', this.model)
     }
   }
 }

@@ -1,8 +1,8 @@
 import { storiesOf } from '@storybook/vue'
 import { text, withKnobs, boolean } from '@storybook/addon-knobs'
-import FvTextField from './index.vue'
+import FvDataTableSearchBar from './index.vue'
 
-storiesOf('Atoms|FvTextField', module)
+storiesOf('Atoms|FvDataTableSearchBar', module)
   .addDecorator(withKnobs)
   .add(
     'Common',
@@ -15,16 +15,15 @@ storiesOf('Atoms|FvTextField', module)
           default: boolean('Outlined', true, 'Props')
         }
       },
-      components: { FvTextField },
+      components: { FvDataTableSearchBar },
       methods: {
-        inputChanged(_v) {}
+        searchChanged(_v) {}
       },
-      template: `<FvTextField
+      template: `<FvDataTableSearchBar
         :label="label"
-        :outlined="outlined"
-        @input="inputChanged"
+        @dataTableSearchBar:changed="searchChanged"
       >
-      </FvTextField>`
+      </FvDataTableSearchBar>`
     }),
     {
       info: {}

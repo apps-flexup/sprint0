@@ -4,10 +4,9 @@
       v-card-title
         | {{ $t('table.products.title') }}
         v-spacer
-        v-text-field(
-          v-model="search"
+        fv-data-table-search-bar(
           :label="$t('table.products.search')"
-          append-outer-icon="mdi-magnify"
+          @dataTableSearchBar:changed="searchChanged"
         )
       v-data-table.elevation-2(
         :headers='headers'
@@ -58,6 +57,9 @@ export default {
     },
     deleteItem(product) {
       this.$store.dispatch('products/remove', product)
+    },
+    searchChanged(v) {
+      this.search = v
     },
     filterFunction(item, queryText, itemText) {
       return filterProductsDataTable(item, queryText, itemText)
