@@ -31,6 +31,7 @@ import FvContractSummaryStepOffer from '@/components/FvContractSummaryStepOffer'
 import FvContractSummaryStepPaiement from '@/components/FvContractSummaryStepPaiement'
 import FvContractSummaryStepStructure from '@/components/FvContractSummaryStepStructure'
 import FvCreateButton from '@/components/FvCreateButton'
+import FvDataTableHeader from '@/components/FvDataTableHeader'
 import FvDataTableSearchBar from '@/components/FvDataTableSearchBar'
 import FvModal from '@/components/FvModal'
 import FvModalActions from '@/components/FvModalActions'
@@ -124,6 +125,7 @@ Vue.component(
   FvContractSummaryStepPaiement
 )
 Vue.component('fv-create-button', FvCreateButton)
+Vue.component('fv-data-table-header', FvDataTableHeader)
 Vue.component('fv-data-table-search-bar', FvDataTableSearchBar)
 Vue.component('fv-modal', FvModal)
 Vue.component('fv-modal-actions', FvModalActions)

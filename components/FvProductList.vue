@@ -1,13 +1,11 @@
 <template lang="pug">
   .fv-product-list
     v-card
-      v-card-title
-        | {{ $t('table.products.title') }}
-        v-spacer
-        fv-data-table-search-bar(
-          :label="$t('table.products.search')"
-          @dataTableSearchBar:changed="searchChanged"
-        )
+      fv-data-table-header(
+        :title="$t('table.products.title')"
+        :searchLabel="$t('table.products.search')"
+        @dataTableSearch:changed="searchChanged"
+      )
       v-data-table.elevation-2(
         :headers='headers'
         :items='items'
