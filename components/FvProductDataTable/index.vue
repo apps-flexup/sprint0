@@ -47,6 +47,7 @@ export default {
     console.log('Composant ', this.$options.name)
     this.$store.dispatch('headers/getProductHeaders')
     this.$store.dispatch('products/get')
+    this.$store.dispatch('categories/get')
   },
   methods: {
     selected(product) {

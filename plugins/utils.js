@@ -6,7 +6,6 @@ String.prototype.filtreAutocomplete = function(filtre) {
 }
 
 export const translateHeaders = (i18n, items) => {
-  console.log('coucou')
   const res = items.map((item) => {
     const translated = i18n.t(item.text)
     return {
