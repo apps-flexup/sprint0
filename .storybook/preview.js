@@ -8,7 +8,7 @@ import Vuetify from 'vuetify'
 import { VApp, VContainer, VBtn, VAutocomplete, VTextField } from 'vuetify/lib'
 import colors from 'vuetify/es5/util/colors'
 import 'vuetify/dist/vuetify.css';
-import VueI18n from 'vue-i18n'
+import i18n from '~/.storybook/i18n'
 import '~/plugins/globalcomponents'
 import '~/plugins/directives'
 import activeAccount from '~/.storybook/activeAccount'
@@ -42,17 +42,6 @@ const vuetifyOptions = {
 }
 
 Vue.use(Vuetify)
-
-Vue.use(VueI18n)
-
-const i18n = new VueI18n({
-  locale: 'fr',
-  fallbackLocale: 'en',
-  messages: {
-    fr: require('@/lang/fr.json'),
-    en: require('@/lang/en.json')
-  }
-})
 
 addDecorator(() => ({
   vuetify: new Vuetify(vuetifyOptions),

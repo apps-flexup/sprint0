@@ -98,15 +98,15 @@ const activeAccount = {
   //   })
   //   return res
   // },
-  // products() {
-  //   const res = ctx.store.getters['products/all']
-  //   return res
-  // },
-  // headersProducts() {
-  //   const res = ctx.store.getters['headers/products']
-  //   res.push({ text: 'headers.actions', value: 'actions', sortable: false })
-  //   return res
-  // },
+  products() {
+    const res = store.getters['products/all']
+    return res
+  },
+  headersProducts() {
+    const res = store.getters['headers/products']
+    res.push({ text: 'headers.actions', value: 'actions', sortable: false })
+    return res
+  },
   // headersOffers() {
   //   const res = ctx.store.getters['headers/offers']
   //   res.push({ text: 'headers.actions', value: 'actions', sortable: false })
