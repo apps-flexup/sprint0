@@ -58,6 +58,7 @@ import FvOrderList from '@/components/FvOrderList'
 import FvPartnerList from '@/components/FvPartnerList'
 import FvModalSlot from '@/components/FvModalSlot'
 import FvPartnerModal from '@/components/FvPartnerModal'
+import FvProductsIndex from '@/components/FvProductsIndex'
 import FvProductModal from '@/components/FvProductModal'
 import FvSpeedDial from '@/components/FvSpeedDial'
 import FvTextField from '@/components/FvTextField'
@@ -135,6 +136,7 @@ Vue.component('fv-nav', FvNav)
 Vue.component('fv-new-partner-form', FvNewPartnerForm)
 Vue.component('fv-product-data-table', FvProductDataTable)
 Vue.component('fv-product-form', FvProductForm)
+Vue.component('fv-products-index', FvProductsIndex)
 Vue.component('fv-stepper', FvStepper)
 Vue.component('fv-delete-action', FvDeleteAction)
 Vue.component('fv-edit-action', FvEditAction)
