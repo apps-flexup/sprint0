@@ -32,6 +32,10 @@
     "products": {
       "title": "My products",
       "search": "Search"
+    },
+    "partners": {
+      "title": "My partners",
+      "search": "Search"
     }
   },
   "forms": {

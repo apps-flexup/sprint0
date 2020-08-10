@@ -28,6 +28,54 @@ const moduleHeaders = {
         }
       ]
       commit('setProductHeaders', data)
+    },
+    getPartnerHeaders({ commit }) {
+      // charger les formes juridiques
+      const data = [
+        {
+          align: "start",
+          sortable: true,
+          text: "headers.partners.name",
+          value: "name"
+        },
+        {
+          align: "start",
+          sortable: true,
+          text: "headers.partners.siret",
+          value: "siret"
+        },
+        {
+          align: "start",
+          sortable: true,
+          text: "headers.partners.legalStructure",
+          value: "legal_structure"
+        },
+        {
+          align: "start",
+          sortable: true,
+          text: "headers.partners.address",
+          value: "address"
+        },
+        {
+          align: "start",
+          sortable: true,
+          text: "headers.partners.zip",
+          value: "zip"
+        },
+        {
+          align: "start",
+          sortable: true,
+          text: "headers.partners.city",
+          value: "city"
+        },
+        {
+          align: "start",
+          sortable: true,
+          text: "headers.partners.country",
+          value: "country"
+        }
+      ]
+      commit('setPartnerHeaders', data)
     }
   },
   getters: getters,

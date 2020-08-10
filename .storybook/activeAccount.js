@@ -54,35 +54,37 @@ const activeAccount = {
   //   const res = ctx.store.getters['offers/all']
   //   return res
   // },
-  // async partners() {
-  //   const partnerIds = ctx.store.getters['partners/ids']
-  //   const res = []
-  //   for (let i = 0; i < partnerIds.length; i++) {
-  //     const partner = await this.getPartner(partnerIds[i])
-  //     res.push(partner)
-  //   }
-  //   return res
-  // },
-  // async getPartner(partnerId) {
-  //   if (!partnerId) return null
-  //   const id = parseInt(partnerId)
-  //   const url = `/partners?id=${id}`
-  //   let partner = await ctx.$axios.$get(url)
-  //   partner = partner[0]
-  //   if (!partner) return null
-  //   const countryId = parseInt(partner.country_id) || null
-  //   const legalStructureId = parseInt(partner.legal_structure_id) || null
-  //   const country = await ctx.store.getters['countries/find'](countryId)
-  //   const legalStructure = await ctx.store.getters[
-  //     'contracts/getLegalStructureById'
-  //   ](legalStructureId)
-  //   const res = {
-  //     ...partner,
-  //     country,
-  //     legalStructure
-  //   }
-  //   return res
-  // },
+  async partners() {
+    const partnerIds = store.getters['partners/ids']
+    const res = []
+    for (let i = 0; i < partnerIds.length; i++) {
+      const partner = await this.getPartner(partnerIds[i])
+      console.log('partner: ', partner)
+      res.push(partner)
+    }
+    return res
+  },
+  async getPartner(partnerId) {
+    if (!partnerId) return null
+    const id = parseInt(partnerId) || null
+    let partner = await store.getters['partners/find'](id)
+    if (!partner) return null
+    const countryId = parseInt(partner.country_id) || null
+    const legalStructureId = parseInt(partner.legal_structure_id) || null
+    const country = await store.getters['countries/find'](countryId)
+    const legalStructure = await store.getters[
+      'contracts/getLegalStructureById'
+    ](legalStructureId)
+    console.log('Legal sturcuer id: ', legalStructureId)
+    console.log('Legal sturcuer: ', legalStructure)
+    const res = {
+      ...partner,
+      country,
+      legalStructure
+    }
+    console.log('res: ', res)
+    return res
+  },
   // async allPartners() {
   //   const partners = await this.partners()
   //   const partnerIds = await ctx.store.getters['partners/ids']
