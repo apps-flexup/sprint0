@@ -54,25 +54,25 @@ const activeAccount = {
   //   const res = ctx.store.getters['offers/all']
   //   return res
   // },
-  async partners() {
+  partners() {
     const partnerIds = store.getters['partners/ids']
     const res = []
     for (let i = 0; i < partnerIds.length; i++) {
-      const partner = await this.getPartner(partnerIds[i])
+      const partner = this.getPartner(partnerIds[i])
       console.log('partner: ', partner)
       res.push(partner)
     }
     return res
   },
-  async getPartner(partnerId) {
+  getPartner(partnerId) {
     if (!partnerId) return null
     const id = parseInt(partnerId) || null
-    let partner = await store.getters['partners/find'](id)
+    let partner = store.getters['partners/find'](id)
     if (!partner) return null
     const countryId = parseInt(partner.country_id) || null
     const legalStructureId = parseInt(partner.legal_structure_id) || null
-    const country = await store.getters['countries/find'](countryId)
-    const legalStructure = await store.getters[
+    const country = store.getters['countries/find'](countryId)
+    const legalStructure = store.getters[
       'contracts/getLegalStructureById'
     ](legalStructureId)
     const res = {
