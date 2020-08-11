@@ -14,7 +14,10 @@
     template(
       slot='form'
     )
-      fv-new-partner-form(:values="partner")
+      fv-new-partner-form(
+        :partner="partner"
+        @partner:changed="partnerChanged"
+      )
     template(
       slot='actions'
     )
@@ -50,6 +53,9 @@ export default {
     },
     save() {
       this.$emit('modal:save', this.partner)
+    },
+    partnerChanged(partner) {
+      this.$emit('partner:changed', partner)
     }
   }
 }

@@ -7,9 +7,10 @@
       ) {{ $t('buttons.create.partner') }}
       fv-partner-modal(
         :show="showModal"
-        :partner='selected'
+        :partner='partner'
         @modal:close="close"
         @modal:save="save"
+        @partner:changed="partnerChanged"
       )
     fv-partner-list(@list:selected="selectedPartner")
 </template>
@@ -18,7 +19,7 @@
 export default {
   data() {
     return {
-      selected: {},
+      partner: {},
       showModal: false
     }
   },
@@ -27,17 +28,20 @@ export default {
   },
   methods: {
     close() {
-      this.selected = {}
+      this.partner = {}
       this.showModal = false
     },
     save(e) {
       this.showModal = false
       this.$store.dispatch('partners/add', e)
-      this.selected = {}
+      this.partner = {}
     },
     selectedPartner(e) {
-      this.selected = JSON.parse(JSON.stringify(e))
+      this.partner = JSON.parse(JSON.stringify(e))
       this.showModal = true
+    },
+    partnerChanged(partner) {
+      this.partner = partner
     }
   }
 }

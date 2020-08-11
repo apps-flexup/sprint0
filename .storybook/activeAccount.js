@@ -75,14 +75,11 @@ const activeAccount = {
     const legalStructure = await store.getters[
       'contracts/getLegalStructureById'
     ](legalStructureId)
-    console.log('Legal sturcuer id: ', legalStructureId)
-    console.log('Legal sturcuer: ', legalStructure)
     const res = {
       ...partner,
       country,
       legalStructure
     }
-    console.log('res: ', res)
     return res
   },
   // async allPartners() {
