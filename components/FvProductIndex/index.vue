@@ -1,10 +1,10 @@
 <template lang="pug">
-  .fv-products-index
+  .fv-product-index
     v-row
       v-col(cols="12")
         fv-create-button.text-right(
-        @button:click='showModal = true'
-      ) {{ $t('buttons.create.product') }}
+          @button:click='showModal = true'
+        ) {{ $t('buttons.create.product') }}
       fv-product-modal(
         :show="showModal"
         :product='product'
@@ -17,7 +17,7 @@
 
 <script>
 export default {
-  name: 'FvProductsIndex',
+  name: 'FvProductIndex',
   data() {
     return {
       product: {},
