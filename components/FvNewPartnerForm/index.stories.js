@@ -11,7 +11,7 @@ storiesOf('Molecules|FvNewPartnerForm', module).add(
       }
     },
     methods: {
-      productChanged(_v) {}
+      partnerChanged(_v) {}
     },
     template: `<FvNewPartnerForm
       :partner="partner"
