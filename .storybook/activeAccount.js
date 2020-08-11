@@ -50,10 +50,10 @@ const activeAccount = {
   //   const res = ctx.store.getters['orders/all']
   //   return res
   // },
-  // offers() {
-  //   const res = ctx.store.getters['offers/all']
-  //   return res
-  // },
+  offers() {
+    const res = store.getters['offers/all']
+    return res
+  },
   partners() {
     const partnerIds = store.getters['partners/ids']
     const res = []
@@ -106,11 +106,11 @@ const activeAccount = {
     res.push({ text: 'headers.actions', value: 'actions', sortable: false })
     return res
   },
-  // headersOffers() {
-  //   const res = ctx.store.getters['headers/offers']
-  //   res.push({ text: 'headers.actions', value: 'actions', sortable: false })
-  //   return res
-  // },
+  headersOffers() {
+    const res = store.getters['headers/offers']
+    res.push({ text: 'headers.actions', value: 'actions', sortable: false })
+    return res
+  },
   // headersOrders() {
   //   const res = ctx.store.getters['headers/orders']
   //   res.push({ text: 'headers.actions', value: 'actions', sortable: false })

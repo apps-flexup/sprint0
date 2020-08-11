@@ -1,4 +1,4 @@
 <template lang="pug">
-  .products
+  .fv-product-index
     fv-product-index
 </template>

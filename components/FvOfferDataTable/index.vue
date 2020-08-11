@@ -1,14 +1,5 @@
 <template lang="pug">
-  .fv-offer-list
-    v-card
-      v-card-title
-        | {{ $t('table.offers.title') }}
-        v-spacer
-        v-text-field(
-          v-model="search"
-          :label="$t('table.offers.search')"
-          append-outer-icon="mdi-magnify"
-        )
+  .fv-product-data-table
       v-data-table.elevation-2(
         :headers='headers'
         :items='items'
@@ -25,27 +16,30 @@
           div(v-to-unit="item")
         template(v-slot:item.status='{ item }')
           fv-status-progress-atom(:status="item.status")
-        template(v-slot:item.actions='{ item }')
-          v-icon.mr-2(small='' @click.stop='selected(item)')
-            | mdi-pencil
-          v-icon(small='' @click.stop='deleteItem(item)')
-            | mdi-delete
+        template(v-slot:item.actions="{ item }")
+          v-row
+            fv-edit-action(@edit:clicked="selected(item)")
+            fv-delete-action(@delete:clicked="deleteItem(item)")
 </template>
 
 <script>
 import { filterOffersDataTable } from '~/plugins/utils'
+import { translateHeaders } from '~/plugins/utils'
 
 export default {
   name: 'FvOfferList',
-  data() {
-    return {
-      search: ''
+  props: {
+    search: {
+      type: String,
+      default() {
+        return ''
+      }
     }
   },
   computed: {
     headers() {
       const res = this.$activeAccount.headersOffers()
-      return this.$translateHeaders(res)
+      return translateHeaders(this.$i18n, res)
     },
     items() {
       const res = this.$activeAccount.offers()
@@ -55,6 +49,7 @@ export default {
   mounted() {
     console.log('Composant ', this.$options.name)
     this.$store.dispatch('headers/getOfferHeaders')
+    this.$store.dispatch('offers/get')
   },
   methods: {
     selected(offer) {

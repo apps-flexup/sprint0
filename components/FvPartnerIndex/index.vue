@@ -1,5 +1,5 @@
 <template lang="pug">
-  .partners-index
+  .fv-partner-index
     v-row
       v-col(cols="12")
         fv-create-button.text-right(

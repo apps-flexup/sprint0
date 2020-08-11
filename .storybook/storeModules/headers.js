@@ -76,6 +76,47 @@ const moduleHeaders = {
         }
       ]
       commit('setPartnerHeaders', data)
+    },
+    getOfferHeaders({ commit }) {
+      const data = [
+        {
+          align: "start",
+          sortable: true,
+          text: "headers.offers.name",
+          value: "name"
+        },
+        {
+          align: "end",
+          sortable: true,
+          text: "headers.offers.price",
+          value: "price"
+        },
+        {
+          align: "end",
+          sortable: true,
+          text: "headers.offers.currency",
+          value: "currency"
+        },
+        {
+          align: "end",
+          sortable: true,
+          text: "headers.offers.vat",
+          value: "vat"
+        },
+        {
+          align: "center",
+          sortable: true,
+          text: "headers.offers.unit",
+          value: "unit"
+        },
+        {
+          align: "start",
+          sortable: true,
+          text: "headers.offers.status",
+          value: "status"
+        }
+      ]
+      commit('setOfferHeaders', data)
     }
   },
   getters: getters,
