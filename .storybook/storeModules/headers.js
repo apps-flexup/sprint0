@@ -117,6 +117,53 @@ const moduleHeaders = {
         }
       ]
       commit('setOfferHeaders', data)
+    },
+    getOrderHeaders({ commit }) {
+      const data = [
+        {
+          align: "start",
+          sortable: true,
+          text: "headers.orders.order_date",
+          value: "date"
+        },
+        {
+          align: "start",
+          sortable: true,
+          text: "headers.orders.offer",
+          value: "offer"
+        },
+        {
+          align: "start",
+          sortable: true,
+          text: "headers.orders.status",
+          value: "status"
+        },
+        {
+          align: "start",
+          sortable: true,
+          text: "headers.orders.startDate",
+          value: "startDate"
+        },
+        {
+          align: "start",
+          sortable: true,
+          text: "headers.orders.endDate",
+          value: "endDate"
+        },
+        {
+          align: "right",
+          sortable: true,
+          text: "headers.orders.quantity",
+          value: "quantity"
+        },
+        {
+          align: "end",
+          sortable: true,
+          text: "headers.orders.price",
+          value: "price"
+        }
+      ]
+      commit('setOrderHeaders', data)
     }
   },
   getters: getters,

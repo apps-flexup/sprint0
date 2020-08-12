@@ -10,12 +10,14 @@
 </template>
 
 <script>
+import { translateHeaders } from '~/plugins/utils'
+
 export default {
   name: 'FvOrderList',
   computed: {
     headers() {
       const res = this.$store.getters['headers/orders']
-      return this.$translateHeaders(res)
+      return translateHeaders(this.$i18n, res)
     },
     items() {
       const res = this.$activeAccount.orders()
@@ -25,6 +27,7 @@ export default {
   mounted() {
     console.log('Composant ', this.$options.name)
     this.$store.dispatch('headers/getOrderHeaders')
+    this.$store.dispatch('orders/get')
   }
 }
 </script>

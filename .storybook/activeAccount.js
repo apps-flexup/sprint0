@@ -46,10 +46,10 @@ const activeAccount = {
     console.log('Get currencies: ', store.getters['currencies/all'])
     return res
   },
-  // orders() {
-  //   const res = ctx.store.getters['orders/all']
-  //   return res
-  // },
+  orders() {
+    const res = store.getters['orders/all']
+    return res
+  },
   offers() {
     const res = store.getters['offers/all']
     return res
