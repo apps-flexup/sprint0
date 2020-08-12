@@ -82,21 +82,59 @@ const activeAccount = {
     }
     return res
   },
-  // async allPartners() {
-  //   const partners = await this.partners()
-  //   const partnerIds = await ctx.store.getters['partners/ids']
-  //   const res = []
-  //   res.push({ header: 'autocomplete.partners.mine' })
-  //   partners.forEach((item) => res.push(item))
-  //   res.push({ header: 'autocomplete.partners.flexup' })
-  //   const data = await ctx.$axios.$get('/partners')
-  //   data.forEach((item) => {
-  //     const tmp = item
-  //     tmp.avatar = require('~/static/logo.svg')
-  //     if (!partnerIds.includes(res.id)) res.push(tmp)
-  //   })
-  //   return res
-  // },
+  async allPartners() {
+    const partners = this.partners()
+    const partnerIds = store.getters['partners/ids']
+    const res = []
+    res.push({ header: 'autocomplete.partners.mine' })
+    partners.forEach((item) => res.push(item))
+    res.push({ header: 'autocomplete.partners.flexup' })
+    const data = [
+      {
+        account_id: 10,
+        address: "12 rue de la poupée qui tousse",
+        city: "Paris",
+        country_id: 77,
+        id: 8,
+        name: "La riflette Toto",
+        zip: "75800"
+      },
+      {
+        account_id: 10,
+        address: "89 rue des avenues",
+        city: "Une Ville",
+        country_id: 77,
+        id: 9,
+        name: "Marcel Flombard",
+        zip: "9876541"
+      },
+      {
+        account_id: 10,
+        address: "9 rue des longs champs",
+        city: "Founiard la glaneuse",
+        country_id: 77,
+        id: 10,
+        name: "Si c'estait possible",
+        zip: "060"
+      },
+      {
+        name: "ABC",
+        address: "10 rue ABC",
+        zip: "75001",
+        city: "Paris",
+        country_id: 77,
+        legal_structure_id: 2,
+        account_id: 1,
+        id: 11
+      }
+    ]
+    data.forEach((item) => {
+      const tmp = item
+      tmp.avatar = require('~/static/logo.svg')
+      if (!partnerIds.includes(res.id)) res.push(tmp)
+    })
+    return res
+  },
   products() {
     const res = store.getters['products/all']
     return res

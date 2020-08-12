@@ -45,6 +45,8 @@
 </template>
 
 <script>
+import { translateHeaders } from '~/plugins/utils'
+
 export default {
   name: 'FvOrderLineList',
   props: {
@@ -58,7 +60,7 @@ export default {
   computed: {
     headers() {
       const res = this.$activeAccount.headersOrderLines()
-      return this.$translateHeaders(res)
+      return translateHeaders(this.$i18n, res)
     }
   },
   mounted() {

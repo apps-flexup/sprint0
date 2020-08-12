@@ -47,6 +47,7 @@ export default {
   },
   mounted() {
     console.log('Composant ', this.$options.name)
+    this.$store.dispatch('partners/get')
     this.$activeAccount.allPartners().then((data) => {
       this.items = data
     })
