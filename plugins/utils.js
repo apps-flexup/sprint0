@@ -37,6 +37,12 @@ export const filterOffersDataTable = (item, v, _it) => {
   return res
 }
 
+export const filterOrdersDataTable = (item, v, _it) => {
+  const nameValues = `${item}`
+  const res = String.prototype.filtreAutocomplete.call(nameValues, v)
+  return res
+}
+
 export const filterPartnersDataTable = (item, v, _it) => {
   const nameValues = `${item}`
   const res = String.prototype.filtreAutocomplete.call(nameValues, v)

@@ -29,6 +29,10 @@
       "title": "My offers",
       "search": "Search"
     },
+    "orders": {
+      "title": "My orders",
+      "search": "Search"
+    },
     "products": {
       "title": "My products",
       "search": "Search"

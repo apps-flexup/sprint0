@@ -1,19 +1,28 @@
 <template lang="pug">
-  .fv-order-list
-    v-row
-      v-col(cols="12")
-        v-data-table.elevation-2(
-          :headers='headers'
-          :items='items'
-          item-key='id'
-        )
+  .fv-order-data-table
+    v-data-table.elevation-2(
+      :headers='headers'
+      :items='items'
+      item-key='id'
+      :search="search"
+      :custom-filter="filterFunction"
+    )
 </template>
 
 <script>
+import { filterOrdersDataTable } from '~/plugins/utils'
 import { translateHeaders } from '~/plugins/utils'
 
 export default {
-  name: 'FvOrderList',
+  name: 'FvOrderDataTable',
+  props: {
+    search: {
+      type: String,
+      default() {
+        return ''
+      }
+    }
+  },
   computed: {
     headers() {
       const res = this.$store.getters['headers/orders']
@@ -28,12 +37,11 @@ export default {
     console.log('Composant ', this.$options.name)
     this.$store.dispatch('headers/getOrderHeaders')
     this.$store.dispatch('orders/get')
+  },
+  methods: {
+    filterFunction(item, queryText, itemText) {
+      return filterOrdersDataTable(item, queryText, itemText)
+    }
   }
 }
 </script>
-
-<style scoped>
-.fv-order-list {
-  background-color: inherit;
-}
-</style>
