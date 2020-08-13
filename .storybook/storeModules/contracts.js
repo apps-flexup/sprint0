@@ -185,6 +185,67 @@ const moduleContracts = {
       ]
       commit('setLegalStructures', data)
     },
+    getStructures({ commit }) {
+      const data = [
+        {
+          id: 1,
+          name: "Base 40% + Equity 60%",
+          schema: [
+            {
+              name: "base",
+              value: 0.4
+            },
+            {
+              name: "Equity",
+              value: 0.6
+            }
+          ]
+        },
+        {
+          id: 2,
+          name: "Base 30% + Equity 70%",
+          schema: [
+            {
+              name: "base",
+              value: 0.3
+            },
+            {
+              name: "Equity",
+              value: 0.7
+            }
+          ]
+        },
+        {
+          id: 3,
+          name: "Base 60% + Equity 40%",
+          schema: [
+            {
+              name: "base",
+              value: 0.6
+            },
+            {
+              name: "Equity",
+              value: 0.4
+            }
+          ]
+        },
+        {
+          id: 4,
+          name: "Base 50% + Equity 50%",
+          schema: [
+            {
+              name: "base",
+              value: 0.5
+            },
+            {
+              name: "Equity",
+              value: 0.5
+            }
+          ]
+        }
+      ]
+      commit('setStructures', data)
+    },
     clear({ commit }) {
       commit('clear')
     }
