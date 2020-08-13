@@ -27,6 +27,5 @@ export default create({
   inputBorderRadius: 4,
 
   brandTitle: "FlexupUI",
-  // brandImage: "../static/icon.png"
-  brandImage: "../static/logo.svg"
+  brandImage: "/logo.svg"
 });
