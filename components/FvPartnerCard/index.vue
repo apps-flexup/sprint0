@@ -34,16 +34,13 @@ export default {
   },
   watch: {
     partnerId() {
-      this.$activeAccount.getPartner(this.partnerId).then((res) => {
-        this.partner = res
-      })
+      this.partner = this.$activeAccount.getPartner(this.partnerId)
     }
   },
   mounted() {
     console.log('Composant ', this.$options.name)
-    this.$activeAccount.getPartner(this.partnerId).then((res) => {
-      this.partner = res
-    })
+    this.$store.dispatch('partners/get')
+    this.partner = this.$activeAccount.getPartner(this.partnerId)
   }
 }
 </script>
