@@ -23,8 +23,7 @@
 </template>
 
 <script>
-import { filterOffersDataTable } from '~/plugins/utils'
-import { translateHeaders } from '~/plugins/utils'
+import { filterOffersDataTable, translateHeaders } from '~/plugins/utils'
 
 export default {
   name: 'FvOfferList',

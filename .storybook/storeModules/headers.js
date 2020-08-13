@@ -164,6 +164,47 @@ const moduleHeaders = {
         }
       ]
       commit('setOrderHeaders', data)
+    },
+    getOrderLineHeaders({ commit }) {
+      const data = [
+        {
+          align: "start",
+          sortable: true,
+          text: "headers.orders.offer",
+          value: "offer"
+        },
+        {
+          align: "end",
+          sortable: true,
+          text: "headers.orders.quantity",
+          value: "quantity"
+        },
+        {
+          align: "end",
+          sortable: true,
+          text: "headers.orders.price",
+          value: "price"
+        },
+        {
+          align: "end",
+          sortable: true,
+          text: "headers.orders.total",
+          value: "total"
+        },
+        {
+          align: "end",
+          sortable: true,
+          text: "headers.orders.vat",
+          value: "vat"
+        },
+        {
+          align: "start",
+          sortable: true,
+          text: "headers.orders.status",
+          value: "status"
+        }
+      ]
+      commit('setOrderLineHeaders', data)
     }
   },
   getters: getters,

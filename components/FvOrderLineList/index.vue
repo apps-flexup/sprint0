@@ -40,8 +40,9 @@
           template(v-slot:item.status="{ item }")
             fv-status-progress-atom(:status="item.status")
           template(v-slot:item.actions="{ item }")
-            v-icon(small='' @click.stop="deleteOrderLine(item)")
-              | mdi-delete
+            fv-delete-action(
+              @delete:clicked="deleteOrderLine(item)"
+            )
 </template>
 
 <script>

@@ -20,7 +20,10 @@ export default {
       }
     },
     searchLabel: {
-      type: String
+      type: String,
+      default() {
+        return 'Search'
+      }
     }
   },
   mounted() {

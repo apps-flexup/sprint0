@@ -21,8 +21,7 @@
 </template>
 
 <script>
-import { filterPartnersDataTable } from '~/plugins/utils'
-import { translateHeaders } from '~/plugins/utils'
+import { filterPartnersDataTable, translateHeaders } from '~/plugins/utils'
 
 export default {
   name: 'FvPartnerDataTable',

@@ -154,11 +154,11 @@ const activeAccount = {
   //   res.push({ text: 'headers.actions', value: 'actions', sortable: false })
   //   return res
   // },
-  // headersOrderLines() {
-  //   const res = ctx.store.getters['headers/orderLines']
-  //   res.push({ text: 'headers.actions', value: 'actions', sortable: false })
-  //   return res
-  // },
+  headersOrderLines() {
+    const res = store.getters['headers/orderLines']
+    res.push({ text: 'headers.actions', value: 'actions', sortable: false })
+    return res
+  },
   // hasRole(role) {
   //   const res = ctx.store.$auth.user
   //   console.log('role :', role, ', res :', res)

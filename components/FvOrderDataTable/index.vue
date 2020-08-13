@@ -10,8 +10,7 @@
 </template>
 
 <script>
-import { filterOrdersDataTable } from '~/plugins/utils'
-import { translateHeaders } from '~/plugins/utils'
+import { filterOrdersDataTable, translateHeaders } from '~/plugins/utils'
 
 export default {
   name: 'FvOrderDataTable',
