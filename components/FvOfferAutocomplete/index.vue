@@ -4,6 +4,7 @@
       :items="items"
       :filter="filter"
       :disabled="disabled"
+      :returnObject="returnObject"
       @autocomplete:selected="selected"
     )
       template(v-slot:label)
@@ -37,6 +38,12 @@ export default {
       }
     },
     disabled: {
+      type: Boolean,
+      default() {
+        return false
+      }
+    },
+    returnObject: {
       type: Boolean,
       default() {
         return false

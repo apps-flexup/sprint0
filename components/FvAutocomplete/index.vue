@@ -7,6 +7,7 @@
       :loading="isLoading"
       :item-value="itemValue"
       :disabled="disabled"
+      :return-object="returnObject"
       clearable=''
       outlined=''
     )
@@ -58,6 +59,12 @@ export default {
       }
     },
     disabled: {
+      type: Boolean,
+      default() {
+        return false
+      }
+    },
+    returnObject: {
       type: Boolean,
       default() {
         return false
