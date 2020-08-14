@@ -1,6 +1,5 @@
 <template lang="pug">
   .fv-order-item-list
-    p {{ $options.name }}
     v-row
       v-col(cols="12")
         v-data-table.elevation-2(

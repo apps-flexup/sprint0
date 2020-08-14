@@ -1,6 +1,5 @@
 <template lang="pug">
   .fv-partner-autocomplete
-    p {{ $options.name }}
     fv-autocomplete(
       :element="partnerId"
       :items="items"

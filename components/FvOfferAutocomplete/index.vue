@@ -1,6 +1,5 @@
 <template lang="pug">
   .fv-offer-autocomplete
-    p {{ $options.name }}
     fv-autocomplete(
       :items="items"
       :filter="filter"
