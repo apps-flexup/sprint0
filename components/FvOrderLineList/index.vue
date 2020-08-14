@@ -14,17 +14,11 @@
           template(v-slot:item.unit="{ item }")
             div(v-to-unit="item")
           template(v-slot:item.quantity="{ item }")
-            v-text-field(
-              v-model="item.quantity"
+            fv-quantity-selector(
+              :quantity="item.quantity"
+              @quantitySelector:minus="item.quantity = item.quantity - 1"
+              @quantitySelector:plus="item.quantity = item.quantity + 1"
             )
-              template(v-slot:append)
-                fv-minus-button(
-                  @button:minus="item.quantity = item.quantity - 1"
-                )
-              template(v-slot:prepend)
-                fv-plus-button(
-                  @button:plus="item.quantity = item.quantity + 1"
-                )
           template(v-slot:item.price="{ item }")
             div(v-to-preferred-currency="item.price")
           template(v-slot:item.total="{ item }")
