@@ -8,6 +8,7 @@
       )
       fv-product-data-table(
         :search="search"
+        @dataTable:selected="selectedProduct"
       )
 </template>
 
@@ -25,6 +26,9 @@ export default {
   methods: {
     searchChanged(v) {
       this.search = v
+    },
+    selectedProduct(product) {
+      this.$emit('list:selected', product)
     }
   }
 }
