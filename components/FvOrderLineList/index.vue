@@ -1,5 +1,5 @@
 <template lang="pug">
-  .fv-order-item-list
+  .fv-order-line-list
     v-row
       v-col(cols="12")
         v-data-table.elevation-2(
@@ -23,7 +23,7 @@
             div(v-to-currency-quantity="item")
           template(v-slot:item.vat='{ item }')
             fv-text-field(
-              :value="item.vat"
+              v-model="item.vat"
               :outlined="false"
               suffix="%"
               @inputChanged="vatChanged"
