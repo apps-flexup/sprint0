@@ -1,5 +1,5 @@
 <template lang="pug">
-  .fv-product-data-table
+  .fv-offer-data-table
       v-data-table.elevation-2(
         :headers='headers'
         :items='items'
@@ -52,7 +52,7 @@ export default {
   },
   methods: {
     selected(offer) {
-      this.$emit('list:selected', offer)
+      this.$emit('dataTable:selected', offer)
     },
     deleteItem(offer) {
       this.$store.dispatch('offers/remove', offer)

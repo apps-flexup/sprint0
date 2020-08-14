@@ -8,6 +8,7 @@
       )
       fv-offer-data-table(
         :search="search"
+        @dataTable:selected="offerSelected"
       )
 </template>
 
@@ -26,6 +27,9 @@ export default {
     searchChanged(v) {
       console.log('Search is now: ', v)
       this.search = v
+    },
+    offerSelected(offer) {
+      this.$emit('list:selected', offer)
     }
   }
 }
