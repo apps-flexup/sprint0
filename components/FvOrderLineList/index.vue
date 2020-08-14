@@ -9,7 +9,8 @@
           item-key='id'
         )
           template(v-slot:item.offer="{ item }")
-            div(v-to-locale="item.offer")
+            div(v-to-locale="item.offer"
+            )
           template(v-slot:item.unit="{ item }")
             div(v-to-unit="item")
           template(v-slot:item.quantity="{ item }")
@@ -17,17 +18,13 @@
               v-model="item.quantity"
             )
               template(v-slot:append)
-                v-btn(
-                  icon
-                  @click.stop="item.quantity = item.quantity - 1"
+                fv-minus-button(
+                  @button:minus="item.quantity = item.quantity - 1"
                 )
-                  v-icon mdi-minus
               template(v-slot:prepend)
-                v-btn(
-                  icon
-                  @click.stop="item.quantity = item.quantity + 1"
+                fv-plus-button(
+                  @button:plus="item.quantity = item.quantity + 1"
                 )
-                  v-icon mdi-plus
           template(v-slot:item.price="{ item }")
             div(v-to-preferred-currency="item.price")
           template(v-slot:item.total="{ item }")

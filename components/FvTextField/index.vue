@@ -7,6 +7,11 @@
       :append-outer-icon="appendOuterIcon"
       @input="inputChanged"
     )
+      template(v-slot:append)
+        slot(name="append")
+      template(v-slot:prepend)
+        slot(name="prepend")
+
 </template>
 
 <script>
@@ -41,6 +46,11 @@ export default {
   data() {
     return {
       model: this.value
+    }
+  },
+  watch: {
+    value() {
+      this.model = this.value
     }
   },
   mounted() {

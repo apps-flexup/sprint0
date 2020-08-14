@@ -33,6 +33,7 @@ import FvContractSummaryStepStructure from '@/components/FvContractSummaryStepSt
 import FvCreateButton from '@/components/FvCreateButton'
 import FvDataTableHeader from '@/components/FvDataTableHeader'
 import FvDataTableSearchBar from '@/components/FvDataTableSearchBar'
+import FvMinusButton from '@/components/FvMinusButton'
 import FvModal from '@/components/FvModal'
 import FvModalActions from '@/components/FvModalActions'
 import FvModalAndButton from '@/components/FvModalAndButton'
@@ -40,6 +41,7 @@ import FvNav from '@/components/FvNav'
 import FvNewPartnerForm from '@/components/FvNewPartnerForm'
 import FvProductDataTable from '@/components/FvProductDataTable'
 import FvProductForm from '@/components/FvProductForm'
+import FvQuantitySelector from '@/components/FvQuantitySelector'
 import FvStepper from '@/components/FvStepper'
 import FvDeleteAction from '@/components/FvDeleteAction'
 import FvEditAction from '@/components/FvEditAction'
@@ -64,6 +66,7 @@ import FvPartnerList from '@/components/FvPartnerList'
 import FvModalSlot from '@/components/FvModalSlot'
 import FvPartnerIndex from '@/components/FvPartnerIndex'
 import FvPartnerModal from '@/components/FvPartnerModal'
+import FvPlusButton from '@/components/FvPlusButton'
 import FvProductIndex from '~/components/FvProductIndex'
 import FvProductModal from '@/components/FvProductModal'
 import FvSpeedDial from '@/components/FvSpeedDial'
@@ -135,6 +138,7 @@ Vue.component(
 Vue.component('fv-create-button', FvCreateButton)
 Vue.component('fv-data-table-header', FvDataTableHeader)
 Vue.component('fv-data-table-search-bar', FvDataTableSearchBar)
+Vue.component('fv-minus-button', FvMinusButton)
 Vue.component('fv-modal', FvModal)
 Vue.component('fv-modal-actions', FvModalActions)
 Vue.component('fv-modal-and-button', FvModalAndButton)
@@ -143,6 +147,7 @@ Vue.component('fv-new-partner-form', FvNewPartnerForm)
 Vue.component('fv-product-data-table', FvProductDataTable)
 Vue.component('fv-product-form', FvProductForm)
 Vue.component('fv-product-index', FvProductIndex)
+Vue.component('fv-quantity-selector', FvQuantitySelector)
 Vue.component('fv-stepper', FvStepper)
 Vue.component('fv-delete-action', FvDeleteAction)
 Vue.component('fv-edit-action', FvEditAction)
@@ -168,6 +173,7 @@ Vue.component('fv-order-list', FvOrderList)
 Vue.component('fv-country-list', FvCountryList)
 Vue.component('fv-partner-data-table', FvPartnerDataTable)
 Vue.component('fv-partner-list', FvPartnerList)
+Vue.component('fv-plus-button', FvPlusButton)
 Vue.component('fv-modal-slot', FvModalSlot)
 Vue.component('fv-partner-index', FvPartnerIndex)
 Vue.component('fv-partner-modal', FvPartnerModal)
