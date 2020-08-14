@@ -8,8 +8,7 @@
           item-key='id'
         )
           template(v-slot:item.offer="{ item }")
-            div(v-to-locale="item.offer"
-            )
+            div(v-to-locale="item.offer")
           template(v-slot:item.unit="{ item }")
             div(v-to-unit="item")
           template(v-slot:item.quantity="{ item }")
@@ -23,9 +22,11 @@
           template(v-slot:item.total="{ item }")
             div(v-to-currency-quantity="item")
           template(v-slot:item.vat='{ item }')
-            v-text-field(
-              v-model="item.vat"
+            fv-text-field(
+              :value="item.vat"
+              :outlined="false"
               suffix="%"
+              @inputChanged="vatChanged"
             )
           template(v-slot:item.status="{ item }")
             fv-status-progress-atom(:status="item.status")
@@ -59,6 +60,9 @@ export default {
     this.$store.dispatch('headers/getOrderLineHeaders')
   },
   methods: {
+    vatChanged(v) {
+      this.item.vat = v
+    },
     deleteOrderLine(v) {
       this.$emit('orderLines:delete', v)
     }

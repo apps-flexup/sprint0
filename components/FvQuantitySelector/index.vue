@@ -1,7 +1,6 @@
 <template lang="pug">
   .fv-quantity-selector
     fv-text-field(
-      label=""
       :value="quantity.toString()"
       :outlined="false"
     )

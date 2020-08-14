@@ -5,6 +5,7 @@
       :label="label"
       :outlined="outlined"
       :append-outer-icon="appendOuterIcon"
+      :suffix="suffix"
       @input="inputChanged"
     )
       template(v-slot:append)
@@ -21,7 +22,7 @@ export default {
     label: {
       type: String,
       default() {
-        return 'Default label'
+        return ''
       }
     },
     appendOuterIcon: {
@@ -37,6 +38,12 @@ export default {
       }
     },
     value: {
+      type: String,
+      default() {
+        return ''
+      }
+    },
+    suffix: {
       type: String,
       default() {
         return ''
