@@ -57,7 +57,7 @@ export default {
       this.$router.push(`/partners/contracts/${res}`)
     },
     selected(v) {
-      this.$emit('list:selected', v)
+      this.$emit('dataTable:selected', v)
     },
     deleteItem(v) {
       console.log('delete :', v)

@@ -8,6 +8,7 @@
       )
       fv-partner-data-table(
         :search="search"
+        @dataTable:selected="partnerSelected"
       )
 </template>
 
@@ -25,6 +26,9 @@ export default {
   methods: {
     searchChanged(v) {
       this.search = v
+    },
+    partnerSelected(partner) {
+      this.$emit('list:selected', partner)
     }
   }
 }
