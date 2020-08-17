@@ -5,7 +5,6 @@ storiesOf('Molecules|FvNavBar', module).add(
   'Common',
   () => ({
     components: { FvNavBar },
-
     template: `<FvNavBar>
     </FvNavBar>`
   }),
