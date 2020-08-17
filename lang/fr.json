@@ -169,7 +169,8 @@
     },
     "submit": "Envoyer",
     "previous": "Précédent",
-    "next": "Suivant"
+    "next": "Suivant",
+    "login": "Connexion"
   },
   "headers": {
     "actions": "Actions",

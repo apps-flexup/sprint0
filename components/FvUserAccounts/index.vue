@@ -1,10 +1,9 @@
 <template lang="pug">
   .fv-user-accounts
-    v-btn.mx-2(
+    fv-login-button(
       v-if="!$auth.loggedIn"
-      @click.stop="login"
+      @loginButton:clicked="login"
     )
-      | Connexion
     .d-flex.justify-center.align-center(v-else)
       v-menu(
         offset-y=''
