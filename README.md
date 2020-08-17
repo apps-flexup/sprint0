@@ -38,3 +38,6 @@ TODO: Offer form:
 TODO: Order form:
 
 - Add periodicity (hidden per default)
+
+Ajout du test
+
