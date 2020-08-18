@@ -13,6 +13,12 @@ $ yarn install
 # serve with hot reload at localhost:3000
 $ yarn dev
 
+# serve with json-server
+$ yarn all
+
+# start storybook
+$ yarn storybook
+
 # build for production and launch server
 $ yarn build
 $ yarn start
@@ -22,18 +28,6 @@ $ yarn generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
-
-TODO: Product form:
-
-- Remove Price + currency
-- Remove periodicity
-
-TODO: Offer form:
-
-- Select product (autocomplete)
-- Price + Currency
-- Dimension + Unit (prefill with product info)
-- Status = draft
 
 TODO: Order form:
 

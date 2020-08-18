@@ -33,11 +33,13 @@ import FvContractSummaryStepStructure from '@/components/FvContractSummaryStepSt
 import FvCreateButton from '@/components/FvCreateButton'
 import FvDataTableHeader from '@/components/FvDataTableHeader'
 import FvDataTableSearchBar from '@/components/FvDataTableSearchBar'
+import FvLoginButton from '@/components/FvLoginButton'
 import FvMinusButton from '@/components/FvMinusButton'
 import FvModal from '@/components/FvModal'
 import FvModalActions from '@/components/FvModalActions'
 import FvModalAndButton from '@/components/FvModalAndButton'
 import FvNav from '@/components/FvNav'
+import FvNavBar from '@/components/FvNavBar'
 import FvNewPartnerForm from '@/components/FvNewPartnerForm'
 import FvProductDataTable from '@/components/FvProductDataTable'
 import FvProductForm from '@/components/FvProductForm'
@@ -138,11 +140,13 @@ Vue.component(
 Vue.component('fv-create-button', FvCreateButton)
 Vue.component('fv-data-table-header', FvDataTableHeader)
 Vue.component('fv-data-table-search-bar', FvDataTableSearchBar)
+Vue.component('fv-login-button', FvLoginButton)
 Vue.component('fv-minus-button', FvMinusButton)
 Vue.component('fv-modal', FvModal)
 Vue.component('fv-modal-actions', FvModalActions)
 Vue.component('fv-modal-and-button', FvModalAndButton)
 Vue.component('fv-nav', FvNav)
+Vue.component('fv-nav-bar', FvNavBar)
 Vue.component('fv-new-partner-form', FvNewPartnerForm)
 Vue.component('fv-product-data-table', FvProductDataTable)
 Vue.component('fv-product-form', FvProductForm)

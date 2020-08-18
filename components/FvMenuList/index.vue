@@ -1,6 +1,5 @@
 <template lang="pug">
   .fv-menu-list-bloc
-    h1 {{ $options.name }}
     v-list
       v-list-item(
         v-for="(item, i) in items"
