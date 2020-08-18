@@ -14,6 +14,7 @@ import '~/plugins/directives'
 import activeAccount from '~/.storybook/activeAccount'
 import store from '~/.storybook/store'
 import axios from 'axios'
+import auth from '~/.storybook/auth'
 import "@mdi/font/css/materialdesignicons.css";
 
 const vuetifyOptions = {
@@ -85,6 +86,7 @@ addDecorator(withA11y);
 Vue.prototype.$store = store
 Vue.prototype.$activeAccount = activeAccount
 Vue.prototype.$axios = axios
+Vue.prototype.$auth = auth
 
 // -- tells storybook where to look for stories
 configure(function () {
