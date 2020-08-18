@@ -2,7 +2,7 @@ import { storiesOf } from '@storybook/vue'
 import { withKnobs } from '@storybook/addon-knobs'
 import FvCountryAutocomplete from './index.vue'
 
-storiesOf('Atoms|FvCountryAutocomplete', module)
+storiesOf('Atoms/FvCountryAutocomplete', module)
   .addDecorator(withKnobs)
   .add(
     'Common',

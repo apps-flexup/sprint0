@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/vue'
 import FvCloseModalButton from './index.vue'
 
-storiesOf('Atoms|FvCloseModalButton', module).add(
+storiesOf('Atoms/FvCloseModalButton', module).add(
   'Common',
   () => ({
     components: { FvCloseModalButton },

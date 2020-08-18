@@ -2,7 +2,7 @@ import { storiesOf } from '@storybook/vue'
 import { withKnobs } from '@storybook/addon-knobs'
 import FvCurrencyAutocomplete from './index.vue'
 
-storiesOf('Atoms|FvCurrencyAutocomplete', module)
+storiesOf('Atoms/FvCurrencyAutocomplete', module)
   .addDecorator(withKnobs)
   .add(
     'Common',

@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/vue'
 import FvMinusButton from './index.vue'
 
-storiesOf('Atoms|FvMinusButton', module).add(
+storiesOf('Atoms/FvMinusButton', module).add(
   'Common',
   () => ({
     components: { FvMinusButton },

@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/vue'
 import FvPartnerDataTable from './index.vue'
 
-storiesOf('Molecules|FvPartnerDataTable', module).add(
+storiesOf('Molecules/FvPartnerDataTable', module).add(
   'Common',
   () => ({
     components: { FvPartnerDataTable },

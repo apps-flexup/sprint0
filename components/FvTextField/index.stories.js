@@ -2,7 +2,7 @@ import { storiesOf } from '@storybook/vue'
 import { text, withKnobs, boolean } from '@storybook/addon-knobs'
 import FvTextField from './index.vue'
 
-storiesOf('Atoms|FvTextField', module)
+storiesOf('Atoms/FvTextField', module)
   .addDecorator(withKnobs)
   .add(
     'Common',

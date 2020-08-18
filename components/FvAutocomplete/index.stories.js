@@ -2,7 +2,7 @@ import { storiesOf } from '@storybook/vue'
 import { text, array, withKnobs } from '@storybook/addon-knobs'
 import FvAutocomplete from './index.vue'
 
-storiesOf('Atoms|FvAutocomplete', module)
+storiesOf('Atoms/FvAutocomplete', module)
   .addDecorator(withKnobs)
   .add(
     'Common',

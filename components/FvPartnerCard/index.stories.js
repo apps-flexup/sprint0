@@ -9,7 +9,7 @@ const partnersAvailable = {
 }
 const defaultValue = '1'
 
-storiesOf('Atoms|FvPartnerCard', module)
+storiesOf('Atoms/FvPartnerCard', module)
   .addDecorator(withKnobs)
   .add(
     'Common',

@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/vue'
 import FvLogoutButton from './index.vue'
 
-storiesOf('Atoms|FvLogoutButton', module).add(
+storiesOf('Atoms/FvLogoutButton', module).add(
   'Common',
   () => ({
     components: { FvLogoutButton },

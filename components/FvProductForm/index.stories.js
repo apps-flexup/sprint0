@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/vue'
 import FvProductForm from './index.vue'
 
-storiesOf('Molecules|FvProductForm', module).add(
+storiesOf('Molecules/FvProductForm', module).add(
   'Common',
   () => ({
     components: { FvProductForm },

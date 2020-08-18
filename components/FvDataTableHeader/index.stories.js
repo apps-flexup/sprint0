@@ -2,7 +2,7 @@ import { storiesOf } from '@storybook/vue'
 import { text, withKnobs } from '@storybook/addon-knobs'
 import FvDataTableHeader from './index.vue'
 
-storiesOf('Molecules|FvDataTableHeader', module)
+storiesOf('Molecules/FvDataTableHeader', module)
   .addDecorator(withKnobs)
   .add(
     'Common',

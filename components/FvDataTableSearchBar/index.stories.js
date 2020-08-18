@@ -2,7 +2,7 @@ import { storiesOf } from '@storybook/vue'
 import { text, withKnobs, boolean } from '@storybook/addon-knobs'
 import FvDataTableSearchBar from './index.vue'
 
-storiesOf('Atoms|FvDataTableSearchBar', module)
+storiesOf('Atoms/FvDataTableSearchBar', module)
   .addDecorator(withKnobs)
   .add(
     'Common',

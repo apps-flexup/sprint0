@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/vue'
 import FvProductDataTable from './index.vue'
 
-storiesOf('Molecules|FvProductDataTable', module).add(
+storiesOf('Molecules/FvProductDataTable', module).add(
   'Common',
   () => ({
     components: { FvProductDataTable },
