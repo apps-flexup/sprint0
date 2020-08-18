@@ -170,7 +170,8 @@
     "submit": "Envoyer",
     "previous": "Précédent",
     "next": "Suivant",
-    "login": "Connexion"
+    "login": "Connexion",
+    "logout": "Déconnexion"
   },
   "headers": {
     "actions": "Actions",
