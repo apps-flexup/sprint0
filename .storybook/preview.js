@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import { configure, addDecorator, addParameters } from '@storybook/vue'
+import { addDecorator, addParameters } from '@storybook/vue'
 import { withKnobs } from '@storybook/addon-knobs'
 import { withInfo } from 'storybook-addon-vue-info'
 import { action } from '@storybook/addon-actions'
@@ -87,9 +87,3 @@ Vue.prototype.$store = store
 Vue.prototype.$activeAccount = activeAccount
 Vue.prototype.$axios = axios
 Vue.prototype.$auth = auth
-
-// -- tells storybook where to look for stories
-configure(function () {
-  const req = require.context('../components/', true, /\.stories\.js$/)
-  req.keys().forEach(filename => req(filename))
-}, module)
