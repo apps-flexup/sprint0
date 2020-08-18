@@ -1,6 +1,7 @@
 import Vue from 'vue'
 // Importation des composants utilitaires
 import FvAutocomplete from '@/components/FvAutocomplete'
+import FvAvatar from '@/components/FvAvatar'
 import FvMenuList from '@/components/FvMenuList'
 import FvAccountAvatar from '@/components/FvAccountAvatar'
 import FvCloseModalButton from '@/components/FvCloseModalButton'
@@ -100,6 +101,7 @@ import FvOrderTotals from '~/components/FvOrderTotals'
 
 // Déclarations composants utilitaires
 Vue.component('fv-autocomplete', FvAutocomplete)
+Vue.component('fv-avatar', FvAvatar)
 Vue.component('fv-menu-list', FvMenuList)
 Vue.component('fv-account-avatar', FvAccountAvatar)
 Vue.component('fv-close-modal-button', FvCloseModalButton)
