@@ -3,7 +3,6 @@ import { addDecorator, addParameters } from '@storybook/vue'
 import { withKnobs } from '@storybook/addon-knobs'
 import { withInfo } from 'storybook-addon-vue-info'
 import { action } from '@storybook/addon-actions'
-import { withA11y } from "@storybook/addon-a11y";
 import Vuetify from 'vuetify'
 import { VApp, VContainer, VBtn, VAutocomplete, VTextField } from 'vuetify/lib'
 import colors from 'vuetify/es5/util/colors'
@@ -80,8 +79,6 @@ addParameters({
 addDecorator(withInfo)
 // -- adds the knob tab to your story, this allows you to play around with your component
 addDecorator(withKnobs)
-
-addDecorator(withA11y);
 
 Vue.prototype.$store = store
 Vue.prototype.$activeAccount = activeAccount
