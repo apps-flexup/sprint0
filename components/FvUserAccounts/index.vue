@@ -20,8 +20,9 @@
             :key='account.id'
             @click.stop="setCurrentAccount(account)"
           )
-            v-list-item-avatar
-              img(:src='account.avatar')
+            fv-avatar(
+              :avatar="account.avatar"
+            )
             v-list-item-content
               v-list-item-title {{ account.name }}
           v-list-item
