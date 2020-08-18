@@ -67,10 +67,8 @@ Vue.component('nuxt-link', {
   template: 'NuxtLink',
 })
 
-import theme from "./theme.js";
 addParameters({
   options: {
-    theme,
     sortStoriesByKind: true,
   }
 });
