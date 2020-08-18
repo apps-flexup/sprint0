@@ -1,6 +1,6 @@
 <template lang="pug">
-  .fv-order-step-select-partner
-    p {{ $options.name }}
+.fv-order-step-select-partner
+  p {{ $options.name }}
 </template>
 
 <script>

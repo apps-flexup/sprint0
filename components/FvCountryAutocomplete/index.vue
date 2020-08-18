@@ -1,17 +1,17 @@
 <template lang="pug">
-  .fv-country-autocomplete
-    fv-autocomplete(
-      :items="items"
-      :filter="filterList"
-      @autocomplete:selected="selected"
-    )
-      template(v-slot:label)
-        p {{ $t('forms.partners.new.country') }}
-      template(v-slot:item="data")
-        v-list-item-content
-          v-list-item-title {{ data.item.name }}
-      template(v-slot:selection="data")
-        div {{ data.item.name }}
+.fv-country-autocomplete
+  fv-autocomplete(
+    :items="items"
+    :filter="filterList"
+    @autocomplete:selected="selected"
+  )
+    template(v-slot:label)
+      p {{ $t('forms.partners.new.country') }}
+    template(v-slot:item="data")
+      v-list-item-content
+        v-list-item-title {{ data.item.name }}
+    template(v-slot:selection="data")
+      div {{ data.item.name }}
 </template>
 
 <script>

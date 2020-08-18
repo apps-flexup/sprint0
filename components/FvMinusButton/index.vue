@@ -1,10 +1,10 @@
 <template lang="pug">
-  .fv-minus-button
-    v-btn(
-      icon
-      @click.stop="minus"
-    )
-      v-icon mdi-minus
+.fv-minus-button
+  v-btn(
+    icon
+    @click.stop="minus"
+  )
+    v-icon mdi-minus
 </template>
 
 <script>

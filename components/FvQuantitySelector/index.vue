@@ -1,17 +1,17 @@
 <template lang="pug">
-  .fv-quantity-selector
-    fv-text-field(
-      :value="quantity.toString()"
-      :outlined="false"
-    )
-      template(v-slot:append)
-        fv-minus-button(
-          @button:minus="minus"
-        )
-      template(v-slot:prepend)
-        fv-plus-button(
-          @button:plus="plus"
-        )
+.fv-quantity-selector
+  fv-text-field(
+    :value="quantity.toString()"
+    :outlined="false"
+  )
+    template(v-slot:append)
+      fv-minus-button(
+        @button:minus="minus"
+      )
+    template(v-slot:prepend)
+      fv-plus-button(
+        @button:plus="plus"
+      )
 </template>
 
 <script>

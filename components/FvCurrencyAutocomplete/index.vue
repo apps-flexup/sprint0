@@ -1,18 +1,18 @@
 <template lang="pug">
-  .fv-currency-autocomplete
-    fv-autocomplete(
-      :element="currencyId"
-      :items="items"
-      :filter="filter"
-      @autocomplete:selected="selected"
-    )
-      template(v-slot:label)
-        p {{ $t('forms.products.new.currency') }}
-      template(v-slot:item="data")
-        v-list-item-content
-          v-list-item-title {{ `${data.item.name} ${data.item.symbole} (${data.item.iso3})` }}
-      template(v-slot:selection="data")
-        div {{ `${data.item.name} ${data.item.symbole} (${data.item.iso3})` }}
+.fv-currency-autocomplete
+  fv-autocomplete(
+    :element="currencyId"
+    :items="items"
+    :filter="filter"
+    @autocomplete:selected="selected"
+  )
+    template(v-slot:label)
+      p {{ $t('forms.products.new.currency') }}
+    template(v-slot:item="data")
+      v-list-item-content
+        v-list-item-title {{ `${data.item.name} ${data.item.symbole} (${data.item.iso3})` }}
+    template(v-slot:selection="data")
+      div {{ `${data.item.name} ${data.item.symbole} (${data.item.iso3})` }}
 </template>
 
 <script>

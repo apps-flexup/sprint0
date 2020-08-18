@@ -1,4 +1,5 @@
 <template lang="pug">
+.fv-modal-slot
   v-dialog(
     v-model='dialog'
     persistent

@@ -1,4 +1,5 @@
 <template lang="pug">
+.fv-partner-modal
   fv-modal-slot(:dialog="show")
     template(
       slot='title'

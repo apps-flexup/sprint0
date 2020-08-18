@@ -1,5 +1,5 @@
 <template lang="pug">
-  .fv-contract-summary-visualisation
+.fv-contract-summary-visualisation
 </template>
 
 <script>

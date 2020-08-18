@@ -1,6 +1,6 @@
 <template lang="pug">
-  .fv-unit-input
-    p {{ $options.name }}
+.fv-unit-input
+  p {{ $options.name }}
 </template>
 
 <script>

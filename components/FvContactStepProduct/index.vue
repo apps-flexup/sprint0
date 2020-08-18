@@ -1,6 +1,6 @@
 <template lang="pug">
-  .fv-contact-step-product
-    p {{ $options.name }}
+.fv-contact-step-product
+  p {{ $options.name }}
 </template>
 <script>
 export default {

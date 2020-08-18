@@ -1,5 +1,6 @@
 <template lang="pug">
-  v-form.fv-contact-edit
+.fv-contact-edit
+  v-form
     v-row
       v-col(cols="6")
         v-text-field(

@@ -1,4 +1,5 @@
 <template lang="pug">
+.fv-status-progress
   v-progress-linear(
     :value="config.value"
     :color="config.color"

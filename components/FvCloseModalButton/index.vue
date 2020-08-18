@@ -1,10 +1,10 @@
 <template lang="pug">
-  .fv-close-modal-button
-    v-btn(
-      color='blue darken-1'
-      text=''
-      @click.stop='close'
-    ) {{ $t('modal.close') }}
+.fv-close-modal-button
+  v-btn(
+    color='blue darken-1'
+    text=''
+    @click.stop='close'
+  ) {{ $t('modal.close') }}
 </template>
 
 <script>

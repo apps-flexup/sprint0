@@ -1,41 +1,41 @@
 <template lang="pug">
-  .fv-nav
-    v-row
-      v-col(
-        cols="2"
-        align='left'
+.fv-nav
+  v-row
+    v-col(
+      cols="2"
+      align='left'
+    )
+      v-btn(
+        :disabled='step === 1'
+        text=''
+        @click.prevent='step--'
       )
-        v-btn(
-          :disabled='step === 1'
-          text=''
-          @click.prevent='step--'
-        )
-          | {{ $t('buttons.previous') }}
-      v-col(
-        cols="8"
-        align='left'
+        | {{ $t('buttons.previous') }}
+    v-col(
+      cols="8"
+      align='left'
+    )
+      fv-etape(:etape='etape')
+    v-col(
+      cols="2"
+      align='right'
+    )
+      v-btn(
+        v-if="step <= nbSteps"
+        :disabled='step === nbSteps'
+        color='primary'
+        depressed=''
+        @click.prevent='step++'
       )
-        fv-etape(:etape='etape')
-      v-col(
-        cols="2"
-        align='right'
+        | {{ $t('buttons.next') }}
+      v-btn(
+        v-else
+        :disabled='step <= nbSteps'
+        color='primary'
+        depressed=''
+        @click.prevent='submit'
       )
-        v-btn(
-          v-if="step <= nbSteps"
-          :disabled='step === nbSteps'
-          color='primary'
-          depressed=''
-          @click.prevent='step++'
-        )
-          | {{ $t('buttons.next') }}
-        v-btn(
-          v-else
-          :disabled='step <= nbSteps'
-          color='primary'
-          depressed=''
-          @click.prevent='submit'
-        )
-          | {{ $t('buttons.submit') }}
+        | {{ $t('buttons.submit') }}
 </template>
 
 <script>

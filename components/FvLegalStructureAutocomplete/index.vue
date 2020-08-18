@@ -1,18 +1,17 @@
 <template lang="pug">
-  .fv-legal-structure-autocomplete
-    fv-autocomplete(
-      :items="items"
-      :filter="filter"
-      @autocomplete:selected="selected"
-    )
-      template(v-slot:label)
-        p {{ $t('forms.partners.new.legalStructure') }}
-      template(v-slot:item="data")
-        v-list-item-content
-          v-list-item-title {{ `${data.item.name} (${data.item.sigle})` }}
-      template(v-slot:selection="data")
-        div {{ `${data.item.name} (${data.item.sigle})` }}
-
+.fv-legal-structure-autocomplete
+  fv-autocomplete(
+    :items="items"
+    :filter="filter"
+    @autocomplete:selected="selected"
+  )
+    template(v-slot:label)
+      p {{ $t('forms.partners.new.legalStructure') }}
+    template(v-slot:item="data")
+      v-list-item-content
+        v-list-item-title {{ `${data.item.name} (${data.item.sigle})` }}
+    template(v-slot:selection="data")
+      div {{ `${data.item.name} (${data.item.sigle})` }}
 </template>
 
 <script>

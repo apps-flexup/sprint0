@@ -1,28 +1,28 @@
 <template lang="pug">
-  .fv-order-form
-    p {{ $options.name }}
-    v-row(
-      v-for="i in nbOrders"
-      :key="i"
-    )
-      v-col(cols="12")
-        fv-order-for-partner(
-          :i="i"
-          :order="orderList[i]"
-          @order:partnerSelected="partnerSelected"
-          @order:orderLinesChanged="orderLinesChanged"
-          @order:remove="removeOrder"
+.fv-order-form
+  p {{ $options.name }}
+  v-row(
+    v-for="i in nbOrders"
+    :key="i"
+  )
+    v-col(cols="12")
+      fv-order-for-partner(
+        :i="i"
+        :order="orderList[i]"
+        @order:partnerSelected="partnerSelected"
+        @order:orderLinesChanged="orderLinesChanged"
+        @order:remove="removeOrder"
+      )
+  v-row(v-if="nbOrders > 1")
+      v-spacer
+      v-col(cols="5")
+        fv-order-totals(
+          :orderLines="allOrderLines"
         )
-    v-row(v-if="nbOrders > 1")
-        v-spacer
-        v-col(cols="5")
-          fv-order-totals(
-            :orderLines="allOrderLines"
-          )
-    v-row
-      v-btn(@click="addNewOrder") Order for new partner
-    v-row
-      v-btn(@click="validateOrders") validate
+  v-row
+    v-btn(@click="addNewOrder") Order for new partner
+  v-row
+    v-btn(@click="validateOrders") validate
 </template>
 
 <script>

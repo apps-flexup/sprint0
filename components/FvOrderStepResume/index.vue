@@ -1,6 +1,6 @@
 <template lang="pug">
-  .fv-offer-step-resume
-    p {{ $options.name }}
+.fv-order-step-resume
+  p {{ $options.name }}
 </template>
 
 <script>

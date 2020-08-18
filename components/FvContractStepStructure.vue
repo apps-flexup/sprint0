@@ -1,15 +1,15 @@
 <template lang="pug">
-  .fv-contract-step4(v-if="etape.id === 3")
-    v-row
-      v-select(
-        v-model="selected"
-        :items="structContractList"
-        item-text="name"
-        item-value="id"
-        :label="$t('forms.contracts.structure.structureType')"
-        clearable=''
-        outlined=''
-      )
+.fv-contract-step-structure(v-if="etape.id === 3")
+  v-row
+    v-select(
+      v-model="selected"
+      :items="structContractList"
+      item-text="name"
+      item-value="id"
+      :label="$t('forms.contracts.structure.structureType')"
+      clearable=''
+      outlined=''
+    )
 </template>
 
 <script>

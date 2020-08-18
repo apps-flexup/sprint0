@@ -1,18 +1,17 @@
 <template lang="pug">
-  .fv-text-field
-    v-text-field(
-      v-model="model"
-      :label="label"
-      :outlined="outlined"
-      :append-outer-icon="appendOuterIcon"
-      :suffix="suffix"
-      @input="inputChanged"
-    )
-      template(v-slot:append)
-        slot(name="append")
-      template(v-slot:prepend)
-        slot(name="prepend")
-
+.fv-text-field
+  v-text-field(
+    v-model="model"
+    :label="label"
+    :outlined="outlined"
+    :append-outer-icon="appendOuterIcon"
+    :suffix="suffix"
+    @input="inputChanged"
+  )
+    template(v-slot:append)
+      slot(name="append")
+    template(v-slot:prepend)
+      slot(name="prepend")
 </template>
 
 <script>

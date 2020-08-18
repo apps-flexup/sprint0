@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import { addDecorator, addParameters } from '@storybook/vue'
 import { withKnobs } from '@storybook/addon-knobs'
-import { withInfo } from 'storybook-addon-vue-info'
 import { action } from '@storybook/addon-actions'
 import Vuetify from 'vuetify'
 import { VApp, VContainer, VBtn, VAutocomplete, VTextField } from 'vuetify/lib'
@@ -73,8 +72,6 @@ addParameters({
   }
 });
 
-// -- adds the info tab to your story
-addDecorator(withInfo)
 // -- adds the knob tab to your story, this allows you to play around with your component
 addDecorator(withKnobs)
 

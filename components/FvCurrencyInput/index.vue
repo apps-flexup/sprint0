@@ -1,6 +1,6 @@
 <template lang="pug">
-  .fv-currency-input
-    p {{ $options.name }}
+.fv-currency-input
+  p {{ $options.name }}
 </template>
 
 <script>

@@ -1,25 +1,25 @@
 <template lang="pug">
-  .fv-offer-data-table
-      v-data-table.elevation-2(
-        :headers='headers'
-        :items='items'
-        item-key='id'
-        @click:row='selected'
-        :search="search"
-        :custom-filter="filterFunction"
-      )
-        template(v-slot:item.name='{ item }')
-          div(v-to-locale="item.name")
-        template(v-slot:item.vat='{ item }')
-          div {{ item.vat }}%
-        template(v-slot:item.unit='{ item }')
-          div(v-to-unit="item")
-        template(v-slot:item.status='{ item }')
-          fv-status-progress-atom(:status="item.status")
-        template(v-slot:item.actions="{ item }")
-          v-row
-            fv-edit-action(@edit:clicked="selected(item)")
-            fv-delete-action(@delete:clicked="deleteItem(item)")
+.fv-offer-data-table
+    v-data-table.elevation-2(
+      :headers='headers'
+      :items='items'
+      item-key='id'
+      @click:row='selected'
+      :search="search"
+      :custom-filter="filterFunction"
+    )
+      template(v-slot:item.name='{ item }')
+        div(v-to-locale="item.name")
+      template(v-slot:item.vat='{ item }')
+        div {{ item.vat }}%
+      template(v-slot:item.unit='{ item }')
+        div(v-to-unit="item")
+      template(v-slot:item.status='{ item }')
+        fv-status-progress-atom(:status="item.status")
+      template(v-slot:item.actions="{ item }")
+        v-row
+          fv-edit-action(@edit:clicked="selected(item)")
+          fv-delete-action(@delete:clicked="deleteItem(item)")
 </template>
 
 <script>

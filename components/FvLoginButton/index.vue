@@ -1,4 +1,5 @@
 <template lang="pug">
+.fv-login-button
   v-btn.mx-2(
     @click.stop="click"
   ) {{ $t('buttons.login') }}

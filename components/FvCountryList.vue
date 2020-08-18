@@ -1,6 +1,6 @@
 <template lang="pug">
-  .fv-country-list
-    p {{ $options.name }}
+.fv-country-list
+  p {{ $options.name }}
 </template>
 
 <script>

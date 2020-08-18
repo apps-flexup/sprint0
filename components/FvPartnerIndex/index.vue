@@ -1,18 +1,18 @@
 <template lang="pug">
-  .fv-partner-index
-    v-row
-      v-col(cols="12")
-        fv-create-button.text-right(
-          @button:click='showModal = true'
-        ) {{ $t('buttons.create.partner') }}
-      fv-partner-modal(
-        :show="showModal"
-        :partner='partner'
-        @modal:close="close"
-        @modal:save="save"
-        @partner:changed="partnerChanged"
-      )
-    fv-partner-list(@list:selected="selectedPartner")
+.fv-partner-index
+  v-row
+    v-col(cols="12")
+      fv-create-button.text-right(
+        @button:click='showModal = true'
+      ) {{ $t('buttons.create.partner') }}
+    fv-partner-modal(
+      :show="showModal"
+      :partner='partner'
+      @modal:close="close"
+      @modal:save="save"
+      @partner:changed="partnerChanged"
+    )
+  fv-partner-list(@list:selected="selectedPartner")
 </template>
 
 <script>

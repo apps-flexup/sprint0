@@ -1,7 +1,7 @@
 <template lang="pug">
-  .fv-delete-action
-    v-icon(small='' @click.stop="clicked")
-      | mdi-delete
+.fv-delete-action
+  v-icon(small='' @click.stop="clicked")
+    | mdi-delete
 </template>
 
 <script>

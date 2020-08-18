@@ -1,7 +1,7 @@
 <template lang="pug">
-  .fv-etapes
-    h3 {{ $tc('forms.title', etape.id) }}
-    h2 {{ $t(etape.name) }}
+.fv-etapes
+  h3 {{ $tc('forms.title', etape.id) }}
+  h2 {{ $t(etape.name) }}
 </template>
 
 <script>

@@ -1,5 +1,6 @@
 <template lang="pug">
-  v-dialog.fv-contact-dialog(
+.fv-contact-dialog
+  v-dialog(
     v-model="show"
     max-width="50%"
   )

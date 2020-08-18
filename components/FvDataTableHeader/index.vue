@@ -1,12 +1,12 @@
 <template lang="pug">
-  .fv-data-table-header
-    v-card-title
-      | {{ title }}
-      v-spacer
-      fv-data-table-search-bar(
-        :label="searchLabel"
-        @dataTableSearchBar:changed="searchChanged"
-      )
+.fv-data-table-header
+  v-card-title
+    | {{ title }}
+    v-spacer
+    fv-data-table-search-bar(
+      :label="searchLabel"
+      @dataTableSearchBar:changed="searchChanged"
+    )
 </template>
 
 <script>
