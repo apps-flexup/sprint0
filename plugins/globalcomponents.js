@@ -34,6 +34,7 @@ import FvCreateButton from '@/components/FvCreateButton'
 import FvDataTableHeader from '@/components/FvDataTableHeader'
 import FvDataTableSearchBar from '@/components/FvDataTableSearchBar'
 import FvLoginButton from '@/components/FvLoginButton'
+import FvLogoutButton from '@/components/FvLogoutButton'
 import FvMinusButton from '@/components/FvMinusButton'
 import FvModal from '@/components/FvModal'
 import FvModalActions from '@/components/FvModalActions'
@@ -141,6 +142,7 @@ Vue.component('fv-create-button', FvCreateButton)
 Vue.component('fv-data-table-header', FvDataTableHeader)
 Vue.component('fv-data-table-search-bar', FvDataTableSearchBar)
 Vue.component('fv-login-button', FvLoginButton)
+Vue.component('fv-logout-button', FvLogoutButton)
 Vue.component('fv-minus-button', FvMinusButton)
 Vue.component('fv-modal', FvModal)
 Vue.component('fv-modal-actions', FvModalActions)

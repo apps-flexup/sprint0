@@ -168,7 +168,8 @@
     "submit": "Submit",
     "previous": "Previous",
     "next": "Next",
-    "login": "Login"
+    "login": "Login",
+    "logout": "Logout"
   },
   "headers": {
     "actions": "Actions",
