@@ -27,10 +27,9 @@
           v-list-item
             v-list-item-content
               v-list-item-title
-                v-btn(
-                  @click.stop="logout"
-                  color="primary"
-                ) Déconnexion
+                fv-logout-button(
+                  @logoutButton:clicked="logout"
+                )
 </template>
 
 <script>
