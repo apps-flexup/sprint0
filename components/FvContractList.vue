@@ -1,16 +1,16 @@
 <template lang="pug">
-  .fv-contract-list
-    p {{ $options.name }}
-    fv-contract-list-search(
-      :contracts="items"
-    )
-    v-row
-      v-col(cols="12")
-        v-data-table.elevation-2(
-          :headers='headers'
-          :items='items'
-          item-key='id'
-        )
+.fv-contract-list
+  p {{ $options.name }}
+  fv-contract-list-search(
+    :contracts="items"
+  )
+  v-row
+    v-col(cols="12")
+      v-data-table.elevation-2(
+        :headers='headers'
+        :items='items'
+        item-key='id'
+      )
 </template>
 
 <script>

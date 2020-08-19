@@ -1,6 +1,6 @@
 <template lang="pug">
-  .fv-contact-form
-    p {{ $options.name }}
+.fv-contact-form
+  p {{ $options.name }}
 </template>
 <script>
 export default {

@@ -1,11 +1,11 @@
 <template lang="pug">
-  .fv-contract-step6
-    v-row
-      v-col(
-        v-for="payment in payments" :key="payment.id"
-        cols="6"
-      )
-        fv-payment-summary-card(:payment='payment')
+.fv-contract-step-payment
+  v-row
+    v-col(
+      v-for="payment in payments" :key="payment.id"
+      cols="6"
+    )
+      fv-payment-summary-card(:payment='payment')
 </template>
 
 <script>

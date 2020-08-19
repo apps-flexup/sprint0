@@ -1,14 +1,14 @@
 <template lang="pug">
-  .fv-contract-step5
-    v-row
-      v-col(cols="12")
-        v-data-table.elevation-2(
-          v-model="selected"
-          :headers="headers"
-          :items="items"
-          item-key="id"
-          show-select
-        )
+.fv-contract-step-commande
+  v-row
+    v-col(cols="12")
+      v-data-table.elevation-2(
+        v-model="selected"
+        :headers="headers"
+        :items="items"
+        item-key="id"
+        show-select
+      )
 </template>
 
 <script>

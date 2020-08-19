@@ -12,7 +12,7 @@ const statusAvailable = {
 }
 const defaultValue = 'draft'
 
-storiesOf('Atoms|FvStatusProgress', module)
+storiesOf('Atoms/FvStatusProgress', module)
   .addDecorator(withKnobs)
   .add(
     'Common',

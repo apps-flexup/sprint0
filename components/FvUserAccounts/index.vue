@@ -1,36 +1,36 @@
 <template lang="pug">
-  .fv-user-accounts
-    fv-login-button(
-      v-if="!$auth.loggedIn"
-      @loginButton:clicked="login"
+.fv-user-accounts
+  fv-login-button(
+    v-if="!$auth.loggedIn"
+    @loginButton:clicked="login"
+  )
+  .d-flex.justify-center.align-center(v-else)
+    v-menu(
+      offset-y=''
     )
-    .d-flex.justify-center.align-center(v-else)
-      v-menu(
-        offset-y=''
-      )
-        template(v-slot:activator='{ attrs, on }')
-          v-btn.mx-2(
-            v-bind='attrs'
-            v-on='on'
+      template(v-slot:activator='{ attrs, on }')
+        v-btn.mx-2(
+          v-bind='attrs'
+          v-on='on'
+        )
+          | {{ $auth.user.preferred_username }}
+      v-list
+        v-list-item(
+          v-for='account in accounts'
+          :key='account.id'
+          @click.stop="setCurrentAccount(account)"
+        )
+          fv-avatar(
+            :avatar="account.avatar"
           )
-            | {{ $auth.user.preferred_username }}
-        v-list
-          v-list-item(
-            v-for='account in accounts'
-            :key='account.id'
-            @click.stop="setCurrentAccount(account)"
-          )
-            fv-avatar(
-              :avatar="account.avatar"
-            )
-            v-list-item-content
-              v-list-item-title {{ account.name }}
-          v-list-item
-            v-list-item-content
-              v-list-item-title
-                fv-logout-button(
-                  @logoutButton:clicked="logout"
-                )
+          v-list-item-content
+            v-list-item-title {{ account.name }}
+        v-list-item
+          v-list-item-content
+            v-list-item-title
+              fv-logout-button(
+                @logoutButton:clicked="logout"
+              )
 </template>
 
 <script>

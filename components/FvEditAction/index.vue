@@ -1,7 +1,7 @@
 <template lang="pug">
-  .fv-edit-action
-    v-icon.mr-2(small='' @click="clicked")
-      | mdi-pencil
+.fv-edit-action
+  v-icon.mr-2(small='' @click="clicked")
+    | mdi-pencil
 </template>
 
 <script>

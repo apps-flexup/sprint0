@@ -1,23 +1,23 @@
 <template lang="pug">
-  .fv-partner-data-table
-    v-data-table.elevation-2(
-      :headers='headers'
-      :items='items'
-      item-key='id'
-      @click:row='selected'
-      :search="search"
-      :custom-filter="filterFunction"
-    )
-      template(v-slot:item.legal_structure="{item}")
-        div(v-if="item.legalStructure") {{ item.legalStructure.name }}
-      template(v-slot:item.country="{item}")
-        div(v-if="item.country") {{ item.country.name }}
-      template(v-slot:item.actions="{ item }")
-        v-row
-          v-icon.mr-2(small='' @click.stop="showContract(item)")
-            | mdi-briefcase
-          fv-edit-action(@edit:clicked="selected(item)")
-          fv-delete-action(@delete:clicked="deleteItem(item)")
+.fv-partner-data-table
+  v-data-table.elevation-2(
+    :headers='headers'
+    :items='items'
+    item-key='id'
+    @click:row='selected'
+    :search="search"
+    :custom-filter="filterFunction"
+  )
+    template(v-slot:item.legal_structure="{item}")
+      div(v-if="item.legalStructure") {{ item.legalStructure.name }}
+    template(v-slot:item.country="{item}")
+      div(v-if="item.country") {{ item.country.name }}
+    template(v-slot:item.actions="{ item }")
+      v-row
+        v-icon.mr-2(small='' @click.stop="showContract(item)")
+          | mdi-briefcase
+        fv-edit-action(@edit:clicked="selected(item)")
+        fv-delete-action(@delete:clicked="deleteItem(item)")
 </template>
 
 <script>

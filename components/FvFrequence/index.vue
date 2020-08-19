@@ -1,20 +1,20 @@
 <template lang="pug">
-  .fv-frequence
-    p {{ $options.name }}
-    p(v-if="periode") periode : {{ $t(`frequences.periods.${periode}`) }}
-    v-select(
-      v-model="periode"
-      :items="periodes"
-      item-value="offset"
-      clearable=''
-      outlined=''
-    )
-      template(v-slot:label)
-        div Période
-      template(v-slot:item="{ item }")
-        div {{ $t(item.text) }}
-      template(v-slot:selection="{ item }")
-        div {{ $t(item.text) }}
+.fv-frequence
+  p {{ $options.name }}
+  p(v-if="periode") periode : {{ $t(`frequences.periods.${periode}`) }}
+  v-select(
+    v-model="periode"
+    :items="periodes"
+    item-value="offset"
+    clearable=''
+    outlined=''
+  )
+    template(v-slot:label)
+      div Période
+    template(v-slot:item="{ item }")
+      div {{ $t(item.text) }}
+    template(v-slot:selection="{ item }")
+      div {{ $t(item.text) }}
 </template>
 
 <script>

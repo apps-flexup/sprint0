@@ -1,17 +1,17 @@
 <template lang="pug">
-  .fv-contact-new
-    v-row
-      v-col(cols="12")
-        fv-nav(
-          :current="step"
-          :steps="steps"
-          @moveTo="moveTo"
-        )
-    v-row
-      v-col(cols="2")
-        fv-stepper(:steps="steps" :current="step")
-      v-col(cols="10")
-        component(:is="etape.composant" :etape='etape')
+.fv-contact-new
+  v-row
+    v-col(cols="12")
+      fv-nav(
+        :current="step"
+        :steps="steps"
+        @moveTo="moveTo"
+      )
+  v-row
+    v-col(cols="2")
+      fv-stepper(:steps="steps" :current="step")
+    v-col(cols="10")
+      component(:is="etape.composant" :etape='etape')
 </template>
 
 <script>

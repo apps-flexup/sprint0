@@ -1,17 +1,17 @@
 <template lang="pug">
-  .fv-menu-list-bloc
-    v-list
-      v-list-item(
-        v-for="(item, i) in items"
-        :key="i"
-        :to="item.to"
-        router
-        exact
-      )
-        v-list-item-action
-          v-icon {{ item.icon }}
-        v-list-item-content
-          v-list-item-title(v-text="$t(item.title)")
+.fv-menu-list
+  v-list
+    v-list-item(
+      v-for="(item, i) in items"
+      :key="i"
+      :to="item.to"
+      router
+      exact
+    )
+      v-list-item-action
+        v-icon {{ item.icon }}
+      v-list-item-content
+        v-list-item-title(v-text="$t(item.title)")
 </template>
 
 <script>

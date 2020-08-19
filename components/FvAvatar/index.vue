@@ -1,7 +1,7 @@
 <template lang="pug">
-  .fv-avatar
-    v-list-item-avatar
-      img(:src='avatar')
+.fv-avatar
+  v-list-item-avatar
+    img(:src='avatar')
 </template>
 
 <script>

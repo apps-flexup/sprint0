@@ -1,12 +1,12 @@
 <template lang="pug">
-  .fv-order-data-table
-    v-data-table.elevation-2(
-      :headers='headers'
-      :items='items'
-      item-key='id'
-      :search="search"
-      :custom-filter="filterFunction"
-    )
+.fv-order-data-table
+  v-data-table.elevation-2(
+    :headers='headers'
+    :items='items'
+    item-key='id'
+    :search="search"
+    :custom-filter="filterFunction"
+  )
 </template>
 
 <script>

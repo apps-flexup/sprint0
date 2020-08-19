@@ -1,14 +1,14 @@
 <template lang="pug">
-  .fv-order-list
-    v-card
-      fv-data-table-header(
-        :title="$t('table.orders.title')"
-        :searchLabel="$t('table.orders.search')"
-        @dataTableSearch:changed="searchChanged"
-      )
-      fv-order-data-table(
-        :search="search"
-      )
+.fv-order-list
+  v-card
+    fv-data-table-header(
+      :title="$t('table.orders.title')"
+      :searchLabel="$t('table.orders.search')"
+      @dataTableSearch:changed="searchChanged"
+    )
+    fv-order-data-table(
+      :search="search"
+    )
 </template>
 
 <script>

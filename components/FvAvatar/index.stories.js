@@ -12,7 +12,7 @@ const avatarAvailable = {
 }
 const defaultAvatar = '/images/avatar-0.png'
 
-storiesOf('Atoms|FvAvatar', module)
+storiesOf('Atoms/FvAvatar', module)
   .addDecorator(withKnobs)
   .add(
     'Common',

@@ -1,6 +1,6 @@
 <template lang="pug">
-  .fv-user-info
-    p {{ $auth.user }}
+.fv-user-info
+  p {{ $auth.user }}
 </template>
 
 <script>

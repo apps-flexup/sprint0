@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/vue'
 import FvModalActions from './index.vue'
 
-storiesOf('Molecules|FvModalActions', module).add(
+storiesOf('Molecules/FvModalActions', module).add(
   'Common',
   () => ({
     components: { FvModalActions },

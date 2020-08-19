@@ -1,15 +1,15 @@
 <template lang="pug">
-  .fv-offer-list
-    v-card
-      fv-data-table-header(
-        :title="$t('table.offers.title')"
-        :searchLabel="$t('table.offers.search')"
-        @dataTableSearch:changed="searchChanged"
-      )
-      fv-offer-data-table(
-        :search="search"
-        @dataTable:selected="offerSelected"
-      )
+.fv-offer-list
+  v-card
+    fv-data-table-header(
+      :title="$t('table.offers.title')"
+      :searchLabel="$t('table.offers.search')"
+      @dataTableSearch:changed="searchChanged"
+    )
+    fv-offer-data-table(
+      :search="search"
+      @dataTable:selected="offerSelected"
+    )
 </template>
 
 <script>

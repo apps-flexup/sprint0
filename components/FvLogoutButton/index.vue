@@ -1,4 +1,5 @@
 <template lang="pug">
+.fv-logout-button
   v-btn(
     @click.stop="click"
     color="primary"

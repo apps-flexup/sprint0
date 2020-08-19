@@ -1,12 +1,12 @@
 <template lang="pug">
-  .fv-modal-actions
-    v-row
-      fv-close-modal-button(
-        @button:close="close"
-      )
-      fv-save-modal-button(
-        @button:save="save"
-      )
+.fv-modal-actions
+  v-row
+    fv-close-modal-button(
+      @button:close="close"
+    )
+    fv-save-modal-button(
+      @button:save="save"
+    )
 </template>
 
 <script>

@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/vue'
 import FvQuantitySelector from './index.vue'
 
-storiesOf('Molecules|FvQuantitySelector', module).add(
+storiesOf('Molecules/FvQuantitySelector', module).add(
   'Common',
   () => ({
     components: { FvQuantitySelector },

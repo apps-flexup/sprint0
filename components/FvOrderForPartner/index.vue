@@ -1,49 +1,49 @@
 <template lang="pug">
-  .fv-order-for-partner
-    p {{ $options.name }}
-    v-card.mainCard
-      v-row
-        v-spacer
-        v-btn(
-          icon
-          @click.prevent="remove"
-          x-large
-        )
-          v-icon mdi-close
-      v-row
-        v-col(cols="6")
-          fv-partner-autocomplete(
-            :partnerId="partnerId"
-            @partner:selected='partnerSelected'
-          )
-        v-col(cols="6")
-          fv-partner-card(
-            v-if="partnerId"
-            :partnerId="partnerId"
-          )
-      v-row
-        v-col(cols="8")
-          fv-offer-autocomplete(
-            :disabled="!partnerId"
-            :partnerId="partnerId"
-            :returnObject="true"
-            @offers:selected="offerSelected"
-          )
-        v-col(cols="4")
-          pre ajouter structure
-          fv-structure-autocomplete(
-            @structures:selected="structureSelected"
-          )
-      fv-order-line-list(
-        :orderLines="orderLines"
-        @orderLines:delete="deleteOrderLine"
+.fv-order-for-partner
+  p {{ $options.name }}
+  v-card.mainCard
+    v-row
+      v-spacer
+      v-btn(
+        icon
+        @click.prevent="remove"
+        x-large
       )
-      v-row
-        v-spacer
-        v-col(cols="5")
-          fv-order-totals(
-            :orderLines="orderLines"
-          )
+        v-icon mdi-close
+    v-row
+      v-col(cols="6")
+        fv-partner-autocomplete(
+          :partnerId="partnerId"
+          @partner:selected='partnerSelected'
+        )
+      v-col(cols="6")
+        fv-partner-card(
+          v-if="partnerId"
+          :partnerId="partnerId"
+        )
+    v-row
+      v-col(cols="8")
+        fv-offer-autocomplete(
+          :disabled="!partnerId"
+          :partnerId="partnerId"
+          :returnObject="true"
+          @offers:selected="offerSelected"
+        )
+      v-col(cols="4")
+        pre ajouter structure
+        fv-structure-autocomplete(
+          @structures:selected="structureSelected"
+        )
+    fv-order-line-list(
+      :orderLines="orderLines"
+      @orderLines:delete="deleteOrderLine"
+    )
+    v-row
+      v-spacer
+      v-col(cols="5")
+        fv-order-totals(
+          :orderLines="orderLines"
+        )
 </template>
 
 <script>

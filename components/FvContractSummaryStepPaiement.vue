@@ -1,6 +1,6 @@
 <template lang="pug">
-  .fv-contract-summary-step2
-    p {{ $options.name }}
+.fv-contract-summary-step-payment
+  p {{ $options.name }}
 </template>
 
 <script>

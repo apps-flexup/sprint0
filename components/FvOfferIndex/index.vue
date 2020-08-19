@@ -1,18 +1,18 @@
 <template lang="pug">
-  .fv-offer-index
-    v-row
-      v-col(cols="12")
-        fv-create-button.text-right(
-          @button:click='showModal = true'
-        ) {{ $t('buttons.create.offer') }}
-        fv-offer-modal(
-          :show="showModal"
-          :offer='offer'
-          @modal:close="close"
-          @modal:save="save"
-          @offer:changed="offerChanged"
-        )
-    fv-offer-list(@list:selected="selectedOffer")
+.fv-offer-index
+  v-row
+    v-col(cols="12")
+      fv-create-button.text-right(
+        @button:click='showModal = true'
+      ) {{ $t('buttons.create.offer') }}
+      fv-offer-modal(
+        :show="showModal"
+        :offer='offer'
+        @modal:close="close"
+        @modal:save="save"
+        @offer:changed="offerChanged"
+      )
+  fv-offer-list(@list:selected="selectedOffer")
 </template>
 
 <script>

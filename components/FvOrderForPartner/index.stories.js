@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/vue'
 import FvOrderForPartner from './index.vue'
 
-storiesOf('Organism|FvOrderForPartner', module).add(
+storiesOf('Organism/FvOrderForPartner', module).add(
   'Common',
   () => ({
     components: { FvOrderForPartner },

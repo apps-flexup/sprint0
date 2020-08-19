@@ -1,11 +1,11 @@
 <template lang="pug">
-  .fv-data-table-search-bar
-    fv-text-field(
-      :label="label"
-      :outlined="false"
-      appendOuterIcon="mdi-magnify"
-      @input="inputChanged"
-    )
+.fv-data-table-search-bar
+  fv-text-field(
+    :label="label"
+    :outlined="false"
+    appendOuterIcon="mdi-magnify"
+    @input="inputChanged"
+  )
 </template>
 
 <script>

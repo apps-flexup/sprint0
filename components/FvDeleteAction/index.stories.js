@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/vue'
 import FvDeleteAction from './index.vue'
 
-storiesOf('Atoms|FvDeleteAction', module).add(
+storiesOf('Atoms/FvDeleteAction', module).add(
   'Common',
   () => ({
     components: { FvDeleteAction },

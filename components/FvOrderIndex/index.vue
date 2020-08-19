@@ -1,11 +1,11 @@
 <template lang="pug">
-  .fv-order-index
-    v-row
-      v-col(cols="12")
-        fv-create-button.text-right(
-          @button:click='createOrder'
-        ) {{ $t('buttons.create.order') }}
-    fv-order-list
+.fv-order-index
+  v-row
+    v-col(cols="12")
+      fv-create-button.text-right(
+        @button:click='createOrder'
+      ) {{ $t('buttons.create.order') }}
+  fv-order-list
 </template>
 
 <script>

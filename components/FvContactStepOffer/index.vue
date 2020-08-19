@@ -1,5 +1,5 @@
 <template lang="pug">
-  .fv-contact-step-offer
+.fv-contact-step-offer
 </template>
 <script>
 export default {

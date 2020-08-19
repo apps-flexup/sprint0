@@ -1,25 +1,25 @@
 <template lang="pug">
-  .fv-contract-new
-    v-row
-      v-col(cols="12") ({{ values }})
-    v-row
-      v-col(cols="12")
-        fv-nav(
-          :current="step"
-          :steps="steps"
-          @moveTo="moveTo"
+.fv-contract-new
+  v-row
+    v-col(cols="12") ({{ values }})
+  v-row
+    v-col(cols="12")
+      fv-nav(
+        :current="step"
+        :steps="steps"
+        @moveTo="moveTo"
+      )
+  v-row
+    v-col(cols="2")
+      fv-stepper(:steps="steps" :current="step")
+    v-col(cols="10")
+      keep-alive
+        component(
+          :is="etape.composant"
+          :etape='etape'
+          :values='values'
+          @wizard="wizard"
         )
-    v-row
-      v-col(cols="2")
-        fv-stepper(:steps="steps" :current="step")
-      v-col(cols="10")
-        keep-alive
-          component(
-            :is="etape.composant"
-            :etape='etape'
-            :values='values'
-            @wizard="wizard"
-          )
 </template>
 
 <script>

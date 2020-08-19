@@ -2,7 +2,7 @@ import { storiesOf } from '@storybook/vue'
 import { withKnobs, boolean } from '@storybook/addon-knobs'
 import FvProductModal from './index.vue'
 
-storiesOf('Organism|FvProductModal', module)
+storiesOf('Organism/FvProductModal', module)
   .addDecorator(withKnobs)
   .add(
     'Common',

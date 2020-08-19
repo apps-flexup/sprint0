@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/vue'
 import FvOfferAutocomplete from './index.vue'
 
-storiesOf('Atoms|FvOfferAutocomplete', module).add(
+storiesOf('Atoms/FvOfferAutocomplete', module).add(
   'Common',
   () => ({
     components: { FvOfferAutocomplete },

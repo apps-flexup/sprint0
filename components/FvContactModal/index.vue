@@ -1,6 +1,6 @@
 <template lang="pug">
-  .fv-contact-modal
-    p {{ $options.name }}
+.fv-contact-modal
+  p {{ $options.name }}
 </template>
 <script>
 export default {

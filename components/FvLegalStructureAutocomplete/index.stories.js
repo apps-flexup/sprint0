@@ -2,7 +2,7 @@ import { storiesOf } from '@storybook/vue'
 import { withKnobs } from '@storybook/addon-knobs'
 import FvLegalStructureAutocomplete from './index.vue'
 
-storiesOf('Atoms|FvLegalStructureAutocomplete', module)
+storiesOf('Atoms/FvLegalStructureAutocomplete', module)
   .addDecorator(withKnobs)
   .add(
     'Common',

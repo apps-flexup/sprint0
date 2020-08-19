@@ -1,7 +1,7 @@
 <template lang="pug">
-  .fv-contract-summary-step5
-    p {{ $options.name }}
-    pre Commande
+.fv-contract-summary-step-commande
+  p {{ $options.name }}
+  pre Commande
 </template>
 
 <script>
