@@ -15,22 +15,7 @@
         )
           | {{ $auth.user.preferred_username }}
       v-list
-        v-list-item(
-          v-for='account in accounts'
-          :key='account.id'
-          @click.stop="setCurrentAccount(account)"
-        )
-          fv-avatar(
-            :avatar="account.avatar"
-          )
-          v-list-item-content
-            v-list-item-title {{ account.name }}
-        v-list-item
-          v-list-item-content
-            v-list-item-title
-              fv-logout-button(
-                @logoutButton:clicked="logout"
-              )
+        fv-list-accounts
 </template>
 
 <script>

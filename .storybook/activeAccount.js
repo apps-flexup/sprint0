@@ -16,19 +16,8 @@ const activeAccount = {
   //   const res = ctx.store.getters['accounts/selected']
   //   return res
   // },
-  // set(accountId) {
-  //   if (accountId === -1) return
-  //   ctx.store.dispatch('accounts/setCurrent', accountId)
-  //   ctx.store.dispatch('charters/get', {}, { root: true })
-  //   ctx.store.dispatch('contacts/get', {}, { root: true })
-  //   ctx.store.dispatch('contracts/getContracts', {}, { root: true })
-  //   ctx.store.dispatch('contracts/getLegalStructures', {}, { root: true })
-  //   ctx.store.dispatch('currencies/get', {}, { root: true })
-  //   ctx.store.dispatch('offers/get', {}, { root: true })
-  //   ctx.store.dispatch('orders/get', {}, { root: true })
-  //   ctx.store.dispatch('partners/get', {}, { root: true })
-  //   ctx.store.dispatch('products/get', {}, { root: true })
-  // },
+  set(_accountId) {
+  },
   // contracts() {
   //   const res = ctx.store.getters['contracts/all']
   //   return res
