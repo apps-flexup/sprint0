@@ -12,12 +12,6 @@
         v-icon mdi-close
     v-row
       v-col(cols="6")
-        fv-text-field(
-          label="Label (optional)"
-          @input="labelChanged"
-        )
-    v-row
-      v-col(cols="6")
         fv-partner-autocomplete(
           :partnerId="partnerId"
           @partner:selected='partnerSelected'
@@ -28,6 +22,12 @@
           :partnerId="partnerId"
         )
     v-row
+      v-col(cols="6")
+        fv-text-field(
+          label="Label (optional)"
+          @input="labelChanged"
+        )
+    v-row
       v-col(cols="8")
         fv-offer-autocomplete(
           :disabled="!partnerId"
@@ -36,7 +36,6 @@
           @offers:selected="offerSelected"
         )
       v-col(cols="4")
-        pre ajouter structure
         fv-structure-autocomplete(
           @structures:selected="structureSelected"
         )
