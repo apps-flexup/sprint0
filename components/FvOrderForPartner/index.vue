@@ -91,7 +91,6 @@ export default {
   },
   methods: {
     labelChanged(label) {
-      console.log('Label: ', label)
       this.$emit('order:labelChanged', this.i, label)
     },
     structureSelected(structureId) {
