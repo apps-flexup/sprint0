@@ -30,6 +30,11 @@ export default {
       }
     }
   },
+  watch: {
+    status() {
+      this.config = statusProgress(this.$vuetify, this.status)
+    }
+  },
   mounted() {
     this.config = statusProgress(this.$vuetify, this.status)
   }
