@@ -22,13 +22,20 @@
 <script>
 export default {
   name: 'FvNavBar',
+  props: {
+    title: {
+      type: String,
+      default() {
+        return ''
+      }
+    }
+  },
   data() {
     return {
       clipped: false,
       drawer: false,
       fixed: false,
-      miniVariant: false,
-      title: 'Flexup - Sprint 0'
+      miniVariant: false
     }
   },
   mounted() {
