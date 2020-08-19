@@ -1,9 +1,10 @@
 import Vue from 'vue'
 // Importation des composants utilitaires
+import FvAccount from '@/components/FvAccount'
+import FvAccountAvatar from '@/components/FvAccountAvatar'
 import FvAutocomplete from '@/components/FvAutocomplete'
 import FvAvatar from '@/components/FvAvatar'
 import FvMenuList from '@/components/FvMenuList'
-import FvAccountAvatar from '@/components/FvAccountAvatar'
 import FvCloseModalButton from '@/components/FvCloseModalButton'
 import FvContactCard from '@/components/FvContactCard'
 import FvContactDialog from '@/components/FvContactDialog'
@@ -101,10 +102,11 @@ import FvPartnerCard from '~/components/FvPartnerCard'
 import FvOrderTotals from '~/components/FvOrderTotals'
 
 // Déclarations composants utilitaires
+Vue.component('fv-account', FvAccount)
+Vue.component('fv-account-avatar', FvAccountAvatar)
 Vue.component('fv-autocomplete', FvAutocomplete)
 Vue.component('fv-avatar', FvAvatar)
 Vue.component('fv-menu-list', FvMenuList)
-Vue.component('fv-account-avatar', FvAccountAvatar)
 Vue.component('fv-close-modal-button', FvCloseModalButton)
 Vue.component('fv-contact-dialog', FvContactDialog)
 Vue.component('fv-contact-card', FvContactCard)

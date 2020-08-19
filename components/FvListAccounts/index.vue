@@ -5,11 +5,10 @@
     :key='account.id'
     @click.stop="setCurrentAccount(account)"
   )
-    fv-avatar(
+    fv-account(
       :avatar="account.avatar"
+      :name="account.name"
     )
-    v-list-item-content
-      v-list-item-title {{ account.name }}
   v-list-item
     v-list-item-content
       v-list-item-title
