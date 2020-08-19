@@ -24,7 +24,7 @@
     v-row
       v-col(cols="6")
         fv-text-field(
-          label="Label (optional)"
+          :label="$t('forms.orders.new.label')"
           @input="labelChanged"
         )
     v-row
