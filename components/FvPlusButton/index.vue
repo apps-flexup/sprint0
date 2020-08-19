@@ -2,6 +2,7 @@
 .fv-plus-button
   v-btn(
     icon
+    x-small
     @click.stop="plus"
   )
     v-icon mdi-plus
