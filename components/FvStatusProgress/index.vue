@@ -14,7 +14,7 @@
 <script>
 import { statusProgress } from '~/plugins/colorMaps'
 export default {
-  name: 'FvStatusProgressAtom',
+  name: 'FvStatusProgress',
   props: {
     status: {
       type: String,
