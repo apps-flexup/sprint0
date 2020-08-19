@@ -1,6 +1,8 @@
 <template lang="pug">
   v-app(dark)
-    fv-nav-bar
+    fv-nav-bar(
+      :title="title"
+    )
     v-main
       v-container
         nuxt
@@ -12,7 +14,8 @@
 export default {
   data() {
     return {
-      fixed: false
+      fixed: false,
+      title: 'Flexup - Sprint 0'
     }
   },
   mounted() {
