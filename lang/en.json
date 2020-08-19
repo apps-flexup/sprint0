@@ -136,6 +136,7 @@
           "offer": "Offer",
           "structure": "Structure",
           "product": "Product",
+          "label": "Label (optional)",
           "totals": {
             "withoutVat": "Subtotal without VAT",
             "total": "Total",

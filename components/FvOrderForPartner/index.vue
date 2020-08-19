@@ -22,6 +22,12 @@
           :partnerId="partnerId"
         )
     v-row
+      v-col(cols="6")
+        fv-text-field(
+          :label="$t('forms.orders.new.label')"
+          @input="labelChanged"
+        )
+    v-row
       v-col(cols="8")
         fv-offer-autocomplete(
           :disabled="!partnerId"
@@ -30,7 +36,6 @@
           @offers:selected="offerSelected"
         )
       v-col(cols="4")
-        pre ajouter structure
         fv-structure-autocomplete(
           @structures:selected="structureSelected"
         )
@@ -85,11 +90,8 @@ export default {
     this.fillFieldsWithOrder()
   },
   methods: {
-    newPartner() {
-      console.log('new partner')
-    },
-    newProduct() {
-      console.log('new product')
+    labelChanged(label) {
+      this.$emit('order:labelChanged', this.i, label)
     },
     structureSelected(structureId) {
       this.order.structure_id = structureId

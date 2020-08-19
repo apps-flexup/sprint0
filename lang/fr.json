@@ -138,6 +138,7 @@
         "offer": "Offre",
         "structure": "Structure",
         "product": "Produit",
+        "label": "Label (optionnel)",
         "totals": {
           "withoutVat": "Total hors taxes",
           "total": "Total",
