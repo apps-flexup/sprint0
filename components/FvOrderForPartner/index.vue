@@ -12,6 +12,12 @@
         v-icon mdi-close
     v-row
       v-col(cols="6")
+        fv-text-field(
+          label="Label (optional)"
+          @input="labelChanged"
+        )
+    v-row
+      v-col(cols="6")
         fv-partner-autocomplete(
           :partnerId="partnerId"
           @partner:selected='partnerSelected'
@@ -85,11 +91,9 @@ export default {
     this.fillFieldsWithOrder()
   },
   methods: {
-    newPartner() {
-      console.log('new partner')
-    },
-    newProduct() {
-      console.log('new product')
+    labelChanged(label) {
+      console.log('Label: ', label)
+      this.$emit('order:labelChanged', this.i, label)
     },
     structureSelected(structureId) {
       this.order.structure_id = structureId
