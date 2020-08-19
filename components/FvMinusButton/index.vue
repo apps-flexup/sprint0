@@ -2,6 +2,7 @@
 .fv-minus-button
   v-btn(
     icon
+    x-small
     @click.stop="minus"
   )
     v-icon mdi-minus

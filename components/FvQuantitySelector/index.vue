@@ -5,13 +5,13 @@
     :outlined="false"
   )
     template(v-slot:append)
-      fv-minus-button(
-        @button:minus="minus"
-      )
-    template(v-slot:prepend)
-      fv-plus-button(
-        @button:plus="plus"
-      )
+      v-col
+        fv-plus-button(
+          @button:plus="plus"
+        )
+        fv-minus-button(
+          @button:minus="minus"
+        )
 </template>
 
 <script>
