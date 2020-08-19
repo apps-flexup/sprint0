@@ -34,6 +34,7 @@ import FvContractSummaryStepStructure from '@/components/FvContractSummaryStepSt
 import FvCreateButton from '@/components/FvCreateButton'
 import FvDataTableHeader from '@/components/FvDataTableHeader'
 import FvDataTableSearchBar from '@/components/FvDataTableSearchBar'
+import FvListAccounts from '@/components/FvListAccounts'
 import FvLoginButton from '@/components/FvLoginButton'
 import FvLogoutButton from '@/components/FvLogoutButton'
 import FvMinusButton from '@/components/FvMinusButton'
@@ -143,6 +144,7 @@ Vue.component(
 Vue.component('fv-create-button', FvCreateButton)
 Vue.component('fv-data-table-header', FvDataTableHeader)
 Vue.component('fv-data-table-search-bar', FvDataTableSearchBar)
+Vue.component('fv-list-accounts', FvListAccounts)
 Vue.component('fv-login-button', FvLoginButton)
 Vue.component('fv-logout-button', FvLogoutButton)
 Vue.component('fv-minus-button', FvMinusButton)
