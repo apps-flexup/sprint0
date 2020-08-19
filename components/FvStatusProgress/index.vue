@@ -14,7 +14,7 @@
 <script>
 import { statusProgress } from '~/plugins/colorMaps'
 export default {
-  name: 'FvStatusProgressAtom',
+  name: 'FvStatusProgress',
   props: {
     status: {
       type: String,
@@ -28,6 +28,11 @@ export default {
         value: 50,
         striped: true
       }
+    }
+  },
+  watch: {
+    status() {
+      this.config = statusProgress(this.$vuetify, this.status)
     }
   },
   mounted() {
