@@ -12,7 +12,6 @@
         @order:partnerSelected="partnerSelected"
         @order:orderLinesChanged="orderLinesChanged"
         @order:remove="removeOrder"
-        @order:labelChanged="labelChanged"
       )
   v-row(v-if="nbOrders > 1")
       v-spacer
@@ -42,12 +41,6 @@ export default {
   methods: {
     addNewOrder() {
       this.nbOrders++
-    },
-    labelChanged(i, label) {
-      if (!this.orderList[i]) {
-        this.orderList[i] = {}
-      }
-      this.orderList[i].label = label
     },
     partnerSelected(i, partnerId) {
       if (!this.orderList[i]) {
