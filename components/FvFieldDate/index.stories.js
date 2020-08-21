@@ -1,5 +1,5 @@
 import { storiesOf } from '@storybook/vue'
-import { date } from '@storybook/addon-knobs'
+import { date, text } from '@storybook/addon-knobs'
 import FvFieldDate from './index.vue'
 
 function isoDateKnob(name, defaultValue, category) {
@@ -15,6 +15,9 @@ storiesOf('Atoms/FvFieldDate', module).add('Common', () => ({
     },
     maxDate: {
       default: isoDateKnob('maxDate', maxDate, 'Props')
+    },
+    label: {
+      default: text('Label', 'Date label', 'Props')
     }
   },
   data() {
@@ -32,6 +35,7 @@ storiesOf('Atoms/FvFieldDate', module).add('Common', () => ({
       :minDate="minDate.toISOString()"
       :maxDate="maxDate.toISOString()"
       :dateRef="selectedDate"
+      :label="label"
       @date:changed="dateChange"
     >
     </FvFieldDate>`
