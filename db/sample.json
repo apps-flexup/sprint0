@@ -13976,44 +13976,32 @@
     {
       "align": "start",
       "sortable": true,
-      "text": "headers.orders.order_date",
+      "text": "headers.orders.date",
       "value": "date"
     },
     {
       "align": "start",
       "sortable": true,
-      "text": "headers.orders.offer",
-      "value": "offer"
+      "text": "headers.orders.amount",
+      "value": "amount"
     },
     {
       "align": "start",
       "sortable": true,
-      "text": "headers.orders.status",
-      "value": "status"
+      "text": "headers.orders.currency",
+      "value": "currency"
     },
     {
       "align": "start",
       "sortable": true,
-      "text": "headers.orders.startDate",
-      "value": "startDate"
+      "text": "headers.orders.label",
+      "value": "label"
     },
     {
       "align": "start",
       "sortable": true,
-      "text": "headers.orders.endDate",
-      "value": "endDate"
-    },
-    {
-      "align": "right",
-      "sortable": true,
-      "text": "headers.orders.quantity",
-      "value": "quantity"
-    },
-    {
-      "align": "end",
-      "sortable": true,
-      "text": "headers.orders.price",
-      "value": "price"
+      "text": "headers.orders.structure",
+      "value": "structure"
     }
   ],
   "orders": [

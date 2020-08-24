@@ -82,6 +82,11 @@ export default {
     },
     validateOrders() {
       console.log('orders: ', this.orderList)
+      for (let i = 0; i < this.orderList.length; i++) {
+        if (this.orderList[i]) {
+          this.$store.dispatch('orders/add', this.orderList[i])
+        }
+      }
     }
   }
 }

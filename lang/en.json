@@ -193,15 +193,11 @@
       "order": "Order"
     },
     "orders": {
-      "order_date": "Order date",
-      "offer": "Offer",
-      "status": "Status",
-      "startDate": "Start date",
-      "endDate": "End date",
-      "quantity": "Quantity",
-      "price": "Price",
-      "vat": "VAT",
-      "total": "Total"
+      "date": "Date",
+      "amount": "Amount",
+      "currency": "Currency",
+      "label": "Label",
+      "structure": "Structure"
     },
     "offers": {
       "name": "Name of the offer",
