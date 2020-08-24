@@ -6,7 +6,10 @@
     :outlined="outlined"
     :append-outer-icon="appendOuterIcon"
     :suffix="suffix"
+    :readonly="readonly"
+    :clearable="clearable"
     @input="inputChanged"
+    @click="clicked"
   )
     template(v-slot:append)
       slot(name="append")
@@ -47,6 +50,18 @@ export default {
       default() {
         return ''
       }
+    },
+    readonly: {
+      type: Boolean,
+      default() {
+        return false
+      }
+    },
+    clearable: {
+      type: Boolean,
+      default() {
+        return true
+      }
     }
   },
   data() {
@@ -65,6 +80,9 @@ export default {
   methods: {
     inputChanged() {
       this.$emit('input', this.model)
+    },
+    clicked() {
+      this.$emit('click')
     }
   }
 }

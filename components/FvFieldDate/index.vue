@@ -10,13 +10,11 @@
     min-width='290px'
   )
     template(v-slot:activator='{ on }')
-      v-text-field(
-        readonly=''
+      fv-text-field(
+        :readonly="true"
         :value='displayDate ? displayDate.substring(0,10) : null'
         :label='label'
-        v-on='on'
-        clearable=''
-        outlined=''
+        @click='fromDateMenu = true'
       )
     v-date-picker(
       locale='en-in'
