@@ -78,7 +78,7 @@ export default {
     return {
       localOrder: {},
       partnerId: null,
-      orderDate: new Date(),
+      orderDate: null,
       orderLines: []
     }
   },
@@ -150,7 +150,7 @@ export default {
     fillFieldsWithOrder() {
       if (!this.order) return
       this.partnerId = this.order.partnerId
-      this.orderDate = this.order.dte ? this.order.dte : this.orderDate
+      this.orderDate = this.order.dte ? this.order.dte : new Date()
       this.orderLines = this.order.orderLines
       this.localOrder = this.order
     },

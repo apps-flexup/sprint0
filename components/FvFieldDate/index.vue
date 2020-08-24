@@ -75,6 +75,12 @@ export default {
       }
     }
   },
+  watch: {
+    dateRef() {
+      this.displayDate = this.dateRef ? this.dateRef.toLocaleString() : null
+      this.pickingDate = this.dateRef ? this.dateRef.toISOString() : null
+    }
+  },
   mounted() {
     console.log('Composant ', this.$options.name)
   }
