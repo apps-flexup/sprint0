@@ -23,6 +23,8 @@
         )
     v-row
       v-col(cols="6")
+        fv-field-date
+      v-col(cols="6")
         fv-text-field(
           :label="$t('forms.orders.new.label')"
           @input="labelChanged"
