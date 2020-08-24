@@ -25,6 +25,7 @@
           fv-text-field(
             v-model="item.vat"
             :outlined="false"
+            :clearable="false"
             suffix="%"
             @inputChanged="vatChanged"
           )
