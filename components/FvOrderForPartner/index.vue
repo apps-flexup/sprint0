@@ -25,6 +25,7 @@
       v-col(cols="6")
         fv-field-date(
           :dateRef="new Date()"
+          :label="$t('forms.orders.new.date')"
         )
       v-col(cols="6")
         fv-text-field(

@@ -129,20 +129,21 @@
         "elasticity": "Elasticity",
         "currency": "Currency",
         "vat": "VAT"
-      },
-      "orders": {
-        "new": {
-          "partner": "Partner",
-          "offer": "Offer",
-          "structure": "Structure",
-          "product": "Product",
-          "label": "Label (optional)",
-          "totals": {
-            "withoutVat": "Subtotal without VAT",
-            "total": "Total",
-            "vat": "VAT",
-            "of": "of"
-          }
+      }
+    },
+    "orders": {
+      "new": {
+        "partner": "Partner",
+        "offer": "Offer",
+        "structure": "Structure",
+        "product": "Product",
+        "label": "Label (optional)",
+        "date": "Order date",
+        "totals": {
+          "withoutVat": "Subtotal without VAT",
+          "total": "Total",
+          "vat": "VAT",
+          "of": "of"
         }
       }
     }
