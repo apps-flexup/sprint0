@@ -51,28 +51,19 @@
     v-row
       v-col(cols="6")
         fv-field-date(
-          :dateRef="dteSignature"
           :label="$t('forms.contracts.detail.dateOfSignature')"
           @date:changed="dateSignatureChanged"
-          clearable=''
-          outlined=''
         )
       v-col(cols="6")
         fv-field-date(
-          :dateRef="dteEffect"
           :label="$t('forms.contracts.detail.effectiveDate')"
           @date:changed="dateEffectChanged"
-          clearable=''
-          outlined=''
         )
     v-row
       v-col(cols="6")
         fv-field-date(
-          :dateRef="dteEnd"
           :label="$t('forms.contracts.detail.endDate')"
           @date:changed="dateEndChanged"
-          clearable=''
-          outlined=''
         )
       v-col(cols="6")
         v-textField(

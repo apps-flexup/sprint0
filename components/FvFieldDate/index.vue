@@ -12,7 +12,7 @@
     template(v-slot:activator='{ on }')
       v-text-field(
         readonly=''
-        :value='fromDateDisp'
+        :value='displayDate ? displayDate.substring(0,10) : null'
         :label='label'
         v-on='on'
         clearable=''
@@ -20,8 +20,8 @@
       )
     v-date-picker(
       locale='en-in'
-      :min='minDate'
-      :max='maxDate'
+      :min='minDate ? minDate.toISOString() : null'
+      :max='maxDate ? maxDate.toISOString() : null'
       v-model='dte'
       no-title=''
       @input='fromDateMenu = false'
@@ -33,13 +33,13 @@ export default {
   name: 'FvFieldDate',
   props: {
     minDate: {
-      type: String,
+      type: Date,
       default() {
         return null
       }
     },
     maxDate: {
-      type: String,
+      type: Date,
       default() {
         return null
       }
@@ -51,7 +51,7 @@ export default {
       }
     },
     dateRef: {
-      type: String,
+      type: Date,
       default() {
         return null
       }
@@ -59,18 +59,20 @@ export default {
   },
   data() {
     return {
-      fromDateMenu: false
+      fromDateMenu: false,
+      displayDate: this.dateRef ? this.dateRef.toLocaleString() : null,
+      pickingDate: this.dateRef ? this.dateRef.toISOString() : null
     }
   },
   computed: {
-    fromDateDisp() {
-      return this.dateRef
-    },
     dte: {
       get() {
-        return this.dateRef
+        return this.pickingDate
       },
       set(v) {
+        const toDisplay = new Date(v)
+        this.displayDate = toDisplay.toLocaleString()
+        this.pickingDate = v
         this.$emit('date:changed', v)
       }
     }

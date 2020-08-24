@@ -22,7 +22,7 @@ storiesOf('Atoms/FvFieldDate', module).add('Common', () => ({
   },
   data() {
     return {
-      selectedDate: null
+      dateRef: new Date()
     }
   },
   components: { FvFieldDate },
@@ -32,9 +32,9 @@ storiesOf('Atoms/FvFieldDate', module).add('Common', () => ({
     }
   },
   template: `<FvFieldDate
-      :minDate="minDate.toISOString()"
-      :maxDate="maxDate.toISOString()"
-      :dateRef="selectedDate"
+      :minDate="minDate"
+      :maxDate="maxDate"
+      :dateRef="dateRef"
       :label="label"
       @date:changed="dateChange"
     >
