@@ -13,6 +13,7 @@
         @order:orderLinesChanged="orderLinesChanged"
         @order:remove="removeOrder"
         @order:labelChanged="labelChanged"
+        @order:dateChanged="dateChanged"
       )
   v-row(v-if="nbOrders > 1")
       v-spacer
@@ -55,6 +56,12 @@ export default {
       }
       this.orderList[i].partnerId = partnerId
       this.orderList[i].orderLines = []
+    },
+    dateChanged(i, dte) {
+      if (!this.orderList[i]) {
+        this.orderList[i] = {}
+      }
+      this.orderList[i].dte = dte
     },
     orderLinesChanged(i, orderLines) {
       this.orderList[i].orderLines = orderLines

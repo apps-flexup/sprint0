@@ -23,6 +23,12 @@
         )
     v-row
       v-col(cols="6")
+        fv-field-date(
+          :dateRef="orderDate"
+          :label="$t('forms.orders.new.date')"
+          @date:changed="dateChanged"
+        )
+      v-col(cols="6")
         fv-text-field(
           :label="$t('forms.orders.new.label')"
           @input="labelChanged"
@@ -72,6 +78,7 @@ export default {
     return {
       localOrder: {},
       partnerId: null,
+      orderDate: null,
       orderLines: []
     }
   },
@@ -88,8 +95,13 @@ export default {
   mounted() {
     console.log('Composant ', this.$options.name)
     this.fillFieldsWithOrder()
+    this.$emit('order:dateChanged', this.i, this.orderDate)
   },
   methods: {
+    dateChanged(dte) {
+      this.orderDate = new Date(dte)
+      this.$emit('order:dateChanged', this.i, this.orderDate)
+    },
     labelChanged(label) {
       this.$emit('order:labelChanged', this.i, label)
     },
@@ -138,6 +150,7 @@ export default {
     fillFieldsWithOrder() {
       if (!this.order) return
       this.partnerId = this.order.partnerId
+      this.orderDate = this.order.dte ? this.order.dte : new Date()
       this.orderLines = this.order.orderLines
       this.localOrder = this.order
     },
