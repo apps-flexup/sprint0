@@ -139,6 +139,7 @@
         "structure": "Structure",
         "product": "Produit",
         "label": "Label (optionnel)",
+        "date": "Date de commande",
         "totals": {
           "withoutVat": "Total hors taxes",
           "total": "Total",
