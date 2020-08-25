@@ -284,6 +284,9 @@ const moduleOffers = {
       ]
       commit('set', data)
     },
+    add({ commit }, order) {
+      console.log('Order to add: ', order)
+    },
     clear({ commit }) {
       commit('clear')
     }

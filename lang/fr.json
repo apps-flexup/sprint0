@@ -195,15 +195,19 @@
       "order": "Commande"
     },
     "orders": {
-      "order_date": "Date de commande",
+      "date": "Date",
+      "amount": "Montant",
+      "currency": "Devise",
+      "label": "Label",
+      "structure": "Structure"
+    },
+    "orderLines": {
       "offer": "Offre",
-      "status": "Statut",
-      "startDate": "Date de début",
-      "endDate": "Date de fin",
       "quantity": "Quantité",
       "price": "Prix",
+      "total": "Total",
       "vat": "TVA",
-      "total": "Total"
+      "status": "Statut"
     },
     "offers": {
       "name": "Nom de l'offre",

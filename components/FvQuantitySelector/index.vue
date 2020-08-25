@@ -3,6 +3,7 @@
   fv-text-field(
     :value="quantity.toString()"
     :outlined="false"
+    :clearable="false"
   )
     template(v-slot:append)
       v-col

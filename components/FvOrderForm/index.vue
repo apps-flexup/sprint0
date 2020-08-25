@@ -14,6 +14,7 @@
         @order:remove="removeOrder"
         @order:labelChanged="labelChanged"
         @order:dateChanged="dateChanged"
+        @order:structureSelected="structureChanged"
       )
   v-row(v-if="nbOrders > 1")
       v-spacer
@@ -50,6 +51,12 @@ export default {
       }
       this.orderList[i].label = label
     },
+    structureChanged(i, structureId) {
+      if (!this.orderList[i]) {
+        this.orderList[i] = {}
+      }
+      this.orderList[i].structureId = structureId
+    },
     partnerSelected(i, partnerId) {
       if (!this.orderList[i]) {
         this.orderList[i] = {}
@@ -81,7 +88,26 @@ export default {
       })
     },
     validateOrders() {
-      console.log('orders: ', this.orderList)
+      this.orderList.forEach((order) => {
+        if (order.orderLines) {
+          let totalAmount = 0
+          order.orderLines.forEach((orderLine) => {
+            totalAmount += orderLine.amount()
+          })
+          const payload = {
+            partner_id: order.partnerId,
+            date: order.dte,
+            label: order.label ? order.label : null,
+            order_lines: order.orderLines,
+            structure: order.structureId,
+            amount: totalAmount,
+            currency: 'EUR'
+          }
+          console.log('Payload:', payload)
+          this.$store.dispatch('orders/add', payload)
+        }
+      })
+      this.$router.push('/orders')
     }
   }
 }
