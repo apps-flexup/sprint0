@@ -201,6 +201,14 @@
       "label": "Label",
       "structure": "Structure"
     },
+    "orderLines": {
+      "offer": "Offre",
+      "quantity": "Quantité",
+      "price": "Prix",
+      "total": "Total",
+      "vat": "TVA",
+      "status": "Status"
+    },
     "offers": {
       "name": "Nom de l'offre",
       "elasticity": "Élasticité",

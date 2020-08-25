@@ -106,7 +106,7 @@ export default {
       this.$emit('order:labelChanged', this.i, label)
     },
     structureSelected(structureId) {
-      this.order.structure_id = structureId
+      this.$emit('order:structureSelected', this.i, structureId)
     },
     partnerSelected(partnerId) {
       console.log('partner selected: ', partnerId)

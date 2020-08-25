@@ -13938,37 +13938,37 @@
     {
       "align": "start",
       "sortable": true,
-      "text": "headers.orders.offer",
+      "text": "headers.orderLines.offer",
       "value": "offer"
     },
     {
       "align": "end",
       "sortable": true,
-      "text": "headers.orders.quantity",
+      "text": "headers.orderLines.quantity",
       "value": "quantity"
     },
     {
       "align": "end",
       "sortable": true,
-      "text": "headers.orders.price",
+      "text": "headers.orderLines.price",
       "value": "price"
     },
     {
       "align": "end",
       "sortable": true,
-      "text": "headers.orders.total",
+      "text": "headers.orderLines.total",
       "value": "total"
     },
     {
       "align": "end",
       "sortable": true,
-      "text": "headers.orders.vat",
+      "text": "headers.orderLines.vat",
       "value": "vat"
     },
     {
       "align": "start",
       "sortable": true,
-      "text": "headers.orders.status",
+      "text": "headers.orderLines.status",
       "value": "status"
     }
   ],
