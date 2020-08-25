@@ -1,7 +1,7 @@
 <template lang="pug">
-  .fv-contract-summary-step5
-    p {{ $options.name }}
-    pre Commande
+.fv-contract-summary-step-commande
+  p {{ $options.name }}
+  pre Commande
 </template>
 
 <script>
@@ -17,7 +17,7 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style scoped>
 .fv-contract-summary-step5 {
   background-color: inherit;
 }

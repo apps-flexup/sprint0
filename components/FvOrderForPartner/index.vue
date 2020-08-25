@@ -1,48 +1,60 @@
 <template lang="pug">
-  .fv-order-for-partner
-    p {{ $options.name }}
-    v-card.mainCard
-      v-row
-        v-spacer
-        v-btn(
-          icon
-          @click.prevent="remove"
-          x-large
-        )
-          v-icon mdi-close
-      v-row
-        v-col(cols="6")
-          fv-partner-autocomplete(
-            :partnerId="partnerId"
-            @partner:selected='partnerSelected'
-          )
-        v-col(cols="6")
-          fv-partner-card(
-            v-if="partnerId"
-            :partnerId="partnerId"
-          )
-      v-row
-        v-col(cols="8")
-          fv-offer-autocomplete(
-            :disabled="!partnerId"
-            :partnerId="partnerId"
-            @offers:selected="offerSelected"
-          )
-        v-col(cols="4")
-          pre ajouter structure
-          fv-structure-autocomplete(
-            @structures:selected="structureSelected"
-          )
-      fv-order-line-list(
-        :orderLines="orderLines"
-        @orderLines:delete="deleteOrderLine"
+.fv-order-for-partner
+  p {{ $options.name }}
+  v-card.mainCard
+    v-row
+      v-spacer
+      v-btn(
+        icon
+        @click.prevent="remove"
+        x-large
       )
-      v-row
-        v-spacer
-        v-col(cols="5")
-          fv-order-totals(
-            :orderLines="orderLines"
-          )
+        v-icon mdi-close
+    v-row
+      v-col(cols="6")
+        fv-partner-autocomplete(
+          :partnerId="partnerId"
+          @partner:selected='partnerSelected'
+        )
+      v-col(cols="6")
+        fv-partner-card(
+          v-if="partnerId"
+          :partnerId="partnerId"
+        )
+    v-row
+      v-col(cols="6")
+        fv-field-date(
+          :dateRef="orderDate"
+          :label="$t('forms.orders.new.date')"
+          @date:changed="dateChanged"
+        )
+      v-col(cols="6")
+        fv-text-field(
+          :label="$t('forms.orders.new.label')"
+          @input="labelChanged"
+        )
+    v-row
+      v-col(cols="8")
+        fv-offer-autocomplete(
+          :disabled="!partnerId"
+          :partnerId="partnerId"
+          :returnObject="true"
+          @offers:selected="offerSelected"
+        )
+      v-col(cols="4")
+        fv-structure-autocomplete(
+          @structures:selected="structureSelected"
+        )
+    fv-order-line-list(
+      :orderLines="orderLines"
+      @orderLines:delete="deleteOrderLine"
+    )
+    v-row
+      v-spacer
+      v-col(cols="5")
+        fv-order-totals(
+          :orderLines="orderLines"
+        )
 </template>
 
 <script>
@@ -66,6 +78,7 @@ export default {
     return {
       localOrder: {},
       partnerId: null,
+      orderDate: null,
       orderLines: []
     }
   },
@@ -82,16 +95,18 @@ export default {
   mounted() {
     console.log('Composant ', this.$options.name)
     this.fillFieldsWithOrder()
+    this.$emit('order:dateChanged', this.i, this.orderDate)
   },
   methods: {
-    newPartner() {
-      console.log('new partner')
+    dateChanged(dte) {
+      this.orderDate = new Date(dte)
+      this.$emit('order:dateChanged', this.i, this.orderDate)
     },
-    newProduct() {
-      console.log('new product')
+    labelChanged(label) {
+      this.$emit('order:labelChanged', this.i, label)
     },
     structureSelected(structureId) {
-      this.order.structure_id = structureId
+      this.$emit('order:structureSelected', this.i, structureId)
     },
     partnerSelected(partnerId) {
       console.log('partner selected: ', partnerId)
@@ -101,31 +116,27 @@ export default {
       }
       this.$emit('order:partnerSelected', this.i, this.partnerId)
     },
-    offerSelected(offerId) {
-      console.log('offer selected: ', offerId)
-      if (!offerId) return
-      this.$repos.offers.show(offerId).then((res) => {
-        // TODO On ne push pas une ligne d'ordre, on doit traduire dans le format adequate
-        const offer = JSON.parse(JSON.stringify(res))
-        const payload = {
-          offer_id: offer.id,
-          offer: offer.name || 'absence de description',
-          status: 'draft',
-          quantity: 1,
-          pas: 1,
-          vat: offer.vat,
-          dimension: offer.dimension,
-          unit: offer.unit,
-          currency: offer.currency,
-          amount() {
-            const res = parseFloat(this.quantity) * parseFloat(this.price)
-            return res
-          },
-          price: offer.price
-        }
-        this.orderLines.push(payload)
-        this.$emit('order:orderLinesChanged', this.i, this.orderLines)
-      })
+    offerSelected(offer) {
+      console.log('offer selected: ', offer)
+      if (!offer) return
+      const payload = {
+        offer_id: offer.id,
+        offer: offer.name || 'absence de description',
+        status: 'draft',
+        quantity: 1,
+        pas: 1,
+        vat: offer.vat,
+        dimension: offer.dimension,
+        unit: offer.unit,
+        currency: offer.currency,
+        amount() {
+          const res = parseFloat(this.quantity) * parseFloat(this.price)
+          return res
+        },
+        price: offer.price
+      }
+      this.orderLines.push(payload)
+      this.$emit('order:orderLinesChanged', this.i, this.orderLines)
     },
     deleteOrderLine(orderLine) {
       this.orderLines = this.orderLines.filter(
@@ -139,6 +150,7 @@ export default {
     fillFieldsWithOrder() {
       if (!this.order) return
       this.partnerId = this.order.partnerId
+      this.orderDate = this.order.dte ? this.order.dte : new Date()
       this.orderLines = this.order.orderLines
       this.localOrder = this.order
     },
@@ -150,7 +162,7 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style scoped>
 .mainCard {
   padding: 10px;
 }

@@ -1,4 +1,5 @@
 <template lang="pug">
+.fv-speed-dial
   v-speed-dial(
     v-model='fab'
     bottom=''

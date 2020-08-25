@@ -1,28 +1,28 @@
 <template lang="pug">
-  .fv-contact-card
-    v-card.mx-auto(
-      max-width="350"
-      outlined=''
-      tile=''
-      min-height="180"
-    )
-      v-list-item(three-line="")
-        v-list-item-content
-          .overline.mb-4 {{ contact.function }}
-          v-list-item-title.headline.mb-1 {{ contact.title }} {{ contact.first_name }} {{ contact.name }}
-          v-list-item-subtitle  {{ contact.address }} {{ contact.zip }} {{ contact.city }}
-        v-list-item-avatar(size="80" color="grey")
-          img(
-            v-if="contact.avatar"
-            :src="contact.avatar"
-            alt="`${contact.title} ${contact.first_name} ${ contact.name}`"
-          )
-      v-card-text
-        .contact-links(
-          v-for="lien in ['pro_email', 'perso_email', 'phone']" :key="lien"
+.fv-contact-card
+  v-card.mx-auto(
+    max-width="350"
+    outlined=''
+    tile=''
+    min-height="180"
+  )
+    v-list-item(three-line="")
+      v-list-item-content
+        .overline.mb-4 {{ contact.function }}
+        v-list-item-title.headline.mb-1 {{ contact.title }} {{ contact.first_name }} {{ contact.name }}
+        v-list-item-subtitle  {{ contact.address }} {{ contact.zip }} {{ contact.city }}
+      v-list-item-avatar(size="80" color="grey")
+        img(
+          v-if="contact.avatar"
+          :src="contact.avatar"
+          alt="`${contact.title} ${contact.first_name} ${ contact.name}`"
         )
-          .communication(:class="lien") :{{ contact[lien] }}
-      v-card-actions
+    v-card-text
+      .contact-links(
+        v-for="lien in ['pro_email', 'perso_email', 'phone']" :key="lien"
+      )
+        .communication(:class="lien") :{{ contact[lien] }}
+    v-card-actions
 </template>
 
 <script>
@@ -41,19 +41,10 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style scoped>
 .fv-contact-card {
   background-color: inherit;
 }
-// .communication {
-//   content: "";
-//   display: block;
-//   background: url("icon.jpg") no-repeat;
-//   width: 20px;
-//   height: 20px;
-//   float: left;
-//   margin: 0 6px 0 0;
-// }
 .phone:before {
   content: 'Telephone';
 }

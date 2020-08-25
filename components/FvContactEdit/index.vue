@@ -1,5 +1,6 @@
 <template lang="pug">
-  v-form.fv-contact-edit
+.fv-contact-edit
+  v-form
     v-row
       v-col(cols="6")
         v-text-field(
@@ -50,7 +51,7 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style scoped>
 .fv-contact-edit {
   background-color: inherit;
 }

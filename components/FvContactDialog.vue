@@ -1,5 +1,6 @@
 <template lang="pug">
-  v-dialog.fv-contact-dialog(
+.fv-contact-dialog
+  v-dialog(
     v-model="show"
     max-width="50%"
   )
@@ -21,7 +22,7 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style scoped>
 .fv-contact-dialog {
   background-color: inherit;
 }

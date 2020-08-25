@@ -1,4 +1,5 @@
 <template lang="pug">
+.fv-offer-modal
   fv-modal-slot(:dialog="show")
     template(
       slot='title'
@@ -22,16 +23,10 @@
       slot='actions'
     )
       v-spacer
-      v-btn(
-        color='blue darken-1'
-        text=''
-        @click.stop='close'
-      ) {{ $t('modal.close') }}
-      v-btn(
-        color='blue darken-1'
-        text=''
-        @click.stop='save'
-      ) {{ $t('modal.save') }}
+      fv-modal-actions(
+        @modal:actions:close="close"
+        @modal:actions:save="save"
+      )
 </template>
 
 <script>

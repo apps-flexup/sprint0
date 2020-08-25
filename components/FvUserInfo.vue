@@ -1,6 +1,6 @@
 <template lang="pug">
-  .fv-user-info
-    p {{ $auth.user }}
+.fv-user-info
+  p {{ $auth.user }}
 </template>
 
 <script>
@@ -11,7 +11,7 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style scoped>
 .fv-user-info {
   background-color: inherit;
 }

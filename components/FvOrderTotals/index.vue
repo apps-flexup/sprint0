@@ -1,28 +1,28 @@
 <template lang="pug">
-  .fv-order-totals
-    v-card
-      v-list
+.fv-order-totals
+  v-card
+    v-list
+    v-list-item
+      v-col(cols="6")
+        div {{ $t('forms.orders.new.totals.withoutVat') }}
+      v-col(cols="6")
+        div.text-right(v-to-preferred-currency="totalWithoutVat")
+    v-divider
+    div(
+      v-for="(v, k) in totalsByVat" :key="k"
+    )
       v-list-item
         v-col(cols="6")
-          div {{ $t('forms.orders.new.totals.withoutVat') }}
+          div.left {{ $t('forms.orders.new.totals.vat')}} {{ k }}% {{ $t('forms.orders.new.totals.of') }}
+          div.right(v-to-preferred-currency="v.total")
         v-col(cols="6")
-          div.text-right(v-to-preferred-currency="totalWithoutVat")
+          div.text-right(v-to-preferred-currency="v.vatTotal")
       v-divider
-      div(
-        v-for="(v, k) in totalsByVat" :key="k"
-      )
-        v-list-item
-          v-col(cols="6")
-            div.left {{ $t('forms.orders.new.totals.vat')}} {{ k }}% {{ $t('forms.orders.new.totals.of') }}
-            div.right(v-to-preferred-currency="v.total")
-          v-col(cols="6")
-            div.text-right(v-to-preferred-currency="v.vatTotal")
-        v-divider
-      v-list-item
-        v-col(cols="6")
-          div {{ $t('forms.orders.new.totals.total') }}
-        v-col(cols="6")
-          div.text-right(v-to-preferred-currency="total")
+    v-list-item
+      v-col(cols="6")
+        div {{ $t('forms.orders.new.totals.total') }}
+      v-col(cols="6")
+        div.text-right(v-to-preferred-currency="total")
 </template>
 
 <script>
@@ -72,7 +72,7 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style scoped>
 .left {
   float: left;
   width: 50%;

@@ -4,6 +4,10 @@ export default {
     // charger les contrat-types
     this.$repos.offers.indexWithAccountId().then((data) => commit('set', data))
   },
+  getAll({ commit }) {
+    // charger les contrat-types
+    this.$repos.offers.index().then((data) => commit('setAll', data))
+  },
   remove({ commit }, offer) {
     // charger les contracts
     this.$repos.offers.delete(offer.id).then(() => {

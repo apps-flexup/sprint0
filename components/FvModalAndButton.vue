@@ -1,17 +1,16 @@
 <template lang="pug">
-  .fv-modal-and-button
-      fv-create-button(
-        :text="buttonText"
-        @click.stop="dialog = true"
-      )
-      fv-modal(
-        :dialog="dialog"
-        :title="title"
-        :subtitle="subtitle"
-        :component="component"
-        @modal:close="close"
-        @modal:save="save"
-      )
+.fv-modal-and-button
+    fv-create-button(
+      @click.stop="dialog = true"
+    ) {{ buttonText }}
+    fv-modal(
+      :dialog="dialog"
+      :title="title"
+      :subtitle="subtitle"
+      :component="component"
+      @modal:close="close"
+      @modal:save="save"
+    )
 </template>
 
 <script>
@@ -60,7 +59,7 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style scoped>
 .fv-modal-and-button {
   background-color: inherit;
 }

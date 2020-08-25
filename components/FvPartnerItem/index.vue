@@ -1,4 +1,5 @@
 <template functional lang="pug">
+.fv-partner-item
   v-list-item(
     v-bind="attrs"
     v-on="on"

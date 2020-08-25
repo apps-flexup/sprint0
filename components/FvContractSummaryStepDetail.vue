@@ -1,6 +1,6 @@
 <template lang="pug">
-  .fv-contract-summary-step1
-    p {{ $options.name }}
+.fv-contract-summary-step-detail
+  p {{ $options.name }}
 </template>
 
 <script>
@@ -8,7 +8,7 @@ export default {
   name: 'FvContractSummaryStepDetail'
 }
 </script>
-<style lang="scss" scoped>
+<style scoped>
 .fv-contract-summary-step1 {
   background-color: inherit;
 }

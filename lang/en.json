@@ -29,8 +29,16 @@
       "title": "My offers",
       "search": "Search"
     },
+    "orders": {
+      "title": "My orders",
+      "search": "Search"
+    },
     "products": {
       "title": "My products",
+      "search": "Search"
+    },
+    "partners": {
+      "title": "My partners",
       "search": "Search"
     }
   },
@@ -88,7 +96,7 @@
         "title": "New partner",
         "subtitle": "Specify your partner's information",
         "name": "Partner name",
-        "juridicalStatus": "Juridical status",
+        "legalStructure": "Legal structure",
         "siret": "SIRET",
         "address":"Address",
         "complement": "Complement",
@@ -121,19 +129,21 @@
         "elasticity": "Elasticity",
         "currency": "Currency",
         "vat": "VAT"
-      },
-      "orders": {
-        "new": {
-          "partner": "Partner",
-          "offer": "Offer",
-          "structure": "Structure",
-          "product": "Product",
-          "totals": {
-            "withoutVat": "Subtotal without VAT",
-            "total": "Total",
-            "vat": "VAT",
-            "of": "of"
-          }
+      }
+    },
+    "orders": {
+      "new": {
+        "partner": "Partner",
+        "offer": "Offer",
+        "structure": "Structure",
+        "product": "Product",
+        "label": "Label (optional)",
+        "date": "Order date",
+        "totals": {
+          "withoutVat": "Subtotal without VAT",
+          "total": "Total",
+          "vat": "VAT",
+          "of": "of"
         }
       }
     }
@@ -159,7 +169,9 @@
     },
     "submit": "Submit",
     "previous": "Previous",
-    "next": "Next"
+    "next": "Next",
+    "login": "Login",
+    "logout": "Logout"
   },
   "headers": {
     "actions": "Actions",
@@ -181,15 +193,19 @@
       "order": "Order"
     },
     "orders": {
-      "order_date": "Order date",
+      "date": "Date",
+      "amount": "Amount",
+      "currency": "Currency",
+      "label": "Label",
+      "structure": "Structure"
+    },
+    "orderLines": {
       "offer": "Offer",
-      "status": "Status",
-      "startDate": "Start date",
-      "endDate": "End date",
       "quantity": "Quantity",
       "price": "Price",
+      "total": "Total",
       "vat": "VAT",
-      "total": "Total"
+      "status": "Status"
     },
     "offers": {
       "name": "Name of the offer",

@@ -24,7 +24,7 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style scoped>
 .nom-composant {
   background-color: inherit;
 }

@@ -1,29 +1,31 @@
 <template lang="pug">
-  .fv-modal
-    v-dialog(
-      v-model='dialog'
-      persistent
-      max-width='50%'
-    )
-      v-toolbar()
-        v-app-bar-nav-icon
-        v-toolbar-title {{ this.title }}
+.fv-modal
+  v-dialog(
+    v-model='dialog'
+    persistent
+    max-width='50%'
+  )
+    v-toolbar()
+      v-app-bar-nav-icon
+      v-toolbar-title {{ this.title }}
+      v-spacer
+      v-btn(icon @click.prevent="close")
+        v-icon mdi-close
+    v-card
+      v-card-subtitle(v-if="this.subtitle")
+        span.headline {{ this.subtitle }}
+      v-card-text
+        v-container
+          component(
+            :is="component"
+            :values='values'
+          )
+      v-card-actions
         v-spacer
-        v-btn(icon @click.prevent="close")
-          v-icon mdi-close
-      v-card
-        v-card-subtitle(v-if="this.subtitle")
-          span.headline {{ this.subtitle }}
-        v-card-text
-          v-container
-            component(
-              :is="component"
-              :values='values'
-            )
-        v-card-actions
-          v-spacer
-          v-btn(color='blue darken-1' text='' @click.stop='close') {{ $t('modal.close') }}
-          v-btn(color='blue darken-1' text='' @click.stop='save') {{ $t('modal.save') }}
+        fv-modal-actions(
+          @modal:actions:close="close"
+          @modal:actions:save="save"
+        )
 </template>
 
 <script>
@@ -74,7 +76,7 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style scoped>
 .fv-modal {
   background-color: inherit;
 }

@@ -1,14 +1,14 @@
 <template lang="pug">
-  .fv-contact-stepProduct(v-if="etape.id === 2")
-    v-row
-      v-col(cols="12")
-        v-data-table.elevation-2(
-          v-model="selected"
-          :headers="headers"
-          :items="items"
-          item-key="id"
-          show-select
-        )
+.fv-contact-stepProduct(v-if="etape.id === 2")
+  v-row
+    v-col(cols="12")
+      v-data-table.elevation-2(
+        v-model="selected"
+        :headers="headers"
+        :items="items"
+        item-key="id"
+        show-select
+      )
 </template>
 
 <script>
@@ -42,7 +42,7 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style scoped>
 .fv-contact-stepProduct {
   background-color: inherit;
 }

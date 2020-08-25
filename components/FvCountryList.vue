@@ -1,6 +1,6 @@
 <template lang="pug">
-  .fv-country-list
-    p {{ $options.name }}
+.fv-country-list
+  p {{ $options.name }}
 </template>
 
 <script>
@@ -16,7 +16,7 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style scoped>
 .fv-country-list {
   background-color: inherit;
 }

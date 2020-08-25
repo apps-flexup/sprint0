@@ -1,29 +1,29 @@
 <template lang="pug">
-  .fv-offer-autocomplete
-    p {{ $options.name }}
-    fv-autocomplete(
-      :items="items"
-      :filter="filter"
-      :disabled="disabled"
-      @autocomplete:selected="selected"
-    )
-      template(v-slot:label)
-        div {{ $t('forms.orders.new.offer') }}
-      template(v-slot:item="data")
-        template(v-if="typeof data.item !== 'object'")
-          v-list-item-content(v-text="data.item")
-        template(v-else='')
-          v-list-item-avatar
-            v-img(:src="data.item.illustration_url")
-          v-list-item-content
-            v-list-item-title(v-to-locale="data.item.name")
-      template(v-slot:selection="data")
-          v-list-item-avatar
-            v-img(:src="data.item.illustration_url")
-          v-list-item-content
-            v-list-item-title(v-to-locale="data.item.name")
-      template(v-slot:no-data)
-        div Aucune donnée disponible
+.fv-offer-autocomplete
+  fv-autocomplete(
+    :items="items"
+    :filter="filter"
+    :disabled="disabled"
+    :returnObject="returnObject"
+    @autocomplete:selected="selected"
+  )
+    template(v-slot:label)
+      div {{ $t('forms.orders.new.offer') }}
+    template(v-slot:item="data")
+      template(v-if="typeof data.item !== 'object'")
+        v-list-item-content(v-text="data.item")
+      template(v-else='')
+        v-list-item-avatar
+          v-img(:src="data.item.illustration_url")
+        v-list-item-content
+          v-list-item-title(v-to-locale="data.item.name")
+    template(v-slot:selection="data")
+        v-list-item-avatar
+          v-img(:src="data.item.illustration_url")
+        v-list-item-content
+          v-list-item-title(v-to-locale="data.item.name")
+    template(v-slot:no-data)
+      div Aucune donnée disponible
 </template>
 
 <script>
@@ -42,6 +42,12 @@ export default {
       default() {
         return false
       }
+    },
+    returnObject: {
+      type: Boolean,
+      default() {
+        return false
+      }
     }
   },
   data() {
@@ -51,16 +57,15 @@ export default {
   },
   watch: {
     partnerId() {
-      const id = parseInt(this.partnerId)
-      const url = `${this.$axios.defaults.baseURL}/offers?account_id=${id}`
-      this.$axios.$get(url).then((res) => (this.items = res))
+      const res = this.$store.getters['offers/getForAccount'](this.partnerId)
+      this.items = res
     }
   },
   mounted() {
     console.log('Composant ', this.$options.name)
-    const id = parseInt(this.partnerId)
-    const url = `${this.$axios.defaults.baseURL}/offers?account_id=${id}`
-    this.$axios.$get(url).then((res) => (this.items = res))
+    this.$store.dispatch('offers/getAll')
+    const res = this.$store.getters['offers/getForAccount'](this.partnerId)
+    this.items = res
   },
   methods: {
     selected(v) {

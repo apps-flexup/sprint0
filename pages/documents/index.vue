@@ -14,7 +14,7 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style scoped>
 .documents {
   background-color: inherit;
 }

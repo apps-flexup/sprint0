@@ -1,6 +1,6 @@
 <template lang="pug">
-  .fv-currency-input
-    p {{ $options.name }}
+.fv-currency-input
+  p {{ $options.name }}
 </template>
 
 <script>
@@ -16,7 +16,7 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style scoped>
 .fv-currency-input {
   background-color: inherit;
 }

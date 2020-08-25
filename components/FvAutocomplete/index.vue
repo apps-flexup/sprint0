@@ -1,29 +1,32 @@
 <template lang="pug">
-  .fv-autocomplete
-    v-autocomplete(
-      v-model="elementId"
-      :items="items"
-      :filter="filter"
-      :loading="isLoading"
-      :item-value="itemValue"
-      :disabled="disabled"
-      clearable=''
-      outlined=''
-    )
-      template(v-slot:label)
-        slot(name="label")
-      template(v-slot:item="data")
-        slot(
-          name="item"
-          v-bind:item="data.item"
-        )
-      template(v-slot:selection="data")
-        slot(
-          name="selection"
-          v-bind:item="data.item"
-        )
-      template(v-slot:append-item)
-        slot(name="append-item")
+.fv-autocomplete
+  v-autocomplete(
+    v-model="elementId"
+    :items="items"
+    :filter="filter"
+    :loading="isLoading"
+    :item-value="itemValue"
+    :disabled="disabled"
+    :return-object="returnObject"
+    clearable=''
+    outlined=''
+  )
+    template(v-slot:label)
+      slot(name="label")
+    template(v-slot:item="data")
+      slot(
+        name="item"
+        v-bind:item="data.item"
+      )
+        v-list-item-content(v-text="data.item")
+    template(v-slot:selection="data")
+      slot(
+        name="selection"
+        v-bind:item="data.item"
+      )
+        v-list-item-content(v-text="data.item")
+    template(v-slot:append-item)
+      slot(name="append-item")
 </template>
 
 <script>
@@ -56,6 +59,12 @@ export default {
       }
     },
     disabled: {
+      type: Boolean,
+      default() {
+        return false
+      }
+    },
+    returnObject: {
       type: Boolean,
       default() {
         return false

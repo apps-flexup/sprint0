@@ -1,5 +1,5 @@
 <template lang="pug">
-  .fv-contact-step-offer
+.fv-contact-step-offer
 </template>
 <script>
 export default {
@@ -14,7 +14,7 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style scoped>
 .fv-contact-step-offer {
   background-color: inherit;
 }

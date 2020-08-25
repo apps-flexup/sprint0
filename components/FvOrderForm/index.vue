@@ -1,28 +1,31 @@
 <template lang="pug">
-  .fv-order-form
-    p {{ $options.name }}
-    v-row(
-      v-for="i in nbOrders"
-      :key="i"
-    )
-      v-col(cols="12")
-        fv-order-for-partner(
-          :i="i"
-          :order="orderList[i]"
-          @order:partnerSelected="partnerSelected"
-          @order:orderLinesChanged="orderLinesChanged"
-          @order:remove="removeOrder"
+.fv-order-form
+  p {{ $options.name }}
+  v-row(
+    v-for="i in nbOrders"
+    :key="i"
+  )
+    v-col(cols="12")
+      fv-order-for-partner(
+        :i="i"
+        :order="orderList[i]"
+        @order:partnerSelected="partnerSelected"
+        @order:orderLinesChanged="orderLinesChanged"
+        @order:remove="removeOrder"
+        @order:labelChanged="labelChanged"
+        @order:dateChanged="dateChanged"
+        @order:structureSelected="structureChanged"
+      )
+  v-row(v-if="nbOrders > 1")
+      v-spacer
+      v-col(cols="5")
+        fv-order-totals(
+          :orderLines="allOrderLines"
         )
-    v-row(v-if="nbOrders > 1")
-        v-spacer
-        v-col(cols="5")
-          fv-order-totals(
-            :orderLines="allOrderLines"
-          )
-    v-row
-      v-btn(@click="addNewOrder") Order for new partner
-    v-row
-      v-btn(@click="validateOrders") validate
+  v-row
+    v-btn(@click="addNewOrder") Order for new partner
+  v-row
+    v-btn(@click="validateOrders") validate
 </template>
 
 <script>
@@ -42,12 +45,30 @@ export default {
     addNewOrder() {
       this.nbOrders++
     },
+    labelChanged(i, label) {
+      if (!this.orderList[i]) {
+        this.orderList[i] = {}
+      }
+      this.orderList[i].label = label
+    },
+    structureChanged(i, structureId) {
+      if (!this.orderList[i]) {
+        this.orderList[i] = {}
+      }
+      this.orderList[i].structureId = structureId
+    },
     partnerSelected(i, partnerId) {
       if (!this.orderList[i]) {
         this.orderList[i] = {}
       }
       this.orderList[i].partnerId = partnerId
       this.orderList[i].orderLines = []
+    },
+    dateChanged(i, dte) {
+      if (!this.orderList[i]) {
+        this.orderList[i] = {}
+      }
+      this.orderList[i].dte = dte
     },
     orderLinesChanged(i, orderLines) {
       this.orderList[i].orderLines = orderLines
@@ -67,7 +88,26 @@ export default {
       })
     },
     validateOrders() {
-      console.log('orders: ', this.orderList)
+      this.orderList.forEach((order) => {
+        if (order.orderLines) {
+          let totalAmount = 0
+          order.orderLines.forEach((orderLine) => {
+            totalAmount += orderLine.amount()
+          })
+          const payload = {
+            partner_id: order.partnerId,
+            date: order.dte,
+            label: order.label ? order.label : null,
+            order_lines: order.orderLines,
+            structure: order.structureId,
+            amount: totalAmount,
+            currency: 'EUR'
+          }
+          console.log('Payload:', payload)
+          this.$store.dispatch('orders/add', payload)
+        }
+      })
+      this.$router.push('/orders')
     }
   }
 }

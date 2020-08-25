@@ -1,6 +1,6 @@
 <template lang="pug">
-  .fv-contact-step-product
-    p {{ $options.name }}
+.fv-contact-step-product
+  p {{ $options.name }}
 </template>
 <script>
 export default {
@@ -15,7 +15,7 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style scoped>
 .fv-contact-step-product {
   background-color: inherit;
 }

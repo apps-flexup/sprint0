@@ -1,8 +1,11 @@
 import Vue from 'vue'
 // Importation des composants utilitaires
-import FvAutocomplete from '@/components/FvAutocomplete'
-import FvMenuList from '@/components/FvMenuList'
+import FvAccount from '@/components/FvAccount'
 import FvAccountAvatar from '@/components/FvAccountAvatar'
+import FvAutocomplete from '@/components/FvAutocomplete'
+import FvAvatar from '@/components/FvAvatar'
+import FvMenuList from '@/components/FvMenuList'
+import FvCloseModalButton from '@/components/FvCloseModalButton'
 import FvContactCard from '@/components/FvContactCard'
 import FvContactDialog from '@/components/FvContactDialog'
 import FvContactEdit from '~/components/FvContactEdit'
@@ -30,12 +33,24 @@ import FvContractSummaryStepOffer from '@/components/FvContractSummaryStepOffer'
 import FvContractSummaryStepPaiement from '@/components/FvContractSummaryStepPaiement'
 import FvContractSummaryStepStructure from '@/components/FvContractSummaryStepStructure'
 import FvCreateButton from '@/components/FvCreateButton'
+import FvDataTableHeader from '@/components/FvDataTableHeader'
+import FvDataTableSearchBar from '@/components/FvDataTableSearchBar'
+import FvListAccounts from '@/components/FvListAccounts'
+import FvLoginButton from '@/components/FvLoginButton'
+import FvLogoutButton from '@/components/FvLogoutButton'
+import FvMinusButton from '@/components/FvMinusButton'
 import FvModal from '@/components/FvModal'
+import FvModalActions from '@/components/FvModalActions'
 import FvModalAndButton from '@/components/FvModalAndButton'
 import FvNav from '@/components/FvNav'
+import FvNavBar from '@/components/FvNavBar'
 import FvNewPartnerForm from '@/components/FvNewPartnerForm'
+import FvProductDataTable from '@/components/FvProductDataTable'
 import FvProductForm from '@/components/FvProductForm'
+import FvQuantitySelector from '@/components/FvQuantitySelector'
 import FvStepper from '@/components/FvStepper'
+import FvDeleteAction from '@/components/FvDeleteAction'
+import FvEditAction from '@/components/FvEditAction'
 import FvEtape from '@/components/FvEtape'
 import FvFieldDate from '@/components/FvFieldDate'
 import FvUserAccounts from '@/components/FvUserAccounts'
@@ -43,16 +58,25 @@ import FvContractSummaryVisualisation from '@/components/FvContractSummaryVisual
 import FvContractStepVisualisation from '@/components/FvContractStepVisualisation'
 import FvCountryList from '@/components/FvCountryList'
 import FvProductList from '@/components/FvProductList'
+import FvOfferDataTable from '@/components/FvOfferDataTable'
 import FvOfferForm from '@/components/FvOfferForm'
+import FvOfferIndex from '@/components/FvOfferIndex'
 import FvOfferList from '@/components/FvOfferList'
 import FvOfferModal from '@/components/FvOfferModal'
+import FvOrderDataTable from '@/components/FvOrderDataTable'
+import FvOrderIndex from '@/components/FvOrderIndex'
 import FvOrderListSearch from '@/components/FvOrderListSearch'
 import FvOrderList from '@/components/FvOrderList'
+import FvPartnerDataTable from '@/components/FvPartnerDataTable'
 import FvPartnerList from '@/components/FvPartnerList'
 import FvModalSlot from '@/components/FvModalSlot'
+import FvPartnerIndex from '@/components/FvPartnerIndex'
 import FvPartnerModal from '@/components/FvPartnerModal'
+import FvPlusButton from '@/components/FvPlusButton'
+import FvProductIndex from '~/components/FvProductIndex'
 import FvProductModal from '@/components/FvProductModal'
 import FvSpeedDial from '@/components/FvSpeedDial'
+import FvTextField from '@/components/FvTextField'
 import FvUserInfo from '@/components/FvUserInfo'
 import FvOrderForm from '@/components/FvOrderForm'
 import FvOrderForPartner from '@/components/FvOrderForPartner'
@@ -65,9 +89,10 @@ import FvCurrencyAutocomplete from '@/components/FvCurrencyAutocomplete'
 import FvUnitAutocomplete from '@/components/FvUnitAutocomplete'
 import FvCountryAutocomplete from '@/components/FvCountryAutocomplete'
 import FvOfferAutocomplete from '@/components/FvOfferAutocomplete'
-import FvFormeJuridiqueAutocomplete from '@/components/FvFormeJuridiqueAutocomplete'
+import FvLegalStructureAutocomplete from '~/components/FvLegalStructureAutocomplete'
 import FvProductItem from '@/components/FvProductItem'
-import FvStatusProgressAtom from '@/components/FvStatusProgressAtom'
+import FvSaveModalButton from '@/components/FvSaveModalButton'
+import FvStatusProgress from '~/components/FvStatusProgress'
 import FvFrequence from '@/components/FvFrequence'
 import FvPartnerItem from '@/components/FvPartnerItem'
 import FvOrderStepSelectPartner from '~/components/FvOrderStepSelectPartner'
@@ -77,9 +102,12 @@ import FvPartnerCard from '~/components/FvPartnerCard'
 import FvOrderTotals from '~/components/FvOrderTotals'
 
 // Déclarations composants utilitaires
-Vue.component('fv-autocomplete', FvAutocomplete)
-Vue.component('fv-menu-list', FvMenuList)
+Vue.component('fv-account', FvAccount)
 Vue.component('fv-account-avatar', FvAccountAvatar)
+Vue.component('fv-autocomplete', FvAutocomplete)
+Vue.component('fv-avatar', FvAvatar)
+Vue.component('fv-menu-list', FvMenuList)
+Vue.component('fv-close-modal-button', FvCloseModalButton)
 Vue.component('fv-contact-dialog', FvContactDialog)
 Vue.component('fv-contact-card', FvContactCard)
 Vue.component('fv-contact-edit', FvContactEdit)
@@ -116,12 +144,25 @@ Vue.component(
   FvContractSummaryStepPaiement
 )
 Vue.component('fv-create-button', FvCreateButton)
+Vue.component('fv-data-table-header', FvDataTableHeader)
+Vue.component('fv-data-table-search-bar', FvDataTableSearchBar)
+Vue.component('fv-list-accounts', FvListAccounts)
+Vue.component('fv-login-button', FvLoginButton)
+Vue.component('fv-logout-button', FvLogoutButton)
+Vue.component('fv-minus-button', FvMinusButton)
 Vue.component('fv-modal', FvModal)
+Vue.component('fv-modal-actions', FvModalActions)
 Vue.component('fv-modal-and-button', FvModalAndButton)
 Vue.component('fv-nav', FvNav)
+Vue.component('fv-nav-bar', FvNavBar)
 Vue.component('fv-new-partner-form', FvNewPartnerForm)
+Vue.component('fv-product-data-table', FvProductDataTable)
 Vue.component('fv-product-form', FvProductForm)
+Vue.component('fv-product-index', FvProductIndex)
+Vue.component('fv-quantity-selector', FvQuantitySelector)
 Vue.component('fv-stepper', FvStepper)
+Vue.component('fv-delete-action', FvDeleteAction)
+Vue.component('fv-edit-action', FvEditAction)
 Vue.component('fv-etape', FvEtape)
 Vue.component('fv-field-date', FvFieldDate)
 Vue.component('fv-user-accounts', FvUserAccounts)
@@ -132,17 +173,25 @@ Vue.component(
 Vue.component('fv-contract-step-visualisation', FvContractStepVisualisation)
 Vue.component('fv-country-list', FvCountryList)
 Vue.component('fv-product-list', FvProductList)
+Vue.component('fv-offer-data-table', FvOfferDataTable)
 Vue.component('fv-offer-form', FvOfferForm)
+Vue.component('fv-offer-index', FvOfferIndex)
 Vue.component('fv-offer-list', FvOfferList)
 Vue.component('fv-offer-modal', FvOfferModal)
+Vue.component('fv-order-data-table', FvOrderDataTable)
+Vue.component('fv-order-index', FvOrderIndex)
 Vue.component('fv-order-list-search', FvOrderListSearch)
 Vue.component('fv-order-list', FvOrderList)
 Vue.component('fv-country-list', FvCountryList)
+Vue.component('fv-partner-data-table', FvPartnerDataTable)
 Vue.component('fv-partner-list', FvPartnerList)
+Vue.component('fv-plus-button', FvPlusButton)
 Vue.component('fv-modal-slot', FvModalSlot)
+Vue.component('fv-partner-index', FvPartnerIndex)
 Vue.component('fv-partner-modal', FvPartnerModal)
 Vue.component('fv-product-modal', FvProductModal)
 Vue.component('fv-speed-dial', FvSpeedDial)
+Vue.component('fv-text-field', FvTextField)
 Vue.component('fv-user-info', FvUserInfo)
 Vue.component('fv-order-form', FvOrderForm)
 Vue.component('fv-order-for-partner', FvOrderForPartner)
@@ -155,9 +204,10 @@ Vue.component('fv-currency-autocomplete', FvCurrencyAutocomplete)
 Vue.component('fv-country-autocomplete', FvCountryAutocomplete)
 Vue.component('fv-offer-autocomplete', FvOfferAutocomplete)
 Vue.component('fv-unit-autocomplete', FvUnitAutocomplete)
-Vue.component('fv-forme-juridique-autocomplete', FvFormeJuridiqueAutocomplete)
+Vue.component('fv-legal-structure-autocomplete', FvLegalStructureAutocomplete)
 Vue.component('fv-product-item', FvProductItem)
-Vue.component('fv-status-progress-atom', FvStatusProgressAtom)
+Vue.component('fv-save-modal-button', FvSaveModalButton)
+Vue.component('fv-status-progress', FvStatusProgress)
 Vue.component('fv-frequence', FvFrequence)
 Vue.component('fv-partner-item', FvPartnerItem)
 Vue.component('fv-order-step-select-partner', FvOrderStepSelectPartner)

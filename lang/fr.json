@@ -32,8 +32,16 @@
       "title": "Mes offres",
       "search": "Rechercher"
     },
+    "orders": {
+      "title": "Mes commandes",
+      "search": "Rechercher"
+    },
     "products": {
       "title": "Mes Produits",
+      "search": "Rechercher"
+    },
+    "partners": {
+      "title": "Mes Partenaires",
       "search": "Rechercher"
     }
   },
@@ -90,7 +98,7 @@
         "title": "Nouveau partenaire",
         "subtitle": "Précisez les informations de votre partenaire",
         "name": "Nom du partenaire",
-        "juridicalStatus": "Statut juridique",
+        "legalStructure": "Statut juridique",
         "siret": "SIRET",
         "address": "Adresse",
         "complement": "Complément",
@@ -126,10 +134,12 @@
     },
     "orders": {
       "new": {
-        "partner": "Partnaire",
+        "partner": "Partenaire",
         "offer": "Offre",
         "structure": "Structure",
         "product": "Produit",
+        "label": "Label (optionnel)",
+        "date": "Date de commande",
         "totals": {
           "withoutVat": "Total hors taxes",
           "total": "Total",
@@ -161,7 +171,9 @@
     },
     "submit": "Envoyer",
     "previous": "Précédent",
-    "next": "Suivant"
+    "next": "Suivant",
+    "login": "Connexion",
+    "logout": "Déconnexion"
   },
   "headers": {
     "actions": "Actions",
@@ -183,15 +195,19 @@
       "order": "Commande"
     },
     "orders": {
-      "order_date": "Date de commande",
+      "date": "Date",
+      "amount": "Montant",
+      "currency": "Devise",
+      "label": "Label",
+      "structure": "Structure"
+    },
+    "orderLines": {
       "offer": "Offre",
-      "status": "Statut",
-      "startDate": "Date de début",
-      "endDate": "Date de fin",
       "quantity": "Quantité",
       "price": "Prix",
+      "total": "Total",
       "vat": "TVA",
-      "total": "Total"
+      "status": "Statut"
     },
     "offers": {
       "name": "Nom de l'offre",

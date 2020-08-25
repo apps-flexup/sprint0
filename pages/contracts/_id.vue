@@ -10,7 +10,7 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style scoped>
 .contract-item {
   background-color: inherit;
 }

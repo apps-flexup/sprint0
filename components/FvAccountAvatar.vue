@@ -1,6 +1,6 @@
 <template functional lang="pug">
-  .fv-account-avatar
-    p {{ $options.name }} --===--
+.fv-account-avatar
+  p {{ $options.name }} --===--
 </template>
 
 <script>
@@ -12,7 +12,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .fv-account-avatar {
   background-color: inherit;
 }

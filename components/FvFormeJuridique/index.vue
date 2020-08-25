@@ -1,6 +1,6 @@
 <template lang="pug">
-  .fv-forme-juridique-input
-    p {{ $options.name }}
+.fv-forme-juridique
+  p {{ $options.name }}
 </template>
 
 <script>
@@ -16,7 +16,7 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style scoped>
 .fv-forme-juridique-input {
   background-color: inherit;
 }

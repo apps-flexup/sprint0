@@ -1,5 +1,5 @@
 <template lang="pug">
-  .fv-contract-summary-visualisation
+.fv-contract-summary-visualisation
 </template>
 
 <script>
@@ -15,7 +15,7 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style scoped>
 .fv-contract-summary-visualisation {
   background-color: inherit;
 }
