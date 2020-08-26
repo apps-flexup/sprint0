@@ -7,6 +7,10 @@
     :search="search"
     :custom-filter="filterFunction"
   )
+    template(v-slot:item.date='{ item }')
+      div {{ dateToLocaleString(item.date) }}
+    template(v-slot:item.structure='{ item }')
+      div {{ getStructureName(item.structure) }}
 </template>
 
 <script>
@@ -40,6 +44,18 @@ export default {
   methods: {
     filterFunction(item, queryText, itemText) {
       return filterOrdersDataTable(item, queryText, itemText)
+    },
+    dateToLocaleString(date) {
+      const dte = new Date(date)
+      const res = dte.toLocaleString().slice(0, 10)
+      return res
+    },
+    getStructureName(structureId) {
+      const structure = this.$store.getters['contracts/getStructureById'](
+        structureId
+      )
+      const res = structure.name
+      return res
     }
   }
 }

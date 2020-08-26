@@ -30,5 +30,11 @@ export default {
     const id = parseInt(legalStructureId)
     const res = state.legalStructures.find((v) => parseInt(v.id) === id)
     return res
+  },
+  getStructureById: (state) => (structureId) => {
+    if (!state.structures) return null
+    const id = parseInt(structureId)
+    const res = state.structures.find((v) => parseInt(v.id) === id)
+    return res
   }
 }
