@@ -1,5 +1,5 @@
 import { storiesOf } from '@storybook/vue'
-import { select, withKnobs } from '@storybook/addon-knobs'
+import { select } from '@storybook/addon-knobs'
 import FvAvatar from './index.vue'
 
 const avatarAvailable = {
@@ -12,23 +12,15 @@ const avatarAvailable = {
 }
 const defaultAvatar = '/images/avatar-0.png'
 
-storiesOf('Atoms/FvAvatar', module)
-  .addDecorator(withKnobs)
-  .add(
-    'Common',
-    () => ({
-      props: {
-        avatar: {
-          default: select('Avatar', avatarAvailable, defaultAvatar, 'Props')
-        }
-      },
-      components: { FvAvatar },
-      template: `<FvAvatar
-        :avatar="avatar"
-      >
-      </FvAvatar>`
-    }),
-    {
-      info: {}
+storiesOf('Atoms/FvAvatar', module).add('Common', () => ({
+  props: {
+    avatar: {
+      default: select('Avatar', avatarAvailable, defaultAvatar, 'Props')
     }
-  )
+  },
+  components: { FvAvatar },
+  template: `<FvAvatar
+    :avatar="avatar"
+  >
+  </FvAvatar>`
+}))

@@ -1,5 +1,5 @@
 import { storiesOf } from '@storybook/vue'
-import { select, withKnobs } from '@storybook/addon-knobs'
+import { select } from '@storybook/addon-knobs'
 import FvPartnerCard from './index.vue'
 
 const partnersAvailable = {
@@ -9,28 +9,20 @@ const partnersAvailable = {
 }
 const defaultValue = '1'
 
-storiesOf('Atoms/FvPartnerCard', module)
-  .addDecorator(withKnobs)
-  .add(
-    'Common',
-    () => ({
-      props: {
-        partnerId: {
-          default: select('Partner', partnersAvailable, defaultValue, 'Props')
-        }
-      },
-      components: { FvPartnerCard },
-      data() {
-        return {
-          partnerId: 1
-        }
-      },
-      template: `<FvPartnerCard
-        :partnerId="partnerId"
-      >
-      </FvPartnerCard>`
-    }),
-    {
-      info: {}
+storiesOf('Atoms/FvPartnerCard', module).add('Common', () => ({
+  props: {
+    partnerId: {
+      default: select('Partner', partnersAvailable, defaultValue, 'Props')
     }
-  )
+  },
+  components: { FvPartnerCard },
+  data() {
+    return {
+      partnerId: 1
+    }
+  },
+  template: `<FvPartnerCard
+    :partnerId="partnerId"
+  >
+  </FvPartnerCard>`
+}))

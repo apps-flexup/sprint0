@@ -1,5 +1,5 @@
 import { storiesOf } from '@storybook/vue'
-import { select, withKnobs } from '@storybook/addon-knobs'
+import { select } from '@storybook/addon-knobs'
 import FvStatusProgressAtom from './index.vue'
 
 const statusAvailable = {
@@ -12,23 +12,15 @@ const statusAvailable = {
 }
 const defaultValue = 'draft'
 
-storiesOf('Atoms/FvStatusProgress', module)
-  .addDecorator(withKnobs)
-  .add(
-    'Common',
-    () => ({
-      props: {
-        status: {
-          default: select('Status', statusAvailable, defaultValue, 'Props')
-        }
-      },
-      components: { FvStatusProgressAtom },
-      template: `<FvStatusProgressAtom
-        :status="status"
-      >
-      </FvStatusProgressAtom>`
-    }),
-    {
-      info: {}
+storiesOf('Atoms/FvStatusProgress', module).add('Common', () => ({
+  props: {
+    status: {
+      default: select('Status', statusAvailable, defaultValue, 'Props')
     }
-  )
+  },
+  components: { FvStatusProgressAtom },
+  template: `<FvStatusProgressAtom
+    :status="status"
+  >
+  </FvStatusProgressAtom>`
+}))
