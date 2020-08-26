@@ -7,6 +7,8 @@
     :search="search"
     :custom-filter="filterFunction"
   )
+    template(v-slot:item.structure='{ item }')
+      div {{ $store.getters['contracts/getStructureById'](item.structure).name }}
 </template>
 
 <script>

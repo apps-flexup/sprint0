@@ -96,7 +96,7 @@ export default {
           })
           const payload = {
             partner_id: order.partnerId,
-            date: order.dte,
+            date: order.dte.toLocaleString().slice(0, 10),
             label: order.label ? order.label : null,
             order_lines: order.orderLines,
             structure: order.structureId,
