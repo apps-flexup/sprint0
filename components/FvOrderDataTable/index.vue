@@ -10,7 +10,7 @@
     template(v-slot:item.date='{ item }')
       div {{ dateToLocaleString(item.date) }}
     template(v-slot:item.structure='{ item }')
-      div {{ $store.getters['contracts/getStructureById'](item.structure).name }}
+      div {{ getStructureName(item.structure) }}
 </template>
 
 <script>
@@ -48,6 +48,11 @@ export default {
     dateToLocaleString(date) {
       const dte = new Date(date)
       const res = dte.toLocaleString().slice(0, 10)
+      return res
+    },
+    getStructureName(structure) {
+      const name = this.$store.getters['contracts/getStructureById']
+      const res = name(structure).name
       return res
     }
   }
