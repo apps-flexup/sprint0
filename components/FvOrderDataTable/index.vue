@@ -50,9 +50,11 @@ export default {
       const res = dte.toLocaleString().slice(0, 10)
       return res
     },
-    getStructureName(structure) {
-      const name = this.$store.getters['contracts/getStructureById']
-      const res = name(structure).name
+    getStructureName(structureId) {
+      const structure = this.$store.getters['contracts/getStructureById'](
+        structureId
+      )
+      const res = structure.name
       return res
     }
   }
