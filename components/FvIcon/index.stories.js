@@ -3,7 +3,7 @@ import { select } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 import FvIcon from './index.vue'
 
-const icon = {
+const icons = {
   heart: 'mdi-heart-outline',
   localisation: 'mdi-map-marker-outline',
   help: 'mdi-help-circle-outline',
@@ -41,8 +41,8 @@ const icon = {
   settings: 'mdi-cog'
 }
 const defaultIcon = 'mdi-plus'
-const iconsNames = Object.keys(icon)
-const color = {
+const iconsNames = Object.keys(icons)
+const colors = {
   black: '#000000',
   red: 'red',
   blue: 'blue',
@@ -53,7 +53,7 @@ const color = {
 }
 const defaultColor = '#000000'
 
-const size = {
+const sizes = {
   xSmall: 'xSmall',
   small: 'small',
   medium: 'medium',
@@ -66,13 +66,13 @@ storiesOf('Atoms/FvIcon', module)
   .add('Common', () => ({
     props: {
       icon: {
-        default: select('Icon', icon, defaultIcon, 'Props')
+        default: select('Icon', icons, defaultIcon, 'Props')
       },
       color: {
-        default: select('Color', color, defaultColor, 'Props')
+        default: select('Color', colors, defaultColor, 'Props')
       },
       size: {
-        default: select('Size', size, defaultSize, 'Props')
+        default: select('Size', sizes, defaultSize, 'Props')
       }
     },
     components: { FvIcon },
@@ -83,7 +83,7 @@ storiesOf('Atoms/FvIcon', module)
       :icon="icon"
       :color="color"
       :size="size"
-      @icon:clicked="clicked"
+      @icons:clicked="clicked"
     >
     </FvIcon>`
   }))
@@ -92,17 +92,17 @@ storiesOf('Atoms/FvIcon', module)
     data() {
       return {
         iconsNames,
-        icon
+        icons
       }
     },
     template: `<div :style="{display: 'flex', flexWrap: 'wrap'}">
       <div
-          v-for="icons in icon"
+          v-for="icon in icons"
           :key="icon"
           :style="{display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '.5rem',flex: '0 0 50px', height: '120px', font: '300 12px Raleway'}">
-        <FvIcon :icon="icons" :style="{margin: '0 0 8px 0'}"/>
+        <FvIcon :icons="icon" :style="{margin: '0 0 8px 0'}"/>
       <div
-        <span :style="{textOverflow: 'ellipsis', whiteSpace: 'nowrap',overflow: 'hidden', width: '70px', textAlign: 'center'}">{{ icons.slice(4) }}</span>
+        <span :style="{textOverflow: 'ellipsis', whiteSpace: 'nowrap',overflow: 'hidden', width: '70px', textAlign: 'center'}">{{ icon.slice(4) }}</span>
       </div>
     </div>`
   }))

@@ -44,18 +44,18 @@ export default {
   },
   watch: {
     size() {
-      this.taille()
+      this.setSize()
     }
   },
   mounted() {
     console.log('Composant ', this.$options.name)
-    this.taille()
+    this.setSize()
   },
   methods: {
     clicked() {
       this.$emit('icon:clicked')
     },
-    taille() {
+    setSize() {
       switch (this.size) {
         case 'xSmall':
           this.xLarge = false
