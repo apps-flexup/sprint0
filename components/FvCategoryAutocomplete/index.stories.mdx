@@ -1,0 +1,22 @@
+import { Meta, Story, ArgsTable } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+import FvCategoryAutocomplete from './index.vue'
+
+<Meta title='Atoms/FvCategoryAutocomplete' component={ FvCategoryAutocomplete } />
+
+# FvCategoryAutocomplete
+
+<Story name='Common' height='150px'>{{
+  components: { FvCategoryAutocomplete },
+  methods: {
+    selected: action('Selected')
+  },
+  template: `<FvCategoryAutocomplete
+    @category:selected="selected"
+  >
+  </FvCategoryAutocomplete>`
+}}</Story>
+
+## ArgsTable
+
+<ArgsTable of={ FvCategoryAutocomplete } />
