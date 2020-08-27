@@ -1,0 +1,23 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+import FvCountryAutocomplete from './index.vue'
+
+<Meta title='Atoms/FvCountryAutocomplete' component={ FvCountryAutocomplete } />
+
+# FvCountryAutocomplete
+
+<Canvas>
+<Story name='Common' height='150px'>{{  components: { FvCountryAutocomplete },  components: { FvCountryAutocomplete },
+  methods: {
+    selected: action('selected')
+  },
+  template: `<FvCountryAutocomplete
+    @country:selected="selected"
+  >
+  </FvCountryAutocomplete>`
+}}</Story>
+</Canvas>
+
+## ArgsTable
+
+<ArgsTable of={ FvCountryAutocomplete } />
