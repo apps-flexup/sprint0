@@ -1,13 +1,17 @@
-import { storiesOf } from '@storybook/vue'
+import { Meta, Story, ArgsTable } from '@storybook/addon-docs/blocks';
 import { text, array } from '@storybook/addon-knobs'
 import FvAutocomplete from './index.vue'
 
-storiesOf('Atoms/FvAutocomplete', module).add('Common', () => ({
+<Meta title='Atoms/FvAutocomplete' component={ FvAutocomplete } />
+
+# FvAutocomplete
+
+<Story name='Common' height='150px'>{{
   props: {
     label: {
       default: text('Label', 'Autocomplete', 'Slots')
     },
-    items: {
+    knobItems: {
       default: array('Items', ['item1', 'item2'], ',', 'Props')
     }
   },
@@ -19,7 +23,7 @@ storiesOf('Atoms/FvAutocomplete', module).add('Common', () => ({
     selected(_v) {}
   },
   template: `<FvAutocomplete
-    :items="items"
+    :items="knobItems"
     :filter="filter"
     @autocomplete:selected="selected"
   >
@@ -27,4 +31,8 @@ storiesOf('Atoms/FvAutocomplete', module).add('Common', () => ({
       {{ label }}
     </template>
   </FvAutocomplete>`
-}))
+}}</Story>
+
+## ArgsTable
+
+<ArgsTable of={ FvAutocomplete } />
