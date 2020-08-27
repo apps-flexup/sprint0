@@ -4,12 +4,41 @@ import { action } from '@storybook/addon-actions'
 import FvIcon from './index.vue'
 
 const icon = {
-  antenne: 'mdi-antenna',
+  heart: 'mdi-heart-outline',
+  localisation: 'mdi-map-marker-outline',
+  help: 'mdi-help-circle-outline',
+  padlock: 'mdi-lock',
+  eye: 'mdi-eye-outline',
+  credit_card: 'mdi-credit-card-multiple-outline',
   plus: 'mdi-plus',
-  moins: 'mdi-minus',
-  avion: 'mdi-airplane',
-  fleche_up: 'mdi-arrow-up',
-  bluetooth: 'mdi-bluetooth'
+  document: 'mdi-file-document-multiple-outline',
+  trash: 'mdi-delete',
+  clock: 'mdi-clock-time-four-outline',
+  writing: 'mdi-pencil-box-multiple-outline',
+  validate: 'mdi-check',
+  shop: 'mdi-basket-outline',
+  truck: 'mdi-truck-fast-outline',
+  calendar: 'mdi-calendar-month-outline',
+  search: 'mdi-magnify',
+  network: 'mdi-wan',
+  account: 'mdi-account-circle-outline',
+  social: 'mdi-account-group-outline',
+  preference: 'mdi-tune-vertical-variant',
+  mail: 'mdi-email-outline',
+  logout: 'mdi-logout-variant',
+  choice: 'mdi-apps',
+  left_arrow: 'mdi-chevron-left',
+  menu_burger: 'mdi-menu',
+  close: 'mdi-close',
+  menu_point: 'mdi-dots-horizontal',
+  home: 'mdi-home-outline',
+  bank: 'mdi-bank-outline',
+  star: 'mdi-star-outline',
+  numero: 'mdi-numeric-1-circle-outline',
+  check_circle: 'mdi-check-circle-outline',
+  switch: 'mdi-toggle-switch',
+  order: 'mdi-inbox-arrow-down-outline',
+  settings: 'mdi-cog'
 }
 const defaultIcon = 'mdi-plus'
 const iconsNames = Object.keys(icon)
@@ -70,10 +99,10 @@ storiesOf('Atoms/FvIcon', module)
       <div
           v-for="icons in icon"
           :key="icon"
-          :style="{display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '.5rem',flex: '0 0 50px', height: '100px', font: '300 12px Raleway'}">
+          :style="{display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '.5rem',flex: '0 0 50px', height: '120px', font: '300 12px Raleway'}">
         <FvIcon :icon="icons" :style="{margin: '0 0 8px 0'}"/>
       <div
-        <span :style="{textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '60px', textAlign: 'center'}">{{ icons.slice(4) }}</span>
+        <span :style="{textOverflow: 'ellipsis', whiteSpace: 'nowrap',overflow: 'hidden', width: '70px', textAlign: 'center'}">{{ icons.slice(4) }}</span>
       </div>
     </div>`
   }))
