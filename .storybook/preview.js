@@ -13,7 +13,8 @@ import activeAccount from '~/.storybook/activeAccount'
 import store from '~/.storybook/store'
 import axios from 'axios'
 import auth from '~/.storybook/auth'
-import "@mdi/font/css/materialdesignicons.css";
+import "@mdi/font/css/materialdesignicons.css"
+import "@/.storybook/style/application_wrap.css"
 
 const vuetifyOptions = {
   theme: {
