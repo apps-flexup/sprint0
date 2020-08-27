@@ -1,0 +1,23 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+import FvCloseModalButton from './index.vue'
+
+<Meta title='Atoms/FvCloseModalButton' component={ FvCloseModalButton } />
+
+# FvCloseModalButton
+
+<Canvas>
+<Story name='Common' height='150px'>{{  components: { FvCloseModalButton },
+  methods: {
+    close: action('close')
+  },
+  template: `<FvCloseModalButton
+    @button:close="close"
+  >
+  </FvCloseModalButton>`
+}}</Story>
+</Canvas>
+
+## ArgsTable
+
+<ArgsTable of={ FvCloseModalButton } />

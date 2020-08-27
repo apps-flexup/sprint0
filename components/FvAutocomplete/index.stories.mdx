@@ -1,4 +1,4 @@
-import { Meta, Story, ArgsTable } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
 import { text, array } from '@storybook/addon-knobs'
 import FvAutocomplete from './index.vue'
 
@@ -6,6 +6,7 @@ import FvAutocomplete from './index.vue'
 
 # FvAutocomplete
 
+<Canvas>
 <Story name='Common' height='150px'>{{
   props: {
     label: {
@@ -32,6 +33,7 @@ import FvAutocomplete from './index.vue'
     </template>
   </FvAutocomplete>`
 }}</Story>
+</Canvas>
 
 ## ArgsTable
 

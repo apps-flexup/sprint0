@@ -1,4 +1,4 @@
-import { Meta, Story, ArgsTable } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
 import { action } from '@storybook/addon-actions'
 import FvCategoryAutocomplete from './index.vue'
 
@@ -6,6 +6,7 @@ import FvCategoryAutocomplete from './index.vue'
 
 # FvCategoryAutocomplete
 
+<Canvas>
 <Story name='Common' height='150px'>{{
   components: { FvCategoryAutocomplete },
   methods: {
@@ -16,6 +17,7 @@ import FvCategoryAutocomplete from './index.vue'
   >
   </FvCategoryAutocomplete>`
 }}</Story>
+<Canvas>
 
 ## ArgsTable
 
