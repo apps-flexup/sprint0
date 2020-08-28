@@ -12,7 +12,7 @@ const moduleOffers = {
           amount: 2500,
           currency: "EUR",
           id: 2,
-          order_date: null,
+          date: "2020-08-20T00:00:00.000Z",
           order_items: [
             {
               currency: "EUR",
@@ -37,7 +37,7 @@ const moduleOffers = {
           amount: 1500,
           currency: "EUR",
           id: 1,
-          order_date: null,
+          date: "2020-09-10T00:00:00.000Z",
           order_items: [
             {
               currency: "EUR",
@@ -66,7 +66,7 @@ const moduleOffers = {
           amount: 150,
           currency: "EUR",
           id: 3,
-          order_date: null,
+          date: "2020-12-09T00:00:00.000Z",
           order_items: [
             {
               currency: "EUR",
@@ -91,7 +91,7 @@ const moduleOffers = {
           amount: 1200,
           currency: "EUR",
           id: 4,
-          order_date: null,
+          date: "2020-08-20T00:00:00.000Z",
           order_items: [
             {
               currency: "EUR",
@@ -120,7 +120,7 @@ const moduleOffers = {
           amount: 2500,
           currency: "EUR",
           id: 5,
-          order_date: null,
+          date: "2020-08-20T00:00:00.000Z",
           order_items: [
             {
               currency: "EUR",
@@ -145,7 +145,7 @@ const moduleOffers = {
           amount: 2500,
           currency: "EUR",
           id: 6,
-          order_date: null,
+          date: "2020-08-20T00:00:00.000Z",
           order_items: [
             {
               currency: "EUR",
@@ -174,7 +174,7 @@ const moduleOffers = {
           amount: 2500,
           currency: "EUR",
           id: 7,
-          order_date: null,
+          date: "2020-08-20T00:00:00.000Z",
           order_items: [
             {
               currency: "EUR",
@@ -203,7 +203,7 @@ const moduleOffers = {
           amount: 2500,
           currency: "EUR",
           id: 8,
-          order_date: null,
+          date: "2020-08-20T00:00:00.000Z",
           order_items: [
             {
               currency: "EUR",
@@ -232,7 +232,7 @@ const moduleOffers = {
           amount: 100,
           currency: "EUR",
           id: 9,
-          order_date: null,
+          date: "2020-08-20T00:00:00.000Z",
           order_items: [
             {
               currency: "EUR",
@@ -261,7 +261,7 @@ const moduleOffers = {
           amount: 37.5,
           currency: "EUR",
           id: 10,
-          order_date: null,
+          date: "2020-08-20T00:00:00.000Z",
           order_items: [
             {
               currency: "EUR",

@@ -1,0 +1,24 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+import FvOfferForm from './index.vue'
+
+<Meta title='Molecules/FvOfferForm' component={ FvOfferForm } />
+
+# FvOfferForm
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  components: { FvOfferForm },
+  methods: {
+    offerChanged: action('Offer changed')
+  },
+  template: `<FvOfferForm
+    @offer:changed="offerChanged"
+  >
+  </FvOfferForm>`
+}}</Story>
+</Canvas>
+
+## ArgsTable
+
+<ArgsTable of={ FvOfferForm } />
