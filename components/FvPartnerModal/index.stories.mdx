@@ -1,9 +1,13 @@
-import { storiesOf } from '@storybook/vue'
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
 import { boolean } from '@storybook/addon-knobs'
 import FvPartnerModal from './index.vue'
 
-storiesOf('Organism/FvPartnerModal', module).add('Common', () => ({
-  props: {
+<Meta title='Organism/FvPartnerModal' component={ FvPartnerModal } />
+
+# FvPartnerModal
+
+<Canvas>
+<Story name='Common' height='150px'>{{  props: {
     showModal: {
       default: boolean('ShowModal', true, 'Props')
     }
@@ -35,4 +39,9 @@ storiesOf('Organism/FvPartnerModal', module).add('Common', () => ({
     @partner:changed="partnerChanged"
   >
   </FvPartnerModal>`
-}))
+}}</Story>
+</Canvas>
+
+## ArgsTable
+
+<ArgsTable of={ FvPartnerModal } />

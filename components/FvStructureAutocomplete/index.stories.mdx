@@ -1,0 +1,23 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+import FvStructureAutocomplete from './index.vue'
+
+<Meta title='Atoms/FvStructureAutocomplete' component={ FvStructureAutocomplete } />
+
+# FvStructureAutocomplete
+
+<Canvas>
+<Story name='Common' height='150px'>{{  components: { FvStructureAutocomplete },
+  methods: {
+    structureSelected: action('Selected')
+  },
+  template: `<FvStructureAutocomplete
+    @structure:selected="structureSelected"
+  >
+  </FvStructureAutocomplete>`
+}}</Story>
+</Canvas>
+
+## ArgsTable
+
+<ArgsTable of={ FvStructureAutocomplete } />
