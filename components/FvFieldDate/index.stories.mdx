@@ -1,0 +1,47 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { text } from '@storybook/addon-knobs'
+import { isoDateKnob } from '@/.storybook/knobs_data/isoDateKnob'
+import FvFieldDate from './index.vue'
+
+<Meta title='Atoms/FvFieldDate' component={ FvFieldDate } />
+
+# FvFieldDate
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  props: {
+    knobMinDate: {
+      default: isoDateKnob('minDate', new Date(2020, 8, 20), 'Props')
+    },
+    knobMaxDate: {
+      default: isoDateKnob('maxDate', new Date(2020, 9, 20), 'Props')
+    },
+    knobLabel: {
+      default: text('Label', 'Date label', 'Props')
+    }
+  },
+  data() {
+    return {
+      dateRef: new Date()
+    }
+  },
+  components: { FvFieldDate },
+  methods: {
+    dateChange(v) {
+      this.selectedDate = v
+    }
+  },
+  template: `<FvFieldDate
+      :minDate="knobMinDate"
+      :maxDate="knobMaxDate"
+      :dateRef="dateRef"
+      :label="knobLabel"
+      @date:changed="dateChange"
+    >
+    </FvFieldDate>`
+}}</Story>
+</Canvas>
+
+## ArgsTable
+
+<ArgsTable of={ FvFieldDate } />
