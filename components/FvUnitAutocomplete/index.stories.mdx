@@ -7,6 +7,9 @@ import FvUnitAutocomplete from './index.vue'
 
 <Story name='Common' height='250px'>{{
   components: { FvUnitAutocomplete },
+  methods: {
+    selected: action('Selected')
+  },
   template: `<FvUnitAutocomplete
     @unit:selected="selected"
   >
