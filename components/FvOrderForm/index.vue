@@ -23,13 +23,15 @@
           :orderLines="allOrderLines"
         )
   v-row
-    fv-secondary-button(
-      @click="addNewOrder"
-    ) {{ $t('forms.orders.new.addPartner') }}
+    v-col(cols="12")
+      fv-secondary-button.text-right(
+        @click="addNewOrder"
+      ) {{ $t('forms.orders.new.addPartner') }}
   v-row
-    fv-primary-button(
-      @click="validateOrders"
-    ) {{ $t('forms.orders.new.validate') }}
+    v-col(cols="12")
+      fv-primary-button.text-right(
+        @click="validateOrders"
+      ) {{ $t('forms.orders.new.validate') }}
 </template>
 
 <script>
