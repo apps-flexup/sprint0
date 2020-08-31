@@ -46,11 +46,17 @@ export default {
       return filterOrdersDataTable(item, queryText, itemText)
     },
     dateToLocaleString(date) {
+      if (!date) {
+        return null
+      }
       const dte = new Date(date)
       const res = dte.toLocaleString().slice(0, 10)
       return res
     },
     getStructureName(structureId) {
+      if (!structureId) {
+        return null
+      }
       const structure = this.$store.getters['contracts/getStructureById'](
         structureId
       )

@@ -1,0 +1,40 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { text, array } from '@storybook/addon-knobs'
+import FvAutocomplete from './index.vue'
+
+<Meta title='Atoms/FvAutocomplete' component={ FvAutocomplete } />
+
+# FvAutocomplete
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  props: {
+    label: {
+      default: text('Label', 'Autocomplete', 'Slots')
+    },
+    knobItems: {
+      default: array('Items', ['item1', 'item2'], ',', 'Props')
+    }
+  },
+  components: { FvAutocomplete },
+  methods: {
+    filter(item, queryText, _itemText) {
+      return item.includes(queryText)
+    },
+    selected(_v) {}
+  },
+  template: `<FvAutocomplete
+    :items="knobItems"
+    :filter="filter"
+    @autocomplete:selected="selected"
+  >
+    <template v-slot:label>
+      {{ label }}
+    </template>
+  </FvAutocomplete>`
+}}</Story>
+</Canvas>
+
+## ArgsTable
+
+<ArgsTable of={ FvAutocomplete } />

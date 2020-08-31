@@ -1,0 +1,35 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import FvQuantitySelector from './index.vue'
+
+<Meta title='Molecules/FvQuantitySelector' component={ FvQuantitySelector } />
+
+# FvQuantitySelector
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  components: { FvQuantitySelector },
+  data() {
+    return {
+      quantity: 1
+    }
+  },
+  methods: {
+    plus() {
+      this.quantity += 1
+    },
+    minus() {
+      this.quantity -= 1
+    }
+  },
+  template: `<FvQuantitySelector
+    :quantity="quantity"
+    @quantitySelector:plus="plus"
+    @quantitySelector:minus="minus"
+  >
+  </FvQuantitySelector>`
+}}</Story>
+</Canvas>
+
+## ArgsTable
+
+<ArgsTable of={ FvQuantitySelector } />

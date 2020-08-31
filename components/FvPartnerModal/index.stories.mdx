@@ -1,0 +1,48 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { boolean } from '@storybook/addon-knobs'
+import FvPartnerModal from './index.vue'
+
+<Meta title='Organism/FvPartnerModal' component={ FvPartnerModal } />
+
+# FvPartnerModal
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  props: {
+    showModal: {
+      default: boolean('ShowModal', true, 'Props')
+    }
+  },
+  components: { FvPartnerModal },
+  data() {
+    return {
+      partner: {}
+    }
+  },
+  methods: {
+    close() {
+      this.partner = {}
+      this.showModal = false
+    },
+    save() {
+      this.partner = {}
+      this.showModal = false
+    },
+    partnerChanged(partner) {
+      this.partner = partner
+    }
+  },
+  template: `<FvPartnerModal
+    :show="showModal"
+    :partner="partner"
+    @modal:close="close"
+    @modal:save="save"
+    @partner:changed="partnerChanged"
+  >
+  </FvPartnerModal>`
+}}</Story>
+</Canvas>
+
+## ArgsTable
+
+<ArgsTable of={ FvPartnerModal } />

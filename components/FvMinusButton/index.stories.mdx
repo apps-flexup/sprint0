@@ -1,0 +1,24 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+import FvMinusButton from './index.vue'
+
+<Meta title='Atoms/FvMinusButton' component={ FvMinusButton } />
+
+# FvMinusButton
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  components: { FvMinusButton },
+  methods: {
+    minus: action('Clicked')
+  },
+  template: `<FvMinusButton
+    @button:minus="minus"
+  >
+  </FvMinusButton>`
+}}</Story>
+</Canvas>
+
+## ArgsTable
+
+<ArgsTable of={ FvMinusButton } />

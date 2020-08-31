@@ -1,0 +1,30 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+import FvNewPartnerForm from './index.vue'
+
+<Meta title='Molecules/FvNewPartnerForm' component={ FvNewPartnerForm } />
+
+# FvNewPartnerForm
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  components: { FvNewPartnerForm },
+  data() {
+    return {
+      partner: {}
+    }
+  },
+  methods: {
+    partnerChanged: action('Partner changed')
+  },
+  template: `<FvNewPartnerForm
+    :partner="partner"
+    @partner:changed="partnerChanged"
+  >
+  </FvNewPartnerForm>`
+}}</Story>
+</Canvas>
+
+## ArgsTable
+
+<ArgsTable of={ FvNewPartnerForm } />
