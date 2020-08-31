@@ -25,12 +25,12 @@
   v-row
     v-col(cols="12")
       fv-secondary-button.text-right(
-        @click="addNewOrder"
+        @button:click="addNewOrder"
       ) {{ $t('forms.orders.new.addPartner') }}
   v-row
     v-col(cols="12")
       fv-primary-button.text-right(
-        @click="validateOrders"
+        @button:click="validateOrders"
       ) {{ $t('forms.orders.new.validate') }}
 </template>
 
