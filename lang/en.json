@@ -144,7 +144,8 @@
           "total": "Total",
           "vat": "VAT",
           "of": "of"
-        }
+        },
+        "validate": "Validate"
       }
     }
   },

@@ -25,7 +25,9 @@
   v-row
     v-btn(@click="addNewOrder") Order for new partner
   v-row
-    v-btn(@click="validateOrders") validate
+    fv-primary-button(
+      @click="validateOrders"
+    ) {{ $t('forms.orders.new.validate') }}
 </template>
 
 <script>

@@ -145,7 +145,8 @@
           "total": "Total",
           "vat": "TVA",
           "of": "de"
-        }
+        },
+        "validate": "Valider"
       }
     }
   },

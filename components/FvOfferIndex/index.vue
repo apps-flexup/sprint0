@@ -2,7 +2,7 @@
 .fv-offer-index
   v-row
     v-col(cols="12")
-      fv-create-button.text-right(
+      fv-primary-button.text-right(
         @button:click='showModal = true'
       ) {{ $t('buttons.create.offer') }}
       fv-offer-modal(

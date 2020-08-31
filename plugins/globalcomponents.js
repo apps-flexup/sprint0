@@ -32,7 +32,7 @@ import FvContractSummaryStepDetail from '@/components/FvContractSummaryStepDetai
 import FvContractSummaryStepOffer from '@/components/FvContractSummaryStepOffer'
 import FvContractSummaryStepPaiement from '@/components/FvContractSummaryStepPaiement'
 import FvContractSummaryStepStructure from '@/components/FvContractSummaryStepStructure'
-import FvCreateButton from '@/components/FvCreateButton'
+import FvPrimaryButton from '@/components/FvPrimaryButton'
 import FvDataTableHeader from '@/components/FvDataTableHeader'
 import FvDataTableSearchBar from '@/components/FvDataTableSearchBar'
 import FvListAccounts from '@/components/FvListAccounts'
@@ -143,7 +143,7 @@ Vue.component(
   'fv-contract-summary-step-paiement',
   FvContractSummaryStepPaiement
 )
-Vue.component('fv-create-button', FvCreateButton)
+Vue.component('fv-primary-button', FvPrimaryButton)
 Vue.component('fv-data-table-header', FvDataTableHeader)
 Vue.component('fv-data-table-search-bar', FvDataTableSearchBar)
 Vue.component('fv-list-accounts', FvListAccounts)
