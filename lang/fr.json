@@ -146,6 +146,7 @@
           "vat": "TVA",
           "of": "de"
         },
+        "addPartner": "Ajouter une commande pour un nouveau partenaire",
         "validate": "Valider"
       }
     }

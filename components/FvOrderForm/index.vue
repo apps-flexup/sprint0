@@ -23,7 +23,9 @@
           :orderLines="allOrderLines"
         )
   v-row
-    v-btn(@click="addNewOrder") Order for new partner
+    fv-secondary-button(
+      @click="addNewOrder"
+    ) {{ $t('forms.orders.new.addPartner') }}
   v-row
     fv-primary-button(
       @click="validateOrders"
