@@ -1,6 +1,6 @@
 <template lang="pug">
 .fv-modal-and-button
-    fv-create-button(
+    fv-primary-button(
       @click.stop="dialog = true"
     ) {{ buttonText }}
     fv-modal(

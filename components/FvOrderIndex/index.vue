@@ -2,7 +2,7 @@
 .fv-order-index
   v-row
     v-col(cols="12")
-      fv-create-button.text-right(
+      fv-primary-button.text-right(
         @button:click='createOrder'
       ) {{ $t('buttons.create.order') }}
   fv-order-list

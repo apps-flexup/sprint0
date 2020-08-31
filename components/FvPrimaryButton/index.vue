@@ -1,5 +1,5 @@
 <template lang="pug">
-.fv-create-button
+.fv-primary-button
   v-btn(
     x-large
     color="#FCB71C"
@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: 'FvCreateButton',
+  name: 'FvPrimaryButton',
   methods: {
     click() {
       this.$emit('button:click')

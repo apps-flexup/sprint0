@@ -144,7 +144,9 @@
           "total": "Total",
           "vat": "VAT",
           "of": "of"
-        }
+        },
+        "addPartner": "Add order for new partner",
+        "validate": "Validate"
       }
     }
   },
