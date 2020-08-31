@@ -8,7 +8,8 @@ import FvPartnerCard from './index.vue'
 # FvPartnerCard
 
 <Canvas>
-<Story name='Common' height='150px'>{{  props: {
+<Story name='Common' height='150px'>{{
+  props: {
     knobPartnerId: {
       default: select('Partner', partnersAvailable, defaultValue, 'Props')
     }
