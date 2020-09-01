@@ -151,6 +151,7 @@ const activeAccount = (ctx) => ({
         currency: newOffer.currency,
         unit: newOffer.unit,
         dimension: newOffer.dimension,
+        vat: newOffer.vat,
         status: 'draft'
       }
       ctx.$repos.offers.createWithAccountId(offer).then((_off) => {
