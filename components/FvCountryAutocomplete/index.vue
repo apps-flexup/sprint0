@@ -1,6 +1,7 @@
 <template lang="pug">
 .fv-country-autocomplete
   fv-autocomplete(
+    :element="countryId"
     :items="items"
     :filter="filterList"
     @autocomplete:selected="selected"
@@ -20,6 +21,14 @@ import { filterCountryAutocomplete } from '~/plugins/utils'
 export default {
   name: 'FvCountryAutocomplete',
   inheritAttrs: true,
+  props: {
+    countryId: {
+      type: Number,
+      default() {
+        return 77
+      }
+    }
+  },
   computed: {
     items() {
       const res = this.$store.getters['countries/all']
