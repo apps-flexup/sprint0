@@ -32,14 +32,14 @@
   v-row
     v-col.md-10.sm-10.lg-10.xl-10(cols='10')
       fv-country-autocomplete(
-        v-model="countryId"
+        :countryId="countryId"
         :label="$t('forms.partners.new.country')"
         @country:selected="countrySelected"
       )
   v-row
     v-col.md-12.sm-12.lg-12.xl-12(cols='12')
       fv-legal-structure-autocomplete(
-        v-model="legalStructureId"
+        :legalStructureId="legalStructureId"
         :label="$t('forms.partners.new.legalStructure')"
         @legalstructure:selected="legalStructureSelected"
       )
@@ -75,8 +75,18 @@ export default {
       siret: null
     }
   },
+  watch: {
+    partner() {
+      if (Object.entries(this.partner).length === 0) {
+        this.clearPartner()
+      } else {
+        this.fillFieldsWithPartner()
+      }
+    }
+  },
   mounted() {
     console.log('Composant ', this.$options.name)
+    this.fillFieldsWithPartner()
   },
   methods: {
     nameChanged(name) {
@@ -134,6 +144,28 @@ export default {
       }
       const res = Object.assign(this.localPartner, payload)
       this.$emit('partner:changed', res)
+    },
+    fillFieldsWithPartner() {
+      console.log('Partner: ', this.partner)
+      if (!this.partner) return
+      this.name = this.partner.name
+      this.address = this.partner.address
+      this.zip = this.partner.zip
+      this.city = this.partner.city
+      this.countryId = this.partner.country_id || null
+      this.legalStructureId = this.partner.legal_structure_id || null
+      this.siret = this.partner.siret
+      this.localPartner = this.partner
+    },
+    clearPartner() {
+      this.name = null
+      this.address = null
+      this.zip = null
+      this.city = null
+      this.countryId = null
+      this.legalStructureId = null
+      this.siret = null
+      this.localPartner = {}
     }
   }
 }

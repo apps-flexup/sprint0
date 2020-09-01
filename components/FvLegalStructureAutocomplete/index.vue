@@ -1,6 +1,7 @@
 <template lang="pug">
 .fv-legal-structure-autocomplete
   fv-autocomplete(
+    :element="legalStructureId"
     :items="items"
     :filter="filter"
     @autocomplete:selected="selected"
@@ -19,6 +20,15 @@ import { filterLegalStructureAutocomplete } from '~/plugins/utils'
 
 export default {
   name: 'FvLegalStructureAutocomplete',
+  inheritAttrs: true,
+  props: {
+    legalStructureId: {
+      type: Number,
+      default() {
+        return null
+      }
+    }
+  },
   computed: {
     items() {
       const res = this.$store.getters['contracts/legalStructures']
