@@ -78,6 +78,10 @@ export default {
   methods: {
     createWithAccountId() {
       this.$store.dispatch('accounts/add', this.account)
+      const partner = {
+        name: this.account.name
+      }
+      this.$store.dispatch('partners/addToFlexup', partner)
       this.$router.push('/products/new')
     }
   }
