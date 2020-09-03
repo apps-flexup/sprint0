@@ -6,6 +6,11 @@ export default {
       .indexWithAccountId()
       .then((data) => commit('set', data))
   },
+  getAll({ commit }) {
+    this.$repos.partners.index().then((data) => {
+      commit('setAll', data)
+    })
+  },
   clear({ commit }) {
     commit('set', [])
   },

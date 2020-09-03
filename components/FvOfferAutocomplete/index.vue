@@ -57,15 +57,26 @@ export default {
   },
   watch: {
     partnerId() {
-      const res = this.$store.getters['offers/getForAccount'](this.partnerId)
-      this.items = res
+      this.items = []
+      if (this.partnerId > 0) {
+        const partner = this.$store.getters['partners/find'](this.partnerId)
+        const accountId = partner.account_id
+        const res = this.$store.getters['offers/getForAccount'](accountId)
+        this.items = res
+      }
     }
   },
   mounted() {
     console.log('Composant ', this.$options.name)
+    this.$store.dispatch('partners/getAll')
     this.$store.dispatch('offers/getAll')
-    const res = this.$store.getters['offers/getForAccount'](this.partnerId)
-    this.items = res
+    this.items = []
+    if (this.partnerId > 0) {
+      const partner = this.$store.getters['partners/find'](this.partnerId)
+      const accountId = partner.account_id
+      const res = this.$store.getters['offers/getForAccount'](accountId)
+      this.items = res
+    }
   },
   methods: {
     selected(v) {
