@@ -20,9 +20,14 @@ export default {
   setCurrent({ commit }, id) {
     commit('setCurrent', id)
   },
-  add({ commit }, account) {
+  add({ commit, dispatch }, account) {
     account.user_id = this.$auth.user.sub
     this.$repos.accounts.create(account).then((res) => {
+      const partner = {
+        name: res.name,
+        account_id: res.id
+      }
+      dispatch('partners/addToFlexup', partner, { root: true })
       commit('add', res)
     })
   }
