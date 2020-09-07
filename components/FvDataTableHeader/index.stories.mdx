@@ -1,0 +1,36 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+import { text } from '@storybook/addon-knobs'
+import FvDataTableHeader from './index.vue'
+
+<Meta title='Molecules/FvDataTableHeader' component={ FvDataTableHeader } />
+
+# FvDataTableHeader
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  components: { FvDataTableHeader },
+  props: {
+    knobLabel: {
+      default: text('Label', 'Label', 'Props')
+    },
+    knobTitle: {
+      default: text('Title', 'Beautiful title', 'Props')
+    }
+  },
+  components: { FvDataTableHeader },
+  methods: {
+    searchChanged: action('Search changed')
+  },
+  template: `<FvDataTableHeader
+    :searchLabel="knobLabel"
+    :title="knobTitle"
+    @dataTableSearch:changed="searchChanged"
+  >
+  </FvDataTableHeader>`
+}}</Story>
+</Canvas>
+
+## ArgsTable
+
+<ArgsTable of={ FvDataTableHeader } />

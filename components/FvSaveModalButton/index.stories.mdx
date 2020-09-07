@@ -1,0 +1,24 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+import FvSaveModalButton from './index.vue'
+
+<Meta title='Atoms/FvSaveModalButton' component={ FvSaveModalButton } />
+
+# FvSaveModalButton
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  components: { FvSaveModalButton },
+  methods: {
+    save: action('Save')
+  },
+  template: `<FvSaveModalButton
+    @button:save="save"
+  >
+  </FvSaveModalButton>`
+}}</Story>
+</Canvas>
+
+## ArgsTable
+
+<ArgsTable of={ FvSaveModalButton } />

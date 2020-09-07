@@ -1,0 +1,30 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+import FvProductForm from './index.vue'
+
+<Meta title='Molecules/FvProductForm' component={ FvProductForm } />
+
+# FvProductForm
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  components: { FvProductForm },
+  data() {
+    return {
+      product: {}
+    }
+  },
+  methods: {
+    productChanged: action('Product changed')
+  },
+  template: `<FvProductForm
+    :product="product"
+    @product:changed="productChanged"
+  >
+  </FvProductForm>`
+}}</Story>
+</Canvas>
+
+## ArgsTable
+
+<ArgsTable of={ FvProductForm } />

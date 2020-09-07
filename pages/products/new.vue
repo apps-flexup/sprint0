@@ -6,7 +6,10 @@
     )
       v-card-title {{ $t('products.new.title') }}
       v-card-text
-        fv-product-form(:values="product")
+        fv-product-form(
+          :product="product"
+          @product:changed="productChanged"
+        )
       v-card-actions
         v-spacer
         v-btn(@click.stop="submit") {{ $t('buttons.submit') }}
@@ -29,6 +32,9 @@ export default {
       this.$activeAccount.addProduct(payload)
       this.$nuxt.$loading.finish()
       this.$router.push('/products')
+    },
+    productChanged(product) {
+      this.product = product
     }
   }
 }

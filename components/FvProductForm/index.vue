@@ -9,8 +9,8 @@
   v-row
     v-col(cols='6')
       fv-text-field(
+        :value="name"
         :label="$t('forms.products.new.name')"
-        outlined=''
         @input="nameChanged"
       )
     v-col(cols='6')
