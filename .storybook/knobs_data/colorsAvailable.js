@@ -7,4 +7,5 @@ export const colors = {
   purple: 'purple',
   white: '#ffffff'
 }
+
 export const defaultColor = '#000000'

@@ -36,4 +36,5 @@ export const icons = {
   settings: 'mdi-cog'
 }
 export const defaultIcon = 'mdi-plus'
+
 export const iconsNames = Object.keys(icons)

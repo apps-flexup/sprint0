@@ -5,4 +5,5 @@ export const sizes = {
   large: 'large',
   xLarge: 'xLarge'
 }
+
 export const defaultSize = 'medium'
