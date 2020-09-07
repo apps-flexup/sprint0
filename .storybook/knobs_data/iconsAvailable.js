@@ -35,6 +35,7 @@ export const icons = {
   order: 'mdi-inbox-arrow-down-outline',
   settings: 'mdi-cog'
 }
+
 export const defaultIcon = 'mdi-plus'
 
 export const iconsNames = Object.keys(icons)
