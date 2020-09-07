@@ -46,7 +46,12 @@ import { sizes, defaultSize } from '@/.storybook/knobs_data/sizesAvailable'
     }
   },
   components: { FvIcon },
-  template: `<div :style="{display: 'flex', flexWrap: 'wrap'}">
+  template: `<div
+      :style="{
+        display: 'flex',
+        flexWrap: 'wrap'
+      }"
+      >
     <div
         v-for="icon in icons"
         :key="icon"
@@ -65,7 +70,16 @@ import { sizes, defaultSize } from '@/.storybook/knobs_data/sizesAvailable'
         :style="{margin: '0 0 8px 0'}"
       />
       <div>
-        <span :style="{textOverflow: 'ellipsis', whiteSpace: 'nowrap',overflow: 'hidden', width: '70px', textAlign: 'center'}">{{ icon.slice(4) }}</span>
+        <span
+        :style="{
+          textOverflow: 'ellipsis',
+          whiteSpace: 'nowrap',
+          overflow: 'hidden',
+          width: '70px',
+          textAlign: 'center'
+          }"
+        >
+        {{ icon.slice(4) }}</span>
       </div>
     </div>
  </div>`
