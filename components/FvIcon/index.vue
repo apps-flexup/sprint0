@@ -2,8 +2,8 @@
 .fv-icon
   v-icon(
     :color="color"
-    :small="small"
     :x-small="xSmall"
+    :small="small"
     :large="large"
     :x-large="xLarge"
     @click="clicked"
@@ -36,9 +36,9 @@ export default {
   },
   data() {
     return {
+      xSmall: false,
       small: false,
       large: false,
-      xSmall: false,
       xLarge: false
     }
   },
