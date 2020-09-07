@@ -46,7 +46,8 @@ import { sizes, defaultSize } from '@/.storybook/knobs_data/sizesAvailable'
     }
   },
   components: { FvIcon },
-  template: `<div
+  template: `
+  <div
       :style="{
         display: 'flex',
         flexWrap: 'wrap'
@@ -64,7 +65,7 @@ import { sizes, defaultSize } from '@/.storybook/knobs_data/sizesAvailable'
           height: '120px',
           font: '300 12px Raleway'
         }"
-    >
+      >
       <FvIcon
         :icon="icon"
         :style="{margin: '0 0 8px 0'}"
@@ -82,7 +83,7 @@ import { sizes, defaultSize } from '@/.storybook/knobs_data/sizesAvailable'
         {{ icon.slice(4) }}</span>
       </div>
     </div>
- </div>`
+  </div>`
 }}</Story>
 </Canvas>
 
