@@ -14022,6 +14022,7 @@
             "en": "Goat milk",
             "fr": "Lait de chêvre"
           },
+          "status": "draft",
           "quantity": 3,
           "pas": 1,
           "dimension": "volume",
@@ -14030,7 +14031,6 @@
           "price": 100
         }
       ],
-      "status": "reserved",
       "structure": 2,
       "amount": 300,
       "currency": "EUR",
@@ -14099,6 +14099,7 @@
             "en": "7 familly game",
             "fr": "Le jeu des 7 familles"
           },
+          "status": "draft",
           "quantity": 2,
           "pas": 1,
           "vat": "20.5",
@@ -14109,7 +14110,6 @@
         }
       ],
       "structure": 4,
-      "status": "reserved",
       "amount": 20,
       "currency": "EUR",
       "account_id": 1,
@@ -14192,109 +14192,6 @@
       "currency": "EUR",
       "account_id": 1,
       "id": 7
-    },
-    {
-      "partner_id": 1,
-      "date": "2020-09-08T09:40:15.539Z",
-      "label": "test status",
-      "order_lines": [
-        {
-          "offer_id": 3,
-          "offer": {
-            "en": "7 familly game",
-            "fr": "Le jeu des 7 familles"
-          },
-          "status": "draft",
-          "quantity": 4,
-          "pas": 1,
-          "vat": "20.5",
-          "dimension": null,
-          "unit": "h",
-          "currency": "EUR",
-          "price": 10
-        }
-      ],
-      "structure": 2,
-      "amount": 40,
-      "status": "draft",
-      "currency": "EUR",
-      "account_id": 1,
-      "id": 8
-    },
-    {
-      "partner_id": 1,
-      "date": "2020-09-08T10:19:21.357Z",
-      "label": "test status 2",
-      "order_lines": [
-        {
-          "offer_id": 3,
-          "offer": {
-            "en": "7 familly game",
-            "fr": "Le jeu des 7 familles"
-          },
-          "status": "draft",
-          "quantity": 5,
-          "pas": 1,
-          "vat": "20.5",
-          "dimension": null,
-          "unit": "h",
-          "currency": "EUR",
-          "price": 10
-        }
-      ],
-      "structure": 4,
-      "amount": 50,
-      "currency": "EUR",
-      "account_id": 1,
-      "id": 9
-    },
-    {
-      "partner_id": 1,
-      "date": "2020-09-08T10:20:12.736Z",
-      "label": "test status 2",
-      "order_lines": [
-        {
-          "offer_id": 21,
-          "offer": "Bananes",
-          "status": "draft",
-          "quantity": 3,
-          "pas": 1,
-          "vat": "12",
-          "dimension": "bandwith",
-          "unit": "Gb/s",
-          "currency": "USD",
-          "price": "123"
-        }
-      ],
-      "structure": 3,
-      "amount": 369,
-      "currency": "EUR",
-      "account_id": 1,
-      "id": 10
-    },
-    {
-      "partner_id": 1,
-      "date": "2020-09-08T12:05:44.165Z",
-      "label": "test draft",
-      "order_lines": [
-        {
-          "offer_id": 20,
-          "offer": "Appartement Paris 19",
-          "quantity": 6,
-          "pas": 1,
-          "vat": "20",
-          "dimension": "duration",
-          "unit": "month",
-          "currency": "EUR",
-          "price": "123"
-        }
-      ],
-      "structure": 3,
-      "status": "active",
-      "amount": 738,
-      "currency": "EUR",
-      "account_id": 1,
-      "id": 11
     }
   ],
   "partner-headers": [
@@ -14509,11 +14406,29 @@
     {
       "align": "start",
       "sortable": true,
+      "text": "headers.products.unit",
+      "value": "unit"
+    },
+    {
+      "align": "start",
+      "sortable": true,
       "text": "headers.products.status",
       "value": "status"
     }
   ],
   "products": [
+    {
+      "account_id": 1,
+      "category_id": 55,
+      "currency": "EUR",
+      "dimension": "duration",
+      "name": "Appartement Paris 8",
+      "price": "1250",
+      "quantity": 1,
+      "status": "active",
+      "unit": "month",
+      "id": 1
+    },
     {
       "account_id": 1,
       "category_id": 55,
