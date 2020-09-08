@@ -1,34 +1,27 @@
 <template lang="pug">
-.fv-text-field
-  v-text-field(
-    v-model="model"
-    v-click-outside="onClickOutside"
+.fv-price-field
+  fv-text-field(
+    :value="price"
     :label="label"
     :outlined="outlined"
-    :append-outer-icon="appendOuterIcon"
-    :suffix="suffix"
     :readonly="readonly"
     :clearable="clearable"
-    @input="inputChanged"
-    @click="clicked"
+    @input="priceChanged"
+    @click:outside="onClickOutside"
   )
-    template(v-slot:append)
-      slot(name="append")
-    template(v-slot:prepend)
-      slot(name="prepend")
 </template>
 
 <script>
 export default {
-  name: 'FvTextField',
+  name: 'FvPriceField',
   props: {
-    label: {
+    value: {
       type: String,
       default() {
         return ''
       }
     },
-    appendOuterIcon: {
+    label: {
       type: String,
       default() {
         return ''
@@ -38,18 +31,6 @@ export default {
       type: Boolean,
       default() {
         return true
-      }
-    },
-    value: {
-      type: String,
-      default() {
-        return ''
-      }
-    },
-    suffix: {
-      type: String,
-      default() {
-        return ''
       }
     },
     readonly: {
@@ -67,26 +48,27 @@ export default {
   },
   data() {
     return {
-      model: this.value
+      price: this.value
     }
   },
   watch: {
     value() {
-      this.model = this.value
+      this.price = this.value
     }
   },
   mounted() {
     console.log('Composant', this.$options.name)
   },
   methods: {
-    inputChanged() {
-      this.$emit('input', this.model)
-    },
-    clicked() {
-      this.$emit('click')
+    priceChanged(v) {
+      this.price = v
+      this.$emit('price:changed', this.price)
     },
     onClickOutside() {
-      this.$emit('click:outside')
+      if (this.price) {
+        this.price = (Math.round(this.price * 100) / 100).toFixed(2)
+        this.priceChanged(this.price)
+      }
     }
   }
 }
