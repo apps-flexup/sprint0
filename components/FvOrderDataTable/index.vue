@@ -1,16 +1,18 @@
 <template lang="pug">
 .fv-order-data-table
-  v-data-table.elevation-2(
-    :headers='headers'
-    :items='items'
-    item-key='id'
-    :search="search"
-    :custom-filter="filterFunction"
-  )
-    template(v-slot:item.date='{ item }')
-      div {{ dateToLocaleString(item.date) }}
-    template(v-slot:item.structure='{ item }')
-      div {{ getStructureName(item.structure) }}
+    v-data-table.elevation-2(
+      :headers='headers'
+      :items='items'
+      item-key='id'
+      :search="search"
+      :custom-filter="filterFunction"
+    )
+      template(v-slot:item.date='{ item }')
+        div {{ dateToLocaleString(item.date) }}
+      template(v-slot:item.structure='{ item }')
+        div {{ getStructureName(item.structure) }}
+      template(v-slot:item.status ='{ item }')
+        fv-status-progress(:status="item.status")
 </template>
 
 <script>
