@@ -2,16 +2,19 @@
 .fv-quantity-selector
   fv-text-field(
     :value="quantity.toString()"
-    :outlined="false"
+    :outlined="true"
     :clearable="false"
+    class="centered-input"
   )
+    template(v-slot:prepend)
+      v-col
+        fv-minus-button(
+          @button:minus="minus"
+        )
     template(v-slot:append)
       v-col
         fv-plus-button(
           @button:plus="plus"
-        )
-        fv-minus-button(
-          @button:minus="minus"
         )
 </template>
 
@@ -39,3 +42,12 @@ export default {
   }
 }
 </script>
+
+<style>
+.col {
+  padding: 0 !important;
+}
+.centered-input input {
+  text-align: center;
+}
+</style>

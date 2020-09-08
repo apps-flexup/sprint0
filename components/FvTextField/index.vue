@@ -14,7 +14,7 @@
   )
     template(v-slot:append)
       slot(name="append")
-    template(v-slot:prepend)
+    template(v-slot:prepend-inner)
       slot(name="prepend")
 </template>
 
