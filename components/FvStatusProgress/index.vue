@@ -18,7 +18,7 @@ export default {
   props: {
     status: {
       type: String,
-      default: 'reserved'
+      default: 'draft'
     }
   },
   data() {

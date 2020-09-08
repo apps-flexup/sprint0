@@ -107,6 +107,7 @@ export default {
             order_lines: order.orderLines,
             structure: order.structureId,
             amount: totalAmount,
+            status: 'draft',
             currency: 'EUR'
           }
           console.log('Payload:', payload)

@@ -201,7 +201,8 @@
       "amount": "Montant",
       "currency": "Devise",
       "label": "Label",
-      "structure": "Structure"
+      "structure": "Structure",
+      "status": "Statut"
     },
     "orderLines": {
       "offer": "Offre",

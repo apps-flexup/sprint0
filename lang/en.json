@@ -199,7 +199,8 @@
       "amount": "Amount",
       "currency": "Currency",
       "label": "Label",
-      "structure": "Structure"
+      "structure": "Structure",
+      "status": "Status"
     },
     "orderLines": {
       "offer": "Offer",
