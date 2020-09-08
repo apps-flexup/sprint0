@@ -14400,6 +14400,12 @@
     {
       "align": "start",
       "sortable": true,
+      "text": "headers.products.unit",
+      "value": "unit"
+    },
+    {
+      "align": "start",
+      "sortable": true,
       "text": "headers.products.status",
       "value": "status"
     }
@@ -14482,11 +14488,20 @@
     {
       "category_id": 22,
       "name": "Bananes",
-      "unit": "Gb/s",
-      "dimension": "bandwith",
+      "unit": "quarter",
+      "dimension": "duration",
       "status": "draft",
       "account_id": 1,
       "id": 15
+    },
+    {
+      "category_id": 13,
+      "name": "Peinture métalisé",
+      "unit": "cl",
+      "dimension": "volume",
+      "status": "draft",
+      "account_id": 1,
+      "id": 16
     }
   ],
   "structures": [

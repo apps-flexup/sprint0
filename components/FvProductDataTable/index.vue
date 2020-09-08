@@ -10,6 +10,8 @@
   )
     template(v-slot:item.category="{ item }")
       div(v-to-category="item.category_id")
+    template(v-slot:item.unit='{ item }')
+      div(v-to-unit="item")
     template(v-slot:item.status='{ item }')
       fv-status-progress(:status="item.status")
     template(v-slot:item.actions="{ item }")
