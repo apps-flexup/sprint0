@@ -160,7 +160,8 @@
     "contacts": "Contacts",
     "partners": "Partenaires",
     "documents": "Documents",
-    "dashboard": "Tableau de bord"
+    "dashboard": "Tableau de bord",
+    "settings": "Préférences"
   },
   "buttons": {
     "create": {

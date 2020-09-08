@@ -159,7 +159,8 @@
     "contacts": "Contacts",
     "partners": "Partners",
     "documents": "Documents",
-    "dashboard": "Dashboard"
+    "dashboard": "Dashboard",
+    "settings": "Settings"
   },
   "buttons": {
     "create" : {
