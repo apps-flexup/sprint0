@@ -17,11 +17,10 @@
       )
   v-row
     v-col(cols="6")
-      v-text-field(
-        v-model="price"
+      fv-price-field(
+        :value="price"
         :label="$t('forms.offers.new.price')"
-        outlined=''
-        @input="priceChanged"
+        @price:changed="priceChanged"
       )
     v-col(cols="6")
       fv-currency-autocomplete(
@@ -107,7 +106,8 @@ export default {
       const res = Object.assign(this.localOffer, payload)
       this.$emit('offer:changed', res)
     },
-    priceChanged() {
+    priceChanged(v) {
+      this.price = v
       const payload = {
         price: this.price
       }
