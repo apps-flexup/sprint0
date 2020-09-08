@@ -183,6 +183,7 @@
       "name": "Nom du produit",
       "category": "Categorie",
       "periodicity": "Périodicité",
+      "unit": "Unité",
       "status": "Statut"
     },
     "contracts": {
