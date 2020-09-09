@@ -4,17 +4,17 @@
     :value="quantity.toString()"
     :outlined="true"
     :clearable="false"
-    class="centered-input"
+    class='centered-input'
   )
     template(v-slot:prepend)
-      v-col
-        fv-minus-button(
-          @button:minus="minus"
+        fv-icon(
+          @icon:clicked="minus"
+          icon="mdi-minus"
         )
     template(v-slot:append)
-      v-col
-        fv-plus-button(
-          @button:plus="plus"
+        fv-icon(
+          @icon:clicked="plus"
+          icon="mdi-plus"
         )
 </template>
 
@@ -44,9 +44,6 @@ export default {
 </script>
 
 <style>
-.col {
-  padding: 0 !important;
-}
 .centered-input input {
   text-align: center;
 }
