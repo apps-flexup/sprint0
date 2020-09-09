@@ -58,6 +58,8 @@ const moduleAccounts = {
     },
     clear({ commit }) {
       commit('clear')
+    },
+    update({ _commit }, _payload) {
     }
   },
   getters: getters,
