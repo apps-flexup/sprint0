@@ -1,0 +1,19 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+import FvSettingsIndex from './index.vue'
+
+<Meta title='Pages/FvSettingsIndex' component={ FvSettingsIndex } />
+
+# FvSettingsIndex
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  components: { FvSettingsIndex },
+  template: `<FvSettingsIndex>
+  </FvSettingsIndex>`
+}}</Story>
+</Canvas>
+
+## ArgsTable
+
+<ArgsTable of={ FvSettingsIndex } />

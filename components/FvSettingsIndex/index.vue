@@ -47,6 +47,7 @@ export default {
     }
   },
   mounted() {
+    this.$store.dispatch('accounts/get')
     console.log('Composant ', this.$options.name)
   }
 }
