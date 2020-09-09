@@ -74,7 +74,6 @@ import FvPartnerList from '@/components/FvPartnerList'
 import FvModalSlot from '@/components/FvModalSlot'
 import FvPartnerIndex from '@/components/FvPartnerIndex'
 import FvPartnerModal from '@/components/FvPartnerModal'
-import FvPlusButton from '@/components/FvPlusButton'
 import FvProductIndex from '~/components/FvProductIndex'
 import FvProductModal from '@/components/FvProductModal'
 import FvSpeedDial from '@/components/FvSpeedDial'
@@ -189,7 +188,6 @@ Vue.component('fv-order-list', FvOrderList)
 Vue.component('fv-country-list', FvCountryList)
 Vue.component('fv-partner-data-table', FvPartnerDataTable)
 Vue.component('fv-partner-list', FvPartnerList)
-Vue.component('fv-plus-button', FvPlusButton)
 Vue.component('fv-modal-slot', FvModalSlot)
 Vue.component('fv-partner-index', FvPartnerIndex)
 Vue.component('fv-partner-modal', FvPartnerModal)
