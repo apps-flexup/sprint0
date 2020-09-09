@@ -50,6 +50,9 @@ import FvProductDataTable from '@/components/FvProductDataTable'
 import FvProductForm from '@/components/FvProductForm'
 import FvQuantitySelector from '@/components/FvQuantitySelector'
 import FvSecondaryButton from '@/components/FvSecondaryButton'
+import FvSettingsDefault from '@/components/FvSettingsDefault'
+import FvSettingsIndex from '@/components/FvSettingsIndex'
+import FvSettingsOthers from '@/components/FvSettingsOthers'
 import FvStepper from '@/components/FvStepper'
 import FvDeleteAction from '@/components/FvDeleteAction'
 import FvEditAction from '@/components/FvEditAction'
@@ -164,6 +167,9 @@ Vue.component('fv-product-form', FvProductForm)
 Vue.component('fv-product-index', FvProductIndex)
 Vue.component('fv-quantity-selector', FvQuantitySelector)
 Vue.component('fv-secondary-button', FvSecondaryButton)
+Vue.component('fv-settings-default', FvSettingsDefault)
+Vue.component('fv-settings-index', FvSettingsIndex)
+Vue.component('fv-settings-others', FvSettingsOthers)
 Vue.component('fv-stepper', FvStepper)
 Vue.component('fv-delete-action', FvDeleteAction)
 Vue.component('fv-edit-action', FvEditAction)

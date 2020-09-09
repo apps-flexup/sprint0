@@ -1,4 +1,4 @@
 <template lang="pug">
 .settings-page
-  p settings
+  fv-settings-index
 </template>

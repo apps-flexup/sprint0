@@ -30,5 +30,11 @@ export default {
       dispatch('partners/addToFlexup', partner, { root: true })
       commit('add', res)
     })
+  },
+  update({ commit }, payload) {
+    this.$repos.accounts.update(payload).then((res) => {
+      commit('remove', res)
+      commit('add', res)
+    })
   }
 }

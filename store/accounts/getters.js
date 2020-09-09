@@ -32,5 +32,8 @@ export default {
       legalStructure
     }
     return payload
+  },
+  current(state) {
+    return state.current
   }
 }

@@ -252,5 +252,14 @@
       "mine": "My partners",
       "flexup": "Flexup partners"
     }
+  },
+  "settings": {
+    "title": "Settings",
+    "default": {
+      "title": "Default"
+    },
+    "others": {
+      "title": "Others"
+    }
   }
 }
