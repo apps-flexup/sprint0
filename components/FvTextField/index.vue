@@ -9,6 +9,8 @@
     :suffix="suffix"
     :readonly="readonly"
     :clearable="clearable"
+    :hide-details="hideDetails"
+    :dense="dense"
     @input="inputChanged"
     @click="clicked"
   )
@@ -62,6 +64,18 @@ export default {
       type: Boolean,
       default() {
         return true
+      }
+    },
+    hideDetails: {
+      type: Boolean,
+      default() {
+        return false
+      }
+    },
+    dense: {
+      type: Boolean,
+      default() {
+        return false
       }
     }
   },

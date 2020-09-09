@@ -4,6 +4,8 @@
     :value="quantity.toString()"
     :outlined="true"
     :clearable="false"
+    :hideDetails="true"
+    :dense="true"
     class='centered-input'
   )
     template(v-slot:prepend)
