@@ -16,8 +16,10 @@
   )
     template(v-slot:append)
       slot(name="append")
-    template(v-slot:prepend-inner)
+    template(v-slot:prepend)
       slot(name="prepend")
+    template(v-slot:prepend-inner)
+      slot(name="prepend-inner")
 </template>
 
 <script>

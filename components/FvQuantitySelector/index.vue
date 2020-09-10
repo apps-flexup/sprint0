@@ -2,13 +2,12 @@
 .fv-quantity-selector
   fv-text-field(
     :value="quantity.toString()"
-    :outlined="true"
     :clearable="false"
     :hideDetails="true"
     :dense="dense"
     class='centered-input'
   )
-    template(v-slot:prepend)
+    template(v-slot:prepend-inner)
         fv-icon(
           @icon:clicked="minus"
           icon="mdi-minus"
