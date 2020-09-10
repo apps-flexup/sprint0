@@ -5,7 +5,7 @@
     :outlined="true"
     :clearable="false"
     :hideDetails="true"
-    :dense="true"
+    :dense="dense"
     class='centered-input'
   )
     template(v-slot:prepend)
@@ -28,6 +28,12 @@ export default {
       type: Number,
       default() {
         return 1
+      }
+    },
+    dense: {
+      type: Boolean,
+      default() {
+        return true
       }
     }
   },

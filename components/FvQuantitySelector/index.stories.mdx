@@ -1,4 +1,5 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { boolean } from '@storybook/addon-knobs'
 import FvQuantitySelector from './index.vue'
 
 <Meta title='Molecules/FvQuantitySelector' component={ FvQuantitySelector } />
@@ -8,6 +9,17 @@ import FvQuantitySelector from './index.vue'
 <Canvas>
 <Story name='Common' height='150px'>{{
   components: { FvQuantitySelector },
+  props: {
+    knobDense: {
+      default: boolean('Dense', true, 'Props')
+    },
+    dense: {
+      type: Boolean,
+      default() {
+        return false
+      }
+    }
+  },
   data() {
     return {
       quantity: 1
@@ -23,6 +35,7 @@ import FvQuantitySelector from './index.vue'
   },
   template: `<FvQuantitySelector
     :quantity="quantity"
+    :dense="knobDense"
     @quantitySelector:plus="plus"
     @quantitySelector:minus="minus"
   >
