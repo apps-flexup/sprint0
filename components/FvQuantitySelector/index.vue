@@ -2,16 +2,20 @@
 .fv-quantity-selector
   fv-text-field(
     :value="quantity.toString()"
-    :outlined="false"
     :clearable="false"
+    :hideDetails="true"
+    :dense="dense"
+    class='centered-input'
   )
-    template(v-slot:append)
-      v-col
-        fv-plus-button(
-          @button:plus="plus"
+    template(v-slot:prepend-inner)
+        fv-icon(
+          @icon:clicked="minus"
+          icon="mdi-minus"
         )
-        fv-minus-button(
-          @button:minus="minus"
+    template(v-slot:append)
+        fv-icon(
+          @icon:clicked="plus"
+          icon="mdi-plus"
         )
 </template>
 
@@ -23,6 +27,12 @@ export default {
       type: Number,
       default() {
         return 1
+      }
+    },
+    dense: {
+      type: Boolean,
+      default() {
+        return true
       }
     }
   },
@@ -39,3 +49,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.centered-input input {
+  text-align: center;
+}
+</style>
