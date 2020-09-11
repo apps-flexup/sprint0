@@ -34,7 +34,8 @@
     },
     "orders": {
       "title": "Mes commandes",
-      "search": "Rechercher"
+      "search": "Rechercher",
+      "name": "Commande sans nom"
     },
     "products": {
       "title": "Mes Produits",

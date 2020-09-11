@@ -31,7 +31,8 @@
     },
     "orders": {
       "title": "My orders",
-      "search": "Search"
+      "search": "Search",
+      "name": "Order without name"
     },
     "products": {
       "title": "My products",
