@@ -10,6 +10,8 @@
     )
       template(v-slot:item.name='{ item }')
         div(v-to-locale="item.name")
+      template(v-slot:item.price='{ item }')
+        div(v-to-preferred-currency="{amount: item.price, currency: item.currency}")
       template(v-slot:item.vat='{ item }')
         div {{ item.vat }}%
       template(v-slot:item.unit='{ item }')
