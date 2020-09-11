@@ -14001,12 +14001,6 @@
     {
       "align": "start",
       "sortable": true,
-      "text": "headers.orders.currency",
-      "value": "currency"
-    },
-    {
-      "align": "start",
-      "sortable": true,
       "text": "headers.orders.label",
       "value": "label"
     },
