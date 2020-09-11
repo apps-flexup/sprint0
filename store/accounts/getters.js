@@ -35,5 +35,14 @@ export default {
   },
   current(state) {
     return state.current
+  },
+  preferredCurrency(state, getters) {
+    if (!state.items) return null
+    const currentId = state.current
+    console.log('CurrentId: ', currentId)
+    if (!currentId) return null
+    const currentAccount = getters.findById(currentId)
+    console.log('currentAccount: ', currentAccount)
+    return currentAccount.currency
   }
 }

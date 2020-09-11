@@ -57,15 +57,32 @@ Vue.directive('to-currency', (el, binding, vnode) => {
 
 Vue.directive('to-preferred-currency', (el, binding, vnode) => {
   const locale = vnode.context.$i18n.locale
-  const valeur = binding.value
-  // TODO: Get preferred currency
+  const value = binding.value
+  const amount = value.amount
+  const fromCurrency = value.currency
+  const toCurrency = vnode.context.$store.getters['accounts/preferredCurrency']
   const options = {
     style: 'currency',
-    currency: 'EUR'
+    currency: toCurrency
   }
-  const valueToDisplay = new Intl.NumberFormat(locale, options).format(valeur)
-  const res = `${valueToDisplay}`
-  el.innerHTML = res
+  if (fromCurrency === toCurrency) {
+    const valueToDisplay = new Intl.NumberFormat(locale, options).format(amount)
+    el.innerHTML = `${valueToDisplay}`
+  } else {
+    console.log('Convert: ', amount + ' ' + fromCurrency + ' to ', toCurrency)
+    let currencyApiUrl = 'https://api.exchangerate.host/convert?'
+    currencyApiUrl += 'amount=' + amount
+    currencyApiUrl += '&from=' + fromCurrency
+    currencyApiUrl += '&to=' + toCurrency
+    fetch(currencyApiUrl)
+      .then((res) => res.json())
+      .then((res) => {
+        const valueToDisplay = new Intl.NumberFormat(locale, options).format(
+          res.result
+        )
+        el.innerHTML = `${valueToDisplay}`
+      })
+  }
 })
 
 // Pour la traduction des i18n
