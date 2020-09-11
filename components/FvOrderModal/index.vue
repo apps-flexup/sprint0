@@ -15,7 +15,7 @@
     template(
       slot='form'
     )
-      fv-order-form(
+      fv-order-details(
         :order="order"
         @order:changed="orderChanged"
       )

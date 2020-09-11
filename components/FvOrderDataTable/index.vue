@@ -46,12 +46,10 @@ export default {
     console.log('Composant ', this.$options.name)
     this.$store.dispatch('headers/getOrderHeaders')
     this.$store.dispatch('orders/get')
-    this.$store.dispatch('partners/get')
   },
   methods: {
     selected(order) {
       this.$emit('dataTable:selected', order)
-      console.log('wsh gros pd')
     },
     filterFunction(item, queryText, itemText) {
       return filterOrdersDataTable(item, queryText, itemText)

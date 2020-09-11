@@ -12,6 +12,8 @@
     template(v-slot:activator='{ on }')
       fv-text-field(
         :readonly="true"
+        :disabled="true"
+        :clearable="clearable"
         :value='displayDate ? displayDate.substring(0,10) : null'
         :label='label'
         @click='fromDateMenu = true'
@@ -52,6 +54,12 @@ export default {
       type: Date,
       default() {
         return null
+      }
+    },
+    clearable: {
+      type: Boolean,
+      default() {
+        return true
       }
     }
   },

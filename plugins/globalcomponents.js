@@ -66,6 +66,7 @@ import FvOfferIndex from '@/components/FvOfferIndex'
 import FvOfferList from '@/components/FvOfferList'
 import FvOfferModal from '@/components/FvOfferModal'
 import FvOrderDataTable from '@/components/FvOrderDataTable'
+import FvOrderDetails from '@/components/FvOrderDetails'
 import FvOrderIndex from '@/components/FvOrderIndex'
 import FvOrderListSearch from '@/components/FvOrderListSearch'
 import FvOrderList from '@/components/FvOrderList'
@@ -184,6 +185,7 @@ Vue.component('fv-offer-index', FvOfferIndex)
 Vue.component('fv-offer-list', FvOfferList)
 Vue.component('fv-offer-modal', FvOfferModal)
 Vue.component('fv-order-data-table', FvOrderDataTable)
+Vue.component('fv-order-details', FvOrderDetails)
 Vue.component('fv-order-index', FvOrderIndex)
 Vue.component('fv-order-list-search', FvOrderListSearch)
 Vue.component('fv-order-list', FvOrderList)
