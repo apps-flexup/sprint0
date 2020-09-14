@@ -23,6 +23,12 @@ const moduleHeaders = {
         {
           align: "start",
           sortable: true,
+          text: "headers.products.unit",
+          value: "unit"
+        },
+        {
+          align: "start",
+          sortable: true,
           text: "headers.products.status",
           value: "status"
         }
