@@ -1,5 +1,4 @@
 export const convert = async (fromCurrency, toCurrency, amount) => {
-  console.log('coucou')
   if (fromCurrency === toCurrency) {
     return amount
   } else {
