@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import { convert } from '~/plugins/currencies'
 
 Vue.directive('partner', (el, binding, vnode) => {
   const res = parseInt(binding.value)
@@ -55,7 +56,7 @@ Vue.directive('to-currency', (el, binding, vnode) => {
   el.innerHTML = res
 })
 
-Vue.directive('to-preferred-currency', (el, binding, vnode) => {
+Vue.directive('to-preferred-currency', async (el, binding, vnode) => {
   const locale = vnode.context.$i18n.locale
   const value = binding.value
   const amount = value.amount
@@ -65,24 +66,12 @@ Vue.directive('to-preferred-currency', (el, binding, vnode) => {
     style: 'currency',
     currency: toCurrency
   }
-  if (fromCurrency === toCurrency) {
-    const valueToDisplay = new Intl.NumberFormat(locale, options).format(amount)
-    el.innerHTML = `${valueToDisplay}`
-  } else {
-    console.log('Convert: ', amount + ' ' + fromCurrency + ' to ', toCurrency)
-    let currencyApiUrl = 'https://api.exchangerate.host/convert?'
-    currencyApiUrl += 'amount=' + amount
-    currencyApiUrl += '&from=' + fromCurrency
-    currencyApiUrl += '&to=' + toCurrency
-    fetch(currencyApiUrl)
-      .then((res) => res.json())
-      .then((res) => {
-        const valueToDisplay = new Intl.NumberFormat(locale, options).format(
-          res.result
-        )
-        el.innerHTML = `${valueToDisplay}`
-      })
-  }
+  console.log('vnode: ', vnode)
+  const convertedAmount = await convert(fromCurrency, toCurrency, amount)
+  const valueToDisplay = new Intl.NumberFormat(locale, options).format(
+    convertedAmount
+  )
+  el.innerHTML = `${valueToDisplay}`
 })
 
 // Pour la traduction des i18n
