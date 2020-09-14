@@ -42,6 +42,7 @@ export default {
     console.log('Composant ', this.$options.name)
     this.$store.dispatch('headers/getOrderHeaders')
     this.$store.dispatch('orders/get')
+    this.$store.dispatch('contracts/getStructures')
   },
   methods: {
     filterFunction(item, queryText, itemText) {

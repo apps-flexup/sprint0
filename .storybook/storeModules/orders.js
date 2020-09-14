@@ -29,6 +29,7 @@ const moduleOffers = {
             }
           ],
           params: { },
+          structure: 1,
           reference: "MRBQCH",
           status: "draft",
           total: 0
@@ -59,6 +60,7 @@ const moduleOffers = {
             }
           ],
           params: { },
+          structure: 2,
           reference: "JQAJAG",
           status: "suspended",
           total: 0
@@ -85,6 +87,7 @@ const moduleOffers = {
             }
           ],
           params: { },
+          structure: 3,
           reference: "UEKBIJ",
           status: "inactive",
           total: 0
@@ -115,6 +118,7 @@ const moduleOffers = {
             }
           ],
           params: { },
+          structure: 4,
           reference: "DGFHPM",
           status: "active",
           total: 0
