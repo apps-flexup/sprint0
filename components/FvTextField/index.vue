@@ -9,6 +9,8 @@
     :suffix="suffix"
     :readonly="readonly"
     :clearable="clearable"
+    :hide-details="hideDetails"
+    :dense="dense"
     @input="inputChanged"
     @click="clicked"
   )
@@ -16,6 +18,8 @@
       slot(name="append")
     template(v-slot:prepend)
       slot(name="prepend")
+    template(v-slot:prepend-inner)
+      slot(name="prepend-inner")
 </template>
 
 <script>
@@ -62,6 +66,18 @@ export default {
       type: Boolean,
       default() {
         return true
+      }
+    },
+    hideDetails: {
+      type: Boolean,
+      default() {
+        return false
+      }
+    },
+    dense: {
+      type: Boolean,
+      default() {
+        return false
       }
     }
   },

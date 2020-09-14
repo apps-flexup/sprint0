@@ -35,10 +35,10 @@ import FvContractSummaryStepStructure from '@/components/FvContractSummaryStepSt
 import FvPrimaryButton from '@/components/FvPrimaryButton'
 import FvDataTableHeader from '@/components/FvDataTableHeader'
 import FvDataTableSearchBar from '@/components/FvDataTableSearchBar'
+import FvIcon from '@/components/FvIcon'
 import FvListAccounts from '@/components/FvListAccounts'
 import FvLoginButton from '@/components/FvLoginButton'
 import FvLogoutButton from '@/components/FvLogoutButton'
-import FvMinusButton from '@/components/FvMinusButton'
 import FvModal from '@/components/FvModal'
 import FvModalActions from '@/components/FvModalActions'
 import FvModalAndButton from '@/components/FvModalAndButton'
@@ -76,7 +76,6 @@ import FvPartnerList from '@/components/FvPartnerList'
 import FvModalSlot from '@/components/FvModalSlot'
 import FvPartnerIndex from '@/components/FvPartnerIndex'
 import FvPartnerModal from '@/components/FvPartnerModal'
-import FvPlusButton from '@/components/FvPlusButton'
 import FvProductIndex from '~/components/FvProductIndex'
 import FvProductModal from '@/components/FvProductModal'
 import FvSpeedDial from '@/components/FvSpeedDial'
@@ -150,10 +149,10 @@ Vue.component(
 Vue.component('fv-primary-button', FvPrimaryButton)
 Vue.component('fv-data-table-header', FvDataTableHeader)
 Vue.component('fv-data-table-search-bar', FvDataTableSearchBar)
+Vue.component('fv-icon', FvIcon)
 Vue.component('fv-list-accounts', FvListAccounts)
 Vue.component('fv-login-button', FvLoginButton)
 Vue.component('fv-logout-button', FvLogoutButton)
-Vue.component('fv-minus-button', FvMinusButton)
 Vue.component('fv-modal', FvModal)
 Vue.component('fv-modal-actions', FvModalActions)
 Vue.component('fv-modal-and-button', FvModalAndButton)
@@ -193,7 +192,6 @@ Vue.component('fv-order-modal', FvOrderModal)
 Vue.component('fv-country-list', FvCountryList)
 Vue.component('fv-partner-data-table', FvPartnerDataTable)
 Vue.component('fv-partner-list', FvPartnerList)
-Vue.component('fv-plus-button', FvPlusButton)
 Vue.component('fv-modal-slot', FvModalSlot)
 Vue.component('fv-partner-index', FvPartnerIndex)
 Vue.component('fv-partner-modal', FvPartnerModal)
