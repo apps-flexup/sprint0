@@ -18,9 +18,9 @@
             @quantitySelector:plus="item.quantity = item.quantity + 1"
           )
         template(v-slot:item.price="{ item }")
-          div(v-to-preferred-currency="item.price")
+          div(v-to-preferred-currency="{amount: item.price, currency: item.currency}")
         template(v-slot:item.total="{ item }")
-          div(v-to-currency-quantity="item")
+          div(v-to-preferred-currency="{amount: item.price * item.quantity, currency: item.currency}")
         template(v-slot:item.vat='{ item }')
           fv-text-field(
             v-model="item.vat"
