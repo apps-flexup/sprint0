@@ -3,39 +3,21 @@
   p {{ $options.name }}
   v-card.mainCard
     v-row
-      v-spacer
-      v-btn(
-        icon
-        @click.prevent="remove"
-        x-large
-      )
-        v-icon mdi-close
-    v-row
-      v-col(cols="6")
-        fv-partner-autocomplete(
+      v-col(cols="8")
+        fv-partner-card(
           :partnerId="partnerId"
           @partner:selected='partnerSelected'
         )
-      v-col(cols="6")
-    v-row
-      v-col(cols="6")
+      v-col(cols="4")
         fv-field-date(
           :dateRef="new Date(orderDate)"
           :label="$t('forms.orders.new.date')"
           :clearable = "false"
           @date:changed="dateChanged"
         )
-      v-col(cols="6")
-        fv-text-field(
-          :label="$t('forms.orders.new.label')"
-          @input="labelChanged"
-        )
     v-row
       v-col(cols="8")
-        fv-offer-autocomplete(
-          :disabled="!partnerId"
-          :partnerId="partnerId"
-          :returnObject="true"
+        fv-text-field(
           @offers:selected="offerSelected"
         )
       v-col(cols="4")
@@ -159,12 +141,12 @@ export default {
     },
     fillFieldsWithOrder() {
       if (!this.order) return
-      this.partnerId = this.order.partnerId
+      this.partnerId = this.order.partner_id
       this.structure = this.getStructureName(this.order.structure)
       this.orderDate = this.order.date
-      this.orderLines = this.order.orderLines
+      this.orderLines = this.order.orderLine
       this.localOrder = this.order
-      console.log('LA DATE ', this.structure)
+      console.log('LA DATE ', this.offer)
     },
     clearOrder() {
       this.partnerId = null
