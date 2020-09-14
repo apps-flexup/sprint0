@@ -18,6 +18,7 @@
     v-row
       v-col(cols="8")
         fv-text-field(
+          v-model="localOffer"
           @offers:selected="offerSelected"
         )
       v-col(cols="4")
@@ -59,6 +60,8 @@ export default {
   data() {
     return {
       localOrder: {},
+      localOffer: null,
+      offerName: null,
       partnerId: null,
       orderDate: null,
       orderLines: []
@@ -140,13 +143,16 @@ export default {
       return res
     },
     fillFieldsWithOrder() {
+      const i = 0
+      this.offerName = this.order.order_lines[i]
       if (!this.order) return
       this.partnerId = this.order.partner_id
+      this.localOffer = this.offerName.offer.fr || this.offerName.offer
       this.structure = this.getStructureName(this.order.structure)
       this.orderDate = this.order.date
       this.orderLines = this.order.orderLine
       this.localOrder = this.order
-      console.log('LA DATE ', this.offer)
+      console.log('LA DATE ', this.order)
     },
     clearOrder() {
       this.partnerId = null
