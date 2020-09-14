@@ -19,6 +19,8 @@
       v-col(cols="8")
         fv-text-field(
           v-model="localOffer"
+          :clearable="false"
+          :readonly="true"
           @offers:selected="offerSelected"
         )
       v-col(cols="4")
@@ -36,7 +38,7 @@
       v-spacer
       v-col(cols="5")
         fv-order-totals(
-          :orderLines="orderLines"
+          :orderLines="lineOrder"
         )
 </template>
 
@@ -60,10 +62,12 @@ export default {
   data() {
     return {
       localOrder: {},
+      structure: null,
       localOffer: null,
       offerName: null,
       partnerId: null,
       orderDate: null,
+      lineOrder: [],
       orderLines: []
     }
   },
@@ -149,10 +153,10 @@ export default {
       this.partnerId = this.order.partner_id
       this.localOffer = this.offerName.offer.fr || this.offerName.offer
       this.structure = this.getStructureName(this.order.structure)
-      this.orderDate = this.order.date
-      this.orderLines = this.order.orderLine
+      this.orderDate = this.lineOrder
+      this.lineOrder = this.order.order_lines
       this.localOrder = this.order
-      console.log('LA DATE ', this.order)
+      console.log('LA DATE ', this.lineOrder)
     },
     clearOrder() {
       this.partnerId = null
