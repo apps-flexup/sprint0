@@ -3,46 +3,43 @@
   p {{ $options.name }}
   v-card.mainCard
     v-row
-      v-col(cols="8")
-        fv-partner-card(
-          :partnerId="partnerId"
-          @partner:selected='partnerSelected'
-        )
-      v-col(cols="4")
-        fv-field-date(
-          :dateRef="new Date(orderDate)"
-          :label="$t('forms.orders.new.date')"
-          :clearable = "false"
-          @date:changed="dateChanged"
-        )
-    v-row
-      v-col(cols="8")
-        fv-text-field(
-          v-model="localOffer"
-          :clearable="false"
-          :readonly="true"
-          @offers:selected="offerSelected"
-        )
-      v-col(cols="4")
-        fv-text-field(
-          v-model="structure"
-          :clearable="false"
-          :readonly="true"
-          @structures:selected="structureSelected"
-        )
+      v-col(cols="12" class="headDetails")
+        v-col(cols="8")
+          fv-partner-card(
+            :partnerId="partnerId"
+            @partner:selected='partnerSelected'
+          )
+        v-col(cols="4")
+          fv-field-date(
+            :dateRef="new Date(orderDate)"
+            :label="$t('forms.orders.new.date')"
+            :clearable = "false"
+            :hideDetails="true"
+            @date:changed="dateChanged"
+            class="align"
+          )
+          fv-text-field(
+            v-model="structure"
+            :clearable="false"
+            :readonly="true"
+            :hideDetails="true"
+            @structures:selected="structureSelected"
+          )
     fv-order-line-list(
-      :orderLines="orderLines"
+      :details="true"
+      :orderLines="lineOrder"
       @orderLines:delete="deleteOrderLine"
     )
     v-row
       v-spacer
-      v-col(cols="5")
+      v-col(cols="7")
         fv-order-totals(
           :orderLines="lineOrder"
         )
 </template>
 
 <script>
+import '@/.storybook/style/v_dialog.css'
 export default {
   name: 'FvOrderDetails',
   props: {
@@ -63,7 +60,6 @@ export default {
     return {
       localOrder: {},
       structure: null,
-      localOffer: null,
       offerName: null,
       partnerId: null,
       orderDate: null,
@@ -147,13 +143,10 @@ export default {
       return res
     },
     fillFieldsWithOrder() {
-      const i = 0
-      this.offerName = this.order.order_lines[i]
       if (!this.order) return
       this.partnerId = this.order.partner_id
-      this.localOffer = this.offerName.offer.fr || this.offerName.offer
       this.structure = this.getStructureName(this.order.structure)
-      this.orderDate = this.lineOrder
+      this.orderDate = this.order.date
       this.lineOrder = this.order.order_lines
       this.localOrder = this.order
       console.log('LA DATE ', this.lineOrder)
@@ -166,8 +159,3 @@ export default {
   }
 }
 </script>
-<style scoped>
-.mainCard {
-  padding: 10px;
-}
-</style>

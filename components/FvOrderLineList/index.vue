@@ -12,23 +12,45 @@
         template(v-slot:item.unit="{ item }")
           div(v-to-unit="item")
         template(v-slot:item.quantity="{ item }")
-          fv-quantity-selector(
-            :quantity="item.quantity"
-            @quantitySelector:minus="item.quantity = item.quantity - 1"
-            @quantitySelector:plus="item.quantity = item.quantity + 1"
-          )
+          div(v-if="details")
+            fv-text-field(
+              :value="item.quantity"
+              :hideDetails="true"
+              :outlined="false"
+              :readonly="true"
+              :clearable="false"
+              :dense="true"
+              class='centered-input'
+            )
+          div(v-else)
+            fv-quantity-selector(
+              :quantity="item.quantity"
+              @quantitySelector:minus="item.quantity = item.quantity - 1"
+              @quantitySelector:plus="item.quantity = item.quantity + 1"
+            )
         template(v-slot:item.price="{ item }")
           div(v-to-preferred-currency="item.price")
         template(v-slot:item.total="{ item }")
           div(v-to-currency-quantity="item")
         template(v-slot:item.vat='{ item }')
-          fv-text-field(
+          div(v-if="details")
+            fv-text-field(
             v-model="item.vat"
             :outlined="false"
+            :dense="true"
+            :hideDetails="true"
             :clearable="false"
+            :readonly="true"
             suffix="%"
-            @inputChanged="vatChanged"
           )
+          div(v-else)
+            fv-text-field(
+              v-model="item.vat"
+              :outlined="false"
+              :clearable="false"
+              suffix="%"
+              @inputChanged="vatChanged"
+            )
         template(v-slot:item.status="{ item }")
           fv-status-progress(:status="item.status")
         template(v-slot:item.actions="{ item }")
@@ -47,6 +69,12 @@ export default {
       type: Array,
       default() {
         return []
+      }
+    },
+    details: {
+      type: Boolean,
+      default() {
+        return false
       }
     }
   },

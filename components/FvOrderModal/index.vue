@@ -22,11 +22,6 @@
     template(
       slot='actions'
     )
-      v-spacer
-      fv-modal-actions(
-        @modal:actions:close="close"
-        @modal:actions:save="save"
-      )
 </template>
 
 <script>
