@@ -1,0 +1,10 @@
+.mainCard {
+  padding: 10px;
+}
+.v-dialog {
+  overflow-x: hidden;
+  max-width: 60% !important;
+}
+.align {
+  margin-bottom: 7px;
+}
