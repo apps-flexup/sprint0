@@ -53,7 +53,6 @@ export default {
           this.preferredCurrency,
           total
         )
-        console.log('amount: ', amount)
         accumulator[orderLine.vat].total += amount
         accumulator[orderLine.vat].vatTotal += (amount * orderLine.vat) / 100
         return Promise.resolve(accumulator)
