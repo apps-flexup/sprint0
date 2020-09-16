@@ -15,18 +15,17 @@
           div(v-if="details")
             fv-text-field(
               :value="item.quantity"
-              :hideDetails="true"
               :outlined="false"
               :readonly="true"
               :clearable="false"
-              :dense="true"
-              class='centered-input'
+              class='quantity-input'
             )
           div(v-else)
             fv-quantity-selector(
               :quantity="item.quantity"
               @quantitySelector:minus="item.quantity = item.quantity - 1"
               @quantitySelector:plus="item.quantity = item.quantity + 1"
+              class='quantity-selector-input'
             )
         template(v-slot:item.price="{ item }")
           div(v-to-preferred-currency="item.price")
@@ -37,18 +36,20 @@
             fv-text-field(
             v-model="item.vat"
             :outlined="false"
-            :dense="true"
-            :hideDetails="true"
             :clearable="false"
             :readonly="true"
             suffix="%"
+            class="vat-input"
           )
           div(v-else)
             fv-text-field(
               v-model="item.vat"
-              :outlined="false"
+              :outlined="true"
               :clearable="false"
+              :hideDetails="true"
+              :dense="true"
               suffix="%"
+              class="vat-selector-input"
               @inputChanged="vatChanged"
             )
         template(v-slot:item.status="{ item }")

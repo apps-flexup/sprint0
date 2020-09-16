@@ -8,3 +8,25 @@
 .align {
   margin-bottom: 7px;
 }
+.headDetails {
+  display: flex;
+  align-items: center;
+}
+.vat-input{
+  width: 50px;
+}
+.vat-input input{
+  text-align: right;
+}
+.quantity-input{
+  max-width: 40px;
+}
+.quantity-input input{
+  text-align: center;
+}
+.vat-selector-input{
+  width: 100px;
+}
+.quantity-selector-input{
+  max-width: 120px;
+}

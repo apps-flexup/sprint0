@@ -19,9 +19,6 @@
         :order="order"
         @order:changed="orderChanged"
       )
-    template(
-      slot='actions'
-    )
 </template>
 
 <script>
