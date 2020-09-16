@@ -17,7 +17,7 @@
         :hideDetails="hideDetails"
         :value='displayDate ? displayDate.substring(0,10) : null'
         :label='label'
-        @click='fromDateMenu = true'
+        @click='fromDateMenu = !readonly'
       )
     v-date-picker(
       locale='en-in'
@@ -64,6 +64,12 @@ export default {
       }
     },
     hideDetails: {
+      type: Boolean,
+      default() {
+        return false
+      }
+    },
+    readonly: {
       type: Boolean,
       default() {
         return false

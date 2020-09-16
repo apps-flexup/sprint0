@@ -13936,31 +13936,31 @@
   ],
   "order-line-headers": [
     {
-      "align": "start",
+      "align": "end",
       "sortable": true,
       "text": "headers.orderLines.offer",
       "value": "offer"
     },
     {
-      "align": "end",
+      "align": "start",
       "sortable": true,
       "text": "headers.orderLines.quantity",
       "value": "quantity"
     },
     {
-      "align": "end",
+      "align": "start",
       "sortable": true,
       "text": "headers.orderLines.price",
       "value": "price"
     },
     {
-      "align": "end",
+      "align": "start",
       "sortable": true,
       "text": "headers.orderLines.total",
       "value": "total"
     },
     {
-      "align": "end",
+      "align": "middle",
       "sortable": true,
       "text": "headers.orderLines.vat",
       "value": "vat"

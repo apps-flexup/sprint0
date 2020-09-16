@@ -13,13 +13,7 @@
           div(v-to-unit="item")
         template(v-slot:item.quantity="{ item }")
           div(v-if="details")
-            fv-text-field(
-              :value="item.quantity"
-              :outlined="false"
-              :readonly="true"
-              :clearable="false"
-              class='quantity-input'
-            )
+            div(class="quantity-input") {{ item.quantity }}
           div(v-else)
             fv-quantity-selector(
               :quantity="item.quantity"
@@ -33,14 +27,7 @@
           div(v-to-currency-quantity="item")
         template(v-slot:item.vat='{ item }')
           div(v-if="details")
-            fv-text-field(
-            v-model="item.vat"
-            :outlined="false"
-            :clearable="false"
-            :readonly="true"
-            suffix="%"
-            class="vat-input"
-          )
+            div(class="vat-input") {{ item.vat }} %
           div(v-else)
             fv-text-field(
               v-model="item.vat"
@@ -55,9 +42,11 @@
         template(v-slot:item.status="{ item }")
           fv-status-progress(:status="item.status")
         template(v-slot:item.actions="{ item }")
-          fv-delete-action(
-            @delete:clicked="deleteOrderLine(item)"
-          )
+          div(v-if="details")
+          div(v-else)
+            fv-delete-action(
+              @delete:clicked="deleteOrderLine(item)"
+            )
 </template>
 
 <script>
@@ -81,7 +70,9 @@ export default {
   },
   computed: {
     headers() {
-      const res = this.$activeAccount.headersOrderLines()
+      const addAction = !this.details
+      const res = this.$activeAccount.headersOrderLines(addAction)
+      console.log(res)
       return translateHeaders(this.$i18n, res)
     }
   },

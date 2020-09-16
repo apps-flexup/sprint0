@@ -15,6 +15,7 @@
             :label="$t('forms.orders.new.date')"
             :clearable = "false"
             :hideDetails="true"
+            :readonly="true"
             @date:changed="dateChanged"
             class="align"
           )
@@ -28,7 +29,6 @@
     fv-order-line-list(
       :details="true"
       :orderLines="lineOrder"
-      @orderLines:delete="deleteOrderLine"
     )
     v-row
       v-spacer
