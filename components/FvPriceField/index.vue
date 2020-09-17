@@ -1,11 +1,12 @@
 <template lang="pug">
 .fv-price-field
-  fv-text-field(
+  fv-number-field(
     :value="price"
     :label="label"
     :outlined="outlined"
     :readonly="readonly"
     :clearable="clearable"
+    :suffix="currency.symbole"
     @input="priceChanged"
     @click:outside="onClickOutside"
   )
@@ -51,6 +52,14 @@ export default {
       price: this.value
     }
   },
+  computed: {
+    currency() {
+      const iso = this.$store.getters['accounts/preferredCurrency']
+      const res = this.$store.getters['currencies/findIso'](iso)
+      console.log('res: ', res)
+      return res
+    }
+  },
   watch: {
     value() {
       this.price = this.value
@@ -58,6 +67,8 @@ export default {
   },
   mounted() {
     console.log('Composant', this.$options.name)
+    this.$store.dispatch('accounts/get')
+    this.$store.dispatch('currencies/get')
   },
   methods: {
     priceChanged(v) {
