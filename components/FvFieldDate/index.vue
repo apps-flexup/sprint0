@@ -12,9 +12,12 @@
     template(v-slot:activator='{ on }')
       fv-text-field(
         :readonly="true"
+        :dateRef="dateRef"
+        :clearable="clearable"
+        :hideDetails="hideDetails"
         :value='displayDate ? displayDate.substring(0,10) : null'
         :label='label'
-        @click='fromDateMenu = true'
+        @click='fromDateMenu = !readonly'
       )
     v-date-picker(
       locale='en-in'
@@ -52,6 +55,24 @@ export default {
       type: Date,
       default() {
         return null
+      }
+    },
+    clearable: {
+      type: Boolean,
+      default() {
+        return true
+      }
+    },
+    hideDetails: {
+      type: Boolean,
+      default() {
+        return false
+      }
+    },
+    readonly: {
+      type: Boolean,
+      default() {
+        return false
       }
     }
   },

@@ -3,25 +3,25 @@
   v-card
     v-list
     v-list-item
-      v-col(cols="6")
+      v-col(cols="8")
         div {{ $t('forms.orders.new.totals.withoutVat') }}
-      v-col(cols="6")
+      v-col(cols="4")
         div.text-right(v-to-preferred-currency="{ amount: totalWithoutVat, currency: preferredCurrency }")
     v-divider
     div(
       v-for="(v, k) in totalsByVat" :key="k"
     )
       v-list-item
-        v-col(cols="6")
+        v-col(cols="8")
           div.left {{ $t('forms.orders.new.totals.vat')}} {{ k }}% {{ $t('forms.orders.new.totals.of') }}
           div.right(v-to-preferred-currency="{amount: v.total, currency: preferredCurrency }")
-        v-col(cols="6")
+        v-col(cols="4")
           div.text-right(v-to-preferred-currency="{ amount: v.vatTotal, currency: preferredCurrency }")
       v-divider
     v-list-item
-      v-col(cols="6")
+      v-col(cols="8")
         div {{ $t('forms.orders.new.totals.total') }}
-      v-col(cols="6")
+      v-col(cols="4")
         div.text-right(v-to-preferred-currency="{ amount: total, currency: preferredCurrency }")
 </template>
 
@@ -86,13 +86,14 @@ export default {
 </script>
 <style scoped>
 .left {
-  float: left;
-  width: 50%;
   text-align: right;
   padding-right: 5px;
 }
 .right {
   float: right;
   width: 50%;
+}
+.col {
+  display: flex !important;
 }
 </style>

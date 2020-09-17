@@ -12,29 +12,41 @@
         template(v-slot:item.unit="{ item }")
           div(v-to-unit="item")
         template(v-slot:item.quantity="{ item }")
-          fv-quantity-selector(
-            :quantity="item.quantity"
-            @quantitySelector:minus="$emit('orderLines:quantityMinus', item)"
-            @quantitySelector:plus="$emit('orderLines:quantityPlus', item)"
-          )
+          div(v-if="details")
+            div(class="quantity-input") {{ item.quantity }}
+          div(v-else)
+            fv-quantity-selector(
+              :quantity="item.quantity"
+              @quantitySelector:minus="item.quantity = item.quantity - 1"
+              @quantitySelector:plus="item.quantity = item.quantity + 1"
+              class='quantity-selector-input'
+            )
         template(v-slot:item.price="{ item }")
           div(v-to-preferred-currency="{amount: item.price, currency: item.currency}")
         template(v-slot:item.total="{ item }")
           div(v-to-preferred-currency="{amount: item.price * item.quantity, currency: item.currency}")
         template(v-slot:item.vat='{ item }')
-          fv-text-field(
-            :value="item.vat"
-            :outlined="false"
-            :clearable="false"
-            suffix="%"
-            @input="vatChanged(arguments, item)"
-          )
+          div(v-if="details")
+            div(class="vat-input") {{ item.vat }} %
+          div(v-else)
+            fv-text-field(
+              v-model="item.vat"
+              :outlined="true"
+              :clearable="false"
+              :hideDetails="true"
+              :dense="true"
+              suffix="%"
+              class="vat-selector-input"
+              @inputChanged="vatChanged"
+            )
         template(v-slot:item.status="{ item }")
           fv-status-progress(:status="item.status")
         template(v-slot:item.actions="{ item }")
-          fv-delete-action(
-            @delete:clicked="deleteOrderLine(item)"
-          )
+          div(v-if="details")
+          div(v-else)
+            fv-delete-action(
+              @delete:clicked="deleteOrderLine(item)"
+            )
 </template>
 
 <script>
@@ -48,11 +60,19 @@ export default {
       default() {
         return []
       }
+    },
+    details: {
+      type: Boolean,
+      default() {
+        return false
+      }
     }
   },
   computed: {
     headers() {
-      const res = this.$activeAccount.headersOrderLines()
+      const addAction = !this.details
+      const res = this.$activeAccount.headersOrderLines(addAction)
+      console.log(res)
       return translateHeaders(this.$i18n, res)
     }
   },
@@ -71,3 +91,20 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.vat-input {
+  width: 50px;
+  text-align: right;
+}
+.quantity-input {
+  max-width: 50px;
+  text-align: right;
+}
+.vat-selector-input {
+  width: 100px;
+}
+.quantity-selector-input {
+  max-width: 120px;
+}
+</style>
