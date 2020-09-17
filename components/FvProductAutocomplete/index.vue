@@ -28,6 +28,7 @@
 
 <script>
 import { filterProductAutocomplete } from '~/plugins/utils'
+
 export default {
   name: 'FvProductAutocomplete',
   props: {
