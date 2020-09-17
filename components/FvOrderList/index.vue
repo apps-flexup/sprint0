@@ -8,6 +8,7 @@
     )
     fv-order-data-table(
       :search="search"
+      @dataTable:selected="orderSelected"
     )
 </template>
 
@@ -25,6 +26,9 @@ export default {
   methods: {
     searchChanged(v) {
       this.search = v
+    },
+    orderSelected(order) {
+      this.$emit('list:selected', order)
     }
   }
 }

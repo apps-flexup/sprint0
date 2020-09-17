@@ -4,6 +4,7 @@
       :headers='headers'
       :items='items'
       item-key='id'
+      @click:row='selected'
       :search="search"
       :custom-filter="filterFunction"
     )
@@ -15,6 +16,9 @@
         div {{ getStructureName(item.structure) }}
       template(v-slot:item.status ='{ item }')
         fv-status-progress(:status="item.status")
+      template(v-slot:item.actions="{ item }")
+        v-row
+          fv-edit-action(@edit:clicked="selected(item)")
 </template>
 
 <script>
@@ -32,7 +36,7 @@ export default {
   },
   computed: {
     headers() {
-      const res = this.$store.getters['headers/orders']
+      const res = this.$activeAccount.headersOrders()
       return translateHeaders(this.$i18n, res)
     },
     items() {
@@ -44,9 +48,13 @@ export default {
     console.log('Composant ', this.$options.name)
     this.$store.dispatch('headers/getOrderHeaders')
     this.$store.dispatch('orders/get')
+    this.$store.dispatch('partners/getAll')
     this.$store.dispatch('contracts/getStructures')
   },
   methods: {
+    selected(order) {
+      this.$emit('dataTable:selected', order)
+    },
     filterFunction(item, queryText, itemText) {
       return filterOrdersDataTable(item, queryText, itemText)
     },
