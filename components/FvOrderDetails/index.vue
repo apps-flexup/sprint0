@@ -7,16 +7,14 @@
         v-col(cols="8")
           fv-partner-card(
             :partnerId="partnerId"
-            @partner:selected='partnerSelected'
           )
         v-col(cols="4")
           fv-field-date(
             :dateRef="new Date(orderDate)"
             :label="$t('forms.orders.new.date')"
-            :clearable = "false"
+            :clearable="false"
             :hideDetails="true"
             :readonly="true"
-            @date:changed="dateChanged"
             class="align"
           )
           fv-text-field(
@@ -24,7 +22,6 @@
             :clearable="false"
             :readonly="true"
             :hideDetails="true"
-            @structures:selected="structureSelected"
           )
     fv-order-line-list(
       :details="true"
@@ -39,7 +36,6 @@
 </template>
 
 <script>
-import '@/.storybook/style/v_dialog.css'
 export default {
   name: 'FvOrderDetails',
   props: {
@@ -58,7 +54,6 @@ export default {
   },
   data() {
     return {
-      localOrder: {},
       structure: null,
       offerName: null,
       partnerId: null,
@@ -69,7 +64,6 @@ export default {
   },
   watch: {
     order() {
-      console.log('Order changed: ', this.order)
       if (Object.entries(this.order).length === 0) {
         this.clearOrder()
       } else {
@@ -80,58 +74,8 @@ export default {
   mounted() {
     console.log('Composant ', this.$options.name)
     this.fillFieldsWithOrder()
-    this.$emit('order:dateChanged', this.i, this.orderDate)
   },
   methods: {
-    dateChanged(dte) {
-      this.orderDate = new Date(dte)
-      this.$emit('order:dateChanged', this.i, this.orderDate)
-    },
-    labelChanged(label) {
-      this.$emit('order:labelChanged', this.i, label)
-    },
-    structureSelected(structureId) {
-      this.$emit('order:structureSelected', this.i, structureId)
-    },
-    partnerSelected(partnerId) {
-      console.log('partner selected: ', partnerId)
-      if (this.partnerId !== partnerId) {
-        this.partnerId = partnerId
-        this.orderLines = []
-      }
-      this.$emit('order:partnerSelected', this.i, this.partnerId)
-    },
-    offerSelected(offer) {
-      console.log('offer selected: ', offer)
-      if (!offer) return
-      const payload = {
-        offer_id: offer.id,
-        offer: offer.name || 'absence de description',
-        status: 'draft',
-        quantity: 1,
-        pas: 1,
-        vat: offer.vat,
-        dimension: offer.dimension,
-        unit: offer.unit,
-        currency: offer.currency,
-        amount() {
-          const res = parseFloat(this.quantity) * parseFloat(this.price)
-          return res
-        },
-        price: offer.price
-      }
-      this.orderLines.push(payload)
-      this.$emit('order:orderLinesChanged', this.i, this.orderLines)
-    },
-    deleteOrderLine(orderLine) {
-      this.orderLines = this.orderLines.filter(
-        (v) => v.offer_id !== orderLine.offer_id
-      )
-      this.$emit('order:orderLinesChanged', this.i, this.orderLines)
-    },
-    remove() {
-      this.$emit('order:remove', this.i)
-    },
     getStructureName(structureId) {
       if (!structureId) {
         return null
@@ -148,14 +92,24 @@ export default {
       this.structure = this.getStructureName(this.order.structure)
       this.orderDate = this.order.date
       this.lineOrder = this.order.order_lines
-      this.localOrder = this.order
-      console.log('LA DATE ', this.lineOrder)
     },
     clearOrder() {
       this.partnerId = null
       this.orderLines = []
-      this.localOrder = {}
     }
   }
 }
 </script>
+
+<style scoped>
+.mainCard {
+  padding: 10px;
+}
+.align {
+  margin-bottom: 7px;
+}
+.headDetails {
+  display: flex;
+  align-items: center;
+}
+</style>

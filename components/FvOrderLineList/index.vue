@@ -90,3 +90,20 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.vat-input {
+  width: 50px;
+  text-align: right;
+}
+.quantity-input {
+  max-width: 50px;
+  text-align: right;
+}
+.vat-selector-input {
+  width: 100px;
+}
+.quantity-selector-input {
+  max-width: 120px;
+}
+</style>
