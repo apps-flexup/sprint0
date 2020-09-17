@@ -1,6 +1,7 @@
 import getters from '@/store/accounts/getters'
 import mutations from '@/store/accounts/mutations'
 import state from '@/store/accounts/state'
+import activeAccount from '@/.storybook/activeAccount'
 
 const moduleAccounts = {
   namespaced: true,
@@ -21,7 +22,8 @@ const moduleAccounts = {
             ],
             "roles_methods": null,
             "supplier": false,
-            "user_id": "2ae5fcf8-9ed5-480a-89c8-a2f946e72140"
+            "user_id": "2ae5fcf8-9ed5-480a-89c8-a2f946e72140",
+            "currency": "EUR"
           },
           {
             "avatar": "/images/avatar-1.png",
@@ -36,7 +38,8 @@ const moduleAccounts = {
             ],
             "roles_methods": null,
             "supplier": false,
-            "user_id": "bcecf237-eec9-43c2-b881-2242c554485f"
+            "user_id": "bcecf237-eec9-43c2-b881-2242c554485f",
+            "currency": "EUR"
           },
           {
             "avatar": "/images/avatar-2.png",
@@ -51,13 +54,21 @@ const moduleAccounts = {
             ],
             "roles_methods": null,
             "supplier": false,
-            "user_id": "2ae5fcf8-9ed5-480a-89c8-a2f946e72140"
+            "user_id": "2ae5fcf8-9ed5-480a-89c8-a2f946e72140",
+            "currency": "EUR"
           }
       ]
       commit('set', data)
+      const accountId = parseInt(data[0].id)
+      activeAccount.set(accountId)
     },
     clear({ commit }) {
       commit('clear')
+    },
+    setCurrent({ commit }, id) {
+      commit('setCurrent', id)
+    },
+    update({ _commit }, _payload) {
     }
   },
   getters: getters,

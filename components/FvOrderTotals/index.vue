@@ -6,7 +6,7 @@
       v-col(cols="8")
         div {{ $t('forms.orders.new.totals.withoutVat') }}
       v-col(cols="4")
-        div.text-right(v-to-preferred-currency="totalWithoutVat")
+        div.text-right(v-to-preferred-currency="{ amount: totalWithoutVat, currency: preferredCurrency }")
     v-divider
     div(
       v-for="(v, k) in totalsByVat" :key="k"
@@ -14,18 +14,20 @@
       v-list-item
         v-col(cols="8")
           div.left {{ $t('forms.orders.new.totals.vat')}} {{ k }}% {{ $t('forms.orders.new.totals.of') }}
-          div.right(v-to-preferred-currency="v.total")
+          div.right(v-to-preferred-currency="{amount: v.total, currency: preferredCurrency }")
         v-col(cols="4")
-          div.text-right(v-to-preferred-currency="v.vatTotal")
+          div.text-right(v-to-preferred-currency="{ amount: v.vatTotal, currency: preferredCurrency }")
       v-divider
     v-list-item
       v-col(cols="8")
         div {{ $t('forms.orders.new.totals.total') }}
       v-col(cols="4")
-        div.text-right(v-to-preferred-currency="total")
+        div.text-right(v-to-preferred-currency="{ amount: total, currency: preferredCurrency }")
 </template>
 
 <script>
+import { convert } from '~/plugins/currencies'
+
 export default {
   name: 'FvOrderTotals',
   props: {
@@ -36,19 +38,29 @@ export default {
       }
     }
   },
-  computed: {
-    totalsByVat() {
-      const res = this.orderLines.reduce((acc, orderLine) => {
-        if (!acc[orderLine.vat]) {
-          acc[orderLine.vat] = {}
-          acc[orderLine.vat].total = 0
-          acc[orderLine.vat].vatTotal = 0
+  asyncComputed: {
+    async totalsByVat() {
+      const res = await this.orderLines.reduce(async (acc, orderLine) => {
+        const accumulator = await acc
+        if (!accumulator[orderLine.vat]) {
+          accumulator[orderLine.vat] = {}
+          accumulator[orderLine.vat].total = 0
+          accumulator[orderLine.vat].vatTotal = 0
         }
-        acc[orderLine.vat].total += orderLine.price * orderLine.quantity
-        acc[orderLine.vat].vatTotal +=
-          (orderLine.price * orderLine.quantity * orderLine.vat) / 100
-        return acc
-      }, {})
+        const total = orderLine.price * orderLine.quantity
+        const amount = await convert(
+          orderLine.currency,
+          this.preferredCurrency,
+          total
+        )
+        accumulator[orderLine.vat].total += amount
+        accumulator[orderLine.vat].vatTotal += (amount * orderLine.vat) / 100
+        return Promise.resolve(accumulator)
+      }, Promise.resolve({}))
+      return res
+    },
+    preferredCurrency() {
+      const res = this.$store.getters['accounts/preferredCurrency']
       return res
     },
     totalWithoutVat() {

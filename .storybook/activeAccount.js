@@ -16,7 +16,8 @@ const activeAccount = {
   //   const res = ctx.store.getters['accounts/selected']
   //   return res
   // },
-  set(_accountId) {
+  set(accountId) {
+    store.dispatch('accounts/setCurrent', accountId)
   },
   // contracts() {
   //   const res = ctx.store.getters['contracts/all']

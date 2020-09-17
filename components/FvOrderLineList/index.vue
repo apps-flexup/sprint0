@@ -22,9 +22,9 @@
               class='quantity-selector-input'
             )
         template(v-slot:item.price="{ item }")
-          div(v-to-preferred-currency="item.price")
+          div(v-to-preferred-currency="{amount: item.price, currency: item.currency}")
         template(v-slot:item.total="{ item }")
-          div(v-to-currency-quantity="item")
+          div(v-to-preferred-currency="{amount: item.price * item.quantity, currency: item.currency}")
         template(v-slot:item.vat='{ item }')
           div(v-if="details")
             div(class="vat-input") {{ item.vat }} %
@@ -81,8 +81,9 @@ export default {
     this.$store.dispatch('headers/getOrderLineHeaders')
   },
   methods: {
-    vatChanged(v) {
-      this.item.vat = v
+    vatChanged(values, item) {
+      const vat = values[0]
+      this.$emit('orderLines:vatChanged', item, vat)
     },
     deleteOrderLine(v) {
       this.$emit('orderLines:delete', v)

@@ -22,11 +22,6 @@
         :label="$t('forms.offers.new.price')"
         @price:changed="priceChanged"
       )
-    v-col(cols="6")
-      fv-currency-autocomplete(
-        :currency="currency"
-        @currency:selected="currencySelected"
-      )
   v-row
     v-col(cols='6')
       v-text-field(
@@ -110,14 +105,6 @@ export default {
       this.price = v
       const payload = {
         price: this.price
-      }
-      const res = Object.assign(this.localOffer, payload)
-      this.$emit('offer:changed', res)
-    },
-    currencySelected(v) {
-      this.currency = v
-      const payload = {
-        currency: this.currency
       }
       const res = Object.assign(this.localOffer, payload)
       this.$emit('offer:changed', res)
