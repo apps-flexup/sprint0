@@ -24,12 +24,10 @@
       )
   v-row
     v-col(cols='6')
-      v-text-field(
-        v-model="vat"
+      fv-vat-field(
+        :value="vat"
         :label="$t('forms.offers.new.vat')"
-        outlined=''
         @input="vatChanged"
-        suffix="%"
       )
     v-col(cols='6')
       fv-unit-autocomplete(

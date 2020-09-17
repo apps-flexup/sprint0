@@ -6,7 +6,7 @@
     :outlined="outlined"
     :readonly="readonly"
     :clearable="clearable"
-    :suffix="currency.symbole"
+    :suffix="currency ? currency.symbole : null"
     @input="priceChanged"
     @click:outside="onClickOutside"
   )
