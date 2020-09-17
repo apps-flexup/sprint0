@@ -155,6 +155,12 @@ const moduleHeaders = {
           sortable: true,
           text: "headers.orders.structure",
           value: "structure"
+        },
+        {
+          align: "start",
+          sortable: true,
+          text: "headers.orders.status",
+          value: "status"
         }
       ]
       commit('setOrderHeaders', data)
