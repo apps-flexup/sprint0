@@ -4,6 +4,7 @@
   fv-autocomplete(
     :element="product"
     :items="items"
+    :filter="filter"
     @autocomplete:selected="selected"
   )
     template(v-slot:label)
@@ -26,6 +27,7 @@
 </template>
 
 <script>
+import { filterProductAutocomplete } from '~/plugins/utils'
 export default {
   name: 'FvProductAutocomplete',
   props: {
@@ -49,6 +51,9 @@ export default {
   methods: {
     selected(v) {
       this.$emit('products:selected', v)
+    },
+    filter(item, v, it) {
+      return filterProductAutocomplete(item, v, it)
     }
   }
 }
