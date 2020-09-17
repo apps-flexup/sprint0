@@ -12,6 +12,7 @@ const moduleOffers = {
           amount: 2500,
           currency: "EUR",
           id: 2,
+          label: "lait de chèvre",
           date: "2020-08-20T00:00:00.000Z",
           order_items: [
             {
@@ -28,8 +29,9 @@ const moduleOffers = {
             }
           ],
           params: { },
+          structure: 1,
           reference: "MRBQCH",
-          status: "pending",
+          status: "draft",
           total: 0
         },
         {
@@ -37,6 +39,7 @@ const moduleOffers = {
           amount: 1500,
           currency: "EUR",
           id: 1,
+          label: "glace à la menthe",
           date: "2020-09-10T00:00:00.000Z",
           order_items: [
             {
@@ -57,6 +60,7 @@ const moduleOffers = {
             }
           ],
           params: { },
+          structure: 2,
           reference: "JQAJAG",
           status: "suspended",
           total: 0
@@ -66,6 +70,7 @@ const moduleOffers = {
           amount: 150,
           currency: "EUR",
           id: 3,
+          label: "bouée gonflable",
           date: "2020-12-09T00:00:00.000Z",
           order_items: [
             {
@@ -82,6 +87,7 @@ const moduleOffers = {
             }
           ],
           params: { },
+          structure: 3,
           reference: "UEKBIJ",
           status: "inactive",
           total: 0
@@ -91,6 +97,7 @@ const moduleOffers = {
           amount: 1200,
           currency: "EUR",
           id: 4,
+          label: "peinture noir mat",
           date: "2020-08-20T00:00:00.000Z",
           order_items: [
             {
@@ -111,174 +118,9 @@ const moduleOffers = {
             }
           ],
           params: { },
+          structure: 4,
           reference: "DGFHPM",
           status: "active",
-          total: 0
-        },
-        {
-          account_id: 1,
-          amount: 2500,
-          currency: "EUR",
-          id: 5,
-          date: "2020-08-20T00:00:00.000Z",
-          order_items: [
-            {
-              currency: "EUR",
-              dimension: null,
-              id: 5,
-              offer_id: 4,
-              order_id: 5,
-              params: { },
-              price: 100,
-              quantity: 25,
-              status: "draft",
-              unit: null
-            }
-          ],
-          params: { },
-          reference: "OPIJJG",
-          status: "active",
-          total: 0
-        },
-        {
-          account_id: 5,
-          amount: 2500,
-          currency: "EUR",
-          id: 6,
-          date: "2020-08-20T00:00:00.000Z",
-          order_items: [
-            {
-              currency: "EUR",
-              dimension: null,
-              id: 6,
-              offer_id: 4,
-              order_id: 6,
-              params: {
-                params: {
-                  plop: 15
-                }
-              },
-              price: 100,
-              quantity: 25,
-              status: "draft",
-              unit: "h"
-            }
-          ],
-          params: { },
-          reference: "URUOSR",
-          status: "pending",
-          total: 0
-        },
-        {
-          account_id: 5,
-          amount: 2500,
-          currency: "EUR",
-          id: 7,
-          date: "2020-08-20T00:00:00.000Z",
-          order_items: [
-            {
-              currency: "EUR",
-              dimension: null,
-              id: 7,
-              offer_id: 4,
-              order_id: 7,
-              params: {
-                params: {
-                  plop: 15
-                }
-              },
-              price: 100,
-              quantity: 25,
-              status: "draft",
-              unit: "h"
-            }
-          ],
-          params: { },
-          reference: "EQEGXE",
-          status: "pending",
-          total: 0
-        },
-        {
-          account_id: 5,
-          amount: 2500,
-          currency: "EUR",
-          id: 8,
-          date: "2020-08-20T00:00:00.000Z",
-          order_items: [
-            {
-              currency: "EUR",
-              dimension: null,
-              id: 8,
-              offer_id: 4,
-              order_id: 8,
-              params: {
-                params: {
-                  plop: 15
-                }
-              },
-              price: 100,
-              quantity: 25,
-              status: "draft",
-              unit: "h"
-            }
-          ],
-          params: { },
-          reference: "LJCTCI",
-          status: "pending",
-          total: 0
-        },
-        {
-          account_id: 1,
-          amount: 100,
-          currency: "EUR",
-          id: 9,
-          date: "2020-08-20T00:00:00.000Z",
-          order_items: [
-            {
-              currency: "EUR",
-              dimension: "duration",
-              id: 9,
-              offer_id: 8,
-              order_id: 9,
-              params: {
-                params: {
-                  iso_9000: false
-                }
-              },
-              price: 50,
-              quantity: 2,
-              status: "draft",
-              unit: "hr"
-            }
-          ],
-          params: { },
-          reference: "VSCAMT",
-          status: "pending",
-          total: 0
-        },
-        {
-          account_id: 1,
-          amount: 37.5,
-          currency: "EUR",
-          id: 10,
-          date: "2020-08-20T00:00:00.000Z",
-          order_items: [
-            {
-              currency: "EUR",
-              dimension: "number",
-              id: 10,
-              offer_id: 9,
-              order_id: 10,
-              params: { },
-              price: 3.75,
-              quantity: 10,
-              status: "draft",
-              unit: "Nr"
-            }
-          ],
-          params: { },
-          reference: "VKPAEP",
-          status: "pending",
           total: 0
         }
       ]

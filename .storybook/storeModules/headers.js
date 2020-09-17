@@ -23,6 +23,12 @@ const moduleHeaders = {
         {
           align: "start",
           sortable: true,
+          text: "headers.products.unit",
+          value: "unit"
+        },
+        {
+          align: "start",
+          sortable: true,
           text: "headers.products.status",
           value: "status"
         }
@@ -149,6 +155,12 @@ const moduleHeaders = {
           sortable: true,
           text: "headers.orders.structure",
           value: "structure"
+        },
+        {
+          align: "start",
+          sortable: true,
+          text: "headers.orders.status",
+          value: "status"
         }
       ]
       commit('setOrderHeaders', data)
