@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import { convert } from '~/plugins/currencies'
 
 Vue.directive('partner', (el, binding, vnode) => {
   const res = parseInt(binding.value)
@@ -55,17 +56,21 @@ Vue.directive('to-currency', (el, binding, vnode) => {
   el.innerHTML = res
 })
 
-Vue.directive('to-preferred-currency', (el, binding, vnode) => {
+Vue.directive('to-preferred-currency', async (el, binding, vnode) => {
   const locale = vnode.context.$i18n.locale
-  const valeur = binding.value
-  // TODO: Get preferred currency
+  const value = binding.value
+  const amount = value.amount
+  const fromCurrency = value.currency
+  const toCurrency = vnode.context.$store.getters['accounts/preferredCurrency']
   const options = {
     style: 'currency',
-    currency: 'EUR'
+    currency: toCurrency
   }
-  const valueToDisplay = new Intl.NumberFormat(locale, options).format(valeur)
-  const res = `${valueToDisplay}`
-  el.innerHTML = res
+  const convertedAmount = await convert(fromCurrency, toCurrency, amount)
+  const valueToDisplay = new Intl.NumberFormat(locale, options).format(
+    convertedAmount
+  )
+  el.innerHTML = `${valueToDisplay}`
 })
 
 // Pour la traduction des i18n

@@ -160,7 +160,8 @@
     "contacts": "Contacts",
     "partners": "Partenaires",
     "documents": "Documents",
-    "dashboard": "Tableau de bord"
+    "dashboard": "Tableau de bord",
+    "settings": "Préférences"
   },
   "buttons": {
     "create": {
@@ -252,6 +253,15 @@
     "partners": {
       "mine": "Mes partenaires",
       "flexup": "Les partenaires Flexup"
+    }
+  },
+  "settings": {
+    "title": "Préférences",
+    "default": {
+      "title": "Par défaut"
+    },
+    "others": {
+      "title": "Autres"
     }
   }
 }

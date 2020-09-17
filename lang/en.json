@@ -159,7 +159,8 @@
     "contacts": "Contacts",
     "partners": "Partners",
     "documents": "Documents",
-    "dashboard": "Dashboard"
+    "dashboard": "Dashboard",
+    "settings": "Settings"
   },
   "buttons": {
     "create" : {
@@ -250,6 +251,15 @@
     "partners": {
       "mine": "My partners",
       "flexup": "Flexup partners"
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "default": {
+      "title": "Default"
+    },
+    "others": {
+      "title": "Others"
     }
   }
 }

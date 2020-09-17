@@ -14,20 +14,20 @@
         template(v-slot:item.quantity="{ item }")
           fv-quantity-selector(
             :quantity="item.quantity"
-            @quantitySelector:minus="item.quantity = item.quantity - 1"
-            @quantitySelector:plus="item.quantity = item.quantity + 1"
+            @quantitySelector:minus="$emit('orderLines:quantityMinus', item)"
+            @quantitySelector:plus="$emit('orderLines:quantityPlus', item)"
           )
         template(v-slot:item.price="{ item }")
-          div(v-to-preferred-currency="item.price")
+          div(v-to-preferred-currency="{amount: item.price, currency: item.currency}")
         template(v-slot:item.total="{ item }")
-          div(v-to-currency-quantity="item")
+          div(v-to-preferred-currency="{amount: item.price * item.quantity, currency: item.currency}")
         template(v-slot:item.vat='{ item }')
           fv-text-field(
-            v-model="item.vat"
+            :value="item.vat"
             :outlined="false"
             :clearable="false"
             suffix="%"
-            @inputChanged="vatChanged"
+            @input="vatChanged(arguments, item)"
           )
         template(v-slot:item.status="{ item }")
           fv-status-progress(:status="item.status")
@@ -61,8 +61,9 @@ export default {
     this.$store.dispatch('headers/getOrderLineHeaders')
   },
   methods: {
-    vatChanged(v) {
-      this.item.vat = v
+    vatChanged(values, item) {
+      const vat = values[0]
+      this.$emit('orderLines:vatChanged', item, vat)
     },
     deleteOrderLine(v) {
       this.$emit('orderLines:delete', v)

@@ -3,7 +3,6 @@
     {
       "avatar": "/images/avatar-0.png",
       "country_id": 77,
-      "id": 1,
       "name": "fred",
       "offers_count": 0,
       "params": {},
@@ -14,7 +13,9 @@
       ],
       "roles_methods": null,
       "supplier": false,
-      "user_id": "2ae5fcf8-9ed5-480a-89c8-a2f946e72140"
+      "user_id": "2ae5fcf8-9ed5-480a-89c8-a2f946e72140",
+      "currency": "EUR",
+      "id": 1
     },
     {
       "avatar": "/images/avatar-1.png",
@@ -29,7 +30,8 @@
       ],
       "roles_methods": null,
       "supplier": false,
-      "user_id": "bcecf237-eec9-43c2-b881-2242c554485f"
+      "user_id": "bcecf237-eec9-43c2-b881-2242c554485f",
+      "currency": "EUR"
     },
     {
       "avatar": "/images/avatar-2.png",
@@ -44,7 +46,8 @@
       ],
       "roles_methods": null,
       "supplier": false,
-      "user_id": "2ae5fcf8-9ed5-480a-89c8-a2f946e72140"
+      "user_id": "2ae5fcf8-9ed5-480a-89c8-a2f946e72140",
+      "currency": "EUR"
     },
     {
       "avatar": "/images/avatar-3.png",
@@ -59,7 +62,8 @@
       ],
       "roles_methods": null,
       "supplier": false,
-      "user_id": "2ae5fcf8-9ed5-480a-89c8-a2f946e72140"
+      "user_id": "2ae5fcf8-9ed5-480a-89c8-a2f946e72140",
+      "currency": "EUR"
     },
     {
       "avatar": "/images/avatar-4.png",
@@ -75,7 +79,8 @@
       ],
       "roles_methods": null,
       "supplier": false,
-      "user_id": "2ae5fcf8-9ed5-480a-89c8-a2f946e72140"
+      "user_id": "2ae5fcf8-9ed5-480a-89c8-a2f946e72140",
+      "currency": "EUR"
     },
     {
       "avatar": "/images/avatar-5.png",
@@ -91,7 +96,8 @@
       ],
       "roles_methods": null,
       "supplier": false,
-      "user_id": "bcecf237-eec9-43c2-b881-2242c554485f"
+      "user_id": "bcecf237-eec9-43c2-b881-2242c554485f",
+      "currency": "EUR"
     },
     {
       "avatar": "/images/avatar-1.png",
@@ -107,7 +113,8 @@
       ],
       "roles_methods": null,
       "supplier": false,
-      "user_id": "7bee39f1-e72b-40c7-ac6a-2a22297c68a6"
+      "user_id": "7bee39f1-e72b-40c7-ac6a-2a22297c68a6",
+      "currency": "EUR"
     },
     {
       "avatar": "/images/avatar-2.png",
@@ -122,7 +129,8 @@
       ],
       "roles_methods": null,
       "supplier": false,
-      "user_id": "7bee39f1-e72b-40c7-ac6a-2a22297c68a6"
+      "user_id": "7bee39f1-e72b-40c7-ac6a-2a22297c68a6",
+      "currency": "EUR"
     },
     {
       "avatar": "/images/avatar-3.png",
@@ -138,7 +146,8 @@
       ],
       "roles_methods": null,
       "supplier": false,
-      "user_id": "7bee39f1-e72b-40c7-ac6a-2a22297c68a6"
+      "user_id": "7bee39f1-e72b-40c7-ac6a-2a22297c68a6",
+      "currency": "EUR"
     },
     {
       "avatar": "/images/avatar-4.png",
@@ -149,7 +158,8 @@
       "lastname": "Bon",
       "name": "jeanbon",
       "title": null,
-      "user_id": "8a4fb33f-0864-464f-b085-65afdedf0d77"
+      "user_id": "8a4fb33f-0864-464f-b085-65afdedf0d77",
+      "currency": "EUR"
     },
     {
       "avatar": "/images/avatar-5.png",
@@ -160,7 +170,8 @@
       "lastname": "Bon",
       "name": "jeanbon2",
       "title": null,
-      "user_id": "8a4fb33f-0864-464f-b085-65afdedf0d77"
+      "user_id": "8a4fb33f-0864-464f-b085-65afdedf0d77",
+      "currency": "EUR"
     },
     {
       "avatar": "/images/avatar-0.png",
@@ -171,7 +182,8 @@
       "lastname": "lasnier",
       "name": "fredl",
       "title": "M.",
-      "user_id": "61d4b5f7-8887-474f-b982-253b78ca95f8"
+      "user_id": "61d4b5f7-8887-474f-b982-253b78ca95f8",
+      "currency": "EUR"
     },
     {
       "email": "gregory.mevelec@flexup.org",
@@ -181,7 +193,8 @@
       "lastname": "grog",
       "name": "grog",
       "title": null,
-      "user_id": "105092c4-0558-460b-99ba-4063d3a75731"
+      "user_id": "105092c4-0558-460b-99ba-4063d3a75731",
+      "currency": "EUR"
     }
   ],
   "categories": [
@@ -13411,6 +13424,12 @@
       "icon": "mdi-desktop-mac-dashboard",
       "title": "menu.dashboard",
       "to": "/dashboard"
+    },
+    {
+      "active": true,
+      "icon": "mdi-tune-vertical-variant",
+      "title": "menu.settings",
+      "to": "/settings"
     }
   ],
   "offer-headers": [
@@ -13425,12 +13444,6 @@
       "sortable": true,
       "text": "headers.offers.price",
       "value": "price"
-    },
-    {
-      "align": "end",
-      "sortable": true,
-      "text": "headers.offers.currency",
-      "value": "currency"
     },
     {
       "align": "end",
@@ -13984,12 +13997,6 @@
       "sortable": true,
       "text": "headers.orders.amount",
       "value": "amount"
-    },
-    {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.orders.currency",
-      "value": "currency"
     },
     {
       "align": "start",

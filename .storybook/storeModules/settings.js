@@ -60,6 +60,12 @@ const moduleSettings = {
           "icon": "mdi-desktop-mac-dashboard",
           "title": "menu.dashboard",
           "to": "/dashboard"
+        },
+        {
+          "active": true,
+          "icon": "mdi-tune-vertical-variant",
+          "title": "menu.settings",
+          "to": "/settings"
         }
       ]
       commit('setMenu', data)

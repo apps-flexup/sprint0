@@ -1,0 +1,42 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+import FvSettingsDefault from './index.vue'
+
+<Meta title='Organism/FvSettingsDefault' component={ FvSettingsDefault } />
+
+# FvSettingsDefault
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  components: { FvSettingsDefault },
+  data() {
+    return {
+      account: {
+        avatar: "/images/avatar-0.png",
+        country_id: 77,
+        id: 1,
+        name: "fred",
+        offers_count: 0,
+        params: { },
+        parent_id: null,
+        roles: [
+        "customer",
+        "supplier"
+        ],
+        roles_methods: null,
+        supplier: false,
+        user_id: "2ae5fcf8-9ed5-480a-89c8-a2f946e72140",
+        currency: "EUR"
+      },
+    }
+  },
+  template: `<FvSettingsDefault
+    :account="account"
+  >
+  </FvSettingsDefault>`
+}}</Story>
+</Canvas>
+
+## ArgsTable
+
+<ArgsTable of={ FvSettingsDefault } />

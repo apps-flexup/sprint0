@@ -73,7 +73,9 @@ export default {
     '~/plugins/data',
     '~/plugins/i18n',
     '~/plugins/utils',
-    '~/plugins/directives'
+    '~/plugins/directives',
+    '~/plugins/currencies',
+    '~/plugins/asyncComputed'
   ],
   /*
    ** Nuxt.js dev-modules
