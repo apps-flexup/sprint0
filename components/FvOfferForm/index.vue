@@ -27,7 +27,7 @@
       fv-vat-field(
         :value="vat"
         :label="$t('forms.offers.new.vat')"
-        @input="vatChanged"
+        @vat:changed="vatChanged"
       )
     v-col(cols='6')
       fv-unit-autocomplete(
@@ -107,7 +107,8 @@ export default {
       const res = Object.assign(this.localOffer, payload)
       this.$emit('offer:changed', res)
     },
-    vatChanged() {
+    vatChanged(v) {
+      this.vat = v
       const payload = {
         vat: this.vat
       }
