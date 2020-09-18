@@ -24,12 +24,10 @@
       )
   v-row
     v-col(cols='6')
-      v-text-field(
-        v-model="vat"
+      fv-vat-field(
+        :value="vat"
         :label="$t('forms.offers.new.vat')"
-        outlined=''
-        @input="vatChanged"
-        suffix="%"
+        @vat:changed="vatChanged"
       )
     v-col(cols='6')
       fv-unit-autocomplete(
@@ -109,7 +107,8 @@ export default {
       const res = Object.assign(this.localOffer, payload)
       this.$emit('offer:changed', res)
     },
-    vatChanged() {
+    vatChanged(v) {
+      this.vat = v
       const payload = {
         vat: this.vat
       }

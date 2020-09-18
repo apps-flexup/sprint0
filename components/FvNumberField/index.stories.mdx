@@ -1,0 +1,35 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+import { text, boolean } from '@storybook/addon-knobs'
+import FvNumberField from './index.vue'
+
+<Meta title='Atoms/FvNumberField' component={ FvNumberField } />
+
+# FvNumberField
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  props: {
+    knobLabel: {
+      default: text('Label', 'Label', 'Props')
+    },
+    knobOutlined: {
+      default: boolean('Outlined', true, 'Props')
+    }
+  },
+  components: { FvNumberField },
+  methods: {
+    inputChanged: action('Input changed')
+  },
+  template: `<FvNumberField
+    :label="knobLabel"
+    :outlined="knobOutlined"
+    @input="inputChanged"
+  >
+  </FvNumberField>`
+}}</Story>
+</Canvas>
+
+## ArgsTable
+
+<ArgsTable of={ FvNumberField } />

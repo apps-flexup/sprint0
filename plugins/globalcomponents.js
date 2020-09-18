@@ -32,7 +32,6 @@ import FvContractSummaryStepDetail from '@/components/FvContractSummaryStepDetai
 import FvContractSummaryStepOffer from '@/components/FvContractSummaryStepOffer'
 import FvContractSummaryStepPaiement from '@/components/FvContractSummaryStepPaiement'
 import FvContractSummaryStepStructure from '@/components/FvContractSummaryStepStructure'
-import FvPrimaryButton from '@/components/FvPrimaryButton'
 import FvDataTableHeader from '@/components/FvDataTableHeader'
 import FvDataTableSearchBar from '@/components/FvDataTableSearchBar'
 import FvIcon from '@/components/FvIcon'
@@ -45,7 +44,9 @@ import FvModalAndButton from '@/components/FvModalAndButton'
 import FvNav from '@/components/FvNav'
 import FvNavBar from '@/components/FvNavBar'
 import FvNewPartnerForm from '@/components/FvNewPartnerForm'
+import FvNumberField from '@/components/FvNumberField'
 import FvPriceField from '@/components/FvPriceField'
+import FvPrimaryButton from '@/components/FvPrimaryButton'
 import FvProductDataTable from '@/components/FvProductDataTable'
 import FvProductForm from '@/components/FvProductForm'
 import FvQuantitySelector from '@/components/FvQuantitySelector'
@@ -54,6 +55,7 @@ import FvSettingsDefault from '@/components/FvSettingsDefault'
 import FvSettingsIndex from '@/components/FvSettingsIndex'
 import FvSettingsOthers from '@/components/FvSettingsOthers'
 import FvStepper from '@/components/FvStepper'
+import FvVatField from '@/components/FvVatField'
 import FvDeleteAction from '@/components/FvDeleteAction'
 import FvEditAction from '@/components/FvEditAction'
 import FvEtape from '@/components/FvEtape'
@@ -149,7 +151,6 @@ Vue.component(
   'fv-contract-summary-step-paiement',
   FvContractSummaryStepPaiement
 )
-Vue.component('fv-primary-button', FvPrimaryButton)
 Vue.component('fv-data-table-header', FvDataTableHeader)
 Vue.component('fv-data-table-search-bar', FvDataTableSearchBar)
 Vue.component('fv-icon', FvIcon)
@@ -162,7 +163,9 @@ Vue.component('fv-modal-and-button', FvModalAndButton)
 Vue.component('fv-nav', FvNav)
 Vue.component('fv-nav-bar', FvNavBar)
 Vue.component('fv-new-partner-form', FvNewPartnerForm)
+Vue.component('fv-number-field', FvNumberField)
 Vue.component('fv-price-field', FvPriceField)
+Vue.component('fv-primary-button', FvPrimaryButton)
 Vue.component('fv-product-data-table', FvProductDataTable)
 Vue.component('fv-product-form', FvProductForm)
 Vue.component('fv-product-index', FvProductIndex)
@@ -172,6 +175,7 @@ Vue.component('fv-settings-default', FvSettingsDefault)
 Vue.component('fv-settings-index', FvSettingsIndex)
 Vue.component('fv-settings-others', FvSettingsOthers)
 Vue.component('fv-stepper', FvStepper)
+Vue.component('fv-vat-field', FvVatField)
 Vue.component('fv-delete-action', FvDeleteAction)
 Vue.component('fv-edit-action', FvEditAction)
 Vue.component('fv-etape', FvEtape)

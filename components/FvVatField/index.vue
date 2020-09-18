@@ -1,14 +1,15 @@
 <template lang="pug">
-.fv-price-field
+.fv-vat-field
   fv-number-field(
-    :value="price"
+    :value="vat"
     :label="label"
     :outlined="outlined"
     :readonly="readonly"
     :clearable="clearable"
-    :suffix="currency ? currency.symbole : null"
-    @input="priceChanged"
-    @click:outside="onClickOutside"
+    :hideDetails="hideDetails"
+    :dense="dense"
+    suffix="%"
+    @input="vatChanged"
   )
 </template>
 
@@ -45,41 +46,37 @@ export default {
       default() {
         return true
       }
+    },
+    hideDetails: {
+      type: Boolean,
+      default() {
+        return false
+      }
+    },
+    dense: {
+      type: Boolean,
+      default() {
+        return false
+      }
     }
   },
   data() {
     return {
-      price: this.value
-    }
-  },
-  computed: {
-    currency() {
-      const iso = this.$store.getters['accounts/preferredCurrency']
-      const res = this.$store.getters['currencies/findIso'](iso)
-      console.log('res: ', res)
-      return res
+      vat: this.value
     }
   },
   watch: {
     value() {
-      this.price = this.value
+      this.vat = this.value
     }
   },
   mounted() {
     console.log('Composant', this.$options.name)
-    this.$store.dispatch('accounts/get')
-    this.$store.dispatch('currencies/get')
   },
   methods: {
-    priceChanged(v) {
-      this.price = v
-      this.$emit('price:changed', this.price)
-    },
-    onClickOutside() {
-      if (this.price) {
-        this.price = (Math.round(this.price * 100) / 100).toFixed(2)
-        this.priceChanged(this.price)
-      }
+    vatChanged(v) {
+      this.vat = v
+      this.$emit('vat:changed', this.vat)
     }
   }
 }
