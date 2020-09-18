@@ -31,7 +31,6 @@
           div(v-else)
             fv-vat-field(
               :value="item.vat"
-              :outlined="true"
               :clearable="false"
               :hideDetails="true"
               :dense="true"
