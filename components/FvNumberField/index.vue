@@ -8,6 +8,8 @@
     :readonly="readonly"
     :clearable="clearable"
     :suffix="suffix"
+    :hideDetails="hideDetails"
+    :dense="dense"
     @input="input"
     @click:outside="onClickOutside"
   )
@@ -51,6 +53,18 @@ export default {
       type: String,
       default() {
         return ''
+      }
+    },
+    hideDetails: {
+      type: Boolean,
+      default() {
+        return false
+      }
+    },
+    dense: {
+      type: Boolean,
+      default() {
+        return false
       }
     }
   },

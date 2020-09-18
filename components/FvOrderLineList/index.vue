@@ -29,13 +29,12 @@
           div(v-if="details")
             div(class="vat-input") {{ item.vat }} %
           div(v-else)
-            fv-text-field(
-              v-model="item.vat"
+            fv-vat-field(
+              :value="item.vat"
               :outlined="true"
               :clearable="false"
               :hideDetails="true"
               :dense="true"
-              suffix="%"
               class="vat-selector-input"
               @inputChanged="vatChanged"
             )

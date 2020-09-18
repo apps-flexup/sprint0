@@ -6,6 +6,8 @@
     :outlined="outlined"
     :readonly="readonly"
     :clearable="clearable"
+    :hideDetails="hideDetails"
+    :dense="dense"
     suffix="%"
     @input="vatChanged"
   )
@@ -43,6 +45,18 @@ export default {
       type: Boolean,
       default() {
         return true
+      }
+    },
+    hideDetails: {
+      type: Boolean,
+      default() {
+        return false
+      }
+    },
+    dense: {
+      type: Boolean,
+      default() {
+        return false
       }
     }
   },
