@@ -16,7 +16,8 @@
       class="mx-3"
     )
       v-rating(
-        :value="4"
+        :value="rating"
+        half-increments
         :dense="true"
         :readonly="true"
         size="16"
@@ -50,6 +51,12 @@ export default {
       type: Number,
       default() {
         return 350
+      }
+    },
+    rating: {
+      type: Number,
+      default() {
+        return 4.5
       }
     }
   },
