@@ -1,5 +1,5 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
-import { number, boolean } from '@storybook/addon-knobs'
+import { number, boolean, color } from '@storybook/addon-knobs'
 import { options } from '@/.storybook/knobs_data/ratings'
 import { action } from '@storybook/addon-actions'
 import FvRating from './index.vue'
@@ -22,6 +22,9 @@ import FvRating from './index.vue'
     },
     knobSize: {
       default: number('Size', 16, {}, 'Props')
+    },
+    knobColor: {
+      default: color('Color', 'primary', 'Props')
     }
   },
   components: { FvRating },
@@ -33,6 +36,7 @@ import FvRating from './index.vue'
     :readonly="knobReadonly"
     :dense="knobDense"
     :size="knobSize"
+    :color="knobColor"
     @input=input
   >
   </FvRating>`

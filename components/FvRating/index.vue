@@ -6,6 +6,8 @@
     :dense="dense"
     :readonly="readonly"
     :size="size"
+    :color="color"
+    :background-color="color"
     @input="input"
   )
 </template>
@@ -36,6 +38,12 @@ export default {
       type: Number,
       default() {
         return 16
+      }
+    },
+    color: {
+      type: String,
+      default() {
+        return 'primary'
       }
     }
   },
