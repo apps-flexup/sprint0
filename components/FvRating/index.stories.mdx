@@ -19,6 +19,9 @@ import FvRating from './index.vue'
     },
     knobDense: {
       default: boolean('Dense', true, 'Props')
+    },
+    knobSize: {
+      default: number('Size', 16, {}, 'Props')
     }
   },
   components: { FvRating },
@@ -29,6 +32,7 @@ import FvRating from './index.vue'
     :rating="knobRating"
     :readonly="knobReadonly"
     :dense="knobDense"
+    :size="knobSize"
     @input=input
   >
   </FvRating>`

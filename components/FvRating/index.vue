@@ -5,14 +5,14 @@
     half-increments
     :dense="dense"
     :readonly="readonly"
-    size="16"
+    :size="size"
     @input="input"
   )
 </template>
 
 <script>
 export default {
-  name: 'FvReview',
+  name: 'FvRating',
   props: {
     rating: {
       type: Number,
@@ -23,13 +23,19 @@ export default {
     readonly: {
       type: Boolean,
       default() {
-        return true
+        return false
       }
     },
     dense: {
       type: Boolean,
       default() {
         return false
+      }
+    },
+    size: {
+      type: Number,
+      default() {
+        return 16
       }
     }
   },
