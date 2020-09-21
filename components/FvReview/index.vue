@@ -11,12 +11,9 @@
           div.left {{ username }}
           div {{ displayDate }}
         v-row
-          v-rating(
-            :value="rating"
-            half-increments
-            :dense="true"
+          fv-rating(
+            :rating="rating"
             :readonly="true"
-            size="16"
           )
   v-row
     div {{ review }}
