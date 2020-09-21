@@ -1,0 +1,40 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { number, boolean } from '@storybook/addon-knobs'
+import { options } from '@/.storybook/knobs_data/ratings'
+import { action } from '@storybook/addon-actions'
+import FvRating from './index.vue'
+
+<Meta title='Atom/FvRating' component={ FvRating } />
+
+# FvRating
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  props: {
+    knobRating: {
+      default: number('Rating', 4, options, 'Props')
+    },
+    knobReadonly: {
+      default: boolean('Readonly', true, 'Props')
+    },
+    knobDense: {
+      default: boolean('Dense', true, 'Props')
+    }
+  },
+  components: { FvRating },
+  methods: {
+    input: action('input')
+  },
+  template: `<FvRating
+    :rating="knobRating"
+    :readonly="knobReadonly"
+    :dense="knobDense"
+    @input=input
+  >
+  </FvRating>`
+}}</Story>
+</Canvas>
+
+## ArgsTable
+
+<ArgsTable of={ FvRating } />
