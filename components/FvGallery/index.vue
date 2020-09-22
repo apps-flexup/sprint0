@@ -38,7 +38,7 @@ export default {
   },
   data() {
     return {
-      selected: this.images[0]
+      selected: this.images.length > 0 ? this.images[0] : {}
     }
   },
   mounted() {
