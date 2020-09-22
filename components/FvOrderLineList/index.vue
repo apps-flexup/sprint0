@@ -17,9 +17,9 @@
           div(v-else)
             fv-quantity-selector(
               :quantity="item.quantity"
-              @quantitySelector:minus="item.quantity = item.quantity - 1"
-              @quantitySelector:plus="item.quantity = item.quantity + 1"
-              class='quantity-selector-input'
+              class="quantity-selector-input"
+              @quantitySelector:minus="$emit('orderLines:quantityMinus', item)"
+              @quantitySelector:plus="$emit('orderLines:quantityPlus', item)"
             )
         template(v-slot:item.price="{ item }")
           div(v-to-preferred-currency="{amount: item.price, currency: item.currency}")
@@ -31,11 +31,10 @@
           div(v-else)
             fv-vat-field(
               :value="item.vat"
-              :clearable="false"
               :hideDetails="true"
               :dense="true"
               class="vat-selector-input"
-              @inputChanged="vatChanged"
+              @vat:changed="vatChanged(arguments, item)"
             )
         template(v-slot:item.status="{ item }")
           fv-status-progress(:status="item.status")
