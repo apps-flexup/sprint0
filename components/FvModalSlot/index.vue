@@ -4,6 +4,7 @@
     v-model='dialog'
     persistent
     max-width='50%'
+    :overflow-y="false"
   )
     v-card
       v-card-title
