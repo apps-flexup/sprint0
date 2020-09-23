@@ -38,6 +38,12 @@
             )
           v-col(cols="6")
             pre Chargement image avatar
+        v-row
+          v-col(cols="12")
+            fv-currency-autocomplete(
+              :currency="currency"
+              @currency:selected="currencySelected"
+            )
       v-card-actions
         v-spacer
         v-btn(@click.stop="createWithAccountId" block='') {{ $t('buttons.submit') }}
@@ -76,6 +82,10 @@ export default {
     this.account.firstname = this.$auth.user.given_name
   },
   methods: {
+    currencySelected(v) {
+      this.currency = v
+      this.account.currency = this.currency
+    },
     createWithAccountId() {
       this.$store.dispatch('accounts/add', this.account)
       this.$router.push('/products/new')
