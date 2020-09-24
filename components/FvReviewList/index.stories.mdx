@@ -1,0 +1,51 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { avatarsAvailable } from '@/.storybook/knobs_data/avatars'
+import FvReviewList from './index.vue'
+
+<Meta title='Organism/FvReviewList' component={ FvReviewList } />
+
+# FvReviewList
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  components: { FvReviewList },
+  data() {
+    return {
+      reviews: [
+        {
+          id: 1,
+          avatar: avatarsAvailable.avatar0,
+          username: "toto",
+          date: new Date('2020, 9, 20'),
+          review: "Produit au top ! Je recommande",
+          rating: 5
+        },
+        {
+          id: 2,
+          avatar: avatarsAvailable.avatar1,
+          username: "tata",
+          date: new Date('2020, 9, 23'),
+          review: "Plutot sympa !",
+          rating: 4
+        },
+        {
+          id: 3,
+          avatar: avatarsAvailable.avatar2,
+          username: "Xx_hater_xX",
+          date: new Date('2020, 9, 29'),
+          review: "C'est nul",
+          rating: 1
+        },
+      ]
+    }
+  },
+  template: `<FvReviewList
+    :reviews="reviews"
+  >
+  </FvReviewList>`
+}}</Story>
+</Canvas>
+
+## ArgsTable
+
+<ArgsTable of={ FvReviewList } />
