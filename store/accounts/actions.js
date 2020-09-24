@@ -25,7 +25,7 @@ export default {
     this.$repos.accounts.create(account).then((res) => {
       const partner = {
         name: res.name,
-        account_id: res.id
+        account_id: null
       }
       dispatch('partners/addToFlexup', partner, { root: true })
       commit('add', res)
