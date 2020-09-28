@@ -8,7 +8,7 @@
         item-key='id'
       )
         template(v-slot:item.product="{ item }")
-          v-row
+          v-row.productCol
             v-col(cols="4")
               v-img.img(
                 :src="item.image ? item.image : '/images/no-img.png'"
@@ -65,6 +65,10 @@ export default {
 .productName {
   font-weight: bolder;
 }
+.productCol {
+  display: flex !important;
+  align-items: center;
+}
 .quantityCol {
   display: flex !important;
   align-items: center;
@@ -73,6 +77,6 @@ export default {
   max-width: 120px;
 }
 .right {
-  padding-left: 5px;
+  padding-left: 15px;
 }
 </style>
