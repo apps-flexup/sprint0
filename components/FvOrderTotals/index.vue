@@ -58,7 +58,9 @@ export default {
         return Promise.resolve(accumulator)
       }, Promise.resolve({}))
       return res
-    },
+    }
+  },
+  computed: {
     preferredCurrency() {
       const res = this.$store.getters['accounts/preferredCurrency']
       return res
@@ -81,6 +83,7 @@ export default {
   },
   mounted() {
     console.log('Composant', this.$options.name)
+    this.$store.dispatch('accounts/get')
   }
 }
 </script>

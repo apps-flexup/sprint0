@@ -1,20 +1,23 @@
 <template lang="pug">
-.fv-price-field
-  fv-number-field(
-    :value="price"
+.fv-number-field
+  fv-text-field(
+    class="right-input"
+    :value="inputValue"
     :label="label"
     :outlined="outlined"
     :readonly="readonly"
     :clearable="clearable"
-    :suffix="currency ? currency.symbole : null"
-    @input="priceChanged"
+    :suffix="suffix"
+    :hideDetails="hideDetails"
+    :dense="dense"
+    @input="input"
     @click:outside="onClickOutside"
   )
 </template>
 
 <script>
 export default {
-  name: 'FvPriceField',
+  name: 'FvNumberField',
   props: {
     value: {
       type: String,
@@ -45,42 +48,53 @@ export default {
       default() {
         return true
       }
+    },
+    suffix: {
+      type: String,
+      default() {
+        return ''
+      }
+    },
+    hideDetails: {
+      type: Boolean,
+      default() {
+        return false
+      }
+    },
+    dense: {
+      type: Boolean,
+      default() {
+        return false
+      }
     }
   },
   data() {
     return {
-      price: this.value
-    }
-  },
-  computed: {
-    currency() {
-      const iso = this.$store.getters['accounts/preferredCurrency']
-      const res = this.$store.getters['currencies/findIso'](iso)
-      console.log('res: ', res)
-      return res
+      inputValue: this.value
     }
   },
   watch: {
     value() {
-      this.price = this.value
+      this.inputValue = this.value
     }
   },
   mounted() {
     console.log('Composant', this.$options.name)
-    this.$store.dispatch('accounts/get')
-    this.$store.dispatch('currencies/get')
   },
   methods: {
-    priceChanged(v) {
-      this.price = v
-      this.$emit('price:changed', this.price)
+    input(v) {
+      this.inputValue = v
+      this.$emit('input', this.inputValue)
     },
     onClickOutside() {
-      if (this.price) {
-        this.price = (Math.round(this.price * 100) / 100).toFixed(2)
-        this.priceChanged(this.price)
-      }
+      this.$emit('click:outside')
     }
   }
 }
 </script>
+
+<style scoped>
+.right-input >>> input {
+  text-align: right;
+}
+</style>

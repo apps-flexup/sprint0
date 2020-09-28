@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import AsyncComputed from 'vue-async-computed'
 import { addDecorator, addParameters } from '@storybook/vue'
 import { withKnobs } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
@@ -15,6 +16,8 @@ import axios from 'axios'
 import auth from '~/.storybook/auth'
 import "@mdi/font/css/materialdesignicons.css"
 import "@/.storybook/style/application_wrap.css"
+
+Vue.use(AsyncComputed)
 
 const vuetifyOptions = {
   theme: {

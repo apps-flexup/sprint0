@@ -5,7 +5,7 @@
     persistent
     max-width='50%'
   )
-    v-card
+    v-card.card
       v-card-title
         slot(name='title')
       v-card-text
@@ -31,3 +31,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.card {
+  overflow-x: hidden;
+}
+</style>

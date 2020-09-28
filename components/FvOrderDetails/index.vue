@@ -25,13 +25,13 @@
           )
     fv-order-line-list(
       :details="true"
-      :orderLines="lineOrder"
+      :orderLines="orderLines"
     )
     v-row
       v-spacer
       v-col(cols="7")
         fv-order-totals(
-          :orderLines="lineOrder"
+          :orderLines="orderLines"
         )
 </template>
 
@@ -58,7 +58,6 @@ export default {
       offerName: null,
       partnerId: null,
       orderDate: null,
-      lineOrder: [],
       orderLines: []
     }
   },
@@ -73,6 +72,9 @@ export default {
   },
   mounted() {
     console.log('Composant ', this.$options.name)
+    this.$store.dispatch('contracts/getStructures')
+    this.$store.dispatch('currencies/get')
+    this.$store.dispatch('accounts/get')
     this.fillFieldsWithOrder()
   },
   methods: {
@@ -91,7 +93,7 @@ export default {
       this.partnerId = this.order.partner_id
       this.structure = this.getStructureName(this.order.structure)
       this.orderDate = this.order.date
-      this.lineOrder = this.order.order_lines
+      this.orderLines = this.order.order_lines
     },
     clearOrder() {
       this.partnerId = null

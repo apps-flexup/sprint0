@@ -262,5 +262,15 @@
     "others": {
       "title": "Others"
     }
+  },
+  "shop": {
+    "buyer": {
+      "review": "review",
+      "products": {
+        "details": {
+          "title": "Customer's opinion"
+        }
+      }
+    }
   }
 }
