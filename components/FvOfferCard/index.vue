@@ -14,7 +14,7 @@
       div {{ article }}
     v-row(
       align='center'
-      class='mx-3'
+      class='mx-4'
       id='prix'
     )
       div.black--text {{ price }} €
