@@ -34,6 +34,11 @@ export default {
     const res = JSON.parse(JSON.stringify(state.orderLines))
     return res
   },
+  orderLinesCart(state) {
+    if (!state.orderLinesCart) return []
+    const res = JSON.parse(JSON.stringify(state.orderLinesCart))
+    return res
+  },
   etapes(state) {
     if (!state.etapes) return []
     const res = JSON.parse(JSON.stringify(state.etapes))

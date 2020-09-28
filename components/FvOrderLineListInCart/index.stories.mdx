@@ -1,0 +1,103 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import FvOrderLineListInCart from './index.vue'
+
+<Meta title='Pages/FvOrderLineListInCart' component={ FvOrderLineListInCart } />
+
+# FvOrderLineListInCart
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  components: { FvOrderLineListInCart },
+  data() {
+    return {
+      orderLines: [
+        {
+          offer_id: 1,
+          offer: {
+            en: 'Goat milk',
+            fr: 'Lait de chêvre'
+          },
+          status: 'draft',
+          quantity: 1,
+          pas: 1,
+          vat: 20,
+          dimension: 'volume',
+          unit: 'm³',
+          currency: 'EUR',
+          amount() {
+            const res = parseFloat(this.quantity) * parseFloat(this.price)
+            return res
+          },
+          price: 100
+        },
+        {
+          offer_id: 2,
+          offer: {
+            en: 'my beautifiul offer'
+          },
+          status: 'draft',
+          quantity: 1,
+          pas: 1,
+          vat: 10,
+          dimension: 'duration',
+          unit: 'day',
+          currency: 'EUR',
+          amount() {
+            const res = parseFloat(this.quantity) * parseFloat(this.price)
+            return res
+          },
+          price: 200,
+          image: '/images/FvGallery/productA.png'
+        },
+        {
+          offer_id: 3,
+          offer: {
+            en: '7 familly game',
+            fr: 'Le jeu des 7 familles'
+          },
+          status: 'draft',
+          quantity: 1,
+          pas: 1,
+          vat: 20,
+          dimension: null,
+          unit: 'h',
+          currency: 'EUR',
+          amount() {
+            const res = parseFloat(this.quantity) * parseFloat(this.price)
+            return res
+          },
+          price: 10
+        }
+      ]
+    }
+  },
+  methods: {
+    quantityMinus(orderLine) {
+      const i = this.orderLines.findIndex(
+        (element) => element.offer_id === orderLine.offer_id
+      )
+      const tmp = this.orderLines[i]
+      tmp.quantity -= tmp.pas
+      this.$set(this.orderLines, i, tmp)
+    },
+    quantityPlus(orderLine) {
+      const i = this.orderLines.findIndex(
+        (element) => element.offer_id === orderLine.offer_id
+      )
+      const tmp = this.orderLines[i]
+      tmp.quantity += tmp.pas
+      this.$set(this.orderLines, i, tmp)
+    }
+  },
+  template: `<FvOrderLineListInCart
+    :orderLines="orderLines"
+    @orderLinesInCart:quantityMinus="quantityMinus"
+    @orderLinesInCart:quantityPlus="quantityPlus"
+  >
+  </FvOrderLineListInCart>`
+}}</Story>
+</Canvas>
+
+## ArgsTable
+
+<ArgsTable of={ FvOrderLineListInCart } />

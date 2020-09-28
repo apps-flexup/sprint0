@@ -4,5 +4,6 @@ export default () => ({
   partners: [],
   offers: [],
   orders: [],
-  orderLines: []
+  orderLines: [],
+  orderLinesCart: []
 })

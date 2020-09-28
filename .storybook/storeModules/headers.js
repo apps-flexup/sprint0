@@ -205,6 +205,35 @@ const moduleHeaders = {
         }
       ]
       commit('setOrderLineHeaders', data)
+    },
+    getOrderLineCartHeaders({ commit }) {
+      const data = [
+        {
+          "align": "start",
+          "sortable": true,
+          "text": "shop.buyer.cart.orderLines.product",
+          "value": "product"
+        },
+        {
+          "align": "start",
+          "sortable": true,
+          "text": "shop.buyer.cart.orderLines.price",
+          "value": "price"
+        },
+        {
+          "align": "start",
+          "sortable": true,
+          "text": "shop.buyer.cart.orderLines.quantity",
+          "value": "quantity"
+        },
+        {
+          "align": "start",
+          "sortable": true,
+          "text": "shop.buyer.cart.orderLines.totalPrice",
+          "value": "totalPrice"
+        }
+      ]
+      commit('setOrderLineCartHeaders', data)
     }
   },
   getters: getters,

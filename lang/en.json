@@ -270,6 +270,14 @@
         "details": {
           "title": "Customer's opinion"
         }
+      },
+      "cart": {
+        "orderLines": {
+          "product": "Product",
+          "price": "Price",
+          "quantity": "Quantity",
+          "totalPrice": "Total price"
+        }
       }
     }
   }

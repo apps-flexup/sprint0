@@ -19,5 +19,8 @@ export default {
   },
   setOrderLineHeaders(state, items) {
     state.orderLines = items
+  },
+  setOrderLineCartHeaders(state, items) {
+    state.orderLinesCart = items
   }
 }
