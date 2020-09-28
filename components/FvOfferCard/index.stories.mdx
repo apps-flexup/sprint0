@@ -1,4 +1,7 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { number, boolean, color, text } from '@storybook/addon-knobs'
+import { options } from '@/.storybook/knobs_data/ratings'
+import { action } from '@storybook/addon-actions'
 import FvOfferCard from './index.vue'
 
 <Meta title='Molecules/FvOfferCard' component={ FvOfferCard } />
@@ -7,14 +10,30 @@ import FvOfferCard from './index.vue'
 
 <Canvas>
 <Story name='Common' height='150px'>{{
-  components: { FvOfferCard },
-  data() {
-    return {
-      search: ''
+  props: {
+    knobRating: {
+      default: number('Rating', 4, options, 'Props')
+    },
+    knobColor: {
+      default: color('Color', 'primary', 'Props')
+    },
+    knobTitle: {
+      default: text('Title', 'Article storybook', 'Props')
+    },
+    knobPrice: {
+      default: number('Price', 15, 'Props')
+    },
+    knobAvis: {
+      default: number('nbrAvis', 3, 'Props')
     }
   },
+  components: { FvOfferCard },
   template: `<FvOfferCard
-    :search="search"
+    :rating="knobRating"
+    :color="knobColor"
+    :article="knobTitle"
+    :price="knobPrice"
+    :nbrAvis="knobAvis"
   >
   </FvOfferCard>`
 }}</Story>

@@ -3,6 +3,7 @@
   v-card.rounded-lg(
     :max-width="max_width"
     :height="height_card"
+    :elevation="4"
   )
     v-img(
       :height='height_img'
@@ -10,19 +11,26 @@
       :src="img"
     )
     v-card-title
-      div Nom de larticle
+      div {{ article }}
     v-row(
-      align="center"
-      class="mx-3"
+      align='center'
+      class='mx-3'
+      id='prix'
     )
-      v-rating(
-        :value="rating"
+      div.black--text {{ price }} €
+      div.grey--text.ml-4 par unité
+    v-row(
+      align='center'
+      class='mx-4'
+    )
+      fv-rating(
+        :rating="rating"
         half-increments
         :dense="true"
         :readonly="true"
-        size="16"
+        :color="color"
       )
-      div.grey--text.ml-4 3 avis
+      div.grey--text.ml-4 {{nbrAvis}} avis
 </template>
 
 <script>
@@ -58,6 +66,30 @@ export default {
       default() {
         return 4.5
       }
+    },
+    article: {
+      type: String,
+      default() {
+        return 'Un chat'
+      }
+    },
+    price: {
+      type: Number,
+      default() {
+        return 15
+      }
+    },
+    nbrAvis: {
+      type: Number,
+      default() {
+        return 3
+      }
+    },
+    color: {
+      type: String,
+      default() {
+        return 'primary'
+      }
     }
   },
   mounted() {
@@ -66,3 +98,15 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.v-card__title {
+  padding: 5px 0 0 15px;
+}
+#prix {
+  padding-bottom: 7px;
+}
+#prix .black--text {
+  font-size: 1.165rem;
+}
+</style>
