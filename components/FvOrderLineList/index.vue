@@ -17,8 +17,9 @@
           div(v-else)
             fv-quantity-selector(
               :quantity="item.quantity"
-              @quantitySelector:minus="$emit('orderLines:quantityMinus', item)"
-              @quantitySelector:plus="$emit('orderLines:quantityPlus', item)"
+              @quantitySelector:minus="quantityChanged([item.quantity - 1], item)"
+              @quantitySelector:plus="quantityChanged([item.quantity + 1], item)"
+              @quantitySelector:inputChanged="quantityChanged(arguments, item)"
             )
         template(v-slot:item.price="{ item }")
           div(v-to-preferred-currency="{amount: item.price, currency: item.currency}")
@@ -75,11 +76,16 @@ export default {
   mounted() {
     console.log('Composant ', this.$options.name)
     this.$store.dispatch('headers/getOrderLineHeaders')
+    this.$store.dispatch('accounts/get')
   },
   methods: {
     vatChanged(values, item) {
       const vat = values[0]
       this.$emit('orderLines:vatChanged', item, vat)
+    },
+    quantityChanged(values, item) {
+      const quantity = values[0]
+      this.$emit('orderLines:quantityChanged', item, quantity)
     },
     deleteOrderLine(v) {
       this.$emit('orderLines:delete', v)
