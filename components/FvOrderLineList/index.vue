@@ -17,7 +17,6 @@
           div(v-else)
             fv-quantity-selector(
               :quantity="item.quantity"
-              class="quantity-selector-input"
               @quantitySelector:minus="$emit('orderLines:quantityMinus', item)"
               @quantitySelector:plus="$emit('orderLines:quantityPlus', item)"
             )
@@ -100,8 +99,5 @@ export default {
 }
 .vat-selector-input {
   width: 100px;
-}
-.quantity-selector-input {
-  max-width: 120px;
 }
 </style>

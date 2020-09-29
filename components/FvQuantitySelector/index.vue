@@ -54,4 +54,7 @@ export default {
 .centered-input input {
   text-align: center;
 }
+.fv-quantity-selector {
+  max-width: 120px;
+}
 </style>

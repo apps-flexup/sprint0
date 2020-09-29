@@ -22,7 +22,7 @@
           div(v-to-preferred-currency="{amount: item.price, currency: item.currency}")
         template(v-slot:item.quantity="{ item }")
           v-row.quantityCol
-            fv-quantity-selector.quantity-selector-input(
+            fv-quantity-selector(
               :quantity="item.quantity"
               @quantitySelector:minus="$emit('orderLinesInCart:quantityMinus', item)"
               @quantitySelector:plus="$emit('orderLinesInCart:quantityPlus', item)"
@@ -72,9 +72,6 @@ export default {
 .quantityCol {
   display: flex !important;
   align-items: center;
-}
-.quantity-selector-input {
-  max-width: 120px;
 }
 .right {
   padding-left: 15px;
