@@ -17,9 +17,7 @@
           div(v-else)
             fv-quantity-selector(
               :quantity="item.quantity"
-              @quantitySelector:minus="quantityChanged([item.quantity - 1], item)"
-              @quantitySelector:plus="quantityChanged([item.quantity + 1], item)"
-              @quantitySelector:inputChanged="quantityChanged(arguments, item)"
+              @quantitySelector:changed="quantityChanged(arguments, item)"
             )
         template(v-slot:item.price="{ item }")
           div(v-to-preferred-currency="{amount: item.price, currency: item.currency}")
