@@ -24,8 +24,7 @@
           v-row.quantityCol
             fv-quantity-selector(
               :quantity="item.quantity"
-              @quantitySelector:minus="$emit('orderLinesInCart:quantityMinus', item)"
-              @quantitySelector:plus="$emit('orderLinesInCart:quantityPlus', item)"
+              @quantitySelector:changed="quantityChanged(arguments, item)"
             )
             div.right(v-to-unit="item")
         template(v-slot:item.totalPrice="{ item }")
@@ -55,6 +54,12 @@ export default {
     this.$store.dispatch('accounts/get')
     this.$store.dispatch('headers/getOrderLineCartHeaders')
     console.log('Composant ', this.$options.name)
+  },
+  methods: {
+    quantityChanged(values, item) {
+      const quantity = values[0]
+      this.$emit('orderLinesInCart:quantityChanged', item, quantity)
+    }
   }
 }
 </script>

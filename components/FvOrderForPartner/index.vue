@@ -48,8 +48,7 @@
     fv-order-line-list(
       :orderLines="orderLines"
       @orderLines:delete="deleteOrderLine"
-      @orderLines:quantityMinus="quantityMinus"
-      @orderLines:quantityPlus="quantityPlus"
+      @orderLines:quantityChanged="quantityChanged"
       @orderLines:vatChanged="vatChanged"
     )
     v-row
@@ -147,20 +146,12 @@ export default {
       )
       this.$emit('order:orderLinesChanged', this.i, this.orderLines)
     },
-    quantityMinus(orderLine) {
+    quantityChanged(orderLine, quantity) {
       const i = this.orderLines.findIndex(
         (element) => element.offer_id === orderLine.offer_id
       )
       const tmp = this.orderLines[i]
-      tmp.quantity -= tmp.pas
-      this.$set(this.orderLines, i, tmp)
-    },
-    quantityPlus(orderLine) {
-      const i = this.orderLines.findIndex(
-        (element) => element.offer_id === orderLine.offer_id
-      )
-      const tmp = this.orderLines[i]
-      tmp.quantity += tmp.pas
+      tmp.quantity = quantity
       this.$set(this.orderLines, i, tmp)
     },
     vatChanged(orderLine, vat) {

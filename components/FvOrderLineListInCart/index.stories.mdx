@@ -72,27 +72,18 @@ import FvOrderLineListInCart from './index.vue'
     }
   },
   methods: {
-    quantityMinus(orderLine) {
+    quantityChanged(orderLine, quantity) {
       const i = this.orderLines.findIndex(
         (element) => element.offer_id === orderLine.offer_id
       )
       const tmp = this.orderLines[i]
-      tmp.quantity -= tmp.pas
-      this.$set(this.orderLines, i, tmp)
-    },
-    quantityPlus(orderLine) {
-      const i = this.orderLines.findIndex(
-        (element) => element.offer_id === orderLine.offer_id
-      )
-      const tmp = this.orderLines[i]
-      tmp.quantity += tmp.pas
+      tmp.quantity = quantity
       this.$set(this.orderLines, i, tmp)
     }
   },
   template: `<FvOrderLineListInCart
     :orderLines="orderLines"
-    @orderLinesInCart:quantityMinus="quantityMinus"
-    @orderLinesInCart:quantityPlus="quantityPlus"
+    @orderLinesInCart:quantityChanged="quantityChanged"
   >
   </FvOrderLineListInCart>`
 }}</Story>

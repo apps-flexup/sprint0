@@ -70,8 +70,19 @@ import FvOrderLineList from './index.vue'
       ]
     }
   },
+  methods: {
+    quantityChanged(orderLine, quantity) {
+      const i = this.orderLines.findIndex(
+        (element) => element.offer_id === orderLine.offer_id
+      )
+      const tmp = this.orderLines[i]
+      tmp.quantity = quantity
+      this.$set(this.orderLines, i, tmp)
+    }
+  },
   template: `<FvOrderLineList
     :orderLines="orderLines"
+    @orderLines:quantityChanged="quantityChanged"
   >
   </FvOrderLineList>`
 }}</Story>
