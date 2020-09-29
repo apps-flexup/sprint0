@@ -1347,6 +1347,32 @@
       "value": "commandes.length"
     }
   ],
+  "order-line-cart-headers": [
+    {
+      "align": "start",
+      "sortable": true,
+      "text": "shop.buyer.cart.orderLines.product",
+      "value": "product"
+    },
+    {
+      "align": "start",
+      "sortable": true,
+      "text": "shop.buyer.cart.orderLines.price",
+      "value": "price"
+    },
+    {
+      "align": "start",
+      "sortable": true,
+      "text": "shop.buyer.cart.orderLines.quantity",
+      "value": "quantity"
+    },
+    {
+      "align": "start",
+      "sortable": true,
+      "text": "shop.buyer.cart.orderLines.totalPrice",
+      "value": "totalPrice"
+    }
+  ],
   "contract-steps": [
     {
       "composant": "fv-contract-step-detail",

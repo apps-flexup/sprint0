@@ -272,6 +272,14 @@
         "details": {
           "title": "L'avis des clients"
         }
+      },
+      "cart": {
+        "orderLines": {
+          "product": "Produit",
+          "price": "Prix",
+          "quantity": "Quantité",
+          "totalPrice": "Prix total"
+        }
       }
     }
   }
