@@ -130,6 +130,9 @@
         "elasticity": "Elasticity",
         "currency": "Currency",
         "vat": "VAT"
+      },
+      "metrics": {
+        "opinion": "no opinion | one opinion | {n} opinions"
       }
     },
     "orders": {

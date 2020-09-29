@@ -131,6 +131,9 @@
         "price": "Prix",
         "currency": "Devise",
         "vat": "TVA"
+      },
+      "metrics": {
+        "opinion": "aucun avis | un avis | {n} avis"
       }
     },
     "orders": {

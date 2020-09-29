@@ -10,12 +10,18 @@
       :width='max_width'
       :src="img"
     )
-
+    fv-icon(
+      icon='mdi-heart-outline'
+      color='#ffffff'
+      size='large'
+      id='heart'
+    )
     v-row(
       class='mx-4'
     )
       p.title {{ article }}
       div.prix
+        // div(v-to-preferred-currency="{amount: price, currency: currency}")
         div.black--text {{ price }} €
         div.grey--text.ml-4 par unité
 
@@ -27,15 +33,17 @@
           :readonly="true"
           :color="color"
         )
-        div.grey--text.ml-3 {{nbrAvis}} avis
-        fv-icon.ml-12(
-          icon='mdi-magnify'
-          id='look'
-        )
-        fv-icon.ml-3(
-          icon='mdi-basket-outline'
-          id='look'
-        )
+        div.grey--text.ml-3
+          | {{ $tc('forms.offers.metrics.opinion', nbrAvis) }}
+        div.button
+          fv-icon(
+            icon='mdi-magnify'
+            id='look'
+          )
+          fv-icon.ml-2(
+            icon='mdi-basket-outline'
+            id='look'
+          )
 </template>
 
 <script>
@@ -116,6 +124,13 @@ export default {
   display: flex;
   position: absolute;
   bottom: 2%;
+  width: 70%;
+  align-items: center;
+}
+.button {
+  position: absolute;
+  display: flex;
+  left: 100%;
 }
 .v-card:hover {
   transition: 0.5s;
@@ -123,5 +138,20 @@ export default {
 }
 .v-card {
   transition: 0.5s;
+}
+#look {
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
+#heart {
+  position: absolute;
+  top: 2%;
+  right: 3%;
+}
+.v-card:hover >>> #look {
+  opacity: 1;
+  visibility: visible;
+  transition: 0.3s;
 }
 </style>
