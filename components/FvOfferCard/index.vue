@@ -2,35 +2,40 @@
 .fv-offer-card
   v-card.rounded-lg(
     :max-width="max_width"
-    :height="height_card"
-    :elevation="4"
+    :height="370"
+    :elevation="2"
   )
     v-img(
       :height='height_img'
       :width='max_width'
       :src="img"
     )
-    v-card-title
-      div {{ article }}
+
     v-row(
-      align='center'
-      class='mx-4'
-      id='prix'
-    )
-      div.black--text {{ price }} €
-      div.grey--text.ml-4 par unité
-    v-row(
-      align='center'
       class='mx-4'
     )
-      fv-rating(
-        :rating="rating"
-        half-increments
-        :dense="true"
-        :readonly="true"
-        :color="color"
-      )
-      div.grey--text.ml-4 {{nbrAvis}} avis
+      p.title {{ article }}
+      div.prix
+        div.black--text {{ price }} €
+        div.grey--text.ml-4 par unité
+
+      div.rating
+        fv-rating(
+          :rating="rating"
+          half-increments
+          :dense="true"
+          :readonly="true"
+          :color="color"
+        )
+        div.grey--text.ml-3 {{nbrAvis}} avis
+        fv-icon.ml-12(
+          icon='mdi-magnify'
+          id='look'
+        )
+        fv-icon.ml-3(
+          icon='mdi-basket-outline'
+          id='look'
+        )
 </template>
 
 <script>
@@ -46,19 +51,13 @@ export default {
     max_width: {
       type: Number,
       default() {
-        return 300
+        return 285
       }
     },
     height_img: {
       type: Number,
       default() {
         return 250
-      }
-    },
-    height_card: {
-      type: Number,
-      default() {
-        return 350
       }
     },
     rating: {
@@ -100,13 +99,29 @@ export default {
 </script>
 
 <style scoped>
-.v-card__title {
-  padding: 5px 0 0 15px;
+.title {
+  width: 100%;
+  margin: 7px 0 3px 0;
+  line-height: 1.5rem;
+  font-size: 1.2rem !important;
 }
-#prix {
-  padding-bottom: 7px;
+.prix {
+  width: 100%;
+  display: flex;
 }
-#prix .black--text {
-  font-size: 1.165rem;
+.prix .black--text {
+  font-size: 1.115rem;
+}
+.rating {
+  display: flex;
+  position: absolute;
+  bottom: 2%;
+}
+.v-card:hover {
+  transition: 0.5s;
+  box-shadow: 0px 3px 20px -3px !important;
+}
+.v-card {
+  transition: 0.5s;
 }
 </style>
