@@ -31,6 +31,9 @@ import FvQuantitySelector from './index.vue'
     },
     minus() {
       this.quantity -= 1
+    },
+    inputChanged(v) {
+      this.quantity = v
     }
   },
   template: `<FvQuantitySelector
@@ -38,6 +41,7 @@ import FvQuantitySelector from './index.vue'
     :dense="knobDense"
     @quantitySelector:plus="plus"
     @quantitySelector:minus="minus"
+    @quantitySelector:inputChanged="inputChanged"
   >
   </FvQuantitySelector>`
 }}</Story>

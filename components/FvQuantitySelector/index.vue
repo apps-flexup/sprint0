@@ -6,6 +6,7 @@
     :hideDetails="true"
     :dense="dense"
     class='centered-input'
+    @input="input"
   )
     template(v-slot:prepend-inner)
         fv-icon(
@@ -45,6 +46,9 @@ export default {
     },
     plus() {
       this.$emit('quantitySelector:plus')
+    },
+    input(v) {
+      this.$emit('quantitySelector:inputChanged', parseInt(v))
     }
   }
 }
