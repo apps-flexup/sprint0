@@ -4,6 +4,7 @@
     :max-width="max_width"
     :height="370"
     :elevation="2"
+    @click="clicked"
   )
     v-img(
       :height='height_img'
@@ -21,17 +22,15 @@
     )
       p.title {{ article }}
       div.prix
-        // div(v-to-preferred-currency="{amount: price, currency: currency}")
-        div.black--text {{ price }} €
-        div.grey--text.ml-4 par unité
-
+        div(v-to-preferred-currency="{amount: price, currency: preferredCurrency}")
+        // div.mx-1 /
+        div.ml-2(v-to-unit="{ unit: unit, dimension: dimension}" id='unit')
       div.rating
         fv-rating(
           :rating="rating"
           half-increments
           :dense="true"
           :readonly="true"
-          :color="color"
         )
         div.grey--text.ml-3
           | {{ $tc('forms.offers.metrics.opinion', nbrAvis) }}
@@ -59,49 +58,67 @@ export default {
     max_width: {
       type: Number,
       default() {
-        return 285
+        return 300
       }
     },
     height_img: {
       type: Number,
       default() {
-        return 250
+        return 260
       }
     },
     rating: {
       type: Number,
       default() {
-        return 4.5
+        return null
       }
     },
     article: {
       type: String,
       default() {
-        return 'Un chat'
+        return null
       }
     },
     price: {
       type: Number,
       default() {
-        return 15
+        return null
       }
     },
     nbrAvis: {
       type: Number,
       default() {
-        return 3
+        return null
       }
     },
-    color: {
+    unit: {
       type: String,
       default() {
-        return 'primary'
+        return null
       }
+    },
+    dimension: {
+      type: String,
+      default() {
+        return null
+      }
+    }
+  },
+  computed: {
+    preferredCurrency() {
+      const res = this.$store.getters['accounts/preferredCurrency']
+      return res
     }
   },
   mounted() {
     console.log('Composant ', this.$options.name)
-    this.$store.dispatch('offers/getAll')
+    this.$store.dispatch('offers/get')
+    this.$store.dispatch('accounts/get')
+  },
+  methods: {
+    clicked() {
+      this.$emit('icon:clicked')
+    }
   }
 }
 </script>
@@ -109,16 +126,15 @@ export default {
 <style scoped>
 .title {
   width: 100%;
-  margin: 7px 0 3px 0;
+  margin: 7px 0 0 0;
   line-height: 1.5rem;
-  font-size: 1.2rem !important;
+  font-size: 1.18rem !important;
 }
 .prix {
   width: 100%;
   display: flex;
-}
-.prix .black--text {
-  font-size: 1.115rem;
+  font-size: 1.1rem;
+  align-items: center;
 }
 .rating {
   display: flex;
@@ -131,6 +147,9 @@ export default {
   position: absolute;
   display: flex;
   left: 100%;
+}
+#unit {
+  font-size: 0.9rem;
 }
 .v-card:hover {
   transition: 0.5s;
