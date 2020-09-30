@@ -208,6 +208,7 @@
     "orderLines": {
       "offer": "Offer",
       "quantity": "Quantity",
+      "unit": "Unit",
       "price": "Price",
       "total": "Total",
       "vat": "VAT",

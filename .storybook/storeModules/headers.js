@@ -180,6 +180,12 @@ const moduleHeaders = {
           value: "quantity"
         },
         {
+          align: "start",
+          sortable: true,
+          text: "headers.orderLines.unit",
+          value: "unit"
+        },
+        {
           align: "end",
           sortable: true,
           text: "headers.orderLines.price",
