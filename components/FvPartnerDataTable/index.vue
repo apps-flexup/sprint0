@@ -47,7 +47,7 @@ export default {
   mounted() {
     console.log('Composant ', this.$options.name)
     this.$store.dispatch('headers/getPartnerHeaders')
-    this.$store.dispatch('partners/get')
+    this.$store.dispatch('partners/getAll')
     this.$store.dispatch('countries/get')
     this.$store.dispatch('contracts/getLegalStructures')
   },
