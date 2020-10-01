@@ -32,6 +32,15 @@ import FvOfferCard from './index.vue'
     },
     knobImage: {
       default: select('Image', imageAvailable, defaultImage, 'Props')
+    },
+    knobWidth: {
+      default: number('Width', 300, {}, 'Props')
+    },
+    knobHeightImg: {
+      default: number('height img', 260, {}, 'Props')
+    },
+    knobHeightCard: {
+      default: number('height card', 370, {}, 'Props')
     }
   },
   components: { FvOfferCard },
@@ -46,6 +55,9 @@ import FvOfferCard from './index.vue'
     :unit="knobUnit"
     :img="knobImage"
     :dimension="knobDimension"
+    :width="knobWidth"
+    :height_img="knobHeightImg"
+    :height="knobHeightCard"
     @icon:clicked="clicked"
   >
   </FvOfferCard>`

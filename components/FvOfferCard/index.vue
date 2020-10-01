@@ -1,14 +1,14 @@
 <template lang="pug">
 .fv-offer-card
   v-card.rounded-lg(
-    :max-width="max_width"
-    :height="370"
+    :width="width"
+    :height="height"
     :elevation="2"
     @click="clicked"
   )
     v-img(
       :height='height_img'
-      :width='max_width'
+      :width='width'
       :src="img"
     )
     fv-icon(
@@ -55,7 +55,7 @@ export default {
         return 'https://lemagduchat.ouest-france.fr/images/dossiers/2020-02/chat-sauvage-064614.jpg'
       }
     },
-    max_width: {
+    width: {
       type: Number,
       default() {
         return 300
@@ -65,6 +65,12 @@ export default {
       type: Number,
       default() {
         return 260
+      }
+    },
+    height: {
+      type: Number,
+      default() {
+        return 370
       }
     },
     rating: {
