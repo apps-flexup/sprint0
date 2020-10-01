@@ -127,40 +127,34 @@ const moduleHeaders = {
     getOrderHeaders({ commit }) {
       const data = [
         {
-          align: "start",
-          sortable: true,
-          text: "headers.orders.date",
-          value: "date"
+          "align": "start",
+          "sortable": true,
+          "text": "headers.orders.date",
+          "value": "date"
         },
         {
-          align: "start",
-          sortable: true,
-          text: "headers.orders.amount",
-          value: "amount"
+          "align": "start",
+          "sortable": true,
+          "text": "headers.orders.amount",
+          "value": "amount"
         },
         {
-          align: "start",
-          sortable: true,
-          text: "headers.orders.currency",
-          value: "currency"
+          "align": "start",
+          "sortable": true,
+          "text": "headers.orders.label",
+          "value": "label"
         },
         {
-          align: "start",
-          sortable: true,
-          text: "headers.orders.label",
-          value: "label"
+          "align": "start",
+          "sortable": true,
+          "text": "headers.orders.structure",
+          "value": "structure"
         },
         {
-          align: "start",
-          sortable: true,
-          text: "headers.orders.structure",
-          value: "structure"
-        },
-        {
-          align: "start",
-          sortable: true,
-          text: "headers.orders.status",
-          value: "status"
+          "align": "start",
+          "sortable": true,
+          "text": "headers.orders.status",
+          "value": "status"
         }
       ]
       commit('setOrderHeaders', data)

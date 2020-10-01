@@ -139,11 +139,11 @@ const activeAccount = {
     res.push({ text: 'headers.actions', value: 'actions', sortable: false })
     return res
   },
-  // headersOrders() {
-  //   const res = ctx.store.getters['headers/orders']
-  //   res.push({ text: 'headers.actions', value: 'actions', sortable: false })
-  //   return res
-  // },
+  headersOrders() {
+    const res = store.getters['headers/orders']
+    res.push({ text: 'headers.actions', value: 'actions', sortable: false })
+    return res
+  },
   headersOrderLines() {
     const res = store.getters['headers/orderLines']
     res.push({ text: 'headers.actions', value: 'actions', sortable: false })
