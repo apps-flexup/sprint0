@@ -20,7 +20,9 @@
               @quantitySelector:changed="quantityChanged(arguments, item)"
             )
         template(v-slot:item.price="{ item }")
-          div(v-to-preferred-currency="{amount: item.price, currency: item.currency}")
+          v-row.priceCol
+            div(v-to-preferred-currency="{amount: item.price, currency: item.currency}")
+            div.right / {{ item.unit }}
         template(v-slot:item.total="{ item }")
           div(v-to-preferred-currency="{amount: item.price * item.quantity, currency: item.currency}")
         template(v-slot:item.vat='{ item }')
@@ -103,5 +105,12 @@ export default {
 }
 .vat-selector-input {
   width: 100px;
+}
+.priceCol {
+  display: flex !important;
+  align-items: center;
+}
+.right {
+  padding-left: 5px;
 }
 </style>
