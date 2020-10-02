@@ -4,8 +4,10 @@
     :width="width"
     :height="height"
     :elevation="2"
-    @click="clicked"
   )
+    div.clickCard(
+      @click="clickedCard"
+    )
     v-img(
       :height='height_img'
       :width='width'
@@ -16,6 +18,7 @@
       color='#ffffff'
       size='large'
       id='heart'
+      @icon:clicked='clickedHeart'
     )
     v-row(
       class='mx-4'
@@ -38,10 +41,12 @@
           fv-icon(
             icon='mdi-magnify'
             id='look'
+            @icon:clicked='clickedLook'
           )
           fv-icon.ml-2(
             icon='mdi-basket-outline'
             id='look'
+            @icon:clicked='clickedShop'
           )
 </template>
 
@@ -122,8 +127,17 @@ export default {
     this.$store.dispatch('accounts/get')
   },
   methods: {
-    clicked() {
-      this.$emit('icon:clicked')
+    clickedCard() {
+      this.$emit('offerCard:clicked')
+    },
+    clickedHeart() {
+      this.$emit('iconHeart:clicked')
+    },
+    clickedLook() {
+      this.$emit('iconLook:clicked')
+    },
+    clickedShop() {
+      this.$emit('iconShop:clicked')
     }
   }
 }
@@ -168,15 +182,24 @@ export default {
   opacity: 0;
   visibility: hidden;
   transition: 0.3s;
+  z-index: 2;
 }
 #heart {
   position: absolute;
   top: 2%;
   right: 3%;
+  z-index: 2;
 }
 .v-card:hover >>> #look {
   opacity: 1;
   visibility: visible;
   transition: 0.3s;
+}
+.clickCard {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
 }
 </style>

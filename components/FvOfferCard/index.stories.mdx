@@ -1,6 +1,7 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
 import { number, boolean, text, select } from '@storybook/addon-knobs'
 import { imageAvailable, defaultImage} from '@/.storybook/knobs_data/imageAvailable'
+import { unitsAvailable, defaultUnit, dimensionsAvailable, defaultDimension} from '@/.storybook/knobs_data/unitsAvailable'
 import { options } from '@/.storybook/knobs_data/ratings'
 import { action } from '@storybook/addon-actions'
 import FvOfferCard from './index.vue'
@@ -25,10 +26,10 @@ import FvOfferCard from './index.vue'
       default: number('nbrAvis', 3, {}, 'Props')
     },
     knobUnit: {
-      default: text('Unit', 'Gb/s', 'Props')
+      default: select('Unit', unitsAvailable, defaultUnit, 'Props')
     },
     knobDimension: {
-      default: text('Dimension', 'bandswidth', 'Props')
+      default: select('DImù', dimensionsAvailable, defaultDimension, 'Props')
     },
     knobImage: {
       default: select('Image', imageAvailable, defaultImage, 'Props')
@@ -45,7 +46,10 @@ import FvOfferCard from './index.vue'
   },
   components: { FvOfferCard },
   methods: {
-    clicked: action('click')
+    clickedHeart: action('click heart'),
+    clickedCard: action('card click'),
+    clickedShop: action('shop click'),
+    clickedLook: action('look click')
   },
   template: `<FvOfferCard
     :rating="knobRating"
@@ -53,12 +57,15 @@ import FvOfferCard from './index.vue'
     :price="knobPrice"
     :nbrAvis="knobAvis"
     :unit="knobUnit"
-    :img="knobImage"
     :dimension="knobDimension"
+    :img="knobImage"
     :width="knobWidth"
     :height_img="knobHeightImg"
     :height="knobHeightCard"
-    @icon:clicked="clicked"
+    @iconHeart:clicked="clickedHeart"
+    @iconLook:clicked="clickedLook"
+    @iconShop:clicked="clickedShop"
+    @offerCard:clicked="clickedCard"
   >
   </FvOfferCard>`
 }}</Story>
