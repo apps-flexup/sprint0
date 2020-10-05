@@ -26,7 +26,6 @@
       p.title {{ article }}
       div.prix
         div(v-to-preferred-currency="{amount: price, currency: preferredCurrency}")
-        // div.mx-1 /
         div.ml-2(v-to-unit="{ unit: unit, dimension: dimension}" id='unit')
       div.rating
         fv-rating(
@@ -57,7 +56,7 @@ export default {
     img: {
       type: String,
       default() {
-        return 'https://lemagduchat.ouest-france.fr/images/dossiers/2020-02/chat-sauvage-064614.jpg'
+        return null
       }
     },
     width: {
@@ -131,13 +130,13 @@ export default {
       this.$emit('offerCard:clicked')
     },
     clickedHeart() {
-      this.$emit('iconHeart:clicked')
+      this.$emit('offerCard:heartClicked')
     },
     clickedLook() {
-      this.$emit('iconLook:clicked')
+      this.$emit('offerCard:lookClicked')
     },
     clickedShop() {
-      this.$emit('iconShop:clicked')
+      this.$emit('offerCard:shopClicked')
     }
   }
 }
@@ -169,7 +168,8 @@ export default {
   left: 100%;
 }
 #unit {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  opacity: 0.7;
 }
 .v-card:hover {
   transition: 0.5s;

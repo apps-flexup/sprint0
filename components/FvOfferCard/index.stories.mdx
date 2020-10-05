@@ -46,7 +46,7 @@ import FvOfferCard from './index.vue'
   },
   components: { FvOfferCard },
   methods: {
-    clickedHeart: action('click heart'),
+    clickedHeart: action('heart click'),
     clickedCard: action('card click'),
     clickedShop: action('shop click'),
     clickedLook: action('look click')
@@ -62,9 +62,9 @@ import FvOfferCard from './index.vue'
     :width="knobWidth"
     :height_img="knobHeightImg"
     :height="knobHeightCard"
-    @iconHeart:clicked="clickedHeart"
-    @iconLook:clicked="clickedLook"
-    @iconShop:clicked="clickedShop"
+    @offerCard:heartClicked="clickedHeart"
+    @offerCard:lookClicked="clickedLook"
+    @offerCard:shopClicked="clickedShop"
     @offerCard:clicked="clickedCard"
   >
   </FvOfferCard>`
