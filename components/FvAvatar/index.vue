@@ -1,7 +1,11 @@
 <template lang="pug">
 .fv-avatar
-  v-list-item-avatar
-    img(:src='avatar')
+  v-avatar(
+    :size="size"
+  )
+    img(
+      :src='avatar'
+    )
 </template>
 
 <script>
@@ -12,6 +16,12 @@ export default {
       type: String,
       default() {
         return ''
+      }
+    },
+    size: {
+      type: Number,
+      default() {
+        return 48
       }
     }
   },
