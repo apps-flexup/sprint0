@@ -18,6 +18,7 @@ export default (ctx, inject) => {
     currencies: repo('currencies'),
     legalStructure: repo('legal-structure'),
     menu: repo('menu'),
+    userMenu: repo('userMenu'),
     offerHeaders: repo('offer-headers'),
     offers: repo('offers'),
     orderHeaders: repo('order-headers'),

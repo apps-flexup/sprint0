@@ -13398,13 +13398,13 @@
   ],
   "menu": [
     {
-      "active": true,
+      "active": false,
       "icon": "mdi-apps",
       "title": "menu.home",
       "to": "/"
     },
     {
-      "active": true,
+      "active": false,
       "icon": "mdi-store-outline",
       "title": "menu.orders",
       "to": "/orders"
@@ -13416,13 +13416,13 @@
       "to": "/contracts"
     },
     {
-      "active": true,
+      "active": false,
       "icon": "mdi-flask-empty",
       "title": "menu.products",
       "to": "/products"
     },
     {
-      "active": true,
+      "active": false,
       "icon": "mdi-barcode",
       "title": "menu.offers",
       "to": "/offers"
@@ -13434,7 +13434,7 @@
       "to": "/contacts"
     },
     {
-      "active": true,
+      "active": false,
       "icon": "mdi-tag",
       "title": "menu.partners",
       "to": "/partners"
@@ -13453,9 +13453,29 @@
     },
     {
       "active": true,
-      "icon": "mdi-tune-vertical-variant",
+      "icon": "mdi-cog-outline",
       "title": "menu.settings",
-      "to": "/settings"
+      "to": "#"
+    }
+  ],
+  "userMenu": [
+    {
+      "active": true,
+      "icon": "mdi-account-circle-outline",
+      "title": "userMenu.data",
+      "to": "#"
+    },
+    {
+      "active": true,
+      "icon": "mdi-shield-lock-outline",
+      "title": "userMenu.security",
+      "to": "#"
+    },
+    {
+      "active": true,
+      "icon": "mdi-account-switch-outline",
+      "title": "userMenu.management",
+      "to": "#"
     }
   ],
   "offer-headers": [

@@ -8,5 +8,10 @@ export default {
     if (!state.menu) return []
     const res = JSON.parse(JSON.stringify(state.menu))
     return res.filter((m) => m.active)
+  },
+  userMenu(state) {
+    if (!state.userMenu) return []
+    const res = JSON.parse(JSON.stringify(state.userMenu))
+    return res.filter((m) => m.active)
   }
 }

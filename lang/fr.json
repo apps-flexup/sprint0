@@ -165,7 +165,12 @@
     "partners": "Partenaires",
     "documents": "Documents",
     "dashboard": "Tableau de bord",
-    "settings": "Préférences"
+    "settings": "Paramètres"
+  },
+  "userMenu": {
+    "data": "Données personnelles",
+    "security": "Connexion & sécurité",
+    "management": "Gestion des comptes"
   },
   "buttons": {
     "create": {
