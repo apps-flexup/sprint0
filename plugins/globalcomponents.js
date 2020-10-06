@@ -2,6 +2,7 @@ import Vue from 'vue'
 // Importation des composants utilitaires
 import FvAccount from '@/components/FvAccount'
 import FvAccountAvatar from '@/components/FvAccountAvatar'
+import FvAccountInfo from '@/components/FvAccountInfo'
 import FvAutocomplete from '@/components/FvAutocomplete'
 import FvAvatar from '@/components/FvAvatar'
 import FvAvatarWithName from '@/components/FvAvatarWithName'
@@ -115,6 +116,7 @@ import FvOrderTotals from '~/components/FvOrderTotals'
 // Déclarations composants utilitaires
 Vue.component('fv-account', FvAccount)
 Vue.component('fv-account-avatar', FvAccountAvatar)
+Vue.component('fv-account-info', FvAccountInfo)
 Vue.component('fv-autocomplete', FvAutocomplete)
 Vue.component('fv-avatar', FvAvatar)
 Vue.component('fv-avatar-with-name', FvAvatarWithName)
