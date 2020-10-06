@@ -1,7 +1,7 @@
 <template lang="pug">
 .fv-avatar-with-name
     fv-avatar(
-      :avatar="avatar"
+      :avatar="computedAvatar"
     )
     div.right
       div.name {{ name }} {{ familyName }}
@@ -29,10 +29,17 @@ export default {
       default() {
         return null
       }
+    },
+    avatar: {
+      type: String,
+      default() {
+        return null
+      }
     }
   },
   asyncComputed: {
-    async avatar() {
+    async computedAvatar() {
+      if (this.avatar) return this.avatar
       let url = 'https://eu.ui-avatars.com/api/?'
       url += 'name=' + this.name
       if (this.familyName) {

@@ -14,8 +14,7 @@
           v-on='on'
         )
           | {{ $auth.user.preferred_username }}
-      v-list
-        fv-list-accounts
+      fv-list-accounts
 </template>
 
 <script>

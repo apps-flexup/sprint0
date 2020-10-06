@@ -1,4 +1,6 @@
 {
+  "user": "User",
+  "activeAccount": "Active account",
   "frequences": {
     "periods": {
       "days": "day",

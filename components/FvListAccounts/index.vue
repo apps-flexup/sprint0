@@ -1,20 +1,28 @@
 <template lang="pug">
 .fv-list-accounts
-  v-list-item(
-    v-for='account in accounts'
-    :key='account.id'
-    @click.stop="setCurrentAccount(account)"
-  )
-    fv-account(
-      :avatar="account.avatar"
-      :name="account.name"
+  v-list
+    v-list-item
+      fv-user-info
+    v-divider
+    v-list-item
+      fv-account-info
+    v-divider
+    v-list-item Autres comptes:
+    v-list-item(
+      v-for='account in accounts'
+      :key='account.id'
+      @click.stop="setCurrentAccount(account)"
     )
-  v-list-item
-    v-list-item-content
-      v-list-item-title
-        fv-logout-button(
-          @logoutButton:clicked="logout"
-        )
+      fv-account(
+        :avatar="account.avatar"
+        :name="account.name"
+      )
+    v-list-item creer compte
+    v-divider
+    v-list-item gerer mes comptes
+    v-divider
+    v-list-item aide
+    v-list-item deconnexion
 </template>
 
 <script>

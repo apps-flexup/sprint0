@@ -2,7 +2,7 @@
 .fv-account
   fv-avatar(
     :avatar="avatar"
-    size="24"
+    :size="size"
   )
   div.right
     | {{ name }}
@@ -22,6 +22,12 @@ export default {
       type: String,
       default() {
         return ''
+      }
+    },
+    size: {
+      type: Number,
+      default() {
+        return 24
       }
     }
   },
