@@ -172,6 +172,11 @@
     "security": "Connexion & sécurité",
     "management": "Gestion des comptes"
   },
+  "accountMenu": {
+    "information": "Information du compte",
+    "variant": "Préférences",
+    "members": "Membres"
+  },
   "buttons": {
     "create": {
       "product": "CRÉER PRODUIT",

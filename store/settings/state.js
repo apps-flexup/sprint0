@@ -1,5 +1,6 @@
 export default () => ({
   items: [],
   menu: [],
-  userMenu: []
+  userMenu: [],
+  accountMenu: []
 })

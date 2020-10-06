@@ -7,5 +7,8 @@ export default {
   },
   setUserMenu(state, items) {
     state.userMenu = items
+  },
+  setAccountMenu(state, items) {
+    state.accountMenu = items
   }
 }

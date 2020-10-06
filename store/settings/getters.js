@@ -13,5 +13,10 @@ export default {
     if (!state.userMenu) return []
     const res = JSON.parse(JSON.stringify(state.userMenu))
     return res.filter((m) => m.active)
+  },
+  accountMenu(state) {
+    if (!state.accountMenu) return []
+    const res = JSON.parse(JSON.stringify(state.accountMenu))
+    return res.filter((m) => m.active)
   }
 }

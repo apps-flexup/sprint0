@@ -13478,6 +13478,26 @@
       "to": "#"
     }
   ],
+  "accountMenu": [
+    {
+      "active": true,
+      "icon": "mdi-information-outline",
+      "title": "accountMenu.information",
+      "to": "#"
+    },
+    {
+      "active": true,
+      "icon": "mdi-tune-vertical-variant",
+      "title": "accountMenu.variant",
+      "to": "/settings"
+    },
+    {
+      "active": true,
+      "icon": "mdi-account-group-outline",
+      "title": "accountMenu.members",
+      "to": "#"
+    }
+  ],
   "offer-headers": [
     {
       "align": "start",

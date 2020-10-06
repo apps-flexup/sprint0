@@ -19,6 +19,7 @@ export default (ctx, inject) => {
     legalStructure: repo('legal-structure'),
     menu: repo('menu'),
     userMenu: repo('userMenu'),
+    accountMenu: repo('accountMenu'),
     offerHeaders: repo('offer-headers'),
     offers: repo('offers'),
     orderHeaders: repo('order-headers'),

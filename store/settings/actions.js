@@ -8,5 +8,10 @@ export default {
   },
   getUserMenu({ commit }) {
     this.$repos.userMenu.index().then((data) => commit('setUserMenu', data))
+  },
+  getAccountMenu({ commit }) {
+    this.$repos.accountMenu
+      .index()
+      .then((data) => commit('setAccountMenu', data))
   }
 }

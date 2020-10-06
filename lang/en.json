@@ -171,6 +171,11 @@
     "security": "Security & connection",
     "management": "Account management"
   },
+  "accountMenu": {
+    "information": "account information",
+    "variant": "Preferences",
+    "members": "Members"
+  },
   "buttons": {
     "create" : {
       "product": "CREATE PRODUCT",
