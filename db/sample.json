@@ -13429,9 +13429,9 @@
     },
     {
       "active": true,
-      "icon": "mdi-account-group",
+      "icon": "mdi-email-outline",
       "title": "menu.contacts",
-      "to": "/contacts"
+      "to": "###############"
     },
     {
       "active": false,
@@ -13495,7 +13495,7 @@
       "active": true,
       "icon": "mdi-account-group-outline",
       "title": "accountMenu.members",
-      "to": "######"
+      "to": "/partners"
     }
   ],
   "buyerMenu": [
@@ -13528,6 +13528,44 @@
       "icon": "mdi-credit-card-multiple-outline",
       "title": "buyerMenu.payments",
       "to": "##########"
+    }
+  ],
+  "sellerMenu": [
+    {
+      "active": true,
+      "icon": "mdi-view-dashboard-outline",
+      "title": "sellerMenu.dashboard",
+      "to": "/dashboard"
+    },
+    {
+      "active": true,
+      "icon": "mdi-inbox-arrow-down-outline",
+      "title": "buyerMenu.orders",
+      "to": "/orders"
+    },
+    {
+      "active": true,
+      "icon": "mdi-package-variant-closed",
+      "title": "sellerMenu.products",
+      "to": "/products"
+    },
+    {
+      "active": true,
+      "icon": "mdi-tag-multiple-outline",
+      "title": "sellerMenu.offers",
+      "to": "/offers"
+    },
+    {
+      "active": true,
+      "icon": "mdi-map-marker-outline",
+      "title": "buyerMenu.deliveries",
+      "to": "#############"
+    },
+    {
+      "active": true,
+      "icon": "mdi-credit-card-multiple-outline",
+      "title": "sellerMenu.payments",
+      "to": "################"
     }
   ],
   "offer-headers": [

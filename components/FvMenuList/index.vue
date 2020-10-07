@@ -46,6 +46,10 @@
         @logoutButton:clicked="logout"
       )
     div(v-else)
+      fv-login-button(
+        @loginButton:clicked="login"
+      )
+      hr
       v-list-item(
         v-for="(item, y) in items"
         :key="y"
@@ -101,6 +105,9 @@ export default {
   methods: {
     logout() {
       this.$auth.logout()
+    },
+    login() {
+      this.$auth.loginWith('keycloak')
     }
   }
 }

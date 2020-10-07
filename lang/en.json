@@ -183,6 +183,15 @@
     "deliveries": "Adresses and delivery",
     "payments": "Payments"
   },
+  "sellerMenu": {
+    "dashboard": "Dashboard",
+    "orders": "Orders",
+    "products": "Products",
+    "offers": "Offers",
+    "deliveries": "Adresses and delivery",
+    "payments": "Payments",
+    "start": "Start"
+  },
   "buttons": {
     "create" : {
       "product": "CREATE PRODUCT",

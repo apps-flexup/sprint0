@@ -13,5 +13,8 @@ export default {
   },
   setBuyerMenu(state, items) {
     state.buyerMenu = items
+  },
+  setSellerMenu(state, items) {
+    state.sellerMenu = items
   }
 }

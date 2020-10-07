@@ -23,5 +23,10 @@ export default {
     if (!state.buyerMenu) return []
     const res = JSON.parse(JSON.stringify(state.buyerMenu))
     return res.filter((m) => m.active)
+  },
+  sellerMenu(state) {
+    if (!state.sellerMenu) return []
+    const res = JSON.parse(JSON.stringify(state.sellerMenu))
+    return res.filter((m) => m.active)
   }
 }

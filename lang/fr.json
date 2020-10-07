@@ -182,7 +182,16 @@
     "orders": "Commandes",
     "favorite": "Favoris",
     "deliveries": "Adresses et livraison",
-    "payments": "Paiments"
+    "payments": "Paiements"
+  },
+  "sellerMenu": {
+    "dashboard": "Tableau de bord",
+    "orders": "Commandes",
+    "products": "Produits",
+    "offers": "Offres",
+    "deliveries": "Adresses et livraison",
+    "payments": "Versements",
+    "start": "Démarrer"
   },
   "buttons": {
     "create": {
