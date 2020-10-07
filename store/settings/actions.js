@@ -13,5 +13,8 @@ export default {
     this.$repos.accountMenu
       .index()
       .then((data) => commit('setAccountMenu', data))
+  },
+  getBuyerMenu({ commit }) {
+    this.$repos.buyerMenu.index().then((data) => commit('setBuyerMenu', data))
   }
 }

@@ -56,6 +56,7 @@ import FvSecondaryButton from '@/components/FvSecondaryButton'
 import FvSettingsDefault from '@/components/FvSettingsDefault'
 import FvSettingsIndex from '@/components/FvSettingsIndex'
 import FvSettingsOthers from '@/components/FvSettingsOthers'
+import FvSpaceMenu from '@/components/FvSpaceMenu'
 import FvStepper from '@/components/FvStepper'
 import FvVatField from '@/components/FvVatField'
 import FvDeleteAction from '@/components/FvDeleteAction'
@@ -178,6 +179,7 @@ Vue.component('fv-secondary-button', FvSecondaryButton)
 Vue.component('fv-settings-default', FvSettingsDefault)
 Vue.component('fv-settings-index', FvSettingsIndex)
 Vue.component('fv-settings-others', FvSettingsOthers)
+Vue.component('fv-space-menu', FvSpaceMenu)
 Vue.component('fv-stepper', FvStepper)
 Vue.component('fv-vat-field', FvVatField)
 Vue.component('fv-delete-action', FvDeleteAction)

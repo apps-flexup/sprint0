@@ -10,5 +10,8 @@ export default {
   },
   setAccountMenu(state, items) {
     state.accountMenu = items
+  },
+  setBuyerMenu(state, items) {
+    state.buyerMenu = items
   }
 }

@@ -176,6 +176,13 @@
     "variant": "Preferences",
     "members": "Members"
   },
+  "buyerMenu": {
+    "search": "Search",
+    "orders": "Orders",
+    "favorite": "Favorite",
+    "deliveries": "Adresses and delivery",
+    "payments": "Payments"
+  },
   "buttons": {
     "create" : {
       "product": "CREATE PRODUCT",

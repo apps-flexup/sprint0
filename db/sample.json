@@ -13463,19 +13463,19 @@
       "active": true,
       "icon": "mdi-account-circle-outline",
       "title": "userMenu.data",
-      "to": "#"
+      "to": "##"
     },
     {
       "active": true,
       "icon": "mdi-shield-lock-outline",
       "title": "userMenu.security",
-      "to": "#"
+      "to": "###"
     },
     {
       "active": true,
       "icon": "mdi-account-switch-outline",
       "title": "userMenu.management",
-      "to": "#"
+      "to": "####"
     }
   ],
   "accountMenu": [
@@ -13483,7 +13483,7 @@
       "active": true,
       "icon": "mdi-information-outline",
       "title": "accountMenu.information",
-      "to": "#"
+      "to": "#####"
     },
     {
       "active": true,
@@ -13495,7 +13495,39 @@
       "active": true,
       "icon": "mdi-account-group-outline",
       "title": "accountMenu.members",
-      "to": "#"
+      "to": "######"
+    }
+  ],
+  "buyerMenu": [
+    {
+      "active": true,
+      "icon": "mdi-magnify",
+      "title": "buyerMenu.search",
+      "to": "#######"
+    },
+    {
+      "active": true,
+      "icon": "mdi-inbox-arrow-down-outline",
+      "title": "buyerMenu.orders",
+      "to": "/orders"
+    },
+    {
+      "active": true,
+      "icon": "mdi-heart-outline",
+      "title": "buyerMenu.favorite",
+      "to": "########"
+    },
+    {
+      "active": true,
+      "icon": "mdi-map-marker-outline",
+      "title": "buyerMenu.deliveries",
+      "to": "#########"
+    },
+    {
+      "active": true,
+      "icon": "mdi-credit-card-multiple-outline",
+      "title": "buyerMenu.payments",
+      "to": "##########"
     }
   ],
   "offer-headers": [

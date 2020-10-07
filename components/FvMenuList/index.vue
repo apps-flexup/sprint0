@@ -1,25 +1,39 @@
 <template lang="pug">
 .fv-menu-list
   v-list
-    div.title Discovery
-    v-list-item(
-      v-for="(item, a) in accountMenu"
-      :key="a"
-      :to="item.to"
-      router
-      exact
-    )
-      v-list-item-action
-        v-icon {{ item.icon }}
-      v-list-item-content
-        v-list-item-title(v-text="$t(item.title)")
-    hr
-    template(v-slot:activator='')
-      v-list-item-title Users
-    v-list-group(:value='true' :sub-group='false')
+    fv-space-menu
+    div(v-if="connected")
+      div.title Discovery
+      v-list-group( :sub-group='false')
+        v-list-item(
+          v-for="(item, a) in accountMenu"
+          :key="a"
+          :to="item.to"
+          router
+          exact
+        )
+          v-list-item-action
+            v-icon {{ item.icon }}
+          v-list-item-content
+            v-list-item-title(v-text="$t(item.title)")
+      hr
+      div.title {{ userName }}
+      v-list-group( :sub-group='false')
+        v-list-item(
+          v-for="(item, i) in userMenu"
+          :key="i"
+          :to="item.to"
+          router
+          exact
+        )
+          v-list-item-action
+            v-icon {{ item.icon }}
+          v-list-item-content
+            v-list-item-title(v-text="$t(item.title)")
+      hr
       v-list-item(
-        v-for="(item, i) in userMenu"
-        :key="i"
+        v-for="(item, y) in items"
+        :key="y"
         :to="item.to"
         router
         exact
@@ -28,28 +42,31 @@
           v-icon {{ item.icon }}
         v-list-item-content
           v-list-item-title(v-text="$t(item.title)")
-    hr
-    v-list-item(
-      v-for="(item, y) in items"
-      :key="y"
-      :to="item.to"
-      router
-      exact
-    )
-      v-list-item-action
-        v-icon {{ item.icon }}
-      v-list-item-content
-        v-list-item-title(v-text="$t(item.title)")
+      fv-logout-button(
+        @logoutButton:clicked="logout"
+      )
+    div(v-else)
+      v-list-item(
+        v-for="(item, y) in items"
+        :key="y"
+        :to="item.to"
+        router
+        exact
+      )
+        v-list-item-action
+          v-icon {{ item.icon }}
+        v-list-item-content
+          v-list-item-title(v-text="$t(item.title)")
 </template>
 
 <script>
 export default {
   name: 'FvMenuList',
   props: {
-    text: {
-      type: String,
+    ezffez: {
+      type: Boolean,
       default() {
-        return 'ta mere'
+        return true
       }
     }
   },
@@ -69,6 +86,10 @@ export default {
     accountMenu() {
       const res = this.$store.getters['settings/accountMenu']
       return res
+    },
+    connected() {
+      const res = this.$auth.loggedIn
+      return res
     }
   },
   mounted() {
@@ -76,6 +97,11 @@ export default {
     this.$store.dispatch('settings/getMenu')
     this.$store.dispatch('settings/getUserMenu')
     this.$store.dispatch('settings/getAccountMenu')
+  },
+  methods: {
+    logout() {
+      this.$auth.logout()
+    }
   }
 }
 </script>

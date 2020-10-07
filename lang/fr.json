@@ -177,6 +177,13 @@
     "variant": "Préférences",
     "members": "Membres"
   },
+  "buyerMenu": {
+    "search": "Recherche",
+    "orders": "Commandes",
+    "favorite": "Favoris",
+    "deliveries": "Adresses et livraison",
+    "payments": "Paiments"
+  },
   "buttons": {
     "create": {
       "product": "CRÉER PRODUIT",

@@ -2,5 +2,6 @@ export default () => ({
   items: [],
   menu: [],
   userMenu: [],
-  accountMenu: []
+  accountMenu: [],
+  buyerMenu: []
 })
