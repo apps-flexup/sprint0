@@ -1,6 +1,6 @@
 <template lang="pug">
 .fv-account-info
-  p {{ $t('activeAccount') }}:
+  p {{ $t('listAccounts.activeAccount') }}:
   fv-avatar-with-name(
     :name="name"
     :avatar="avatar"

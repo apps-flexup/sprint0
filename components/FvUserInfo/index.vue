@@ -1,6 +1,6 @@
 <template lang="pug">
 .fv-user-info
-  p {{ $t('user') }}:
+  p {{ $t('listAccounts.user') }}:
   fv-avatar-with-name(
     :name="name"
     :familyName="family_name"

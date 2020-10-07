@@ -11,7 +11,6 @@ export default {
   },
   selected(state, getters) {
     if (!state.current) return getters.first
-    console.log('selected il y a un state')
     const res = JSON.parse(JSON.stringify(state.current))
     return res
   },
@@ -39,10 +38,16 @@ export default {
   preferredCurrency(state, getters) {
     if (!state.items) return null
     const currentId = state.current
-    console.log('CurrentId: ', currentId)
     if (!currentId) return null
     const currentAccount = getters.findById(currentId)
-    console.log('currentAccount: ', currentAccount)
     return currentAccount.currency
+  },
+  others(state, getters) {
+    if (!state.items) return null
+    const res = JSON.parse(JSON.stringify(state.items))
+    const current = getters.current
+    const i = res.findIndex((element) => element.id === current)
+    res.splice(i, 1)
+    return res
   }
 }
