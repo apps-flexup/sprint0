@@ -9,9 +9,9 @@ const auth = Vue.observable({
     this.loggedIn = false
   },
   user: {
-    preferred_username: 'toto',
+    preferred_username: 'Simone',
     family_name: "Weil",
-    name: "Simone",
+    name: "Simone Weil",
     email: "simone@weil.com"
   }
 })
