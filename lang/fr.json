@@ -178,6 +178,7 @@
     "members": "Membres"
   },
   "buyerMenu": {
+    "title": "Acheter",
     "search": "Recherche",
     "orders": "Commandes",
     "favorite": "Favoris",
@@ -185,6 +186,7 @@
     "payments": "Paiements"
   },
   "sellerMenu": {
+    "title": "Vendre",
     "dashboard": "Tableau de bord",
     "orders": "Commandes",
     "products": "Produits",

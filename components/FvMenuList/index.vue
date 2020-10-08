@@ -1,11 +1,16 @@
 <template lang="pug">
 .fv-menu-list
-  v-list
+  v-list(
+    expand
+  )
+  div(v-if='connected')
     fv-space-menu
-    div(v-if="connected")
-      div.title Discovery
-      v-list-group( :sub-group='false')
-        v-list-item(
+    v-list-group(
+      :value='true'
+    )
+      template(v-slot:activator)
+        v-list-item-title.title Discovery
+      v-list-item(
           v-for="(item, a) in accountMenu"
           :key="a"
           :to="item.to"
@@ -16,12 +21,15 @@
             v-icon {{ item.icon }}
           v-list-item-content
             v-list-item-title(v-text="$t(item.title)")
-      hr
-      div.title {{ userName }}
-      v-list-group( :sub-group='false')
-        v-list-item(
-          v-for="(item, i) in userMenu"
-          :key="i"
+    div.line
+    v-list-group(
+      :value='true'
+    )
+      template(v-slot:activator)
+        v-list-item-title.title {{userName}}
+      v-list-item(
+          v-for="(item, a) in userMenu"
+          :key="a"
           :to="item.to"
           router
           exact
@@ -30,8 +38,8 @@
             v-icon {{ item.icon }}
           v-list-item-content
             v-list-item-title(v-text="$t(item.title)")
-      hr
-      v-list-item(
+    div.line
+    v-list-item(
         v-for="(item, y) in items"
         :key="y"
         :to="item.to"
@@ -42,15 +50,15 @@
           v-icon {{ item.icon }}
         v-list-item-content
           v-list-item-title(v-text="$t(item.title)")
-      fv-logout-button(
-        @logoutButton:clicked="logout"
-      )
-    div(v-else)
-      fv-login-button(
-        @loginButton:clicked="login"
-      )
-      hr
-      v-list-item(
+    fv-logout-button(
+      @logoutButton:clicked="logout"
+    )
+  div(v-else)
+    fv-login-button(
+      @loginButton:clicked="login"
+    )
+    div.line
+    v-list-item(
         v-for="(item, y) in items"
         :key="y"
         :to="item.to"
@@ -118,5 +126,11 @@ export default {
   font-weight: 800;
   text-transform: uppercase;
   padding: 0 20px;
+}
+.line {
+  width: 92%;
+  float: right;
+  height: 1.5pt;
+  background-color: lightgray;
 }
 </style>

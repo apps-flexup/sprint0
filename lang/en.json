@@ -177,6 +177,7 @@
     "members": "Members"
   },
   "buyerMenu": {
+    "title": "Buyer",
     "search": "Search",
     "orders": "Orders",
     "favorite": "Favorite",
@@ -184,6 +185,7 @@
     "payments": "Payments"
   },
   "sellerMenu": {
+    "title": "Seller",
     "dashboard": "Dashboard",
     "orders": "Orders",
     "products": "Products",
