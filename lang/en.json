@@ -1,4 +1,12 @@
 {
+  "listAccounts": {
+    "user": "User",
+    "activeAccount": "Active account",
+    "createAccount": "Create account",
+    "manageAccounts": "Manage accounts",
+    "help": "Help",
+    "logout": "Logout"
+  },
   "frequences": {
     "periods": {
       "days": "day",

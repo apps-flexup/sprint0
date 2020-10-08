@@ -9,7 +9,10 @@ const auth = Vue.observable({
     this.loggedIn = false
   },
   user: {
-    preferred_username: 'toto'
+    preferred_username: 'toto',
+    family_name: "Weil",
+    name: "Simone",
+    email: "simone@weil.com"
   }
 })
 export default auth
