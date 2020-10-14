@@ -6,6 +6,7 @@ import FvAccountInfo from '@/components/FvAccountInfo'
 import FvAutocomplete from '@/components/FvAutocomplete'
 import FvAvatar from '@/components/FvAvatar'
 import FvAvatarWithName from '@/components/FvAvatarWithName'
+import FvBreadcrumbs from '@/components/FvBreadcrumbs'
 import FvMenuList from '@/components/FvMenuList'
 import FvCloseModalButton from '@/components/FvCloseModalButton'
 import FvContactCard from '@/components/FvContactCard'
@@ -120,6 +121,7 @@ Vue.component('fv-account-info', FvAccountInfo)
 Vue.component('fv-autocomplete', FvAutocomplete)
 Vue.component('fv-avatar', FvAvatar)
 Vue.component('fv-avatar-with-name', FvAvatarWithName)
+Vue.component('fv-breadcrumbs', FvBreadcrumbs)
 Vue.component('fv-menu-list', FvMenuList)
 Vue.component('fv-close-modal-button', FvCloseModalButton)
 Vue.component('fv-contact-dialog', FvContactDialog)

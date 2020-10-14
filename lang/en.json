@@ -1,4 +1,23 @@
 {
+  "spaces": {
+    "sell": "Sell",
+    "buy": "Buy",
+    "manage": "Manage"
+  },
+  "breadcrumbs": {
+    "account": "Account: ",
+    "space": "Space: ",
+    "route": {
+      "index": "Home",
+      "orders": "Orders",
+      "orders-new": "New order",
+      "products": "Products",
+      "offers": "Offers",
+      "contacts": "Contacts",
+      "partners": "Partners",
+      "settings": "Settings"
+    }
+  },
   "listAccounts": {
     "user": "User",
     "activeAccount": "Active account",

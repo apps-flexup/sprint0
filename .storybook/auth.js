@@ -1,7 +1,7 @@
 import Vue from 'vue'
 
 const auth = Vue.observable({
-  loggedIn: false,
+  loggedIn: true,
   loginWith(_param) {
     this.loggedIn = true
   },
