@@ -1,4 +1,9 @@
 {
+  "themes": {
+    "theme": "Theme",
+    "light": "Light",
+    "dark": "Dark"
+  },
   "spaces": {
     "sell": "Sell",
     "buy": "Buy",

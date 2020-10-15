@@ -1,4 +1,9 @@
 {
+  "themes": {
+    "theme": "Thème",
+    "light": "Clair",
+    "dark": "Foncé"
+  },
   "spaces": {
     "sell": "Vendre",
     "buy": "Acheter",

@@ -60,6 +60,7 @@ import FvSettingsDefault from '@/components/FvSettingsDefault'
 import FvSettingsIndex from '@/components/FvSettingsIndex'
 import FvSettingsOthers from '@/components/FvSettingsOthers'
 import FvStepper from '@/components/FvStepper'
+import FvThemeSelect from '@/components/FvThemeSelect'
 import FvVatField from '@/components/FvVatField'
 import FvDeleteAction from '@/components/FvDeleteAction'
 import FvEditAction from '@/components/FvEditAction'
@@ -185,6 +186,7 @@ Vue.component('fv-settings-default', FvSettingsDefault)
 Vue.component('fv-settings-index', FvSettingsIndex)
 Vue.component('fv-settings-others', FvSettingsOthers)
 Vue.component('fv-stepper', FvStepper)
+Vue.component('fv-theme-select', FvThemeSelect)
 Vue.component('fv-vat-field', FvVatField)
 Vue.component('fv-delete-action', FvDeleteAction)
 Vue.component('fv-edit-action', FvEditAction)

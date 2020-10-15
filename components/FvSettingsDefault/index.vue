@@ -4,7 +4,7 @@
     :currency="currency"
     @currency:selected="currencySelected"
   )
-  v-divider
+  fv-theme-select
 </template>
 
 <script>
