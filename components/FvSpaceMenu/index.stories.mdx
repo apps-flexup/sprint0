@@ -1,25 +1,25 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
 import { boolean } from '@storybook/addon-knobs'
-import FvMenuList from './index.vue'
+import FvSpaceMenu from './index.vue'
 
-<Meta title='Molecules/FvMenuList' component={ FvMenuList } />
+<Meta title='Molecules/FvSpaceMenu' component={ FvSpaceMenu } />
 
-# FvMenuList
+# FvSpaceMenu
 
 <Canvas>
 <Story name='Common' height='150px'>{{
-  components: { FvMenuList },
+  components: { FvSpaceMenu },
   props: {
     seller: {
       default: boolean('Seller', false, 'Props')
     }
   },
-  template: `<FvMenuList>
+  template: `<FvSpaceMenu>
     :seller='seller'
-  </FvMenuList>`
+  </FvSpaceMenu>`
 }}</Story>
 </Canvas>
 
 ## ArgsTable
 
-<ArgsTable of={ FvMenuList } />
+<ArgsTable of={ FvSpaceMenu } />

@@ -8,13 +8,13 @@ const moduleSettings = {
     getMenu({ commit }) {
       const data = [
         {
-          "active": true,
+          "active": false,
           "icon": "mdi-apps",
           "title": "menu.home",
           "to": "/"
         },
         {
-          "active": true,
+          "active": false,
           "icon": "mdi-store-outline",
           "title": "menu.orders",
           "to": "/orders"
@@ -26,25 +26,25 @@ const moduleSettings = {
           "to": "/contracts"
         },
         {
-          "active": true,
+          "active": false,
           "icon": "mdi-flask-empty",
           "title": "menu.products",
           "to": "/products"
         },
         {
-          "active": true,
+          "active": false,
           "icon": "mdi-barcode",
           "title": "menu.offers",
           "to": "/offers"
         },
         {
           "active": true,
-          "icon": "mdi-account-group",
+          "icon": "mdi-email-outline",
           "title": "menu.contacts",
-          "to": "/contacts"
+          "to": "###############"
         },
         {
-          "active": true,
+          "active": false,
           "icon": "mdi-tag",
           "title": "menu.partners",
           "to": "/partners"
@@ -63,12 +63,134 @@ const moduleSettings = {
         },
         {
           "active": true,
-          "icon": "mdi-tune-vertical-variant",
+          "icon": "mdi-cog-outline",
           "title": "menu.settings",
-          "to": "/settings"
+          "to": "#"
         }
       ]
       commit('setMenu', data)
+    },
+    getAccountMenu({ commit }) {
+      const data = [
+        {
+          "active": true,
+          "icon": "mdi-information-outline",
+          "title": "accountMenu.information",
+          "to": "#####"
+        },
+        {
+          "active": true,
+          "icon": "mdi-tune-vertical-variant",
+          "title": "accountMenu.variant",
+          "to": "/settings"
+        },
+        {
+          "active": true,
+          "icon": "mdi-account-group-outline",
+          "title": "accountMenu.members",
+          "to": "/partners"
+        },
+      ]
+      commit('setAccountMenu', data)
+    },
+    getUserMenu({ commit }) {
+      const data = [
+        {
+          "active": true,
+          "icon": "mdi-account-circle-outline",
+          "title": "userMenu.data",
+          "to": "##"
+        },
+        {
+          "active": true,
+          "icon": "mdi-shield-lock-outline",
+          "title": "userMenu.security",
+          "to": "###"
+        },
+        {
+          "active": true,
+          "icon": "mdi-account-switch-outline",
+          "title": "userMenu.management",
+          "to": "####"
+        }
+      ]
+      commit('setUserMenu', data)
+    },
+    getBuyerMenu({ commit }) {
+      const data = [
+        {
+          "active": true,
+          "icon": "mdi-magnify",
+          "title": "buyerMenu.search",
+          "to": "#######"
+        },
+        {
+          "active": true,
+          "icon": "mdi-inbox-arrow-down-outline",
+          "title": "buyerMenu.orders",
+          "to": "/orders"
+        },
+        {
+          "active": true,
+          "icon": "mdi-heart-outline",
+          "title": "buyerMenu.favorite",
+          "to": "########"
+        },
+        {
+          "active": true,
+          "icon": "mdi-map-marker-outline",
+          "title": "buyerMenu.deliveries",
+          "to": "#########"
+        },
+        {
+          "active": true,
+          "icon": "mdi-credit-card-multiple-outline",
+          "title": "buyerMenu.payments",
+          "to": "##########"
+        },
+      ]
+      commit('setBuyerMenu', data)
+    },
+    getSellerMenu({ commit }) {
+      const data = [
+        {
+          "active": true,
+          "icon": "mdi-view-dashboard-outline",
+          "title": "sellerMenu.dashboard",
+          "to": "/dashboard"
+        },
+        {
+          "active": true,
+          "icon": "mdi-inbox-arrow-down-outline",
+          "title": "buyerMenu.orders",
+          "to": "/orders"
+        },
+        {
+          "active": true,
+          "icon": "mdi-package-variant-closed",
+          "title": "sellerMenu.products",
+          "to": "/products"
+        },
+        {
+          "active": true,
+          "icon": "mdi-tag-multiple-outline",
+          "title": "sellerMenu.offers",
+          "to": "/offers"
+        },
+        {
+          "active": true,
+          "icon": "mdi-map-marker-outline",
+          "title": "buyerMenu.deliveries",
+          "to": "#############"
+        },
+        {
+          "active": true,
+          "icon": "mdi-credit-card-multiple-outline",
+          "title": "sellerMenu.payments",
+          "to": "################"
+        },
+      ]
+      commit('setSellerMenu', data)
     }
   },
 

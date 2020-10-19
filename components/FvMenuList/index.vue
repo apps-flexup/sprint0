@@ -4,7 +4,9 @@
     expand
   )
   div(v-if='connected')
-    fv-space-menu
+    fv-space-menu(
+      :seller='seller'
+    )
     v-list-group(
       :value='true'
     )
@@ -21,7 +23,7 @@
             v-icon {{ item.icon }}
           v-list-item-content
             v-list-item-title(v-text="$t(item.title)")
-    div.line
+    hr
     v-list-group(
       :value='true'
     )
@@ -38,7 +40,7 @@
             v-icon {{ item.icon }}
           v-list-item-content
             v-list-item-title(v-text="$t(item.title)")
-    div.line
+    hr
     v-list-item(
         v-for="(item, y) in items"
         :key="y"
@@ -57,7 +59,7 @@
     fv-login-button(
       @loginButton:clicked="login"
     )
-    div.line
+    hr
     v-list-item(
         v-for="(item, y) in items"
         :key="y"
@@ -75,10 +77,10 @@
 export default {
   name: 'FvMenuList',
   props: {
-    ezffez: {
+    seller: {
       type: Boolean,
       default() {
-        return true
+        return false
       }
     }
   },
