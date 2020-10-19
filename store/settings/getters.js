@@ -8,5 +8,10 @@ export default {
     if (!state.menu) return []
     const res = JSON.parse(JSON.stringify(state.menu))
     return res.filter((m) => m.active)
+  },
+  settings: (state) => (accountId) => {
+    if (!state.settings) return []
+    const res = JSON.parse(JSON.stringify(state.settings))
+    return res.filter((s) => s.account_id === accountId)[0]
   }
 }

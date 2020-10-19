@@ -19,36 +19,34 @@ export default {
       }
     }
   },
-  data() {
-    return {
-      currency: null
-    }
-  },
-  watch: {
-    account() {
-      console.log('Account changed: ', this.account)
-      if (this.account) {
-        this.fillFieldsWithAccount()
-      } else {
-        this.clearFields()
-      }
+  computed: {
+    settings() {
+      const accountId = this.account.id
+      const res = this.$store.getters['settings/settings'](accountId)
+      return res
+    },
+    currency() {
+      const res = this.settings ? this.settings.currency : null
+      return res
+    },
+    language() {
+      const res = this.settings ? this.settings.language : null
+      return res
+    },
+    theme() {
+      const res = this.settings ? this.settings.theme : null
+      return res
     }
   },
   mounted() {
     console.log('Composant ', this.$options.name)
-    if (this.account) this.fillFieldsWithAccount()
+    this.$store.dispatch('settings/getSettings')
   },
   methods: {
     currencySelected(v) {
-      this.currency = v
-      this.account.currency = this.currency
-      this.$store.dispatch('accounts/update', this.account)
-    },
-    fillFieldsWithAccount() {
-      this.currency = this.account.currency
-    },
-    clearFields() {
-      this.currency = null
+      const newSettings = this.settings
+      newSettings.currency = v
+      this.$store.dispatch('settings/updateSettings', newSettings)
     }
   }
 }

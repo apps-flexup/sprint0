@@ -1,4 +1,5 @@
 export default () => ({
   items: [],
-  menu: []
+  menu: [],
+  settings: []
 })
