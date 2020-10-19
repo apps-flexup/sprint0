@@ -1,4 +1,9 @@
 {
+  "languages": {
+    "language": "Langue",
+    "en": "English",
+    "fr": "Français"
+  },
   "themes": {
     "theme": "Thème",
     "light": "Clair",
