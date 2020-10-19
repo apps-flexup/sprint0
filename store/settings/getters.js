@@ -4,9 +4,9 @@ export default {
     const res = JSON.parse(JSON.stringify(state.items))
     return res
   },
-  menu(state) {
-    if (!state.menu) return []
-    const res = JSON.parse(JSON.stringify(state.menu))
+  manageMenu(state) {
+    if (!state.manageMenu) return []
+    const res = JSON.parse(JSON.stringify(state.manageMenu))
     return res.filter((m) => m.active)
   },
   userMenu(state) {

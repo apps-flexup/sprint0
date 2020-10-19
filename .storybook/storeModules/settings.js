@@ -10,65 +10,65 @@ const moduleSettings = {
         {
           "active": false,
           "icon": "mdi-apps",
-          "title": "menu.home",
+          "title": "manageMenu.home",
           "to": "/"
         },
         {
           "active": false,
           "icon": "mdi-store-outline",
-          "title": "menu.orders",
+          "title": "manageMenu.orders",
           "to": "/orders"
         },
         {
           "active": false,
           "icon": "mdi-briefcase-check",
-          "title": "menu.contracts",
+          "title": "manageMenu.contracts",
           "to": "/contracts"
         },
         {
           "active": false,
           "icon": "mdi-flask-empty",
-          "title": "menu.products",
+          "title": "manageMenu.products",
           "to": "/products"
         },
         {
           "active": false,
           "icon": "mdi-barcode",
-          "title": "menu.offers",
+          "title": "manageMenu.offers",
           "to": "/offers"
         },
         {
           "active": true,
           "icon": "mdi-email-outline",
-          "title": "menu.contacts",
+          "title": "manageMenu.contacts",
           "to": "###############"
         },
         {
           "active": false,
           "icon": "mdi-tag",
-          "title": "menu.partners",
+          "title": "manageMenu.partners",
           "to": "/partners"
         },
         {
           "active": false,
           "icon": "mdi-file-document",
-          "title": "menu.documents",
+          "title": "manageMenu.documents",
           "to": "/documents"
         },
         {
           "active": false,
           "icon": "mdi-desktop-mac-dashboard",
-          "title": "menu.dashboard",
+          "title": "manageMenu.dashboard",
           "to": "/dashboard"
         },
         {
           "active": true,
           "icon": "mdi-cog-outline",
-          "title": "menu.settings",
+          "title": "manageMenu.settings",
           "to": "#"
         }
       ]
-      commit('setMenu', data)
+      commit('setManageMenu', data)
     },
     getAccountMenu({ commit }) {
       const data = [

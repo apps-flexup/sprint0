@@ -23,7 +23,7 @@
             v-icon {{ item.icon }}
           v-list-item-content
             v-list-item-title(v-text="$t(item.title)")
-    hr
+    hr.line
     v-list-group(
       :value='true'
     )
@@ -40,18 +40,7 @@
             v-icon {{ item.icon }}
           v-list-item-content
             v-list-item-title(v-text="$t(item.title)")
-    hr
-    v-list-item(
-        v-for="(item, y) in items"
-        :key="y"
-        :to="item.to"
-        router
-        exact
-      )
-        v-list-item-action
-          v-icon {{ item.icon }}
-        v-list-item-content
-          v-list-item-title(v-text="$t(item.title)")
+    hr.line
     fv-logout-button(
       @logoutButton:clicked="logout"
     )
@@ -59,18 +48,7 @@
     fv-login-button(
       @loginButton:clicked="login"
     )
-    hr
-    v-list-item(
-        v-for="(item, y) in items"
-        :key="y"
-        :to="item.to"
-        router
-        exact
-      )
-        v-list-item-action
-          v-icon {{ item.icon }}
-        v-list-item-content
-          v-list-item-title(v-text="$t(item.title)")
+    hr.line
 </template>
 
 <script>
@@ -78,17 +56,13 @@ export default {
   name: 'FvMenuList',
   props: {
     seller: {
-      type: Boolean,
+      type: String,
       default() {
-        return false
+        return 'manage'
       }
     }
   },
   computed: {
-    items() {
-      const res = this.$store.getters['settings/menu']
-      return res
-    },
     userMenu() {
       const res = this.$store.getters['settings/userMenu']
       return res
@@ -108,7 +82,7 @@ export default {
   },
   mounted() {
     console.log('Composant ', this.$options.name)
-    this.$store.dispatch('settings/getMenu')
+    this.$store.dispatch('settings/getManageMenu')
     this.$store.dispatch('settings/getUserMenu')
     this.$store.dispatch('settings/getAccountMenu')
   },
@@ -127,12 +101,13 @@ export default {
 .title {
   font-weight: 800;
   text-transform: uppercase;
-  padding: 0 20px;
+  padding: 0 0px;
 }
 .line {
   width: 92%;
   float: right;
+  border-style: hidden;
   height: 1.5pt;
-  background-color: lightgray;
+  background-color: lightgrey;
 }
 </style>

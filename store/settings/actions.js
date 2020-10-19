@@ -3,8 +3,8 @@ export default {
   get({ commit }) {
     this.$repos.menus.index().then((data) => commit('set', data))
   },
-  getMenu({ commit }) {
-    this.$repos.menu.index().then((data) => commit('setMenu', data))
+  getManageMenu({ commit }) {
+    this.$repos.manageMenu.index().then((data) => commit('setManageMenu', data))
   },
   getUserMenu({ commit }) {
     this.$repos.userMenu.index().then((data) => commit('setUserMenu', data))

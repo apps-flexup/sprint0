@@ -1,7 +1,6 @@
 <template lang="pug">
 .fv-space-menu
-  // PART OF THE SELLER MENU
-  div(v-if='seller')
+  div(v-if="seller === 'seller'")
     v-list-group(
         :value='true'
       )
@@ -18,8 +17,8 @@
               v-icon {{ item.icon }}
             v-list-item-content
               v-list-item-title(v-text="$t(item.title)")
-    hr
-  div(v-else)
+    hr.line
+  div(v-else-if="seller === 'buyer'")
     v-list-group(
         :value='true'
       )
@@ -31,13 +30,32 @@
             :to="item.to"
             router
             exact
-
           )
             v-list-item-action
               v-icon {{ item.icon }}
             v-list-item-content
               v-list-item-title(v-text="$t(item.title)")
-    hr
+    hr.line
+  div(v-else-if="seller === 'manage'")
+    v-list-group(
+        :value='true'
+      )
+        template(v-slot:activator)
+          v-list-item-title.title(v-text="$t('manageMenu.title')")
+        v-list-item(
+            v-for="(item, a) in manageMenu"
+            :key="a"
+            :to="item.to"
+            router
+            exact
+          )
+            v-list-item-action
+              v-icon {{ item.icon }}
+            v-list-item-content
+              v-list-item-title(v-text="$t(item.title)")
+    hr.line
+  div(v-else)
+    p ya rien ici
 </template>
 
 <script>
@@ -45,9 +63,9 @@ export default {
   name: 'FvSpaceMenu',
   props: {
     seller: {
-      type: Boolean,
+      type: String,
       default() {
-        return false
+        return null
       }
     }
   },
@@ -60,6 +78,10 @@ export default {
       const res = this.$store.getters['settings/sellerMenu']
       return res
     },
+    manageMenu() {
+      const res = this.$store.getters['settings/manageMenu']
+      return res
+    },
     connected() {
       const res = this.$auth.loggedIn
       return res
@@ -68,6 +90,7 @@ export default {
   mounted() {
     console.log('Composant ', this.$options.name)
     this.$store.dispatch('settings/getBuyerMenu')
+    this.$store.dispatch('settings/getManageMenu')
     this.$store.dispatch('settings/getSellerMenu')
   },
   methods: {
@@ -82,12 +105,13 @@ export default {
 .title {
   font-weight: 800;
   text-transform: uppercase;
-  padding: 0 20px;
+  padding: 0 2px;
 }
 .line {
   width: 92%;
   float: right;
+  border-style: hidden;
   height: 1.5pt;
-  background-color: lightgray;
+  background-color: lightgrey;
 }
 </style>

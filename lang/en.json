@@ -154,7 +154,8 @@
       }
     }
   },
-  "menu" : {
+  "manageMenu" : {
+    "title": "Management",
     "home": "Home",
     "orders": "Orders",
     "offers": "Offers",
