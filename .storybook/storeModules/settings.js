@@ -5,34 +5,34 @@ import state from '@/store/settings/state'
 const moduleSettings = {
   namespaced: true,
   actions: {
-    getMenu({ commit }) {
+    getManageMenu({ commit }) {
       const data = [
         {
-          "active": false,
+          "active": true,
           "icon": "mdi-apps",
           "title": "manageMenu.home",
           "to": "/"
         },
         {
-          "active": false,
+          "active": true,
           "icon": "mdi-store-outline",
           "title": "manageMenu.orders",
           "to": "/orders"
         },
         {
-          "active": false,
+          "active": true,
           "icon": "mdi-briefcase-check",
           "title": "manageMenu.contracts",
           "to": "/contracts"
         },
         {
-          "active": false,
+          "active": true,
           "icon": "mdi-flask-empty",
           "title": "manageMenu.products",
           "to": "/products"
         },
         {
-          "active": false,
+          "active": true,
           "icon": "mdi-barcode",
           "title": "manageMenu.offers",
           "to": "/offers"
@@ -44,7 +44,7 @@ const moduleSettings = {
           "to": "###############"
         },
         {
-          "active": false,
+          "active": true,
           "icon": "mdi-tag",
           "title": "manageMenu.partners",
           "to": "/partners"
