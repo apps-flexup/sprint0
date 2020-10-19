@@ -1,5 +1,6 @@
 <template lang="pug">
 .fv-settings-default
+  fv-language-select
   fv-currency-autocomplete(
     :currency="currency"
     @currency:selected="currencySelected"
