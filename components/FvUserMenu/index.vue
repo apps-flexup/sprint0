@@ -1,13 +1,13 @@
 <template lang="pug">
-.fv-account-menu
+.fv-user-menu
     v-list
       v-list-group(
         :value='true'
       )
         template(v-slot:activator)
-          v-list-item-title.title {{accountName}}
+          v-list-item-title.title {{userName}}
         v-list-item(
-            v-for="(item, a) in accountMenu"
+            v-for="(item, a) in userMenu"
             :key="a"
             :to="item.to"
             router
@@ -22,23 +22,20 @@
 
 <script>
 export default {
-  name: 'FvMenuList',
+  name: 'FvUserMenu',
   computed: {
-    accountMenu() {
-      const res = this.$store.getters['settings/accountMenu']
+    userMenu() {
+      const res = this.$store.getters['settings/userMenu']
       return res
     },
-    accountName() {
-      const res = this.$store.getters['accounts/selected']
-      const account = this.$store.getters['accounts/findById'](res)
-      const name = account.name
+    userName() {
+      const name = this.$auth.user.preferred_username
       return name
     }
   },
   mounted() {
     console.log('Composant ', this.$options.name)
-    this.$store.dispatch('settings/getAccountMenu')
-    this.$store.dispatch('accounts/get')
+    this.$store.dispatch('settings/getUserMenu')
   }
 }
 </script>

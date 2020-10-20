@@ -16,6 +16,7 @@ import axios from 'axios'
 import auth from '~/.storybook/auth'
 import "@mdi/font/css/materialdesignicons.css"
 import "@/.storybook/style/application_wrap.css"
+import "@/.storybook/style/icon_margin.css"
 
 Vue.use(AsyncComputed)
 
