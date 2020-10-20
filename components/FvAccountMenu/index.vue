@@ -1,22 +1,23 @@
 <template lang="pug">
 .fv-account-menu
-    v-list-group(
-      :value='true'
-    )
-      template(v-slot:activator)
-        v-list-item-title.title Discovery
-      v-list-item(
-          v-for="(item, a) in accountMenu"
-          :key="a"
-          :to="item.to"
-          router
-          exact
-        )
-          v-list-item-action
-            v-icon {{ item.icon }}
-          v-list-item-content
-            v-list-item-title(v-text="$t(item.title)")
-    hr.line
+    v-list
+      v-list-group(
+        :value='true'
+      )
+        template(v-slot:activator)
+          v-list-item-title.title Discovery
+        v-list-item(
+            v-for="(item, a) in accountMenu"
+            :key="a"
+            :to="item.to"
+            router
+            exact
+          )
+            v-list-item-action
+              v-icon {{ item.icon }}
+            v-list-item-content
+              v-list-item-title(v-text="$t(item.title)")
+      hr.line
 </template>
 
 <script>

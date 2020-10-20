@@ -1,19 +1,21 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
 import FvAccountMenu from './index.vue'
 
-<Meta title='Molecules/FvAccountMenu' component={ FvAccountMenu } />
+<Meta title="Molecules/FvAccountMenu" component={FvAccountMenu} />
 
 # FvAccountMenu
 
 <Canvas>
-<Story name='Common' height='150px'>{{
-  components: { FvAccountMenu },
-  template: `
-    <FvAccountMenu
+  <Story name="Common" height="150px">
+    {{
+      components: { FvAccountMenu },
+      template: `
+    <FvAccountMenu>
     </FvAccountMenu>`
-}}</Story>
+    }}
+  </Story>
 </Canvas>
 
 ## ArgsTable
 
-<ArgsTable of={ FvAccountMenu } />
+<ArgsTable of={FvAccountMenu} />

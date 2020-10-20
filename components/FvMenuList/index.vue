@@ -42,7 +42,7 @@ export default {
     seller: {
       type: String,
       default() {
-        return 'manage'
+        return 'buyer'
       }
     }
   },

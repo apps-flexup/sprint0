@@ -1,25 +1,29 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
-import { boolean } from '@storybook/addon-knobs'
+import { select } from '@storybook/addon-knobs'
+import { spaces, defaultSpace } from '@/.storybook/knobs_data/spacesAvailable'
 import FvMenuList from './index.vue'
 
-<Meta title='Molecules/FvMenuList' component={ FvMenuList } />
+<Meta title="Molecules/FvMenuList" component={FvMenuList} />
 
 # FvMenuList
 
 <Canvas>
-<Story name='Common' height='150px'>{{
-  components: { FvMenuList },
-  props: {
-    seller: {
-      default: boolean('Seller', false, 'Props')
-    }
-  },
-  template: `<FvMenuList>
-    :seller='seller'
+  <Story name="Common" height="150px">
+    {{
+      components: { FvMenuList },
+      props: {
+        knobSpace: {
+          default: select('Space', spaces, defaultSpace, 'Props')
+        }
+      },
+      template: `<FvMenuList
+    :seller='knobSpace'
+    > 
   </FvMenuList>`
-}}</Story>
+    }}
+  </Story>
 </Canvas>
 
 ## ArgsTable
 
-<ArgsTable of={ FvMenuList } />
+<ArgsTable of={FvMenuList} />
