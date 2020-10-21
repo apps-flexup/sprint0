@@ -1,24 +1,5 @@
 <template lang="pug">
 .fv-space-menu
-  div(v-if="space === 'seller'")
-    v-list-group(
-        :value='true'
-      )
-        template(v-slot:activator)
-          v-list-item-title.title(v-text="$t('sellerMenu.title')")
-        v-list-item(
-            v-for="(item, a) in sellerMenu"
-            :key="a"
-            :to="item.to"
-            router
-            exact
-          )
-            v-list-item-action
-              v-icon {{ item.icon }}
-            v-list-item-content
-              v-list-item-title(v-text="$t(item.title)")
-    hr.line
-  div(v-else-if="space === 'buyer'")
     v-list-group(
         :value='true'
       )
@@ -36,26 +17,6 @@
             v-list-item-content
               v-list-item-title(v-text="$t(item.title)")
     hr.line
-  div(v-else-if="space === 'manage'")
-    v-list-group(
-        :value='true'
-      )
-        template(v-slot:activator)
-          v-list-item-title.title(v-text="$t('manageMenu.title')")
-        v-list-item(
-            v-for="(item, a) in manageMenu"
-            :key="a"
-            :to="item.to"
-            router
-            exact
-          )
-            v-list-item-action
-              v-icon {{ item.icon }}
-            v-list-item-content
-              v-list-item-title(v-text="$t(item.title)")
-    hr.line
-  div(v-else)
-    p ya rien ici
 </template>
 
 <script>
@@ -65,18 +26,24 @@ export default {
     space: {
       type: String,
       default() {
-        return 'buyer'
+        return 'buyerMenu'
       }
     }
   },
   computed: {
     buyerMenu() {
-      const res = this.$store.getters['settings/buyerMenu']
-      return res
-    },
-    sellerMenu() {
-      const res = this.$store.getters['settings/sellerMenu']
-      return res
+      if (this.space === 'buyerMenu') {
+        const res = this.$store.getters['settings/buyerMenu']
+        return res
+      } else if (this.space === 'sellerMenu') {
+        const res = this.$store.getters['settings/sellerMenu']
+        return res
+      } else if (this.space === 'manageMenu') {
+        const res = this.$store.getters['settings/manageMenu']
+        return res
+      } else {
+        return null
+      }
     },
     manageMenu() {
       const res = this.$store.getters['settings/manageMenu']

@@ -44,6 +44,7 @@ export default {
 .title {
   font-weight: 800;
   text-transform: uppercase;
+  font-size: 1.15rem !important;
 }
 .line {
   width: 92%;

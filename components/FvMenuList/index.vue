@@ -5,10 +5,10 @@
   )
   div(v-if='connected')
     fv-space-menu(
-      :seller='seller'
+      :space='space'
     )
-    fv-account-menu() 
-    fv-user-menu()
+    fv-account-menu
+    fv-user-menu
     fv-logout-button(
       @logoutButton:clicked="logout"
     )
@@ -25,10 +25,10 @@ import '@/.storybook/style/icon_margin.css'
 export default {
   name: 'FvMenuList',
   props: {
-    seller: {
+    space: {
       type: String,
       default() {
-        return 'buyer'
+        return 'buyerMenu'
       }
     }
   },

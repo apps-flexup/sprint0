@@ -13455,7 +13455,7 @@
       "active": true,
       "icon": "mdi-cog-outline",
       "title": "manageMenu.settings",
-      "to": "#"
+      "to": "/settings"
     }
   ],
   "userMenu": [
@@ -13463,19 +13463,19 @@
       "active": true,
       "icon": "mdi-account-circle-outline",
       "title": "userMenu.data",
-      "to": "##"
+      "to": "/personaldata"
     },
     {
       "active": true,
       "icon": "mdi-shield-lock-outline",
       "title": "userMenu.security",
-      "to": "###"
+      "to": "/security"
     },
     {
       "active": true,
       "icon": "mdi-account-switch-outline",
       "title": "userMenu.management",
-      "to": "####"
+      "to": "/users"
     }
   ],
   "accountMenu": [
@@ -13483,7 +13483,7 @@
       "active": true,
       "icon": "mdi-information-outline",
       "title": "accountMenu.information",
-      "to": "#####"
+      "to": "/informations"
     },
     {
       "active": true,
@@ -13495,7 +13495,7 @@
       "active": true,
       "icon": "mdi-account-group-outline",
       "title": "accountMenu.members",
-      "to": "##########"
+      "to": "/members"
     }
   ],
   "buyerMenu": [
@@ -13503,7 +13503,7 @@
       "active": true,
       "icon": "mdi-magnify",
       "title": "buyerMenu.search",
-      "to": "#######"
+      "to": "/search"
     },
     {
       "active": true,
@@ -13515,19 +13515,19 @@
       "active": true,
       "icon": "mdi-heart-outline",
       "title": "buyerMenu.favorite",
-      "to": "########"
+      "to": "/favorite"
     },
     {
       "active": true,
       "icon": "mdi-map-marker-outline",
       "title": "buyerMenu.deliveries",
-      "to": "#########"
+      "to": "/deliveries"
     },
     {
       "active": true,
       "icon": "mdi-credit-card-multiple-outline",
       "title": "buyerMenu.payments",
-      "to": "##########"
+      "to": "/payments"
     }
   ],
   "sellerMenu": [
@@ -13559,13 +13559,13 @@
       "active": true,
       "icon": "mdi-map-marker-outline",
       "title": "buyerMenu.deliveries",
-      "to": "#############"
+      "to": "/deliveries"
     },
     {
       "active": true,
       "icon": "mdi-credit-card-multiple-outline",
       "title": "sellerMenu.payments",
-      "to": "################"
+      "to": "/paiments"
     }
   ],
   "offer-headers": [

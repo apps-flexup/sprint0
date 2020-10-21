@@ -22,23 +22,22 @@
 
 <script>
 export default {
-  name: 'FvMenuList',
+  name: 'FvAccountMenu',
   computed: {
     accountMenu() {
       const res = this.$store.getters['settings/accountMenu']
       return res
     },
     accountName() {
-      const res = this.$store.getters['accounts/selected']
-      const account = this.$store.getters['accounts/findById'](res)
-      const name = account.name
-      return name
+      const selectedAccount = this.$store.getters['accounts/selected']
+      const account = this.$store.getters['accounts/findById'](selectedAccount)
+      const res = account ? account.name : null
+      return res
     }
   },
   mounted() {
     console.log('Composant ', this.$options.name)
     this.$store.dispatch('settings/getAccountMenu')
-    this.$store.dispatch('accounts/get')
   }
 }
 </script>
@@ -47,6 +46,7 @@ export default {
 .title {
   font-weight: 800;
   text-transform: uppercase;
+  font-size: 1.15rem !important;
 }
 .line {
   width: 92%;
