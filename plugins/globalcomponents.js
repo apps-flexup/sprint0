@@ -38,7 +38,7 @@ import FvContractSummaryStepStructure from '@/components/FvContractSummaryStepSt
 import FvDataTableHeader from '@/components/FvDataTableHeader'
 import FvDataTableSearchBar from '@/components/FvDataTableSearchBar'
 import FvIcon from '@/components/FvIcon'
-import FvLanguageSelect from '@/components/FvLanguageSelect'
+import FvLanguageAutocomplete from '@/components/FvLanguageAutocomplete'
 import FvListAccounts from '@/components/FvListAccounts'
 import FvLoginButton from '@/components/FvLoginButton'
 import FvLogoutButton from '@/components/FvLogoutButton'
@@ -164,7 +164,7 @@ Vue.component(
 Vue.component('fv-data-table-header', FvDataTableHeader)
 Vue.component('fv-data-table-search-bar', FvDataTableSearchBar)
 Vue.component('fv-icon', FvIcon)
-Vue.component('fv-language-select', FvLanguageSelect)
+Vue.component('fv-language-autocomplete', FvLanguageAutocomplete)
 Vue.component('fv-list-accounts', FvListAccounts)
 Vue.component('fv-login-button', FvLoginButton)
 Vue.component('fv-logout-button', FvLogoutButton)

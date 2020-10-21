@@ -1,5 +1,5 @@
 export default () => ({
   items: [],
   menu: [],
-  settings: []
+  settings: {}
 })

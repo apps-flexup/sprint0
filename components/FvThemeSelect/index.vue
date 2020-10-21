@@ -3,7 +3,7 @@
   v-select(
     :items="items"
     :outlined="true"
-    :value="value"
+    :value="theme"
     :label="$t('themes.theme')"
     @input="selected"
   )
@@ -13,22 +13,26 @@
 export default {
   name: 'FvThemeSelect',
   inheritAttrs: true,
+  props: {
+    theme: {
+      type: String,
+      default() {
+        return null
+      }
+    }
+  },
   computed: {
     items() {
       const res = [
         {
           text: this.$t('themes.light'),
-          value: 0
+          value: 'light'
         },
         {
           text: this.$t('themes.dark'),
-          value: 1
+          value: 'dark'
         }
       ]
-      return res
-    },
-    value() {
-      const res = 0
       return res
     }
   },
@@ -37,7 +41,7 @@ export default {
   },
   methods: {
     selected(v) {
-      this.$vuetify.theme.dark = v
+      if (v) this.$emit('theme:selected', v)
     }
   }
 }

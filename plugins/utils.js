@@ -85,6 +85,12 @@ export const filterCountryAutocomplete = (item, v, _it) => {
   return res
 }
 
+export const filterLanguageAutocomplete = (item, v, _it) => {
+  const nameValues = `${item.name} ${item.iso2}`
+  const res = String.prototype.filtreAutocomplete.call(nameValues, v)
+  return res
+}
+
 export const filterLegalStructureAutocomplete = (item, v, _it) => {
   const nameValues = `${item.name} ${item.sigle}`
   const res = String.prototype.filtreAutocomplete.call(nameValues, v)

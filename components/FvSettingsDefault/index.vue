@@ -1,11 +1,17 @@
 <template lang="pug">
 .fv-settings-default
-  fv-language-select
+  fv-language-autocomplete(
+    :language="language"
+    @language:selected="languageSelected"
+  )
   fv-currency-autocomplete(
     :currency="currency"
     @currency:selected="currencySelected"
   )
-  fv-theme-select
+  fv-theme-select(
+    :theme="theme"
+    @theme:selected="themeSelected"
+  )
 </template>
 
 <script>
@@ -21,8 +27,7 @@ export default {
   },
   computed: {
     settings() {
-      const accountId = this.account.id
-      const res = this.$store.getters['settings/settings'](accountId)
+      const res = this.$store.getters['settings/settings']
       return res
     },
     currency() {
@@ -47,6 +52,19 @@ export default {
       const newSettings = this.settings
       newSettings.currency = v
       this.$store.dispatch('settings/updateSettings', newSettings)
+      this.$activeAccount.setSettings()
+    },
+    languageSelected(v) {
+      const newSettings = this.settings
+      newSettings.language = v
+      this.$store.dispatch('settings/updateSettings', newSettings)
+      this.$activeAccount.setSettings()
+    },
+    themeSelected(v) {
+      const newSettings = this.settings
+      newSettings.theme = v
+      this.$store.dispatch('settings/updateSettings', newSettings)
+      this.$activeAccount.setSettings()
     }
   }
 }

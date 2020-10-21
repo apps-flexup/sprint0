@@ -1,14 +1,14 @@
 {
   "settings": [
     {
-      "currency": "USD",
+      "currency": "EUR",
       "language": "fr",
       "theme": "light",
       "account_id": 1,
       "id": 1
     },
     {
-      "id": 1,
+      "id": 2,
       "currency": "USD",
       "language": "en",
       "theme": "dark",
