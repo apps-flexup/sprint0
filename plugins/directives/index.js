@@ -60,7 +60,7 @@ Vue.directive('to-preferred-currency', async (el, binding, vnode) => {
   const value = binding.value
   const amount = value.amount
   const fromCurrency = value.currency
-  const toCurrency = vnode.context.$store.getters['accounts/preferredCurrency']
+  const toCurrency = vnode.context.$store.getters['settings/settings'].currency
   const options = {
     style: 'currency',
     currency: toCurrency

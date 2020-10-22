@@ -77,6 +77,7 @@ export default {
     console.log('Composant ', this.$options.name)
     this.$store.dispatch('headers/getOrderLineHeaders')
     this.$store.dispatch('accounts/get')
+    this.$store.dispatch('settings/getSettings')
   },
   methods: {
     vatChanged(values, item) {

@@ -84,6 +84,7 @@ export default {
   mounted() {
     console.log('Composant', this.$options.name)
     this.$store.dispatch('accounts/get')
+    this.$store.dispatch('settings/getSettings')
   }
 }
 </script>

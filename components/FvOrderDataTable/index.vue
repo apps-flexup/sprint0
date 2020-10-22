@@ -51,6 +51,7 @@ export default {
     this.$store.dispatch('partners/getAll')
     this.$store.dispatch('contracts/getStructures')
     this.$store.dispatch('accounts/get')
+    this.$store.dispatch('settings/getSettings')
   },
   methods: {
     selected(order) {

@@ -124,6 +124,7 @@ export default {
     console.log('Composant ', this.$options.name)
     this.$store.dispatch('offers/get')
     this.$store.dispatch('accounts/get')
+    this.$store.dispatch('settings/getSettings')
   },
   methods: {
     clickedCard() {

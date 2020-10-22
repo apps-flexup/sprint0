@@ -51,6 +51,7 @@ export default {
     console.log('Composant ', this.$options.name)
     this.$store.dispatch('headers/getOfferHeaders')
     this.$store.dispatch('offers/get')
+    this.$store.dispatch('settings/getSettings')
   },
   methods: {
     selected(offer) {
