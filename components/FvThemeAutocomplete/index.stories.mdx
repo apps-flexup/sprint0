@@ -1,0 +1,18 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import FvThemeAutocomplete from './index.vue'
+
+<Meta title='Atoms/FvThemeAutocomplete' component={ FvThemeAutocomplete } />
+
+# FvThemeAutocomplete
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  components: { FvThemeAutocomplete },
+  template: `<FvThemeAutocomplete>
+  </FvThemeAutocomplete>`
+}}</Story>
+</Canvas>
+
+## ArgsTable
+
+<ArgsTable of={ FvThemeAutocomplete } />

@@ -8,7 +8,7 @@
     :currency="currency"
     @currency:selected="currencySelected"
   )
-  fv-theme-select(
+  fv-theme-autocomplete(
     :theme="theme"
     @theme:selected="themeSelected"
   )
