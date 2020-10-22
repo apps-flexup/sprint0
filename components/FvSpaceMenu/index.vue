@@ -1,13 +1,12 @@
 <template lang="pug">
 .fv-space-menu
-  div(v-if="space === 'seller'")
     v-list-group(
         :value='true'
       )
         template(v-slot:activator)
-          v-list-item-title.title(v-text="$t('sellerMenu.title')")
+          v-list-item-title.title(v-text="$t(space + 'Menu.title')")
         v-list-item(
-            v-for="(item, a) in sellerMenu"
+            v-for="(item, a) in findMenu"
             :key="a"
             :to="item.to"
             router
@@ -18,44 +17,6 @@
             v-list-item-content
               v-list-item-title(v-text="$t(item.title)")
     hr.line
-  div(v-else-if="space === 'buyer'")
-    v-list-group(
-        :value='true'
-      )
-        template(v-slot:activator)
-          v-list-item-title.title(v-text="$t('buyerMenu.title')")
-        v-list-item(
-            v-for="(item, a) in buyerMenu"
-            :key="a"
-            :to="item.to"
-            router
-            exact
-          )
-            v-list-item-action
-              v-icon {{ item.icon }}
-            v-list-item-content
-              v-list-item-title(v-text="$t(item.title)")
-    hr.line
-  div(v-else-if="space === 'manage'")
-    v-list-group(
-        :value='true'
-      )
-        template(v-slot:activator)
-          v-list-item-title.title(v-text="$t('manageMenu.title')")
-        v-list-item(
-            v-for="(item, a) in manageMenu"
-            :key="a"
-            :to="item.to"
-            router
-            exact
-          )
-            v-list-item-action
-              v-icon {{ item.icon }}
-            v-list-item-content
-              v-list-item-title(v-text="$t(item.title)")
-    hr.line
-  div(v-else)
-    p ya rien ici
 </template>
 
 <script>
@@ -65,26 +26,24 @@ export default {
     space: {
       type: String,
       default() {
-        return 'buyer'
+        return null
       }
     }
   },
   computed: {
-    buyerMenu() {
-      const res = this.$store.getters['settings/buyerMenu']
-      return res
-    },
-    sellerMenu() {
-      const res = this.$store.getters['settings/sellerMenu']
-      return res
-    },
-    manageMenu() {
-      const res = this.$store.getters['settings/manageMenu']
-      return res
-    },
-    connected() {
-      const res = this.$auth.loggedIn
-      return res
+    findMenu() {
+      if (this.space === 'buyer') {
+        const res = this.$store.getters['settings/buyerMenu']
+        return res
+      } else if (this.space === 'seller') {
+        const res = this.$store.getters['settings/sellerMenu']
+        return res
+      } else if (this.space === 'manage') {
+        const res = this.$store.getters['settings/manageMenu']
+        return res
+      } else {
+        return null
+      }
     }
   },
   mounted() {
@@ -92,11 +51,6 @@ export default {
     this.$store.dispatch('settings/getBuyerMenu')
     this.$store.dispatch('settings/getManageMenu')
     this.$store.dispatch('settings/getSellerMenu')
-  },
-  methods: {
-    click() {
-      console.log('click')
-    }
   }
 }
 </script>

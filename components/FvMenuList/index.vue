@@ -28,23 +28,11 @@ export default {
     space: {
       type: String,
       default() {
-        return 'buyerMenu'
+        return 'buyer'
       }
     }
   },
   computed: {
-    userMenu() {
-      const res = this.$store.getters['settings/userMenu']
-      return res
-    },
-    userName() {
-      const name = this.$auth.user.preferred_username
-      return name
-    },
-    accountMenu() {
-      const res = this.$store.getters['settings/accountMenu']
-      return res
-    },
     connected() {
       const res = this.$auth.loggedIn
       return res
@@ -52,9 +40,6 @@ export default {
   },
   mounted() {
     console.log('Composant ', this.$options.name)
-    this.$store.dispatch('settings/getManageMenu')
-    this.$store.dispatch('settings/getUserMenu')
-    this.$store.dispatch('settings/getAccountMenu')
   },
   methods: {
     logout() {

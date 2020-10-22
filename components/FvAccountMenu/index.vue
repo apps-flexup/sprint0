@@ -32,6 +32,7 @@ export default {
       const selectedAccount = this.$store.getters['accounts/selected']
       const account = this.$store.getters['accounts/findById'](selectedAccount)
       const res = account ? account.name : null
+      console.log('nom du compte: ', res)
       return res
     }
   },
