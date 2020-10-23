@@ -1,6 +1,7 @@
 <template lang="pug">
 .fv-account-menu
     v-list
+      i.category compte :
       v-list-group(
         :value='true'
       )
@@ -32,7 +33,6 @@ export default {
       const selectedAccount = this.$store.getters['accounts/selected']
       const account = this.$store.getters['accounts/findById'](selectedAccount)
       const res = account ? account.name : null
-      console.log('nom du compte: ', res)
       return res
     }
   },
@@ -55,5 +55,11 @@ export default {
   border-style: hidden;
   height: 1.5pt;
   background-color: lightgrey;
+  margin: 20px 0;
+}
+.category {
+  padding: 0 16px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
 }
 </style>

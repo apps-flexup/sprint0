@@ -19,5 +19,8 @@ export default {
   },
   getSellerMenu({ commit }) {
     this.$repos.sellerMenu.index().then((data) => commit('setSellerMenu', data))
+  },
+  getGlobalMenu({ commit }) {
+    this.$repos.globalMenu.index().then((data) => commit('setGlobalMenu', data))
   }
 }

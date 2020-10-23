@@ -16,5 +16,8 @@ export default {
   },
   setSellerMenu(state, items) {
     state.sellerMenu = items
+  },
+  setGlobalMenu(state, items) {
+    state.globalMenu = items
   }
 }

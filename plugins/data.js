@@ -22,6 +22,7 @@ export default (ctx, inject) => {
     accountMenu: repo('accountMenu'),
     buyerMenu: repo('buyerMenu'),
     sellerMenu: repo('sellerMenu'),
+    globalMenu: repo('globalMenu'),
     offerHeaders: repo('offer-headers'),
     offers: repo('offers'),
     orderHeaders: repo('order-headers'),

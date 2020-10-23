@@ -9,6 +9,7 @@
     )
     fv-account-menu
     fv-user-menu
+    fv-global-menu
     fv-logout-button(
       @logoutButton:clicked="logout"
     )
@@ -17,6 +18,7 @@
       @loginButton:clicked="login"
     )
     hr.line
+    fv-global-menu
 </template>
 
 <script>
@@ -59,5 +61,6 @@ export default {
   border-style: hidden;
   height: 1.5pt;
   background-color: lightgrey;
+  margin: 20px 0;
 }
 </style>

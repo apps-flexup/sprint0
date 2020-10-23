@@ -196,6 +196,10 @@
     "payments": "Versements",
     "start": "Démarrer"
   },
+  "globalMenu": {
+    "question": "FAQ",
+    "contact": "Contact"
+  },
   "buttons": {
     "create": {
       "product": "CRÉER PRODUIT",

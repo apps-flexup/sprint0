@@ -13568,6 +13568,20 @@
       "to": "/paiments"
     }
   ],
+  "globalMenu": [
+    {
+      "active": true,
+      "icon": "mdi-help-circle-outline",
+      "title": "globalMenu.question",
+      "to": "/question"
+    },
+    {
+      "active": true,
+      "icon": "mdi-email-outline",
+      "title": "globalMenu.contact",
+      "to": "/contact"
+    }
+  ],
   "offer-headers": [
     {
       "align": "start",

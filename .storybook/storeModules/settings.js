@@ -191,7 +191,24 @@ const moduleSettings = {
         },
       ]
       commit('setSellerMenu', data)
-    }
+    },
+    getGlobalMenu({ commit }) {
+      const data = [
+        {
+          "active": true,
+          "icon": "mdi-help-circle-outline",
+          "title": "globalMenu.question",
+          "to": "/question"
+        },
+        {
+          "active": true,
+          "icon": "mdi-email-outline",
+          "title": "globalMenu.contact",
+          "to": "/contact"
+        }
+      ]
+      commit('setGlobalMenu', data)
+    },
   },
 
   getters: getters,

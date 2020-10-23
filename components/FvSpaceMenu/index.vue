@@ -1,5 +1,6 @@
 <template lang="pug">
 .fv-space-menu
+    i.category espace :
     v-list-group(
         :value='true'
       )
@@ -66,5 +67,11 @@ export default {
   border-style: hidden;
   height: 1.5pt;
   background-color: lightgrey;
+  margin: 20px 0;
+}
+.category {
+  padding: 0 16px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
 }
 </style>

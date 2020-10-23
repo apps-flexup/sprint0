@@ -2,3 +2,9 @@
   min-width: initial !important;
   margin: 0 !important;
 }
+.v-list-item {
+  min-height: 35px;
+}
+.v-list {
+  padding: 3px 0;
+}

@@ -28,5 +28,10 @@ export default {
     if (!state.sellerMenu) return []
     const res = JSON.parse(JSON.stringify(state.sellerMenu))
     return res.filter((m) => m.active)
+  },
+  globalMenu(state) {
+    if (!state.globalMenu) return []
+    const res = JSON.parse(JSON.stringify(state.globalMenu))
+    return res.filter((m) => m.active)
   }
 }

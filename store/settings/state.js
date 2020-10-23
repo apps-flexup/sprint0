@@ -4,5 +4,6 @@ export default () => ({
   userMenu: [],
   accountMenu: [],
   buyerMenu: [],
-  sellerMenu: []
+  sellerMenu: [],
+  globalMenu: []
 })
