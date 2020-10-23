@@ -26,11 +26,11 @@ const activeAccount = (ctx) => ({
     ctx.store.dispatch('orders/get', {}, { root: true })
     ctx.store.dispatch('partners/get', {}, { root: true })
     ctx.store.dispatch('products/get', {}, { root: true })
-    ctx.store
-      .dispatch('settings/getSettings', {}, { root: true })
-      .then((_res) => {
-        this.setSettings()
-      })
+    ctx.store.dispatch('settings/getSettings', {}, { root: true })
+  },
+  settings() {
+    const res = ctx.store.getters['settings/settings']
+    return res
   },
   contracts() {
     const res = ctx.store.getters['contracts/all']
@@ -166,11 +166,6 @@ const activeAccount = (ctx) => ({
         ctx.store.dispatch('offers/get')
       })
     }
-  },
-  setSettings() {
-    const settings = ctx.store.getters['settings/settings']
-    ctx.app.i18n.locale = settings.language
-    ctx.$vuetify.theme.dark = settings.theme === 'dark'
   }
 })
 

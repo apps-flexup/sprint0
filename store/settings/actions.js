@@ -7,7 +7,7 @@ export default {
     this.$repos.menu.index().then((data) => commit('setMenu', data))
   },
   getSettings({ commit }) {
-    return this.$repos.settings.indexWithAccountId().then((data) => {
+    this.$repos.settings.indexWithAccountId().then((data) => {
       commit('setSettings', data[0])
     })
   },

@@ -1,5 +1,6 @@
 <template lang="pug">
 .fv-settings-default
+  pre {{ settings }}
   fv-language-autocomplete(
     :language="language"
     @language:selected="languageSelected"
@@ -27,7 +28,7 @@ export default {
   },
   computed: {
     settings() {
-      const res = this.$store.getters['settings/settings']
+      const res = this.$activeAccount.settings()
       return res
     },
     currency() {
@@ -52,19 +53,17 @@ export default {
       const newSettings = this.settings
       newSettings.currency = v
       this.$store.dispatch('settings/updateSettings', newSettings)
-      this.$activeAccount.setSettings()
     },
     languageSelected(v) {
       const newSettings = this.settings
       newSettings.language = v
       this.$store.dispatch('settings/updateSettings', newSettings)
-      this.$activeAccount.setSettings()
     },
     themeSelected(v) {
       const newSettings = this.settings
       newSettings.theme = v
+      console.log('this: ', this)
       this.$store.dispatch('settings/updateSettings', newSettings)
-      this.$activeAccount.setSettings()
     }
   }
 }
