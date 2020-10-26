@@ -4,14 +4,17 @@
     expand
   )
   div(v-if='connected')
-    fv-space-menu(
-      :space='space'
+    fv-sub-menu(
+      categoryName = 'space'
+      menuName = 'buyer'
     )
     fv-sub-menu(
       categoryName = 'account'
+      menuName = 'account'
     )
     fv-sub-menu(
       categoryName = 'user'
+      menuName = 'user'
     )
     fv-global-menu
     fv-logout-button(
@@ -30,14 +33,6 @@ import '@/style/icon_margin.css'
 
 export default {
   name: 'FvMenuList',
-  props: {
-    space: {
-      type: String,
-      default() {
-        return 'buyer'
-      }
-    }
-  },
   computed: {
     connected() {
       const res = this.$auth.loggedIn

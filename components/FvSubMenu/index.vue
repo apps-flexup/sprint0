@@ -6,7 +6,10 @@
         :value='true'
       )
         template(v-slot:activator)
-          v-list-item-title.title {{ findName }}
+          fv-title-menu(
+            :categoryName='categoryName'
+            :menuName='menuName'
+          )
         v-list-item(
             v-for="(item, a) in findMenu"
             :key="a"
@@ -30,34 +33,27 @@ export default {
       default() {
         return null
       }
+    },
+    menuName: {
+      type: String,
+      default() {
+        return null
+      }
     }
   },
   computed: {
     findMenu() {
-      const res = this.$store.getters['settings/' + this.categoryName + 'Menu']
+      const res = this.$store.getters['settings/' + this.menuName + 'Menu']
       return res
-    },
-    findName() {
-      if (this.categoryName === 'user') {
-        const name = this.$auth.user.preferred_username
-        return name
-      } else if (this.categoryName === 'account') {
-        const selectedAccount = this.$store.getters['accounts/selected']
-        const account = this.$store.getters['accounts/findById'](
-          selectedAccount
-        )
-        const res = account ? account.name : null
-        return res
-      } else {
-        alert('Error : Wrong category name ')
-        return null
-      }
     }
   },
   mounted() {
     console.log('Composant ', this.$options.name)
     this.$store.dispatch('settings/getUserMenu')
     this.$store.dispatch('settings/getAccountMenu')
+    this.$store.dispatch('settings/getBuyerMenu')
+    this.$store.dispatch('settings/getManageMenu')
+    this.$store.dispatch('settings/getSellerMenu')
   }
 }
 </script>

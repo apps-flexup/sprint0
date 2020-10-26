@@ -1,14 +1,17 @@
-export const spaces = {
+export const menus = {
+    user: 'user',
+    account: 'account',
     seller: 'seller',
     buyer: 'buyer',
     manage: 'manage'
 }
 
-export const defaultSpace = 'buyer'
+export const defaultMenu = 'user'
 
 export const category = {
     user: 'user',
-    account: 'account'
+    account: 'account',
+    space: 'space'
 }
 
 export const defaultCategory = 'user'
