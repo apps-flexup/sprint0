@@ -50,13 +50,13 @@ const moduleSettings = {
           "to": "/partners"
         },
         {
-          "active": false,
+          "active": true,
           "icon": "mdi-file-document",
           "title": "manageMenu.documents",
           "to": "/documents"
         },
         {
-          "active": false,
+          "active": true,
           "icon": "mdi-desktop-mac-dashboard",
           "title": "manageMenu.dashboard",
           "to": "/dashboard"
@@ -89,6 +89,12 @@ const moduleSettings = {
           "icon": "mdi-account-group-outline",
           "title": "accountMenu.members",
           "to": "/partners"
+        },
+        {
+          "active": true,
+          "icon": "mdi-map-marker-outline",
+          "title": "buyerMenu.deliveries",
+          "to": "#########"
         },
       ]
       commit('setAccountMenu', data)
@@ -135,18 +141,6 @@ const moduleSettings = {
           "icon": "mdi-heart-outline",
           "title": "buyerMenu.favorite",
           "to": "########"
-        },
-        {
-          "active": true,
-          "icon": "mdi-map-marker-outline",
-          "title": "buyerMenu.deliveries",
-          "to": "#########"
-        },
-        {
-          "active": true,
-          "icon": "mdi-credit-card-multiple-outline",
-          "title": "buyerMenu.payments",
-          "to": "##########"
         },
       ]
       commit('setBuyerMenu', data)
