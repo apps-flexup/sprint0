@@ -16,7 +16,9 @@
       categoryName = 'user'
       menuName = 'user'
     )
-    fv-global-menu
+    fv-find-menu(
+      menuName='global'
+    )
     fv-logout-button(
       @logoutButton:clicked="logout"
     )
@@ -25,7 +27,9 @@
       @loginButton:clicked="login"
     )
     hr.line
-    fv-global-menu
+    fv-find-menu(
+      menuName='global'
+    )
 </template>
 
 <script>

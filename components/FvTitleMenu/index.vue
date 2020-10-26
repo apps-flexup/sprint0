@@ -3,7 +3,7 @@
   div(v-if="categoryName === 'space'")
     v-list-item-title.title(v-text="$t(menuName + 'Menu.title')")
   div(v-else-if="categoryName === 'user' || 'account'")
-    v-list-item-title.title {{findName}}
+    v-list-item-title.title {{ findName }}
   div(v-else)
     v-list-item-title.title
 </template>
