@@ -3,12 +3,12 @@ import { select } from '@storybook/addon-knobs'
 import { spaces, defaultSpace } from '@/.storybook/knobs_data/menusAvailable'
 import FvMenuList from './index.vue'
 
-<Meta title="Molecules/FvMenuList" component={FvMenuList} />
+<Meta title='Molecules/FvMenuList' component={ FvMenuList } />
 
 # FvMenuList
 
 <Canvas>
-  <Story name="Common" height="150px">
+  <Story name='Common' height='150px'>
     {{
       components: { FvMenuList },
       props: {
@@ -17,13 +17,13 @@ import FvMenuList from './index.vue'
         }
       },
       template: `<FvMenuList
-    :space='knobSpace'
-    > 
-    </FvMenuList>`
+        :space='knobSpace'
+      > 
+      </FvMenuList>`
     }}
   </Story>
 </Canvas>
 
 ## ArgsTable
 
-<ArgsTable of={FvMenuList} />
+<ArgsTable of={ FvMenuList } />
