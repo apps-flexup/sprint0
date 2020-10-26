@@ -18,6 +18,7 @@ const activeAccount = {
   // },
   set(accountId) {
     store.dispatch('accounts/setCurrent', accountId)
+    store.dispatch('settings/getSettings', {}, { root: true })
   },
   // contracts() {
   //   const res = ctx.store.getters['contracts/all']

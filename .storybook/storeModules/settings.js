@@ -69,9 +69,18 @@ const moduleSettings = {
         }
       ]
       commit('setMenu', data)
+    },
+    getSettings({ commit }) {
+      const data = {
+        currency: "EUR",
+        language: "fr",
+        theme: "light",
+        account_id: 1,
+        id: 1
+      }
+      commit('setSettings', data)
     }
   },
-
   getters: getters,
   mutations: mutations,
   state: state

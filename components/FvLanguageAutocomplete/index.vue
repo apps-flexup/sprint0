@@ -30,7 +30,7 @@ export default {
   },
   computed: {
     items() {
-      const res = this.$store.getters.locales
+      const res = this.$store.getters['settings/locales']
       return res
     }
   },

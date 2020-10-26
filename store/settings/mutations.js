@@ -7,7 +7,7 @@ export default {
   },
   setSettings(state, item) {
     state.settings = item
-    this.app.i18n.locale = item.language
-    this.app.vuetify.framework.theme.dark = item.theme === 'dark'
+    // this.app.i18n.locale = item.language
+    // this.app.vuetify.framework.theme.dark = item.theme === 'dark'
   }
 }
