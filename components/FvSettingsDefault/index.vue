@@ -1,6 +1,5 @@
 <template lang="pug">
 .fv-settings-default
-  pre {{ settings }}
   fv-language-autocomplete(
     :language="language"
     @language:selected="languageSelected"
