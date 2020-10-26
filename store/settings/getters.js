@@ -15,8 +15,8 @@ export default {
     return res
   },
   locale(state) {
-    const res = JSON.parse(JSON.stringify(state.locale))
-    return res
+    const res = JSON.parse(JSON.stringify(state.settings))
+    return res.language
   },
   fallbackLocale(state) {
     const res = JSON.parse(JSON.stringify(state.fallbackLocale))

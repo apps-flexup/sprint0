@@ -51,18 +51,17 @@ export default {
     currencySelected(v) {
       const newSettings = this.settings
       newSettings.currency = v
-      this.$store.dispatch('settings/updateSettings', newSettings)
+      this.$activeAccount.setSettings(newSettings)
     },
     languageSelected(v) {
       const newSettings = this.settings
       newSettings.language = v
-      this.$store.dispatch('settings/updateSettings', newSettings)
+      this.$activeAccount.setSettings(newSettings)
     },
     themeSelected(v) {
       const newSettings = this.settings
       newSettings.theme = v
-      console.log('this: ', this)
-      this.$store.dispatch('settings/updateSettings', newSettings)
+      this.$activeAccount.setSettings(newSettings)
     }
   }
 }
