@@ -79,6 +79,9 @@ const moduleSettings = {
         id: 1
       }
       commit('setSettings', data)
+    },
+    updateSettings({ commit }, settings) {
+        commit('setSettings', settings)
     }
   },
   getters: getters,

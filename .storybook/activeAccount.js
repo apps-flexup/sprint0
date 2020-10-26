@@ -36,6 +36,9 @@ const activeAccount = {
     const res = store.getters['settings/settings']
     return res
   },
+  setSettings(settings) {
+    store.dispatch('settings/updateSettings', settings)
+  },
   currencies() {
     const res = store.getters['currencies/all']
     return res

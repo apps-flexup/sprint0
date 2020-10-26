@@ -39,7 +39,7 @@ const activeAccount = (ctx) => ({
   setSettings(settings) {
     ctx.app.i18n.locale = settings.language
     ctx.$vuetify.theme.dark = settings.theme === 'dark'
-    this.$store.dispatch('settings/updateSettings', settings)
+    ctx.store.dispatch('settings/updateSettings', settings)
   },
   contracts() {
     const res = ctx.store.getters['contracts/all']
