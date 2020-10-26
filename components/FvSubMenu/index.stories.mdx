@@ -1,0 +1,32 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { select } from '@storybook/addon-knobs'
+import {
+  category,
+  defaultCategory
+} from '@/.storybook/knobs_data/menusAvailable'
+import FvSubMenu from './index.vue'
+
+<Meta title="Molecules/FvSubMenu" component={FvSubMenu} />
+
+# FvSubMenu
+
+<Canvas>
+  <Story name="Common" height="150px">
+    {{
+      components: { FvSubMenu },
+      props: {
+        knobCategory: {
+          default: select('Category', category, defaultCategory, 'Props')
+        }
+      },
+      template: `<FvSubMenu
+    :categoryName='knobCategory'
+    >
+    </FvSubMenu>`
+    }}
+  </Story>
+</Canvas>
+
+## ArgsTable
+
+<ArgsTable of={FvSubMenu} />

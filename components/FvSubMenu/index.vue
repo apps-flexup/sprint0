@@ -1,14 +1,14 @@
 <template lang="pug">
-.fv-account-menu
+.fv-sub-menu
     v-list
-      i.category compte :
+      i.category(v-text="$t('category.' + categoryName)")
       v-list-group(
         :value='true'
       )
         template(v-slot:activator)
-          v-list-item-title.title {{accountName}}
+          v-list-item-title.title {{ findName }}
         v-list-item(
-            v-for="(item, a) in accountMenu"
+            v-for="(item, a) in findMenu"
             :key="a"
             :to="item.to"
             router
@@ -23,21 +23,40 @@
 
 <script>
 export default {
-  name: 'FvAccountMenu',
+  name: 'FvSubMenu',
+  props: {
+    categoryName: {
+      type: String,
+      default() {
+        return null
+      }
+    }
+  },
   computed: {
-    accountMenu() {
-      const res = this.$store.getters['settings/accountMenu']
+    findMenu() {
+      const res = this.$store.getters['settings/' + this.categoryName + 'Menu']
       return res
     },
-    accountName() {
-      const selectedAccount = this.$store.getters['accounts/selected']
-      const account = this.$store.getters['accounts/findById'](selectedAccount)
-      const res = account ? account.name : null
-      return res
+    findName() {
+      if (this.categoryName === 'user') {
+        const name = this.$auth.user.preferred_username
+        return name
+      } else if (this.categoryName === 'account') {
+        const selectedAccount = this.$store.getters['accounts/selected']
+        const account = this.$store.getters['accounts/findById'](
+          selectedAccount
+        )
+        const res = account ? account.name : null
+        return res
+      } else {
+        alert('Error : Wrong category name ')
+        return null
+      }
     }
   },
   mounted() {
     console.log('Composant ', this.$options.name)
+    this.$store.dispatch('settings/getUserMenu')
     this.$store.dispatch('settings/getAccountMenu')
   }
 }

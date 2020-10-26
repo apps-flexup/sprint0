@@ -5,3 +5,10 @@ export const spaces = {
 }
 
 export const defaultSpace = 'buyer'
+
+export const category = {
+    user: 'user',
+    account: 'account'
+}
+
+export const defaultCategory = 'user'

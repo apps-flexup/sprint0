@@ -173,12 +173,12 @@
     "management": "Account management"
   },
   "accountMenu": {
-    "information": "account information",
+    "information": "Account information",
     "variant": "Preferences",
     "members": "Members"
   },
   "buyerMenu": {
-    "title": "Buyer",
+    "title": "Buy",
     "search": "Search",
     "orders": "Orders",
     "favorite": "Favorite",
@@ -186,7 +186,7 @@
     "payments": "Payments"
   },
   "sellerMenu": {
-    "title": "Seller",
+    "title": "Sell",
     "dashboard": "Dashboard",
     "orders": "Orders",
     "products": "Products",
@@ -198,6 +198,11 @@
   "globalMenu": {
     "question": "FAQ",
     "contact": "Contact"
+  },
+  "category": {
+    "space": "Space :",
+    "account": "Account :",
+    "user": "User :"
   },
   "buttons": {
     "create" : {

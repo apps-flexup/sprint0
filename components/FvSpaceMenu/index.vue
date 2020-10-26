@@ -1,6 +1,6 @@
 <template lang="pug">
 .fv-space-menu
-    i.category espace :
+    i.category(v-text="$t('category.space')")
     v-list-group(
         :value='true'
       )
@@ -33,18 +33,8 @@ export default {
   },
   computed: {
     findMenu() {
-      if (this.space === 'buyer') {
-        const res = this.$store.getters['settings/buyerMenu']
-        return res
-      } else if (this.space === 'seller') {
-        const res = this.$store.getters['settings/sellerMenu']
-        return res
-      } else if (this.space === 'manage') {
-        const res = this.$store.getters['settings/manageMenu']
-        return res
-      } else {
-        return null
-      }
+      const res = this.$store.getters['settings/' + this.space + 'Menu']
+      return res
     }
   },
   mounted() {

@@ -7,8 +7,12 @@
     fv-space-menu(
       :space='space'
     )
-    fv-account-menu
-    fv-user-menu
+    fv-sub-menu(
+      categoryName = 'account'
+    )
+    fv-sub-menu(
+      categoryName = 'user'
+    )
     fv-global-menu
     fv-logout-button(
       @logoutButton:clicked="logout"
@@ -22,7 +26,7 @@
 </template>
 
 <script>
-import '@/.storybook/style/icon_margin.css'
+import '@/style/icon_margin.css'
 
 export default {
   name: 'FvMenuList',

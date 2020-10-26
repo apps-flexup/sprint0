@@ -13496,6 +13496,12 @@
       "icon": "mdi-account-group-outline",
       "title": "accountMenu.members",
       "to": "/members"
+    },
+    {
+      "active": true,
+      "icon": "mdi-map-marker-outline",
+      "title": "buyerMenu.deliveries",
+      "to": "/deliveries"
     }
   ],
   "buyerMenu": [
@@ -13516,18 +13522,6 @@
       "icon": "mdi-heart-outline",
       "title": "buyerMenu.favorite",
       "to": "/favorite"
-    },
-    {
-      "active": true,
-      "icon": "mdi-map-marker-outline",
-      "title": "buyerMenu.deliveries",
-      "to": "/deliveries"
-    },
-    {
-      "active": true,
-      "icon": "mdi-credit-card-multiple-outline",
-      "title": "buyerMenu.payments",
-      "to": "/payments"
     }
   ],
   "sellerMenu": [

@@ -41,7 +41,7 @@ const moduleSettings = {
           "active": true,
           "icon": "mdi-email-outline",
           "title": "manageMenu.contacts",
-          "to": "###############"
+          "to": "/contacts"
         },
         {
           "active": true,
@@ -65,7 +65,7 @@ const moduleSettings = {
           "active": true,
           "icon": "mdi-cog-outline",
           "title": "manageMenu.settings",
-          "to": "#"
+          "to": "/settings"
         }
       ]
       commit('setManageMenu', data)

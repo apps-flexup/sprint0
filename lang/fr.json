@@ -156,7 +156,7 @@
     }
   },
   "manageMenu": {
-    "title": "Management",
+    "title": "Manager",
     "home": "Accueil",
     "orders": "Commandes",
     "offers": "Offres",
@@ -199,6 +199,11 @@
   "globalMenu": {
     "question": "FAQ",
     "contact": "Contact"
+  },
+  "category": {
+    "space": "Espace :",
+    "account": "Compte :",
+    "user": "Utilisateur :"
   },
   "buttons": {
     "create": {
