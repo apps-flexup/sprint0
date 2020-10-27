@@ -14,4 +14,4 @@ export const category = {
     space: 'space'
 }
 
-export const defaultCategory = 'user'
+export const defaultCategory = 'user' 

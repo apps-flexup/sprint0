@@ -38,7 +38,7 @@ export default {
         const res = account ? account.name : null
         return res
       } else {
-        return null
+        return 'invité'
       }
     }
   },
