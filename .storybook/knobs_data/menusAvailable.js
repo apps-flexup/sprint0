@@ -8,7 +8,7 @@ export const menus = {
 
 export const defaultMenu = 'user'
 
-export const category = {
+export const categories = {
     user: 'user',
     account: 'account',
     space: 'space'
