@@ -1,6 +1,6 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
 import { array } from '@storybook/addon-knobs'
-import { menus, defaultMenu } from '@/.storybook/knobs_data/menusAvailable'
+import { menus, defaultMenu, fakeList } from '@/.storybook/knobs_data/menusAvailable'
 import FvFindMenu from './index.vue'
 
 <Meta title='Molecules/FvFindMenu' component={ FvFindMenu } />
@@ -13,11 +13,11 @@ import FvFindMenu from './index.vue'
       components: { FvFindMenu },
       props: {
         knobList: {
-          default: array('list', [], ',', 'Props')
+          default: array('list',fakeList , ',', 'Props')
         }
       },
       template: `<FvFindMenu
-        :list='knobMenu'
+        :list='knobList'
       >
       </FvFindMenu>`
     }}
