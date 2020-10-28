@@ -11,7 +11,10 @@
       template(v-slot:item.name='{ item }')
         div(v-to-locale="item.name")
       template(v-slot:item.price='{ item }')
-        div(v-to-preferred-currency="{amount: item.price, currency: item.currency}")
+        div(
+          v-to-preferred-currency="{amount: item.price, currency: item.currency}"
+          :key="preferredCurrency"
+        )
       template(v-slot:item.vat='{ item }')
         div {{ item.vat }}%
       template(v-slot:item.unit='{ item }')
@@ -38,6 +41,10 @@ export default {
     }
   },
   computed: {
+    preferredCurrency() {
+      const res = this.$activeAccount.settings().currency
+      return res
+    },
     headers() {
       const res = this.$activeAccount.headersOffers()
       return translateHeaders(this.$i18n, res)

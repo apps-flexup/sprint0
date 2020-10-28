@@ -65,7 +65,10 @@ Vue.directive('to-preferred-currency', async (el, binding, vnode) => {
     style: 'currency',
     currency: toCurrency
   }
-  const convertedAmount = await convert(fromCurrency, toCurrency, amount)
+  let convertedAmount = amount
+  if (fromCurrency !== toCurrency) {
+    convertedAmount = await convert(fromCurrency, toCurrency, amount)
+  }
   const valueToDisplay = new Intl.NumberFormat(locale, options).format(
     convertedAmount
   )

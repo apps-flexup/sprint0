@@ -56,7 +56,6 @@ export default {
     currency() {
       const iso = this.$activeAccount.settings().currency
       const res = this.$store.getters['currencies/findIso'](iso)
-      console.log('res: ', res)
       return res
     }
   },
