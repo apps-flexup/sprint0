@@ -5,19 +5,22 @@
   )
   div(v-if='connected')
     fv-sub-menu(
-      categoryName = 'space'
-      menuName = 'buyer'
+      categoryName='space'
+      menuName='buyer'
+      :title="buyer"
     )
     fv-sub-menu(
-      categoryName = 'account'
-      menuName = 'account'
+      categoryName='account'
+      menuName='account'
+      :title="account"
     )
     fv-sub-menu(
-      categoryName = 'user'
-      menuName = 'user'
+      categoryName='user'
+      menuName='user'
+      :title="user"
     )
     fv-find-menu(
-      menuName='global'
+      :list='globalMenu'
     )
     fv-logout-button(
       @logoutButton:clicked="logout"
@@ -28,7 +31,7 @@
     )
     hr.line
     fv-find-menu(
-      menuName='global'
+      :list='globalMenu'
     )
 </template>
 
@@ -36,10 +39,50 @@
 import '@/style/icon_margin.css'
 
 export default {
+  props: {
+    titleSpace: {
+      type: String,
+      default() {
+        return this.space
+      }
+    },
+    menuName: {
+      type: String,
+      default() {
+        return null
+      }
+    }
+  },
   name: 'FvMenuList',
   computed: {
     connected() {
       const res = this.$auth.loggedIn
+      return res
+    },
+    user() {
+      const name = this.$auth.user.preferred_username
+      return name
+    },
+    account() {
+      const selectedAccount = this.$store.getters['accounts/selected']
+      const account = this.$store.getters['accounts/findById'](selectedAccount)
+      const res = account ? account.name : null
+      return res
+    },
+    buyer() {
+      const res = this.$t('buyerMenu.title')
+      return res
+    },
+    seller() {
+      const res = this.$t('sellerMenu.title')
+      return res
+    },
+    manage() {
+      const res = this.$t('manageMenu.title')
+      return res
+    },
+    globalMenu() {
+      const res = this.$store.getters['settings/globalMenu']
       return res
     }
   },

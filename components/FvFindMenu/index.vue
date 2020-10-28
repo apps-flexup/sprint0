@@ -2,7 +2,7 @@
 .fv-find-menu
     v-list
       v-list-item(
-          v-for="(item, a) in findMenu"
+          v-for="(item, a) in list"
           :key="a"
           :to="item.to"
           router
@@ -23,12 +23,12 @@ export default {
       default() {
         return null
       }
-    }
-  },
-  computed: {
-    findMenu() {
-      const res = this.$store.getters['settings/' + this.menuName + 'Menu']
-      return res
+    },
+    list: {
+      type: Array,
+      default() {
+        return []
+      }
     }
   },
   mounted() {

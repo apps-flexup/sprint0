@@ -6,12 +6,10 @@
         :value='true'
       )
         template(v-slot:activator)
-          fv-title-menu(
-            :categoryName='categoryName'
-            :menuName='menuName'
-          )
+          v-list-item-title.title {{ title }}
         fv-find-menu(
           :menuName='menuName'
+          :list='findMenu'
         )
       hr.line
 </template>
@@ -31,6 +29,18 @@ export default {
       default() {
         return null
       }
+    },
+    title: {
+      type: String,
+      default() {
+        return null
+      }
+    }
+  },
+  computed: {
+    findMenu() {
+      const res = this.$store.getters['settings/' + this.menuName + 'Menu']
+      return res
     }
   },
   mounted() {

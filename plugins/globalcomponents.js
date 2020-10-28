@@ -58,7 +58,6 @@ import FvSettingsDefault from '@/components/FvSettingsDefault'
 import FvSettingsIndex from '@/components/FvSettingsIndex'
 import FvSettingsOthers from '@/components/FvSettingsOthers'
 import FvStepper from '@/components/FvStepper'
-import FvTitleMenu from '@/components/FvTitleMenu'
 import FvVatField from '@/components/FvVatField'
 import FvDeleteAction from '@/components/FvDeleteAction'
 import FvEditAction from '@/components/FvEditAction'
@@ -194,7 +193,6 @@ Vue.component(
   'fv-contract-summary-visualisation',
   FvContractSummaryVisualisation
 )
-Vue.component('fv-title-menu', FvTitleMenu)
 Vue.component('fv-contract-step-visualisation', FvContractStepVisualisation)
 Vue.component('fv-country-list', FvCountryList)
 Vue.component('fv-product-list', FvProductList)
