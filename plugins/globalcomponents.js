@@ -4,7 +4,7 @@ import FvAccount from '@/components/FvAccount'
 import FvAccountAvatar from '@/components/FvAccountAvatar'
 import FvAutocomplete from '@/components/FvAutocomplete'
 import FvAvatar from '@/components/FvAvatar'
-import FvMenuList from '@/components/FvMenuList'
+import FvMenu from '@/components/FvMenu'
 import FvCloseModalButton from '@/components/FvCloseModalButton'
 import FvContactCard from '@/components/FvContactCard'
 import FvContactDialog from '@/components/FvContactDialog'
@@ -34,7 +34,7 @@ import FvContractSummaryStepPaiement from '@/components/FvContractSummaryStepPai
 import FvContractSummaryStepStructure from '@/components/FvContractSummaryStepStructure'
 import FvDataTableHeader from '@/components/FvDataTableHeader'
 import FvDataTableSearchBar from '@/components/FvDataTableSearchBar'
-import FvFindMenu from '@/components/FvFindMenu'
+import FvShowMenu from '@/components/FvShowMenu'
 import FvIcon from '@/components/FvIcon'
 import FvListAccounts from '@/components/FvListAccounts'
 import FvLoginButton from '@/components/FvLoginButton'
@@ -118,7 +118,7 @@ Vue.component('fv-account', FvAccount)
 Vue.component('fv-account-avatar', FvAccountAvatar)
 Vue.component('fv-autocomplete', FvAutocomplete)
 Vue.component('fv-avatar', FvAvatar)
-Vue.component('fv-menu-list', FvMenuList)
+Vue.component('fv-menu-list', FvMenu)
 Vue.component('fv-close-modal-button', FvCloseModalButton)
 Vue.component('fv-contact-dialog', FvContactDialog)
 Vue.component('fv-contact-card', FvContactCard)
@@ -157,7 +157,7 @@ Vue.component(
 )
 Vue.component('fv-data-table-header', FvDataTableHeader)
 Vue.component('fv-data-table-search-bar', FvDataTableSearchBar)
-Vue.component('fv-find-menu', FvFindMenu)
+Vue.component('fv-show-menu', FvShowMenu)
 Vue.component('fv-icon', FvIcon)
 Vue.component('fv-list-accounts', FvListAccounts)
 Vue.component('fv-login-button', FvLoginButton)

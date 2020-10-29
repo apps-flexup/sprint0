@@ -1,5 +1,5 @@
 <template lang="pug">
-.fv-menu-list
+.fv-menu
   v-list(
     expand
   )
@@ -19,7 +19,7 @@
       menuName='user'
       :title="user"
     )
-    fv-find-menu(
+    fv-show-menu(
       :list='globalMenu'
     )
     fv-logout-button(
@@ -30,7 +30,7 @@
       @loginButton:clicked="login"
     )
     hr.line
-    fv-find-menu(
+    fv-show-menu(
       :list='globalMenu'
     )
 </template>
@@ -39,6 +39,7 @@
 import '@/style/icon_margin.css'
 
 export default {
+  name: 'FvMenu',
   props: {
     titleSpace: {
       type: String,
@@ -53,7 +54,6 @@ export default {
       }
     }
   },
-  name: 'FvMenuList',
   computed: {
     connected() {
       const res = this.$auth.loggedIn

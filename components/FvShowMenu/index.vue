@@ -1,5 +1,5 @@
 <template lang="pug">
-.fv-find-menu
+.fv-show-menu
     v-list
       v-list-item(
           v-for="(item, a) in list"
@@ -16,7 +16,7 @@
 
 <script>
 export default {
-  name: 'FvFindMenu',
+  name: 'FvShowMenu',
   props: {
     menuName: {
       type: String,

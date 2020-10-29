@@ -7,7 +7,7 @@
       )
         template(v-slot:activator)
           v-list-item-title.title {{ title }}
-        fv-find-menu(
+        fv-show-menu(
           :menuName='menuName'
           :list='findMenu'
         )
