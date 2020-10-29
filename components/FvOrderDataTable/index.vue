@@ -11,7 +11,10 @@
       template(v-slot:item.date='{ item }')
         div {{ dateToLocaleString(item.date) }}
       template(v-slot:item.amount='{ item }')
-        div(v-to-preferred-currency="{amount: item.amount, currency: item.currency}")
+        fv-price-to-preferred-currency(
+          :price="item.amount"
+          :currency="item.currency"
+        )
       template(v-slot:item.structure='{ item }')
         div {{ getStructureName(item.structure) }}
       template(v-slot:item.status ='{ item }')
