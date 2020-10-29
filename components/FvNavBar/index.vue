@@ -7,7 +7,9 @@
     fixed
     app
   )
-    fv-menu-list
+    fv-menu(
+      :spaceTitle="findSpaceTitle"
+    )
   v-app-bar(
     :clipped-left="clipped"
     fixed
@@ -28,6 +30,12 @@ export default {
       default() {
         return ''
       }
+    },
+    spaceTitle: {
+      type: String,
+      default() {
+        return 'buyer'
+      }
     }
   },
   data() {
@@ -36,6 +44,12 @@ export default {
       drawer: false,
       fixed: false,
       miniVariant: false
+    }
+  },
+  computed: {
+    findSpaceTitle() {
+      const res = this.$t(this.spaceTitle + 'Menu.title')
+      return res
     }
   },
   mounted() {

@@ -8,20 +8,18 @@ import FvShowMenu from './index.vue'
 # FvShowMenu
 
 <Canvas>
-  <Story name='Common' height='150px'>
-    {{
-      components: { FvShowMenu },
-      props: {
-        knobList: {
-          default: array('list',fakeList , ',', 'Props')
-        }
-      },
-      template: `<FvShowMenu
-        :list='knobList'
-      >
-      </FvShowMenu>`
-    }}
-  </Story>
+<Story name='Common' height='150px'>{{
+  components: { FvShowMenu },
+  props: {
+    knobList: {
+      default: array('list',fakeList , ',', 'Props')
+    }
+  },
+  template: `<FvShowMenu
+    :list='knobList'
+  >
+  </FvShowMenu>`
+}}</Story>
 </Canvas>
 
 ## ArgsTable

@@ -39,7 +39,7 @@ export default {
   },
   computed: {
     findMenu() {
-      const res = this.$store.getters['settings/' + this.menuName + 'Menu']
+      const res = this.$store.getters['settings/' + this.menuName]
       return res
     }
   },

@@ -5,7 +5,6 @@ export const menus = {
     buyer: 'buyer',
     manage: 'manage'
 }
-
 export const defaultMenu = 'user'
 
 export const categories = {
@@ -13,8 +12,14 @@ export const categories = {
     account: 'account',
     space: 'space'
 }
-
 export const defaultCategory = 'user' 
+
+export const spaceTitle = {
+    buyer: 'buyer',
+    seller: 'seller',
+    manage: 'manage'
+}
+export const defaultSpaceTitle = 'buyer'
 
 export const fakeList = [
     {

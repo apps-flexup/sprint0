@@ -76,7 +76,7 @@ const moduleSettings = {
           "active": true,
           "icon": "mdi-information-outline",
           "title": "accountMenu.information",
-          "to": "#####"
+          "to": "/information"
         },
         {
           "active": true,
@@ -94,7 +94,7 @@ const moduleSettings = {
           "active": true,
           "icon": "mdi-map-marker-outline",
           "title": "buyerMenu.deliveries",
-          "to": "#########"
+          "to": "/deliveries"
         },
       ]
       commit('setAccountMenu', data)
@@ -105,19 +105,19 @@ const moduleSettings = {
           "active": true,
           "icon": "mdi-account-circle-outline",
           "title": "userMenu.data",
-          "to": "##"
+          "to": "/data"
         },
         {
           "active": true,
           "icon": "mdi-shield-lock-outline",
           "title": "userMenu.security",
-          "to": "###"
+          "to": "/security"
         },
         {
           "active": true,
           "icon": "mdi-account-switch-outline",
           "title": "userMenu.management",
-          "to": "####"
+          "to": "/management"
         }
       ]
       commit('setUserMenu', data)
@@ -128,7 +128,7 @@ const moduleSettings = {
           "active": true,
           "icon": "mdi-magnify",
           "title": "buyerMenu.search",
-          "to": "#######"
+          "to": "/search"
         },
         {
           "active": true,
@@ -140,7 +140,7 @@ const moduleSettings = {
           "active": true,
           "icon": "mdi-heart-outline",
           "title": "buyerMenu.favorite",
-          "to": "########"
+          "to": "/favorite"
         },
       ]
       commit('setBuyerMenu', data)
@@ -175,13 +175,13 @@ const moduleSettings = {
           "active": true,
           "icon": "mdi-map-marker-outline",
           "title": "buyerMenu.deliveries",
-          "to": "#############"
+          "to": "/deliveries"
         },
         {
           "active": true,
           "icon": "mdi-credit-card-multiple-outline",
           "title": "sellerMenu.payments",
-          "to": "################"
+          "to": "/paiments"
         },
       ]
       commit('setSellerMenu', data)
