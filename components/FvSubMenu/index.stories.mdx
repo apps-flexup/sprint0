@@ -14,16 +14,12 @@ import FvSubMenu from './index.vue'
     knobCategory: {
       default: select('Categories', categories, defaultCategory, 'Props')
     },
-    knobMenu: {
-      default: array('Menus', fakeList, ',', 'Props')
-    },
     knobTitle: {
       default: text('Title', 'test', 'Props')
     }
   },
   template: `<FvSubMenu
     :categoryName='knobCategory'
-    :findMenu='knobMenu'
     :title='knobTitle'
   >
   </FvSubMenu>`
