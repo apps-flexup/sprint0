@@ -12,12 +12,12 @@
     fv-sub-menu(
       categoryName='account'
       menuName='accountMenu'
-      :title="account"
+      :title="accountSelected"
     )
     fv-sub-menu(
       categoryName='user'
       menuName='userMenu'
-      :title="user"
+      :title="userName"
     )
     fv-show-menu(
       :list='globalMenu'
@@ -59,11 +59,11 @@ export default {
       const res = this.$auth.loggedIn
       return res
     },
-    user() {
+    userName() {
       const name = this.$auth.user.preferred_username
       return name
     },
-    account() {
+    accountSelected() {
       const selectedAccount = this.$store.getters['accounts/selected']
       const account = this.$store.getters['accounts/findById'](selectedAccount)
       const res = account ? account.name : null
