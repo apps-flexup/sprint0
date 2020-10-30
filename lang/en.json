@@ -18,6 +18,8 @@
     "account": "Account: ",
     "space": "Space: ",
     "route": {
+      "account": "Account",
+      "account-new": "New account",
       "index": "Home",
       "orders": "Orders",
       "orders-new": "New order",
@@ -25,7 +27,8 @@
       "offers": "Offers",
       "contacts": "Contacts",
       "partners": "Partners",
-      "settings": "Settings"
+      "settings": "Settings",
+      "settings-new": "New settings"
     }
   },
   "listAccounts": {
