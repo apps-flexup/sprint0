@@ -21,7 +21,10 @@
             )
         template(v-slot:item.price="{ item }")
           v-row.priceCol
-            div(v-to-preferred-currency="{amount: item.price, currency: item.currency}")
+            fv-price-to-preferred-currency(
+              :price="item.price"
+              :currency="item.currency"
+            )
             div.right / {{ item.unit }}
         template(v-slot:item.total="{ item }")
           div(v-to-preferred-currency="{amount: item.price * item.quantity, currency: item.currency}")
