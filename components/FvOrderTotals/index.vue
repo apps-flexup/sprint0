@@ -6,7 +6,10 @@
       v-col(cols="8")
         div {{ $t('forms.orders.new.totals.withoutVat') }}
       v-col(cols="4")
-        div.text-right(v-to-preferred-currency="{ amount: totalWithoutVat, currency: preferredCurrency }")
+        fv-price-to-preferred-currency(
+          :price="totalWithoutVat"
+          :currency="preferredCurrency"
+        )
     v-divider
     div(
       v-for="(v, k) in totalsByVat" :key="k"
@@ -14,15 +17,25 @@
       v-list-item
         v-col(cols="8")
           div.left {{ $t('forms.orders.new.totals.vat')}} {{ k }}% {{ $t('forms.orders.new.totals.of') }}
-          div.right(v-to-preferred-currency="{amount: v.total, currency: preferredCurrency }")
+          fv-price-to-preferred-currency.right(
+            :price="v.total"
+            :currency="preferredCurrency"
+          )
         v-col(cols="4")
-          div.text-right(v-to-preferred-currency="{ amount: v.vatTotal, currency: preferredCurrency }")
+          fv-price-to-preferred-currency.text-right(
+            :price="v.vatTotal"
+            :currency="preferredCurrency"
+          )
       v-divider
     v-list-item
       v-col(cols="8")
         div {{ $t('forms.orders.new.totals.total') }}
       v-col(cols="4")
-        div.text-right(v-to-preferred-currency="{ amount: total, currency: preferredCurrency }")
+        fv-price-to-preferred-currency.text-right(
+          :price="total"
+          :currency="preferredCurrency"
+        )
+
 </template>
 
 <script>
@@ -62,7 +75,7 @@ export default {
   },
   computed: {
     preferredCurrency() {
-      const res = this.$store.getters['accounts/preferredCurrency']
+      const res = this.$activeAccount.settings().currency
       return res
     },
     totalWithoutVat() {
