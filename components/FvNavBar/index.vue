@@ -8,7 +8,7 @@
     app
   )
     fv-menu(
-      :spaceTitle="findSpaceTitle"
+      :space="space"
     )
   v-app-bar(
     :clipped-left="clipped"
@@ -31,10 +31,10 @@ export default {
         return ''
       }
     },
-    spaceTitle: {
+    space: {
       type: String,
       default() {
-        return 'buyer'
+        return 'manage'
       }
     }
   },
@@ -44,12 +44,6 @@ export default {
       drawer: false,
       fixed: false,
       miniVariant: false
-    }
-  },
-  computed: {
-    findSpaceTitle() {
-      const res = this.$t(this.spaceTitle + 'Menu.title')
-      return res
     }
   },
   mounted() {

@@ -18,12 +18,6 @@
 export default {
   name: 'FvShowMenu',
   props: {
-    menuName: {
-      type: String,
-      default() {
-        return null
-      }
-    },
     list: {
       type: Array,
       default() {

@@ -8,7 +8,6 @@
         template(v-slot:activator)
           v-list-item-title.title {{ title }}
         fv-show-menu(
-          :menuName='menuName'
           :list='findMenu'
         )
       hr.line
@@ -39,7 +38,7 @@ export default {
   },
   computed: {
     findMenu() {
-      const res = this.$store.getters['settings/' + this.menuName]
+      const res = this.$store.getters['settings/' + this.menuName + 'Menu']
       return res
     }
   },

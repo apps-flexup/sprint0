@@ -1,6 +1,6 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
 import { select, text, array } from '@storybook/addon-knobs'
-import { categories, defaultCategory, menus, defaultMenu, fakeList} from '@/.storybook/knobs_data/menusAvailable'
+import { categories, defaultCategory, menus, defaultMenu} from '@/.storybook/knobs_data/menusAvailable'
 import FvSubMenu from './index.vue'
 
 <Meta title='Molecules/FvSubMenu' component={ FvSubMenu } />
@@ -16,11 +16,15 @@ import FvSubMenu from './index.vue'
     },
     knobTitle: {
       default: text('Title', 'test', 'Props')
+    },
+    knobMenu: {
+      default: select('Menu', menus, defaultMenu, 'Props')
     }
   },
   template: `<FvSubMenu
     :categoryName='knobCategory'
     :title='knobTitle'
+    :menuName='knobMenu'
   >
   </FvSubMenu>`
 }}</Story>

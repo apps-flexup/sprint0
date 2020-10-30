@@ -14,13 +14,13 @@ import FvNavBar from './index.vue'
       default: text('Title', 'Navbar title', 'Slots')
     },
     knobSpaceTitle: {
-      default: select('spaceTitle', spaceTitle, defaultSpaceTitle, 'Props')
+      default: select('Space', spaceTitle, defaultSpaceTitle, 'Props')
     }
   },
   components: { FvNavBar },
   template: `<FvNavBar
     :title="knobTitle"
-    :spaceTitle="knobSpaceTitle"
+    :space="knobSpaceTitle"
   >
   </FvNavBar>`
 }}</Story>

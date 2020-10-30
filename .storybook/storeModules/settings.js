@@ -81,7 +81,7 @@ const moduleSettings = {
         {
           "active": true,
           "icon": "mdi-tune-vertical-variant",
-          "title": "accountMenu.variant",
+          "title": "accountMenu.settings",
           "to": "/settings"
         },
         {

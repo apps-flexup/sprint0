@@ -175,7 +175,7 @@
   },
   "accountMenu": {
     "information": "Information du compte",
-    "variant": "Préférences",
+    "settings": "Préférences",
     "members": "Membres"
   },
   "buyerMenu": {

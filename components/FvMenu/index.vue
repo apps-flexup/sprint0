@@ -6,17 +6,17 @@
   div(v-if='connected')
     fv-sub-menu(
       categoryName='space'
-      menuName='buyerMenu'
+      :menuName="space"
       :title="spaceTitle"
     )
     fv-sub-menu(
       categoryName='account'
-      menuName='accountMenu'
+      menuName='account'
       :title="accountSelected"
     )
     fv-sub-menu(
       categoryName='user'
-      menuName='userMenu'
+      menuName='user'
       :title="userName"
     )
     fv-show-menu(
@@ -41,13 +41,13 @@ import '@/style/icon_margin.css'
 export default {
   name: 'FvMenu',
   props: {
-    spaceTitle: {
+    menuName: {
       type: String,
       default() {
         return null
       }
     },
-    menuName: {
+    space: {
       type: String,
       default() {
         return null
@@ -71,6 +71,10 @@ export default {
     },
     globalMenu() {
       const res = this.$store.getters['settings/globalMenu']
+      return res
+    },
+    spaceTitle() {
+      const res = this.$t(this.space + 'Menu.title')
       return res
     }
   },
