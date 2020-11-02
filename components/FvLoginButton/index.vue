@@ -1,8 +1,12 @@
 <template lang="pug">
 .fv-login-button
-  v-btn.mx-2(
+  v-list-item(
     @click.stop="click"
-  ) {{ $t('buttons.login') }}
+  )
+    v-list-item-action
+      v-icon {{ 'mdi-login' }}
+    v-list-item-content
+      v-list-item-title(v-text="$t('buttons.login')")
 </template>
 
 <script>

@@ -194,7 +194,8 @@
       }
     }
   },
-  "menu" : {
+  "manageMenu" : {
+    "title": "Manage",
     "home": "Home",
     "orders": "Orders",
     "offers": "Offers",
@@ -205,6 +206,43 @@
     "documents": "Documents",
     "dashboard": "Dashboard",
     "settings": "Settings"
+  },
+  "userMenu": {
+    "data": "Personnal data",
+    "security": "Security & connection",
+    "management": "Account management"
+  },
+  "accountMenu": {
+    "information": "Account information",
+    "settings": "Preferences",
+    "members": "Members"
+  },
+  "buyerMenu": {
+    "title": "Buy",
+    "search": "Search",
+    "orders": "Orders",
+    "favorite": "Favorite",
+    "deliveries": "Adresses and delivery",
+    "payments": "Payments"
+  },
+  "sellerMenu": {
+    "title": "Sell",
+    "dashboard": "Dashboard",
+    "orders": "Orders",
+    "products": "Products",
+    "offers": "Offers",
+    "deliveries": "Deliveries option",
+    "payments": "Payments",
+    "start": "Start"
+  },
+  "globalMenu": {
+    "question": "FAQ",
+    "contact": "Contact"
+  },
+  "category": {
+    "space": "Space :",
+    "account": "Account :",
+    "user": "User :"
   },
   "buttons": {
     "create" : {

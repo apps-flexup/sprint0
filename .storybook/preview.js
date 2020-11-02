@@ -17,6 +17,7 @@ import auth from '~/.storybook/auth'
 import route from '~/.storybook/route'
 import "@mdi/font/css/materialdesignicons.css"
 import "@/.storybook/style/application_wrap.css"
+import "@/style/icon_margin.css"
 
 Vue.use(AsyncComputed)
 
