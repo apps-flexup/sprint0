@@ -63,6 +63,7 @@ import FvSettingsIndex from '@/components/FvSettingsIndex'
 import FvSettingsOthers from '@/components/FvSettingsOthers'
 import FvShowMenu from '@/components/FvShowMenu'
 import FvStepper from '@/components/FvStepper'
+import FvStepForm from '@/components/FvStepForm'
 import FvSubMenu from '@/components/FvSubMenu'
 import FvThemeAutocomplete from '@/components/FvThemeAutocomplete'
 import FvVatField from '@/components/FvVatField'
@@ -127,7 +128,6 @@ Vue.component('fv-autocomplete', FvAutocomplete)
 Vue.component('fv-avatar', FvAvatar)
 Vue.component('fv-avatar-with-name', FvAvatarWithName)
 Vue.component('fv-breadcrumbs', FvBreadcrumbs)
-Vue.component('fv-menu-list', FvMenuList)
 Vue.component('fv-close-modal-button', FvCloseModalButton)
 Vue.component('fv-contact-dialog', FvContactDialog)
 Vue.component('fv-contact-card', FvContactCard)
@@ -194,6 +194,7 @@ Vue.component('fv-settings-index', FvSettingsIndex)
 Vue.component('fv-settings-others', FvSettingsOthers)
 Vue.component('fv-show-menu', FvShowMenu)
 Vue.component('fv-stepper', FvStepper)
+Vue.component('fv-step-form', FvStepForm)
 Vue.component('fv-sub-menu', FvSubMenu)
 Vue.component('fv-theme-autocomplete', FvThemeAutocomplete)
 Vue.component('fv-vat-field', FvVatField)

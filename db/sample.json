@@ -3,16 +3,16 @@
     {
       "currency": "EUR",
       "language": "fr",
-      "theme": "light",
+      "theme": "dark",
       "account_id": 1,
       "id": 1
     },
     {
-      "id": 2,
       "currency": "USD",
       "language": "en",
       "theme": "dark",
-      "account_id": 3
+      "account_id": 3,
+      "id": 2
     }
   ],
   "accounts": [
