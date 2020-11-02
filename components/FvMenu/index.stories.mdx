@@ -11,12 +11,12 @@ import FvMenu from './index.vue'
 <Story name='Common' height='150px'>{{
   components: { FvMenu },
   props: {
-    knobSpaceTitle: {
+    knobSpace: {
       default: select('Space', spaceTitle, defaultSpaceTitle, 'Props')
     }
   },
   template: `<FvMenu
-    :space="knobSpaceTitle"
+    :space="knobSpace"
   > 
   </FvMenu>`
 }}</Story>
