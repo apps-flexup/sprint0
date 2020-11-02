@@ -4,5 +4,8 @@ export default {
   },
   setMenu(state, items) {
     state.menu = items
+  },
+  setSettings(state, item) {
+    state.settings = item
   }
 }

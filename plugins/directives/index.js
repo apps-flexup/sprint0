@@ -60,12 +60,15 @@ Vue.directive('to-preferred-currency', async (el, binding, vnode) => {
   const value = binding.value
   const amount = value.amount
   const fromCurrency = value.currency
-  const toCurrency = vnode.context.$store.getters['accounts/preferredCurrency']
+  const toCurrency = vnode.context.$store.getters['settings/settings'].currency
   const options = {
     style: 'currency',
     currency: toCurrency
   }
-  const convertedAmount = await convert(fromCurrency, toCurrency, amount)
+  let convertedAmount = amount
+  if (fromCurrency !== toCurrency) {
+    convertedAmount = await convert(fromCurrency, toCurrency, amount)
+  }
   const valueToDisplay = new Intl.NumberFormat(locale, options).format(
     convertedAmount
   )

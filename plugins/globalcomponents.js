@@ -38,7 +38,7 @@ import FvContractSummaryStepStructure from '@/components/FvContractSummaryStepSt
 import FvDataTableHeader from '@/components/FvDataTableHeader'
 import FvDataTableSearchBar from '@/components/FvDataTableSearchBar'
 import FvIcon from '@/components/FvIcon'
-import FvLanguageSelect from '@/components/FvLanguageSelect'
+import FvLanguageAutocomplete from '@/components/FvLanguageAutocomplete'
 import FvListAccounts from '@/components/FvListAccounts'
 import FvLoginButton from '@/components/FvLoginButton'
 import FvLogoutButton from '@/components/FvLogoutButton'
@@ -50,6 +50,7 @@ import FvNavBar from '@/components/FvNavBar'
 import FvNewPartnerForm from '@/components/FvNewPartnerForm'
 import FvNumberField from '@/components/FvNumberField'
 import FvPriceField from '@/components/FvPriceField'
+import FvPriceToPreferredCurrency from '@/components/FvPriceToPreferredCurrency'
 import FvPrimaryButton from '@/components/FvPrimaryButton'
 import FvProductDataTable from '@/components/FvProductDataTable'
 import FvProductForm from '@/components/FvProductForm'
@@ -61,7 +62,7 @@ import FvSettingsDefault from '@/components/FvSettingsDefault'
 import FvSettingsIndex from '@/components/FvSettingsIndex'
 import FvSettingsOthers from '@/components/FvSettingsOthers'
 import FvStepper from '@/components/FvStepper'
-import FvThemeSelect from '@/components/FvThemeSelect'
+import FvThemeAutocomplete from '@/components/FvThemeAutocomplete'
 import FvVatField from '@/components/FvVatField'
 import FvDeleteAction from '@/components/FvDeleteAction'
 import FvEditAction from '@/components/FvEditAction'
@@ -164,7 +165,7 @@ Vue.component(
 Vue.component('fv-data-table-header', FvDataTableHeader)
 Vue.component('fv-data-table-search-bar', FvDataTableSearchBar)
 Vue.component('fv-icon', FvIcon)
-Vue.component('fv-language-select', FvLanguageSelect)
+Vue.component('fv-language-autocomplete', FvLanguageAutocomplete)
 Vue.component('fv-list-accounts', FvListAccounts)
 Vue.component('fv-login-button', FvLoginButton)
 Vue.component('fv-logout-button', FvLogoutButton)
@@ -176,6 +177,7 @@ Vue.component('fv-nav-bar', FvNavBar)
 Vue.component('fv-new-partner-form', FvNewPartnerForm)
 Vue.component('fv-number-field', FvNumberField)
 Vue.component('fv-price-field', FvPriceField)
+Vue.component('fv-price-to-preferred-currency', FvPriceToPreferredCurrency)
 Vue.component('fv-primary-button', FvPrimaryButton)
 Vue.component('fv-product-data-table', FvProductDataTable)
 Vue.component('fv-product-form', FvProductForm)
@@ -188,7 +190,7 @@ Vue.component('fv-settings-default', FvSettingsDefault)
 Vue.component('fv-settings-index', FvSettingsIndex)
 Vue.component('fv-settings-others', FvSettingsOthers)
 Vue.component('fv-stepper', FvStepper)
-Vue.component('fv-theme-select', FvThemeSelect)
+Vue.component('fv-theme-autocomplete', FvThemeAutocomplete)
 Vue.component('fv-vat-field', FvVatField)
 Vue.component('fv-delete-action', FvDeleteAction)
 Vue.component('fv-edit-action', FvEditAction)

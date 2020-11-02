@@ -11,7 +11,10 @@
       template(v-slot:item.name='{ item }')
         div(v-to-locale="item.name")
       template(v-slot:item.price='{ item }')
-        div(v-to-preferred-currency="{amount: item.price, currency: item.currency}")
+        fv-price-to-preferred-currency(
+          :price="item.price"
+          :currency="item.currency"
+        )
       template(v-slot:item.vat='{ item }')
         div {{ item.vat }}%
       template(v-slot:item.unit='{ item }')
@@ -51,6 +54,7 @@ export default {
     console.log('Composant ', this.$options.name)
     this.$store.dispatch('headers/getOfferHeaders')
     this.$store.dispatch('offers/get')
+    this.$store.dispatch('settings/getSettings')
   },
   methods: {
     selected(offer) {

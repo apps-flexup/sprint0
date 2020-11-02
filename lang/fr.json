@@ -18,6 +18,8 @@
     "account": "Compte : ",
     "space": "Espace : ",
     "route": {
+      "account": "Compte",
+      "account-new": "Nouveau compte",
       "index": "Accueil",
       "orders": "Commandes",
       "orders-new": "Nouvelle commande",
@@ -25,7 +27,8 @@
       "offers": "Offres",
       "contacts": "Contacts",
       "partners": "Partnenaires",
-      "settings": "Préférences"
+      "settings": "Préférences",
+      "settings-new": "Créer préférences"
     }
   },
   "listAccounts": {

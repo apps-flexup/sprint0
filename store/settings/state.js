@@ -1,4 +1,7 @@
 export default () => ({
   items: [],
-  menu: []
+  menu: [],
+  locales: ['en', 'fr'],
+  fallbackLocale: 'en',
+  settings: {}
 })
