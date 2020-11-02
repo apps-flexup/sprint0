@@ -4,7 +4,6 @@ import FvAccount from '@/components/FvAccount'
 import FvAccountAvatar from '@/components/FvAccountAvatar'
 import FvAutocomplete from '@/components/FvAutocomplete'
 import FvAvatar from '@/components/FvAvatar'
-import FvMenu from '@/components/FvMenu'
 import FvCloseModalButton from '@/components/FvCloseModalButton'
 import FvContactCard from '@/components/FvContactCard'
 import FvContactDialog from '@/components/FvContactDialog'
@@ -34,11 +33,11 @@ import FvContractSummaryStepPaiement from '@/components/FvContractSummaryStepPai
 import FvContractSummaryStepStructure from '@/components/FvContractSummaryStepStructure'
 import FvDataTableHeader from '@/components/FvDataTableHeader'
 import FvDataTableSearchBar from '@/components/FvDataTableSearchBar'
-import FvShowMenu from '@/components/FvShowMenu'
 import FvIcon from '@/components/FvIcon'
 import FvListAccounts from '@/components/FvListAccounts'
 import FvLoginButton from '@/components/FvLoginButton'
 import FvLogoutButton from '@/components/FvLogoutButton'
+import FvMenu from '@/components/FvMenu'
 import FvModal from '@/components/FvModal'
 import FvModalActions from '@/components/FvModalActions'
 import FvModalAndButton from '@/components/FvModalAndButton'
@@ -57,14 +56,15 @@ import FvSecondaryButton from '@/components/FvSecondaryButton'
 import FvSettingsDefault from '@/components/FvSettingsDefault'
 import FvSettingsIndex from '@/components/FvSettingsIndex'
 import FvSettingsOthers from '@/components/FvSettingsOthers'
+import FvShowMenu from '@/components/FvShowMenu'
 import FvStepper from '@/components/FvStepper'
+import FvSubMenu from '@/components/FvSubMenu'
 import FvVatField from '@/components/FvVatField'
 import FvDeleteAction from '@/components/FvDeleteAction'
 import FvEditAction from '@/components/FvEditAction'
 import FvEtape from '@/components/FvEtape'
 import FvFieldDate from '@/components/FvFieldDate'
 import FvUserAccounts from '@/components/FvUserAccounts'
-import FvSubMenu from '@/components/FvSubMenu'
 import FvContractSummaryVisualisation from '@/components/FvContractSummaryVisualisation'
 import FvContractStepVisualisation from '@/components/FvContractStepVisualisation'
 import FvCountryList from '@/components/FvCountryList'
@@ -118,7 +118,6 @@ Vue.component('fv-account', FvAccount)
 Vue.component('fv-account-avatar', FvAccountAvatar)
 Vue.component('fv-autocomplete', FvAutocomplete)
 Vue.component('fv-avatar', FvAvatar)
-Vue.component('fv-menu', FvMenu)
 Vue.component('fv-close-modal-button', FvCloseModalButton)
 Vue.component('fv-contact-dialog', FvContactDialog)
 Vue.component('fv-contact-card', FvContactCard)
@@ -157,11 +156,11 @@ Vue.component(
 )
 Vue.component('fv-data-table-header', FvDataTableHeader)
 Vue.component('fv-data-table-search-bar', FvDataTableSearchBar)
-Vue.component('fv-show-menu', FvShowMenu)
 Vue.component('fv-icon', FvIcon)
 Vue.component('fv-list-accounts', FvListAccounts)
 Vue.component('fv-login-button', FvLoginButton)
 Vue.component('fv-logout-button', FvLogoutButton)
+Vue.component('fv-menu', FvMenu)
 Vue.component('fv-modal', FvModal)
 Vue.component('fv-modal-actions', FvModalActions)
 Vue.component('fv-modal-and-button', FvModalAndButton)
@@ -181,14 +180,15 @@ Vue.component('fv-secondary-button', FvSecondaryButton)
 Vue.component('fv-settings-default', FvSettingsDefault)
 Vue.component('fv-settings-index', FvSettingsIndex)
 Vue.component('fv-settings-others', FvSettingsOthers)
+Vue.component('fv-show-menu', FvShowMenu)
 Vue.component('fv-stepper', FvStepper)
+Vue.component('fv-sub-menu', FvSubMenu)
 Vue.component('fv-vat-field', FvVatField)
 Vue.component('fv-delete-action', FvDeleteAction)
 Vue.component('fv-edit-action', FvEditAction)
 Vue.component('fv-etape', FvEtape)
 Vue.component('fv-field-date', FvFieldDate)
 Vue.component('fv-user-accounts', FvUserAccounts)
-Vue.component('fv-sub-menu', FvSubMenu)
 Vue.component(
   'fv-contract-summary-visualisation',
   FvContractSummaryVisualisation

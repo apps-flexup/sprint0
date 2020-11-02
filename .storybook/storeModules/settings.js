@@ -15,25 +15,25 @@ const moduleSettings = {
         },
         {
           "active": true,
-          "icon": "mdi-store-outline",
+          "icon": "mdi-inbox-arrow-down-outline",
           "title": "manageMenu.orders",
           "to": "/orders"
         },
         {
           "active": true,
-          "icon": "mdi-briefcase-check",
+          "icon": "mdi-file-document-multiple-outline",
           "title": "manageMenu.contracts",
           "to": "/contracts"
         },
         {
           "active": true,
-          "icon": "mdi-flask-empty",
+          "icon": "mdi-package-variant-closed",
           "title": "manageMenu.products",
           "to": "/products"
         },
         {
           "active": true,
-          "icon": "mdi-barcode",
+          "icon": "mdi-tag-multiple-outline",
           "title": "manageMenu.offers",
           "to": "/offers"
         },
@@ -45,7 +45,7 @@ const moduleSettings = {
         },
         {
           "active": true,
-          "icon": "mdi-tag",
+          "icon": "mdi-city-variant-outline",
           "title": "manageMenu.partners",
           "to": "/partners"
         },
@@ -65,7 +65,7 @@ const moduleSettings = {
           "active": true,
           "icon": "mdi-cog-outline",
           "title": "manageMenu.settings",
-          "to": "/settings"
+          "to": "/parameters"
         }
       ]
       commit('setManageMenu', data)
@@ -88,13 +88,13 @@ const moduleSettings = {
           "active": true,
           "icon": "mdi-account-group-outline",
           "title": "accountMenu.members",
-          "to": "/partners"
+          "to": "/members"
         },
         {
           "active": true,
           "icon": "mdi-map-marker-outline",
           "title": "buyerMenu.deliveries",
-          "to": "/deliveries"
+          "to": "/adresses"
         },
       ]
       commit('setAccountMenu', data)
@@ -156,7 +156,7 @@ const moduleSettings = {
         {
           "active": true,
           "icon": "mdi-inbox-arrow-down-outline",
-          "title": "buyerMenu.orders",
+          "title": "sellerMenu.orders",
           "to": "/orders"
         },
         {
@@ -173,7 +173,7 @@ const moduleSettings = {
         },
         {
           "active": true,
-          "icon": "mdi-map-marker-outline",
+          "icon": "mdi-truck-fast-outline",
           "title": "buyerMenu.deliveries",
           "to": "/deliveries"
         },
