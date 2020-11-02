@@ -25,6 +25,16 @@
       "pre-commit": "lint-staged"
     }
   },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "vue"
+    ],
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
+      ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest"
+    }
+  },
   "dependencies": {
     "@babel/runtime-corejs3": "^7.10.5",
     "@mdi/font": "^5.4.55",
