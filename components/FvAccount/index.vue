@@ -1,11 +1,11 @@
 <template lang="pug">
 .fv-account
-  v-list-item
-    fv-avatar(
-      :avatar="avatar"
-    )
-    v-list-item-content
-      v-list-item-title {{ name }}
+  fv-avatar(
+    :avatar="avatar"
+    :size="size"
+  )
+  div.right
+    | {{ name }}
 </template>
 
 <script>
@@ -23,6 +23,12 @@ export default {
       default() {
         return ''
       }
+    },
+    size: {
+      type: Number,
+      default() {
+        return 24
+      }
     }
   },
   mounted() {
@@ -30,3 +36,13 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.fv-account {
+  display: flex !important;
+  align-items: center;
+}
+.right {
+  margin-left: 15px;
+}
+</style>

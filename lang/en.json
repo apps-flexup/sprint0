@@ -1,4 +1,44 @@
 {
+  "languages": {
+    "language": "Language",
+    "en": "English",
+    "fr": "Français"
+  },
+  "themes": {
+    "theme": "Theme",
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "spaces": {
+    "sell": "Sell",
+    "buy": "Buy",
+    "manage": "Manage"
+  },
+  "breadcrumbs": {
+    "account": "Account: ",
+    "space": "Space: ",
+    "route": {
+      "account": "Account",
+      "account-new": "New account",
+      "index": "Home",
+      "orders": "Orders",
+      "orders-new": "New order",
+      "products": "Products",
+      "offers": "Offers",
+      "contacts": "Contacts",
+      "partners": "Partners",
+      "settings": "Settings",
+      "settings-new": "New settings"
+    }
+  },
+  "listAccounts": {
+    "user": "User",
+    "activeAccount": "Active account",
+    "createAccount": "Create account",
+    "manageAccounts": "Manage accounts",
+    "help": "Help",
+    "logout": "Logout"
+  },
   "frequences": {
     "periods": {
       "days": "day",

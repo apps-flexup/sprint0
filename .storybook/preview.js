@@ -14,6 +14,7 @@ import activeAccount from '~/.storybook/activeAccount'
 import store from '~/.storybook/store'
 import axios from 'axios'
 import auth from '~/.storybook/auth'
+import route from '~/.storybook/route'
 import "@mdi/font/css/materialdesignicons.css"
 import "@/.storybook/style/application_wrap.css"
 import "@/style/icon_margin.css"
@@ -84,3 +85,4 @@ Vue.prototype.$store = store
 Vue.prototype.$activeAccount = activeAccount
 Vue.prototype.$axios = axios
 Vue.prototype.$auth = auth
+Vue.prototype.$route = route

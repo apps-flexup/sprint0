@@ -26,6 +26,20 @@ const activeAccount = (ctx) => ({
     ctx.store.dispatch('orders/get', {}, { root: true })
     ctx.store.dispatch('partners/get', {}, { root: true })
     ctx.store.dispatch('products/get', {}, { root: true })
+    ctx.store
+      .dispatch('settings/getSettings', {}, { root: true })
+      .then((_data) => {
+        this.setSettings(this.settings())
+      })
+  },
+  settings() {
+    const res = ctx.store.getters['settings/settings']
+    return res
+  },
+  setSettings(settings) {
+    ctx.app.i18n.locale = settings.language
+    ctx.$vuetify.theme.dark = settings.theme === 'dark'
+    ctx.store.dispatch('settings/updateSettings', settings)
   },
   contracts() {
     const res = ctx.store.getters['contracts/all']

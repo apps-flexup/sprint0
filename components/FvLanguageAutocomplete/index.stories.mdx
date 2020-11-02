@@ -1,0 +1,24 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+import FvLanguageAutocomplete from './index.vue'
+
+<Meta title='Atoms/FvLanguageAutocomplete' component={ FvLanguageAutocomplete } />
+
+# FvLanguageAutocomplete
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  components: { FvLanguageAutocomplete },
+  methods: {
+    selected: action('Language selected')
+  },
+  template: `<FvLanguageAutocomplete
+    @language:selected="selected"
+  >
+  </FvLanguageAutocomplete>`
+}}</Story>
+</Canvas>
+
+## ArgsTable
+
+<ArgsTable of={ FvLanguageAutocomplete } />

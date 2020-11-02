@@ -203,8 +203,20 @@ const moduleSettings = {
       ]
       commit('setGlobalMenu', data)
     },
+    getSettings({ commit }) {
+      const data = {
+        currency: "EUR",
+        language: "fr",
+        theme: "light",
+        account_id: 1,
+        id: 1
+      }
+      commit('setSettings', data)
+    },
+    updateSettings({ commit }, settings) {
+        commit('setSettings', settings)
+    }
   },
-
   getters: getters,
   mutations: mutations,
   state: state

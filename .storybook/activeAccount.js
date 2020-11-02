@@ -18,6 +18,7 @@ const activeAccount = {
   // },
   set(accountId) {
     store.dispatch('accounts/setCurrent', accountId)
+    store.dispatch('settings/getSettings', {}, { root: true })
   },
   // contracts() {
   //   const res = ctx.store.getters['contracts/all']
@@ -31,9 +32,15 @@ const activeAccount = {
   //   const res = ctx.store.getters['contacts/all']
   //   return res
   // },
+  settings() {
+    const res = store.getters['settings/settings']
+    return res
+  },
+  setSettings(settings) {
+    store.dispatch('settings/updateSettings', settings)
+  },
   currencies() {
     const res = store.getters['currencies/all']
-    console.log('Get currencies: ', store.getters['currencies/all'])
     return res
   },
   orders() {

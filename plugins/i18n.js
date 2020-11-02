@@ -5,8 +5,8 @@ Vue.use(VueI18n)
 
 export default ({ app, store }) => {
   app.i18n = new VueI18n({
-    locale: store.state.locale,
-    fallbackLocale: store.state.fallbackLocale,
+    locale: store.getters['settings/locale'],
+    fallbackLocale: store.getters['settings/fallbackLocale'],
     messages: {
       fr: require('@/lang/fr.json'),
       en: require('@/lang/en.json')

@@ -1,10 +1,17 @@
 <template lang="pug">
 .fv-settings-default
+  fv-language-autocomplete(
+    :language="language"
+    @language:selected="languageSelected"
+  )
   fv-currency-autocomplete(
     :currency="currency"
     @currency:selected="currencySelected"
   )
-  v-divider
+  fv-theme-autocomplete(
+    :theme="theme"
+    @theme:selected="themeSelected"
+  )
 </template>
 
 <script>
@@ -18,36 +25,43 @@ export default {
       }
     }
   },
-  data() {
-    return {
-      currency: null
-    }
-  },
-  watch: {
-    account() {
-      console.log('Account changed: ', this.account)
-      if (this.account) {
-        this.fillFieldsWithAccount()
-      } else {
-        this.clearFields()
-      }
+  computed: {
+    settings() {
+      const res = this.$activeAccount.settings()
+      return res
+    },
+    currency() {
+      const res = this.settings ? this.settings.currency : null
+      return res
+    },
+    language() {
+      const res = this.settings ? this.settings.language : null
+      return res
+    },
+    theme() {
+      const res = this.settings ? this.settings.theme : null
+      return res
     }
   },
   mounted() {
     console.log('Composant ', this.$options.name)
-    if (this.account) this.fillFieldsWithAccount()
+    this.$store.dispatch('settings/getSettings')
   },
   methods: {
     currencySelected(v) {
-      this.currency = v
-      this.account.currency = this.currency
-      this.$store.dispatch('accounts/update', this.account)
+      const newSettings = this.settings
+      newSettings.currency = v
+      this.$activeAccount.setSettings(newSettings)
     },
-    fillFieldsWithAccount() {
-      this.currency = this.account.currency
+    languageSelected(v) {
+      const newSettings = this.settings
+      newSettings.language = v
+      this.$activeAccount.setSettings(newSettings)
     },
-    clearFields() {
-      this.currency = null
+    themeSelected(v) {
+      const newSettings = this.settings
+      newSettings.theme = v
+      this.$activeAccount.setSettings(newSettings)
     }
   }
 }

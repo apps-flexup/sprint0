@@ -22,5 +22,15 @@ export default {
   },
   getGlobalMenu({ commit }) {
     this.$repos.globalMenu.index().then((data) => commit('setGlobalMenu', data))
+  },
+  getSettings({ commit }) {
+    return this.$repos.settings.indexWithAccountId().then((data) => {
+      commit('setSettings', data[0])
+    })
+  },
+  updateSettings({ commit }, settings) {
+    this.$repos.settings.update(settings).then((data) => {
+      commit('setSettings', data)
+    })
   }
 }

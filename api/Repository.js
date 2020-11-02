@@ -33,7 +33,6 @@ export default ($axios, store) => (resource) => ({
     delete payload.created_at
     delete payload.updated_at
     const res = await $axios.$put(`/${resource}/${id}`, payload)
-    console.log('res :', res)
     return res
   },
   async delete(id) {

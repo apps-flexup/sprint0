@@ -1,15 +1,14 @@
 // Action de base
 export default {
-  get({ commit }) {
+  get({ commit, getters }) {
     if (!this.$auth.loggedIn) return
     this.$axios.$get(`accounts?user_id=${this.$auth.user.sub}`).then((data) => {
       commit('set', data)
-      // Si data.length > 0
-      if (data.length > 0) {
+      if (!getters.current && data.length > 0) {
         // if (this.$auth.user.last_account ^ data.length > 0) {
         const account = parseInt(data[0].id)
         this.$activeAccount.set(account)
-      } else {
+      } else if (!getters.current) {
         this.app.router.push('/account/new')
       }
     })

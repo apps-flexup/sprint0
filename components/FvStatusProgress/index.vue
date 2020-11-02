@@ -6,6 +6,7 @@
     :striped="config.striped"
     height="20"
     rounded=''
+    :key="theme"
   )
     template(v-slot="data")
       strong {{ status }}
@@ -30,13 +31,26 @@ export default {
       }
     }
   },
+  computed: {
+    theme() {
+      const res = this.$activeAccount.settings().theme
+      return res
+    }
+  },
   watch: {
     status() {
       this.config = statusProgress(this.$vuetify, this.status)
+    },
+    theme: {
+      deep: true,
+      handler() {
+        this.config = statusProgress(this.$vuetify, this.status)
+      }
     }
   },
   mounted() {
     this.config = statusProgress(this.$vuetify, this.status)
+    this.$store.dispatch('settings/getSettings')
   }
 }
 </script>

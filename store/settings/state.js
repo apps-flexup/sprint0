@@ -5,5 +5,8 @@ export default () => ({
   accountMenu: [],
   buyerMenu: [],
   sellerMenu: [],
-  globalMenu: []
+  globalMenu: [],
+  locales: ['en', 'fr'],
+  fallbackLocale: 'en',
+  settings: {}
 })
