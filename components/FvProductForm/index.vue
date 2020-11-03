@@ -1,24 +1,30 @@
 <template lang="pug">
 .fv-product-form
-  v-row
-    v-col(cols='6')
-      fv-category-autocomplete(
-        :categoryId="categoryId"
-        @category:selected="categorySelected"
-      )
-  v-row
-    v-col(cols='6')
-      fv-text-field(
-        :value="name"
-        :label="$t('forms.products.new.name')"
-        @input="nameChanged"
-      )
-    v-col(cols='6')
-      fv-unit-autocomplete(
-        :dimension="dimension"
-        :unit="unit"
-        @unit:selected="unitSelected"
-      )
+  v-list
+    div.justify-center.information
+      p
+        b.mb-0.bold Gagnez du temps : 
+        | recherchez dans notre catalogue FlexShop si le produit ou service que vous souhaitez vendre n’existe pas déjà !
+    v-row
+      v-col(cols='10')
+        fv-category-autocomplete(
+          :categoryId="categoryId"
+          @category:selected="categorySelected"
+        )
+    v-row
+      v-col(cols='10')
+        fv-text-field(
+          :value="name"
+          :label="$t('forms.products.new.name')"
+          @input="nameChanged"
+        )
+    v-row
+      v-col(cols='10')
+        fv-unit-autocomplete(
+          :dimension="dimension"
+          :unit="unit"
+          @unit:selected="unitSelected"
+        )
 </template>
 
 <script>
@@ -100,3 +106,16 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.row {
+  justify-content: center;
+}
+.information {
+  display: flex;
+  font-size: 18px;
+}
+.bold {
+  font-weight: 500;
+}
+</style>

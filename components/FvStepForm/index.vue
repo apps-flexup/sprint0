@@ -5,9 +5,10 @@
       :value='true'
     )
       template(v-slot:activator)
-        a.mr-4.number {{ formId }}
-        p.titleForm {{ title }}
-      fv-product-form
+        a.mr-3.number {{ formId }}
+        p.mr-2.titleForm {{ title }}
+      div.form
+        fv-product-form
 </template>
 
 <script>
@@ -46,5 +47,11 @@ export default {
   border-radius: 50px;
   color: black;
   font-size: 18px;
+}
+.form >>> .v-list {
+  background-color: rgba(225, 226, 230, 0.29);
+  margin: 0 20vw;
+  padding: 20px 30px;
+  border-radius: 12px;
 }
 </style>
