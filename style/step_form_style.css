@@ -1,0 +1,10 @@
+.v-input > .v-input__control > .v-input__slot {
+    background: #FFFFFF;
+  }
+.v-list-item__icon {
+    position: absolute;
+    right: 0;
+}
+.v-list-item__icon > .v-icon {
+    font-size: 36px;
+}

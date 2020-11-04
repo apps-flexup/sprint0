@@ -1,10 +1,6 @@
 <template lang="pug">
 .fv-product-form
   v-list
-    div.justify-center.information
-      p.headText
-        b.mb-0.bold Gagnez du temps : 
-        | recherchez dans notre catalogue FlexShop si le produit ou service que vous souhaitez vendre n’existe pas déjà !
     v-row
       v-col(cols='12')
         fv-category-autocomplete(

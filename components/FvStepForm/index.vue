@@ -12,6 +12,8 @@
 </template>
 
 <script>
+import '@/style/step_form_style.css'
+
 export default {
   name: 'FvStepForm',
   props: {
@@ -38,7 +40,7 @@ export default {
 .titleForm {
   margin: 0;
   padding: 0;
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 500;
   color: black;
 }
@@ -51,7 +53,7 @@ export default {
 }
 .form >>> .v-list {
   background-color: rgba(225, 226, 230, 0.29);
-  padding: 20px 30px;
+  padding: 15px 30px;
   border-radius: 12px;
 }
 .v-list {
