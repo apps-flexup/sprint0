@@ -2,24 +2,24 @@
 .fv-product-form
   v-list
     div.justify-center.information
-      p
+      p.headText
         b.mb-0.bold Gagnez du temps : 
         | recherchez dans notre catalogue FlexShop si le produit ou service que vous souhaitez vendre n’existe pas déjà !
     v-row
-      v-col(cols='10')
+      v-col(cols='12')
         fv-category-autocomplete(
           :categoryId="categoryId"
           @category:selected="categorySelected"
         )
     v-row
-      v-col(cols='10')
+      v-col(cols='12')
         fv-text-field(
           :value="name"
           :label="$t('forms.products.new.name')"
           @input="nameChanged"
         )
     v-row
-      v-col(cols='10')
+      v-col(cols='12')
         fv-unit-autocomplete(
           :dimension="dimension"
           :unit="unit"
@@ -117,5 +117,8 @@ export default {
 }
 .bold {
   font-weight: 500;
+}
+.headText {
+  font-weight: 100;
 }
 </style>

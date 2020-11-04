@@ -7,7 +7,7 @@
       template(v-slot:activator)
         a.mr-3.number {{ formId }}
         p.mr-2.titleForm {{ title }}
-      div.form
+      div.mt-5.form
         fv-product-form
 </template>
 
@@ -24,7 +24,7 @@ export default {
     title: {
       type: String,
       default() {
-        return 'Informations Générale'
+        return 'Informations Générales'
       }
     }
   },
@@ -39,6 +39,7 @@ export default {
   margin: 0;
   padding: 0;
   font-size: 24px;
+  font-weight: 500;
   color: black;
 }
 .number {
@@ -50,8 +51,10 @@ export default {
 }
 .form >>> .v-list {
   background-color: rgba(225, 226, 230, 0.29);
-  margin: 0 20vw;
   padding: 20px 30px;
   border-radius: 12px;
+}
+.v-list {
+  margin: 0 20vw;
 }
 </style>
