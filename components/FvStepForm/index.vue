@@ -8,7 +8,7 @@
         a.mr-3.number {{ formId }}
         p.mr-2.titleForm {{ title }}
       div.mt-5.form
-        fv-product-form
+        slot(name="form")
 </template>
 
 <script>
@@ -42,16 +42,15 @@ export default {
   padding: 0;
   font-size: 26px;
   font-weight: 500;
-  color: black;
 }
 .number {
-  border: black solid 1px;
+  border: solid 1px;
   padding: 0 8px;
   border-radius: 50px;
-  color: black;
   font-size: 18px;
+  color: initial;
 }
-.form >>> .v-list {
+.form >>> .background {
   background-color: rgba(225, 226, 230, 0.29);
   padding: 15px 30px;
   border-radius: 12px;

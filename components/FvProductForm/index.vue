@@ -1,6 +1,6 @@
 <template lang="pug">
 .fv-product-form
-  v-list
+  div.background
     v-row
       v-col(cols='12')
         fv-category-autocomplete(
