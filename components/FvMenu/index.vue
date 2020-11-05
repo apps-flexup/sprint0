@@ -36,8 +36,6 @@
 </template>
 
 <script>
-import '@/style/icon_margin.css'
-
 export default {
   name: 'FvMenu',
   props: {
@@ -93,6 +91,8 @@ export default {
 </script>
 
 <style scoped>
+@import '@/style/icon_margin.css';
+
 .line {
   width: 92%;
   float: right;
