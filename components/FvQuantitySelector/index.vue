@@ -1,6 +1,7 @@
 <template lang="pug">
 .fv-quantity-selector
   fv-text-field(
+    data-testid="quantitySelector"
     :value="quantity.toString()"
     :clearable="false"
     :hideDetails="true"
