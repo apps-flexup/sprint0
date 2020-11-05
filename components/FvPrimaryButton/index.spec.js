@@ -1,12 +1,7 @@
 import { mount } from '@vue/test-utils'
-import Vue from 'vue'
-import vuetify from 'vuetify'
 import FvPrimaryButton from './index.vue'
 
 describe('FvPrimaryButton', () => {
-  beforeEach(() => {
-    Vue.use(vuetify)
-  })
   it('should render a button', () => {
     const wrapper = mount(FvPrimaryButton)
     expect(wrapper.find('[data-testid="button"]').exists()).toBe(true)

@@ -20,5 +20,8 @@ module.exports = {
       pug: { doctype: 'html' }
     }
   },
-  setupFiles: ['<rootDir>/plugins/globalcomponents.js']
+  setupFiles: [
+    '<rootDir>/test/setup.js',
+    '<rootDir>/plugins/globalcomponents.js'
+  ]
 }
