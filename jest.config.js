@@ -19,5 +19,6 @@ module.exports = {
     'vue-jest': {
       pug: { doctype: 'html' }
     }
-  }
+  },
+  setupFiles: ['<rootDir>/plugins/globalcomponents.js']
 }
