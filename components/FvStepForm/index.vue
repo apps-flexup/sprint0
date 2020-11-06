@@ -1,32 +1,30 @@
 <template lang="pug">
 .fv-step-form
-  v-list
     v-list-group(
       :value='true'
     )
       template(v-slot:activator)
-        a.mr-3.number {{ formId }}
+        p.mr-3.number {{ formId }}
         p.mr-2.titleForm {{ title }}
+        v-spacer
       div.mt-5.form
         slot(name="form")
 </template>
 
 <script>
-import '@/style/step_form_style.css'
-
 export default {
   name: 'FvStepForm',
   props: {
     formId: {
       type: Number,
       default() {
-        return 1
+        return null
       }
     },
     title: {
       type: String,
       default() {
-        return 'Informations Générales'
+        return null
       }
     }
   },
@@ -48,14 +46,20 @@ export default {
   padding: 0 8px;
   border-radius: 50px;
   font-size: 18px;
-  color: initial;
+  margin-bottom: initial;
 }
-.form >>> .background {
+.form >>> .v-card {
   background-color: rgba(225, 226, 230, 0.29);
   padding: 15px 30px;
   border-radius: 12px;
 }
-.v-list {
-  margin: 0 20vw;
+.v-list-group {
+  margin: 1vh 3vw;
+}
+::v-deep .v-list-item__icon > .v-icon {
+  font-size: 35px;
+}
+::v-deep .v-list-item {
+  min-height: 30px;
 }
 </style>

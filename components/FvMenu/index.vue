@@ -36,8 +36,6 @@
 </template>
 
 <script>
-import '@/style/icon_margin.css'
-
 export default {
   name: 'FvMenu',
   props: {

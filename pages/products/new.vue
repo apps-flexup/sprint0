@@ -1,20 +1,34 @@
 <template lang="pug">
   .page-product-new
-    fv-step-form(
-    ) 
-      template(
-        slot="form"
-      )
-        composant(
-          :is="product"
+    v-list.mt-10(
+      v-for="(step, index) in product"
+    )
+      fv-step-form(
+        :formId="index+1"
+        :title="step.title"
+      ) 
+        template(
+          slot="form"
         )
+          composant(
+            :is="step.component"
+          )
 </template>
 
 <script>
 export default {
   data() {
     return {
-      product: 'fv-product-form'
+      product: [
+        {
+          component: 'fv-product-form',
+          title: 'Information générales'
+        },
+        {
+          component: 'fv-order-form',
+          title: 'Commande à faire'
+        }
+      ]
     }
   },
   mounted() {
@@ -34,3 +48,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+::v-deep .v-sheet {
+  border-radius: 15px;
+}
+</style>
