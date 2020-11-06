@@ -7,5 +7,8 @@ export default {
   },
   setContactSteps(state, items) {
     state.contacts = items
+  },
+  setProductSteps(state, items) {
+    state.products = items
   }
 }

@@ -10,5 +10,10 @@ export default {
     this.$repos.contactSteps
       .index()
       .then((data) => commit('setContactSteps', data))
+  },
+  getProduct({ commit }) {
+    this.$repos.productSteps
+      .index()
+      .then((data) => commit('setProductSteps', data))
   }
 }

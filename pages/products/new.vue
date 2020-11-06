@@ -1,7 +1,8 @@
 <template lang="pug">
   .page-product-new
     v-list.mt-10(
-      v-for="(step, index) in product"
+      v-for="(step, index) in getProductStep"
+      :key="index"
     )
       fv-step-form(
         :formId="index+1"
@@ -17,22 +18,15 @@
 
 <script>
 export default {
-  data() {
-    return {
-      product: [
-        {
-          component: 'fv-product-form',
-          title: 'Information générales'
-        },
-        {
-          component: 'fv-order-form',
-          title: 'Commande à faire'
-        }
-      ]
+  computed: {
+    getProductStep() {
+      const res = this.$store.getters['forms/products']
+      return res
     }
   },
   mounted() {
     console.log('Composant ', this.$options.name)
+    this.$store.dispatch('forms/getProduct')
   },
   methods: {
     submit() {

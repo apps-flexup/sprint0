@@ -1414,6 +1414,16 @@
       "resume": "fv-contract-summary-step-visualisation"
     }
   ],
+  "product-steps": [
+    {
+      "component": "fv-product-form",
+      "title": "Information générales"
+    },
+    {
+      "component": "fv-order-form",
+      "title": "Commande à faire"
+    }
+  ],
   "contract-types": [
     {
       "account_id": null,

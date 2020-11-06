@@ -43,9 +43,9 @@ export default {
 }
 .number {
   border: solid 1px;
-  padding: 0 8px;
+  padding: 0 8.5px;
   border-radius: 50px;
-  font-size: 18px;
+  font-size: 19px;
   margin-bottom: initial;
 }
 .form >>> .v-card {
