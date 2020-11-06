@@ -91,8 +91,6 @@ export default {
 </script>
 
 <style scoped>
-@import '@/style/icon_margin.css';
-
 .line {
   width: 92%;
   float: right;
@@ -100,5 +98,15 @@ export default {
   height: 1.5pt;
   background-color: lightgrey;
   margin: 20px 0;
+}
+.v-list {
+  padding: 3px 0;
+}
+::v-deep .v-list-item__icon {
+  min-width: initial !important;
+  margin: 0 !important;
+}
+::v-deep .v-list-item {
+  min-height: 35px;
 }
 </style>
