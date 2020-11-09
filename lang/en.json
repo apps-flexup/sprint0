@@ -19,6 +19,7 @@
     "space": "Space: ",
     "route": {
       "account": "Account",
+      "accounts": "My accounts",
       "account-new": "New account",
       "index": "Home",
       "orders": "Orders",

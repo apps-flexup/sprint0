@@ -19,6 +19,7 @@
     "space": "Espace : ",
     "route": {
       "account": "Compte",
+      "accounts": "Mes comptes",
       "account-new": "Nouveau compte",
       "index": "Accueil",
       "orders": "Commandes",
