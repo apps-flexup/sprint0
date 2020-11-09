@@ -1,10 +1,13 @@
 <template lang="pug">
 .fv-account
   fv-avatar(
+    data-testid="avatar"
     :avatar="avatar"
     :size="size"
   )
-  div.right
+  div.right(
+    data-testid="accountName"
+  )
     | {{ name }}
 </template>
 
