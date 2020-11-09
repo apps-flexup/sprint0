@@ -6,16 +6,17 @@
     :clearable="false"
     :hideDetails="true"
     :dense="dense"
-    class='centered-input'
     @input="input"
   )
     template(v-slot:prepend-inner)
         fv-icon(
+          data-testid="buttonMinus"
           @icon:clicked="minus"
           icon="mdi-minus"
         )
     template(v-slot:append)
         fv-icon(
+          data-testid="buttonPlus"
           @icon:clicked="plus"
           icon="mdi-plus"
         )
@@ -55,11 +56,11 @@ export default {
 }
 </script>
 
-<style>
-.centered-input input {
-  text-align: center;
-}
+<style scoped>
 .fv-quantity-selector {
   max-width: 120px;
+}
+::v-deep .v-input input {
+  text-align: center;
 }
 </style>
