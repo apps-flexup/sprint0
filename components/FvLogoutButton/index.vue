@@ -1,9 +1,12 @@
 <template lang="pug">
 .fv-logout-button
-  v-btn(
+  v-list-item(
     @click.stop="click"
-    color="primary"
-  ) {{ $t('buttons.logout') }}
+  )
+    v-list-item-action
+      v-icon {{ 'mdi-logout' }}
+    v-list-item-content
+      v-list-item-title(v-text="$t('buttons.logout')")
 </template>
 
 <script>

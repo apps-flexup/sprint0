@@ -7,7 +7,6 @@ import FvAutocomplete from '@/components/FvAutocomplete'
 import FvAvatar from '@/components/FvAvatar'
 import FvAvatarWithName from '@/components/FvAvatarWithName'
 import FvBreadcrumbs from '@/components/FvBreadcrumbs'
-import FvMenuList from '@/components/FvMenuList'
 import FvCloseModalButton from '@/components/FvCloseModalButton'
 import FvContactCard from '@/components/FvContactCard'
 import FvContactDialog from '@/components/FvContactDialog'
@@ -42,6 +41,7 @@ import FvLanguageAutocomplete from '@/components/FvLanguageAutocomplete'
 import FvListAccounts from '@/components/FvListAccounts'
 import FvLoginButton from '@/components/FvLoginButton'
 import FvLogoutButton from '@/components/FvLogoutButton'
+import FvMenu from '@/components/FvMenu'
 import FvModal from '@/components/FvModal'
 import FvModalActions from '@/components/FvModalActions'
 import FvModalAndButton from '@/components/FvModalAndButton'
@@ -61,7 +61,9 @@ import FvSecondaryButton from '@/components/FvSecondaryButton'
 import FvSettingsDefault from '@/components/FvSettingsDefault'
 import FvSettingsIndex from '@/components/FvSettingsIndex'
 import FvSettingsOthers from '@/components/FvSettingsOthers'
+import FvShowMenu from '@/components/FvShowMenu'
 import FvStepper from '@/components/FvStepper'
+import FvSubMenu from '@/components/FvSubMenu'
 import FvThemeAutocomplete from '@/components/FvThemeAutocomplete'
 import FvVatField from '@/components/FvVatField'
 import FvDeleteAction from '@/components/FvDeleteAction'
@@ -125,7 +127,6 @@ Vue.component('fv-autocomplete', FvAutocomplete)
 Vue.component('fv-avatar', FvAvatar)
 Vue.component('fv-avatar-with-name', FvAvatarWithName)
 Vue.component('fv-breadcrumbs', FvBreadcrumbs)
-Vue.component('fv-menu-list', FvMenuList)
 Vue.component('fv-close-modal-button', FvCloseModalButton)
 Vue.component('fv-contact-dialog', FvContactDialog)
 Vue.component('fv-contact-card', FvContactCard)
@@ -169,6 +170,7 @@ Vue.component('fv-language-autocomplete', FvLanguageAutocomplete)
 Vue.component('fv-list-accounts', FvListAccounts)
 Vue.component('fv-login-button', FvLoginButton)
 Vue.component('fv-logout-button', FvLogoutButton)
+Vue.component('fv-menu', FvMenu)
 Vue.component('fv-modal', FvModal)
 Vue.component('fv-modal-actions', FvModalActions)
 Vue.component('fv-modal-and-button', FvModalAndButton)
@@ -189,7 +191,9 @@ Vue.component('fv-secondary-button', FvSecondaryButton)
 Vue.component('fv-settings-default', FvSettingsDefault)
 Vue.component('fv-settings-index', FvSettingsIndex)
 Vue.component('fv-settings-others', FvSettingsOthers)
+Vue.component('fv-show-menu', FvShowMenu)
 Vue.component('fv-stepper', FvStepper)
+Vue.component('fv-sub-menu', FvSubMenu)
 Vue.component('fv-theme-autocomplete', FvThemeAutocomplete)
 Vue.component('fv-vat-field', FvVatField)
 Vue.component('fv-delete-action', FvDeleteAction)

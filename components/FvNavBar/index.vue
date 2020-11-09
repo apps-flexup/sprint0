@@ -7,7 +7,9 @@
     fixed
     app
   )
-    fv-menu-list
+    fv-menu(
+      :space="space"
+    )
   v-app-bar(
     :clipped-left="clipped"
     fixed
@@ -27,6 +29,12 @@ export default {
       type: String,
       default() {
         return ''
+      }
+    },
+    space: {
+      type: String,
+      default() {
+        return 'manage'
       }
     }
   },
