@@ -8,17 +8,31 @@
     v-card-title.justify-center
       fv-avatar(
         data-testid="avatar"
-        avatar="/images/avatar-0.png"
+        :avatar="avatar"
         :size="avatarSize"
       )
     v-card-title.justify-center(
       data-testid="accountName"
-    ) Simone Weil
+    ) {{ name }}
 </template>
 
 <script>
 export default {
   name: 'FvAccountCard',
+  props: {
+    avatar: {
+      type: String,
+      default() {
+        return null
+      }
+    },
+    name: {
+      type: String,
+      default() {
+        return null
+      }
+    }
+  },
   data() {
     return {
       width: 300,
