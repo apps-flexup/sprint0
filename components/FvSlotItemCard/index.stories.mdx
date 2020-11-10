@@ -1,0 +1,42 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { number, color} from '@storybook/addon-knobs'
+import { action } from '@storybook/addon-actions'
+import { avatarsAvailable, defaultAvatar } from '@/.storybook/knobs_data/avatars'
+import FvSlotItemCard from './index.vue'
+
+<Meta title='Atoms/FvSlotItemCard' component={ FvSlotItemCard } />
+
+# FvSlotItemCard
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  components: { FvSlotItemCard },
+  props: {
+    knobCardWidth: {
+      default: number('Card width', 300, {}, 'Props')
+    },
+    knobCardHeight: {
+      default: number('Height', 370, {}, 'Props')
+    },
+    knobLikeColor: {
+      default: color('Like color', 'black', 'Props')
+    }
+  },
+  methods: {
+    cardClicked: action('card clicked'),
+    likeClicked: action('like clicked')
+  },
+  template: `<FvSlotItemCard
+    :cardWidth="knobCardWidth"
+    :cardHeight="knobCardHeight"
+    :likeColor="knobLikeColor"
+    @card:clicked="cardClicked"
+    @like:clicked="likeClicked"
+  >
+  </FvSlotItemCard>`
+}}</Story>
+</Canvas>
+
+## ArgsTable
+
+<ArgsTable of={ FvSlotItemCard } />
