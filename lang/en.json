@@ -247,6 +247,7 @@
   },
   "buttons": {
     "create" : {
+      "account": "CREATE ACCOUNT",
       "product": "CREATE PRODUCT",
       "contract": "CREATE CONTRACT",
       "partner": "CREATE PARTNER",

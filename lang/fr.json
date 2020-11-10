@@ -248,6 +248,7 @@
   },
   "buttons": {
     "create": {
+      "account": "CRÉER COMPTE",
       "product": "CRÉER PRODUIT",
       "contract": "CRÉER CONTRAT",
       "partner": "CRÉER PARTENAIRE",
