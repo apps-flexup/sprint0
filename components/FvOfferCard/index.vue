@@ -9,7 +9,7 @@
       @click="clickedCard"
     )
     v-img(
-      :height='height_img'
+      :height='heightImg'
       :width='width'
       :src="img"
     )
@@ -65,7 +65,7 @@ export default {
         return 300
       }
     },
-    height_img: {
+    heightImg: {
       type: Number,
       default() {
         return 260
