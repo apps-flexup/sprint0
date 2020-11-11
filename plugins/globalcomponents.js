@@ -64,6 +64,7 @@ import FvSettingsDefault from '@/components/FvSettingsDefault'
 import FvSettingsIndex from '@/components/FvSettingsIndex'
 import FvSettingsOthers from '@/components/FvSettingsOthers'
 import FvShowMenu from '@/components/FvShowMenu'
+import FvSlotItemCard from '@/components/FvSlotItemCard'
 import FvStepper from '@/components/FvStepper'
 import FvSubMenu from '@/components/FvSubMenu'
 import FvThemeAutocomplete from '@/components/FvThemeAutocomplete'
@@ -196,6 +197,7 @@ Vue.component('fv-settings-default', FvSettingsDefault)
 Vue.component('fv-settings-index', FvSettingsIndex)
 Vue.component('fv-settings-others', FvSettingsOthers)
 Vue.component('fv-show-menu', FvShowMenu)
+Vue.component('fv-slot-item-card', FvSlotItemCard)
 Vue.component('fv-stepper', FvStepper)
 Vue.component('fv-sub-menu', FvSubMenu)
 Vue.component('fv-theme-autocomplete', FvThemeAutocomplete)

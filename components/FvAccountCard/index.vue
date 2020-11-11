@@ -1,19 +1,20 @@
 <template lang="pug">
 .fv-account-card
-  v-card.rounded-lg(
+  fv-slot-item-card(
     data-testid="card"
-    :width="width"
-    :height="height"
+    @card:clicked="cardClicked"
+    @like:clicked="likeClicked"
   )
-    v-card-title.justify-center
-      fv-avatar(
-        data-testid="avatar"
-        :avatar="avatar"
-        :size="avatarSize"
-      )
-    v-card-title.justify-center(
-      data-testid="accountName"
-    ) {{ name }}
+    template(v-slot:default)
+      v-card-title.justify-center
+        fv-avatar(
+          data-testid="avatar"
+          :avatar="avatar"
+          :size="avatarSize"
+        )
+      v-card-title.justify-center(
+        data-testid="accountName"
+      ) {{ name }}
 </template>
 
 <script>
@@ -35,13 +36,19 @@ export default {
   },
   data() {
     return {
-      width: 300,
-      height: 370,
       avatarSize: 128
     }
   },
   mounted() {
     console.log('Composant ', this.$options.name)
+  },
+  methods: {
+    cardClicked() {
+      this.$emit('accountCard:clicked')
+    },
+    likeClicked() {
+      this.$emit('accountCard:liked')
+    }
   }
 }
 </script>

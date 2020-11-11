@@ -1,7 +1,8 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
 import { text, select} from '@storybook/addon-knobs'
-import FvAccountCard from './index.vue'
+import { action } from '@storybook/addon-actions'
 import { avatarsAvailable, defaultAvatar } from '@/.storybook/knobs_data/avatars'
+import FvAccountCard from './index.vue'
 
 <Meta title='Molecules/FvAccountCard' component={ FvAccountCard } />
 
@@ -9,6 +10,7 @@ import { avatarsAvailable, defaultAvatar } from '@/.storybook/knobs_data/avatars
 
 <Canvas>
 <Story name='Common' height='150px'>{{
+  components: { FvAccountCard },
   props: {
     knobName: {
       default: text('Name', 'fred', 'Props')
@@ -17,10 +19,13 @@ import { avatarsAvailable, defaultAvatar } from '@/.storybook/knobs_data/avatars
       default: select('Avatar', avatarsAvailable, defaultAvatar, 'Props')
     }
   },
-  components: { FvAccountCard },
+  methods: {
+    clicked: action('card clicked')
+  },
   template: `<FvAccountCard
     :name="knobName"
     :avatar="knobAvatar"
+    @accountCard:clicked="clicked"
   >
   </FvAccountCard>`
 }}</Story>
