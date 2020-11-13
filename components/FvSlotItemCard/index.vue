@@ -5,6 +5,8 @@
     :width="cardWidth"
     :height="cardHeight"
     :elevation="2"
+    @mouseover="mouseover"
+    @mouseleave="mouseleave"
   )
     div.clickCard(
       data-testid="cardDiv"
@@ -54,12 +56,21 @@ export default {
     },
     likeClicked() {
       this.$emit('like:clicked')
+    },
+    mouseover() {
+      this.$emit('card:mouseover', true)
+    },
+    mouseleave() {
+      this.$emit('card:mouseover', false)
     }
   }
 }
 </script>
 
 <style scoped>
+.v-card {
+  transition: 0.5s;
+}
 .v-card:hover {
   transition: 0.5s;
   box-shadow: 0px 3px 20px -3px !important;
