@@ -37,13 +37,13 @@ describe('FvOfferCard', () => {
         toUnit
       }
     })
-    expect(wrapper.find('[data-testid="offerCard"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="offerImg"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="offerName"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="offerPrice"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="offerRating"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="offerDetails"]').exists()).toBe(false)
-    expect(wrapper.find('[data-testid="offerBuy"]').exists()).toBe(false)
+    expect(wrapper.find('[data-testid="card"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="img"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="name"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="price"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="rating"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="details"]').exists()).toBe(false)
+    expect(wrapper.find('[data-testid="buy"]').exists()).toBe(false)
   })
   it('should display action icons if mouse is over', async () => {
     const wrapper = mount(FvOfferCard, {
@@ -60,8 +60,8 @@ describe('FvOfferCard', () => {
     })
     wrapper.setData({ over: true })
     await wrapper.vm.$nextTick()
-    expect(wrapper.find('[data-testid="offerDetails"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="offerBuy"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="detailsIcon"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="buyIcon"]').exists()).toBe(true)
   })
   it('should emit an event when click on card', () => {
     const wrapper = mount(FvOfferCard, {
@@ -76,7 +76,7 @@ describe('FvOfferCard', () => {
         toUnit
       }
     })
-    const card = wrapper.find('[data-testid="offerCard"]')
+    const card = wrapper.find('[data-testid="card"]')
     card.vm.$emit('card:clicked')
     const cardClickedCalls = wrapper.emitted('offerCard:clicked')
     expect(cardClickedCalls).toBeTruthy()

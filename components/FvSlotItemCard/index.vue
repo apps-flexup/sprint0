@@ -12,12 +12,12 @@
       data-testid="cardDiv"
       @click="cardClicked"
     )
-    fv-icon.like(
-      data-testid="likeIcon"
+    fv-icon.favorite(
+      data-testid="favoriteIcon"
       icon='mdi-heart-outline'
-      :color="likeColor"
+      :color="favoriteIconColor"
       size='large'
-      @icon:clicked='likeClicked'
+      @icon:clicked='favoriteClicked'
     )
     slot(
       data-testid="defaultSlot"
@@ -40,7 +40,7 @@ export default {
         return 370
       }
     },
-    likeColor: {
+    favoriteIconColor: {
       type: String,
       default() {
         return 'black'
@@ -54,8 +54,8 @@ export default {
     cardClicked() {
       this.$emit('card:clicked')
     },
-    likeClicked() {
-      this.$emit('like:clicked')
+    favoriteClicked() {
+      this.$emit('favorite:clicked')
     },
     mouseover() {
       this.$emit('card:mouseover', true)
@@ -75,7 +75,7 @@ export default {
   transition: 0.5s;
   box-shadow: 0px 3px 20px -3px !important;
 }
-.like {
+.favorite {
   position: absolute;
   top: 2%;
   right: 3%;

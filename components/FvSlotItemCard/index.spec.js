@@ -6,7 +6,7 @@ describe('FvSlotItemCard', () => {
     const wrapper = mount(FvSlotItemCard)
     expect(wrapper.find('[data-testid="card"]').exists()).toBe(true)
     expect(wrapper.find('[data-testid="cardDiv"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="likeIcon"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="favoriteIcon"]').exists()).toBe(true)
   })
   it('should render default slot', () => {
     const defaultSlot = 'helloWorld'
@@ -45,12 +45,27 @@ describe('FvSlotItemCard', () => {
     expect(emitted).toBeTruthy()
     expect(emitted).toHaveLength(1)
   })
-  it('should emit an event when like icon clicked', () => {
+  it('should emit an event when favorite icon clicked', () => {
     const wrapper = mount(FvSlotItemCard)
-    const likeIcon = wrapper.find('[data-testid="likeIcon"]')
-    likeIcon.vm.$emit('icon:clicked')
-    const emitted = wrapper.emitted('like:clicked')
+    const favoriteIcon = wrapper.find('[data-testid="favoriteIcon"]')
+    favoriteIcon.vm.$emit('icon:clicked')
+    const emitted = wrapper.emitted('favorite:clicked')
     expect(emitted).toBeTruthy()
     expect(emitted).toHaveLength(1)
+  })
+  it('should display favorite icon to black by default', () => {
+    const wrapper = mount(FvSlotItemCard)
+    const favoriteIcon = wrapper.find('[data-testid="favoriteIcon"]')
+    expect(favoriteIcon.props().color).toBe('black')
+  })
+  it('should display favorite icon to color prop', () => {
+    const color = '#FFFFFF'
+    const wrapper = mount(FvSlotItemCard, {
+      propsData: {
+        favoriteIconColor: color
+      }
+    })
+    const favoriteIcon = wrapper.find('[data-testid="favoriteIcon"]')
+    expect(favoriteIcon.props().color).toBe(color)
   })
 })

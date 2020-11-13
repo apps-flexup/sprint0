@@ -1,15 +1,15 @@
 <template lang="pug">
 .fv-offer-card
   fv-slot-item-card(
-    data-testid="offerCard"
-    likeColor="#FFFFFF"
+    data-testid="card"
+    favoriteIconColor="#FFFFFF"
     @card:clicked="cardClicked"
-    @like:clicked="likeClicked"
+    @favorite:clicked="favoriteClicked"
     @card:mouseover="mouseoverChanged"
   )
     template(v-slot:default)
       v-img(
-        data-testid="offerImg"
+        data-testid="img"
         :height='heightImg'
         width='100%'
         :src="img"
@@ -18,15 +18,15 @@
         class='mx-4'
       )
         p.title(
-          data-testid="offerName"
+          data-testid="name"
         ) {{ article }}
         div.prix(
-          data-testid="offerPrice"
+          data-testid="price"
         )
           div(v-to-preferred-currency="{amount: price, currency: currency}")
           div.ml-2(v-to-unit="{ unit: unit, dimension: dimension}" id='unit')
         div.rating(
-          data-testid="offerRating"
+          data-testid="rating"
         )
           fv-rating(
             :rating="rating"
@@ -40,12 +40,12 @@
             v-if="over"
           )
             fv-icon(
-              data-testid="offerDetails"
+              data-testid="detailsIcon"
               icon='mdi-magnify'
               @icon:clicked='detailsClicked'
             )
             fv-icon.ml-2(
-              data-testid="offerBuy"
+              data-testid="buyIcon"
               icon='mdi-basket-outline'
               @icon:clicked='buyClicked'
             )
@@ -127,9 +127,9 @@ export default {
       console.log('on lcick on click ')
       this.$emit('offerCard:clicked')
     },
-    likeClicked() {
+    favoriteClicked() {
       console.log('on lcick on click LOIKE')
-      this.$emit('offerCard:likeClicked')
+      this.$emit('offerCard:favoriteClicked')
     },
     detailsClicked() {
       console.log('on lcick on DETRAILS ')
