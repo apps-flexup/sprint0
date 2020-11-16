@@ -18,20 +18,20 @@ import FvSlotItemCard from './index.vue'
     knobCardHeight: {
       default: number('Height', 370, {}, 'Props')
     },
-    knobLikeColor: {
-      default: color('Like color', 'black', 'Props')
+    knobFavoriteColor: {
+      default: color('Favorite color', 'black', 'Props')
     }
   },
   methods: {
     cardClicked: action('card clicked'),
-    likeClicked: action('like clicked')
+    favoriteClicked: action('favorite clicked')
   },
   template: `<FvSlotItemCard
     :cardWidth="knobCardWidth"
     :cardHeight="knobCardHeight"
-    :likeColor="knobLikeColor"
+    :favoriteColor="knobfavoriteColor"
     @card:clicked="cardClicked"
-    @like:clicked="likeClicked"
+    @favorite:clicked="favoriteClicked"
   >
   </FvSlotItemCard>`
 }}</Story>
