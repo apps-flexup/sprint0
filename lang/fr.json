@@ -132,7 +132,8 @@
         "unit": "Unité",
         "price": "Prix",
         "currency": "Devise",
-        "elasticity": "Élasticité"
+        "elasticity": "Élasticité",
+        "change": "Modifier mon produit"
       }
     },
     "partners": {

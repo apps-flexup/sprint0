@@ -3,7 +3,7 @@
   v-row
     v-col(cols="12")
       fv-primary-button.text-right(
-        @button:click='showModal = true'
+        @button:click='createProduct'
       ) {{ $t('buttons.create.product') }}
     fv-product-modal(
       :show="showModal"
@@ -39,6 +39,9 @@ export default {
     selectedProduct(e) {
       this.product = JSON.parse(JSON.stringify(e))
       this.showModal = true
+    },
+    createProduct() {
+      this.$router.push('/products/new')
     },
     productChanged(product) {
       this.product = product

@@ -130,7 +130,8 @@
         "unit":"Unit",
         "price": "Price",
         "currency": "Currency",
-        "elasticity": "Elasticity"
+        "elasticity": "Elasticity",
+        "change": "Edit my product"
       }
     },
     "partners": {

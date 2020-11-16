@@ -1,7 +1,6 @@
 <template lang="pug">
 .fv-order-totals
   v-card
-    v-list
     v-list-item
       v-col(cols="8")
         div {{ $t('forms.orders.new.totals.withoutVat') }}
