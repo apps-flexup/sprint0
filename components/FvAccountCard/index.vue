@@ -47,7 +47,7 @@ export default {
       this.$emit('accountCard:clicked')
     },
     favoriteClicked() {
-      this.$emit('accountCard:favorite')
+      this.$emit('accountCard:favoriteClicked')
     }
   }
 }

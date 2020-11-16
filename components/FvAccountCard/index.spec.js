@@ -16,7 +16,7 @@ describe('FvAccountCard', () => {
       }
     })
     const avatar = wrapper.find('[data-testid="avatar"]')
-    expect(avatar.props().avatar).toMatch(img)
+    expect(avatar.props().avatar).toBe(img)
   })
   it('should display account name prop', () => {
     const expectedName = 'helloWorld'
@@ -26,7 +26,7 @@ describe('FvAccountCard', () => {
       }
     })
     const name = wrapper.find('[data-testid="name"]')
-    expect(name.text()).toMatch(expectedName)
+    expect(name.text()).toBe(expectedName)
   })
   it('should emit an event when card is clicked', () => {
     const wrapper = mount(FvAccountCard)
@@ -40,7 +40,7 @@ describe('FvAccountCard', () => {
     const wrapper = mount(FvAccountCard)
     const card = wrapper.find('[data-testid="card"]')
     card.vm.$emit('favorite:clicked')
-    const emitted = wrapper.emitted('accountCard:favorite')
+    const emitted = wrapper.emitted('accountCard:favoriteClicked')
     expect(emitted).toBeTruthy()
     expect(emitted).toHaveLength(1)
   })

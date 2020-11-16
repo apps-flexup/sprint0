@@ -20,12 +20,14 @@ import FvAccountCard from './index.vue'
     }
   },
   methods: {
-    clicked: action('card clicked')
+    clicked: action('card clicked'),
+    favoriteClicked: action('favorite clicked')
   },
   template: `<FvAccountCard
     :name="knobName"
     :avatar="knobAvatar"
     @accountCard:clicked="clicked"
+    @accountCard:favoriteClicked="favoriteClicked"
   >
   </FvAccountCard>`
 }}</Story>
