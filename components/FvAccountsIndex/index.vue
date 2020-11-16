@@ -3,19 +3,24 @@
   v-row
     v-col.headBar(cols="12")
       v-col(cols="4")
-        p.title title
+        p.title(
+          data-testid="title"
+        ) title
       v-col(cols="8")
         fv-primary-button.text-right(
+          data-testid="createButton"
           @button:click="createAccount"
         ) {{ $t('buttons.create.account') }}
   v-row(
     class="d-flex flex-row"
+    data-testid="accountList"
   )
     div(
       v-for="account in accounts"
       :key="account.id"
     )
       fv-account-card.card(
+        data-testid="accountCard"
         :avatar="account.avatar"
         :name="account.name"
       )
@@ -26,7 +31,6 @@ export default {
   computed: {
     accounts() {
       const res = this.$store.getters['accounts/all']
-      console.log('res: ', res)
       return res
     }
   },
@@ -37,6 +41,7 @@ export default {
   methods: {
     createAccount() {
       console.log('create account')
+      this.$emit('accounts:create')
     }
   }
 }
