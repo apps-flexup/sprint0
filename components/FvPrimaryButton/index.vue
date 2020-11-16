@@ -1,6 +1,7 @@
 <template lang="pug">
 .fv-primary-button
   v-btn(
+    data-testid="button"
     x-large
     color="#FCB71C"
     @click.prevent="click"

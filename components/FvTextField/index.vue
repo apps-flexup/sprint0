@@ -1,6 +1,7 @@
 <template lang="pug">
 .fv-text-field
   v-text-field(
+    data-testid="textField"
     v-model="model"
     v-click-outside="onClickOutside"
     :label="label"

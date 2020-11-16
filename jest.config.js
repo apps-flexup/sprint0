@@ -10,9 +10,18 @@ module.exports = {
     '^.+\\.js$': 'babel-jest',
     '.*\\.(vue)$': 'vue-jest'
   },
-  collectCoverage: true,
-  collectCoverageFrom: [
-    '<rootDir>/components/**/*.vue',
-    '<rootDir>/pages/**/*.vue'
+  collectCoverage: false,
+  // collectCoverageFrom: [
+  //   '<rootDir>/components/**/*.vue',
+  //   '<rootDir>/pages/**/*.vue'
+  // ]
+  globals: {
+    'vue-jest': {
+      pug: { doctype: 'html' }
+    }
+  },
+  setupFiles: [
+    '<rootDir>/test/setup.js',
+    '<rootDir>/plugins/globalcomponents.js'
   ]
 }

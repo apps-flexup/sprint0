@@ -17,7 +17,7 @@ import auth from '~/.storybook/auth'
 import route from '~/.storybook/route'
 import "@mdi/font/css/materialdesignicons.css"
 import "@/.storybook/style/application_wrap.css"
-import "@/style/icon_margin.css"
+import { withA11y } from '@storybook/addon-a11y'
 
 Vue.use(AsyncComputed)
 
@@ -78,8 +78,10 @@ addParameters({
   }
 });
 
-// -- adds the knob tab to your story, this allows you to play around with your component
+// adds the knob tab to your story, this allows you to play around with your component
 addDecorator(withKnobs)
+// add test to stories
+addDecorator(withA11y)
 
 Vue.prototype.$store = store
 Vue.prototype.$activeAccount = activeAccount
