@@ -6,7 +6,7 @@ describe('FvAccountCard', () => {
     const wrapper = mount(FvAccountCard)
     expect(wrapper.find('[data-testid="card"]').exists()).toBe(true)
     expect(wrapper.find('[data-testid="avatar"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="accountName"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="name"]').exists()).toBe(true)
   })
   it('should display avatar prop', () => {
     const img = '/images/avatar-1.png'
@@ -19,14 +19,14 @@ describe('FvAccountCard', () => {
     expect(avatar.props().avatar).toMatch(img)
   })
   it('should display account name prop', () => {
-    const name = 'helloWorld'
+    const expectedName = 'helloWorld'
     const wrapper = mount(FvAccountCard, {
       propsData: {
-        name
+        name: expectedName
       }
     })
-    const accountName = wrapper.find('[data-testid="accountName"]')
-    expect(accountName.text()).toMatch(name)
+    const name = wrapper.find('[data-testid="name"]')
+    expect(name.text()).toMatch(expectedName)
   })
   it('should emit an event when card is clicked', () => {
     const wrapper = mount(FvAccountCard)
@@ -36,11 +36,11 @@ describe('FvAccountCard', () => {
     expect(emitted).toBeTruthy()
     expect(emitted).toHaveLength(1)
   })
-  it('should emit an event when like is clicked', () => {
+  it('should emit an event when favorite is clicked', () => {
     const wrapper = mount(FvAccountCard)
     const card = wrapper.find('[data-testid="card"]')
-    card.vm.$emit('like:clicked')
-    const emitted = wrapper.emitted('accountCard:liked')
+    card.vm.$emit('favorite:clicked')
+    const emitted = wrapper.emitted('accountCard:favorite')
     expect(emitted).toBeTruthy()
     expect(emitted).toHaveLength(1)
   })

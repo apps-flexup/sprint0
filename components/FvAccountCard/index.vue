@@ -3,7 +3,7 @@
   fv-slot-item-card(
     data-testid="card"
     @card:clicked="cardClicked"
-    @like:clicked="likeClicked"
+    @favorite:clicked="favoriteClicked"
   )
     template(v-slot:default)
       v-card-title.justify-center
@@ -13,7 +13,7 @@
           :size="avatarSize"
         )
       v-card-title.justify-center(
-        data-testid="accountName"
+        data-testid="name"
       ) {{ name }}
 </template>
 
@@ -46,8 +46,8 @@ export default {
     cardClicked() {
       this.$emit('accountCard:clicked')
     },
-    likeClicked() {
-      this.$emit('accountCard:liked')
+    favoriteClicked() {
+      this.$emit('accountCard:favorite')
     }
   }
 }

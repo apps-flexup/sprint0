@@ -124,19 +124,15 @@ export default {
       this.over = over
     },
     cardClicked() {
-      console.log('on lcick on click ')
       this.$emit('offerCard:clicked')
     },
     favoriteClicked() {
-      console.log('on lcick on click LOIKE')
       this.$emit('offerCard:favoriteClicked')
     },
     detailsClicked() {
-      console.log('on lcick on DETRAILS ')
       this.$emit('offerCard:detailsClicked')
     },
     buyClicked() {
-      console.log('on lcick on SHOP')
       this.$emit('offerCard:buyClicked')
     }
   }

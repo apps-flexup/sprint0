@@ -8,14 +8,31 @@
         fv-primary-button.text-right(
           @button:click="createAccount"
         ) {{ $t('buttons.create.account') }}
-  v-row
-    fv-account-card
+  v-row(
+    class="d-flex flex-row"
+  )
+    div(
+      v-for="account in accounts"
+      :key="account.id"
+    )
+      fv-account-card.card(
+        :avatar="account.avatar"
+        :name="account.name"
+      )
 </template>
 
 <script>
 export default {
+  computed: {
+    accounts() {
+      const res = this.$store.getters['accounts/all']
+      console.log('res: ', res)
+      return res
+    }
+  },
   mounted() {
     console.log('Composant ', this.$options.name)
+    this.$store.dispatch('accounts/get')
   },
   methods: {
     createAccount() {
@@ -32,5 +49,9 @@ export default {
 }
 .title {
   font-weight: bold;
+}
+.card {
+  margin-left: 10px;
+  margin-right: 10px;
 }
 </style>
