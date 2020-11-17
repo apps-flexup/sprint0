@@ -1,25 +1,28 @@
 <template lang="pug">
 .fv-product-form
-    v-row
-      v-col(cols='12')
-        fv-category-autocomplete(
-          :categoryId="categoryId"
-          @category:selected="categorySelected"
-        )
-    v-row
-      v-col(cols='12')
-        fv-text-field(
-          :value="name"
-          :label="$t('forms.products.new.name')"
-          @input="nameChanged"
-        )
-    v-row
-      v-col(cols='12')
-        fv-unit-autocomplete(
-          :dimension="dimension"
-          :unit="unit"
-          @unit:selected="unitSelected"
-        )
+  v-row
+    v-col(cols='12')
+      fv-category-autocomplete(
+        data-testid='categoryAutocomplete'
+        :categoryId="categoryId"
+        @category:selected="categorySelected"
+      )
+  v-row
+    v-col(cols='12')
+      fv-text-field(
+        data-testid='productName'
+        :value="name"
+        :label="$t('forms.products.new.name')"
+        @input="nameChanged"
+      )
+  v-row
+    v-col(cols='12')
+      fv-unit-autocomplete(
+        data-testid='unitAutocomplete'
+        :dimension="dimension"
+        :unit="unit"
+        @unit:selected="unitSelected"
+      )
 </template>
 
 <script>

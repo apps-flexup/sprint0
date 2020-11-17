@@ -1420,7 +1420,6 @@
       "title": "Information générales"
     },
     {
-      "component": "fv-order-form",
       "title": "Commande à faire"
     }
   ],
