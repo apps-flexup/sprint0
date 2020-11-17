@@ -325,6 +325,9 @@
     "save": "Sauvegarder"
   },
   "accounts": {
+    "index": {
+      "title": "Mes comptes"
+    },
     "new": {
       "title": "Bienvenue sur FlexUp, créons votre premier compte"
     }

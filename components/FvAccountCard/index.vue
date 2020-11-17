@@ -21,6 +21,10 @@
 export default {
   name: 'FvAccountCard',
   props: {
+    id: {
+      type: Number,
+      required: true
+    },
     avatar: {
       type: String,
       default() {
@@ -44,7 +48,7 @@ export default {
   },
   methods: {
     cardClicked() {
-      this.$emit('accountCard:clicked')
+      this.$router.push('accounts/' + this.id)
     },
     favoriteClicked() {
       this.$emit('accountCard:favoriteClicked')

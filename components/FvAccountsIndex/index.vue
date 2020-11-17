@@ -5,7 +5,7 @@
       v-col(cols="4")
         p.title(
           data-testid="title"
-        ) title
+        ) {{ $t('accounts.index.title') }}
       v-col(cols="8")
         fv-primary-button.text-right(
           data-testid="createButton"
@@ -21,6 +21,7 @@
     )
       fv-account-card.card(
         data-testid="accountCard"
+        :id="account.id"
         :avatar="account.avatar"
         :name="account.name"
       )
