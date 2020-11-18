@@ -1416,11 +1416,8 @@
   ],
   "product-steps": [
     {
-      "component": "fv-product-form",
+      "component": "fv-product-step-detail",
       "title": "Information générales"
-    },
-    {
-      "title": "Commande à faire"
     }
   ],
   "contract-types": [
