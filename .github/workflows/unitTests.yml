@@ -9,7 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Install modules
+    - name: Install yarn
       run: yarn
+    - name: Install vuex
+      run: yarn add vuex
     - name: Run tests
       run: yarn jest
