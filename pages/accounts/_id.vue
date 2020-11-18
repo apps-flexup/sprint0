@@ -1,6 +1,5 @@
 <template lang="pug">
 .accounts-id
-  pre {{ account }}
 </template>
 
 <script>
