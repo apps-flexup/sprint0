@@ -38,6 +38,7 @@ import FvContractSummaryStepPaiement from '@/components/FvContractSummaryStepPai
 import FvContractSummaryStepStructure from '@/components/FvContractSummaryStepStructure'
 import FvDataTableHeader from '@/components/FvDataTableHeader'
 import FvDataTableSearchBar from '@/components/FvDataTableSearchBar'
+import FvFlexItems from '@/components/FvFlexItems'
 import FvIcon from '@/components/FvIcon'
 import FvLanguageAutocomplete from '@/components/FvLanguageAutocomplete'
 import FvListAccounts from '@/components/FvListAccounts'
@@ -170,6 +171,7 @@ Vue.component(
 )
 Vue.component('fv-data-table-header', FvDataTableHeader)
 Vue.component('fv-data-table-search-bar', FvDataTableSearchBar)
+Vue.component('fv-flex-items', FvFlexItems)
 Vue.component('fv-icon', FvIcon)
 Vue.component('fv-language-autocomplete', FvLanguageAutocomplete)
 Vue.component('fv-list-accounts', FvListAccounts)

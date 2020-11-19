@@ -13611,12 +13611,6 @@
       "value": "vat"
     },
     {
-      "align": "center",
-      "sortable": true,
-      "text": "headers.offers.unit",
-      "value": "unit"
-    },
-    {
       "align": "start",
       "sortable": true,
       "text": "headers.offers.status",
@@ -14118,12 +14112,6 @@
       "sortable": true,
       "text": "headers.orderLines.quantity",
       "value": "quantity"
-    },
-    {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.orderLines.unit",
-      "value": "unit"
     },
     {
       "align": "end",
