@@ -11,7 +11,7 @@
       template(v-slot:item.date='{ item }')
         div {{ dateToLocaleString(item.date) }}
       template(v-slot:item.amount='{ item }')
-        fv-price-to-preferred-currency(
+        fv-price-to-preferred-currency.text-right(
           :price="item.amount"
           :currency="item.currency"
         )

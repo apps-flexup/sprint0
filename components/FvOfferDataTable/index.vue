@@ -11,12 +11,12 @@
       template(v-slot:item.name='{ item }')
         div(v-to-locale="item.name")
       template(v-slot:item.price='{ item }')
-        fv-price-to-preferred-currency(
+        fv-price-to-preferred-currency.text-right(
           :price="item.price"
           :currency="item.currency"
         )
       template(v-slot:item.vat='{ item }')
-        div {{ item.vat }}%
+        div.text-right {{ item.vat }}%
       template(v-slot:item.unit='{ item }')
         div(v-to-unit="item")
       template(v-slot:item.status='{ item }')
