@@ -4,10 +4,10 @@
       :value='true'
     )
       template(v-slot:activator)
-        p.mr-3.number {{ formId }}
-        p.mr-2.titleForm {{ title }}
+        p(data-testid='formId').mr-3.number {{ formId }}
+        p(data-testid='formTitle').mr-2.titleForm {{ title }}
         v-spacer
-      div.mt-5.form
+      div(data-testid='formSlot').mt-5.form
         slot(name="form")
 </template>
 

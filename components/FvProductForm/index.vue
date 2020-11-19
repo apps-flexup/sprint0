@@ -8,9 +8,7 @@
         :formId="index+1"
         :title="step.title"
       )
-        template(
-          slot="form"
-        )
+        template(slot="form")
           composant(
             :is="step.component"
           )
