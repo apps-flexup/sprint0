@@ -25,7 +25,7 @@
               :price="item.price"
               :currency="item.currency"
             )
-            div.right / {{ item.unit }}
+            div /{{ item.unit }}
         template(v-slot:item.total="{ item }")
           div(v-to-preferred-currency="{amount: item.price * item.quantity, currency: item.currency}")
         template(v-slot:item.vat='{ item }')
@@ -113,8 +113,5 @@ export default {
 .priceCol {
   display: flex !important;
   align-items: center;
-}
-.right {
-  padding-left: 5px;
 }
 </style>
