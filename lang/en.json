@@ -19,6 +19,7 @@
     "space": "Space: ",
     "route": {
       "account": "Account",
+      "accounts": "My accounts",
       "account-new": "New account",
       "index": "Home",
       "orders": "Orders",
@@ -246,6 +247,7 @@
   },
   "buttons": {
     "create" : {
+      "account": "CREATE ACCOUNT",
       "product": "CREATE PRODUCT",
       "contract": "CREATE CONTRACT",
       "partner": "CREATE PARTNER",
@@ -321,6 +323,9 @@
     "save": "Save"
   },
   "accounts": {
+    "index": {
+      "title": "My accounts"
+    },
     "new": {
       "title": "Welcome to FlexUp, let's create your first account"
     }

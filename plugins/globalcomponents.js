@@ -2,7 +2,9 @@ import Vue from 'vue'
 // Importation des composants utilitaires
 import FvAccount from '@/components/FvAccount'
 import FvAccountAvatar from '@/components/FvAccountAvatar'
+import FvAccountCard from '@/components/FvAccountCard'
 import FvAccountInfo from '@/components/FvAccountInfo'
+import FvAccountsIndex from '@/components/FvAccountsIndex'
 import FvAutocomplete from '@/components/FvAutocomplete'
 import FvAvatar from '@/components/FvAvatar'
 import FvAvatarWithName from '@/components/FvAvatarWithName'
@@ -62,6 +64,7 @@ import FvSettingsDefault from '@/components/FvSettingsDefault'
 import FvSettingsIndex from '@/components/FvSettingsIndex'
 import FvSettingsOthers from '@/components/FvSettingsOthers'
 import FvShowMenu from '@/components/FvShowMenu'
+import FvSlotItemCard from '@/components/FvSlotItemCard'
 import FvStepper from '@/components/FvStepper'
 import FvSubMenu from '@/components/FvSubMenu'
 import FvThemeAutocomplete from '@/components/FvThemeAutocomplete'
@@ -122,7 +125,9 @@ import FvOrderTotals from '~/components/FvOrderTotals'
 // Déclarations composants utilitaires
 Vue.component('fv-account', FvAccount)
 Vue.component('fv-account-avatar', FvAccountAvatar)
+Vue.component('fv-account-card', FvAccountCard)
 Vue.component('fv-account-info', FvAccountInfo)
+Vue.component('fv-accounts-index', FvAccountsIndex)
 Vue.component('fv-autocomplete', FvAutocomplete)
 Vue.component('fv-avatar', FvAvatar)
 Vue.component('fv-avatar-with-name', FvAvatarWithName)
@@ -192,6 +197,7 @@ Vue.component('fv-settings-default', FvSettingsDefault)
 Vue.component('fv-settings-index', FvSettingsIndex)
 Vue.component('fv-settings-others', FvSettingsOthers)
 Vue.component('fv-show-menu', FvShowMenu)
+Vue.component('fv-slot-item-card', FvSlotItemCard)
 Vue.component('fv-stepper', FvStepper)
 Vue.component('fv-sub-menu', FvSubMenu)
 Vue.component('fv-theme-autocomplete', FvThemeAutocomplete)

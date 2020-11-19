@@ -13490,7 +13490,7 @@
       "active": true,
       "icon": "mdi-account-switch-outline",
       "title": "userMenu.management",
-      "to": "/users"
+      "to": "/accounts"
     }
   ],
   "accountMenu": [
