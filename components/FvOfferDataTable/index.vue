@@ -11,14 +11,19 @@
       template(v-slot:item.name='{ item }')
         div(v-to-locale="item.name")
       template(v-slot:item.price='{ item }')
-        fv-price-to-preferred-currency.text-right(
-          :price="item.price"
-          :currency="item.currency"
-        )
+        fv-flex-items
+          template(v-slot:left)
+            v-spacer
+            fv-price-to-preferred-currency(
+              :price="item.price"
+              :currency="item.currency"
+            )
+          template(v-slot:separator)
+            div /
+          template(v-slot:right)
+            div {{ item.unit }}
       template(v-slot:item.vat='{ item }')
         div.text-right {{ item.vat }}%
-      template(v-slot:item.unit='{ item }')
-        div(v-to-unit="item")
       template(v-slot:item.status='{ item }')
         fv-status-progress(:status="item.status")
       template(v-slot:item.actions="{ item }")
@@ -69,3 +74,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.right {
+  margin-right: 0px !important;
+  margin-left: auto;
+}
+</style>

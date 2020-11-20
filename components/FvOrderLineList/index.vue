@@ -13,21 +13,31 @@
           div(v-to-unit="item")
         template(v-slot:item.quantity="{ item }")
           div.text-right(v-if="details")
-            div(class="quantity-input") {{ item.quantity }}
+            fv-flex-items
+              template(v-slot:left)
+                div(class="quantity-input") {{ item.quantity }}
+              template(v-slot:right)
+                div {{ item.unit }}
           div(v-else)
-            fv-quantity-selector.quantity-selector-input(
-              :quantity="item.quantity"
-              @quantitySelector:changed="quantityChanged(arguments, item)"
-            )
+            fv-flex-items
+              template(v-slot:left)
+                fv-quantity-selector.quantity-selector-input(
+                  :quantity="item.quantity"
+                  @quantitySelector:changed="quantityChanged(arguments, item)"
+                )
+              template(v-slot:right)
+                div {{ item.unit }}
         template(v-slot:item.price="{ item }")
-          div
-            v-row.priceCol
-              v-spacer
+          fv-flex-items
+            template(v-slot:left)
               fv-price-to-preferred-currency(
                 :price="item.price"
                 :currency="item.currency"
               )
-              div /{{ item.unit }}
+            template(v-slot:separator)
+              div /
+            template(v-slot:right)
+              div {{ item.unit }}
         template(v-slot:item.total="{ item }")
           div.text-right(v-to-preferred-currency="{amount: item.price * item.quantity, currency: item.currency}")
         template(v-slot:item.vat='{ item }')
@@ -116,11 +126,7 @@ export default {
 }
 .quantity-selector-input {
   width: 200px;
-  margin-right: 0px;
+  margin-right: 10px;
   margin-left: auto;
-}
-.priceCol {
-  display: flex !important;
-  align-items: center;
 }
 </style>
