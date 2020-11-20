@@ -1,6 +1,8 @@
 <template lang="pug">
 .fv-flex-items
-  div.flex
+  div.flex(
+    data-testid="div"
+  )
     slot(name='left')
     slot(name='separator')
     slot(name='right')
