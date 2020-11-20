@@ -32,6 +32,12 @@ export default {
       default() {
         return null
       }
+    },
+    dimensionFilter: {
+      type: String,
+      default() {
+        return null
+      }
     }
   },
   data() {
@@ -41,7 +47,10 @@ export default {
   },
   computed: {
     items() {
-      const res = this.$store.getters['units/all']
+      let res = this.$store.getters['units/all']
+      if (this.dimensionFilter) {
+        res = res.filter((unit) => unit.dimension === this.dimensionFilter)
+      }
       return res
     },
     unitId: {
