@@ -15,7 +15,7 @@
     template(
       slot='form'
     )
-      fv-product-form(
+      fv-product-step-detail(
         :product="product"
         @product:changed="productChanged"
       )

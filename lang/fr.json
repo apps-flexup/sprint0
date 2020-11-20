@@ -133,7 +133,9 @@
         "price": "Prix",
         "currency": "Devise",
         "elasticity": "Élasticité",
-        "change": "Modifier mon produit"
+        "change": "Modifier mon produit",
+        "validate": "Valider",
+        "cancel": "Annuler"
       }
     },
     "partners": {

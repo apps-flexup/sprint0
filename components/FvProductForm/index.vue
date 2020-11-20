@@ -1,5 +1,13 @@
 <template lang="pug">
-  .fv-product-form
+.fv-product-form
+    v-row.head
+      fv-icon.mr-11(
+        color="inherit"
+        size="xLarge"
+        icon="mdi-chevron-left"
+        @icon:clicked="cancel"
+      )
+      h1 {{ $t('forms.products.new.title') }}
     v-list.mt-10(
       v-for="(step, index) in getProductStep"
       :key="index"
@@ -11,11 +19,28 @@
         template(slot="form")
           composant(
             :is="step.component"
+            :product="product"
+            @product:changed="productChanged"
           )
+    div.btn.mt-10
+      fv-secondary-button(
+        @button:click="cancel"
+      ) {{ $t('forms.products.new.cancel') }}
+      fv-primary-button(
+        @button:click="submit"
+      ) {{ $t('forms.products.new.validate') }}
 </template>
 
 <script>
 export default {
+  props: {
+    product: {
+      type: Object,
+      default() {
+        return {}
+      }
+    }
+  },
   computed: {
     getProductStep() {
       const res = this.$store.getters['forms/products']
@@ -34,6 +59,9 @@ export default {
       this.$nuxt.$loading.finish()
       this.$router.push('/products')
     },
+    cancel() {
+      this.$router.push('/products')
+    },
     productChanged(product) {
       this.product = product
     }
@@ -47,5 +75,12 @@ export default {
 }
 ::v-deep .v-list.mt-10.v-sheet.theme--light {
   background-color: rgb(241, 241, 241);
+}
+.btn {
+  display: flex;
+  justify-content: space-between;
+}
+.head {
+  align-items: center;
 }
 </style>

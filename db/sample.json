@@ -14726,6 +14726,15 @@
       "status": "draft",
       "account_id": 1,
       "id": 16
+    },
+    {
+      "category_id": 4,
+      "name": "Fuite d'eau",
+      "unit": "hr",
+      "dimension": "duration",
+      "status": "draft",
+      "account_id": 1,
+      "id": 17
     }
   ],
   "structures": [

@@ -131,7 +131,9 @@
         "price": "Price",
         "currency": "Currency",
         "elasticity": "Elasticity",
-        "change": "Edit my product"
+        "change": "Edit my product",
+        "validate": "Validate",
+        "cancel": "Cancel"
       }
     },
     "partners": {
