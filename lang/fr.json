@@ -96,7 +96,13 @@
         "1": "Sélectionner offres",
         "2": "Récapitulatif"
       }
-    },    "contracts": {
+    },
+    "product": {
+      "step": {
+        "0": "Informations générales"
+      }
+    },
+    "contracts": {
       "step": {
         "0": "-",
         "1": "Détail",

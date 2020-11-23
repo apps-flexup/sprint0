@@ -5,13 +5,6 @@
       fv-primary-button.text-right(
         @button:click='createProduct'
       ) {{ $t('buttons.create.product') }}
-    fv-product-modal(
-      :show="showModal"
-      :product='product'
-      @modal:close="close"
-      @modal:save="save"
-      @product:changed="productChanged"
-    )
   fv-product-list(@list:selected="selectedProduct")
 </template>
 
@@ -36,9 +29,10 @@ export default {
       this.product = {}
       this.$nuxt.$loading.finish()
     },
-    selectedProduct(e) {
-      this.product = JSON.parse(JSON.stringify(e))
-      this.showModal = true
+    selectedProduct(product) {
+      product = JSON.parse(JSON.stringify(product))
+      this.$emit('product:changed', product)
+      this.$router.push('/products/' + product.id)
     },
     createProduct() {
       this.$router.push('/products/new')

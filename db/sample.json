@@ -1417,7 +1417,7 @@
   "product-steps": [
     {
       "component": "fv-product-step-detail",
-      "title": "Information générales"
+      "title": "forms.product.step.0"
     }
   ],
   "contract-types": [

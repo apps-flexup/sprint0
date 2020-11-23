@@ -94,6 +94,11 @@
         "2": "Summary"
       }
     },
+    "product": {
+      "step": {
+        "0": "General information"
+      }
+    },
     "contracts": {
       "step": {
         "0": "-",

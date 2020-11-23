@@ -14,7 +14,7 @@
     )
       fv-step-form(
         :formId="index+1"
-        :title="step.title"
+        :title="$t(step.title)"
       )
         template(slot="form")
           composant(
