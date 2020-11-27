@@ -25,6 +25,7 @@
       "orders-new": "New order",
       "products": "Products",
       "products-new": "New product",
+      "products-id": "Edit my product",
       "offers": "Offers",
       "contacts": "Contacts",
       "partners": "Partners",
@@ -136,9 +137,11 @@
         "price": "Price",
         "currency": "Currency",
         "elasticity": "Elasticity",
-        "change": "Edit my product",
         "validate": "Validate",
         "cancel": "Cancel"
+      },
+      "edit": {
+        "title": "Edit my product"
       }
     },
     "partners": {

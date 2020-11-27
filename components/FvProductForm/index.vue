@@ -2,17 +2,20 @@
 .fv-product-form
     v-row.head
       fv-icon.mr-11(
+        data-testid="icon"
         color="inherit"
         size="xLarge"
         icon="mdi-chevron-left"
         @icon:clicked="cancel"
       )
-      h1 {{ $t('forms.products.new.title') }}
+      h1(data-testid="pageTitle") {{ $t('forms.products.' + action + '.title') }}
     v-list.mt-10(
+      data-testid="listProductStep"
       v-for="(step, index) in getProductStep"
       :key="index"
     )
       fv-step-form(
+        data-testid="stepForm"
         :formId="index+1"
         :title="$t(step.title)"
       )
@@ -24,9 +27,11 @@
           )
     div.btn.mt-10
       fv-secondary-button(
+        data-testid="cancelBtn"
         @button:click="cancel"
       ) {{ $t('forms.products.new.cancel') }}
       fv-primary-button(
+        data-testid="submitBtn"
         @button:click="submit"
       ) {{ $t('forms.products.new.validate') }}
 </template>
@@ -38,6 +43,12 @@ export default {
       type: Object,
       default() {
         return {}
+      }
+    },
+    action: {
+      type: String,
+      default() {
+        return null
       }
     }
   },
@@ -53,14 +64,17 @@ export default {
   },
   methods: {
     submit() {
+      this.$emit('clicked')
       this.$nuxt.$loading.start()
       const payload = this.product
+      this.product.category_id = this.product.categoryId
       this.$activeAccount.addProduct(payload)
       this.$nuxt.$loading.finish()
       this.$router.push('/products')
     },
     cancel() {
       this.$router.push('/products')
+      this.$emit('clicked')
     },
     productChanged(product) {
       this.product = product

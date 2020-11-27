@@ -31,7 +31,6 @@ export default {
     },
     selectedProduct(product) {
       product = JSON.parse(JSON.stringify(product))
-      this.$emit('product:changed', product)
       this.$router.push('/products/' + product.id)
     },
     createProduct() {

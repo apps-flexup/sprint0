@@ -1,19 +1,20 @@
 <template lang="pug">
-  fv-product-step-detail(
-        :product="product"
-        @product:changed="productChanged"
-      )
+  fv-product-form(
+    :product="getProduct"
+    @product:changed="productChanged"
+    action='edit'
+  )
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      product: {}
+  computed: {
+    getProduct() {
+      const productId = this.$route.params.id
+      const products = this.$store.getters['products/findById'](productId)
+      const payload = JSON.parse(JSON.stringify(products))
+      return payload
     }
-  },
-  mounted() {
-    console.log('LE PRODUIT TA GRAND MERE', this.product)
   },
   methods: {
     productChanged(product) {
