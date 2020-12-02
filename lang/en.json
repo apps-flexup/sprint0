@@ -302,7 +302,7 @@
       "elasticity": "Elasticity",
       "label": "Label",
       "products": "Product(s)",
-      "price": "Price",
+      "price": "Price incl. tax",
       "currency": "Currency",
       "vat": "VAT",
       "unit": "Unit",

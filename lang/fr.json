@@ -304,7 +304,7 @@
       "elasticity": "Élasticité",
       "label": "Label",
       "products": "Produit(s)",
-      "price": "Prix",
+      "price": "Prix TTC",
       "currency": "Devise",
       "vat": "TVA",
       "unit": "Unité",
