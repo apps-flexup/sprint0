@@ -1,6 +1,7 @@
 <template lang="pug">
 .fv-field-date
   v-menu(
+    data-testid="menu"
     v-model='fromDateMenu'
     close-on-content-click=''
     :nudge-right='40'
@@ -11,15 +12,17 @@
   )
     template(v-slot:activator='{ on }')
       fv-text-field(
+        data-testid="textField"
         :readonly="true"
         :clearable="clearable"
         :hideDetails="hideDetails"
         :value="displayDate"
         :label="label"
-        @click="fromDateMenu = !readonly"
+        @click="click"
       )
     v-date-picker(
-      locale='en-in'
+      data-testid="datePicker"
+      :locale='locale'
       :min='minDate ? minDate.toISOString() : null'
       :max='maxDate ? maxDate.toISOString() : null'
       :value='pickingDate'
@@ -104,10 +107,12 @@ export default {
   },
   methods: {
     dateSelected(v) {
-      console.log('v: ', v)
       this.fromDateMenu = false
       this.pickingDate = v
       this.$emit('date:changed', v)
+    },
+    click() {
+      this.fromDateMenu = !this.readonly
     }
   }
 }
