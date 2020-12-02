@@ -1,4 +1,5 @@
 import { mount, createLocalVue } from '@vue/test-utils'
+import Vuetify from 'vuetify'
 import Vuex from 'Vuex'
 import FvFieldDate from './index.vue'
 
@@ -7,11 +8,13 @@ localVue.use(Vuex)
 
 describe('FvFieldDate', () => {
   let store
+  let vuetify
   const locale = 'fr'
 
   const factory = () => {
     return mount(FvFieldDate, {
       localVue,
+      vuetify,
       store,
       computed: {
         locale: () => locale
@@ -19,6 +22,7 @@ describe('FvFieldDate', () => {
     })
   }
   beforeEach(() => {
+    vuetify = new Vuetify()
     store = new Vuex.Store({
       modules: {
         settings: {
