@@ -12,20 +12,19 @@
     template(v-slot:activator='{ on }')
       fv-text-field(
         :readonly="true"
-        :dateRef="dateRef"
         :clearable="clearable"
         :hideDetails="hideDetails"
-        :value='displayDate ? displayDate.substring(0,10) : null'
-        :label='label'
-        @click='fromDateMenu = !readonly'
+        :value="displayDate"
+        :label="label"
+        @click="fromDateMenu = !readonly"
       )
     v-date-picker(
       locale='en-in'
       :min='minDate ? minDate.toISOString() : null'
       :max='maxDate ? maxDate.toISOString() : null'
-      v-model='dte'
+      :value='pickingDate'
       no-title=''
-      @input='fromDateMenu = false'
+      @input="dateSelected"
     )
 </template>
 
@@ -79,31 +78,37 @@ export default {
   data() {
     return {
       fromDateMenu: false,
-      displayDate: this.dateRef ? this.dateRef.toLocaleString() : null,
       pickingDate: this.dateRef ? this.dateRef.toISOString() : null
     }
   },
   computed: {
-    dte: {
-      get() {
-        return this.pickingDate
-      },
-      set(v) {
-        const toDisplay = new Date(v)
-        this.displayDate = toDisplay.toLocaleString()
-        this.pickingDate = v
-        this.$emit('date:changed', v)
-      }
+    locale() {
+      const settings = this.$store.getters['settings/settings']
+      const res = settings.language
+      return res
+    },
+    displayDate() {
+      const dte = new Date(this.pickingDate)
+      const res = dte.toLocaleDateString(this.locale)
+      return res
     }
   },
   watch: {
     dateRef() {
-      this.displayDate = this.dateRef ? this.dateRef.toLocaleString() : null
       this.pickingDate = this.dateRef ? this.dateRef.toISOString() : null
     }
   },
   mounted() {
     console.log('Composant ', this.$options.name)
+    this.$store.dispatch('settings/getSettings')
+  },
+  methods: {
+    dateSelected(v) {
+      console.log('v: ', v)
+      this.fromDateMenu = false
+      this.pickingDate = v
+      this.$emit('date:changed', v)
+    }
   }
 }
 </script>
