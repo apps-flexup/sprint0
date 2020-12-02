@@ -167,7 +167,7 @@
         "dimension": "Dimension",
         "name": "Offer name",
         "unit": "Unit",
-        "price": "Price",
+        "price": "Price incl. tax",
         "elasticity": "Elasticity",
         "currency": "Currency",
         "vat": "VAT"
@@ -185,8 +185,8 @@
         "label": "Label (optional)",
         "date": "Order date",
         "totals": {
-          "withoutVat": "Subtotal without VAT",
-          "total": "Total",
+          "withoutVat": "Subtotal excl. tax",
+          "total": "Total incl. tax",
           "vat": "VAT",
           "of": "of"
         },
@@ -282,7 +282,7 @@
     },
     "orders": {
       "date": "Date",
-      "amount": "Amount",
+      "amount": "Amount incl. tax",
       "currency": "Currency",
       "label": "Label",
       "structure": "Structure",
@@ -292,8 +292,8 @@
       "offer": "Offer",
       "quantity": "Quantity",
       "unit": "Unit",
-      "price": "Price",
-      "total": "Total",
+      "price": "Price incl. tax",
+      "total": "Total incl. tax",
       "vat": "VAT",
       "status": "Status"
     },

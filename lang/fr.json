@@ -169,7 +169,7 @@
         "dimension": "Dimension",
         "name": "Nom de l'offre",
         "unit": "Unité",
-        "price": "Prix",
+        "price": "Prix TTC",
         "currency": "Devise",
         "vat": "TVA"
       },
@@ -187,7 +187,7 @@
         "date": "Date de commande",
         "totals": {
           "withoutVat": "Total hors taxes",
-          "total": "Total",
+          "total": "Total TTC",
           "vat": "TVA",
           "of": "de"
         },
@@ -284,7 +284,7 @@
     },
     "orders": {
       "date": "Date",
-      "amount": "Montant",
+      "amount": "Montant TTC",
       "currency": "Devise",
       "label": "Label",
       "structure": "Structure",
@@ -294,8 +294,8 @@
       "offer": "Offre",
       "quantity": "Quantité",
       "unit": "Unité",
-      "price": "Prix",
-      "total": "Total",
+      "price": "Prix TTC",
+      "total": "Total TTC",
       "vat": "TVA",
       "status": "Statut"
     },
