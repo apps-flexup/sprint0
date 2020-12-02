@@ -67,8 +67,10 @@ export default {
       if (!date) {
         return null
       }
+      const settings = this.$store.getters['settings/settings']
+      const locale = settings.language
       const dte = new Date(date)
-      const res = dte.toLocaleString().slice(0, 10)
+      const res = dte.toLocaleDateString(locale)
       return res
     },
     getStructureName(structureId) {
