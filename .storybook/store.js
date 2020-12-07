@@ -5,6 +5,7 @@ import moduleCategories from './storeModules/categories'
 import moduleCountries from './storeModules/countries'
 import moduleCurrencies from './storeModules/currencies'
 import moduleContracts from './storeModules/contracts'
+import moduleForms from './storeModules/forms'
 import moduleHeaders from './storeModules/headers'
 import moduleOffers from './storeModules/offers'
 import moduleOrders from './storeModules/orders'
@@ -22,6 +23,7 @@ const store = new Vuex.Store({
     countries: moduleCountries,
     currencies: moduleCurrencies,
     contracts: moduleContracts,
+    forms: moduleForms,
     headers: moduleHeaders,
     offers: moduleOffers,
     orders: moduleOrders,

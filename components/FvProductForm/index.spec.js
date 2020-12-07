@@ -41,12 +41,12 @@ describe('FvProductForm', () => {
       mocks: {
         $nuxt: {
           $loading: {
-            start: () => {},
-            finish: () => {}
+            start: jest.fn(),
+            finish: jest.fn()
           }
         },
         $activeAccount: {
-          addProduct: () => {}
+          addProduct: jest.fn()
         }
       }
     })

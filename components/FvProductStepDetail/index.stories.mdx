@@ -1,14 +1,14 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
 import { action } from '@storybook/addon-actions'
-import FvProductForm from './index.vue'
+import FvProductStepDetail from './index.vue'
 
-<Meta title='Molecules/FvProductForm' component={ FvProductForm } />
+<Meta title='Molecules/FvProductStepDetail' component={ FvProductStepDetail } />
 
-# FvProductForm
+# FvProductStepDetail
 
 <Canvas>
 <Story name='Common' height='150px'>{{
-  components: { FvProductForm },
+  components: { FvProductStepDetail },
   data() {
     return {
       product: {}
@@ -17,14 +17,14 @@ import FvProductForm from './index.vue'
   methods: {
     productChanged: action('Product changed')
   },
-  template: `<FvProductForm
+  template: `<FvProductStepDetail
     :product="product"
     @product:changed="productChanged"
   >
-  </FvProductForm>`
+  </FvProductStepDetail>`
 }}</Story>
 </Canvas>
 
 ## ArgsTable
 
-<ArgsTable of={ FvProductForm } />
+<ArgsTable of={ FvProductStepDetail } />
