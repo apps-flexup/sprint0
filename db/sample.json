@@ -13838,11 +13838,11 @@
         },
         "plop": 2525
       },
-      "price": 100,
+      "price": "100.00",
       "reference": "EICMNB",
       "status": "archived",
       "unit": "h",
-      "vat": "12",
+      "vat": "12.0",
       "id": 4
     },
     {
@@ -14076,7 +14076,7 @@
     {
       "product_id": 15,
       "name": "Appartement Paris 19",
-      "price": "123",
+      "price": "123.00",
       "unit": "month",
       "dimension": "duration",
       "status": "draft",
@@ -14084,19 +14084,19 @@
       "category_id": 22,
       "productId": 2,
       "currency": "EUR",
-      "vat": "20",
+      "vat": "20.0",
       "id": 20
     },
     {
       "product_id": 15,
       "name": "Bananes",
-      "price": "123",
+      "price": "123.00",
       "currency": "USD",
       "unit": "Gb/s",
       "dimension": "bandwith",
       "status": "draft",
       "account_id": 1,
-      "vat": "12",
+      "vat": "12.0",
       "id": 21
     }
   ],

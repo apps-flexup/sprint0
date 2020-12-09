@@ -10,12 +10,13 @@
     :dense="dense"
     suffix="%"
     @input="vatChanged"
+    @click:outside="onClickOutside"
   )
 </template>
 
 <script>
 export default {
-  name: 'FvPriceField',
+  name: 'FvVatField',
   props: {
     value: {
       type: String,
@@ -77,6 +78,12 @@ export default {
     vatChanged(v) {
       this.vat = v
       this.$emit('vat:changed', this.vat)
+    },
+    onClickOutside() {
+      if (this.vat) {
+        this.vat = (Math.round(this.vat * 100) / 100).toFixed(1)
+        this.vatChanged(this.vat)
+      }
     }
   }
 }
