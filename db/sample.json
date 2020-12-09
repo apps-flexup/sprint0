@@ -8,11 +8,11 @@
       "id": 1
     },
     {
-      "id": 2,
       "currency": "USD",
       "language": "en",
       "theme": "dark",
-      "account_id": 3
+      "account_id": 3,
+      "id": 2
     }
   ],
   "accounts": [
@@ -1412,6 +1412,12 @@
       "id": 4,
       "name": "forms.contracts.step.4",
       "resume": "fv-contract-summary-step-visualisation"
+    }
+  ],
+  "product-steps": [
+    {
+      "component": "fv-product-step-detail",
+      "title": "forms.product.step.0"
     }
   ],
   "contract-types": [
@@ -14640,15 +14646,6 @@
       "status": "inactive",
       "unit": "month",
       "id": 2
-    },
-    {
-      "account_id": 10,
-      "category_id": 17,
-      "currency": "EUR",
-      "id": 5,
-      "name": "Minute",
-      "periodicity": "souvent",
-      "status": "draft"
     },
     {
       "account_id": 10,

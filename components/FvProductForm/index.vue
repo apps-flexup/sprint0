@@ -1,102 +1,100 @@
 <template lang="pug">
 .fv-product-form
-  v-row
-    v-col(cols='6')
-      fv-category-autocomplete(
-        :categoryId="categoryId"
-        @category:selected="categorySelected"
+    v-row.head
+      fv-icon.mr-11(
+        data-testid="icon"
+        color="inherit"
+        size="xLarge"
+        icon="mdi-chevron-left"
+        @icon:clicked="cancel"
       )
-  v-row
-    v-col(cols='6')
-      fv-text-field(
-        :value="name"
-        :label="$t('forms.products.new.name')"
-        @input="nameChanged"
+      h1(data-testid="pageTitle") {{ $t('forms.products.' + action + '.title') }}
+    v-list.mt-10(
+      data-testid="listProductStep"
+      v-for="(step, index) in getProductStep"
+      :key="index"
+    )
+      fv-step-form(
+        data-testid="stepForm"
+        :formId="index+1"
+        :title="$t(step.title)"
       )
-    v-col(cols='6')
-      fv-unit-autocomplete(
-        :dimension="dimension"
-        :unit="unit"
-        @unit:selected="unitSelected"
-      )
+        template(slot="form")
+          composant(
+            :is="step.component"
+            :product="product"
+            @product:changed="productChanged"
+          )
+    div.btn.mt-10
+      fv-secondary-button(
+        data-testid="cancelBtn"
+        @button:click="cancel"
+      ) {{ $t('forms.products.new.cancel') }}
+      fv-primary-button(
+        data-testid="submitBtn"
+        @button:click="submit"
+      ) {{ $t('forms.products.new.validate') }}
 </template>
 
 <script>
 export default {
-  name: 'FvProductForm',
   props: {
     product: {
       type: Object,
       default() {
         return {}
       }
-    }
-  },
-  data() {
-    return {
-      localProduct: {},
-      categoryId: this.product.category_id || null,
-      name: null,
-      unit: null,
-      dimension: null
-    }
-  },
-  watch: {
-    product() {
-      if (Object.entries(this.product).length === 0) {
-        this.clearProduct()
-      } else {
-        this.fillFieldsWithProduct()
+    },
+    action: {
+      type: String,
+      default() {
+        return null
       }
+    }
+  },
+  computed: {
+    getProductStep() {
+      const res = this.$store.getters['forms/products']
+      return res
     }
   },
   mounted() {
     console.log('Composant ', this.$options.name)
-    this.fillFieldsWithProduct()
+    this.$store.dispatch('forms/getProduct')
   },
   methods: {
-    categorySelected(v) {
-      this.categoryId = v
-      const payload = {
-        categoryId: this.categoryId
-      }
-      const res = Object.assign(this.localProduct, payload)
-      this.$emit('product:changed', res)
+    submit() {
+      this.$emit('clicked')
+      this.$nuxt.$loading.start()
+      const payload = this.product
+      this.product.category_id = this.product.categoryId
+      this.$activeAccount.addProduct(payload)
+      this.$nuxt.$loading.finish()
+      this.$router.push('/products')
     },
-    nameChanged(name) {
-      console.log('Name changed: ', name)
-      const payload = {
-        name
-      }
-      const res = Object.assign(this.localProduct, payload)
-      this.$emit('product:changed', res)
+    cancel() {
+      this.$router.push('/products')
+      this.$emit('clicked')
     },
-    unitSelected(v) {
-      const unit = this.$store.getters['units/find'](v)
-      this.dimension = unit ? unit.dimension : null
-      this.unit = unit ? unit.symbole : null
-      const payload = {
-        dimension: this.dimension,
-        unit: this.unit
-      }
-      const res = Object.assign(this.localProduct, payload)
-      this.$emit('product:changed', res)
-    },
-    fillFieldsWithProduct() {
-      if (!this.product) return
-      this.categoryId = this.product.category_id
-      this.name = this.product.name
-      this.unit = this.product.unit
-      this.dimension = this.product.dimension
-      this.localProduct = this.product
-    },
-    clearProduct() {
-      this.categoryId = null
-      this.name = null
-      this.unit = null
-      this.dimension = null
-      this.localProduct = {}
+    productChanged(product) {
+      this.product = product
     }
   }
 }
 </script>
+
+<style scoped>
+::v-deep .v-sheet {
+  border-radius: 15px;
+}
+::v-deep .v-list.mt-10.v-sheet.theme--light {
+  background-color: rgb(241, 241, 241);
+}
+.btn {
+  display: flex;
+  justify-content: space-between;
+}
+.head {
+  align-items: center;
+}
+</style>

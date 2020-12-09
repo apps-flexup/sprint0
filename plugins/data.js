@@ -31,6 +31,7 @@ export default (ctx, inject) => {
     partnerHeaders: repo('partner-headers'),
     partners: repo('partners'),
     productHeaders: repo('product-headers'),
+    productSteps: repo('product-steps'),
     products: repo('products'),
     settings: repo('settings'),
     structures: repo('structures'),

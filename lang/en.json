@@ -25,6 +25,8 @@
       "orders": "Orders",
       "orders-new": "New order",
       "products": "Products",
+      "products-new": "New product",
+      "products-id": "Edit my product",
       "offers": "Offers",
       "contacts": "Contacts",
       "partners": "Partners",
@@ -94,6 +96,11 @@
         "2": "Summary"
       }
     },
+    "product": {
+      "step": {
+        "0": "General information"
+      }
+    },
     "contracts": {
       "step": {
         "0": "-",
@@ -130,7 +137,12 @@
         "unit":"Unit",
         "price": "Price",
         "currency": "Currency",
-        "elasticity": "Elasticity"
+        "elasticity": "Elasticity",
+        "validate": "Validate",
+        "cancel": "Cancel"
+      },
+      "edit": {
+        "title": "Edit my product"
       }
     },
     "partners": {

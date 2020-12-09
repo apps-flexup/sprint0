@@ -1,25 +1,22 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
-import { action } from '@storybook/addon-actions'
+import { select } from '@storybook/addon-knobs'
+import { actions, defaultAction } from '@/.storybook/knobs_data/actions'
 import FvProductForm from './index.vue'
 
-<Meta title='Molecules/FvProductForm' component={ FvProductForm } />
+<Meta title='organism/FvProductForm' component={ FvProductForm } />
 
 # FvProductForm
 
 <Canvas>
 <Story name='Common' height='150px'>{{
-  components: { FvProductForm },
-  data() {
-    return {
-      product: {}
+  props: {
+    knobAction: {
+      default: select('action', actions, defaultAction, 'Props')
     }
   },
-  methods: {
-    productChanged: action('Product changed')
-  },
+  components: { FvProductForm },
   template: `<FvProductForm
-    :product="product"
-    @product:changed="productChanged"
+    :action=knobAction
   >
   </FvProductForm>`
 }}</Story>

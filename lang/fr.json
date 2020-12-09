@@ -25,6 +25,8 @@
       "orders": "Commandes",
       "orders-new": "Nouvelle commande",
       "products": "Produits",
+      "products-new": "Nouveau produit",
+      "products-id": "Modifier mon produit",
       "offers": "Offres",
       "contacts": "Contacts",
       "partners": "Partnenaires",
@@ -96,7 +98,13 @@
         "1": "Sélectionner offres",
         "2": "Récapitulatif"
       }
-    },    "contracts": {
+    },
+    "product": {
+      "step": {
+        "0": "Informations générales"
+      }
+    },
+    "contracts": {
       "step": {
         "0": "-",
         "1": "Détail",
@@ -132,7 +140,12 @@
         "unit": "Unité",
         "price": "Prix",
         "currency": "Devise",
-        "elasticity": "Élasticité"
+        "elasticity": "Élasticité",
+        "validate": "Valider",
+        "cancel": "Annuler"
+      },
+      "edit": {
+        "title": "Modifier mon produit"
       }
     },
     "partners": {

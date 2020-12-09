@@ -5,7 +5,7 @@
       slot='title'
     )
       v-toolbar(flat='')
-        v-toolbar-title {{ $t('forms.products.new.title') }}
+        v-toolbar-title {{ $t('forms.products.new.change') }}
         v-spacer
         v-btn(
           icon=''
@@ -15,7 +15,7 @@
     template(
       slot='form'
     )
-      fv-product-form(
+      fv-product-step-detail(
         :product="product"
         @product:changed="productChanged"
       )

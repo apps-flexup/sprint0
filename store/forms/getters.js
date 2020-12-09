@@ -8,5 +8,10 @@ export default {
     if (!state.contacts) return []
     const res = JSON.parse(JSON.stringify(state.contacts))
     return res
+  },
+  products(state) {
+    if (!state.products) return []
+    const res = JSON.parse(JSON.stringify(state.products))
+    return res
   }
 }

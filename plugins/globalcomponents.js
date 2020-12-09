@@ -57,6 +57,7 @@ import FvPriceToPreferredCurrency from '@/components/FvPriceToPreferredCurrency'
 import FvPrimaryButton from '@/components/FvPrimaryButton'
 import FvProductDataTable from '@/components/FvProductDataTable'
 import FvProductForm from '@/components/FvProductForm'
+import FvProductStepDetail from '@/components/FvProductStepDetail'
 import FvQuantitySelector from '@/components/FvQuantitySelector'
 import FvRating from '@/components/FvRating'
 import FvReview from '@/components/FvReview'
@@ -67,6 +68,7 @@ import FvSettingsOthers from '@/components/FvSettingsOthers'
 import FvShowMenu from '@/components/FvShowMenu'
 import FvSlotItemCard from '@/components/FvSlotItemCard'
 import FvStepper from '@/components/FvStepper'
+import FvStepForm from '@/components/FvStepForm'
 import FvSubMenu from '@/components/FvSubMenu'
 import FvThemeAutocomplete from '@/components/FvThemeAutocomplete'
 import FvVatField from '@/components/FvVatField'
@@ -190,6 +192,7 @@ Vue.component('fv-price-to-preferred-currency', FvPriceToPreferredCurrency)
 Vue.component('fv-primary-button', FvPrimaryButton)
 Vue.component('fv-product-data-table', FvProductDataTable)
 Vue.component('fv-product-form', FvProductForm)
+Vue.component('fv-product-step-detail', FvProductStepDetail)
 Vue.component('fv-product-index', FvProductIndex)
 Vue.component('fv-quantity-selector', FvQuantitySelector)
 Vue.component('fv-rating', FvRating)
@@ -201,6 +204,7 @@ Vue.component('fv-settings-others', FvSettingsOthers)
 Vue.component('fv-show-menu', FvShowMenu)
 Vue.component('fv-slot-item-card', FvSlotItemCard)
 Vue.component('fv-stepper', FvStepper)
+Vue.component('fv-step-form', FvStepForm)
 Vue.component('fv-sub-menu', FvSubMenu)
 Vue.component('fv-theme-autocomplete', FvThemeAutocomplete)
 Vue.component('fv-vat-field', FvVatField)
