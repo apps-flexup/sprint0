@@ -32,6 +32,7 @@
         )
       v-col(cols='6')
         fv-unit-autocomplete(
+          :dimensionFilter="dimension"
           :dimension="dimension"
           :unit="unit"
           @unit:selected="unitSelected"

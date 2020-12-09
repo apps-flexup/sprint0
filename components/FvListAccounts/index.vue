@@ -62,6 +62,7 @@ export default {
       console.log('create account')
     },
     manageAccounts() {
+      this.$router.push('accounts')
       console.log('manage accounts')
     },
     help() {

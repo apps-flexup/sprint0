@@ -19,6 +19,7 @@
     "space": "Espace : ",
     "route": {
       "account": "Compte",
+      "accounts": "Mes comptes",
       "account-new": "Nouveau compte",
       "index": "Accueil",
       "orders": "Commandes",
@@ -181,7 +182,7 @@
         "dimension": "Dimension",
         "name": "Nom de l'offre",
         "unit": "Unité",
-        "price": "Prix",
+        "price": "Prix TTC",
         "currency": "Devise",
         "vat": "TVA"
       },
@@ -199,7 +200,7 @@
         "date": "Date de commande",
         "totals": {
           "withoutVat": "Total hors taxes",
-          "total": "Total",
+          "total": "Total TTC",
           "vat": "TVA",
           "of": "de"
         },
@@ -260,6 +261,7 @@
   },
   "buttons": {
     "create": {
+      "account": "CRÉER COMPTE",
       "product": "CRÉER PRODUIT",
       "contract": "CRÉER CONTRAT",
       "partner": "CRÉER PARTENAIRE",
@@ -295,7 +297,7 @@
     },
     "orders": {
       "date": "Date",
-      "amount": "Montant",
+      "amount": "Montant TTC",
       "currency": "Devise",
       "label": "Label",
       "structure": "Structure",
@@ -305,8 +307,8 @@
       "offer": "Offre",
       "quantity": "Quantité",
       "unit": "Unité",
-      "price": "Prix",
-      "total": "Total",
+      "price": "Prix TTC",
+      "total": "Total TTC",
       "vat": "TVA",
       "status": "Statut"
     },
@@ -315,7 +317,7 @@
       "elasticity": "Élasticité",
       "label": "Label",
       "products": "Produit(s)",
-      "price": "Prix",
+      "price": "Prix TTC",
       "currency": "Devise",
       "vat": "TVA",
       "unit": "Unité",
@@ -336,6 +338,9 @@
     "save": "Sauvegarder"
   },
   "accounts": {
+    "index": {
+      "title": "Mes comptes"
+    },
     "new": {
       "title": "Bienvenue sur FlexUp, créons votre premier compte"
     }

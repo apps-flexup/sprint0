@@ -70,9 +70,17 @@ export default {
   },
   methods: {
     createCrumb(href, text, disabled) {
+      if (text === 'accounts-id') {
+        const account = this.$store.getters['accounts/findById'](
+          this.$route.params.id
+        )
+        text = account.name
+      } else {
+        text = this.$t('breadcrumbs.route.' + text)
+      }
       const crumb = {
         href,
-        text: this.$t('breadcrumbs.route.' + text),
+        text,
         disabled
       }
       return crumb

@@ -22,6 +22,9 @@ import FvOfferCard from './index.vue'
     knobPrice: {
       default: number('Price', 15, {}, 'Props')
     },
+    knobCurrency: {
+      default: text('Currency', 'EUR', 'Props')
+    },
     knobAvis: {
       default: number('nbrAvis', 3, {}, 'Props')
     },
@@ -34,38 +37,31 @@ import FvOfferCard from './index.vue'
     knobImage: {
       default: select('Image', imageAvailable, defaultImage, 'Props')
     },
-    knobWidth: {
-      default: number('Width', 300, {}, 'Props')
-    },
     knobHeightImg: {
       default: number('height img', 260, {}, 'Props')
     },
-    knobHeightCard: {
-      default: number('height card', 370, {}, 'Props')
-    }
   },
   components: { FvOfferCard },
   methods: {
-    clickedHeart: action('heart click'),
-    clickedCard: action('card click'),
-    clickedShop: action('shop click'),
-    clickedLook: action('look click')
+    likeClicked: action('like clicked'),
+    cardClicked: action('card clicked'),
+    buyClicked: action('buy clicked'),
+    detailsClicked: action('details clicked')
   },
   template: `<FvOfferCard
     :rating="knobRating"
     :article="knobTitle"
     :price="knobPrice"
+    :currency="knobCurrency"
     :nbrAvis="knobAvis"
     :unit="knobUnit"
     :dimension="knobDimension"
     :img="knobImage"
-    :width="knobWidth"
-    :height_img="knobHeightImg"
-    :height="knobHeightCard"
-    @offerCard:heartClicked="clickedHeart"
-    @offerCard:lookClicked="clickedLook"
-    @offerCard:shopClicked="clickedShop"
-    @offerCard:clicked="clickedCard"
+    :heightImg="knobHeightImg"
+    @offerCard:likeClicked="likeClicked"
+    @offerCard:detailsClicked="detailsClicked"
+    @offerCard:buyClicked="buyClicked"
+    @offerCard:clicked="cardClicked"
   >
   </FvOfferCard>`
 }}</Story>

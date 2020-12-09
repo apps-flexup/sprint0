@@ -12,24 +12,36 @@
         template(v-slot:item.unit="{ item }")
           div(v-to-unit="item")
         template(v-slot:item.quantity="{ item }")
-          div(v-if="details")
-            div(class="quantity-input") {{ item.quantity }}
+          div.text-right(v-if="details")
+            fv-flex-items
+              template(v-slot:left)
+                div(class="quantity-input") {{ item.quantity }}
+              template(v-slot:right)
+                div {{ item.unit }}
           div(v-else)
-            fv-quantity-selector(
-              :quantity="item.quantity"
-              @quantitySelector:changed="quantityChanged(arguments, item)"
-            )
+            fv-flex-items
+              template(v-slot:left)
+                fv-quantity-selector.quantity-selector-input(
+                  :quantity="item.quantity"
+                  @quantitySelector:changed="quantityChanged(arguments, item)"
+                )
+              template(v-slot:right)
+                div {{ item.unit }}
         template(v-slot:item.price="{ item }")
-          v-row.priceCol
-            fv-price-to-preferred-currency(
-              :price="item.price"
-              :currency="item.currency"
-            )
-            div.right / {{ item.unit }}
+          fv-flex-items
+            template(v-slot:left)
+              fv-price-to-preferred-currency(
+                :price="item.price"
+                :currency="item.currency"
+              )
+            template(v-slot:separator)
+              div /
+            template(v-slot:right)
+              div {{ item.unit }}
         template(v-slot:item.total="{ item }")
-          div(v-to-preferred-currency="{amount: item.price * item.quantity, currency: item.currency}")
+          div.text-right(v-to-preferred-currency="{amount: item.price * item.quantity, currency: item.currency}")
         template(v-slot:item.vat='{ item }')
-          div(v-if="details")
+          div.text-right(v-if="details")
             div(class="vat-input") {{ item.vat }} %
           div(v-else)
             fv-vat-field(
@@ -101,20 +113,20 @@ export default {
 <style scoped>
 .vat-input {
   width: 50px;
-  text-align: right;
 }
 .quantity-input {
   max-width: 50px;
-  text-align: right;
+  margin-right: 0px;
+  margin-left: auto;
 }
 .vat-selector-input {
   width: 100px;
+  margin-right: 0px;
+  margin-left: auto;
 }
-.priceCol {
-  display: flex !important;
-  align-items: center;
-}
-.right {
-  padding-left: 5px;
+.quantity-selector-input {
+  width: 200px;
+  margin-right: 10px;
+  margin-left: auto;
 }
 </style>

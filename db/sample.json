@@ -13496,7 +13496,7 @@
       "active": true,
       "icon": "mdi-account-switch-outline",
       "title": "userMenu.management",
-      "to": "/users"
+      "to": "/accounts"
     }
   ],
   "accountMenu": [
@@ -13615,12 +13615,6 @@
       "sortable": true,
       "text": "headers.offers.vat",
       "value": "vat"
-    },
-    {
-      "align": "center",
-      "sortable": true,
-      "text": "headers.offers.unit",
-      "value": "unit"
     },
     {
       "align": "start",
@@ -14124,12 +14118,6 @@
       "sortable": true,
       "text": "headers.orderLines.quantity",
       "value": "quantity"
-    },
-    {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.orderLines.unit",
-      "value": "unit"
     },
     {
       "align": "end",

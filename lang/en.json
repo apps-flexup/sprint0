@@ -19,6 +19,7 @@
     "space": "Space: ",
     "route": {
       "account": "Account",
+      "accounts": "My accounts",
       "account-new": "New account",
       "index": "Home",
       "orders": "Orders",
@@ -178,7 +179,7 @@
         "dimension": "Dimension",
         "name": "Offer name",
         "unit": "Unit",
-        "price": "Price",
+        "price": "Price incl. tax",
         "elasticity": "Elasticity",
         "currency": "Currency",
         "vat": "VAT"
@@ -196,8 +197,8 @@
         "label": "Label (optional)",
         "date": "Order date",
         "totals": {
-          "withoutVat": "Subtotal without VAT",
-          "total": "Total",
+          "withoutVat": "Subtotal excl. tax",
+          "total": "Total incl. tax",
           "vat": "VAT",
           "of": "of"
         },
@@ -258,6 +259,7 @@
   },
   "buttons": {
     "create" : {
+      "account": "CREATE ACCOUNT",
       "product": "CREATE PRODUCT",
       "contract": "CREATE CONTRACT",
       "partner": "CREATE PARTNER",
@@ -292,7 +294,7 @@
     },
     "orders": {
       "date": "Date",
-      "amount": "Amount",
+      "amount": "Amount incl. tax",
       "currency": "Currency",
       "label": "Label",
       "structure": "Structure",
@@ -302,8 +304,8 @@
       "offer": "Offer",
       "quantity": "Quantity",
       "unit": "Unit",
-      "price": "Price",
-      "total": "Total",
+      "price": "Price incl. tax",
+      "total": "Total incl. tax",
       "vat": "VAT",
       "status": "Status"
     },
@@ -312,7 +314,7 @@
       "elasticity": "Elasticity",
       "label": "Label",
       "products": "Product(s)",
-      "price": "Price",
+      "price": "Price incl. tax",
       "currency": "Currency",
       "vat": "VAT",
       "unit": "Unit",
@@ -333,6 +335,9 @@
     "save": "Save"
   },
   "accounts": {
+    "index": {
+      "title": "My accounts"
+    },
     "new": {
       "title": "Welcome to FlexUp, let's create your first account"
     }

@@ -11,7 +11,7 @@ describe('FvQuantitySelector', () => {
   it('should display a quantity of 1 by default', () => {
     const wrapper = mount(FvQuantitySelector)
     const textField = wrapper.find('[data-testid="quantitySelector"]')
-    expect(textField.props().value).toMatch('1')
+    expect(textField.props().value).toBe('1')
   })
   it('should display passed quantity', () => {
     const wrapper = mount(FvQuantitySelector, {
@@ -20,7 +20,7 @@ describe('FvQuantitySelector', () => {
       }
     })
     const textField = wrapper.find('[data-testid="quantitySelector"]')
-    expect(textField.props().value).toMatch('5')
+    expect(textField.props().value).toBe('5')
   })
   it('should add 1 to quantity when plus is clicked', () => {
     const wrapper = mount(FvQuantitySelector)

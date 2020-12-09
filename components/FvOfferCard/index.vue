@@ -1,52 +1,54 @@
 <template lang="pug">
 .fv-offer-card
-  v-card.rounded-lg(
-    :width="width"
-    :height="height"
-    :elevation="2"
+  fv-slot-item-card(
+    data-testid="card"
+    favoriteIconColor="#FFFFFF"
+    @card:clicked="cardClicked"
+    @favorite:clicked="favoriteClicked"
+    @card:mouseover="mouseoverChanged"
   )
-    div.clickCard(
-      @click="clickedCard"
-    )
-    v-img(
-      :height='height_img'
-      :width='width'
-      :src="img"
-    )
-    fv-icon(
-      icon='mdi-heart-outline'
-      color='#ffffff'
-      size='large'
-      id='heart'
-      @icon:clicked='clickedHeart'
-    )
-    v-row(
-      class='mx-4'
-    )
-      p.title {{ article }}
-      div.prix
-        div(v-to-preferred-currency="{amount: price, currency: preferredCurrency}")
-        div.ml-2(v-to-unit="{ unit: unit, dimension: dimension}" id='unit')
-      div.rating
-        fv-rating(
-          :rating="rating"
-          half-increments
-          :dense="true"
-          :readonly="true"
+    template(v-slot:default)
+      v-img(
+        data-testid="img"
+        :height='heightImg'
+        width='100%'
+        :src="img"
+      )
+      v-row(
+        class='mx-4'
+      )
+        p.title(
+          data-testid="name"
+        ) {{ article }}
+        div.prix(
+          data-testid="price"
         )
-        div.grey--text.ml-3
-          | {{ $tc('forms.offers.metrics.opinion', nbrAvis) }}
-        div.button
-          fv-icon(
-            icon='mdi-magnify'
-            id='look'
-            @icon:clicked='clickedLook'
+          div(v-to-preferred-currency="{amount: price, currency: currency}")
+          div.ml-2(v-to-unit="{ unit: unit, dimension: dimension}" id='unit')
+        div.rating(
+          data-testid="rating"
+        )
+          fv-rating(
+            :rating="rating"
+            half-increments
+            :dense="true"
+            :readonly="true"
           )
-          fv-icon.ml-2(
-            icon='mdi-basket-outline'
-            id='look'
-            @icon:clicked='clickedShop'
+          div.grey--text.ml-3
+            | {{ $tc('forms.offers.metrics.opinion', nbrAvis) }}
+          div.actions(
+            v-if="over"
           )
+            fv-icon(
+              data-testid="detailsIcon"
+              icon='mdi-magnify'
+              @icon:clicked='detailsClicked'
+            )
+            fv-icon.ml-2(
+              data-testid="buyIcon"
+              icon='mdi-basket-outline'
+              @icon:clicked='buyClicked'
+            )
 </template>
 
 <script>
@@ -59,22 +61,10 @@ export default {
         return null
       }
     },
-    width: {
-      type: Number,
-      default() {
-        return 300
-      }
-    },
-    height_img: {
+    heightImg: {
       type: Number,
       default() {
         return 260
-      }
-    },
-    height: {
-      type: Number,
-      default() {
-        return 370
       }
     },
     rating: {
@@ -91,6 +81,12 @@ export default {
     },
     price: {
       type: Number,
+      default() {
+        return null
+      }
+    },
+    currency: {
+      type: String,
       default() {
         return null
       }
@@ -114,30 +110,30 @@ export default {
       }
     }
   },
-  computed: {
-    preferredCurrency() {
-      const res = this.$store.getters['accounts/preferredCurrency']
-      return res
+  data() {
+    return {
+      over: false
     }
   },
   mounted() {
     console.log('Composant ', this.$options.name)
-    this.$store.dispatch('offers/get')
-    this.$store.dispatch('accounts/get')
     this.$store.dispatch('settings/getSettings')
   },
   methods: {
-    clickedCard() {
+    mouseoverChanged(over) {
+      this.over = over
+    },
+    cardClicked() {
       this.$emit('offerCard:clicked')
     },
-    clickedHeart() {
-      this.$emit('offerCard:heartClicked')
+    favoriteClicked() {
+      this.$emit('offerCard:favoriteClicked')
     },
-    clickedLook() {
-      this.$emit('offerCard:lookClicked')
+    detailsClicked() {
+      this.$emit('offerCard:detailsClicked')
     },
-    clickedShop() {
-      this.$emit('offerCard:shopClicked')
+    buyClicked() {
+      this.$emit('offerCard:buyClicked')
     }
   }
 }
@@ -163,44 +159,14 @@ export default {
   width: 70%;
   align-items: center;
 }
-.button {
+.actions {
   position: absolute;
   display: flex;
   left: 100%;
+  z-index: 2;
 }
 #unit {
   font-size: 0.85rem;
   opacity: 0.7;
-}
-.v-card:hover {
-  transition: 0.5s;
-  box-shadow: 0px 3px 20px -3px !important;
-}
-.v-card {
-  transition: 0.5s;
-}
-#look {
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.3s;
-  z-index: 2;
-}
-#heart {
-  position: absolute;
-  top: 2%;
-  right: 3%;
-  z-index: 2;
-}
-.v-card:hover >>> #look {
-  opacity: 1;
-  visibility: visible;
-  transition: 0.3s;
-}
-.clickCard {
-  position: absolute;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
 }
 </style>

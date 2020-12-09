@@ -9,7 +9,7 @@ export default {
         const account = parseInt(data[0].id)
         this.$activeAccount.set(account)
       } else if (!getters.current) {
-        this.app.router.push('/account/new')
+        this.app.router.push('/accounts/new')
       }
     })
   },

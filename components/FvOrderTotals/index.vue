@@ -5,7 +5,7 @@
       v-col(cols="8")
         div {{ $t('forms.orders.new.totals.withoutVat') }}
       v-col(cols="4")
-        fv-price-to-preferred-currency(
+        fv-price-to-preferred-currency.rightTotal(
           :price="totalWithoutVat"
           :currency="preferredCurrency"
         )
@@ -21,7 +21,7 @@
             :currency="preferredCurrency"
           )
         v-col(cols="4")
-          fv-price-to-preferred-currency.text-right(
+          fv-price-to-preferred-currency.rightTotal(
             :price="v.vatTotal"
             :currency="preferredCurrency"
           )
@@ -30,7 +30,7 @@
       v-col(cols="8")
         div {{ $t('forms.orders.new.totals.total') }}
       v-col(cols="4")
-        fv-price-to-preferred-currency.text-right(
+        fv-price-to-preferred-currency.rightTotal(
           :price="total"
           :currency="preferredCurrency"
         )
@@ -111,5 +111,9 @@ export default {
 }
 .col {
   display: flex !important;
+}
+.rightTotal {
+  margin-right: 0px;
+  margin-left: auto;
 }
 </style>

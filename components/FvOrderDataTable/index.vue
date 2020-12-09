@@ -11,7 +11,7 @@
       template(v-slot:item.date='{ item }')
         div {{ dateToLocaleString(item.date) }}
       template(v-slot:item.amount='{ item }')
-        fv-price-to-preferred-currency(
+        fv-price-to-preferred-currency.text-right(
           :price="item.amount"
           :currency="item.currency"
         )
@@ -67,8 +67,10 @@ export default {
       if (!date) {
         return null
       }
+      const settings = this.$store.getters['settings/settings']
+      const locale = settings.language
       const dte = new Date(date)
-      const res = dte.toLocaleString().slice(0, 10)
+      const res = dte.toLocaleDateString(locale)
       return res
     },
     getStructureName(structureId) {
