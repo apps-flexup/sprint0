@@ -6,7 +6,6 @@ const modulesForms = {
   namespaced: true,
   actions: {
     getProduct({ commit }) {
-      // charger les formes juridiques
       const data = [
         {
           "component": "fv-product-step-detail",

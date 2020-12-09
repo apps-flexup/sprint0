@@ -9,7 +9,6 @@
 export default {
   mounted() {
     console.log('Composant ', this.$options.name)
-    console.log('la route', this.$route)
   }
 }
 </script>

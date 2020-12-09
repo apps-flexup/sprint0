@@ -76,41 +76,25 @@ describe('FvProductForm', () => {
   it('should send signal when clicked', () => {
     const wrapper = factory()
     const iconBack = wrapper.find('[data-testid="icon"]')
-    const cancelBtn = wrapper.find('[data-testid="cancelBtn"]')
-    const submitBtn = wrapper.find('[data-testid="submitBtn"]')
     iconBack.vm.$emit('icon:clicked')
+    const submittedCalls = wrapper.emitted('clicked')
+    expect(submittedCalls).toBeTruthy()
+    expect(submittedCalls).toHaveLength(1)
+  })
+  it('should send signal when clicked', () => {
+    const wrapper = factory()
+    const cancelBtn = wrapper.find('[data-testid="cancelBtn"]')
     cancelBtn.vm.$emit('button:click')
+    const submittedCalls = wrapper.emitted('clicked')
+    expect(submittedCalls).toBeTruthy()
+    expect(submittedCalls).toHaveLength(1)
+  })
+  it('should send signal when clicked', () => {
+    const wrapper = factory()
+    const submitBtn = wrapper.find('[data-testid="submitBtn"]')
     submitBtn.vm.$emit('button:click')
     const submittedCalls = wrapper.emitted('clicked')
     expect(submittedCalls).toBeTruthy()
-    expect(submittedCalls).toHaveLength(3)
-  })
-  it('should show the title of new product', () => {
-    const wrapper = factory()
-    const title = wrapper.find('[data-testid="pageTitle"]')
-    expect(title.text()).toBe('Nouveau produit')
-  })
-  it('should show the title of edit product', () => {
-    const wrapper = mount(FvProductForm, {
-      i18n,
-      store,
-      router,
-      localVue,
-      stubs: {
-        FvIcon: true,
-        FvStepForm: true,
-        FvSecondaryButton: true,
-        FvPrimaryButton: true,
-        FvProductStepDetail: true
-      },
-      computed: {
-        getProductStep: () => productStep
-      },
-      propsData: {
-        action: 'edit'
-      }
-    })
-    const title = wrapper.find('[data-testid="pageTitle"]')
-    expect(title.text()).toBe('Modifier mon produit')
+    expect(submittedCalls).toHaveLength(1)
   })
 })
