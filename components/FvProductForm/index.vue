@@ -11,7 +11,7 @@
       h1(data-testid="pageTitle") {{ $t('forms.products.' + action + '.title') }}
     v-list.mt-10(
       data-testid="listProductStep"
-      v-for="(step, index) in getProductStep"
+      v-for="(step, index) in getFormStep"
       :key="index"
     )
       fv-step-form(
@@ -23,7 +23,9 @@
           composant(
             :is="step.component"
             :product="product"
+            :offer="offer"
             @product:changed="productChanged"
+            @offer:changed="offerChanged"
           )
     div.btn.mt-10
       fv-secondary-button(
@@ -45,22 +47,47 @@ export default {
         return {}
       }
     },
+    offer: {
+      type: Object,
+      default() {
+        return {}
+      }
+    },
     action: {
       type: String,
+      default() {
+        return null
+      }
+    },
+    url: {
+      type: String,
+      default() {
+        return null
+      }
+    },
+    form: {
+      type: String,
+      default() {
+        return null
+      }
+    },
+    add: {
+      type: Function,
       default() {
         return null
       }
     }
   },
   computed: {
-    getProductStep() {
-      const res = this.$store.getters['forms/products']
+    getFormStep() {
+      const res = this.$store.getters['forms/' + this.form]
       return res
     }
   },
   mounted() {
     console.log('Composant ', this.$options.name)
     this.$store.dispatch('forms/getProduct')
+    this.$store.dispatch('forms/getOffer')
   },
   methods: {
     submit() {
@@ -70,7 +97,7 @@ export default {
       this.product.category_id = this.product.categoryId
       this.$activeAccount.addProduct(payload)
       this.$nuxt.$loading.finish()
-      this.$router.push('/products')
+      this.$router.push('/' + this.url)
     },
     cancel() {
       this.$router.push('/products')
@@ -78,6 +105,9 @@ export default {
     },
     productChanged(product) {
       this.product = product
+    },
+    offerChanged(offer) {
+      this.offer = offer
     }
   }
 }

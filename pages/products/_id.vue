@@ -3,11 +3,21 @@
     :product="getProduct"
     @product:changed="productChanged"
     action='edit'
+    :url='category'
+    :form='category'
   )
 </template>
 
 <script>
 export default {
+  props: {
+    category: {
+      type: String,
+      default() {
+        return 'products'
+      }
+    }
+  },
   computed: {
     getProduct() {
       const productId = this.$route.params.id

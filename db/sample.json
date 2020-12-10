@@ -1420,6 +1420,12 @@
       "title": "forms.product.step.0"
     }
   ],
+  "offer-steps": [
+    {
+      "component": "fv-offer-form",
+      "title": "test"
+    }
+  ],
   "contract-types": [
     {
       "account_id": null,

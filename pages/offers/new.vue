@@ -1,8 +1,8 @@
 <template lang="pug">
   .page-product-new
     fv-product-form(
-      url='products'
-      form='products'
+      url='offers'
+      form='offers'
       action='new'
     )
 </template>

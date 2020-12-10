@@ -13,5 +13,10 @@ export default {
     if (!state.products) return []
     const res = JSON.parse(JSON.stringify(state.products))
     return res
+  },
+  offers(state) {
+    if (!state.offers) return []
+    const res = JSON.parse(JSON.stringify(state.offers))
+    return res
   }
 }
