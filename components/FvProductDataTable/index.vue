@@ -1,12 +1,13 @@
 <template lang="pug">
 .fv-product-data-table
-  v-data-table.elevation-2(
+  v-data-table(
     :headers='headers'
     :items='items'
     item-key='id'
+    :hide-default-footer="hideDefaultFooter"
     @click:row='selected'
-    :search="search"
-    :custom-filter="filterFunction"
+    @update:sort-by="sortBy"
+    @update:sort-desc="sortDesc"
   )
     template(v-slot:item.category="{ item }")
       div(v-to-category="item.category_id")
@@ -21,33 +22,30 @@
 </template>
 
 <script>
-import { filterProductsDataTable, translateHeaders } from '~/plugins/utils'
-
 export default {
   name: 'FvProductDataTable',
   props: {
-    search: {
-      type: String,
+    hideDefaultFooter: {
+      type: Boolean,
       default() {
-        return ''
+        return false
       }
-    }
-  },
-  computed: {
-    headers() {
-      const res = this.$activeAccount.headersProducts()
-      return translateHeaders(this.$i18n, res)
     },
-    items() {
-      const res = this.$activeAccount.products()
-      return res
+    headers: {
+      type: Array,
+      default() {
+        return null
+      }
+    },
+    items: {
+      type: Array,
+      default() {
+        return null
+      }
     }
   },
   mounted() {
     console.log('Composant ', this.$options.name)
-    this.$store.dispatch('headers/getProductHeaders')
-    this.$store.dispatch('products/get')
-    this.$store.dispatch('categories/get')
   },
   methods: {
     selected(product) {
@@ -57,8 +55,11 @@ export default {
     deleteItem(product) {
       this.$store.dispatch('products/remove', product)
     },
-    filterFunction(item, queryText, itemText) {
-      return filterProductsDataTable(item, queryText, itemText)
+    sortBy(v) {
+      this.$emit('dataTable:sortBy', v)
+    },
+    sortDesc(v) {
+      this.$emit('dataTable:sortDesc', v)
     }
   }
 }

@@ -1,8 +1,16 @@
-/* eslint no-extend-native: ["error", { "exceptions": ["String"] }] */
+/* eslint no-extend-native: ["error", { "exceptions": ["String", "Array"] }] */
 String.prototype.filtreAutocomplete = function(filtre) {
   const str = (this || '').toLowerCase()
   const v = (filtre || '').toLowerCase()
   return str.includes(v)
+}
+
+Array.prototype.sortByKey = function(key) {
+  this.sort((a, b) => {
+    if (a[key] < b[key]) return -1
+    else if (a[key] > b[key]) return 1
+    return 0
+  })
 }
 
 export const translateHeaders = (i18n, items) => {
@@ -30,6 +38,22 @@ export const translateHeaders = (i18n, items) => {
 //   })
 //   return res
 // }
+
+export const filterDataTable = (array, filters) => {
+  if (!array[0]) return []
+  const itemKeys = Object.keys(array[0])
+  const res = array.filter((item) => {
+    return filters.every((filter) => {
+      return itemKeys.some((itemKey) => {
+        if (typeof item[itemKey] === 'string') {
+          return String.prototype.filtreAutocomplete.call(item[itemKey], filter)
+        }
+        return false
+      })
+    })
+  })
+  return res
+}
 
 export const filterOffersDataTable = (item, v, _it) => {
   const nameValues = `${item}`
