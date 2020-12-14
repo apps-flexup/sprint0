@@ -18,19 +18,9 @@ export default {
     }
   },
   methods: {
-    close() {
-      this.product = {}
-      this.showModal = false
-    },
-    save() {
-      this.$nuxt.$loading.start()
-      this.showModal = false
-      this.$activeAccount.addProduct(this.product)
-      this.product = {}
-      this.$nuxt.$loading.finish()
-    },
     selectedProduct(product) {
       product = JSON.parse(JSON.stringify(product))
+      console.log('le produit la con de ta race', product)
       this.$router.push('/products/' + product.id)
     },
     createProduct() {

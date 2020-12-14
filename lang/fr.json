@@ -104,6 +104,11 @@
         "0": "Informations générales"
       }
     },
+    "offer": {
+      "step": {
+        "0": "Informations générales"
+      }
+    },
     "contracts": {
       "step": {
         "0": "-",
@@ -185,6 +190,9 @@
         "price": "Prix TTC",
         "currency": "Devise",
         "vat": "TVA"
+      },
+      "edit": {
+        "title": "Modifier mon offre"
       },
       "metrics": {
         "opinion": "aucun avis | un avis | {n} avis"

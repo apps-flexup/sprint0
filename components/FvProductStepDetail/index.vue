@@ -4,7 +4,7 @@
     v-col(cols='12')
       fv-category-autocomplete(
         data-testid='categoryAutocomplete'
-        :categoryId="categoryId"
+        :category_id="category_id"
         @category:selected="categorySelected"
       )
   v-row
@@ -39,7 +39,7 @@ export default {
   data() {
     return {
       localProduct: {},
-      categoryId: this.product.category_id || null,
+      category_id: this.product.category_id || null,
       name: null,
       unit: null,
       dimension: null
@@ -60,9 +60,9 @@ export default {
   },
   methods: {
     categorySelected(v) {
-      this.categoryId = v
+      this.category_id = v
       const payload = {
-        categoryId: this.categoryId
+        category_id: this.category_id
       }
       const res = Object.assign(this.localProduct, payload)
       this.$emit('product:changed', res)
@@ -88,14 +88,14 @@ export default {
     },
     fillFieldsWithProduct() {
       if (!this.product) return
-      this.categoryId = this.product.category_id
+      this.category_id = this.product.category_id
       this.name = this.product.name
       this.unit = this.product.unit
       this.dimension = this.product.dimension
       this.localProduct = this.product
     },
     clearProduct() {
-      this.categoryId = null
+      this.category_id = null
       this.name = null
       this.unit = null
       this.dimension = null

@@ -2,6 +2,7 @@
   fv-product-form(
     :product="getProduct"
     @product:changed="productChanged"
+    @product:add="editProduct"
     action='edit'
     :url='category'
     :form='category'
@@ -16,6 +17,12 @@ export default {
       default() {
         return 'products'
       }
+    },
+    product: {
+      type: Object,
+      default() {
+        return {}
+      }
     }
   },
   computed: {
@@ -29,6 +36,10 @@ export default {
   methods: {
     productChanged(product) {
       this.product = product
+    },
+    editProduct(product) {
+      const payload = product
+      this.$activeAccount.addProduct(payload)
     }
   }
 }

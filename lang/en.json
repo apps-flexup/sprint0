@@ -101,6 +101,11 @@
         "0": "General information"
       }
     },
+    "offer": {
+      "step": {
+        "0": "General information"
+      }
+    },
     "contracts": {
       "step": {
         "0": "-",
@@ -183,6 +188,9 @@
         "elasticity": "Elasticity",
         "currency": "Currency",
         "vat": "VAT"
+      },
+      "edit": {
+        "title": "Edit my offer"
       },
       "metrics": {
         "opinion": "no opinion | one opinion | {n} opinions"

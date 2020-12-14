@@ -8,7 +8,7 @@
         icon="mdi-chevron-left"
         @icon:clicked="cancel"
       )
-      h1(data-testid="pageTitle") {{ $t('forms.products.' + action + '.title') }}
+      h1(data-testid="pageTitle") {{ $t('forms.' + form + '.' + action + '.title') }}
     v-list.mt-10(
       data-testid="listProductStep"
       v-for="(step, index) in getFormStep"
@@ -91,16 +91,13 @@ export default {
   },
   methods: {
     submit() {
-      this.$emit('clicked')
       this.$nuxt.$loading.start()
-      const payload = this.product
-      this.product.category_id = this.product.categoryId
-      this.$activeAccount.addProduct(payload)
-      this.$nuxt.$loading.finish()
+      this.$emit('product:add', this.product)
       this.$router.push('/' + this.url)
+      this.$nuxt.$loading.finish()
     },
     cancel() {
-      this.$router.push('/products')
+      this.$router.push('/' + this.url)
       this.$emit('clicked')
     },
     productChanged(product) {

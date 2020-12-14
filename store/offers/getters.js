@@ -29,5 +29,25 @@ export default {
     })
     const res = JSON.parse(JSON.stringify(offers))
     return res
+  },
+  findById: (state, _getters, _rootStates) => (offerId) => {
+    if (!state.items) return null
+    const id = parseInt(offerId)
+    const res = state.items.find((v) => parseInt(v.id) === id)
+    if (!res) return null
+    const unit = res.unit || null
+    const productId = res.productId || null
+    const name = res.name || null
+    const price = res.price || null
+    const vat = res.vat || null
+    const payload = {
+      ...res,
+      unit,
+      price,
+      vat,
+      productId,
+      name
+    }
+    return payload
   }
 }
