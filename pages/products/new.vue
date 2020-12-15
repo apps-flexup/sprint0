@@ -6,7 +6,7 @@
       url='products'
       form='products'
       action='new'
-      @product:add="addProduct"
+      @product:add="createProduct"
     )
 </template>
 
@@ -24,12 +24,13 @@ export default {
     console.log('Composant ', this.$options.name)
   },
   methods: {
-    addProduct(product) {
-      const payload = product
-      this.$activeAccount.addProduct(payload)
-    },
     productChanged(product) {
       this.product = product
+    },
+    createProduct(product) {
+      const payload = product
+      console.log('le produit la con de ta race', payload)
+      this.$activeAccount.addProduct(payload)
     }
   }
 }

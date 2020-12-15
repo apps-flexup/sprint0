@@ -14086,7 +14086,7 @@
       "id": 19
     },
     {
-      "product_id": 15,
+      "product_id": 2,
       "name": "Appartement Paris 19",
       "price": "123.00",
       "unit": "month",
@@ -14094,7 +14094,6 @@
       "status": "draft",
       "account_id": 1,
       "category_id": 22,
-      "productId": 2,
       "currency": "EUR",
       "vat": "20.0",
       "id": 20

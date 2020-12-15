@@ -20,7 +20,6 @@ export default {
   methods: {
     selectedProduct(product) {
       product = JSON.parse(JSON.stringify(product))
-      console.log('le produit la con de ta race', product)
       this.$router.push('/products/' + product.id)
     },
     createProduct() {

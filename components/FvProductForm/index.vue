@@ -91,10 +91,9 @@ export default {
   },
   methods: {
     submit() {
-      this.$nuxt.$loading.start()
       this.$emit('product:add', this.product)
+      this.$emit('offer:add', this.offer)
       this.$router.push('/' + this.url)
-      this.$nuxt.$loading.finish()
     },
     cancel() {
       this.$router.push('/' + this.url)

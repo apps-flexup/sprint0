@@ -2,6 +2,7 @@
   fv-product-form(
     :offer="getOffer"
     @offer:changed="offerChanged"
+    @offer:add="editOffer"
     action='edit'
     :url='category'
     :form='category'
@@ -16,6 +17,12 @@ export default {
       default() {
         return 'offers'
       }
+    },
+    offer: {
+      type: Object,
+      default() {
+        return {}
+      }
     }
   },
   computed: {
@@ -28,6 +35,10 @@ export default {
     }
   },
   methods: {
+    editOffer(offer) {
+      const payload = offer
+      this.$activeAccount.addOffer(payload)
+    },
     offerChanged(offer) {
       this.offer = offer
     }
