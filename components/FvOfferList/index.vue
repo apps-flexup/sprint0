@@ -6,13 +6,16 @@
       :searchLabel="$t('table.offers.search')"
       @dataTableSearch:changed="searchChanged"
     )
-    fv-offer-data-table(
-      :search="search"
-      @dataTable:selected="offerSelected"
+    fv-recursive-data-table(
+      :headers="mainHeaders"
+      :items="mainItems"
+      :filters="filters"
     )
 </template>
 
 <script>
+import { translateHeaders } from '~/plugins/utils'
+
 export default {
   name: 'FvOfferList',
   data() {
@@ -20,12 +23,48 @@ export default {
       search: ''
     }
   },
+  computed: {
+    filters() {
+      let res = []
+      if (this.search)
+        res.push(this.search)
+      return res
+    },
+    mainHeaders() {
+      const headers = this.$activeAccount.headersOffers()
+      const res = translateHeaders(this.$i18n, headers.main)
+      return res
+    },
+    mainItems() {
+      const headers = this.$activeAccount.headersOffers()
+      if (!headers.sub) return []
+      const subHeaders = headers.sub
+      const subHeadersKeys = Object.keys(headers.sub)
+      subHeadersKeys.forEach((key) => {
+        subHeaders[key] = translateHeaders(this.$i18n, subHeaders[key])
+      })
+      const res = [
+        {
+          headers: subHeaders,
+          items: this.offerItems
+        }
+      ]
+      return res
+    },
+    offerItems() {
+      const res = this.$activeAccount.offers()
+      console.log('offers: ', res)
+      return res
+    }
+  },
+
   mounted() {
     console.log('Composant ', this.$options.name)
+    this.$store.dispatch('headers/getOfferHeaders')
+    this.$store.dispatch('offers/get')
   },
   methods: {
     searchChanged(v) {
-      console.log('Search is now: ', v)
       this.search = v
     },
     offerSelected(offer) {

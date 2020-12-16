@@ -1,12 +1,16 @@
 export default ($axios, store) => (resource) => ({
   async index() {
     const res = await $axios.$get(`/${resource}`)
+    // const headers = await $axios.$get(`/${resource}-headers`)
+    // Creer un RepoWithHeaders.js et faire ca dedans
+    // return { items: res, headers }
     return res
   },
   async indexWithAccountId() {
     const accountId = store.getters['accounts/selected']
     const res = await $axios.$get(`/${resource}?account_id=${accountId}`)
-    console.log(`${resource} (${accountId})`, res)
+    // const headers = await $axios.$get(`/${resource}-headers`)
+    // return { data: res, headers }
     return res
   },
   async show(id) {

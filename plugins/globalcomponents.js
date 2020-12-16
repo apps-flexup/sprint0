@@ -48,6 +48,7 @@ import FvMenu from '@/components/FvMenu'
 import FvModal from '@/components/FvModal'
 import FvModalActions from '@/components/FvModalActions'
 import FvModalAndButton from '@/components/FvModalAndButton'
+import FvRecursiveDataTable from '@/components/FvRecursiveDataTable'
 import FvNav from '@/components/FvNav'
 import FvNavBar from '@/components/FvNavBar'
 import FvNewPartnerForm from '@/components/FvNewPartnerForm'
@@ -183,6 +184,7 @@ Vue.component('fv-menu', FvMenu)
 Vue.component('fv-modal', FvModal)
 Vue.component('fv-modal-actions', FvModalActions)
 Vue.component('fv-modal-and-button', FvModalAndButton)
+Vue.component('fv-recursive-data-table', FvRecursiveDataTable)
 Vue.component('fv-nav', FvNav)
 Vue.component('fv-nav-bar', FvNavBar)
 Vue.component('fv-new-partner-form', FvNewPartnerForm)

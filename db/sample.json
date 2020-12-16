@@ -13597,32 +13597,64 @@
       "to": "/contact"
     }
   ],
-  "offer-headers": [
-    {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.offers.name",
-      "value": "name"
-    },
-    {
-      "align": "end",
-      "sortable": true,
-      "text": "headers.offers.price",
-      "value": "price"
-    },
-    {
-      "align": "end",
-      "sortable": true,
-      "text": "headers.offers.vat",
-      "value": "vat"
-    },
-    {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.offers.status",
-      "value": "status"
+  "offer-headers": {
+    "main": [
+      {
+        "text": "mainHeaders.product",
+        "value": "products",
+        "align": "center",
+        "sortable": false
+      },
+      {
+        "text": "mainHeaders.offer",
+        "value": "offers",
+        "align": "center",
+        "sortable": false
+      }
+    ],
+    "sub": {
+      "products": [
+        {
+          "align": "center",
+          "sortable": true,
+          "text": "headers.products.name",
+          "value": "name"
+        },
+        {
+          "align": "center",
+          "sortable": true,
+          "text": "headers.products.category",
+          "value": "category"
+        },
+        {
+          "align": "center",
+          "sortable": true,
+          "text": "headers.products.unit",
+          "value": "unit"
+        }
+      ],
+      "offers": [
+        {
+          "align": "center",
+          "sortable": true,
+          "text": "headers.offers.price",
+          "value": "price"
+        },
+        {
+          "align": "center",
+          "sortable": true,
+          "text": "headers.offers.vat",
+          "value": "vat"
+        },
+        {
+          "align": "center",
+          "sortable": true,
+          "text": "headers.offers.status",
+          "value": "status"
+        }
+      ]
     }
-  ],
+  },
   "offers": [
     {
       "account_id": 3,
@@ -14398,6 +14430,60 @@
       "currency": "EUR",
       "account_id": 1,
       "id": 8
+    },
+    {
+      "partner_id": 1,
+      "date": "2020-12-11T16:15:18.282Z",
+      "label": null,
+      "order_lines": [
+        {
+          "offer_id": 3,
+          "offer": {
+            "en": "7 familly game",
+            "fr": "Le jeu des 7 familles"
+          },
+          "status": "draft",
+          "quantity": 8,
+          "pas": 1,
+          "vat": "20.5",
+          "dimension": null,
+          "unit": "h",
+          "currency": "EUR",
+          "price": 10
+        }
+      ],
+      "amount": 80,
+      "status": "draft",
+      "currency": "EUR",
+      "account_id": 1,
+      "id": 9
+    },
+    {
+      "partner_id": 5,
+      "date": "2020-12-11T16:20:47.844Z",
+      "label": null,
+      "order_lines": [
+        {
+          "offer_id": 1,
+          "offer": {
+            "en": "Goat milk",
+            "fr": "Lait de chêvre"
+          },
+          "status": "draft",
+          "quantity": 5,
+          "pas": 1,
+          "vat": "10",
+          "dimension": "volume",
+          "unit": "m³",
+          "currency": "EUR",
+          "price": 100
+        }
+      ],
+      "amount": 500,
+      "status": "draft",
+      "currency": "EUR",
+      "account_id": 1,
+      "id": 10
     }
   ],
   "partner-headers": [

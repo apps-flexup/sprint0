@@ -3,12 +3,13 @@
   v-data-table(
     :headers='headers'
     :items='items'
-    item-key='id'
     :hide-default-footer="hideDefaultFooter"
     @click:row='selected'
     @update:sort-by="sortBy"
     @update:sort-desc="sortDesc"
   )
+    template(v-slot:item.name="{ item }")
+      div(v-to-locale="item.name")
     template(v-slot:item.category="{ item }")
       div(v-to-category="item.category_id")
     template(v-slot:item.unit='{ item }')
@@ -34,13 +35,13 @@ export default {
     headers: {
       type: Array,
       default() {
-        return null
+        return []
       }
     },
     items: {
       type: Array,
       default() {
-        return null
+        return []
       }
     }
   },

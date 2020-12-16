@@ -5,15 +5,21 @@ String.prototype.filtreAutocomplete = function(filtre) {
   return str.includes(v)
 }
 
-Array.prototype.sortByKey = function(key) {
-  this.sort((a, b) => {
-    if (a[key] < b[key]) return -1
-    else if (a[key] > b[key]) return 1
-    return 0
-  })
+export const instantTranslate = (array, locale, fallback) => {
+  if (!array) return 'check instantTranslate (undefined string)'
+  if (typeof array === 'string') return array
+  const locales = Object.keys(array)
+  if (Object.prototype.hasOwnProperty.call(array, locale)) {
+    return array[locale]
+  } else if (Object.prototype.hasOwnProperty.call(array, fallback)) {
+    return array[fallback]
+  }
+  return array[locales[0]]
 }
 
+
 export const translateHeaders = (i18n, items) => {
+  if (!items) return []
   const res = items.map((item) => {
     const translated = i18n.t(item.text)
     return {
@@ -22,35 +28,6 @@ export const translateHeaders = (i18n, items) => {
       sortable: item.sortable,
       value: item.value
     }
-  })
-  return res
-}
-
-// const translateHeaders = (i18n) => (items) => {
-//   const res = items.map((item) => {
-//     const translated = i18n.t(item.text)
-//     return {
-//       text: translated,
-//       align: item.align,
-//       sortable: item.sortable,
-//       value: item.value
-//     }
-//   })
-//   return res
-// }
-
-export const filterDataTable = (array, filters) => {
-  if (!array[0]) return []
-  const itemKeys = Object.keys(array[0])
-  const res = array.filter((item) => {
-    return filters.every((filter) => {
-      return itemKeys.some((itemKey) => {
-        if (typeof item[itemKey] === 'string') {
-          return String.prototype.filtreAutocomplete.call(item[itemKey], filter)
-        }
-        return false
-      })
-    })
   })
   return res
 }
