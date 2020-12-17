@@ -2,7 +2,7 @@ import { mount, createLocalVue } from '@vue/test-utils'
 import VueRouter from 'vue-router'
 import Vue from 'vue'
 import Vuex from 'vuex'
-import FvProductForm from './index.vue'
+import FvForm from './index.vue'
 import i18n from '~/.storybook/i18n'
 
 const localVue = createLocalVue()
@@ -11,7 +11,7 @@ const router = new VueRouter()
 
 Vue.use(Vuex)
 
-describe('FvProductForm', () => {
+describe('FvForm', () => {
   let store
   const productStep = [
     {
@@ -20,7 +20,7 @@ describe('FvProductForm', () => {
     }
   ]
   const factory = () => {
-    return mount(FvProductForm, {
+    return mount(FvForm, {
       i18n,
       store,
       router,
@@ -36,7 +36,7 @@ describe('FvProductForm', () => {
         action: 'new'
       },
       computed: {
-        getProductStep: () => productStep
+        getFormStep: () => productStep
       },
       mocks: {
         $nuxt: {
@@ -93,7 +93,7 @@ describe('FvProductForm', () => {
     const wrapper = factory()
     const submitBtn = wrapper.find('[data-testid="submitBtn"]')
     submitBtn.vm.$emit('button:click')
-    const submittedCalls = wrapper.emitted('clicked')
+    const submittedCalls = wrapper.emitted('')
     expect(submittedCalls).toBeTruthy()
     expect(submittedCalls).toHaveLength(1)
   })
