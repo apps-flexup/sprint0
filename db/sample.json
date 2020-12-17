@@ -1422,8 +1422,8 @@
   ],
   "offer-steps": [
     {
-      "component": "fv-offer-form",
-      "title": "test"
+      "component": "fv-offer-step-detail",
+      "title": "forms.offer.step.0"
     }
   ],
   "contract-types": [

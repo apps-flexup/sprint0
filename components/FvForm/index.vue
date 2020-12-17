@@ -1,5 +1,5 @@
 <template lang="pug">
-.fv-product-form
+.fv-form
     v-row.head
       fv-icon.mr-11(
         data-testid="icon"
@@ -22,10 +22,8 @@
         template(slot="form")
           composant(
             :is="step.component"
-            :product="product"
-            :offer="offer"
-            @product:changed="productChanged"
-            @offer:changed="offerChanged"
+            :product="payload"
+            :offer="payload"
           )
     div.btn.mt-10
       fv-secondary-button(
@@ -40,14 +38,9 @@
 
 <script>
 export default {
+  name: 'FvForm',
   props: {
-    product: {
-      type: Object,
-      default() {
-        return {}
-      }
-    },
-    offer: {
+    payload: {
       type: Object,
       default() {
         return {}
@@ -91,9 +84,10 @@ export default {
   },
   methods: {
     submit() {
-      this.$emit('product:add', this.product)
-      this.$emit('offer:add', this.offer)
+      this.$nuxt.$loading.start()
+      this.$emit(this.form + ':add', this.payload)
       this.$router.push('/' + this.url)
+      this.$nuxt.$loading.finish()
     },
     cancel() {
       this.$router.push('/' + this.url)

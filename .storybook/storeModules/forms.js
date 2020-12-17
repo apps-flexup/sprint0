@@ -13,6 +13,15 @@ const modulesForms = {
         }
       ]
       commit('setProductSteps', data)
+    },
+    getOffer({ commit }) {
+      const data = [
+        {
+          "component": "fv-offer-step-detail",
+          "title": "forms.offer.step.0"
+        }
+      ]
+      commit('setOfferSteps', data)
     }
   },
   getters: getters,

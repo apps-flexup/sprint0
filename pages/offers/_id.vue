@@ -1,23 +1,17 @@
 <template lang="pug">
-  fv-product-form(
-    :offer="getOffer"
+  fv-form(
+    :payload="getOffer"
     @offer:changed="offerChanged"
-    @offer:add="editOffer"
+    @offers:add="editOffer"
     action='edit'
-    :url='category'
-    :form='category'
+    url='offers'
+    form='offers'
   )
 </template>
 
 <script>
 export default {
   props: {
-    category: {
-      type: String,
-      default() {
-        return 'offers'
-      }
-    },
     offer: {
       type: Object,
       default() {
@@ -30,13 +24,13 @@ export default {
       const offerId = this.$route.params.id
       const offers = this.$store.getters['offers/findById'](offerId)
       const payload = JSON.parse(JSON.stringify(offers))
-      console.log('LA BELLE OFFFFFFRE', payload)
       return payload
     }
   },
   methods: {
     editOffer(offer) {
       const payload = offer
+      payload.product_id = payload.productId
       this.$activeAccount.addOffer(payload)
     },
     offerChanged(offer) {

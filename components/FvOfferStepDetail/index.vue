@@ -1,5 +1,5 @@
 <template lang="pug">
-.fv-offer-form
+.fv-offer-step-detail
   p {{ $options.name }}
   v-row
     v-col(cols="12")
@@ -40,7 +40,7 @@
 
 <script>
 export default {
-  name: 'FvOfferForm',
+  name: 'FvOfferStepDetail',
   props: {
     offer: {
       type: Object,
@@ -151,3 +151,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+::v-deep .v-input.theme--light .v-input__slot {
+  background: #ffffff;
+}
+</style>

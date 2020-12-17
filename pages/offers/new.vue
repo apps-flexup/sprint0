@@ -1,9 +1,9 @@
 <template lang="pug">
-  .page-product-new
-    fv-product-form(
-      :offer="offer"
+  .page-offer-new
+    fv-form(
+      :payload="offer"
       @offer:changed="offerChanged"
-      @offer:add="createOffer"
+      @offers:add="createOffer"
       url='offers'
       form='offers'
       action='new'
@@ -29,7 +29,6 @@ export default {
     },
     createOffer(offer) {
       const payload = offer
-      console.log('le produit la con de ta race', payload)
       this.$activeAccount.addOffer(payload)
     }
   }

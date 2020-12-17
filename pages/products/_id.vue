@@ -1,23 +1,17 @@
 <template lang="pug">
-  fv-product-form(
-    :product="getProduct"
+  fv-form(
+    :payload="getProduct"
     @product:changed="productChanged"
-    @product:add="editProduct"
+    @products:add="editProduct"
     action='edit'
-    :url='category'
-    :form='category'
+    url='products'
+    form='products'
   )
 </template>
 
 <script>
 export default {
   props: {
-    category: {
-      type: String,
-      default() {
-        return 'products'
-      }
-    },
     product: {
       type: Object,
       default() {
@@ -39,6 +33,7 @@ export default {
     },
     editProduct(product) {
       const payload = product
+      payload.category_id = payload.categoryId
       this.$activeAccount.addProduct(payload)
     }
   }

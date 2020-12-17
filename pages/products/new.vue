@@ -1,12 +1,12 @@
 <template lang="pug">
   .page-product-new
-    fv-product-form(
-      :product='product'
+    fv-form(
+      :payload='product'
       @product:changed="productChanged"
+      @products:add="createProduct"
       url='products'
       form='products'
       action='new'
-      @product:add="createProduct"
     )
 </template>
 
@@ -29,7 +29,6 @@ export default {
     },
     createProduct(product) {
       const payload = product
-      console.log('le produit la con de ta race', payload)
       this.$activeAccount.addProduct(payload)
     }
   }
