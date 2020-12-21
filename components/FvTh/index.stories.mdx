@@ -1,0 +1,54 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { text, boolean } from '@storybook/addon-knobs'
+import FvTh from './index.vue'
+
+<Meta title='Atoms/FvTh' component={ FvTh } />
+
+# FvTh
+
+<Canvas>
+<Story name='Common'>{{
+  components: { FvTh },
+  data() {
+    return {
+      sortKey: 'test',
+      isSorted: false,
+      isSortedDesc: false
+    }
+  },
+  props: {
+    knobText: {
+      default: text('Text', 'header', 'Props')
+    },
+    knobSortable: {
+      default: boolean('Sortable', true, 'Props')
+    }
+  },
+  methods: {
+    thSort(v) {
+      if (this.isSorted && this.isSortedDesc) {
+        this.isSorted = false
+        this.isSortedDesc = false
+      } else if (this.isSorted) {
+        this.isSortedDesc = true
+      } else {
+        this.isSorted = true
+        this.isSortedDesc = false
+      }
+    }
+  },
+  template: `<FvTh
+    :text="knobText"
+    :sortKey="sortKey"
+    :sortable="knobSortable"
+    :isSorted="isSorted"
+    :isSortedDesc="isSortedDesc"
+    @th:sort="thSort"
+  >
+  </FvTh>`
+}}</Story>
+</Canvas>
+
+## ArgsTable
+
+<ArgsTable of={ FvTh} />
