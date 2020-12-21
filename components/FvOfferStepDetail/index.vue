@@ -4,12 +4,14 @@
   v-row
     v-col(cols="12")
       fv-product-autocomplete(
+        data-testid="productAutocomplete"
         :product="productId"
         @products:selected="productSelected"
       )
   v-row
     v-col(cols="12")
       v-text-field(
+        data-testid="textField"
         v-model="name"
         :label="$t('forms.offers.new.name')"
         outlined=''
@@ -18,6 +20,7 @@
   v-row
     v-col(cols="6")
       fv-price-field(
+        data-testid="priceField"
         :value="price"
         :label="$t('forms.offers.new.price')"
         @price:changed="priceChanged"
@@ -25,12 +28,14 @@
   v-row
     v-col(cols='6')
       fv-vat-field(
+        data-testid="vatField"
         :value="vat"
         :label="$t('forms.offers.new.vat')"
         @vat:changed="vatChanged"
       )
     v-col(cols='6')
       fv-unit-autocomplete(
+        data-testid="unitAutocomplete"
         :dimensionFilter="dimension"
         :dimension="dimension"
         :unit="unit"
@@ -77,21 +82,20 @@ export default {
   },
   methods: {
     productSelected(v) {
-      // this.$activeAccount.getProduct(v).then((product) => {
-      this.$repos.products.show(v).then((product) => {
-        this.productId = product ? product.id : null
-        this.unit = product ? product.unit : null
-        this.dimension = product ? product.dimension : null
-        this.name = product ? product.name : null
-        const payload = {
-          productId: this.productId,
-          unit: this.unit,
-          dimension: this.dimension,
-          name: this.name
-        }
-        const res = Object.assign(this.localOffer, payload)
-        this.$emit('offer:changed', res)
-      })
+      // this.$repos.products.show(v).then((product)
+      const product = this.$store.getters['products/findById'](v)
+      this.productId = product ? product.id : null
+      this.unit = product ? product.unit : null
+      this.dimension = product ? product.dimension : null
+      this.name = product ? product.name : null
+      const payload = {
+        productId: this.productId,
+        unit: this.unit,
+        dimension: this.dimension,
+        name: this.name
+      }
+      const res = Object.assign(this.localOffer, payload)
+      this.$emit('offer:changed', res)
     },
     nameChanged() {
       const payload = {

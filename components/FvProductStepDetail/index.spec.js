@@ -14,7 +14,7 @@ describe('FvProductStepDetail', () => {
       }
     })
   }
-  it('should render a form', () => {
+  it('should render a product form', () => {
     const wrapper = factory()
     expect(wrapper.find('[data-testid="categoryAutocomplete"]').exists()).toBe(
       true

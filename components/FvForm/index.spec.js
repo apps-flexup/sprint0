@@ -19,7 +19,7 @@ describe('FvForm', () => {
       title: 'forms.product.step.0'
     }
   ]
-  const factory = () => {
+  const factory = (propsData) => {
     return mount(FvForm, {
       i18n,
       store,
@@ -30,10 +30,13 @@ describe('FvForm', () => {
         FvStepForm: true,
         FvSecondaryButton: true,
         FvPrimaryButton: true,
-        FvProductStepDetail: true
+        FvProductStepDetail: true,
+        FvOfferStepDetail: true
       },
       propsData: {
-        action: 'new'
+        form: 'products',
+        action: 'new',
+        ...propsData
       },
       computed: {
         getFormStep: () => productStep
@@ -58,7 +61,8 @@ describe('FvForm', () => {
           namespaced: true,
           state: {},
           actions: {
-            getProduct: jest.fn()
+            getProduct: jest.fn(),
+            getOffer: jest.fn()
           }
         }
       }
@@ -72,6 +76,7 @@ describe('FvForm', () => {
     expect(wrapper.find('[data-testid="stepForm"]').exists()).toBe(true)
     expect(wrapper.find('[data-testid="cancelBtn"]').exists()).toBe(true)
     expect(wrapper.find('[data-testid="submitBtn"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="stepComponent"]').exists()).toBe(true)
   })
   it('should send signal when clicked', () => {
     const wrapper = factory()
@@ -89,12 +94,36 @@ describe('FvForm', () => {
     expect(submittedCalls).toBeTruthy()
     expect(submittedCalls).toHaveLength(1)
   })
-  it('should send signal when clicked', () => {
-    const wrapper = factory()
+  it('should send signal when clicked in a form', () => {
+    const wrapper = factory({ form: 'offers' })
     const submitBtn = wrapper.find('[data-testid="submitBtn"]')
     submitBtn.vm.$emit('button:click')
-    const submittedCalls = wrapper.emitted('')
+    const submittedCalls = wrapper.emitted('offers:add')
     expect(submittedCalls).toBeTruthy()
     expect(submittedCalls).toHaveLength(1)
+  })
+  it('should have data in the payload', () => {
+    const wrapper = factory({
+      payload: {
+        category_id: 13,
+        name: 'Peinture métalisé',
+        unit: 'cl',
+        dimension: 'volume',
+        status: 'draft',
+        account_id: 1,
+        id: 16
+      }
+    })
+
+    const stepForm = wrapper.find('[data-testid="stepComponent"]')
+    expect(stepForm.props().product).toStrictEqual({
+      category_id: 13,
+      name: 'Peinture métalisé',
+      unit: 'cl',
+      dimension: 'volume',
+      status: 'draft',
+      account_id: 1,
+      id: 16
+    })
   })
 })

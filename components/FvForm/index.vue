@@ -21,6 +21,7 @@
       )
         template(slot="form")
           composant(
+            data-testid="stepComponent"
             :is="step.component"
             :product="payload"
             :offer="payload"
@@ -60,12 +61,6 @@ export default {
     },
     form: {
       type: String,
-      default() {
-        return null
-      }
-    },
-    add: {
-      type: Function,
       default() {
         return null
       }
