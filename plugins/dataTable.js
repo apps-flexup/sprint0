@@ -15,8 +15,7 @@ const dataTable = (ctx) => ({
       else if (first > second) return 1
       return 0
     })
-    if (sortDesc)
-      res.reverse()
+    if (sortDesc) res.reverse()
     return res
   },
   filter(array, filters) {
@@ -26,7 +25,10 @@ const dataTable = (ctx) => ({
       return filters.every((filter) => {
         return itemKeys.some((itemKey) => {
           if (typeof item[itemKey] === 'string') {
-            return String.prototype.filtreAutocomplete.call(item[itemKey], filter)
+            return String.prototype.filtreAutocomplete.call(
+              item[itemKey],
+              filter
+            )
           }
           if (typeof item[itemKey] === 'object') {
             const locale = ctx.store.getters['settings/locale']
