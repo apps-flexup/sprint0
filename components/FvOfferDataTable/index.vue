@@ -1,19 +1,17 @@
 <template lang="pug">
 .fv-offer-data-table
-  v-data-table(
+  fv-data-table(
     :headers='headers'
     :items='items'
     :hide-default-footer="hideDefaultFooter"
-    @click:row='selected'
-    @update:sort-by="sortBy"
-    @update:sort-desc="sortDesc"
+    @dataTable:sortBy="sortBy"
+    @dataTable:selected='selected'
   )
     template(v-slot:item.name='{ item }')
       div(v-to-locale="item.name")
     template(v-slot:item.price='{ item }')
       fv-flex-items
         template(v-slot:left)
-          v-spacer
           fv-price-to-preferred-currency(
             :price="item.price"
             :currency="item.currency"
@@ -23,7 +21,7 @@
         template(v-slot:right)
           div {{ item.unit }}
     template(v-slot:item.vat='{ item }')
-      div.text-right {{ item.vat }}%
+      div {{ item.vat }}%
     template(v-slot:item.status='{ item }')
       fv-status-progress(:status="item.status")
     template(v-slot:item.actions="{ item }")
@@ -67,17 +65,7 @@ export default {
     },
     sortBy(v) {
       this.$emit('dataTable:sortBy', v)
-    },
-    sortDesc(v) {
-      this.$emit('dataTable:sortDesc', v)
     }
   }
 }
 </script>
-
-<style scoped>
-.right {
-  margin-right: 0px !important;
-  margin-left: auto;
-}
-</style>
