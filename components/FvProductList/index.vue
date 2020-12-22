@@ -11,7 +11,6 @@
       :items="items"
       @dataTable:selected="selectedProduct"
       @dataTable:sortBy="sortBy"
-      @dataTable:sortDesc="sortDesc"
     )
 </template>
 
@@ -56,16 +55,8 @@ export default {
       this.$emit('list:selected', product)
     },
     sortBy(v) {
-      if (v[0])
-        this.sortKey = v[0]
-      else
-        this.sortKey = null
-    },
-    sortDesc(v) {
-      if (v[0])
-        this.shouldSortDesc = v[0]
-      else
-        this.shouldSortDesc = false
+      this.sortKey = v.key
+      this.shouldSortDesc = v.desc
     }
   }
 }
