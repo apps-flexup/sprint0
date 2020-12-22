@@ -87,12 +87,6 @@ export default {
     cancel() {
       this.$router.push('/' + this.url)
       this.$emit('clicked')
-    },
-    productChanged(product) {
-      this.product = product
-    },
-    offerChanged(offer) {
-      this.offer = offer
     }
   }
 }
