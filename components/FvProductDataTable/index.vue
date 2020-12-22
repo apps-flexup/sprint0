@@ -1,12 +1,12 @@
 <template lang="pug">
 .fv-product-data-table
-  v-data-table(
+  fv-data-table(
+    data-testid="fvDataTable"
     :headers='headers'
     :items='items'
     :hide-default-footer="hideDefaultFooter"
-    @click:row='selected'
-    @update:sort-by="sortBy"
-    @update:sort-desc="sortDesc"
+    @dataTable:sortBy="sortBy"
+    @dataTable:selected="selected"
   )
     template(v-slot:item.name="{ item }")
       div(v-to-locale="item.name")
@@ -47,10 +47,10 @@ export default {
   },
   mounted() {
     console.log('Composant ', this.$options.name)
+    this.$store.dispatch('categories/get')
   },
   methods: {
     selected(product) {
-      console.log('selected: ', product)
       this.$emit('dataTable:selected', product)
     },
     deleteItem(product) {
@@ -58,9 +58,6 @@ export default {
     },
     sortBy(v) {
       this.$emit('dataTable:sortBy', v)
-    },
-    sortDesc(v) {
-      this.$emit('dataTable:sortDesc', v)
     }
   }
 }
