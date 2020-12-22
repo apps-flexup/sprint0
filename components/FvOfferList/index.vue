@@ -25,9 +25,8 @@ export default {
   },
   computed: {
     filters() {
-      let res = []
-      if (this.search)
-        res.push(this.search)
+      const res = []
+      if (this.search) res.push(this.search)
       return res
     },
     mainHeaders() {
