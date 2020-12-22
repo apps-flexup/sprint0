@@ -51,6 +51,30 @@ describe('FvOfferStepDetail', () => {
     expect(submittedCalls).toBeTruthy()
     expect(submittedCalls).toHaveLength(1)
   })
+  it('should send signal when price changed', () => {
+    const wrapper = factory()
+    const priceField = wrapper.find('[data-testid="priceField"]')
+    priceField.vm.$emit('price:changed')
+    const submittedCalls = wrapper.emitted('offer:changed')
+    expect(submittedCalls).toBeTruthy()
+    expect(submittedCalls).toHaveLength(1)
+  })
+  it('should send signal when vat changed', () => {
+    const wrapper = factory()
+    const vatField = wrapper.find('[data-testid="vatField"]')
+    vatField.vm.$emit('vat:changed')
+    const submittedCalls = wrapper.emitted('offer:changed')
+    expect(submittedCalls).toBeTruthy()
+    expect(submittedCalls).toHaveLength(1)
+  })
+  it('should send signal when unit is selected', () => {
+    const wrapper = factory()
+    const unitAutocomplete = wrapper.find('[data-testid="unitAutocomplete"]')
+    unitAutocomplete.vm.$emit('unit:selected')
+    const submittedCalls = wrapper.emitted('offer:changed')
+    expect(submittedCalls).toBeTruthy()
+    expect(submittedCalls).toHaveLength(1)
+  })
   it('should receive the product id', () => {
     const wrapper = factory()
     const productAutocomplete = wrapper.find(
@@ -58,10 +82,19 @@ describe('FvOfferStepDetail', () => {
     )
     expect(productAutocomplete.props().product).toBe(2)
   })
-  it('should receive the product name', () => {
+  it('should have an empty text field for product name', () => {
     const wrapper = factory()
     const textField = wrapper.find('[data-testid="textField"]')
-    expect(textField.props()).toMatch('120')
+    expect(textField.text()).toMatch('')
+  })
+  it('should emit an event when input changed', async () => {
+    const name = 'bananes'
+    const wrapper = factory()
+    const textField = wrapper.find('[data-testid="textField"]')
+    await textField.setValue(name)
+    const inputCalls = wrapper.emitted('offer:changed')
+    expect(inputCalls).toHaveLength(1)
+    expect(inputCalls[0][0].name).toMatch(name)
   })
   it('should receive the product price', () => {
     const wrapper = factory()
