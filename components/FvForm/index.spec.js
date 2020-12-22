@@ -102,7 +102,7 @@ describe('FvForm', () => {
     expect(submittedCalls).toBeTruthy()
     expect(submittedCalls).toHaveLength(1)
   })
-  it('should have data in the payload', () => {
+  it('should props receive data from the payload', () => {
     const wrapper = factory({
       payload: {
         category_id: 13,
