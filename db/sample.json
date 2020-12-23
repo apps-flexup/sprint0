@@ -13659,37 +13659,12 @@
     {
       "account_id": 3,
       "active": true,
-      "category": {
-        "active": true,
-        "allow_at_client": false,
-        "allow_at_supplier": true,
-        "allow_remote": false,
-        "allow_shipping": true,
-        "description": {
-          "en": "Milk",
-          "fr": "Catégorie Lait"
-        },
-        "dimension": "volume",
-        "id": 25,
-        "name": {
-          "en": "Milk",
-          "fr": "Lait"
-        },
-        "offers_count": 6,
-        "orderable": true,
-        "other_parent": [],
-        "parent_id": 21,
-        "sort_order": 0,
-        "status": "active",
-        "unit": "l"
-      },
-      "category_id": 25,
+      "product_id": 17,
       "currency": "EUR",
       "description": {
         "en": "True Goat milk",
         "fr": "Le vrai lait de chèvre"
       },
-      "dimension": "volume",
       "elasticity": 20,
       "evaluation_avg": 6.5,
       "favorite": true,
@@ -13708,36 +13683,11 @@
       },
       "price": 100,
       "reference": "EKWOHX",
-      "status": "reserved",
-      "unit": "m³"
+      "status": "reserved"
     },
     {
       "account_id": 5,
       "active": true,
-      "category": {
-        "active": false,
-        "allow_at_client": true,
-        "allow_at_supplier": true,
-        "allow_remote": false,
-        "allow_shipping": true,
-        "description": {
-          "en": "Services category",
-          "fr": "Catégorie chapeau pour les services (en français)"
-        },
-        "dimension": "duration",
-        "id": 2,
-        "name": {
-          "en": "Services",
-          "fr": "Services (en français)"
-        },
-        "offers_count": 1,
-        "orderable": true,
-        "other_parent": [],
-        "parent_id": 1,
-        "sort_order": 0,
-        "status": "active",
-        "unit": "day"
-      },
       "category_id": 2,
       "currency": "EUR",
       "description": {
@@ -13769,37 +13719,12 @@
     {
       "account_id": 1,
       "active": true,
-      "category": {
-        "active": true,
-        "allow_at_client": true,
-        "allow_at_supplier": true,
-        "allow_remote": false,
-        "allow_shipping": true,
-        "description": {
-          "en": "English",
-          "fr": "French"
-        },
-        "dimension": "number",
-        "id": 44,
-        "name": {
-          "en": "Card Games",
-          "fr": "Jeux de cartes"
-        },
-        "offers_count": 1,
-        "orderable": true,
-        "other_parent": [],
-        "parent_id": 43,
-        "sort_order": 0,
-        "status": "active",
-        "unit": "Nr"
-      },
-      "category_id": 44,
+      "product_id": 18,
       "currency": "EUR",
       "description": {
         "en": "description of offer fab",
         "fr": "description of Le jeu des 7 familles"
       },
-      "dimension": null,
       "elasticity": 0,
       "evaluation_avg": 6.5,
       "favorite": true,
@@ -13822,43 +13747,17 @@
       "price": 10,
       "reference": "BAVAFC",
       "status": "active",
-      "unit": "h",
       "vat": "20.5",
       "id": 3
     },
     {
       "account_id": 1,
       "active": true,
-      "category": {
-        "active": true,
-        "allow_at_client": false,
-        "allow_at_supplier": false,
-        "allow_remote": false,
-        "allow_shipping": false,
-        "description": {
-          "en": "English",
-          "fr": "French"
-        },
-        "dimension": null,
-        "id": 52,
-        "name": {
-          "en": "Development",
-          "fr": "Développement"
-        },
-        "offers_count": 1,
-        "orderable": true,
-        "other_parent": [],
-        "parent_id": 51,
-        "sort_order": 0,
-        "status": "suspended",
-        "unit": null
-      },
-      "category_id": 52,
+      "product_id": 19,
       "currency": "EUR",
       "description": {
         "en": "description of offer php"
       },
-      "dimension": null,
       "elasticity": 20,
       "evaluation_avg": 6.5,
       "favorite": true,
@@ -13879,37 +13778,12 @@
       "price": "100.00",
       "reference": "EICMNB",
       "status": "archived",
-      "unit": "h",
       "vat": "12.0",
       "id": 4
     },
     {
       "account_id": 5,
       "active": true,
-      "category": {
-        "active": true,
-        "allow_at_client": true,
-        "allow_at_supplier": true,
-        "allow_remote": false,
-        "allow_shipping": false,
-        "description": {
-          "en": "English",
-          "fr": "French"
-        },
-        "dimension": "duration",
-        "id": 8,
-        "name": {
-          "en": "Baby sitting",
-          "fr": "Baby sitting"
-        },
-        "offers_count": 2,
-        "orderable": true,
-        "other_parent": [],
-        "parent_id": 6,
-        "sort_order": 1,
-        "status": "inactive",
-        "unit": "hr"
-      },
       "category_id": 8,
       "currency": "EUR",
       "description": {
@@ -13939,30 +13813,6 @@
     {
       "account_id": 5,
       "active": true,
-      "category": {
-        "active": true,
-        "allow_at_client": true,
-        "allow_at_supplier": true,
-        "allow_remote": false,
-        "allow_shipping": false,
-        "description": {
-          "en": "English",
-          "fr": "French"
-        },
-        "dimension": "duration",
-        "id": 8,
-        "name": {
-          "en": "Baby sitting",
-          "fr": "Baby sitting"
-        },
-        "offers_count": 2,
-        "orderable": true,
-        "other_parent": [],
-        "parent_id": 6,
-        "sort_order": 1,
-        "status": "active",
-        "unit": "hr"
-      },
       "category_id": 8,
       "currency": "EUR",
       "description": {
@@ -13992,30 +13842,6 @@
     {
       "account_id": 5,
       "active": true,
-      "category": {
-        "active": true,
-        "allow_at_client": true,
-        "allow_at_supplier": true,
-        "allow_remote": false,
-        "allow_shipping": false,
-        "description": {
-          "en": "English",
-          "fr": "French"
-        },
-        "dimension": "duration",
-        "id": 9,
-        "name": {
-          "en": "Babysitting for babies",
-          "fr": "Babysitter pour les bébés"
-        },
-        "offers_count": 1,
-        "orderable": true,
-        "other_parent": [],
-        "parent_id": 8,
-        "sort_order": 0,
-        "status": "active",
-        "unit": "hr"
-      },
       "category_id": 9,
       "currency": "EUR",
       "description": {
@@ -14112,15 +13938,11 @@
       "id": 19
     },
     {
-      "product_id": 15,
+      "product_id": 2,
       "name": "Appartement Paris 19",
       "price": "123.00",
-      "unit": "month",
-      "dimension": "duration",
       "status": "draft",
       "account_id": 1,
-      "category_id": 22,
-      "productId": 2,
       "currency": "EUR",
       "vat": "20.0",
       "id": 20
@@ -14130,8 +13952,6 @@
       "name": "Bananes",
       "price": "123.00",
       "currency": "USD",
-      "unit": "Gb/s",
-      "dimension": "bandwith",
       "status": "draft",
       "account_id": 1,
       "vat": "12.0",
@@ -14791,6 +14611,33 @@
       "status": "draft",
       "account_id": 1,
       "id": 16
+    },
+    {
+      "category_id": 25,
+      "name": "Lait de chevre",
+      "unit": "m³",
+      "dimension": "volume",
+      "status": "draft",
+      "account_id": 3,
+      "id": 17
+    },
+    {
+      "category_id": 44,
+      "name": "Jeu 7 familles",
+      "unit": "h",
+      "dimension": null,
+      "status": "draft",
+      "account_id": 1,
+      "id": 18
+    },
+    {
+      "category_id": 52,
+      "name": "PHP",
+      "unit": "h",
+      "dimension": null,
+      "status": "draft",
+      "account_id": 1,
+      "id": 19
     }
   ],
   "structures": [

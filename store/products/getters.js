@@ -1,16 +1,7 @@
 export default {
-  all(state, _getters, _rootStates, rootGetters) {
+  all(state) {
     if (!state.items) return []
-    const items = JSON.parse(JSON.stringify(state.items))
-    const res = items.map((item) => {
-      const categoryId = parseInt(item.category_id)
-      const category = rootGetters['categories/find'](categoryId)
-      const payload = {
-        ...item,
-        category: category.name
-      }
-      return payload
-    })
+    const res = JSON.parse(JSON.stringify(state.items))
     return res
   },
   findById: (state, _getters, _rootStates, rootGetters) => (productId) => {
