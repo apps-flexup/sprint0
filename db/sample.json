@@ -13660,6 +13660,8 @@
       "account_id": 3,
       "active": true,
       "product_id": 17,
+      "dimension": "volume",
+      "unit": "m³",
       "currency": "EUR",
       "description": {
         "en": "True Goat milk",
@@ -13721,6 +13723,8 @@
       "active": true,
       "product_id": 18,
       "currency": "EUR",
+      "dimension": "unit",
+      "unit": "Unit",
       "description": {
         "en": "description of offer fab",
         "fr": "description of Le jeu des 7 familles"
@@ -13755,6 +13759,8 @@
       "active": true,
       "product_id": 19,
       "currency": "EUR",
+      "dimension": null,
+      "unit": "h",
       "description": {
         "en": "description of offer php"
       },
@@ -13940,6 +13946,8 @@
     {
       "product_id": 2,
       "name": "Appartement Paris 19",
+      "dimension": "duration",
+      "unit": "month",
       "price": "123.00",
       "status": "draft",
       "account_id": 1,
@@ -13950,6 +13958,8 @@
     {
       "product_id": 15,
       "name": "Bananes",
+      "dimension": "weight",
+      "unit": "kg",
       "price": "123.00",
       "currency": "USD",
       "status": "draft",

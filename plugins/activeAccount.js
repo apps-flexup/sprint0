@@ -64,7 +64,21 @@ const activeAccount = (ctx) => ({
     return res
   },
   offers() {
-    const res = ctx.store.getters['offers/all']
+    const offers = ctx.store.getters['offers/all']
+    const locale = ctx.store.getters['settings/locale']
+    const fallback = ctx.store.getters['settings/fallbackLocale']
+    const res = offers.map((offer) => {
+      const product = ctx.store.getters['products/findById'](offer.product_id)
+      if (product) {
+        const category = product.category
+        const payload = {
+          ...offer,
+          category: instantTranslate(category.name, locale, fallback)
+        }
+        return payload
+      }
+      return null
+    })
     return res
   },
   partners() {
