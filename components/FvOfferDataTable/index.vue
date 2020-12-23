@@ -12,10 +12,7 @@
     template(v-slot:item.price='{ item }')
       fv-flex-items
         template(v-slot:left)
-          fv-price-to-preferred-currency(
-            :price="item.price"
-            :currency="item.currency"
-          )
+          div(v-to-currency="{ amount: item.price, currency: item.currency }")
         template(v-slot:separator)
           div /
         template(v-slot:right)

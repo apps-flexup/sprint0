@@ -13903,14 +13903,6 @@
       "status": "draft"
     },
     {
-      "account_id": -1,
-      "dimension": "dimension",
-      "id": 13,
-      "name": "test",
-      "product_id": 8,
-      "status": "draft"
-    },
-    {
       "currency": "AUD",
       "dimension": "weight",
       "name": "un truc du genre des pommes",

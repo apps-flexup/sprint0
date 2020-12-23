@@ -1,4 +1,5 @@
 import { instantTranslate } from './utils'
+import { convert } from './currencies'
 
 const activeAccount = (ctx) => ({
   clear() {
@@ -63,22 +64,40 @@ const activeAccount = (ctx) => ({
     const res = ctx.store.getters['orders/all']
     return res
   },
-  offers() {
+  async offers() {
     const offers = ctx.store.getters['offers/all']
     const locale = ctx.store.getters['settings/locale']
     const fallback = ctx.store.getters['settings/fallbackLocale']
-    const res = offers.map((offer) => {
-      const product = ctx.store.getters['products/findById'](offer.product_id)
-      if (product) {
-        const category = product.category
-        const payload = {
-          ...offer,
-          category: instantTranslate(category.name, locale, fallback)
+    const preferredCurrency = this.settings().currency
+    const res = await Promise.all(
+      offers.map(async (offer) => {
+        let payload = {
+          ...offer
+        }
+        const product = ctx.store.getters['products/findById'](offer.product_id)
+        if (product) {
+          const category = product.category
+          payload = {
+            ...payload,
+            category: instantTranslate(category.name, locale, fallback)
+          }
+        }
+        let convertedAmount = offer.price
+        if (offer.currency !== preferredCurrency) {
+          convertedAmount = await convert(
+            offer.currency,
+            preferredCurrency,
+            offer.price
+          )
+        }
+        payload = {
+          ...payload,
+          price: convertedAmount,
+          currency: preferredCurrency
         }
         return payload
-      }
-      return null
-    })
+      })
+    )
     return res
   },
   partners() {

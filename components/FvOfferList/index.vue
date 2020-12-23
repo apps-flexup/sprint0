@@ -49,14 +49,14 @@ export default {
         }
       ]
       return res
-    },
-    offerItems() {
-      const res = this.$activeAccount.offers()
-      console.log('offers: ', res)
+    }
+  },
+  asyncComputed: {
+    async offerItems() {
+      const res = await this.$activeAccount.offers()
       return res
     }
   },
-
   mounted() {
     console.log('Composant ', this.$options.name)
     this.$store.dispatch('headers/getOfferHeaders')
