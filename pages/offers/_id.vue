@@ -29,7 +29,6 @@ export default {
   methods: {
     editOffer(offer) {
       const payload = offer
-      payload.product_id = payload.productId
       this.$activeAccount.addOffer(payload)
     }
   }

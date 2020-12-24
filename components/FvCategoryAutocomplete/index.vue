@@ -51,7 +51,6 @@ export default {
     },
     selected(v) {
       this.$emit('category:selected', v)
-      console.log('la categorie fdpppp', v)
     }
   }
 }

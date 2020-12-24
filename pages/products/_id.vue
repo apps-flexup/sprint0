@@ -23,7 +23,6 @@ export default {
       const productId = this.$route.params.id
       const products = this.$store.getters['products/findById'](productId)
       const payload = JSON.parse(JSON.stringify(products))
-      console.log('le payload la', payload)
       return payload
     }
   },

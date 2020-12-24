@@ -25,7 +25,6 @@ export default {
   methods: {
     createProduct() {
       const payload = this.product
-      console.log('le produit envoyer', payload)
       this.$activeAccount.addProduct(payload)
     }
   }
