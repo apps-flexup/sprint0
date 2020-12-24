@@ -164,8 +164,17 @@ const activeAccount = (ctx) => ({
   },
   headersOffers() {
     const res = ctx.store.getters['headers/offers']
-    if (res.length && res[res.length - 1].value !== 'actions')
-      res.push({ text: 'headers.actions', value: 'actions', sortable: false })
+    if (res.sub) {
+      if (
+        res.sub.offers.length &&
+        res.sub.offers[res.sub.offers.length - 1].value !== 'actions'
+      )
+        res.sub.offers.push({
+          text: 'headers.actions',
+          value: 'actions',
+          sortable: false
+        })
+    }
     return res
   },
   headersOrders() {
