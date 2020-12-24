@@ -36,7 +36,7 @@ export default {
     const res = state.items.find((v) => parseInt(v.id) === id)
     if (!res) return null
     const unit = res.unit || null
-    const productId = res.productId || null
+    const productId = res.product_id || null
     const name = res.name || null
     const price = res.price || null
     const vat = res.vat || null
@@ -45,7 +45,7 @@ export default {
       unit,
       price,
       vat,
-      productId,
+      product_id: productId,
       name
     }
     return payload

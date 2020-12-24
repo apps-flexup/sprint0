@@ -218,7 +218,7 @@ const activeAccount = (ctx) => ({
     } else {
       const preferredCurrency = ctx.store.getters['accounts/preferredCurrency']
       const offer = {
-        product_id: newOffer.productId,
+        product_id: newOffer.product_id,
         name: newOffer.name,
         price: newOffer.price,
         currency: preferredCurrency,

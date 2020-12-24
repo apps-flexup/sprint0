@@ -89,7 +89,7 @@ export default {
       this.dimension = product ? product.dimension : null
       this.name = product ? product.name : null
       const payload = {
-        productId: this.productId,
+        product_id: this.productId,
         unit: this.unit,
         dimension: this.dimension,
         name: this.name
