@@ -4,7 +4,6 @@ export default {
     // charger les contrat-types
     this.$repos.offers.indexWithAccountId().then((data) => {
       commit('set', data)
-      // commit('setHeaders', data.headers)
     })
   },
   getAll({ commit }) {
