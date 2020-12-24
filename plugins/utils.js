@@ -1,4 +1,4 @@
-/* eslint no-extend-native: ["error", { "exceptions": ["String", "Array"] }] */
+/* eslint no-extend-native: ["error", { "exceptions": ["String"] }] */
 String.prototype.filtreAutocomplete = function(filtre) {
   const str = (this || '').toLowerCase()
   const v = (filtre || '').toLowerCase()
