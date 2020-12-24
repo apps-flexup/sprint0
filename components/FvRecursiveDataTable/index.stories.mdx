@@ -1,0 +1,36 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import FvRecursiveDataTable from './index.vue'
+
+<Meta title='Molecules/FvRecursiveDataTable' component={ FvRecursiveDataTable } />
+
+# FvRecursiveDataTable
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  components: { FvRecursiveDataTable },
+  data() {
+    return {
+      headers: [
+        {
+          text: 'Group 1',
+          value: 'group1',
+          align: 'center'
+        },
+        {
+          text: 'Group 2',
+          value: 'group2',
+          align: 'center'
+        }
+      ]
+    }
+  },
+  template: `<FvRecursiveDataTable
+    :headers="headers"
+  >
+  </FvRecursiveDataTable>`
+}}</Story>
+</Canvas>
+
+## ArgsTable
+
+<ArgsTable of={ FvRecursiveDataTable } />

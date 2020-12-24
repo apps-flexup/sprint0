@@ -12,7 +12,7 @@ export default {
   inheritAttrs: true,
   props: {
     price: {
-      type: Number,
+      type: [Number, String],
       default() {
         return null
       }

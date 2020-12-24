@@ -1,4 +1,8 @@
 {
+  "mainHeaders": {
+    "product": "Produit",
+    "offer": "Offre"
+  },
   "languages": {
     "language": "Langue",
     "en": "English",

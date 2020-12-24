@@ -1,0 +1,66 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+import FvDataTable from './index.vue'
+
+<Meta title='Molecules/FvDataTable' component={ FvDataTable } />
+
+# FvDataTable
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  components: { FvDataTable },
+  data() {
+    return {
+      headers: [
+        {
+          text: 'column 1',
+          value: 'column1',
+          sortable: true
+        },
+        {
+          text: 'column 2',
+          value: 'column2',
+          sortable: true
+        },
+        {
+          text: 'not sortable column',
+          value: 'notSortableColumn',
+          sortable: false
+        }
+      ],
+      items: [
+        {
+          column1: 'hello',
+          column2: 'world',
+          notSortableColumn: 'plop'
+        },
+        {
+          column1: 'Lorem',
+          column2: 'ipsum',
+          notSortableColumn: 'dolor'
+        },
+        {
+          column1: 'sed',
+          column2: 'do',
+          notSortableColumn: 'eiusmod'
+        },
+      ]
+    }
+  },
+  methods: {
+    selected: action('selected'),
+    sortBy: action('sort')
+  },
+  template: `<FvDataTable
+    :headers="headers"
+    :items="items"
+    @dataTable:selected="selected"
+    @dataTable:sortBy="sortBy"
+  >
+  </FvDataTable>`
+}}</Story>
+</Canvas>
+
+## ArgsTable
+
+<ArgsTable of={ FvDataTable } />

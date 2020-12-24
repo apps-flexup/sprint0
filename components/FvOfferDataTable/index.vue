@@ -1,65 +1,57 @@
 <template lang="pug">
 .fv-offer-data-table
-    v-data-table.elevation-2(
-      :headers='headers'
-      :items='items'
-      item-key='id'
-      @click:row='selected'
-      :search="search"
-      :custom-filter="filterFunction"
-    )
-      template(v-slot:item.name='{ item }')
-        div(v-to-locale="item.name")
-      template(v-slot:item.price='{ item }')
-        fv-flex-items
-          template(v-slot:left)
-            v-spacer
-            fv-price-to-preferred-currency(
-              :price="item.price"
-              :currency="item.currency"
-            )
-          template(v-slot:separator)
-            div /
-          template(v-slot:right)
-            div {{ item.unit }}
-      template(v-slot:item.vat='{ item }')
-        div.text-right {{ item.vat }}%
-      template(v-slot:item.status='{ item }')
-        fv-status-progress(:status="item.status")
-      template(v-slot:item.actions="{ item }")
-        v-row
-          fv-edit-action(@edit:clicked="selected(item)")
-          fv-delete-action(@delete:clicked="deleteItem(item)")
+  fv-data-table(
+    :headers='headers'
+    :items='items'
+    :hide-default-footer="hideDefaultFooter"
+    @dataTable:sortBy="sortBy"
+    @dataTable:selected='selected'
+  )
+    template(v-slot:item.name='{ item }')
+      div(v-to-locale="item.name")
+    template(v-slot:item.price='{ item }')
+      fv-flex-items
+        template(v-slot:left)
+          div(v-to-currency="{ amount: item.price, currency: item.currency }")
+        template(v-slot:separator)
+          div /
+        template(v-slot:right)
+          div {{ item.unit }}
+    template(v-slot:item.vat='{ item }')
+      div {{ item.vat }}%
+    template(v-slot:item.status='{ item }')
+      fv-status-progress(:status="item.status")
+    template(v-slot:item.actions="{ item }")
+      v-row
+        fv-edit-action(@edit:clicked="selected(item)")
+        fv-delete-action(@delete:clicked="deleteItem(item)")
 </template>
 
 <script>
-import { filterOffersDataTable, translateHeaders } from '~/plugins/utils'
-
 export default {
-  name: 'FvOfferList',
+  name: 'FvOfferDataTable',
   props: {
-    search: {
-      type: String,
+    hideDefaultFooter: {
+      type: Boolean,
       default() {
-        return ''
+        return false
       }
-    }
-  },
-  computed: {
-    headers() {
-      const res = this.$activeAccount.headersOffers()
-      return translateHeaders(this.$i18n, res)
     },
-    items() {
-      const res = this.$activeAccount.offers()
-      return res
+    headers: {
+      type: Array,
+      default() {
+        return []
+      }
+    },
+    items: {
+      type: Array,
+      default() {
+        return []
+      }
     }
   },
   mounted() {
     console.log('Composant ', this.$options.name)
-    this.$store.dispatch('headers/getOfferHeaders')
-    this.$store.dispatch('offers/get')
-    this.$store.dispatch('settings/getSettings')
   },
   methods: {
     selected(offer) {
@@ -68,16 +60,9 @@ export default {
     deleteItem(offer) {
       this.$store.dispatch('offers/remove', offer)
     },
-    filterFunction(item, queryText, itemText) {
-      return filterOffersDataTable(item, queryText, itemText)
+    sortBy(v) {
+      this.$emit('dataTable:sortBy', v)
     }
   }
 }
 </script>
-
-<style scoped>
-.right {
-  margin-right: 0px !important;
-  margin-left: auto;
-}
-</style>

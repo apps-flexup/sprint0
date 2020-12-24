@@ -5,7 +5,20 @@ String.prototype.filtreAutocomplete = function(filtre) {
   return str.includes(v)
 }
 
+export const instantTranslate = (array, locale, fallback) => {
+  if (!array) return 'check instantTranslate (undefined string)'
+  if (typeof array === 'string') return array
+  const locales = Object.keys(array)
+  if (Object.prototype.hasOwnProperty.call(array, locale)) {
+    return array[locale]
+  } else if (Object.prototype.hasOwnProperty.call(array, fallback)) {
+    return array[fallback]
+  }
+  return array[locales[0]]
+}
+
 export const translateHeaders = (i18n, items) => {
+  if (!items) return []
   const res = items.map((item) => {
     const translated = i18n.t(item.text)
     return {
@@ -17,19 +30,6 @@ export const translateHeaders = (i18n, items) => {
   })
   return res
 }
-
-// const translateHeaders = (i18n) => (items) => {
-//   const res = items.map((item) => {
-//     const translated = i18n.t(item.text)
-//     return {
-//       text: translated,
-//       align: item.align,
-//       sortable: item.sortable,
-//       value: item.value
-//     }
-//   })
-//   return res
-// }
 
 export const filterOffersDataTable = (item, v, _it) => {
   const nameValues = `${item}`
