@@ -16,6 +16,7 @@
         :items="sortedItems"
         hide-default-footer
         @dataTable:sortBy="sortBy"
+        @dataTable:selected="selected"
       )
 </template>
 
@@ -71,6 +72,9 @@ export default {
     },
     getColumnSlot(key) {
       return 'item.' + key
+    },
+    selected(v) {
+      this.$emit('dataTable:selected', v)
     }
   }
 }

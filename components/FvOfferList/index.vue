@@ -10,6 +10,7 @@
       :headers="mainHeaders"
       :items="mainItems"
       :filters="filters"
+      @dataTable:selected="offerSelected"
     )
 </template>
 
