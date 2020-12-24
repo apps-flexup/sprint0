@@ -2,15 +2,17 @@ import { instantTranslate } from '~/plugins/utils'
 
 const dataTable = (ctx) => ({
   sortByKey(array, key, sortDesc = false) {
+    const locale = ctx.store.getters['settings/locale']
+    const fallback = ctx.store.getters['settings/fallbackLocale']
     const res = array.sort((a, b) => {
       let first = a[key]
       let second = b[key]
-      if (typeof first === 'object') {
-        const locale = ctx.store.getters['settings/locale']
-        const fallback = ctx.store.getters['settings/fallbackLocale']
+      if (typeof first === 'object')
         first = instantTranslate(a[key], locale, fallback)
+      if (typeof second === 'object')
         second = instantTranslate(b[key], locale, fallback)
-      }
+      if (typeof first === 'string') first = first.toLowerCase()
+      if (typeof second === 'string') second = second.toLowerCase()
       if (first < second) return -1
       else if (first > second) return 1
       return 0
