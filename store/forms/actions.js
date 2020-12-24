@@ -15,5 +15,8 @@ export default {
     this.$repos.productSteps
       .index()
       .then((data) => commit('setProductSteps', data))
+  },
+  getOffer({ commit }) {
+    this.$repos.offerSteps.index().then((data) => commit('setOfferSteps', data))
   }
 }

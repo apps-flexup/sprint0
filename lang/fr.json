@@ -32,6 +32,8 @@
       "products-new": "Nouveau produit",
       "products-id": "Modifier mon produit",
       "offers": "Offres",
+      "offers-new": "Nouvelle offre",
+      "offers-id": "Modifier mon offre",
       "contacts": "Contacts",
       "partners": "Partnenaires",
       "settings": "Préférences",
@@ -104,6 +106,11 @@
       }
     },
     "product": {
+      "step": {
+        "0": "Informations générales"
+      }
+    },
+    "offer": {
       "step": {
         "0": "Informations générales"
       }
@@ -189,6 +196,9 @@
         "price": "Prix TTC",
         "currency": "Devise",
         "vat": "TVA"
+      },
+      "edit": {
+        "title": "Modifier mon offre"
       },
       "metrics": {
         "opinion": "aucun avis | un avis | {n} avis"

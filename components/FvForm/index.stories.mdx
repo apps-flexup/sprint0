@@ -1,27 +1,32 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
 import { select } from '@storybook/addon-knobs'
 import { actions, defaultAction } from '@/.storybook/knobs_data/actions'
-import FvProductForm from './index.vue'
+import { forms, defaultForm } from '@/.storybook/knobs_data/forms'
+import FvForm from './index.vue'
 
-<Meta title='organism/FvProductForm' component={ FvProductForm } />
+<Meta title='organism/FvForm' component={ FvForm } />
 
-# FvProductForm
+# FvForm
 
 <Canvas>
 <Story name='Common' height='150px'>{{
   props: {
     knobAction: {
       default: select('action', actions, defaultAction, 'Props')
+    },
+    knobForm: {
+      default: select('form', forms, defaultForm, 'Props')
     }
   },
-  components: { FvProductForm },
-  template: `<FvProductForm
+  components: { FvForm },
+  template: `<FvForm
     :action=knobAction
+    :form=knobForm
   >
-  </FvProductForm>`
+  </FvForm>`
 }}</Story>
 </Canvas>
 
 ## ArgsTable
 
-<ArgsTable of={ FvProductForm } />
+<ArgsTable of={ FvForm } />

@@ -3,15 +3,8 @@
   v-row
     v-col(cols="12")
       fv-primary-button.text-right(
-        @button:click='showModal = true'
+        @button:click='createOffer'
       ) {{ $t('buttons.create.offer') }}
-      fv-offer-modal(
-        :show="showModal"
-        :offer='offer'
-        @modal:close="close"
-        @modal:save="save"
-        @offer:changed="offerChanged"
-      )
   fv-offer-list(@list:selected="selectedOffer")
 </template>
 
@@ -40,8 +33,10 @@ export default {
     },
     selectedOffer(offer) {
       this.offer = JSON.parse(JSON.stringify(offer))
-      console.log('SelectedOffer: ', offer)
-      this.showModal = true
+      this.$router.push('/offers/' + offer.id)
+    },
+    createOffer() {
+      this.$router.push('/offers/new')
     },
     offerChanged(offer) {
       this.offer = offer

@@ -58,7 +58,7 @@ import FvPriceField from '@/components/FvPriceField'
 import FvPriceToPreferredCurrency from '@/components/FvPriceToPreferredCurrency'
 import FvPrimaryButton from '@/components/FvPrimaryButton'
 import FvProductDataTable from '@/components/FvProductDataTable'
-import FvProductForm from '@/components/FvProductForm'
+import FvForm from '@/components/FvForm'
 import FvProductStepDetail from '@/components/FvProductStepDetail'
 import FvQuantitySelector from '@/components/FvQuantitySelector'
 import FvRating from '@/components/FvRating'
@@ -85,7 +85,7 @@ import FvContractStepVisualisation from '@/components/FvContractStepVisualisatio
 import FvCountryList from '@/components/FvCountryList'
 import FvProductList from '@/components/FvProductList'
 import FvOfferDataTable from '@/components/FvOfferDataTable'
-import FvOfferForm from '@/components/FvOfferForm'
+import FvOfferStepDetail from '@/components/FvOfferStepDetail'
 import FvOfferIndex from '@/components/FvOfferIndex'
 import FvOfferList from '@/components/FvOfferList'
 import FvOfferModal from '@/components/FvOfferModal'
@@ -196,7 +196,7 @@ Vue.component('fv-price-field', FvPriceField)
 Vue.component('fv-price-to-preferred-currency', FvPriceToPreferredCurrency)
 Vue.component('fv-primary-button', FvPrimaryButton)
 Vue.component('fv-product-data-table', FvProductDataTable)
-Vue.component('fv-product-form', FvProductForm)
+Vue.component('fv-form', FvForm)
 Vue.component('fv-product-step-detail', FvProductStepDetail)
 Vue.component('fv-product-index', FvProductIndex)
 Vue.component('fv-quantity-selector', FvQuantitySelector)
@@ -227,7 +227,7 @@ Vue.component('fv-contract-step-visualisation', FvContractStepVisualisation)
 Vue.component('fv-country-list', FvCountryList)
 Vue.component('fv-product-list', FvProductList)
 Vue.component('fv-offer-data-table', FvOfferDataTable)
-Vue.component('fv-offer-form', FvOfferForm)
+Vue.component('fv-offer-step-detail', FvOfferStepDetail)
 Vue.component('fv-offer-index', FvOfferIndex)
 Vue.component('fv-offer-list', FvOfferList)
 Vue.component('fv-offer-modal', FvOfferModal)

@@ -1,7 +1,7 @@
 <template lang="pug">
 .fv-category-autocomplete
   fv-autocomplete(
-    :element="categoryId"
+    :element="category_id"
     :items="items"
     :filter="filterList"
     @autocomplete:selected="selected"
@@ -23,7 +23,7 @@ export default {
   name: 'FvCategoryAutocomplete',
   inheritAttrs: true,
   props: {
-    categoryId: {
+    category_id: {
       type: Number,
       default() {
         return null

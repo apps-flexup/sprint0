@@ -10,5 +10,8 @@ export default {
   },
   setProductSteps(state, items) {
     state.products = items
+  },
+  setOfferSteps(state, items) {
+    state.offers = items
   }
 }

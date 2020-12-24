@@ -1,5 +1,5 @@
 <template lang="pug">
-.fv-product-form
+.fv-form
     v-row.head
       fv-icon.mr-11(
         data-testid="icon"
@@ -8,10 +8,10 @@
         icon="mdi-chevron-left"
         @icon:clicked="cancel"
       )
-      h1(data-testid="pageTitle") {{ $t('forms.products.' + action + '.title') }}
+      h1(data-testid="pageTitle") {{ $t('forms.' + form + '.' + action + '.title') }}
     v-list.mt-10(
       data-testid="listProductStep"
-      v-for="(step, index) in getProductStep"
+      v-for="(step, index) in getFormStep"
       :key="index"
     )
       fv-step-form(
@@ -21,9 +21,10 @@
       )
         template(slot="form")
           composant(
+            data-testid="stepComponent"
             :is="step.component"
-            :product="product"
-            @product:changed="productChanged"
+            :payload="payload"
+            @payload:changed="payloadChanged"
           )
     div.btn.mt-10
       fv-secondary-button(
@@ -38,8 +39,9 @@
 
 <script>
 export default {
+  name: 'FvForm',
   props: {
-    product: {
+    payload: {
       type: Object,
       default() {
         return {}
@@ -50,34 +52,44 @@ export default {
       default() {
         return null
       }
+    },
+    url: {
+      type: String,
+      default() {
+        return null
+      }
+    },
+    form: {
+      type: String,
+      default() {
+        return null
+      }
     }
   },
   computed: {
-    getProductStep() {
-      const res = this.$store.getters['forms/products']
+    getFormStep() {
+      const res = this.$store.getters['forms/' + this.form]
       return res
     }
   },
   mounted() {
     console.log('Composant ', this.$options.name)
     this.$store.dispatch('forms/getProduct')
+    this.$store.dispatch('forms/getOffer')
   },
   methods: {
     submit() {
-      this.$emit('clicked')
       this.$nuxt.$loading.start()
-      const payload = this.product
-      this.product.category_id = this.product.categoryId
-      this.$activeAccount.addProduct(payload)
+      this.$emit('payload:add', this.payload)
+      this.$router.push('/' + this.url)
       this.$nuxt.$loading.finish()
-      this.$router.push('/products')
     },
     cancel() {
-      this.$router.push('/products')
+      this.$router.push('/' + this.url)
       this.$emit('clicked')
     },
-    productChanged(product) {
-      this.product = product
+    payloadChanged(payload) {
+      this.payload = payload
     }
   }
 }

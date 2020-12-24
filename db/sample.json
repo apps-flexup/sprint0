@@ -1420,6 +1420,12 @@
       "title": "forms.product.step.0"
     }
   ],
+  "offer-steps": [
+    {
+      "component": "fv-offer-step-detail",
+      "title": "forms.offer.step.0"
+    }
+  ],
   "contract-types": [
     {
       "account_id": null,
@@ -13943,7 +13949,11 @@
       "price": "123.00",
       "status": "draft",
       "account_id": 1,
-      "currency": "EUR",
+      "category_id": 22,
+
+      
+      
+  "currency": "EUR",
       "vat": "20.0",
       "id": 20
     },

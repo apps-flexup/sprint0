@@ -32,6 +32,8 @@
       "products-new": "New product",
       "products-id": "Edit my product",
       "offers": "Offers",
+      "offers-new": "New offer",
+      "offers-id": "Edit my offer",
       "contacts": "Contacts",
       "partners": "Partners",
       "settings": "Settings",
@@ -101,6 +103,11 @@
       }
     },
     "product": {
+      "step": {
+        "0": "General information"
+      }
+    },
+    "offer": {
       "step": {
         "0": "General information"
       }
@@ -187,6 +194,9 @@
         "elasticity": "Elasticity",
         "currency": "Currency",
         "vat": "VAT"
+      },
+      "edit": {
+        "title": "Edit my offer"
       },
       "metrics": {
         "opinion": "no opinion | one opinion | {n} opinions"

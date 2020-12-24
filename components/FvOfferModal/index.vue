@@ -15,9 +15,9 @@
     template(
       slot='form'
     )
-      fv-offer-form(
+      fv-offer-step-detail(
         :offer="offer"
-        @offer:changed="offerChanged"
+        @payload:changed="offerChanged"
       )
     template(
       slot='actions'

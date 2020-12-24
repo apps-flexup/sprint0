@@ -1,10 +1,10 @@
 <template lang="pug">
-  .page-product-new
+  .page-offer-new
     fv-form(
-      :payload='product'
-      @payload:add="createProduct"
-      url='products'
-      form='products'
+      :payload="offer"
+      @payload:add="createOffer"
+      url='offers'
+      form='offers'
       action='new'
     )
 </template>
@@ -12,7 +12,7 @@
 <script>
 export default {
   props: {
-    product: {
+    offer: {
       type: Object,
       default() {
         return {}
@@ -23,9 +23,9 @@ export default {
     console.log('Composant ', this.$options.name)
   },
   methods: {
-    createProduct() {
-      const payload = this.product
-      this.$activeAccount.addProduct(payload)
+    createOffer(offer) {
+      const payload = offer
+      this.$activeAccount.addOffer(payload)
     }
   }
 }

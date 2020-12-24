@@ -2,7 +2,7 @@ import { mount, createLocalVue } from '@vue/test-utils'
 import VueRouter from 'vue-router'
 import Vue from 'vue'
 import Vuex from 'vuex'
-import FvProductForm from './index.vue'
+import FvForm from './index.vue'
 import i18n from '~/.storybook/i18n'
 
 const localVue = createLocalVue()
@@ -11,16 +11,16 @@ const router = new VueRouter()
 
 Vue.use(Vuex)
 
-describe('FvProductForm', () => {
+describe('FvForm', () => {
   let store
-  const productStep = [
+  const formStep = [
     {
       component: 'fv-product-step-detail',
       title: 'forms.product.step.0'
     }
   ]
-  const factory = () => {
-    return mount(FvProductForm, {
+  const factory = (propsData) => {
+    return mount(FvForm, {
       i18n,
       store,
       router,
@@ -30,13 +30,16 @@ describe('FvProductForm', () => {
         FvStepForm: true,
         FvSecondaryButton: true,
         FvPrimaryButton: true,
-        FvProductStepDetail: true
+        FvProductStepDetail: true,
+        FvOfferStepDetail: true
       },
       propsData: {
-        action: 'new'
+        form: 'products',
+        action: 'new',
+        ...propsData
       },
       computed: {
-        getProductStep: () => productStep
+        getFormStep: () => formStep
       },
       mocks: {
         $nuxt: {
@@ -58,7 +61,8 @@ describe('FvProductForm', () => {
           namespaced: true,
           state: {},
           actions: {
-            getProduct: jest.fn()
+            getProduct: jest.fn(),
+            getOffer: jest.fn()
           }
         }
       }
@@ -72,6 +76,7 @@ describe('FvProductForm', () => {
     expect(wrapper.find('[data-testid="stepForm"]').exists()).toBe(true)
     expect(wrapper.find('[data-testid="cancelBtn"]').exists()).toBe(true)
     expect(wrapper.find('[data-testid="submitBtn"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="stepComponent"]').exists()).toBe(true)
   })
   it('should send signal when clicked', () => {
     const wrapper = factory()
@@ -89,12 +94,36 @@ describe('FvProductForm', () => {
     expect(submittedCalls).toBeTruthy()
     expect(submittedCalls).toHaveLength(1)
   })
-  it('should send signal when clicked', () => {
-    const wrapper = factory()
+  it('should send signal when clicked in a form', () => {
+    const wrapper = factory({ form: 'offers' })
     const submitBtn = wrapper.find('[data-testid="submitBtn"]')
     submitBtn.vm.$emit('button:click')
-    const submittedCalls = wrapper.emitted('clicked')
+    const submittedCalls = wrapper.emitted('payload:add')
     expect(submittedCalls).toBeTruthy()
     expect(submittedCalls).toHaveLength(1)
+  })
+  it('should props receive data from the payload', () => {
+    const wrapper = factory({
+      payload: {
+        category_id: 13,
+        name: 'Peinture métalisé',
+        unit: 'cl',
+        dimension: 'volume',
+        status: 'draft',
+        account_id: 1,
+        id: 16
+      }
+    })
+
+    const stepForm = wrapper.find('[data-testid="stepComponent"]')
+    expect(stepForm.props().payload).toStrictEqual({
+      category_id: 13,
+      name: 'Peinture métalisé',
+      unit: 'cl',
+      dimension: 'volume',
+      status: 'draft',
+      account_id: 1,
+      id: 16
+    })
   })
 })

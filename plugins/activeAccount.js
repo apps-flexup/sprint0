@@ -200,7 +200,7 @@ const activeAccount = (ctx) => ({
       ctx.store.dispatch('products/add', newProduct)
     } else {
       const product = {
-        category_id: newProduct.categoryId,
+        category_id: newProduct.category_id,
         name: newProduct.name,
         unit: newProduct.unit,
         dimension: newProduct.dimension,
