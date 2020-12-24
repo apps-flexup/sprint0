@@ -1,8 +1,7 @@
 <template lang="pug">
   fv-form(
     :payload="getOffer"
-    @offer:changed="offerChanged"
-    @offers:add="editOffer"
+    @payload:add="editOffer"
     action='edit'
     url='offers'
     form='offers'
@@ -32,9 +31,6 @@ export default {
       const payload = offer
       payload.product_id = payload.productId
       this.$activeAccount.addOffer(payload)
-    },
-    offerChanged(offer) {
-      this.offer = offer
     }
   }
 }

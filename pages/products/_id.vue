@@ -1,8 +1,7 @@
 <template lang="pug">
   fv-form(
     :payload="getProduct"
-    @product:changed="productChanged"
-    @products:add="editProduct"
+    @payload:add="editProduct"
     action='edit'
     url='products'
     form='products'
@@ -24,16 +23,13 @@ export default {
       const productId = this.$route.params.id
       const products = this.$store.getters['products/findById'](productId)
       const payload = JSON.parse(JSON.stringify(products))
+      console.log('le payload la', payload)
       return payload
     }
   },
   methods: {
-    productChanged(product) {
-      this.product = product
-    },
     editProduct(product) {
       const payload = product
-      payload.category_id = payload.categoryId
       this.$activeAccount.addProduct(payload)
     }
   }

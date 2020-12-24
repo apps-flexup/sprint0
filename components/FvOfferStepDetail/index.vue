@@ -47,7 +47,7 @@
 export default {
   name: 'FvOfferStepDetail',
   props: {
-    offer: {
+    payload: {
       type: Object,
       default() {
         return {}
@@ -68,7 +68,7 @@ export default {
   },
   watch: {
     offer() {
-      if (Object.entries(this.offer).length === 0) {
+      if (Object.entries(this.payload).length === 0) {
         this.clearOffer()
       } else {
         this.fillFieldsWithOffer()
@@ -95,14 +95,14 @@ export default {
         name: this.name
       }
       const res = Object.assign(this.localOffer, payload)
-      this.$emit('offer:changed', res)
+      this.$emit('payload:changed', res)
     },
     nameChanged() {
       const payload = {
         name: this.name
       }
       const res = Object.assign(this.localOffer, payload)
-      this.$emit('offer:changed', res)
+      this.$emit('payload:changed', res)
     },
     priceChanged(v) {
       this.price = v
@@ -110,7 +110,7 @@ export default {
         price: this.price
       }
       const res = Object.assign(this.localOffer, payload)
-      this.$emit('offer:changed', res)
+      this.$emit('payload:changed', res)
     },
     vatChanged(v) {
       this.vat = v
@@ -118,7 +118,7 @@ export default {
         vat: this.vat
       }
       const res = Object.assign(this.localOffer, payload)
-      this.$emit('offer:changed', res)
+      this.$emit('payload:changed', res)
     },
     unitSelected(v) {
       const unit = this.$store.getters['units/find'](v)
@@ -129,18 +129,18 @@ export default {
         dimension: this.dimension
       }
       const res = Object.assign(this.localOffer, payload)
-      this.$emit('offer:changed', res)
+      this.$emit('payload:changed', res)
     },
     fillFieldsWithOffer() {
-      if (!this.offer) return
-      this.productId = this.offer.product_id
-      this.name = this.offer.name
-      this.price = this.offer.price
-      this.currency = this.offer.currency
-      this.unit = this.offer.unit
-      this.vat = this.offer.vat
-      this.dimension = this.offer.dimension
-      this.localOffer = this.offer
+      if (!this.payload) return
+      this.productId = this.payload.product_id
+      this.name = this.payload.name
+      this.price = this.payload.price
+      this.currency = this.payload.currency
+      this.unit = this.payload.unit
+      this.vat = this.payload.vat
+      this.dimension = this.payload.dimension
+      this.localOffer = this.payload
     },
     clearOffer() {
       this.productId = null

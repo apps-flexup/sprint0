@@ -23,8 +23,8 @@
           composant(
             data-testid="stepComponent"
             :is="step.component"
-            :product="payload"
-            :offer="payload"
+            :payload="payload"
+            @payload:changed="payloadChanged"
           )
     div.btn.mt-10
       fv-secondary-button(
@@ -80,13 +80,16 @@ export default {
   methods: {
     submit() {
       this.$nuxt.$loading.start()
-      this.$emit(this.form + ':add', this.payload)
+      this.$emit('payload:add', this.payload)
       this.$router.push('/' + this.url)
       this.$nuxt.$loading.finish()
     },
     cancel() {
       this.$router.push('/' + this.url)
       this.$emit('clicked')
+    },
+    payloadChanged(payload) {
+      this.payload = payload
     }
   }
 }

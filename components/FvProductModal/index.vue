@@ -17,7 +17,7 @@
     )
       fv-product-step-detail(
         :product="product"
-        @product:changed="productChanged"
+        @payload:changed="productChanged"
       )
     template(
       slot='actions'

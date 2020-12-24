@@ -2,8 +2,7 @@
   .page-offer-new
     fv-form(
       :payload="offer"
-      @offer:changed="offerChanged"
-      @offers:add="createOffer"
+      @payload:add="createOffer"
       url='offers'
       form='offers'
       action='new'
@@ -24,9 +23,6 @@ export default {
     console.log('Composant ', this.$options.name)
   },
   methods: {
-    offerChanged(offer) {
-      this.offer = offer
-    },
     createOffer(offer) {
       const payload = offer
       this.$activeAccount.addOffer(payload)

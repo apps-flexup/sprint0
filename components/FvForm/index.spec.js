@@ -13,7 +13,7 @@ Vue.use(Vuex)
 
 describe('FvForm', () => {
   let store
-  const productStep = [
+  const formStep = [
     {
       component: 'fv-product-step-detail',
       title: 'forms.product.step.0'
@@ -39,7 +39,7 @@ describe('FvForm', () => {
         ...propsData
       },
       computed: {
-        getFormStep: () => productStep
+        getFormStep: () => formStep
       },
       mocks: {
         $nuxt: {
@@ -116,7 +116,7 @@ describe('FvForm', () => {
     })
 
     const stepForm = wrapper.find('[data-testid="stepComponent"]')
-    expect(stepForm.props().product).toStrictEqual({
+    expect(stepForm.props().payload).toStrictEqual({
       category_id: 13,
       name: 'Peinture métalisé',
       unit: 'cl',

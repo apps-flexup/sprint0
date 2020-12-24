@@ -4,7 +4,7 @@
     v-col(cols='12')
       fv-category-autocomplete(
         data-testid='categoryAutocomplete'
-        :category_id="categoryId"
+        :category_id="category_id"
         @category:selected="categorySelected"
       )
   v-row
@@ -29,7 +29,7 @@
 export default {
   name: 'FvProductStepDetail',
   props: {
-    product: {
+    payload: {
       type: Object,
       default() {
         return {}
@@ -39,7 +39,7 @@ export default {
   data() {
     return {
       localProduct: {},
-      categoryId: this.product.category_id || null,
+      category_id: this.payload.category_id || null,
       name: null,
       unit: null,
       dimension: null
@@ -47,7 +47,7 @@ export default {
   },
   watch: {
     product() {
-      if (Object.entries(this.product).length === 0) {
+      if (Object.entries(this.payload).length === 0) {
         this.clearProduct()
       } else {
         this.fillFieldsWithProduct()
@@ -60,12 +60,13 @@ export default {
   },
   methods: {
     categorySelected(v) {
+      console.log('le catgeory Id', v)
       this.category_id = v
       const payload = {
-        categoryId: this.category_id
+        category_id: this.category_id
       }
       const res = Object.assign(this.localProduct, payload)
-      this.$emit('product:changed', res)
+      this.$emit('payload:changed', res)
     },
     nameChanged(name) {
       console.log('Name changed: ', name)
@@ -73,7 +74,7 @@ export default {
         name
       }
       const res = Object.assign(this.localProduct, payload)
-      this.$emit('product:changed', res)
+      this.$emit('payload:changed', res)
     },
     unitSelected(v) {
       const unit = this.$store.getters['units/find'](v)
@@ -84,18 +85,18 @@ export default {
         unit: this.unit
       }
       const res = Object.assign(this.localProduct, payload)
-      this.$emit('product:changed', res)
+      this.$emit('payload:changed', res)
     },
     fillFieldsWithProduct() {
-      if (!this.product) return
-      this.categoryId = this.product.category_id
-      this.name = this.product.name
-      this.unit = this.product.unit
-      this.dimension = this.product.dimension
-      this.localProduct = this.product
+      if (!this.payload) return
+      this.category_id = this.payload.category_id
+      this.name = this.payload.name
+      this.unit = this.payload.unit
+      this.dimension = this.payload.dimension
+      this.localProduct = this.payload
     },
     clearProduct() {
-      this.categoryId = null
+      this.category_id = null
       this.name = null
       this.unit = null
       this.dimension = null

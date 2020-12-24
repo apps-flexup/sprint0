@@ -2,8 +2,7 @@
   .page-product-new
     fv-form(
       :payload='product'
-      @product:changed="productChanged"
-      @products:add="createProduct"
+      @payload:add="createProduct"
       url='products'
       form='products'
       action='new'
@@ -24,11 +23,9 @@ export default {
     console.log('Composant ', this.$options.name)
   },
   methods: {
-    productChanged(product) {
-      this.product = product
-    },
-    createProduct(product) {
-      const payload = product
+    createProduct() {
+      const payload = this.product
+      console.log('le produit envoyer', payload)
       this.$activeAccount.addProduct(payload)
     }
   }
