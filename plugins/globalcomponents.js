@@ -36,6 +36,7 @@ import FvContractSummaryStepDetail from '@/components/FvContractSummaryStepDetai
 import FvContractSummaryStepOffer from '@/components/FvContractSummaryStepOffer'
 import FvContractSummaryStepPaiement from '@/components/FvContractSummaryStepPaiement'
 import FvContractSummaryStepStructure from '@/components/FvContractSummaryStepStructure'
+import FvDataTable from '@/components/FvDataTable'
 import FvDataTableHeader from '@/components/FvDataTableHeader'
 import FvDataTableSearchBar from '@/components/FvDataTableSearchBar'
 import FvFlexItems from '@/components/FvFlexItems'
@@ -48,6 +49,7 @@ import FvMenu from '@/components/FvMenu'
 import FvModal from '@/components/FvModal'
 import FvModalActions from '@/components/FvModalActions'
 import FvModalAndButton from '@/components/FvModalAndButton'
+import FvRecursiveDataTable from '@/components/FvRecursiveDataTable'
 import FvNav from '@/components/FvNav'
 import FvNavBar from '@/components/FvNavBar'
 import FvNewPartnerForm from '@/components/FvNewPartnerForm'
@@ -70,6 +72,7 @@ import FvSlotItemCard from '@/components/FvSlotItemCard'
 import FvStepper from '@/components/FvStepper'
 import FvStepForm from '@/components/FvStepForm'
 import FvSubMenu from '@/components/FvSubMenu'
+import FvTh from '@/components/FvTh'
 import FvThemeAutocomplete from '@/components/FvThemeAutocomplete'
 import FvVatField from '@/components/FvVatField'
 import FvDeleteAction from '@/components/FvDeleteAction'
@@ -171,6 +174,7 @@ Vue.component(
   'fv-contract-summary-step-paiement',
   FvContractSummaryStepPaiement
 )
+Vue.component('fv-data-table', FvDataTable)
 Vue.component('fv-data-table-header', FvDataTableHeader)
 Vue.component('fv-data-table-search-bar', FvDataTableSearchBar)
 Vue.component('fv-flex-items', FvFlexItems)
@@ -183,6 +187,7 @@ Vue.component('fv-menu', FvMenu)
 Vue.component('fv-modal', FvModal)
 Vue.component('fv-modal-actions', FvModalActions)
 Vue.component('fv-modal-and-button', FvModalAndButton)
+Vue.component('fv-recursive-data-table', FvRecursiveDataTable)
 Vue.component('fv-nav', FvNav)
 Vue.component('fv-nav-bar', FvNavBar)
 Vue.component('fv-new-partner-form', FvNewPartnerForm)
@@ -206,6 +211,7 @@ Vue.component('fv-slot-item-card', FvSlotItemCard)
 Vue.component('fv-stepper', FvStepper)
 Vue.component('fv-step-form', FvStepForm)
 Vue.component('fv-sub-menu', FvSubMenu)
+Vue.component('fv-th', FvTh)
 Vue.component('fv-theme-autocomplete', FvThemeAutocomplete)
 Vue.component('fv-vat-field', FvVatField)
 Vue.component('fv-delete-action', FvDeleteAction)

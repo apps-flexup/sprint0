@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import { convert } from '~/plugins/currencies'
+import { instantTranslate } from '~/plugins/utils'
 
 Vue.directive('partner', (el, binding, vnode) => {
   const res = parseInt(binding.value)
@@ -75,18 +76,6 @@ Vue.directive('to-preferred-currency', async (el, binding, vnode) => {
   el.innerHTML = `${valueToDisplay}`
 })
 
-// Pour la traduction des i18n
-const instantTranslate = (tableau, language, fallback) => {
-  if (!tableau) return 'check instantTranslate (undefined string)'
-  if (typeof tableau === 'string') return tableau
-  const langues = Object.keys(tableau)
-  if (Object.prototype.hasOwnProperty.call(tableau, language)) {
-    return tableau[language]
-  } else if (Object.prototype.hasOwnProperty.call(tableau, fallback)) {
-    return tableau[fallback]
-  }
-  return tableau[langues[0]]
-}
 Vue.directive('to-locale', (el, binding, vnode) => {
   const locale = vnode.context.$i18n.locale
   const fallbackLocale = vnode.context.$i18n.fallbackLocale

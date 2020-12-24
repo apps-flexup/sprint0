@@ -6,7 +6,6 @@ export default ($axios, store) => (resource) => ({
   async indexWithAccountId() {
     const accountId = store.getters['accounts/selected']
     const res = await $axios.$get(`/${resource}?account_id=${accountId}`)
-    console.log(`${resource} (${accountId})`, res)
     return res
   },
   async show(id) {

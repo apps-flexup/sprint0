@@ -2,7 +2,9 @@
 export default {
   get({ commit }) {
     // charger les contrat-types
-    this.$repos.offers.indexWithAccountId().then((data) => commit('set', data))
+    this.$repos.offers.indexWithAccountId().then((data) => {
+      commit('set', data)
+    })
   },
   getAll({ commit }) {
     // charger les contrat-types

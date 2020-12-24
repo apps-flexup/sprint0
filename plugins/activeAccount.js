@@ -1,3 +1,6 @@
+import { instantTranslate } from './utils'
+import { convert } from './currencies'
+
 const activeAccount = (ctx) => ({
   clear() {
     ctx.store.dispatch('accounts/clear', {}, { root: true })
@@ -61,8 +64,40 @@ const activeAccount = (ctx) => ({
     const res = ctx.store.getters['orders/all']
     return res
   },
-  offers() {
-    const res = ctx.store.getters['offers/all']
+  async offers() {
+    const offers = ctx.store.getters['offers/all']
+    const locale = ctx.store.getters['settings/locale']
+    const fallback = ctx.store.getters['settings/fallbackLocale']
+    const preferredCurrency = this.settings().currency
+    const res = await Promise.all(
+      offers.map(async (offer) => {
+        let payload = {
+          ...offer
+        }
+        const product = ctx.store.getters['products/findById'](offer.product_id)
+        if (product) {
+          const category = product.category
+          payload = {
+            ...payload,
+            category: instantTranslate(category.name, locale, fallback)
+          }
+        }
+        let convertedAmount = offer.price
+        if (offer.currency !== preferredCurrency) {
+          convertedAmount = await convert(
+            offer.currency,
+            preferredCurrency,
+            offer.price
+          )
+        }
+        payload = {
+          ...payload,
+          price: convertedAmount,
+          currency: preferredCurrency
+        }
+        return payload
+      })
+    )
     return res
   },
   partners() {
@@ -108,17 +143,38 @@ const activeAccount = (ctx) => ({
     return res
   },
   products() {
-    const res = ctx.store.getters['products/all']
+    const products = ctx.store.getters['products/all']
+    const locale = ctx.store.getters['settings/locale']
+    const fallback = ctx.store.getters['settings/fallbackLocale']
+    const res = products.map((product) => {
+      const category = ctx.store.getters['categories/find'](product.category_id)
+      const payload = {
+        ...product,
+        category: instantTranslate(category.name, locale, fallback)
+      }
+      return payload
+    })
     return res
   },
   headersProducts() {
     const res = ctx.store.getters['headers/products']
-    res.push({ text: 'headers.actions', value: 'actions', sortable: false })
+    if (res.length && res[res.length - 1].value !== 'actions')
+      res.push({ text: 'headers.actions', value: 'actions', sortable: false })
     return res
   },
   headersOffers() {
     const res = ctx.store.getters['headers/offers']
-    res.push({ text: 'headers.actions', value: 'actions', sortable: false })
+    if (res.sub) {
+      if (
+        res.sub.offers.length &&
+        res.sub.offers[res.sub.offers.length - 1].value !== 'actions'
+      )
+        res.sub.offers.push({
+          text: 'headers.actions',
+          value: 'actions',
+          sortable: false
+        })
+    }
     return res
   },
   headersOrders() {
