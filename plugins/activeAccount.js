@@ -179,7 +179,8 @@ const activeAccount = (ctx) => ({
   },
   headersOrders() {
     const res = ctx.store.getters['headers/orders']
-    res.push({ text: 'headers.actions', value: 'actions', sortable: false })
+    if (res.length && res[res.length - 1].value !== 'actions')
+      res.push({ text: 'headers.actions', value: 'actions', sortable: false })
     return res
   },
   headersOrderLines(addActions = false) {
