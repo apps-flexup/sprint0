@@ -7,6 +7,13 @@
     @dataTable:sortBy="sortBy"
     @dataTable:selected="selected"
   )
+    template(v-slot:body.prepend)
+      tr(class="totalLine")
+        td {{ $t('total') }}
+        td.text-right(v-to-currency="{ amount: total, currency: preferredCurrency }")
+        td(
+          v-for="i in headers.length - 2"
+        )
     template(v-slot:item.date='{ item }')
       div {{ dateToLocaleString(item.date) }}
     template(v-slot:item.amount='{ item }')
@@ -46,6 +53,19 @@ export default {
       }
     }
   },
+  computed: {
+    total() {
+      let res = 0
+      this.items.forEach((item) => {
+        res += item.amount
+      })
+      return res
+    },
+    preferredCurrency() {
+      const res = this.$store.getters['settings/settings']
+      return res.currency
+    }
+  },
   mounted() {
     console.log('Composant ', this.$options.name)
   },
@@ -79,3 +99,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.totalLine {
+  background-color: #fff8df;
+}
+</style>
