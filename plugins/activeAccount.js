@@ -1,4 +1,4 @@
-import { instantTranslate, convertPrice } from './utils'
+import { instantTranslate, addConvertedPriceToPayload } from './utils'
 
 const activeAccount = (ctx) => ({
   clear() {
@@ -69,16 +69,12 @@ const activeAccount = (ctx) => ({
         let payload = {
           ...order
         }
-        const convertedAmount = await convertPrice(
+        payload = await addConvertedPriceToPayload(
+          payload,
           order.amount,
           order.currency,
           preferredCurrency
         )
-        payload = {
-          ...payload,
-          amount: convertedAmount,
-          currency: preferredCurrency
-        }
         return payload
       })
     )
@@ -102,16 +98,12 @@ const activeAccount = (ctx) => ({
             category: instantTranslate(category.name, locale, fallback)
           }
         }
-        const convertedAmount = await convertPrice(
+        payload = await addConvertedPriceToPayload(
+          payload,
           offer.price,
           offer.currency,
           preferredCurrency
         )
-        payload = {
-          ...payload,
-          price: convertedAmount,
-          currency: preferredCurrency
-        }
         return payload
       })
     )

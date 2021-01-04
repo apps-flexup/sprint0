@@ -7,9 +7,19 @@ String.prototype.filtreAutocomplete = function(filtre) {
   return str.includes(v)
 }
 
-export const convertPrice = async (price, currency, preferredCurrency) => {
-  if (currency === preferredCurrency) return price
-  const res = await convert(currency, preferredCurrency, price)
+export const addConvertedPriceToPayload = async (
+  payload,
+  price,
+  fromCurrency,
+  toCurrency
+) => {
+  const convertedPrice = await convert(fromCurrency, toCurrency, price)
+  const res = {
+    ...payload,
+    price: convertedPrice,
+    amount: convertedPrice, // ugly fix to deal with the fact that an order works with amount instead of the price
+    currency: toCurrency
+  }
   return res
 }
 
