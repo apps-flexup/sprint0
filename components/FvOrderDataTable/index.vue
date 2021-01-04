@@ -14,8 +14,6 @@
         td(
           v-for="i in headers.length - 2"
         )
-    template(v-slot:item.date='{ item }')
-      div {{ dateToLocaleString(item.date) }}
     template(v-slot:item.amount='{ item }')
       fv-price-to-preferred-currency.text-right(
         :price="item.amount"

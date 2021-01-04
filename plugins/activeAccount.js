@@ -1,4 +1,8 @@
-import { instantTranslate, addConvertedPriceToPayload } from './utils'
+import {
+  instantTranslate,
+  addConvertedPriceToPayload,
+  addLocaleDateToPayload
+} from './utils'
 
 const activeAccount = (ctx) => ({
   clear() {
@@ -62,7 +66,6 @@ const activeAccount = (ctx) => ({
   async orders() {
     const orders = ctx.store.getters['orders/all']
     const locale = ctx.store.getters['settings/locale']
-    const fallback = ctx.store.getters['settings/fallbackLocale']
     const preferredCurrency = this.settings().currency
     const res = await Promise.all(
       orders.map(async (order) => {
@@ -75,6 +78,7 @@ const activeAccount = (ctx) => ({
           order.currency,
           preferredCurrency
         )
+        payload = addLocaleDateToPayload(payload, order.date, locale)
         return payload
       })
     )
