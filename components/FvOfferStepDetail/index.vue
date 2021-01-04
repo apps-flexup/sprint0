@@ -107,7 +107,7 @@ export default {
     priceChanged(v) {
       this.price = v
       const payload = {
-        price: this.price
+        price: parseInt(this.price)
       }
       const res = Object.assign(this.localOffer, payload)
       this.$emit('payload:changed', res)
