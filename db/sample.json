@@ -14008,38 +14008,50 @@
       "value": "status"
     }
   ],
-  "order-headers": [
-    {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.orders.date",
-      "value": "date"
-    },
-    {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.orders.amount",
-      "value": "amount"
-    },
-    {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.orders.label",
-      "value": "label"
-    },
-    {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.orders.structure",
-      "value": "structure"
-    },
-    {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.orders.status",
-      "value": "status"
+  "order-headers": {
+    "main": [
+      {
+        "text": "mainHeaders.order",
+        "value": "orders",
+        "align": "center",
+        "sortable": false
+      }
+    ],
+    "sub": {
+      "orders": [
+        {
+          "align": "start",
+          "sortable": true,
+          "text": "headers.orders.date",
+          "value": "date"
+        },
+        {
+          "align": "start",
+          "sortable": true,
+          "text": "headers.orders.amount",
+          "value": "amount"
+        },
+        {
+          "align": "start",
+          "sortable": true,
+          "text": "headers.orders.label",
+          "value": "label"
+        },
+        {
+          "align": "start",
+          "sortable": true,
+          "text": "headers.orders.structure",
+          "value": "structure"
+        },
+        {
+          "align": "start",
+          "sortable": true,
+          "text": "headers.orders.status",
+          "value": "status"
+        }
+      ]
     }
-  ],
+  },
   "orders": [
     {
       "partner_id": 3,

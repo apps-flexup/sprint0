@@ -1,8 +1,16 @@
+import { convert } from './currencies'
+
 /* eslint no-extend-native: ["error", { "exceptions": ["String"] }] */
 String.prototype.filtreAutocomplete = function(filtre) {
   const str = (this || '').toLowerCase()
   const v = (filtre || '').toLowerCase()
   return str.includes(v)
+}
+
+export const convertPrice = async (price, currency, preferredCurrency) => {
+  if (currency === preferredCurrency) return price
+  const res = await convert(currency, preferredCurrency, price)
+  return res
 }
 
 export const instantTranslate = (array, locale, fallback) => {

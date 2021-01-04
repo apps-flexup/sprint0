@@ -1,5 +1,4 @@
-import { instantTranslate } from './utils'
-import { convert } from './currencies'
+import { instantTranslate, convertPrice } from './utils'
 
 const activeAccount = (ctx) => ({
   clear() {
@@ -60,8 +59,29 @@ const activeAccount = (ctx) => ({
     const res = ctx.store.getters['currencies/all']
     return res
   },
-  orders() {
-    const res = ctx.store.getters['orders/all']
+  async orders() {
+    const orders = ctx.store.getters['orders/all']
+    const locale = ctx.store.getters['settings/locale']
+    const fallback = ctx.store.getters['settings/fallbackLocale']
+    const preferredCurrency = this.settings().currency
+    const res = await Promise.all(
+      orders.map(async (order) => {
+        let payload = {
+          ...order
+        }
+        const convertedAmount = await convertPrice(
+          order.amount,
+          order.currency,
+          preferredCurrency
+        )
+        payload = {
+          ...payload,
+          amount: convertedAmount,
+          currency: preferredCurrency
+        }
+        return payload
+      })
+    )
     return res
   },
   async offers() {
@@ -82,14 +102,11 @@ const activeAccount = (ctx) => ({
             category: instantTranslate(category.name, locale, fallback)
           }
         }
-        let convertedAmount = offer.price
-        if (offer.currency !== preferredCurrency) {
-          convertedAmount = await convert(
-            offer.currency,
-            preferredCurrency,
-            offer.price
-          )
-        }
+        const convertedAmount = await convertPrice(
+          offer.price,
+          offer.currency,
+          preferredCurrency
+        )
         payload = {
           ...payload,
           price: convertedAmount,
@@ -179,8 +196,17 @@ const activeAccount = (ctx) => ({
   },
   headersOrders() {
     const res = ctx.store.getters['headers/orders']
-    if (res.length && res[res.length - 1].value !== 'actions')
-      res.push({ text: 'headers.actions', value: 'actions', sortable: false })
+    if (res.sub) {
+      if (
+        res.sub.orders.length &&
+        res.sub.orders[res.sub.orders.length - 1].value !== 'actions'
+      )
+        res.sub.orders.push({
+          text: 'headers.actions',
+          value: 'actions',
+          sortable: false
+        })
+    }
     return res
   },
   headersOrderLines(addActions = false) {
