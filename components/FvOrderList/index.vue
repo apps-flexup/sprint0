@@ -6,9 +6,10 @@
       :searchLabel="$t('table.orders.search')"
       @dataTableSearch:changed="searchChanged"
     )
-    fv-order-data-table(
-      :headers="headers"
-      :items="items"
+    fv-recursive-data-table(
+      :headers="mainHeaders"
+      :items="mainItems"
+      :filters="filters"
       @dataTable:selected="orderSelected"
       @dataTable:sortBy="sortBy"
     )
@@ -27,17 +28,36 @@ export default {
     }
   },
   computed: {
-    headers() {
-      const res = this.$activeAccount.headersOrders()
-      return translateHeaders(this.$i18n, res)
+    filters() {
+      const res = []
+      if (this.search) res.push(this.search)
+      return res
     },
-    items() {
-      const orders = this.$activeAccount.orders()
-      const filters = [this.search]
-      let res = this.$dataTable.filter(orders, filters)
-      if (this.sortKey) {
-        res = this.$dataTable.sortByKey(res, this.sortKey, this.shouldSortDesc)
-      }
+    mainHeaders() {
+      const headers = this.$activeAccount.headersOrders()
+      const res = translateHeaders(this.$i18n, headers.main)
+      return res
+    },
+    mainItems() {
+      const headers = this.$activeAccount.headersOrders()
+      if (!headers.sub) return []
+      const subHeaders = headers.sub
+      const subHeadersKeys = Object.keys(subHeaders)
+      subHeadersKeys.forEach((key) => {
+        subHeaders[key] = translateHeaders(this.$i18n, subHeaders[key])
+      })
+      const res = [
+        {
+          headers: subHeaders,
+          items: this.orderItems
+        }
+      ]
+      return res
+    }
+  },
+  asyncComputed: {
+    async orderItems() {
+      const res = await this.$activeAccount.orders()
       return res
     }
   },

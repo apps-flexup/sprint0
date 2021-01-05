@@ -13787,7 +13787,7 @@
         },
         "plop": 2525
       },
-      "price": "100.00",
+      "price": 100,
       "reference": "EICMNB",
       "status": "archived",
       "vat": "12.0",
@@ -13887,32 +13887,15 @@
       "elasticity": "1",
       "id": 10,
       "name": "Minute",
-      "price": "150",
+      "price": 150,
       "product_id": 5,
-      "status": "draft"
-    },
-    {
-      "account_id": 10,
-      "dimension": "dimension",
-      "id": 11,
-      "name": "test",
-      "product_id": 6,
-      "status": "draft"
-    },
-    {
-      "account_id": 10,
-      "currency": 49,
-      "dimension": "dimension",
-      "id": 12,
-      "name": "test",
-      "product_id": 7,
       "status": "draft"
     },
     {
       "currency": "AUD",
       "dimension": "weight",
       "name": "un truc du genre des pommes",
-      "price": "2.5",
+      "price": 2.5,
       "status": "inactive",
       "unit": "kg",
       "product_id": 12,
@@ -13923,7 +13906,7 @@
       "currency": "EUR",
       "dimension": "duration",
       "name": "Appt ",
-      "price": "1752",
+      "price": 1752,
       "status": "draft",
       "unit": "month",
       "product_id": 13,
@@ -13934,7 +13917,7 @@
       "currency": "EUR",
       "dimension": "weight",
       "name": "Cerises",
-      "price": "4.98",
+      "price": 4.98,
       "status": "draft",
       "unit": "kg",
       "product_id": 14,
@@ -13946,14 +13929,11 @@
       "name": "Appartement Paris 19",
       "dimension": "duration",
       "unit": "month",
-      "price": "123.00",
+      "price": 123,
       "status": "draft",
       "account_id": 1,
       "category_id": 22,
-
-      
-      
-  "currency": "EUR",
+      "currency": "EUR",
       "vat": "20.0",
       "id": 20
     },
@@ -13962,7 +13942,7 @@
       "name": "Bananes",
       "dimension": "weight",
       "unit": "kg",
-      "price": "123.00",
+      "price": 123,
       "currency": "USD",
       "status": "draft",
       "account_id": 1,
@@ -14008,38 +13988,50 @@
       "value": "status"
     }
   ],
-  "order-headers": [
-    {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.orders.date",
-      "value": "date"
-    },
-    {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.orders.amount",
-      "value": "amount"
-    },
-    {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.orders.label",
-      "value": "label"
-    },
-    {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.orders.structure",
-      "value": "structure"
-    },
-    {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.orders.status",
-      "value": "status"
+  "order-headers": {
+    "main": [
+      {
+        "text": "mainHeaders.order",
+        "value": "orders",
+        "align": "center",
+        "sortable": false
+      }
+    ],
+    "sub": {
+      "orders": [
+        {
+          "align": "start",
+          "sortable": true,
+          "text": "headers.orders.date",
+          "value": "date"
+        },
+        {
+          "align": "start",
+          "sortable": true,
+          "text": "headers.orders.amount",
+          "value": "amount"
+        },
+        {
+          "align": "start",
+          "sortable": true,
+          "text": "headers.orders.label",
+          "value": "label"
+        },
+        {
+          "align": "start",
+          "sortable": true,
+          "text": "headers.orders.structure",
+          "value": "structure"
+        },
+        {
+          "align": "start",
+          "sortable": true,
+          "text": "headers.orders.status",
+          "value": "status"
+        }
+      ]
     }
-  ],
+  },
   "orders": [
     {
       "partner_id": 3,

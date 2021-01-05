@@ -2,7 +2,8 @@
   "total": "Total",
   "mainHeaders": {
     "product": "Product",
-    "offer": "Offer"
+    "offer": "Offer",
+    "order": "Order"
   },
   "languages": {
     "language": "Language",

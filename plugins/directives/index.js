@@ -49,9 +49,12 @@ Vue.directive('to-currency', (el, binding, vnode) => {
     style: 'currency',
     currency: valeur.currency
   }
-  const valueToDisplay = new Intl.NumberFormat(locale, options).format(
-    valeur.amount
-  )
+  let valueToDisplay = valeur.amount
+  if (valeur.currency) {
+    valueToDisplay = new Intl.NumberFormat(locale, options).format(
+      valeur.amount
+    )
+  }
   const res = `${valueToDisplay}`
   el.innerHTML = res
 })

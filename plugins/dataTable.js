@@ -26,9 +26,12 @@ const dataTable = (ctx) => ({
     const res = array.filter((item) => {
       return filters.every((filter) => {
         return itemKeys.some((itemKey) => {
-          if (typeof item[itemKey] === 'string') {
+          if (
+            typeof item[itemKey] === 'string' ||
+            typeof item[itemKey] === 'number'
+          ) {
             return String.prototype.filtreAutocomplete.call(
-              item[itemKey],
+              item[itemKey].toString(),
               filter
             )
           }
