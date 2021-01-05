@@ -1,7 +1,8 @@
 import {
   instantTranslate,
   addConvertedPriceToPayload,
-  addLocaleDateToPayload
+  addLocaleDateToPayload,
+  addStructureNameToPayload
 } from './utils'
 
 const activeAccount = (ctx) => ({
@@ -79,6 +80,7 @@ const activeAccount = (ctx) => ({
           preferredCurrency
         )
         payload = addLocaleDateToPayload(payload, order.date, locale)
+        payload = addStructureNameToPayload(payload, ctx.store, order.structure)
         return payload
       })
     )

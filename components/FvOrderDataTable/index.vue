@@ -19,8 +19,6 @@
         :price="item.amount"
         :currency="item.currency"
       )
-    template(v-slot:item.structure='{ item }')
-      div {{ getStructureName(item.structure) }}
     template(v-slot:item.status ='{ item }')
       fv-status-progress(:status="item.status")
     template(v-slot:item.actions="{ item }")
@@ -82,16 +80,6 @@ export default {
       const locale = settings.language
       const dte = new Date(date)
       const res = dte.toLocaleDateString(locale)
-      return res
-    },
-    getStructureName(structureId) {
-      if (!structureId) {
-        return null
-      }
-      const structure = this.$store.getters['contracts/getStructureById'](
-        structureId
-      )
-      const res = structure.name
       return res
     }
   }

@@ -23,6 +23,17 @@ export const addConvertedPriceToPayload = async (
   return res
 }
 
+export const addStructureNameToPayload = (payload, store, structureId) => {
+  if (!structureId) return payload
+  const structure = store.getters['contracts/getStructureById'](structureId)
+  if (!structure) return payload
+  const res = {
+    ...payload,
+    structure: structure.name
+  }
+  return res
+}
+
 export const addLocaleDateToPayload = (payload, date, locale) => {
   if (!date) return payload
   const dte = new Date(date)
