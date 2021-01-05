@@ -1,12 +1,12 @@
 <template lang="pug">
-.fv-partner-list
+.fv-third-party-account-list
   v-card
     fv-data-table-header(
-      :title="$t('table.partners.title')"
-      :searchLabel="$t('table.partners.search')"
+      :title="$t('table.thirdPartyAccounts.title')"
+      :searchLabel="$t('table.thirdPartyAccounts.search')"
       @dataTableSearch:changed="searchChanged"
     )
-    fv-partner-data-table(
+    fv-third-party-account-data-table(
       :search="search"
       @dataTable:selected="partnerSelected"
     )
@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  name: 'FvPartnerList',
+  name: 'FvThirdPartyAccountList',
   data() {
     return {
       search: ''

@@ -37,7 +37,7 @@
       "offers-new": "New offer",
       "offers-id": "Edit my offer",
       "contacts": "Contacts",
-      "partners": "Partners",
+      "thirdPartyAccounts": "Third party accounts",
       "settings": "Settings",
       "settings-new": "New settings"
     }
@@ -89,8 +89,8 @@
       "title": "My products",
       "search": "Search"
     },
-    "partners": {
-      "title": "My partners",
+    "thirdPartyAccounts": {
+      "title": "My third party accounts",
       "search": "Search"
     }
   },
@@ -231,7 +231,7 @@
     "contracts": "Contracts",
     "products": "Products",
     "contacts": "Contacts",
-    "partners": "Partners",
+    "thirdPartyAccounts": "Third party accounts",
     "documents": "Documents",
     "dashboard": "Dashboard",
     "settings": "Settings"
@@ -278,7 +278,7 @@
       "account": "CREATE ACCOUNT",
       "product": "CREATE PRODUCT",
       "contract": "CREATE CONTRACT",
-      "partner": "CREATE PARTNER",
+      "thirdPartyAccount": "CREATE THIRD PARTY ACCOUNT",
       "offer": "CREATE OFFER",
       "order": "CREATE ORDER"
     },

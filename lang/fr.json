@@ -37,7 +37,7 @@
       "offers-new": "Nouvelle offre",
       "offers-id": "Modifier mon offre",
       "contacts": "Contacts",
-      "partners": "Partnenaires",
+      "thirdPartyAccounts": "Comptes tiers",
       "settings": "Préférences",
       "settings-new": "Créer préférences"
     }
@@ -92,8 +92,8 @@
       "title": "Mes Produits",
       "search": "Rechercher"
     },
-    "partners": {
-      "title": "Mes Partenaires",
+    "thirdPartyAccounts": {
+      "title": "Mes comptes tiers",
       "search": "Rechercher"
     }
   },
@@ -233,7 +233,7 @@
     "contracts": "Contrats",
     "products": "Produits",
     "contacts": "Contacts",
-    "partners": "Partenaires",
+    "thirdPartyAccounts": "Comptes tiers",
     "documents": "Documents",
     "dashboard": "Tableau de bord",
     "settings": "Paramètres"
@@ -280,7 +280,7 @@
       "account": "CRÉER COMPTE",
       "product": "CRÉER PRODUIT",
       "contract": "CRÉER CONTRAT",
-      "partner": "CRÉER PARTENAIRE",
+      "thirdPartyAccount": "CRÉER COMPTE TIERS",
       "offer": "CRÉER OFFRE",
       "order": "CRÉER COMMANDE"
 

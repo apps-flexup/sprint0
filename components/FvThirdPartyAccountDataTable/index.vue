@@ -1,5 +1,5 @@
 <template lang="pug">
-.fv-partner-data-table
+.fv-third-party-account-data-table
   v-data-table.elevation-2(
     :headers='headers'
     :items='items'
@@ -24,7 +24,7 @@
 import { filterPartnersDataTable, translateHeaders } from '~/plugins/utils'
 
 export default {
-  name: 'FvPartnerDataTable',
+  name: 'FvThirdPartyAccountDataTable',
   props: {
     search: {
       type: String,

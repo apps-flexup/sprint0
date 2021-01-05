@@ -95,10 +95,10 @@ import FvOrderIndex from '@/components/FvOrderIndex'
 import FvOrderListSearch from '@/components/FvOrderListSearch'
 import FvOrderList from '@/components/FvOrderList'
 import FvOrderModal from '@/components/FvOrderModal'
-import FvPartnerDataTable from '@/components/FvPartnerDataTable'
-import FvPartnerList from '@/components/FvPartnerList'
+import FvThirdPartyAccountDataTable from '@/components/FvThirdPartyAccountDataTable'
+import FvThirdPartyAccountList from '@/components/FvThirdPartyAccountList'
 import FvModalSlot from '@/components/FvModalSlot'
-import FvPartnerIndex from '@/components/FvPartnerIndex'
+import FvThirdPartyAccountIndex from '@/components/FvThirdPartyAccountIndex'
 import FvPartnerModal from '@/components/FvPartnerModal'
 import FvProductIndex from '~/components/FvProductIndex'
 import FvProductModal from '@/components/FvProductModal'
@@ -238,10 +238,10 @@ Vue.component('fv-order-list-search', FvOrderListSearch)
 Vue.component('fv-order-list', FvOrderList)
 Vue.component('fv-order-modal', FvOrderModal)
 Vue.component('fv-country-list', FvCountryList)
-Vue.component('fv-partner-data-table', FvPartnerDataTable)
-Vue.component('fv-partner-list', FvPartnerList)
+Vue.component('fv-third-party-account-data-table', FvThirdPartyAccountDataTable)
+Vue.component('fv-third-party-account-list', FvThirdPartyAccountList)
 Vue.component('fv-modal-slot', FvModalSlot)
-Vue.component('fv-partner-index', FvPartnerIndex)
+Vue.component('fv-third-party-account-index', FvThirdPartyAccountIndex)
 Vue.component('fv-partner-modal', FvPartnerModal)
 Vue.component('fv-product-modal', FvProductModal)
 Vue.component('fv-speed-dial', FvSpeedDial)

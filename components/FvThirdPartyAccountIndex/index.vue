@@ -1,10 +1,10 @@
 <template lang="pug">
-.fv-partner-index
+.fv-third-party-account-index
   v-row
     v-col(cols="12")
       fv-primary-button.text-right(
         @button:click='showModal = true'
-      ) {{ $t('buttons.create.partner') }}
+      ) {{ $t('buttons.create.thirdPartyAccount') }}
     fv-partner-modal(
       :show="showModal"
       :partner='partner'
@@ -12,7 +12,7 @@
       @modal:save="save"
       @partner:changed="partnerChanged"
     )
-  fv-partner-list(@list:selected="selectedPartner")
+  fv-third-party-account-list(@list:selected="selectedPartner")
 </template>
 
 <script>
