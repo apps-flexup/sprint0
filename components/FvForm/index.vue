@@ -80,7 +80,7 @@ export default {
   methods: {
     submit() {
       this.$nuxt.$loading.start()
-      this.$emit('payload:add', this.payload)
+      this.$emit('form:submit', this.payload)
       this.$router.push('/' + this.url)
       this.$nuxt.$loading.finish()
     },

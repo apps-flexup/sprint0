@@ -98,7 +98,7 @@ describe('FvForm', () => {
     const wrapper = factory({ form: 'offers' })
     const submitBtn = wrapper.find('[data-testid="submitBtn"]')
     submitBtn.vm.$emit('button:click')
-    const submittedCalls = wrapper.emitted('payload:add')
+    const submittedCalls = wrapper.emitted('form:submit')
     expect(submittedCalls).toBeTruthy()
     expect(submittedCalls).toHaveLength(1)
   })

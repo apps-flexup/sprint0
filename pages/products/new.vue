@@ -2,7 +2,7 @@
   .page-product-new
     fv-form(
       :payload='product'
-      @payload:add="createProduct"
+      @form:submit="createProduct"
       url='products'
       form='products'
       action='new'

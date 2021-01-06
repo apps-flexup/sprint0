@@ -2,7 +2,7 @@
   .page-offer-new
     fv-form(
       :payload="offer"
-      @payload:add="createOffer"
+      @form:submit="createOffer"
       url='offers'
       form='offers'
       action='new'

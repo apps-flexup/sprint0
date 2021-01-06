@@ -1,7 +1,7 @@
 <template lang="pug">
   fv-form(
     :payload="getProduct"
-    @payload:add="editProduct"
+    @form:submit="editProduct"
     action='edit'
     url='products'
     form='products'

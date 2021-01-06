@@ -3,15 +3,8 @@
   v-row
     v-col(cols="12")
       fv-primary-button.text-right(
-        @button:click='showModal = true'
+        @button:click='createThirdPartyAccount'
       ) {{ $t('buttons.create.thirdPartyAccount') }}
-    fv-partner-modal(
-      :show="showModal"
-      :partner='thirdPartyAccount'
-      @modal:close="close"
-      @modal:save="save"
-      @partner:changed="thirdPartyAccountChanged"
-    )
   fv-third-party-account-list(@list:selected="selectedThirdPartyAccount")
 </template>
 
@@ -19,29 +12,28 @@
 export default {
   data() {
     return {
-      thirdPartyAccount: {},
-      showModal: false
+      thirdPartyAccount: {}
     }
   },
   mounted() {
     console.log('Composant ', this.$options.name)
   },
   methods: {
-    close() {
-      this.thirdPartyAccount = {}
-      this.showModal = false
+    // close() {
+    //   this.thirdPartyAccount = {}
+    //   this.showModal = false
+    // },
+    // save(e) {
+    //   this.showModal = false
+    //   this.$store.dispatch('thirdPartyAccounts/add', e)
+    //   this.thirdPartyAccount = {}
+    // },
+    selectedThirdPartyAccount(thirdParty) {
+      thirdParty = JSON.parse(JSON.stringify(thirdParty))
+      this.$router.push('/thirdPartyAccounts/' + thirdParty.id)
     },
-    save(e) {
-      this.showModal = false
-      this.$store.dispatch('thirdPartyAccounts/add', e)
-      this.thirdPartyAccount = {}
-    },
-    selectedThirdPartyAccount(e) {
-      this.thirdPartyAccount = JSON.parse(JSON.stringify(e))
-      this.showModal = true
-    },
-    thirdPartyAccountChanged(thirdPartyAccount) {
-      this.thirdPartyAccount = thirdPartyAccount
+    createThirdPartyAccount() {
+      this.$router.push('thirdPartyAccounts/new')
     }
   }
 }

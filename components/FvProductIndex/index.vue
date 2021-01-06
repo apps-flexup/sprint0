@@ -11,12 +11,6 @@
 <script>
 export default {
   name: 'FvProductIndex',
-  data() {
-    return {
-      product: {},
-      showModal: false
-    }
-  },
   methods: {
     selectedProduct(product) {
       product = JSON.parse(JSON.stringify(product))
@@ -24,9 +18,6 @@ export default {
     },
     createProduct() {
       this.$router.push('/products/new')
-    },
-    productChanged(product) {
-      this.product = product
     }
   }
 }
