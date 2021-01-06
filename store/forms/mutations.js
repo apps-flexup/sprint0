@@ -13,5 +13,8 @@ export default {
   },
   setOfferSteps(state, items) {
     state.offers = items
+  },
+  setThirdPartyAccountSteps(state, items) {
+    state.thirdPartyAccounts = items
   }
 }

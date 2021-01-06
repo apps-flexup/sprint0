@@ -45,15 +45,6 @@ export default {
       dimension: null
     }
   },
-  watch: {
-    product() {
-      if (Object.entries(this.payload).length === 0) {
-        this.clearProduct()
-      } else {
-        this.fillFieldsWithProduct()
-      }
-    }
-  },
   mounted() {
     console.log('Composant ', this.$options.name)
     this.fillFieldsWithProduct()

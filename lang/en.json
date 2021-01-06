@@ -38,6 +38,7 @@
       "offers-id": "Edit my offer",
       "contacts": "Contacts",
       "thirdPartyAccounts": "Third party accounts",
+      "thirdPartyAccounts-id": "Edit my third party account",
       "settings": "Settings",
       "settings-new": "New settings"
     }
@@ -158,11 +159,16 @@
         "title": "Edit my product"
       }
     },
-    "partners": {
+    "third-party-account": {
+      "step": {
+        "0": "General information"
+      }
+    },
+    "thirdPartyAccounts": {
       "new": {
-        "title": "New partner",
-        "subtitle": "Specify your partner's information",
-        "name": "Partner name",
+        "title": "New third party account",
+        "subtitle": "Specify your third party account's information",
+        "name": "Third party account's name",
         "legalStructure": "Legal structure",
         "siret": "SIRET",
         "address":"Address",
@@ -170,6 +176,9 @@
         "zip": "ZIP",
         "city": "City",
         "country": "Country"
+      },
+      "edit": {
+        "title":"Edit my third party account"
       }
     },
     "accounts": {

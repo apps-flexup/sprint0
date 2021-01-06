@@ -26,9 +26,6 @@ export default {
       shouldSortDesc: false
     }
   },
-  mounted() {
-    console.log('Composant ', this.$options.name)
-  },
   computed: {
     headers() {
       const res = this.$activeAccount.headersThirdPartyAccounts()
@@ -43,6 +40,9 @@ export default {
       }
       return res
     }
+  },
+  mounted() {
+    console.log('Composant ', this.$options.name)
   },
   methods: {
     searchChanged(v) {

@@ -29,6 +29,7 @@ export default (ctx, inject) => {
     orderHeaders: repo('order-headers'),
     orderLineHeaders: repo('order-line-headers'),
     orders: repo('orders'),
+    thirdPartyAccountSteps: repo('third-party-account-steps'),
     thirdPartyAccountHeaders: repo('third-party-account-headers'),
     thirdPartyAccounts: repo('third-party-accounts'),
     productHeaders: repo('product-headers'),

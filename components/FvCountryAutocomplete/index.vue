@@ -7,7 +7,7 @@
     @autocomplete:selected="selected"
   )
     template(v-slot:label)
-      p {{ $t('forms.partners.new.country') }}
+      p {{ label }}
     template(v-slot:item="data")
       v-list-item-content
         v-list-item-title {{ data.item.name }}
@@ -26,6 +26,12 @@ export default {
       type: Number,
       default() {
         return 77
+      }
+    },
+    label: {
+      type: String,
+      default() {
+        return null
       }
     }
   },

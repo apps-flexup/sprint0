@@ -1426,6 +1426,12 @@
       "title": "forms.offer.step.0"
     }
   ],
+  "third-party-account-steps": [
+    {
+      "component": "fv-third-party-account-step-detail",
+      "title": "forms.third-party-account.step.0"
+    }
+  ],
   "contract-types": [
     {
       "account_id": null,

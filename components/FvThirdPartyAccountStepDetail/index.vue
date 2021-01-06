@@ -1,17 +1,17 @@
 <template lang="pug">
-.fv-new-partner-form
+.fv-third-party-account-step-detail
   v-row
     v-col.md-12.sm-12.lg-12.xl-12(cols='12')
       fv-text-field(
         :value="name"
-        :label="$t('forms.partners.new.name')"
+        :label="$t('forms.thirdPartyAccounts.new.name')"
         @input="nameChanged"
       )
   v-row
     v-col.md-12.sm-12.lg-12.xl-12(cols='12')
       v-textarea(
         v-model="address"
-        :label="$t('forms.partners.new.address')"
+        :label="$t('forms.thirdPartyAccounts.new.address')"
         rows='3'
         outlined=''
         @input="addressChanged"
@@ -20,34 +20,34 @@
     v-col.md-4.sm-4.lg-4.xl-4(cols='4')
       fv-text-field(
         :value="zip"
-        :label="$t('forms.partners.new.zip')"
+        :label="$t('forms.thirdPartyAccounts.new.zip')"
         @input="zipChanged"
     )
     v-col.md-8.sm-8.lg-8.xl-8(cols='8')
       fv-text-field(
         :value="city"
-        :label="$t('forms.partners.new.city')"
+        :label="$t('forms.thirdPartyAccounts.new.city')"
         @input="cityChanged"
       )
   v-row
     v-col.md-10.sm-10.lg-10.xl-10(cols='10')
       fv-country-autocomplete(
         :countryId="countryId"
-        :label="$t('forms.partners.new.country')"
+        :label="$t('forms.thirdPartyAccounts.new.country')"
         @country:selected="countrySelected"
       )
   v-row
     v-col.md-12.sm-12.lg-12.xl-12(cols='12')
       fv-legal-structure-autocomplete(
         :legalStructureId="legalStructureId"
-        :label="$t('forms.partners.new.legalStructure')"
+        :label="$t('forms.thirdPartyAccounts.new.legalStructure')"
         @legalstructure:selected="legalStructureSelected"
       )
   v-row
     v-col.md-12.sm-12.lg-12.xl-12(cols='12')
       fv-text-field(
         :value="siret"
-        :label="$t('forms.partners.new.siret')"
+        :label="$t('forms.thirdPartyAccounts.new.siret')"
         @input="siretChanged"
     )
 </template>
@@ -56,7 +56,7 @@
 export default {
   name: 'FvNewProductForm',
   props: {
-    partner: {
+    payload: {
       type: Object,
       default() {
         return {}
@@ -65,7 +65,7 @@ export default {
   },
   data() {
     return {
-      localPartner: {},
+      localThirdParty: {},
       name: null,
       address: null,
       zip: null,
@@ -73,15 +73,6 @@ export default {
       countryId: null,
       legalStructureId: null,
       siret: null
-    }
-  },
-  watch: {
-    partner() {
-      if (Object.entries(this.partner).length === 0) {
-        this.clearPartner()
-      } else {
-        this.fillFieldsWithPartner()
-      }
     }
   },
   mounted() {
@@ -94,7 +85,7 @@ export default {
       const payload = {
         name
       }
-      const res = Object.assign(this.localPartner, payload)
+      const res = Object.assign(this.localThirdParty, payload)
       this.$emit('partner:changed', res)
     },
     addressChanged(address) {
@@ -102,7 +93,7 @@ export default {
       const payload = {
         address
       }
-      const res = Object.assign(this.localPartner, payload)
+      const res = Object.assign(this.localThirdParty, payload)
       this.$emit('partner:changed', res)
     },
     zipChanged(zip) {
@@ -110,7 +101,7 @@ export default {
       const payload = {
         zip
       }
-      const res = Object.assign(this.localPartner, payload)
+      const res = Object.assign(this.localThirdParty, payload)
       this.$emit('partner:changed', res)
     },
     cityChanged(city) {
@@ -118,7 +109,7 @@ export default {
       const payload = {
         city
       }
-      const res = Object.assign(this.localPartner, payload)
+      const res = Object.assign(this.localThirdParty, payload)
       this.$emit('partner:changed', res)
     },
     countrySelected(v) {
@@ -126,7 +117,7 @@ export default {
       const payload = {
         country_id: this.countryId
       }
-      const res = Object.assign(this.localPartner, payload)
+      const res = Object.assign(this.localThirdParty, payload)
       this.$emit('partner:changed', res)
     },
     legalStructureSelected(v) {
@@ -134,7 +125,7 @@ export default {
       const payload = {
         legal_structure_id: this.legalStructureId
       }
-      const res = Object.assign(this.localPartner, payload)
+      const res = Object.assign(this.localThirdParty, payload)
       this.$emit('partner:changed', res)
     },
     siretChanged(siret) {
@@ -142,20 +133,20 @@ export default {
       const payload = {
         siret
       }
-      const res = Object.assign(this.localPartner, payload)
+      const res = Object.assign(this.localThirdParty, payload)
       this.$emit('partner:changed', res)
     },
     fillFieldsWithPartner() {
-      console.log('Partner: ', this.partner)
-      if (!this.partner) return
-      this.name = this.partner.name
-      this.address = this.partner.address
-      this.zip = this.partner.zip
-      this.city = this.partner.city
-      this.countryId = this.partner.country_id || null
-      this.legalStructureId = this.partner.legal_structure_id || null
-      this.siret = this.partner.siret
-      this.localPartner = this.partner
+      console.log('Partner: ', this.payload)
+      if (!this.payload) return
+      this.name = this.payload.name
+      this.address = this.payload.address
+      this.zip = this.payload.zip
+      this.city = this.payload.city
+      this.countryId = this.payload.country_id || null
+      this.legalStructureId = this.payload.legal_structure_id || null
+      this.siret = this.payload.siret
+      this.localThirdParty = this.payload
     },
     clearPartner() {
       this.name = null
@@ -165,8 +156,14 @@ export default {
       this.countryId = null
       this.legalStructureId = null
       this.siret = null
-      this.localPartner = {}
+      this.localThirdParty = {}
     }
   }
 }
 </script>
+
+<style scoped>
+::v-deep .v-input.theme--light .v-input__slot {
+  background: #ffffff;
+}
+</style>

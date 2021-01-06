@@ -76,6 +76,7 @@ export default {
     console.log('Composant ', this.$options.name)
     this.$store.dispatch('forms/getProduct')
     this.$store.dispatch('forms/getOffer')
+    this.$store.dispatch('forms/getThirdPartyAccount')
   },
   methods: {
     submit() {

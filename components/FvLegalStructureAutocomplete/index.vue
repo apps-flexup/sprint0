@@ -7,7 +7,7 @@
     @autocomplete:selected="selected"
   )
     template(v-slot:label)
-      p {{ $t('forms.partners.new.legalStructure') }}
+      p {{ label }}
     template(v-slot:item="data")
       v-list-item-content
         v-list-item-title {{ `${data.item.name} (${data.item.sigle})` }}
@@ -24,6 +24,12 @@ export default {
   props: {
     legalStructureId: {
       type: Number,
+      default() {
+        return null
+      }
+    },
+    label: {
+      type: String,
       default() {
         return null
       }
