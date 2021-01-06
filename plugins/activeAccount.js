@@ -115,6 +115,12 @@ const activeAccount = (ctx) => ({
     )
     return res
   },
+  headersThirdPartyAccounts() {
+    const res = ctx.store.getters['headers/thirdPartyAccounts']
+    if (res.length && res[res.length - 1].value !== 'actions')
+      res.push({ text: 'headers.actions', value: 'actions', sortable: false })
+    return res
+  },
   thirdPartyAccounts() {
     const thirdPartyIds = ctx.store.getters['thirdPartyAccounts/ids']
     const res = []

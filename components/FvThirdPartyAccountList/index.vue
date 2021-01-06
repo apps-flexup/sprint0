@@ -7,28 +7,53 @@
       @dataTableSearch:changed="searchChanged"
     )
     fv-third-party-account-data-table(
-      :search="search"
-      @dataTable:selected="thirdPartyAccountSelected"
+      :headers="headers"
+      :items="items"
+      @dataTable:selected="selectedThirdPartyAccount"
+      @dataTable:sortBy="sortBy"
     )
 </template>
 
 <script>
+import { translateHeaders } from '~/plugins/utils'
+
 export default {
   name: 'FvThirdPartyAccountList',
   data() {
     return {
-      search: ''
+      search: '',
+      sortKey: null,
+      shouldSortDesc: false
     }
   },
   mounted() {
     console.log('Composant ', this.$options.name)
   },
+  computed: {
+    headers() {
+      const res = this.$activeAccount.headersThirdPartyAccounts()
+      return translateHeaders(this.$i18n, res)
+    },
+    items() {
+      const thirdPartyAccounts = this.$activeAccount.thirdPartyAccounts()
+      const filters = [this.search]
+      let res = this.$dataTable.filter(thirdPartyAccounts, filters)
+      if (this.sortKey) {
+        res = this.$dataTable.sortByKey(res, this.sortKey, this.shouldSortDesc)
+      }
+      return res
+    }
+  },
   methods: {
     searchChanged(v) {
       this.search = v
     },
-    thirdPartyAccountSelected(thirdParty) {
+    selectedThirdPartyAccount(thirdParty) {
       this.$emit('list:selected', thirdParty)
+    },
+    sortBy(v) {
+      this.sortKey = v.key
+      this.shouldSortDesc = v.desc
     }
   }
 }

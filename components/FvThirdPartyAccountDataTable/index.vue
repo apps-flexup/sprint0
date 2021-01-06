@@ -1,12 +1,11 @@
 <template lang="pug">
 .fv-third-party-account-data-table
-  v-data-table.elevation-2(
+  fv-data-table(
     :headers='headers'
     :items='items'
-    item-key='id'
-    @click:row='selected'
-    :search="search"
-    :custom-filter="filterFunction"
+    :hide-default-footer="hideDefaultFooter"
+    @dataTable:sortBy="sortBy"
+    @dataTable:selected="selected"
   )
     template(v-slot:item.legal_structure="{item}")
       div(v-if="item && item.legalStructure") {{ item.legalStructure.name }}
@@ -21,27 +20,26 @@
 </template>
 
 <script>
-import { filterPartnersDataTable, translateHeaders } from '~/plugins/utils'
-
 export default {
   name: 'FvThirdPartyAccountDataTable',
   props: {
-    search: {
-      type: String,
+    hideDefaultFooter: {
+      type: Boolean,
       default() {
-        return ''
+        return false
       }
-    }
-  },
-  computed: {
-    headers() {
-      const res = this.$store.getters['headers/thirdPartyAccounts']
-      res.push({ text: 'headers.actions', value: 'actions', sortable: false })
-      return translateHeaders(this.$i18n, res)
     },
-    items() {
-      const res = this.$activeAccount.thirdPartyAccounts()
-      return res
+    headers: {
+      type: Array,
+      default() {
+        return []
+      }
+    },
+    items: {
+      type: Array,
+      default() {
+        return []
+      }
     }
   },
   mounted() {
@@ -60,11 +58,10 @@ export default {
       this.$emit('dataTable:selected', v)
     },
     deleteItem(v) {
-      console.log('delete :', v)
       this.$store.dispatch('thirdPartyAccounts/remove', v)
     },
-    filterFunction(item, queryText, itemText) {
-      return filterPartnersDataTable(item, queryText, itemText)
+    sortBy(v) {
+      this.$emit('dataTable:sortBy', v)
     }
   }
 }
