@@ -11,12 +11,9 @@
 
 <script>
 export default {
-  props: {
-    product: {
-      type: Object,
-      default() {
-        return {}
-      }
+  data() {
+    return {
+      product: {}
     }
   },
   mounted() {
