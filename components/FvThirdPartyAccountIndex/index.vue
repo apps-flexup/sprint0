@@ -19,15 +19,6 @@ export default {
     console.log('Composant ', this.$options.name)
   },
   methods: {
-    // close() {
-    //   this.thirdPartyAccount = {}
-    //   this.showModal = false
-    // },
-    // save(e) {
-    //   this.showModal = false
-    //   this.$store.dispatch('thirdPartyAccounts/add', e)
-    //   this.thirdPartyAccount = {}
-    // },
     selectedThirdPartyAccount(thirdParty) {
       thirdParty = JSON.parse(JSON.stringify(thirdParty))
       this.$router.push('/thirdPartyAccounts/' + thirdParty.id)

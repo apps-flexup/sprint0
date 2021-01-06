@@ -27,7 +27,7 @@ export default {
   methods: {
     editThirdPartyAccount(thirdPartyAccount) {
       const payload = thirdPartyAccount
-      console.log(payload)
+      this.$store.dispatch('thirdPartyAccounts/add', payload)
     }
   }
 }
