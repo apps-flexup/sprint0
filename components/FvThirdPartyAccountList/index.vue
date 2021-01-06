@@ -8,7 +8,7 @@
     )
     fv-third-party-account-data-table(
       :search="search"
-      @dataTable:selected="partnerSelected"
+      @dataTable:selected="thirdPartyAccountSelected"
     )
 </template>
 
@@ -27,8 +27,8 @@ export default {
     searchChanged(v) {
       this.search = v
     },
-    partnerSelected(partner) {
-      this.$emit('list:selected', partner)
+    thirdPartyAccountSelected(thirdParty) {
+      this.$emit('list:selected', thirdParty)
     }
   }
 }
