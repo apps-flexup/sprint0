@@ -9,7 +9,7 @@ import moduleForms from './storeModules/forms'
 import moduleHeaders from './storeModules/headers'
 import moduleOffers from './storeModules/offers'
 import moduleOrders from './storeModules/orders'
-import modulePartners from './storeModules/partners'
+import moduleThirdPartyAccounts from './storeModules/thirdPartyAccounts'
 import moduleProducts from './storeModules/products'
 import moduleSettings from './storeModules/settings'
 import moduleUnits from './storeModules/units'
@@ -27,7 +27,7 @@ const store = new Vuex.Store({
     headers: moduleHeaders,
     offers: moduleOffers,
     orders: moduleOrders,
-    partners: modulePartners,
+    thirdPartyAccounts: moduleThirdPartyAccounts,
     products: moduleProducts,
     settings: moduleSettings,
     units: moduleUnits

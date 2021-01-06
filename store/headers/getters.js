@@ -14,9 +14,9 @@ export default {
     const res = JSON.parse(JSON.stringify(state.products))
     return res
   },
-  partners(state) {
-    if (!state.partners) return []
-    const res = JSON.parse(JSON.stringify(state.partners))
+  thirdPartyAccounts(state) {
+    if (!state.thirdPartyAccounts) return []
+    const res = JSON.parse(JSON.stringify(state.thirdPartyAccounts))
     return res
   },
   offers(state) {

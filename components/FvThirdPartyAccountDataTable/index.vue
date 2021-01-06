@@ -35,33 +35,33 @@ export default {
   },
   computed: {
     headers() {
-      const res = this.$store.getters['headers/partners']
+      const res = this.$store.getters['headers/thirdPartyAccounts']
       res.push({ text: 'headers.actions', value: 'actions', sortable: false })
       return translateHeaders(this.$i18n, res)
     },
     items() {
-      const res = this.$activeAccount.partners()
+      const res = this.$activeAccount.thirdPartyAccounts()
       return res
     }
   },
   mounted() {
     console.log('Composant ', this.$options.name)
-    this.$store.dispatch('headers/getPartnerHeaders')
-    this.$store.dispatch('partners/getAll')
+    this.$store.dispatch('headers/getThirdPartyAccountHeaders')
+    this.$store.dispatch('thirdPartyAccounts/getAll')
     this.$store.dispatch('countries/get')
     this.$store.dispatch('contracts/getLegalStructures')
   },
   methods: {
     showContract(v) {
       const res = v.account_id
-      this.$router.push(`/partners/contracts/${res}`)
+      this.$router.push(`/thirdPartyAccounts/contracts/${res}`)
     },
     selected(v) {
       this.$emit('dataTable:selected', v)
     },
     deleteItem(v) {
       console.log('delete :', v)
-      this.$store.dispatch('partners/remove', v)
+      this.$store.dispatch('thirdPartyAccounts/remove', v)
     },
     filterFunction(item, queryText, itemText) {
       return filterPartnersDataTable(item, queryText, itemText)

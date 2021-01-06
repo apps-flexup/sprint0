@@ -14310,7 +14310,7 @@
       "id": 10
     }
   ],
-  "partner-headers": [
+  "third-party-account-headers": [
     {
       "align": "start",
       "sortable": true,
@@ -14355,7 +14355,7 @@
       "value": "country"
     }
   ],
-  "partners": [
+  "third-party-accounts": [
     {
       "account_id": 1,
       "address": "12 rue de la poupée qui tousse",

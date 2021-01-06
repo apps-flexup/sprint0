@@ -1,8 +1,8 @@
-import getters from '@/store/partners/getters'
-import mutations from '@/store/partners/mutations'
-import state from '@/store/partners/state'
+import getters from '~/store/thirdPartyAccounts/getters'
+import mutations from '~/store/thirdPartyAccounts/mutations'
+import state from '~/store/thirdPartyAccounts/state'
 
-const modulePartners = {
+const moduleThirdPartyAccounts = {
   namespaced: true,
   actions: {
     get({ commit }) {
@@ -91,4 +91,4 @@ const modulePartners = {
   mutations: mutations,
   state: state
 }
-export default modulePartners
+export default moduleThirdPartyAccounts

@@ -14,7 +14,7 @@ const activeAccount = (ctx) => ({
     ctx.store.dispatch('currencies/clear', {}, { root: true })
     ctx.store.dispatch('offers/clear', {}, { root: true })
     ctx.store.dispatch('orders/clear', {}, { root: true })
-    ctx.store.dispatch('partners/clear', {}, { root: true })
+    ctx.store.dispatch('thirdPartyAccounts/clear', {}, { root: true })
     ctx.store.dispatch('products/clear', {}, { root: true })
   },
   get() {
@@ -31,7 +31,7 @@ const activeAccount = (ctx) => ({
     ctx.store.dispatch('currencies/get', {}, { root: true })
     ctx.store.dispatch('offers/get', {}, { root: true })
     ctx.store.dispatch('orders/get', {}, { root: true })
-    ctx.store.dispatch('partners/get', {}, { root: true })
+    ctx.store.dispatch('thirdPartyAccounts/get', {}, { root: true })
     ctx.store.dispatch('products/get', {}, { root: true })
     ctx.store
       .dispatch('settings/getSettings', {}, { root: true })
@@ -115,45 +115,45 @@ const activeAccount = (ctx) => ({
     )
     return res
   },
-  partners() {
-    const partnerIds = ctx.store.getters['partners/ids']
+  thirdPartyAccounts() {
+    const thirdPartyIds = ctx.store.getters['thirdPartyAccounts/ids']
     const res = []
-    for (let i = 0; i < partnerIds.length; i++) {
-      const partner = this.getPartner(partnerIds[i])
-      res.push(partner)
+    for (let i = 0; i < thirdPartyIds.length; i++) {
+      const thirdParty = this.getThirdPartyAccount(thirdPartyIds[i])
+      res.push(thirdParty)
     }
     return res
   },
-  getPartner(partnerId) {
-    if (!partnerId) return null
-    const id = parseInt(partnerId) || null
-    const partner = ctx.store.getters['partners/find'](id)
-    if (!partner) return null
-    const countryId = parseInt(partner.country_id) || null
-    const legalStructureId = parseInt(partner.legal_structure_id) || null
+  getThirdPartyAccount(thirdPartyId) {
+    if (!thirdPartyId) return null
+    const id = parseInt(thirdPartyId) || null
+    const thirdParty = ctx.store.getters['thirdPartyAccounts/find'](id)
+    if (!thirdParty) return null
+    const countryId = parseInt(thirdParty.country_id) || null
+    const legalStructureId = parseInt(thirdParty.legal_structure_id) || null
     const country = ctx.store.getters['countries/find'](countryId)
     const legalStructure = ctx.store.getters['contracts/getLegalStructureById'](
       legalStructureId
     )
     const res = {
-      ...partner,
+      ...thirdParty,
       country,
       legalStructure
     }
     return res
   },
-  async allPartners() {
-    const partners = await this.partners()
-    const partnerIds = await ctx.store.getters['partners/ids']
+  async allThirdPartyAccounts() {
+    const thirdPartyAccounts = await this.thirdPartyAccounts()
+    const thirdPartyIds = await ctx.store.getters['thirdPartyAccounts/ids']
     const res = []
-    res.push({ header: 'autocomplete.partners.mine' })
-    partners.forEach((item) => res.push(item))
-    res.push({ header: 'autocomplete.partners.flexup' })
-    const data = await ctx.$axios.$get('/partners')
+    res.push({ header: 'autocomplete.thirdPartyAccounts.mine' })
+    thirdPartyAccounts.forEach((item) => res.push(item))
+    res.push({ header: 'autocomplete.thirdPartyAccounts.flexup' })
+    const data = await ctx.$axios.$get('/thirdPartyAccounts')
     data.forEach((item) => {
       const tmp = item
       tmp.avatar = require('~/static/logo.svg')
-      if (!partnerIds.includes(res.id)) res.push(tmp)
+      if (!thirdPartyIds.includes(res.id)) res.push(tmp)
     })
     return res
   },

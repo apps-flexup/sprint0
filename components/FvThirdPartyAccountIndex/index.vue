@@ -7,19 +7,19 @@
       ) {{ $t('buttons.create.thirdPartyAccount') }}
     fv-partner-modal(
       :show="showModal"
-      :partner='partner'
+      :partner='thirdPartyAccount'
       @modal:close="close"
       @modal:save="save"
-      @partner:changed="partnerChanged"
+      @partner:changed="thirdPartyAccountChanged"
     )
-  fv-third-party-account-list(@list:selected="selectedPartner")
+  fv-third-party-account-list(@list:selected="selectedThirdPartyAccount")
 </template>
 
 <script>
 export default {
   data() {
     return {
-      partner: {},
+      thirdPartyAccount: {},
       showModal: false
     }
   },
@@ -28,20 +28,20 @@ export default {
   },
   methods: {
     close() {
-      this.partner = {}
+      this.thirdPartyAccount = {}
       this.showModal = false
     },
     save(e) {
       this.showModal = false
-      this.$store.dispatch('partners/add', e)
-      this.partner = {}
+      this.$store.dispatch('thirdPartyAccounts/add', e)
+      this.thirdPartyAccount = {}
     },
-    selectedPartner(e) {
-      this.partner = JSON.parse(JSON.stringify(e))
+    selectedThirdPartyAccount(e) {
+      this.thirdPartyAccount = JSON.parse(JSON.stringify(e))
       this.showModal = true
     },
-    partnerChanged(partner) {
-      this.partner = partner
+    thirdPartyAccountChanged(thirdPartyAccount) {
+      this.thirdPartyAccount = thirdPartyAccount
     }
   }
 }
