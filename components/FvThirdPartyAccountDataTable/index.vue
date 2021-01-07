@@ -7,10 +7,6 @@
     @dataTable:sortBy="sortBy"
     @dataTable:selected="selected"
   )
-    template(v-slot:item.legal_structure="{item}")
-      div(v-if="item && item.legalStructure") {{ item.legalStructure.name }}
-    template(v-slot:item.country="{item}")
-      div(v-if="item && item.country") {{ item.country.name }}
     template(v-slot:item.actions="{ item }")
       v-row
         v-icon.mr-2(small='' @click.stop="showContract(item)")

@@ -2,7 +2,9 @@ import {
   instantTranslate,
   addConvertedPriceToPayload,
   addLocaleDateToPayload,
-  addStructureNameToPayload
+  addStructureNameToPayload,
+  addLegalStructureNameToPayload,
+  addCountryNameToPayload
 } from './utils'
 
 const activeAccount = (ctx) => ({
@@ -122,30 +124,21 @@ const activeAccount = (ctx) => ({
     return res
   },
   thirdPartyAccounts() {
-    const thirdPartyIds = ctx.store.getters['thirdPartyAccounts/ids']
-    const res = []
-    for (let i = 0; i < thirdPartyIds.length; i++) {
-      const thirdParty = this.getThirdPartyAccount(thirdPartyIds[i])
-      res.push(thirdParty)
-    }
-    return res
-  },
-  getThirdPartyAccount(thirdPartyId) {
-    if (!thirdPartyId) return null
-    const id = parseInt(thirdPartyId) || null
-    const thirdParty = ctx.store.getters['thirdPartyAccounts/find'](id)
-    if (!thirdParty) return null
-    const countryId = parseInt(thirdParty.country_id) || null
-    const legalStructureId = parseInt(thirdParty.legal_structure_id) || null
-    const country = ctx.store.getters['countries/find'](countryId)
-    const legalStructure = ctx.store.getters['contracts/getLegalStructureById'](
-      legalStructureId
-    )
-    const res = {
-      ...thirdParty,
-      country,
-      legalStructure
-    }
+    const thirdPArtyAccounts = ctx.store.getters['thirdPartyAccounts/all']
+    const res = thirdPArtyAccounts.map((thirdPartyAccount) => {
+      let payload = {
+        ...thirdPartyAccount
+      }
+      const legalStructureId = thirdPartyAccount.legal_structure_id
+      payload = addLegalStructureNameToPayload(
+        payload,
+        ctx.store,
+        legalStructureId
+      )
+      const countryId = thirdPartyAccount.country_id
+      payload = addCountryNameToPayload(payload, ctx.store, countryId)
+      return payload
+    })
     return res
   },
   async allThirdPartyAccounts() {
