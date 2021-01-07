@@ -25,6 +25,7 @@ export default {
   },
   mounted() {
     console.log('Composant ', this.$options.name)
+    this.$store.dispatch('orders/get')
   },
   methods: {
     close() {
@@ -42,8 +43,9 @@ export default {
       this.$router.push('/orders/new')
     },
     selectedOrder(order) {
-      this.order = JSON.parse(JSON.stringify(order))
-      console.log('SelectedOrder: ', order)
+      const orderId = order.id
+      const tmp = this.$store.getters['orders/find'](orderId)
+      this.order = JSON.parse(JSON.stringify(tmp))
       this.showModal = true
     },
     orderChanged(order) {
