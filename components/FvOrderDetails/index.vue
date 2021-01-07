@@ -90,7 +90,7 @@ export default {
     },
     fillFieldsWithOrder() {
       if (!this.order) return
-      this.thirdPartyAccountId = this.order.partner_id
+      this.thirdPartyAccountId = this.order.third_party_account_id
       this.structure = this.getStructureName(this.order.structure)
       this.orderDate = this.order.date
       this.orderLines = this.order.order_lines

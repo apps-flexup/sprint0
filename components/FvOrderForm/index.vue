@@ -9,7 +9,7 @@
       fv-order-for-third-party-account(
         :i="i"
         :order="orderList[i]"
-        @order:partnerSelected="partnerSelected"
+        @order:thirdPartyAccountSelected="thirdPartyAccountSelected"
         @order:orderLinesChanged="orderLinesChanged"
         @order:remove="removeOrder"
         @order:labelChanged="labelChanged"
@@ -26,7 +26,7 @@
     v-col(cols="12")
       fv-secondary-button.text-right(
         @button:click="addNewOrder"
-      ) {{ $t('forms.orders.new.addPartner') }}
+      ) {{ $t('forms.orders.new.addThirdPartyAccount') }}
   v-row
     v-col(cols="12")
       fv-primary-button.text-right(
@@ -63,11 +63,11 @@ export default {
       }
       this.orderList[i].structureId = structureId
     },
-    partnerSelected(i, partnerId) {
+    thirdPartyAccountSelected(i, thirdPartyAccountId) {
       if (!this.orderList[i]) {
         this.orderList[i] = {}
       }
-      this.orderList[i].partnerId = partnerId
+      this.orderList[i].thirdPartyAccountId = thirdPartyAccountId
       this.orderList[i].orderLines = []
     },
     dateChanged(i, dte) {
@@ -101,7 +101,7 @@ export default {
             totalAmount += orderLine.amount()
           })
           const payload = {
-            partner_id: order.partnerId,
+            third_party_account_id: order.thirdPartyAccountId,
             date: order.dte,
             label: order.label ? order.label : null,
             order_lines: order.orderLines,

@@ -227,7 +227,7 @@
           "vat": "TVA",
           "of": "de"
         },
-        "addPartner": "Ajouter une commande pour un nouveau partenaire",
+        "addThirdPartyAccount": "Ajouter une commande pour un nouveau compte tiers",
         "validate": "Valider"
       }
     }

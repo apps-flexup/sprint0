@@ -225,7 +225,7 @@
           "vat": "VAT",
           "of": "of"
         },
-        "addPartner": "Add order for new partner",
+        "addThirdPartyAccount": "Add order for new third party account",
         "validate": "Validate"
       }
     }
