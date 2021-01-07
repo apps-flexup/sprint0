@@ -1,13 +1,13 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
-import FvOrderForPartner from './index.vue'
+import FvOrderForThirdPartyAccount from './index.vue'
 
-<Meta title='Organism/FvOrderForPartner' component={ FvOrderForPartner } />
+<Meta title='Organism/FvOrderForThirdPartyAccount' component={ FvOrderForThirdPartyAccount } />
 
-# FvOrderForPartner
+# FvOrderForThirdPartyAccount
 
 <Canvas>
 <Story name='Common' height='150px'>{{
-  components: { FvOrderForPartner },
+  components: { FvOrderForThirdPartyAccount },
   data() {
     return {
       orderLines: [
@@ -70,13 +70,13 @@ import FvOrderForPartner from './index.vue'
       ]
     }
   },
-  template: `<FvOrderForPartner
+  template: `<FvOrderForThirdPartyAccount
     :order="orderLines"
   >
-  </FvOrderForPartner>`
+  </FvOrderForThirdPartyAccount>`
 }}</Story>
 </Canvas>
 
 ## ArgsTable
 
-<ArgsTable of={ FvOrderForPartner } />
+<ArgsTable of={ FvOrderForThirdPartyAccount } />

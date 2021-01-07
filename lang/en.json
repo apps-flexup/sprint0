@@ -98,13 +98,6 @@
   "forms": {
     "title": "Step {n}",
     "duration": "- | 1 second | {n} seconds",
-    "orders": {
-      "step": {
-        "0": "Select partner",
-        "1": "Select offers",
-        "2": "Summary"
-      }
-    },
     "product": {
       "step": {
         "0": "General information"
@@ -214,8 +207,13 @@
       }
     },
     "orders": {
+      "step": {
+        "0": "Select partner",
+        "1": "Select offers",
+        "2": "Summary"
+      },
       "new": {
-        "partner": "Partner",
+        "thirdPartyAccount": "Third party account",
         "offer": "Offer",
         "structure": "Structure",
         "product": "Product",

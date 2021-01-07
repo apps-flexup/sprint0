@@ -148,7 +148,7 @@ const activeAccount = (ctx) => ({
     res.push({ header: 'autocomplete.thirdPartyAccounts.mine' })
     thirdPartyAccounts.forEach((item) => res.push(item))
     res.push({ header: 'autocomplete.thirdPartyAccounts.flexup' })
-    const data = await ctx.$axios.$get('/thirdPartyAccounts')
+    const data = await ctx.$axios.$get('/third-party-accounts')
     data.forEach((item) => {
       const tmp = item
       tmp.avatar = require('~/static/logo.svg')

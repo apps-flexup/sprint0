@@ -1,13 +1,13 @@
 <template lang="pug">
-.fv-partner-autocomplete
+.fv-third-party-account-autocomplete
   fv-autocomplete(
-    :element="partnerId"
+    :element="thirdPartyAccountId"
     :items="items"
     :filter="filter"
     @autocomplete:selected="selected"
   )
     template(v-slot:label)
-      div {{ $t('forms.orders.new.partner') }}
+      div {{ $t('forms.orders.new.thirdPartyAccount') }}
     template(v-slot:item="data")
       template(v-if="typeof data.item !== 'object'")
         v-list-item-content {{ $t(data.item) }}
@@ -28,14 +28,14 @@
       div Aucune donnée disponible
     template(v-slot:append-item)
       v-list-item-content
-        v-btn(@click="addPartner" color="primary") Add new Partner
+        v-btn(@click="addThirdPartyAccount" color="primary") Add new third party account
 </template>
 
 <script>
 export default {
-  name: 'FvPartnerAutocomplete',
+  name: 'FvThirdPartyAccountAutocomplete',
   props: {
-    partnerId: {
+    thirdPartyAccountId: {
       type: Number,
       default() {
         return null
@@ -49,22 +49,22 @@ export default {
   },
   mounted() {
     console.log('Composant ', this.$options.name)
-    this.$store.dispatch('partners/get')
+    this.$store.dispatch('thirdPartyAccounts/get')
     this.$activeAccount.allThirdPartyAccounts().then((data) => {
       this.items = data
     })
   },
   methods: {
     selected(v) {
-      this.$emit('partner:selected', v)
+      this.$emit('thirdPartyAccount:selected', v)
     },
     filter(item, queryText, _itemText) {
       if (Object.prototype.hasOwnProperty.call(item, 'header')) return true
       const res = item.name.toLowerCase().includes(queryText.toLowerCase())
       return res
     },
-    addPartner() {
-      console.log('Ajouter nouveau partenaire')
+    addThirdPartyAccount() {
+      console.log('Ajouter nouveau compte tiers')
     }
   }
 }

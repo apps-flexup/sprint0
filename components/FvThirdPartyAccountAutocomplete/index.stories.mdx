@@ -1,14 +1,14 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
 import { action } from '@storybook/addon-actions'
-import FvPartnerAutocomplete from './index.vue'
+import FvThirdPartyAccountAutocomplete from './index.vue'
 
-<Meta title='Atoms/FvPartnerAutocomplete' component={ FvPartnerAutocomplete } />
+<Meta title='Atoms/FvThirdPartyAccountAutocomplete' component={ FvThirdPartyAccountAutocomplete } />
 
-# FvPartnerAutocomplete
+# FvThirdPartyAccountAutocomplete
 
 <Canvas>
 <Story name='Common' height='150px'>{{
-  components: { FvPartnerAutocomplete },
+  components: { FvThirdPartyAccountAutocomplete },
   data() {
     return {
       partnerId: null
@@ -17,14 +17,14 @@ import FvPartnerAutocomplete from './index.vue'
   methods: {
     partnerSelected: action('Selected')
   },
-  template: `<FvPartnerAutocomplete
+  template: `<FvThirdPartyAccountAutocomplete
     :partnerId="partnerId"
     @partner:selected='partnerSelected'
   >
-  </FvPartnerAutocomplete>`
+  </FvThirdPartyAccountAutocomplete>`
 }}</Story>
 </Canvas>
 
 ## ArgsTable
 
-<ArgsTable of={ FvPartnerAutocomplete } />
+<ArgsTable of={ FvThirdPartyAccountAutocomplete } />

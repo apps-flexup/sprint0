@@ -101,13 +101,6 @@
   "forms": {
     "title": "Étape {n}",
     "duration": "- | 1 seconde | {n} secondes",
-    "orders": {
-      "step": {
-        "0": "Sélectionner partenaire",
-        "1": "Sélectionner offres",
-        "2": "Récapitulatif"
-      }
-    },
     "product": {
       "step": {
         "0": "Informations générales"
@@ -216,8 +209,13 @@
       }
     },
     "orders": {
+      "step": {
+        "0": "Sélectionner partenaire",
+        "1": "Sélectionner offres",
+        "2": "Récapitulatif"
+      },
       "new": {
-        "partner": "Partenaire",
+        "thirdPartyAccount": "Compte tiers",
         "offer": "Offre",
         "structure": "Structure",
         "product": "Produit",

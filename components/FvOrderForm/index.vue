@@ -6,7 +6,7 @@
     :key="i"
   )
     v-col(cols="12")
-      fv-order-for-partner(
+      fv-order-for-third-party-account(
         :i="i"
         :order="orderList[i]"
         @order:partnerSelected="partnerSelected"

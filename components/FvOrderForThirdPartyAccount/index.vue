@@ -1,5 +1,5 @@
 <template lang="pug">
-.fv-order-for-partner
+.fv-order-for-third-party-account
   p {{ $options.name }}
   v-card.mainCard
     v-row
@@ -12,14 +12,14 @@
         v-icon mdi-close
     v-row
       v-col(cols="6")
-        fv-partner-autocomplete(
-          :partnerId="partnerId"
-          @partner:selected='partnerSelected'
+        fv-third-party-account-autocomplete(
+          :thirdPartyAccountId="thirdPartyAccountId"
+          @thirdPartyAccount:selected='thirdPartyAccountSelected'
         )
       v-col(cols="6")
-        fv-partner-card(
-          v-if="partnerId"
-          :partnerId="partnerId"
+        fv-third-party-account-card(
+          v-if="thirdPartyAccountId"
+          :thirdPartyAccountId="thirdPartyAccountId"
         )
     v-row
       v-col(cols="6")
@@ -36,8 +36,8 @@
     v-row
       v-col(cols="8")
         fv-offer-autocomplete(
-          :disabled="!partnerId"
-          :partnerId="partnerId"
+          :disabled="!thirdPartyAccountId"
+          :thirdPartyAccountId="thirdPartyAccountId"
           :returnObject="true"
           @offers:selected="offerSelected"
         )
@@ -61,7 +61,7 @@
 
 <script>
 export default {
-  name: 'FvOrderForPartner',
+  name: 'FvOrderForThirdPartyAccount',
   props: {
     i: {
       type: Number,
@@ -79,7 +79,7 @@ export default {
   data() {
     return {
       localOrder: {},
-      partnerId: null,
+      thirdPartyAccountId: null,
       orderDate: null,
       orderLines: []
     }
@@ -110,13 +110,16 @@ export default {
     structureSelected(structureId) {
       this.$emit('order:structureSelected', this.i, structureId)
     },
-    partnerSelected(partnerId) {
-      console.log('partner selected: ', partnerId)
-      if (this.partnerId !== partnerId) {
-        this.partnerId = partnerId
+    thirdPartyAccountSelected(thirdPartyAccountId) {
+      if (this.thirdPartyAccountId !== thirdPartyAccountId) {
+        this.thirdPartyAccountId = thirdPartyAccountId
         this.orderLines = []
       }
-      this.$emit('order:partnerSelected', this.i, this.partnerId)
+      this.$emit(
+        'order:thirdPartyAccountSelected',
+        this.i,
+        this.thirdPartyAccountId
+      )
     },
     offerSelected(offer) {
       console.log('offer selected: ', offer)
@@ -167,13 +170,13 @@ export default {
     },
     fillFieldsWithOrder() {
       if (!this.order) return
-      this.partnerId = this.order.partnerId
+      this.thirdPartyAccountId = this.order.thirdPartyAccountId
       this.orderDate = this.order.dte ? this.order.dte : new Date()
       this.orderLines = this.order.orderLines
       this.localOrder = this.order
     },
     clearOrder() {
-      this.partnerId = null
+      this.thirdPartyAccountId = null
       this.orderLines = []
       this.localOrder = {}
     }
