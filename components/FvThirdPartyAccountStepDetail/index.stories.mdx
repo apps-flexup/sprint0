@@ -11,15 +11,15 @@ import FvThirdPArtyAccountStepDetail from './index.vue'
   components: { FvThirdPArtyAccountStepDetail },
   data() {
     return {
-      partner: {}
+      thirdPartyAccount: {}
     }
   },
   methods: {
-    partnerChanged: action('Partner changed')
+    thirdPartyAccountChanged: action('Third party account changed')
   },
   template: `<FvThirdPArtyAccountStepDetail
-    :partner="partner"
-    @partner:changed="partnerChanged"
+    :payload="thirdPartyAccount"
+    @payload:changed="thirdPartyAccountChanged"
   >
   </FvThirdPArtyAccountStepDetail>`
 }}</Story>

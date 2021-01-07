@@ -1,4 +1,4 @@
-export const partnersAvailable = {
+export const thirdPartyAccountsAvailable = {
   1: '1',
   6: '6',
   11: '11'

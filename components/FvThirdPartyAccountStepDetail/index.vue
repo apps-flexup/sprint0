@@ -77,7 +77,7 @@ export default {
   },
   mounted() {
     console.log('Composant ', this.$options.name)
-    this.fillFieldsWithPartner()
+    this.fillFieldsWithThirdPartyAccount()
   },
   methods: {
     nameChanged(name) {
@@ -86,7 +86,7 @@ export default {
         name
       }
       const res = Object.assign(this.localThirdParty, payload)
-      this.$emit('partner:changed', res)
+      this.$emit('payload:changed', res)
     },
     addressChanged(address) {
       console.log('address changed: ', address)
@@ -94,7 +94,7 @@ export default {
         address
       }
       const res = Object.assign(this.localThirdParty, payload)
-      this.$emit('partner:changed', res)
+      this.$emit('payload:changed', res)
     },
     zipChanged(zip) {
       console.log('zip changed: ', zip)
@@ -102,7 +102,7 @@ export default {
         zip
       }
       const res = Object.assign(this.localThirdParty, payload)
-      this.$emit('partner:changed', res)
+      this.$emit('payload:changed', res)
     },
     cityChanged(city) {
       console.log('city changed: ', city)
@@ -110,7 +110,7 @@ export default {
         city
       }
       const res = Object.assign(this.localThirdParty, payload)
-      this.$emit('partner:changed', res)
+      this.$emit('payload:changed', res)
     },
     countrySelected(v) {
       this.countryId = v
@@ -118,7 +118,7 @@ export default {
         country_id: this.countryId
       }
       const res = Object.assign(this.localThirdParty, payload)
-      this.$emit('partner:changed', res)
+      this.$emit('payload:changed', res)
     },
     legalStructureSelected(v) {
       this.legalStructureId = v
@@ -126,7 +126,7 @@ export default {
         legal_structure_id: this.legalStructureId
       }
       const res = Object.assign(this.localThirdParty, payload)
-      this.$emit('partner:changed', res)
+      this.$emit('payload:changed', res)
     },
     siretChanged(siret) {
       console.log('siret changed: ', siret)
@@ -134,10 +134,9 @@ export default {
         siret
       }
       const res = Object.assign(this.localThirdParty, payload)
-      this.$emit('partner:changed', res)
+      this.$emit('payload:changed', res)
     },
-    fillFieldsWithPartner() {
-      console.log('Partner: ', this.payload)
+    fillFieldsWithThirdPartyAccount() {
       if (!this.payload) return
       this.name = this.payload.name
       this.address = this.payload.address
@@ -147,16 +146,6 @@ export default {
       this.legalStructureId = this.payload.legal_structure_id || null
       this.siret = this.payload.siret
       this.localThirdParty = this.payload
-    },
-    clearPartner() {
-      this.name = null
-      this.address = null
-      this.zip = null
-      this.city = null
-      this.countryId = null
-      this.legalStructureId = null
-      this.siret = null
-      this.localThirdParty = {}
     }
   }
 }

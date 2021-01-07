@@ -46,8 +46,8 @@ const moduleSettings = {
         {
           "active": true,
           "icon": "mdi-city-variant-outline",
-          "title": "manageMenu.partners",
-          "to": "/partners"
+          "title": "manageMenu.thirdPartyAccounts",
+          "to": "/thirdPartyAccounts"
         },
         {
           "active": true,

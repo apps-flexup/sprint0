@@ -11,15 +11,15 @@ import FvThirdPartyAccountAutocomplete from './index.vue'
   components: { FvThirdPartyAccountAutocomplete },
   data() {
     return {
-      partnerId: null
+      thirdPartyAccountId: null
     }
   },
   methods: {
-    partnerSelected: action('Selected')
+    thirdPartyAccountSelected: action('Selected')
   },
   template: `<FvThirdPartyAccountAutocomplete
-    :partnerId="partnerId"
-    @partner:selected='partnerSelected'
+    :thirdPartyAccountId="thirdPartyAccountId"
+    @thirdPartyAccount:selected='thirdPartyAccountSelected'
   >
   </FvThirdPartyAccountAutocomplete>`
 }}</Story>
