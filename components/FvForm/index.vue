@@ -82,11 +82,11 @@ export default {
     submit() {
       this.$nuxt.$loading.start()
       this.$emit('form:submit', this.payload)
-      this.$router.push('/' + this.url)
+      this.$router.push('/' + this.url, () => {})
       this.$nuxt.$loading.finish()
     },
     cancel() {
-      this.$router.push('/' + this.url)
+      this.$router.push('/' + this.url, () => {})
       this.$emit('clicked')
     },
     payloadChanged(payload) {
