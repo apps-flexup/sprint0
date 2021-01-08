@@ -1,7 +1,6 @@
 import { createLocalVue, shallowMount } from '@vue/test-utils'
 import Vuex from 'Vuex'
 import FvProductStepDetail from './index.vue'
-import i18n from '~/.storybook/i18n'
 
 const localVue = createLocalVue()
 localVue.use(Vuex)
@@ -12,8 +11,10 @@ describe('FvProductStepDetail', () => {
   const factory = () => {
     return shallowMount(FvProductStepDetail, {
       localVue,
-      i18n,
-      store
+      store,
+      mocks: {
+        $t: (msg) => msg
+      }
     })
   }
   beforeEach(() => {

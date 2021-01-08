@@ -1,12 +1,10 @@
 import { mount } from '@vue/test-utils'
 import FvOfferStepDetail from './index.vue'
-import i18n from '~/.storybook/i18n'
 import store from '@/.storybook/store'
 
 describe('FvOfferStepDetail', () => {
   const factory = (propsData) => {
     return mount(FvOfferStepDetail, {
-      i18n,
       store,
       stubs: {
         FvUnitAutocomplete: true,
@@ -16,6 +14,9 @@ describe('FvOfferStepDetail', () => {
       },
       propsData: {
         ...propsData
+      },
+      mocks: {
+        $t: (msg) => msg
       },
       data() {
         return {

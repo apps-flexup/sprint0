@@ -1,7 +1,6 @@
 import { mount, createLocalVue } from '@vue/test-utils'
 import Vuex from 'Vuex'
 import FvOfferCard from './index.vue'
-import i18n from '~/.storybook/i18n'
 
 const localVue = createLocalVue()
 localVue.use(Vuex)
@@ -14,10 +13,13 @@ describe('FvOfferCard', () => {
   const factory = () => {
     return mount(FvOfferCard, {
       localVue,
-      i18n,
       store,
       propsData: {
         img: '/images/storybook/productA.png'
+      },
+      mocks: {
+        $t: (msg) => msg,
+        $tc: (msg) => msg
       },
       directives: {
         toPreferredCurrency,

@@ -1,7 +1,6 @@
 import { shallowMount, createLocalVue } from '@vue/test-utils'
 import Vuex from 'Vuex'
 import FvThirdPartyAccountStepDetail from './index.vue'
-import i18n from '~/.storybook/i18n'
 
 const localVue = createLocalVue()
 localVue.use(Vuex)
@@ -13,7 +12,9 @@ describe('FvThirdPartyAccountStepDetail', () => {
     return shallowMount(FvThirdPartyAccountStepDetail, {
       localVue,
       store,
-      i18n
+      mocks: {
+        $t: (msg) => msg
+      }
     })
   }
   beforeEach(() => {

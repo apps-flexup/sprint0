@@ -2,7 +2,6 @@ import { shallowMount, createLocalVue } from '@vue/test-utils'
 import VueRouter from 'vue-router'
 import Vuex from 'vuex'
 import FvForm from './index.vue'
-import i18n from '~/.storybook/i18n'
 
 const localVue = createLocalVue()
 localVue.use(Vuex)
@@ -20,7 +19,6 @@ describe('FvForm', () => {
 
   const factory = (propsData) => {
     return shallowMount(FvForm, {
-      i18n,
       store,
       router,
       localVue,
@@ -33,6 +31,7 @@ describe('FvForm', () => {
         getFormStep: () => formStep
       },
       mocks: {
+        $t: (msg) => msg,
         $nuxt: {
           $loading: {
             start: jest.fn(),
