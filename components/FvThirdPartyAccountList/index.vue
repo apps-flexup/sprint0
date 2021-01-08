@@ -2,11 +2,13 @@
 .fv-third-party-account-list
   v-card
     fv-data-table-header(
+      data-testid='header'
       :title="$t('table.thirdPartyAccounts.title')"
       :searchLabel="$t('table.thirdPartyAccounts.search')"
       @dataTableSearch:changed="searchChanged"
     )
     fv-third-party-account-data-table(
+      data-testid='dataTable'
       :headers="headers"
       :items="items"
       @dataTable:selected="selectedThirdPartyAccount"
