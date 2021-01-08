@@ -7,6 +7,14 @@ localVue.use(Vuex)
 
 describe('FvProductStepDetail', () => {
   let store
+  const unit = {
+    base: 'year',
+    default: true,
+    dimension: 'age',
+    id: 1,
+    symbole: 'year',
+    unit_per_base: 1
+  }
 
   const factory = () => {
     return shallowMount(FvProductStepDetail, {
@@ -23,7 +31,7 @@ describe('FvProductStepDetail', () => {
         units: {
           namespaced: true,
           getters: {
-            find: () => jest.fn()
+            find: () => () => unit
           }
         }
       }
@@ -42,25 +50,31 @@ describe('FvProductStepDetail', () => {
     const categoryAutocomplete = wrapper.find(
       '[data-testid="categoryAutocomplete"]'
     )
-    categoryAutocomplete.vm.$emit('category:selected')
+    const categoryId = 1
+    categoryAutocomplete.vm.$emit('category:selected', categoryId)
     const submittedCalls = wrapper.emitted('payload:changed')
     expect(submittedCalls).toBeTruthy()
     expect(submittedCalls).toHaveLength(1)
+    expect(submittedCalls[0][0].category_id).toBe(categoryId)
   })
   it('should send signal when name is changed', () => {
     const wrapper = factory()
     const productName = wrapper.find('[data-testid="productName"]')
-    productName.vm.$emit('input')
+    const name = 'toto'
+    productName.vm.$emit('input', name)
     const submittedCalls = wrapper.emitted('payload:changed')
     expect(submittedCalls).toBeTruthy()
     expect(submittedCalls).toHaveLength(1)
+    expect(submittedCalls[0][0].name).toBe(name)
   })
   it('should send signal when unit is changed', () => {
     const wrapper = factory()
     const unitAutocomplete = wrapper.find('[data-testid="unitAutocomplete"]')
-    unitAutocomplete.vm.$emit('unit:selected')
+    unitAutocomplete.vm.$emit('unit:selected', 1)
     const submittedCalls = wrapper.emitted('payload:changed')
     expect(submittedCalls).toBeTruthy()
     expect(submittedCalls).toHaveLength(1)
+    expect(submittedCalls[0][0].dimension).toBe(unit.dimension)
+    expect(submittedCalls[0][0].unit).toBe(unit.symbole)
   })
 })
