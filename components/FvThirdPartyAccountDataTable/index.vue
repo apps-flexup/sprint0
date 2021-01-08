@@ -1,6 +1,7 @@
 <template lang="pug">
 .fv-third-party-account-data-table
   fv-data-table(
+    data-testid="dataTable"
     :headers='headers'
     :items='items'
     :hide-default-footer="hideDefaultFooter"
