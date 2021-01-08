@@ -1,19 +1,33 @@
-import { mount } from '@vue/test-utils'
+import { createLocalVue, shallowMount } from '@vue/test-utils'
+import Vuex from 'Vuex'
 import FvProductStepDetail from './index.vue'
 import i18n from '~/.storybook/i18n'
-import store from '@/.storybook/store'
+
+const localVue = createLocalVue()
+localVue.use(Vuex)
 
 describe('FvProductStepDetail', () => {
+  let store
+
   const factory = () => {
-    return mount(FvProductStepDetail, {
+    return shallowMount(FvProductStepDetail, {
+      localVue,
       i18n,
-      store,
-      stubs: {
-        FvUnitAutocomplete: true,
-        FvCategoryAutocomplete: true
-      }
+      store
     })
   }
+  beforeEach(() => {
+    store = new Vuex.Store({
+      modules: {
+        units: {
+          namespaced: true,
+          getters: {
+            find: () => jest.fn()
+          }
+        }
+      }
+    })
+  })
   it('should render a product form', () => {
     const wrapper = factory()
     expect(wrapper.find('[data-testid="categoryAutocomplete"]').exists()).toBe(
