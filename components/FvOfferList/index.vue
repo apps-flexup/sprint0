@@ -2,11 +2,13 @@
 .fv-offer-list
   v-card
     fv-data-table-header(
+      data-testid='header'
       :title="$t('table.offers.title')"
       :searchLabel="$t('table.offers.search')"
       @dataTableSearch:changed="searchChanged"
     )
     fv-recursive-data-table(
+      data-testid='recursiveDataTable'
       :headers="mainHeaders"
       :items="mainItems"
       :filters="filters"
