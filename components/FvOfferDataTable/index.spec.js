@@ -20,18 +20,11 @@ describe('FvOfferDataTable', () => {
   beforeEach(() => {
     store = new Vuex.Store({
       modules: {
-        products: {
+        offers: {
           namespaced: true,
           state: {},
           actions: {
             remove: jest.fn()
-          }
-        },
-        categories: {
-          namespaced: true,
-          state: {},
-          actions: {
-            get: jest.fn()
           }
         }
       }
