@@ -19,7 +19,7 @@ export default {
   name: 'FvVatField',
   props: {
     value: {
-      type: String,
+      type: [String, Number],
       default() {
         return ''
       }

@@ -10,11 +10,10 @@
       )
   v-row
     v-col(cols="12")
-      v-text-field(
-        data-testid="textField"
-        v-model="name"
+      fv-text-field(
+        data-testid="nameField"
+        :value="name"
         :label="$t('forms.offers.new.name')"
-        outlined=''
         @input="nameChanged"
       )
   v-row
@@ -82,7 +81,6 @@ export default {
   },
   methods: {
     productSelected(v) {
-      // this.$repos.products.show(v).then((product)
       const product = this.$store.getters['products/findById'](v)
       this.productId = product ? product.id : null
       this.unit = product ? product.unit : null
@@ -97,9 +95,9 @@ export default {
       const res = Object.assign(this.localOffer, payload)
       this.$emit('payload:changed', res)
     },
-    nameChanged() {
+    nameChanged(name) {
       const payload = {
-        name: this.name
+        name
       }
       const res = Object.assign(this.localOffer, payload)
       this.$emit('payload:changed', res)
@@ -107,7 +105,7 @@ export default {
     priceChanged(v) {
       this.price = v
       const payload = {
-        price: parseInt(this.price)
+        price: parseFloat(this.price)
       }
       const res = Object.assign(this.localOffer, payload)
       this.$emit('payload:changed', res)
