@@ -1,7 +1,6 @@
 import { mount, createLocalVue } from '@vue/test-utils'
 import Vuex from 'Vuex'
 import FvAccountsIndex from './index'
-import i18n from '~/.storybook/i18n'
 
 const localVue = createLocalVue()
 localVue.use(Vuex)
@@ -56,8 +55,10 @@ describe('FvAccountsIndex', () => {
   const factory = () => {
     return mount(FvAccountsIndex, {
       localVue,
-      i18n,
       store,
+      mocks: {
+        $t: (msg) => msg
+      },
       computed: {
         accounts: () => accounts
       }

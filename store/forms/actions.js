@@ -18,5 +18,10 @@ export default {
   },
   getOffer({ commit }) {
     this.$repos.offerSteps.index().then((data) => commit('setOfferSteps', data))
+  },
+  getThirdPartyAccount({ commit }) {
+    this.$repos.thirdPartyAccountSteps
+      .index()
+      .then((data) => commit('setThirdPartyAccountSteps', data))
   }
 }

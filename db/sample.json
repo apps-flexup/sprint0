@@ -1426,6 +1426,12 @@
       "title": "forms.offer.step.0"
     }
   ],
+  "third-party-account-steps": [
+    {
+      "component": "fv-third-party-account-step-detail",
+      "title": "forms.third-party-account.step.0"
+    }
+  ],
   "contract-types": [
     {
       "account_id": null,
@@ -13463,8 +13469,8 @@
     {
       "active": true,
       "icon": "mdi-city-variant-outline",
-      "title": "manageMenu.partners",
-      "to": "/partners"
+      "title": "manageMenu.thirdPartyAccounts",
+      "to": "/thirdPartyAccounts"
     },
     {
       "active": false,
@@ -14034,7 +14040,7 @@
   },
   "orders": [
     {
-      "partner_id": 3,
+      "third_party_account_id": 3,
       "date": "2020-08-20T00:00:00.000Z",
       "label": "du bon lait",
       "order_lines": [
@@ -14061,7 +14067,7 @@
       "id": 1
     },
     {
-      "partner_id": 1,
+      "third_party_account_id": 1,
       "date": "2020-08-20T00:00:00.000Z",
       "label": null,
       "order_lines": [
@@ -14085,7 +14091,7 @@
       "id": 2
     },
     {
-      "partner_id": 1,
+      "third_party_account_id": 1,
       "date": "2020-07-12T00:00:00.000Z",
       "label": "futur commande",
       "order_lines": [
@@ -14112,7 +14118,7 @@
       "id": 3
     },
     {
-      "partner_id": 1,
+      "third_party_account_id": 1,
       "date": "2020-08-20T00:00:00.000Z",
       "label": "commande 1",
       "order_lines": [
@@ -14139,7 +14145,7 @@
       "id": 4
     },
     {
-      "partner_id": 1,
+      "third_party_account_id": 1,
       "date": "2020-08-20T00:00:00.000Z",
       "label": "commande 3",
       "order_lines": [
@@ -14163,7 +14169,7 @@
       "id": 5
     },
     {
-      "partner_id": 3,
+      "third_party_account_id": 3,
       "date": "2020-08-20T00:00:00.000Z",
       "label": "commande 2",
       "order_lines": [
@@ -14190,7 +14196,7 @@
       "id": 6
     },
     {
-      "partner_id": 1,
+      "third_party_account_id": 1,
       "date": "2020-08-09T00:00:00.000Z",
       "label": null,
       "order_lines": [
@@ -14217,7 +14223,7 @@
       "id": 7
     },
     {
-      "partner_id": 3,
+      "third_party_account_id": 3,
       "date": "2020-09-14T16:18:22.650Z",
       "label": "Plusieurs offres",
       "order_lines": [
@@ -14256,7 +14262,7 @@
       "id": 8
     },
     {
-      "partner_id": 1,
+      "third_party_account_id": 1,
       "date": "2020-12-11T16:15:18.282Z",
       "label": null,
       "order_lines": [
@@ -14283,7 +14289,7 @@
       "id": 9
     },
     {
-      "partner_id": 5,
+      "third_party_account_id": 5,
       "date": "2020-12-11T16:20:47.844Z",
       "label": null,
       "order_lines": [
@@ -14310,52 +14316,52 @@
       "id": 10
     }
   ],
-  "partner-headers": [
+  "third-party-account-headers": [
     {
       "align": "start",
       "sortable": true,
-      "text": "headers.partners.name",
+      "text": "headers.thirdPartyAccounts.name",
       "value": "name"
     },
     {
       "align": "start",
       "sortable": true,
-      "text": "headers.partners.siret",
+      "text": "headers.thirdPartyAccounts.siret",
       "value": "siret"
     },
     {
       "align": "start",
       "sortable": true,
-      "text": "headers.partners.legalStructure",
+      "text": "headers.thirdPartyAccounts.legalStructure",
       "value": "legal_structure"
     },
     {
       "align": "start",
       "sortable": true,
-      "text": "headers.partners.address",
+      "text": "headers.thirdPartyAccounts.address",
       "city": "Courtanche sur Mer",
       "value": "address"
     },
     {
       "align": "start",
       "sortable": true,
-      "text": "headers.partners.zip",
+      "text": "headers.thirdPartyAccounts.zip",
       "value": "zip"
     },
     {
       "align": "start",
       "sortable": true,
-      "text": "headers.partners.city",
+      "text": "headers.thirdPartyAccounts.city",
       "value": "city"
     },
     {
       "align": "start",
       "sortable": true,
-      "text": "headers.partners.country",
+      "text": "headers.thirdPartyAccounts.country",
       "value": "country"
     }
   ],
-  "partners": [
+  "third-party-accounts": [
     {
       "account_id": 1,
       "address": "12 rue de la poupée qui tousse",
@@ -14365,47 +14371,6 @@
       "name": "plop",
       "zip": "15774",
       "legal_structure_id": 13,
-      "country": {
-        "active": true,
-        "continent": null,
-        "continent_id": null,
-        "currencies": [
-          {
-            "active": true,
-            "id": 49,
-            "iso3": "EUR",
-            "ison": 978,
-            "minor": 2,
-            "name": "Euro"
-          }
-        ],
-        "id": 157,
-        "iso2": "NL",
-        "iso3": "NLD",
-        "ison": 528,
-        "languages": [
-          {
-            "active": false,
-            "id": 114,
-            "iso2": "nl",
-            "name": null,
-            "native": null
-          }
-        ],
-        "name": "Netherlands (the)",
-        "sovereignty": {
-          "countries_count": 193,
-          "description": "UN member state",
-          "id": 13,
-          "name": "UN"
-        },
-        "sovereignty_id": 13
-      },
-      "legalStructure": {
-        "id": 13,
-        "name": "Société par actions simplifiée unipersonnelle",
-        "sigle": "SASU"
-      },
       "siret": "1231231312",
       "id": 1
     },

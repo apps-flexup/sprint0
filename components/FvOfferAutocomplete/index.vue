@@ -31,7 +31,7 @@ import { filterOfferAutocomplete } from '~/plugins/utils'
 export default {
   name: 'FvOfferAutocomplete',
   props: {
-    partnerId: {
+    thirdPartyAccountId: {
       type: Number,
       default() {
         return null
@@ -56,11 +56,13 @@ export default {
     }
   },
   watch: {
-    partnerId() {
+    thirdPartyAccountId() {
       this.items = []
-      if (this.partnerId > 0) {
-        const partner = this.$store.getters['partners/find'](this.partnerId)
-        const accountId = partner.account_id
+      if (this.thirdPartyAccountId > 0) {
+        const thirdPartyAccount = this.$store.getters[
+          'thirdPartyAccounts/find'
+        ](this.thirdPartyAccountId)
+        const accountId = thirdPartyAccount.account_id
         const res = this.$store.getters['offers/getForAccount'](accountId)
         this.items = res
       }
@@ -68,12 +70,14 @@ export default {
   },
   mounted() {
     console.log('Composant ', this.$options.name)
-    this.$store.dispatch('partners/getAll')
+    this.$store.dispatch('thirdPartyAccounts/getAll')
     this.$store.dispatch('offers/getAll')
     this.items = []
-    if (this.partnerId > 0) {
-      const partner = this.$store.getters['partners/find'](this.partnerId)
-      const accountId = partner.account_id
+    if (this.thirdPartyAccountId > 0) {
+      const thirdPartyAccount = this.$store.getters['thirdPartyAccounts/find'](
+        this.thirdPartyAccountId
+      )
+      const accountId = thirdPartyAccount.account_id
       const res = this.$store.getters['offers/getForAccount'](accountId)
       this.items = res
     }

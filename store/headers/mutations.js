@@ -8,8 +8,8 @@ export default {
   setProductHeaders(state, items) {
     state.products = items
   },
-  setPartnerHeaders(state, items) {
-    state.partners = items
+  setThirdPartyAccountHeaders(state, items) {
+    state.thirdPartyAccounts = items
   },
   setOfferHeaders(state, items) {
     state.offers = items

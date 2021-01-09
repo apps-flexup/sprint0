@@ -35,53 +35,53 @@ const moduleHeaders = {
       ]
       commit('setProductHeaders', data)
     },
-    getPartnerHeaders({ commit }) {
+    getThirdPartyAccountHeaders({ commit }) {
       // charger les formes juridiques
       const data = [
         {
           align: "start",
           sortable: true,
-          text: "headers.partners.name",
+          text: "headers.thirdPartyAccounts.name",
           value: "name"
         },
         {
           align: "start",
           sortable: true,
-          text: "headers.partners.siret",
+          text: "headers.thirdPartyAccounts.siret",
           value: "siret"
         },
         {
           align: "start",
           sortable: true,
-          text: "headers.partners.legalStructure",
+          text: "headers.thirdPartyAccounts.legalStructure",
           value: "legal_structure"
         },
         {
           align: "start",
           sortable: true,
-          text: "headers.partners.address",
+          text: "headers.thirdPartyAccounts.address",
           value: "address"
         },
         {
           align: "start",
           sortable: true,
-          text: "headers.partners.zip",
+          text: "headers.thirdPartyAccounts.zip",
           value: "zip"
         },
         {
           align: "start",
           sortable: true,
-          text: "headers.partners.city",
+          text: "headers.thirdPartyAccounts.city",
           value: "city"
         },
         {
           align: "start",
           sortable: true,
-          text: "headers.partners.country",
+          text: "headers.thirdPartyAccounts.country",
           value: "country"
         }
       ]
-      commit('setPartnerHeaders', data)
+      commit('setThirdPartyAccountHeaders', data)
     },
     getOfferHeaders({ commit }) {
       const data = [

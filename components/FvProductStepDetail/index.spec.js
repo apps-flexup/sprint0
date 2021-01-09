@@ -1,19 +1,42 @@
-import { mount } from '@vue/test-utils'
+import { createLocalVue, shallowMount } from '@vue/test-utils'
+import Vuex from 'Vuex'
 import FvProductStepDetail from './index.vue'
-import i18n from '~/.storybook/i18n'
-import store from '@/.storybook/store'
+
+const localVue = createLocalVue()
+localVue.use(Vuex)
 
 describe('FvProductStepDetail', () => {
+  let store
+  const unit = {
+    base: 'year',
+    default: true,
+    dimension: 'age',
+    id: 1,
+    symbole: 'year',
+    unit_per_base: 1
+  }
+
   const factory = () => {
-    return mount(FvProductStepDetail, {
-      i18n,
+    return shallowMount(FvProductStepDetail, {
+      localVue,
       store,
-      stubs: {
-        FvUnitAutocomplete: true,
-        FvCategoryAutocomplete: true
+      mocks: {
+        $t: (msg) => msg
       }
     })
   }
+  beforeEach(() => {
+    store = new Vuex.Store({
+      modules: {
+        units: {
+          namespaced: true,
+          getters: {
+            find: () => () => unit
+          }
+        }
+      }
+    })
+  })
   it('should render a product form', () => {
     const wrapper = factory()
     expect(wrapper.find('[data-testid="categoryAutocomplete"]').exists()).toBe(
@@ -27,25 +50,31 @@ describe('FvProductStepDetail', () => {
     const categoryAutocomplete = wrapper.find(
       '[data-testid="categoryAutocomplete"]'
     )
-    categoryAutocomplete.vm.$emit('category:selected')
+    const categoryId = 1
+    categoryAutocomplete.vm.$emit('category:selected', categoryId)
     const submittedCalls = wrapper.emitted('payload:changed')
     expect(submittedCalls).toBeTruthy()
     expect(submittedCalls).toHaveLength(1)
+    expect(submittedCalls[0][0].category_id).toBe(categoryId)
   })
   it('should send signal when name is changed', () => {
     const wrapper = factory()
     const productName = wrapper.find('[data-testid="productName"]')
-    productName.vm.$emit('input')
+    const name = 'toto'
+    productName.vm.$emit('input', name)
     const submittedCalls = wrapper.emitted('payload:changed')
     expect(submittedCalls).toBeTruthy()
     expect(submittedCalls).toHaveLength(1)
+    expect(submittedCalls[0][0].name).toBe(name)
   })
   it('should send signal when unit is changed', () => {
     const wrapper = factory()
     const unitAutocomplete = wrapper.find('[data-testid="unitAutocomplete"]')
-    unitAutocomplete.vm.$emit('unit:selected')
+    unitAutocomplete.vm.$emit('unit:selected', 1)
     const submittedCalls = wrapper.emitted('payload:changed')
     expect(submittedCalls).toBeTruthy()
     expect(submittedCalls).toHaveLength(1)
+    expect(submittedCalls[0][0].dimension).toBe(unit.dimension)
+    expect(submittedCalls[0][0].unit).toBe(unit.symbole)
   })
 })

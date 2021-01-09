@@ -52,7 +52,7 @@ import FvModalAndButton from '@/components/FvModalAndButton'
 import FvRecursiveDataTable from '@/components/FvRecursiveDataTable'
 import FvNav from '@/components/FvNav'
 import FvNavBar from '@/components/FvNavBar'
-import FvNewPartnerForm from '@/components/FvNewPartnerForm'
+import FvThirdPartyAccountStepDetail from '@/components/FvThirdPartyAccountStepDetail'
 import FvNumberField from '@/components/FvNumberField'
 import FvPriceField from '@/components/FvPriceField'
 import FvPriceToPreferredCurrency from '@/components/FvPriceToPreferredCurrency'
@@ -95,10 +95,10 @@ import FvOrderIndex from '@/components/FvOrderIndex'
 import FvOrderListSearch from '@/components/FvOrderListSearch'
 import FvOrderList from '@/components/FvOrderList'
 import FvOrderModal from '@/components/FvOrderModal'
-import FvPartnerDataTable from '@/components/FvPartnerDataTable'
-import FvPartnerList from '@/components/FvPartnerList'
+import FvThirdPartyAccountDataTable from '@/components/FvThirdPartyAccountDataTable'
+import FvThirdPartyAccountList from '@/components/FvThirdPartyAccountList'
 import FvModalSlot from '@/components/FvModalSlot'
-import FvPartnerIndex from '@/components/FvPartnerIndex'
+import FvThirdPartyAccountIndex from '@/components/FvThirdPartyAccountIndex'
 import FvPartnerModal from '@/components/FvPartnerModal'
 import FvProductIndex from '~/components/FvProductIndex'
 import FvProductModal from '@/components/FvProductModal'
@@ -106,10 +106,10 @@ import FvSpeedDial from '@/components/FvSpeedDial'
 import FvTextField from '@/components/FvTextField'
 import FvUserInfo from '@/components/FvUserInfo'
 import FvOrderForm from '@/components/FvOrderForm'
-import FvOrderForPartner from '@/components/FvOrderForPartner'
+import FvOrderForThirdPartyAccount from '@/components/FvOrderForThirdPartyAccount'
 import FvOrderLineList from '@/components/FvOrderLineList'
 import FvStructureAutocomplete from '@/components/FvStructureAutocomplete'
-import FvPartnerAutocomplete from '@/components/FvPartnerAutocomplete'
+import FvThirdPartyAccountAutocomplete from '@/components/FvThirdPartyAccountAutocomplete'
 import FvProductAutocomplete from '@/components/FvProductAutocomplete'
 import FvCategoryAutocomplete from '@/components/FvCategoryAutocomplete'
 import FvCurrencyAutocomplete from '@/components/FvCurrencyAutocomplete'
@@ -125,7 +125,7 @@ import FvPartnerItem from '@/components/FvPartnerItem'
 import FvOrderStepSelectPartner from '~/components/FvOrderStepSelectPartner'
 import FvOrderStepSelectOffers from '~/components/FvOrderStepSelectOffers'
 import FvOrderStepResume from '~/components/FvOrderStepResume'
-import FvPartnerCard from '~/components/FvPartnerCard'
+import FvThirdPartyAccountCard from '~/components/FvThirdPartyAccountCard'
 import FvOrderTotals from '~/components/FvOrderTotals'
 
 // Déclarations composants utilitaires
@@ -190,7 +190,10 @@ Vue.component('fv-modal-and-button', FvModalAndButton)
 Vue.component('fv-recursive-data-table', FvRecursiveDataTable)
 Vue.component('fv-nav', FvNav)
 Vue.component('fv-nav-bar', FvNavBar)
-Vue.component('fv-new-partner-form', FvNewPartnerForm)
+Vue.component(
+  'fv-third-party-account-step-detail',
+  FvThirdPartyAccountStepDetail
+)
 Vue.component('fv-number-field', FvNumberField)
 Vue.component('fv-price-field', FvPriceField)
 Vue.component('fv-price-to-preferred-currency', FvPriceToPreferredCurrency)
@@ -238,20 +241,23 @@ Vue.component('fv-order-list-search', FvOrderListSearch)
 Vue.component('fv-order-list', FvOrderList)
 Vue.component('fv-order-modal', FvOrderModal)
 Vue.component('fv-country-list', FvCountryList)
-Vue.component('fv-partner-data-table', FvPartnerDataTable)
-Vue.component('fv-partner-list', FvPartnerList)
+Vue.component('fv-third-party-account-data-table', FvThirdPartyAccountDataTable)
+Vue.component('fv-third-party-account-list', FvThirdPartyAccountList)
 Vue.component('fv-modal-slot', FvModalSlot)
-Vue.component('fv-partner-index', FvPartnerIndex)
+Vue.component('fv-third-party-account-index', FvThirdPartyAccountIndex)
 Vue.component('fv-partner-modal', FvPartnerModal)
 Vue.component('fv-product-modal', FvProductModal)
 Vue.component('fv-speed-dial', FvSpeedDial)
 Vue.component('fv-text-field', FvTextField)
 Vue.component('fv-user-info', FvUserInfo)
 Vue.component('fv-order-form', FvOrderForm)
-Vue.component('fv-order-for-partner', FvOrderForPartner)
+Vue.component('fv-order-for-third-party-account', FvOrderForThirdPartyAccount)
 Vue.component('fv-order-line-list', FvOrderLineList)
 Vue.component('fv-structure-autocomplete', FvStructureAutocomplete)
-Vue.component('fv-partner-autocomplete', FvPartnerAutocomplete)
+Vue.component(
+  'fv-third-party-account-autocomplete',
+  FvThirdPartyAccountAutocomplete
+)
 Vue.component('fv-product-autocomplete', FvProductAutocomplete)
 Vue.component('fv-category-autocomplete', FvCategoryAutocomplete)
 Vue.component('fv-currency-autocomplete', FvCurrencyAutocomplete)
@@ -267,5 +273,5 @@ Vue.component('fv-partner-item', FvPartnerItem)
 Vue.component('fv-order-step-select-partner', FvOrderStepSelectPartner)
 Vue.component('fv-order-step-select-offers', FvOrderStepSelectOffers)
 Vue.component('fv-order-step-resume', FvOrderStepResume)
-Vue.component('fv-partner-card', FvPartnerCard)
+Vue.component('fv-third-party-account-card', FvThirdPartyAccountCard)
 Vue.component('fv-order-totals', FvOrderTotals)

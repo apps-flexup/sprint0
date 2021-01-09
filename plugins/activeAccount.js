@@ -2,7 +2,9 @@ import {
   instantTranslate,
   addConvertedPriceToPayload,
   addLocaleDateToPayload,
-  addStructureNameToPayload
+  addStructureNameToPayload,
+  addLegalStructureNameToPayload,
+  addCountryNameToPayload
 } from './utils'
 
 const activeAccount = (ctx) => ({
@@ -14,7 +16,7 @@ const activeAccount = (ctx) => ({
     ctx.store.dispatch('currencies/clear', {}, { root: true })
     ctx.store.dispatch('offers/clear', {}, { root: true })
     ctx.store.dispatch('orders/clear', {}, { root: true })
-    ctx.store.dispatch('partners/clear', {}, { root: true })
+    ctx.store.dispatch('thirdPartyAccounts/clear', {}, { root: true })
     ctx.store.dispatch('products/clear', {}, { root: true })
   },
   get() {
@@ -31,7 +33,7 @@ const activeAccount = (ctx) => ({
     ctx.store.dispatch('currencies/get', {}, { root: true })
     ctx.store.dispatch('offers/get', {}, { root: true })
     ctx.store.dispatch('orders/get', {}, { root: true })
-    ctx.store.dispatch('partners/get', {}, { root: true })
+    ctx.store.dispatch('thirdPartyAccounts/get', {}, { root: true })
     ctx.store.dispatch('products/get', {}, { root: true })
     ctx.store
       .dispatch('settings/getSettings', {}, { root: true })
@@ -115,45 +117,42 @@ const activeAccount = (ctx) => ({
     )
     return res
   },
-  partners() {
-    const partnerIds = ctx.store.getters['partners/ids']
-    const res = []
-    for (let i = 0; i < partnerIds.length; i++) {
-      const partner = this.getPartner(partnerIds[i])
-      res.push(partner)
-    }
+  headersThirdPartyAccounts() {
+    const res = ctx.store.getters['headers/thirdPartyAccounts']
+    if (res.length && res[res.length - 1].value !== 'actions')
+      res.push({ text: 'headers.actions', value: 'actions', sortable: false })
     return res
   },
-  getPartner(partnerId) {
-    if (!partnerId) return null
-    const id = parseInt(partnerId) || null
-    const partner = ctx.store.getters['partners/find'](id)
-    if (!partner) return null
-    const countryId = parseInt(partner.country_id) || null
-    const legalStructureId = parseInt(partner.legal_structure_id) || null
-    const country = ctx.store.getters['countries/find'](countryId)
-    const legalStructure = ctx.store.getters['contracts/getLegalStructureById'](
-      legalStructureId
-    )
-    const res = {
-      ...partner,
-      country,
-      legalStructure
-    }
+  thirdPartyAccounts() {
+    const thirdPArtyAccounts = ctx.store.getters['thirdPartyAccounts/all']
+    const res = thirdPArtyAccounts.map((thirdPartyAccount) => {
+      let payload = {
+        ...thirdPartyAccount
+      }
+      const legalStructureId = thirdPartyAccount.legal_structure_id
+      payload = addLegalStructureNameToPayload(
+        payload,
+        ctx.store,
+        legalStructureId
+      )
+      const countryId = thirdPartyAccount.country_id
+      payload = addCountryNameToPayload(payload, ctx.store, countryId)
+      return payload
+    })
     return res
   },
-  async allPartners() {
-    const partners = await this.partners()
-    const partnerIds = await ctx.store.getters['partners/ids']
+  async allThirdPartyAccounts() {
+    const thirdPartyAccounts = await this.thirdPartyAccounts()
+    const thirdPartyIds = await ctx.store.getters['thirdPartyAccounts/ids']
     const res = []
-    res.push({ header: 'autocomplete.partners.mine' })
-    partners.forEach((item) => res.push(item))
-    res.push({ header: 'autocomplete.partners.flexup' })
-    const data = await ctx.$axios.$get('/partners')
+    res.push({ header: 'autocomplete.thirdPartyAccounts.mine' })
+    thirdPartyAccounts.forEach((item) => res.push(item))
+    res.push({ header: 'autocomplete.thirdPartyAccounts.flexup' })
+    const data = await ctx.$axios.$get('/third-party-accounts')
     data.forEach((item) => {
       const tmp = item
       tmp.avatar = require('~/static/logo.svg')
-      if (!partnerIds.includes(res.id)) res.push(tmp)
+      if (!thirdPartyIds.includes(res.id)) res.push(tmp)
     })
     return res
   },

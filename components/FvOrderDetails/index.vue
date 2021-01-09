@@ -5,8 +5,8 @@
     v-row
       v-col(cols="12" class="headDetails")
         v-col(cols="8")
-          fv-partner-card(
-            :partnerId="partnerId"
+          fv-third-party-account-card(
+            :thirdPartyAccountId="thirdPartyAccountId"
           )
         v-col(cols="4")
           fv-field-date(
@@ -56,7 +56,7 @@ export default {
     return {
       structure: null,
       offerName: null,
-      partnerId: null,
+      thirdPartyAccountId: null,
       orderDate: null,
       orderLines: []
     }
@@ -90,13 +90,13 @@ export default {
     },
     fillFieldsWithOrder() {
       if (!this.order) return
-      this.partnerId = this.order.partner_id
+      this.thirdPartyAccountId = this.order.third_party_account_id
       this.structure = this.getStructureName(this.order.structure)
       this.orderDate = this.order.date
       this.orderLines = this.order.order_lines
     },
     clearOrder() {
-      this.partnerId = null
+      this.thirdPartyAccountId = null
       this.orderLines = []
     }
   }

@@ -45,22 +45,12 @@ export default {
       dimension: null
     }
   },
-  watch: {
-    product() {
-      if (Object.entries(this.payload).length === 0) {
-        this.clearProduct()
-      } else {
-        this.fillFieldsWithProduct()
-      }
-    }
-  },
   mounted() {
     console.log('Composant ', this.$options.name)
     this.fillFieldsWithProduct()
   },
   methods: {
     categorySelected(v) {
-      console.log('le catgeory Id', v)
       this.category_id = v
       const payload = {
         category_id: this.category_id
@@ -69,7 +59,6 @@ export default {
       this.$emit('payload:changed', res)
     },
     nameChanged(name) {
-      console.log('Name changed: ', name)
       const payload = {
         name
       }

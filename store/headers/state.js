@@ -1,7 +1,7 @@
 export default () => ({
   contracts: [],
   products: [],
-  partners: [],
+  thirdPartyAccounts: [],
   offers: [],
   orders: [],
   orderLines: [],

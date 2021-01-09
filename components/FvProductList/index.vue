@@ -2,11 +2,13 @@
 .fv-product-list
   v-card
     fv-data-table-header(
+      data-testid='header'
       :title="$t('table.products.title')"
       :searchLabel="$t('table.products.search')"
       @dataTableSearch:changed="searchChanged"
     )
     fv-product-data-table(
+      data-testid='dataTable'
       :headers="headers"
       :items="items"
       @dataTable:selected="selectedProduct"
@@ -44,7 +46,6 @@ export default {
   mounted() {
     console.log('Composant ', this.$options.name)
     this.$store.dispatch('headers/getProductHeaders')
-    this.$store.dispatch('categories/get')
     this.$store.dispatch('products/get')
   },
   methods: {

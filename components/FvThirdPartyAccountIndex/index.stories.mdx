@@ -1,0 +1,18 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import FvThirdPartyAccountIndex from './index.vue'
+
+<Meta title='Pages/FvThirdPartyAccountIndex' component={ FvThirdPartyAccountIndex } />
+
+# FvThirdPartyAccountIndex
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  components: { FvThirdPartyAccountIndex },
+  template: `<FvThirdPartyAccountIndex>
+  </FvThirdPartyAccountIndex>`
+}}</Story>
+</Canvas>
+
+## ArgsTable
+
+<ArgsTable of={ FvThirdPartyAccountIndex } />

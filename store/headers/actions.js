@@ -6,11 +6,11 @@ export default {
       .index()
       .then((data) => commit('setContractHeader', data))
   },
-  getPartnerHeaders({ commit }) {
+  getThirdPartyAccountHeaders({ commit }) {
     // charger les formes juridiques
-    this.$repos.partnerHeaders
+    this.$repos.thirdPartyAccountHeaders
       .index()
-      .then((data) => commit('setPartnerHeaders', data))
+      .then((data) => commit('setThirdPartyAccountHeaders', data))
   },
   getProductHeaders({ commit }) {
     // charger les formes juridiques

@@ -22,11 +22,13 @@ export default {
   add({ commit, dispatch }, account) {
     account.user_id = this.$auth.user.sub
     this.$repos.accounts.create(account).then((res) => {
-      const partner = {
+      const thirdPartyAccount = {
         name: res.name,
         account_id: null
       }
-      dispatch('partners/addToFlexup', partner, { root: true })
+      dispatch('thirdPartyAccounts/addToFlexup', thirdPartyAccount, {
+        root: true
+      })
       commit('add', res)
     })
   },
