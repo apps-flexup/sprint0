@@ -7,6 +7,7 @@
     :hide-default-footer="hideDefaultFooter"
     disable-sort
     @click:row='selected'
+    :footer-props='footerOptions'
   )
     template(
       v-slot:[getThSlot(key)]="{ header }"
@@ -56,7 +57,11 @@ export default {
   data() {
     return {
       sortKey: null,
-      sortDesc: false
+      sortDesc: false,
+      footerOptions: {
+        'items-per-page-text': this.$t('dataTable.footer.rowsPerPage'),
+        'items-per-page-all-text': this.$t('dataTable.footer.all')
+      }
     }
   },
   mounted() {

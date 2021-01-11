@@ -1,4 +1,10 @@
 {
+  "dataTable": {
+    "footer": {
+      "rowsPerPage": "Lignes par page",
+      "all": "Tous"
+    }
+  },
   "total": "Total",
   "mainHeaders": {
     "product": "Produit",
