@@ -238,7 +238,7 @@
     "contracts": "Contracts",
     "products": "Products",
     "contacts": "Contacts",
-    "thirdPartyAccounts": "Third party accounts",
+    "thirdPartyAccounts": "Third party",
     "documents": "Documents",
     "dashboard": "Dashboard",
     "settings": "Settings"
@@ -343,7 +343,7 @@
       "unit": "Unit",
       "status": "Status"
     },
-    "thirdPArtyAccounts": {
+    "thirdPartyAccounts": {
       "name": "Name",
       "siret": "SIRET",
       "legalStructure": "Legal structure",
