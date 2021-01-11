@@ -343,7 +343,7 @@
       "unit": "Unit",
       "status": "Status"
     },
-    "thirdPArtyAccounts": {
+    "thirdPartyAccounts": {
       "name": "Name",
       "siret": "SIRET",
       "legalStructure": "Legal structure",
