@@ -7,7 +7,15 @@
     :hide-default-footer="hideDefaultFooter"
     disable-sort
     @click:row='selected'
+    :footer-props="{ \
+      itemsPerPageText: $t('dataTable.footer.rowsPerPage'), \
+      itemsPerPageAllText: $t('dataTable.footer.all') \
+    }"
   )
+    template(
+      v-slot:footer.page-text="{ pageStart, pageStop }"
+    )
+      div {{ pageStart }} {{ $t('dataTable.footer.of') }} {{ pageStop }}
     template(
       v-slot:[getThSlot(key)]="{ header }"
       v-for="key in headers.map(header => header.value)"

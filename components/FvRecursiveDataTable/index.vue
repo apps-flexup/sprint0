@@ -1,6 +1,6 @@
 <template lang="pug">
 .fv-recursive-data-table
-  v-data-table.elevation-2(
+  fv-data-table.elevation-2(
     data-testid="dataTable"
     :headers="headers"
     :items="mainItems"
@@ -84,12 +84,20 @@ export default {
 ::v-deep .v-data-table {
   border-radius: 0;
 }
-::v-deep .main-data-table > .v-data-table__wrapper > table > tbody > tr > td {
+::v-deep
+  .main-data-table
+  > .v-data-table
+  > .v-data-table__wrapper
+  > table
+  > tbody
+  > tr
+  > td {
   border-right: #0e0e0e0e solid 1px;
   padding: 0;
 }
 ::v-deep
   .main-data-table
+  > .v-data-table
   > .v-data-table__wrapper
   > table
   > tbody
@@ -99,16 +107,17 @@ export default {
 }
 ::v-deep
   .main-data-table
+  > .v-data-table
   > .v-data-table__wrapper
   > table
   > .v-data-table-header
   > tr
   > th {
   border-right: #0e0e0e0e solid 1px;
-  padding: 0;
 }
 ::v-deep
   .main-data-table
+  > .v-data-table
   > .v-data-table__wrapper
   > table
   > .v-data-table-header
