@@ -2,7 +2,8 @@
   "dataTable": {
     "footer": {
       "rowsPerPage": "Lignes par page",
-      "all": "Tous"
+      "all": "Tous",
+      "of": "sur"
     }
   },
   "total": "Total",
