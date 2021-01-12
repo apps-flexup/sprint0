@@ -13771,8 +13771,8 @@
       "active": true,
       "product_id": 19,
       "currency": "EUR",
-      "dimension": null,
-      "unit": "h",
+      "dimension": "duration",
+      "unit": "hr",
       "description": {
         "en": "description of offer php"
       },
@@ -14105,8 +14105,8 @@
           "quantity": 5,
           "pas": 1,
           "vat": "20.5",
-          "dimension": null,
-          "unit": "h",
+          "dimension": "duration",
+          "unit": "hr",
           "currency": "EUR",
           "price": 10
         }
@@ -14132,8 +14132,8 @@
           "quantity": 2,
           "pas": 1,
           "vat": "20.5",
-          "dimension": null,
-          "unit": "h",
+          "dimension": "duration",
+          "unit": "hr",
           "currency": "EUR",
           "price": 10
         }
@@ -14210,8 +14210,8 @@
           "quantity": 1,
           "pas": 1,
           "vat": "20.5",
-          "dimension": null,
-          "unit": "h",
+          "dimension": "duration",
+          "unit": "hr",
           "currency": "EUR",
           "price": 10
         }
@@ -14276,8 +14276,8 @@
           "quantity": 8,
           "pas": 1,
           "vat": "20.5",
-          "dimension": null,
-          "unit": "h",
+          "dimension": "duration",
+          "unit": "hr",
           "currency": "EUR",
           "price": 10
         }
@@ -14593,8 +14593,8 @@
     {
       "category_id": 44,
       "name": "Jeu 7 familles",
-      "unit": "h",
-      "dimension": null,
+      "unit": "hr",
+      "dimension": "duration",
       "status": "draft",
       "account_id": 1,
       "id": 18
@@ -14602,8 +14602,8 @@
     {
       "category_id": 52,
       "name": "PHP",
-      "unit": "h",
-      "dimension": null,
+      "unit": "hr",
+      "dimension": "duration",
       "status": "draft",
       "account_id": 1,
       "id": 19
