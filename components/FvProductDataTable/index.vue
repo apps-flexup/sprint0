@@ -8,8 +8,8 @@
     @dataTable:sortBy="sortBy"
     @dataTable:selected="selected"
   )
-    template(v-slot:item.name="{ item }")
-      div(v-to-locale="item.name")
+    template(v-slot:item.category="{ item }")
+      div {{ displayCategory(item.category_id) }}
     template(v-slot:item.unit='{ item }')
       div(v-to-unit="item")
     template(v-slot:item.status='{ item }')
@@ -48,6 +48,10 @@ export default {
     this.$store.dispatch('categories/get')
   },
   methods: {
+    displayCategory(categoryId) {
+      const res = this.$displayRules.category(categoryId)
+      return res
+    },
     selected(product) {
       this.$emit('dataTable:selected', product)
     },

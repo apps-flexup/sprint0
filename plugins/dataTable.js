@@ -20,28 +20,21 @@ const dataTable = (ctx) => ({
     if (sortDesc) res.reverse()
     return res
   },
-  filter(array, filters) {
+  filter(array, filters, rules = {}) {
     if (!array || !array[0]) return []
     const itemKeys = Object.keys(array[0])
     const res = array.filter((item) => {
       return filters.every((filter) => {
         return itemKeys.some((itemKey) => {
-          if (
-            typeof item[itemKey] === 'string' ||
-            typeof item[itemKey] === 'number'
-          ) {
+          let displayedItem = item[itemKey]
+          if (rules[itemKey]) {
+            displayedItem = rules[itemKey](displayedItem)
+          }
+          if (typeof displayedItem === 'string') {
             return String.prototype.filtreAutocomplete.call(
-              item[itemKey].toString(),
+              displayedItem.toString(),
               filter
             )
-          }
-          if (typeof item[itemKey] === 'object') {
-            const locale = ctx.store.getters['settings/locale']
-            const fallback = ctx.store.getters['settings/fallbackLocale']
-            const str = instantTranslate(item[itemKey], locale, fallback)
-            if (typeof str === 'string')
-              return String.prototype.filtreAutocomplete.call(str, filter)
-            return false
           }
           return false
         })

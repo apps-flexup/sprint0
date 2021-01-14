@@ -25,7 +25,11 @@ export default {
     return {
       search: '',
       sortKey: null,
-      shouldSortDesc: false
+      shouldSortDesc: false,
+      rules: {
+        status: this.$displayRules.status,
+        category_id: this.$displayRules.category
+      }
     }
   },
   computed: {
@@ -36,7 +40,7 @@ export default {
     items() {
       const products = this.$activeAccount.products()
       const filters = [this.search]
-      let res = this.$dataTable.filter(products, filters)
+      let res = this.$dataTable.filter(products, filters, this.rules)
       if (this.sortKey) {
         res = this.$dataTable.sortByKey(res, this.sortKey, this.shouldSortDesc)
       }

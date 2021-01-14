@@ -1,4 +1,12 @@
 {
+  "status": {
+    "active": "Active",
+    "archived": "Archived",
+    "draft": "Draft",
+    "inactive": "Inactive",
+    "reserved": "Reserved",
+    "suspended": "Suspended"
+  },
   "dataTable": {
     "footer": {
       "rowsPerPage": "Rows per page",

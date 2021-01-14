@@ -1,8 +1,16 @@
 {
+  "status": {
+    "active": "Actif",
+    "archived": "Archivé",
+    "draft": "Brouillon",
+    "inactive": "Inactif",
+    "reserved": "Réservé",
+    "suspended": "Suspendu"
+  },
   "dataTable": {
     "footer": {
       "rowsPerPage": "Lignes par page",
-      "all": "Tous",
+      "all": "Toutes",
       "of": "sur"
     }
   },
