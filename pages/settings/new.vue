@@ -14,9 +14,21 @@
 
 <script>
 export default {
+  mounted() {
+    this.defaultSettings()
+  },
   methods: {
     submit() {
       this.$router.push('/products/new')
+    },
+    defaultSettings() {
+      const defaultSettings = {
+        language: 'fr',
+        currency: 'EUR',
+        theme: 'light'
+      }
+      this.$store.dispatch('settings/createSettings', defaultSettings)
+      this.$activeAccount.setSettings(defaultSettings)
     }
   }
 }
