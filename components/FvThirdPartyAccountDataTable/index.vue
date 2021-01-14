@@ -8,6 +8,10 @@
     @dataTable:sortBy="sortBy"
     @dataTable:selected="selected"
   )
+    template(v-slot:item.legal_structure="{ item }")
+      div {{ displayLegalStructure(item.legal_structure_id) }}
+    template(v-slot:item.country="{ item }")
+      div {{ displayCountry(item.country_id) }}
     template(v-slot:item.actions="{ item }")
       v-row
         v-icon.mr-2(small='' @click.stop="showContract(item)")
@@ -47,6 +51,14 @@ export default {
     this.$store.dispatch('contracts/getLegalStructures')
   },
   methods: {
+    displayLegalStructure(legalStructureId) {
+      const res = this.$displayRules.legalStructure(legalStructureId)
+      return res
+    },
+    displayCountry(countryId) {
+      const res = this.$displayRules.country(countryId)
+      return res
+    },
     showContract(v) {
       const res = v.account_id
       this.$router.push(`/thirdPartyAccounts/contracts/${res}`)

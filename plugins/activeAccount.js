@@ -2,9 +2,7 @@ import {
   instantTranslate,
   addConvertedPriceToPayload,
   addLocaleDateToPayload,
-  addStructureNameToPayload,
-  addLegalStructureNameToPayload,
-  addCountryNameToPayload
+  addStructureNameToPayload
 } from './utils'
 
 const activeAccount = (ctx) => ({
@@ -125,21 +123,7 @@ const activeAccount = (ctx) => ({
   },
   thirdPartyAccounts() {
     const thirdPArtyAccounts = ctx.store.getters['thirdPartyAccounts/all']
-    const res = thirdPArtyAccounts.map((thirdPartyAccount) => {
-      let payload = {
-        ...thirdPartyAccount
-      }
-      const legalStructureId = thirdPartyAccount.legal_structure_id
-      payload = addLegalStructureNameToPayload(
-        payload,
-        ctx.store,
-        legalStructureId
-      )
-      const countryId = thirdPartyAccount.country_id
-      payload = addCountryNameToPayload(payload, ctx.store, countryId)
-      return payload
-    })
-    return res
+    return thirdPArtyAccounts
   },
   async allThirdPartyAccounts() {
     const thirdPartyAccounts = await this.thirdPartyAccounts()

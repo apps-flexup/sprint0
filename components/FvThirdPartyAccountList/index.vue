@@ -25,7 +25,11 @@ export default {
     return {
       search: '',
       sortKey: null,
-      shouldSortDesc: false
+      shouldSortDesc: false,
+      rules: {
+        legal_structure_id: this.$displayRules.legalStructure,
+        country_id: this.$displayRules.country
+      }
     }
   },
   computed: {
@@ -36,7 +40,7 @@ export default {
     items() {
       const thirdPartyAccounts = this.$activeAccount.thirdPartyAccounts()
       const filters = [this.search]
-      let res = this.$dataTable.filter(thirdPartyAccounts, filters)
+      let res = this.$dataTable.filter(thirdPartyAccounts, filters, this.rules)
       if (this.sortKey) {
         res = this.$dataTable.sortByKey(res, this.sortKey, this.shouldSortDesc)
       }
