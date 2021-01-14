@@ -8,7 +8,10 @@ let vuetify
 const factory = () => {
   return mount(FvRecursiveDataTable, {
     localVue,
-    vuetify
+    vuetify,
+    mocks: {
+      $t: (msg) => msg
+    }
   })
 }
 
