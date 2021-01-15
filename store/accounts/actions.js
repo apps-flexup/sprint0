@@ -22,11 +22,20 @@ export default {
   add({ commit, dispatch }, account) {
     account.user_id = this.$auth.user.sub
     this.$repos.accounts.create(account).then((res) => {
+      this.$activeAccount.set(res.id)
       const thirdPartyAccount = {
         name: res.name,
         account_id: null
       }
       dispatch('thirdPartyAccounts/addToFlexup', thirdPartyAccount, {
+        root: true
+      })
+      const defaultSettings = {
+        language: 'fr',
+        currency: 'EUR',
+        theme: 'light'
+      }
+      dispatch('settings/createSettings', defaultSettings, {
         root: true
       })
       commit('add', res)

@@ -32,5 +32,10 @@ export default {
     this.$repos.settings.update(settings).then((data) => {
       commit('setSettings', data)
     })
+  },
+  createSettings({ commit }, settings) {
+    this.$repos.settings.createWithAccountId(settings).then((data) => {
+      commit('setSettings', data)
+    })
   }
 }
