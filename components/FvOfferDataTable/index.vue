@@ -8,8 +8,6 @@
     @dataTable:sortBy="sortBy"
     @dataTable:selected='selected'
   )
-    template(v-slot:item.name='{ item }')
-      div(v-to-locale="item.name")
     template(v-slot:item.price='{ item }')
       fv-flex-items
         template(v-slot:left)

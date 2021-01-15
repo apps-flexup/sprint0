@@ -1,5 +1,4 @@
 import {
-  instantTranslate,
   addConvertedPriceToPayload,
   addLocaleDateToPayload,
   addStructureNameToPayload
@@ -88,8 +87,6 @@ const activeAccount = (ctx) => ({
   },
   async offers() {
     const offers = ctx.store.getters['offers/all']
-    const locale = ctx.store.getters['settings/locale']
-    const fallback = ctx.store.getters['settings/fallbackLocale']
     const preferredCurrency = this.settings().currency
     const res = await Promise.all(
       offers.map(async (offer) => {
@@ -98,10 +95,9 @@ const activeAccount = (ctx) => ({
         }
         const product = ctx.store.getters['products/findById'](offer.product_id)
         if (product) {
-          const category = product.category
           payload = {
             ...payload,
-            category: instantTranslate(category.name, locale, fallback)
+            category_id: product.category_id
           }
         }
         payload = await addConvertedPriceToPayload(

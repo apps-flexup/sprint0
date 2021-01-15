@@ -12,6 +12,7 @@
       :headers="mainHeaders"
       :items="mainItems"
       :filters="filters"
+      :rules="rules"
       @dataTable:selected="offerSelected"
     )
 </template>
@@ -23,7 +24,12 @@ export default {
   name: 'FvOfferList',
   data() {
     return {
-      search: ''
+      search: '',
+      rules: {
+        name: this.$displayRules.multiLanguage,
+        category_id: this.$displayRules.category,
+        status: this.$displayRules.status
+      }
     }
   },
   computed: {

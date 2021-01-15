@@ -1,6 +1,12 @@
 import { instantTranslate } from './utils'
 
 const displayRules = (ctx) => ({
+  multiLanguage(field) {
+    const locale = ctx.store.getters['settings/locale']
+    const fallback = ctx.store.getters['settings/fallbackLocale']
+    const res = instantTranslate(field, locale, fallback)
+    return res
+  },
   category(categoryId) {
     if (!categoryId) return null
     const category = ctx.store.getters['categories/find'](categoryId)

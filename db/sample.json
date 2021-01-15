@@ -13636,7 +13636,7 @@
           "align": "center",
           "sortable": true,
           "text": "headers.products.category",
-          "value": "category"
+          "value": "category_id"
         },
         {
           "align": "center",

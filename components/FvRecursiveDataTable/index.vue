@@ -40,6 +40,12 @@ export default {
       default() {
         return []
       }
+    },
+    rules: {
+      type: Object,
+      default() {
+        return {}
+      }
     }
   },
   data() {
@@ -55,9 +61,15 @@ export default {
     },
     sortedItems() {
       let res = this.mainItems[0].items
-      res = this.$dataTable.filter(res, this.filters)
+      res = this.$dataTable.filter(res, this.filters, this.rules)
       if (this.sortKey) {
-        res = this.$dataTable.sortByKey(res, this.sortKey, this.shouldSortDesc)
+        const rule = this.rules[this.sortKey]
+        res = this.$dataTable.sortByKey(
+          res,
+          this.sortKey,
+          this.shouldSortDesc,
+          rule
+        )
       }
       return res
     }
