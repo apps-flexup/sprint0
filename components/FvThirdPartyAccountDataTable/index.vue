@@ -8,9 +8,9 @@
     @dataTable:sortBy="sortBy"
     @dataTable:selected="selected"
   )
-    template(v-slot:item.legal_structure="{ item }")
+    template(v-slot:item.legal_structure_id="{ item }")
       div {{ displayLegalStructure(item.legal_structure_id) }}
-    template(v-slot:item.country="{ item }")
+    template(v-slot:item.country_id="{ item }")
       div {{ displayCountry(item.country_id) }}
     template(v-slot:item.actions="{ item }")
       v-row

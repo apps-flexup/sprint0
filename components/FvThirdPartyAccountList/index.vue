@@ -42,7 +42,13 @@ export default {
       const filters = [this.search]
       let res = this.$dataTable.filter(thirdPartyAccounts, filters, this.rules)
       if (this.sortKey) {
-        res = this.$dataTable.sortByKey(res, this.sortKey, this.shouldSortDesc)
+        const rule = this.rules[this.sortKey]
+        res = this.$dataTable.sortByKey(
+          res,
+          this.sortKey,
+          this.shouldSortDesc,
+          rule
+        )
       }
       return res
     }

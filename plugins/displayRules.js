@@ -20,12 +20,14 @@ const displayRules = (ctx) => ({
     const legalStructure = ctx.store.getters['contracts/getLegalStructureById'](
       legalStructureId
     )
+    if (!legalStructure) return null
     const res = legalStructure.name
     return res
   },
   country(countryId) {
     if (!countryId) return null
     const country = ctx.store.getters['countries/find'](countryId)
+    if (!country) return null
     const res = country.name
     return res
   }
