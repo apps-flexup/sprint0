@@ -14482,7 +14482,7 @@
       "align": "start",
       "sortable": true,
       "text": "headers.products.category",
-      "value": "category"
+      "value": "category_id"
     },
     {
       "align": "start",

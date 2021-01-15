@@ -8,7 +8,7 @@
     @dataTable:sortBy="sortBy"
     @dataTable:selected="selected"
   )
-    template(v-slot:item.category="{ item }")
+    template(v-slot:item.category_id="{ item }")
       div {{ displayCategory(item.category_id) }}
     template(v-slot:item.unit='{ item }')
       div(v-to-unit="item")

@@ -4,6 +4,7 @@ const displayRules = (ctx) => ({
   category(categoryId) {
     if (!categoryId) return null
     const category = ctx.store.getters['categories/find'](categoryId)
+    if (!category) return null
     const locale = ctx.store.getters['settings/locale']
     const fallback = ctx.store.getters['settings/fallbackLocale']
     const res = instantTranslate(category.name, locale, fallback)
