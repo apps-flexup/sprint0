@@ -78,7 +78,6 @@ export default {
   methods: {
     createWithAccountId() {
       this.$store.dispatch('accounts/add', this.account)
-      this.$store.dispatch('thirdPartyAccounts/addToFlexup')
       this.$router.push('/settings/new')
     }
   }
