@@ -16,7 +16,10 @@
     app
   )
     v-app-bar-nav-icon(@click.stop="drawer = !drawer")
-    v-toolbar-title(v-text="title")
+    v-toolbar-title.mr-16(v-text="title")
+    fv-nav-bar-slots(
+      :space="space"
+    )
     v-spacer
     fv-user-accounts
 </template>

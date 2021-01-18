@@ -363,6 +363,18 @@
       "country": "Pays"
     }
   },
+  "navBar": {
+    "manage": {
+      "dashboard": "Tableau de bord",
+      "currentManagement": "Gestion courante",
+      "FlexUpGestion": "Gestion FlexUp"
+    },
+    "seller": {
+      "dashboard":"Tableau de bord",
+      "orders": "Commandes",
+      "myoffers": "Mes offres"
+    }
+  },
   "modal": {
     "close": "Fermer",
     "save": "Sauvegarder"
