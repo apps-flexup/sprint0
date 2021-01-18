@@ -35,7 +35,7 @@ export default {
   inheritAttrs: true,
   props: {
     element: {
-      type: Number,
+      type: [Number, String],
       default() {
         return null
       }
