@@ -36,17 +36,25 @@ export default {
     headers() {
       const res = this.$activeAccount.headersThirdPartyAccounts()
       return translateHeaders(this.$i18n, res)
-    },
-    items() {
+    }
+  },
+  asyncComputed: {
+    async items() {
       const thirdPartyAccounts = this.$activeAccount.thirdPartyAccounts()
       const filters = [this.search]
-      let res = this.$dataTable.filter(thirdPartyAccounts, filters, this.rules)
-      if (this.sortKey) {
-        const rule = this.rules[this.sortKey]
-        res = this.$dataTable.sortByKey(
+      const sortKey = this.sortKey
+      const shouldSortDesc = this.shouldSortDesc
+      let res = await this.$dataTable.filter(
+        thirdPartyAccounts,
+        filters,
+        this.rules
+      )
+      if (sortKey) {
+        const rule = this.rules[sortKey]
+        res = await this.$dataTable.sortByRule(
           res,
-          this.sortKey,
-          this.shouldSortDesc,
+          sortKey,
+          shouldSortDesc,
           rule
         )
       }

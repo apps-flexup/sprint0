@@ -85,30 +85,21 @@ const activeAccount = (ctx) => ({
     )
     return res
   },
-  async offers() {
+  offers() {
     const offers = ctx.store.getters['offers/all']
-    const preferredCurrency = this.settings().currency
-    const res = await Promise.all(
-      offers.map(async (offer) => {
-        let payload = {
-          ...offer
+    const res = offers.map((offer) => {
+      let payload = {
+        ...offer
+      }
+      const product = ctx.store.getters['products/findById'](offer.product_id)
+      if (product) {
+        payload = {
+          ...payload,
+          category_id: product.category_id
         }
-        const product = ctx.store.getters['products/findById'](offer.product_id)
-        if (product) {
-          payload = {
-            ...payload,
-            category_id: product.category_id
-          }
-        }
-        payload = await addConvertedPriceToPayload(
-          payload,
-          offer.price,
-          offer.currency,
-          preferredCurrency
-        )
-        return payload
-      })
-    )
+      }
+      return payload
+    })
     return res
   },
   headersThirdPartyAccounts() {

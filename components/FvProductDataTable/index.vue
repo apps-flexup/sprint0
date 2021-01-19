@@ -9,11 +9,11 @@
     @dataTable:selected="selected"
   )
     template(v-slot:item.name="{ item }")
-      div {{ displayName(item.name) }}
+      div {{ displayName(item) }}
     template(v-slot:item.category_id="{ item }")
-      div {{ displayCategory(item.category_id) }}
+      div {{ displayCategory(item) }}
     template(v-slot:item.unit='{ item }')
-      div(v-to-unit="item")
+      div {{ displayUnit(item) }}
     template(v-slot:item.status='{ item }')
       fv-status-progress(:status="item.status")
     template(v-slot:item.actions="{ item }")
@@ -50,12 +50,16 @@ export default {
     this.$store.dispatch('categories/get')
   },
   methods: {
-    displayName(name) {
-      const res = this.$displayRules.multiLanguage(name)
+    displayName(item) {
+      const res = this.$displayRules.name(item)
       return res
     },
-    displayCategory(categoryId) {
-      const res = this.$displayRules.category(categoryId)
+    displayCategory(item) {
+      const res = this.$displayRules.category(item)
+      return res
+    },
+    displayUnit(item) {
+      const res = this.$displayRules.unit(item)
       return res
     },
     selected(product) {

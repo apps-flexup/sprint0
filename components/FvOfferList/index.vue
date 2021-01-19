@@ -26,8 +26,11 @@ export default {
     return {
       search: '',
       rules: {
-        name: this.$displayRules.multiLanguage,
+        name: this.$displayRules.name,
         category_id: this.$displayRules.category,
+        unit: this.$displayRules.unit,
+        price: this.$displayRules.priceWithUnit,
+        vat: this.$displayRules.vat,
         status: this.$displayRules.status
       }
     }
@@ -58,11 +61,9 @@ export default {
         }
       ]
       return res
-    }
-  },
-  asyncComputed: {
-    async offerItems() {
-      const res = await this.$activeAccount.offers()
+    },
+    offerItems() {
+      const res = this.$activeAccount.offers()
       return res
     }
   },

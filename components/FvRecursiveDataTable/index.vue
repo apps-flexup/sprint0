@@ -58,16 +58,20 @@ export default {
     mainItems() {
       const res = this.items ? this.items : []
       return res
-    },
-    sortedItems() {
-      let res = this.mainItems[0].items
-      res = this.$dataTable.filter(res, this.filters, this.rules)
-      if (this.sortKey) {
-        const rule = this.rules[this.sortKey]
-        res = this.$dataTable.sortByKey(
+    }
+  },
+  asyncComputed: {
+    async sortedItems() {
+      let res = this.mainItems[0] ? this.mainItems[0].items : []
+      const sortKey = this.sortKey
+      const shouldSortDesc = this.shouldSortDesc
+      res = await this.$dataTable.filter(res, this.filters, this.rules)
+      if (sortKey) {
+        const rule = this.rules[sortKey]
+        res = await this.$dataTable.sortByRule(
           res,
-          this.sortKey,
-          this.shouldSortDesc,
+          sortKey,
+          shouldSortDesc,
           rule
         )
       }

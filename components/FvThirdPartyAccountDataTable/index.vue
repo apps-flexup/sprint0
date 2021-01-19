@@ -9,9 +9,9 @@
     @dataTable:selected="selected"
   )
     template(v-slot:item.legal_structure_id="{ item }")
-      div {{ displayLegalStructure(item.legal_structure_id) }}
+      div {{ displayLegalStructure(item) }}
     template(v-slot:item.country_id="{ item }")
-      div {{ displayCountry(item.country_id) }}
+      div {{ displayCountry(item) }}
     template(v-slot:item.actions="{ item }")
       v-row
         v-icon.mr-2(small='' @click.stop="showContract(item)")
@@ -51,12 +51,12 @@ export default {
     this.$store.dispatch('contracts/getLegalStructures')
   },
   methods: {
-    displayLegalStructure(legalStructureId) {
-      const res = this.$displayRules.legalStructure(legalStructureId)
+    displayLegalStructure(item) {
+      const res = this.$displayRules.legalStructure(item)
       return res
     },
-    displayCountry(countryId) {
-      const res = this.$displayRules.country(countryId)
+    displayCountry(item) {
+      const res = this.$displayRules.country(item)
       return res
     },
     showContract(v) {

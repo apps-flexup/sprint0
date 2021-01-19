@@ -37,7 +37,10 @@ export default {
       return res
     },
     statusDisplay() {
-      const res = this.$displayRules.status(this.status)
+      const item = {
+        status: this.status
+      }
+      const res = this.$displayRules.status(item)
       return res
     }
   },

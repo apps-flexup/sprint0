@@ -28,7 +28,8 @@ export default {
       shouldSortDesc: false,
       rules: {
         status: this.$displayRules.status,
-        category_id: this.$displayRules.category
+        category_id: this.$displayRules.category,
+        unit: this.$displayRules.unit
       }
     }
   },
@@ -36,17 +37,21 @@ export default {
     headers() {
       const res = this.$activeAccount.headersProducts()
       return translateHeaders(this.$i18n, res)
-    },
-    items() {
+    }
+  },
+  asyncComputed: {
+    async items() {
       const products = this.$activeAccount.products()
       const filters = [this.search]
-      let res = this.$dataTable.filter(products, filters, this.rules)
-      if (this.sortKey) {
-        const rule = this.rules[this.sortKey]
-        res = this.$dataTable.sortByKey(
+      const sortKey = this.sortKey
+      const shouldSortDesc = this.shouldSortDesc
+      let res = await this.$dataTable.filter(products, filters, this.rules)
+      if (sortKey) {
+        const rule = this.rules[sortKey]
+        res = await this.$dataTable.sortByRule(
           res,
-          this.sortKey,
-          this.shouldSortDesc,
+          sortKey,
+          shouldSortDesc,
           rule
         )
       }
