@@ -17,10 +17,13 @@
   )
     v-app-bar-nav-icon(@click.stop="drawer = !drawer")
     v-toolbar-title.mr-16(v-text="title")
-    fv-nav-bar-slots(
-      :space="space"
+    fv-nav-bar-slots-left(
+      :space='space'
     )
     v-spacer
+    div(
+        class='line'
+    )
     fv-user-accounts
 </template>
 
@@ -54,3 +57,11 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.line {
+  width: 2px;
+  height: 100%;
+  background-color: brown;
+}
+</style>

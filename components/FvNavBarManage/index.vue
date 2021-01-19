@@ -1,15 +1,12 @@
 <template lang="pug">
-.fv-nav-bar-slots
-  slot(name="NavBarHeader")
-    component(
-      :is="'fv-nav-bar-slots-' + space"
-      :space="space"
-    )
+.fv-nav-bar-manage
+  slot(name='gestion')
+  slot(name='button')
 </template>
 
 <script>
 export default {
-  name: 'FvNavBarSlots',
+  name: 'FvNavBarManage',
   props: {
     space: {
       type: String,
@@ -23,3 +20,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+a {
+  padding: 20px;
+}
+</style>
