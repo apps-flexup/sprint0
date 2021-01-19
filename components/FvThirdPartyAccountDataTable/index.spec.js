@@ -14,7 +14,10 @@ describe('FvThirdPartyAccountDataTable', () => {
     return mount(FvThirdPartyAccountDataTable, {
       localVue,
       store,
-      vuetify
+      vuetify,
+      mocks: {
+        $t: (msg) => msg
+      }
     })
   }
   beforeEach(() => {

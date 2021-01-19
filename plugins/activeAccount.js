@@ -1,10 +1,7 @@
 import {
-  instantTranslate,
   addConvertedPriceToPayload,
   addLocaleDateToPayload,
-  addStructureNameToPayload,
-  addLegalStructureNameToPayload,
-  addCountryNameToPayload
+  addStructureNameToPayload
 } from './utils'
 
 const activeAccount = (ctx) => ({
@@ -88,33 +85,21 @@ const activeAccount = (ctx) => ({
     )
     return res
   },
-  async offers() {
+  offers() {
     const offers = ctx.store.getters['offers/all']
-    const locale = ctx.store.getters['settings/locale']
-    const fallback = ctx.store.getters['settings/fallbackLocale']
-    const preferredCurrency = this.settings().currency
-    const res = await Promise.all(
-      offers.map(async (offer) => {
-        let payload = {
-          ...offer
+    const res = offers.map((offer) => {
+      let payload = {
+        ...offer
+      }
+      const product = ctx.store.getters['products/findById'](offer.product_id)
+      if (product) {
+        payload = {
+          ...payload,
+          category_id: product.category_id
         }
-        const product = ctx.store.getters['products/findById'](offer.product_id)
-        if (product) {
-          const category = product.category
-          payload = {
-            ...payload,
-            category: instantTranslate(category.name, locale, fallback)
-          }
-        }
-        payload = await addConvertedPriceToPayload(
-          payload,
-          offer.price,
-          offer.currency,
-          preferredCurrency
-        )
-        return payload
-      })
-    )
+      }
+      return payload
+    })
     return res
   },
   headersThirdPartyAccounts() {
@@ -125,21 +110,7 @@ const activeAccount = (ctx) => ({
   },
   thirdPartyAccounts() {
     const thirdPArtyAccounts = ctx.store.getters['thirdPartyAccounts/all']
-    const res = thirdPArtyAccounts.map((thirdPartyAccount) => {
-      let payload = {
-        ...thirdPartyAccount
-      }
-      const legalStructureId = thirdPartyAccount.legal_structure_id
-      payload = addLegalStructureNameToPayload(
-        payload,
-        ctx.store,
-        legalStructureId
-      )
-      const countryId = thirdPartyAccount.country_id
-      payload = addCountryNameToPayload(payload, ctx.store, countryId)
-      return payload
-    })
-    return res
+    return thirdPArtyAccounts
   },
   async allThirdPartyAccounts() {
     const thirdPartyAccounts = await this.thirdPartyAccounts()
@@ -157,17 +128,7 @@ const activeAccount = (ctx) => ({
     return res
   },
   products() {
-    const products = ctx.store.getters['products/all']
-    const locale = ctx.store.getters['settings/locale']
-    const fallback = ctx.store.getters['settings/fallbackLocale']
-    const res = products.map((product) => {
-      const category = ctx.store.getters['categories/find'](product.category_id)
-      const payload = {
-        ...product,
-        category: instantTranslate(category.name, locale, fallback)
-      }
-      return payload
-    })
+    const res = ctx.store.getters['products/all']
     return res
   },
   headersProducts() {

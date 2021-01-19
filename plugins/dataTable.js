@@ -1,52 +1,67 @@
-import { instantTranslate } from '~/plugins/utils'
-
-const dataTable = (ctx) => ({
-  sortByKey(array, key, sortDesc = false) {
-    const locale = ctx.store.getters['settings/locale']
-    const fallback = ctx.store.getters['settings/fallbackLocale']
-    const res = array.sort((a, b) => {
-      let first = a[key]
-      let second = b[key]
-      if (typeof first === 'object')
-        first = instantTranslate(a[key], locale, fallback)
-      if (typeof second === 'object')
-        second = instantTranslate(b[key], locale, fallback)
+const dataTable = (_ctx) => ({
+  async sortByRule(array, key, sortDesc = false, rule = null) {
+    let i = 1
+    while (i < array.length) {
+      let first = array[i - 1]
+      let second = array[i]
+      if (rule) {
+        first = await rule(first)
+        second = await rule(second)
+      } else {
+        first = first[key]
+        second = first[key]
+      }
       if (typeof first === 'string') first = first.toLowerCase()
       if (typeof second === 'string') second = second.toLowerCase()
-      if (first < second) return -1
-      else if (first > second) return 1
-      return 0
-    })
-    if (sortDesc) res.reverse()
-    return res
+      if (first > second) {
+        const tmp = array[i - 1]
+        array[i - 1] = array[i]
+        array[i] = tmp
+        i = 0
+      }
+      i++
+    }
+    if (sortDesc) array.reverse()
+    return array
   },
-  filter(array, filters) {
-    if (!array || !array[0]) return []
+
+  async asyncArraySome(itemKeys, item, rules, filter) {
+    for (const itemKey of itemKeys) {
+      let displayedItem = item[itemKey]
+      const rule = rules[itemKey]
+      if (rule) {
+        displayedItem = await rule(item)
+      }
+      if (typeof displayedItem === 'string') {
+        const res = String.prototype.filtreAutocomplete.call(
+          displayedItem.toString(),
+          filter
+        )
+        if (res) return true
+      }
+    }
+    return false
+  },
+  async asyncArrayEvery(filters, itemKeys, item, rules) {
+    for (const filter of filters) {
+      const res = await this.asyncArraySome(itemKeys, item, rules, filter)
+      if (!res) return false
+    }
+    return true
+  },
+  async asyncArrayFilter(array, filters, rules) {
     const itemKeys = Object.keys(array[0])
-    const res = array.filter((item) => {
-      return filters.every((filter) => {
-        return itemKeys.some((itemKey) => {
-          if (
-            typeof item[itemKey] === 'string' ||
-            typeof item[itemKey] === 'number'
-          ) {
-            return String.prototype.filtreAutocomplete.call(
-              item[itemKey].toString(),
-              filter
-            )
-          }
-          if (typeof item[itemKey] === 'object') {
-            const locale = ctx.store.getters['settings/locale']
-            const fallback = ctx.store.getters['settings/fallbackLocale']
-            const str = instantTranslate(item[itemKey], locale, fallback)
-            if (typeof str === 'string')
-              return String.prototype.filtreAutocomplete.call(str, filter)
-            return false
-          }
-          return false
-        })
+    const res = await Promise.all(
+      array.map(async (item) => {
+        const res = await this.asyncArrayEvery(filters, itemKeys, item, rules)
+        return res
       })
-    })
+    )
+    return array.filter((_v, index) => res[index])
+  },
+  async filter(array, filters, rules = {}) {
+    if (!array || !array[0]) return []
+    const res = await this.asyncArrayFilter(array, filters, rules)
     return res
   }
 })

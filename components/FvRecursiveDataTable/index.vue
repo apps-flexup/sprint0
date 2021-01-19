@@ -40,6 +40,12 @@ export default {
       default() {
         return []
       }
+    },
+    rules: {
+      type: Object,
+      default() {
+        return {}
+      }
     }
   },
   data() {
@@ -52,12 +58,22 @@ export default {
     mainItems() {
       const res = this.items ? this.items : []
       return res
-    },
-    sortedItems() {
-      let res = this.mainItems[0].items
-      res = this.$dataTable.filter(res, this.filters)
-      if (this.sortKey) {
-        res = this.$dataTable.sortByKey(res, this.sortKey, this.shouldSortDesc)
+    }
+  },
+  asyncComputed: {
+    async sortedItems() {
+      let res = this.mainItems[0] ? this.mainItems[0].items : []
+      const sortKey = this.sortKey
+      const shouldSortDesc = this.shouldSortDesc
+      res = await this.$dataTable.filter(res, this.filters, this.rules)
+      if (sortKey) {
+        const rule = this.rules[sortKey]
+        res = await this.$dataTable.sortByRule(
+          res,
+          sortKey,
+          shouldSortDesc,
+          rule
+        )
       }
       return res
     }

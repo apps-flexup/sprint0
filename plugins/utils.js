@@ -34,34 +34,6 @@ export const addStructureNameToPayload = (payload, store, structureId) => {
   return res
 }
 
-export const addCountryNameToPayload = (payload, store, countryId) => {
-  if (!countryId) return payload
-  const country = store.getters['countries/find'](countryId)
-  if (!country) return payload
-  const res = {
-    ...payload,
-    country: country.name
-  }
-  return res
-}
-
-export const addLegalStructureNameToPayload = (
-  payload,
-  store,
-  legalStructureId
-) => {
-  if (!legalStructureId) return payload
-  const legalStructure = store.getters['contracts/getLegalStructureById'](
-    legalStructureId
-  )
-  if (!legalStructure) return payload
-  const res = {
-    ...payload,
-    legal_structure: legalStructure.name
-  }
-  return res
-}
-
 export const addLocaleDateToPayload = (payload, date, locale) => {
   if (!date) return payload
   const dte = new Date(date)

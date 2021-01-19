@@ -14,7 +14,10 @@ describe('FvOfferDataTable', () => {
     return mount(FvOfferDataTable, {
       localVue,
       store,
-      vuetify
+      vuetify,
+      mocks: {
+        $t: (msg) => msg
+      }
     })
   }
   beforeEach(() => {

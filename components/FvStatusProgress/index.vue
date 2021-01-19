@@ -9,7 +9,7 @@
     :key="theme"
   )
     template(v-slot="data")
-      strong {{ status }}
+      strong {{ statusDisplay }}
 </template>
 
 <script>
@@ -34,6 +34,13 @@ export default {
   computed: {
     theme() {
       const res = this.$activeAccount.settings().theme
+      return res
+    },
+    statusDisplay() {
+      const item = {
+        status: this.status
+      }
+      const res = this.$displayRules.status(item)
       return res
     }
   },

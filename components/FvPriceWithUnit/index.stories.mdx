@@ -1,10 +1,10 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
 import { text, number } from '@storybook/addon-knobs'
-import FvPriceToPreferredCurrency from './index.vue'
+import FvPriceWithUnit from './index.vue'
 
-<Meta title='Atoms/FvPriceToPreferredCurrency' component={ FvPriceToPreferredCurrency } />
+<Meta title='Atoms/FvPriceWithUnit' component={ FvPriceWithUnit } />
 
-# FvPriceToPreferredCurrency
+# FvPriceWithUnit
 
 <Canvas>
 <Story name='Common' height='150px'>{{
@@ -16,15 +16,15 @@ import FvPriceToPreferredCurrency from './index.vue'
       default: text('Currency', 'EUR', 'Props')
     }
   },
-  components: { FvPriceToPreferredCurrency },
-  template: `<FvPriceToPreferredCurrency
+  components: { FvPriceWithUnit },
+  template: `<FvPriceWithUnit
     :price="knobPrice"
     :currency="knobCurrency"
   >
-  </FvPriceToPreferredCurrency>`
+  </FvPriceWithUnit>`
 }}</Story>
 </Canvas>
 
 ## ArgsTable
 
-<ArgsTable of={ FvPriceToPreferredCurrency } />
+<ArgsTable of={ FvPriceWithUnit } />

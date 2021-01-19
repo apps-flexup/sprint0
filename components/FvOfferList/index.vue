@@ -12,6 +12,7 @@
       :headers="mainHeaders"
       :items="mainItems"
       :filters="filters"
+      :rules="rules"
       @dataTable:selected="offerSelected"
     )
 </template>
@@ -23,7 +24,15 @@ export default {
   name: 'FvOfferList',
   data() {
     return {
-      search: ''
+      search: '',
+      rules: {
+        name: this.$displayRules.name,
+        category_id: this.$displayRules.category,
+        unit: this.$displayRules.unit,
+        price: this.$displayRules.priceWithUnit,
+        vat: this.$displayRules.vat,
+        status: this.$displayRules.status
+      }
     }
   },
   computed: {
@@ -52,11 +61,9 @@ export default {
         }
       ]
       return res
-    }
-  },
-  asyncComputed: {
-    async offerItems() {
-      const res = await this.$activeAccount.offers()
+    },
+    offerItems() {
+      const res = this.$activeAccount.offers()
       return res
     }
   },

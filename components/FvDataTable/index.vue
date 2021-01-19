@@ -3,7 +3,7 @@
   v-data-table(
     data-testid="dataTable"
     :headers='headers'
-    :items='items'
+    :items='items ? items : []'
     :hide-default-footer="hideDefaultFooter"
     disable-sort
     @click:row='selected'

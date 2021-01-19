@@ -31,6 +31,9 @@ const factory = (propsData) => {
     },
     propsData: {
       ...propsData
+    },
+    mocks: {
+      $t: (msg) => msg
     }
   })
 }

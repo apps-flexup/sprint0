@@ -1,9 +1,6 @@
 <template lang="pug">
-.fv-price-to-preferred-currency
-  div(
-    v-to-preferred-currency="{amount: price, currency: currency}"
-    :key="preferredCurrency"
-  )
+.fv-price-with-unit
+  div {{ priceWithUnit }}
 </template>
 
 <script>
@@ -22,17 +19,27 @@ export default {
       default() {
         return null
       }
+    },
+    unit: {
+      type: String,
+      default() {
+        return null
+      }
     }
   },
-  computed: {
-    preferredCurrency() {
-      const res = this.$activeAccount.settings().currency
+  asyncComputed: {
+    async priceWithUnit() {
+      const item = {
+        price: this.price,
+        currency: this.currency,
+        unit: this.unit
+      }
+      const res = await this.$displayRules.priceWithUnit(item)
       return res
     }
   },
   mounted() {
     console.log('Composant', this.$options.name)
-    this.$store.dispatch('settings/getSettings')
   }
 }
 </script>

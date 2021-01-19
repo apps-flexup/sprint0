@@ -55,7 +55,7 @@ import FvNavBar from '@/components/FvNavBar'
 import FvThirdPartyAccountStepDetail from '@/components/FvThirdPartyAccountStepDetail'
 import FvNumberField from '@/components/FvNumberField'
 import FvPriceField from '@/components/FvPriceField'
-import FvPriceToPreferredCurrency from '@/components/FvPriceToPreferredCurrency'
+import FvPriceWithUnit from '@/components/FvPriceWithUnit'
 import FvPrimaryButton from '@/components/FvPrimaryButton'
 import FvProductDataTable from '@/components/FvProductDataTable'
 import FvForm from '@/components/FvForm'
@@ -196,7 +196,7 @@ Vue.component(
 )
 Vue.component('fv-number-field', FvNumberField)
 Vue.component('fv-price-field', FvPriceField)
-Vue.component('fv-price-to-preferred-currency', FvPriceToPreferredCurrency)
+Vue.component('fv-price-with-unit', FvPriceWithUnit)
 Vue.component('fv-primary-button', FvPrimaryButton)
 Vue.component('fv-product-data-table', FvProductDataTable)
 Vue.component('fv-form', FvForm)

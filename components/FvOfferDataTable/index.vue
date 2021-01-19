@@ -8,18 +8,14 @@
     @dataTable:sortBy="sortBy"
     @dataTable:selected='selected'
   )
-    template(v-slot:item.name='{ item }')
-      div(v-to-locale="item.name")
     template(v-slot:item.price='{ item }')
-      fv-flex-items
-        template(v-slot:left)
-          div(v-to-currency="{ amount: item.price, currency: item.currency }")
-        template(v-slot:separator)
-          div /
-        template(v-slot:right)
-          div {{ item.unit }}
+      fv-price-with-unit(
+        :price="item.price"
+        :currency="item.currency"
+        :unit="item.unit"
+      )
     template(v-slot:item.vat='{ item }')
-      div {{ item.vat }}%
+      div {{ displayVat(item) }}
     template(v-slot:item.status='{ item }')
       fv-status-progress(:status="item.status")
     template(v-slot:item.actions="{ item }")
@@ -55,6 +51,10 @@ export default {
     console.log('Composant ', this.$options.name)
   },
   methods: {
+    displayVat(item) {
+      const res = this.$displayRules.vat(item)
+      return res
+    },
     selected(offer) {
       this.$emit('dataTable:selected', offer)
     },

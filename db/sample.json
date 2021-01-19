@@ -13636,7 +13636,7 @@
           "align": "center",
           "sortable": true,
           "text": "headers.products.category",
-          "value": "category"
+          "value": "category_id"
         },
         {
           "align": "center",
@@ -14333,7 +14333,7 @@
       "align": "start",
       "sortable": true,
       "text": "headers.thirdPartyAccounts.legalStructure",
-      "value": "legal_structure"
+      "value": "legal_structure_id"
     },
     {
       "align": "start",
@@ -14358,7 +14358,7 @@
       "align": "start",
       "sortable": true,
       "text": "headers.thirdPartyAccounts.country",
-      "value": "country"
+      "value": "country_id"
     }
   ],
   "third-party-accounts": [
@@ -14482,7 +14482,7 @@
       "align": "start",
       "sortable": true,
       "text": "headers.products.category",
-      "value": "category"
+      "value": "category_id"
     },
     {
       "align": "start",

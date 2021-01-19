@@ -25,20 +25,38 @@ export default {
     return {
       search: '',
       sortKey: null,
-      shouldSortDesc: false
+      shouldSortDesc: false,
+      rules: {
+        legal_structure_id: this.$displayRules.legalStructure,
+        country_id: this.$displayRules.country
+      }
     }
   },
   computed: {
     headers() {
       const res = this.$activeAccount.headersThirdPartyAccounts()
       return translateHeaders(this.$i18n, res)
-    },
-    items() {
+    }
+  },
+  asyncComputed: {
+    async items() {
       const thirdPartyAccounts = this.$activeAccount.thirdPartyAccounts()
       const filters = [this.search]
-      let res = this.$dataTable.filter(thirdPartyAccounts, filters)
-      if (this.sortKey) {
-        res = this.$dataTable.sortByKey(res, this.sortKey, this.shouldSortDesc)
+      const sortKey = this.sortKey
+      const shouldSortDesc = this.shouldSortDesc
+      let res = await this.$dataTable.filter(
+        thirdPartyAccounts,
+        filters,
+        this.rules
+      )
+      if (sortKey) {
+        const rule = this.rules[sortKey]
+        res = await this.$dataTable.sortByRule(
+          res,
+          sortKey,
+          shouldSortDesc,
+          rule
+        )
       }
       return res
     }
