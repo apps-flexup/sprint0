@@ -26,9 +26,10 @@ const displayRules = (ctx) => ({
     if (!item) return null
     const unit = item.unit
     if (!unit) return null
-    const dimension = item.dimension
-    let res = unit
-    if (dimension) res += '(' + dimension + ')'
+    const i18n = ctx.app.i18n
+    const dimension = i18n.t('units.dimension.' + item.dimension)
+    let res = i18n.t('units.symbol.' + unit)
+    if (dimension) res += ' (' + dimension + ')'
     return res
   },
   status(item) {
@@ -69,6 +70,7 @@ const displayRules = (ctx) => ({
     if (!unit) return null
     const settings = ctx.store.getters['settings/settings']
     const locale = ctx.store.getters['settings/locale']
+    const i18n = ctx.app.i18n
     const toCurrency = settings.currency
     const options = {
       style: 'currency',
@@ -78,7 +80,7 @@ const displayRules = (ctx) => ({
     const formatedPrice = new Intl.NumberFormat(locale, options).format(
       convertedPrice
     )
-    const res = formatedPrice.toString() + '/' + unit
+    const res = formatedPrice.toString() + '/' + i18n.t('units.symbol.' + unit)
     return res
   },
   vat(item) {
