@@ -22,9 +22,7 @@ export default {
   name: 'FvOrderList',
   data() {
     return {
-      search: '',
-      sortKey: null,
-      shouldSortDesc: false
+      search: ''
     }
   },
   computed: {
