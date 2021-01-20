@@ -1,48 +1,8 @@
-import { convert } from './currencies'
-
 /* eslint no-extend-native: ["error", { "exceptions": ["String"] }] */
 String.prototype.filtreAutocomplete = function(filtre) {
   const str = (this || '').toLowerCase()
   const v = (filtre || '').toLowerCase()
   return str.includes(v)
-}
-
-export const addConvertedPriceToPayload = async (
-  payload,
-  price,
-  fromCurrency,
-  toCurrency
-) => {
-  const convertedPrice = await convert(fromCurrency, toCurrency, price)
-  const res = {
-    ...payload,
-    price: convertedPrice,
-    amount: convertedPrice, // ugly fix to deal with the fact that an order works with amount instead of the price
-    currency: toCurrency
-  }
-  return res
-}
-
-export const addStructureNameToPayload = (payload, store, structureId) => {
-  if (!structureId) return payload
-  const structure = store.getters['contracts/getStructureById'](structureId)
-  if (!structure) return payload
-  const res = {
-    ...payload,
-    structure: structure.name
-  }
-  return res
-}
-
-export const addLocaleDateToPayload = (payload, date, locale) => {
-  if (!date) return payload
-  const dte = new Date(date)
-  const localeDate = dte.toLocaleDateString(locale)
-  const res = {
-    ...payload,
-    date: localeDate
-  }
-  return res
 }
 
 export const instantTranslate = (array, locale, fallback) => {

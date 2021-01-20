@@ -10,8 +10,8 @@
       :headers="mainHeaders"
       :items="mainItems"
       :filters="filters"
+      :rules="rules"
       @dataTable:selected="orderSelected"
-      @dataTable:sortBy="sortBy"
     )
 </template>
 
@@ -23,8 +23,12 @@ export default {
   data() {
     return {
       search: '',
-      sortKey: null,
-      shouldSortDesc: false
+      rules: {
+        date: this.$displayRules.localeDate,
+        amount: this.$displayRules.priceToPreferredCurrency,
+        structure: this.$displayRules.paymentStructure,
+        status: this.$displayRules.status
+      }
     }
   },
   computed: {
@@ -53,11 +57,9 @@ export default {
         }
       ]
       return res
-    }
-  },
-  asyncComputed: {
-    async orderItems() {
-      const res = await this.$activeAccount.orders()
+    },
+    orderItems() {
+      const res = this.$activeAccount.orders()
       return res
     }
   },
@@ -72,10 +74,6 @@ export default {
     },
     orderSelected(order) {
       this.$emit('list:selected', order)
-    },
-    sortBy(v) {
-      this.sortKey = v.key
-      this.shouldSortDesc = v.desc
     }
   }
 }

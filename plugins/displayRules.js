@@ -61,26 +61,29 @@ const displayRules = (ctx) => ({
     return res
   },
   async priceWithUnit(item) {
+    const i18n = ctx.app.i18n
+    const formatedPrice = await this.priceToPreferredCurrency(item)
+    if (!formatedPrice) return null
+    const unit = item.unit
+    if (!unit) return null
+    const res = formatedPrice.toString() + '/' + i18n.t('units.symbol.' + unit)
+    return res
+  },
+  async priceToPreferredCurrency(item) {
     if (!item) return null
     const price = item.price
     if (!price) return null
     const fromCurrency = item.currency
     if (!fromCurrency) return null
-    const unit = item.unit
-    if (!unit) return null
     const settings = ctx.store.getters['settings/settings']
     const locale = ctx.store.getters['settings/locale']
-    const i18n = ctx.app.i18n
     const toCurrency = settings.currency
     const options = {
       style: 'currency',
       currency: toCurrency
     }
     const convertedPrice = await convert(fromCurrency, toCurrency, price)
-    const formatedPrice = new Intl.NumberFormat(locale, options).format(
-      convertedPrice
-    )
-    const res = formatedPrice.toString() + '/' + i18n.t('units.symbol.' + unit)
+    const res = new Intl.NumberFormat(locale, options).format(convertedPrice)
     return res
   },
   vat(item) {
@@ -88,6 +91,26 @@ const displayRules = (ctx) => ({
     const vat = item.vat
     if (!vat) return null
     const res = vat + '%'
+    return res
+  },
+  localeDate(item) {
+    if (!item) return null
+    const date = item.date
+    if (!date) return null
+    const locale = ctx.store.getters['settings/locale']
+    const dte = new Date(date)
+    const res = dte.toLocaleDateString(locale)
+    return res
+  },
+  paymentStructure(item) {
+    if (!item) return null
+    const structureId = item.structure
+    if (!structureId) return null
+    const structure = ctx.store.getters['contracts/getStructureById'](
+      structureId
+    )
+    if (!structure) return null
+    const res = structure.name
     return res
   }
 })

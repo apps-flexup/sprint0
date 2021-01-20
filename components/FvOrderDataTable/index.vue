@@ -15,11 +15,15 @@
         td(
           v-for="i in headers.length - 2"
         )
+    template(v-slot:item.date='{ item }')
+      div {{ localeDate(item) }}
     template(v-slot:item.amount='{ item }')
       fv-price-to-preferred-currency.text-right(
         :price="item.amount"
         :currency="item.currency"
       )
+    template(v-slot:item.structure='{ item }')
+      div {{ paymentStructure(item) }}
     template(v-slot:item.status ='{ item }')
       fv-status-progress(:status="item.status")
     template(v-slot:item.actions="{ item }")
@@ -73,6 +77,14 @@ export default {
     console.log('Composant ', this.$options.name)
   },
   methods: {
+    localeDate(item) {
+      const res = this.$displayRules.localeDate(item)
+      return res
+    },
+    paymentStructure(item) {
+      const res = this.$displayRules.paymentStructure(item)
+      return res
+    },
     selected(order) {
       this.$emit('dataTable:selected', order)
     },
