@@ -201,7 +201,7 @@ const activeAccount = (ctx) => ({
       // update de l'offre
       ctx.store.dispatch('offers/add', newOffer)
     } else {
-      const preferredCurrency = ctx.store.getters['accounts/preferredCurrency']
+      const preferredCurrency = this.settings().currency
       const offer = {
         product_id: newOffer.product_id,
         name: newOffer.name,
