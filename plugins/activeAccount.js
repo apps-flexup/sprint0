@@ -1,8 +1,4 @@
-import {
-  addConvertedPriceToPayload,
-  addLocaleDateToPayload,
-  addStructureNameToPayload
-} from './utils'
+import { addStructureNameToPayload } from './utils'
 
 const activeAccount = (ctx) => ({
   clear() {
@@ -63,26 +59,17 @@ const activeAccount = (ctx) => ({
     const res = ctx.store.getters['currencies/all']
     return res
   },
-  async orders() {
+  orders() {
     const orders = ctx.store.getters['orders/all']
-    const locale = ctx.store.getters['settings/locale']
-    const preferredCurrency = this.settings().currency
-    const res = await Promise.all(
-      orders.map(async (order) => {
-        let payload = {
-          ...order
-        }
-        payload = await addConvertedPriceToPayload(
-          payload,
-          order.amount,
-          order.currency,
-          preferredCurrency
-        )
-        payload = addLocaleDateToPayload(payload, order.date, locale)
-        payload = addStructureNameToPayload(payload, ctx.store, order.structure)
-        return payload
-      })
-    )
+    const res = orders.map((order) => {
+      let payload = {
+        ...order,
+        price: order.amount,
+        status: 'draft'
+      }
+      payload = addStructureNameToPayload(payload, ctx.store, order.structure)
+      return payload
+    })
     return res
   },
   offers() {
