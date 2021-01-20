@@ -365,14 +365,14 @@
   },
   "navBar": {
     "manage": {
-      "dashboard": "Tableau de bord",
-      "currentManagement": "Gestion courante",
-      "FlexUpGestion": "Gestion FlexUp"
+      "0": "Tableau de bord",
+      "1": "Gestion courante",
+      "2": "Gestion FlexUp"
     },
     "seller": {
-      "dashboard":"Tableau de bord",
-      "orders": "Commandes",
-      "myoffers": "Mes offres"
+      "0":"Tableau de bord",
+      "1": "Commandes",
+      "2": "Mes offres"
     }
   },
   "modal": {

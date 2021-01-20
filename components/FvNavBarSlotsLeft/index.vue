@@ -5,10 +5,14 @@
       :space="space"
     )
       template(slot='gestion')
-        a(href="") {{$t('navBar.'+space+'.dashboard')}}
-        a(href="") {{$t('navBar.'+space+'.currentManagement')}}
-        a(href="") {{$t('navBar.'+space+'.FlexUpGestion')}}
-  slot(name='manage')
+        v-btn(elevation='0')
+          | {{ $t('navBar.'+space+'.0') }}
+        v-btn(elevation='0')
+          | {{$t('navBar.'+space+'.1')}}
+        v-btn(elevation='0')
+          | {{$t('navBar.'+space+'.2')}}
+      template(slot='search')
+        p.mb-0 search bar navbar buyer here
 </template>
 
 <script>

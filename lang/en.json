@@ -360,6 +360,18 @@
       "country": "Country"
     }
   },
+  "navBar": {
+    "manage": {
+      "0": "Dashboard",
+      "1": "Current gestion",
+      "2": "FlexUp gestion"
+    },
+    "seller": {
+      "0":"Dashboard",
+      "1": "Orders",
+      "2": "My offers"
+    }
+  },
   "modal": {
     "close": "Close",
     "save": "Save"
