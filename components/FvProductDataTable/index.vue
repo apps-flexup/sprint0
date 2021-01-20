@@ -5,6 +5,7 @@
     :headers='headers'
     :items='items'
     :hide-default-footer="hideDefaultFooter"
+    :options="options"
     @dataTable:sortBy="sortBy"
     @dataTable:selected="selected"
   )
@@ -42,6 +43,12 @@ export default {
       type: Array,
       default() {
         return []
+      }
+    },
+    options: {
+      type: Object,
+      default() {
+        return null
       }
     }
   },

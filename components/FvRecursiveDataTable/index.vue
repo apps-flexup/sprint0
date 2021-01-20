@@ -5,6 +5,8 @@
     :headers="headers"
     :items="mainItems"
     class="main-data-table"
+    :itemsLength="sortedItems ? sortedItems.length : undefined"
+    @dataTable:paginationChanged="paginationChanged"
   )
     template(
       v-slot:[getColumnSlot(key)]='{ item }'
@@ -15,6 +17,7 @@
         :headers="item.headers ? item.headers[key] : []"
         :items="sortedItems"
         hide-default-footer
+        :options="options"
         @dataTable:sortBy="sortBy"
         @dataTable:selected="selected"
       )
@@ -51,7 +54,8 @@ export default {
   data() {
     return {
       sortKey: null,
-      shouldSortDesc: false
+      shouldSortDesc: false,
+      options: null
     }
   },
   computed: {
@@ -82,6 +86,9 @@ export default {
     console.log('Composant ', this.$options.name)
   },
   methods: {
+    paginationChanged(pagination) {
+      this.options = pagination
+    },
     sortBy(v) {
       this.sortKey = v.key
       this.shouldSortDesc = v.desc
