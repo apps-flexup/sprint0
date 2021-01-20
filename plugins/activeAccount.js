@@ -1,5 +1,3 @@
-import { addStructureNameToPayload } from './utils'
-
 const activeAccount = (ctx) => ({
   clear() {
     ctx.store.dispatch('accounts/clear', {}, { root: true })
@@ -62,12 +60,11 @@ const activeAccount = (ctx) => ({
   orders() {
     const orders = ctx.store.getters['orders/all']
     const res = orders.map((order) => {
-      let payload = {
+      const payload = {
         ...order,
         price: order.amount,
         status: 'draft'
       }
-      payload = addStructureNameToPayload(payload, ctx.store, order.structure)
       return payload
     })
     return res

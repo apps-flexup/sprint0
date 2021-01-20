@@ -26,6 +26,7 @@ export default {
       rules: {
         date: this.$displayRules.localeDate,
         amount: this.$displayRules.priceToPreferredCurrency,
+        structure: this.$displayRules.paymentStructure,
         status: this.$displayRules.status
       }
     }

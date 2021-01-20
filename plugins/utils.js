@@ -5,17 +5,6 @@ String.prototype.filtreAutocomplete = function(filtre) {
   return str.includes(v)
 }
 
-export const addStructureNameToPayload = (payload, store, structureId) => {
-  if (!structureId) return payload
-  const structure = store.getters['contracts/getStructureById'](structureId)
-  if (!structure) return payload
-  const res = {
-    ...payload,
-    structure: structure.name
-  }
-  return res
-}
-
 export const instantTranslate = (array, locale, fallback) => {
   if (!array) return 'check instantTranslate (undefined string)'
   if (typeof array === 'string') return array

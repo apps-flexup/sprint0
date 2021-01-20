@@ -101,6 +101,17 @@ const displayRules = (ctx) => ({
     const dte = new Date(date)
     const res = dte.toLocaleDateString(locale)
     return res
+  },
+  paymentStructure(item) {
+    if (!item) return null
+    const structureId = item.structure
+    if (!structureId) return null
+    const structure = ctx.store.getters['contracts/getStructureById'](
+      structureId
+    )
+    if (!structure) return null
+    const res = structure.name
+    return res
   }
 })
 

@@ -22,6 +22,8 @@
         :price="item.amount"
         :currency="item.currency"
       )
+    template(v-slot:item.structure='{ item }')
+      div {{ paymentStructure(item) }}
     template(v-slot:item.status ='{ item }')
       fv-status-progress(:status="item.status")
     template(v-slot:item.actions="{ item }")
@@ -77,6 +79,10 @@ export default {
   methods: {
     localeDate(item) {
       const res = this.$displayRules.localeDate(item)
+      return res
+    },
+    paymentStructure(item) {
+      const res = this.$displayRules.paymentStructure(item)
       return res
     },
     selected(order) {
