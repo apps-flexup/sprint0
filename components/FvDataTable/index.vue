@@ -6,11 +6,14 @@
     :items='items ? items : []'
     :hide-default-footer="hideDefaultFooter"
     disable-sort
-    @click:row='selected'
     :footer-props="{ \
       itemsPerPageText: $t('dataTable.footer.rowsPerPage'), \
       itemsPerPageAllText: $t('dataTable.footer.all') \
     }"
+    :server-items-length="itemsLength"
+    :options="options"
+    @click:row='selected'
+    @pagination='paginationChanged'
   )
     template(
       v-slot:footer.page-text="{ pageStart, pageStop }"
@@ -59,6 +62,18 @@ export default {
       default() {
         return []
       }
+    },
+    itemsLength: {
+      type: Number,
+      default() {
+        return undefined
+      }
+    },
+    options: {
+      type: Object,
+      default() {
+        return null
+      }
     }
   },
   data() {
@@ -93,6 +108,10 @@ export default {
     },
     selected(item) {
       this.$emit('dataTable:selected', item)
+    },
+    paginationChanged(pagination) {
+      if (this.itemsLength) pagination.itemsLength = this.itemsLength
+      this.$emit('dataTable:paginationChanged', pagination)
     }
   }
 }
