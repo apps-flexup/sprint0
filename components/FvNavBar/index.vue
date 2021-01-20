@@ -21,9 +21,13 @@
       :space='space'
     )
     v-spacer
+    fv-nav-bar-slots-right(
+      :space='space'
+    )
     div(
         class='line'
     )
+    p(class='titleNavbar').mb-0  {{ $t(space + 'Menu.title') }}
     fv-user-accounts
 </template>
 
@@ -60,8 +64,16 @@ export default {
 
 <style scoped>
 .line {
-  width: 2px;
+  width: 1px;
   height: 100%;
-  background-color: brown;
+  margin: 0 20px;
+  background-color: lightgray;
+}
+.titleNavbar {
+  text-transform: uppercase;
+  font-weight: 300;
+}
+::v-deep .v-toolbar__content {
+  padding: 0 16px;
 }
 </style>

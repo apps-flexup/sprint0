@@ -53,6 +53,7 @@ import FvRecursiveDataTable from '@/components/FvRecursiveDataTable'
 import FvNav from '@/components/FvNav'
 import FvNavBar from '@/components/FvNavBar'
 import FvNavBarSlotsLeft from '@/components/FvNavBarSlotsLeft'
+import FvNavBarSlotsRight from '@/components/FvNavBarSlotsRight'
 import FvNavBarManage from '@/components/FvNavBarManage'
 import FvThirdPartyAccountStepDetail from '@/components/FvThirdPartyAccountStepDetail'
 import FvNumberField from '@/components/FvNumberField'
@@ -193,6 +194,7 @@ Vue.component('fv-recursive-data-table', FvRecursiveDataTable)
 Vue.component('fv-nav', FvNav)
 Vue.component('fv-nav-bar', FvNavBar)
 Vue.component('fv-nav-bar-slots-left', FvNavBarSlotsLeft)
+Vue.component('fv-nav-bar-slots-right', FvNavBarSlotsRight)
 Vue.component('fv-nav-bar-manage', FvNavBarManage)
 Vue.component(
   'fv-third-party-account-step-detail',

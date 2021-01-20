@@ -1,18 +1,17 @@
 <template lang="pug">
-.fv-nav-bar-slots-left
+.fv-nav-bar-slots-right
   component(
       :is="'fv-nav-bar-' + space"
       :space="space"
     )
-      template(slot='gestion')
-        a(href="") {{$t('navBar.'+space+'.dashboard')}}
-        a(href="") {{$t('navBar.'+space+'.currentManagement')}}
-        a(href="") {{$t('navBar.'+space+'.FlexUpGestion')}}
+      template(slot='button')
+        v-btn()
+          | button
 </template>
 
 <script>
 export default {
-  name: 'FvNavBarSlotsLeft',
+  name: 'FvNavBarSlotsright',
   props: {
     space: {
       type: String,
