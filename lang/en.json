@@ -471,7 +471,11 @@
       "title": "Default"
     },
     "others": {
-      "title": "Others"
+      "title": "Others",
+      "labels": {
+        "priceNbDigits": "Price: number of digits after decimal point",
+        "vatNbDigits": "VAT: number of digits after decimal point"
+      }
     }
   },
   "shop": {

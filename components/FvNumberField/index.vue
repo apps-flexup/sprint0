@@ -20,7 +20,7 @@ export default {
   name: 'FvNumberField',
   props: {
     value: {
-      type: String,
+      type: [Number, String],
       default() {
         return ''
       }
