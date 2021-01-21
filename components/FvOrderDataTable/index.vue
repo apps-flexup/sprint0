@@ -63,6 +63,7 @@ export default {
   computed: {
     total() {
       let res = 0
+      if (!this.items) return 0
       this.items.forEach((item) => {
         res += item.amount
       })
