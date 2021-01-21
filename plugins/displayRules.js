@@ -78,9 +78,11 @@ const displayRules = (ctx) => ({
     const settings = ctx.store.getters['settings/settings']
     const locale = ctx.store.getters['settings/locale']
     const toCurrency = settings.currency
+    const minimumFractionDigits = settings.price_nb_after_decimal_point
     const options = {
       style: 'currency',
-      currency: toCurrency
+      currency: toCurrency,
+      minimumFractionDigits
     }
     const convertedPrice = await convert(fromCurrency, toCurrency, price)
     const res = new Intl.NumberFormat(locale, options).format(convertedPrice)
@@ -88,9 +90,16 @@ const displayRules = (ctx) => ({
   },
   vat(item) {
     if (!item) return null
-    const vat = item.vat
+    const vat = item.vat / 100
     if (!vat) return null
-    const res = vat + '%'
+    const settings = ctx.store.getters['settings/settings']
+    const locale = ctx.store.getters['settings/locale']
+    const minimumFractionDigits = settings.vat_nb_after_decimal_point
+    const options = {
+      style: 'percent',
+      minimumFractionDigits
+    }
+    const res = new Intl.NumberFormat(locale, options).format(vat)
     return res
   },
   localeDate(item) {
