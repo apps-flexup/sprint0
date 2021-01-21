@@ -5,12 +5,14 @@
       :space="space"
     )
       template(slot='gestion')
-        v-btn(elevation='0')
-          | {{ $t('navBar.'+space+'.0') }}
-        v-btn(elevation='0')
-          | {{$t('navBar.'+space+'.1')}}
-        v-btn(elevation='0')
-          | {{$t('navBar.'+space+'.2')}}
+        v-list-item(
+          v-for="(item, a) in navBar"
+          :key="a"
+          :to="item.to"
+          router
+        )
+          v-btn(elevation='0' class='navBtn')
+            | {{ $t(item.title) }}
       template(slot='search')
         p.mb-0 search bar navbar buyer here
 </template>
@@ -24,6 +26,12 @@ export default {
       default() {
         return null
       }
+    },
+    navBar: {
+      type: Array,
+      default() {
+        return []
+      }
     }
   },
   mounted() {
@@ -34,8 +42,23 @@ export default {
 
 <style scoped>
 .navBtn {
-  position: absolute;
-  left: 70%;
-  top: 25%;
+  text-transform: initial;
+  font-size: 0.95rem;
+}
+.theme.v-btn {
+  color: initial;
+}
+.fv-nav-bar-slots-left >>> div {
+  display: flex;
+}
+.v-list-item {
+  padding: 0;
+  margin: 0 5px;
+  min-height: initial;
+}
+a {
+  padding: initial;
+  border-radius: 10px;
+  text-transform: initial;
 }
 </style>

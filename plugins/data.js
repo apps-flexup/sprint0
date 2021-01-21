@@ -23,6 +23,8 @@ export default (ctx, inject) => {
     buyerMenu: repo('buyerMenu'),
     sellerMenu: repo('sellerMenu'),
     globalMenu: repo('globalMenu'),
+    manageNavBar: repo('manageNavBar'),
+    sellerNavBar: repo('sellerNavBar'),
     offerHeaders: repo('offer-headers'),
     offerSteps: repo('offer-steps'),
     offers: repo('offers'),

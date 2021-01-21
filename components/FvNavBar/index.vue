@@ -19,6 +19,7 @@
     v-toolbar-title.mr-16(v-text="title")
     fv-nav-bar-slots-left(
       :space='space'
+      :navBar='navBar'
     )
     v-spacer
     fv-nav-bar-slots-right(
@@ -56,8 +57,16 @@ export default {
       miniVariant: false
     }
   },
+  computed: {
+    navBar() {
+      const res = this.$store.getters['settings/' + this.space + 'NavBar']
+      return res
+    }
+  },
   mounted() {
     console.log('Composant ', this.$options.name)
+    this.$store.dispatch('settings/getSellerNavBar')
+    this.$store.dispatch('settings/getManageNavBar')
   }
 }
 </script>
@@ -66,12 +75,13 @@ export default {
 .line {
   width: 1px;
   height: 100%;
-  margin: 0 20px;
+  margin: 0 10px;
   background-color: lightgray;
 }
 .titleNavbar {
   text-transform: uppercase;
   font-weight: 300;
+  padding: 0 16px;
 }
 ::v-deep .v-toolbar__content {
   padding: 0 16px;

@@ -12,9 +12,9 @@
           v-list-item(
             v-for="(item, a) in icons"
             :key="a"
+            :to="item.to"
           )
-            v-list-item-action
-              v-icon(size='25') {{ item.icon }}
+            v-icon(size='25') {{ item.icon }}
 </template>
 
 <script>
@@ -32,13 +32,16 @@ export default {
     return {
       icons: [
         {
-          icon: 'mdi-map-marker-outline'
+          icon: 'mdi-map-marker-outline',
+          to: '/adresses'
         },
         {
-          icon: 'mdi-heart-outline'
+          icon: 'mdi-heart-outline',
+          to: '/favorite'
         },
         {
-          icon: 'mdi-basket-outline'
+          icon: 'mdi-basket-outline',
+          to: '/'
         }
       ]
     }
@@ -53,7 +56,7 @@ export default {
 .icons {
   display: flex;
 }
-.v-list-item {
-  padding: initial;
+button {
+  margin: 0 16px;
 }
 </style>
