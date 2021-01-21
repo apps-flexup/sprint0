@@ -33,7 +33,9 @@ export default {
       const defaultSettings = {
         language: 'fr',
         currency: 'EUR',
-        theme: 'light'
+        theme: 'light',
+        price_nb_after_digit: 2,
+        vat_nb_after_digit: 1
       }
       dispatch('settings/createSettings', defaultSettings, {
         root: true
