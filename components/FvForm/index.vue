@@ -23,7 +23,7 @@
         composant(
           data-testid="stepComponent"
           :is="step.component"
-          :payload="payload"
+          :payload="localPayload"
           @payload:changed="payloadChanged"
         )
   div.btn.mt-10
@@ -66,6 +66,11 @@ export default {
       }
     }
   },
+  data() {
+    return {
+      localPayload: this.payload
+    }
+  },
   computed: {
     getFormStep() {
       const res = this.$store.getters['forms/' + this.form]
@@ -90,7 +95,7 @@ export default {
       this.$emit('clicked')
     },
     payloadChanged(payload) {
-      this.payload = payload
+      this.localPayload = Object.assign({}, this.localPayload, payload)
     }
   }
 }

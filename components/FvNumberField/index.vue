@@ -11,6 +11,7 @@
     :hideDetails="hideDetails"
     :dense="dense"
     @input="input"
+    @click="onClick"
     @click:outside="onClickOutside"
   )
 </template>
@@ -85,6 +86,9 @@ export default {
     input(v) {
       this.inputValue = v
       this.$emit('input', this.inputValue)
+    },
+    onClick() {
+      this.$emit('click')
     },
     onClickOutside() {
       this.$emit('click:outside')
