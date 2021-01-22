@@ -27,8 +27,7 @@ export default {
     }
   },
   methods: {
-    editProduct(product) {
-      const payload = product
+    editProduct(payload) {
       this.$activeAccount.addProduct(payload)
     }
   }

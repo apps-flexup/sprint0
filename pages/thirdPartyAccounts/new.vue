@@ -20,8 +20,7 @@ export default {
     console.log('Composant ', this.$options.name)
   },
   methods: {
-    createThirdPartyAccount(thirdPartyAccount) {
-      const payload = thirdPartyAccount
+    createThirdPartyAccount(payload) {
       this.$store.dispatch('thirdPartyAccounts/add', payload)
     }
   }

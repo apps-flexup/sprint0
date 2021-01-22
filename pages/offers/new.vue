@@ -23,8 +23,7 @@ export default {
     console.log('Composant ', this.$options.name)
   },
   methods: {
-    createOffer(offer) {
-      const payload = offer
+    createOffer(payload) {
       this.$activeAccount.addOffer(payload)
     }
   }

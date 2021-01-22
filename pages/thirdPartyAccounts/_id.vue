@@ -25,8 +25,7 @@ export default {
     console.log('Composant ', this.$options.name)
   },
   methods: {
-    editThirdPartyAccount(thirdPartyAccount) {
-      const payload = thirdPartyAccount
+    editThirdPartyAccount(payload) {
       this.$store.dispatch('thirdPartyAccounts/add', payload)
     }
   }
