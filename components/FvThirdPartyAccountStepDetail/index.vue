@@ -12,7 +12,7 @@
     v-col.md-12.sm-12.lg-12.xl-12(cols='12')
       v-textarea(
         data-testid='address'
-        v-model="address"
+        :value="address"
         :label="$t('forms.thirdPartyAccounts.new.address')"
         rows='3'
         outlined=''
@@ -61,7 +61,7 @@
 
 <script>
 export default {
-  name: 'FvNewProductForm',
+  name: 'FvThirdPartyAccountStepDetail',
   props: {
     payload: {
       type: Object,
@@ -70,89 +70,81 @@ export default {
       }
     }
   },
-  data() {
-    return {
-      localThirdParty: {},
-      name: null,
-      address: null,
-      zip: null,
-      city: null,
-      countryId: null,
-      legalStructureId: null,
-      siret: null
+  computed: {
+    name() {
+      const res = this.payload ? this.payload.name : null
+      return res
+    },
+    address() {
+      const res = this.payload ? this.payload.address : null
+      return res
+    },
+    zip() {
+      const res = this.payload ? this.payload.zip : null
+      return res
+    },
+    city() {
+      const res = this.payload ? this.payload.city : null
+      return res
+    },
+    countryId() {
+      const res = this.payload ? this.payload.country_id : null
+      return res
+    },
+    legalStructureId() {
+      const res = this.payload ? this.payload.legal_structure_id : null
+      return res
+    },
+    siret() {
+      const res = this.payload ? this.payload.siret : null
+      return res
     }
   },
   mounted() {
     console.log('Composant ', this.$options.name)
-    this.fillFieldsWithThirdPartyAccount()
   },
   methods: {
     nameChanged(name) {
-      console.log('name changed: ', name)
       const payload = {
         name
       }
-      const res = Object.assign(this.localThirdParty, payload)
-      this.$emit('payload:changed', res)
+      this.$emit('payload:changed', payload)
     },
     addressChanged(address) {
-      console.log('address changed: ', address)
       const payload = {
         address
       }
-      const res = Object.assign(this.localThirdParty, payload)
-      this.$emit('payload:changed', res)
+      this.$emit('payload:changed', payload)
     },
     zipChanged(zip) {
-      console.log('zip changed: ', zip)
       const payload = {
         zip
       }
-      const res = Object.assign(this.localThirdParty, payload)
-      this.$emit('payload:changed', res)
+      this.$emit('payload:changed', payload)
     },
     cityChanged(city) {
-      console.log('city changed: ', city)
       const payload = {
         city
       }
-      const res = Object.assign(this.localThirdParty, payload)
-      this.$emit('payload:changed', res)
+      this.$emit('payload:changed', payload)
     },
     countrySelected(v) {
-      this.countryId = v
       const payload = {
-        country_id: this.countryId
+        country_id: v
       }
-      const res = Object.assign(this.localThirdParty, payload)
-      this.$emit('payload:changed', res)
+      this.$emit('payload:changed', payload)
     },
     legalStructureSelected(v) {
-      this.legalStructureId = v
       const payload = {
-        legal_structure_id: this.legalStructureId
+        legal_structure_id: v
       }
-      const res = Object.assign(this.localThirdParty, payload)
-      this.$emit('payload:changed', res)
+      this.$emit('payload:changed', payload)
     },
     siretChanged(siret) {
-      console.log('siret changed: ', siret)
       const payload = {
         siret
       }
-      const res = Object.assign(this.localThirdParty, payload)
-      this.$emit('payload:changed', res)
-    },
-    fillFieldsWithThirdPartyAccount() {
-      if (!this.payload) return
-      this.name = this.payload.name
-      this.address = this.payload.address
-      this.zip = this.payload.zip
-      this.city = this.payload.city
-      this.countryId = this.payload.country_id || null
-      this.legalStructureId = this.payload.legal_structure_id || null
-      this.siret = this.payload.siret
-      this.localThirdParty = this.payload
+      this.$emit('payload:changed', payload)
     }
   }
 }
