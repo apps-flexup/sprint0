@@ -24,6 +24,7 @@
       v-for="key in headers.map(header => header.value)"
     )
       fv-th(
+        :class="headerClass(header.align)"
         data-testid="fvTh"
         :text="header.text"
         :sortKey="header.value"
@@ -112,6 +113,10 @@ export default {
     paginationChanged(pagination) {
       if (this.itemsLength) pagination.itemsLength = this.itemsLength
       this.$emit('dataTable:paginationChanged', pagination)
+    },
+    headerClass(alignment) {
+      const res = 'd-flex justify-' + alignment
+      return res
     }
   }
 }

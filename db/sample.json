@@ -13631,19 +13631,19 @@
     "sub": {
       "products": [
         {
-          "align": "center",
+          "align": "start",
           "sortable": true,
           "text": "headers.products.name",
           "value": "name"
         },
         {
-          "align": "center",
+          "align": "start",
           "sortable": true,
           "text": "headers.products.category",
           "value": "category_id"
         },
         {
-          "align": "center",
+          "align": "start",
           "sortable": true,
           "text": "headers.products.unit",
           "value": "unit"
@@ -13651,13 +13651,13 @@
       ],
       "offers": [
         {
-          "align": "center",
+          "align": "end",
           "sortable": true,
           "text": "headers.offers.price",
           "value": "price"
         },
         {
-          "align": "center",
+          "align": "end",
           "sortable": true,
           "text": "headers.offers.vat",
           "value": "vat"
@@ -14495,7 +14495,7 @@
       "value": "unit"
     },
     {
-      "align": "start",
+      "align": "center",
       "sortable": true,
       "text": "headers.products.status",
       "value": "status"
