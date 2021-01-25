@@ -20,8 +20,7 @@ export default {
     console.log('Composant ', this.$options.name)
   },
   methods: {
-    createProduct() {
-      const payload = this.product
+    createProduct(payload) {
       this.$activeAccount.addProduct(payload)
     }
   }

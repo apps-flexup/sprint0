@@ -4,7 +4,7 @@
     v-col(cols='12')
       fv-category-autocomplete(
         data-testid='categoryAutocomplete'
-        :category_id="category_id"
+        :category_id="categoryId"
         @category:selected="categorySelected"
       )
   v-row
@@ -36,60 +36,47 @@ export default {
       }
     }
   },
-  data() {
-    return {
-      localProduct: {},
-      category_id: this.payload.category_id || null,
-      name: null,
-      unit: null,
-      dimension: null
+  computed: {
+    categoryId() {
+      const res = this.payload ? this.payload.category_id : null
+      return res
+    },
+    name() {
+      const res = this.payload ? this.payload.name : null
+      return res
+    },
+    unit() {
+      const res = this.payload ? this.payload.unit : null
+      return res
+    },
+    dimension() {
+      const res = this.payload ? this.payload.dimension : null
+      return res
     }
   },
   mounted() {
     console.log('Composant ', this.$options.name)
-    this.fillFieldsWithProduct()
   },
   methods: {
     categorySelected(v) {
-      this.category_id = v
       const payload = {
-        category_id: this.category_id
+        category_id: v
       }
-      const res = Object.assign(this.localProduct, payload)
-      this.$emit('payload:changed', res)
+      this.$emit('payload:changed', payload)
     },
     nameChanged(name) {
       const payload = {
         name
       }
-      const res = Object.assign(this.localProduct, payload)
-      this.$emit('payload:changed', res)
+      this.$emit('payload:changed', payload)
     },
     unitSelected(v) {
       const unit = this.$store.getters['units/find'](v)
-      this.dimension = unit ? unit.dimension : null
-      this.unit = unit ? unit.symbole : null
       const payload = {
-        dimension: this.dimension,
-        unit: this.unit
+        dimension: unit ? unit.dimension : null,
+        unit: unit ? unit.symbole : null
       }
-      const res = Object.assign(this.localProduct, payload)
-      this.$emit('payload:changed', res)
-    },
-    fillFieldsWithProduct() {
-      if (!this.payload) return
-      this.category_id = this.payload.category_id
-      this.name = this.payload.name
-      this.unit = this.payload.unit
-      this.dimension = this.payload.dimension
-      this.localProduct = this.payload
-    },
-    clearProduct() {
-      this.category_id = null
-      this.name = null
-      this.unit = null
-      this.dimension = null
-      this.localProduct = {}
+      this.$emit('payload:changed', payload)
     }
   }
 }

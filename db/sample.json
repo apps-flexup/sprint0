@@ -4,6 +4,8 @@
       "currency": "EUR",
       "language": "fr",
       "theme": "light",
+      "price_nb_after_decimal_point": "2",
+      "vat_nb_after_decimal_point": "1",
       "account_id": 1,
       "id": 1
     },
@@ -11,6 +13,8 @@
       "currency": "USD",
       "language": "en",
       "theme": "dark",
+      "price_nb_after_decimal_point": 2,
+      "vat_nb_after_decimal_point": 1,
       "account_id": 3,
       "id": 2
     }

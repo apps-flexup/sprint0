@@ -9,10 +9,12 @@ const dataTable = (_ctx) => ({
         second = await rule(second)
       } else {
         first = first[key]
-        second = first[key]
+        second = second[key]
       }
       if (typeof first === 'string') first = first.toLowerCase()
       if (typeof second === 'string') second = second.toLowerCase()
+      if (!first) first = ''
+      if (!second) second = ''
       if (first > second) {
         const tmp = array[i - 1]
         array[i - 1] = array[i]

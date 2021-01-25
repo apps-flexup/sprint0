@@ -8,6 +8,7 @@
     :clearable="clearable"
     :suffix="currency ? currency.symbole : null"
     @input="priceChanged"
+    @click="onClick"
     @click:outside="onClickOutside"
   )
 </template>
@@ -49,7 +50,7 @@ export default {
   },
   data() {
     return {
-      price: this.value
+      truncatePrice: true
     }
   },
   computed: {
@@ -57,11 +58,22 @@ export default {
       const iso = this.$activeAccount.settings().currency
       const res = this.$store.getters['currencies/findIso'](iso)
       return res
-    }
-  },
-  watch: {
-    value() {
-      this.price = this.value
+    },
+    nbDigitsAfterDecimalPoint() {
+      const settings = this.$activeAccount.settings()
+      if (!settings) return null
+      const res = settings.price_nb_after_decimal_point
+      return res
+    },
+    price() {
+      let res = this.value
+      if (this.truncatePrice && this.nbDigitsAfterDecimalPoint) {
+        const multiplier = 10 ** this.nbDigitsAfterDecimalPoint
+        res = (Math.round(res * multiplier) / multiplier).toFixed(
+          this.nbDigitsAfterDecimalPoint
+        )
+      }
+      return res
     }
   },
   mounted() {
@@ -71,14 +83,17 @@ export default {
   },
   methods: {
     priceChanged(v) {
-      this.price = v
-      this.$emit('price:changed', this.price)
+      const payload = {
+        price: parseFloat(v),
+        currency: this.currency ? this.currency.iso3 : null
+      }
+      this.$emit('price:changed', payload)
+    },
+    onClick() {
+      this.truncatePrice = false
     },
     onClickOutside() {
-      if (this.price) {
-        this.price = (Math.round(this.price * 100) / 100).toFixed(2)
-        this.priceChanged(this.price)
-      }
+      this.truncatePrice = true
     }
   }
 }

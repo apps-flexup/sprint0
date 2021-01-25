@@ -17,9 +17,11 @@ const displayRules = (ctx) => ({
     if (!categoryId) return null
     const category = ctx.store.getters['categories/find'](categoryId)
     if (!category) return null
+    const name = category.name
+    if (!name) return null
     const locale = ctx.store.getters['settings/locale']
     const fallback = ctx.store.getters['settings/fallbackLocale']
-    const res = instantTranslate(category.name, locale, fallback)
+    const res = instantTranslate(name, locale, fallback)
     return res
   },
   unit(item) {
@@ -61,11 +63,28 @@ const displayRules = (ctx) => ({
     return res
   },
   async priceWithUnit(item) {
-    const i18n = ctx.app.i18n
-    const formatedPrice = await this.priceToPreferredCurrency(item)
+    if (!item) return null
+    const price = item.price
+    if (!price) return null
+    const fromCurrency = item.currency
+    if (!fromCurrency) return null
+    const settings = ctx.store.getters['settings/settings']
+    const locale = ctx.store.getters['settings/locale']
+    const toCurrency = settings.currency
+    const minimumFractionDigits = settings.price_nb_after_decimal_point
+    const options = {
+      style: 'currency',
+      currency: toCurrency,
+      minimumFractionDigits
+    }
+    const convertedPrice = await convert(fromCurrency, toCurrency, price)
+    const formatedPrice = new Intl.NumberFormat(locale, options).format(
+      convertedPrice
+    )
     if (!formatedPrice) return null
     const unit = item.unit
     if (!unit) return null
+    const i18n = ctx.app.i18n
     const res = formatedPrice.toString() + '/' + i18n.t('units.symbol.' + unit)
     return res
   },
@@ -78,9 +97,11 @@ const displayRules = (ctx) => ({
     const settings = ctx.store.getters['settings/settings']
     const locale = ctx.store.getters['settings/locale']
     const toCurrency = settings.currency
+    const minimumFractionDigits = settings.price_nb_after_decimal_point
     const options = {
       style: 'currency',
-      currency: toCurrency
+      currency: toCurrency,
+      minimumFractionDigits
     }
     const convertedPrice = await convert(fromCurrency, toCurrency, price)
     const res = new Intl.NumberFormat(locale, options).format(convertedPrice)
@@ -88,9 +109,16 @@ const displayRules = (ctx) => ({
   },
   vat(item) {
     if (!item) return null
-    const vat = item.vat
+    const vat = item.vat / 100
     if (!vat) return null
-    const res = vat + '%'
+    const settings = ctx.store.getters['settings/settings']
+    const locale = ctx.store.getters['settings/locale']
+    const minimumFractionDigits = settings.vat_nb_after_decimal_point
+    const options = {
+      style: 'percent',
+      minimumFractionDigits
+    }
+    const res = new Intl.NumberFormat(locale, options).format(vat)
     return res
   },
   localeDate(item) {

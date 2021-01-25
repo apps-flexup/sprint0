@@ -46,7 +46,7 @@ export default {
       }
     },
     value: {
-      type: String,
+      type: [Number, String],
       default() {
         return ''
       }
