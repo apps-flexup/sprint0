@@ -8,6 +8,9 @@
     :item-value="itemValue"
     :disabled="disabled"
     :return-object="returnObject"
+    :chips="chips"
+    :auto-select-first="autoSelectFirst"
+    :multiple="multiple"
     clearable=''
     outlined=''
   )
@@ -65,6 +68,24 @@ export default {
       }
     },
     returnObject: {
+      type: Boolean,
+      default() {
+        return false
+      }
+    },
+    chips: {
+      type: Boolean,
+      default() {
+        return false
+      }
+    },
+    autoSelectFirst: {
+      type: Boolean,
+      default() {
+        return false
+      }
+    },
+    multiple: {
       type: Boolean,
       default() {
         return false

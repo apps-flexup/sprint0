@@ -5,7 +5,7 @@
       :space="space"
     )
       template(slot='button')
-        v-btn()
+        v-btn(elevation="0" class="navBtn")
           | button
       template(slot='icon')
         div(class='icons')
@@ -56,7 +56,10 @@ export default {
 .icons {
   display: flex;
 }
-button {
+.navBtn {
   margin: 0 16px;
+  border: grey solid 1px;
+  border-radius: 10px;
+  color: grey;
 }
 </style>

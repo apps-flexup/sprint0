@@ -17,14 +17,9 @@
   )
     v-app-bar-nav-icon(@click.stop="drawer = !drawer")
     v-toolbar-title.mr-16(v-text="title")
-    fv-nav-bar-slots-left(
-      :space='space'
-      :navBar='navBar'
-    )
+    slot(name='left')
     v-spacer
-    fv-nav-bar-slots-right(
-      :space='space'
-    )
+    slot(name='right')
     div(
         class='line'
     )
@@ -45,7 +40,7 @@ export default {
     space: {
       type: String,
       default() {
-        return 'buyer'
+        return 'manage'
       }
     }
   },
@@ -55,12 +50,6 @@ export default {
       drawer: false,
       fixed: false,
       miniVariant: false
-    }
-  },
-  computed: {
-    navBar() {
-      const res = this.$store.getters['settings/' + this.space + 'NavBar']
-      return res
     }
   },
   mounted() {
@@ -81,9 +70,6 @@ export default {
 .titleNavbar {
   text-transform: uppercase;
   font-weight: 300;
-  padding: 0 16px;
-}
-::v-deep .v-toolbar__content {
   padding: 0 16px;
 }
 </style>

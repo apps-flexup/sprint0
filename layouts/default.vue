@@ -1,13 +1,15 @@
 <template lang="pug">
   v-app(dark)
-    fv-nav-bar(
+    component(
+      :is="'fv-nav-bar-' + space"
       :title="title"
+      :space='space'
     )
     v-main
       v-container
         fv-breadcrumbs(
           :account="account"
-          space="manage"
+          :space="space"
         )
         nuxt
     v-footer(:fixed="fixed" app)
@@ -16,9 +18,16 @@
 
 <script>
 export default {
+  props: {
+    space: {
+      type: String,
+      default() {
+        return 'buyer'
+      }
+    }
+  },
   data() {
     return {
-      fixed: false,
       title: 'Flexup - Sprint 0'
     }
   },

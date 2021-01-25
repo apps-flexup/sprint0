@@ -45,9 +45,6 @@ export default {
   text-transform: initial;
   font-size: 0.95rem;
 }
-.theme.v-btn {
-  color: initial;
-}
 .fv-nav-bar-slots-left >>> div {
   display: flex;
 }
