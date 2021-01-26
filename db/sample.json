@@ -13631,19 +13631,19 @@
     "sub": {
       "products": [
         {
-          "align": "start",
+          "align": "left",
           "sortable": true,
           "text": "headers.products.name",
           "value": "name"
         },
         {
-          "align": "start",
+          "align": "left",
           "sortable": true,
           "text": "headers.products.category",
           "value": "category_id"
         },
         {
-          "align": "start",
+          "align": "left",
           "sortable": true,
           "text": "headers.products.unit",
           "value": "unit"
@@ -13651,13 +13651,13 @@
       ],
       "offers": [
         {
-          "align": "end",
+          "align": "right",
           "sortable": true,
           "text": "headers.offers.price",
           "value": "price"
         },
         {
-          "align": "end",
+          "align": "right",
           "sortable": true,
           "text": "headers.offers.vat",
           "value": "vat"
@@ -14010,31 +14010,31 @@
     "sub": {
       "orders": [
         {
-          "align": "start",
+          "align": "left",
           "sortable": true,
           "text": "headers.orders.date",
           "value": "date"
         },
         {
-          "align": "start",
+          "align": "right",
           "sortable": true,
           "text": "headers.orders.amount",
           "value": "amount"
         },
         {
-          "align": "start",
+          "align": "left",
           "sortable": true,
           "text": "headers.orders.label",
           "value": "label"
         },
         {
-          "align": "start",
+          "align": "left",
           "sortable": true,
           "text": "headers.orders.structure",
           "value": "structure"
         },
         {
-          "align": "start",
+          "align": "center",
           "sortable": true,
           "text": "headers.orders.status",
           "value": "status"
@@ -14322,44 +14322,44 @@
   ],
   "third-party-account-headers": [
     {
-      "align": "start",
+      "align": "left",
       "sortable": true,
       "text": "headers.thirdPartyAccounts.name",
       "value": "name"
     },
     {
-      "align": "start",
+      "align": "left",
       "sortable": true,
       "text": "headers.thirdPartyAccounts.siret",
       "value": "siret"
     },
     {
-      "align": "start",
+      "align": "left",
       "sortable": true,
       "text": "headers.thirdPartyAccounts.legalStructure",
       "value": "legal_structure_id"
     },
     {
-      "align": "start",
+      "align": "left",
       "sortable": true,
       "text": "headers.thirdPartyAccounts.address",
       "city": "Courtanche sur Mer",
       "value": "address"
     },
     {
-      "align": "start",
+      "align": "right",
       "sortable": true,
       "text": "headers.thirdPartyAccounts.zip",
       "value": "zip"
     },
     {
-      "align": "start",
+      "align": "left",
       "sortable": true,
       "text": "headers.thirdPartyAccounts.city",
       "value": "city"
     },
     {
-      "align": "start",
+      "align": "left",
       "sortable": true,
       "text": "headers.thirdPartyAccounts.country",
       "value": "country_id"
@@ -14477,19 +14477,19 @@
   ],
   "product-headers": [
     {
-      "align": "start",
+      "align": "left",
       "sortable": true,
       "text": "headers.products.name",
       "value": "name"
     },
     {
-      "align": "start",
+      "align": "left",
       "sortable": true,
       "text": "headers.products.category",
       "value": "category_id"
     },
     {
-      "align": "start",
+      "align": "left",
       "sortable": true,
       "text": "headers.products.unit",
       "value": "unit"
