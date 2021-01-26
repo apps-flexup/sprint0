@@ -115,7 +115,10 @@ export default {
       this.$emit('dataTable:paginationChanged', pagination)
     },
     headerClass(alignment) {
-      const res = 'd-flex justify-' + alignment
+      let flexAlignment = alignment
+      if (flexAlignment === 'left') flexAlignment = 'start'
+      if (flexAlignment === 'right') flexAlignment = 'end'
+      const res = 'd-flex justify-' + flexAlignment
       return res
     }
   }
