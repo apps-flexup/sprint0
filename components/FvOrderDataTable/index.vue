@@ -10,7 +10,7 @@
   )
     template(v-slot:body.prepend)
       tr(class="totalLine")
-        td {{ $t('total') }}
+        td.text-left {{ $t('total') }}
         td.text-right(v-to-currency="{ amount: total, currency: preferredCurrency }")
         td(
           v-for="i in headers.length - 2"
@@ -18,7 +18,7 @@
     template(v-slot:item.date='{ item }')
       div {{ localeDate(item) }}
     template(v-slot:item.amount='{ item }')
-      fv-price-to-preferred-currency.text-right(
+      fv-price-to-preferred-currency(
         :price="item.amount"
         :currency="item.currency"
       )
