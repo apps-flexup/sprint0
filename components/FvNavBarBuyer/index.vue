@@ -3,6 +3,8 @@
   fv-nav-bar(
     :title='title'
   )
+    template(slot='left')
+      fv-search-autocomplete
     template(slot='right')
       div(class='icons')
         v-list-item(

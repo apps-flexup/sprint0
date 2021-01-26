@@ -11,6 +11,9 @@
     :chips="chips"
     :auto-select-first="autoSelectFirst"
     :multiple="multiple"
+    :append-icon="appendIcon"
+    :placeholder="placeholder"
+    :dense="dense"
     clearable=''
     outlined=''
   )
@@ -89,6 +92,24 @@ export default {
       type: Boolean,
       default() {
         return false
+      }
+    },
+    appendIcon: {
+      type: String,
+      default() {
+        return null
+      }
+    },
+    placeholder: {
+      type: String,
+      default() {
+        return null
+      }
+    },
+    dense: {
+      type: Boolean,
+      default() {
+        return null
       }
     }
   },
