@@ -5,7 +5,7 @@
       data-testid='header'
       :title="$t('table.products.title')"
       :searchLabel="$t('table.products.search')"
-      @dataTableSearch:changed="searchChanged"
+      @dataTableSearch:filtersChanged="filtersChanged"
     )
     fv-product-data-table(
       data-testid='dataTable'
@@ -23,7 +23,7 @@ export default {
   name: 'FvProductList',
   data() {
     return {
-      search: '',
+      filters: [],
       sortKey: null,
       shouldSortDesc: false,
       rules: {
@@ -42,8 +42,8 @@ export default {
   asyncComputed: {
     async items() {
       const products = this.$activeAccount.products()
-      const filters = [this.search]
       const sortKey = this.sortKey
+      const filters = this.filters
       const shouldSortDesc = this.shouldSortDesc
       let res = await this.$dataTable.filter(products, filters, this.rules)
       if (sortKey) {
@@ -64,8 +64,8 @@ export default {
     this.$store.dispatch('products/get')
   },
   methods: {
-    searchChanged(v) {
-      this.search = v
+    filtersChanged(v) {
+      this.filters = v
     },
     selectedProduct(product) {
       this.$emit('list:selected', product)

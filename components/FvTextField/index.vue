@@ -14,6 +14,7 @@
     :dense="dense"
     @input="inputChanged"
     @click="clicked"
+    @keydown.enter="enterPressed"
   )
     template(v-slot:append)
       slot(name="append")
@@ -104,6 +105,9 @@ export default {
     },
     onClickOutside() {
       this.$emit('click:outside')
+    },
+    enterPressed() {
+      this.$emit('enterPressed')
     }
   }
 }
