@@ -55,5 +55,7 @@ export default {
 <style scoped>
 .icons {
   display: flex;
+  justify-content: flex-end;
+  flex: initial;
 }
 </style>

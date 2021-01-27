@@ -17,13 +17,13 @@
   )
     v-app-bar-nav-icon(@click.stop="drawer = !drawer")
     v-toolbar-title.mr-16(v-text="title")
-    slot(name='left')
+    slot(name='left' v-if="$auth.loggedIn")
     v-spacer
-    slot(name='right')
+    slot(name='right' v-if="$auth.loggedIn")
     div(
         class='line'
     )
-    p(class='titleNavbar').mb-0  {{ $t(space + 'Menu.title') }}
+    p(class='titleNavbar' v-if="$auth.loggedIn").mb-0  {{ $t(space + 'Menu.title') }}
     fv-user-accounts
 </template>
 
@@ -71,5 +71,9 @@ export default {
   text-transform: uppercase;
   font-weight: 300;
   padding: 0 16px;
+}
+::v-deep .v-toolbar__content,
+.v-toolbar__extension {
+  padding: 0 12px;
 }
 </style>
