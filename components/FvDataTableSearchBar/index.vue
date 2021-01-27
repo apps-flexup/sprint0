@@ -1,10 +1,12 @@
 <template lang="pug">
 .fv-data-table-search-bar
   fv-text-field(
+    :value="search"
     :label="label"
     :outlined="false"
     appendOuterIcon="mdi-magnify"
     @input="inputChanged"
+    @enterPressed="enterPressed"
   )
 </template>
 
@@ -19,12 +21,22 @@ export default {
       }
     }
   },
+  data() {
+    return {
+      search: null
+    }
+  },
   mounted() {
     console.log('Composant', this.$options.name)
   },
   methods: {
     inputChanged(v) {
+      this.search = v
       this.$emit('dataTableSearchBar:changed', v)
+    },
+    enterPressed() {
+      this.$emit('dataTableSearchBar:filterValidated', this.search)
+      this.search = null
     }
   }
 }
