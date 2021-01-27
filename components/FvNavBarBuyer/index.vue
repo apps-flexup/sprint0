@@ -2,6 +2,7 @@
 .fv-nav-bar-buyer
   fv-nav-bar(
     :title='title'
+    :space="space"
   )
     template(slot='left')
       fv-search-autocomplete
@@ -39,7 +40,7 @@ export default {
         },
         {
           icon: 'mdi-basket-outline',
-          to: '/'
+          to: '/shop'
         }
       ],
       title: 'Flexup - Sprint 0'

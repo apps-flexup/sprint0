@@ -1,7 +1,7 @@
 <template lang="pug">
   v-app(dark)
     component(
-      :is="'fv-nav-bar-' + space"
+      :is="findSpace"
       :title="title"
       :space='space'
     )
@@ -37,6 +37,14 @@ export default {
       const res = this.$store.getters['accounts/findById'](id)
       if (res) return res.name
       return null
+    },
+    findSpace() {
+      const space = this.space
+      if (space === 'manage' || space === 'seller') {
+        return 'fv-nav-bar-manage'
+      } else {
+        return 'fv-nav-bar-' + space
+      }
     }
   },
   mounted() {

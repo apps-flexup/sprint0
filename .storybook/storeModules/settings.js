@@ -203,6 +203,46 @@ const moduleSettings = {
       ]
       commit('setGlobalMenu', data)
     },
+    getManageNavBar({ commit }) {
+      const data = [
+        {
+          "active": true,
+          "title": "navBar.manage.0",
+          "to": "/dashboard"
+        },
+        {
+          "active": true,
+          "title": "navBar.manage.1",
+          "to": "/currentGestion"
+        },
+        {
+          "active": true,
+          "title": "navBar.manage.2",
+          "to": "/FlexUpGestion"
+        }
+      ]
+      commit('setManageNavBar', data)
+    },
+    getSellerNavBar({ commit }) {
+      const data = [
+        {
+          "active": true,
+          "title": "navBar.seller.0",
+          "to": "/dashboard"
+        },
+        {
+          "active": true,
+          "title": "navBar.seller.1",
+          "to": "/orders"
+        },
+        {
+          "active": true,
+          "title": "navBar.seller.2",
+          "to": "/offers"
+        }
+      ]
+      commit('setSellerNavBar', data)
+    },
     getSettings({ commit }) {
       const data = {
         currency: "EUR",

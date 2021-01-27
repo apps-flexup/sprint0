@@ -40,7 +40,7 @@ export default {
     space: {
       type: String,
       default() {
-        return 'manage'
+        return null
       }
     }
   },

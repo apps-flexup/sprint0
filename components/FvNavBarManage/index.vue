@@ -2,6 +2,7 @@
 .fv-nav-bar-manage
   fv-nav-bar(
     :title='title'
+    :space="space"
   )
     template(slot='left')
       v-list-item(

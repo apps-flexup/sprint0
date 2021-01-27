@@ -52,11 +52,8 @@ import FvModalAndButton from '@/components/FvModalAndButton'
 import FvRecursiveDataTable from '@/components/FvRecursiveDataTable'
 import FvNav from '@/components/FvNav'
 import FvNavBar from '@/components/FvNavBar'
-import FvNavBarSlotsLeft from '@/components/FvNavBarSlotsLeft'
-import FvNavBarSlotsRight from '@/components/FvNavBarSlotsRight'
 import FvNavBarBuyer from '@/components/FvNavBarBuyer'
 import FvNavBarManage from '@/components/FvNavBarManage'
-import FvNavBarSeller from '@/components/FvNavBarSeller'
 import FvThirdPartyAccountStepDetail from '@/components/FvThirdPartyAccountStepDetail'
 import FvNumberField from '@/components/FvNumberField'
 import FvPriceField from '@/components/FvPriceField'
@@ -196,11 +193,8 @@ Vue.component('fv-modal-and-button', FvModalAndButton)
 Vue.component('fv-recursive-data-table', FvRecursiveDataTable)
 Vue.component('fv-nav', FvNav)
 Vue.component('fv-nav-bar', FvNavBar)
-Vue.component('fv-nav-bar-slots-left', FvNavBarSlotsLeft)
-Vue.component('fv-nav-bar-slots-right', FvNavBarSlotsRight)
 Vue.component('fv-nav-bar-buyer', FvNavBarBuyer)
 Vue.component('fv-nav-bar-manage', FvNavBarManage)
-Vue.component('fv-nav-bar-seller', FvNavBarSeller)
 Vue.component(
   'fv-third-party-account-step-detail',
   FvThirdPartyAccountStepDetail
