@@ -1,31 +1,21 @@
 <template lang="pug">
 .fv-product-list
-  v-card
-    fv-data-table-header(
-      data-testid='header'
-      :title="$t('table.products.title')"
-      :searchLabel="$t('table.products.search')"
-      @dataTableSearch:filtersChanged="filtersChanged"
-    )
-    fv-product-data-table(
-      data-testid='dataTable'
-      :headers="headers"
-      :items="items"
-      @dataTable:selected="selectedProduct"
-      @dataTable:sortBy="sortBy"
-    )
+  fv-index-table(
+    :title="$t('table.products.title')"
+    :searchLabel="$t('table.products.search')"
+    table="fv-product-data-table"
+    :headers="headers"
+    :items="items"
+    :rules="rules"
+    @list:selected="productSelected"
+  )
 </template>
 
 <script>
-import { translateHeaders } from '~/plugins/utils'
-
 export default {
   name: 'FvProductList',
   data() {
     return {
-      filters: [],
-      sortKey: null,
-      shouldSortDesc: false,
       rules: {
         status: this.$displayRules.status,
         category_id: this.$displayRules.category,
@@ -36,25 +26,10 @@ export default {
   computed: {
     headers() {
       const res = this.$activeAccount.headersProducts()
-      return translateHeaders(this.$i18n, res)
-    }
-  },
-  asyncComputed: {
-    async items() {
-      const products = this.$activeAccount.products()
-      const sortKey = this.sortKey
-      const filters = this.filters
-      const shouldSortDesc = this.shouldSortDesc
-      let res = await this.$dataTable.filter(products, filters, this.rules)
-      if (sortKey) {
-        const rule = this.rules[sortKey]
-        res = await this.$dataTable.sortByRule(
-          res,
-          sortKey,
-          shouldSortDesc,
-          rule
-        )
-      }
+      return res
+    },
+    items() {
+      const res = this.$activeAccount.products()
       return res
     }
   },
@@ -64,15 +39,8 @@ export default {
     this.$store.dispatch('products/get')
   },
   methods: {
-    filtersChanged(v) {
-      this.filters = v
-    },
-    selectedProduct(product) {
+    productSelected(product) {
       this.$emit('list:selected', product)
-    },
-    sortBy(v) {
-      this.sortKey = v.key
-      this.shouldSortDesc = v.desc
     }
   }
 }
