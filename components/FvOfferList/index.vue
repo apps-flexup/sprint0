@@ -42,9 +42,6 @@ export default {
     this.$store.dispatch('offers/get')
   },
   methods: {
-    searchChanged(v) {
-      this.search = v
-    },
     offerSelected(offer) {
       this.$emit('list:selected', offer)
     }
