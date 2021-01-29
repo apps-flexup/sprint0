@@ -22,7 +22,7 @@ export default {
     space: {
       type: String,
       default() {
-        return 'buyer'
+        return 'manage'
       }
     }
   },

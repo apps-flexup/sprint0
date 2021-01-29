@@ -2,6 +2,7 @@
 .fv-search-autocomplete
   div(class='searchBar')
     v-select(
+      data-testid='selector'
       class='selector'
       :items='item'
       v-model='defaultSelect'
@@ -10,6 +11,7 @@
       :dense='true'
     )
     fv-autocomplete(
+      data-testid='searchBar'
       class='search'
       appendIcon='mdi-magnify'
       :element="category_id"
