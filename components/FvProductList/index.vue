@@ -1,6 +1,7 @@
 <template lang="pug">
 .fv-product-list
   fv-index-table(
+    data-testid="table"
     :title="$t('table.products.title')"
     :searchLabel="$t('table.products.search')"
     table="fv-product-data-table"
