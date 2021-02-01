@@ -10,22 +10,20 @@ describe('FvThirdPartyAccountList', () => {
           headersThirdPartyAccounts: jest.fn(),
           thirdPartyAccounts: jest.fn()
         },
-        $dataTable: {
-          filter: jest.fn(),
-          sortByKey: jest.fn()
+        $displayRules: {
+          legalStructure: jest.fn()
         }
       }
     })
   }
   it('should render a fv third party account list', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="header"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="dataTable"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="table"]').exists()).toBe(true)
   })
   it('should emit an event when third party account is selected', () => {
     const wrapper = factory()
-    const dataTable = wrapper.find('[data-testid="dataTable"]')
-    dataTable.vm.$emit('dataTable:selected')
+    const table = wrapper.find('[data-testid="table"]')
+    table.vm.$emit('list:selected')
     const selectedCalls = wrapper.emitted('list:selected')
     expect(selectedCalls).toBeTruthy()
     expect(selectedCalls).toHaveLength(1)
