@@ -1,5 +1,9 @@
 <template lang="pug">
 .fv-recursive-data-table
+  style.
+    :root {
+       --mainTheadColor: {{ theadColor }}
+    }
   fv-data-table.elevation-2(
     data-testid="dataTable"
     :headers="headers"
@@ -66,6 +70,10 @@ export default {
     subItems() {
       const res = this.items ? this.items[0].items : []
       return res
+    },
+    theadColor() {
+      const res = '#eaebee'
+      return res
     }
   },
   mounted() {
@@ -90,6 +98,14 @@ export default {
 </script>
 
 <style scoped>
+::v-deep
+  .main-data-table
+  > .v-data-table
+  > .v-data-table__wrapper
+  > table
+  > thead {
+  background-color: var(--mainTheadColor);
+}
 ::v-deep .v-data-table {
   border-radius: 0;
 }

@@ -1,5 +1,9 @@
 <template lang="pug">
 .fv-data-table
+  style.
+    :root {
+       --theadColor: {{ theadColor }}
+    }
   v-data-table(
     data-testid="dataTable"
     :headers='headers'
@@ -83,6 +87,12 @@ export default {
       sortDesc: false
     }
   },
+  computed: {
+    theadColor() {
+      const res = '#f5f6f7'
+      return res
+    }
+  },
   mounted() {
     console.log('Composant ', this.$options.name)
   },
@@ -124,3 +134,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+::v-deep thead {
+  background-color: var(--theadColor);
+}
+</style>
