@@ -1,4 +1,4 @@
-import { mount, createLocalVue } from '@vue/test-utils'
+import { shallowMount, createLocalVue } from '@vue/test-utils'
 import Vuetify from 'vuetify'
 import Vuex from 'Vuex'
 import FvProductDataTable from './index.vue'
@@ -6,12 +6,12 @@ import FvProductDataTable from './index.vue'
 const localVue = createLocalVue()
 localVue.use(Vuex)
 
-describe('FvProductDataTable', () => {
-  let store
-  let vuetify
+let store
+let vuetify
 
+describe('FvProductDataTable', () => {
   const factory = () => {
-    return mount(FvProductDataTable, {
+    return shallowMount(FvProductDataTable, {
       localVue,
       store,
       vuetify,

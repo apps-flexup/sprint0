@@ -1,4 +1,4 @@
-import { mount, createLocalVue } from '@vue/test-utils'
+import { shallowMount, createLocalVue } from '@vue/test-utils'
 import Vuetify from 'vuetify'
 import Vuex from 'Vuex'
 import FvThirdPartyAccountDataTable from './index.vue'
@@ -6,12 +6,12 @@ import FvThirdPartyAccountDataTable from './index.vue'
 const localVue = createLocalVue()
 localVue.use(Vuex)
 
-describe('FvThirdPartyAccountDataTable', () => {
-  let store
-  let vuetify
+let store
+let vuetify
 
+describe('FvThirdPartyAccountDataTable', () => {
   const factory = () => {
-    return mount(FvThirdPartyAccountDataTable, {
+    return shallowMount(FvThirdPartyAccountDataTable, {
       localVue,
       store,
       vuetify,

@@ -6,6 +6,7 @@
     :items="mainItems"
     class="main-data-table"
     :itemsLength="items ? items.length : undefined"
+    :style="cssVars"
     @dataTable:paginationChanged="paginationChanged"
   )
     template(
@@ -66,10 +67,21 @@ export default {
     subItems() {
       const res = this.items ? this.items[0].items : []
       return res
+    },
+    cssVars() {
+      const settings = this.$store.getters['settings/settings']
+      const theme = settings.theme
+      let color = '#eaebee'
+      if (theme === 'dark') color = '#4a4b4e'
+      const res = {
+        '--mainTheadColor': color
+      }
+      return res
     }
   },
   mounted() {
     console.log('Composant ', this.$options.name)
+    this.$store.dispatch('settings/getSettings')
   },
   methods: {
     paginationChanged(pagination) {
@@ -90,6 +102,14 @@ export default {
 </script>
 
 <style scoped>
+::v-deep
+  .main-data-table
+  > .v-data-table
+  > .v-data-table__wrapper
+  > table
+  > thead {
+  background-color: var(--mainTheadColor);
+}
 ::v-deep .v-data-table {
   border-radius: 0;
 }

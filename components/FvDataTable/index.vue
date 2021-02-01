@@ -12,6 +12,7 @@
     }"
     :server-items-length="itemsLength"
     :options="options"
+    :style="cssVars"
     @click:row='selected'
     @pagination='paginationChanged'
   )
@@ -83,8 +84,21 @@ export default {
       sortDesc: false
     }
   },
+  computed: {
+    cssVars() {
+      const settings = this.$store.getters['settings/settings']
+      const theme = settings.theme
+      let color = '#f5f6f7'
+      if (theme === 'dark') color = '#656667'
+      const res = {
+        '--theadColor': color
+      }
+      return res
+    }
+  },
   mounted() {
     console.log('Composant ', this.$options.name)
+    this.$store.dispatch('settings/getSettings')
   },
   methods: {
     getThSlot(key) {
@@ -124,3 +138,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+::v-deep thead {
+  background-color: var(--theadColor);
+}
+</style>
