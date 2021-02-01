@@ -22,9 +22,8 @@ describe('FvOfferList', () => {
           headersOffers: () => headersOffers,
           offers: jest.fn()
         },
-        $dataTable: {
-          filter: jest.fn(),
-          sortByKey: jest.fn()
+        $displayRules: {
+          name: jest.fn()
         }
       }
     })
@@ -49,15 +48,12 @@ describe('FvOfferList', () => {
   })
   it('should render a fv offer list', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="header"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="recursiveDataTable"]').exists()).toBe(
-      true
-    )
+    expect(wrapper.find('[data-testid="table"]').exists()).toBe(true)
   })
   it('should emit an event when offer is selected', () => {
     const wrapper = factory()
-    const dataTable = wrapper.find('[data-testid="recursiveDataTable"]')
-    dataTable.vm.$emit('dataTable:selected')
+    const table = wrapper.find('[data-testid="table"]')
+    table.vm.$emit('list:selected')
     const selectedCalls = wrapper.emitted('list:selected')
     expect(selectedCalls).toBeTruthy()
     expect(selectedCalls).toHaveLength(1)

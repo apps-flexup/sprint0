@@ -5,7 +5,7 @@
     :headers="headers"
     :items="mainItems"
     class="main-data-table"
-    :itemsLength="sortedItems ? sortedItems.length : undefined"
+    :itemsLength="items ? items.length : undefined"
     @dataTable:paginationChanged="paginationChanged"
   )
     template(
@@ -15,7 +15,7 @@
       component(
         :is="`fv-${key.replace(/s$/g,'')}-data-table`"
         :headers="item.headers ? item.headers[key] : []"
-        :items="sortedItems"
+        :items="subItems"
         hide-default-footer
         :options="options"
         @dataTable:sortBy="sortBy"
@@ -62,23 +62,9 @@ export default {
     mainItems() {
       const res = this.items ? this.items : []
       return res
-    }
-  },
-  asyncComputed: {
-    async sortedItems() {
-      let res = this.mainItems[0] ? this.mainItems[0].items : []
-      const sortKey = this.sortKey
-      const shouldSortDesc = this.shouldSortDesc
-      res = await this.$dataTable.filter(res, this.filters, this.rules)
-      if (sortKey) {
-        const rule = this.rules[sortKey]
-        res = await this.$dataTable.sortByRule(
-          res,
-          sortKey,
-          shouldSortDesc,
-          rule
-        )
-      }
+    },
+    subItems() {
+      const res = this.items ? this.items[0].items : []
       return res
     }
   },

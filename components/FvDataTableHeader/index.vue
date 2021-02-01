@@ -4,7 +4,7 @@
     | {{ title }}
     v-spacer
     v-chip.chip(
-      v-for="filter in filters"
+      v-for="filter in filters" :key="filter"
       close
       :color="getColorForFilter(filter)"
       @click:close="removeFilter(filter)"

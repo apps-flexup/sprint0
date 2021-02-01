@@ -41,6 +41,7 @@ import FvDataTableHeader from '@/components/FvDataTableHeader'
 import FvDataTableSearchBar from '@/components/FvDataTableSearchBar'
 import FvFlexItems from '@/components/FvFlexItems'
 import FvIcon from '@/components/FvIcon'
+import FvIndexTable from '@/components/FvIndexTable'
 import FvLanguageAutocomplete from '@/components/FvLanguageAutocomplete'
 import FvListAccounts from '@/components/FvListAccounts'
 import FvLoginButton from '@/components/FvLoginButton'
@@ -180,6 +181,7 @@ Vue.component('fv-data-table-header', FvDataTableHeader)
 Vue.component('fv-data-table-search-bar', FvDataTableSearchBar)
 Vue.component('fv-flex-items', FvFlexItems)
 Vue.component('fv-icon', FvIcon)
+Vue.component('fv-index-table', FvIndexTable)
 Vue.component('fv-language-autocomplete', FvLanguageAutocomplete)
 Vue.component('fv-list-accounts', FvListAccounts)
 Vue.component('fv-login-button', FvLoginButton)

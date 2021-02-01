@@ -21,27 +21,30 @@ describe('FvOfferStepDetail', () => {
     dimension: unit.dimension,
     name: 'test'
   }
+  const payload = {
+    product_id: 2,
+    name: 'Appartement Paris 19',
+    price: '120',
+    currency: 'EUR',
+    vat: '20',
+    unit: 'month',
+    dimension: 'duration'
+  }
 
   const factory = (propsData) => {
     return shallowMount(FvOfferStepDetail, {
       localVue,
       store,
       propsData: {
-        ...propsData
+        ...propsData,
+        payload
       },
       mocks: {
         $t: (msg) => msg
       },
-      data() {
-        return {
-          localOffer: {},
-          productId: 2,
-          name: 'Appartement Paris 19',
-          price: '120',
-          currency: null,
-          vat: '20',
-          unit: 'month',
-          dimension: null
+      computed: {
+        price() {
+          return payload.price
         }
       }
     })
@@ -62,6 +65,15 @@ describe('FvOfferStepDetail', () => {
           },
           getters: {
             findById: () => () => product
+          }
+        },
+        settings: {
+          namespaced: true,
+          actions: {
+            getSettings: jest.fn()
+          },
+          getters: {
+            settings: jest.fn()
           }
         }
       }
@@ -86,16 +98,21 @@ describe('FvOfferStepDetail', () => {
     const submittedCalls = wrapper.emitted('payload:changed')
     expect(submittedCalls).toBeTruthy()
     expect(submittedCalls).toHaveLength(1)
+    expect(submittedCalls[0][0].product_id).toBe(product.id)
+    expect(submittedCalls[0][0].unit).toBe(product.unit)
+    expect(submittedCalls[0][0].dimension).toBe(product.dimension)
+    expect(submittedCalls[0][0].name).toBe(product.name)
   })
   it('should send signal when price changed', () => {
     const wrapper = factory()
     const priceField = wrapper.find('[data-testid="priceField"]')
-    const price = 10.5
+    const price = { price: 10.5, currency: 'EUR' }
     priceField.vm.$emit('price:changed', price)
     const submittedCalls = wrapper.emitted('payload:changed')
     expect(submittedCalls).toBeTruthy()
     expect(submittedCalls).toHaveLength(1)
-    expect(submittedCalls[0][0].price).toBe(price)
+    expect(submittedCalls[0][0].price).toBe(price.price)
+    expect(submittedCalls[0][0].currency).toBe(price.currency)
   })
   it('should send signal when vat changed', () => {
     const wrapper = factory()
@@ -134,15 +151,17 @@ describe('FvOfferStepDetail', () => {
     )
     expect(productAutocomplete.props().product).toBe(2)
   })
-  it('should have an empty text field for product name', () => {
+  it('should receive the product name', () => {
     const wrapper = factory()
+    const name = payload.name
     const nameField = wrapper.find('[data-testid="nameField"]')
-    expect(nameField.text()).toMatch('')
+    expect(nameField.props().value).toBe(name)
   })
   it('should receive the product price', () => {
     const wrapper = factory()
+    const price = payload.price
     const priceField = wrapper.find('[data-testid="priceField"]')
-    expect(priceField.props().value).toBe('120')
+    expect(priceField.props().value).toBe(price)
   })
   it('should receive the product VAT', () => {
     const wrapper = factory()
@@ -153,5 +172,10 @@ describe('FvOfferStepDetail', () => {
     const wrapper = factory()
     const unitAutocomplete = wrapper.find('[data-testid="unitAutocomplete"]')
     expect(unitAutocomplete.props().unit).toBe('month')
+  })
+  it('should receive the product dimension', () => {
+    const wrapper = factory()
+    const unitAutocomplete = wrapper.find('[data-testid="unitAutocomplete"]')
+    expect(unitAutocomplete.props().dimension).toBe('duration')
   })
 })
