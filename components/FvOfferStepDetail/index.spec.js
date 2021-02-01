@@ -41,6 +41,11 @@ describe('FvOfferStepDetail', () => {
       },
       mocks: {
         $t: (msg) => msg
+      },
+      computed: {
+        price() {
+          return payload.price
+        }
       }
     })
   }
@@ -152,14 +157,12 @@ describe('FvOfferStepDetail', () => {
     const nameField = wrapper.find('[data-testid="nameField"]')
     expect(nameField.props().value).toBe(name)
   })
-  // Need to find a way to pass this test
-  // it('should receive the product price', async () => {
-  //   const wrapper = factory()
-  //   const price = payload.price
-  //   const priceField = wrapper.find('[data-testid="priceField"]')
-  //   await wrapper.vm.$nextTick()
-  //   expect(priceField.props().value).toBe(price)
-  // })
+  it('should receive the product price', () => {
+    const wrapper = factory()
+    const price = payload.price
+    const priceField = wrapper.find('[data-testid="priceField"]')
+    expect(priceField.props().value).toBe(price)
+  })
   it('should receive the product VAT', () => {
     const wrapper = factory()
     const vatField = wrapper.find('[data-testid="vatField"]')
