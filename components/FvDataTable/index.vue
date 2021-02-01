@@ -1,9 +1,5 @@
 <template lang="pug">
 .fv-data-table
-  style.
-    :root {
-       --theadColor: {{ theadColor }}
-    }
   v-data-table(
     data-testid="dataTable"
     :headers='headers'
@@ -16,6 +12,7 @@
     }"
     :server-items-length="itemsLength"
     :options="options"
+    :style="cssVars"
     @click:row='selected'
     @pagination='paginationChanged'
   )
@@ -88,13 +85,20 @@ export default {
     }
   },
   computed: {
-    theadColor() {
-      const res = '#f5f6f7'
+    cssVars() {
+      const settings = this.$store.getters['settings/settings']
+      const theme = settings.theme
+      let color = '#f5f6f7'
+      if (theme === 'dark') color = '#656667'
+      const res = {
+        '--theadColor': color
+      }
       return res
     }
   },
   mounted() {
     console.log('Composant ', this.$options.name)
+    this.$store.dispatch('settings/getSettings')
   },
   methods: {
     getThSlot(key) {

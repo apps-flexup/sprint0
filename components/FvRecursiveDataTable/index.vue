@@ -1,15 +1,12 @@
 <template lang="pug">
 .fv-recursive-data-table
-  style.
-    :root {
-       --mainTheadColor: {{ theadColor }}
-    }
   fv-data-table.elevation-2(
     data-testid="dataTable"
     :headers="headers"
     :items="mainItems"
     class="main-data-table"
     :itemsLength="items ? items.length : undefined"
+    :style="cssVars"
     @dataTable:paginationChanged="paginationChanged"
   )
     template(
@@ -71,13 +68,20 @@ export default {
       const res = this.items ? this.items[0].items : []
       return res
     },
-    theadColor() {
-      const res = '#eaebee'
+    cssVars() {
+      const settings = this.$store.getters['settings/settings']
+      const theme = settings.theme
+      let color = '#eaebee'
+      if (theme === 'dark') color = '#4a4b4e'
+      const res = {
+        '--mainTheadColor': color
+      }
       return res
     }
   },
   mounted() {
     console.log('Composant ', this.$options.name)
+    this.$store.dispatch('settings/getSettings')
   },
   methods: {
     paginationChanged(pagination) {

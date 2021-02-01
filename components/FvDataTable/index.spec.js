@@ -1,9 +1,14 @@
 import { mount, createLocalVue } from '@vue/test-utils'
 import Vuetify from 'vuetify'
+import Vuex from 'vuex'
 import FvDataTable from './index.vue'
 
 const localVue = createLocalVue()
+localVue.use(Vuex)
+
+let store
 let vuetify
+
 const headers = [
   {
     text: 'column1',
@@ -25,6 +30,7 @@ const headers = [
 const factory = (propsData) => {
   return mount(FvDataTable, {
     localVue,
+    store,
     vuetify,
     stubs: {
       FvTh: true
@@ -37,6 +43,25 @@ const factory = (propsData) => {
     }
   })
 }
+beforeEach(() => {
+  store = new Vuex.Store({
+    modules: {
+      settings: {
+        namespaced: true,
+        actions: {
+          getSettings: jest.fn()
+        },
+        getters: {
+          settings() {
+            return {
+              theme: 'light'
+            }
+          }
+        }
+      }
+    }
+  })
+})
 
 describe('FvDataTable', () => {
   beforeEach(() => {
