@@ -322,6 +322,11 @@
         "validate": "Valider"
       }
     },
+    "payment-condition": {
+      "step": {
+        "0": "Détails"
+      }
+    },
     "paymentConditions": {
       "new": {
         "title": "Nouvelle condition de paiement"

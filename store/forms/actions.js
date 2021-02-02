@@ -25,8 +25,8 @@ export default {
       .then((data) => commit('setThirdPartyAccountSteps', data))
   },
   getPaymentCondition({ commit }) {
-    this.$repos.paymentConditionSteps
+    this.$repos.paymentConditionsSteps
       .index()
-      .then((data) => commit('paymentConditionSteps', data))
+      .then((data) => commit('setPaymentConditionSteps', data))
   }
 }

@@ -18,6 +18,6 @@ export default {
     state.thirdPartyAccounts = items
   },
   setPaymentConditionSteps(state, items) {
-    state.setPaymentConditions = items
+    state.paymentConditions = items
   }
 }

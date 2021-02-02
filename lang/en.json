@@ -320,6 +320,11 @@
         "validate": "Validate"
       }
     },
+    "payment-condition": {
+      "step": {
+        "0": "Details"
+      }
+    },
     "paymentConditions": {
       "new": {
         "title": "New payment condition"
