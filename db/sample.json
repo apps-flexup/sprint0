@@ -1436,6 +1436,12 @@
       "title": "forms.third-party-account.step.0"
     }
   ],
+  "payment-condition-steps": [
+    {
+      "component": "fv-payment-condition-step-detail",
+      "title": "forms.payment-condition.step.0"
+    }
+  ],
   "contract-types": [
     {
       "account_id": null,
