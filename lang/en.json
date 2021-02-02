@@ -129,7 +129,9 @@
       "thirdPartyAccounts": "Third party accounts",
       "thirdPartyAccounts-id": "Edit my third party account",
       "settings": "Settings",
-      "settings-new": "New settings"
+      "settings-new": "New settings",
+      "paymentConditions": "Payment conditions",
+      "paymentConditions-new": "New payment conditions"
     }
   },
   "listAccounts": {
@@ -317,6 +319,11 @@
         "addThirdPartyAccount": "Add order for new third party account",
         "validate": "Validate"
       }
+    },
+    "paymentConditions": {
+      "new": {
+        "title": "New payment condition"
+      }
     }
   },
   "manageMenu" : {
@@ -328,9 +335,7 @@
     "products": "Products",
     "contacts": "Contacts",
     "thirdPartyAccounts": "Third party",
-    "documents": "Documents",
-    "dashboard": "Dashboard",
-    "settings": "Settings"
+    "paymentConditions": "Payment conditions"
   },
   "userMenu": {
     "data": "Personnal data",
@@ -376,7 +381,8 @@
       "contract": "CREATE CONTRACT",
       "thirdPartyAccount": "CREATE THIRD PARTY ACCOUNT",
       "offer": "CREATE OFFER",
-      "order": "CREATE ORDER"
+      "order": "CREATE ORDER",
+      "paymentCondition": "CREATE PAYMENT CONDITION"
     },
     "submit": "Submit",
     "previous": "Previous",

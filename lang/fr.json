@@ -129,7 +129,9 @@
       "thirdPartyAccounts": "Comptes tiers",
       "thirdPartyAccounts-id": "Modifier mon compte tiers",
       "settings": "Préférences",
-      "settings-new": "Créer préférences"
+      "settings-new": "Créer préférences",
+      "paymentConditions": "Conditions de paiement",
+      "paymentConditions-new": "Nouvelle condition de paiement"
     }
   },
   "listAccounts": {
@@ -319,6 +321,11 @@
         "addThirdPartyAccount": "Ajouter une commande pour un nouveau compte tiers",
         "validate": "Valider"
       }
+    },
+    "paymentConditions": {
+      "new": {
+        "title": "Nouvelle condition de paiement"
+      }
     }
   },
   "manageMenu": {
@@ -332,7 +339,7 @@
     "thirdPartyAccounts": "Tiers",
     "documents": "Documents",
     "dashboard": "Tableau de bord",
-    "settings": "Paramètres"
+    "paymentConditions": "Conditions de paiment"
   },
   "userMenu": {
     "data": "Données personnelles",
@@ -378,8 +385,8 @@
       "contract": "CRÉER CONTRAT",
       "thirdPartyAccount": "CRÉER COMPTE TIERS",
       "offer": "CRÉER OFFRE",
-      "order": "CRÉER COMMANDE"
-
+      "order": "CRÉER COMMANDE",
+      "paymentCondition": "CRÉER CONDITION DE PAIEMENT"
     },
     "submit": "Envoyer",
     "previous": "Précédent",

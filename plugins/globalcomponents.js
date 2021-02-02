@@ -55,6 +55,7 @@ import FvNav from '@/components/FvNav'
 import FvNavBar from '@/components/FvNavBar'
 import FvThirdPartyAccountStepDetail from '@/components/FvThirdPartyAccountStepDetail'
 import FvNumberField from '@/components/FvNumberField'
+import FvPaymentConditionIndex from '@/components/FvPaymentConditionIndex'
 import FvPriceField from '@/components/FvPriceField'
 import FvPriceToPreferredCurrency from '@/components/FvPriceToPreferredCurrency'
 import FvPriceWithUnit from '@/components/FvPriceWithUnit'
@@ -198,6 +199,7 @@ Vue.component(
   FvThirdPartyAccountStepDetail
 )
 Vue.component('fv-number-field', FvNumberField)
+Vue.component('fv-payment-condition-index', FvPaymentConditionIndex)
 Vue.component('fv-price-field', FvPriceField)
 Vue.component('fv-price-to-preferred-currency', FvPriceToPreferredCurrency)
 Vue.component('fv-price-with-unit', FvPriceWithUnit)
