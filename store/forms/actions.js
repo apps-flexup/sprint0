@@ -23,5 +23,10 @@ export default {
     this.$repos.thirdPartyAccountSteps
       .index()
       .then((data) => commit('setThirdPartyAccountSteps', data))
+  },
+  getPaymentCondition({ commit }) {
+    this.$repos.paymentConditionSteps
+      .index()
+      .then((data) => commit('paymentConditionSteps', data))
   }
 }
