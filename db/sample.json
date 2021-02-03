@@ -1,4 +1,23 @@
 {
+  "references": [
+    {
+      "key": "r1",
+      "value": [
+        {
+          "key": "base",
+          "value": 1
+        },
+        {
+          "key": "flex",
+          "value": 1
+        },
+        {
+          "key": "equity",
+          "value": 1
+        }
+      ]
+    }
+  ],
   "settings": [
     {
       "currency": "EUR",
