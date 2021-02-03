@@ -1,6 +1,7 @@
 <template lang="pug">
 .fv-payment-condition-step-detail
   p {{ $options.name }}
+  pre {{ references }}
 </template>
 
 <script>
@@ -14,8 +15,15 @@ export default {
       }
     }
   },
+  computed: {
+    references() {
+      const res = this.$store.getters['references/all']
+      return res
+    }
+  },
   mounted() {
     console.log('Composant ', this.$options.name)
+    this.$store.dispatch('references/get')
   }
 }
 </script>
