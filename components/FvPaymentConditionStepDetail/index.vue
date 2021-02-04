@@ -95,6 +95,7 @@ export default {
       return res
     },
     referenceHasParam(reference) {
+      if (!reference) return false
       const key = reference.key
       const selectedReference = this.selectedReferences[key]
       if (
@@ -106,25 +107,25 @@ export default {
     },
     getComponentForReference(reference) {
       let res = null
-      const key = reference.key
-      const selectedReference = this.selectedReferences[key]
-      if (selectedReference && this.referenceHasParam(selectedReference)) {
+      if (this.referenceHasParam(reference)) {
+        const key = reference.key
+        const selectedReference = this.selectedReferences[key]
         const params = selectedReference.params
         res = params.key
       }
       return res
     },
     referenceParamsChanged(reference, v) {
-      const key = reference.key
-      const selectedReference = JSON.parse(
-        JSON.stringify(this.selectedReferences[key])
-      )
-      if (selectedReference && this.referenceHasParam(selectedReference)) {
+      if (this.referenceHasParam(reference)) {
+        const key = reference.key
+        const selectedReference = JSON.parse(
+          JSON.stringify(this.selectedReferences[key])
+        )
         const params = JSON.parse(JSON.stringify(selectedReference.params))
         params.value = v
         selectedReference.params = params
+        this.$set(this.selectedReferences, reference.key, selectedReference)
       }
-      this.$set(this.selectedReferences, reference.key, selectedReference)
     },
     filter(item, v, it) {
       return filterReferenceAutocomplete(item, v, it)
