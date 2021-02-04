@@ -6,7 +6,7 @@
   )
   div(v-for="reference in references" :key="reference.key")
     v-row
-      v-col(cols="8")
+      v-col(cols="10")
         fv-autocomplete(
           :items="reference.value"
           :filter="filter"
@@ -42,6 +42,7 @@
           color="white"
         )
           span.referenceKey {{ getValueForReference(reference) }}%
+  pre total : {{ total }}
 </template>
 
 <script>
@@ -66,6 +67,14 @@ export default {
     references() {
       const res = this.$store.getters['references/all']
       return res
+    },
+    total() {
+      let res = 0
+      const references = this.selectedReferences
+      for (const reference of Object.values(references)) {
+        res += reference.value
+      }
+      return res
     }
   },
   mounted() {
@@ -87,6 +96,7 @@ export default {
       this.$emit('payload:changed', payload)
     },
     getValueForReference(reference) {
+      console.log('GET VALUE: ', reference)
       const key = reference.key
       const selectedReference = this.selectedReferences[key]
       let res = 0
@@ -140,5 +150,8 @@ export default {
 }
 .referenceKey {
   color: #6b6b6b;
+}
+::v-deep .referenceAvatar {
+  border-color: black !important;
 }
 </style>
