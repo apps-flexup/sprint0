@@ -1,4 +1,15 @@
 {
+  "references": {
+    "r1": {
+      "base": "Base",
+      "flex": "Flex",
+      "equity": "Equity"
+    },
+    "r2": {
+      "now": "Maintenant",
+      "later": "Plus tard"
+    }
+  },
   "units": {
     "symbol": {
       "year": "année",
@@ -329,7 +340,13 @@
     },
     "paymentConditions": {
       "new": {
-        "title": "Nouvelle condition de paiement"
+        "title": "Nouvelle condition de paiement",
+        "label": "Libellé",
+        "days": "Jours",
+        "references": {
+          "r1": "Priorité de paiement",
+          "r2": "Délai de paiement"
+        }
       }
     }
   },

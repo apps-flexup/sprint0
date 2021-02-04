@@ -9,11 +9,27 @@
         },
         {
           "key": "flex",
-          "value": 1
+          "value": 2
         },
         {
           "key": "equity",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "key": "r2",
+      "value": [
+        {
+          "key": "now",
           "value": 1
+        },
+        {
+          "key": "later",
+          "value": 2,
+          "params": {
+            "key": "fv-payment-term-params"
+          }
         }
       ]
     }
