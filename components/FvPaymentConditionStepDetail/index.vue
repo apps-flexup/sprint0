@@ -82,7 +82,7 @@ export default {
     referenceSelected(reference, v) {
       this.$set(this.selectedReferences, reference.key, v)
       const payload = {
-        selectedReferences: this.selectedReferences
+        references: this.selectedReferences
       }
       this.$emit('payload:changed', payload)
     },
@@ -124,7 +124,7 @@ export default {
         const params = JSON.parse(JSON.stringify(selectedReference.params))
         params.value = v
         selectedReference.params = params
-        this.$set(this.selectedReferences, reference.key, selectedReference)
+        this.referenceSelected(reference, selectedReference)
       }
     },
     filter(item, v, it) {
