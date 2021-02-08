@@ -3,6 +3,7 @@
     "r1": {
       "base": "Base",
       "flex": "Flex",
+      "superFlex": "SuperFlex",
       "equity": "Equity"
     },
     "r2": {
@@ -341,6 +342,7 @@
         "title": "New payment condition",
         "label": "Label",
         "days": "Days",
+        "total": "Total:",
         "references": {
           "r1": "Payment priority",
           "r2": "Payment term"

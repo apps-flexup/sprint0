@@ -5,15 +5,19 @@
       "value": [
         {
           "key": "base",
-          "value": 1
+          "value": 25
         },
         {
           "key": "flex",
-          "value": 2
+          "value": 60
+        },
+        {
+          "key": "superFlex",
+          "value": 80
         },
         {
           "key": "equity",
-          "value": 3
+          "value": 100
         }
       ]
     },
@@ -22,11 +26,10 @@
       "value": [
         {
           "key": "none",
-          "value": 1
+          "value": 100
         },
         {
           "key": "later",
-          "value": 2,
           "params": {
             "key": "fv-payment-term-params"
           }

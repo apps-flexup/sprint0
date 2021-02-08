@@ -14,7 +14,15 @@ export default {
   },
   methods: {
     inputChanged(v) {
-      this.$emit('referenceParams:changed', v)
+      const value = this.computeValue(v)
+      this.$emit('referenceParams:changed', v, value)
+    },
+    computeValue(v) {
+      const nbDays = parseInt(v)
+      let res = (Math.log10(nbDays + 60) + 0.5) / 5
+      res = Math.round(res * 100) / 100
+      res *= 100
+      return res
     }
   }
 }

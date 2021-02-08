@@ -24,25 +24,19 @@
           :is="getComponentForReference(reference)"
           @referenceParams:changed="referenceParamsChanged(reference, ...arguments)"
         )
-      v-col(
-        cols="1"
-        align="center"
-        justify="center"
-      )
-        v-avatar.referenceAvatar(
-          color="white"
-        )
+      v-col(cols="1")
+        v-avatar(color="white")
           span.referenceKey {{ reference.key }}
-      v-col(
-        cols="1"
-        align="center"
-        justify="center"
-      )
-        v-avatar.referenceAvatar(
-          color="white"
-        )
+      v-col(cols="1")
+        v-avatar(color="white")
           span.referenceKey {{ getValueForReference(reference) }}%
-  pre total : {{ total }}
+  v-row(class="justify-center align-center")
+    v-col(cols="10")
+    v-col(cols="1" justify='center')
+      p.total {{ $t('forms.paymentConditions.new.total') }}
+    v-col(cols="1")
+      v-avatar(color="white")
+        span.referenceKey {{ total }}%
 </template>
 
 <script>
@@ -72,7 +66,11 @@ export default {
       let res = 0
       const references = this.selectedReferences
       for (const reference of Object.values(references)) {
-        res += reference.value
+        if (res === 0) {
+          res = reference.value
+        } else {
+          res *= reference.value / 100
+        }
       }
       return res
     }
@@ -96,7 +94,6 @@ export default {
       this.$emit('payload:changed', payload)
     },
     getValueForReference(reference) {
-      console.log('GET VALUE: ', reference)
       const key = reference.key
       const selectedReference = this.selectedReferences[key]
       let res = 0
@@ -125,7 +122,7 @@ export default {
       }
       return res
     },
-    referenceParamsChanged(reference, v) {
+    referenceParamsChanged(reference, v, value) {
       if (this.referenceHasParam(reference)) {
         const key = reference.key
         const selectedReference = JSON.parse(
@@ -134,6 +131,7 @@ export default {
         const params = JSON.parse(JSON.stringify(selectedReference.params))
         params.value = v
         selectedReference.params = params
+        selectedReference.value = value
         this.referenceSelected(reference, selectedReference)
       }
     },
@@ -151,7 +149,8 @@ export default {
 .referenceKey {
   color: #6b6b6b;
 }
-::v-deep .referenceAvatar {
-  border-color: black !important;
+.total {
+  font-weight: bold;
+  color: black;
 }
 </style>
