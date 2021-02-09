@@ -91,6 +91,106 @@
           "value": 70
         }
       ]
+    },
+    {
+      "key": "r5",
+      "value": [
+        {
+          "key": "none",
+          "value": 100
+        },
+        {
+          "key": "convertToEquity",
+          "value": 100
+        },
+        {
+          "key": "principal",
+          "value": 100
+        },
+        {
+          "key": "everyYear",
+          "value": 90
+        },
+        {
+          "key": "everyQuarter",
+          "value": 80
+        },
+        {
+          "key": "everyMonth",
+          "value": 70
+        }
+      ]
+    },
+    {
+      "key": "r6",
+      "value": [
+        {
+          "key": "thirdParty",
+          "value": 75
+        },
+        {
+          "key": "projectOrThirdParty",
+          "value": 100
+        },
+        {
+          "key": "projectAndThirdParty",
+          "value": 100
+        },
+        {
+          "key": "project",
+          "value": 150
+        }
+      ]
+    },
+    {
+      "key": "r7",
+      "value": [
+        {
+          "key": "none",
+          "value": 100
+        },
+        {
+          "key": "equity",
+          "value": 100
+        },
+        {
+          "key": "superFlex",
+          "value": 90
+        },
+        {
+          "key": "flex",
+          "value": 80
+        },
+        {
+          "key": "base",
+          "value": 70
+        }
+      ]
+    },
+    {
+      "key": "r8",
+      "value": [
+        {
+          "key": "none",
+          "value": 100
+        },
+        {
+          "key": "equity",
+          "value": 100
+        },
+        {
+          "key": "nextYear",
+          "value": 90
+        },
+        {
+          "key": "nextQuarter",
+          "value": 80
+        },
+        {
+          "key": "nextMonth",
+          "value": 70
+        }
+      ]
     }
   ],
   "settings": [

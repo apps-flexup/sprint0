@@ -24,6 +24,34 @@
       "flex": "Flex",
       "superFlex": "SuperFlex",
       "equity": "Equity"
+    },
+    "r5": {
+      "none": "Pas de rendement",
+      "convertToEquity": "Rendement calculé tous les exercices et converti en equity",
+      "principal": "Rendement calculé et payés même temps que le principal",
+      "everyYear": "Rendement calculé et programmé tous les exercices",
+      "everyQuarter": "Rendement calculé et programmé tous les trimestres",
+      "everyMonth": "Rendement calculé et programmé tous les mois"
+    },
+    "r6": {
+      "thirdParty": "A la demande du tiers uniquement",
+      "projectOrThirdParty": "A la demande du projet ou du tiers",
+      "projectAndThirdParty": "A la demande du projet et du tiers",
+      "project": "A la demande du projet uniquement"
+    },
+    "r7": {
+      "none": "Non applicable",
+      "equity": "Equity (pas de reprogrammation)",
+      "superFlex": "SuperFlex",
+      "flex": "Flex",
+      "base": "Base"
+    },
+    "r8": {
+      "none": "Non applicable",
+      "equity": "Converti en equity (pas de reprogrammation)",
+      "nextYear": "Reprogammé à l'année suivante (à la même date)",
+      "nextQuarter": "Reprogrammé à la fin du trimestre suivant",
+      "nextMonth": "Reprogrammé à la fin du mois suivant"
     }
   },
   "units": {
@@ -365,7 +393,11 @@
           "r1": "Priorité de paiement",
           "r2": "Délai de paiement",
           "r3": "Taux de rendement",
-          "r4": "Priorité du rendement"
+          "r4": "Priorité du rendement",
+          "r5": "Périodicité du rendement",
+          "r6": "Condition de paiment anticipé",
+          "r7": "Nouvelle priorité en cas de reprogrammation",
+          "r8": "Reprogrammation"
         }
       }
     }

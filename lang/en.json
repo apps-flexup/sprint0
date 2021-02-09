@@ -24,6 +24,34 @@
       "flex": "Flex",
       "superFlex": "SuperFlex",
       "equity": "Equity"
+    },
+    "r5": {
+      "none": "No yield",
+      "convertToEquity": "Yield calculated every year and convert to equity",
+      "principal": "Yield calculated and paid at the same time of the principal",
+      "everyYear": "Yield calculated and scheduled every year",
+      "everyQuarter": "Yield calculated and scheduled every quarter",
+      "everyMonth": "Yield calculated and scheduled every month"
+    },
+    "r6": {
+      "thirdParty": "At the request of the third party only",
+      "projectOrThirdParty": "At the request of the project or third party",
+      "projectAndThirdParty": "At the request of the project and third party",
+      "project": "At the request of the project only"
+    },
+    "r7": {
+      "none": "Not applicable",
+      "equity": "Equity (no reprogramming)",
+      "superFlex": "SuperFlex",
+      "flex": "Flex",
+      "base": "Base"
+    },
+    "r8": {
+      "none": "Not applicable",
+      "equity": "Convert to equity (no reprogramming)",
+      "nextYear": "Re-scheduled to the following year (on the same date)",
+      "nextQuarter": "Rescheduled at the end of the next quarter",
+      "nextMonth": "Rescheduled at the end of the following month"
     }
   },
   "units": {
@@ -363,7 +391,11 @@
           "r1": "Payment priority",
           "r2": "Payment term",
           "r3": "Yield rate",
-          "r4": "Yield priority"
+          "r4": "Yield priority",
+          "r5": "Yield periodicity",
+          "r6": "Terms of Prepayment",
+          "r7": "New priority in case of reprogramming",
+          "r8": "Reprogramming"
         }
       }
     }

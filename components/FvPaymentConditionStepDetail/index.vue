@@ -111,7 +111,8 @@ export default {
     referenceSelected(reference, v) {
       this.$set(this.selectedReferences, reference.key, v)
       const payload = {
-        references: this.selectedReferences
+        references: this.selectedReferences,
+        total: this.total
       }
       this.$emit('payload:changed', payload)
     },
