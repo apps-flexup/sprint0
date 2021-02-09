@@ -1,11 +1,11 @@
 <template lang="pug">
 .fv-payment-condition-step-detail
-  fv-text-field(
+  fv-text-field.label(
     :label="$t('forms.paymentConditions.new.label')"
     @input="labelChanged"
   )
-  div(v-for="reference in references" :key="reference.key")
-    v-row
+  div(v-for="reference in references" :key="reference.key" :style="cssVars")
+    v-row(class="align-center")
       v-col(cols="10")
         fv-autocomplete(
           :items="reference.value"
@@ -19,24 +19,25 @@
               v-list-item-title {{ $t('references.' + reference.key + '.' + data.item.key) }}
           template(v-slot:selection="data")
             div {{ $t('references.' + reference.key + '.' + data.item.key) }}
+      v-col.center(cols="1")
+        v-avatar.center(:color="avatarColor")
+          span.referenceKey {{ reference.key }}
+      v-col.center(cols="1")
+        v-avatar.center(:color="avatarColor")
+          span.referenceKey {{ getValueForReference(reference) }}%
+    v-row(v-if="referenceHasParam(reference)")
+      v-col(cols="10")
         component(
-          v-if="referenceHasParam(reference)"
           :is="getComponentForReference(reference)"
           @referenceParams:changed="referenceParamsChanged(reference, ...arguments)"
         )
-      v-col(cols="1")
-        v-avatar(color="white")
-          span.referenceKey {{ reference.key }}
-      v-col(cols="1")
-        v-avatar(color="white")
-          span.referenceKey {{ getValueForReference(reference) }}%
-  v-row(class="justify-center align-center")
+  v-divider
+  v-row(class="justify-center align-center" :style="cssVars")
     v-col(cols="10")
-    v-col(cols="1" justify='center')
-      p.total {{ $t('forms.paymentConditions.new.total') }}
-    v-col(cols="1")
-      v-avatar(color="white")
-        span.referenceKey {{ total }}%
+    v-col.center(cols="1")
+      span.total {{ $t('forms.paymentConditions.new.total') }}
+    v-col.center(cols="1")
+      v-chip.total(:color="avatarColor") {{ total }}%
 </template>
 
 <script>
@@ -66,11 +67,31 @@ export default {
       let res = 0
       const references = this.selectedReferences
       for (const reference of Object.values(references)) {
-        if (res === 0) {
-          res = reference.value
-        } else {
-          res *= reference.value / 100
+        if (reference.value) {
+          if (res === 0) {
+            res = reference.value
+          } else {
+            res *= reference.value / 100
+          }
         }
+      }
+      res = Math.round(res * 10) / 10
+      return res
+    },
+    avatarColor() {
+      const settings = this.$store.getters['settings/settings']
+      const theme = settings.theme
+      let res = 'white'
+      if (theme === 'dark') res = '#4a4b4e'
+      return res
+    },
+    cssVars() {
+      const settings = this.$store.getters['settings/settings']
+      const theme = settings.theme
+      let color = 'black'
+      if (theme === 'dark') color = 'white'
+      const res = {
+        '--fontColor': color
       }
       return res
     }
@@ -78,6 +99,7 @@ export default {
   mounted() {
     console.log('Composant ', this.$options.name)
     this.$store.dispatch('references/get')
+    this.$store.dispatch('settings/getSettings')
   },
   methods: {
     labelChanged(v) {
@@ -99,6 +121,7 @@ export default {
       let res = 0
       if (selectedReference) res = selectedReference.value
       if (!res) res = 0
+      res = Math.round(res)
       return res
     },
     referenceHasParam(reference) {
@@ -145,12 +168,29 @@ export default {
 <style scoped>
 ::v-deep .v-input.theme--light .v-input__slot {
   background: #ffffff;
+  margin-bottom: initial;
+}
+::v-deep .v-text-field__details {
+  display: none;
+}
+::v-deep .v-divider {
+  background-color: darkgray;
+  margin-top: 8px;
+  height: 2px;
+  max-height: initial;
+}
+.label {
+  margin-bottom: 8px;
+}
+.center {
+  text-align: center;
 }
 .referenceKey {
-  color: #6b6b6b;
+  color: var(--fontColor);
 }
 .total {
   font-weight: bold;
-  color: black;
+  color: var(--fontColor);
+  font-size: 1rem;
 }
 </style>

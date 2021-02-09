@@ -20,7 +20,6 @@ export default {
     computeValue(v) {
       const nbDays = parseInt(v)
       let res = (Math.log10(nbDays + 60) + 0.5) / 5
-      res = Math.round(res * 100) / 100
       res *= 100
       return res
     }
