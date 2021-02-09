@@ -25,13 +25,44 @@
       "key": "r2",
       "value": [
         {
-          "key": "none",
+          "key": "equity",
           "value": 100
+        },
+        {
+          "key": "beforeDeliveryDate",
+          "value": 40
+        },
+        {
+          "key": "beginningOfDeliveryMonth",
+          "value": 45
+        },
+        {
+          "key": "endOfDeliveryMonth",
+          "value": 50
         },
         {
           "key": "later",
           "params": {
             "key": "fv-payment-term-params"
+          }
+        }
+      ]
+    },
+    {
+      "key": "r3",
+      "value": [
+        {
+          "key": "none",
+          "value": 100
+        },
+        {
+          "key": "moreThan15",
+          "value": 0
+        },
+        {
+          "key": "lessThan15",
+          "params": {
+            "key": "fv-rate-of-return-params"
           }
         }
       ]

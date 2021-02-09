@@ -7,8 +7,16 @@
       "equity": "Equity"
     },
     "r2": {
-      "none": "None",
+      "equity": "None (Equity)",
+      "beforeDeliveryDate": "Before delivery date",
+      "beginningOfDeliveryMonth": "Beginning of delivery month",
+      "endOfDeliveryMonth": "End of delivery month",
       "later": "Later"
+    },
+    "r3": {
+      "none": "None",
+      "moreThan15": "More than 15%",
+      "lessThan15": "Less than 15%"
     }
   },
   "units": {
@@ -342,10 +350,12 @@
         "title": "New payment condition",
         "label": "Label",
         "days": "Days",
+        "rateOfReturn": "Rate of return",
         "total": "Total:",
         "references": {
           "r1": "Payment priority",
-          "r2": "Payment term"
+          "r2": "Payment term",
+          "r3": "Rate of return"
         }
       }
     }

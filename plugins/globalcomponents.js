@@ -66,6 +66,7 @@ import FvProductDataTable from '@/components/FvProductDataTable'
 import FvForm from '@/components/FvForm'
 import FvProductStepDetail from '@/components/FvProductStepDetail'
 import FvQuantitySelector from '@/components/FvQuantitySelector'
+import FvRateOfReturnParams from '@/components/FvRateOfReturnParams'
 import FvRating from '@/components/FvRating'
 import FvReview from '@/components/FvReview'
 import FvSecondaryButton from '@/components/FvSecondaryButton'
@@ -213,6 +214,7 @@ Vue.component('fv-form', FvForm)
 Vue.component('fv-product-step-detail', FvProductStepDetail)
 Vue.component('fv-product-index', FvProductIndex)
 Vue.component('fv-quantity-selector', FvQuantitySelector)
+Vue.component('fv-rate-of-return-params', FvRateOfReturnParams)
 Vue.component('fv-rating', FvRating)
 Vue.component('fv-review', FvReview)
 Vue.component('fv-secondary-button', FvSecondaryButton)
