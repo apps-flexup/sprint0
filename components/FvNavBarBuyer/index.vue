@@ -20,10 +20,10 @@
 export default {
   name: 'FvNavBarBuyer',
   props: {
-    space: {
+    title: {
       type: String,
       default() {
-        return null
+        return 'Flex Up - Sprint 0'
       }
     }
   },
@@ -43,7 +43,7 @@ export default {
           to: '/shop'
         }
       ],
-      title: 'Flexup - Sprint 0'
+      space: 'buyer'
     }
   },
   mounted() {

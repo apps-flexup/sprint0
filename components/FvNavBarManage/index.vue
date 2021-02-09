@@ -27,17 +27,18 @@ export default {
       default() {
         return null
       }
+    },
+    title: {
+      type: String,
+      default() {
+        return 'Flex Up - Sprint 0'
+      }
     }
   },
   computed: {
     navBar() {
       const res = this.$store.getters['settings/' + this.space + 'NavBar']
       return res
-    }
-  },
-  data() {
-    return {
-      title: 'Flexup - Sprint 0'
     }
   },
   mounted() {

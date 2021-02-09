@@ -11,19 +11,20 @@
       :space="space"
     )
   v-app-bar(
+    data-testid='navbar'
     :clipped-left="clipped"
     fixed
     app
   )
-    v-app-bar-nav-icon(@click.stop="drawer = !drawer")
-    v-toolbar-title.mr-16(v-text="title")
-    slot(name='left' v-if="$auth.loggedIn")
+    v-app-bar-nav-icon(@click.stop="drawer = !drawer" data-testid="icon-navbar")
+    v-toolbar-title.mr-16(v-text="title" data-testid="title-navbar")
+    div(v-if="$auth.loggedIn" data-testid="slot-left" class="slot")
+      slot(name='left')
     v-spacer
-    slot(name='right' v-if="$auth.loggedIn")
-    div(
-        class='line'
-    )
-    p(class='titleNavbar' v-if="$auth.loggedIn").mb-0  {{ $t(space + 'Menu.title') }}
+    div(v-if="$auth.loggedIn" data-testid="slot-right" class="slot")
+      slot(name='right')
+    div(class='line')
+    p(class='titleNavbar' v-if="$auth.loggedIn" data-testid="space-navbar").mb-0  {{ $t(space + 'Menu.title') }}
     fv-user-accounts
 </template>
 
@@ -71,6 +72,9 @@ export default {
   text-transform: uppercase;
   font-weight: 300;
   padding: 0 16px;
+}
+.slot {
+  display: contents;
 }
 ::v-deep .v-toolbar__content,
 .v-toolbar__extension {
