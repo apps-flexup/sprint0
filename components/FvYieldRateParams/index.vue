@@ -1,14 +1,14 @@
 <template lang="pug">
-.fv-rate-of-return-params
+.fv-yield-rate-params
   fv-number-field(
-    :label="$t('forms.paymentConditions.new.rateOfReturn')"
+    :label="$t('forms.paymentConditions.new.yieldRate')"
     @input="inputChanged"
   )
 </template>
 
 <script>
 export default {
-  name: 'FvRateOfReturnParams',
+  name: 'FvYieldRateParams',
   mounted() {
     console.log('Composant', this.$options.name)
   },

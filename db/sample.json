@@ -62,8 +62,33 @@
         {
           "key": "lessThan15",
           "params": {
-            "key": "fv-rate-of-return-params"
+            "key": "fv-yield-rate-params"
           }
+        }
+      ]
+    },
+    {
+      "key": "r4",
+      "value": [
+        {
+          "key": "none",
+          "value": 100
+        },
+        {
+          "key": "equity",
+          "value": 100
+        },
+        {
+          "key": "superFlex",
+          "value": 90
+        },
+        {
+          "key": "flex",
+          "value": 80
+        },
+        {
+          "key": "base",
+          "value": 70
         }
       ]
     }
