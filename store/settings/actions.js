@@ -23,6 +23,16 @@ export default {
   getGlobalMenu({ commit }) {
     this.$repos.globalMenu.index().then((data) => commit('setGlobalMenu', data))
   },
+  getSellerNavBar({ commit }) {
+    this.$repos.sellerNavBar
+      .index()
+      .then((data) => commit('setSellerNavBar', data))
+  },
+  getManageNavBar({ commit }) {
+    this.$repos.manageNavBar
+      .index()
+      .then((data) => commit('setManageNavBar', data))
+  },
   getSettings({ commit }) {
     return this.$repos.settings.indexWithAccountId().then((data) => {
       commit('setSettings', data[0])

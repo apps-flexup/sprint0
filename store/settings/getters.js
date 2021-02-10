@@ -34,6 +34,16 @@ export default {
     const res = JSON.parse(JSON.stringify(state.globalMenu))
     return res.filter((m) => m.active)
   },
+  manageNavBar(state) {
+    if (!state.manageNavBar) return []
+    const res = JSON.parse(JSON.stringify(state.manageNavBar))
+    return res.filter((m) => m.active)
+  },
+  sellerNavBar(state) {
+    if (!state.sellerNavBar) return []
+    const res = JSON.parse(JSON.stringify(state.sellerNavBar))
+    return res.filter((m) => m.active)
+  },
   locales(state) {
     if (!state.locales) return []
     const res = JSON.parse(JSON.stringify(state.locales))

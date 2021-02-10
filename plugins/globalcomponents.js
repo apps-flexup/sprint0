@@ -53,6 +53,8 @@ import FvModalAndButton from '@/components/FvModalAndButton'
 import FvRecursiveDataTable from '@/components/FvRecursiveDataTable'
 import FvNav from '@/components/FvNav'
 import FvNavBar from '@/components/FvNavBar'
+import FvNavBarBuyer from '@/components/FvNavBarBuyer'
+import FvNavBarManage from '@/components/FvNavBarManage'
 import FvThirdPartyAccountStepDetail from '@/components/FvThirdPartyAccountStepDetail'
 import FvNumberField from '@/components/FvNumberField'
 import FvPriceField from '@/components/FvPriceField'
@@ -65,6 +67,7 @@ import FvProductStepDetail from '@/components/FvProductStepDetail'
 import FvQuantitySelector from '@/components/FvQuantitySelector'
 import FvRating from '@/components/FvRating'
 import FvReview from '@/components/FvReview'
+import FvSearchAutocomplete from '@/components/FvSearchAutocomplete'
 import FvSecondaryButton from '@/components/FvSecondaryButton'
 import FvSettingsDefault from '@/components/FvSettingsDefault'
 import FvSettingsIndex from '@/components/FvSettingsIndex'
@@ -193,6 +196,8 @@ Vue.component('fv-modal-and-button', FvModalAndButton)
 Vue.component('fv-recursive-data-table', FvRecursiveDataTable)
 Vue.component('fv-nav', FvNav)
 Vue.component('fv-nav-bar', FvNavBar)
+Vue.component('fv-nav-bar-buyer', FvNavBarBuyer)
+Vue.component('fv-nav-bar-manage', FvNavBarManage)
 Vue.component(
   'fv-third-party-account-step-detail',
   FvThirdPartyAccountStepDetail
@@ -209,6 +214,7 @@ Vue.component('fv-product-index', FvProductIndex)
 Vue.component('fv-quantity-selector', FvQuantitySelector)
 Vue.component('fv-rating', FvRating)
 Vue.component('fv-review', FvReview)
+Vue.component('fv-search-autocomplete', FvSearchAutocomplete)
 Vue.component('fv-secondary-button', FvSecondaryButton)
 Vue.component('fv-settings-default', FvSettingsDefault)
 Vue.component('fv-settings-index', FvSettingsIndex)

@@ -6,6 +6,8 @@ export default () => ({
   buyerMenu: [],
   sellerMenu: [],
   globalMenu: [],
+  manageNavBar: [],
+  sellerNavBar: [],
   locales: ['en', 'fr'],
   fallbackLocale: 'en',
   settings: {}
