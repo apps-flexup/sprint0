@@ -242,6 +242,10 @@
     "thirdPartyAccounts": {
       "title": "Mes comptes tiers",
       "search": "Rechercher"
+    },
+    "paymentConditions": {
+      "title": "Mes conditions de paiement",
+      "search": "Rechercher"
     }
   },
   "forms": {
@@ -524,6 +528,13 @@
       "zip": "Code postal",
       "city": "Ville",
       "country": "Pays"
+    },
+    "paymentConditions": {
+      "label": "Libellé",
+      "priority": "Priorité",
+      "paymentTerm": "Délai de paiement",
+      "interestRate": "Taux d'intérêts",
+      "risk": "Risque"
     }
   },
   "modal": {

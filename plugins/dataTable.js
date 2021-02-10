@@ -26,19 +26,32 @@ const dataTable = (_ctx) => ({
     if (sortDesc) array.reverse()
     return array
   },
-
+  async applyRule(rule, item, itemKey, filter) {
+    let displayedItem = item[itemKey]
+    if (rule) {
+      displayedItem = await rule(item)
+    }
+    if (typeof displayedItem === 'string') {
+      const res = String.prototype.filtreAutocomplete.call(
+        displayedItem.toString(),
+        filter
+      )
+      if (res) return true
+    }
+    return false
+  },
   async asyncArraySome(itemKeys, item, rules, filter) {
     for (const itemKey of itemKeys) {
-      let displayedItem = item[itemKey]
+      let res = false
       const rule = rules[itemKey]
-      if (rule) {
-        displayedItem = await rule(item)
-      }
-      if (typeof displayedItem === 'string') {
-        const res = String.prototype.filtreAutocomplete.call(
-          displayedItem.toString(),
-          filter
-        )
+      if (typeof rule === 'object') {
+        const subRules = Object.keys(rule)
+        for (const subRule of subRules) {
+          res = await this.applyRule(rule[subRule], item, itemKey, filter)
+          if (res) return true
+        }
+      } else {
+        res = await this.applyRule(rule, item, itemKey, filter)
         if (res) return true
       }
     }

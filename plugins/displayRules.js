@@ -140,6 +140,44 @@ const displayRules = (ctx) => ({
     if (!structure) return null
     const res = structure.name
     return res
+  },
+  paymentConditionPriority(item) {
+    if (!item) return null
+    const references = item.references
+    if (!references) return null
+    const priorityReference = references.r1
+    if (!priorityReference) return null
+    const priority = priorityReference.key
+    const i18n = ctx.app.i18n
+    const res = i18n.t('references.r1.' + priority)
+    return res
+  },
+  paymentConditionPaymentTerm(item) {
+    if (!item) return null
+    const references = item.references
+    if (!references) return null
+    const paymentTermReference = references.r2
+    if (!paymentTermReference) return null
+    const paymentTerm = paymentTermReference.key
+    const i18n = ctx.app.i18n
+    const res = i18n.t('references.r2.' + paymentTerm)
+    return res
+  },
+  paymentConditionInterestRate(item) {
+    if (!item) return null
+    const references = item.references
+    if (!references) return null
+    const interestRateReference = references.r3
+    if (!interestRateReference) return null
+    const interestRate = interestRateReference.key
+    const i18n = ctx.app.i18n
+    const res = i18n.t('references.r3.' + interestRate)
+    return res
+  },
+  paymentConditionRisk(item) {
+    if (!item) return null
+    const res = item.risk + '%'
+    return res
   }
 })
 

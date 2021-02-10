@@ -239,6 +239,10 @@
     "thirdPartyAccounts": {
       "title": "My third party accounts",
       "search": "Search"
+    },
+    "paymentConditions": {
+      "title": "My payment conditions",
+      "search": "Search"
     }
   },
   "forms": {
@@ -520,6 +524,13 @@
       "zip": "ZIP",
       "city": "City",
       "country": "Country"
+    },
+    "paymentConditions": {
+      "label": "Label",
+      "priority": "Priority",
+      "paymentTerm": "Payment term",
+      "interestRate": "Interest rate",
+      "risk": "Risk"
     }
   },
   "modal": {

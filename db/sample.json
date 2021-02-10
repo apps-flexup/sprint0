@@ -1,4 +1,54 @@
 {
+  "payment-conditions": [
+    {
+      "label": "test",
+      "references": {
+        "r1": {
+          "key": "base",
+          "value": 40
+        },
+        "r2": {
+          "key": "later",
+          "params": {
+            "key": "fv-payment-term-params",
+            "value": "90"
+          },
+          "value": 53.52182518111363
+        },
+        "r3": {
+          "key": "lessThan15",
+          "params": {
+            "key": "fv-yield-rate-params",
+            "value": "5"
+          },
+          "value": 70
+        },
+        "r4": {
+          "key": "flex",
+          "value": 80
+        },
+        "r5": {
+          "key": "everyMonth",
+          "value": 70
+        },
+        "r6": {
+          "key": "projectAndThirdParty",
+          "value": 100
+        },
+        "r7": {
+          "key": "equity",
+          "value": 100
+        },
+        "r8": {
+          "key": "equity",
+          "value": 100
+        }
+      },
+      "risk": 8.4,
+      "account_id": 1,
+      "id": 1
+    }
+  ],
   "references": [
     {
       "key": "r1",
@@ -1634,6 +1684,38 @@
     {
       "component": "fv-payment-condition-step-detail",
       "title": "forms.payment-condition.step.0"
+    }
+  ],
+  "payment-condition-headers": [
+    {
+      "align": "start",
+      "sortable": true,
+      "text": "headers.paymentConditions.label",
+      "value": "label"
+    },
+    {
+      "align": "start",
+      "sortable": true,
+      "text": "headers.paymentConditions.priority",
+      "value": "priority"
+    },
+    {
+      "align": "start",
+      "sortable": true,
+      "text": "headers.paymentConditions.paymentTerm",
+      "value": "paymentTerm"
+    },
+    {
+      "align": "start",
+      "sortable": true,
+      "text": "headers.paymentConditions.interestRate",
+      "value": "interestRate"
+    },
+    {
+      "align": "start",
+      "sortable": true,
+      "text": "headers.paymentConditions.risk",
+      "value": "risk"
     }
   ],
   "contract-types": [

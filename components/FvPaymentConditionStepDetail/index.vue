@@ -112,7 +112,7 @@ export default {
       this.$set(this.selectedReferences, reference.key, v)
       const payload = {
         references: this.selectedReferences,
-        total: this.total
+        risk: this.total
       }
       this.$emit('payload:changed', payload)
     },

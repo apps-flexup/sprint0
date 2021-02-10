@@ -26,6 +26,7 @@ const activeAccount = (ctx) => ({
     ctx.store.dispatch('orders/get', {}, { root: true })
     ctx.store.dispatch('thirdPartyAccounts/get', {}, { root: true })
     ctx.store.dispatch('products/get', {}, { root: true })
+    ctx.store.dispatch('paymentConditions/get', {}, { root: true })
     ctx.store
       .dispatch('settings/getSettings', {}, { root: true })
       .then((_data) => {
@@ -115,6 +116,10 @@ const activeAccount = (ctx) => ({
     const res = ctx.store.getters['products/all']
     return res
   },
+  paymentConditions() {
+    const res = ctx.store.getters['paymentConditions/all']
+    return res
+  },
   headersProducts() {
     const res = ctx.store.getters['headers/products']
     if (res.length && res[res.length - 1].value !== 'actions')
@@ -156,6 +161,12 @@ const activeAccount = (ctx) => ({
     if (addActions) {
       res.push({ text: 'headers.actions', value: 'actions', sortable: false })
     }
+    return res
+  },
+  headersPaymentConditions() {
+    const res = ctx.store.getters['headers/paymentConditions']
+    if (res.length && res[res.length - 1].value !== 'actions')
+      res.push({ text: 'headers.actions', value: 'actions', sortable: false })
     return res
   },
   hasRole(role) {
@@ -200,6 +211,9 @@ const activeAccount = (ctx) => ({
         ctx.store.dispatch('offers/get')
       })
     }
+  },
+  addPaymentCondition(newPaymentCondition) {
+    ctx.store.dispatch('paymentConditions/add', newPaymentCondition)
   }
 })
 

@@ -21,8 +21,7 @@ export default {
   },
   methods: {
     createPaymentCondition(payload) {
-      console.log('Create payment condition: ', payload)
-      // this.$activeAccount.addProduct(payload)
+      this.$activeAccount.addPaymentCondition(payload)
     }
   }
 }

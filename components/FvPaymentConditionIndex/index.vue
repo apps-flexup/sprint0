@@ -5,19 +5,19 @@
       fv-primary-button.text-right(
         @button:click='createPaymentCondition'
       ) {{ $t('buttons.create.paymentCondition') }}
-  //- fv-product-list(@list:selected="selectedProduct")
+  fv-payment-condition-list(@list:selected="selectedPaymentCondition")
 </template>
 
 <script>
 export default {
   name: 'FvPaimentConditionIndex',
   methods: {
-    // selectedProduct(product) {
-    //   product = JSON.parse(JSON.stringify(product))
-    //   this.$router.push('/products/' + product.id)
-    // },
+    selectedPaymentCondition(paymentCondition) {
+      console.log('selected: ', paymentCondition)
+      // product = JSON.parse(JSON.stringify(product))
+      // this.$router.push('/products/' + product.id)
+    },
     createPaymentCondition() {
-      console.log('create payment condition')
       this.$router.push('/paymentConditions/new')
     }
   }
