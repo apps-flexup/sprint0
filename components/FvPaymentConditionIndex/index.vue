@@ -14,8 +14,8 @@ export default {
   methods: {
     selectedPaymentCondition(paymentCondition) {
       console.log('selected: ', paymentCondition)
-      // product = JSON.parse(JSON.stringify(product))
-      // this.$router.push('/products/' + product.id)
+      paymentCondition = JSON.parse(JSON.stringify(paymentCondition))
+      this.$router.push('/paymentConditions/' + paymentCondition.id)
     },
     createPaymentCondition() {
       this.$router.push('/paymentConditions/new')
