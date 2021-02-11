@@ -1,7 +1,7 @@
 <template lang="pug">
 .fv-autocomplete
   v-autocomplete(
-    v-model="elementId"
+    v-model="model"
     :items="items"
     :filter="filter"
     :loading="isLoading"
@@ -35,7 +35,7 @@ export default {
   inheritAttrs: true,
   props: {
     element: {
-      type: [Number, String],
+      type: undefined,
       default() {
         return null
       }
@@ -49,7 +49,7 @@ export default {
     itemValue: {
       type: String,
       default() {
-        return 'id'
+        return undefined
       }
     },
     filter: {
@@ -77,7 +77,7 @@ export default {
     }
   },
   computed: {
-    elementId: {
+    model: {
       get() {
         return this.element
       },
