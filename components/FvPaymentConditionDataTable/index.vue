@@ -75,9 +75,9 @@ export default {
     selected(paymentCondition) {
       this.$emit('dataTable:selected', paymentCondition)
     },
-    // deleteItem(product) {
-    //   this.$store.dispatch('products/remove', product)
-    // },
+    deleteItem(paymentCondition) {
+      this.$store.dispatch('paymentConditions/remove', paymentCondition)
+    },
     sortBy(v) {
       this.$emit('dataTable:sortBy', v)
     }
