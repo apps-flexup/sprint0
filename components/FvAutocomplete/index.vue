@@ -49,7 +49,7 @@ export default {
     itemValue: {
       type: String,
       default() {
-        return undefined
+        return 'id'
       }
     },
     filter: {
