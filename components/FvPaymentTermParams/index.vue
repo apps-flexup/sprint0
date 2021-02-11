@@ -2,6 +2,7 @@
 .fv-payment-term-params
   fv-number-field(
     :label="$t('forms.paymentConditions.new.days')"
+    :value="value"
     @input="inputChanged"
   )
 </template>
@@ -9,6 +10,14 @@
 <script>
 export default {
   name: 'FvPaymentTermParms',
+  props: {
+    value: {
+      type: [Number, String],
+      default() {
+        return null
+      }
+    }
+  },
   mounted() {
     console.log('Composant', this.$options.name)
   },

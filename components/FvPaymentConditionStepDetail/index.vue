@@ -1,6 +1,7 @@
 <template lang="pug">
 .fv-payment-condition-step-detail
   fv-text-field.label(
+    :value="label"
     :label="$t('forms.paymentConditions.new.label')"
     @input="labelChanged"
   )
@@ -8,8 +9,11 @@
     v-row(class="align-center")
       v-col(cols="10")
         fv-autocomplete(
+          :element="getElementForReference(reference)"
           :items="reference.value"
           :filter="filter"
+          :returnObject="true"
+          itemValue="key"
           @autocomplete:selected="referenceSelected(reference, ...arguments)"
         )
           template(v-slot:label)
@@ -29,6 +33,7 @@
       v-col(cols="10")
         component(
           :is="getComponentForReference(reference)"
+          :value="getParamValueForReference(reference)"
           @referenceParams:changed="referenceParamsChanged(reference, ...arguments)"
         )
   v-divider
@@ -53,18 +58,23 @@ export default {
       }
     }
   },
-  data() {
-    return {
-      selectedReferences: {}
-    }
-  },
   computed: {
+    label() {
+      const res = this.payload ? this.payload.label : null
+      return res
+    },
+    selectedReferences() {
+      const references = this.payload ? this.payload.references : null
+      const res = references || {}
+      return res
+    },
     references() {
       const res = this.$store.getters['references/all']
       return res
     },
     total() {
       let res = 0
+      if (!this.selectedReferences) return res
       const references = this.selectedReferences
       for (const reference of Object.values(references)) {
         if (reference.value) {
@@ -109,12 +119,18 @@ export default {
       this.$emit('payload:changed', payload)
     },
     referenceSelected(reference, v) {
-      this.$set(this.selectedReferences, reference.key, v)
+      const references = this.selectedReferences
+      references[reference.key] = v
       const payload = {
-        references: this.selectedReferences,
+        references,
         risk: this.total
       }
       this.$emit('payload:changed', payload)
+    },
+    getElementForReference(reference) {
+      const res = this.selectedReferences[reference.key]
+      if (!res) return null
+      return res
     },
     getValueForReference(reference) {
       const key = reference.key
@@ -125,8 +141,17 @@ export default {
       res = Math.round(res)
       return res
     },
+    getParamValueForReference(reference) {
+      const key = reference.key
+      const selectedReference = this.selectedReferences[key]
+      let params = null
+      if (selectedReference) params = selectedReference.params
+      if (!params) return null
+      const res = params.value
+      return res
+    },
     referenceHasParam(reference) {
-      if (!reference) return false
+      if (!reference || !this.selectedReferences) return false
       const key = reference.key
       const selectedReference = this.selectedReferences[key]
       if (

@@ -2,6 +2,7 @@
 .fv-yield-rate-params
   fv-number-field(
     :label="$t('forms.paymentConditions.new.yieldRate')"
+    :value="value"
     @input="inputChanged"
   )
 </template>
@@ -9,6 +10,14 @@
 <script>
 export default {
   name: 'FvYieldRateParams',
+  props: {
+    value: {
+      type: [Number, String],
+      default() {
+        return null
+      }
+    }
+  },
   mounted() {
     console.log('Composant', this.$options.name)
   },
