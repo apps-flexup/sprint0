@@ -57,6 +57,11 @@ import FvNavBarBuyer from '@/components/FvNavBarBuyer'
 import FvNavBarManage from '@/components/FvNavBarManage'
 import FvThirdPartyAccountStepDetail from '@/components/FvThirdPartyAccountStepDetail'
 import FvNumberField from '@/components/FvNumberField'
+import FvPaymentConditionDataTable from '@/components/FvPaymentConditionDataTable'
+import FvPaymentConditionIndex from '@/components/FvPaymentConditionIndex'
+import FvPaymentConditionList from '@/components/FvPaymentConditionList'
+import FvPaymentConditionStepDetail from '@/components/FvPaymentConditionStepDetail'
+import FvPaymentTermParams from '@/components/FvPaymentTermParams'
 import FvPriceField from '@/components/FvPriceField'
 import FvPriceToPreferredCurrency from '@/components/FvPriceToPreferredCurrency'
 import FvPriceWithUnit from '@/components/FvPriceWithUnit'
@@ -65,7 +70,9 @@ import FvProductDataTable from '@/components/FvProductDataTable'
 import FvForm from '@/components/FvForm'
 import FvProductStepDetail from '@/components/FvProductStepDetail'
 import FvQuantitySelector from '@/components/FvQuantitySelector'
+import FvYieldRateParams from '@/components/FvYieldRateParams'
 import FvRating from '@/components/FvRating'
+import FvReferenceAutocomplete from '@/components/FvReferenceAutocomplete'
 import FvReview from '@/components/FvReview'
 import FvSearchAutocomplete from '@/components/FvSearchAutocomplete'
 import FvSecondaryButton from '@/components/FvSecondaryButton'
@@ -203,6 +210,11 @@ Vue.component(
   FvThirdPartyAccountStepDetail
 )
 Vue.component('fv-number-field', FvNumberField)
+Vue.component('fv-payment-condition-data-table', FvPaymentConditionDataTable)
+Vue.component('fv-payment-condition-index', FvPaymentConditionIndex)
+Vue.component('fv-payment-condition-list', FvPaymentConditionList)
+Vue.component('fv-payment-condition-step-detail', FvPaymentConditionStepDetail)
+Vue.component('fv-payment-term-params', FvPaymentTermParams)
 Vue.component('fv-price-field', FvPriceField)
 Vue.component('fv-price-to-preferred-currency', FvPriceToPreferredCurrency)
 Vue.component('fv-price-with-unit', FvPriceWithUnit)
@@ -212,7 +224,9 @@ Vue.component('fv-form', FvForm)
 Vue.component('fv-product-step-detail', FvProductStepDetail)
 Vue.component('fv-product-index', FvProductIndex)
 Vue.component('fv-quantity-selector', FvQuantitySelector)
+Vue.component('fv-yield-rate-params', FvYieldRateParams)
 Vue.component('fv-rating', FvRating)
+Vue.component('fv-reference-autocomplete', FvReferenceAutocomplete)
 Vue.component('fv-review', FvReview)
 Vue.component('fv-search-autocomplete', FvSearchAutocomplete)
 Vue.component('fv-secondary-button', FvSecondaryButton)

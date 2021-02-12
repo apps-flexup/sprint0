@@ -23,5 +23,10 @@ export default {
     if (!state.thirdPartyAccounts) return []
     const res = JSON.parse(JSON.stringify(state.thirdPartyAccounts))
     return res
+  },
+  paymentConditions(state) {
+    if (!state.paymentConditions) return []
+    const res = JSON.parse(JSON.stringify(state.paymentConditions))
+    return res
   }
 }

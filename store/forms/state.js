@@ -3,5 +3,6 @@ export default () => ({
   contacts: [],
   products: [],
   offers: [],
-  thirdPartyAccounts: []
+  thirdPartyAccounts: [],
+  paymentConditions: []
 })

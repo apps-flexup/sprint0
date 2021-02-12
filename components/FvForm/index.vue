@@ -11,7 +11,7 @@
     h1(data-testid="pageTitle") {{ $t('forms.' + form + '.' + action + '.title') }}
   v-list.mt-10(
     data-testid="listProductStep"
-    v-for="(step, index) in getFormStep"
+    v-for="(step, index) in formSteps"
     :key="index"
   )
     fv-step-form(
@@ -72,7 +72,7 @@ export default {
     }
   },
   computed: {
-    getFormStep() {
+    formSteps() {
       const res = this.$store.getters['forms/' + this.form]
       return res
     }
@@ -82,6 +82,7 @@ export default {
     this.$store.dispatch('forms/getProduct')
     this.$store.dispatch('forms/getOffer')
     this.$store.dispatch('forms/getThirdPartyAccount')
+    this.$store.dispatch('forms/getPaymentCondition')
   },
   methods: {
     submit() {

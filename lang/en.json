@@ -1,4 +1,59 @@
 {
+  "references": {
+    "r1": {
+      "base": "Base",
+      "flex": "Flex",
+      "superFlex": "SuperFlex",
+      "equity": "Equity"
+    },
+    "r2": {
+      "equity": "None (Equity)",
+      "beforeDeliveryDate": "Before delivery date",
+      "beginningOfDeliveryMonth": "Beginning of delivery month",
+      "endOfDeliveryMonth": "End of delivery month",
+      "later": "Later"
+    },
+    "r3": {
+      "none": "None",
+      "moreThan15": "More than 15%",
+      "lessThan15": "Less than 15%"
+    },
+    "r4": {
+      "none": "No yield",
+      "base": "Base",
+      "flex": "Flex",
+      "superFlex": "SuperFlex",
+      "equity": "Equity"
+    },
+    "r5": {
+      "none": "No yield",
+      "convertToEquity": "Yield calculated every year and convert to equity",
+      "principal": "Yield calculated and paid at the same time of the principal",
+      "everyYear": "Yield calculated and scheduled every year",
+      "everyQuarter": "Yield calculated and scheduled every quarter",
+      "everyMonth": "Yield calculated and scheduled every month"
+    },
+    "r6": {
+      "thirdParty": "At the request of the third party only",
+      "projectOrThirdParty": "At the request of the project or third party",
+      "projectAndThirdParty": "At the request of the project and third party",
+      "project": "At the request of the project only"
+    },
+    "r7": {
+      "none": "Not applicable",
+      "equity": "Equity (no reprogramming)",
+      "superFlex": "SuperFlex",
+      "flex": "Flex",
+      "base": "Base"
+    },
+    "r8": {
+      "none": "Not applicable",
+      "equity": "Convert to equity (no reprogramming)",
+      "nextYear": "Re-scheduled to the following year (on the same date)",
+      "nextQuarter": "Rescheduled at the end of the next quarter",
+      "nextMonth": "Rescheduled at the end of the following month"
+    }
+  },
   "units": {
     "symbol": {
       "year": "year",
@@ -130,7 +185,9 @@
       "thirdPartyAccounts": "Third party accounts",
       "thirdPartyAccounts-id": "Edit my third party account",
       "settings": "Settings",
-      "settings-new": "New settings"
+      "settings-new": "New settings",
+      "paymentConditions": "Payment conditions",
+      "paymentConditions-new": "New payment conditions"
     }
   },
   "listAccounts": {
@@ -182,6 +239,10 @@
     },
     "thirdPartyAccounts": {
       "title": "My third party accounts",
+      "search": "Search"
+    },
+    "paymentConditions": {
+      "title": "My payment conditions",
       "search": "Search"
     }
   },
@@ -318,6 +379,33 @@
         "addThirdPartyAccount": "Add order for new third party account",
         "validate": "Validate"
       }
+    },
+    "payment-condition": {
+      "step": {
+        "0": "Details"
+      }
+    },
+    "paymentConditions": {
+      "new": {
+        "title": "New payment condition",
+        "label": "Label",
+        "days": "Days",
+        "yieldRate": "Yield rate",
+        "total": "Total:",
+        "references": {
+          "r1": "Payment priority",
+          "r2": "Payment term",
+          "r3": "Yield rate",
+          "r4": "Yield priority",
+          "r5": "Yield periodicity",
+          "r6": "Terms of Prepayment",
+          "r7": "New priority in case of reprogramming",
+          "r8": "Reprogramming"
+        }
+      },
+      "edit": {
+        "title": "Edit my payment condition"
+      }
     }
   },
   "manageMenu" : {
@@ -329,9 +417,7 @@
     "products": "Products",
     "contacts": "Contacts",
     "thirdPartyAccounts": "Third party",
-    "documents": "Documents",
-    "dashboard": "Dashboard",
-    "settings": "Settings"
+    "paymentConditions": "Payment conditions"
   },
   "userMenu": {
     "data": "Personnal data",
@@ -377,7 +463,8 @@
       "contract": "CREATE CONTRACT",
       "thirdPartyAccount": "CREATE THIRD PARTY ACCOUNT",
       "offer": "CREATE OFFER",
-      "order": "CREATE ORDER"
+      "order": "CREATE ORDER",
+      "paymentCondition": "CREATE PAYMENT CONDITION"
     },
     "submit": "Submit",
     "previous": "Previous",
@@ -441,6 +528,13 @@
       "zip": "ZIP",
       "city": "City",
       "country": "Country"
+    },
+    "paymentConditions": {
+      "label": "Label",
+      "priority": "Priority",
+      "paymentTerm": "Payment term",
+      "interestRate": "Interest rate",
+      "risk": "Risk"
     }
   },
   "navBar": {

@@ -1,4 +1,59 @@
 {
+  "references": {
+    "r1": {
+      "base": "Base",
+      "flex": "Flex",
+      "superFlex": "SuperFlex",
+      "equity": "Equity"
+    },
+    "r2": {
+      "equity": "Aucun (Equity)",
+      "beforeDeliveryDate": "Avant la date de livraison",
+      "beginningOfDeliveryMonth": "Début du mois de livraison",
+      "endOfDeliveryMonth": "Fin du mois de livraison",
+      "later": "Plus tard"
+    },
+    "r3": {
+      "none": "Aucun",
+      "moreThan15": "Supérieur à 15%",
+      "lessThan15": "Inférieur à 15%"
+    },
+    "r4": {
+      "none": "Aucun rendement",
+      "base": "Base",
+      "flex": "Flex",
+      "superFlex": "SuperFlex",
+      "equity": "Equity"
+    },
+    "r5": {
+      "none": "Pas de rendement",
+      "convertToEquity": "Rendement calculé tous les exercices et converti en equity",
+      "principal": "Rendement calculé et payés même temps que le principal",
+      "everyYear": "Rendement calculé et programmé tous les exercices",
+      "everyQuarter": "Rendement calculé et programmé tous les trimestres",
+      "everyMonth": "Rendement calculé et programmé tous les mois"
+    },
+    "r6": {
+      "thirdParty": "A la demande du tiers uniquement",
+      "projectOrThirdParty": "A la demande du projet ou du tiers",
+      "projectAndThirdParty": "A la demande du projet et du tiers",
+      "project": "A la demande du projet uniquement"
+    },
+    "r7": {
+      "none": "Non applicable",
+      "equity": "Equity (pas de reprogrammation)",
+      "superFlex": "SuperFlex",
+      "flex": "Flex",
+      "base": "Base"
+    },
+    "r8": {
+      "none": "Non applicable",
+      "equity": "Converti en equity (pas de reprogrammation)",
+      "nextYear": "Reprogammé à l'année suivante (à la même date)",
+      "nextQuarter": "Reprogrammé à la fin du trimestre suivant",
+      "nextMonth": "Reprogrammé à la fin du mois suivant"
+    }
+  },
   "units": {
     "symbol": {
       "year": "année",
@@ -130,7 +185,10 @@
       "thirdPartyAccounts": "Comptes tiers",
       "thirdPartyAccounts-id": "Modifier mon compte tiers",
       "settings": "Préférences",
-      "settings-new": "Créer préférences"
+      "settings-new": "Créer préférences",
+      "paymentConditions": "Conditions de paiement",
+      "paymentConditions-new": "Nouvelle condition de paiement",
+      "paymentConditions-id": "Modifier ma condition de paiement"
     }
   },
   "listAccounts": {
@@ -185,6 +243,10 @@
     },
     "thirdPartyAccounts": {
       "title": "Mes comptes tiers",
+      "search": "Rechercher"
+    },
+    "paymentConditions": {
+      "title": "Mes conditions de paiement",
       "search": "Rechercher"
     }
   },
@@ -320,6 +382,33 @@
         "addThirdPartyAccount": "Ajouter une commande pour un nouveau compte tiers",
         "validate": "Valider"
       }
+    },
+    "payment-condition": {
+      "step": {
+        "0": "Détails"
+      }
+    },
+    "paymentConditions": {
+      "new": {
+        "title": "Nouvelle condition de paiement",
+        "label": "Libellé",
+        "days": "Jours",
+        "yieldRate": "Taux de rendement",
+        "total": "Total :",
+        "references": {
+          "r1": "Priorité de paiement",
+          "r2": "Délai de paiement",
+          "r3": "Taux de rendement",
+          "r4": "Priorité du rendement",
+          "r5": "Périodicité du rendement",
+          "r6": "Condition de paiment anticipé",
+          "r7": "Nouvelle priorité en cas de reprogrammation",
+          "r8": "Reprogrammation"
+        }
+      },
+      "edit": {
+        "title": "Modifier ma condition de paiement"
+      }
     }
   },
   "manageMenu": {
@@ -333,7 +422,7 @@
     "thirdPartyAccounts": "Tiers",
     "documents": "Documents",
     "dashboard": "Tableau de bord",
-    "settings": "Paramètres"
+    "paymentConditions": "Conditions de paiment"
   },
   "userMenu": {
     "data": "Données personnelles",
@@ -379,8 +468,8 @@
       "contract": "CRÉER CONTRAT",
       "thirdPartyAccount": "CRÉER COMPTE TIERS",
       "offer": "CRÉER OFFRE",
-      "order": "CRÉER COMMANDE"
-
+      "order": "CRÉER COMMANDE",
+      "paymentCondition": "CRÉER CONDITION DE PAIEMENT"
     },
     "submit": "Envoyer",
     "previous": "Précédent",
@@ -444,6 +533,13 @@
       "zip": "Code postal",
       "city": "Ville",
       "country": "Pays"
+    },
+    "paymentConditions": {
+      "label": "Libellé",
+      "priority": "Priorité",
+      "paymentTerm": "Délai de paiement",
+      "interestRate": "Taux d'intérêts",
+      "risk": "Risque"
     }
   },
   "navBar": {

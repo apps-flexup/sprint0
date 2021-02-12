@@ -22,5 +22,8 @@ export default {
   },
   setOrderLineCartHeaders(state, items) {
     state.orderLinesCart = items
+  },
+  setPaymentConditionHeaders(state, items) {
+    state.paymentConditions = items
   }
 }

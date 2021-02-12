@@ -10,7 +10,7 @@ const router = new VueRouter()
 
 describe('FvForm', () => {
   let store
-  const formStep = [
+  const formSteps = [
     {
       component: 'fv-product-step-detail',
       title: 'forms.product.step.0'
@@ -28,7 +28,7 @@ describe('FvForm', () => {
         ...propsData
       },
       computed: {
-        getFormStep: () => formStep
+        formSteps: () => formSteps
       },
       mocks: {
         $t: (msg) => msg,

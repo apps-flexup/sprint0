@@ -51,5 +51,10 @@ export default {
     if (reference > state.etapes.length) return 'Étape inconnue'
     const res = state.etapes[reference]
     return res
+  },
+  paymentConditions(state) {
+    if (!state.paymentConditions) return []
+    const res = JSON.parse(JSON.stringify(state.paymentConditions))
+    return res
   }
 }

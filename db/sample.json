@@ -1,4 +1,199 @@
 {
+  "payment-conditions": [],
+  "references": [
+    {
+      "key": "r1",
+      "value": [
+        {
+          "key": "base",
+          "value": 40
+        },
+        {
+          "key": "flex",
+          "value": 60
+        },
+        {
+          "key": "superFlex",
+          "value": 80
+        },
+        {
+          "key": "equity",
+          "value": 100
+        }
+      ]
+    },
+    {
+      "key": "r2",
+      "value": [
+        {
+          "key": "equity",
+          "value": 100
+        },
+        {
+          "key": "beforeDeliveryDate",
+          "value": 40
+        },
+        {
+          "key": "beginningOfDeliveryMonth",
+          "value": 45
+        },
+        {
+          "key": "endOfDeliveryMonth",
+          "value": 50
+        },
+        {
+          "key": "later",
+          "params": {
+            "key": "fv-payment-term-params"
+          }
+        }
+      ]
+    },
+    {
+      "key": "r3",
+      "value": [
+        {
+          "key": "none",
+          "value": 100
+        },
+        {
+          "key": "moreThan15",
+          "value": 0
+        },
+        {
+          "key": "lessThan15",
+          "params": {
+            "key": "fv-yield-rate-params"
+          }
+        }
+      ]
+    },
+    {
+      "key": "r4",
+      "value": [
+        {
+          "key": "none",
+          "value": 100
+        },
+        {
+          "key": "equity",
+          "value": 100
+        },
+        {
+          "key": "superFlex",
+          "value": 90
+        },
+        {
+          "key": "flex",
+          "value": 80
+        },
+        {
+          "key": "base",
+          "value": 70
+        }
+      ]
+    },
+    {
+      "key": "r5",
+      "value": [
+        {
+          "key": "none",
+          "value": 100
+        },
+        {
+          "key": "convertToEquity",
+          "value": 100
+        },
+        {
+          "key": "principal",
+          "value": 100
+        },
+        {
+          "key": "everyYear",
+          "value": 90
+        },
+        {
+          "key": "everyQuarter",
+          "value": 80
+        },
+        {
+          "key": "everyMonth",
+          "value": 70
+        }
+      ]
+    },
+    {
+      "key": "r6",
+      "value": [
+        {
+          "key": "thirdParty",
+          "value": 75
+        },
+        {
+          "key": "projectOrThirdParty",
+          "value": 100
+        },
+        {
+          "key": "projectAndThirdParty",
+          "value": 100
+        },
+        {
+          "key": "project",
+          "value": 150
+        }
+      ]
+    },
+    {
+      "key": "r7",
+      "value": [
+        {
+          "key": "none",
+          "value": 100
+        },
+        {
+          "key": "equity",
+          "value": 100
+        },
+        {
+          "key": "superFlex",
+          "value": 90
+        },
+        {
+          "key": "flex",
+          "value": 80
+        },
+        {
+          "key": "base",
+          "value": 70
+        }
+      ]
+    },
+    {
+      "key": "r8",
+      "value": [
+        {
+          "key": "none",
+          "value": 100
+        },
+        {
+          "key": "equity",
+          "value": 100
+        },
+        {
+          "key": "nextYear",
+          "value": 90
+        },
+        {
+          "key": "nextQuarter",
+          "value": 80
+        },
+        {
+          "key": "nextMonth",
+          "value": 70
+        }
+      ]
+    }
+  ],
   "settings": [
     {
       "currency": "EUR",
@@ -1434,6 +1629,44 @@
     {
       "component": "fv-third-party-account-step-detail",
       "title": "forms.third-party-account.step.0"
+    }
+  ],
+  "payment-condition-steps": [
+    {
+      "component": "fv-payment-condition-step-detail",
+      "title": "forms.payment-condition.step.0"
+    }
+  ],
+  "payment-condition-headers": [
+    {
+      "align": "start",
+      "sortable": true,
+      "text": "headers.paymentConditions.label",
+      "value": "label"
+    },
+    {
+      "align": "start",
+      "sortable": true,
+      "text": "headers.paymentConditions.priority",
+      "value": "priority"
+    },
+    {
+      "align": "start",
+      "sortable": true,
+      "text": "headers.paymentConditions.paymentTerm",
+      "value": "paymentTerm"
+    },
+    {
+      "align": "start",
+      "sortable": true,
+      "text": "headers.paymentConditions.interestRate",
+      "value": "interestRate"
+    },
+    {
+      "align": "start",
+      "sortable": true,
+      "text": "headers.paymentConditions.risk",
+      "value": "risk"
     }
   ],
   "contract-types": [
@@ -13477,22 +13710,10 @@
       "to": "/thirdPartyAccounts"
     },
     {
-      "active": false,
-      "icon": "mdi-file-document",
-      "title": "manageMenu.documents",
-      "to": "/documents"
-    },
-    {
-      "active": false,
-      "icon": "mdi-desktop-mac-dashboard",
-      "title": "manageMenu.dashboard",
-      "to": "/dashboard"
-    },
-    {
       "active": true,
-      "icon": "mdi-cog-outline",
-      "title": "manageMenu.settings",
-      "to": "/parameters"
+      "icon": "mdi-credit-card-settings-outline",
+      "title": "manageMenu.paymentConditions",
+      "to": "/paymentConditions"
     }
   ],
   "userMenu": [
