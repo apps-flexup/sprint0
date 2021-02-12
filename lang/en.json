@@ -401,6 +401,9 @@
           "r7": "New priority in case of reprogramming",
           "r8": "Reprogramming"
         }
+      },
+      "edit": {
+        "title": "Edit my payment condition"
       }
     }
   },

@@ -186,7 +186,8 @@
       "settings": "Préférences",
       "settings-new": "Créer préférences",
       "paymentConditions": "Conditions de paiement",
-      "paymentConditions-new": "Nouvelle condition de paiement"
+      "paymentConditions-new": "Nouvelle condition de paiement",
+      "paymentConditions-id": "Modifier ma condition de paiement"
     }
   },
   "listAccounts": {
@@ -403,6 +404,9 @@
           "r7": "Nouvelle priorité en cas de reprogrammation",
           "r8": "Reprogrammation"
         }
+      },
+      "edit": {
+        "title": "Modifier ma condition de paiement"
       }
     }
   },
