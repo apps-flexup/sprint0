@@ -70,6 +70,7 @@ import FvProductStepDetail from '@/components/FvProductStepDetail'
 import FvQuantitySelector from '@/components/FvQuantitySelector'
 import FvYieldRateParams from '@/components/FvYieldRateParams'
 import FvRating from '@/components/FvRating'
+import FvReferenceAutocomplete from '@/components/FvReferenceAutocomplete'
 import FvReview from '@/components/FvReview'
 import FvSecondaryButton from '@/components/FvSecondaryButton'
 import FvSettingsDefault from '@/components/FvSettingsDefault'
@@ -220,6 +221,7 @@ Vue.component('fv-product-index', FvProductIndex)
 Vue.component('fv-quantity-selector', FvQuantitySelector)
 Vue.component('fv-yield-rate-params', FvYieldRateParams)
 Vue.component('fv-rating', FvRating)
+Vue.component('fv-reference-autocomplete', FvReferenceAutocomplete)
 Vue.component('fv-review', FvReview)
 Vue.component('fv-secondary-button', FvSecondaryButton)
 Vue.component('fv-settings-default', FvSettingsDefault)

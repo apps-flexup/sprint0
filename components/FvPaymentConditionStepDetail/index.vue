@@ -8,21 +8,11 @@
   div(v-for="reference in references" :key="reference.key" :style="cssVars")
     v-row(class="align-center")
       v-col(cols="10")
-        fv-autocomplete(
+        fv-reference-autocomplete(
           :element="getElementForReference(reference)"
-          :items="reference.value"
-          :filter="filter"
-          :returnObject="true"
-          itemValue="key"
-          @autocomplete:selected="referenceSelected(reference, ...arguments)"
+          :reference="reference"
+          @reference:selected="referenceSelected(reference, ...arguments)"
         )
-          template(v-slot:label)
-            p {{ $t('forms.paymentConditions.new.references.' + reference.key) }}
-          template(v-slot:item="data")
-            v-list-item-content
-              v-list-item-title {{ $t('references.' + reference.key + '.' + data.item.key) }}
-          template(v-slot:selection="data")
-            div {{ $t('references.' + reference.key + '.' + data.item.key) }}
       v-col.center(cols="1")
         v-avatar.center(:color="avatarColor")
           span.referenceKey {{ reference.key }}
