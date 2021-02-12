@@ -171,6 +171,7 @@
       "account": "Compte",
       "accounts": "Mes comptes",
       "account-new": "Nouveau compte",
+      "dashboard": "Tableau de bord",
       "index": "Accueil",
       "orders": "Commandes",
       "orders-new": "Nouvelle commande",
@@ -539,6 +540,18 @@
       "paymentTerm": "Délai de paiement",
       "interestRate": "Taux d'intérêts",
       "risk": "Risque"
+    }
+  },
+  "navBar": {
+    "manage": {
+      "0": "Tableau de bord",
+      "1": "Gestion courante",
+      "2": "Gestion FlexUp"
+    },
+    "seller": {
+      "0":"Tableau de bord",
+      "1": "Commandes",
+      "2": "Mes offres"
     }
   },
   "modal": {

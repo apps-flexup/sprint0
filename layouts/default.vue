@@ -1,13 +1,15 @@
 <template lang="pug">
   v-app(dark)
-    fv-nav-bar(
+    component(
+      :is="findSpace"
       :title="title"
+      :space='space'
     )
     v-main
       v-container
         fv-breadcrumbs(
           :account="account"
-          space="manage"
+          :space="space"
         )
         nuxt
     v-footer(:fixed="fixed" app)
@@ -16,9 +18,16 @@
 
 <script>
 export default {
+  props: {
+    space: {
+      type: String,
+      default() {
+        return 'manage'
+      }
+    }
+  },
   data() {
     return {
-      fixed: false,
       title: 'Flexup - Sprint 0'
     }
   },
@@ -28,6 +37,14 @@ export default {
       const res = this.$store.getters['accounts/findById'](id)
       if (res) return res.name
       return null
+    },
+    findSpace() {
+      const space = this.space
+      if (space === 'manage' || space === 'seller') {
+        return 'fv-nav-bar-manage'
+      } else {
+        return 'fv-nav-bar-' + space
+      }
     }
   },
   mounted() {

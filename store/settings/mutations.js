@@ -20,6 +20,12 @@ export default {
   setGlobalMenu(state, items) {
     state.globalMenu = items
   },
+  setManageNavBar(state, items) {
+    state.manageNavBar = items
+  },
+  setSellerNavBar(state, items) {
+    state.sellerNavBar = items
+  },
   setSettings(state, item) {
     state.settings = item
   }

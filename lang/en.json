@@ -171,6 +171,7 @@
       "account": "Account",
       "accounts": "My accounts",
       "account-new": "New account",
+      "dashboard": "Dashboard",
       "index": "Home",
       "orders": "Orders",
       "orders-new": "New order",
@@ -534,6 +535,18 @@
       "paymentTerm": "Payment term",
       "interestRate": "Interest rate",
       "risk": "Risk"
+    }
+  },
+  "navBar": {
+    "manage": {
+      "0": "Dashboard",
+      "1": "Current gestion",
+      "2": "FlexUp gestion"
+    },
+    "seller": {
+      "0":"Dashboard",
+      "1": "Orders",
+      "2": "My offers"
     }
   },
   "modal": {

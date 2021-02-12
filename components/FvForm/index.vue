@@ -20,7 +20,7 @@
       :title="$t(step.title)"
     )
       template(slot="form")
-        composant(
+        component(
           data-testid="stepComponent"
           :is="step.component"
           :payload="localPayload"
