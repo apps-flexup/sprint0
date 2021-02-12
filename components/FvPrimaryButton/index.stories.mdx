@@ -1,9 +1,10 @@
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
-import { text } from '@storybook/addon-knobs'
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
 import { action } from '@storybook/addon-actions'
 import FvPrimaryButton from './index.vue'
 
-<Meta title='Atoms/FvPrimaryButton' component={ FvPrimaryButton } />
+<Meta title='Atoms/FvPrimaryButton' component={ FvPrimaryButton } argTypes={{
+  label: { control: 'text' }
+}}/>
 
 # FvPrimaryButton
 
@@ -11,7 +12,7 @@ import FvPrimaryButton from './index.vue'
 <Story name='Common' height='150px'>{{
   props: {
     label: {
-      default: text('Label', 'Primary button', 'Slots')
+      default: 'Primary button'
     }
   },
   methods: {
@@ -26,6 +27,6 @@ import FvPrimaryButton from './index.vue'
 }}</Story>
 </Canvas>
 
-## ArgsTable
+## Props
 
-<ArgsTable of={ FvPrimaryButton } />
+<Props of={ FvPrimaryButton } />
