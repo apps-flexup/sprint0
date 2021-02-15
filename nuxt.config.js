@@ -168,11 +168,5 @@ export default {
         ]
       }
     }
-  },
-  storybook: {
-    stories: [
-      '~/components/FvPrimaryButton/*.stories.mdx'
-    ],
-    addons: ['@storybook/addon-docs', '@storybook/addon-controls']
   }
 }
