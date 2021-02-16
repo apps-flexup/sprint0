@@ -1,7 +1,7 @@
 import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
 import FvPriceToPreferredCurrency from './index.vue'
 
-<Meta title='Atoms/FvPriceToPreferredCurrency' component={ FvPriceToPreferredCurrency } {{
+<Meta title='Atoms/FvPriceToPreferredCurrency' component={ FvPriceToPreferredCurrency } argTypes={{
   price: { control: 'number' },
   currency: { control: 'text' }
 }}/>
@@ -9,7 +9,10 @@ import FvPriceToPreferredCurrency from './index.vue'
 # FvPriceToPreferredCurrency
 
 <Canvas>
-<Story name='Common' height='150px'>{{
+<Story name='Common' height='150px' args={{
+  price: 15,
+  currency: 'EUR'
+}}>{{
   props: {
     price: {},
     currency: {}

@@ -1,35 +1,41 @@
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
-import { text, select, number } from '@storybook/addon-knobs'
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
 import FvAccount from './index.vue'
-import { avatarsAvailable, defaultAvatar } from '@/.storybook/knobs_data/avatars'
+import { avatarsAvailable, defaultAvatar } from '@/.storybook/data/avatarsAvailable'
 
-<Meta title='Molecules/FvAccount' component={ FvAccount } />
+<Meta title='Molecules/FvAccount' component={ FvAccount } argTypes={{
+  name: { control: 'text' },
+  avatar: {
+    control: {
+      type: 'select',
+      options: avatarsAvailable
+    }
+  },
+  size: { control: 'number' }
+}}/>
 
 # FvAccount
 
 <Canvas>
-<Story name='Common' height='150px'>{{
+<Story name='Common' height='150px' args={{
+  name: 'Fred',
+  avatar: defaultAvatar,
+  size: 24
+}}>{{
   props: {
-    knobName: {
-      default: text('Name', 'fred', 'Props')
-    },
-    knobAvatar: {
-      default: select('Avatar', avatarsAvailable, defaultAvatar, 'Props')
-    },
-    knobSize: {
-      default: number('Size', 24, {}, 'Props')
-    }
+    name: {},
+    avatar: {},
+    size: {}
   },
   components: { FvAccount },
   template: `<FvAccount
-    :name="knobName"
-    :avatar="knobAvatar"
-    :size="knobSize"
+    :name="name"
+    :avatar="avatar"
+    :size="size"
   >
   </FvAccount>`
 }}</Story>
 </Canvas>
 
-## ArgsTable
+## Props
 
-<ArgsTable of={ FvAccount } />
+<Props of={ FvAccount } />

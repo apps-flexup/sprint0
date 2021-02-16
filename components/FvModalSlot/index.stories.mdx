@@ -1,18 +1,19 @@
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
-import { boolean } from '@storybook/addon-knobs'
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
 import FvModalSlot from './index.vue'
 
-<Meta title='Molecules/FvModalSlot' component={ FvModalSlot } />
+<Meta title='Molecules/FvModalSlot' component={ FvModalSlot } argTypes={{
+  show: { control: 'boolean' }
+}}/>
 
 # FvModalSlot
 
 <Canvas>
-<Story name='Common' height='150px'>{{
+<Story name='Common' height='150px' args={{
+  show: true
+}}>{{
   components: { FvModalSlot },
   props: {
-    show: {
-      default: boolean('Show', true, 'Props')
-    }
+    show: {}
   },
   template: `<FvModalSlot
     :dialog="show"
@@ -30,6 +31,6 @@ import FvModalSlot from './index.vue'
 }}</Story>
 </Canvas>
 
-## ArgsTable
+## Props
 
-<ArgsTable of={ FvModalSlot } />
+<Props of={ FvModalSlot } />

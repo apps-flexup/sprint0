@@ -5,9 +5,7 @@ module.exports = nuxifyStorybook({
     return config
   },
   stories: [
-    // '~/components/**/*.stories.mdx'
-    '~/components/FvVatField/*.stories.mdx'
-    // '~/components/FvThirdPartyAccountCard/*.stories.mdx'
+    '~/components/**/*.stories.@(js|mdx)'
   ],
   addons: [
     '@storybook/addon-docs',

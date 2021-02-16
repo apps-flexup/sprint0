@@ -1,36 +1,46 @@
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
-import { select } from '@storybook/addon-knobs'
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
 import { action } from '@storybook/addon-actions'
+import { iconsAvailable, defaultIcon } from '@/.storybook/data/iconsAvailable'
+import { sizesAvailable, defaultSize } from '@/.storybook/data/sizesAvailable'
 import FvIcon from './index.vue'
-import { icons, defaultIcon, iconsNames } from '@/.storybook/knobs_data/iconsAvailable'
-import { colors, defaultColor } from '@/.storybook/knobs_data/colorsAvailable'
-import { sizes, defaultSize } from '@/.storybook/knobs_data/sizesAvailable'
 
-<Meta title='Atoms/FvIcon' component={ FvIcon } />
+<Meta title='Atoms/FvIcon' component={ FvIcon } argTypes={{
+  icon: {
+    control: {
+      type: 'select',
+      options: iconsAvailable
+    }
+  },
+  color: { control: 'color' },
+  size: {
+    control: {
+      type: 'select',
+      options: sizesAvailable
+    }
+  }
+}}/>
 
 # FvIcon
 
 <Canvas>
-<Story name='Common'>{{
+<Story name='Common' args={{
+  icon: defaultIcon,
+  color: '#000000',
+  size: defaultSize
+}}>{{
   props: {
-    knobIcon: {
-      default: select('Icon', icons, defaultIcon, 'Props')
-    },
-    knobColor: {
-      default: select('Color', colors, defaultColor, 'Props')
-    },
-    knobSize: {
-      default: select('Size', sizes, defaultSize, 'Props')
-    }
+    icon: {},
+    color: {},
+    size: {}
   },
   components: { FvIcon },
   methods: {
     clicked: action('click')
   },
   template: `<FvIcon
-    :icon="knobIcon"
-    :color="knobColor"
-    :size="knobSize"
+    :icon="icon"
+    :color="color"
+    :size="size"
     @icon:clicked="clicked"
   >
   </FvIcon>`
@@ -41,8 +51,7 @@ import { sizes, defaultSize } from '@/.storybook/knobs_data/sizesAvailable'
 <Story name='Available icons'> {{
   data() {
     return {
-      iconsNames,
-      icons
+      icons: iconsAvailable
     }
   },
   components: { FvIcon },
@@ -88,6 +97,6 @@ import { sizes, defaultSize } from '@/.storybook/knobs_data/sizesAvailable'
 }}</Story>
 </Canvas>
 
-## ArgsTable
+## Props
 
-<ArgsTable of={ FvIcon} />
+<Props of={ FvIcon} />

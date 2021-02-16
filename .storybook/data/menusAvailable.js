@@ -14,12 +14,12 @@ export const categories = [
 ]
 export const defaultCategory = 'user'
 
-export const spaceTitle = [
+export const spaces = [
   'buyer',
   'seller',
   'manage'
 ]
-export const defaultSpaceTitle = 'manage'
+export const defaultSpace = 'manage'
 
 export const fakeList = [
   {

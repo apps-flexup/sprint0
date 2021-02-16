@@ -2,7 +2,7 @@ import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
 import { action } from '@storybook/addon-actions'
 import FvRating from './index.vue'
 
-<Meta title='Atom/FvRating' component={ FvRating } argTypes={{
+<Meta title='Atoms/FvRating' component={ FvRating } argTypes={{
   rating: {
     control: {
       type: 'range',
@@ -23,7 +23,7 @@ import FvRating from './index.vue'
 <Story name='Common' height='150px' args={{
   rating: 4,
   readonly: true,
-  dense: true
+  dense: true,
   size: 16,
   color: 'primary'
 }}>{{
