@@ -35,7 +35,7 @@
             :readonly="true"
           )
           div.grey--text.ml-3
-            | {{ $tc('forms.offers.metrics.opinion', nbrAvis) }}
+            | {{ $tc('forms.offers.metrics.opinion', nbReviews) }}
           div.actions(
             v-if="over"
           )
@@ -91,7 +91,7 @@ export default {
         return null
       }
     },
-    nbrAvis: {
+    nbReviews: {
       type: Number,
       default() {
         return null

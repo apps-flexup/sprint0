@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
 import { action } from '@storybook/addon-actions'
 import FvSettingsDefault from './index.vue'
 
@@ -20,8 +20,8 @@ import FvSettingsDefault from './index.vue'
         params: { },
         parent_id: null,
         roles: [
-        "customer",
-        "supplier"
+          "customer",
+          "supplier"
         ],
         roles_methods: null,
         supplier: false,
@@ -37,6 +37,6 @@ import FvSettingsDefault from './index.vue'
 }}</Story>
 </Canvas>
 
-## ArgsTable
+## Props
 
-<ArgsTable of={ FvSettingsDefault } />
+<Props of={ FvSettingsDefault } />

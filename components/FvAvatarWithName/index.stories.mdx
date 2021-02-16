@@ -1,34 +1,35 @@
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
-import { text } from '@storybook/addon-knobs'
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
 import FvAvatarWithName from './index.vue'
 
-<Meta title='Atoms/FvAvatarWithName' component={ FvAvatarWithName } />
+<Meta title='Atoms/FvAvatarWithName' component={ FvAvatarWithName } argTypes={{
+  name: { control: 'text' },
+  familyName: { control: 'text' },
+  email: { control: 'text' }
+}}/>
 
 # FvAvatarWithName
 
 <Canvas>
-<Story name='Common' height='150px'>{{
+<Story name='Common' height='150px' args={{
+  name: 'Toto',
+  familyName: 'La riflette',
+  email: 'toto@lariflette.com'
+}}>{{
   components: { FvAvatarWithName },
   props: {
-    knobName: {
-      default: text('Name', 'Toto', 'Props')
-    },
-    knobFamilyName: {
-      default: text('Family name', '', 'Props')
-    },
-    knobEmail: {
-      default: text('Email', '', 'Props')
-    }
+    name: {},
+    familyName: {},
+    email: {}
   },
   template: `<FvAvatarWithName
-    :name="knobName"
-    :familyName="knobFamilyName"
-    :email="knobEmail"
+    :name="name"
+    :familyName="familyName"
+    :email="email"
   >
   </FvAvatarWithName>`
 }}</Story>
 </Canvas>
 
-## ArgsTable
+## Props
 
-<ArgsTable of={ FvAvatarWithName } />
+<Props of={ FvAvatarWithName } />

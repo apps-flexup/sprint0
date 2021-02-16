@@ -1,18 +1,19 @@
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
-import { text } from '@storybook/addon-knobs'
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
 import { action } from '@storybook/addon-actions'
 import FvSecondaryButton from './index.vue'
 
-<Meta title='Atoms/FvSecondaryButton' component={ FvSecondaryButton } />
+<Meta title='Atoms/FvSecondaryButton' component={ FvSecondaryButton } argTypes={{
+  label: { control: 'text' }
+}}/>
 
 # FvSecondaryButton
 
 <Canvas>
-<Story name='Common' height='150px'>{{
+<Story name='Common' height='150px' args={{
+  label: 'Secondary button'
+}}>{{
   props: {
-    label: {
-      default: text('Label', 'Secondary button', 'Slots')
-    }
+    label: {}
   },
   methods: {
     clicked: action('clicked')
@@ -26,6 +27,6 @@ import FvSecondaryButton from './index.vue'
 }}</Story>
 </Canvas>
 
-## ArgsTable
+## Props
 
-<ArgsTable of={ FvSecondaryButton } />
+<Props of={ FvSecondaryButton } />

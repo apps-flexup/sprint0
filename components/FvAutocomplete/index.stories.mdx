@@ -1,20 +1,21 @@
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
-import { text, array } from '@storybook/addon-knobs'
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
 import FvAutocomplete from './index.vue'
 
-<Meta title='Atoms/FvAutocomplete' component={ FvAutocomplete } />
+<Meta title='Atoms/FvAutocomplete' component={ FvAutocomplete } argTypes={{
+  label: { control: 'text' },
+  items: { control: 'array' }
+}}/>
 
 # FvAutocomplete
 
 <Canvas>
-<Story name='Common' height='150px'>{{
+<Story name='Common' height='150px' args={{
+  label: 'Autocomplete',
+  items: ['item1', 'item2']
+}}>{{
   props: {
-    label: {
-      default: text('Label', 'Autocomplete', 'Slots')
-    },
-    knobItems: {
-      default: array('Items', ['item1', 'item2'], ',', 'Props')
-    }
+    label: {},
+    items: {}
   },
   components: { FvAutocomplete },
   methods: {
@@ -24,7 +25,7 @@ import FvAutocomplete from './index.vue'
     selected(_v) {}
   },
   template: `<FvAutocomplete
-    :items="knobItems"
+    :items="items"
     :filter="filter"
     @autocomplete:selected="selected"
   >
@@ -35,6 +36,6 @@ import FvAutocomplete from './index.vue'
 }}</Story>
 </Canvas>
 
-## ArgsTable
+## Props
 
-<ArgsTable of={ FvAutocomplete } />
+<Props of={ FvAutocomplete } />

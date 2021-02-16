@@ -1,35 +1,36 @@
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
 import { action } from '@storybook/addon-actions'
-import { text, boolean } from '@storybook/addon-knobs'
 import FvVatField from './index.vue'
 
-<Meta title='Atoms/FvVatField' component={ FvVatField } />
+<Meta title='Atoms/FvVatField' component={ FvVatField } argTypes={{
+  label: { control: 'text' },
+  outlined: { control: 'boolean' }
+}}/>
 
 # FvVatField
 
 <Canvas>
-<Story name='Common' height='150px'>{{
+<Story name='Common' height='150px' args={{
+  label: 'Label de test',
+  outlined: true
+}}>{{
   props: {
-    knobLabel: {
-      default: text('Label', 'Label', 'Props')
-    },
-    knobOutlined: {
-      default: boolean('Outlined', true, 'Props')
-    }
+    label: {},
+    outlined: {}
   },
   components: { FvVatField },
   methods: {
     vatChanged: action('VAT changed')
   },
   template: `<FvVatField
-    :label="knobLabel"
-    :outlined="knobOutlined"
+    :label="label"
+    :outlined="outlined"
     @vat:changed="vatChanged"
   >
   </FvVatField>`
 }}</Story>
 </Canvas>
 
-## ArgsTable
+## Props
 
-<ArgsTable of={ FvVatField } />
+<Props of={ FvVatField } />

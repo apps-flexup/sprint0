@@ -1,27 +1,33 @@
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
-import { select } from '@storybook/addon-knobs'
-import { statusAvailable, defaultValue } from '@/.storybook/knobs_data/statusAvailable'
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import { statusAvailable, defaultValue } from '@/.storybook/data/statusAvailable'
 import FvStatusProgress from './index.vue'
 
-<Meta title='Atoms/FvStatusProgress' component={ FvStatusProgress } />
+<Meta title='Atoms/FvStatusProgress' component={ FvStatusProgress } argTypes={{
+  status: {
+    control: {
+      type: 'select',
+      options: statusAvailable
+    }
+  }
+}}/>
 
 # FvStatusProgress
 
 <Canvas>
 <Story name='Common' height='150px'>{{
   props: {
-    knobStatus: {
-      default: select('Status', statusAvailable, defaultValue, 'Props')
+    status: {
+      default: defaultValue
     }
   },
   components: { FvStatusProgress },
   template: `<FvStatusProgress
-    :status="knobStatus"
+    :status="status"
   >
   </FvStatusProgress>`
 }}</Story>
 </Canvas>
 
-## ArgsTable
+## Props
 
-<ArgsTable of={ FvStatusProgress } />
+<Props of={ FvStatusProgress } />

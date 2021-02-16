@@ -1,45 +1,67 @@
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
-import { number, boolean, text, select } from '@storybook/addon-knobs'
-import { imageAvailable, defaultImage} from '@/.storybook/knobs_data/imageAvailable'
-import { unitsAvailable, defaultUnit, dimensionsAvailable, defaultDimension} from '@/.storybook/knobs_data/unitsAvailable'
-import { options } from '@/.storybook/knobs_data/ratings'
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import { imagesAvailable, defaultImage } from '@/.storybook/data/imagesAvailable'
+import { unitsAvailable, defaultUnit, dimensionsAvailable, defaultDimension } from '@/.storybook/data/unitsAvailable'
 import { action } from '@storybook/addon-actions'
 import FvOfferCard from './index.vue'
 
-<Meta title='Molecules/FvOfferCard' component={ FvOfferCard } />
+<Meta title='Molecules/FvOfferCard' component={ FvOfferCard } argTypes={{
+  rating: {
+    control: {
+      type: 'range',
+      min: 0,
+      max: 5,
+      step: 0.5
+    }
+  },
+  title: { control: 'text' },
+  price: { control: 'number' },
+  currency: { control: 'text' },
+  nbReviews: { control: 'number' },
+  unit: {
+    control: {
+      type: 'select',
+      options: unitsAvailable
+    }
+  },
+  dimension: {
+    control: {
+      type: 'select',
+      options: dimensionsAvailable
+    }
+  },
+  image: {
+    control: {
+      type: 'select',
+      options: imagesAvailable
+    }
+  },
+  heightImg: { control: 'number' }
+}}/>
 
 # FvOfferCard
 
 <Canvas>
-<Story name='Common' height='150px'>{{
+<Story name='Common' height='150px' args={{
+  rating: 4,
+  title: 'Article storybook',
+  price: 15,
+  currency: 'EUR',
+  nbReviews: 3,
+  unit: defaultUnit,
+  dimension: defaultDimension,
+  image: defaultImage,
+  heightImg: 260
+}}>{{
   props: {
-    knobRating: {
-      default: number('Rating', 4, options, 'Props')
-    },
-    knobTitle: {
-      default: text('Title', 'Article storybook', 'Props')
-    },
-    knobPrice: {
-      default: number('Price', 15, {}, 'Props')
-    },
-    knobCurrency: {
-      default: text('Currency', 'EUR', 'Props')
-    },
-    knobAvis: {
-      default: number('nbrAvis', 3, {}, 'Props')
-    },
-    knobUnit: {
-      default: select('Unit', unitsAvailable, defaultUnit, 'Props')
-    },
-    knobDimension: {
-      default: select('Dimension', dimensionsAvailable, defaultDimension, 'Props')
-    },
-    knobImage: {
-      default: select('Image', imageAvailable, defaultImage, 'Props')
-    },
-    knobHeightImg: {
-      default: number('height img', 260, {}, 'Props')
-    },
+    rating: {},
+    title: {},
+    price: {},
+    currency: {},
+    nbReviews: {},
+    unit: {},
+    dimension: {},
+    image: {},
+    heightImg: {},
   },
   components: { FvOfferCard },
   methods: {
@@ -49,15 +71,15 @@ import FvOfferCard from './index.vue'
     detailsClicked: action('details clicked')
   },
   template: `<FvOfferCard
-    :rating="knobRating"
-    :article="knobTitle"
-    :price="knobPrice"
-    :currency="knobCurrency"
-    :nbrAvis="knobAvis"
-    :unit="knobUnit"
-    :dimension="knobDimension"
-    :img="knobImage"
-    :heightImg="knobHeightImg"
+    :rating="rating"
+    :article="title"
+    :price="price"
+    :currency="currency"
+    :nbReviews="nbReviews"
+    :unit="unit"
+    :dimension="dimension"
+    :img="image"
+    :heightImg="heightImg"
     @offerCard:likeClicked="likeClicked"
     @offerCard:detailsClicked="detailsClicked"
     @offerCard:buyClicked="buyClicked"
@@ -67,6 +89,6 @@ import FvOfferCard from './index.vue'
 }}</Story>
 </Canvas>
 
-## ArgsTable
+## Props
 
-<ArgsTable of={ FvOfferCard } />
+<Props of={ FvOfferCard } />
