@@ -10,21 +10,20 @@ import FvVatField from './index.vue'
 # FvVatField
 
 <Canvas>
-<Story name='Common' height='150px'>{{
+<Story name='Common' height='150px' args={{
+  label: 'Label de test',
+  outlined: true
+}}>{{
   props: {
-    label: {
-      default: 'Label'
-    },
-    outlined: {
-      default: true
-    }
+    label: {},
+    outlined: {}
   },
   components: { FvVatField },
   methods: {
     vatChanged: action('VAT changed')
   },
   template: `<FvVatField
-    label="plop"
+    :label="label"
     :outlined="outlined"
     @vat:changed="vatChanged"
   >

@@ -26,7 +26,9 @@ export default {
     },
     label: {
       type: String,
-      default: 'coucou'
+      default() {
+        return ''
+      }
     },
     outlined: {
       type: Boolean,
