@@ -1,35 +1,35 @@
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
-import { number, color} from '@storybook/addon-knobs'
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
 import { action } from '@storybook/addon-actions'
-import { avatarsAvailable, defaultAvatar } from '@/.storybook/knobs_data/avatars'
 import FvSlotItemCard from './index.vue'
 
-<Meta title='Atoms/FvSlotItemCard' component={ FvSlotItemCard } />
+<Meta title='Atoms/FvSlotItemCard' component={ FvSlotItemCard } argTypes={{
+  cardWidth: { control: 'number' },
+  cardHeight: { control: 'number' },
+  favoriteIconColor: { control: 'color' }
+}}/>
 
 # FvSlotItemCard
 
 <Canvas>
-<Story name='Common' height='150px'>{{
+<Story name='Common' height='150px' args={{
+  cardWidth: 300,
+  cardHeight: 370,
+  favoriteIconColor: '#000000'
+}}>{{
   components: { FvSlotItemCard },
   props: {
-    knobCardWidth: {
-      default: number('Card width', 300, {}, 'Props')
-    },
-    knobCardHeight: {
-      default: number('Height', 370, {}, 'Props')
-    },
-    knobFavoriteColor: {
-      default: color('Favorite color', 'black', 'Props')
-    }
+    cardWidth: {},
+    cardHeight: {},
+    favoriteIconColor: {}
   },
   methods: {
     cardClicked: action('card clicked'),
     favoriteClicked: action('favorite clicked')
   },
   template: `<FvSlotItemCard
-    :cardWidth="knobCardWidth"
-    :cardHeight="knobCardHeight"
-    :favoriteColor="knobfavoriteColor"
+    :cardWidth="cardWidth"
+    :cardHeight="cardHeight"
+    :favoriteIconColor="favoriteIconColor"
     @card:clicked="cardClicked"
     @favorite:clicked="favoriteClicked"
   >
@@ -37,6 +37,6 @@ import FvSlotItemCard from './index.vue'
 }}</Story>
 </Canvas>
 
-## ArgsTable
+## Props
 
-<ArgsTable of={ FvSlotItemCard } />
+<Props of={ FvSlotItemCard } />

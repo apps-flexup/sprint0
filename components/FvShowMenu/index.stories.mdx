@@ -1,27 +1,28 @@
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
-import { array } from '@storybook/addon-knobs'
-import { fakeList } from '@/.storybook/knobs_data/menusAvailable'
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import { fakeList } from '@/.storybook/data/menusAvailable'
 import FvShowMenu from './index.vue'
 
-<Meta title='Molecules/FvShowMenu' component={ FvShowMenu } />
+<Meta title='Molecules/FvShowMenu' component={ FvShowMenu } argTypes={{
+  list: { control: 'array' }
+}}/>
 
 # FvShowMenu
 
 <Canvas>
-<Story name='Common' height='150px'>{{
+<Story name='Common' height='150px' args={{
+  list: fakeList
+}}>{{
   components: { FvShowMenu },
   props: {
-    knobList: {
-      default: array('list',fakeList , ',', 'Props')
-    }
+    list: {}
   },
   template: `<FvShowMenu
-    :list='knobList'
+    :list='list'
   >
   </FvShowMenu>`
 }}</Story>
 </Canvas>
 
-## ArgsTable
+## Props
 
-<ArgsTable of={ FvShowMenu } />
+<Props of={ FvShowMenu } />

@@ -1,25 +1,26 @@
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
-import { text, number } from '@storybook/addon-knobs'
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
 import FvStepForm from './index.vue'
 
-<Meta title='Molecules/FvStepForm' component={ FvStepForm } />
+<Meta title='Molecules/FvStepForm' component={ FvStepForm } argTypes={{
+  title: { control: 'text' },
+  formId: { control: 'number' }
+}}/>
 
 # FvStepForm
 
 <Canvas>
-<Story name='Common' height='150px'>{{
+<Story name='Common' height='150px' args={{
+  title: 'title',
+  formId: '1'
+}}>{{
   props: {
-    knobTitle: {
-      default: text('title', 'Mon produit', 'Props')
-    },
-    knobId: {
-      default: number('formId', 1, 1, 'Props')
-    }
+    title: {},
+    formId: {}
   },
   components: { FvStepForm },
   template: `<FvStepForm
-    :formId="knobId"
-    :title="knobTitle"
+    :title="title"
+    :formId="formId"
   >
   <template slot='form'>
       <li> Beautiful form </li>
@@ -27,6 +28,6 @@ import FvStepForm from './index.vue'
 }}</Story>
 </Canvas>
 
-## ArgsTable
+## Props
 
-<ArgsTable of={ FvStepForm } />
+<Props of={ FvStepForm } />
