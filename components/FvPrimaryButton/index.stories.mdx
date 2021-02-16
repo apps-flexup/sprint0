@@ -9,11 +9,11 @@ import FvPrimaryButton from './index.vue'
 # FvPrimaryButton
 
 <Canvas>
-<Story name='Common' height='150px'>{{
+<Story name='Common' height='150px' args={{
+  label: 'Primary button'
+}}>{{
   props: {
-    label: {
-      default: 'Primary button'
-    }
+    label: {}
   },
   methods: {
     clicked: action('clicked')
