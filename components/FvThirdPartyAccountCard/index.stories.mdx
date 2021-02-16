@@ -8,16 +8,17 @@ import FvThirdPartyAccountCard from './index.vue'
       type: 'select',
       options: thirdPartyAccountsAvailable
     }
+  }
 }}/>
 
 # FvThirdPartyAccountCard
 
 <Canvas>
-<Story name='Common' height='150px'>{{
+<Story name='Common' height='150px' args={{
+  thirdPartyAccountId: defaultValue
+}}>{{
   props: {
-    thirdPartyAccountId: {
-      default: defaultValue
-    }
+    thirdPartyAccountId: {}
   },
   components: { FvThirdPartyAccountCard },
   template: `<FvThirdPartyAccountCard
