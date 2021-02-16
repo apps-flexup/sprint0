@@ -1,17 +1,18 @@
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
-import { boolean } from '@storybook/addon-knobs'
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
 import FvPartnerModal from './index.vue'
 
-<Meta title='Organism/FvPartnerModal' component={ FvPartnerModal } />
+<Meta title='Organism/FvPartnerModal' component={ FvPartnerModal } argTypes={{
+  showModal: { control: 'boolean' }
+}}/>
 
 # FvPartnerModal
 
 <Canvas>
-<Story name='Common' height='150px'>{{
+<Story name='Common' height='150px' args={{
+  showModal: true
+}}>{{
   props: {
-    showModal: {
-      default: boolean('ShowModal', true, 'Props')
-    }
+    showModal: {}
   },
   components: { FvPartnerModal },
   data() {
@@ -43,6 +44,6 @@ import FvPartnerModal from './index.vue'
 }}</Story>
 </Canvas>
 
-## ArgsTable
+## Props
 
-<ArgsTable of={ FvPartnerModal } />
+<Props of={ FvPartnerModal } />
