@@ -1,13 +1,18 @@
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
-import { text, boolean } from '@storybook/addon-knobs'
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
 import FvTh from './index.vue'
 
-<Meta title='Atoms/FvTh' component={ FvTh } />
+<Meta title='Atoms/FvTh' component={ FvTh } argTypes={{
+  text: { control: 'text' },
+  sortable: { control: 'boolean' }
+}}/>
 
 # FvTh
 
 <Canvas>
-<Story name='Common'>{{
+<Story name='Common' args={{
+  text: 'header',
+  sortable: 'true'
+}}>{{
   components: { FvTh },
   data() {
     return {
@@ -17,12 +22,8 @@ import FvTh from './index.vue'
     }
   },
   props: {
-    knobText: {
-      default: text('Text', 'header', 'Props')
-    },
-    knobSortable: {
-      default: boolean('Sortable', true, 'Props')
-    }
+    text: {},
+    sortable: {}
   },
   methods: {
     thSort(v) {
@@ -38,9 +39,9 @@ import FvTh from './index.vue'
     }
   },
   template: `<FvTh
-    :text="knobText"
+    :text="text"
     :sortKey="sortKey"
-    :sortable="knobSortable"
+    :sortable="sortable"
     :isSorted="isSorted"
     :isSortedDesc="isSortedDesc"
     @th:sort="thSort"
@@ -49,6 +50,6 @@ import FvTh from './index.vue'
 }}</Story>
 </Canvas>
 
-## ArgsTable
+## Props
 
-<ArgsTable of={ FvTh} />
+<Props of={ FvTh} />

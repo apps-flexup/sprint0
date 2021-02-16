@@ -1,35 +1,46 @@
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
-import { select, text, array } from '@storybook/addon-knobs'
-import { categories, defaultCategory, menus, defaultMenu} from '@/.storybook/knobs_data/menusAvailable'
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import { categories, defaultCategory, menus, defaultMenu } from '@/.storybook/data/menusAvailable'
 import FvSubMenu from './index.vue'
 
-<Meta title='Molecules/FvSubMenu' component={ FvSubMenu } />
+<Meta title='Molecules/FvSubMenu' component={ FvSubMenu } argTypes={{
+  category: {
+    control: {
+      type: 'select',
+      options: categories
+    }
+  },
+  title: { control: 'text' },
+  menu: {
+    control: {
+      type: 'select',
+      options: menus
+    }
+  }
+}}/>
 
 # FvSubMenu
 
 <Canvas>
-<Story name='Common' height='150px'>{{
+<Story name='Common' height='150px' args={{
+  category: defaultCategory,
+  title: 'test',
+  menu: defaultMenu
+}}>{{
   components: { FvSubMenu },
   props: {
-    knobCategory: {
-      default: select('Categories', categories, defaultCategory, 'Props')
-    },
-    knobTitle: {
-      default: text('Title', 'test', 'Props')
-    },
-    knobMenu: {
-      default: select('Menu', menus, defaultMenu, 'Props')
-    }
+    category: {},
+    title: {},
+    menu: {}
   },
   template: `<FvSubMenu
-    :categoryName='knobCategory'
-    :title='knobTitle'
-    :menuName='knobMenu'
+    :categoryName='category'
+    :title='title'
+    :menuName='menu'
   >
   </FvSubMenu>`
 }}</Story>
 </Canvas>
 
-## ArgsTable
+## Props
 
-<ArgsTable of={ FvSubMenu } />
+<Props of={ FvSubMenu } />
