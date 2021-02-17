@@ -38,7 +38,7 @@ export default (ctx, inject) => {
     sellerMenu: repo('sellerMenu'),
     sellerNavBar: repo('sellerNavBar'),
     settings: repo('settings'),
-    structures: repo('structures'),
+    paymentStructures: repo('paymentStructures'),
     team: repo('team'),
     thirdPartyAccountHeaders: repo('third-party-account-headers'),
     thirdPartyAccounts: repo('third-party-accounts'),
