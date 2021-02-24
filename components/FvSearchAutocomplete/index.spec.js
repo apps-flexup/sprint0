@@ -14,6 +14,9 @@ describe('FvSearchAutocomplete', () => {
     return shallowMount(FvSearchAutocomplete, {
       localVue,
       store,
+      computed: {
+        items: () => ['test', 'test', 'searchBar']
+      },
       vuetify
     })
   }
@@ -26,9 +29,7 @@ describe('FvSearchAutocomplete', () => {
             get: jest.fn()
           },
           getters: {
-            all() {
-              return ['test', 'test', 'searchBar']
-            }
+            all: jest.fn()
           }
         }
       }
