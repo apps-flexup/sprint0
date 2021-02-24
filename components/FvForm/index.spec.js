@@ -53,7 +53,9 @@ describe('FvForm', () => {
           actions: {
             getProduct: jest.fn(),
             getOffer: jest.fn(),
-            getThirdPartyAccount: jest.fn()
+            getThirdPartyAccount: jest.fn(),
+            getPaymentCondition: jest.fn(),
+            getPaymentStructure: jest.fn()
           }
         }
       }

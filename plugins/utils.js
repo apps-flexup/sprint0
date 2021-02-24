@@ -19,6 +19,7 @@ export const instantTranslate = (array, locale, fallback) => {
 
 export const translateHeaders = (i18n, items) => {
   if (!items) return []
+  if (!i18n) return items
   const res = items.map((item) => {
     const translated = i18n.t(item.text)
     return {

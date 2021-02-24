@@ -1,4 +1,4 @@
-import { mount, createLocalVue } from '@vue/test-utils'
+import { shallowMount, createLocalVue } from '@vue/test-utils'
 import Vuetify from 'vuetify'
 import Vuex from 'Vuex'
 import FvNavBar from './index.vue'
@@ -12,7 +12,7 @@ describe('FvNavBar', () => {
   let vuetify
   const slot = 'HelloWorld'
   const factory = (payload) => {
-    return mount(FvNavBar, {
+    return shallowMount(FvNavBar, {
       localVue,
       store,
       vuetify,
