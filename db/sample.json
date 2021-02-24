@@ -1,5 +1,86 @@
 {
-  "payment-conditions": [],
+  "payment-conditions": [
+    {
+      "label": "Equity simple",
+      "references": {
+        "r1": {
+          "key": "equity",
+          "value": 100
+        },
+        "r2": {
+          "key": "equity",
+          "value": 100
+        },
+        "r3": {
+          "key": "none",
+          "value": 100
+        },
+        "r4": {
+          "key": "none",
+          "value": 100
+        },
+        "r5": {
+          "key": "none",
+          "value": 100
+        },
+        "r6": {
+          "key": "projectOrThirdParty",
+          "value": 100
+        },
+        "r7": {
+          "key": "none",
+          "value": 100
+        },
+        "r8": {
+          "key": "none",
+          "value": 100
+        }
+      },
+      "risk": 100,
+      "account_id": 1,
+      "id": 2
+    },
+    {
+      "label": "Base simple",
+      "references": {
+        "r1": {
+          "key": "base",
+          "value": 40
+        },
+        "r2": {
+          "key": "endOfDeliveryMonth",
+          "value": 50
+        },
+        "r3": {
+          "key": "none",
+          "value": 100
+        },
+        "r4": {
+          "key": "none",
+          "value": 100
+        },
+        "r5": {
+          "key": "none",
+          "value": 100
+        },
+        "r6": {
+          "key": "projectOrThirdParty",
+          "value": 100
+        },
+        "r7": {
+          "key": "equity",
+          "value": 100
+        },
+        "r8": {
+          "key": "equity",
+          "value": 100
+        }
+      },
+      "risk": 20,
+      "account_id": 1,
+      "id": 3
+    }
+  ],
   "references": [
     {
       "key": "r1",
@@ -1667,6 +1748,32 @@
       "sortable": true,
       "text": "headers.paymentConditions.risk",
       "value": "risk"
+    }
+  ],
+  "payment-conditions-for-payment-structure-form": [
+    {
+      "align": "start",
+      "sortable": true,
+      "text": "headers.paymentConditionsForPaymentStructureForm.portion",
+      "value": "portion"
+    },
+    {
+      "align": "start",
+      "sortable": true,
+      "text": "headers.paymentConditionsForPaymentStructureForm.label",
+      "value": "label"
+    },
+    {
+      "align": "start",
+      "sortable": true,
+      "text": "headers.paymentConditionsForPaymentStructureForm.risk",
+      "value": "risk"
+    }
+  ],
+  "payment-structure-steps": [
+    {
+      "component": "fv-payment-structure-step-detail",
+      "title": "forms.payment-structure.step.0"
     }
   ],
   "contract-types": [
@@ -13714,6 +13821,12 @@
       "icon": "mdi-credit-card-settings-outline",
       "title": "manageMenu.paymentConditions",
       "to": "/paymentConditions"
+    },
+    {
+      "active": true,
+      "icon": "mdi-chart-bar",
+      "title": "manageMenu.paymentStructures",
+      "to": "/paymentStructures"
     }
   ],
   "userMenu": [

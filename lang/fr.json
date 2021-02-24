@@ -188,7 +188,9 @@
       "settings-new": "Créer préférences",
       "paymentConditions": "Conditions de paiement",
       "paymentConditions-new": "Nouvelle condition de paiement",
-      "paymentConditions-id": "Modifier ma condition de paiement"
+      "paymentConditions-id": "Modifier ma condition de paiement",
+      "paymentStructures": "Structures de paiement",
+      "paymentStructures-new": "Nouvelle structure de paiement"
     }
   },
   "listAccounts": {
@@ -409,6 +411,18 @@
       "edit": {
         "title": "Modifier ma condition de paiement"
       }
+    },
+    "paymentStructures": {
+      "new": {
+        "title": "Nouvelle structure de paiement",
+        "label": "Libellé",
+        "paymentConditions": "Conditions de paiement"
+      }
+    },
+    "payment-structure": {
+      "step": {
+        "0": "Détails"
+      }
     }
   },
   "manageMenu": {
@@ -422,7 +436,8 @@
     "thirdPartyAccounts": "Tiers",
     "documents": "Documents",
     "dashboard": "Tableau de bord",
-    "paymentConditions": "Conditions de paiment"
+    "paymentConditions": "Conditions de paiment",
+    "paymentStructures": "Structures de paiement"
   },
   "userMenu": {
     "data": "Données personnelles",
@@ -469,7 +484,8 @@
       "thirdPartyAccount": "CRÉER COMPTE TIERS",
       "offer": "CRÉER OFFRE",
       "order": "CRÉER COMMANDE",
-      "paymentCondition": "CRÉER CONDITION DE PAIEMENT"
+      "paymentCondition": "CRÉER CONDITION DE PAIEMENT",
+      "paymentStructure": "CRÉER STRUCTURE DE PAIEMENT"
     },
     "submit": "Envoyer",
     "previous": "Précédent",
@@ -539,6 +555,11 @@
       "priority": "Priorité",
       "paymentTerm": "Délai de paiement",
       "interestRate": "Taux d'intérêts",
+      "risk": "Risque"
+    },
+    "paymentConditionsForPaymentStructureForm": {
+      "portion": "Portion %",
+      "label": "Libellé",
       "risk": "Risque"
     }
   },

@@ -9,6 +9,12 @@
     @dataTable:sortBy="sortBy"
     @dataTable:selected="selected"
   )
+    template(v-slot:item.portion="{ item }")
+      fv-number-field.portion-input(
+        :hideDetails="true"
+        :dense="true"
+        @input="portionChanged(item, ...arguments)"
+      )
     template(v-slot:item.priority="{ item }")
       div {{ displayPriority(item) }}
     template(v-slot:item.paymentTerm="{ item }")
@@ -72,6 +78,13 @@ export default {
       const res = this.$displayRules.paymentConditionRisk(item)
       return res
     },
+    portionChanged(item, v) {
+      const payload = {
+        ...item,
+        portion: parseInt(v)
+      }
+      this.$emit('dataTable:portionChanged', payload)
+    },
     selected(paymentCondition) {
       this.$emit('dataTable:selected', paymentCondition)
     },
@@ -84,3 +97,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.portion-input {
+  max-width: 100px;
+}
+</style>

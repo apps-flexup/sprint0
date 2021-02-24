@@ -25,5 +25,8 @@ export default {
   },
   setPaymentConditionHeaders(state, items) {
     state.paymentConditions = items
+  },
+  setPaymentConditionForPaymentStructureFormHeaders(state, items) {
+    state.paymentConditionsForPaymentStructureForm = items
   }
 }

@@ -83,6 +83,7 @@ export default {
     this.$store.dispatch('forms/getOffer')
     this.$store.dispatch('forms/getThirdPartyAccount')
     this.$store.dispatch('forms/getPaymentCondition')
+    this.$store.dispatch('forms/getPaymentStructure')
   },
   methods: {
     submit() {

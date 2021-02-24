@@ -4,5 +4,6 @@ export default () => ({
   products: [],
   offers: [],
   thirdPartyAccounts: [],
-  paymentConditions: []
+  paymentConditions: [],
+  paymentStructures: []
 })

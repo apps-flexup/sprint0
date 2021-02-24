@@ -28,5 +28,10 @@ export default {
     if (!state.paymentConditions) return []
     const res = JSON.parse(JSON.stringify(state.paymentConditions))
     return res
+  },
+  paymentStructures(state) {
+    if (!state.paymentStructures) return []
+    const res = JSON.parse(JSON.stringify(state.paymentStructures))
+    return res
   }
 }

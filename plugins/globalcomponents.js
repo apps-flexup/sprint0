@@ -57,10 +57,13 @@ import FvNavBarBuyer from '@/components/FvNavBarBuyer'
 import FvNavBarManage from '@/components/FvNavBarManage'
 import FvThirdPartyAccountStepDetail from '@/components/FvThirdPartyAccountStepDetail'
 import FvNumberField from '@/components/FvNumberField'
+import FvPaymentConditionAutocomplete from '@/components/FvPaymentConditionAutocomplete'
 import FvPaymentConditionDataTable from '@/components/FvPaymentConditionDataTable'
 import FvPaymentConditionIndex from '@/components/FvPaymentConditionIndex'
 import FvPaymentConditionList from '@/components/FvPaymentConditionList'
 import FvPaymentConditionStepDetail from '@/components/FvPaymentConditionStepDetail'
+import FvPaymentStructureIndex from '@/components/FvPaymentStructureIndex'
+import FvPaymentStructureStepDetail from '@/components/FvPaymentStructureStepDetail'
 import FvPaymentTermParams from '@/components/FvPaymentTermParams'
 import FvPriceField from '@/components/FvPriceField'
 import FvPriceToPreferredCurrency from '@/components/FvPriceToPreferredCurrency'
@@ -210,10 +213,16 @@ Vue.component(
   FvThirdPartyAccountStepDetail
 )
 Vue.component('fv-number-field', FvNumberField)
+Vue.component(
+  'fv-payment-condition-autocomplete',
+  FvPaymentConditionAutocomplete
+)
 Vue.component('fv-payment-condition-data-table', FvPaymentConditionDataTable)
 Vue.component('fv-payment-condition-index', FvPaymentConditionIndex)
 Vue.component('fv-payment-condition-list', FvPaymentConditionList)
 Vue.component('fv-payment-condition-step-detail', FvPaymentConditionStepDetail)
+Vue.component('fv-payment-structure-index', FvPaymentStructureIndex)
+Vue.component('fv-payment-structure-step-detail', FvPaymentStructureStepDetail)
 Vue.component('fv-payment-term-params', FvPaymentTermParams)
 Vue.component('fv-price-field', FvPriceField)
 Vue.component('fv-price-to-preferred-currency', FvPriceToPreferredCurrency)

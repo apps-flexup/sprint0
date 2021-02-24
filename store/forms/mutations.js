@@ -19,5 +19,8 @@ export default {
   },
   setPaymentConditionSteps(state, items) {
     state.paymentConditions = items
+  },
+  setPaymentStructureSteps(state, items) {
+    state.paymentStructures = items
   }
 }
