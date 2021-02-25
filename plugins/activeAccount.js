@@ -169,6 +169,13 @@ const activeAccount = (ctx) => ({
       res.push({ text: 'headers.actions', value: 'actions', sortable: false })
     return res
   },
+  headersPaymentConditionsForPaymentStructureForm() {
+    const res =
+      ctx.store.getters['headers/paymentConditionsForPaymentStructureForm']
+    if (res.length && res[res.length - 1].value !== 'actions')
+      res.push({ text: 'headers.actions', value: 'actions', sortable: false })
+    return res
+  },
   hasRole(role) {
     const res = ctx.store.$auth.user
     console.log('role :', role, ', res :', res)

@@ -13,6 +13,7 @@
       :items="formattedItems"
       @dataTable:selected="selected"
       @dataTable:sortBy="sortBy"
+      @dataTable:delete="deleteItem"
     )
 </template>
 
@@ -124,6 +125,9 @@ export default {
     },
     selected(item) {
       this.$emit('list:selected', item)
+    },
+    deleteItem(item) {
+      this.$emit('list:delete', item)
     },
     sortBy(v) {
       this.sortKey = v.key

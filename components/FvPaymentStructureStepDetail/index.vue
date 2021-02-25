@@ -9,11 +9,23 @@
     @paymentCondition:selected="paymentConditionSelected"
   )
   fv-payment-condition-data-table(
-    v-if="items.length"
+    v-if="paymentConditions && paymentConditions.length"
     :headers="headers"
-    :items="items"
+    :items="paymentConditions"
+    :hideDefaultFooter="true"
     @dataTable:portionChanged="portionChanged"
+    @dataTable:delete="deleteItem"
+    @dataTable:selected="selected"
   )
+    template(v-slot:body.prepend)
+      tr(class="totalLine")
+        td.text-left {{ $t('forms.paymentStructures.new.globalRisk') }}
+        td
+        td {{ displayGlobalRisk() }}
+        td
+  p.errorMsg(
+    v-if="paymentConditions && paymentConditions.length && totalPortion !== 100"
+  ) {{ $t('forms.paymentStructures.new.totalPortionMustBe100') }}
 </template>
 
 <script>
@@ -27,24 +39,34 @@ export default {
       }
     }
   },
-  data() {
-    return {
-      paymentConditions: []
-    }
-  },
   computed: {
+    globalRisk() {
+      if (!this.paymentConditions) return 0
+      let res = 0
+      this.paymentConditions.forEach((paymentCondition) => {
+        if (res === 0) res = paymentCondition.risk
+        else res *= paymentCondition.risk / 100
+      })
+      return res
+    },
+    totalPortion() {
+      if (!this.paymentConditions) return 0
+      let res = 0
+      this.paymentConditions.forEach((paymentCondition) => {
+        res += paymentCondition.portion
+      })
+      return res
+    },
     label() {
       const res = this.payload ? this.payload.label : null
       return res
     },
     headers() {
-      const res = this.$store.getters[
-        'headers/paymentConditionsForPaymentStructureForm'
-      ]
+      const res = this.$activeAccount.headersPaymentConditionsForPaymentStructureForm()
       return res
     },
-    items() {
-      const res = this.paymentConditions
+    paymentConditions() {
+      const res = this.payload ? this.payload.paymentConditions : []
       return res
     }
   },
@@ -62,10 +84,58 @@ export default {
       this.$emit('payload:changed', payload)
     },
     paymentConditionSelected(v) {
-      this.paymentConditions.push(v)
+      const paymentConditions = this.paymentConditions || []
+      const found = paymentConditions.find((paymentCondition) => {
+        return paymentCondition.id === v.id
+      })
+      if (!found) {
+        v.portion = 0
+        paymentConditions.push(v)
+        const payload = {
+          paymentConditions
+        }
+        this.$emit('payload:changed', payload)
+      }
     },
     portionChanged(v) {
-      console.log('portion: ', v)
+      if (!this.paymentConditions) return
+      const paymentConditions = this.paymentConditions
+      const index = paymentConditions.findIndex((paymentCondition) => {
+        return paymentCondition.id === v.item_id
+      })
+      console.log('index: ', index)
+      if (index >= 0) {
+        paymentConditions[index].portion = v.portion
+        const payload = {
+          paymentConditions
+        }
+        this.$emit('payload:changed', payload)
+      }
+    },
+    displayGlobalRisk() {
+      const item = {
+        risk: this.globalRisk
+      }
+      const res = this.$displayRules.paymentConditionRisk(item)
+      return res
+    },
+    deleteItem(v) {
+      if (!this.paymentConditions) return
+      const paymentConditions = this.paymentConditions
+      const index = paymentConditions.findIndex((paymentCondition) => {
+        return paymentCondition.id === v.id
+      })
+      if (index >= 0) {
+        paymentConditions.splice(index, 1)
+        const payload = {
+          paymentConditions
+        }
+        this.$emit('payload:changed', payload)
+      }
+    },
+    selected(v) {
+      const paymentCondition = JSON.parse(JSON.stringify(v))
+      this.$router.push('/paymentConditions/' + paymentCondition.id)
     }
   }
 }
@@ -75,5 +145,12 @@ export default {
 ::v-deep .v-input.theme--light .v-input__slot {
   background: #ffffff;
   margin-bottom: initial;
+}
+.totalLine {
+  background-color: #fff8df;
+}
+.errorMsg {
+  margin-top: 10px;
+  color: red;
 }
 </style>

@@ -413,7 +413,9 @@
       "new": {
         "title": "New payment structure",
         "label": "Label",
-        "paymentConditions": "Payment conditions"
+        "paymentConditions": "Payment conditions",
+        "globalRisk": "Global risk",
+        "totalPortionMustBe100": "The total must be equal to 100%"
       }
     },
     "payment-structure": {
