@@ -221,6 +221,9 @@ const activeAccount = (ctx) => ({
   },
   addPaymentCondition(newPaymentCondition) {
     ctx.store.dispatch('paymentConditions/add', newPaymentCondition)
+  },
+  addPaymentStructure(newPaymentStructure) {
+    ctx.store.dispatch('paymentStructures/add', newPaymentStructure)
   }
 })
 

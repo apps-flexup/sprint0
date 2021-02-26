@@ -1,4 +1,22 @@
 {
+  "payment-structures": [
+    {
+      "label": "B25 + E75",
+      "paymentConditions": [
+        {
+          "id": 2,
+          "portion": 75
+        },
+        {
+          "id": 3,
+          "portion": 25
+        }
+      ],
+      "risk": 20,
+      "account_id": 1,
+      "id": 1
+    }
+  ],
   "payment-conditions": [
     {
       "label": "Equity simple",

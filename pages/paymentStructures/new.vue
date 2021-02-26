@@ -22,7 +22,7 @@ export default {
   methods: {
     createPaymentStructure(payload) {
       console.log('Create payment structure: ', payload)
-      // this.$activeAccount.addPaymentCondition(payload)
+      this.$activeAccount.addPaymentStructure(payload)
     }
   }
 }
