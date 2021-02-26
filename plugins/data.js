@@ -35,6 +35,7 @@ export default (ctx, inject) => {
     ),
     paymentConditionsSteps: repo('payment-condition-steps'),
     productHeaders: repo('product-headers'),
+    paymentStructureHeaders: repo('payment-structure-headers'),
     paymentStructures: repo('payment-structures'),
     paymentStructureSteps: repo('payment-structure-steps'),
     products: repo('products'),

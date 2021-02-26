@@ -246,6 +246,10 @@
     "paymentConditions": {
       "title": "My payment conditions",
       "search": "Search"
+    },
+    "paymentStructures": {
+      "title": "My payment structures",
+      "search": "Search"
     }
   },
   "forms": {
@@ -553,6 +557,11 @@
       "paymentTerm": "Payment term",
       "interestRate": "Interest rate",
       "risk": "Risk"
+    },
+    "paymentStructures": {
+      "label": "Label",
+      "risk": "Risk",
+      "nbPortions": "Number of portions"
     },
     "paymentConditionsForPaymentStructureForm": {
       "portion": "Portion %",

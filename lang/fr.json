@@ -250,6 +250,10 @@
     "paymentConditions": {
       "title": "Mes conditions de paiement",
       "search": "Rechercher"
+    },
+    "paymentStructures": {
+      "title": "Mes structures de paiement",
+      "search": "Rechercher"
     }
   },
   "forms": {
@@ -558,6 +562,11 @@
       "paymentTerm": "Délai de paiement",
       "interestRate": "Taux d'intérêts",
       "risk": "Risque"
+    },
+    "paymentStructures": {
+      "label": "Libellé",
+      "risk": "Risque",
+      "nbPortions": "Nombre de portions"
     },
     "paymentConditionsForPaymentStructureForm": {
       "portion": "Portion %",

@@ -62,7 +62,9 @@ import FvPaymentConditionDataTable from '@/components/FvPaymentConditionDataTabl
 import FvPaymentConditionIndex from '@/components/FvPaymentConditionIndex'
 import FvPaymentConditionList from '@/components/FvPaymentConditionList'
 import FvPaymentConditionStepDetail from '@/components/FvPaymentConditionStepDetail'
+import FvPaymentStructureDataTable from '@/components/FvPaymentStructureDataTable'
 import FvPaymentStructureIndex from '@/components/FvPaymentStructureIndex'
+import FvPaymentStructureList from '@/components/FvPaymentStructureList'
 import FvPaymentStructureStepDetail from '@/components/FvPaymentStructureStepDetail'
 import FvPaymentTermParams from '@/components/FvPaymentTermParams'
 import FvPriceField from '@/components/FvPriceField'
@@ -221,7 +223,9 @@ Vue.component('fv-payment-condition-data-table', FvPaymentConditionDataTable)
 Vue.component('fv-payment-condition-index', FvPaymentConditionIndex)
 Vue.component('fv-payment-condition-list', FvPaymentConditionList)
 Vue.component('fv-payment-condition-step-detail', FvPaymentConditionStepDetail)
+Vue.component('fv-payment-structure-data-table', FvPaymentStructureDataTable)
 Vue.component('fv-payment-structure-index', FvPaymentStructureIndex)
+Vue.component('fv-payment-structure-list', FvPaymentStructureList)
 Vue.component('fv-payment-structure-step-detail', FvPaymentStructureStepDetail)
 Vue.component('fv-payment-term-params', FvPaymentTermParams)
 Vue.component('fv-price-field', FvPriceField)

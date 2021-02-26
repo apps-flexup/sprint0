@@ -41,6 +41,11 @@ export default {
       .index()
       .then((data) => commit('setPaymentConditionHeaders', data))
   },
+  getPaymentStructureHeaders({ commit }) {
+    this.$repos.paymentStructureHeaders
+      .index()
+      .then((data) => commit('setPaymentStructureHeaders', data))
+  },
   getPaymentConditionForPaymentStructureFormHeaders({ commit }) {
     this.$repos.paymentConditionsForPaymentStructureForm
       .index()

@@ -178,6 +178,11 @@ const displayRules = (ctx) => ({
     if (!item) return null
     const res = item.risk + '%'
     return res
+  },
+  paymentStructureRisk(item) {
+    if (!item) return null
+    const res = item.risk + '%'
+    return res
   }
 })
 

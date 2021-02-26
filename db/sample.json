@@ -1768,6 +1768,26 @@
       "value": "risk"
     }
   ],
+  "payment-structure-headers": [
+    {
+      "align": "start",
+      "sortable": true,
+      "text": "headers.paymentStructures.label",
+      "value": "label"
+    },
+    {
+      "align": "start",
+      "sortable": true,
+      "text": "headers.paymentStructures.risk",
+      "value": "risk"
+    },
+    {
+      "align": "start",
+      "sortable": true,
+      "text": "headers.paymentStructures.nbPortions",
+      "value": "nbPortions"
+    }
+  ],
   "payment-conditions-for-payment-structure-form": [
     {
       "align": "start",
