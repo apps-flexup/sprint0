@@ -11,7 +11,7 @@
   fv-payment-condition-data-table(
     v-if="paymentConditions && paymentConditions.length"
     :headers="headers"
-    :items="paymentConditions"
+    :items="paymentConditionsDetails"
     :hideDefaultFooter="true"
     @dataTable:portionChanged="portionChanged"
     @dataTable:delete="deleteItem"
@@ -41,9 +41,9 @@ export default {
   },
   computed: {
     globalRisk() {
-      if (!this.paymentConditions) return 0
+      if (!this.paymentConditionsDetails) return 0
       let res = 0
-      this.paymentConditions.forEach((paymentCondition) => {
+      this.paymentConditionsDetails.forEach((paymentCondition) => {
         if (res === 0) res = paymentCondition.risk
         else res *= paymentCondition.risk / 100
       })
@@ -68,6 +68,22 @@ export default {
     paymentConditions() {
       const res = this.payload ? this.payload.paymentConditions : []
       return res
+    },
+    paymentConditionsDetails() {
+      if (!this.payload || !this.payload.paymentConditions) return []
+      const res = []
+      const paymentConditions = this.payload.paymentConditions
+      paymentConditions.forEach((paymentCondition) => {
+        const tmp = this.$store.getters['paymentConditions/findById'](
+          paymentCondition.id
+        )
+        const payload = {
+          ...tmp,
+          portion: paymentCondition.portion
+        }
+        res.push(payload)
+      })
+      return res
     }
   },
   mounted() {
@@ -75,6 +91,7 @@ export default {
     this.$store.dispatch(
       'headers/getPaymentConditionForPaymentStructureFormHeaders'
     )
+    this.$store.dispatch('paymentConditions/get')
   },
   methods: {
     labelChanged(v) {
@@ -86,11 +103,14 @@ export default {
     paymentConditionSelected(v) {
       const paymentConditions = this.paymentConditions || []
       const found = paymentConditions.find((paymentCondition) => {
-        return paymentCondition.id === v.id
+        return paymentCondition.id === v
       })
       if (!found) {
-        v.portion = 0
-        paymentConditions.push(v)
+        const paymentCondition = {
+          id: v,
+          portion: 0
+        }
+        paymentConditions.push(paymentCondition)
         const payload = {
           paymentConditions
         }
@@ -107,7 +127,8 @@ export default {
       if (index >= 0) {
         paymentConditions[index].portion = v.portion
         const payload = {
-          paymentConditions
+          paymentConditions,
+          risk: this.globalRisk
         }
         this.$emit('payload:changed', payload)
       }
@@ -133,9 +154,9 @@ export default {
         this.$emit('payload:changed', payload)
       }
     },
-    selected(v) {
-      const paymentCondition = JSON.parse(JSON.stringify(v))
-      this.$router.push('/paymentConditions/' + paymentCondition.id)
+    selected(_v) {
+      // const paymentCondition = JSON.parse(JSON.stringify(v))
+      // this.$router.push('/paymentConditions/' + paymentCondition.id)
     }
   }
 }

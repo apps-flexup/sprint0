@@ -4,7 +4,6 @@
     :element="paymentConditionId"
     :items="items"
     :filter="filterList"
-    :returnObject="true"
     @autocomplete:selected="selected"
   )
     template(v-slot:label)
