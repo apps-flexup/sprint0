@@ -28,7 +28,8 @@ export default {
   },
   data() {
     return {
-      title: 'Flexup - Sprint 0'
+      title: 'Flexup - Sprint 0',
+      fixed: true
     }
   },
   computed: {
