@@ -44,9 +44,11 @@ export default {
       if (!this.paymentConditionsDetails) return 0
       let res = 0
       this.paymentConditionsDetails.forEach((paymentCondition) => {
-        if (res === 0) res = paymentCondition.risk
-        else res *= paymentCondition.risk / 100
+        const riskForPortion = paymentCondition.risk * paymentCondition.portion
+        if (res === 0) res = riskForPortion
+        else res += riskForPortion
       })
+      res /= 100
       return res
     },
     totalPortion() {
