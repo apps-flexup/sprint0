@@ -134,7 +134,7 @@ const displayRules = (ctx) => ({
     if (!item) return null
     const structureId = item.structure
     if (!structureId) return null
-    const structure = ctx.store.getters['contracts/getStructureById'](
+    const structure = ctx.store.getters['paymentStructures/findById'](
       structureId
     )
     if (!structure) return null

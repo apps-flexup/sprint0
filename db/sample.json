@@ -4,17 +4,61 @@
       "label": "B25 + E75",
       "paymentConditions": [
         {
-          "id": 2,
-          "portion": 75
-        },
-        {
           "id": 3,
           "portion": 25
+        },
+        {
+          "id": 2,
+          "portion": 75
+        }
+      ],
+      "risk": 80,
+      "account_id": 1,
+      "id": 1
+    },
+    {
+      "label": "B50 + F25 + E25",
+      "paymentConditions": [
+        {
+          "id": 3,
+          "portion": 50
+        },
+        {
+          "id": 4,
+          "portion": 25
+        },
+        {
+          "id": 2,
+          "portion": 25
+        }
+      ],
+      "risk": 46.25,
+      "account_id": 1,
+      "id": 2
+    },
+    {
+      "label": "Base simple",
+      "paymentConditions": [
+        {
+          "id": 3,
+          "portion": 100
         }
       ],
       "risk": 20,
       "account_id": 1,
-      "id": 1
+      "id": 3
+    },
+    {
+      "label": "Equity simple",
+      "paymentConditions": [
+        {
+          "id": 2,
+          "portion": 100
+        }
+      ],
+      "risk": 100,
+      "account_id": 1,
+      "id": 4
     }
   ],
   "payment-conditions": [
@@ -97,6 +141,46 @@
       "risk": 20,
       "account_id": 1,
       "id": 3
+    },
+    {
+      "references": {
+        "r1": {
+          "key": "flex",
+          "value": 60
+        },
+        "r2": {
+          "key": "endOfDeliveryMonth",
+          "value": 50
+        },
+        "r3": {
+          "key": "none",
+          "value": 100
+        },
+        "r4": {
+          "key": "none",
+          "value": 100
+        },
+        "r5": {
+          "key": "none",
+          "value": 100
+        },
+        "r6": {
+          "key": "projectOrThirdParty",
+          "value": 100
+        },
+        "r7": {
+          "key": "equity",
+          "value": 100
+        },
+        "r8": {
+          "key": "equity",
+          "value": 100
+        }
+      },
+      "risk": 45,
+      "label": "Flex simple",
+      "account_id": 1,
+      "id": 4
     }
   ],
   "references": [
