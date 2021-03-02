@@ -72,26 +72,16 @@ export default {
   },
   mounted() {
     console.log('Composant ', this.$options.name)
-    this.$store.dispatch('contracts/getStructures')
+    this.$store.dispatch('paymentStructures/get')
     this.$store.dispatch('currencies/get')
     this.$store.dispatch('accounts/get')
     this.fillFieldsWithOrder()
   },
   methods: {
-    getStructureName(structureId) {
-      if (!structureId) {
-        return null
-      }
-      const structure = this.$store.getters['contracts/getStructureById'](
-        structureId
-      )
-      const res = structure.name
-      return res
-    },
     fillFieldsWithOrder() {
       if (!this.order) return
       this.thirdPartyAccountId = this.order.third_party_account_id
-      this.structure = this.getStructureName(this.order.structure)
+      this.structure = this.order.structure.label
       this.orderDate = this.order.date
       this.orderLines = this.order.order_lines
     },

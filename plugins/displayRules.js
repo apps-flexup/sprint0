@@ -132,13 +132,9 @@ const displayRules = (ctx) => ({
   },
   paymentStructure(item) {
     if (!item) return null
-    const structureId = item.structure
-    if (!structureId) return null
-    const structure = ctx.store.getters['paymentStructures/findById'](
-      structureId
-    )
+    const structure = item.structure
     if (!structure) return null
-    const res = structure.name
+    const res = structure.label
     return res
   },
   paymentConditionPriority(item) {

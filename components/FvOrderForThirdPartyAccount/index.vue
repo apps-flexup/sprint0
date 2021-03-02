@@ -108,7 +108,10 @@ export default {
       this.$emit('order:labelChanged', this.i, label)
     },
     structureSelected(structureId) {
-      this.$emit('order:structureSelected', this.i, structureId)
+      const structure = this.$store.getters['paymentStructures/getDetailsById'](
+        structureId
+      )
+      this.$emit('order:structureSelected', this.i, structure)
     },
     thirdPartyAccountSelected(thirdPartyAccountId) {
       if (this.thirdPartyAccountId !== thirdPartyAccountId) {
