@@ -190,6 +190,7 @@
       "paymentConditions-new": "Nouvelle condition de paiement",
       "paymentConditions-id": "Modifier ma condition de paiement",
       "paymentStructures": "Structures de paiement",
+      "paymentStructures-id": "Modifier ma structure de paiement",
       "paymentStructures-new": "Nouvelle structure de paiement"
     }
   },
@@ -423,6 +424,9 @@
         "paymentConditions": "Conditions de paiement",
         "globalRisk": "Risque global",
         "totalPortionMustBe100": "Le total doit être égal à 100%"
+      },
+      "edit": {
+        "title": "Modifier ma structure de paiement"
       }
     },
     "payment-structure": {
@@ -442,7 +446,7 @@
     "thirdPartyAccounts": "Tiers",
     "documents": "Documents",
     "dashboard": "Tableau de bord",
-    "paymentConditions": "Conditions de paiment",
+    "paymentConditions": "Conditions de paiement",
     "paymentStructures": "Structures de paiement"
   },
   "userMenu": {

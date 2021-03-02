@@ -1,10 +1,10 @@
 <template lang="pug">
   fv-form(
-    :payload="getPaymentCondition"
-    @form:submit="editPaymentCondition"
+    :payload="getPaymentStructure"
+    @form:submit="editPaymentStructure"
     action='edit'
-    url='paymentConditions'
-    form='paymentConditions'
+    url='paymentStructures'
+    form='paymentStructures'
   )
 </template>
 
@@ -19,19 +19,19 @@ export default {
     }
   },
   computed: {
-    getPaymentCondition() {
-      const paymentConditionId = this.$route.params.id
-      const paymentCondition = this.$store.getters[
-        'paymentConditions/findById'
-      ](paymentConditionId)
-      const payload = JSON.parse(JSON.stringify(paymentCondition))
+    getPaymentStructure() {
+      const paymentStructureId = this.$route.params.id
+      const paymentStructure = this.$store.getters[
+        'paymentStructures/findById'
+      ](paymentStructureId)
+      const payload = JSON.parse(JSON.stringify(paymentStructure))
       return payload
     }
   },
   methods: {
-    editPaymentCondition(payload) {
+    editPaymentStructure(payload) {
       console.log('edit: ', payload)
-      this.$activeAccount.addPaymentCondition(payload)
+      this.$activeAccount.addPaymentStructure(payload)
     }
   }
 }

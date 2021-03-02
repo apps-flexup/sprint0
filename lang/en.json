@@ -187,8 +187,10 @@
       "settings": "Settings",
       "settings-new": "New settings",
       "paymentConditions": "Payment conditions",
+      "paymentConditions-id": "Edit my payment condition",
       "paymentConditions-new": "New payment condition",
       "paymentStructures": "Payment structures",
+      "paymentStructures-id": "Edit my payment structure",
       "paymentStructures-new": "New payment structure"
     }
   },
@@ -420,6 +422,9 @@
         "paymentConditions": "Payment conditions",
         "globalRisk": "Global risk",
         "totalPortionMustBe100": "The total must be equal to 100%"
+      },
+      "edit": {
+        "title": "Edit my payment structure"
       }
     },
     "payment-structure": {
