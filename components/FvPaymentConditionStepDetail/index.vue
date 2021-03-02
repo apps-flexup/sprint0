@@ -67,12 +67,10 @@ export default {
       if (!this.selectedReferences) return res
       const references = this.selectedReferences
       for (const reference of Object.values(references)) {
-        if (reference.value) {
-          if (res === 0) {
-            res = reference.value
-          } else {
-            res *= reference.value / 100
-          }
+        if (res === 0) {
+          res = reference.value
+        } else {
+          res *= reference.value / 100
         }
       }
       res = Math.round(res * 10) / 10
