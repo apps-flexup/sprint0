@@ -26,12 +26,10 @@ export default {
   computed: {
     headers() {
       const res = this.$activeAccount.headersPaymentStructures()
-      console.log('headers: ', res)
       return res
     },
     items() {
       const res = this.$activeAccount.paymentStructures()
-      console.log('paymentStructures: ', res)
       return res
     }
   },

@@ -125,7 +125,6 @@ export default {
       const index = paymentConditions.findIndex((paymentCondition) => {
         return paymentCondition.id === v.item_id
       })
-      console.log('index: ', index)
       if (index >= 0) {
         paymentConditions[index].portion = v.portion
         const payload = {
