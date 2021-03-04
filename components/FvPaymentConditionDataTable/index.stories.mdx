@@ -1,0 +1,36 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import FvPaymentConditionDataTable from './index.vue'
+
+<Meta title='Pages/FvPaymentConditionDataTable' component={ FvPaymentConditionDataTable } />
+
+# FvPaymentConditionDataTable
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  components: { FvPaymentConditionDataTable },
+  mounted() {
+    this.$store.dispatch('headers/getPaymentConditionHeaders')
+    this.$store.dispatch('paymentConditions/get')
+  },
+  computed: {
+    headers() {
+      const res = this.$store.getters['headers/paymentConditions']
+      return res
+    },
+    items() {
+      const res = this.$store.getters['paymentConditions/all']
+      console.log('items: ', res)
+      return res
+    }
+  },
+  template: `<FvPaymentConditionDataTable
+    :headers="headers"
+    :items="items"
+  >
+  </FvPaymentConditionDataTable>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvPaymentConditionDataTable } />
