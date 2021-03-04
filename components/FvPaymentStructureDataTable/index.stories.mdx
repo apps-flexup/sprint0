@@ -1,0 +1,35 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import FvPaymentStructureDataTable from './index.vue'
+
+<Meta title='Molecules/FvPaymentStructureDataTable' component={ FvPaymentStructureDataTable } />
+
+# FvPaymentStructureDataTable
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  components: { FvPaymentStructureDataTable },
+  mounted() {
+    this.$store.dispatch('headers/getPaymentStructureHeaders')
+    this.$store.dispatch('paymentStructures/get')
+  },
+  computed: {
+    headers() {
+      const res = this.$activeAccount.headersPaymentStructures()
+      return res
+    },
+    items() {
+      const res = this.$activeAccount.paymentStructures()
+      return res
+    }
+  },
+  template: `<FvPaymentStructureDataTable
+    :headers="headers"
+    :items="items"
+  >
+  </FvPaymentStructureDataTable>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvPaymentStructureDataTable } />

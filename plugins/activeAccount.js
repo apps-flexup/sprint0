@@ -27,6 +27,7 @@ const activeAccount = (ctx) => ({
     ctx.store.dispatch('thirdPartyAccounts/get', {}, { root: true })
     ctx.store.dispatch('products/get', {}, { root: true })
     ctx.store.dispatch('paymentConditions/get', {}, { root: true })
+    ctx.store.dispatch('paymentStructures/get', {}, { root: true })
     ctx.store
       .dispatch('settings/getSettings', {}, { root: true })
       .then((_data) => {
