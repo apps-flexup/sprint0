@@ -6,5 +6,7 @@ export default () => ({
   orders: [],
   orderLines: [],
   orderLinesCart: [],
-  paymentConditions: []
+  paymentConditions: [],
+  paymentStructures: [],
+  paymentConditionsForPaymentStructureForm: []
 })

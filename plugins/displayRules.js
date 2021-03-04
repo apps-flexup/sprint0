@@ -132,13 +132,9 @@ const displayRules = (ctx) => ({
   },
   paymentStructure(item) {
     if (!item) return null
-    const structureId = item.structure
-    if (!structureId) return null
-    const structure = ctx.store.getters['contracts/getStructureById'](
-      structureId
-    )
+    const structure = item.structure
     if (!structure) return null
-    const res = structure.name
+    const res = structure.label
     return res
   },
   paymentConditionPriority(item) {
@@ -175,6 +171,11 @@ const displayRules = (ctx) => ({
     return res
   },
   paymentConditionRisk(item) {
+    if (!item) return null
+    const res = item.risk + '%'
+    return res
+  },
+  paymentStructureRisk(item) {
     if (!item) return null
     const res = item.risk + '%'
     return res

@@ -1,21 +1,18 @@
 <template lang="pug">
 .fv-structure-autocomplete
   fv-autocomplete(
-    v-model="this.structure"
+    v-model="structure"
     :items="items"
     @autocomplete:selected="selected"
   )
     template(v-slot:label)
       div {{ $t('forms.orders.new.structure') }}
     template(v-slot:item="data")
-      template(v-if="typeof data.item !== 'object'")
-        v-list-item-content(v-text="data.item")
-      template(v-else='')
         v-list-item-content
-          div {{ data.item.name }}
+          div {{ data.item.label }}
     template(v-slot:selection="data")
         v-list-item-content
-          div {{ data.item.name }}
+          div {{ data.item.label }}
     template(v-slot:no-data)
       div Aucune donnée disponible
 </template>
@@ -33,13 +30,13 @@ export default {
   },
   computed: {
     items() {
-      const res = this.$store.getters['contracts/structures']
+      const res = this.$store.getters['paymentStructures/all']
       return res
     }
   },
   mounted() {
     console.log('Composant ', this.$options.name)
-    this.$store.dispatch('contracts/getStructures')
+    this.$store.dispatch('paymentStructures/get')
   },
   methods: {
     selected(v) {

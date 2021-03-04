@@ -2,7 +2,7 @@
 .fv-data-table
   v-data-table(
     data-testid="dataTable"
-    :headers='headers'
+    :headers='translatedHeaders'
     :items='items ? items : []'
     :hide-default-footer="hideDefaultFooter"
     disable-sort
@@ -44,6 +44,8 @@
 </template>
 
 <script>
+import { translateHeaders } from '~/plugins/utils'
+
 export default {
   name: 'FvDataTable',
   props: {
@@ -85,6 +87,10 @@ export default {
     }
   },
   computed: {
+    translatedHeaders() {
+      const res = translateHeaders(this.$i18n, this.headers)
+      return res
+    },
     cssVars() {
       const settings = this.$store.getters['settings/settings']
       const theme = settings.theme

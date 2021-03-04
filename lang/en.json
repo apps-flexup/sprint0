@@ -187,7 +187,11 @@
       "settings": "Settings",
       "settings-new": "New settings",
       "paymentConditions": "Payment conditions",
-      "paymentConditions-new": "New payment conditions"
+      "paymentConditions-id": "Edit my payment condition",
+      "paymentConditions-new": "New payment condition",
+      "paymentStructures": "Payment structures",
+      "paymentStructures-id": "Edit my payment structure",
+      "paymentStructures-new": "New payment structure"
     }
   },
   "listAccounts": {
@@ -243,6 +247,10 @@
     },
     "paymentConditions": {
       "title": "My payment conditions",
+      "search": "Search"
+    },
+    "paymentStructures": {
+      "title": "My payment structures",
       "search": "Search"
     }
   },
@@ -406,6 +414,23 @@
       "edit": {
         "title": "Edit my payment condition"
       }
+    },
+    "paymentStructures": {
+      "new": {
+        "title": "New payment structure",
+        "label": "Label",
+        "paymentConditions": "Payment conditions",
+        "globalRisk": "Global risk",
+        "totalPortionMustBe100": "The total must be equal to 100%"
+      },
+      "edit": {
+        "title": "Edit my payment structure"
+      }
+    },
+    "payment-structure": {
+      "step": {
+        "0": "Details"
+      }
     }
   },
   "manageMenu" : {
@@ -417,7 +442,8 @@
     "products": "Products",
     "contacts": "Contacts",
     "thirdPartyAccounts": "Third party",
-    "paymentConditions": "Payment conditions"
+    "paymentConditions": "Payment conditions",
+    "paymentStructures": "Payment structures"
   },
   "userMenu": {
     "data": "Personnal data",
@@ -464,7 +490,8 @@
       "thirdPartyAccount": "CREATE THIRD PARTY ACCOUNT",
       "offer": "CREATE OFFER",
       "order": "CREATE ORDER",
-      "paymentCondition": "CREATE PAYMENT CONDITION"
+      "paymentCondition": "CREATE PAYMENT CONDITION",
+      "paymentStructure": "CREATE PAYMENT STRUCTURE"
     },
     "submit": "Submit",
     "previous": "Previous",
@@ -534,6 +561,16 @@
       "priority": "Priority",
       "paymentTerm": "Payment term",
       "interestRate": "Interest rate",
+      "risk": "Risk"
+    },
+    "paymentStructures": {
+      "label": "Label",
+      "risk": "Risk",
+      "nbPortions": "Number of portions"
+    },
+    "paymentConditionsForPaymentStructureForm": {
+      "portion": "Portion %",
+      "label": "Label",
       "risk": "Risk"
     }
   },

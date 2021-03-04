@@ -28,5 +28,10 @@ export default {
     this.$repos.paymentConditionsSteps
       .index()
       .then((data) => commit('setPaymentConditionSteps', data))
+  },
+  getPaymentStructure({ commit }) {
+    this.$repos.paymentStructureSteps
+      .index()
+      .then((data) => commit('setPaymentStructureSteps', data))
   }
 }

@@ -28,7 +28,8 @@ export default {
   },
   data() {
     return {
-      title: 'Flexup - Sprint 0'
+      title: 'Flexup - Sprint 0',
+      fixed: true
     }
   },
   computed: {
@@ -53,7 +54,6 @@ export default {
     this.$store.dispatch('units/get')
     this.$store.dispatch('currencies/get')
     this.$store.dispatch('countries/get')
-    this.$store.dispatch('contracts/getStructures')
     this.$store.dispatch('contracts/getLegalStructures')
     this.$store.dispatch('accounts/get')
   }

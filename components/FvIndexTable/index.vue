@@ -9,10 +9,11 @@
     )
     component(
       :is="table"
-      :headers="translatedHeaders"
+      :headers="tableHeaders"
       :items="formattedItems"
       @dataTable:selected="selected"
       @dataTable:sortBy="sortBy"
+      @dataTable:delete="deleteItem"
     )
 </template>
 
@@ -67,13 +68,11 @@ export default {
     }
   },
   computed: {
-    translatedHeaders() {
+    tableHeaders() {
       const headers = this.headers
-      let res = null
+      let res = headers
       if (this.table === 'fv-recursive-data-table') {
-        res = translateHeaders(this.$i18n, headers.main)
-      } else {
-        res = translateHeaders(this.$i18n, headers)
+        res = headers.main
       }
       return res
     },
@@ -126,6 +125,9 @@ export default {
     },
     selected(item) {
       this.$emit('list:selected', item)
+    },
+    deleteItem(item) {
+      this.$emit('list:delete', item)
     },
     sortBy(v) {
       this.sortKey = v.key

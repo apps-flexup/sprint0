@@ -14,17 +14,26 @@ describe('FvSearchAutocomplete', () => {
     return shallowMount(FvSearchAutocomplete, {
       localVue,
       store,
-      data() {
-        return {
-          item: ['Catégories', 'Produits', 'Offres', 'Services'],
-          items: ['test', 'test', 'searchBar']
-        }
+      computed: {
+        items: () => ['test', 'test', 'searchBar']
       },
       vuetify
     })
   }
   beforeEach(() => {
-    store = new Vuex.Store({})
+    store = new Vuex.Store({
+      modules: {
+        categories: {
+          namespaced: true,
+          actions: {
+            get: jest.fn()
+          },
+          getters: {
+            all: jest.fn()
+          }
+        }
+      }
+    })
     vuetify = new Vuetify()
   })
   it('should render a fv search autocomplete', () => {

@@ -27,6 +27,7 @@ const activeAccount = (ctx) => ({
     ctx.store.dispatch('thirdPartyAccounts/get', {}, { root: true })
     ctx.store.dispatch('products/get', {}, { root: true })
     ctx.store.dispatch('paymentConditions/get', {}, { root: true })
+    ctx.store.dispatch('paymentStructures/get', {}, { root: true })
     ctx.store
       .dispatch('settings/getSettings', {}, { root: true })
       .then((_data) => {
@@ -120,6 +121,13 @@ const activeAccount = (ctx) => ({
     const res = ctx.store.getters['paymentConditions/all']
     return res
   },
+  paymentStructures() {
+    const res = ctx.store.getters['paymentStructures/all']
+    res.forEach((paymentStructure) => {
+      paymentStructure.nbPortions = paymentStructure.paymentConditions.length
+    })
+    return res
+  },
   headersProducts() {
     const res = ctx.store.getters['headers/products']
     if (res.length && res[res.length - 1].value !== 'actions')
@@ -169,6 +177,19 @@ const activeAccount = (ctx) => ({
       res.push({ text: 'headers.actions', value: 'actions', sortable: false })
     return res
   },
+  headersPaymentStructures() {
+    const res = ctx.store.getters['headers/paymentStructures']
+    if (res.length && res[res.length - 1].value !== 'actions')
+      res.push({ text: 'headers.actions', value: 'actions', sortable: false })
+    return res
+  },
+  headersPaymentConditionsForPaymentStructureForm() {
+    const res =
+      ctx.store.getters['headers/paymentConditionsForPaymentStructureForm']
+    if (res.length && res[res.length - 1].value !== 'actions')
+      res.push({ text: 'headers.actions', value: 'actions', sortable: false })
+    return res
+  },
   hasRole(role) {
     const res = ctx.store.$auth.user
     console.log('role :', role, ', res :', res)
@@ -214,6 +235,9 @@ const activeAccount = (ctx) => ({
   },
   addPaymentCondition(newPaymentCondition) {
     ctx.store.dispatch('paymentConditions/add', newPaymentCondition)
+  },
+  addPaymentStructure(newPaymentStructure) {
+    ctx.store.dispatch('paymentStructures/add', newPaymentStructure)
   }
 })
 

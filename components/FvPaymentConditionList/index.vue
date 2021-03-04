@@ -9,6 +9,7 @@
     :items="items"
     :rules="rules"
     @list:selected="paymentConditionSelected"
+    @list:delete="deletePaymentCondition"
   )
 </template>
 
@@ -47,6 +48,9 @@ export default {
   methods: {
     paymentConditionSelected(paymentCondition) {
       this.$emit('list:selected', paymentCondition)
+    },
+    deletePaymentCondition(paymentCondition) {
+      this.$store.dispatch('paymentConditions/remove', paymentCondition)
     }
   }
 }

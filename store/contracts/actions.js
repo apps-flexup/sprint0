@@ -23,9 +23,5 @@ export default {
     this.$repos.legalStructure
       .index()
       .then((data) => commit('setLegalStructures', data))
-  },
-  getStructures({ commit }) {
-    // charger les structures
-    this.$repos.structures.index().then((data) => commit('setStructures', data))
   }
 }
