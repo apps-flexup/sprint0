@@ -30,17 +30,7 @@ export default {
       dispatch('thirdPartyAccounts/addToFlexup', thirdPartyAccount, {
         root: true
       })
-      const defaultSettings = {
-        language: 'fr',
-        currency: 'EUR',
-        theme: 'light',
-        price_nb_after_decimal_point: 2,
-        vat_nb_after_decimal_point: 1,
-        displayedHeaders: []
-      }
-      dispatch('settings/createSettings', defaultSettings, {
-        root: true
-      })
+      dispatch('settings/createSettings', {}, { root: true })
       commit('add', res)
     })
   },

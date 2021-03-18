@@ -1,3 +1,5 @@
+import { mergeObjects } from '~/plugins/utils'
+
 export default {
   all(state) {
     if (!state.items) return []
@@ -59,8 +61,10 @@ export default {
     return res
   },
   settings(state) {
-    if (!state.settings) return {}
-    const res = JSON.parse(JSON.stringify(state.settings))
+    if (!state.defaultSettings) return {}
+    const customSettings = state.settings
+    const res = JSON.parse(JSON.stringify(state.defaultSettings))
+    if (customSettings) mergeObjects(res, customSettings)
     return res
   },
   customHeaders: (state) => (tableName) => {

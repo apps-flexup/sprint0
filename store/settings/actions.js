@@ -38,8 +38,13 @@ export default {
       commit('setSettings', data[0])
     })
   },
-  updateSettings({ commit }, settings) {
-    this.$repos.settings.update(settings).then((data) => {
+  updateSettings({ commit, state }, settings) {
+    const defaultSettings = state.defaultSettings
+    const payload = {}
+    Object.keys(settings).forEach((key) => {
+      if (settings[key] !== defaultSettings[key]) payload[key] = settings[key]
+    })
+    this.$repos.settings.update(payload).then((data) => {
       commit('setSettings', data)
     })
   },

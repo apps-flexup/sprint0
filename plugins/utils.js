@@ -5,6 +5,19 @@ String.prototype.filtreAutocomplete = function(filtre) {
   return str.includes(v)
 }
 
+export const mergeObjects = (dst, src) => {
+  Object.keys(src).forEach((key) => {
+    if (!dst[key]) dst[key] = src[key]
+    else if (
+      typeof src[key] === 'object' &&
+      src[key] &&
+      typeof dst[key] === 'object' &&
+      dst[key]
+    )
+      mergeObjects(dst[key], src[key])
+  })
+}
+
 export const instantTranslate = (array, locale, fallback) => {
   if (!array) return 'check instantTranslate (undefined string)'
   if (typeof array === 'string') return array
