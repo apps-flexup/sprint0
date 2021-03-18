@@ -379,6 +379,15 @@
   ],
   "settings": [
     {
+      "account_id": null,
+      "currency": "EUR",
+      "language": "fr",
+      "theme": "light",
+      "price_nb_after_decimal_point": "2",
+      "vat_nb_after_decimal_point": "1",
+      "id": 0
+    },
+    {
       "account_id": "1",
       "currency": "EUR",
       "language": "fr",
