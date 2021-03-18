@@ -14,6 +14,10 @@
       @dataTableSearchBar:changed="searchChanged"
       @dataTableSearchBar:filterValidated="filterValidated"
     )
+    fv-icon.settings(
+      icon="mdi-cog"
+      @icon:clicked="settingsClicked"
+    )
 </template>
 
 <script>
@@ -80,13 +84,22 @@ export default {
         res = this.colors[index]
       }
       return res
+    },
+    settingsClicked() {
+      this.$emit('dataTableHeader:settingsClicked')
     }
   }
 }
 </script>
 
 <style scoped>
+::v-deep .v-text-field__details {
+  display: none;
+}
 .chip {
   margin: 5px;
+}
+.settings {
+  margin-left: 25px;
 }
 </style>

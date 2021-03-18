@@ -1,4 +1,13 @@
 export default {
+  get: (state) => (tableName) => {
+    if (!state[tableName]) return []
+    const items = state[tableName]
+    let res = items.filter((item) => {
+      return item.active === true
+    })
+    res = JSON.parse(JSON.stringify(res))
+    return res
+  },
   contracts(state) {
     if (!state.contracts) return []
     const res = JSON.parse(JSON.stringify(state.contracts))

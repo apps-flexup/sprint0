@@ -6,6 +6,7 @@
       :title="title"
       :searchLabel="searchLabel"
       @dataTableSearch:filtersChanged="filtersChanged"
+      @dataTableHeader:settingsClicked="settingsClicked"
     )
     component(
       :is="table"
@@ -14,6 +15,12 @@
       @dataTable:selected="selected"
       @dataTable:sortBy="sortBy"
       @dataTable:delete="deleteItem"
+    )
+    fv-select-headers(
+      :dialog="dialog"
+      :headers="headers"
+      @selectHeaders:close="close"
+      @selectHeaders:save="save"
     )
 </template>
 
@@ -64,7 +71,8 @@ export default {
     return {
       filters: [],
       sortKey: null,
-      shouldSortDesc: false
+      shouldSortDesc: false,
+      dialog: false
     }
   },
   computed: {
@@ -74,6 +82,7 @@ export default {
       if (this.table === 'fv-recursive-data-table') {
         res = headers.main
       }
+      res = res.filter((header) => header.active && header.enabled)
       return res
     },
     formattedItems() {
@@ -94,6 +103,10 @@ export default {
           }
         ]
       }
+      return res
+    },
+    defaultHeaders() {
+      const res = this.$store.getters['headers/products']
       return res
     }
   },
@@ -118,6 +131,7 @@ export default {
   },
   mounted() {
     console.log('Composant ', this.$options.name)
+    this.$store.dispatch('headers/getProductHeaders')
   },
   methods: {
     filtersChanged(v) {
@@ -132,6 +146,35 @@ export default {
     sortBy(v) {
       this.sortKey = v.key
       this.shouldSortDesc = v.desc
+    },
+    settingsClicked() {
+      this.dialog = true
+    },
+    close() {
+      this.dialog = false
+    },
+    save(customHeaders) {
+      console.log('customHeaders: ', customHeaders)
+      const settings = this.$store.getters['settings/settings']
+      const newCustoms = settings.custom_headers['products']
+      console.log('custom before loop: ', newCustoms)
+      customHeaders.forEach((customHeader) => {
+        const i = newCustoms.findIndex((newCustom) => {
+          return newCustom.text === customHeader.text
+        })
+        const isDefaultHeader = this.defaultHeaders.find((header) => {
+          return JSON.stringify(header) === JSON.stringify(customHeader)
+        })
+
+        if (i > -1) {
+          // console.log('il existe, on remove: ', newCustoms[i])
+          newCustoms.splice(i, 1)
+        }
+        newCustoms.push(customHeader)
+      })
+      console.log('custom after loop: ', settings.custom_headers['products'])
+      // this.$store.dispatch('settings/updateSettings', settings)
+      this.dialog = false
     }
   }
 }

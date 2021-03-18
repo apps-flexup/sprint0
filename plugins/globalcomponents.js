@@ -81,6 +81,7 @@ import FvReferenceAutocomplete from '@/components/FvReferenceAutocomplete'
 import FvReview from '@/components/FvReview'
 import FvSearchAutocomplete from '@/components/FvSearchAutocomplete'
 import FvSecondaryButton from '@/components/FvSecondaryButton'
+import FvSelectHeaders from '@/components/FvSelectHeaders'
 import FvSettingsDefault from '@/components/FvSettingsDefault'
 import FvSettingsIndex from '@/components/FvSettingsIndex'
 import FvSettingsOthers from '@/components/FvSettingsOthers'
@@ -243,6 +244,7 @@ Vue.component('fv-reference-autocomplete', FvReferenceAutocomplete)
 Vue.component('fv-review', FvReview)
 Vue.component('fv-search-autocomplete', FvSearchAutocomplete)
 Vue.component('fv-secondary-button', FvSecondaryButton)
+Vue.component('fv-select-headers', FvSelectHeaders)
 Vue.component('fv-settings-default', FvSettingsDefault)
 Vue.component('fv-settings-index', FvSettingsIndex)
 Vue.component('fv-settings-others', FvSettingsOthers)

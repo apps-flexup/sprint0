@@ -50,6 +50,7 @@ export default {
     return res
   },
   locale(state) {
+    if (!state.settings) return null
     const res = JSON.parse(JSON.stringify(state.settings))
     return res.language
   },
@@ -60,6 +61,13 @@ export default {
   settings(state) {
     if (!state.settings) return {}
     const res = JSON.parse(JSON.stringify(state.settings))
+    return res
+  },
+  customHeaders: (state) => (tableName) => {
+    if (!state.settings) return []
+    if (!state.settings.custom_headers) return []
+    if (!state.settings.custom_headers[tableName]) return []
+    const res = JSON.parse(JSON.stringify(state.settings.custom_headers[tableName]))
     return res
   }
 }

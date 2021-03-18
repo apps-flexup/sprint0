@@ -379,22 +379,27 @@
   ],
   "settings": [
     {
+      "account_id": "1",
       "currency": "EUR",
       "language": "fr",
       "theme": "light",
       "price_nb_after_decimal_point": "2",
       "vat_nb_after_decimal_point": "1",
-      "account_id": 1,
+      "custom_headers": {
+        "products": [
+          {
+            "align": "center",
+            "sortable": true,
+            "text": "headers.products.status",
+            "value": "status",
+            "order": 3,
+            "customizable": true,
+            "active": true,
+            "enabled": false
+          }
+        ]
+      },
       "id": 1
-    },
-    {
-      "currency": "USD",
-      "language": "en",
-      "theme": "dark",
-      "price_nb_after_decimal_point": 2,
-      "vat_nb_after_decimal_point": 1,
-      "account_id": 3,
-      "id": 2
     }
   ],
   "accounts": [
@@ -14109,13 +14114,21 @@
         "text": "mainHeaders.product",
         "value": "products",
         "align": "center",
-        "sortable": false
+        "sortable": false,
+        "order": 0,
+        "customizable": false,
+        "active": true,
+        "enabled": true
       },
       {
         "text": "mainHeaders.offer",
         "value": "offers",
         "align": "center",
-        "sortable": false
+        "sortable": false,
+        "order": 1,
+        "customizable": false,
+        "active": true,
+        "enabled": true
       }
     ],
     "sub": {
@@ -14693,25 +14706,41 @@
       "align": "left",
       "sortable": true,
       "text": "headers.products.name",
-      "value": "name"
+      "value": "name",
+      "order": 0,
+      "customizable": false,
+      "active": true,
+      "enabled": true
     },
     {
       "align": "left",
       "sortable": true,
       "text": "headers.products.category",
-      "value": "category_id"
+      "value": "category_id",
+      "order": 1,
+      "customizable": true,
+      "active": true,
+      "enabled": true
     },
     {
       "align": "left",
       "sortable": true,
       "text": "headers.products.unit",
-      "value": "unit"
+      "value": "unit",
+      "order": 2,
+      "customizable": true,
+      "active": true,
+      "enabled": true
     },
     {
       "align": "center",
       "sortable": true,
       "text": "headers.products.status",
-      "value": "status"
+      "value": "status",
+      "order": 3,
+      "customizable": true,
+      "active": true,
+      "enabled": true
     }
   ],
   "products": [

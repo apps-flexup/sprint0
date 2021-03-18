@@ -35,7 +35,8 @@ export default {
         currency: 'EUR',
         theme: 'light',
         price_nb_after_decimal_point: 2,
-        vat_nb_after_decimal_point: 1
+        vat_nb_after_decimal_point: 1,
+        displayedHeaders: []
       }
       dispatch('settings/createSettings', defaultSettings, {
         root: true
