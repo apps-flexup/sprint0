@@ -39,7 +39,7 @@ const activeAccount = (ctx) => ({
     return res
   },
   setSettings(settings) {
-    ctx.app.i18n.locale = settings.language
+    ctx.app.i18n.locale = settings.locale
     ctx.$vuetify.theme.dark = settings.theme === 'dark'
     ctx.store.dispatch('settings/updateSettings', settings)
   },

@@ -52,9 +52,11 @@ export default {
     return res
   },
   locale(state) {
-    if (!state.settings) return null
-    const res = JSON.parse(JSON.stringify(state.settings))
-    return res.language
+    let res = state.defaultSettings.locale
+    if (state.settings && state.settings.locale) {
+      res = state.settings.locale
+    }
+    return res
   },
   fallbackLocale(state) {
     const res = JSON.parse(JSON.stringify(state.fallbackLocale))

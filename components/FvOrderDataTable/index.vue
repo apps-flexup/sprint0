@@ -97,7 +97,7 @@ export default {
         return null
       }
       const settings = this.$store.getters['settings/settings']
-      const locale = settings.language
+      const locale = settings.locale
       const dte = new Date(date)
       const res = dte.toLocaleDateString(locale)
       return res

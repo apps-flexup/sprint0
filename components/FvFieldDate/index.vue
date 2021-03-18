@@ -86,8 +86,7 @@ export default {
   },
   computed: {
     locale() {
-      const settings = this.$store.getters['settings/settings']
-      const res = settings.language
+      const res = this.$store.getters['settings/locale']
       return res
     },
     displayDate() {

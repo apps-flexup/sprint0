@@ -7,14 +7,14 @@ String.prototype.filtreAutocomplete = function(filtre) {
 
 export const mergeObjects = (dst, src) => {
   Object.keys(src).forEach((key) => {
-    if (!dst[key]) dst[key] = src[key]
-    else if (
+    if (
       typeof src[key] === 'object' &&
       src[key] &&
       typeof dst[key] === 'object' &&
       dst[key]
     )
       mergeObjects(dst[key], src[key])
+    else dst[key] = src[key]
   })
 }
 
