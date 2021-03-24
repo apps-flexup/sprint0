@@ -69,11 +69,18 @@ export default {
     if (customSettings) mergeObjects(res, customSettings)
     return res
   },
-  customHeaders: (state) => (tableName) => {
-    if (!state.settings) return []
-    if (!state.settings.custom_headers) return []
-    if (!state.settings.custom_headers[tableName]) return []
-    const res = JSON.parse(JSON.stringify(state.settings.custom_headers[tableName]))
+  headers: (state) => (tableName) => {
+    if (!state.defaultSettings) return []
+    const res = JSON.parse(
+      JSON.stringify(state.defaultSettings.headers[tableName])
+    )
+    if (!state.settings) return res
+    const customHeaders = state.settings.headers
+    if (!customHeaders) return res
+    const customTableHeaders = state.settings.headers[tableName]
+    if (customTableHeaders) mergeObjects(res, customTableHeaders)
+    console.log('settings getters: ', res)
+    // TODO: On fait le sort de res par rapport au champ <order>
     return res
   }
 }

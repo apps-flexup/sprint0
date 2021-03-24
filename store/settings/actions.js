@@ -1,4 +1,6 @@
 // Action de base
+import { deepDiff } from '~/plugins/utils'
+
 export default {
   get({ commit }) {
     this.$repos.menus.index().then((data) => commit('set', data))
@@ -40,10 +42,7 @@ export default {
   },
   updateSettings({ commit, state }, settings) {
     const defaultSettings = state.defaultSettings
-    const payload = {}
-    Object.keys(settings).forEach((key) => {
-      if (settings[key] !== defaultSettings[key]) payload[key] = settings[key]
-    })
+    const payload = deepDiff(defaultSettings, settings)
     this.$repos.settings.update(payload).then((data) => {
       commit('setSettings', data)
     })

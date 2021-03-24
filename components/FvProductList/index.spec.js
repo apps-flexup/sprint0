@@ -15,7 +15,7 @@ describe('FvProductList', () => {
       mocks: {
         $t: (msg) => msg,
         $activeAccount: {
-          headersProducts: jest.fn(),
+          headers: jest.fn(),
           products: jest.fn()
         },
         $displayRules: {

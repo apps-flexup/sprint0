@@ -17,6 +17,7 @@ export default {
   name: 'FvProductList',
   data() {
     return {
+      tableName: 'products',
       rules: {
         status: this.$displayRules.status,
         category_id: this.$displayRules.category,
@@ -26,7 +27,7 @@ export default {
   },
   computed: {
     headers() {
-      const res = this.$activeAccount.headersProducts()
+      const res = this.$activeAccount.headers(this.tableName)
       return res
     },
     items() {

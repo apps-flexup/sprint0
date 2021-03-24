@@ -10,7 +10,7 @@
     )
     component(
       :is="table"
-      :headers="tableHeaders"
+      :headers="displayedHeaders"
       :items="formattedItems"
       @dataTable:selected="selected"
       @dataTable:sortBy="sortBy"
@@ -76,7 +76,7 @@ export default {
     }
   },
   computed: {
-    tableHeaders() {
+    displayedHeaders() {
       const headers = this.headers
       let res = headers
       if (this.table === 'fv-recursive-data-table') {
@@ -103,10 +103,6 @@ export default {
           }
         ]
       }
-      return res
-    },
-    defaultHeaders() {
-      const res = this.$store.getters['headers/products']
       return res
     }
   },
@@ -154,26 +150,11 @@ export default {
       this.dialog = false
     },
     save(customHeaders) {
-      console.log('customHeaders: ', customHeaders)
       const settings = this.$store.getters['settings/settings']
-      const newCustoms = settings.custom_headers['products']
-      console.log('custom before loop: ', newCustoms)
-      customHeaders.forEach((customHeader) => {
-        const i = newCustoms.findIndex((newCustom) => {
-          return newCustom.text === customHeader.text
-        })
-        const isDefaultHeader = this.defaultHeaders.find((header) => {
-          return JSON.stringify(header) === JSON.stringify(customHeader)
-        })
-
-        if (i > -1) {
-          // console.log('il existe, on remove: ', newCustoms[i])
-          newCustoms.splice(i, 1)
-        }
-        newCustoms.push(customHeader)
-      })
-      console.log('custom after loop: ', settings.custom_headers['products'])
-      // this.$store.dispatch('settings/updateSettings', settings)
+      if (!settings.headers) settings.headers = {}
+      // Utiliser la prop tableName
+      settings.headers.products = customHeaders
+      this.$store.dispatch('settings/updateSettings', settings)
       this.dialog = false
     }
   }

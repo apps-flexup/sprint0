@@ -128,21 +128,8 @@ const activeAccount = (ctx) => ({
     })
     return res
   },
-  headersProducts() {
-    const headers = ctx.store.getters['headers/get']('products')
-    const customHeaders = ctx.store.getters['settings/customHeaders']('products')
-    const res = []
-    headers.forEach((header) => {
-      const custom = customHeaders.find((customHeader) => {
-        return customHeader.text === header.text
-      })
-      if (custom) {
-        header = Object.assign(header, custom)
-      }
-      res.push(header)
-    })
-    if (res.length && res[res.length - 1].value !== 'actions')
-      res.push({ text: 'headers.actions', value: 'actions', sortable: false, active: true, customizable: false, enabled: true })
+  headers(tableName) {
+    const res = ctx.store.getters['settings/headers'](tableName)
     return res
   },
   headersOffers() {

@@ -21,6 +21,7 @@
                   )
                 v-list-item-action
                   v-checkbox(
+                    v-if="header.customizable"
                     :input-value="header.enabled"
                   )
     template(v-slot:actions)
@@ -50,12 +51,16 @@ export default {
   },
   data() {
     return {
-      customHeaders: this.headers ? JSON.parse(JSON.stringify(this.headers)) : []
+      customHeaders: this.headers
+        ? JSON.parse(JSON.stringify(this.headers))
+        : []
     }
   },
   watch: {
     headers() {
-      this.customHeaders = this.headers ? JSON.parse(JSON.stringify(this.headers)) : []
+      this.customHeaders = this.headers
+        ? JSON.parse(JSON.stringify(this.headers))
+        : []
     }
   },
   mounted() {
@@ -63,10 +68,12 @@ export default {
   },
   methods: {
     toggleEnabled(header) {
-      header.enabled = !header.enabled
+      if (header.customizable) header.enabled = !header.enabled
     },
     close() {
-      this.customHeaders = this.headers ? JSON.parse(JSON.stringify(this.headers)) : []
+      this.customHeaders = this.headers
+        ? JSON.parse(JSON.stringify(this.headers))
+        : []
       this.$emit('selectHeaders:close')
     },
     save() {
@@ -77,7 +84,7 @@ export default {
         })
         if (!exist) payload.push(customHeader)
       })
-      this.$emit('selectHeaders:save', payload)
+      this.$emit('selectHeaders:save', this.customHeaders)
     }
   }
 }

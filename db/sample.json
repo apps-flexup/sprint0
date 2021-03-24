@@ -380,19 +380,8 @@
   "settings": [
     {
       "account_id": "1",
-      "custom_headers": {
-        "products": [
-          {
-            "align": "center",
-            "sortable": true,
-            "text": "headers.products.status",
-            "value": "status",
-            "order": 3,
-            "customizable": true,
-            "active": true,
-            "enabled": false
-          }
-        ]
+      "headers": {
+        "products": []
       },
       "id": 1
     }
