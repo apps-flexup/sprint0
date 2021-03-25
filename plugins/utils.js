@@ -5,6 +5,12 @@ String.prototype.filtreAutocomplete = function(filtre) {
   return str.includes(v)
 }
 
+export const camelToSnakeCase = (str) => {
+  if (!str) return null
+  const res = str.replace(/[A-Z]/g, (letter) => `_${letter.toLowerCase()}`)
+  return res
+}
+
 export const arrayDiff = (a1, a2) => {
   return a2.filter((x2) => {
     return !a1.some((x1) => {

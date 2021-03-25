@@ -88,16 +88,6 @@ const activeAccount = (ctx) => ({
     })
     return res
   },
-  headersThirdPartyAccounts() {
-    const res = ctx.store.getters['headers/thirdPartyAccounts']
-    if (res.length && res[res.length - 1].value !== 'actions')
-      res.push({ text: 'headers.actions', value: 'actions', sortable: false })
-    return res
-  },
-  thirdPartyAccounts() {
-    const thirdPArtyAccounts = ctx.store.getters['thirdPartyAccounts/all']
-    return thirdPArtyAccounts
-  },
   async allThirdPartyAccounts() {
     const thirdPartyAccounts = await this.thirdPartyAccounts()
     const thirdPartyIds = await ctx.store.getters['thirdPartyAccounts/ids']
@@ -113,14 +103,6 @@ const activeAccount = (ctx) => ({
     })
     return res
   },
-  products() {
-    const res = ctx.store.getters['products/all']
-    return res
-  },
-  paymentConditions() {
-    const res = ctx.store.getters['paymentConditions/all']
-    return res
-  },
   paymentStructures() {
     const res = ctx.store.getters['paymentStructures/all']
     res.forEach((paymentStructure) => {
@@ -130,6 +112,10 @@ const activeAccount = (ctx) => ({
   },
   headers(tableName) {
     const res = ctx.store.getters['settings/headers'](tableName)
+    return res
+  },
+  items(tableName) {
+    const res = ctx.store.getters[tableName + '/all']
     return res
   },
   headersOffers() {
@@ -167,12 +153,6 @@ const activeAccount = (ctx) => ({
     if (addActions) {
       res.push({ text: 'headers.actions', value: 'actions', sortable: false })
     }
-    return res
-  },
-  headersPaymentConditions() {
-    const res = ctx.store.getters['headers/paymentConditions']
-    if (res.length && res[res.length - 1].value !== 'actions')
-      res.push({ text: 'headers.actions', value: 'actions', sortable: false })
     return res
   },
   headersPaymentStructures() {

@@ -9,7 +9,7 @@
       @dataTableHeader:settingsClicked="settingsClicked"
     )
     component(
-      :is="table"
+      :is="tableComponent"
       :headers="displayedHeaders"
       :items="formattedItems"
       @dataTable:selected="selected"
@@ -26,6 +26,7 @@
 
 <script>
 import { translateHeaders } from '~/plugins/utils'
+import { camelToSnakeCase } from '~/plugins/utils'
 
 export default {
   name: 'FvIndexTable',
@@ -42,22 +43,16 @@ export default {
         return null
       }
     },
-    table: {
+    tableComponent: {
       type: String,
       default() {
         return null
       }
     },
-    headers: {
-      type: [Array, Object],
+    tableName: {
+      type: String,
       default() {
-        return []
-      }
-    },
-    items: {
-      type: Array,
-      default() {
-        return []
+        return null
       }
     },
     rules: {
@@ -76,6 +71,15 @@ export default {
     }
   },
   computed: {
+    headers() {
+      const snakeCaseTableName = camelToSnakeCase(this.tableName)
+      const res = this.$activeAccount.headers(snakeCaseTableName)
+      return res
+    },
+    items() {
+      const res = this.$activeAccount.items(this.tableName)
+      return res
+    },
     displayedHeaders() {
       const headers = this.headers
       let res = headers
@@ -152,8 +156,8 @@ export default {
     save(customHeaders) {
       const settings = this.$store.getters['settings/settings']
       if (!settings.headers) settings.headers = {}
-      // Utiliser la prop tableName
-      settings.headers.products = customHeaders
+      const snakeCaseTableName = camelToSnakeCase(this.tableName)
+      settings.headers[snakeCaseTableName] = customHeaders
       this.$store.dispatch('settings/updateSettings', settings)
       this.dialog = false
     }

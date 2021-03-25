@@ -71,6 +71,8 @@ export default {
   },
   headers: (state) => (tableName) => {
     if (!state.defaultSettings) return []
+    if (!state.defaultSettings.headers) return []
+    if (!state.defaultSettings.headers[tableName]) return []
     const res = JSON.parse(
       JSON.stringify(state.defaultSettings.headers[tableName])
     )

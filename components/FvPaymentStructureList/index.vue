@@ -4,9 +4,8 @@
     data-testid="table"
     :title="$t('table.paymentStructures.title')"
     :searchLabel="$t('table.paymentStructures.search')"
-    table="fv-payment-structure-data-table"
-    :headers="headers"
-    :items="items"
+    tableComponent="fv-payment-structure-data-table"
+    tableName="paymentStructures"
     :rules="rules"
     @list:selected="paymentStructureSelected"
     @list:delete="deletePaymentStructure"
@@ -23,19 +22,8 @@ export default {
       }
     }
   },
-  computed: {
-    headers() {
-      const res = this.$activeAccount.headersPaymentStructures()
-      return res
-    },
-    items() {
-      const res = this.$activeAccount.paymentStructures()
-      return res
-    }
-  },
   mounted() {
     console.log('Composant ', this.$options.name)
-    this.$store.dispatch('headers/getPaymentStructureHeaders')
     this.$store.dispatch('paymentStructures/get')
   },
   methods: {

@@ -379,9 +379,262 @@
   ],
   "settings": [
     {
+      "id": 0,
+      "account_id": null,
+      "currency": "EUR",
+      "locale": "fr",
+      "theme": "light",
+      "price_nb_after_decimal_point": 2,
+      "vat_nb_after_decimal_point": 1,
+      "headers": {
+        "products": [
+          {
+            "align": "left",
+            "sortable": true,
+            "text": "headers.products.name",
+            "value": "name",
+            "order": 0,
+            "customizable": false,
+            "active": true,
+            "enabled": true
+          },
+          {
+            "align": "left",
+            "sortable": true,
+            "text": "headers.products.category",
+            "value": "category_id",
+            "order": 1,
+            "customizable": true,
+            "active": true,
+            "enabled": true
+          },
+          {
+            "align": "left",
+            "sortable": true,
+            "text": "headers.products.unit",
+            "value": "unit",
+            "order": 2,
+            "customizable": true,
+            "active": true,
+            "enabled": true
+          },
+          {
+            "align": "center",
+            "sortable": true,
+            "text": "headers.products.status",
+            "value": "status",
+            "order": 3,
+            "customizable": true,
+            "active": true,
+            "enabled": true
+          },
+          {
+            "align": "left",
+            "sortable": false,
+            "text": "headers.actions",
+            "value": "actions",
+            "order": 4,
+            "customizable": false,
+            "active": true,
+            "enabled": true
+          }
+        ],
+        "third_party_accounts": [
+          {
+            "align": "left",
+            "sortable": true,
+            "text": "headers.thirdPartyAccounts.name",
+            "value": "name",
+            "order": 0,
+            "customizable": false,
+            "active": true,
+            "enabled": true
+          },
+          {
+            "align": "left",
+            "sortable": true,
+            "text": "headers.thirdPartyAccounts.siret",
+            "value": "siret",
+            "order": 1,
+            "customizable": true,
+            "active": true,
+            "enabled": true
+          },
+          {
+            "align": "left",
+            "sortable": true,
+            "text": "headers.thirdPartyAccounts.legalStructure",
+            "value": "legal_structure_id",
+            "order": 2,
+            "customizable": true,
+            "active": true,
+            "enabled": true
+          },
+          {
+            "align": "left",
+            "sortable": true,
+            "text": "headers.thirdPartyAccounts.address",
+            "city": "Courtanche sur Mer",
+            "value": "address",
+            "order": 3,
+            "customizable": true,
+            "active": true,
+            "enabled": true
+          },
+          {
+            "align": "right",
+            "sortable": true,
+            "text": "headers.thirdPartyAccounts.zip",
+            "value": "zip",
+            "order": 4,
+            "customizable": true,
+            "active": true,
+            "enabled": true
+          },
+          {
+            "align": "left",
+            "sortable": true,
+            "text": "headers.thirdPartyAccounts.city",
+            "value": "city",
+            "order": 5,
+            "customizable": true,
+            "active": true,
+            "enabled": true
+          },
+          {
+            "align": "left",
+            "sortable": true,
+            "text": "headers.thirdPartyAccounts.country",
+            "value": "country_id",
+            "order": 6,
+            "customizable": true,
+            "active": true,
+            "enabled": true
+          },
+          {
+            "align": "left",
+            "sortable": false,
+            "text": "headers.actions",
+            "value": "actions",
+            "order": 7,
+            "customizable": false,
+            "active": true,
+            "enabled": true
+          }
+        ],
+        "payment_conditions": [
+          {
+            "align": "start",
+            "sortable": true,
+            "text": "headers.paymentConditions.label",
+            "value": "label",
+            "order": 0,
+            "customizable": false,
+            "active": true,
+            "enabled": true
+          },
+          {
+            "align": "start",
+            "sortable": true,
+            "text": "headers.paymentConditions.priority",
+            "value": "priority",
+            "order": 1,
+            "customizable": true,
+            "active": true,
+            "enabled": true
+          },
+          {
+            "align": "start",
+            "sortable": true,
+            "text": "headers.paymentConditions.paymentTerm",
+            "value": "paymentTerm",
+            "order": 2,
+            "customizable": true,
+            "active": true,
+            "enabled": true
+          },
+          {
+            "align": "start",
+            "sortable": true,
+            "text": "headers.paymentConditions.interestRate",
+            "value": "interestRate",
+            "order": 3,
+            "customizable": true,
+            "active": true,
+            "enabled": true
+          },
+          {
+            "align": "start",
+            "sortable": true,
+            "text": "headers.paymentConditions.risk",
+            "value": "risk",
+            "order": 4,
+            "customizable": true,
+            "active": true,
+            "enabled": true
+          },
+          {
+            "align": "left",
+            "sortable": false,
+            "text": "headers.actions",
+            "value": "actions",
+            "order": 5,
+            "customizable": false,
+            "active": true,
+            "enabled": true
+          }
+        ],
+        "payment_structures": [
+          {
+            "align": "start",
+            "sortable": true,
+            "text": "headers.paymentStructures.label",
+            "value": "label",
+            "order": 0,
+            "customizable": false,
+            "active": true,
+            "enabled": true
+          },
+          {
+            "align": "start",
+            "sortable": true,
+            "text": "headers.paymentStructures.risk",
+            "value": "risk",
+            "order": 1,
+            "customizable": true,
+            "active": true,
+            "enabled": true
+          },
+          {
+            "align": "start",
+            "sortable": true,
+            "text": "headers.paymentStructures.nbPortions",
+            "value": "nbPortions",
+            "order": 2,
+            "customizable": true,
+            "active": true,
+            "enabled": true
+          },
+          {
+            "align": "left",
+            "sortable": false,
+            "text": "headers.actions",
+            "value": "actions",
+            "order": 3,
+            "customizable": false,
+            "active": true,
+            "enabled": true
+          }
+        ]
+      }
+    },
+    {
       "account_id": "1",
       "headers": {
-        "products": []
+        "products": [],
+        "third_party_accounts": [],
+        "payment_conditions": [],
+        "payment_structures": []
       },
       "id": 1
     }

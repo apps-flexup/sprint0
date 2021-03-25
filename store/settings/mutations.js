@@ -28,5 +28,8 @@ export default {
   },
   setSettings(state, item) {
     state.settings = item
+  },
+  setDefaultSettings(state, item) {
+    state.defaultSettings = item
   }
 }

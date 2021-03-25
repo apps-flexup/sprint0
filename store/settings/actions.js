@@ -40,6 +40,11 @@ export default {
       commit('setSettings', data[0])
     })
   },
+  getDefaultSettings({ commit }) {
+    return this.$repos.settings.show(0).then((data) => {
+      commit('setDefaultSettings', data)
+    })
+  },
   updateSettings({ commit, state }, settings) {
     const defaultSettings = state.defaultSettings
     const payload = deepDiff(defaultSettings, settings)
