@@ -81,7 +81,6 @@ export default {
     if (!customHeaders) return res
     const customTableHeaders = state.settings.headers[tableName]
     if (customTableHeaders) mergeObjects(res, customTableHeaders)
-    console.log('settings getters: ', res)
     // TODO: On fait le sort de res par rapport au champ <order>
     return res
   }
