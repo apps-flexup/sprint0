@@ -27,12 +27,6 @@ describe('FvProductList', () => {
   beforeEach(() => {
     store = new Vuex.Store({
       modules: {
-        headers: {
-          namespaced: true,
-          actions: {
-            getProductHeaders: jest.fn()
-          }
-        },
         products: {
           namespaced: true,
           actions: {

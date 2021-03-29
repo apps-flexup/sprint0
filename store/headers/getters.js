@@ -18,26 +18,6 @@ export default {
     const res = JSON.parse(JSON.stringify(state.contacts))
     return res
   },
-  products(state) {
-    if (!state.products) return []
-    const res = JSON.parse(JSON.stringify(state.products))
-    return res
-  },
-  thirdPartyAccounts(state) {
-    if (!state.thirdPartyAccounts) return []
-    const res = JSON.parse(JSON.stringify(state.thirdPartyAccounts))
-    return res
-  },
-  offers(state) {
-    if (!state.offers) return []
-    const res = JSON.parse(JSON.stringify(state.offers))
-    return res
-  },
-  orders(state) {
-    if (!state.orders) return []
-    const res = JSON.parse(JSON.stringify(state.orders))
-    return res
-  },
   orderLines(state) {
     if (!state.orderLines) return []
     const res = JSON.parse(JSON.stringify(state.orderLines))
@@ -59,16 +39,6 @@ export default {
     if (reference < 0) reference = 0
     if (reference > state.etapes.length) return 'Étape inconnue'
     const res = state.etapes[reference]
-    return res
-  },
-  paymentConditions(state) {
-    if (!state.paymentConditions) return []
-    const res = JSON.parse(JSON.stringify(state.paymentConditions))
-    return res
-  },
-  paymentStructures(state) {
-    if (!state.paymentStructures) return []
-    const res = JSON.parse(JSON.stringify(state.paymentStructures))
     return res
   },
   paymentConditionsForPaymentStructureForm(state) {

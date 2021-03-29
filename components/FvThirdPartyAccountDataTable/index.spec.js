@@ -24,12 +24,6 @@ describe('FvThirdPartyAccountDataTable', () => {
     vuetify = new Vuetify()
     store = new Vuex.Store({
       modules: {
-        headers: {
-          namespaced: true,
-          actions: {
-            getThirdPartyAccountHeaders: jest.fn()
-          }
-        },
         thirdPartyAccounts: {
           namespaced: true,
           actions: {
