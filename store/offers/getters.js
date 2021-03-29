@@ -1,7 +1,20 @@
 export default {
-  all(state) {
+  all(state, _getters, _rootStates, rootGetters) {
     if (!state.items) return []
-    const res = JSON.parse(JSON.stringify(state.items))
+    const offers = JSON.parse(JSON.stringify(state.items))
+    const res = offers.map((offer) => {
+      let payload = {
+        ...offer
+      }
+      const product = rootGetters['products/findById'](offer.product_id)
+      if (product) {
+        payload = {
+          ...payload,
+          category_id: product.category_id
+        }
+      }
+      return payload
+    })
     return res
   },
   getForAccount: (state) => (id) => {

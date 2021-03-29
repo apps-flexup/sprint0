@@ -59,35 +59,6 @@ const activeAccount = (ctx) => ({
     const res = ctx.store.getters['currencies/all']
     return res
   },
-  orders() {
-    const orders = ctx.store.getters['orders/all']
-    const res = orders.map((order) => {
-      const payload = {
-        ...order,
-        price: order.amount,
-        status: 'draft'
-      }
-      return payload
-    })
-    return res
-  },
-  offers() {
-    const offers = ctx.store.getters['offers/all']
-    const res = offers.map((offer) => {
-      let payload = {
-        ...offer
-      }
-      const product = ctx.store.getters['products/findById'](offer.product_id)
-      if (product) {
-        payload = {
-          ...payload,
-          category_id: product.category_id
-        }
-      }
-      return payload
-    })
-    return res
-  },
   async allThirdPartyAccounts() {
     const thirdPartyAccounts = await this.thirdPartyAccounts()
     const thirdPartyIds = await ctx.store.getters['thirdPartyAccounts/ids']
