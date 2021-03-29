@@ -793,7 +793,49 @@
               }
             ]
           }
-        }
+        },
+        "payment_conditions_for_payment_structure_form": [
+          {
+            "align": "start",
+            "sortable": true,
+            "text": "headers.paymentConditionsForPaymentStructureForm.portion",
+            "value": "portion",
+            "order": 0,
+            "customizable": false,
+            "enabled": true,
+            "active": true
+          },
+          {
+            "align": "start",
+            "sortable": true,
+            "text": "headers.paymentConditionsForPaymentStructureForm.label",
+            "value": "label",
+            "order": 1,
+            "customizable": false,
+            "enabled": true,
+            "active": true
+          },
+          {
+            "align": "start",
+            "sortable": true,
+            "text": "headers.paymentConditionsForPaymentStructureForm.risk",
+            "value": "risk",
+            "order": 2,
+            "customizable": false,
+            "enabled": true,
+            "active": true
+          },
+          {
+            "align": "left",
+            "sortable": false,
+            "text": "headers.actions",
+            "value": "actions",
+            "order": 3,
+            "customizable": false,
+            "active": true,
+            "enabled": true
+          }
+        ]
       }
     },
     {
@@ -816,7 +858,8 @@
           "sub": {
             "orders": []
           }
-        }
+        },
+        "payment_conditions_for_payment_structure_form": []
       },
       "id": 1
     }
@@ -2242,26 +2285,6 @@
     {
       "component": "fv-payment-condition-step-detail",
       "title": "forms.payment-condition.step.0"
-    }
-  ],
-  "payment-conditions-for-payment-structure-form": [
-    {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.paymentConditionsForPaymentStructureForm.portion",
-      "value": "portion"
-    },
-    {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.paymentConditionsForPaymentStructureForm.label",
-      "value": "label"
-    },
-    {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.paymentConditionsForPaymentStructureForm.risk",
-      "value": "risk"
     }
   ],
   "payment-structure-steps": [

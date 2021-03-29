@@ -11,12 +11,5 @@ export default {
     this.$repos.orderLineHeaders
       .index()
       .then((data) => commit('setOrderLineHeaders', data))
-  },
-  getPaymentConditionForPaymentStructureFormHeaders({ commit }) {
-    this.$repos.paymentConditionsForPaymentStructureForm
-      .index()
-      .then((data) =>
-        commit('setPaymentConditionForPaymentStructureFormHeaders', data)
-      )
   }
 }

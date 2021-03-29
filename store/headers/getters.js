@@ -40,12 +40,5 @@ export default {
     if (reference > state.etapes.length) return 'Étape inconnue'
     const res = state.etapes[reference]
     return res
-  },
-  paymentConditionsForPaymentStructureForm(state) {
-    if (!state.paymentConditionsForPaymentStructureForm) return []
-    const res = JSON.parse(
-      JSON.stringify(state.paymentConditionsForPaymentStructureForm)
-    )
-    return res
   }
 }
