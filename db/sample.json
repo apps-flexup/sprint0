@@ -2244,58 +2244,6 @@
       "title": "forms.payment-condition.step.0"
     }
   ],
-  "payment-condition-headers": [
-    {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.paymentConditions.label",
-      "value": "label"
-    },
-    {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.paymentConditions.priority",
-      "value": "priority"
-    },
-    {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.paymentConditions.paymentTerm",
-      "value": "paymentTerm"
-    },
-    {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.paymentConditions.interestRate",
-      "value": "interestRate"
-    },
-    {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.paymentConditions.risk",
-      "value": "risk"
-    }
-  ],
-  "payment-structure-headers": [
-    {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.paymentStructures.label",
-      "value": "label"
-    },
-    {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.paymentStructures.risk",
-      "value": "risk"
-    },
-    {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.paymentStructures.nbPortions",
-      "value": "nbPortions"
-    }
-  ],
   "payment-conditions-for-payment-structure-form": [
     {
       "align": "start",
@@ -14854,96 +14802,7 @@
       "value": "status"
     }
   ],
-  "order-headers": {
-    "main": [
-      {
-        "text": "mainHeaders.order",
-        "value": "orders",
-        "align": "center",
-        "sortable": false
-      }
-    ],
-    "sub": {
-      "orders": [
-        {
-          "align": "left",
-          "sortable": true,
-          "text": "headers.orders.date",
-          "value": "date"
-        },
-        {
-          "align": "right",
-          "sortable": true,
-          "text": "headers.orders.amount",
-          "value": "amount"
-        },
-        {
-          "align": "left",
-          "sortable": true,
-          "text": "headers.orders.label",
-          "value": "label"
-        },
-        {
-          "align": "left",
-          "sortable": true,
-          "text": "headers.orders.structure",
-          "value": "structure"
-        },
-        {
-          "align": "center",
-          "sortable": true,
-          "text": "headers.orders.status",
-          "value": "status"
-        }
-      ]
-    }
-  },
   "orders": [],
-  "third-party-account-headers": [
-    {
-      "align": "left",
-      "sortable": true,
-      "text": "headers.thirdPartyAccounts.name",
-      "value": "name"
-    },
-    {
-      "align": "left",
-      "sortable": true,
-      "text": "headers.thirdPartyAccounts.siret",
-      "value": "siret"
-    },
-    {
-      "align": "left",
-      "sortable": true,
-      "text": "headers.thirdPartyAccounts.legalStructure",
-      "value": "legal_structure_id"
-    },
-    {
-      "align": "left",
-      "sortable": true,
-      "text": "headers.thirdPartyAccounts.address",
-      "city": "Courtanche sur Mer",
-      "value": "address"
-    },
-    {
-      "align": "right",
-      "sortable": true,
-      "text": "headers.thirdPartyAccounts.zip",
-      "value": "zip"
-    },
-    {
-      "align": "left",
-      "sortable": true,
-      "text": "headers.thirdPartyAccounts.city",
-      "value": "city"
-    },
-    {
-      "align": "left",
-      "sortable": true,
-      "text": "headers.thirdPartyAccounts.country",
-      "value": "country_id"
-    }
-  ],
   "third-party-accounts": [
     {
       "account_id": 1,
@@ -15052,48 +14911,6 @@
       "legal_structure_id": 2,
       "account_id": 1,
       "id": 11
-    }
-  ],
-  "product-headers": [
-    {
-      "align": "left",
-      "sortable": true,
-      "text": "headers.products.name",
-      "value": "name",
-      "order": 0,
-      "customizable": false,
-      "active": true,
-      "enabled": true
-    },
-    {
-      "align": "left",
-      "sortable": true,
-      "text": "headers.products.category",
-      "value": "category_id",
-      "order": 1,
-      "customizable": true,
-      "active": true,
-      "enabled": true
-    },
-    {
-      "align": "left",
-      "sortable": true,
-      "text": "headers.products.unit",
-      "value": "unit",
-      "order": 2,
-      "customizable": true,
-      "active": true,
-      "enabled": true
-    },
-    {
-      "align": "center",
-      "sortable": true,
-      "text": "headers.products.status",
-      "value": "status",
-      "order": 3,
-      "customizable": true,
-      "active": true,
-      "enabled": true
     }
   ],
   "products": [
