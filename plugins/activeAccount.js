@@ -82,32 +82,11 @@ const activeAccount = (ctx) => ({
     const res = ctx.store.getters[tableName + '/all']
     return res
   },
-  headersOrders() {
-    const res = ctx.store.getters['headers/orders']
-    if (res.sub) {
-      if (
-        res.sub.orders.length &&
-        res.sub.orders[res.sub.orders.length - 1].value !== 'actions'
-      )
-        res.sub.orders.push({
-          text: 'headers.actions',
-          value: 'actions',
-          sortable: false
-        })
-    }
-    return res
-  },
   headersOrderLines(addActions = false) {
     const res = ctx.store.getters['headers/orderLines']
     if (addActions) {
       res.push({ text: 'headers.actions', value: 'actions', sortable: false })
     }
-    return res
-  },
-  headersPaymentStructures() {
-    const res = ctx.store.getters['headers/paymentStructures']
-    if (res.length && res[res.length - 1].value !== 'actions')
-      res.push({ text: 'headers.actions', value: 'actions', sortable: false })
     return res
   },
   headersPaymentConditionsForPaymentStructureForm() {
