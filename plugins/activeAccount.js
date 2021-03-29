@@ -74,13 +74,6 @@ const activeAccount = (ctx) => ({
     })
     return res
   },
-  paymentStructures() {
-    const res = ctx.store.getters['paymentStructures/all']
-    res.forEach((paymentStructure) => {
-      paymentStructure.nbPortions = paymentStructure.paymentConditions.length
-    })
-    return res
-  },
   headers(tableName) {
     const res = ctx.store.getters['settings/headers'](tableName)
     return res

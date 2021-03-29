@@ -2,6 +2,9 @@ export default {
   all(state) {
     if (!state.items) return []
     const res = JSON.parse(JSON.stringify(state.items))
+    res.forEach((paymentStructure) => {
+      paymentStructure.nbPortions = paymentStructure.paymentConditions.length
+    })
     return res
   },
   findById: (state) => (structureId) => {
