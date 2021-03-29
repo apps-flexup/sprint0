@@ -13,17 +13,29 @@ const headers = [
   {
     text: 'column1',
     value: 'column1',
-    sortable: true
+    sortable: true,
+    order: 0,
+    customizable: true,
+    active: true,
+    enabled: true
   },
   {
     text: 'column2',
     value: 'column2',
-    sortable: true
+    sortable: true,
+    order: 1,
+    customizable: true,
+    active: true,
+    enabled: true
   },
   {
     text: 'column3',
     value: 'column3',
-    sortable: false
+    sortable: false,
+    order: 2,
+    customizable: true,
+    active: true,
+    enabled: true
   }
 ]
 
