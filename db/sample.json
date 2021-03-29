@@ -625,16 +625,198 @@
             "active": true,
             "enabled": true
           }
-        ]
+        ],
+        "offers": {
+          "main": [
+            {
+              "text": "mainHeaders.product",
+              "value": "products",
+              "align": "center",
+              "sortable": false,
+              "order": 0,
+              "customizable": false,
+              "active": true,
+              "enabled": true
+            },
+            {
+              "text": "mainHeaders.offer",
+              "value": "offers",
+              "align": "center",
+              "sortable": false,
+              "order": 1,
+              "customizable": false,
+              "active": true,
+              "enabled": true
+            }
+          ],
+          "sub": {
+            "products": [
+              {
+                "align": "left",
+                "sortable": true,
+                "text": "headers.products.name",
+                "value": "name",
+                "order": 0,
+                "customizable": false,
+                "active": true,
+                "enabled": true
+              },
+              {
+                "align": "left",
+                "sortable": true,
+                "text": "headers.products.category",
+                "value": "category_id",
+                "order": 1,
+                "customizable": true,
+                "active": true,
+                "enabled": true
+              },
+              {
+                "align": "left",
+                "sortable": true,
+                "text": "headers.products.unit",
+                "value": "unit",
+                "order": 2,
+                "customizable": true,
+                "active": true,
+                "enabled": true
+              }
+            ],
+            "offers": [
+              {
+                "align": "right",
+                "sortable": true,
+                "text": "headers.offers.price",
+                "value": "price",
+                "order": 0,
+                "customizable": true,
+                "active": true,
+                "enabled": true
+              },
+              {
+                "align": "right",
+                "sortable": true,
+                "text": "headers.offers.vat",
+                "value": "vat",
+                "order": 1,
+                "customizable": true,
+                "active": true,
+                "enabled": true
+              },
+              {
+                "align": "center",
+                "sortable": true,
+                "text": "headers.offers.status",
+                "value": "status",
+                "order": 2,
+                "customizable": true,
+                "active": true,
+                "enabled": true
+              },
+              {
+                "align": "left",
+                "sortable": false,
+                "text": "headers.actions",
+                "value": "actions",
+                "order": 3,
+                "customizable": false,
+                "active": true,
+                "enabled": true
+              }
+            ]
+          }
+        },
+        "orders": {
+          "main": [
+            {
+              "text": "mainHeaders.order",
+              "value": "orders",
+              "align": "center",
+              "sortable": false,
+              "order": 0,
+              "customizable": false,
+              "active": true,
+              "enabled": true
+            }
+          ],
+          "sub": {
+            "orders": [
+              {
+                "align": "left",
+                "sortable": true,
+                "text": "headers.orders.date",
+                "value": "date",
+                "order": 0,
+                "customizable": true,
+                "active": true,
+                "enabled": true
+              },
+              {
+                "align": "right",
+                "sortable": true,
+                "text": "headers.orders.amount",
+                "value": "amount",
+                "order": 1,
+                "customizable": true,
+                "active": true,
+                "enabled": true
+              },
+              {
+                "align": "left",
+                "sortable": true,
+                "text": "headers.orders.label",
+                "value": "label",
+                "order": 2,
+                "customizable": true,
+                "active": true,
+                "enabled": true
+              },
+              {
+                "align": "left",
+                "sortable": true,
+                "text": "headers.orders.structure",
+                "value": "structure",
+                "order": 3,
+                "customizable": true,
+                "active": true,
+                "enabled": true
+              },
+              {
+                "align": "center",
+                "sortable": true,
+                "text": "headers.orders.status",
+                "value": "status",
+                "order": 4,
+                "customizable": true,
+                "active": true,
+                "enabled": true
+              }
+            ]
+          }
+        }
       }
     },
     {
       "account_id": "1",
+      "currency": "USD",
       "headers": {
         "products": [],
         "third_party_accounts": [],
         "payment_conditions": [],
-        "payment_structures": []
+        "payment_structures": [],
+        "offers": {
+          "main": [],
+          "sub": {
+            "products": [],
+            "offers": []
+          }
+        },
+        "orders": {
+          "main": [],
+          "sub": {
+            "orders": []
+          }
+        }
       },
       "id": 1
     }
@@ -14345,72 +14527,6 @@
       "to": "/FlexUpGestion"
     }
   ],
-  "offer-headers": {
-    "main": [
-      {
-        "text": "mainHeaders.product",
-        "value": "products",
-        "align": "center",
-        "sortable": false,
-        "order": 0,
-        "customizable": false,
-        "active": true,
-        "enabled": true
-      },
-      {
-        "text": "mainHeaders.offer",
-        "value": "offers",
-        "align": "center",
-        "sortable": false,
-        "order": 1,
-        "customizable": false,
-        "active": true,
-        "enabled": true
-      }
-    ],
-    "sub": {
-      "products": [
-        {
-          "align": "left",
-          "sortable": true,
-          "text": "headers.products.name",
-          "value": "name"
-        },
-        {
-          "align": "left",
-          "sortable": true,
-          "text": "headers.products.category",
-          "value": "category_id"
-        },
-        {
-          "align": "left",
-          "sortable": true,
-          "text": "headers.products.unit",
-          "value": "unit"
-        }
-      ],
-      "offers": [
-        {
-          "align": "right",
-          "sortable": true,
-          "text": "headers.offers.price",
-          "value": "price"
-        },
-        {
-          "align": "right",
-          "sortable": true,
-          "text": "headers.offers.vat",
-          "value": "vat"
-        },
-        {
-          "align": "center",
-          "sortable": true,
-          "text": "headers.offers.status",
-          "value": "status"
-        }
-      ]
-    }
-  },
   "offers": [
     {
       "account_id": 3,

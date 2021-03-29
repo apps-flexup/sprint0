@@ -8,22 +8,24 @@
         v-list-item-group(
           multiple
         )
-          template(v-for="(header, i) in customHeaders")
-            v-list-item(
-              v-if="header.active"
-              :key="`header-${i}`"
-              @click="toggleEnabled(header)"
-            )
-              template(v-slot:default)
-                v-list-item-content
-                  v-list-item-title(
-                    v-text="$t(header.text)"
-                  )
-                v-list-item-action
-                  v-checkbox(
-                    v-if="header.customizable"
-                    :input-value="header.enabled"
-                  )
+          template(v-for="(headerGroup) in customHeaders.main || [{ text: 'plop', value: 'value'}]")
+            p {{ headerGroup.text }}
+            template(v-for="(header, i) in customHeaders.sub ? customHeaders.sub[headerGroup.value] : customHeaders")
+              v-list-item(
+                v-if="header.active"
+                :key="`${headerGroup.value}-header-${i}`"
+                @click="toggleEnabled(header)"
+              )
+                template(v-slot:default)
+                  v-list-item-content
+                    v-list-item-title(
+                      v-text="$t(header.text)"
+                    )
+                  v-list-item-action
+                    v-checkbox(
+                      v-if="header.customizable"
+                      :input-value="header.enabled"
+                    )
     template(v-slot:actions)
       v-spacer
       fv-modal-actions(
@@ -77,13 +79,6 @@ export default {
       this.$emit('selectHeaders:close')
     },
     save() {
-      const payload = []
-      this.customHeaders.forEach((customHeader) => {
-        const exist = this.headers.find((header) => {
-          return JSON.stringify(header) === JSON.stringify(customHeader)
-        })
-        if (!exist) payload.push(customHeader)
-      })
       this.$emit('selectHeaders:save', this.customHeaders)
     }
   }

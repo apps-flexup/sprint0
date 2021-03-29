@@ -4,9 +4,8 @@
     data-testid="table"
     :title="$t('table.offers.title')"
     :searchLabel="$t('table.offers.search')"
-    table="fv-recursive-data-table"
-    :headers="headers"
-    :items="items"
+    tableComponent="fv-recursive-data-table"
+    tableName="offers"
     :rules="rules"
     @list:selected="offerSelected"
   )
@@ -27,20 +26,8 @@ export default {
       }
     }
   },
-  computed: {
-    headers() {
-      const res = this.$activeAccount.headersOffers()
-      return res
-    },
-    items() {
-      const res = this.$activeAccount.offers()
-      return res
-    }
-  },
   mounted() {
     console.log('Composant ', this.$options.name)
-    this.$store.dispatch('headers/getOfferHeaders')
-    this.$store.dispatch('offers/get')
   },
   methods: {
     offerSelected(offer) {

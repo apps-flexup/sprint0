@@ -10,7 +10,7 @@
     )
     component(
       :is="tableComponent"
-      :headers="displayedHeaders"
+      :headers="formattedHeaders"
       :items="formattedItems"
       @dataTable:selected="selected"
       @dataTable:sortBy="sortBy"
@@ -19,13 +19,13 @@
     fv-select-headers(
       :dialog="dialog"
       :headers="headers"
+      :tableName="tableName"
       @selectHeaders:close="close"
       @selectHeaders:save="save"
     )
 </template>
 
 <script>
-import { translateHeaders } from '~/plugins/utils'
 import { camelToSnakeCase } from '~/plugins/utils'
 
 export default {
@@ -80,26 +80,21 @@ export default {
       const res = this.$activeAccount.items(this.tableName)
       return res
     },
-    displayedHeaders() {
+    formattedHeaders() {
       const headers = this.headers
       let res = headers
-      if (this.table === 'fv-recursive-data-table') {
+      if (!Array.isArray(res)) {
         res = headers.main
       }
-      res = res.filter((header) => header.active && header.enabled)
       return res
     },
     formattedItems() {
       const items = this.sortedItems
       let res = items
-      if (this.table === 'fv-recursive-data-table') {
+      if (!Array.isArray(this.headers)) {
         const headers = this.headers
         if (!headers.sub) return []
         const subHeaders = headers.sub
-        const subHeadersKeys = Object.keys(headers.sub)
-        subHeadersKeys.forEach((key) => {
-          subHeaders[key] = translateHeaders(this.$i18n, subHeaders[key])
-        })
         res = [
           {
             headers: subHeaders,
