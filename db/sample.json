@@ -835,6 +835,88 @@
             "active": true,
             "enabled": true
           }
+        ],
+        "contracts": [
+          {
+            "align": "start",
+            "sortable": true,
+            "text": "headers.contracts.effectiveDate",
+            "value": "dteEffect",
+            "order": 0,
+            "customizable": true,
+            "active": true,
+            "enabled": true
+          },
+          {
+            "align": "start",
+            "sortable": true,
+            "text": "headers.contracts.dateOfSignature",
+            "value": "dteSignature",
+            "order": 1,
+            "customizable": true,
+            "active": true,
+            "enabled": true
+          },
+          {
+            "align": "start",
+            "sortable": true,
+            "text": "headers.contracts.endDate",
+            "value": "dteEnd",
+            "order": 2,
+            "customizable": true,
+            "active": true,
+            "enabled": true
+          },
+          {
+            "align": "start",
+            "sortable": true,
+            "text": "headers.contracts.contact",
+            "value": "contactName",
+            "order": 3,
+            "customizable": true,
+            "active": true,
+            "enabled": true
+          },
+          {
+            "align": "start",
+            "sortable": true,
+            "text": "headers.contracts.name",
+            "value": "contractType",
+            "order": 4,
+            "customizable": true,
+            "active": true,
+            "enabled": true
+          },
+          {
+            "align": "start",
+            "sortable": true,
+            "text": "headers.contracts.structure",
+            "value": "structureName",
+            "order": 5,
+            "customizable": true,
+            "active": true,
+            "enabled": true
+          },
+          {
+            "align": "start",
+            "sortable": true,
+            "text": "headers.contracts.offer",
+            "value": "offers.length",
+            "order": 6,
+            "customizable": true,
+            "active": true,
+            "enabled": true
+          },
+          {
+            "align": "start",
+            "sortable": true,
+            "text": "headers.contracts.order",
+            "value": "commandes.length",
+            "order": 7,
+            "customizable": true,
+            "active": true,
+            "enabled": true
+          }
         ]
       }
     },
@@ -859,7 +941,8 @@
             "orders": []
           }
         },
-        "payment_conditions_for_payment_structure_form": []
+        "payment_conditions_for_payment_structure_form": [],
+        "contracts": []
       },
       "id": 1
     }
@@ -2159,56 +2242,6 @@
       },
       "name": "grog",
       "zip": "7478518"
-    }
-  ],
-  "contract-headers": [
-    {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.contracts.effectiveDate",
-      "value": "dteEffect"
-    },
-    {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.contracts.dateOfSignature",
-      "value": "dteSignature"
-    },
-    {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.contracts.endDate",
-      "value": "dteEnd"
-    },
-    {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.contracts.contact",
-      "value": "contactName"
-    },
-    {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.contracts.name",
-      "value": "contractType"
-    },
-    {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.contracts.structure",
-      "value": "structureName"
-    },
-    {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.contracts.offer",
-      "value": "offers.length"
-    },
-    {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.contracts.order",
-      "value": "commandes.length"
     }
   ],
   "order-line-cart-headers": [
