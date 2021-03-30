@@ -60,7 +60,7 @@ const activeAccount = (ctx) => ({
     return res
   },
   async allThirdPartyAccounts() {
-    const thirdPartyAccounts = await this.thirdPartyAccounts()
+    const thirdPartyAccounts = await this.items('thirdPartyAccounts')
     const thirdPartyIds = await ctx.store.getters['thirdPartyAccounts/ids']
     const res = []
     res.push({ header: 'autocomplete.thirdPartyAccounts.mine' })
