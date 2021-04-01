@@ -27,7 +27,7 @@
                 v-list-item(
                   v-if="header.active"
                   :key="`${headerGroup.value}-header-${i}`"
-                  @click="toggleEnabled(header)"
+                  @click="toggleDisplayed(header)"
                 )
                   template(v-slot:default)
                     v-list-item-action
@@ -42,7 +42,7 @@
                     v-list-item-action
                       v-checkbox(
                         v-if="header.customizable"
-                        :input-value="header.enabled"
+                        :input-value="header.displayed"
                       )
 
     template(v-slot:actions)
@@ -94,8 +94,8 @@ export default {
     console.log('Composant ', this.$options.name)
   },
   methods: {
-    toggleEnabled(header) {
-      if (header.customizable) header.enabled = !header.enabled
+    toggleDisplayed(header) {
+      if (header.customizable) header.displayed = !header.displayed
     },
     update(headerGroup, _v) {
       const arr = this.customHeaders.sub

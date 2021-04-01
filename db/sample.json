@@ -396,7 +396,7 @@
             "order": 0,
             "customizable": false,
             "active": true,
-            "enabled": true
+            "displayed": true
           },
           {
             "align": "left",
@@ -406,7 +406,7 @@
             "order": 1,
             "customizable": true,
             "active": true,
-            "enabled": true
+            "displayed": true
           },
           {
             "align": "left",
@@ -416,7 +416,7 @@
             "order": 2,
             "customizable": true,
             "active": true,
-            "enabled": true
+            "displayed": true
           },
           {
             "align": "center",
@@ -426,7 +426,7 @@
             "order": 3,
             "customizable": true,
             "active": true,
-            "enabled": true
+            "displayed": true
           },
           {
             "align": "left",
@@ -436,7 +436,7 @@
             "order": 4,
             "customizable": false,
             "active": true,
-            "enabled": true
+            "displayed": true
           }
         ],
         "third_party_accounts": [
@@ -448,7 +448,7 @@
             "order": 0,
             "customizable": false,
             "active": true,
-            "enabled": true
+            "displayed": true
           },
           {
             "align": "left",
@@ -458,7 +458,7 @@
             "order": 1,
             "customizable": true,
             "active": true,
-            "enabled": true
+            "displayed": true
           },
           {
             "align": "left",
@@ -468,7 +468,7 @@
             "order": 2,
             "customizable": true,
             "active": true,
-            "enabled": true
+            "displayed": true
           },
           {
             "align": "left",
@@ -479,7 +479,7 @@
             "order": 3,
             "customizable": true,
             "active": true,
-            "enabled": true
+            "displayed": true
           },
           {
             "align": "right",
@@ -489,7 +489,7 @@
             "order": 4,
             "customizable": true,
             "active": true,
-            "enabled": true
+            "displayed": true
           },
           {
             "align": "left",
@@ -499,7 +499,7 @@
             "order": 5,
             "customizable": true,
             "active": true,
-            "enabled": true
+            "displayed": true
           },
           {
             "align": "left",
@@ -509,7 +509,7 @@
             "order": 6,
             "customizable": true,
             "active": true,
-            "enabled": true
+            "displayed": true
           },
           {
             "align": "left",
@@ -519,7 +519,7 @@
             "order": 7,
             "customizable": false,
             "active": true,
-            "enabled": true
+            "displayed": true
           }
         ],
         "payment_conditions": [
@@ -531,7 +531,7 @@
             "order": 0,
             "customizable": false,
             "active": true,
-            "enabled": true
+            "displayed": true
           },
           {
             "align": "start",
@@ -541,7 +541,7 @@
             "order": 1,
             "customizable": true,
             "active": true,
-            "enabled": true
+            "displayed": true
           },
           {
             "align": "start",
@@ -551,7 +551,7 @@
             "order": 2,
             "customizable": true,
             "active": true,
-            "enabled": true
+            "displayed": true
           },
           {
             "align": "start",
@@ -561,7 +561,7 @@
             "order": 3,
             "customizable": true,
             "active": true,
-            "enabled": true
+            "displayed": true
           },
           {
             "align": "start",
@@ -571,7 +571,7 @@
             "order": 4,
             "customizable": true,
             "active": true,
-            "enabled": true
+            "displayed": true
           },
           {
             "align": "left",
@@ -581,7 +581,7 @@
             "order": 5,
             "customizable": false,
             "active": true,
-            "enabled": true
+            "displayed": true
           }
         ],
         "payment_structures": [
@@ -593,7 +593,7 @@
             "order": 0,
             "customizable": false,
             "active": true,
-            "enabled": true
+            "displayed": true
           },
           {
             "align": "start",
@@ -603,7 +603,7 @@
             "order": 1,
             "customizable": true,
             "active": true,
-            "enabled": true
+            "displayed": true
           },
           {
             "align": "start",
@@ -613,7 +613,7 @@
             "order": 2,
             "customizable": true,
             "active": true,
-            "enabled": true
+            "displayed": true
           },
           {
             "align": "left",
@@ -623,7 +623,7 @@
             "order": 3,
             "customizable": false,
             "active": true,
-            "enabled": true
+            "displayed": true
           }
         ],
         "offers": {
@@ -636,7 +636,7 @@
               "order": 0,
               "customizable": false,
               "active": true,
-              "enabled": true
+              "displayed": true
             },
             {
               "text": "mainHeaders.offer",
@@ -646,7 +646,7 @@
               "order": 1,
               "customizable": false,
               "active": true,
-              "enabled": true
+              "displayed": true
             }
           ],
           "sub": {
@@ -659,7 +659,7 @@
                 "order": 0,
                 "customizable": false,
                 "active": true,
-                "enabled": true
+                "displayed": true
               },
               {
                 "align": "left",
@@ -669,7 +669,7 @@
                 "order": 1,
                 "customizable": true,
                 "active": true,
-                "enabled": true
+                "displayed": true
               },
               {
                 "align": "left",
@@ -679,7 +679,7 @@
                 "order": 2,
                 "customizable": true,
                 "active": true,
-                "enabled": true
+                "displayed": true
               }
             ],
             "offers": [
@@ -691,7 +691,7 @@
                 "order": 0,
                 "customizable": true,
                 "active": true,
-                "enabled": true
+                "displayed": true
               },
               {
                 "align": "right",
@@ -701,7 +701,7 @@
                 "order": 1,
                 "customizable": true,
                 "active": true,
-                "enabled": true
+                "displayed": true
               },
               {
                 "align": "center",
@@ -711,7 +711,7 @@
                 "order": 2,
                 "customizable": true,
                 "active": true,
-                "enabled": true
+                "displayed": true
               },
               {
                 "align": "left",
@@ -721,7 +721,7 @@
                 "order": 3,
                 "customizable": false,
                 "active": true,
-                "enabled": true
+                "displayed": true
               }
             ]
           }
@@ -736,7 +736,7 @@
               "order": 0,
               "customizable": false,
               "active": true,
-              "enabled": true
+              "displayed": true
             }
           ],
           "sub": {
@@ -749,7 +749,7 @@
                 "order": 0,
                 "customizable": true,
                 "active": true,
-                "enabled": true
+                "displayed": true
               },
               {
                 "align": "right",
@@ -759,7 +759,7 @@
                 "order": 1,
                 "customizable": true,
                 "active": true,
-                "enabled": true
+                "displayed": true
               },
               {
                 "align": "left",
@@ -769,7 +769,7 @@
                 "order": 2,
                 "customizable": true,
                 "active": true,
-                "enabled": true
+                "displayed": true
               },
               {
                 "align": "left",
@@ -779,7 +779,7 @@
                 "order": 3,
                 "customizable": true,
                 "active": true,
-                "enabled": true
+                "displayed": true
               },
               {
                 "align": "center",
@@ -789,7 +789,7 @@
                 "order": 4,
                 "customizable": true,
                 "active": true,
-                "enabled": true
+                "displayed": true
               }
             ]
           }
@@ -802,7 +802,7 @@
             "value": "portion",
             "order": 0,
             "customizable": false,
-            "enabled": true,
+            "displayed": true,
             "active": true
           },
           {
@@ -812,7 +812,7 @@
             "value": "label",
             "order": 1,
             "customizable": false,
-            "enabled": true,
+            "displayed": true,
             "active": true
           },
           {
@@ -822,7 +822,7 @@
             "value": "risk",
             "order": 2,
             "customizable": false,
-            "enabled": true,
+            "displayed": true,
             "active": true
           },
           {
@@ -833,7 +833,7 @@
             "order": 3,
             "customizable": false,
             "active": true,
-            "enabled": true
+            "displayed": true
           }
         ],
         "contracts": [
@@ -845,7 +845,7 @@
             "order": 0,
             "customizable": true,
             "active": true,
-            "enabled": true
+            "displayed": true
           },
           {
             "align": "start",
@@ -855,7 +855,7 @@
             "order": 1,
             "customizable": true,
             "active": true,
-            "enabled": true
+            "displayed": true
           },
           {
             "align": "start",
@@ -865,7 +865,7 @@
             "order": 2,
             "customizable": true,
             "active": true,
-            "enabled": true
+            "displayed": true
           },
           {
             "align": "start",
@@ -875,7 +875,7 @@
             "order": 3,
             "customizable": true,
             "active": true,
-            "enabled": true
+            "displayed": true
           },
           {
             "align": "start",
@@ -885,7 +885,7 @@
             "order": 4,
             "customizable": true,
             "active": true,
-            "enabled": true
+            "displayed": true
           },
           {
             "align": "start",
@@ -895,7 +895,7 @@
             "order": 5,
             "customizable": true,
             "active": true,
-            "enabled": true
+            "displayed": true
           },
           {
             "align": "start",
@@ -905,7 +905,7 @@
             "order": 6,
             "customizable": true,
             "active": true,
-            "enabled": true
+            "displayed": true
           },
           {
             "align": "start",
@@ -915,7 +915,7 @@
             "order": 7,
             "customizable": true,
             "active": true,
-            "enabled": true
+            "displayed": true
           }
         ]
       }

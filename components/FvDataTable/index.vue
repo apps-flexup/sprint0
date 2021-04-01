@@ -89,7 +89,7 @@ export default {
   computed: {
     displayedHeaders() {
       const res = this.headers.filter(
-        (header) => header.active && header.enabled
+        (header) => header.active && header.displayed
       )
       return res
     },
