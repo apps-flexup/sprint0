@@ -1,4 +1,4 @@
-import { mergeObjects } from '~/plugins/utils'
+import { mergeObjects, sortArrayByKey } from '~/plugins/utils'
 
 export default {
   all(state) {
@@ -81,7 +81,14 @@ export default {
     if (!customHeaders) return res
     const customTableHeaders = state.settings.headers[tableName]
     if (customTableHeaders) mergeObjects(res, customTableHeaders)
-    // TODO: On fait le sort de res par rapport au champ <order>
+    const sortKey = 'order'
+    if (Array.isArray(res)) {
+      sortArrayByKey(res, sortKey)
+    } else {
+      Object.keys(res.sub).forEach((subHeader) => {
+        sortArrayByKey(res.sub[subHeader], sortKey)
+      })
+    }
     return res
   }
 }

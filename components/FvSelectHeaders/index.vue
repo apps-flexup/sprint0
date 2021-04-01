@@ -10,22 +10,26 @@
         )
           template(v-for="(headerGroup) in customHeaders.main || [{ text: 'plop', value: 'value'}]")
             p {{ headerGroup.text }}
-            template(v-for="(header, i) in customHeaders.sub ? customHeaders.sub[headerGroup.value] : customHeaders")
-              v-list-item(
-                v-if="header.active"
-                :key="`${headerGroup.value}-header-${i}`"
-                @click="toggleEnabled(header)"
-              )
-                template(v-slot:default)
-                  v-list-item-content
-                    v-list-item-title(
-                      v-text="$t(header.text)"
-                    )
-                  v-list-item-action
-                    v-checkbox(
-                      v-if="header.customizable"
-                      :input-value="header.enabled"
-                    )
+            draggable(
+              :list="customHeaders.sub ? customHeaders.sub[headerGroup.value] : customHeaders"
+              @update="update(headerGroup.value, ...arguments)"
+            )
+              template(v-for="(header, i) in customHeaders.sub ? customHeaders.sub[headerGroup.value] : customHeaders")
+                v-list-item(
+                  v-if="header.active"
+                  :key="`${headerGroup.value}-header-${i}`"
+                  @click="toggleEnabled(header)"
+                )
+                  template(v-slot:default)
+                    v-list-item-content
+                      v-list-item-title(
+                        v-text="$t(header.text)"
+                      )
+                    v-list-item-action
+                      v-checkbox(
+                        v-if="header.customizable"
+                        :input-value="header.enabled"
+                      )
     template(v-slot:actions)
       v-spacer
       fv-modal-actions(
@@ -71,6 +75,14 @@ export default {
   methods: {
     toggleEnabled(header) {
       if (header.customizable) header.enabled = !header.enabled
+    },
+    update(headerGroup, _v) {
+      const arr = this.customHeaders.sub
+        ? this.customHeaders.sub[headerGroup]
+        : this.customHeaders
+      for (let i = 0; i < arr.length; i++) {
+        arr[i].order = i
+      }
     },
     close() {
       this.customHeaders = this.headers

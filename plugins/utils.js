@@ -5,6 +5,14 @@ String.prototype.filtreAutocomplete = function(filtre) {
   return str.includes(v)
 }
 
+export const sortArrayByKey = (arr, key) => {
+  arr.sort((a, b) => {
+    if (a[key] < b[key]) return -1
+    if (a[key] > b[key]) return 1
+    return 0
+  })
+}
+
 export const camelToSnakeCase = (str) => {
   if (!str) return null
   const res = str.replace(/[A-Z]/g, (letter) => `_${letter.toLowerCase()}`)

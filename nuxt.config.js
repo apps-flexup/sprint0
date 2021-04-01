@@ -77,7 +77,8 @@ export default {
     '~/plugins/currencies',
     '~/plugins/asyncComputed',
     '~/plugins/dataTable',
-    '~/plugins/displayRules'
+    '~/plugins/displayRules',
+    '~/plugins/vuedraggable'
   ],
   /*
    ** Nuxt.js dev-modules
