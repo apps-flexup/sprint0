@@ -2,14 +2,16 @@
 .fv-select-headers
   fv-modal-slot(:dialog="dialog")
     template(v-slot:title)
-      div Coucou on test
+      div {{ $t('selectHeaders.title.' + tableName) }}
     template(v-slot:form)
       v-list
         v-list-item-group(
           multiple
         )
           template(v-for="(headerGroup) in customHeaders.main || [{ text: 'plop', value: 'value'}]")
-            p {{ headerGroup.text }}
+            v-subheader(
+              v-if="customHeaders.sub && Object.keys(customHeaders.sub).length > 1"
+            ) {{ $t('selectHeaders.subHeaders.' + headerGroup.text) }}
             draggable(
               :list="customHeaders.sub ? customHeaders.sub[headerGroup.value] : customHeaders"
               @update="update(headerGroup.value, ...arguments)"
@@ -52,6 +54,12 @@ export default {
       type: Boolean,
       default() {
         return false
+      }
+    },
+    tableName: {
+      type: String,
+      default() {
+        return null
       }
     },
     headers: {
