@@ -5,6 +5,13 @@
       div {{ $t('selectHeaders.title.' + tableName) }}
     template(v-slot:form)
       v-list
+        v-list-item
+          template(slot:default)
+            v-list-item-content
+              v-list-item-title {{ $t('selectHeaders.columnName')}}
+            v-list-item-action
+              v-list-item-title {{ $t('selectHeaders.settings.displayed')}}
+      v-list
         v-list-item-group(
           multiple
         )

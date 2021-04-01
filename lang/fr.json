@@ -13,6 +13,10 @@
         "product": "Produits",
         "offer": "Offres"
       }
+    },
+    "columnName": "Nom de la colonne",
+    "settings": {
+      "displayed": "Affichée ?"
     }
   },
   "references": {
