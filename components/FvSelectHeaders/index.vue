@@ -21,6 +21,11 @@
                   @click="toggleEnabled(header)"
                 )
                   template(v-slot:default)
+                    v-list-item-action
+                      fv-icon.draggableIcon(
+                        icon="mdi-drag-horizontal-variant"
+                        color="#BBBBBB"
+                      )
                     v-list-item-content
                       v-list-item-title(
                         v-text="$t(header.text)"
@@ -30,6 +35,7 @@
                         v-if="header.customizable"
                         :input-value="header.enabled"
                       )
+
     template(v-slot:actions)
       v-spacer
       fv-modal-actions(
@@ -96,3 +102,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.draggableIcon {
+  /* margin-right: 100px !important;
+  padding: 100px !important; */
+}
+</style>
