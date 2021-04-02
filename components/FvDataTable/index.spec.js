@@ -17,7 +17,7 @@ const headers = [
     order: 0,
     customizable: true,
     active: true,
-    enabled: true
+    displayed: true
   },
   {
     text: 'column2',
@@ -26,7 +26,7 @@ const headers = [
     order: 1,
     customizable: true,
     active: true,
-    enabled: true
+    displayed: true
   },
   {
     text: 'column3',
@@ -35,7 +35,7 @@ const headers = [
     order: 2,
     customizable: true,
     active: true,
-    enabled: true
+    displayed: true
   }
 ]
 
