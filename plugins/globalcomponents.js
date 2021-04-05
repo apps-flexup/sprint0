@@ -1,7 +1,6 @@
 import Vue from 'vue'
 // Importation des composants utilitaires
 import FvAccount from '@/components/FvAccount'
-import FvAccountAvatar from '@/components/FvAccountAvatar'
 import FvAccountCard from '@/components/FvAccountCard'
 import FvAccountInfo from '@/components/FvAccountInfo'
 import FvAccountsIndex from '@/components/FvAccountsIndex'
@@ -148,7 +147,6 @@ import FvOrderTotals from '~/components/FvOrderTotals'
 
 // Déclarations composants utilitaires
 Vue.component('fv-account', FvAccount)
-Vue.component('fv-account-avatar', FvAccountAvatar)
 Vue.component('fv-account-card', FvAccountCard)
 Vue.component('fv-account-info', FvAccountInfo)
 Vue.component('fv-accounts-index', FvAccountsIndex)
