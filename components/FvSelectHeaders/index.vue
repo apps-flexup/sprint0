@@ -117,10 +117,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.draggableIcon {
-  /* margin-right: 100px !important;
-  padding: 100px !important; */
-}
-</style>
