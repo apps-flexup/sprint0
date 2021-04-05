@@ -11,7 +11,6 @@ import FvBreadcrumbs from '@/components/FvBreadcrumbs'
 import FvCloseModalButton from '@/components/FvCloseModalButton'
 import FvContactCard from '@/components/FvContactCard'
 import FvContactDialog from '@/components/FvContactDialog'
-import FvContactEdit from '~/components/FvContactEdit'
 import FvContactForm from '~/components/FvContactForm'
 import FvContactList from '~/components/FvContactList'
 import FvContactModal from '~/components/FvContactModal'
@@ -99,7 +98,6 @@ import FvFieldDate from '@/components/FvFieldDate'
 import FvUserAccounts from '@/components/FvUserAccounts'
 import FvContractSummaryVisualisation from '@/components/FvContractSummaryVisualisation'
 import FvContractStepVisualisation from '@/components/FvContractStepVisualisation'
-import FvCountryList from '@/components/FvCountryList'
 import FvProductList from '@/components/FvProductList'
 import FvOfferDataTable from '@/components/FvOfferDataTable'
 import FvOfferStepDetail from '@/components/FvOfferStepDetail'
@@ -157,7 +155,6 @@ Vue.component('fv-breadcrumbs', FvBreadcrumbs)
 Vue.component('fv-close-modal-button', FvCloseModalButton)
 Vue.component('fv-contact-dialog', FvContactDialog)
 Vue.component('fv-contact-card', FvContactCard)
-Vue.component('fv-contact-edit', FvContactEdit)
 Vue.component('fv-contact-form', FvContactForm)
 Vue.component('fv-contact-list', FvContactList)
 Vue.component('fv-contact-modal', FvContactModal)
@@ -264,7 +261,6 @@ Vue.component(
   FvContractSummaryVisualisation
 )
 Vue.component('fv-contract-step-visualisation', FvContractStepVisualisation)
-Vue.component('fv-country-list', FvCountryList)
 Vue.component('fv-product-list', FvProductList)
 Vue.component('fv-offer-data-table', FvOfferDataTable)
 Vue.component('fv-offer-step-detail', FvOfferStepDetail)
@@ -277,7 +273,6 @@ Vue.component('fv-order-index', FvOrderIndex)
 Vue.component('fv-order-list-search', FvOrderListSearch)
 Vue.component('fv-order-list', FvOrderList)
 Vue.component('fv-order-modal', FvOrderModal)
-Vue.component('fv-country-list', FvCountryList)
 Vue.component('fv-third-party-account-data-table', FvThirdPartyAccountDataTable)
 Vue.component('fv-third-party-account-list', FvThirdPartyAccountList)
 Vue.component('fv-modal-slot', FvModalSlot)
