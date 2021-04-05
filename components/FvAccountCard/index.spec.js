@@ -34,4 +34,16 @@ describe('FvAccountCard', () => {
     const name = wrapper.find('[data-testid="name"]')
     expect(name.text()).toBe(expectedName)
   })
+  it('should emit an event when favorite is clicked', () => {
+    const wrapper = mount(FvAccountCard, {
+      propsData: {
+        id: 1
+      }
+    })
+    const card = wrapper.find('[data-testid="card"]')
+    card.vm.$emit('favorite:clicked')
+    const favoriteCalls = wrapper.emitted('accountCard:favoriteClicked')
+    expect(favoriteCalls).toBeTruthy()
+    expect(favoriteCalls).toHaveLength(1)
+  })
 })
