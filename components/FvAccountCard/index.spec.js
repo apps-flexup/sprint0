@@ -46,4 +46,25 @@ describe('FvAccountCard', () => {
     expect(favoriteCalls).toBeTruthy()
     expect(favoriteCalls).toHaveLength(1)
   })
+  it('should push route to account details when card clicked', () => {
+    const accountId = 1
+    const $route = {
+      path: 'accounts/' + accountId
+    }
+    const $router = {
+      push: jest.fn()
+    }
+    const wrapper = mount(FvAccountCard, {
+      propsData: {
+        id: accountId
+      },
+      mocks: {
+        $route,
+        $router
+      }
+    })
+    const card = wrapper.find('[data-testid="card"]')
+    card.vm.$emit('card:clicked')
+    expect(wrapper.vm.$route.path).toBe($route.path)
+  })
 })
