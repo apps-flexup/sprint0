@@ -18,13 +18,13 @@ export default {
     name: {
       type: String,
       default() {
-        return 'Name'
+        return null
       }
     },
     avatar: {
       type: String,
       default() {
-        return ''
+        return null
       }
     },
     size: {
