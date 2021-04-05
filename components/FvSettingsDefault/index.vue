@@ -35,7 +35,7 @@ export default {
       return res
     },
     language() {
-      const res = this.settings ? this.settings.language : null
+      const res = this.settings ? this.settings.locale : null
       return res
     },
     theme() {
@@ -55,7 +55,7 @@ export default {
     },
     languageSelected(v) {
       const newSettings = this.settings
-      newSettings.language = v
+      newSettings.locale = v
       this.$activeAccount.setSettings(newSettings)
     },
     themeSelected(v) {

@@ -4,9 +4,8 @@
     data-testid="table"
     :title="$t('table.thirdPartyAccounts.title')"
     :searchLabel="$t('table.thirdPartyAccounts.search')"
-    table="fv-third-party-account-data-table"
-    :headers="headers"
-    :items="items"
+    tableComponent="fv-third-party-account-data-table"
+    tableName="thirdPartyAccounts"
     :rules="rules"
     @list:selected="thirdPartyAccountSelected"
   )
@@ -21,16 +20,6 @@ export default {
         legal_structure_id: this.$displayRules.legalStructure,
         country_id: this.$displayRules.country
       }
-    }
-  },
-  computed: {
-    headers() {
-      const res = this.$activeAccount.headersThirdPartyAccounts()
-      return res
-    },
-    items() {
-      const res = this.$activeAccount.thirdPartyAccounts()
-      return res
     }
   },
   mounted() {

@@ -87,8 +87,14 @@ export default {
     }
   },
   computed: {
+    displayedHeaders() {
+      const res = this.headers.filter(
+        (header) => header.active && header.displayed
+      )
+      return res
+    },
     translatedHeaders() {
-      const res = translateHeaders(this.$i18n, this.headers)
+      const res = translateHeaders(this.$i18n, this.displayedHeaders)
       return res
     },
     cssVars() {

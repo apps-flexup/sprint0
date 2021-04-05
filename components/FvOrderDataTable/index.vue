@@ -13,7 +13,7 @@
         td.text-left {{ $t('total') }}
         td.text-right(v-to-currency="{ amount: total, currency: preferredCurrency }")
         td(
-          v-for="i in headers.length - 2"
+          v-for="i in displayedHeaders.length - 2"
         )
     template(v-slot:item.date='{ item }')
       div {{ localeDate(item) }}
@@ -72,6 +72,12 @@ export default {
     preferredCurrency() {
       const res = this.$store.getters['settings/settings']
       return res.currency
+    },
+    displayedHeaders() {
+      const res = this.headers.filter(
+        (header) => header.active && header.displayed
+      )
+      return res
     }
   },
   mounted() {
@@ -97,7 +103,7 @@ export default {
         return null
       }
       const settings = this.$store.getters['settings/settings']
-      const locale = settings.language
+      const locale = settings.locale
       const dte = new Date(date)
       const res = dte.toLocaleDateString(locale)
       return res

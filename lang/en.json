@@ -1,4 +1,20 @@
 {
+  "selectHeaders": {
+    "title": {
+      "products": "Customize your product table",
+      "offers": "Customize your offer table",
+      "orders": "Customize your order table",
+      "thirdPartyAccounts": "Customize your third party table",
+      "paymentConditions": "Customize your payment condition table",
+      "paymentStructures": "Customize your payment structure table"
+    },
+    "subHeaders": {
+      "mainHeaders": {
+        "product": "Products",
+        "offer": "Offers"
+      }
+    }
+  },
   "references": {
     "r1": {
       "base": "Base",

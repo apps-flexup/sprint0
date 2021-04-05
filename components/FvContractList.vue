@@ -26,7 +26,7 @@ export default {
   },
   computed: {
     headers() {
-      const res = this.$store.getters['headers/contracts']
+      const res = this.$$activeAccount.headers('contracts')
       return this.$translateHeaders(res)
     },
     items() {
@@ -36,7 +36,6 @@ export default {
   },
   mounted() {
     console.log('Composant ', this.$options.name)
-    this.$store.dispatch('headers/getContractHeaders')
   }
 }
 </script>

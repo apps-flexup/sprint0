@@ -29,6 +29,8 @@
 </template>
 
 <script>
+import { camelToSnakeCase } from '~/plugins/utils'
+
 export default {
   name: 'FvPaymentStructureStepDetail',
   props: {
@@ -37,6 +39,11 @@ export default {
       default() {
         return {}
       }
+    }
+  },
+  data() {
+    return {
+      tableName: 'paymentConditionsForPaymentStructureForm'
     }
   },
   computed: {
@@ -64,7 +71,8 @@ export default {
       return res
     },
     headers() {
-      const res = this.$activeAccount.headersPaymentConditionsForPaymentStructureForm()
+      const snakeCaseTableName = camelToSnakeCase(this.tableName)
+      const res = this.$activeAccount.headers(snakeCaseTableName)
       return res
     },
     paymentConditions() {
@@ -90,9 +98,6 @@ export default {
   },
   mounted() {
     console.log('Composant ', this.$options.name)
-    this.$store.dispatch(
-      'headers/getPaymentConditionForPaymentStructureFormHeaders'
-    )
     this.$store.dispatch('paymentConditions/get')
   },
   methods: {

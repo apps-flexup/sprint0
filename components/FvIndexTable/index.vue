@@ -6,19 +6,27 @@
       :title="title"
       :searchLabel="searchLabel"
       @dataTableSearch:filtersChanged="filtersChanged"
+      @dataTableHeader:settingsClicked="settingsClicked"
     )
     component(
-      :is="table"
-      :headers="tableHeaders"
+      :is="tableComponent"
+      :headers="formattedHeaders"
       :items="formattedItems"
       @dataTable:selected="selected"
       @dataTable:sortBy="sortBy"
       @dataTable:delete="deleteItem"
     )
+    fv-select-headers(
+      :dialog="dialog"
+      :headers="headers"
+      :tableName="tableName"
+      @selectHeaders:close="close"
+      @selectHeaders:save="save"
+    )
 </template>
 
 <script>
-import { translateHeaders } from '~/plugins/utils'
+import { camelToSnakeCase } from '~/plugins/utils'
 
 export default {
   name: 'FvIndexTable',
@@ -35,22 +43,16 @@ export default {
         return null
       }
     },
-    table: {
+    tableComponent: {
       type: String,
       default() {
         return null
       }
     },
-    headers: {
-      type: [Array, Object],
+    tableName: {
+      type: String,
       default() {
-        return []
-      }
-    },
-    items: {
-      type: Array,
-      default() {
-        return []
+        return null
       }
     },
     rules: {
@@ -64,14 +66,24 @@ export default {
     return {
       filters: [],
       sortKey: null,
-      shouldSortDesc: false
+      shouldSortDesc: false,
+      dialog: false
     }
   },
   computed: {
-    tableHeaders() {
+    headers() {
+      const snakeCaseTableName = camelToSnakeCase(this.tableName)
+      const res = this.$activeAccount.headers(snakeCaseTableName)
+      return res
+    },
+    items() {
+      const res = this.$activeAccount.items(this.tableName)
+      return res
+    },
+    formattedHeaders() {
       const headers = this.headers
       let res = headers
-      if (this.table === 'fv-recursive-data-table') {
+      if (!Array.isArray(res)) {
         res = headers.main
       }
       return res
@@ -79,14 +91,10 @@ export default {
     formattedItems() {
       const items = this.sortedItems
       let res = items
-      if (this.table === 'fv-recursive-data-table') {
+      if (!Array.isArray(this.headers)) {
         const headers = this.headers
         if (!headers.sub) return []
         const subHeaders = headers.sub
-        const subHeadersKeys = Object.keys(headers.sub)
-        subHeadersKeys.forEach((key) => {
-          subHeaders[key] = translateHeaders(this.$i18n, subHeaders[key])
-        })
         res = [
           {
             headers: subHeaders,
@@ -132,6 +140,20 @@ export default {
     sortBy(v) {
       this.sortKey = v.key
       this.shouldSortDesc = v.desc
+    },
+    settingsClicked() {
+      this.dialog = true
+    },
+    close() {
+      this.dialog = false
+    },
+    save(customHeaders) {
+      const settings = this.$store.getters['settings/settings']
+      if (!settings.headers) settings.headers = {}
+      const snakeCaseTableName = camelToSnakeCase(this.tableName)
+      settings.headers[snakeCaseTableName] = customHeaders
+      this.$store.dispatch('settings/updateSettings', settings)
+      this.dialog = false
     }
   }
 }

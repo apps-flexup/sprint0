@@ -50,6 +50,7 @@ export default {
   },
   mounted() {
     // charger tous les éléments unitaires de configuration
+    this.$store.dispatch('settings/getDefaultSettings')
     this.$store.dispatch('categories/get')
     this.$store.dispatch('units/get')
     this.$store.dispatch('currencies/get')

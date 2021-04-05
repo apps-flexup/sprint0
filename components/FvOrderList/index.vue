@@ -3,9 +3,8 @@
   fv-index-table(
     :title="$t('table.orders.title')"
     :searchLabel="$t('table.orders.search')"
-    table="fv-recursive-data-table"
-    :headers="headers"
-    :items="items"
+    tableComponent="fv-recursive-data-table"
+    tableName="orders"
     :rules="rules"
     @list:selected="orderSelected"
   )
@@ -24,20 +23,8 @@ export default {
       }
     }
   },
-  computed: {
-    headers() {
-      const res = this.$activeAccount.headersOrders()
-      return res
-    },
-    items() {
-      const res = this.$activeAccount.orders()
-      return res
-    }
-  },
   mounted() {
     console.log('Composant ', this.$options.name)
-    this.$store.dispatch('headers/getOrderHeaders')
-    this.$store.dispatch('orders/get')
   },
   methods: {
     orderSelected(order) {

@@ -1,4 +1,24 @@
 {
+  "selectHeaders": {
+    "title": {
+      "products": "Personnalisez votre tableau des produits",
+      "offers": "Personnalisez votre tableau des offres",
+      "orders": "Personnalisez votre tableau des commandes",
+      "thirdPartyAccounts": "Personnalisez votre tableau des tiers",
+      "paymentConditions": "Personnalisez votre tableau des conditions de paiement",
+      "paymentStructures": "Personnalisez votre tableau des structures de paiement"
+    },
+    "subHeaders": {
+      "mainHeaders": {
+        "product": "Produits",
+        "offer": "Offres"
+      }
+    },
+    "columnName": "Nom de la colonne",
+    "settings": {
+      "displayed": "Affichée ?"
+    }
+  },
   "references": {
     "r1": {
       "base": "Base",

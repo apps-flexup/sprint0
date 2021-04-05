@@ -379,22 +379,572 @@
   ],
   "settings": [
     {
+      "id": 0,
+      "account_id": null,
       "currency": "EUR",
-      "language": "fr",
+      "locale": "fr",
       "theme": "light",
-      "price_nb_after_decimal_point": "2",
-      "vat_nb_after_decimal_point": "1",
-      "account_id": 1,
-      "id": 1
-    },
-    {
-      "currency": "USD",
-      "language": "en",
-      "theme": "dark",
       "price_nb_after_decimal_point": 2,
       "vat_nb_after_decimal_point": 1,
-      "account_id": 3,
-      "id": 2
+      "headers": {
+        "products": [
+          {
+            "align": "left",
+            "sortable": true,
+            "text": "headers.products.name",
+            "value": "name",
+            "order": 0,
+            "customizable": false,
+            "active": true,
+            "displayed": true
+          },
+          {
+            "align": "left",
+            "sortable": true,
+            "text": "headers.products.category",
+            "value": "category_id",
+            "order": 1,
+            "customizable": true,
+            "active": true,
+            "displayed": true
+          },
+          {
+            "align": "left",
+            "sortable": true,
+            "text": "headers.products.unit",
+            "value": "unit",
+            "order": 2,
+            "customizable": true,
+            "active": true,
+            "displayed": true
+          },
+          {
+            "align": "center",
+            "sortable": true,
+            "text": "headers.products.status",
+            "value": "status",
+            "order": 3,
+            "customizable": true,
+            "active": true,
+            "displayed": true
+          },
+          {
+            "align": "left",
+            "sortable": false,
+            "text": "headers.actions",
+            "value": "actions",
+            "order": 4,
+            "customizable": false,
+            "active": true,
+            "displayed": true
+          }
+        ],
+        "third_party_accounts": [
+          {
+            "align": "left",
+            "sortable": true,
+            "text": "headers.thirdPartyAccounts.name",
+            "value": "name",
+            "order": 0,
+            "customizable": false,
+            "active": true,
+            "displayed": true
+          },
+          {
+            "align": "left",
+            "sortable": true,
+            "text": "headers.thirdPartyAccounts.siret",
+            "value": "siret",
+            "order": 1,
+            "customizable": true,
+            "active": true,
+            "displayed": true
+          },
+          {
+            "align": "left",
+            "sortable": true,
+            "text": "headers.thirdPartyAccounts.legalStructure",
+            "value": "legal_structure_id",
+            "order": 2,
+            "customizable": true,
+            "active": true,
+            "displayed": true
+          },
+          {
+            "align": "left",
+            "sortable": true,
+            "text": "headers.thirdPartyAccounts.address",
+            "city": "Courtanche sur Mer",
+            "value": "address",
+            "order": 3,
+            "customizable": true,
+            "active": true,
+            "displayed": true
+          },
+          {
+            "align": "right",
+            "sortable": true,
+            "text": "headers.thirdPartyAccounts.zip",
+            "value": "zip",
+            "order": 4,
+            "customizable": true,
+            "active": true,
+            "displayed": true
+          },
+          {
+            "align": "left",
+            "sortable": true,
+            "text": "headers.thirdPartyAccounts.city",
+            "value": "city",
+            "order": 5,
+            "customizable": true,
+            "active": true,
+            "displayed": true
+          },
+          {
+            "align": "left",
+            "sortable": true,
+            "text": "headers.thirdPartyAccounts.country",
+            "value": "country_id",
+            "order": 6,
+            "customizable": true,
+            "active": true,
+            "displayed": true
+          },
+          {
+            "align": "left",
+            "sortable": false,
+            "text": "headers.actions",
+            "value": "actions",
+            "order": 7,
+            "customizable": false,
+            "active": true,
+            "displayed": true
+          }
+        ],
+        "payment_conditions": [
+          {
+            "align": "start",
+            "sortable": true,
+            "text": "headers.paymentConditions.label",
+            "value": "label",
+            "order": 0,
+            "customizable": false,
+            "active": true,
+            "displayed": true
+          },
+          {
+            "align": "start",
+            "sortable": true,
+            "text": "headers.paymentConditions.priority",
+            "value": "priority",
+            "order": 1,
+            "customizable": true,
+            "active": true,
+            "displayed": true
+          },
+          {
+            "align": "start",
+            "sortable": true,
+            "text": "headers.paymentConditions.paymentTerm",
+            "value": "paymentTerm",
+            "order": 2,
+            "customizable": true,
+            "active": true,
+            "displayed": true
+          },
+          {
+            "align": "start",
+            "sortable": true,
+            "text": "headers.paymentConditions.interestRate",
+            "value": "interestRate",
+            "order": 3,
+            "customizable": true,
+            "active": true,
+            "displayed": true
+          },
+          {
+            "align": "start",
+            "sortable": true,
+            "text": "headers.paymentConditions.risk",
+            "value": "risk",
+            "order": 4,
+            "customizable": true,
+            "active": true,
+            "displayed": true
+          },
+          {
+            "align": "left",
+            "sortable": false,
+            "text": "headers.actions",
+            "value": "actions",
+            "order": 5,
+            "customizable": false,
+            "active": true,
+            "displayed": true
+          }
+        ],
+        "payment_structures": [
+          {
+            "align": "start",
+            "sortable": true,
+            "text": "headers.paymentStructures.label",
+            "value": "label",
+            "order": 0,
+            "customizable": false,
+            "active": true,
+            "displayed": true
+          },
+          {
+            "align": "start",
+            "sortable": true,
+            "text": "headers.paymentStructures.risk",
+            "value": "risk",
+            "order": 1,
+            "customizable": true,
+            "active": true,
+            "displayed": true
+          },
+          {
+            "align": "start",
+            "sortable": true,
+            "text": "headers.paymentStructures.nbPortions",
+            "value": "nbPortions",
+            "order": 2,
+            "customizable": true,
+            "active": true,
+            "displayed": true
+          },
+          {
+            "align": "left",
+            "sortable": false,
+            "text": "headers.actions",
+            "value": "actions",
+            "order": 3,
+            "customizable": false,
+            "active": true,
+            "displayed": true
+          }
+        ],
+        "offers": {
+          "main": [
+            {
+              "text": "mainHeaders.product",
+              "value": "products",
+              "align": "center",
+              "sortable": false,
+              "order": 0,
+              "customizable": false,
+              "active": true,
+              "displayed": true
+            },
+            {
+              "text": "mainHeaders.offer",
+              "value": "offers",
+              "align": "center",
+              "sortable": false,
+              "order": 1,
+              "customizable": false,
+              "active": true,
+              "displayed": true
+            }
+          ],
+          "sub": {
+            "products": [
+              {
+                "align": "left",
+                "sortable": true,
+                "text": "headers.products.name",
+                "value": "name",
+                "order": 0,
+                "customizable": false,
+                "active": true,
+                "displayed": true
+              },
+              {
+                "align": "left",
+                "sortable": true,
+                "text": "headers.products.category",
+                "value": "category_id",
+                "order": 1,
+                "customizable": true,
+                "active": true,
+                "displayed": true
+              },
+              {
+                "align": "left",
+                "sortable": true,
+                "text": "headers.products.unit",
+                "value": "unit",
+                "order": 2,
+                "customizable": true,
+                "active": true,
+                "displayed": true
+              }
+            ],
+            "offers": [
+              {
+                "align": "right",
+                "sortable": true,
+                "text": "headers.offers.price",
+                "value": "price",
+                "order": 0,
+                "customizable": true,
+                "active": true,
+                "displayed": true
+              },
+              {
+                "align": "right",
+                "sortable": true,
+                "text": "headers.offers.vat",
+                "value": "vat",
+                "order": 1,
+                "customizable": true,
+                "active": true,
+                "displayed": true
+              },
+              {
+                "align": "center",
+                "sortable": true,
+                "text": "headers.offers.status",
+                "value": "status",
+                "order": 2,
+                "customizable": true,
+                "active": true,
+                "displayed": true
+              },
+              {
+                "align": "left",
+                "sortable": false,
+                "text": "headers.actions",
+                "value": "actions",
+                "order": 3,
+                "customizable": false,
+                "active": true,
+                "displayed": true
+              }
+            ]
+          }
+        },
+        "orders": {
+          "main": [
+            {
+              "text": "mainHeaders.order",
+              "value": "orders",
+              "align": "center",
+              "sortable": false,
+              "order": 0,
+              "customizable": false,
+              "active": true,
+              "displayed": true
+            }
+          ],
+          "sub": {
+            "orders": [
+              {
+                "align": "left",
+                "sortable": true,
+                "text": "headers.orders.date",
+                "value": "date",
+                "order": 0,
+                "customizable": true,
+                "active": true,
+                "displayed": true
+              },
+              {
+                "align": "right",
+                "sortable": true,
+                "text": "headers.orders.amount",
+                "value": "amount",
+                "order": 1,
+                "customizable": true,
+                "active": true,
+                "displayed": true
+              },
+              {
+                "align": "left",
+                "sortable": true,
+                "text": "headers.orders.label",
+                "value": "label",
+                "order": 2,
+                "customizable": true,
+                "active": true,
+                "displayed": true
+              },
+              {
+                "align": "left",
+                "sortable": true,
+                "text": "headers.orders.structure",
+                "value": "structure",
+                "order": 3,
+                "customizable": true,
+                "active": true,
+                "displayed": true
+              },
+              {
+                "align": "center",
+                "sortable": true,
+                "text": "headers.orders.status",
+                "value": "status",
+                "order": 4,
+                "customizable": true,
+                "active": true,
+                "displayed": true
+              }
+            ]
+          }
+        },
+        "payment_conditions_for_payment_structure_form": [
+          {
+            "align": "start",
+            "sortable": true,
+            "text": "headers.paymentConditionsForPaymentStructureForm.portion",
+            "value": "portion",
+            "order": 0,
+            "customizable": false,
+            "displayed": true,
+            "active": true
+          },
+          {
+            "align": "start",
+            "sortable": true,
+            "text": "headers.paymentConditionsForPaymentStructureForm.label",
+            "value": "label",
+            "order": 1,
+            "customizable": false,
+            "displayed": true,
+            "active": true
+          },
+          {
+            "align": "start",
+            "sortable": true,
+            "text": "headers.paymentConditionsForPaymentStructureForm.risk",
+            "value": "risk",
+            "order": 2,
+            "customizable": false,
+            "displayed": true,
+            "active": true
+          },
+          {
+            "align": "left",
+            "sortable": false,
+            "text": "headers.actions",
+            "value": "actions",
+            "order": 3,
+            "customizable": false,
+            "active": true,
+            "displayed": true
+          }
+        ],
+        "contracts": [
+          {
+            "align": "start",
+            "sortable": true,
+            "text": "headers.contracts.effectiveDate",
+            "value": "dteEffect",
+            "order": 0,
+            "customizable": true,
+            "active": true,
+            "displayed": true
+          },
+          {
+            "align": "start",
+            "sortable": true,
+            "text": "headers.contracts.dateOfSignature",
+            "value": "dteSignature",
+            "order": 1,
+            "customizable": true,
+            "active": true,
+            "displayed": true
+          },
+          {
+            "align": "start",
+            "sortable": true,
+            "text": "headers.contracts.endDate",
+            "value": "dteEnd",
+            "order": 2,
+            "customizable": true,
+            "active": true,
+            "displayed": true
+          },
+          {
+            "align": "start",
+            "sortable": true,
+            "text": "headers.contracts.contact",
+            "value": "contactName",
+            "order": 3,
+            "customizable": true,
+            "active": true,
+            "displayed": true
+          },
+          {
+            "align": "start",
+            "sortable": true,
+            "text": "headers.contracts.name",
+            "value": "contractType",
+            "order": 4,
+            "customizable": true,
+            "active": true,
+            "displayed": true
+          },
+          {
+            "align": "start",
+            "sortable": true,
+            "text": "headers.contracts.structure",
+            "value": "structureName",
+            "order": 5,
+            "customizable": true,
+            "active": true,
+            "displayed": true
+          },
+          {
+            "align": "start",
+            "sortable": true,
+            "text": "headers.contracts.offer",
+            "value": "offers.length",
+            "order": 6,
+            "customizable": true,
+            "active": true,
+            "displayed": true
+          },
+          {
+            "align": "start",
+            "sortable": true,
+            "text": "headers.contracts.order",
+            "value": "commandes.length",
+            "order": 7,
+            "customizable": true,
+            "active": true,
+            "displayed": true
+          }
+        ]
+      }
+    },
+    {
+      "account_id": "1",
+      "currency": "USD",
+      "headers": {
+        "products": [],
+        "third_party_accounts": [],
+        "payment_conditions": [],
+        "payment_structures": [],
+        "offers": {
+          "main": [],
+          "sub": {
+            "products": [],
+            "offers": []
+          }
+        },
+        "orders": {
+          "main": [],
+          "sub": {
+            "orders": []
+          }
+        },
+        "payment_conditions_for_payment_structure_form": [],
+        "contracts": []
+      },
+      "id": 1
     }
   ],
   "accounts": [
@@ -1694,56 +2244,6 @@
       "zip": "7478518"
     }
   ],
-  "contract-headers": [
-    {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.contracts.effectiveDate",
-      "value": "dteEffect"
-    },
-    {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.contracts.dateOfSignature",
-      "value": "dteSignature"
-    },
-    {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.contracts.endDate",
-      "value": "dteEnd"
-    },
-    {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.contracts.contact",
-      "value": "contactName"
-    },
-    {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.contracts.name",
-      "value": "contractType"
-    },
-    {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.contracts.structure",
-      "value": "structureName"
-    },
-    {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.contracts.offer",
-      "value": "offers.length"
-    },
-    {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.contracts.order",
-      "value": "commandes.length"
-    }
-  ],
   "order-line-cart-headers": [
     {
       "align": "start",
@@ -1818,78 +2318,6 @@
     {
       "component": "fv-payment-condition-step-detail",
       "title": "forms.payment-condition.step.0"
-    }
-  ],
-  "payment-condition-headers": [
-    {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.paymentConditions.label",
-      "value": "label"
-    },
-    {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.paymentConditions.priority",
-      "value": "priority"
-    },
-    {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.paymentConditions.paymentTerm",
-      "value": "paymentTerm"
-    },
-    {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.paymentConditions.interestRate",
-      "value": "interestRate"
-    },
-    {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.paymentConditions.risk",
-      "value": "risk"
-    }
-  ],
-  "payment-structure-headers": [
-    {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.paymentStructures.label",
-      "value": "label"
-    },
-    {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.paymentStructures.risk",
-      "value": "risk"
-    },
-    {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.paymentStructures.nbPortions",
-      "value": "nbPortions"
-    }
-  ],
-  "payment-conditions-for-payment-structure-form": [
-    {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.paymentConditionsForPaymentStructureForm.portion",
-      "value": "portion"
-    },
-    {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.paymentConditionsForPaymentStructureForm.label",
-      "value": "label"
-    },
-    {
-      "align": "start",
-      "sortable": true,
-      "text": "headers.paymentConditionsForPaymentStructureForm.risk",
-      "value": "risk"
     }
   ],
   "payment-structure-steps": [
@@ -14103,64 +14531,6 @@
       "to": "/FlexUpGestion"
     }
   ],
-  "offer-headers": {
-    "main": [
-      {
-        "text": "mainHeaders.product",
-        "value": "products",
-        "align": "center",
-        "sortable": false
-      },
-      {
-        "text": "mainHeaders.offer",
-        "value": "offers",
-        "align": "center",
-        "sortable": false
-      }
-    ],
-    "sub": {
-      "products": [
-        {
-          "align": "left",
-          "sortable": true,
-          "text": "headers.products.name",
-          "value": "name"
-        },
-        {
-          "align": "left",
-          "sortable": true,
-          "text": "headers.products.category",
-          "value": "category_id"
-        },
-        {
-          "align": "left",
-          "sortable": true,
-          "text": "headers.products.unit",
-          "value": "unit"
-        }
-      ],
-      "offers": [
-        {
-          "align": "right",
-          "sortable": true,
-          "text": "headers.offers.price",
-          "value": "price"
-        },
-        {
-          "align": "right",
-          "sortable": true,
-          "text": "headers.offers.vat",
-          "value": "vat"
-        },
-        {
-          "align": "center",
-          "sortable": true,
-          "text": "headers.offers.status",
-          "value": "status"
-        }
-      ]
-    }
-  },
   "offers": [
     {
       "account_id": 3,
@@ -14488,96 +14858,7 @@
       "value": "status"
     }
   ],
-  "order-headers": {
-    "main": [
-      {
-        "text": "mainHeaders.order",
-        "value": "orders",
-        "align": "center",
-        "sortable": false
-      }
-    ],
-    "sub": {
-      "orders": [
-        {
-          "align": "left",
-          "sortable": true,
-          "text": "headers.orders.date",
-          "value": "date"
-        },
-        {
-          "align": "right",
-          "sortable": true,
-          "text": "headers.orders.amount",
-          "value": "amount"
-        },
-        {
-          "align": "left",
-          "sortable": true,
-          "text": "headers.orders.label",
-          "value": "label"
-        },
-        {
-          "align": "left",
-          "sortable": true,
-          "text": "headers.orders.structure",
-          "value": "structure"
-        },
-        {
-          "align": "center",
-          "sortable": true,
-          "text": "headers.orders.status",
-          "value": "status"
-        }
-      ]
-    }
-  },
   "orders": [],
-  "third-party-account-headers": [
-    {
-      "align": "left",
-      "sortable": true,
-      "text": "headers.thirdPartyAccounts.name",
-      "value": "name"
-    },
-    {
-      "align": "left",
-      "sortable": true,
-      "text": "headers.thirdPartyAccounts.siret",
-      "value": "siret"
-    },
-    {
-      "align": "left",
-      "sortable": true,
-      "text": "headers.thirdPartyAccounts.legalStructure",
-      "value": "legal_structure_id"
-    },
-    {
-      "align": "left",
-      "sortable": true,
-      "text": "headers.thirdPartyAccounts.address",
-      "city": "Courtanche sur Mer",
-      "value": "address"
-    },
-    {
-      "align": "right",
-      "sortable": true,
-      "text": "headers.thirdPartyAccounts.zip",
-      "value": "zip"
-    },
-    {
-      "align": "left",
-      "sortable": true,
-      "text": "headers.thirdPartyAccounts.city",
-      "value": "city"
-    },
-    {
-      "align": "left",
-      "sortable": true,
-      "text": "headers.thirdPartyAccounts.country",
-      "value": "country_id"
-    }
-  ],
   "third-party-accounts": [
     {
       "account_id": 1,
@@ -14686,32 +14967,6 @@
       "legal_structure_id": 2,
       "account_id": 1,
       "id": 11
-    }
-  ],
-  "product-headers": [
-    {
-      "align": "left",
-      "sortable": true,
-      "text": "headers.products.name",
-      "value": "name"
-    },
-    {
-      "align": "left",
-      "sortable": true,
-      "text": "headers.products.category",
-      "value": "category_id"
-    },
-    {
-      "align": "left",
-      "sortable": true,
-      "text": "headers.products.unit",
-      "value": "unit"
-    },
-    {
-      "align": "center",
-      "sortable": true,
-      "text": "headers.products.status",
-      "value": "status"
     }
   ],
   "products": [

@@ -39,7 +39,7 @@ const activeAccount = (ctx) => ({
     return res
   },
   setSettings(settings) {
-    ctx.app.i18n.locale = settings.language
+    ctx.app.i18n.locale = settings.locale
     ctx.$vuetify.theme.dark = settings.theme === 'dark'
     ctx.store.dispatch('settings/updateSettings', settings)
   },
@@ -59,47 +59,8 @@ const activeAccount = (ctx) => ({
     const res = ctx.store.getters['currencies/all']
     return res
   },
-  orders() {
-    const orders = ctx.store.getters['orders/all']
-    const res = orders.map((order) => {
-      const payload = {
-        ...order,
-        price: order.amount,
-        status: 'draft'
-      }
-      return payload
-    })
-    return res
-  },
-  offers() {
-    const offers = ctx.store.getters['offers/all']
-    const res = offers.map((offer) => {
-      let payload = {
-        ...offer
-      }
-      const product = ctx.store.getters['products/findById'](offer.product_id)
-      if (product) {
-        payload = {
-          ...payload,
-          category_id: product.category_id
-        }
-      }
-      return payload
-    })
-    return res
-  },
-  headersThirdPartyAccounts() {
-    const res = ctx.store.getters['headers/thirdPartyAccounts']
-    if (res.length && res[res.length - 1].value !== 'actions')
-      res.push({ text: 'headers.actions', value: 'actions', sortable: false })
-    return res
-  },
-  thirdPartyAccounts() {
-    const thirdPArtyAccounts = ctx.store.getters['thirdPartyAccounts/all']
-    return thirdPArtyAccounts
-  },
   async allThirdPartyAccounts() {
-    const thirdPartyAccounts = await this.thirdPartyAccounts()
+    const thirdPartyAccounts = await this.items('thirdPartyAccounts')
     const thirdPartyIds = await ctx.store.getters['thirdPartyAccounts/ids']
     const res = []
     res.push({ header: 'autocomplete.thirdPartyAccounts.mine' })
@@ -113,55 +74,12 @@ const activeAccount = (ctx) => ({
     })
     return res
   },
-  products() {
-    const res = ctx.store.getters['products/all']
+  headers(tableName) {
+    const res = ctx.store.getters['settings/headers'](tableName)
     return res
   },
-  paymentConditions() {
-    const res = ctx.store.getters['paymentConditions/all']
-    return res
-  },
-  paymentStructures() {
-    const res = ctx.store.getters['paymentStructures/all']
-    res.forEach((paymentStructure) => {
-      paymentStructure.nbPortions = paymentStructure.paymentConditions.length
-    })
-    return res
-  },
-  headersProducts() {
-    const res = ctx.store.getters['headers/products']
-    if (res.length && res[res.length - 1].value !== 'actions')
-      res.push({ text: 'headers.actions', value: 'actions', sortable: false })
-    return res
-  },
-  headersOffers() {
-    const res = ctx.store.getters['headers/offers']
-    if (res.sub) {
-      if (
-        res.sub.offers.length &&
-        res.sub.offers[res.sub.offers.length - 1].value !== 'actions'
-      )
-        res.sub.offers.push({
-          text: 'headers.actions',
-          value: 'actions',
-          sortable: false
-        })
-    }
-    return res
-  },
-  headersOrders() {
-    const res = ctx.store.getters['headers/orders']
-    if (res.sub) {
-      if (
-        res.sub.orders.length &&
-        res.sub.orders[res.sub.orders.length - 1].value !== 'actions'
-      )
-        res.sub.orders.push({
-          text: 'headers.actions',
-          value: 'actions',
-          sortable: false
-        })
-    }
+  items(tableName) {
+    const res = ctx.store.getters[tableName + '/all']
     return res
   },
   headersOrderLines(addActions = false) {
@@ -169,25 +87,6 @@ const activeAccount = (ctx) => ({
     if (addActions) {
       res.push({ text: 'headers.actions', value: 'actions', sortable: false })
     }
-    return res
-  },
-  headersPaymentConditions() {
-    const res = ctx.store.getters['headers/paymentConditions']
-    if (res.length && res[res.length - 1].value !== 'actions')
-      res.push({ text: 'headers.actions', value: 'actions', sortable: false })
-    return res
-  },
-  headersPaymentStructures() {
-    const res = ctx.store.getters['headers/paymentStructures']
-    if (res.length && res[res.length - 1].value !== 'actions')
-      res.push({ text: 'headers.actions', value: 'actions', sortable: false })
-    return res
-  },
-  headersPaymentConditionsForPaymentStructureForm() {
-    const res =
-      ctx.store.getters['headers/paymentConditionsForPaymentStructureForm']
-    if (res.length && res[res.length - 1].value !== 'actions')
-      res.push({ text: 'headers.actions', value: 'actions', sortable: false })
     return res
   },
   hasRole(role) {

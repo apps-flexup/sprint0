@@ -15,7 +15,7 @@ describe('FvProductList', () => {
       mocks: {
         $t: (msg) => msg,
         $activeAccount: {
-          headersProducts: jest.fn(),
+          headers: jest.fn(),
           products: jest.fn()
         },
         $displayRules: {
@@ -27,12 +27,6 @@ describe('FvProductList', () => {
   beforeEach(() => {
     store = new Vuex.Store({
       modules: {
-        headers: {
-          namespaced: true,
-          actions: {
-            getProductHeaders: jest.fn()
-          }
-        },
         products: {
           namespaced: true,
           actions: {

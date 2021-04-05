@@ -10,5 +10,6 @@ export default () => ({
   sellerNavBar: [],
   locales: ['en', 'fr'],
   fallbackLocale: 'en',
-  settings: {}
+  settings: {},
+  defaultSettings: {}
 })

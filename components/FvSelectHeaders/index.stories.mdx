@@ -1,0 +1,45 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import FvSelectHeaders from './index.vue'
+import { tablesAvailable, defaultTable } from '@/.storybook/data/tablesAvailable'
+
+<Meta title='organism/FvSelectHeaders' component={ FvSelectHeaders } argTypes={{
+  dialog: { control: 'boolean' },
+  tableName: {
+    control: {
+      type: 'select',
+      options: tablesAvailable
+    }
+  }
+}}/>
+
+# FvSelectHeaders
+
+<Canvas>
+<Story name='Common' height='150px' args={{
+  dialog: true,
+  tableName: defaultTable
+}}>{{
+  props: {
+    dialog: {},
+    tableName: {}
+  },
+  computed: {
+    headers() {
+      const res = this.$activeAccount.headers(this.tableName)
+      console.log('RES: ', res)
+      return res
+    }
+  },
+  components: { FvSelectHeaders },
+  template: `<FvSelectHeaders
+    :dialog=dialog
+    :tableName=tableName
+    :headers=headers
+  >
+  </FvSelectHeaders>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvSelectHeaders } />
