@@ -45,9 +45,7 @@ import FvListAccounts from '@/components/FvListAccounts'
 import FvLoginButton from '@/components/FvLoginButton'
 import FvLogoutButton from '@/components/FvLogoutButton'
 import FvMenu from '@/components/FvMenu'
-import FvModal from '@/components/FvModal'
 import FvModalActions from '@/components/FvModalActions'
-import FvModalAndButton from '@/components/FvModalAndButton'
 import FvRecursiveDataTable from '@/components/FvRecursiveDataTable'
 import FvNav from '@/components/FvNav'
 import FvNavBar from '@/components/FvNavBar'
@@ -198,9 +196,7 @@ Vue.component('fv-list-accounts', FvListAccounts)
 Vue.component('fv-login-button', FvLoginButton)
 Vue.component('fv-logout-button', FvLogoutButton)
 Vue.component('fv-menu', FvMenu)
-Vue.component('fv-modal', FvModal)
 Vue.component('fv-modal-actions', FvModalActions)
-Vue.component('fv-modal-and-button', FvModalAndButton)
 Vue.component('fv-recursive-data-table', FvRecursiveDataTable)
 Vue.component('fv-nav', FvNav)
 Vue.component('fv-nav-bar', FvNavBar)
