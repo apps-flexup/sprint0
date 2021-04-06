@@ -1,11 +1,14 @@
 <template lang="pug">
 .fv-avatar-with-name
-    fv-avatar(
-      :avatar="computedAvatar"
-    )
-    div.right
-      div.name {{ name }} {{ familyName }}
-      div {{ email }}
+  fv-flex-items
+    template(v-slot:left)
+      fv-avatar(
+        :avatar="computedAvatar"
+      )
+    template(v-slot:right)
+      div.right
+        div.name {{ name }} {{ familyName }}
+        div {{ email }}
 </template>
 
 <script>
@@ -58,10 +61,6 @@ export default {
 </script>
 
 <style scoped>
-.fv-avatar-with-name {
-  display: flex !important;
-  align-items: center;
-}
 .name {
   font-weight: bold;
 }
