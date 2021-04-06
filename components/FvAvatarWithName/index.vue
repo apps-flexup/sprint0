@@ -3,12 +3,13 @@
   fv-flex-items
     template(v-slot:left)
       fv-avatar(
+        data-testid="avatar"
         :avatar="computedAvatar"
       )
     template(v-slot:right)
       div.right
-        div.name {{ name }} {{ familyName }}
-        div {{ email }}
+        div.name(data-testid="name") {{ name }} {{ familyName }}
+        div(data-testid="email") {{ email }}
 </template>
 
 <script>
@@ -40,8 +41,8 @@ export default {
       }
     }
   },
-  asyncComputed: {
-    async computedAvatar() {
+  computed: {
+    computedAvatar() {
       if (this.avatar) return this.avatar
       let url = 'https://eu.ui-avatars.com/api/?'
       url += 'name=' + this.name
@@ -50,8 +51,7 @@ export default {
       } else {
         url += '&length=1'
       }
-      const res = await fetch(url)
-      return res.url
+      return url
     }
   },
   mounted() {
