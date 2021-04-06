@@ -1,13 +1,8 @@
-import { mount, createLocalVue } from '@vue/test-utils'
-import AsyncComputed from 'vue-async-computed'
+import { mount } from '@vue/test-utils'
 import FvAvatarWithName from './index'
-
-const localVue = createLocalVue()
-localVue.use(AsyncComputed)
 
 const factory = (propsData) => {
   return mount(FvAvatarWithName, {
-    localVue,
     propsData
   })
 }
