@@ -46,6 +46,11 @@
                         :input-value="header.displayed"
                       )
     template(v-slot:actions)
+      v-btn(
+    color='blue darken-1'
+    text=''
+    @click.stop='reset()'
+  ) {{ 'RESET' }}
       v-spacer
       fv-modal-actions(
         @modal:actions:close="close"
@@ -92,6 +97,7 @@ export default {
   },
   mounted() {
     console.log('Composant ', this.$options.name)
+    console.log('header', this.$store.getters['settings/settings'].headers)
   },
   methods: {
     toggleDisplayed(header) {
@@ -110,6 +116,11 @@ export default {
         ? JSON.parse(JSON.stringify(this.headers))
         : []
       this.$emit('selectHeaders:close')
+    },
+    reset() {
+      const defaultHeader = this.$store.getters['settings/defaultSettings']
+        .headers[this.tableName]
+      this.customHeaders = defaultHeader
     },
     save() {
       this.$emit('selectHeaders:save', this.customHeaders)
