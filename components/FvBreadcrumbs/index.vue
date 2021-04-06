@@ -1,6 +1,7 @@
 <template lang="pug">
 .fv-breadcrumbs
   v-breadcrumbs(
+    data-testid="breadcrumbs"
     v-if="$auth.loggedIn"
     :items="crumbs"
     :divider="divider"
@@ -66,6 +67,7 @@ export default {
     }
   },
   mounted() {
+    this.$store.dispatch('accounts/get')
     console.log('Composant ', this.$options.name)
   },
   methods: {
