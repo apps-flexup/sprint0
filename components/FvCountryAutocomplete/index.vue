@@ -1,6 +1,7 @@
 <template lang="pug">
 .fv-country-autocomplete
   fv-autocomplete(
+    data-testid="autocomplete"
     :element="countryId"
     :items="items"
     :filter="filterList"
