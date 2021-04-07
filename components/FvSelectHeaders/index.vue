@@ -49,7 +49,7 @@
       v-btn(
     color='blue darken-1'
     text=''
-    @click.stop='reset()'
+    @click='reset()'
   ) {{ 'RESET' }}
       v-spacer
       fv-modal-actions(
