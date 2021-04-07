@@ -55,10 +55,6 @@ const activeAccount = (ctx) => ({
     const res = ctx.store.getters['contacts/all']
     return res
   },
-  currencies() {
-    const res = ctx.store.getters['currencies/all']
-    return res
-  },
   async allThirdPartyAccounts() {
     const thirdPartyAccounts = await this.items('thirdPartyAccounts')
     const thirdPartyIds = await ctx.store.getters['thirdPartyAccounts/ids']
