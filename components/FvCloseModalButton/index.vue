@@ -1,6 +1,7 @@
 <template lang="pug">
 .fv-close-modal-button
   v-btn(
+    data-testid="button"
     color='blue darken-1'
     text=''
     @click.stop='close'
