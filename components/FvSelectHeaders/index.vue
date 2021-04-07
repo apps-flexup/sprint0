@@ -59,6 +59,7 @@
 </template>
 
 <script>
+import { camelToSnakeCase } from '~/plugins/utils'
 export default {
   name: 'FvSelectHeaders',
   props: {
@@ -97,7 +98,6 @@ export default {
   },
   mounted() {
     console.log('Composant ', this.$options.name)
-    console.log('header', this.$store.getters['settings/settings'].headers)
   },
   methods: {
     toggleDisplayed(header) {
@@ -118,8 +118,11 @@ export default {
       this.$emit('selectHeaders:close')
     },
     reset() {
-      const defaultHeader = this.$store.getters['settings/defaultSettings']
-        .headers[this.tableName]
+      let headerName = this.tableName
+      headerName = camelToSnakeCase(headerName)
+      const defaultHeader = this.$store.getters['settings/defaultSettings'](
+        headerName
+      )
       this.customHeaders = defaultHeader
     },
     save() {

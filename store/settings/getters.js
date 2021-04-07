@@ -69,9 +69,11 @@ export default {
     if (customSettings) mergeObjects(res, customSettings)
     return res
   },
-  defaultSettings(state) {
+  defaultSettings: (state) => (tableName) => {
     if (!state.defaultSettings) return {}
-    const res = JSON.parse(JSON.stringify(state.defaultSettings))
+    const res = JSON.parse(
+      JSON.stringify(state.defaultSettings.headers[tableName])
+    )
     return res
   },
   headers: (state) => (tableName) => {
