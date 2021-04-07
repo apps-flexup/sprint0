@@ -1,6 +1,10 @@
 <template lang="pug">
 .fv-edit-action
-  v-icon.mr-2(small='' @click="clicked")
+  v-icon.mr-2(
+    data-testid="editIcon"
+    small
+    @click="clicked"
+  )
     | mdi-pencil
 </template>
 
