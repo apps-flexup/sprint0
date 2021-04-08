@@ -80,12 +80,6 @@ export default {
       default() {
         return []
       }
-    },
-    text: {
-      type: String,
-      default() {
-        return 'Par défaut'
-      }
     }
   },
   data() {
