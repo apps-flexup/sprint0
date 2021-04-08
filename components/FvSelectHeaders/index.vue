@@ -48,7 +48,7 @@
     template(v-slot:actions)
       v-btn(
         color='blue darken-1'
-        text=''
+        text
         @click='reset'
       ) {{  $t('modal.resetDefault')  }}
       v-spacer
