@@ -17,7 +17,8 @@
     "columnName": "Nom de la colonne",
     "settings": {
       "displayed": "Affichée ?"
-    }
+    },
+    "resetDefault": "Réinitialiser les valeurs par défaut"
   },
   "references": {
     "r1": {
