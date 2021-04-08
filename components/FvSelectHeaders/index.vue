@@ -50,7 +50,7 @@
         color='blue darken-1'
         text=''
         @click='reset'
-      ) {{  $t('selectHeaders.resetDefault')  }}
+      ) {{  $t('modal.resetDefault')  }}
       v-spacer
       fv-modal-actions(
         @modal:actions:close="close"
