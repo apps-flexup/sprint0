@@ -22,9 +22,7 @@
     fv-show-menu(
       :list='globalMenu'
     )
-    fv-logout-button(
-      @logoutButton:clicked="logout"
-    )
+    fv-logout-button
   div(v-else)
     fv-login-button
     hr.line
@@ -76,11 +74,6 @@ export default {
   },
   mounted() {
     console.log('Composant ', this.$options.name)
-  },
-  methods: {
-    logout() {
-      this.$auth.logout()
-    }
   }
 }
 </script>
