@@ -119,4 +119,31 @@ describe('FvForm', () => {
       id: 16
     })
   })
+  it('should update the local payload when step send payload', () => {
+    const initialPayload = {
+      category_id: 13,
+      name: 'Peinture métalisé',
+      unit: 'cl',
+      dimension: 'volume',
+      status: 'draft',
+      account_id: 1,
+      id: 16
+    }
+    const newPayload = {
+      name: 'test'
+    }
+    const expectedPayload = {
+      category_id: 13,
+      name: 'test',
+      unit: 'cl',
+      dimension: 'volume',
+      status: 'draft',
+      account_id: 1,
+      id: 16
+    }
+    const wrapper = factory({ payload: initialPayload })
+    const stepComponent = wrapper.find('[data-testid="stepComponent"]')
+    stepComponent.vm.$emit('payload:changed', newPayload)
+    expect(wrapper.vm.localPayload).toEqual(expectedPayload)
+  })
 })
