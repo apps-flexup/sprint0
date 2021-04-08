@@ -2,22 +2,24 @@
 .fv-list-accounts
   v-list
     v-list-item.user-info
-      fv-user-info
+      fv-user-info(data-testid="userInfo")
     v-divider
     v-list-item.account-info
-      fv-account-info
+      fv-account-info(data-testid="accountInfo")
     v-divider
     v-list-item Autres comptes:
     v-list-item(
+      data-testid="otherAccount"
       v-for='account in otherAccounts'
       :key='account.id'
-      @click.stop="setCurrentAccount(account)"
+      @click="setCurrentAccount(account)"
     )
       fv-account(
         :avatar="account.avatar"
         :name="account.name"
       )
     v-list-item.createAccount(
+      data-testid="createAccount"
       @click="createAccount"
     )
       fv-icon(
@@ -26,13 +28,16 @@
       div.right {{ $t('listAccounts.createAccount') }}
     v-divider
     v-list-item(
+      data-testid="manageAccounts"
       @click="manageAccounts"
     ) {{ $t('listAccounts.manageAccounts') }}
     v-divider
     v-list-item(
+      data-testid="help"
       @click="help"
     ) {{ $t('listAccounts.help') }}
     v-list-item(
+      data-testid="logout"
       @click="logout"
     ) {{ $t('listAccounts.logout') }}
 </template>
