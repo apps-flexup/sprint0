@@ -17,8 +17,7 @@
     "columnName": "Nom de la colonne",
     "settings": {
       "displayed": "Affichée ?"
-    },
-    "resetDefault": "Réinitialiser les valeurs par défaut"
+    }
   },
   "references": {
     "r1": {
@@ -613,7 +612,8 @@
   },
   "modal": {
     "close": "Fermer",
-    "save": "Sauvegarder"
+    "save": "Sauvegarder",
+    "resetDefault": "Réinitialiser les valeurs par défaut"
   },
   "accounts": {
     "index": {

@@ -13,8 +13,7 @@
         "product": "Products",
         "offer": "Offers"
       }
-    },
-    "resetDefault": "Reset defaults"
+    }
   },
   "references": {
     "r1": {
@@ -605,7 +604,8 @@
   },
   "modal": {
     "close": "Close",
-    "save": "Save"
+    "save": "Save",
+    "resetDefault": "Reset defaults"
   },
   "accounts": {
     "index": {
