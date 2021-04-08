@@ -26,9 +26,7 @@
       @logoutButton:clicked="logout"
     )
   div(v-else)
-    fv-login-button(
-      @loginButton:clicked="login"
-    )
+    fv-login-button
     hr.line
     fv-show-menu(
       :list='globalMenu'
@@ -82,9 +80,6 @@ export default {
   methods: {
     logout() {
       this.$auth.logout()
-    },
-    login() {
-      this.$auth.loginWith('keycloak')
     }
   }
 }
