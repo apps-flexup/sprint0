@@ -46,6 +46,11 @@
                         :input-value="header.displayed"
                       )
     template(v-slot:actions)
+      v-btn(
+        color='blue darken-1'
+        text
+        @click='reset'
+      ) {{  $t('modal.resetDefault')  }}
       v-spacer
       fv-modal-actions(
         @modal:actions:close="close"
@@ -54,6 +59,7 @@
 </template>
 
 <script>
+import { camelToSnakeCase } from '~/plugins/utils'
 export default {
   name: 'FvSelectHeaders',
   props: {
@@ -110,6 +116,14 @@ export default {
         ? JSON.parse(JSON.stringify(this.headers))
         : []
       this.$emit('selectHeaders:close')
+    },
+    reset() {
+      let headerName = this.tableName
+      headerName = camelToSnakeCase(headerName)
+      const defaultHeader = this.$store.getters['settings/defaultHeaders'](
+        headerName
+      )
+      this.customHeaders = defaultHeader
     },
     save() {
       this.$emit('selectHeaders:save', this.customHeaders)
