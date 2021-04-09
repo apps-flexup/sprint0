@@ -1,7 +1,8 @@
 <template lang="pug">
 .fv-login-button
   v-list-item(
-    @click.stop="click"
+    data-testid="button"
+    @click="click"
   )
     v-list-item-action
       v-icon {{ 'mdi-login' }}
@@ -17,7 +18,7 @@ export default {
   },
   methods: {
     click() {
-      this.$emit('loginButton:clicked')
+      this.$auth.loginWith('keycloak')
     }
   }
 }

@@ -1,20 +1,26 @@
 <template lang="pug">
 .fv-nav-bar-manage
   fv-nav-bar(
+    data-testid="navBar"
     :title='title'
     :space="space"
   )
     template(slot='left')
       v-list-item(
-          v-for="(item, a) in navBar"
-          :key="a"
-          :to="item.to"
-          router
-        )
-          v-btn(elevation='0' class='navBtn')
-            | {{ $t(item.title) }}
+        data-testid="links"
+        v-for="(item, a) in links"
+        :key="a"
+        :to="item.to"
+        router
+      )
+        v-btn(elevation='0' class='navBtn')
+          | {{ $t(item.title) }}
     template(slot='right')
-      v-btn(elevation="0" class="navRightBtn")
+      v-btn(
+        data-testid="createButton"
+        elevation="0"
+        class="navRightBtn"
+      )
         | button
 </template>
 
@@ -36,7 +42,7 @@ export default {
     }
   },
   computed: {
-    navBar() {
+    links() {
       const res = this.$store.getters['settings/' + this.space + 'NavBar']
       return res
     }

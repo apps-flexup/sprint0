@@ -2,7 +2,6 @@
 .fv-user-accounts
   fv-login-button(
     v-if="!$auth.loggedIn"
-    @loginButton:clicked="login"
   )
   .d-flex.justify-center.align-center(v-else)
     v-menu(
@@ -36,9 +35,6 @@ export default {
   methods: {
     logout() {
       this.$auth.logout()
-    },
-    login() {
-      this.$auth.loginWith('keycloak')
     },
     setCurrentAccount(a) {
       // envoyer dans le store l'account qui va bien

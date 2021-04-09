@@ -9,6 +9,7 @@
       @dataTableHeader:settingsClicked="settingsClicked"
     )
     component(
+      data-testid="table"
       :is="tableComponent"
       :headers="formattedHeaders"
       :items="formattedItems"
@@ -17,6 +18,7 @@
       @dataTable:delete="deleteItem"
     )
     fv-select-headers(
+      data-testid="selectHeaders"
       :dialog="dialog"
       :headers="headers"
       :tableName="tableName"

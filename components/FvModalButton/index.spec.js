@@ -1,15 +1,15 @@
 import { mount } from '@vue/test-utils'
-import FvCloseModalButton from './index'
+import FvModalButton from './index'
 
 const factory = () => {
-  return mount(FvCloseModalButton, {
+  return mount(FvModalButton, {
     mocks: {
       $t: (msg) => msg
     }
   })
 }
 
-describe('FvCloseModalButton', () => {
+describe('FvModalButton', () => {
   it('should render a fv close modal button', () => {
     const wrapper = factory()
     expect(wrapper.find('[data-testid=button]').exists()).toBe(true)
@@ -18,7 +18,7 @@ describe('FvCloseModalButton', () => {
     const wrapper = factory()
     const button = wrapper.find('[data-testid=button]')
     button.trigger('click')
-    const clickedCalls = wrapper.emitted('button:close')
+    const clickedCalls = wrapper.emitted('button:click')
     expect(clickedCalls).toBeTruthy()
     expect(clickedCalls).toHaveLength(1)
   })

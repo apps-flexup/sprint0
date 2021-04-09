@@ -9,12 +9,7 @@ import FvLogoutButton from './index.vue'
 <Canvas>
 <Story name='Common' height='150px'>{{
   components: { FvLogoutButton },
-  methods: {
-    logout: action('Logout')
-  },
-  template: `<FvLogoutButton
-    @logoutButton:clicked="logout"
-  >
+  template: `<FvLogoutButton>
   </FvLogoutButton>`
 }}</Story>
 </Canvas>

@@ -1,14 +1,16 @@
 <template lang="pug">
 .fv-nav-bar-buyer
   fv-nav-bar(
+    data-testid="navBar"
     :title='title'
     :space="space"
   )
     template(slot='left')
-      fv-search-autocomplete
+      fv-search-autocomplete(data-testid="search")
     template(slot='right')
       div(class='icons')
         v-list-item(
+          data-testid="icons"
           v-for="(item, a) in icons"
           :key="a"
           :to="item.to"

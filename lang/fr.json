@@ -612,7 +612,8 @@
   },
   "modal": {
     "close": "Fermer",
-    "save": "Sauvegarder"
+    "save": "Sauvegarder",
+    "resetDefault": "Réinitialiser les valeurs par défaut"
   },
   "accounts": {
     "index": {

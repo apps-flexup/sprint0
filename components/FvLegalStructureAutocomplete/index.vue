@@ -1,6 +1,7 @@
 <template lang="pug">
 .fv-legal-structure-autocomplete
   fv-autocomplete(
+    data-testid="autocomplete"
     :element="legalStructureId"
     :items="items"
     :filter="filter"

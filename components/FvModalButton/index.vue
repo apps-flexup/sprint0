@@ -1,11 +1,12 @@
 <template lang="pug">
-.fv-close-modal-button
+.fv-modal-button
   v-btn(
     data-testid="button"
     color='blue darken-1'
     text=''
-    @click.stop='close'
-  ) {{ $t('modal.close') }}
+    @click.stop='click'
+  )
+    slot
 </template>
 
 <script>
@@ -15,8 +16,8 @@ export default {
     console.log('Composant', this.$options.name)
   },
   methods: {
-    close() {
-      this.$emit('button:close')
+    click() {
+      this.$emit('button:click')
     }
   }
 }
