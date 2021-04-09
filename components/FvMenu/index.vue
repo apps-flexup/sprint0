@@ -5,28 +5,33 @@
   )
   div(v-if='connected')
     fv-sub-menu(
+      data-testid="spaceMenu"
       categoryName='space'
       :menuName="space"
       :title="spaceTitle"
     )
     fv-sub-menu(
+      data-testid="accountMenu"
       categoryName='account'
       menuName='account'
       :title="accountSelected"
     )
     fv-sub-menu(
+      data-testid="userMenu"
       categoryName='user'
       menuName='user'
       :title="userName"
     )
     fv-show-menu(
+      data-testid="globalMenu"
       :list='globalMenu'
     )
-    fv-logout-button
+    fv-logout-button(data-testid="logoutButton")
   div(v-else)
-    fv-login-button
+    fv-login-button(data-testid="loginButton")
     hr.line
     fv-show-menu(
+      data-testid="globalMenu"
       :list='globalMenu'
     )
 </template>
