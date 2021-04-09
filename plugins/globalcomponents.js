@@ -8,7 +8,6 @@ import FvAutocomplete from '@/components/FvAutocomplete'
 import FvAvatar from '@/components/FvAvatar'
 import FvAvatarWithName from '@/components/FvAvatarWithName'
 import FvBreadcrumbs from '@/components/FvBreadcrumbs'
-import FvCloseModalButton from '@/components/FvCloseModalButton'
 import FvContactCard from '@/components/FvContactCard'
 import FvContactDialog from '@/components/FvContactDialog'
 import FvContactForm from '~/components/FvContactForm'
@@ -46,6 +45,7 @@ import FvLoginButton from '@/components/FvLoginButton'
 import FvLogoutButton from '@/components/FvLogoutButton'
 import FvMenu from '@/components/FvMenu'
 import FvModalActions from '@/components/FvModalActions'
+import FvModalButton from '@/components/FvModalButton'
 import FvRecursiveDataTable from '@/components/FvRecursiveDataTable'
 import FvNav from '@/components/FvNav'
 import FvNavBar from '@/components/FvNavBar'
@@ -131,7 +131,6 @@ import FvCountryAutocomplete from '@/components/FvCountryAutocomplete'
 import FvOfferAutocomplete from '@/components/FvOfferAutocomplete'
 import FvLegalStructureAutocomplete from '~/components/FvLegalStructureAutocomplete'
 import FvProductItem from '@/components/FvProductItem'
-import FvSaveModalButton from '@/components/FvSaveModalButton'
 import FvStatusProgress from '~/components/FvStatusProgress'
 import FvFrequence from '@/components/FvFrequence'
 import FvPartnerItem from '@/components/FvPartnerItem'
@@ -150,7 +149,6 @@ Vue.component('fv-autocomplete', FvAutocomplete)
 Vue.component('fv-avatar', FvAvatar)
 Vue.component('fv-avatar-with-name', FvAvatarWithName)
 Vue.component('fv-breadcrumbs', FvBreadcrumbs)
-Vue.component('fv-close-modal-button', FvCloseModalButton)
 Vue.component('fv-contact-dialog', FvContactDialog)
 Vue.component('fv-contact-card', FvContactCard)
 Vue.component('fv-contact-form', FvContactForm)
@@ -197,6 +195,7 @@ Vue.component('fv-login-button', FvLoginButton)
 Vue.component('fv-logout-button', FvLogoutButton)
 Vue.component('fv-menu', FvMenu)
 Vue.component('fv-modal-actions', FvModalActions)
+Vue.component('fv-modal-button', FvModalButton)
 Vue.component('fv-recursive-data-table', FvRecursiveDataTable)
 Vue.component('fv-nav', FvNav)
 Vue.component('fv-nav-bar', FvNavBar)
@@ -294,7 +293,6 @@ Vue.component('fv-offer-autocomplete', FvOfferAutocomplete)
 Vue.component('fv-unit-autocomplete', FvUnitAutocomplete)
 Vue.component('fv-legal-structure-autocomplete', FvLegalStructureAutocomplete)
 Vue.component('fv-product-item', FvProductItem)
-Vue.component('fv-save-modal-button', FvSaveModalButton)
 Vue.component('fv-status-progress', FvStatusProgress)
 Vue.component('fv-frequence', FvFrequence)
 Vue.component('fv-partner-item', FvPartnerItem)
