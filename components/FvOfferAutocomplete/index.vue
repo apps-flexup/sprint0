@@ -1,6 +1,7 @@
 <template lang="pug">
 .fv-offer-autocomplete
   fv-autocomplete(
+    data-testid="autocomplete"
     :items="items"
     :filter="filter"
     :disabled="disabled"
@@ -10,13 +11,10 @@
     template(v-slot:label)
       div {{ $t('forms.orders.new.offer') }}
     template(v-slot:item="data")
-      template(v-if="typeof data.item !== 'object'")
-        v-list-item-content(v-text="data.item")
-      template(v-else='')
-        v-list-item-avatar
-          v-img(:src="data.item.illustration_url")
-        v-list-item-content
-          v-list-item-title(v-to-locale="data.item.name")
+      v-list-item-avatar
+        v-img(:src="data.item.illustration_url")
+      v-list-item-content
+        v-list-item-title(v-to-locale="data.item.name")
     template(v-slot:selection="data")
         v-list-item-avatar
           v-img(:src="data.item.illustration_url")
