@@ -2,15 +2,9 @@ import { mount } from '@vue/test-utils'
 import FvVatField from './index.vue'
 
 describe('FvVatField', () => {
-  let vat = 20
-  vat = (Math.round(vat * 100) / 100).toFixed(1)
-  const factory = (propsData) => {
-    return mount(FvVatField, {
-      propsData: {
-        ...propsData,
-        vat
-      }
-    })
+  const vat = 20
+  const factory = () => {
+    return mount(FvVatField)
   }
   it('should render a vat field', () => {
     const wrapper = factory()
@@ -30,9 +24,10 @@ describe('FvVatField', () => {
     const vatField = wrapper.find('[data-testid="vatField"]')
     await wrapper.setData({ vat })
     vatField.vm.$emit('click:outside', vat)
+    const expectedVat = parseFloat(vat).toFixed(1)
     const submittedCalls = wrapper.emitted('vat:changed')
     expect(submittedCalls).toBeTruthy()
     expect(submittedCalls).toHaveLength(1)
-    expect(submittedCalls[0][0]).toBe(vat)
+    expect(submittedCalls[0][0]).toBe(expectedVat)
   })
 })
