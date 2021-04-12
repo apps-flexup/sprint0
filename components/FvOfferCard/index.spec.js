@@ -52,10 +52,20 @@ describe('FvOfferCard', () => {
   })
   it('should display action icons if mouse is over', async () => {
     const wrapper = factory()
-    wrapper.setData({ over: true })
+    const card = wrapper.find('[data-testid="card"]')
+    card.vm.$emit('card:mouseover', true)
     await wrapper.vm.$nextTick()
     expect(wrapper.find('[data-testid="detailsIcon"]').exists()).toBe(true)
     expect(wrapper.find('[data-testid="buyIcon"]').exists()).toBe(true)
+  })
+  it('should hide action icons if mouse is not over', async () => {
+    const wrapper = factory()
+    wrapper.setData({ over: true })
+    const card = wrapper.find('[data-testid="card"]')
+    card.vm.$emit('card:mouseover', false)
+    await wrapper.vm.$nextTick()
+    expect(wrapper.find('[data-testid="detailsIcon"]').exists()).toBe(false)
+    expect(wrapper.find('[data-testid="buyIcon"]').exists()).toBe(false)
   })
   it('should emit an event when click on card', () => {
     const wrapper = factory()
