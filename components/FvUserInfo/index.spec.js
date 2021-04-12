@@ -1,17 +1,21 @@
-import { mount } from '@vue/test-utils'
+import { shallowMount } from '@vue/test-utils'
 import FvUserInfo from './index.vue'
 
 describe('FvUserInfo', () => {
-  const auth = {
-    loggedIn: true,
-    user: 'gmelevec'
+  const $auth = {
+    user: {
+      name: 'test',
+      email: 'test'
+    }
   }
   it('should render a FvUserInfo', () => {
-    const wrapper = mount(FvUserInfo, {
+    const wrapper = shallowMount(FvUserInfo, {
       mocks: {
         $t: (msg) => msg,
-        $auth: auth,
-        user: auth.user
+        $auth
+      },
+      stubs: {
+        FvAvatarWithName: true
       }
     })
     expect(wrapper.find('[data-testid="userInfo"]').exists()).toBe(true)
