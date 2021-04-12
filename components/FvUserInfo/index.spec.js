@@ -13,9 +13,6 @@ describe('FvUserInfo', () => {
       mocks: {
         $t: (msg) => msg,
         $auth
-      },
-      stubs: {
-        FvAvatarWithName: true
       }
     })
     expect(wrapper.find('[data-testid="userInfo"]').exists()).toBe(true)
