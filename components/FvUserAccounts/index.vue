@@ -16,33 +16,14 @@
           v-on='on'
         )
           | {{ $auth.user.preferred_username }}
-      fv-list-accounts
+      fv-list-accounts(data-testid="accountList")
 </template>
 
 <script>
 export default {
   name: 'FvUserAccounts',
-  computed: {
-    accounts() {
-      const res = this.$store.getters['accounts/all']
-      return res
-    },
-    loggedIn() {
-      const res = this.$auth.loggedIn
-      return res
-    }
-  },
   mounted() {
     console.log('Composant ', this.$options.name)
-  },
-  methods: {
-    logout() {
-      this.$auth.logout()
-    },
-    setCurrentAccount(a) {
-      // envoyer dans le store l'account qui va bien
-      this.$activeAccount.set(a.id)
-    }
   }
 }
 </script>
