@@ -6,10 +6,12 @@
       v-col(cols="12" class="headDetails")
         v-col(cols="8")
           fv-third-party-account-card(
+            data-testid="thirdPartyAccount"
             :thirdPartyAccountId="thirdPartyAccountId"
           )
         v-col(cols="4")
           fv-field-date(
+            data-testid="date"
             :dateRef="new Date(orderDate)"
             :label="$t('forms.orders.new.date')"
             :clearable="false"
@@ -18,12 +20,14 @@
             class="align"
           )
           fv-text-field(
+            data-testid="paymentStructure"
             v-model="structure"
             :clearable="false"
             :readonly="true"
             :hideDetails="true"
           )
     fv-order-line-list(
+      data-testid="orderLines"
       :details="true"
       :orderLines="orderLines"
     )
@@ -31,6 +35,7 @@
       v-spacer
       v-col(cols="7")
         fv-order-totals(
+          data-testid="total"
           :orderLines="orderLines"
         )
 </template>
@@ -48,14 +53,13 @@ export default {
     order: {
       type: Object,
       default() {
-        return {}
+        return null
       }
     }
   },
   data() {
     return {
       structure: null,
-      offerName: null,
       thirdPartyAccountId: null,
       orderDate: null,
       orderLines: []
@@ -72,21 +76,20 @@ export default {
   },
   mounted() {
     console.log('Composant ', this.$options.name)
-    this.$store.dispatch('paymentStructures/get')
-    this.$store.dispatch('currencies/get')
-    this.$store.dispatch('accounts/get')
     this.fillFieldsWithOrder()
   },
   methods: {
     fillFieldsWithOrder() {
       if (!this.order) return
       this.thirdPartyAccountId = this.order.third_party_account_id
-      this.structure = this.order.structure.label
+      if (this.order.structure) this.structure = this.order.structure.label
       this.orderDate = this.order.date
       this.orderLines = this.order.order_lines
     },
     clearOrder() {
+      this.structure = null
       this.thirdPartyAccountId = null
+      this.orderDate = null
       this.orderLines = []
     }
   }
