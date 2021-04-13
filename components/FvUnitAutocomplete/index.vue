@@ -1,7 +1,7 @@
 <template lang="pug">
 .fv-unit-autocomplete
   fv-autocomplete(
-    data-testid='fvAutocomplete'
+    data-testid='autocomplete'
     :element="unitId"
     :items="items"
     :filter="filter"
@@ -54,17 +54,12 @@ export default {
       }
       return res
     },
-    unitId: {
-      get() {
-        const res = this.$store.getters['units/findByDimension'](
-          this.dimension,
-          this.unit
-        )
-        return res ? res.id : null
-      },
-      set(v) {
-        this.$emit('unit:selected', v)
-      }
+    unitId() {
+      const res = this.$store.getters['units/findByDimension'](
+        this.dimension,
+        this.unit
+      )
+      return res ? res.id : null
     }
   },
   mounted() {
