@@ -1,0 +1,18 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import FvUserAccounts from './index.vue'
+
+<Meta title='Atoms/FvUserAccounts' component={ FvUserAccounts } />
+
+# FvUserAccounts
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  components: { FvUserAccounts },
+  template: `<FvUserAccounts>
+  </FvUserAccounts>`
+}}</Story>
+</Canvas>
+
+## ArgsTable
+
+<ArgsTable of={ FvUserAccounts } />
