@@ -1,12 +1,12 @@
 import { mount } from '@vue/test-utils'
+import Vuetify from 'vuetify'
 import FvUserAccount from './index.vue'
 
 describe('FvUserAccount', () => {
-  const app = document.createElement('div')
-  app.setAttribute('data-app', true)
-  document.body.append(app)
+  let vuetify
   const factory = (propsData) => {
     return mount(FvUserAccount, {
+      vuetify,
       stubs: {
         FvLoginButton: true,
         FvListAccounts: true
@@ -22,6 +22,9 @@ describe('FvUserAccount', () => {
       }
     })
   }
+  beforeEach(() => {
+    vuetify = new Vuetify()
+  })
   it('should render a fvUserAccount when logged in', () => {
     const wrapper = factory()
     expect(wrapper.find('[data-testid="loginBtn"]').exists()).toBe(false)
