@@ -1,6 +1,7 @@
 <template lang="pug">
 .fv-order-list
   fv-index-table(
+    data-testid="indexTable"
     :title="$t('table.orders.title')"
     :searchLabel="$t('table.orders.search')"
     tableComponent="fv-recursive-data-table"
