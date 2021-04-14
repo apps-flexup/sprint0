@@ -3,6 +3,7 @@
   v-row
     v-col(cols="12")
       v-data-table.elevation-2(
+        data-testid="dataTable"
         :headers='headers'
         :items='orderLines'
         item-key='id'
