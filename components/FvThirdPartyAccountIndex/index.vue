@@ -3,9 +3,13 @@
   v-row
     v-col(cols="12")
       fv-primary-button.text-right(
+        data-testid='primaryBtn'
         @button:click='createThirdPartyAccount'
       ) {{ $t('buttons.create.thirdPartyAccount') }}
-  fv-third-party-account-list(@list:selected="selectedThirdPartyAccount")
+  fv-third-party-account-list(
+    @list:selected="selectedThirdPartyAccount"
+    data-testid='thirdPartyAccountList'
+  )
 </template>
 
 <script>
