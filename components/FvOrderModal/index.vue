@@ -11,7 +11,6 @@
         v-toolbar-title {{ order.label ? order.label : $t('table.orders.name') }}
         v-spacer
         v-btn(
-          data-testid="closeButton"
           icon
           @click.stop="close"
         )
