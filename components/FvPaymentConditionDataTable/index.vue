@@ -1,7 +1,7 @@
 <template lang="pug">
 .fv-payment-condition-data-table
   fv-data-table(
-    data-testid="fvDataTable"
+    data-testid="dataTable"
     :headers='headers'
     :items='items'
     :hide-default-footer="hideDefaultFooter"
