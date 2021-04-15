@@ -6,6 +6,7 @@
         div {{ $t('forms.orders.new.totals.withoutVat') }}
       v-col(cols="4")
         fv-price-to-preferred-currency.rightTotal(
+          data-testid="totalWithoutVat"
           :price="totalWithoutVat"
           :currency="preferredCurrency"
         )
@@ -17,6 +18,7 @@
         v-col(cols="8")
           div.left {{ $t('forms.orders.new.totals.vat')}} {{ k }}% {{ $t('forms.orders.new.totals.of') }}
           fv-price-to-preferred-currency.right(
+            data-testid="totalByVat"
             :price="v.total"
             :currency="preferredCurrency"
           )
@@ -31,6 +33,7 @@
         div {{ $t('forms.orders.new.totals.total') }}
       v-col(cols="4")
         fv-price-to-preferred-currency.rightTotal(
+          data-testid="total"
           :price="total"
           :currency="preferredCurrency"
         )
