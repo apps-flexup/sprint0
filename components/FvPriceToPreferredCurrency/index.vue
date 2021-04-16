@@ -1,6 +1,6 @@
 <template lang="pug">
 .fv-price-to-preferred-currency
-  div {{ convertedPrice }}
+  div(data-testid="price") {{ convertedPrice }}
 </template>
 
 <script>
