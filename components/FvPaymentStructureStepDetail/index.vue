@@ -1,14 +1,17 @@
 <template lang="pug">
 .fv-payment-structure-step-detail
   fv-text-field(
+    data-testid="labelField"
     :value="label"
     :label="$t('forms.paymentStructures.new.label')"
     @input="labelChanged"
   )
   fv-payment-condition-autocomplete(
+    data-testid="autocomplete"
     @paymentCondition:selected="paymentConditionSelected"
   )
   fv-payment-condition-data-table(
+    data-testid="table"
     v-if="paymentConditions && paymentConditions.length"
     :headers="headers"
     :items="paymentConditionsDetails"
@@ -24,6 +27,7 @@
         td {{ displayGlobalRisk() }}
         td
   p.errorMsg(
+    data-testid="error"
     v-if="paymentConditions && paymentConditions.length && totalPortion !== 100"
   ) {{ $t('forms.paymentStructures.new.totalPortionMustBe100') }}
 </template>
