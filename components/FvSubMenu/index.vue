@@ -1,13 +1,15 @@
 <template lang="pug">
 .fv-sub-menu
     v-list
-      i.category(v-text="$t('category.' + categoryName)")
+      i.category(data-testid='categoryMenu' v-text="$t('category.' + categoryName)")
       v-list-group(
+        data-testid='menuList'
         :value='true'
       )
         template(v-slot:activator)
           v-list-item-title.title {{ title }}
         fv-show-menu(
+          data-testid='menu'
           :list='findMenu'
         )
       hr.line
