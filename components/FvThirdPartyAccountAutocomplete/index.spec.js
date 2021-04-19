@@ -59,7 +59,7 @@ describe('FvThirdPartyAccountAutocomplete', () => {
     expect(submittedCalls[0][0]).toBe(thirdPartyAccount)
   })
   it('should return the data of promise', () => {
-    return $activeAccount.allThirdPartyAccounts().then((data) => {
+    $activeAccount.allThirdPartyAccounts().then((data) => {
       expect(data).toEqual([thirdPartyAccount])
     })
   })
