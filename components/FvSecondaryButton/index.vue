@@ -1,9 +1,10 @@
 <template lang="pug">
 .fv-secondary-button
   v-btn(
+    data-testid="button"
     x-large
     color="#FCB71C"
-    outlined=''
+    outlined
     @click.prevent="click"
   )
     slot
