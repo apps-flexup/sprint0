@@ -1,6 +1,7 @@
 <template lang="pug">
 .fv-third-party-account-autocomplete
   fv-autocomplete(
+    data-testid='autocomplete'
     :element="thirdPartyAccountId"
     :items="items"
     :filter="filter"
@@ -9,9 +10,7 @@
     template(v-slot:label)
       div {{ $t('forms.orders.new.thirdPartyAccount') }}
     template(v-slot:item="data")
-      template(v-if="typeof data.item !== 'object'")
-        v-list-item-content {{ $t(data.item) }}
-      template(v-else-if="data.item")
+      template(v-if="data.item")
         v-list-item-avatar
           v-img(:src="data.item.avatar")
         v-list-item-content
