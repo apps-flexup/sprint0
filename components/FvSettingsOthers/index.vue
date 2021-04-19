@@ -1,11 +1,13 @@
 <template lang="pug">
 .fv-settings-others
   fv-number-field(
+    data-testid="priceNbDigits"
     :value="priceNbDigits"
     :label="$t('settings.others.labels.priceNbDigits')"
     @input="priceNbDigitsChanged"
   )
   fv-number-field(
+    data-testid="vatNbDigits"
     :value="vatNbDigits"
     :label="$t('settings.others.labels.vatNbDigits')"
     @input="vatNbDigitsChanged"
