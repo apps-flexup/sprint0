@@ -1,4 +1,4 @@
-import { mount, createLocalVue } from '@vue/test-utils'
+import { shallowMount, createLocalVue } from '@vue/test-utils'
 import Vuetify from 'vuetify'
 import Vuex from 'vuex'
 import FvRecursiveDataTable from './index.vue'
@@ -10,7 +10,7 @@ let store
 let vuetify
 
 const factory = () => {
-  return mount(FvRecursiveDataTable, {
+  return shallowMount(FvRecursiveDataTable, {
     localVue,
     store,
     vuetify,
