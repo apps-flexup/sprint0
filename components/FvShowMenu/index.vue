@@ -9,9 +9,12 @@
       exact
     )
       v-list-item-action
-        v-icon {{ item.icon }}
+        v-icon(data-testid="icon") {{ item.icon }}
       v-list-item-content
-        v-list-item-title(v-text="$t(item.title)")
+        v-list-item-title(
+          data-testid="title"
+          v-text="$t(item.title)"
+        )
 </template>
 
 <script>
