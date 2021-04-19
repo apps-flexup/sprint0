@@ -27,12 +27,6 @@ export default {
   },
   mounted() {
     console.log('Composant ', this.$options.name)
-    this.$store.dispatch('settings/getGlobalMenu')
-    this.$store.dispatch('settings/getUserMenu')
-    this.$store.dispatch('settings/getAccountMenu')
-    this.$store.dispatch('settings/getBuyerMenu')
-    this.$store.dispatch('settings/getManageMenu')
-    this.$store.dispatch('settings/getSellerMenu')
   }
 }
 </script>

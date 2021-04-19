@@ -78,6 +78,7 @@ export default {
     }
   },
   mounted() {
+    this.$store.dispatch('settings/getGlobalMenu')
     console.log('Composant ', this.$options.name)
   }
 }

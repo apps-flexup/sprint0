@@ -45,6 +45,11 @@ export default {
     }
   },
   mounted() {
+    this.$store.dispatch('settings/getUserMenu')
+    this.$store.dispatch('settings/getAccountMenu')
+    this.$store.dispatch('settings/getBuyerMenu')
+    this.$store.dispatch('settings/getManageMenu')
+    this.$store.dispatch('settings/getSellerMenu')
     console.log('Composant ', this.$options.name)
   }
 }
