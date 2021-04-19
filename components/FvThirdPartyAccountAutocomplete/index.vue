@@ -16,9 +16,7 @@
         v-list-item-content
           div {{ data.item.name }}
     template(v-slot:selection="data")
-      template(v-if="typeof data.item !== 'object'")
-        v-list-item-content {{ $t(data.item) }}
-      template(v-else-if="data.item")
+      template(v-if="data.item")
         v-list-item-avatar
           v-img(:src="data.item.avatar")
         v-list-item-content
