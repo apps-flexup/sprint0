@@ -1,6 +1,7 @@
 <template lang="pug">
 .fv-structure-autocomplete
   fv-autocomplete(
+    data-testid='autocomplete'
     v-model="structure"
     :items="items"
     @autocomplete:selected="selected"
