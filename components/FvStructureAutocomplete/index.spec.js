@@ -1,11 +1,11 @@
 import { mount, createLocalVue } from '@vue/test-utils'
 import Vuex from 'Vuex'
-import FvThirdPartyAccountAutocomplete from './index.vue'
+import FvStructureAutocomplete from './index.vue'
 
 const localVue = createLocalVue()
 localVue.use(Vuex)
 
-describe('FvThirdPartyAccountAutocomplete', () => {
+describe('FvStructureAutocomplete', () => {
   let store
   const paymentStructures = [
     {
@@ -23,30 +23,10 @@ describe('FvThirdPartyAccountAutocomplete', () => {
       risk: 80,
       account_id: 1,
       id: 1
-    },
-    {
-      label: 'B50 + F25 + E25',
-      paymentConditions: [
-        {
-          id: 3,
-          portion: 50
-        },
-        {
-          id: 4,
-          portion: 25
-        },
-        {
-          id: 2,
-          portion: 25
-        }
-      ],
-      risk: 46.25,
-      account_id: 1,
-      id: 2
     }
   ]
   const factory = () => {
-    return mount(FvThirdPartyAccountAutocomplete, {
+    return mount(FvStructureAutocomplete, {
       localVue,
       store,
       stubs: {
@@ -76,7 +56,7 @@ describe('FvThirdPartyAccountAutocomplete', () => {
     const wrapper = factory()
     expect(wrapper.find('[data-testid="autocomplete"]').exists()).toBe(true)
   })
-  it('should emit an event when third party account is selected', () => {
+  it('should emit an event when a structure is selected', () => {
     const wrapper = factory()
     const autocomplete = wrapper.find('[data-testid="autocomplete"]')
     autocomplete.vm.$emit('autocomplete:selected', paymentStructures)
