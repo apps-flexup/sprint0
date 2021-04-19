@@ -1,14 +1,17 @@
 <template lang="pug">
 .fv-settings-default
   fv-language-autocomplete(
+    data-testid="languageAutocomplete"
     :language="language"
     @language:selected="languageSelected"
   )
   fv-currency-autocomplete(
+    data-testid="currencyAutocomplete"
     :currency="currency"
     @currency:selected="currencySelected"
   )
   fv-theme-autocomplete(
+    data-testid="themeAutocomplete"
     :theme="theme"
     @theme:selected="themeSelected"
   )
