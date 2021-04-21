@@ -39,7 +39,7 @@ export default {
   },
   computed: {
     items() {
-      const res = this.$activeAccount.products()
+      const res = this.$activeAccount.items('products')
       return res
     }
   },
