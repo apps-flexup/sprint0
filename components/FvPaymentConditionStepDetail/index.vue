@@ -1,6 +1,7 @@
 <template lang="pug">
 .fv-payment-condition-step-detail
   fv-text-field.label(
+    data-testid="labelField"
     :value="label"
     :label="$t('forms.paymentConditions.new.label')"
     @input="labelChanged"
@@ -9,6 +10,7 @@
     v-row(class="align-center")
       v-col(cols="10")
         fv-reference-autocomplete(
+          data-testid="referenceField"
           :element="getElementForReference(reference)"
           :reference="reference"
           @reference:selected="referenceSelected(reference, ...arguments)"

@@ -10,7 +10,7 @@ import FvCurrencyAutocomplete from './index.vue'
 <Story name='Common' height='150px'>{{
   components: { FvCurrencyAutocomplete },
   methods: {
-    selected(_v) {}
+    selected: action('currency selected')
   },
   template: `
   <div>

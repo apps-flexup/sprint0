@@ -1,11 +1,15 @@
 <template lang="pug">
-.fv-payment-contidion-index
+.fv-payment-condition-index
   v-row
     v-col(cols="12")
       fv-primary-button.text-right(
+        data-testid="createButton"
         @button:click='createPaymentCondition'
       ) {{ $t('buttons.create.paymentCondition') }}
-  fv-payment-condition-list(@list:selected="selectedPaymentCondition")
+  fv-payment-condition-list(
+    data-testid="paymentConditionList"
+    @list:selected="selectedPaymentCondition"
+  )
 </template>
 
 <script>
@@ -13,8 +17,6 @@ export default {
   name: 'FvPaimentConditionIndex',
   methods: {
     selectedPaymentCondition(paymentCondition) {
-      console.log('selected: ', paymentCondition)
-      paymentCondition = JSON.parse(JSON.stringify(paymentCondition))
       this.$router.push('/paymentConditions/' + paymentCondition.id)
     },
     createPaymentCondition() {

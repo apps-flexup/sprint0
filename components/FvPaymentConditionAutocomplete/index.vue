@@ -1,6 +1,7 @@
 <template lang="pug">
 .fv-payment-condition-autocomplete
   fv-autocomplete(
+    data-testid="autocomplete"
     :element="paymentConditionId"
     :items="items"
     :filter="filterList"

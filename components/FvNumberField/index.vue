@@ -1,6 +1,7 @@
 <template lang="pug">
 .fv-number-field
   fv-text-field(
+    data-testid="numberField"
     class="right-input"
     :value="inputValue"
     :label="label"

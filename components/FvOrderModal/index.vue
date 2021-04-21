@@ -1,14 +1,17 @@
 <template lang="pug">
 .fv-order-modal
-  fv-modal-slot(:dialog="show")
+  fv-modal-slot(
+    data-testid="modal"
+    :dialog="show"
+  )
     template(
       slot='title'
     )
-      v-toolbar(flat='')
+      v-toolbar(flat)
         v-toolbar-title {{ order.label ? order.label : $t('table.orders.name') }}
         v-spacer
         v-btn(
-          icon=''
+          icon
           @click.stop="close"
         )
           v-icon mdi-close

@@ -1,6 +1,7 @@
 <template lang="pug">
 .fv-price-field
   fv-number-field(
+    data-testid="priceField"
     :value="price"
     :label="label"
     :outlined="outlined"
@@ -78,7 +79,6 @@ export default {
   },
   mounted() {
     console.log('Composant', this.$options.name)
-    this.$store.dispatch('accounts/get')
     this.$store.dispatch('currencies/get')
   },
   methods: {

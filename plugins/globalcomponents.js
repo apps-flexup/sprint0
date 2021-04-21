@@ -1,7 +1,6 @@
 import Vue from 'vue'
 // Importation des composants utilitaires
 import FvAccount from '@/components/FvAccount'
-import FvAccountAvatar from '@/components/FvAccountAvatar'
 import FvAccountCard from '@/components/FvAccountCard'
 import FvAccountInfo from '@/components/FvAccountInfo'
 import FvAccountsIndex from '@/components/FvAccountsIndex'
@@ -9,10 +8,8 @@ import FvAutocomplete from '@/components/FvAutocomplete'
 import FvAvatar from '@/components/FvAvatar'
 import FvAvatarWithName from '@/components/FvAvatarWithName'
 import FvBreadcrumbs from '@/components/FvBreadcrumbs'
-import FvCloseModalButton from '@/components/FvCloseModalButton'
 import FvContactCard from '@/components/FvContactCard'
 import FvContactDialog from '@/components/FvContactDialog'
-import FvContactEdit from '~/components/FvContactEdit'
 import FvContactForm from '~/components/FvContactForm'
 import FvContactList from '~/components/FvContactList'
 import FvContactModal from '~/components/FvContactModal'
@@ -47,9 +44,8 @@ import FvListAccounts from '@/components/FvListAccounts'
 import FvLoginButton from '@/components/FvLoginButton'
 import FvLogoutButton from '@/components/FvLogoutButton'
 import FvMenu from '@/components/FvMenu'
-import FvModal from '@/components/FvModal'
 import FvModalActions from '@/components/FvModalActions'
-import FvModalAndButton from '@/components/FvModalAndButton'
+import FvModalButton from '@/components/FvModalButton'
 import FvRecursiveDataTable from '@/components/FvRecursiveDataTable'
 import FvNav from '@/components/FvNav'
 import FvNavBar from '@/components/FvNavBar'
@@ -100,7 +96,6 @@ import FvFieldDate from '@/components/FvFieldDate'
 import FvUserAccounts from '@/components/FvUserAccounts'
 import FvContractSummaryVisualisation from '@/components/FvContractSummaryVisualisation'
 import FvContractStepVisualisation from '@/components/FvContractStepVisualisation'
-import FvCountryList from '@/components/FvCountryList'
 import FvProductList from '@/components/FvProductList'
 import FvOfferDataTable from '@/components/FvOfferDataTable'
 import FvOfferStepDetail from '@/components/FvOfferStepDetail'
@@ -136,7 +131,6 @@ import FvCountryAutocomplete from '@/components/FvCountryAutocomplete'
 import FvOfferAutocomplete from '@/components/FvOfferAutocomplete'
 import FvLegalStructureAutocomplete from '~/components/FvLegalStructureAutocomplete'
 import FvProductItem from '@/components/FvProductItem'
-import FvSaveModalButton from '@/components/FvSaveModalButton'
 import FvStatusProgress from '~/components/FvStatusProgress'
 import FvFrequence from '@/components/FvFrequence'
 import FvPartnerItem from '@/components/FvPartnerItem'
@@ -148,7 +142,6 @@ import FvOrderTotals from '~/components/FvOrderTotals'
 
 // Déclarations composants utilitaires
 Vue.component('fv-account', FvAccount)
-Vue.component('fv-account-avatar', FvAccountAvatar)
 Vue.component('fv-account-card', FvAccountCard)
 Vue.component('fv-account-info', FvAccountInfo)
 Vue.component('fv-accounts-index', FvAccountsIndex)
@@ -156,10 +149,8 @@ Vue.component('fv-autocomplete', FvAutocomplete)
 Vue.component('fv-avatar', FvAvatar)
 Vue.component('fv-avatar-with-name', FvAvatarWithName)
 Vue.component('fv-breadcrumbs', FvBreadcrumbs)
-Vue.component('fv-close-modal-button', FvCloseModalButton)
 Vue.component('fv-contact-dialog', FvContactDialog)
 Vue.component('fv-contact-card', FvContactCard)
-Vue.component('fv-contact-edit', FvContactEdit)
 Vue.component('fv-contact-form', FvContactForm)
 Vue.component('fv-contact-list', FvContactList)
 Vue.component('fv-contact-modal', FvContactModal)
@@ -203,9 +194,8 @@ Vue.component('fv-list-accounts', FvListAccounts)
 Vue.component('fv-login-button', FvLoginButton)
 Vue.component('fv-logout-button', FvLogoutButton)
 Vue.component('fv-menu', FvMenu)
-Vue.component('fv-modal', FvModal)
 Vue.component('fv-modal-actions', FvModalActions)
-Vue.component('fv-modal-and-button', FvModalAndButton)
+Vue.component('fv-modal-button', FvModalButton)
 Vue.component('fv-recursive-data-table', FvRecursiveDataTable)
 Vue.component('fv-nav', FvNav)
 Vue.component('fv-nav-bar', FvNavBar)
@@ -266,7 +256,6 @@ Vue.component(
   FvContractSummaryVisualisation
 )
 Vue.component('fv-contract-step-visualisation', FvContractStepVisualisation)
-Vue.component('fv-country-list', FvCountryList)
 Vue.component('fv-product-list', FvProductList)
 Vue.component('fv-offer-data-table', FvOfferDataTable)
 Vue.component('fv-offer-step-detail', FvOfferStepDetail)
@@ -279,7 +268,6 @@ Vue.component('fv-order-index', FvOrderIndex)
 Vue.component('fv-order-list-search', FvOrderListSearch)
 Vue.component('fv-order-list', FvOrderList)
 Vue.component('fv-order-modal', FvOrderModal)
-Vue.component('fv-country-list', FvCountryList)
 Vue.component('fv-third-party-account-data-table', FvThirdPartyAccountDataTable)
 Vue.component('fv-third-party-account-list', FvThirdPartyAccountList)
 Vue.component('fv-modal-slot', FvModalSlot)
@@ -305,7 +293,6 @@ Vue.component('fv-offer-autocomplete', FvOfferAutocomplete)
 Vue.component('fv-unit-autocomplete', FvUnitAutocomplete)
 Vue.component('fv-legal-structure-autocomplete', FvLegalStructureAutocomplete)
 Vue.component('fv-product-item', FvProductItem)
-Vue.component('fv-save-modal-button', FvSaveModalButton)
 Vue.component('fv-status-progress', FvStatusProgress)
 Vue.component('fv-frequence', FvFrequence)
 Vue.component('fv-partner-item', FvPartnerItem)

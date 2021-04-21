@@ -1,6 +1,7 @@
 <template lang="pug">
 .fv-data-table-search-bar
   fv-text-field(
+    data-testid="textField"
     :value="search"
     :label="label"
     :outlined="false"

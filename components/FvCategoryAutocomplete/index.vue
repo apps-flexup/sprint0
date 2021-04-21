@@ -1,6 +1,7 @@
 <template lang="pug">
 .fv-category-autocomplete
   fv-autocomplete(
+    data-testid="autocomplete"
     :element="category_id"
     :items="items"
     :filter="filterList"

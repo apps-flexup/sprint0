@@ -1,24 +1,24 @@
 import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
 import { action } from '@storybook/addon-actions'
-import FvCloseModalButton from './index.vue'
+import FvModalButton from './index.vue'
 
-<Meta title='Atoms/FvCloseModalButton' component={ FvCloseModalButton } />
+<Meta title='Atoms/FvModalButton' component={ FvModalButton } />
 
-# FvCloseModalButton
+# FvModalButton
 
 <Canvas>
 <Story name='Common' height='150px'>{{
-  components: { FvCloseModalButton },
+  components: { FvModalButton },
   methods: {
     close: action('close')
   },
-  template: `<FvCloseModalButton
+  template: `<FvModalButton
     @button:close="close"
   >
-  </FvCloseModalButton>`
+  </FvModalButton>`
 }}</Story>
 </Canvas>
 
 ## Props
 
-<Props of={ FvCloseModalButton } />
+<Props of={ FvModalButton } />

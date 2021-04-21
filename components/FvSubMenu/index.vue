@@ -1,13 +1,15 @@
 <template lang="pug">
 .fv-sub-menu
     v-list
-      i.category(v-text="$t('category.' + categoryName)")
+      i.category(data-testid='categoryMenu' v-text="$t('category.' + categoryName)")
       v-list-group(
+        data-testid='menuList'
         :value='true'
       )
         template(v-slot:activator)
           v-list-item-title.title {{ title }}
         fv-show-menu(
+          data-testid='menu'
           :list='findMenu'
         )
       hr.line
@@ -43,6 +45,11 @@ export default {
     }
   },
   mounted() {
+    this.$store.dispatch('settings/getUserMenu')
+    this.$store.dispatch('settings/getAccountMenu')
+    this.$store.dispatch('settings/getBuyerMenu')
+    this.$store.dispatch('settings/getManageMenu')
+    this.$store.dispatch('settings/getSellerMenu')
     console.log('Composant ', this.$options.name)
   }
 }

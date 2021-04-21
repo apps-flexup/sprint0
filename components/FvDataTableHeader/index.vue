@@ -1,20 +1,23 @@
 <template lang="pug">
 .fv-data-table-header
-  v-card-title
+  v-card-title(data-testid="title")
     | {{ title }}
     v-spacer
     v-chip.chip(
+      data-testid="filters"
       v-for="filter in filters" :key="filter"
       close
       :color="getColorForFilter(filter)"
       @click:close="removeFilter(filter)"
     ) {{ filter }}
     fv-data-table-search-bar(
+      data-testid="searchBar"
       :label="searchLabel"
       @dataTableSearchBar:changed="searchChanged"
       @dataTableSearchBar:filterValidated="filterValidated"
     )
     fv-icon.settings(
+      data-testid="settings"
       icon="mdi-cog"
       @icon:clicked="settingsClicked"
     )

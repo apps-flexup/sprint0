@@ -1,6 +1,7 @@
 <template lang="pug">
 .fv-order-data-table
   fv-data-table(
+    data-testid="dataTable"
     :headers='headers'
     :items='items'
     :hide-default-footer="hideDefaultFooter"
@@ -97,16 +98,6 @@ export default {
     },
     sortBy(v) {
       this.$emit('dataTable:sortBy', v)
-    },
-    dateToLocaleString(date) {
-      if (!date) {
-        return null
-      }
-      const settings = this.$store.getters['settings/settings']
-      const locale = settings.locale
-      const dte = new Date(date)
-      const res = dte.toLocaleDateString(locale)
-      return res
     }
   }
 }

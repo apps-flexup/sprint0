@@ -5,15 +5,16 @@
       v-list-item-avatar
         // TODO Get flexup avatar in api endpoint
         v-img(
+          data-testid='thirdPartyAccountAvatar'
           :src="thirdPartyAccount.avatar"
           :alt="`${thirdPartyAccount.name}`"
         )
       v-card-text
-        div {{ thirdPartyAccount.name }}
-        div {{ thirdPartyAccount.address }}
-        div {{ thirdPartyAccount.city }} {{ thirdPartyAccount.zip }}
-        div(v-if="country") {{ country.name }} ({{ country.iso2 }})
-        div(v-if="legalStructure") {{ legalStructure.name }} ({{ legalStructure.sigle }})
+        div(data-testid='thirdPartyAccountName') {{ thirdPartyAccount.name }}
+        div(data-testid='thirdPartyAccountAddress') {{ thirdPartyAccount.address }}
+        div(data-testid='thirdPartyAccountCity') {{ thirdPartyAccount.city }} {{ thirdPartyAccount.zip }}
+        div(data-testid='thirdPartyAccountCountry' v-if="country") {{ country.name }} ({{ country.iso2 }})
+        div(data-testid='thirdPartyAccountLegalStructure' v-if="legalStructure") {{ legalStructure.name }} ({{ legalStructure.sigle }})
 </template>
 
 <script>

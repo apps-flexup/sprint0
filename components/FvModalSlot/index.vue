@@ -1,6 +1,7 @@
 <template lang="pug">
 .fv-modal-slot
   v-dialog(
+    data-testid="modal"
     v-model='dialog'
     persistent
     max-width='50%'
@@ -26,7 +27,6 @@ export default {
     }
   },
   mounted() {
-    console.log('Dialog: ', this.dialog)
     console.log('Composant ', this.$options.name)
   }
 }

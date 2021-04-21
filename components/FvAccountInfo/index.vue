@@ -2,6 +2,7 @@
 .fv-account-info
   p {{ $t('listAccounts.activeAccount') }}:
   fv-avatar-with-name(
+    data-testid="accountInfo"
     :name="name"
     :avatar="avatar"
   )
@@ -9,7 +10,7 @@
 
 <script>
 export default {
-  name: 'FvUserInfo',
+  name: 'FvAccountInfo',
   computed: {
     account() {
       const current = this.$store.getters['accounts/current']

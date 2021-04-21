@@ -9,33 +9,38 @@
         @click.prevent="remove"
         x-large
       )
-        v-icon mdi-close
+        v-icon(data-testid="remove") mdi-close
     v-row
       v-col(cols="6")
         fv-third-party-account-autocomplete(
+          data-testid="thirdPartyAccountAutocomplete"
           :thirdPartyAccountId="thirdPartyAccountId"
           @thirdPartyAccount:selected='thirdPartyAccountSelected'
         )
       v-col(cols="6")
         fv-third-party-account-card(
+          data-testid="thirdPartyAccount"
           v-if="thirdPartyAccountId"
           :thirdPartyAccountId="thirdPartyAccountId"
         )
     v-row
       v-col(cols="6")
         fv-field-date(
+          data-testid="date"
           :dateRef="orderDate"
           :label="$t('forms.orders.new.date')"
           @date:changed="dateChanged"
         )
       v-col(cols="6")
         fv-text-field(
+          data-testid="label"
           :label="$t('forms.orders.new.label')"
           @input="labelChanged"
         )
     v-row
       v-col(cols="8")
         fv-offer-autocomplete(
+          data-testid="offerAutocomplete"
           :disabled="!thirdPartyAccountId"
           :thirdPartyAccountId="thirdPartyAccountId"
           :returnObject="true"
@@ -43,9 +48,11 @@
         )
       v-col(cols="4")
         fv-structure-autocomplete(
+          data-testid="paymentStructureAutocomplete"
           @structures:selected="structureSelected"
         )
     fv-order-line-list(
+      data-testid="orderLines"
       :orderLines="orderLines"
       @orderLines:delete="deleteOrderLine"
       @orderLines:quantityChanged="quantityChanged"
@@ -55,6 +62,7 @@
       v-spacer
       v-col(cols="5")
         fv-order-totals(
+          data-testid="total"
           :orderLines="orderLines"
         )
 </template>

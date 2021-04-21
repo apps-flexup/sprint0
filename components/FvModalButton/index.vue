@@ -1,21 +1,23 @@
 <template lang="pug">
-.fv-save-modal-button
+.fv-modal-button
   v-btn(
+    data-testid="button"
     color='blue darken-1'
     text=''
-    @click.stop='close'
-  ) {{ $t('modal.save') }}
+    @click.stop='click'
+  )
+    slot
 </template>
 
 <script>
 export default {
-  name: 'FvSaveModalButton',
+  name: 'FvCloseModalButton',
   mounted() {
     console.log('Composant', this.$options.name)
   },
   methods: {
-    close() {
-      this.$emit('button:save')
+    click() {
+      this.$emit('button:click')
     }
   }
 }

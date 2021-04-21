@@ -3,16 +3,21 @@
   v-row
     v-col(cols="12")
       fv-primary-button.text-right(
+        data-testid="createButton"
         @button:click='createOrder'
       ) {{ $t('buttons.create.order') }}
       fv-order-modal(
+        data-testid="orderModal"
         :show="showModal"
         :order="order"
         @modal:close="close"
         @modal:save="save"
         @order:changed="orderChanged"
       )
-  fv-order-list(@list:selected="selectedOrder")
+  fv-order-list(
+    data-testid="orderList"
+    @list:selected="selectedOrder"
+  )
 </template>
 
 <script>

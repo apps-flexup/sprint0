@@ -1,7 +1,8 @@
 <template lang="pug">
 .fv-logout-button
   v-list-item(
-    @click.stop="click"
+    data-testid="button"
+    @click="click"
   )
     v-list-item-action
       v-icon {{ 'mdi-logout' }}
@@ -17,7 +18,7 @@ export default {
   },
   methods: {
     click() {
-      this.$emit('logoutButton:clicked')
+      this.$auth.logout()
     }
   }
 }

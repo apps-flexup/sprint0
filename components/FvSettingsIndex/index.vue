@@ -1,9 +1,10 @@
 <template lang="pug">
 .fv-settings-index
-  h1 {{ $t('settings.title') }}
+  h1(data-testid="title") {{ $t('settings.title') }}
   v-card
     v-tabs(v-model="tab")
       v-tab(
+        data-testid="tab"
         v-for="item in items"
         :key="item.tab"
       ) {{ $t(item.tab) }}
@@ -14,6 +15,7 @@
         )
           v-card-text
             component(
+              data-testid="tabItem"
               :is="item.content"
               v-bind="item.props"
             )

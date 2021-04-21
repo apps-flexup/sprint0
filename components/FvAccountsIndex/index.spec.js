@@ -58,9 +58,6 @@ describe('FvAccountsIndex', () => {
       store,
       mocks: {
         $t: (msg) => msg
-      },
-      computed: {
-        accounts: () => accounts
       }
     })
   }
@@ -71,6 +68,9 @@ describe('FvAccountsIndex', () => {
           namespaced: true,
           actions: {
             get: jest.fn()
+          },
+          getters: {
+            all: () => accounts
           }
         }
       }
@@ -93,5 +93,9 @@ describe('FvAccountsIndex', () => {
     const createCalls = wrapper.emitted('accounts:create')
     expect(createCalls).toBeTruthy()
     expect(createCalls).toHaveLength(1)
+  })
+  it('should give all accounts in accounts compute', () => {
+    const wrapper = factory()
+    expect(wrapper.vm.accounts).toBe(accounts)
   })
 })

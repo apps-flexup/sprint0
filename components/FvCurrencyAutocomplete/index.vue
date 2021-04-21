@@ -1,6 +1,7 @@
 <template lang="pug">
 .fv-currency-autocomplete
   fv-autocomplete(
+    data-testid="autocomplete"
     :element="currencyId"
     :items="items"
     :filter="filter"
@@ -34,20 +35,13 @@ export default {
   },
   computed: {
     items() {
-      const res = this.$activeAccount.currencies()
+      const res = this.$store.getters['currencies/all']
       return res
     },
-    currencyId: {
-      get() {
-        console.log('Find by iso: ', this.currency)
-        const currency = this.$store.getters['currencies/findIso'](
-          this.currency
-        )
-        return currency ? currency.id : null
-      },
-      set(v) {
-        this.selected(v)
-      }
+    currencyId() {
+      console.log('Find by iso: ', this.currency)
+      const currency = this.$store.getters['currencies/findIso'](this.currency)
+      return currency ? currency.id : null
     }
   },
   mounted() {

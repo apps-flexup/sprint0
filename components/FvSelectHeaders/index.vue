@@ -46,11 +46,9 @@
                         :input-value="header.displayed"
                       )
     template(v-slot:actions)
-      v-btn(
-        color='blue darken-1'
-        text
-        @click='reset'
-      ) {{  $t('modal.resetDefault')  }}
+      fv-modal-button(
+        @button:click='resetToDefaultHeaders'
+      ) {{ $t('modal.resetDefault') }}
       v-spacer
       fv-modal-actions(
         @modal:actions:close="close"
@@ -117,7 +115,7 @@ export default {
         : []
       this.$emit('selectHeaders:close')
     },
-    reset() {
+    resetToDefaultHeaders() {
       let headerName = this.tableName
       headerName = camelToSnakeCase(headerName)
       const defaultHeader = this.$store.getters['settings/defaultHeaders'](

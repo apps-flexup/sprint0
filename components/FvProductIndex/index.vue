@@ -3,9 +3,13 @@
   v-row
     v-col(cols="12")
       fv-primary-button.text-right(
+        data-testid="createButton"
         @button:click='createProduct'
       ) {{ $t('buttons.create.product') }}
-  fv-product-list(@list:selected="selectedProduct")
+  fv-product-list(
+    data-testid="productList"
+    @list:selected="selectedProduct"
+  )
 </template>
 
 <script>

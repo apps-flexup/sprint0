@@ -2,6 +2,7 @@
 .fv-user-info
   p {{ $t('listAccounts.user') }}:
   fv-avatar-with-name(
+    data-testid='userInfo'
     :name="name"
     :email="email"
   )

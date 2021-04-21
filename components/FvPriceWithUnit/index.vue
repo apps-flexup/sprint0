@@ -1,11 +1,11 @@
 <template lang="pug">
 .fv-price-with-unit
-  div {{ priceWithUnit }}
+  div(data-testid="price") {{ priceWithUnit }}
 </template>
 
 <script>
 export default {
-  name: 'FvAutocomplete',
+  name: 'FvPriceWithUnit',
   inheritAttrs: true,
   props: {
     price: {

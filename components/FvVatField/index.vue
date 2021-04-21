@@ -8,6 +8,7 @@
     :clearable="clearable"
     :hideDetails="hideDetails"
     :dense="dense"
+    data-testid="vatField"
     suffix="%"
     @input="vatChanged"
     @click:outside="onClickOutside"

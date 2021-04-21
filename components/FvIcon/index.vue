@@ -1,6 +1,7 @@
 <template lang="pug">
 .fv-icon
   v-icon(
+    data-testid="icon"
     :color="color"
     :x-small="xSmall"
     :small="small"
