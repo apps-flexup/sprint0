@@ -1,4 +1,7 @@
 {
+  "mediaField": {
+    "label": "Label"
+  },
   "selectHeaders": {
     "title": {
       "products": "Customize your product table",

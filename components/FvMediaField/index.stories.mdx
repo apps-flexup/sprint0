@@ -1,0 +1,42 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+import FvMediaField from './index.vue'
+
+<Meta title='Molecules/FvMediaField' component={ FvMediaField } argTypes={{
+  mediaValue: { control: 'text' },
+  mediaLabel: { control: 'text' },
+  label: { control: 'text' }
+}}/>
+
+# FvMediaField
+
+<Canvas>
+<Story name='Common' height='150px' args={{
+  mediaValue: 'value',
+  mediaLabel: 'Super label',
+  label: 'perso'
+}}>{{
+  props: {
+    mediaValue: {},
+    mediaLabel: {},
+    label: {}
+  },
+  components: { FvMediaField },
+  methods: {
+    valueChanged: action('value changed'),
+    labelChanged: action('label changed')
+  },
+  template: `<FvMediaField
+    :mediaValue=mediaValue
+    :mediaLabel=mediaLabel
+    :label=label
+    @media:value:changed=valueChanged
+    @media:label:changed=labelChanged
+  >
+  </FvMediaField>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvMediaField } />

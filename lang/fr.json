@@ -1,4 +1,7 @@
 {
+  "mediaField": {
+    "label": "Libellé"
+  },
   "selectHeaders": {
     "title": {
       "products": "Personnalisez votre tableau des produits",
