@@ -8,7 +8,7 @@ localVue.use(Vuex)
 let store
 
 const $activeAccount = {
-  products: () => ['1', '2', '3']
+  items: () => ['1', '2', '3']
 }
 
 const factory = () => {
