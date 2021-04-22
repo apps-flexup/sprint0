@@ -5,7 +5,8 @@ import FvMediaField from './index.vue'
 <Meta title='Molecules/FvMediaField' component={ FvMediaField } argTypes={{
   mediaValue: { control: 'text' },
   mediaLabel: { control: 'text' },
-  label: { control: 'text' }
+  label: { control: 'text' },
+  isMediaValueReadonly: { control: 'boolean' }
 }}/>
 
 # FvMediaField
@@ -14,12 +15,14 @@ import FvMediaField from './index.vue'
 <Story name='Common' height='150px' args={{
   mediaValue: 'value',
   mediaLabel: 'Super label',
-  label: 'perso'
+  label: 'perso',
+  isMediaValueReadonly: false
 }}>{{
   props: {
     mediaValue: {},
     mediaLabel: {},
-    label: {}
+    label: {},
+    isMediaValueReadonly: {}
   },
   components: { FvMediaField },
   methods: {
@@ -30,6 +33,7 @@ import FvMediaField from './index.vue'
     :mediaValue=mediaValue
     :mediaLabel=mediaLabel
     :label=label
+    :isMediaValueReadonly=isMediaValueReadonly
     @media:value:changed=valueChanged
     @media:label:changed=labelChanged
   >

@@ -6,6 +6,7 @@
         data-testid="valueField"
         :label="mediaLabel"
         :value="mediaValue"
+        :readonly="isMediaValueReadonly"
         @input="valueChanged"
         @click="valueClicked"
       )
@@ -22,6 +23,12 @@
 export default {
   name: 'FvMediaField',
   props: {
+    isMediaValueReadonly: {
+      type: Boolean,
+      default() {
+        return false
+      }
+    },
     mediaValue: {
       type: [Number, String],
       default() {
