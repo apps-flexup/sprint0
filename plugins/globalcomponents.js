@@ -43,6 +43,7 @@ import FvLanguageAutocomplete from '@/components/FvLanguageAutocomplete'
 import FvListAccounts from '@/components/FvListAccounts'
 import FvLoginButton from '@/components/FvLoginButton'
 import FvLogoutButton from '@/components/FvLogoutButton'
+import FvMailField from '@/components/FvMailField'
 import FvMediaField from '@/components/FvMediaField'
 import FvMenu from '@/components/FvMenu'
 import FvModalActions from '@/components/FvModalActions'
@@ -194,6 +195,7 @@ Vue.component('fv-language-autocomplete', FvLanguageAutocomplete)
 Vue.component('fv-list-accounts', FvListAccounts)
 Vue.component('fv-login-button', FvLoginButton)
 Vue.component('fv-logout-button', FvLogoutButton)
+Vue.component('fv-mail-field', FvMailField)
 Vue.component('fv-media-field', FvMediaField)
 Vue.component('fv-menu', FvMenu)
 Vue.component('fv-modal-actions', FvModalActions)
