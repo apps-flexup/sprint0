@@ -2,8 +2,8 @@
 .fv-mail-field
   fv-media-field(
     data-testid="mailField"
-    :mediaValue="mediaValue"
-    :mediaLabel="mediaLabel"
+    :mediaValue="mail"
+    :mediaLabel="mailLabel"
     :labelValue="labelValue"
     @media:value:changed="mailChanged"
     @media:label:changed="labelChanged"
@@ -14,8 +14,8 @@
 export default {
   name: 'FvMailField',
   props: {
-    mediaValue: {
-      type: [Number, String],
+    mail: {
+      type: String,
       default() {
         return null
       }
@@ -30,7 +30,7 @@ export default {
   data() {
     return {
       valueType: 'mail',
-      mediaLabel: this.$t('mediaField.mailLabel')
+      mailLabel: this.$t('mediaField.mailLabel')
     }
   },
   mounted() {

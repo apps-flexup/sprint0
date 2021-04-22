@@ -2,8 +2,8 @@
 .fv-phone-field
   fv-media-field(
     data-testid="phoneField"
-    :mediaValue="mediaValue"
-    :mediaLabel="mediaLabel"
+    :mediaValue="phone"
+    :mediaLabel="phoneLabel"
     :labelValue="labelValue"
     @media:value:changed="phoneChanged"
     @media:label:changed="labelChanged"
@@ -14,7 +14,7 @@
 export default {
   name: 'FvPhoneField',
   props: {
-    mediaValue: {
+    phone: {
       type: [Number, String],
       default() {
         return null
@@ -30,7 +30,7 @@ export default {
   data() {
     return {
       valueType: 'phone',
-      mediaLabel: this.$t('mediaField.phoneLabel')
+      phoneLabel: this.$t('mediaField.phoneLabel')
     }
   },
   mounted() {

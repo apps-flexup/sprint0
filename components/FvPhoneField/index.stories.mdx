@@ -3,7 +3,7 @@ import { action } from '@storybook/addon-actions'
 import FvPhoneField from './index.vue'
 
 <Meta title='Molecules/FvPhoneField' component={ FvPhoneField } argTypes={{
-  mediaValue: { control: 'text' },
+  phone: { control: 'text' },
   labelValue: { control: 'text' }
 }}/>
 
@@ -11,11 +11,11 @@ import FvPhoneField from './index.vue'
 
 <Canvas>
 <Story name='Common' height='150px' args={{
-  mediaValue: 'value',
+  phone: '0123456789',
   labelValue: 'mon label',
 }}>{{
   props: {
-    mediaValue: {},
+    phone: {},
     labelValue: {}
   },
   components: { FvPhoneField },
@@ -24,7 +24,7 @@ import FvPhoneField from './index.vue'
     labelChanged: action('label changed')
   },
   template: `<FvPhoneField
-    :mediaValue=mediaValue
+    :phone=phone
     :labelValue=labelValue
     @phone:value:changed=valueChanged
     @phone:label:changed=labelChanged

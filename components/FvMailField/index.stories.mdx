@@ -3,7 +3,7 @@ import { action } from '@storybook/addon-actions'
 import FvMailField from './index.vue'
 
 <Meta title='Molecules/FvMailField' component={ FvMailField } argTypes={{
-  mediaValue: { control: 'text' },
+  mail: { control: 'text' },
   labelValue: { control: 'text' }
 }}/>
 
@@ -11,11 +11,11 @@ import FvMailField from './index.vue'
 
 <Canvas>
 <Story name='Common' height='150px' args={{
-  mediaValue: 'value',
+  mail: 'toto@toto.com',
   labelValue: 'mon label',
 }}>{{
   props: {
-    mediaValue: {},
+    mail: {},
     labelValue: {}
   },
   components: { FvMailField },
@@ -24,7 +24,7 @@ import FvMailField from './index.vue'
     labelChanged: action('label changed')
   },
   template: `<FvMailField
-    :mediaValue=mediaValue
+    :mail=mail
     :labelValue=labelValue
     @mail:value:changed=valueChanged
     @mail:label:changed=labelChanged
