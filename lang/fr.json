@@ -359,7 +359,7 @@
     "accounts": {
       "new": {
         "name": "Nom du compte",
-        "title": "Titre",
+        "title": "Nouveau compte",
         "lastname": "Nom",
         "firstname": "Prénom",
         "email": "Email",

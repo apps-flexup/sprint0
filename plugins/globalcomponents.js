@@ -4,6 +4,7 @@ import FvAccount from '@/components/FvAccount'
 import FvAccountCard from '@/components/FvAccountCard'
 import FvAccountInfo from '@/components/FvAccountInfo'
 import FvAccountsIndex from '@/components/FvAccountsIndex'
+import FvAccountStepDetail from '@/components/FvAccountStepDetail'
 import FvAutocomplete from '@/components/FvAutocomplete'
 import FvAvatar from '@/components/FvAvatar'
 import FvAvatarWithName from '@/components/FvAvatarWithName'
@@ -145,6 +146,7 @@ Vue.component('fv-account', FvAccount)
 Vue.component('fv-account-card', FvAccountCard)
 Vue.component('fv-account-info', FvAccountInfo)
 Vue.component('fv-accounts-index', FvAccountsIndex)
+Vue.component('fv-account-step-detail', FvAccountStepDetail)
 Vue.component('fv-autocomplete', FvAutocomplete)
 Vue.component('fv-avatar', FvAvatar)
 Vue.component('fv-avatar-with-name', FvAvatarWithName)

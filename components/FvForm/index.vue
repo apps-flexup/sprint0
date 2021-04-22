@@ -79,6 +79,7 @@ export default {
   },
   mounted() {
     console.log('Composant ', this.$options.name)
+    this.$store.dispatch('forms/getAccount')
     this.$store.dispatch('forms/getProduct')
     this.$store.dispatch('forms/getOffer')
     this.$store.dispatch('forms/getThirdPartyAccount')

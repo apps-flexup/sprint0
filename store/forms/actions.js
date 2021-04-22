@@ -1,5 +1,10 @@
 // Action de base
 export default {
+  getAccount({ commit }) {
+    this.$repos.accountSteps
+      .index()
+      .then((data) => commit('setAccountSteps', data))
+  },
   getContract({ commit }) {
     // charger les contrat-types
     this.$repos.contractSteps

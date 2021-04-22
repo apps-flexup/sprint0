@@ -64,7 +64,7 @@ export default {
       this.$activeAccount.set(a.id)
     },
     createAccount() {
-      console.log('create account')
+      this.$router.push('accounts/new')
     },
     manageAccounts() {
       this.$router.push('accounts')

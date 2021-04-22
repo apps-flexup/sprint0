@@ -1,4 +1,9 @@
 export default {
+  accounts(state) {
+    if (!state.accounts) return []
+    const res = JSON.parse(JSON.stringify(state.accounts))
+    return res
+  },
   contracts(state) {
     if (!state.contracts) return []
     const res = JSON.parse(JSON.stringify(state.contracts))
