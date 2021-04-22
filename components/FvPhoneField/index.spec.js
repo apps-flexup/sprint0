@@ -15,7 +15,7 @@ const factory = (propsData) => {
 }
 
 describe('FvPhoneField', () => {
-  it('should render a fv mail field', () => {
+  it('should render a fv phone field', () => {
     const wrapper = factory()
     expect(wrapper.find('[data-testid="phoneField"]').exists()).toBe(true)
   })

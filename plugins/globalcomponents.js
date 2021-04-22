@@ -65,6 +65,7 @@ import FvPaymentStructureIndex from '@/components/FvPaymentStructureIndex'
 import FvPaymentStructureList from '@/components/FvPaymentStructureList'
 import FvPaymentStructureStepDetail from '@/components/FvPaymentStructureStepDetail'
 import FvPaymentTermParams from '@/components/FvPaymentTermParams'
+import FvPhoneField from '@/components/FvPhoneField'
 import FvPriceField from '@/components/FvPriceField'
 import FvPriceToPreferredCurrency from '@/components/FvPriceToPreferredCurrency'
 import FvPriceWithUnit from '@/components/FvPriceWithUnit'
@@ -223,6 +224,7 @@ Vue.component('fv-payment-structure-index', FvPaymentStructureIndex)
 Vue.component('fv-payment-structure-list', FvPaymentStructureList)
 Vue.component('fv-payment-structure-step-detail', FvPaymentStructureStepDetail)
 Vue.component('fv-payment-term-params', FvPaymentTermParams)
+Vue.component('fv-phone-field', FvPhoneField)
 Vue.component('fv-price-field', FvPriceField)
 Vue.component('fv-price-to-preferred-currency', FvPriceToPreferredCurrency)
 Vue.component('fv-price-with-unit', FvPriceWithUnit)
