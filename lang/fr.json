@@ -363,6 +363,7 @@
         "lastname": "Nom",
         "firstname": "Prénom",
         "email": "Email",
+        "civility": "Civilité",
         "titles": {
           "mr": "M.",
           "ms": "Mme",

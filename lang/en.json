@@ -356,6 +356,7 @@
         "lastname": "Lastname",
         "firstname": "Firstname",
         "email": "Email",
+        "civility": "Civility",
         "titles": {
           "mr": "Mr",
           "ms": "Ms",
