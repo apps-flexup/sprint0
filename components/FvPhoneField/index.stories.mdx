@@ -1,0 +1,38 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+import FvPhoneField from './index.vue'
+
+<Meta title='Molecules/FvPhoneField' component={ FvPhoneField } argTypes={{
+  mediaValue: { control: 'text' },
+  labelValue: { control: 'text' }
+}}/>
+
+# FvPhoneField
+
+<Canvas>
+<Story name='Common' height='150px' args={{
+  mediaValue: 'value',
+  labelValue: 'mon label',
+}}>{{
+  props: {
+    mediaValue: {},
+    labelValue: {}
+  },
+  components: { FvPhoneField },
+  methods: {
+    valueChanged: action('value changed'),
+    labelChanged: action('label changed')
+  },
+  template: `<FvPhoneField
+    :mediaValue=mediaValue
+    :labelValue=labelValue
+    @phone:value:changed=valueChanged
+    @phone:label:changed=labelChanged
+  >
+  </FvPhoneField>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvPhoneField } />

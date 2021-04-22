@@ -1,7 +1,8 @@
 {
   "mediaField": {
     "label": "Libellé",
-    "mailLabel": "Email"
+    "mailLabel": "Email",
+    "phoneLabel": "Téléphone"
   },
   "selectHeaders": {
     "title": {
