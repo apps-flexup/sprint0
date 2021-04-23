@@ -190,7 +190,7 @@
     "route": {
       "account": "Compte",
       "accounts": "Mes comptes",
-      "account-new": "Nouveau compte",
+      "accounts-new": "Nouveau compte",
       "dashboard": "Tableau de bord",
       "index": "Accueil",
       "orders": "Commandes",
@@ -288,6 +288,11 @@
     "offer": {
       "step": {
         "0": "Informations générales"
+      }
+    },
+    "account": {
+      "step": {
+        "0": "Informations personnelles"
       }
     },
     "contracts": {

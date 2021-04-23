@@ -3,6 +3,8 @@
   v-row
     v-col(cols="2")
       v-select(
+        data-testid='civilitySelect'
+        outlined
         :items="titres"
         :value="title"
         :label="$t('forms.accounts.new.civility')"
@@ -10,7 +12,7 @@
       )
     v-col(cols='10')
       fv-text-field(
-        data-testid='Account name'
+        data-testid='accountName'
         :value="name"
         :label="$t('forms.accounts.new.name')"
         @input="nameChanged"
@@ -18,12 +20,14 @@
   v-row
     v-col(cols="6")
       fv-text-field(
+        data-testid='userLastname'
         :value="lastname"
         :label="$t('forms.accounts.new.lastname')"
         @input="lastnameChanged"
       )
     v-col(cols="6")
       fv-text-field(
+        data-testid='userFirstname'
         :value="firstname"
         :label="$t('forms.accounts.new.firstname')"
         @input="firstnameChanged"
@@ -31,6 +35,7 @@
   v-row
     v-col(cols="6")
       fv-text-field(
+        data-testid='accountEmail'
         :value="email"
         :label="$t('forms.accounts.new.email')"
         @input="emailChanged"
@@ -44,7 +49,7 @@ export default {
     payload: {
       type: Object,
       default() {
-        return {}
+        return null
       }
     }
   },
@@ -84,15 +89,15 @@ export default {
     console.log('Composant ', this.$options.name)
   },
   methods: {
-    nameChanged(name) {
-      const payload = {
-        name
-      }
-      this.$emit('payload:changed', payload)
-    },
     civilityChanged(title) {
       const payload = {
         title
+      }
+      this.$emit('payload:changed', payload)
+    },
+    nameChanged(name) {
+      const payload = {
+        name
       }
       this.$emit('payload:changed', payload)
     },

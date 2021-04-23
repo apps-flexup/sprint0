@@ -41,7 +41,7 @@ export default {
   },
   methods: {
     createAccount() {
-      this.$router.push('accounts/new')
+      this.$router.push('account/new')
       this.$emit('accounts:create')
     }
   }

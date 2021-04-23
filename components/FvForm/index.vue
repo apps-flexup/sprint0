@@ -111,6 +111,13 @@ export default {
 ::v-deep .v-list.mt-10.v-sheet.theme--light {
   background-color: rgb(241, 241, 241);
 }
+::v-deep .v-input.theme--light .v-input__slot {
+  background: #ffffff;
+  margin-bottom: initial;
+}
+::v-deep .v-text-field__details {
+  display: none;
+}
 .btn {
   display: flex;
   justify-content: space-between;

@@ -186,7 +186,7 @@
     "route": {
       "account": "Account",
       "accounts": "My accounts",
-      "account-new": "New account",
+      "accounts-new": "New account",
       "dashboard": "Dashboard",
       "index": "Home",
       "orders": "Orders",
@@ -281,6 +281,11 @@
     "offer": {
       "step": {
         "0": "General information"
+      }
+    },
+    "account": {
+      "step": {
+        "0": "Personal information"
       }
     },
     "contracts": {

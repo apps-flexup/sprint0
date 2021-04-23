@@ -182,13 +182,6 @@ export default {
 </script>
 
 <style scoped>
-::v-deep .v-input.theme--light .v-input__slot {
-  background: #ffffff;
-  margin-bottom: initial;
-}
-::v-deep .v-text-field__details {
-  display: none;
-}
 ::v-deep .v-divider {
   background-color: darkgray;
   margin-top: 8px;
