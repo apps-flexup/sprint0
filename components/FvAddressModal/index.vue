@@ -74,24 +74,24 @@ export default {
   },
   data() {
     return {
-      localAddress: JSON.parse(JSON.stringify(this.address))
+      localAddress: this.address ? JSON.parse(JSON.stringify(this.address)) : {}
     }
   },
   computed: {
     street() {
-      const res = this.localAddress ? this.localAddress.street : null
+      const res = this.localAddress.street
       return res
     },
     zip() {
-      const res = this.localAddress ? this.localAddress.zip : null
+      const res = this.localAddress.zip
       return res
     },
     city() {
-      const res = this.localAddress ? this.localAddress.city : null
+      const res = this.localAddress.city
       return res
     },
     country() {
-      const res = this.localAddress ? this.localAddress.country : null
+      const res = this.localAddress.country
       return res
     }
   },
