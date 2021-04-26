@@ -28,7 +28,7 @@ export default {
     country: {
       type: String,
       default() {
-        return 'FRA'
+        return null
       }
     },
     itemValue: {

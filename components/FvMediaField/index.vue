@@ -2,7 +2,7 @@
 .fv-media-field
   fv-flex-items
     template(v-slot:left)
-      fv-text-field(
+      fv-text-field.left(
         data-testid="valueField"
         :label="mediaLabel"
         :value="mediaValue"
@@ -66,7 +66,11 @@ export default {
 </script>
 
 <style scoped>
+.left {
+  flex: 3 1 0;
+}
 .right {
+  flex: 1 1 0;
   margin-left: 15px;
 }
 </style>

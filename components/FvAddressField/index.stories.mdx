@@ -1,0 +1,42 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+import FvAddressField from './index.vue'
+
+<Meta title='Molecules/FvAddressField' component={ FvAddressField } argTypes={{
+  labelValue: { control: 'text' }
+}}/>
+
+# FvAddressField
+
+<Canvas>
+<Story name='Common' height='150px' args={{
+  labelValue: 'mon label',
+}}>{{
+  props: {
+    labelValue: {}
+  },
+  data() {
+    return {
+      address: {}
+    }
+  },
+  components: { FvAddressField },
+  methods: {
+    valueChanged(v) {
+      this.address = Object.assign({}, this.address, v.value)
+    },
+    labelChanged: action('label changed')
+  },
+  template: `<FvAddressField
+    :address=address
+    :labelValue=labelValue
+    @address:value:changed=valueChanged
+    @address:label:changed=labelChanged
+  >
+  </FvAddressField>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvAddressField } />
