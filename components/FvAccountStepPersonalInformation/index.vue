@@ -3,9 +3,9 @@
   v-row
     v-col(cols="2")
       v-select(
-        data-testid='civilityField'
+        data-testid='titleField'
         outlined
-        :items="titres"
+        :items="titles"
         :value="title"
         :label="$t('forms.accounts.new.civility')"
         @input="civilityChanged"
@@ -74,7 +74,7 @@ export default {
       const res = this.payload ? this.payload.email : null
       return res
     },
-    titres() {
+    titles() {
       const res = [
         'forms.accounts.new.titles.mr',
         'forms.accounts.new.titles.ms',
