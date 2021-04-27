@@ -2200,7 +2200,7 @@
   ],
   "account-steps": [
     {
-      "component": "fv-account-step-detail",
+      "component": "fv-account-step-personal-information",
       "title": "forms.account.step.0"
     }
   ],

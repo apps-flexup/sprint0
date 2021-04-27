@@ -1,5 +1,5 @@
 <template lang="pug">
-.fv-account-step-detail
+.fv-account-step-personal-information
   v-row
     v-col(cols="2")
       v-select(
@@ -44,7 +44,7 @@
 
 <script>
 export default {
-  name: 'FvAccountStepDetail',
+  name: 'FvAccountStepPersonalInformation',
   props: {
     payload: {
       type: Object,

@@ -1,9 +1,9 @@
 import { shallowMount } from '@vue/test-utils'
-import FvAccountStepDetail from './index.vue'
+import FvAccountStepPersonalInformation from './index.vue'
 
-describe('FvAccountStepDetail', () => {
+describe('FvAccountStepPersonalInformation', () => {
   const factory = (propsData) => {
-    return shallowMount(FvAccountStepDetail, {
+    return shallowMount(FvAccountStepPersonalInformation, {
       propsData: {
         ...propsData
       },
@@ -12,7 +12,7 @@ describe('FvAccountStepDetail', () => {
       }
     })
   }
-  it('should render an account form', () => {
+  it('should render a fv account step personal information', () => {
     const wrapper = factory()
     expect(wrapper.find('[data-testid="civilitySelect"]').exists()).toBe(true)
     expect(wrapper.find('[data-testid="accountName"]').exists()).toBe(true)

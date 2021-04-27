@@ -1,14 +1,14 @@
 import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
 import { action } from '@storybook/addon-actions'
-import FvAccountStepDetail from './index.vue'
+import FvAccountStepPersonalInformation from './index.vue'
 
-<Meta title='Molecules/FvAccountStepDetail' component={ FvAccountStepDetail } />
+<Meta title='Molecules/FvAccountStepPersonalInformation' component={ FvAccountStepPersonalInformation } />
 
-# FvAccountStepDetail
+# FvAccountStepPersonalInformation
 
 <Canvas>
 <Story name='Common' height='150px'>{{
-  components: { FvAccountStepDetail },
+  components: { FvAccountStepPersonalInformation },
   data() {
     return {
       Account: {}
@@ -17,14 +17,14 @@ import FvAccountStepDetail from './index.vue'
   methods: {
     AccountChanged: action('Account changed')
   },
-  template: `<FvAccountStepDetail
+  template: `<FvAccountStepPersonalInformation
     :account="account"
     @account:changed="accountChanged"
   >
-  </FvAccountStepDetail>`
+  </FvAccountStepPersonalInformation>`
 }}</Story>
 </Canvas>
 
 ## Props
 
-<Props of={ FvAccountStepDetail } />
+<Props of={ FvAccountStepPersonalInformation } />
