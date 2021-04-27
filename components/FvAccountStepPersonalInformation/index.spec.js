@@ -14,27 +14,27 @@ describe('FvAccountStepPersonalInformation', () => {
   }
   it('should render a fv account step personal information', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="civilitySelect"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="accountName"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="userLastname"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="userFirstname"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="accountEmail"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="civilityField"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="nameField"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="lastnameField"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="firstnameField"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="emailField"]').exists()).toBe(true)
   })
   it('should send signal when civility is changed', () => {
     const wrapper = factory()
-    const civilitySelect = wrapper.find('[data-testid="civilitySelect"]')
-    const civility = 'M.'
-    civilitySelect.vm.$emit('input', civility)
+    const civilityField = wrapper.find('[data-testid="civilityField"]')
+    const input = 'M.'
+    civilityField.vm.$emit('input', input)
     const submittedCalls = wrapper.emitted('payload:changed')
     expect(submittedCalls).toBeTruthy()
     expect(submittedCalls).toHaveLength(1)
-    expect(submittedCalls[0][0].title).toBe(civility)
+    expect(submittedCalls[0][0].title).toBe(input)
   })
   it('should send signal when account name is changed', () => {
     const wrapper = factory()
-    const accountName = wrapper.find('[data-testid="accountName"]')
+    const nameField = wrapper.find('[data-testid="nameField"]')
     const name = 'fred & cie'
-    accountName.vm.$emit('input', name)
+    nameField.vm.$emit('input', name)
     const submittedCalls = wrapper.emitted('payload:changed')
     expect(submittedCalls).toBeTruthy()
     expect(submittedCalls).toHaveLength(1)
@@ -42,9 +42,9 @@ describe('FvAccountStepPersonalInformation', () => {
   })
   it('should send signal when lastname is changed', () => {
     const wrapper = factory()
-    const userLastname = wrapper.find('[data-testid="userLastname"]')
+    const lastnameField = wrapper.find('[data-testid="lastnameField"]')
     const lastname = 'fred'
-    userLastname.vm.$emit('input', lastname)
+    lastnameField.vm.$emit('input', lastname)
     const submittedCalls = wrapper.emitted('payload:changed')
     expect(submittedCalls).toBeTruthy()
     expect(submittedCalls).toHaveLength(1)
@@ -52,9 +52,9 @@ describe('FvAccountStepPersonalInformation', () => {
   })
   it('should send signal when firstname is changed', () => {
     const wrapper = factory()
-    const userFirstname = wrapper.find('[data-testid="userFirstname"]')
+    const firstnameField = wrapper.find('[data-testid="firstnameField"]')
     const firstname = 'bearstone'
-    userFirstname.vm.$emit('input', firstname)
+    firstnameField.vm.$emit('input', firstname)
     const submittedCalls = wrapper.emitted('payload:changed')
     expect(submittedCalls).toBeTruthy()
     expect(submittedCalls).toHaveLength(1)
@@ -62,51 +62,51 @@ describe('FvAccountStepPersonalInformation', () => {
   })
   it('should send signal when email is changed', () => {
     const wrapper = factory()
-    const accountEmail = wrapper.find('[data-testid="accountEmail"]')
+    const emailField = wrapper.find('[data-testid="emailField"]')
     const email = 'fred@flexup.org'
-    accountEmail.vm.$emit('input', email)
+    emailField.vm.$emit('input', email)
     const submittedCalls = wrapper.emitted('payload:changed')
     expect(submittedCalls).toBeTruthy()
     expect(submittedCalls).toHaveLength(1)
     expect(submittedCalls[0][0].email).toBe(email)
   })
-  it('should return the name of the payload', () => {
+  it('should set the name of the payload', () => {
     const wrapper = factory({ payload: { name: 'plop' } })
     expect(wrapper.vm.name).toBe('plop')
   })
-  it('should return the civility of the payload', () => {
+  it('should set the civility of the payload', () => {
     const wrapper = factory({ payload: { title: 'Miss' } })
     expect(wrapper.vm.title).toBe('Miss')
   })
-  it('should return the lastname of the payload', () => {
+  it('should set the lastname of the payload', () => {
     const wrapper = factory({ payload: { lastname: 'le jambon' } })
     expect(wrapper.vm.lastname).toBe('le jambon')
   })
-  it('should return the firstname of the payload', () => {
+  it('should set the firstname of the payload', () => {
     const wrapper = factory({ payload: { firstname: 'de parme' } })
     expect(wrapper.vm.firstname).toBe('de parme')
   })
-  it('should return the email of the payload', () => {
+  it('should set the email of the payload', () => {
     const wrapper = factory({ payload: { email: 'lejambondeparme@orange.fr' } })
     expect(wrapper.vm.email).toBe('lejambondeparme@orange.fr')
   })
-  it('should return null if empty payload', () => {
+  it('should have null name if empty payload', () => {
     const wrapper = factory()
     expect(wrapper.vm.name).toBe(null)
   })
-  it('should return null if empty payload', () => {
+  it('should have null title if empty payload', () => {
     const wrapper = factory()
     expect(wrapper.vm.title).toBe(null)
   })
-  it('should return null if empty payload', () => {
+  it('should have null lastname if empty payload', () => {
     const wrapper = factory()
     expect(wrapper.vm.lastname).toBe(null)
   })
-  it('should return null if empty payload', () => {
+  it('should have null firstname if empty payload', () => {
     const wrapper = factory()
     expect(wrapper.vm.firstname).toBe(null)
   })
-  it('should return null if empty payload', () => {
+  it('should have null email if empty payload', () => {
     const wrapper = factory()
     expect(wrapper.vm.email).toBe(null)
   })

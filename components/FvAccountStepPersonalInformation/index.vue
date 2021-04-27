@@ -3,7 +3,7 @@
   v-row
     v-col(cols="2")
       v-select(
-        data-testid='civilitySelect'
+        data-testid='civilityField'
         outlined
         :items="titres"
         :value="title"
@@ -12,7 +12,7 @@
       )
     v-col(cols='10')
       fv-text-field(
-        data-testid='accountName'
+        data-testid='nameField'
         :value="name"
         :label="$t('forms.accounts.new.name')"
         @input="nameChanged"
@@ -20,14 +20,14 @@
   v-row
     v-col(cols="6")
       fv-text-field(
-        data-testid='userLastname'
+        data-testid='lastnameField'
         :value="lastname"
         :label="$t('forms.accounts.new.lastname')"
         @input="lastnameChanged"
       )
     v-col(cols="6")
       fv-text-field(
-        data-testid='userFirstname'
+        data-testid='firstnameField'
         :value="firstname"
         :label="$t('forms.accounts.new.firstname')"
         @input="firstnameChanged"
@@ -35,7 +35,7 @@
   v-row
     v-col(cols="6")
       fv-text-field(
-        data-testid='accountEmail'
+        data-testid='emailField'
         :value="email"
         :label="$t('forms.accounts.new.email')"
         @input="emailChanged"
