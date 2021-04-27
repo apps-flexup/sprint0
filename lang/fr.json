@@ -387,6 +387,9 @@
           "ms": "Mme",
           "miss": "Mlle"
         }
+      },
+      "edit": {
+        "title": "Modifier mon compte"
       }
     },
     "offers": {
