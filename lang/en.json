@@ -1,4 +1,10 @@
 {
+  "mediaField": {
+    "label": "Label",
+    "mailLabel": "Email",
+    "phoneLabel": "Phone",
+    "addressLabel": "Address"
+  },
   "selectHeaders": {
     "title": {
       "products": "Customize your product table",
@@ -287,6 +293,12 @@
       "step": {
         "0": "Personal information"
       }
+    "addresses": {
+      "title": "Address",
+      "street": "Address",
+      "zip": "ZIP",
+      "city": "City",
+      "country": "Country"
     },
     "contracts": {
       "step": {

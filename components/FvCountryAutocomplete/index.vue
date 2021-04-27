@@ -2,9 +2,11 @@
 .fv-country-autocomplete
   fv-autocomplete(
     data-testid="autocomplete"
-    :element="countryId"
+    :element="country"
     :items="items"
     :filter="filterList"
+    :returnObject="true"
+    :itemValue="itemValue"
     @autocomplete:selected="selected"
   )
     template(v-slot:label)
@@ -23,10 +25,16 @@ export default {
   name: 'FvCountryAutocomplete',
   inheritAttrs: true,
   props: {
-    countryId: {
-      type: Number,
+    country: {
+      type: String,
       default() {
-        return 77
+        return null
+      }
+    },
+    itemValue: {
+      type: String,
+      default() {
+        return 'iso3'
       }
     },
     label: {
@@ -48,7 +56,6 @@ export default {
   },
   methods: {
     filterList(item, v, it) {
-      console.log(item)
       return filterCountryAutocomplete(item, v, it)
     },
     selected(v) {

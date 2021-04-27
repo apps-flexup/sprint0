@@ -1,4 +1,10 @@
 {
+  "mediaField": {
+    "label": "Libellé",
+    "mailLabel": "Email",
+    "phoneLabel": "Téléphone",
+    "addressLabel": "Adresse"
+  },
   "selectHeaders": {
     "title": {
       "products": "Personnalisez votre tableau des produits",
@@ -284,6 +290,13 @@
       "step": {
         "0": "Informations générales"
       }
+    },
+    "addresses": {
+      "title": "Adresse",
+      "street": "Adresse",
+      "zip": "Code postal",
+      "city": "Ville",
+      "country": "Pays"
     },
     "offer": {
       "step": {

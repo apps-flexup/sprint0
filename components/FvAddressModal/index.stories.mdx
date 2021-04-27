@@ -1,0 +1,47 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+import FvAddressModal from './index.vue'
+
+<Meta title='Molecules/FvAddressModal' component={ FvAddressModal } argTypes={{
+  dialog: { control: 'boolean' }
+}}/>
+
+# FvAddressModal
+
+<Canvas>
+<Story name='Common' height='150px' args={{
+  dialog: true
+}}>{{
+  props: {
+    dialog: {}
+  },
+  data() {
+    return {
+      address: {
+        street: '10 rue des plopliers',
+        zip: '12345',
+        city: 'Machmure',
+        country: 'FRA'
+      }
+    }
+  },
+  components: { FvAddressModal },
+  methods: {
+    payloadChanged: action('payload:changed'),
+    close: action('close'),
+    save: action('save')
+  },
+  template: `<FvAddressModal
+    :dialog=dialog
+    :address=address
+    @modal:payload:changed="payloadChanged"
+    @modal:actions:close="close"
+    @modal:actions:save="save"
+  >
+  </FvAddressModal>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvAddressModal } />
