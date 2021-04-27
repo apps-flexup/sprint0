@@ -380,6 +380,9 @@
           "ms": "Ms",
           "miss": "Mrs"
         }
+      },
+      "edit": {
+        "title": "Edit my account"
       }
     },
     "offers": {
