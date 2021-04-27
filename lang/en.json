@@ -293,6 +293,7 @@
       "step": {
         "0": "Personal information"
       }
+    },
     "addresses": {
       "title": "Address",
       "street": "Address",
