@@ -96,9 +96,6 @@ export default {
 </script>
 
 <style scoped>
-::v-deep .v-text-field__details {
-  display: none;
-}
 .chip {
   margin: 5px;
 }

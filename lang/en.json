@@ -192,7 +192,7 @@
     "route": {
       "account": "Account",
       "accounts": "My accounts",
-      "account-new": "New account",
+      "accounts-new": "New account",
       "dashboard": "Dashboard",
       "index": "Home",
       "orders": "Orders",
@@ -289,6 +289,11 @@
         "0": "General information"
       }
     },
+    "account": {
+      "step": {
+        "0": "Personal information"
+      }
+    },
     "addresses": {
       "title": "Address",
       "street": "Address",
@@ -365,10 +370,11 @@
     "accounts": {
       "new": {
         "name": "Account name",
-        "title": "Title",
+        "title": "New account",
         "lastname": "Lastname",
         "firstname": "Firstname",
         "email": "Email",
+        "civility": "Civility",
         "titles": {
           "mr": "Mr",
           "ms": "Ms",

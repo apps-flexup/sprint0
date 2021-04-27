@@ -1,35 +1,41 @@
 <template lang="pug">
 .fv-payment-structure-step-detail
-  fv-text-field(
-    data-testid="labelField"
-    :value="label"
-    :label="$t('forms.paymentStructures.new.label')"
-    @input="labelChanged"
-  )
-  fv-payment-condition-autocomplete(
-    data-testid="autocomplete"
-    @paymentCondition:selected="paymentConditionSelected"
-  )
-  fv-payment-condition-data-table(
-    data-testid="table"
-    v-if="paymentConditions && paymentConditions.length"
-    :headers="headers"
-    :items="paymentConditionsDetails"
-    :hideDefaultFooter="true"
-    @dataTable:portionChanged="portionChanged"
-    @dataTable:delete="deleteItem"
-    @dataTable:selected="selected"
-  )
-    template(v-slot:body.prepend)
-      tr(class="totalLine")
-        td.text-left {{ $t('forms.paymentStructures.new.globalRisk') }}
-        td
-        td {{ displayGlobalRisk() }}
-        td
-  p.errorMsg(
-    data-testid="error"
-    v-if="paymentConditions && paymentConditions.length && totalPortion !== 100"
-  ) {{ $t('forms.paymentStructures.new.totalPortionMustBe100') }}
+  v-row
+    v-col(cols='12')
+      fv-text-field(
+        data-testid="labelField"
+        :value="label"
+        :label="$t('forms.paymentStructures.new.label')"
+        @input="labelChanged"
+      )
+  v-row
+    v-col(cols='12')
+      fv-payment-condition-autocomplete(
+        data-testid="autocomplete"
+        @paymentCondition:selected="paymentConditionSelected"
+      )
+  v-row
+    v-col(cols='12')
+      fv-payment-condition-data-table(
+        data-testid="table"
+        v-if="paymentConditions && paymentConditions.length"
+        :headers="headers"
+        :items="paymentConditionsDetails"
+        :hideDefaultFooter="true"
+        @dataTable:portionChanged="portionChanged"
+        @dataTable:delete="deleteItem"
+        @dataTable:selected="selected"
+      )
+        template(v-slot:body.prepend)
+          tr(class="totalLine")
+            td.text-left {{ $t('forms.paymentStructures.new.globalRisk') }}
+            td
+            td {{ displayGlobalRisk() }}
+            td
+      p.errorMsg(
+        data-testid="error"
+        v-if="paymentConditions && paymentConditions.length && totalPortion !== 100"
+      ) {{ $t('forms.paymentStructures.new.totalPortionMustBe100') }}
 </template>
 
 <script>
@@ -173,10 +179,6 @@ export default {
 </script>
 
 <style scoped>
-::v-deep .v-input.theme--light .v-input__slot {
-  background: #ffffff;
-  margin-bottom: initial;
-}
 .totalLine {
   background-color: #fff8df;
 }

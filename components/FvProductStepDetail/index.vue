@@ -96,7 +96,4 @@ export default {
 .headText {
   font-weight: 100;
 }
-::v-deep .v-input.theme--light .v-input__slot {
-  background: #ffffff;
-}
 </style>

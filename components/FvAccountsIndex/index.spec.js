@@ -50,6 +50,9 @@ describe('FvAccountsIndex', () => {
       user_id: '2ae5fcf8-9ed5-480a-89c8-a2f946e72140'
     }
   ]
+  const $router = {
+    push: jest.fn()
+  }
   let store
 
   const factory = () => {
@@ -57,7 +60,8 @@ describe('FvAccountsIndex', () => {
       localVue,
       store,
       mocks: {
-        $t: (msg) => msg
+        $t: (msg) => msg,
+        $router
       }
     })
   }
