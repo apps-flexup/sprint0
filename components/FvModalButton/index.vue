@@ -1,5 +1,7 @@
 <template lang="pug">
 .fv-modal-button
+  div(data-testid='slot-icon')
+    slot(name="icon")
   v-btn(
     data-testid="button"
     color='blue darken-1'

@@ -437,7 +437,8 @@
         "label": "Label",
         "paymentConditions": "Payment conditions",
         "globalRisk": "Global risk",
-        "totalPortionMustBe100": "The total must be equal to 100%"
+        "totalPortionMustBe100": "The total must be equal to 100%",
+        "addNewPaymentCondition": "Create new payment condition"
       },
       "edit": {
         "title": "Edit my payment structure"

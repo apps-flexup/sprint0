@@ -43,7 +43,7 @@ export default {
 }
 .number {
   border: solid 1px;
-  padding: 0 8.5px;
+  padding: 0 9px;
   border-radius: 50px;
   font-size: 19px;
   margin-bottom: initial;

@@ -3,6 +3,9 @@ import FvModalButton from './index'
 
 const factory = () => {
   return mount(FvModalButton, {
+    slots: {
+      icon: 'HelloWorld'
+    },
     mocks: {
       $t: (msg) => msg
     }
@@ -21,5 +24,10 @@ describe('FvModalButton', () => {
     const clickedCalls = wrapper.emitted('button:click')
     expect(clickedCalls).toBeTruthy()
     expect(clickedCalls).toHaveLength(1)
+  })
+  it('should render icon slot', () => {
+    const wrapper = factory()
+    const slotIcon = wrapper.find('[data-testid=slot-icon]')
+    expect(slotIcon.text()).toBe('HelloWorld')
   })
 })

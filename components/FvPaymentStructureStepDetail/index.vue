@@ -30,6 +30,17 @@
     data-testid="error"
     v-if="paymentConditions && paymentConditions.length && totalPortion !== 100"
   ) {{ $t('forms.paymentStructures.new.totalPortionMustBe100') }}
+  fv-modal-button(
+    data-testid="addNewPaymentConditionButton"
+    @button:click="addNewPaymentCondition"
+  ) {{ $t('forms.paymentStructures.new.addNewPaymentCondition') }}
+    template(v-slot:icon)
+      fv-icon(
+        x-large=true
+        icon="mdi-plus"
+        color="#1976d2"
+        @icon:clicked="addNewPaymentCondition"
+      )
 </template>
 
 <script>
@@ -167,6 +178,9 @@ export default {
     selected(_v) {
       // const paymentCondition = JSON.parse(JSON.stringify(v))
       // this.$router.push('/paymentConditions/' + paymentCondition.id)
+    },
+    addNewPaymentCondition() {
+      this.$router.push({ path: '/paymentConditions/new' })
     }
   }
 }
@@ -176,6 +190,18 @@ export default {
 ::v-deep .v-input.theme--light .v-input__slot {
   background: #ffffff;
   margin-bottom: initial;
+}
+.fv-modal-button {
+  display: flex;
+  align-items: baseline;
+}
+.fv-icon {
+  border: solid 1px;
+  border-radius: 50px;
+}
+::v-deep .v-btn {
+  text-transform: initial;
+  font-size: 1rem;
 }
 .totalLine {
   background-color: #fff8df;

@@ -10,7 +10,12 @@ let store
 const $activeAccount = {
   headers: jest.fn()
 }
-
+const $router = {
+  push: jest.fn()
+}
+const $route = {
+  path: 'paymentConditions/new'
+}
 const factory = (propsData) => {
   return shallowMount(FvPaymentStructureStepDetail, {
     localVue,
@@ -20,7 +25,9 @@ const factory = (propsData) => {
     },
     mocks: {
       $t: (msg) => msg,
-      $activeAccount
+      $activeAccount,
+      $router,
+      $route
     }
   })
 }
@@ -46,6 +53,9 @@ describe('FvPaymentStructureStepDetail', () => {
     const wrapper = factory()
     expect(wrapper.find('[data-testid="labelField"]').exists()).toBe(true)
     expect(wrapper.find('[data-testid="autocomplete"]').exists()).toBe(true)
+    expect(
+      wrapper.find('[data-testid="addNewPaymentConditionButton"]').exists()
+    ).toBe(true)
     expect(wrapper.find('[data-testid="table"]').exists()).toBe(false)
     expect(wrapper.find('[data-testid="error"]').exists()).toBe(false)
   })
@@ -86,5 +96,13 @@ describe('FvPaymentStructureStepDetail', () => {
       label
     }
     expect(payloadChangedCalls[0][0]).toEqual(expectedPayload)
+  })
+  it('should push to new payment condition form when the new payment condition button is clicked', () => {
+    const wrapper = factory()
+    const addNewPaymentConditionButton = wrapper.find(
+      '[data-testid="addNewPaymentConditionButton"]'
+    )
+    addNewPaymentConditionButton.vm.$emit('button:click')
+    expect(addNewPaymentConditionButton.vm.$route.path).toBe($route.path)
   })
 })
