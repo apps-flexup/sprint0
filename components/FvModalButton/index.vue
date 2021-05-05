@@ -1,19 +1,24 @@
 <template lang="pug">
 .fv-modal-button
-  div(data-testid='slot-icon')
-    slot(name="icon")
-  v-btn(
-    data-testid="button"
-    color='blue darken-1'
-    text=''
-    @click.stop='click'
+  fv-text-button(
+    data-testid='modal-button'
+    @button:click="click"
   )
-    slot
+    template(v-slot:text)
+      | {{ text }}
 </template>
 
 <script>
 export default {
-  name: 'FvCloseModalButton',
+  name: 'FvModalButton',
+  props: {
+    text: {
+      type: String,
+      default() {
+        return null
+      }
+    }
+  },
   mounted() {
     console.log('Composant', this.$options.name)
   },

@@ -1,0 +1,24 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+import FvTextButton from './index.vue'
+
+<Meta title='Atoms/FvTextButton' component={ FvTextButton } />
+
+# FvTextButton
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  components: { FvTextButton },
+  methods: {
+    click: action('click')
+  },
+  template: `<FvTextButton
+    @button:click="click"
+  >
+  </FvTextButton>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvTextButton } />

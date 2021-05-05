@@ -86,6 +86,7 @@ import FvSlotItemCard from '@/components/FvSlotItemCard'
 import FvStepper from '@/components/FvStepper'
 import FvStepForm from '@/components/FvStepForm'
 import FvSubMenu from '@/components/FvSubMenu'
+import FvTextButton from '@/components/FvTextButton'
 import FvTh from '@/components/FvTh'
 import FvThemeAutocomplete from '@/components/FvThemeAutocomplete'
 import FvVatField from '@/components/FvVatField'
@@ -243,6 +244,7 @@ Vue.component('fv-slot-item-card', FvSlotItemCard)
 Vue.component('fv-stepper', FvStepper)
 Vue.component('fv-step-form', FvStepForm)
 Vue.component('fv-sub-menu', FvSubMenu)
+Vue.component('fv-text-button', FvTextButton)
 Vue.component('fv-th', FvTh)
 Vue.component('fv-theme-autocomplete', FvThemeAutocomplete)
 Vue.component('fv-vat-field', FvVatField)

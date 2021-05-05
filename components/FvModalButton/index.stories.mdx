@@ -2,18 +2,26 @@ import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
 import { action } from '@storybook/addon-actions'
 import FvModalButton from './index.vue'
 
-<Meta title='Atoms/FvModalButton' component={ FvModalButton } />
+<Meta title='Atoms/FvModalButton' component={ FvModalButton } argTypes={{
+  text: { control: 'text' }
+}}/>
 
 # FvModalButton
 
 <Canvas>
-<Story name='Common' height='150px'>{{
+<Story name='Common' height='150px' args={{
+  text: 'Modal button'
+}}>{{
+  props: {
+    text: {}
+  },
   components: { FvModalButton },
   methods: {
-    close: action('close')
+    click: action('click')
   },
   template: `<FvModalButton
-    @button:close="close"
+    @button:click="click"
+    :text="text"
   >
   </FvModalButton>`
 }}</Story>

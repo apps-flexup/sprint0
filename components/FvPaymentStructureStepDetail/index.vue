@@ -30,10 +30,10 @@
     data-testid="error"
     v-if="paymentConditions && paymentConditions.length && totalPortion !== 100"
   ) {{ $t('forms.paymentStructures.new.totalPortionMustBe100') }}
-  fv-modal-button(
+  fv-text-button(
     data-testid="addNewPaymentConditionButton"
     @button:click="addNewPaymentCondition"
-  ) {{ $t('forms.paymentStructures.new.addNewPaymentCondition') }}
+  )
     template(v-slot:icon)
       fv-icon(
         x-large=true
@@ -41,6 +41,8 @@
         color="#1976d2"
         @icon:clicked="addNewPaymentCondition"
       )
+    template(v-slot:text)
+      | {{ $t('forms.paymentStructures.new.addNewPaymentCondition') }}
 </template>
 
 <script>
@@ -180,7 +182,7 @@ export default {
       // this.$router.push('/paymentConditions/' + paymentCondition.id)
     },
     addNewPaymentCondition() {
-      this.$router.push({ path: '/paymentConditions/new' })
+      this.$router.push('/paymentConditions/new')
     }
   }
 }
@@ -190,10 +192,6 @@ export default {
 ::v-deep .v-input.theme--light .v-input__slot {
   background: #ffffff;
   margin-bottom: initial;
-}
-.fv-modal-button {
-  display: flex;
-  align-items: baseline;
 }
 .fv-icon {
   border: solid 1px;
