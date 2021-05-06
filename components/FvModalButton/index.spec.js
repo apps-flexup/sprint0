@@ -3,8 +3,8 @@ import FvModalButton from './index'
 
 const factory = () => {
   return mount(FvModalButton, {
-    propsData: {
-      text: 'HelloWorld'
+    slots: {
+      default: 'HelloWorld'
     }
   })
 }
@@ -22,7 +22,7 @@ describe('FvModalButton', () => {
     expect(clickedCalls).toBeTruthy()
     expect(clickedCalls).toHaveLength(1)
   })
-  it('should button have a text from props text', () => {
+  it('should render a slot', () => {
     const wrapper = factory()
     const modalButton = wrapper.find('[data-testid=modal-button]')
     expect(modalButton.text()).toBe('HelloWorld')
