@@ -5,7 +5,8 @@
     @button:click="click"
   )
     template(v-slot:text)
-      | {{ text }}
+      slot(name='modal-text')
+        | {{ text }}
 </template>
 
 <script>

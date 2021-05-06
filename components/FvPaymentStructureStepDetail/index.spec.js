@@ -10,12 +10,8 @@ let store
 const $activeAccount = {
   headers: jest.fn()
 }
-const $router = {
-  push: jest.fn()
-}
-const $route = {
-  path: 'paymentConditions/new'
-}
+const pushFn = jest.fn()
+
 const factory = (propsData) => {
   return shallowMount(FvPaymentStructureStepDetail, {
     localVue,
@@ -26,8 +22,9 @@ const factory = (propsData) => {
     mocks: {
       $t: (msg) => msg,
       $activeAccount,
-      $router,
-      $route
+      $router: {
+        push: pushFn
+      }
     }
   })
 }
@@ -103,6 +100,8 @@ describe('FvPaymentStructureStepDetail', () => {
       '[data-testid="addNewPaymentConditionButton"]'
     )
     addNewPaymentConditionButton.vm.$emit('button:click')
-    expect(addNewPaymentConditionButton.vm.$route.path).toBe($route.path)
+    expect(pushFn).toHaveBeenCalledTimes(1)
+    const newPaymentConditionRoute = '/paymentConditions/new'
+    expect(pushFn).toHaveBeenCalledWith(newPaymentConditionRoute)
   })
 })
