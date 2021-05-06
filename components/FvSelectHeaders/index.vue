@@ -48,8 +48,7 @@
     template(v-slot:actions)
       fv-modal-button(
         @button:click='resetToDefaultHeaders'
-        :text="$t('modal.resetDefault')"
-      )
+      ) {{ $t('modal.resetDefault') }}
       v-spacer
       fv-modal-actions(
         @modal:actions:close="close"

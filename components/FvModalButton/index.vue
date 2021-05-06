@@ -5,21 +5,12 @@
     @button:click="click"
   )
     template(v-slot:text)
-      slot(name='modal-text')
-        | {{ text }}
+      slot
 </template>
 
 <script>
 export default {
   name: 'FvModalButton',
-  props: {
-    text: {
-      type: String,
-      default() {
-        return null
-      }
-    }
-  },
   mounted() {
     console.log('Composant', this.$options.name)
   },
