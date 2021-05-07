@@ -1,0 +1,51 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+import { iconsAvailable, defaultIcon } from '@/.storybook/data/iconsAvailable'
+import FvTextButton from './index.vue'
+import FvIcon from './../FvIcon/index.vue'
+
+<Meta title='Atoms/FvTextButton' component={ FvTextButton, FvIcon } argTypes={{
+  text: { control: 'text'},
+  icon: {
+    control: {
+      type: 'select',
+      options: iconsAvailable
+    }
+  }
+}}/>
+
+# FvTextButton
+
+<Canvas>
+<Story name='Common' height='150px' args={{
+  text: 'Text button',
+  icon: defaultIcon
+}}>{{
+  components: { FvTextButton, FvIcon },
+  props: {
+    text: {},
+    icon: {}
+  },
+  methods: {
+    click: action('click')
+  },
+  template: `<FvTextButton
+    @button:click="click"
+  >
+    <template v-slot:text>
+      {{ text }}
+    </template>
+    <template v-slot:icon>
+      <FvIcon
+        :icon="icon"
+        color="blue"
+      >
+      </FvIcon>
+    </template>
+  </FvTextButton>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvTextButton } />

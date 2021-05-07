@@ -465,7 +465,8 @@
         "label": "Libellé",
         "paymentConditions": "Conditions de paiement",
         "globalRisk": "Risque global",
-        "totalPortionMustBe100": "Le total doit être égal à 100%"
+        "totalPortionMustBe100": "Le total doit être égal à 100%",
+        "addNewPaymentCondition": "Créer une nouvelle condition de paiement"
       },
       "edit": {
         "title": "Modifier ma structure de paiement"

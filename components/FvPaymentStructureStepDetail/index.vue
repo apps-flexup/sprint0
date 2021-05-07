@@ -173,12 +173,27 @@ export default {
     selected(_v) {
       // const paymentCondition = JSON.parse(JSON.stringify(v))
       // this.$router.push('/paymentConditions/' + paymentCondition.id)
+    },
+    addNewPaymentCondition() {
+      this.$router.push('/paymentConditions/new')
     }
   }
 }
 </script>
 
 <style scoped>
+::v-deep .v-input.theme--light .v-input__slot {
+  background: #ffffff;
+  margin-bottom: initial;
+}
+.fv-icon {
+  border: solid 1px;
+  border-radius: 50px;
+}
+::v-deep .v-btn {
+  text-transform: initial;
+  font-size: 1rem;
+}
 .totalLine {
   background-color: #fff8df;
 }
