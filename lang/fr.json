@@ -1,4 +1,10 @@
 {
+  "mediaField": {
+    "label": "Libellé",
+    "mailLabel": "Email",
+    "phoneLabel": "Téléphone",
+    "addressLabel": "Adresse"
+  },
   "selectHeaders": {
     "title": {
       "products": "Personnalisez votre tableau des produits",
@@ -190,7 +196,7 @@
     "route": {
       "account": "Compte",
       "accounts": "Mes comptes",
-      "account-new": "Nouveau compte",
+      "accounts-new": "Nouveau compte",
       "dashboard": "Tableau de bord",
       "index": "Accueil",
       "orders": "Commandes",
@@ -285,9 +291,21 @@
         "0": "Informations générales"
       }
     },
+    "addresses": {
+      "title": "Adresse",
+      "street": "Adresse",
+      "zip": "Code postal",
+      "city": "Ville",
+      "country": "Pays"
+    },
     "offer": {
       "step": {
         "0": "Informations générales"
+      }
+    },
+    "account": {
+      "step": {
+        "0": "Informations personnelles"
       }
     },
     "contracts": {
@@ -359,15 +377,19 @@
     "accounts": {
       "new": {
         "name": "Nom du compte",
-        "title": "Titre",
+        "title": "Nouveau compte",
         "lastname": "Nom",
         "firstname": "Prénom",
         "email": "Email",
+        "civility": "Civilité",
         "titles": {
           "mr": "M.",
           "ms": "Mme",
           "miss": "Mlle"
         }
+      },
+      "edit": {
+        "title": "Modifier mon compte"
       }
     },
     "offers": {

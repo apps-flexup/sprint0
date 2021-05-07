@@ -4,6 +4,9 @@ import FvAccount from '@/components/FvAccount'
 import FvAccountCard from '@/components/FvAccountCard'
 import FvAccountInfo from '@/components/FvAccountInfo'
 import FvAccountsIndex from '@/components/FvAccountsIndex'
+import FvAddressField from '@/components/FvAddressField'
+import FvAddressModal from '@/components/FvAddressModal'
+import FvAccountStepPersonalInformation from '@/components/FvAccountStepPersonalInformation'
 import FvAutocomplete from '@/components/FvAutocomplete'
 import FvAvatar from '@/components/FvAvatar'
 import FvAvatarWithName from '@/components/FvAvatarWithName'
@@ -43,6 +46,8 @@ import FvLanguageAutocomplete from '@/components/FvLanguageAutocomplete'
 import FvListAccounts from '@/components/FvListAccounts'
 import FvLoginButton from '@/components/FvLoginButton'
 import FvLogoutButton from '@/components/FvLogoutButton'
+import FvMailField from '@/components/FvMailField'
+import FvMediaField from '@/components/FvMediaField'
 import FvMenu from '@/components/FvMenu'
 import FvModalActions from '@/components/FvModalActions'
 import FvModalButton from '@/components/FvModalButton'
@@ -63,6 +68,7 @@ import FvPaymentStructureIndex from '@/components/FvPaymentStructureIndex'
 import FvPaymentStructureList from '@/components/FvPaymentStructureList'
 import FvPaymentStructureStepDetail from '@/components/FvPaymentStructureStepDetail'
 import FvPaymentTermParams from '@/components/FvPaymentTermParams'
+import FvPhoneField from '@/components/FvPhoneField'
 import FvPriceField from '@/components/FvPriceField'
 import FvPriceToPreferredCurrency from '@/components/FvPriceToPreferredCurrency'
 import FvPriceWithUnit from '@/components/FvPriceWithUnit'
@@ -146,6 +152,12 @@ Vue.component('fv-account', FvAccount)
 Vue.component('fv-account-card', FvAccountCard)
 Vue.component('fv-account-info', FvAccountInfo)
 Vue.component('fv-accounts-index', FvAccountsIndex)
+Vue.component('fv-address-field', FvAddressField)
+Vue.component('fv-address-modal', FvAddressModal)
+Vue.component(
+  'fv-account-step-personal-information',
+  FvAccountStepPersonalInformation
+)
 Vue.component('fv-autocomplete', FvAutocomplete)
 Vue.component('fv-avatar', FvAvatar)
 Vue.component('fv-avatar-with-name', FvAvatarWithName)
@@ -194,6 +206,8 @@ Vue.component('fv-language-autocomplete', FvLanguageAutocomplete)
 Vue.component('fv-list-accounts', FvListAccounts)
 Vue.component('fv-login-button', FvLoginButton)
 Vue.component('fv-logout-button', FvLogoutButton)
+Vue.component('fv-mail-field', FvMailField)
+Vue.component('fv-media-field', FvMediaField)
 Vue.component('fv-menu', FvMenu)
 Vue.component('fv-modal-actions', FvModalActions)
 Vue.component('fv-modal-button', FvModalButton)
@@ -220,6 +234,7 @@ Vue.component('fv-payment-structure-index', FvPaymentStructureIndex)
 Vue.component('fv-payment-structure-list', FvPaymentStructureList)
 Vue.component('fv-payment-structure-step-detail', FvPaymentStructureStepDetail)
 Vue.component('fv-payment-term-params', FvPaymentTermParams)
+Vue.component('fv-phone-field', FvPhoneField)
 Vue.component('fv-price-field', FvPriceField)
 Vue.component('fv-price-to-preferred-currency', FvPriceToPreferredCurrency)
 Vue.component('fv-price-with-unit', FvPriceWithUnit)

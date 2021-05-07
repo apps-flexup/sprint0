@@ -1,4 +1,10 @@
 {
+  "mediaField": {
+    "label": "Label",
+    "mailLabel": "Email",
+    "phoneLabel": "Phone",
+    "addressLabel": "Address"
+  },
   "selectHeaders": {
     "title": {
       "products": "Customize your product table",
@@ -13,6 +19,10 @@
         "product": "Products",
         "offer": "Offers"
       }
+    },
+    "columnName": "Column name",
+    "settings": {
+      "displayed": "Displayed ?"
     }
   },
   "references": {
@@ -186,7 +196,7 @@
     "route": {
       "account": "Account",
       "accounts": "My accounts",
-      "account-new": "New account",
+      "accounts-new": "New account",
       "dashboard": "Dashboard",
       "index": "Home",
       "orders": "Orders",
@@ -283,6 +293,18 @@
         "0": "General information"
       }
     },
+    "account": {
+      "step": {
+        "0": "Personal information"
+      }
+    },
+    "addresses": {
+      "title": "Address",
+      "street": "Address",
+      "zip": "ZIP",
+      "city": "City",
+      "country": "Country"
+    },
     "contracts": {
       "step": {
         "0": "-",
@@ -352,15 +374,19 @@
     "accounts": {
       "new": {
         "name": "Account name",
-        "title": "Title",
+        "title": "New account",
         "lastname": "Lastname",
         "firstname": "Firstname",
         "email": "Email",
+        "civility": "Civility",
         "titles": {
           "mr": "Mr",
           "ms": "Ms",
           "miss": "Mrs"
         }
+      },
+      "edit": {
+        "title": "Edit my account"
       }
     },
     "offers": {

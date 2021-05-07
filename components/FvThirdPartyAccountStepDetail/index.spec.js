@@ -82,12 +82,14 @@ describe('FvThirdPartyAccountStepDetail', () => {
   it('should send a signal when country is changed', () => {
     const wrapper = factory()
     const countryInput = wrapper.find('[data-testid="country"]')
-    const countryId = 1
-    countryInput.vm.$emit('country:selected', countryId)
+    const country = {
+      iso3: 'FRA'
+    }
+    countryInput.vm.$emit('country:selected', country)
     const emitCalls = wrapper.emitted('payload:changed')
     expect(emitCalls).toBeTruthy()
     expect(emitCalls).toHaveLength(1)
-    expect(emitCalls[0][0].country_id).toBe(countryId)
+    expect(emitCalls[0][0].country).toBe(country.iso3)
   })
   it('should send a signal when legalStructure is changed', () => {
     const wrapper = factory()

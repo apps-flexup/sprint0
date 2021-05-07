@@ -37,7 +37,7 @@
     v-col.md-10.sm-10.lg-10.xl-10(cols='10')
       fv-country-autocomplete(
         data-testid='country'
-        :countryId="countryId"
+        :country="country"
         :label="$t('forms.thirdPartyAccounts.new.country')"
         @country:selected="countrySelected"
       )
@@ -87,8 +87,8 @@ export default {
       const res = this.payload ? this.payload.city : null
       return res
     },
-    countryId() {
-      const res = this.payload ? this.payload.country_id : null
+    country() {
+      const res = this.payload ? this.payload.country : null
       return res
     },
     legalStructureId() {
@@ -130,7 +130,7 @@ export default {
     },
     countrySelected(v) {
       const payload = {
-        country_id: v
+        country: v.iso3
       }
       this.$emit('payload:changed', payload)
     },
@@ -149,9 +149,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-::v-deep .v-input.theme--light .v-input__slot {
-  background: #ffffff;
-}
-</style>

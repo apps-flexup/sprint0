@@ -140,9 +140,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-::v-deep .v-input.theme--light .v-input__slot {
-  background: #ffffff;
-}
-</style>

@@ -1131,17 +1131,6 @@
       "title": "M.",
       "user_id": "61d4b5f7-8887-474f-b982-253b78ca95f8",
       "currency": "EUR"
-    },
-    {
-      "email": "gregory.mevelec@flexup.org",
-      "country_id": 77,
-      "firstname": "grog",
-      "id": 13,
-      "lastname": "grog",
-      "name": "grog",
-      "title": null,
-      "user_id": "105092c4-0558-460b-99ba-4063d3a75731",
-      "currency": "EUR"
     }
   ],
   "categories": [
@@ -2100,6 +2089,12 @@
     {
       "id": 4,
       "name": "charter 4"
+    }
+  ],
+  "account-steps": [
+    {
+      "component": "fv-account-step-personal-information",
+      "title": "forms.account.step.0"
     }
   ],
   "contact-steps": [
