@@ -36,6 +36,19 @@
         data-testid="error"
         v-if="paymentConditions && paymentConditions.length && totalPortion !== 100"
       ) {{ $t('forms.paymentStructures.new.totalPortionMustBe100') }}
+      fv-text-button(
+        data-testid="addNewPaymentConditionButton"
+        @button:click="addNewPaymentCondition"
+      )
+        template(v-slot:icon)
+          fv-icon(
+            x-large=true
+            icon="mdi-plus"
+            color="#1976d2"
+            @icon:clicked="addNewPaymentCondition"
+          )
+        template(v-slot:text)
+          | {{ $t('forms.paymentStructures.new.addNewPaymentCondition') }}
 </template>
 
 <script>
