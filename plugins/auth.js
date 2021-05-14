@@ -11,12 +11,12 @@ export default function({ $auth, store }) {
     const userId = $auth.user.sub
     const connectedUser = $auth.user
     let found = false
-    let i = -1
-    while (!found && i < users.length - 1) {
-      i++
+    let i = 0
+    while (!found && i < users.length) {
       if (users[i].uuid === userId) {
         found = true
       }
+      i++
     }
     if (!found) {
       store.dispatch('users/add', connectedUser)
