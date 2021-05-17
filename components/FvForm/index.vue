@@ -94,7 +94,7 @@ export default {
       this.$nuxt.$loading.finish()
     },
     cancel() {
-      this.$router.push('/' + this.url, () => {})
+      this.$router.go(-1)
       this.$emit('clicked')
     },
     payloadChanged(payload) {
