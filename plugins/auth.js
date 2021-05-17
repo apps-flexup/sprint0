@@ -20,6 +20,7 @@ export default function({ $auth, store }) {
     }
     if (!found) {
       store.dispatch('users/add', connectedUser)
+      store.dispatch('accounts/addPersonalAccount', connectedUser)
     }
   })
 }

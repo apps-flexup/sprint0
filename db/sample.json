@@ -1,4 +1,16 @@
 {
+  "users": [
+    {
+      "email_verified": false,
+      "name": "toto La Riflette",
+      "preferred_username": "toto",
+      "given_name": "toto",
+      "family_name": "La Riflette",
+      "email": "toto@toto.com",
+      "uuid": "c7e4d104-2e45-4056-94cc-10a87af32693",
+      "id": 1
+    }
+  ],
   "payment-structures": [
     {
       "label": "B25 + E75",
@@ -945,6 +957,31 @@
         "contracts": []
       },
       "id": 1
+    },
+    {
+      "account_id": 13,
+      "headers": {
+        "products": [],
+        "third_party_accounts": [],
+        "payment_conditions": [],
+        "payment_structures": [],
+        "offers": {
+          "main": [],
+          "sub": {
+            "products": [],
+            "offers": []
+          }
+        },
+        "orders": {
+          "main": [],
+          "sub": {
+            "orders": []
+          }
+        },
+        "payment_conditions_for_payment_structure_form": [],
+        "contracts": []
+      },
+      "id": 2
     }
   ],
   "accounts": [
@@ -961,7 +998,7 @@
       ],
       "roles_methods": null,
       "supplier": false,
-      "user_id": "2ae5fcf8-9ed5-480a-89c8-a2f946e72140",
+      "user_id": "c7e4d104-2e45-4056-94cc-10a87af32693",
       "id": 1
     },
     {
@@ -993,7 +1030,7 @@
       ],
       "roles_methods": null,
       "supplier": false,
-      "user_id": "2ae5fcf8-9ed5-480a-89c8-a2f946e72140",
+      "user_id": "c7e4d104-2e45-4056-94cc-10a87af32693",
       "currency": "EUR"
     },
     {
@@ -1009,7 +1046,7 @@
       ],
       "roles_methods": null,
       "supplier": false,
-      "user_id": "2ae5fcf8-9ed5-480a-89c8-a2f946e72140",
+      "user_id": "c7e4d104-2e45-4056-94cc-10a87af32693",
       "currency": "EUR"
     },
     {
@@ -1026,7 +1063,7 @@
       ],
       "roles_methods": null,
       "supplier": false,
-      "user_id": "2ae5fcf8-9ed5-480a-89c8-a2f946e72140",
+      "user_id": "c7e4d104-2e45-4056-94cc-10a87af32693",
       "currency": "EUR"
     },
     {
@@ -1131,6 +1168,17 @@
       "title": "M.",
       "user_id": "61d4b5f7-8887-474f-b982-253b78ca95f8",
       "currency": "EUR"
+    },
+    {
+      "parent_type": "User",
+      "parent_id": "c7e4d104-2e45-4056-94cc-10a87af32693",
+      "type": "Personal",
+      "name": "toto La Riflette",
+      "firstname": "toto",
+      "lastname": "La Riflette",
+      "country": "FRA",
+      "user_id": "c7e4d104-2e45-4056-94cc-10a87af32693",
+      "id": 13
     }
   ],
   "categories": [
@@ -14962,6 +15010,11 @@
       "legal_structure_id": 2,
       "account_id": 1,
       "id": 11
+    },
+    {
+      "name": "toto La Riflette",
+      "account_id": null,
+      "id": 12
     }
   ],
   "products": [
