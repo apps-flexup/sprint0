@@ -59,7 +59,25 @@ export default {
       return res
     },
     title() {
-      const res = this.payload ? this.payload.title : null
+      let res = this.payload ? this.payload.title : null
+      switch (res) {
+        case 'Mrs':
+        case 'Mlle':
+          res = 'Miss'
+          break
+        case 'M.':
+          res = 'Mr'
+          break
+        case 'Mme':
+          res = 'Ms'
+          break
+        default:
+          break
+      }
+      const translateTitle = this.$t(
+        'forms.accounts.new.titles.' + res.toLowerCase()
+      )
+      res = translateTitle
       return res
     },
     lastname() {
@@ -90,6 +108,7 @@ export default {
   },
   methods: {
     civilityChanged(title) {
+      console.log('le title', title)
       const payload = {
         title
       }

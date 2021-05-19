@@ -945,6 +945,43 @@
         "contracts": []
       },
       "id": 1
+    },
+    {
+      "account_id": 13,
+      "headers": {
+        "products": [],
+        "third_party_accounts": [],
+        "payment_conditions": [],
+        "payment_structures": [],
+        "offers": {
+          "main": [],
+          "sub": {
+            "products": [],
+            "offers": []
+          }
+        },
+        "orders": {
+          "main": [],
+          "sub": {
+            "orders": []
+          }
+        },
+        "payment_conditions_for_payment_structure_form": [],
+        "contracts": []
+      },
+      "id": 2
+    }
+  ],
+  "users": [
+    {
+      "email_verified": false,
+      "name": "toto La Riflette",
+      "preferred_username": "toto",
+      "given_name": "toto",
+      "family_name": "La Riflette",
+      "email": "toto@toto.com",
+      "uuid": "c7e4d104-2e45-4056-94cc-10a87af32693",
+      "id": 1
     }
   ],
   "accounts": [
@@ -1131,6 +1168,15 @@
       "title": "M.",
       "user_id": "61d4b5f7-8887-474f-b982-253b78ca95f8",
       "currency": "EUR"
+    },
+    {
+      "name": "test toto",
+      "title": "Mr",
+      "lastname": "toto",
+      "firstname": "le jambon",
+      "email": "toto@toto.com",
+      "user_id": "c7e4d104-2e45-4056-94cc-10a87af32693",
+      "id": 13
     }
   ],
   "categories": [
@@ -14399,7 +14445,7 @@
       "active": true,
       "icon": "mdi-information-outline",
       "title": "accountMenu.information",
-      "to": "/informations"
+      "to": "/accounts"
     },
     {
       "active": true,
@@ -14962,6 +15008,11 @@
       "legal_structure_id": 2,
       "account_id": 1,
       "id": 11
+    },
+    {
+      "name": "test toto",
+      "account_id": null,
+      "id": 12
     }
   ],
   "products": [
