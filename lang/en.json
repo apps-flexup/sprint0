@@ -295,7 +295,8 @@
     },
     "account": {
       "step": {
-        "0": "Personal information"
+        "0": "Personal information",
+        "1": "Private information"
       }
     },
     "addresses": {

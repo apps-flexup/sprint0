@@ -998,7 +998,7 @@
       ],
       "roles_methods": null,
       "supplier": false,
-      "user_id": "2ae5fcf8-9ed5-480a-89c8-a2f946e72140",
+      "user_id": "c7e4d104-2e45-4056-94cc-10a87af32693",
       "id": 1
     },
     {
@@ -1030,7 +1030,7 @@
       ],
       "roles_methods": null,
       "supplier": false,
-      "user_id": "2ae5fcf8-9ed5-480a-89c8-a2f946e72140",
+      "user_id": "c7e4d104-2e45-4056-94cc-10a87af32693",
       "currency": "EUR"
     },
     {
@@ -1046,7 +1046,7 @@
       ],
       "roles_methods": null,
       "supplier": false,
-      "user_id": "2ae5fcf8-9ed5-480a-89c8-a2f946e72140",
+      "user_id": "c7e4d104-2e45-4056-94cc-10a87af32693",
       "currency": "EUR"
     },
     {
@@ -1063,7 +1063,7 @@
       ],
       "roles_methods": null,
       "supplier": false,
-      "user_id": "2ae5fcf8-9ed5-480a-89c8-a2f946e72140",
+      "user_id": "c7e4d104-2e45-4056-94cc-10a87af32693",
       "currency": "EUR"
     },
     {
@@ -1170,11 +1170,25 @@
       "currency": "EUR"
     },
     {
-      "name": "test toto",
+      "parent_type": "User",
       "title": "Mr",
-      "lastname": "toto",
-      "firstname": "le jambon",
-      "email": "toto@toto.com",
+      "parent_id": "c7e4d104-2e45-4056-94cc-10a87af32693",
+      "type": "Personal",
+      "name": "toto La Riflette",
+      "firstname": "toto",
+      "medias": [
+        {
+          "id": 1,
+          "entity_type": "Account",
+          "entity_id": 13,
+          "description": {
+            "type": "Mail",
+            "value": "test@domain.com",
+            "label": "Pro"
+          }
+        }
+      ],
+      "lastname": "La Riflette",
       "user_id": "c7e4d104-2e45-4056-94cc-10a87af32693",
       "id": 13
     }
@@ -2141,6 +2155,10 @@
     {
       "component": "fv-account-step-personal-information",
       "title": "forms.account.step.0"
+    },
+    {
+      "component": "fv-account-step-contact-information",
+      "title": "forms.account.step.1"
     }
   ],
   "contact-steps": [
@@ -15010,7 +15028,7 @@
       "id": 11
     },
     {
-      "name": "test toto",
+      "name": "toto La Riflette",
       "account_id": null,
       "id": 12
     }

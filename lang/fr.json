@@ -305,7 +305,8 @@
     },
     "account": {
       "step": {
-        "0": "Informations personnelles"
+        "0": "Informations personnelles",
+        "1": "Informations privées"
       }
     },
     "contracts": {

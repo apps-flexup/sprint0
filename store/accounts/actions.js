@@ -8,8 +8,6 @@ export default {
         // if (this.$auth.user.last_account ^ data.length > 0) {
         const account = parseInt(data[0].id)
         this.$activeAccount.set(account)
-      } else if (!getters.current) {
-        this.app.router.push('/accounts/new')
       }
     })
   },
@@ -21,6 +19,7 @@ export default {
   },
   add({ commit, dispatch }, account) {
     account.user_id = this.$auth.user.sub
+    console.log('on veut creer le compte: ', account)
     this.$repos.accounts.create(account).then((res) => {
       this.$activeAccount.set(res.id)
       const thirdPartyAccount = {
@@ -33,6 +32,20 @@ export default {
       dispatch('settings/createSettings', {}, { root: true })
       commit('add', res)
     })
+  },
+  addPersonalAccount({ dispatch }, user) {
+    console.log('user: ', user)
+    const account = {
+      parent_type: 'User',
+      parent_id: user.sub,
+      type: 'Personal',
+      name: user.name,
+      firstname: user.given_name,
+      lastname: user.family_name,
+      country: 'FRA'
+    }
+    console.log('account: ', account)
+    dispatch('accounts/add', account, { root: true })
   },
   update({ commit }, account) {
     this.$repos.accounts.update(account).then((res) => {
