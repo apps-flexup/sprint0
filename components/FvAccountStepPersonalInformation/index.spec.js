@@ -18,7 +18,6 @@ describe('FvAccountStepPersonalInformation', () => {
     expect(wrapper.find('[data-testid="nameField"]').exists()).toBe(true)
     expect(wrapper.find('[data-testid="lastnameField"]').exists()).toBe(true)
     expect(wrapper.find('[data-testid="firstnameField"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="emailField"]').exists()).toBe(true)
   })
   it('should send signal when title is changed', () => {
     const wrapper = factory()
@@ -60,16 +59,6 @@ describe('FvAccountStepPersonalInformation', () => {
     expect(submittedCalls).toHaveLength(1)
     expect(submittedCalls[0][0].firstname).toBe(firstname)
   })
-  it('should send signal when email is changed', () => {
-    const wrapper = factory()
-    const emailField = wrapper.find('[data-testid="emailField"]')
-    const email = 'fred@flexup.org'
-    emailField.vm.$emit('input', email)
-    const submittedCalls = wrapper.emitted('payload:changed')
-    expect(submittedCalls).toBeTruthy()
-    expect(submittedCalls).toHaveLength(1)
-    expect(submittedCalls[0][0].email).toBe(email)
-  })
   it('should set the name of the payload', () => {
     const wrapper = factory({ payload: { name: 'plop' } })
     expect(wrapper.vm.name).toBe('plop')
@@ -86,10 +75,6 @@ describe('FvAccountStepPersonalInformation', () => {
     const wrapper = factory({ payload: { firstname: 'de parme' } })
     expect(wrapper.vm.firstname).toBe('de parme')
   })
-  it('should set the email of the payload', () => {
-    const wrapper = factory({ payload: { email: 'lejambondeparme@orange.fr' } })
-    expect(wrapper.vm.email).toBe('lejambondeparme@orange.fr')
-  })
   it('should have null name if empty payload', () => {
     const wrapper = factory()
     expect(wrapper.vm.name).toBe(null)
@@ -105,9 +90,5 @@ describe('FvAccountStepPersonalInformation', () => {
   it('should have null firstname if empty payload', () => {
     const wrapper = factory()
     expect(wrapper.vm.firstname).toBe(null)
-  })
-  it('should have null email if empty payload', () => {
-    const wrapper = factory()
-    expect(wrapper.vm.email).toBe(null)
   })
 })
