@@ -65,7 +65,7 @@ describe('FvAccountStepPersonalInformation', () => {
   })
   it('should set the title of the payload', () => {
     const wrapper = factory({ payload: { title: 'Miss' } })
-    expect(wrapper.vm.title).toBe('forms.accounts.new.title.miss')
+    expect(wrapper.vm.title).toBe('forms.accounts.new.titles.miss')
   })
   it('should set the lastname of the payload', () => {
     const wrapper = factory({ payload: { lastname: 'le jambon' } })
