@@ -67,7 +67,7 @@ export default {
           break
       }
       const translateTitle = this.$t(
-        'forms.accounts.new.titles.' + res.toLowerCase()
+        res ? 'forms.accounts.new.titles.' + res.toLowerCase() : null
       )
       res = translateTitle
       return res
