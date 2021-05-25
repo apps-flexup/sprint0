@@ -76,7 +76,7 @@ export default {
         const account = this.$store.getters['accounts/findById'](
           this.$route.params.id
         )
-        text = account.name
+        text = account ? account.name : null
       } else {
         text = this.$t('breadcrumbs.route.' + text)
       }
