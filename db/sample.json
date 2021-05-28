@@ -999,6 +999,49 @@
       "roles_methods": null,
       "supplier": false,
       "user_id": "c7e4d104-2e45-4056-94cc-10a87af32693",
+      "medias": [
+        {
+          "entity_type": "Account",
+          "entity_id": 1,
+          "description": {
+            "type": "Mail",
+            "value": "test@test.com",
+            "label": "test"
+          }
+        },
+        {
+          "entity_type": "Account",
+          "entity_id": 1,
+          "description": {
+            "type": "Phone",
+            "value": "0123456789",
+            "label": "portable"
+          }
+        },
+        {
+          "entity_type": "Account",
+          "entity_id": 1,
+          "description": {
+            "type": "Address",
+            "value": {
+              "street": "10 rue des plopliers",
+              "zip": "13245",
+              "city": "Plopland",
+              "country": "FRA"
+            },
+            "label": "Maison"
+          }
+        },
+        {
+          "entity_type": "Account",
+          "entity_id": 1,
+          "description": {
+            "type": "Mail",
+            "value": "fred@email.com",
+            "label": "super email"
+          }
+        }
+      ],
       "id": 1
     },
     {

@@ -1,7 +1,7 @@
 import { shallowMount } from '@vue/test-utils'
 import FvPhoneField from './index.vue'
 
-const valueType = 'phone'
+const valueType = 'Phone'
 
 const factory = (propsData) => {
   return shallowMount(FvPhoneField, {

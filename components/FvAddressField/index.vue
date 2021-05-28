@@ -40,12 +40,13 @@ export default {
     return {
       localAddress: JSON.parse(JSON.stringify(this.address)),
       displayModal: false,
-      valueType: 'address',
+      valueType: 'Address',
       addressLabel: this.$t('mediaField.addressLabel')
     }
   },
   computed: {
     mediaValue() {
+      if (!this.address) return ''
       const country = this.$store.getters['countries/findByIso3'](
         this.address.country
       )

@@ -29,7 +29,7 @@ export default {
   },
   data() {
     return {
-      valueType: 'phone',
+      valueType: 'Phone',
       phoneLabel: this.$t('mediaField.phoneLabel')
     }
   },

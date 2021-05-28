@@ -7,7 +7,7 @@ localVue.use(Vuex)
 
 let store
 
-const valueType = 'address'
+const valueType = 'Address'
 
 const factory = (propsData) => {
   return shallowMount(FvAddressField, {

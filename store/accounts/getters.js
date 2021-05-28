@@ -17,20 +17,21 @@ export default {
   findById: (state, _getters, _rootStates, rootGetters) => (accountId) => {
     if (!state.items) return null
     const id = parseInt(accountId)
-    const res = state.items.find((v) => parseInt(v.id) === id)
-    if (!res) return null
-    const countryId = parseInt(res.country_id) || null
-    const legalStructureId = parseInt(res.legal_structure_id) || null
+    const account = state.items.find((v) => parseInt(v.id) === id)
+    if (!account) return null
+    const countryId = parseInt(account.country_id) || null
+    const legalStructureId = parseInt(account.legal_structure_id) || null
     const country = rootGetters['countries/find'](countryId)
     const legalStructure = rootGetters['contracts/getLegalStructureById'](
       legalStructureId
     )
     const payload = {
-      ...res,
+      ...account,
       country,
       legalStructure
     }
-    return payload
+    const res = JSON.parse(JSON.stringify(payload))
+    return res
   },
   current(state) {
     return state.current

@@ -29,7 +29,7 @@ export default {
   },
   data() {
     return {
-      valueType: 'mail',
+      valueType: 'Mail',
       mailLabel: this.$t('mediaField.mailLabel')
     }
   },

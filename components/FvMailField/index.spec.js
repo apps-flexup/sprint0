@@ -1,7 +1,7 @@
 import { shallowMount } from '@vue/test-utils'
 import FvMailField from './index.vue'
 
-const valueType = 'mail'
+const valueType = 'Mail'
 
 const factory = (propsData) => {
   return shallowMount(FvMailField, {
