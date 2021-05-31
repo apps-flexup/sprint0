@@ -1,7 +1,7 @@
 <template lang="pug">
 .fv-account-step-contact-information
   div(v-for="rule in rules")
-    h1(data-testid="mediaName") {{ rule }}
+    h1(data-testid="mediaName") {{ $t('mediaField.' + rule.toLowerCase() + 'Label') }}
     v-row(v-for="(media, index) in getMediasForRule(rule)" :key="index")
       v-col(cols="6")
         fv-address-field(
@@ -40,7 +40,7 @@
             @icon:clicked="addNewMedia(rule)"
           )
         template(v-slot:text)
-          | {{ $t('mediaField.' + rule.toLowerCase() + 'Label') }}
+          | {{ $t('mediaField.new.' + rule.toLowerCase()) }}
 
 </template>
 

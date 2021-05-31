@@ -3,7 +3,12 @@
     "label": "Label",
     "mailLabel": "Email",
     "phoneLabel": "Phone",
-    "addressLabel": "Address"
+    "addressLabel": "Address",
+    "new": {
+      "address": "Add new address",
+      "mail": "Add new email",
+      "phone": "Add new phone"
+    }
   },
   "selectHeaders": {
     "title": {
