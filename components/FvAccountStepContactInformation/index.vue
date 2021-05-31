@@ -67,11 +67,6 @@ export default {
       return res
     }
   },
-  watch: {
-    payload() {
-      console.log('ca change: ', this.payload)
-    }
-  },
   mounted() {
     console.log('Composant ', this.$options.name)
   },
