@@ -117,7 +117,6 @@ export default {
       if (index === undefined) return
       const medias = this.medias
       medias[index].description.value = description.value
-      console.log('medias: ', medias)
       const payload = {
         medias
       }
@@ -128,7 +127,6 @@ export default {
       if (index === undefined) return
       const medias = this.medias
       medias[index].description.label = description.label
-      console.log('medias: ', medias)
       const payload = {
         medias
       }

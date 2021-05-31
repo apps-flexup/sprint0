@@ -47,4 +47,68 @@ describe('FvAccountStepContactInformation', () => {
     expect(payloadChangedCalls).toHaveLength(1)
     expect(payloadChangedCalls[0][0]).toEqual(expectedPayload)
   })
+  it('should send signal when media value is changed', () => {
+    const medias = [
+      {
+        entity_type: 'Account',
+        entity_id: accountId,
+        description: {
+          label: null,
+          value: 'test@test.com',
+          type: 'Mail'
+        }
+      }
+    ]
+    const payload = {
+      medias
+    }
+    const wrapper = factory({ payload })
+    const mailField = wrapper.find('[data-testid="mailField"]')
+    const description = {
+      type: 'Mail',
+      value: 'super@test.com',
+      label: null
+    }
+    mailField.vm.$emit('mail:value:changed', description)
+    const payloadChangedCalls = wrapper.emitted('payload:changed')
+    expect(payloadChangedCalls).toBeTruthy()
+    expect(payloadChangedCalls).toHaveLength(1)
+    medias[0].description = description
+    const expectedPayload = {
+      medias
+    }
+    expect(payloadChangedCalls[0][0]).toEqual(expectedPayload)
+  })
+  it('should send signal when media label is changed', () => {
+    const medias = [
+      {
+        entity_type: 'Account',
+        entity_id: accountId,
+        description: {
+          label: 'perso',
+          value: null,
+          type: 'Mail'
+        }
+      }
+    ]
+    const payload = {
+      medias
+    }
+    const wrapper = factory({ payload })
+    const mailField = wrapper.find('[data-testid="mailField"]')
+    const description = {
+      type: 'Mail',
+      value: null,
+      label: 'pro'
+    }
+    mailField.vm.$emit('mail:label:changed', description)
+    const payloadChangedCalls = wrapper.emitted('payload:changed')
+    expect(payloadChangedCalls).toBeTruthy()
+    expect(payloadChangedCalls).toHaveLength(1)
+    medias[0].description = description
+    const expectedPayload = {
+      medias
+    }
+    expect(payloadChangedCalls[0][0]).toEqual(expectedPayload)
+  })
 })
