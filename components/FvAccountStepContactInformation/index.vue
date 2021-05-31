@@ -1,7 +1,7 @@
 <template lang="pug">
 .fv-account-step-contact-information
   div(v-for="rule in rules")
-    h1 {{ rule }}
+    h1(data-testid="mediaName") {{ rule }}
     v-row(v-for="(media, index) in getMediasForRule(rule)" :key="index")
       v-col(cols="6")
         fv-address-field(
@@ -29,6 +29,7 @@
           @phone:label:changed="labelChanged(index, rule, ...arguments)"
         )
     fv-text-button(
+        data-testid="addNewMediaButton"
         @button:click="addNewMedia(rule)"
       )
         template(v-slot:icon)
@@ -95,7 +96,6 @@ export default {
       return res
     },
     addNewMedia(rule) {
-      console.log('Add for account: ', this.$activeAccount.get())
       const media = {
         entity_type: 'Account',
         entity_id: this.$activeAccount.get(),
@@ -105,13 +105,11 @@ export default {
           label: null
         }
       }
-      console.log('Create media : ', media)
       const medias = this.medias
       medias.push(media)
       const payload = {
         medias
       }
-      console.log('payload: ', payload)
       this.$emit('payload:changed', payload)
     },
     valueChanged(indexForRule, rule, description) {
