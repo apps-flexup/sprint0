@@ -47,4 +47,12 @@ describe('FvMailField', () => {
     expect(labelChangedCalls).toHaveLength(1)
     expect(labelChangedCalls[0][0]).toEqual(expectedPayload)
   })
+  it('should emit an event when mail needs to be deleted', () => {
+    const wrapper = factory()
+    const mailField = wrapper.find('[data-testid="mailField"]')
+    mailField.vm.$emit('media:delete:clicked')
+    const deleteCalls = wrapper.emitted('mail:delete:clicked')
+    expect(deleteCalls).toBeTruthy()
+    expect(deleteCalls).toHaveLength(1)
+  })
 })

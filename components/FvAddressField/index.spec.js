@@ -161,4 +161,12 @@ describe('FvAddressField', () => {
     expect(labelChangedCalls).toHaveLength(1)
     expect(labelChangedCalls[0][0]).toEqual(expectedPayload)
   })
+  it('should emit an event when address needs to be deleted', () => {
+    const wrapper = factory()
+    const addressField = wrapper.find('[data-testid="addressField"]')
+    addressField.vm.$emit('media:delete:clicked')
+    const deleteCalls = wrapper.emitted('address:delete:clicked')
+    expect(deleteCalls).toBeTruthy()
+    expect(deleteCalls).toHaveLength(1)
+  })
 })

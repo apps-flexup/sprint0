@@ -7,6 +7,7 @@
     :labelValue="labelValue"
     @media:value:changed="mailChanged"
     @media:label:changed="labelChanged"
+    @media:delete:clicked="deleteClicked"
   )
 </template>
 
@@ -50,6 +51,9 @@ export default {
         label: v
       }
       this.$emit('mail:label:changed', payload)
+    },
+    deleteClicked() {
+      this.$emit('mail:delete:clicked')
     }
   }
 }

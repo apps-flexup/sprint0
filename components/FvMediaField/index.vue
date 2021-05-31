@@ -1,8 +1,8 @@
 <template lang="pug">
 .fv-media-field
-  fv-flex-items
-    template(v-slot:left)
-      fv-text-field.left(
+  v-row.flex
+    v-col(cols=5)
+      fv-text-field(
         data-testid="valueField"
         :label="mediaLabel"
         :value="mediaValue"
@@ -10,12 +10,18 @@
         @input="valueChanged"
         @click="valueClicked"
       )
-    template(v-slot:right)
-      fv-text-field.right(
+    v-col(cols=5)
+      fv-text-field(
         data-testid="labelField"
         :label="$t('mediaField.label')"
         :value="labelValue"
         @input="labelChanged"
+      )
+    v-col(cols=2)
+      fv-icon(
+        data-testid="deleteIcon"
+        icon="mdi-delete"
+        @icon:clicked="deleteClicked"
       )
 </template>
 
@@ -60,17 +66,17 @@ export default {
     },
     labelChanged(v) {
       this.$emit('media:label:changed', v)
+    },
+    deleteClicked() {
+      this.$emit('media:delete:clicked')
     }
   }
 }
 </script>
 
 <style scoped>
-.left {
-  flex: 3 1 0;
-}
-.right {
-  flex: 1 1 0;
-  margin-left: 15px;
+.flex {
+  display: flex !important;
+  align-items: center;
 }
 </style>

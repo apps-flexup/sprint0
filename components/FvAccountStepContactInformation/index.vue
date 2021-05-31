@@ -11,6 +11,7 @@
           :labelValue="media.description ? media.description.label : null"
           @address:value:changed="valueChanged(index, rule, ...arguments)"
           @address:label:changed="labelChanged(index, rule, ...arguments)"
+          @address:delete:clicked="deleteClicked(index, rule)"
         )
         fv-mail-field(
           v-if="media.description.type === 'Mail'"
@@ -19,6 +20,7 @@
           :labelValue="media.description ? media.description.label : null"
           @mail:value:changed="valueChanged(index, rule, ...arguments)"
           @mail:label:changed="labelChanged(index, rule, ...arguments)"
+          @mail:delete:clicked="deleteClicked(index, rule)"
         )
         fv-phone-field(
           v-if="media.description.type === 'Phone'"
@@ -27,6 +29,7 @@
           :labelValue="media.description ? media.description.label : null"
           @phone:value:changed="valueChanged(index, rule, ...arguments)"
           @phone:label:changed="labelChanged(index, rule, ...arguments)"
+          @phone:delete:clicked="deleteClicked(index, rule)"
         )
     fv-text-button(
         data-testid="addNewMediaButton"
@@ -122,6 +125,16 @@ export default {
       if (index === undefined) return
       const medias = this.medias
       medias[index].description.label = description.label
+      const payload = {
+        medias
+      }
+      this.$emit('payload:changed', payload)
+    },
+    deleteClicked(indexForRule, rule) {
+      const index = this.findMediaIndexWithIndexOfRule(indexForRule, rule)
+      if (index === undefined) return
+      const medias = this.medias
+      medias.splice(index, 1)
       const payload = {
         medias
       }

@@ -111,4 +111,30 @@ describe('FvAccountStepContactInformation', () => {
     }
     expect(payloadChangedCalls[0][0]).toEqual(expectedPayload)
   })
+  it('should send signal when media is deleted', () => {
+    const medias = [
+      {
+        entity_type: 'Account',
+        entity_id: accountId,
+        description: {
+          label: 'perso',
+          value: null,
+          type: 'Mail'
+        }
+      }
+    ]
+    const payload = {
+      medias
+    }
+    const wrapper = factory({ payload })
+    const mailField = wrapper.find('[data-testid="mailField"]')
+    mailField.vm.$emit('mail:delete:clicked')
+    const payloadChangedCalls = wrapper.emitted('payload:changed')
+    expect(payloadChangedCalls).toBeTruthy()
+    expect(payloadChangedCalls).toHaveLength(1)
+    const expectedPayload = {
+      medias: []
+    }
+    expect(payloadChangedCalls[0][0]).toEqual(expectedPayload)
+  })
 })

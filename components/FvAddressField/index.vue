@@ -8,6 +8,7 @@
     :isMediaValueReadonly="true"
     @media:value:clicked="valueClicked"
     @media:label:changed="labelChanged"
+    @media:delete:clicked="deleteClicked"
   )
   fv-address-modal(
     data-testid="modal"
@@ -78,6 +79,9 @@ export default {
         label: v
       }
       this.$emit('address:label:changed', payload)
+    },
+    deleteClicked() {
+      this.$emit('address:delete:clicked')
     },
     addressChanged(v) {
       this.localAddress = v
