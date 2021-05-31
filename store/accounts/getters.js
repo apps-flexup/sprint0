@@ -19,15 +19,12 @@ export default {
     const id = parseInt(accountId)
     const account = state.items.find((v) => parseInt(v.id) === id)
     if (!account) return null
-    const countryId = parseInt(account.country_id) || null
     const legalStructureId = parseInt(account.legal_structure_id) || null
-    const country = rootGetters['countries/find'](countryId)
     const legalStructure = rootGetters['contracts/getLegalStructureById'](
       legalStructureId
     )
     const payload = {
       ...account,
-      country,
       legalStructure
     }
     const res = JSON.parse(JSON.stringify(payload))
