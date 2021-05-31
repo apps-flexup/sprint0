@@ -40,7 +40,7 @@
             @icon:clicked="addNewMedia(rule)"
           )
         template(v-slot:text)
-          | Add new {{ rule }}
+          | {{ $t('mediaField.' + rule.toLowerCase() + 'Label') }}
 
 </template>
 
