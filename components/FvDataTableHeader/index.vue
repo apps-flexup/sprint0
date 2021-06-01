@@ -16,7 +16,7 @@
       @dataTableSearchBar:changed="searchChanged"
       @dataTableSearchBar:filterValidated="filterValidated"
     )
-    fv-icon.settings(
+    .settings(
       data-testid="settings"
       icon="mdi-cog"
       @icon:clicked="settingsClicked"

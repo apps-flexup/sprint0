@@ -1,9 +1,9 @@
 {
   "mediaField": {
     "label": "Libellé",
-    "mailLabel": "Email",
-    "phoneLabel": "Téléphone",
-    "addressLabel": "Adresse",
+    "mailLabel": "Emails",
+    "phoneLabel": "Téléphones",
+    "addressLabel": "Adresses",
     "new": {
       "address": "Ajouter une adresse",
       "mail": "Ajouter un email",

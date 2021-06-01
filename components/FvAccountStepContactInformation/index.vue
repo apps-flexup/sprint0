@@ -1,7 +1,7 @@
 <template lang="pug">
 .fv-account-step-contact-information
   div(v-for="rule in rules")
-    h1(data-testid="mediaName") {{ $t('mediaField.' + rule.toLowerCase() + 'Label') }}
+    h3.font-weight-regular(data-testid="mediaName") {{ $t('mediaField.' + rule.toLowerCase() + 'Label') }}
     v-row(v-for="(media, index) in getMediasForRule(rule)" :key="index")
       v-col(cols="6")
         fv-address-field(
@@ -37,14 +37,13 @@
       )
         template(v-slot:icon)
           fv-icon(
-            x-large=true
+            size="small"
             icon="mdi-plus"
             color="#1976d2"
             @icon:clicked="addNewMedia(rule)"
           )
         template(v-slot:text)
           | {{ $t('mediaField.new.' + rule.toLowerCase()) }}
-
 </template>
 
 <script>
@@ -143,3 +142,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+::v-deep .v-btn {
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+</style>

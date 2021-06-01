@@ -77,6 +77,6 @@ export default {
 <style scoped>
 .flex {
   display: flex !important;
-  align-items: center;
+  align-items: baseline;
 }
 </style>
