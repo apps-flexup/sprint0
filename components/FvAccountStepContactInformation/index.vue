@@ -1,9 +1,9 @@
 <template lang="pug">
 .fv-account-step-contact-information
-  div(v-for="rule in rules")
+  div(v-for="(rule, index) in rules" :key="index")
     h3.font-weight-regular(data-testid="mediaName") {{ $t('mediaField.' + rule.toLowerCase() + 'Label') }}
     v-row(v-for="(media, index) in getMediasForRule(rule)" :key="index")
-      v-col(cols="6")
+      v-col(cols="12")
         fv-address-field(
           v-if="media.description.type === 'Address'"
           data-testid='addressField'
@@ -44,6 +44,7 @@
           )
         template(v-slot:text)
           | {{ $t('mediaField.new.' + rule.toLowerCase()) }}
+    v-divider.line(v-if="rules.length !== index + 1")
 </template>
 
 <script>
@@ -147,5 +148,14 @@ export default {
 ::v-deep .v-btn {
   font-size: 0.75rem;
   font-weight: 400;
+}
+.col-12 {
+  padding: 3px 12px;
+}
+::v-deep .col-5 {
+  padding: 3px 12px;
+}
+.line {
+  margin: 1rem 0;
 }
 </style>
