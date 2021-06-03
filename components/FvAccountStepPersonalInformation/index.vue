@@ -1,15 +1,6 @@
 <template lang="pug">
 .fv-account-step-personal-information
   v-row
-    v-col(cols="2")
-      v-select(
-        data-testid='titleField'
-        outlined
-        :items="titles"
-        :value="title"
-        :label="$t('forms.accounts.new.civility')"
-        @input="civilityChanged"
-      )
     v-col(cols='10')
       fv-text-field(
         data-testid='nameField'
@@ -50,28 +41,6 @@ export default {
       const res = this.payload ? this.payload.name : null
       return res
     },
-    title() {
-      let res = this.payload ? this.payload.title : null
-      switch (res) {
-        case 'Mrs':
-        case 'Mlle':
-          res = 'Miss'
-          break
-        case 'M.':
-          res = 'Mr'
-          break
-        case 'Mme':
-          res = 'Ms'
-          break
-        default:
-          break
-      }
-      const translateTitle = this.$t(
-        res ? 'forms.accounts.new.titles.' + res.toLowerCase() : null
-      )
-      res = translateTitle
-      return res
-    },
     lastname() {
       const res = this.payload ? this.payload.lastname : null
       return res
@@ -79,28 +48,17 @@ export default {
     firstname() {
       const res = this.payload ? this.payload.firstname : null
       return res
-    },
-    titles() {
-      const res = [
-        'forms.accounts.new.titles.mr',
-        'forms.accounts.new.titles.ms',
-        'forms.accounts.new.titles.miss'
-      ]
-      return res.map((v) => {
-        return this.$t(v)
-      })
+    }
+  },
+  data() {
+    return {
+      titles_trad: ['mr', 'ms', 'miss']
     }
   },
   mounted() {
     console.log('Composant ', this.$options.name)
   },
   methods: {
-    civilityChanged(title) {
-      const payload = {
-        title
-      }
-      this.$emit('payload:changed', payload)
-    },
     nameChanged(name) {
       const payload = {
         name
