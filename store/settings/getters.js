@@ -16,9 +16,11 @@ export default {
     const res = JSON.parse(JSON.stringify(state.userMenu))
     return res.filter((m) => m.active)
   },
-  accountMenu(state) {
-    if (!state.accountMenu) return []
+  accountMenu(state, _getters, _rootStates, rootGetters) {
+    if (!state.accountMenu || !state.accountMenu.length) return []
+    const accountId = rootGetters['accounts/selected']
     const res = JSON.parse(JSON.stringify(state.accountMenu))
+    res[0].to = '/accounts/' + accountId
     return res.filter((m) => m.active)
   },
   buyerMenu(state) {

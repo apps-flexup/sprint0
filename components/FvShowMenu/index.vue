@@ -22,7 +22,7 @@ export default {
   name: 'FvShowMenu',
   props: {
     list: {
-      type: Array,
+      type: [Array, Promise],
       default() {
         return []
       }

@@ -77,6 +77,14 @@ export default {
       return res
     }
   },
+  watch: {
+    payload: {
+      deep: true,
+      handler() {
+        this.localPayload = Object.assign({}, this.localPayload, this.payload)
+      }
+    }
+  },
   mounted() {
     console.log('Composant ', this.$options.name)
     this.$store.dispatch('forms/getAccount')

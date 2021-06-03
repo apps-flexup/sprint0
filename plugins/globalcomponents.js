@@ -6,11 +6,13 @@ import FvAccountInfo from '@/components/FvAccountInfo'
 import FvAccountsIndex from '@/components/FvAccountsIndex'
 import FvAddressField from '@/components/FvAddressField'
 import FvAddressModal from '@/components/FvAddressModal'
+import FvAccountStepContactInformation from '@/components/FvAccountStepContactInformation'
 import FvAccountStepPersonalInformation from '@/components/FvAccountStepPersonalInformation'
 import FvAutocomplete from '@/components/FvAutocomplete'
 import FvAvatar from '@/components/FvAvatar'
 import FvAvatarWithName from '@/components/FvAvatarWithName'
 import FvBreadcrumbs from '@/components/FvBreadcrumbs'
+import FvCivilityField from '@/components/FvCivilityField'
 import FvContactCard from '@/components/FvContactCard'
 import FvContactDialog from '@/components/FvContactDialog'
 import FvContactForm from '~/components/FvContactForm'
@@ -158,10 +160,15 @@ Vue.component(
   'fv-account-step-personal-information',
   FvAccountStepPersonalInformation
 )
+Vue.component(
+  'fv-account-step-contact-information',
+  FvAccountStepContactInformation
+)
 Vue.component('fv-autocomplete', FvAutocomplete)
 Vue.component('fv-avatar', FvAvatar)
 Vue.component('fv-avatar-with-name', FvAvatarWithName)
 Vue.component('fv-breadcrumbs', FvBreadcrumbs)
+Vue.component('fv-civility-field', FvCivilityField)
 Vue.component('fv-contact-dialog', FvContactDialog)
 Vue.component('fv-contact-card', FvContactCard)
 Vue.component('fv-contact-form', FvContactForm)

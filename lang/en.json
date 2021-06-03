@@ -1,9 +1,14 @@
 {
   "mediaField": {
     "label": "Label",
-    "mailLabel": "Email",
-    "phoneLabel": "Phone",
-    "addressLabel": "Address"
+    "mailLabel": "Emails",
+    "phoneLabel": "Phones",
+    "addressLabel": "Addresses",
+    "new": {
+      "address": "Add new address",
+      "mail": "Add new email",
+      "phone": "Add new phone"
+    }
   },
   "selectHeaders": {
     "title": {
@@ -295,7 +300,8 @@
     },
     "account": {
       "step": {
-        "0": "Personal information"
+        "0": "Personal information",
+        "1": "Private information"
       }
     },
     "addresses": {

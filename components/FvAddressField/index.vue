@@ -8,6 +8,7 @@
     :isMediaValueReadonly="true"
     @media:value:clicked="valueClicked"
     @media:label:changed="labelChanged"
+    @media:delete:clicked="deleteClicked"
   )
   fv-address-modal(
     data-testid="modal"
@@ -40,12 +41,13 @@ export default {
     return {
       localAddress: JSON.parse(JSON.stringify(this.address)),
       displayModal: false,
-      valueType: 'address',
+      valueType: 'Address',
       addressLabel: this.$t('mediaField.addressLabel')
     }
   },
   computed: {
     mediaValue() {
+      if (!this.address) return ''
       const country = this.$store.getters['countries/findByIso3'](
         this.address.country
       )
@@ -77,6 +79,9 @@ export default {
         label: v
       }
       this.$emit('address:label:changed', payload)
+    },
+    deleteClicked() {
+      this.$emit('address:delete:clicked')
     },
     addressChanged(v) {
       this.localAddress = v

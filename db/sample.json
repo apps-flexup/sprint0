@@ -1,16 +1,4 @@
 {
-  "users": [
-    {
-      "email_verified": false,
-      "name": "toto La Riflette",
-      "preferred_username": "toto",
-      "given_name": "toto",
-      "family_name": "La Riflette",
-      "email": "toto@toto.com",
-      "uuid": "c7e4d104-2e45-4056-94cc-10a87af32693",
-      "id": 1
-    }
-  ],
   "payment-structures": [
     {
       "label": "B25 + E75",
@@ -984,6 +972,18 @@
       "id": 2
     }
   ],
+  "users": [
+    {
+      "email_verified": false,
+      "name": "toto La Riflette",
+      "preferred_username": "toto",
+      "given_name": "toto",
+      "family_name": "La Riflette",
+      "email": "toto@toto.com",
+      "uuid": "c7e4d104-2e45-4056-94cc-10a87af32693",
+      "id": 1
+    }
+  ],
   "accounts": [
     {
       "avatar": "/images/avatar-0.png",
@@ -999,6 +999,49 @@
       "roles_methods": null,
       "supplier": false,
       "user_id": "c7e4d104-2e45-4056-94cc-10a87af32693",
+      "medias": [
+        {
+          "entity_type": "Account",
+          "entity_id": 1,
+          "description": {
+            "type": "Mail",
+            "value": "test@test.com",
+            "label": "test"
+          }
+        },
+        {
+          "entity_type": "Account",
+          "entity_id": 1,
+          "description": {
+            "type": "Phone",
+            "value": "0123456789",
+            "label": "portable"
+          }
+        },
+        {
+          "entity_type": "Account",
+          "entity_id": 1,
+          "description": {
+            "type": "Address",
+            "value": {
+              "street": "10 rue des plopliers",
+              "zip": "13245",
+              "city": "Plopland",
+              "country": "FRA"
+            },
+            "label": "Maison"
+          }
+        },
+        {
+          "entity_type": "Account",
+          "entity_id": 1,
+          "description": {
+            "type": "Mail",
+            "value": "fred@email.com",
+            "label": "super email"
+          }
+        }
+      ],
       "id": 1
     },
     {
@@ -1171,12 +1214,24 @@
     },
     {
       "parent_type": "User",
+      "title": "Mr",
       "parent_id": "c7e4d104-2e45-4056-94cc-10a87af32693",
       "type": "Personal",
       "name": "toto La Riflette",
       "firstname": "toto",
+      "medias": [
+        {
+          "id": 1,
+          "entity_type": "Account",
+          "entity_id": 13,
+          "description": {
+            "type": "Mail",
+            "value": "test@domain.com",
+            "label": "Pro"
+          }
+        }
+      ],
       "lastname": "La Riflette",
-      "country": "FRA",
       "user_id": "c7e4d104-2e45-4056-94cc-10a87af32693",
       "id": 13
     }
@@ -2143,6 +2198,10 @@
     {
       "component": "fv-account-step-personal-information",
       "title": "forms.account.step.0"
+    },
+    {
+      "component": "fv-account-step-contact-information",
+      "title": "forms.account.step.1"
     }
   ],
   "contact-steps": [
@@ -14447,7 +14506,7 @@
       "active": true,
       "icon": "mdi-information-outline",
       "title": "accountMenu.information",
-      "to": "/informations"
+      "to": "/accounts"
     },
     {
       "active": true,

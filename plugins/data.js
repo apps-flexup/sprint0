@@ -22,6 +22,7 @@ export default (ctx, inject) => {
     legalStructure: repo('legal-structure'),
     manageMenu: repo('manageMenu'),
     manageNavBar: repo('manageNavBar'),
+    medias: repo('medias'),
     offers: repo('offers'),
     offerSteps: repo('offer-steps'),
     orderLineHeaders: repo('order-line-headers'),
