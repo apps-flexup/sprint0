@@ -660,6 +660,9 @@
     "partners": {
       "mine": "Mes partenaires",
       "flexup": "Les partenaires Flexup"
+    },
+    "user": {
+      "label": "Utilisateur"
     }
   },
   "settings": {

@@ -20,7 +20,13 @@
         @modal:header:close="close"
       )
     template(v-slot:form)
-      div ici l'autocomplete + le role
+      fv-user-autocomplete(
+        :user="user"
+        :users="users"
+        @user:selected="userSelected"
+      )
+      pre {{ user }}
+      div(v-if="user") ici le role
     template(v-slot:actions)
       v-spacer
       fv-modal-button(
@@ -39,10 +45,21 @@ export default {
   name: 'FvMemberIndex',
   data() {
     return {
-      dialog: false
+      dialog: false,
+      user: null
+    }
+  },
+  computed: {
+    users() {
+      const users = this.$store.getters['users/all']
+      const activeUserUuid = this.$auth.user.sub
+      const res = users.filter((user) => user.uuid !== activeUserUuid)
+      // Here we also need to remove users who are already members of the active account
+      return res
     }
   },
   mounted() {
+    this.$store.dispatch('users/get')
     console.log('Composant ', this.$options.name)
   },
   methods: {
@@ -58,6 +75,9 @@ export default {
     },
     sendInvitation() {
       this.dialog = false
+    },
+    userSelected(v) {
+      this.user = v
     }
   }
 }

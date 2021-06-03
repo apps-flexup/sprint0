@@ -657,6 +657,9 @@
     "partners": {
       "mine": "My partners",
       "flexup": "Flexup partners"
+    },
+    "user": {
+      "label": "User"
     }
   },
   "settings": {
