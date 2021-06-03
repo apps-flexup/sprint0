@@ -197,27 +197,28 @@
       "account": "Account",
       "accounts": "My accounts",
       "accounts-new": "New account",
+      "contacts": "Contacts",
       "dashboard": "Dashboard",
       "index": "Home",
+      "members": "Members",
+      "offers": "Offers",
+      "offers-id": "Edit my offer",
+      "offers-new": "New offer",
       "orders": "Orders",
       "orders-new": "New order",
       "products": "Products",
-      "products-new": "New product",
-      "products-id": "Edit my product",
-      "offers": "Offers",
-      "offers-new": "New offer",
-      "offers-id": "Edit my offer",
-      "contacts": "Contacts",
-      "thirdPartyAccounts": "Third party accounts",
-      "thirdPartyAccounts-id": "Edit my third party account",
-      "settings": "Settings",
-      "settings-new": "New settings",
       "paymentConditions": "Payment conditions",
       "paymentConditions-id": "Edit my payment condition",
       "paymentConditions-new": "New payment condition",
       "paymentStructures": "Payment structures",
       "paymentStructures-id": "Edit my payment structure",
-      "paymentStructures-new": "New payment structure"
+      "paymentStructures-new": "New payment structure",
+      "products-id": "Edit my product",
+      "products-new": "New product",
+      "settings": "Settings",
+      "settings-new": "New settings",
+      "thirdPartyAccounts": "Third party accounts",
+      "thirdPartyAccounts-id": "Edit my third party account"
     }
   },
   "listAccounts": {
@@ -474,6 +475,9 @@
       "step": {
         "0": "Details"
       }
+    },
+    "members": {
+      "title": "Add a member"
     }
   },
   "manageMenu" : {
@@ -536,6 +540,7 @@
       "paymentCondition": "CREATE PAYMENT CONDITION",
       "paymentStructure": "CREATE PAYMENT STRUCTURE"
     },
+    "inviteMember": "INVITE MEMBER",
     "submit": "Submit",
     "previous": "Previous",
     "next": "Next",
@@ -632,7 +637,8 @@
   "modal": {
     "close": "Close",
     "save": "Save",
-    "resetDefault": "Reset defaults"
+    "resetDefault": "Reset defaults",
+    "sendInvitation": "Send invitation"
   },
   "accounts": {
     "index": {

@@ -48,9 +48,12 @@ import FvLoginButton from '@/components/FvLoginButton'
 import FvLogoutButton from '@/components/FvLogoutButton'
 import FvMailField from '@/components/FvMailField'
 import FvMediaField from '@/components/FvMediaField'
+import FvMemberIndex from '@/components/FvMemberIndex'
+import FvMemberList from '@/components/FvMemberList'
 import FvMenu from '@/components/FvMenu'
 import FvModalActions from '@/components/FvModalActions'
 import FvModalButton from '@/components/FvModalButton'
+import FvModalHeader from '@/components/FvModalHeader'
 import FvRecursiveDataTable from '@/components/FvRecursiveDataTable'
 import FvNav from '@/components/FvNav'
 import FvNavBar from '@/components/FvNavBar'
@@ -208,9 +211,12 @@ Vue.component('fv-login-button', FvLoginButton)
 Vue.component('fv-logout-button', FvLogoutButton)
 Vue.component('fv-mail-field', FvMailField)
 Vue.component('fv-media-field', FvMediaField)
+Vue.component('fv-member-index', FvMemberIndex)
+Vue.component('fv-member-list', FvMemberList)
 Vue.component('fv-menu', FvMenu)
 Vue.component('fv-modal-actions', FvModalActions)
 Vue.component('fv-modal-button', FvModalButton)
+Vue.component('fv-modal-header', FvModalHeader)
 Vue.component('fv-recursive-data-table', FvRecursiveDataTable)
 Vue.component('fv-nav', FvNav)
 Vue.component('fv-nav-bar', FvNavBar)

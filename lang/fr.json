@@ -197,27 +197,27 @@
       "account": "Compte",
       "accounts": "Mes comptes",
       "accounts-new": "Nouveau compte",
+      "contacts": "Contacts",
       "dashboard": "Tableau de bord",
       "index": "Accueil",
+      "offers": "Offres",
+      "offers-id": "Modifier mon offre",
+      "offers-new": "Nouvelle offre",
       "orders": "Commandes",
       "orders-new": "Nouvelle commande",
-      "products": "Produits",
-      "products-new": "Nouveau produit",
-      "products-id": "Modifier mon produit",
-      "offers": "Offres",
-      "offers-new": "Nouvelle offre",
-      "offers-id": "Modifier mon offre",
-      "contacts": "Contacts",
-      "thirdPartyAccounts": "Comptes tiers",
-      "thirdPartyAccounts-id": "Modifier mon compte tiers",
-      "settings": "Préférences",
-      "settings-new": "Créer préférences",
       "paymentConditions": "Conditions de paiement",
-      "paymentConditions-new": "Nouvelle condition de paiement",
       "paymentConditions-id": "Modifier ma condition de paiement",
+      "paymentConditions-new": "Nouvelle condition de paiement",
       "paymentStructures": "Structures de paiement",
       "paymentStructures-id": "Modifier ma structure de paiement",
-      "paymentStructures-new": "Nouvelle structure de paiement"
+      "paymentStructures-new": "Nouvelle structure de paiement",
+      "products": "Produits",
+      "products-id": "Modifier mon produit",
+      "products-new": "Nouveau produit",
+      "settings": "Préférences",
+      "settings-new": "Créer préférences",
+      "thirdPartyAccounts": "Comptes tiers",
+      "thirdPartyAccounts-id": "Modifier mon compte tiers"
     }
   },
   "listAccounts": {
@@ -476,6 +476,9 @@
       "step": {
         "0": "Détails"
       }
+    },
+    "members": {
+      "title": "Ajouter un membre"
     }
   },
   "manageMenu": {
@@ -540,6 +543,7 @@
       "paymentCondition": "CRÉER CONDITION DE PAIEMENT",
       "paymentStructure": "CRÉER STRUCTURE DE PAIEMENT"
     },
+    "inviteMember": "INVITER UN MEMBRE",
     "submit": "Envoyer",
     "previous": "Précédent",
     "next": "Suivant",
@@ -636,7 +640,8 @@
   "modal": {
     "close": "Fermer",
     "save": "Sauvegarder",
-    "resetDefault": "Réinitialiser les valeurs par défaut"
+    "resetDefault": "Réinitialiser les valeurs par défaut",
+    "sendInvitation": "Envoyer une invitation"
   },
   "accounts": {
     "index": {
