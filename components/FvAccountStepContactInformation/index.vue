@@ -44,7 +44,7 @@
           )
         template(v-slot:text)
           | {{ $t('mediaField.new.' + rule.toLowerCase()) }}
-    v-divider.line(v-if="rules.length !== index + 1")
+    v-divider.line(v-if="index + 1 !== rules.length")
 </template>
 
 <script>

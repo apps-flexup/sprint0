@@ -21,12 +21,12 @@ export default {
     }
   },
   computed: {
-    title() {
+    civility() {
       const res = this.payload ? this.payload.title : null
       return res
     },
-    titles() {
-      const res = this.titles_trad.map((value) => {
+    civilities() {
+      const res = this.titles_available.map((value) => {
         const text = this.$t(`forms.accounts.new.titles.${value}`)
         return { text, value }
       })
