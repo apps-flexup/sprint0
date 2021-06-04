@@ -2,8 +2,11 @@ export default {
   set(state, items) {
     state.items = items
   },
-  setAccountSteps(state, items) {
-    state.accounts = items
+  setBusinessAccountSteps(state, items) {
+    state.businessAccounts = items
+  },
+  setPersonalAccountSteps(state, items) {
+    state.personalAccounts = items
   },
   setContractSteps(state, items) {
     state.contracts = items

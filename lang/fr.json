@@ -309,9 +309,17 @@
       }
     },
     "account": {
-      "step": {
-        "0": "Informations personnelles",
-        "1": "Informations privées"
+      "business": {
+        "step": {
+          "0": "Informations générales",
+          "1": "Informations juridiques"
+        }
+      },
+      "personal": {
+        "step": {
+          "0": "Informations personnelles",
+          "1": "Informations privées"
+        }
       }
     },
     "contracts": {
@@ -380,7 +388,7 @@
         "title": "Modifier mon compte tiers"
       }
     },
-    "accounts": {
+    "personalAccounts": {
       "new": {
         "name": "Nom du compte",
         "title": "Nouveau compte",
@@ -393,6 +401,18 @@
           "ms": "Mme",
           "miss": "Mlle"
         }
+      },
+      "edit": {
+        "title": "Modifier mon compte"
+      }
+    },
+    "businessAccounts": {
+      "new": {
+        "name": "Nom du compte",
+        "title": "Nouveau compte",
+        "email": "Email",
+        "description": "Description",
+        "country": "Pays"
       },
       "edit": {
         "title": "Modifier mon compte"

@@ -970,6 +970,43 @@
         "contracts": []
       },
       "id": 2
+    },
+    {
+      "account_id": 14,
+      "headers": {
+        "products": [],
+        "third_party_accounts": [],
+        "payment_conditions": [],
+        "payment_structures": [],
+        "offers": {
+          "main": [],
+          "sub": {
+            "products": [],
+            "offers": []
+          }
+        },
+        "orders": {
+          "main": [],
+          "sub": {
+            "orders": []
+          }
+        },
+        "payment_conditions_for_payment_structure_form": [],
+        "contracts": []
+      },
+      "id": 3
+    },
+    {
+      "account_id": 14,
+      "id": 4
+    },
+    {
+      "account_id": 14,
+      "id": 5
+    },
+    {
+      "account_id": 15,
+      "id": 6
     }
   ],
   "users": [
@@ -2194,14 +2231,24 @@
       "name": "charter 4"
     }
   ],
-  "account-steps": [
+  "business-account-steps": [
+    {
+      "component": "fv-business-account-step-general-information",
+      "title": "forms.account.business.step.0"
+    },
+    {
+      "component": "fv-business-account-step-juridical-information",
+      "title": "forms.account.business.step.1"
+    }
+  ],
+  "personal-account-steps": [
     {
       "component": "fv-account-step-personal-information",
-      "title": "forms.account.step.0"
+      "title": "forms.account.personal.step.0"
     },
     {
       "component": "fv-account-step-contact-information",
-      "title": "forms.account.step.1"
+      "title": "forms.account.personal.step.1"
     }
   ],
   "contact-steps": [
@@ -15074,6 +15121,26 @@
       "name": "toto La Riflette",
       "account_id": null,
       "id": 12
+    },
+    {
+      "name": null,
+      "account_id": null,
+      "id": 13
+    },
+    {
+      "name": "Fred le monstre",
+      "account_id": null,
+      "id": 14
+    },
+    {
+      "name": "gregou",
+      "account_id": null,
+      "id": 15
+    },
+    {
+      "name": null,
+      "account_id": null,
+      "id": 16
     }
   ],
   "products": [

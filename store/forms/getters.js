@@ -1,7 +1,7 @@
 export default {
-  accounts(state) {
-    if (!state.accounts) return []
-    const res = JSON.parse(JSON.stringify(state.accounts))
+  businessAccounts(state) {
+    if (!state.businessAccounts) return []
+    const res = JSON.parse(JSON.stringify(state.businessAccounts))
     return res
   },
   contracts(state) {
@@ -12,6 +12,11 @@ export default {
   contacts(state) {
     if (!state.contacts) return []
     const res = JSON.parse(JSON.stringify(state.contacts))
+    return res
+  },
+  personalAccounts(state) {
+    if (!state.personalAccounts) return []
+    const res = JSON.parse(JSON.stringify(state.personalAccounts))
     return res
   },
   products(state) {

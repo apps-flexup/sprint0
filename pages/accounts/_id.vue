@@ -4,7 +4,7 @@
     :payload='account'
     @form:submit="editAccount"
     url='accounts'
-    form='accounts'
+    form='personalAccounts'
     action='edit'
   )
 </template>

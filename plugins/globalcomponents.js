@@ -12,6 +12,8 @@ import FvAutocomplete from '@/components/FvAutocomplete'
 import FvAvatar from '@/components/FvAvatar'
 import FvAvatarWithName from '@/components/FvAvatarWithName'
 import FvBreadcrumbs from '@/components/FvBreadcrumbs'
+import FvBusinessAccountStepGeneralInformation from '@/components/FvBusinessAccountStepGeneralInformation'
+import FvBusinessAccountStepJuridicalInformation from '@/components/FvBusinessAccountStepJuridicalInformation'
 import FvCivilityField from '@/components/FvCivilityField'
 import FvContactCard from '@/components/FvContactCard'
 import FvContactDialog from '@/components/FvContactDialog'
@@ -168,6 +170,14 @@ Vue.component('fv-autocomplete', FvAutocomplete)
 Vue.component('fv-avatar', FvAvatar)
 Vue.component('fv-avatar-with-name', FvAvatarWithName)
 Vue.component('fv-breadcrumbs', FvBreadcrumbs)
+Vue.component(
+  'fv-business-account-step-general-information',
+  FvBusinessAccountStepGeneralInformation
+)
+Vue.component(
+  'fv-business-account-step-juridical-information',
+  FvBusinessAccountStepJuridicalInformation
+)
 Vue.component('fv-civility-field', FvCivilityField)
 Vue.component('fv-contact-dialog', FvContactDialog)
 Vue.component('fv-contact-card', FvContactCard)

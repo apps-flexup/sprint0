@@ -299,9 +299,17 @@
       }
     },
     "account": {
-      "step": {
-        "0": "Personal information",
-        "1": "Private information"
+      "business": {
+        "step": {
+          "0": "General information",
+          "1": "Juridical information"
+        }
+      },
+      "personal": {
+        "step": {
+          "0": "Personal information",
+          "1": "Private information"
+        }
       }
     },
     "addresses": {
@@ -377,7 +385,7 @@
         "title":"Edit my third party account"
       }
     },
-    "accounts": {
+    "personalAccounts": {
       "new": {
         "name": "Account name",
         "title": "New account",
@@ -390,6 +398,18 @@
           "ms": "Ms",
           "miss": "Mrs"
         }
+      },
+      "edit": {
+        "title": "Edit my account"
+      }
+    },
+    "businessAccounts": {
+      "new": {
+        "name": "Account name",
+        "title": "New account",
+        "email": "Email",
+        "description": "Description",
+        "country": "Country"
       },
       "edit": {
         "title": "Edit my account"
