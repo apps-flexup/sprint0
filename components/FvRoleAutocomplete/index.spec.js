@@ -2,7 +2,11 @@ import { shallowMount } from '@vue/test-utils'
 import FvRoleAutocomplete from './index'
 
 const factory = () => {
-  return shallowMount(FvRoleAutocomplete)
+  return shallowMount(FvRoleAutocomplete, {
+    mocks: {
+      $t: (msg) => msg
+    }
+  })
 }
 
 describe('FvRoleAutocomplete', () => {

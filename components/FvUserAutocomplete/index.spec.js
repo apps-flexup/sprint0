@@ -2,7 +2,11 @@ import { shallowMount } from '@vue/test-utils'
 import FvUserAutocomplete from './index'
 
 const factory = () => {
-  return shallowMount(FvUserAutocomplete)
+  return shallowMount(FvUserAutocomplete, {
+    mocks: {
+      $t: (msg) => msg
+    }
+  })
 }
 
 describe('FvUserAutocomplete', () => {

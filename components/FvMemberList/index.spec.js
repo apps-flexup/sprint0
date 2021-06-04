@@ -1,13 +1,46 @@
-import { shallowMount } from '@vue/test-utils'
+import { shallowMount, createLocalVue } from '@vue/test-utils'
+import Vuex from 'vuex'
 import FvMemberList from './index.vue'
+
+const localVue = createLocalVue()
+localVue.use(Vuex)
+
+const account = {
+  name: 'Hello World'
+}
+
+let store
+
+const $activeAccount = {
+  get: () => 42
+}
 
 const factory = () => {
   return shallowMount(FvMemberList, {
+    localVue,
+    store,
     mocks: {
-      $t: (msg) => msg
+      $t: (msg) => msg,
+      $activeAccount
     }
   })
 }
+
+beforeEach(() => {
+  store = new Vuex.Store({
+    modules: {
+      accounts: {
+        namespaced: true,
+        actions: {
+          get: jest.fn()
+        },
+        getters: {
+          findById: () => () => account
+        }
+      }
+    }
+  })
+})
 
 describe('FvMemberIndex', () => {
   it('should render a fv member list', () => {
