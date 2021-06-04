@@ -84,6 +84,7 @@ import FvYieldRateParams from '@/components/FvYieldRateParams'
 import FvRating from '@/components/FvRating'
 import FvReferenceAutocomplete from '@/components/FvReferenceAutocomplete'
 import FvReview from '@/components/FvReview'
+import FvRoleAutocomplete from '@/components/FvRoleAutocomplete'
 import FvSearchAutocomplete from '@/components/FvSearchAutocomplete'
 import FvSecondaryButton from '@/components/FvSecondaryButton'
 import FvSelectHeaders from '@/components/FvSelectHeaders'
@@ -255,6 +256,7 @@ Vue.component('fv-yield-rate-params', FvYieldRateParams)
 Vue.component('fv-rating', FvRating)
 Vue.component('fv-reference-autocomplete', FvReferenceAutocomplete)
 Vue.component('fv-review', FvReview)
+Vue.component('fv-role-autocomplete', FvRoleAutocomplete)
 Vue.component('fv-search-autocomplete', FvSearchAutocomplete)
 Vue.component('fv-secondary-button', FvSecondaryButton)
 Vue.component('fv-select-headers', FvSelectHeaders)

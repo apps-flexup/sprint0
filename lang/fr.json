@@ -1,4 +1,9 @@
 {
+  "functionalRoles": {
+    "admin": "Admin",
+    "editor": "Éditeur",
+    "guest": "Invité"
+  },
   "mediaField": {
     "label": "Libellé",
     "mailLabel": "Email",
@@ -281,6 +286,10 @@
     "paymentStructures": {
       "title": "Mes structures de paiement",
       "search": "Rechercher"
+    },
+    "members": {
+      "title": "Membres du compte {accountName}",
+      "search": "Search"
     }
   },
   "forms": {
@@ -663,6 +672,9 @@
     },
     "user": {
       "label": "Utilisateur"
+    },
+    "role": {
+      "label": "Rôle"
     }
   },
   "settings": {

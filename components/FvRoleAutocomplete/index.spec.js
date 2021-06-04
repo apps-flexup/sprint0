@@ -1,11 +1,11 @@
 import { shallowMount } from '@vue/test-utils'
-import FvUserAutocomplete from './index'
+import FvRoleAutocomplete from './index'
 
 const factory = () => {
-  return shallowMount(FvUserAutocomplete)
+  return shallowMount(FvRoleAutocomplete)
 }
 
-describe('FvUserAutocomplete', () => {
+describe('FvRoleAutocomplete', () => {
   it('should render a fv user autocomplete', () => {
     const wrapper = factory()
     expect(wrapper.find('[data-testid=autocomplete]').exists()).toBe(true)

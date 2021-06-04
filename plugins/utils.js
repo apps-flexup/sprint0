@@ -214,6 +214,12 @@ export const filterUserAutocomplete = (item, v, _it) => {
   return res
 }
 
+export const filterRoleAutocomplete = (item, v, _it) => {
+  const nameValues = `${item.value}`
+  const res = String.prototype.filtreAutocomplete.call(nameValues, v)
+  return res
+}
+
 // export default (ctx, inject) => {
 //   const headers = translateHeaders(ctx.app.i18n)
 //   inject('translateHeaders', headers)

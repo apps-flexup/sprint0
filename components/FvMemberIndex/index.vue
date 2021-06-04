@@ -25,8 +25,13 @@
         :users="users"
         @user:selected="userSelected"
       )
-      pre {{ user }}
-      div(v-if="user") ici le role
+      fv-role-autocomplete(
+        v-if="user"
+        :role="role"
+        :roles="functionalRoles"
+        @role:selected="roleSelected"
+      )
+      pre(v-if="role") {{ role }}
     template(v-slot:actions)
       v-spacer
       fv-modal-button(
@@ -46,7 +51,8 @@ export default {
   data() {
     return {
       dialog: false,
-      user: null
+      user: null,
+      role: null
     }
   },
   computed: {
@@ -56,10 +62,15 @@ export default {
       const res = users.filter((user) => user.uuid !== activeUserUuid)
       // Here we also need to remove users who are already members of the active account
       return res
+    },
+    functionalRoles() {
+      const res = this.$store.getters['functionalRoles/all']
+      return res
     }
   },
   mounted() {
     this.$store.dispatch('users/get')
+    this.$store.dispatch('functionalRoles/get')
     console.log('Composant ', this.$options.name)
   },
   methods: {
@@ -74,10 +85,20 @@ export default {
       this.dialog = false
     },
     sendInvitation() {
+      if (!this.user || !this.role) {
+        // On affiche une erreur ici
+        return
+      }
       this.dialog = false
+      this.$activeAccount.inviteUserWithRole(this.user, this.role)
+      this.user = null
+      this.role = null
     },
     userSelected(v) {
       this.user = v
+    },
+    roleSelected(v) {
+      this.role = v
     }
   }
 }

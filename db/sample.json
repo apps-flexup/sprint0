@@ -1,4 +1,30 @@
 {
+  "given-roles": [
+    {
+      "from_type": "Account",
+      "from_id": 1,
+      "to_type": "User",
+      "to_id": "ad276495-e93c-41d4-aeda-a6ffab7fe876",
+      "role": "editor",
+      "data": null,
+      "status": "WaitingConfirmation",
+      "id": 1
+    }
+  ],
+  "functional-roles": [
+    {
+      "value": "admin",
+      "type": "free"
+    },
+    {
+      "value": "editor",
+      "type": "free"
+    },
+    {
+      "value": "guest",
+      "type": "free"
+    }
+  ],
   "users": [
     {
       "email_verified": false,
@@ -9,6 +35,16 @@
       "email": "toto@toto.com",
       "uuid": "c7e4d104-2e45-4056-94cc-10a87af32693",
       "id": 1
+    },
+    {
+      "email_verified": false,
+      "name": "grog le jambon",
+      "preferred_username": "grog",
+      "given_name": "grog",
+      "family_name": "le jambon",
+      "email": "grog@grog.com",
+      "uuid": "ad276495-e93c-41d4-aeda-a6ffab7fe876",
+      "id": 2
     }
   ],
   "payment-structures": [
@@ -982,6 +1018,31 @@
         "contracts": []
       },
       "id": 2
+    },
+    {
+      "account_id": 14,
+      "headers": {
+        "products": [],
+        "third_party_accounts": [],
+        "payment_conditions": [],
+        "payment_structures": [],
+        "offers": {
+          "main": [],
+          "sub": {
+            "products": [],
+            "offers": []
+          }
+        },
+        "orders": {
+          "main": [],
+          "sub": {
+            "orders": []
+          }
+        },
+        "payment_conditions_for_payment_structure_form": [],
+        "contracts": []
+      },
+      "id": 3
     }
   ],
   "accounts": [
@@ -1179,6 +1240,17 @@
       "country": "FRA",
       "user_id": "c7e4d104-2e45-4056-94cc-10a87af32693",
       "id": 13
+    },
+    {
+      "parent_type": "User",
+      "parent_id": "ad276495-e93c-41d4-aeda-a6ffab7fe876",
+      "type": "Personal",
+      "name": "grog le jambon",
+      "firstname": "grog",
+      "lastname": "le jambon",
+      "country": "FRA",
+      "user_id": "ad276495-e93c-41d4-aeda-a6ffab7fe876",
+      "id": 14
     }
   ],
   "categories": [
@@ -15015,6 +15087,11 @@
       "name": "toto La Riflette",
       "account_id": null,
       "id": 12
+    },
+    {
+      "name": "grog le jambon",
+      "account_id": null,
+      "id": 13
     }
   ],
   "products": [
