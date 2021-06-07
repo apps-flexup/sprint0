@@ -5,7 +5,7 @@
       fv-text-field(
         data-testid='nameField'
         :value="name"
-        :label="$t('forms.accounts.new.name')"
+        :label="$t('forms.personalAccounts.new.name')"
         @input="nameChanged"
       )
   v-row
@@ -13,14 +13,14 @@
       fv-text-field(
         data-testid='lastnameField'
         :value="lastname"
-        :label="$t('forms.accounts.new.lastname')"
+        :label="$t('forms.personalAccounts.new.lastname')"
         @input="lastnameChanged"
       )
     v-col(cols="6")
       fv-text-field(
         data-testid='firstnameField'
         :value="firstname"
-        :label="$t('forms.accounts.new.firstname')"
+        :label="$t('forms.personalAccounts.new.firstname')"
         @input="firstnameChanged"
       )
 </template>
