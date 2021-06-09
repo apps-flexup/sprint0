@@ -15,8 +15,8 @@
     :append-icon="appendIcon"
     :placeholder="placeholder"
     :dense="dense"
-    clearable=''
-    outlined=''
+    :clearable="clearable"
+    outlined
   )
     template(v-slot:label)
       slot(name="label")
@@ -111,6 +111,12 @@ export default {
       type: Boolean,
       default() {
         return null
+      }
+    },
+    clearable: {
+      type: Boolean,
+      default() {
+        return true
       }
     }
   },

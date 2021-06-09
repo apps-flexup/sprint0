@@ -48,6 +48,7 @@ import FvLoginButton from '@/components/FvLoginButton'
 import FvLogoutButton from '@/components/FvLogoutButton'
 import FvMailField from '@/components/FvMailField'
 import FvMediaField from '@/components/FvMediaField'
+import FvMemberDataTable from '@/components/FvMemberDataTable'
 import FvMemberIndex from '@/components/FvMemberIndex'
 import FvMemberList from '@/components/FvMemberList'
 import FvMenu from '@/components/FvMenu'
@@ -213,6 +214,7 @@ Vue.component('fv-login-button', FvLoginButton)
 Vue.component('fv-logout-button', FvLogoutButton)
 Vue.component('fv-mail-field', FvMailField)
 Vue.component('fv-media-field', FvMediaField)
+Vue.component('fv-member-data-table', FvMemberDataTable)
 Vue.component('fv-member-index', FvMemberIndex)
 Vue.component('fv-member-list', FvMemberList)
 Vue.component('fv-menu', FvMenu)

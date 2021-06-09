@@ -5,7 +5,7 @@
     :title="$t('table.members.title', { accountName })"
     :searchLabel="$t('table.members.search')"
     tableComponent="fv-member-data-table"
-    tableName="givenRoles"
+    tableName="members"
     :rules="rules"
     @list:selected="memberSelected"
   )
@@ -16,7 +16,9 @@ export default {
   name: 'FvMemberList',
   data() {
     return {
-      rules: {}
+      rules: {
+        user: this.$displayRules.userNameFromUuid
+      }
     }
   },
   computed: {
@@ -29,6 +31,7 @@ export default {
   },
   mounted() {
     console.log('Composant ', this.$options.name)
+    this.$store.dispatch('members/get')
   },
   methods: {
     memberSelected(member) {

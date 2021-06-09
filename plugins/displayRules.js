@@ -179,6 +179,14 @@ const displayRules = (ctx) => ({
     if (!item) return null
     const res = item.risk + '%'
     return res
+  },
+  userNameFromUuid(item) {
+    if (!item) return null
+    const uuid = item.to_id
+    if (!uuid) return null
+    const user = ctx.store.getters['users/findByUuId'](uuid)
+    const res = user.name
+    return res
   }
 })
 

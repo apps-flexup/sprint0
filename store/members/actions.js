@@ -2,7 +2,13 @@
 export default {
   get({ commit }) {
     return this.$repos.givenRoles.index().then((data) => {
-      commit('set', data)
+      const activeAccountId = this.$activeAccount.get()
+      const activeAccountMembers = data.filter((givenRole) => {
+        const isAccount = givenRole.from_type === 'Account'
+        const isActiveAccount = givenRole.from_id === activeAccountId
+        return isAccount && isActiveAccount
+      })
+      commit('set', activeAccountMembers)
     })
   },
   add({ commit }, givenRole) {

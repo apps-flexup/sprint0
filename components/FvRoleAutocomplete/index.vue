@@ -5,6 +5,8 @@
     :element="role"
     :items="roles"
     :filter="filter"
+    :dense="dense"
+    :clearable="clearable"
     item-value="value"
     @autocomplete:selected="selected"
   )
@@ -41,6 +43,18 @@ export default {
       type: String,
       default() {
         return this.$t('autocomplete.role.label')
+      }
+    },
+    dense: {
+      type: Boolean,
+      default() {
+        return false
+      }
+    },
+    clearable: {
+      type: Boolean,
+      default() {
+        return true
       }
     }
   },

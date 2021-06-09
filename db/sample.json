@@ -965,6 +965,38 @@
             "active": true,
             "displayed": true
           }
+        ],
+        "members": [
+          {
+            "align": "left",
+            "sortable": true,
+            "text": "headers.members.user",
+            "value": "user",
+            "order": 0,
+            "customizable": false,
+            "active": true,
+            "displayed": true
+          },
+          {
+            "align": "left",
+            "sortable": true,
+            "text": "headers.members.role",
+            "value": "role",
+            "order": 1,
+            "customizable": false,
+            "active": true,
+            "displayed": true
+          },
+          {
+            "align": "left",
+            "sortable": false,
+            "text": "headers.actions",
+            "value": "actions",
+            "order": 4,
+            "customizable": false,
+            "active": true,
+            "displayed": true
+          }
         ]
       }
     },
@@ -990,7 +1022,8 @@
           }
         },
         "payment_conditions_for_payment_structure_form": [],
-        "contracts": []
+        "contracts": [],
+        "members": []
       },
       "id": 1
     },

@@ -632,6 +632,10 @@
       "portion": "Portion %",
       "label": "Libellé",
       "risk": "Risque"
+    },
+    "members": {
+      "user": "Utilisateur",
+      "role": "Rôle"
     }
   },
   "navBar": {
