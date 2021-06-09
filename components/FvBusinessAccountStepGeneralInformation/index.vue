@@ -11,7 +11,7 @@
   v-row
     v-col(cols="12")
       fv-text-field(
-        data-testid='lastnameField'
+        data-testid='descriptionField'
         :value="description"
         :label="$t('forms.businessAccounts.new.description')"
         @input="descriptionChanged"
@@ -19,7 +19,7 @@
   v-row
     v-col(cols="12")
       fv-country-autocomplete(
-        data-testid='firstnameField'
+        data-testid='countryField'
         :country="country"
         :label="$t('forms.businessAccounts.new.country')"
         @country:selected="countrySelected"
