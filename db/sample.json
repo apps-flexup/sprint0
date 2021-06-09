@@ -2239,6 +2239,10 @@
     {
       "component": "fv-business-account-step-juridical-information",
       "title": "forms.account.business.step.1"
+    },
+    {
+      "component": "fv-account-step-contact-information",
+      "title": "forms.account.business.step.2"
     }
   ],
   "personal-account-steps": [

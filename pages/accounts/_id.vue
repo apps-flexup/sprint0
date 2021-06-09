@@ -24,7 +24,7 @@ export default {
     findAccountType() {
       const account = this.account
       const type = account.type.toLowerCase()
-      const res = type + 'Accounts'
+      const res = `${type}Accounts`
       return res
     }
   },

@@ -312,7 +312,8 @@
       "business": {
         "step": {
           "0": "Informations générales",
-          "1": "Informations juridiques"
+          "1": "Informations juridiques",
+          "2": "Informations privées"
         }
       },
       "personal": {
