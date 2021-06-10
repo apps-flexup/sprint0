@@ -31,7 +31,6 @@
         :roles="functionalRoles"
         @role:selected="roleSelected"
       )
-      pre(v-if="role") {{ role }}
     template(v-slot:actions)
       v-spacer
       fv-modal-button(
