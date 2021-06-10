@@ -3,7 +3,7 @@
   v-row
     v-col(cols="12")
       fv-legal-structure-autocomplete(
-        data-testid='legalStructure'
+        data-testid='legalStructureField'
         :legalStructureId="legalStructureId"
         :label="$t('forms.thirdPartyAccounts.new.legalStructure')"
         @legalstructure:selected="legalStructureSelected"
@@ -11,7 +11,7 @@
   v-row
     v-col(cols="12")
       fv-text-field(
-        data-testid='siret'
+        data-testid='siretField'
         :value="siret"
         :label="$t('forms.thirdPartyAccounts.new.siret')"
         @input="siretChanged"
