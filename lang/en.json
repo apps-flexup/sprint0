@@ -338,7 +338,7 @@
         "charter": "Charter",
         "dateOfSignature": "Date of signature",
         "effectiveDate": "Effective date",
-        "endDate":"End date",
+        "endDate": "End date",
         "type": "Type of contract"
       },
       "structure": {
@@ -358,7 +358,7 @@
         "category": "Category",
         "periodicity": "Periodicity",
         "name": "Product name",
-        "unit":"Unit",
+        "unit": "Unit",
         "price": "Price",
         "currency": "Currency",
         "elasticity": "Elasticity",
@@ -381,14 +381,14 @@
         "name": "Third party account's name",
         "legalStructure": "Legal structure",
         "siret": "SIRET",
-        "address":"Address",
+        "address": "Address",
         "complement": "Complement",
         "zip": "ZIP",
         "city": "City",
         "country": "Country"
       },
       "edit": {
-        "title":"Edit my third party account"
+        "title": "Edit my third party account"
       }
     },
     "personalAccounts": {
@@ -415,7 +415,9 @@
         "title": "New account",
         "email": "Email",
         "description": "Description",
-        "country": "Country"
+        "country": "Country",
+        "legalStructure": "Legal structure",
+        "siret": "SIRET"
       },
       "edit": {
         "title": "Edit my account"
@@ -508,7 +510,7 @@
       }
     }
   },
-  "manageMenu" : {
+  "manageMenu": {
     "title": "Manage",
     "home": "Home",
     "orders": "Orders",
@@ -558,7 +560,7 @@
     "user": "User :"
   },
   "buttons": {
-    "create" : {
+    "create": {
       "account": "CREATE ACCOUNT",
       "product": "CREATE PRODUCT",
       "contract": "CREATE CONTRACT",
@@ -656,7 +658,7 @@
       "2": "FlexUp gestion"
     },
     "seller": {
-      "0":"Dashboard",
+      "0": "Dashboard",
       "1": "Orders",
       "2": "My offers"
     }

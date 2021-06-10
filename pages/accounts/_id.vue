@@ -21,7 +21,7 @@ export default {
       const res = this.$store.getters['accounts/findById'](this.accountId)
       return res
     },
-    formAccountType() {
+    formForAccountType() {
       const account = this.account
       const type = account.type.toLowerCase()
       const res = `${type}Accounts`

@@ -418,7 +418,9 @@
         "title": "Nouveau compte",
         "email": "Email",
         "description": "Description",
-        "country": "Pays"
+        "country": "Pays",
+        "legalStructure": "Statut juridique",
+        "siret": "SIRET"
       },
       "edit": {
         "title": "Modifier mon compte"
@@ -660,7 +662,7 @@
       "2": "Gestion FlexUp"
     },
     "seller": {
-      "0":"Tableau de bord",
+      "0": "Tableau de bord",
       "1": "Commandes",
       "2": "Mes offres"
     }
