@@ -4,6 +4,11 @@
     "mailLabel": "Emails",
     "phoneLabel": "Téléphones",
     "addressLabel": "Adresses",
+    "placeholder": {
+      "mailLabel": "Email",
+      "phoneLabel": "Téléphone",
+      "addressLabel": "Adresse"
+    },
     "new": {
       "address": "Ajouter une adresse",
       "mail": "Ajouter un email",

@@ -13,13 +13,7 @@
 export default {
   data() {
     return {
-      account: {
-        name: null,
-        title: null,
-        lastname: null,
-        firstname: null,
-        email: null
-      }
+      account: {}
     }
   },
   mounted() {

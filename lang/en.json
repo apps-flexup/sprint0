@@ -4,6 +4,11 @@
     "mailLabel": "Emails",
     "phoneLabel": "Phones",
     "addressLabel": "Addresses",
+    "placeholder": {
+      "mailLabel": "Email",
+      "phoneLabel": "Phone",
+      "addressLabel": "Addresse"
+    },
     "new": {
       "address": "Add new address",
       "mail": "Add new email",
