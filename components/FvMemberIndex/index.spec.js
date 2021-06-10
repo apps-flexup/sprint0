@@ -43,7 +43,7 @@ beforeEach(() => {
 })
 
 describe('FvMembersIndex', () => {
-  test('should render a fv member index', () => {
+  it('should render a fv member index', () => {
     const wrapper = factory()
     expect(wrapper.find('[data-testid="inviteMemberButton"]').exists()).toBe(
       true
@@ -52,5 +52,15 @@ describe('FvMembersIndex', () => {
     expect(wrapper.find('[data-testid="inviteMemberModal"]').exists()).toBe(
       true
     )
+    expect(wrapper.vm.dialog).toBe(false)
+  })
+  it('should display invite member modal when clicked on invite member button', () => {
+    const wrapper = factory()
+    const inviteMemberButton = wrapper.find(
+      '[data-testid="inviteMemberButton"]'
+    )
+    expect(wrapper.vm.dialog).toBe(false)
+    inviteMemberButton.vm.$emit('button:click')
+    expect(wrapper.vm.dialog).toBe(true)
   })
 })

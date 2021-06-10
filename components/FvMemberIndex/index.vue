@@ -8,7 +8,6 @@
       ) {{ $t('buttons.inviteMember') }}
   fv-member-list(
     data-testid="memberList"
-    @list:selected="selectedMember"
   )
   fv-modal-slot(
     data-testid="inviteMemberModal"
@@ -75,10 +74,6 @@ export default {
   methods: {
     inviteMember() {
       this.dialog = true
-      console.log('plop on add')
-    },
-    selectedMember(v) {
-      console.log('on select: ', v)
     },
     close() {
       this.dialog = false
