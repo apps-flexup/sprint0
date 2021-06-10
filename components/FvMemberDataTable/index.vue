@@ -17,7 +17,7 @@
         :roles="functionalRoles"
         :dense="true"
         :clearable="false"
-        @role:selected="roleSelected"
+        @role:selected="roleSelected(item, ...arguments)"
       )
     template(v-slot:item.actions="{ item }")
       fv-delete-action(@delete:clicked="deleteItem(item)")
@@ -83,6 +83,10 @@ export default {
     },
     sortBy(v) {
       this.$emit('dataTable:sortBy', v)
+    },
+    roleSelected(member, newRole) {
+      member.role = newRole
+      this.$store.dispatch('members/update', member)
     }
   }
 }

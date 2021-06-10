@@ -15,5 +15,16 @@ export default {
     this.$repos.givenRoles.create(givenRole).then((res) => {
       commit('add', res)
     })
+  },
+  update({ commit }, member) {
+    this.$repos.givenRoles.update(member).then((res) => {
+      commit('remove', res)
+      commit('add', res)
+    })
+  },
+  remove({ commit }, member) {
+    this.$repos.givenRoles
+      .delete(member.id)
+      .then(() => commit('remove', member))
   }
 }
