@@ -9,11 +9,18 @@ const account = {
   name: 'Hello World'
 }
 
-let store
-
 const $activeAccount = {
-  get: () => 42
+  get: () => {
+    return 42
+  }
 }
+
+const $displayRules = {
+  userNameFromUuid: jest.fn(),
+  role: jest.fn()
+}
+
+let store
 
 const factory = () => {
   return shallowMount(FvMemberList, {
@@ -21,7 +28,8 @@ const factory = () => {
     store,
     mocks: {
       $t: (msg) => msg,
-      $activeAccount
+      $activeAccount,
+      $displayRules
     }
   })
 }
@@ -37,6 +45,12 @@ beforeEach(() => {
         getters: {
           findById: () => () => account
         }
+      },
+      members: {
+        namespaced: true,
+        actions: {
+          get: jest.fn()
+        }
       }
     }
   })
@@ -50,9 +64,13 @@ describe('FvMemberIndex', () => {
   it('should emit an event when member is selected', () => {
     const wrapper = factory()
     const table = wrapper.find('[data-testid="table"]')
-    table.vm.$emit('list:selected')
+    const member = {
+      name: 'member'
+    }
+    table.vm.$emit('list:selected', member)
     const selectedCalls = wrapper.emitted('list:selected')
     expect(selectedCalls).toBeTruthy()
     expect(selectedCalls).toHaveLength(1)
+    expect(selectedCalls[0][0]).toEqual(member)
   })
 })
