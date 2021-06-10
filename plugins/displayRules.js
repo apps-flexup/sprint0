@@ -187,6 +187,14 @@ const displayRules = (ctx) => ({
     const user = ctx.store.getters['users/findByUuId'](uuid)
     const res = user.name
     return res
+  },
+  role(item) {
+    if (!item) return null
+    const role = item.role
+    if (!role) return null
+    const i18n = ctx.app.i18n
+    const res = i18n.t('functionalRoles.' + role)
+    return res
   }
 })
 
