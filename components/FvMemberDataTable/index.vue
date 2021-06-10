@@ -7,7 +7,6 @@
     :hide-default-footer="hideDefaultFooter"
     :options="options"
     @dataTable:sortBy="sortBy"
-    @dataTable:selected="selected"
   )
     template(v-slot:item.user="{ item }")
       div {{ displayUserName(item) }}
@@ -66,17 +65,6 @@ export default {
     displayUserName(item) {
       const res = this.$displayRules.userNameFromUuid(item)
       return res
-    },
-    displayCategory(item) {
-      const res = this.$displayRules.category(item)
-      return res
-    },
-    displayUnit(item) {
-      const res = this.$displayRules.unit(item)
-      return res
-    },
-    selected(member) {
-      this.$emit('dataTable:selected', member)
     },
     deleteItem(member) {
       this.$store.dispatch('members/remove', member)
