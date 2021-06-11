@@ -17,7 +17,8 @@
       "orders": "Personnalisez votre tableau des commandes",
       "thirdPartyAccounts": "Personnalisez votre tableau des tiers",
       "paymentConditions": "Personnalisez votre tableau des conditions de paiement",
-      "paymentStructures": "Personnalisez votre tableau des structures de paiement"
+      "paymentStructures": "Personnalisez votre tableau des structures de paiement",
+      "members": "Personnalisez votre tableau des membres"
     },
     "subHeaders": {
       "mainHeaders": {
@@ -289,7 +290,7 @@
     },
     "members": {
       "title": "Membres du compte {accountName}",
-      "search": "Search"
+      "search": "Rechercher"
     }
   },
   "forms": {

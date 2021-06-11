@@ -17,7 +17,8 @@
       "orders": "Customize your order table",
       "thirdPartyAccounts": "Customize your third party table",
       "paymentConditions": "Customize your payment condition table",
-      "paymentStructures": "Customize your payment structure table"
+      "paymentStructures": "Customize your payment structure table",
+      "members": "Customize your member table"
     },
     "subHeaders": {
       "mainHeaders": {
