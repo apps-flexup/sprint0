@@ -1,66 +1,58 @@
 import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
 import { action } from '@storybook/addon-actions'
-import FvProductDataTable from './index.vue'
+import FvMemberDataTable from './index.vue'
 
-<Meta title='Molecules/FvProductDataTable' component={ FvProductDataTable } />
+<Meta title='Molecules/FvMemberDataTable' component={ FvMemberDataTable } />
 
-# FvProductDataTable
+# FvMemberDataTable
 
 <Canvas>
 <Story name='Common' height='150px'>{{
-  components: { FvProductDataTable },
+  components: { FvMemberDataTable },
   data() {
     return {
       headers: [
         {
-          align: "start",
+          align: "left",
           sortable: true,
-          text: "Nom",
-          value: "name"
+          text: "headers.members.user",
+          value: "user",
+          order: 0,
+          customizable: false,
+          active: true,
+          displayed: true
         },
         {
-          align: "start",
+          align: "left",
           sortable: true,
-          text: "Catégorie",
-          value: "category"
+          text: "headers.members.role",
+          value: "role",
+          order: 1,
+          customizable: false,
+          active: true,
+          displayed: true
         },
         {
-          align: "start",
-          sortable: true,
-          text: "Unité",
-          value: "unit"
-        },
-        {
-          align: "start",
-          sortable: true,
-          text: "Statut",
-          value: "status"
+          align: "left",
+          sortable: false,
+          text: "headers.actions",
+          value: "actions",
+          order: 4,
+          customizable: false,
+          active: true,
+          displayed: true
         }
       ],
       items: [
         {
-          account_id: 1,
-          category_id: 55,
-          currency: "EUR",
-          dimension: "duration",
-          name: "Appartement Paris 8",
-          price: "1250",
-          quantity: 1,
-          status: "active",
-          unit: "month",
+          from_type: "Account",
+          from_id: 1,
+          to_type: "User",
+          to_id: "ad276495-e93c-41d4-aeda-a6ffab7fe876",
+          role: "editor",
+          data: null,
+          status: "WaitingConfirmation",
           id: 1
-        },
-        {
-          account_id: 1,
-          category_id: 55,
-          currency: "EUR",
-          dimension: "duration",
-          name: "Appartement Paris 19",
-          price: "300",
-          quantity: 1,
-          status: "inactive",
-          unit: "month",
-          id: 2
         }
       ]
     }
@@ -69,16 +61,16 @@ import FvProductDataTable from './index.vue'
     sortBy: action('sortBy'),
     selected: action('selected')
   },
-  template: `<FvProductDataTable
+  template: `<FvMemberDataTable
     :headers="headers"
     :items="items"
     @dataTable:sortBy="sortBy"
     @dataTable:selected="selected"
   >
-  </FvProductDataTable>`
+  </FvMemberDataTable>`
 }}</Story>
 </Canvas>
 
 ## Props
 
-<Props of={ FvProductDataTable } />
+<Props of={ FvMemberDataTable } />
