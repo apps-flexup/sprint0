@@ -1,0 +1,30 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+import FvBusinessAccountStepJuridicalInformation from './index.vue'
+
+<Meta title='Molecules/FvBusinessAccountStepJuridicalInformation' component={ FvBusinessAccountStepJuridicalInformation } />
+
+# FvBusinessAccountStepJuridicalInformation
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  components: { FvBusinessAccountStepJuridicalInformation },
+  data() {
+    return {
+      account: {}
+    }
+  },
+  methods: {
+    accountChanged: action('Account changed')
+  },
+  template: `<FvBusinessAccountStepJuridicalInformation
+    :account="account"
+    @payload:changed="accountChanged"
+  >
+  </FvBusinessAccountStepJuridicalInformation>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvAccountStepPersonalInformation } />

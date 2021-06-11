@@ -1,10 +1,10 @@
 <template lang="pug">
-  .page-product-new
+  .page-account-new
     fv-form(
       :payload='account'
       @form:submit="createAccount"
       url='accounts'
-      form='accounts'
+      form="businessAccounts"
       action='new'
     )
 </template>
@@ -13,13 +13,7 @@
 export default {
   data() {
     return {
-      account: {
-        name: null,
-        title: null,
-        lastname: null,
-        firstname: null,
-        email: null
-      }
+      account: {}
     }
   },
   mounted() {

@@ -1,9 +1,20 @@
 {
   "mediaField": {
-    "label": "Libellé",
-    "mailLabel": "Emails",
-    "phoneLabel": "Téléphones",
-    "addressLabel": "Adresses",
+    "label": {
+      "placeholder": "Libellé"
+    },
+    "address": {
+      "placeholder": "Adresse",
+      "title": "Adresses"
+    },
+    "mail": {
+      "placeholder": "Email",
+      "title": "Emails"
+    },
+    "phone": {
+      "placeholder": "Téléphone",
+      "title": "Téléphones"
+    },
     "new": {
       "address": "Ajouter une adresse",
       "mail": "Ajouter un email",
@@ -310,9 +321,18 @@
       }
     },
     "account": {
-      "step": {
-        "0": "Informations personnelles",
-        "1": "Informations privées"
+      "business": {
+        "step": {
+          "0": "Informations générales",
+          "1": "Informations juridiques",
+          "2": "Informations privées"
+        }
+      },
+      "personal": {
+        "step": {
+          "0": "Informations personnelles",
+          "1": "Informations privées"
+        }
       }
     },
     "contracts": {
@@ -381,7 +401,7 @@
         "title": "Modifier mon compte tiers"
       }
     },
-    "accounts": {
+    "personalAccounts": {
       "new": {
         "name": "Nom du compte",
         "title": "Nouveau compte",
@@ -394,6 +414,20 @@
           "ms": "Mme",
           "miss": "Mlle"
         }
+      },
+      "edit": {
+        "title": "Modifier mon compte"
+      }
+    },
+    "businessAccounts": {
+      "new": {
+        "name": "Nom du compte",
+        "title": "Nouveau compte",
+        "email": "Email",
+        "description": "Description",
+        "country": "Pays",
+        "legalStructure": "Statut juridique",
+        "siret": "SIRET"
       },
       "edit": {
         "title": "Modifier mon compte"
@@ -635,7 +669,7 @@
       "2": "Gestion FlexUp"
     },
     "seller": {
-      "0":"Tableau de bord",
+      "0": "Tableau de bord",
       "1": "Commandes",
       "2": "Mes offres"
     }

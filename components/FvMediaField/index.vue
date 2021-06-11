@@ -13,7 +13,7 @@
     v-col(cols=5)
       fv-text-field(
         data-testid="labelField"
-        :label="$t('mediaField.label')"
+        :label="$t('mediaField.label.placeholder')"
         :value="labelValue"
         @input="labelChanged"
       )

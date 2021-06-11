@@ -1,33 +1,34 @@
 <template lang="pug">
-.fv-account-step-personal-information
+.fv-business-account-step-general-information
   v-row
-    v-col(cols='10')
+    v-col(cols='12')
       fv-text-field(
         data-testid='nameField'
         :value="name"
-        :label="$t('forms.personalAccounts.new.name')"
+        :label="$t('forms.businessAccounts.new.name')"
         @input="nameChanged"
       )
   v-row
-    v-col(cols="6")
+    v-col(cols="12")
       fv-text-field(
-        data-testid='lastnameField'
-        :value="lastname"
-        :label="$t('forms.personalAccounts.new.lastname')"
-        @input="lastnameChanged"
+        data-testid='descriptionField'
+        :value="description"
+        :label="$t('forms.businessAccounts.new.description')"
+        @input="descriptionChanged"
       )
-    v-col(cols="6")
-      fv-text-field(
-        data-testid='firstnameField'
-        :value="firstname"
-        :label="$t('forms.personalAccounts.new.firstname')"
-        @input="firstnameChanged"
+  v-row
+    v-col(cols="12")
+      fv-country-autocomplete(
+        data-testid='countryField'
+        :country="country"
+        :label="$t('forms.businessAccounts.new.country')"
+        @country:selected="countrySelected"
       )
 </template>
 
 <script>
 export default {
-  name: 'FvAccountStepPersonalInformation',
+  name: 'FvBusinessAccountStepGeneralInformation',
   props: {
     payload: {
       type: Object,
@@ -41,12 +42,12 @@ export default {
       const res = this.payload ? this.payload.name : null
       return res
     },
-    lastname() {
-      const res = this.payload ? this.payload.lastname : null
+    description() {
+      const res = this.payload ? this.payload.description : null
       return res
     },
-    firstname() {
-      const res = this.payload ? this.payload.firstname : null
+    country() {
+      const res = this.payload ? this.payload.country : null
       return res
     }
   },
@@ -60,15 +61,15 @@ export default {
       }
       this.$emit('payload:changed', payload)
     },
-    lastnameChanged(lastname) {
+    descriptionChanged(description) {
       const payload = {
-        lastname
+        description
       }
       this.$emit('payload:changed', payload)
     },
-    firstnameChanged(firstname) {
+    countrySelected(v) {
       const payload = {
-        firstname
+        country: v.iso3
       }
       this.$emit('payload:changed', payload)
     }

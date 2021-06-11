@@ -1,9 +1,9 @@
 // Action de base
 export default {
-  getAccount({ commit }) {
-    this.$repos.accountSteps
+  getBusinessAccount({ commit }) {
+    this.$repos.businessAccountSteps
       .index()
-      .then((data) => commit('setAccountSteps', data))
+      .then((data) => commit('setBusinessAccountSteps', data))
   },
   getContract({ commit }) {
     // charger les contrat-types
@@ -23,6 +23,11 @@ export default {
   },
   getOffer({ commit }) {
     this.$repos.offerSteps.index().then((data) => commit('setOfferSteps', data))
+  },
+  getPersonalAccount({ commit }) {
+    this.$repos.personalAccountSteps
+      .index()
+      .then((data) => commit('setPersonalAccountSteps', data))
   },
   getThirdPartyAccount({ commit }) {
     this.$repos.thirdPartyAccountSteps

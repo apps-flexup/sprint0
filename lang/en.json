@@ -1,9 +1,20 @@
 {
   "mediaField": {
-    "label": "Label",
-    "mailLabel": "Emails",
-    "phoneLabel": "Phones",
-    "addressLabel": "Addresses",
+    "label": {
+      "placeholder": "Label"
+    },
+    "address": {
+      "placeholder": "Addresse",
+      "title": "Addresses"
+    },
+    "mail": {
+      "placeholder": "Email",
+      "title": "Emails"
+    },
+    "phone": {
+      "placeholder": "Phone",
+      "title": "Phones"
+    },
     "new": {
       "address": "Add new address",
       "mail": "Add new email",
@@ -300,9 +311,18 @@
       }
     },
     "account": {
-      "step": {
-        "0": "Personal information",
-        "1": "Private information"
+      "business": {
+        "step": {
+          "0": "General information",
+          "1": "Juridical information",
+          "2": "Private Information"
+        }
+      },
+      "personal": {
+        "step": {
+          "0": "Personal information",
+          "1": "Private information"
+        }
       }
     },
     "addresses": {
@@ -325,7 +345,7 @@
         "charter": "Charter",
         "dateOfSignature": "Date of signature",
         "effectiveDate": "Effective date",
-        "endDate":"End date",
+        "endDate": "End date",
         "type": "Type of contract"
       },
       "structure": {
@@ -345,7 +365,7 @@
         "category": "Category",
         "periodicity": "Periodicity",
         "name": "Product name",
-        "unit":"Unit",
+        "unit": "Unit",
         "price": "Price",
         "currency": "Currency",
         "elasticity": "Elasticity",
@@ -368,17 +388,17 @@
         "name": "Third party account's name",
         "legalStructure": "Legal structure",
         "siret": "SIRET",
-        "address":"Address",
+        "address": "Address",
         "complement": "Complement",
         "zip": "ZIP",
         "city": "City",
         "country": "Country"
       },
       "edit": {
-        "title":"Edit my third party account"
+        "title": "Edit my third party account"
       }
     },
-    "accounts": {
+    "personalAccounts": {
       "new": {
         "name": "Account name",
         "title": "New account",
@@ -391,6 +411,20 @@
           "ms": "Ms",
           "miss": "Mrs"
         }
+      },
+      "edit": {
+        "title": "Edit my account"
+      }
+    },
+    "businessAccounts": {
+      "new": {
+        "name": "Account name",
+        "title": "New account",
+        "email": "Email",
+        "description": "Description",
+        "country": "Country",
+        "legalStructure": "Legal structure",
+        "siret": "SIRET"
       },
       "edit": {
         "title": "Edit my account"
@@ -483,7 +517,7 @@
       }
     }
   },
-  "manageMenu" : {
+  "manageMenu": {
     "title": "Manage",
     "home": "Home",
     "orders": "Orders",
@@ -533,7 +567,7 @@
     "user": "User :"
   },
   "buttons": {
-    "create" : {
+    "create": {
       "account": "CREATE ACCOUNT",
       "product": "CREATE PRODUCT",
       "contract": "CREATE CONTRACT",
@@ -631,7 +665,7 @@
       "2": "FlexUp gestion"
     },
     "seller": {
-      "0":"Dashboard",
+      "0": "Dashboard",
       "1": "Orders",
       "2": "My offers"
     }

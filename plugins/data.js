@@ -6,7 +6,7 @@ export default (ctx, inject) => {
   const repos = {
     accounts: repo('accounts'),
     accountMenu: repo('accountMenu'),
-    accountSteps: repo('account-steps'),
+    businessAccountSteps: repo('business-account-steps'),
     buyerMenu: repo('buyerMenu'),
     categories: repo('categories'),
     charters: repo('charters'),
@@ -35,6 +35,7 @@ export default (ctx, inject) => {
     paymentConditionsSteps: repo('payment-condition-steps'),
     paymentStructures: repo('payment-structures'),
     paymentStructureSteps: repo('payment-structure-steps'),
+    personalAccountSteps: repo('personal-account-steps'),
     products: repo('products'),
     productSteps: repo('product-steps'),
     references: repo('references'),
