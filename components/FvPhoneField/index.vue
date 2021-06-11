@@ -31,7 +31,7 @@ export default {
   data() {
     return {
       valueType: 'Phone',
-      phoneLabel: this.$t('mediaField.placeholder.phoneLabel')
+      phoneLabel: this.$t('mediaField.phone.placeholder')
     }
   },
   mounted() {

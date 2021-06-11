@@ -31,7 +31,7 @@ export default {
   data() {
     return {
       valueType: 'Mail',
-      mailLabel: this.$t('mediaField.placeholder.mailLabel')
+      mailLabel: this.$t('mediaField.mail.placeholder')
     }
   },
   mounted() {

@@ -42,7 +42,7 @@ export default {
       localAddress: JSON.parse(JSON.stringify(this.address)),
       displayModal: false,
       valueType: 'Address',
-      addressLabel: this.$t('mediaField.placeholder.addressLabel')
+      addressLabel: this.$t('mediaField.address.placeholder')
     }
   },
   computed: {
