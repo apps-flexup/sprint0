@@ -1,19 +1,19 @@
 {
   "mediaField": {
-    "mailLabel": "Emails",
-    "phoneLabel": "Phones",
-    "addressLabel": "Addresses",
     "label": {
       "placeholder": "Label"
     },
     "address": {
-      "placeholder": "Addresse"
+      "placeholder": "Addresse",
+      "title": "Addresses"
     },
     "mail": {
-      "placeholder": "Email"
+      "placeholder": "Email",
+      "title": "Emails"
     },
     "phone": {
-      "placeholder": "Phone"
+      "placeholder": "Phone",
+      "title": "Phones"
     },
     "new": {
       "address": "Add new address",

@@ -1,7 +1,7 @@
 <template lang="pug">
 .fv-account-step-contact-information
   div(v-for="(rule, index) in rules" :key="index")
-    h3.font-weight-regular(data-testid="mediaName") {{ $t('mediaField.' + rule.toLowerCase() + 'Label') }}
+    h3.font-weight-regular(data-testid="mediaName") {{ $t('mediaField.' + rule.toLowerCase() + '.title') }}
     v-row(v-for="(media, index) in getMediasForRule(rule)" :key="index")
       v-col(cols="12")
         fv-address-field(
