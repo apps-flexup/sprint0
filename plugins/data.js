@@ -18,6 +18,8 @@ export default (ctx, inject) => {
     contracts: repo('contracts'),
     contractSteps: repo('contract-steps'),
     contractTypes: repo('contract-types'),
+    functionalRoles: repo('functional-roles'),
+    givenRoles: repo('given-roles'),
     globalMenu: repo('globalMenu'),
     legalStructure: repo('legal-structure'),
     manageMenu: repo('manageMenu'),

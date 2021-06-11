@@ -1,0 +1,76 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+import FvMemberDataTable from './index.vue'
+
+<Meta title='Molecules/FvMemberDataTable' component={ FvMemberDataTable } />
+
+# FvMemberDataTable
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  components: { FvMemberDataTable },
+  data() {
+    return {
+      headers: [
+        {
+          align: "left",
+          sortable: true,
+          text: "headers.members.user",
+          value: "user",
+          order: 0,
+          customizable: false,
+          active: true,
+          displayed: true
+        },
+        {
+          align: "left",
+          sortable: true,
+          text: "headers.members.role",
+          value: "role",
+          order: 1,
+          customizable: false,
+          active: true,
+          displayed: true
+        },
+        {
+          align: "left",
+          sortable: false,
+          text: "headers.actions",
+          value: "actions",
+          order: 4,
+          customizable: false,
+          active: true,
+          displayed: true
+        }
+      ],
+      items: [
+        {
+          from_type: "Account",
+          from_id: 1,
+          to_type: "User",
+          to_id: "ad276495-e93c-41d4-aeda-a6ffab7fe876",
+          role: "editor",
+          data: null,
+          status: "WaitingConfirmation",
+          id: 1
+        }
+      ]
+    }
+  },
+  methods: {
+    sortBy: action('sortBy'),
+    selected: action('selected')
+  },
+  template: `<FvMemberDataTable
+    :headers="headers"
+    :items="items"
+    @dataTable:sortBy="sortBy"
+    @dataTable:selected="selected"
+  >
+  </FvMemberDataTable>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvMemberDataTable } />

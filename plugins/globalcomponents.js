@@ -52,9 +52,13 @@ import FvLoginButton from '@/components/FvLoginButton'
 import FvLogoutButton from '@/components/FvLogoutButton'
 import FvMailField from '@/components/FvMailField'
 import FvMediaField from '@/components/FvMediaField'
+import FvMemberDataTable from '@/components/FvMemberDataTable'
+import FvMemberIndex from '@/components/FvMemberIndex'
+import FvMemberList from '@/components/FvMemberList'
 import FvMenu from '@/components/FvMenu'
 import FvModalActions from '@/components/FvModalActions'
 import FvModalButton from '@/components/FvModalButton'
+import FvModalHeader from '@/components/FvModalHeader'
 import FvRecursiveDataTable from '@/components/FvRecursiveDataTable'
 import FvNav from '@/components/FvNav'
 import FvNavBar from '@/components/FvNavBar'
@@ -85,6 +89,7 @@ import FvYieldRateParams from '@/components/FvYieldRateParams'
 import FvRating from '@/components/FvRating'
 import FvReferenceAutocomplete from '@/components/FvReferenceAutocomplete'
 import FvReview from '@/components/FvReview'
+import FvRoleAutocomplete from '@/components/FvRoleAutocomplete'
 import FvSearchAutocomplete from '@/components/FvSearchAutocomplete'
 import FvSecondaryButton from '@/components/FvSecondaryButton'
 import FvSelectHeaders from '@/components/FvSelectHeaders'
@@ -105,6 +110,7 @@ import FvEditAction from '@/components/FvEditAction'
 import FvEtape from '@/components/FvEtape'
 import FvFieldDate from '@/components/FvFieldDate'
 import FvUserAccounts from '@/components/FvUserAccounts'
+import FvUserAutocomplete from '@/components/FvUserAutocomplete'
 import FvContractSummaryVisualisation from '@/components/FvContractSummaryVisualisation'
 import FvContractStepVisualisation from '@/components/FvContractStepVisualisation'
 import FvProductList from '@/components/FvProductList'
@@ -225,9 +231,13 @@ Vue.component('fv-login-button', FvLoginButton)
 Vue.component('fv-logout-button', FvLogoutButton)
 Vue.component('fv-mail-field', FvMailField)
 Vue.component('fv-media-field', FvMediaField)
+Vue.component('fv-member-data-table', FvMemberDataTable)
+Vue.component('fv-member-index', FvMemberIndex)
+Vue.component('fv-member-list', FvMemberList)
 Vue.component('fv-menu', FvMenu)
 Vue.component('fv-modal-actions', FvModalActions)
 Vue.component('fv-modal-button', FvModalButton)
+Vue.component('fv-modal-header', FvModalHeader)
 Vue.component('fv-recursive-data-table', FvRecursiveDataTable)
 Vue.component('fv-nav', FvNav)
 Vue.component('fv-nav-bar', FvNavBar)
@@ -265,6 +275,7 @@ Vue.component('fv-yield-rate-params', FvYieldRateParams)
 Vue.component('fv-rating', FvRating)
 Vue.component('fv-reference-autocomplete', FvReferenceAutocomplete)
 Vue.component('fv-review', FvReview)
+Vue.component('fv-role-autocomplete', FvRoleAutocomplete)
 Vue.component('fv-search-autocomplete', FvSearchAutocomplete)
 Vue.component('fv-secondary-button', FvSecondaryButton)
 Vue.component('fv-select-headers', FvSelectHeaders)
@@ -285,6 +296,7 @@ Vue.component('fv-edit-action', FvEditAction)
 Vue.component('fv-etape', FvEtape)
 Vue.component('fv-field-date', FvFieldDate)
 Vue.component('fv-user-accounts', FvUserAccounts)
+Vue.component('fv-user-autocomplete', FvUserAutocomplete)
 Vue.component(
   'fv-contract-summary-visualisation',
   FvContractSummaryVisualisation

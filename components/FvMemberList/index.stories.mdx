@@ -1,0 +1,18 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import FvMemberList from './index.vue'
+
+<Meta title='Pages/FvMemberList' component={ FvMemberList } />
+
+# FvMemberList
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  components: { FvMemberList },
+  template: `<FvMemberList>
+  </FvMemberList>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvMemberList } />
