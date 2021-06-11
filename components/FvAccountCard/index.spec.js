@@ -49,7 +49,7 @@ describe('FvAccountCard', () => {
   it('should push route to account details when card clicked', () => {
     const accountId = 1
     const $route = {
-      path: 'accounts/' + accountId
+      path: '/accounts/' + accountId
     }
     const $router = {
       push: jest.fn()
