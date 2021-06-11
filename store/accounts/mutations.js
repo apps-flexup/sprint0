@@ -10,7 +10,10 @@ export default {
     state.current = id
   },
   add(state, item) {
-    state.items.push(item)
+    const accountAlreadyExists = state.items.find((element) => {
+      return element.id === item.id
+    })
+    if (!accountAlreadyExists) state.items.push(item)
   },
   remove(state, item) {
     state.items = state.items.filter((v) => v.id !== item.id)

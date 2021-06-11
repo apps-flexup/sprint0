@@ -1,6 +1,6 @@
 // Action de base
 export default {
-  get({ commit, getters }) {
+  get({ commit, dispatch, getters }) {
     if (!this.$auth.loggedIn) return
     this.$axios.$get(`accounts?user_id=${this.$auth.user.sub}`).then((data) => {
       commit('set', data)
@@ -9,7 +9,20 @@ export default {
         const account = parseInt(data[0].id)
         this.$activeAccount.set(account)
       }
+      dispatch('getSharedAccounts')
     })
+  },
+  getSharedAccounts({ commit }) {
+    this.$axios
+      .$get(`given-roles?to_id=${this.$auth.user.sub}`)
+      .then((givenRoles) => {
+        givenRoles.forEach((givenRole) => {
+          const accountId = givenRole.from_id
+          this.$axios.$get(`accounts?id=${accountId}`).then((accounts) => {
+            commit('add', accounts[0])
+          })
+        })
+      })
   },
   clear({ commit }) {
     commit('clear')
