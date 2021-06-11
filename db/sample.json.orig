@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "given-roles": [
     {
       "from_type": "Account",
@@ -47,6 +48,8 @@
       "id": 2
     }
   ],
+=======
+>>>>>>> dev-flas
   "payment-structures": [
     {
       "label": "B25 + E75",
@@ -1078,12 +1081,23 @@
       "id": 3
     }
   ],
+  "users": [
+    {
+      "email_verified": false,
+      "name": "toto La Riflette",
+      "preferred_username": "toto",
+      "given_name": "toto",
+      "family_name": "La Riflette",
+      "email": "toto@toto.com",
+      "uuid": "c7e4d104-2e45-4056-94cc-10a87af32693",
+      "id": 1
+    }
+  ],
   "accounts": [
     {
       "avatar": "/images/avatar-0.png",
       "country_id": 77,
       "name": "fred",
-      "type": "Personal",
       "offers_count": 0,
       "params": {},
       "parent_id": null,
@@ -1159,7 +1173,6 @@
       "avatar": "/images/avatar-2.png",
       "country_id": 77,
       "id": 3,
-      "type": "Business",
       "name": "Johanna (supplier)",
       "offers_count": 0,
       "params": {},
@@ -1176,7 +1189,6 @@
       "avatar": "/images/avatar-3.png",
       "country_id": 77,
       "id": 4,
-      "type": "Business",
       "name": "Compte supplier 3",
       "offers_count": 0,
       "params": {},
@@ -1193,7 +1205,6 @@
       "avatar": "/images/avatar-4.png",
       "country_id": 77,
       "id": 5,
-      "type": "Business",
       "name": "Compte supplier 2",
       "offers_count": 0,
       "params": {},
@@ -1330,7 +1341,6 @@
         }
       ],
       "lastname": "La Riflette",
-      "country": "FRA",
       "user_id": "c7e4d104-2e45-4056-94cc-10a87af32693",
       "id": 13
     },
