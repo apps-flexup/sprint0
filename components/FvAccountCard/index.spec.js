@@ -1,6 +1,10 @@
 import { mount } from '@vue/test-utils'
 import FvAccountCard from './index.vue'
 
+beforeEach(() => {
+  jest.clearAllMocks()
+})
+
 describe('FvAccountCard', () => {
   it('should render a fv account card', () => {
     const wrapper = mount(FvAccountCard, {
@@ -48,9 +52,7 @@ describe('FvAccountCard', () => {
   })
   it('should push route to account details when card clicked', () => {
     const accountId = 1
-    const $route = {
-      path: '/accounts/' + accountId
-    }
+    const expectedPath = '/accounts/' + accountId
     const $router = {
       push: jest.fn()
     }
@@ -59,12 +61,12 @@ describe('FvAccountCard', () => {
         id: accountId
       },
       mocks: {
-        $route,
         $router
       }
     })
     const card = wrapper.find('[data-testid="card"]')
     card.vm.$emit('card:clicked')
-    expect(wrapper.vm.$route.path).toBe($route.path)
+    expect($router.push).toHaveBeenCalledTimes(1)
+    expect($router.push).toHaveBeenCalledWith(expectedPath)
   })
 })
