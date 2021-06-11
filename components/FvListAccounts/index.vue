@@ -67,7 +67,7 @@ export default {
       this.$router.push('/accounts/new')
     },
     manageAccounts() {
-      this.$router.push('accounts')
+      this.$router.push('/accounts')
       console.log('manage accounts')
     },
     help() {
