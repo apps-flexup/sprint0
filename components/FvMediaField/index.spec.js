@@ -20,6 +20,7 @@ describe('FvMediaField', () => {
     const wrapper = factory()
     expect(wrapper.find('[data-testid="valueField"]').exists()).toBe(true)
     expect(wrapper.find('[data-testid="labelField"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="deleteIcon"]').exists()).toBe(true)
   })
   it('should display media value in value field', () => {
     const value = 'value'
@@ -66,5 +67,13 @@ describe('FvMediaField', () => {
     expect(changedCalls).toBeTruthy()
     expect(changedCalls).toHaveLength(1)
     expect(changedCalls[0][0]).toBe(label)
+  })
+  it('should emit an event when delete is clicked', () => {
+    const wrapper = factory()
+    const deleteIcon = wrapper.find('[data-testid="deleteIcon"]')
+    deleteIcon.vm.$emit('icon:clicked')
+    const deleteCalls = wrapper.emitted('media:delete:clicked')
+    expect(deleteCalls).toBeTruthy()
+    expect(deleteCalls).toHaveLength(1)
   })
 })

@@ -1093,6 +1093,49 @@
       "roles_methods": null,
       "supplier": false,
       "user_id": "c7e4d104-2e45-4056-94cc-10a87af32693",
+      "medias": [
+        {
+          "entity_type": "Account",
+          "entity_id": 1,
+          "description": {
+            "type": "Mail",
+            "value": "test@test.com",
+            "label": "test"
+          }
+        },
+        {
+          "entity_type": "Account",
+          "entity_id": 1,
+          "description": {
+            "type": "Phone",
+            "value": "0123456789",
+            "label": "portable"
+          }
+        },
+        {
+          "entity_type": "Account",
+          "entity_id": 1,
+          "description": {
+            "type": "Address",
+            "value": {
+              "street": "10 rue des plopliers",
+              "zip": "13245",
+              "city": "Plopland",
+              "country": "FRA"
+            },
+            "label": "Maison"
+          }
+        },
+        {
+          "entity_type": "Account",
+          "entity_id": 1,
+          "description": {
+            "type": "Mail",
+            "value": "fred@email.com",
+            "label": "super email"
+          }
+        }
+      ],
       "id": 1
     },
     {
@@ -1265,10 +1308,23 @@
     },
     {
       "parent_type": "User",
+      "title": "Mr",
       "parent_id": "c7e4d104-2e45-4056-94cc-10a87af32693",
       "type": "Personal",
       "name": "toto La Riflette",
       "firstname": "toto",
+      "medias": [
+        {
+          "id": 1,
+          "entity_type": "Account",
+          "entity_id": 13,
+          "description": {
+            "type": "Mail",
+            "value": "test@domain.com",
+            "label": "Pro"
+          }
+        }
+      ],
       "lastname": "La Riflette",
       "country": "FRA",
       "user_id": "c7e4d104-2e45-4056-94cc-10a87af32693",
@@ -2244,10 +2300,28 @@
       "name": "charter 4"
     }
   ],
-  "account-steps": [
+  "business-account-steps": [
+    {
+      "component": "fv-business-account-step-general-information",
+      "title": "forms.account.business.step.0"
+    },
+    {
+      "component": "fv-business-account-step-juridical-information",
+      "title": "forms.account.business.step.1"
+    },
+    {
+      "component": "fv-account-step-contact-information",
+      "title": "forms.account.business.step.2"
+    }
+  ],
+  "personal-account-steps": [
     {
       "component": "fv-account-step-personal-information",
-      "title": "forms.account.step.0"
+      "title": "forms.account.personal.step.0"
+    },
+    {
+      "component": "fv-account-step-contact-information",
+      "title": "forms.account.personal.step.1"
     }
   ],
   "contact-steps": [
@@ -14552,7 +14626,7 @@
       "active": true,
       "icon": "mdi-information-outline",
       "title": "accountMenu.information",
-      "to": "/informations"
+      "to": "/accounts"
     },
     {
       "active": true,

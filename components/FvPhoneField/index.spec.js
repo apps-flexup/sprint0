@@ -1,7 +1,7 @@
 import { shallowMount } from '@vue/test-utils'
 import FvPhoneField from './index.vue'
 
-const valueType = 'phone'
+const valueType = 'Phone'
 
 const factory = (propsData) => {
   return shallowMount(FvPhoneField, {
@@ -46,5 +46,13 @@ describe('FvPhoneField', () => {
     expect(labelChangedCalls).toBeTruthy()
     expect(labelChangedCalls).toHaveLength(1)
     expect(labelChangedCalls[0][0]).toEqual(expectedPayload)
+  })
+  it('should emit an event when phone needs to be deleted', () => {
+    const wrapper = factory()
+    const phoneField = wrapper.find('[data-testid="phoneField"]')
+    phoneField.vm.$emit('media:delete:clicked')
+    const deleteCalls = wrapper.emitted('phone:delete:clicked')
+    expect(deleteCalls).toBeTruthy()
+    expect(deleteCalls).toHaveLength(1)
   })
 })

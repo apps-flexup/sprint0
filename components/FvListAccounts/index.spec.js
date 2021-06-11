@@ -107,7 +107,7 @@ describe('FvListAccounts', () => {
     const manageAccounts = wrapper.find('[data-testid="manageAccounts"]')
     manageAccounts.vm.$emit('click')
     expect(pushFn).toHaveBeenCalledTimes(1)
-    const accountsRoute = 'accounts'
+    const accountsRoute = '/accounts'
     expect(pushFn).toHaveBeenCalledWith(accountsRoute)
   })
 })

@@ -4,7 +4,7 @@
     :payload='account'
     @form:submit="editAccount"
     url='accounts'
-    form='accounts'
+    :form='formForAccountType'
     action='edit'
   )
 </template>
@@ -19,6 +19,12 @@ export default {
   computed: {
     account() {
       const res = this.$store.getters['accounts/findById'](this.accountId)
+      return res
+    },
+    formForAccountType() {
+      const account = this.account
+      const type = account.type.toLowerCase()
+      const res = `${type}Accounts`
       return res
     }
   },

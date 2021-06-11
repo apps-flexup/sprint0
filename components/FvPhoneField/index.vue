@@ -7,6 +7,7 @@
     :labelValue="labelValue"
     @media:value:changed="phoneChanged"
     @media:label:changed="labelChanged"
+    @media:delete:clicked="deleteClicked"
   )
 </template>
 
@@ -29,8 +30,8 @@ export default {
   },
   data() {
     return {
-      valueType: 'phone',
-      phoneLabel: this.$t('mediaField.phoneLabel')
+      valueType: 'Phone',
+      phoneLabel: this.$t('mediaField.phone.placeholder')
     }
   },
   mounted() {
@@ -50,6 +51,9 @@ export default {
         label: v
       }
       this.$emit('phone:label:changed', payload)
+    },
+    deleteClicked() {
+      this.$emit('phone:delete:clicked')
     }
   }
 }

@@ -7,6 +7,7 @@
     :labelValue="labelValue"
     @media:value:changed="mailChanged"
     @media:label:changed="labelChanged"
+    @media:delete:clicked="deleteClicked"
   )
 </template>
 
@@ -29,8 +30,8 @@ export default {
   },
   data() {
     return {
-      valueType: 'mail',
-      mailLabel: this.$t('mediaField.mailLabel')
+      valueType: 'Mail',
+      mailLabel: this.$t('mediaField.mail.placeholder')
     }
   },
   mounted() {
@@ -50,6 +51,9 @@ export default {
         label: v
       }
       this.$emit('mail:label:changed', payload)
+    },
+    deleteClicked() {
+      this.$emit('mail:delete:clicked')
     }
   }
 }

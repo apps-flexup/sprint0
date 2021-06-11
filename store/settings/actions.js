@@ -12,7 +12,7 @@ export default {
     this.$repos.userMenu.index().then((data) => commit('setUserMenu', data))
   },
   getAccountMenu({ commit }) {
-    this.$repos.accountMenu
+    return this.$repos.accountMenu
       .index()
       .then((data) => commit('setAccountMenu', data))
   },

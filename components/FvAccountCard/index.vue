@@ -48,7 +48,7 @@ export default {
   },
   methods: {
     cardClicked() {
-      this.$router.push('accounts/' + this.id)
+      this.$router.push('/accounts/' + this.id)
     },
     favoriteClicked() {
       this.$emit('accountCard:favoriteClicked')

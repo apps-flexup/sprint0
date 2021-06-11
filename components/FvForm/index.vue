@@ -36,7 +36,6 @@
       @button:click="submit"
     ) {{ $t('forms.products.new.validate') }}
 </template>
-
 <script>
 export default {
   name: 'FvForm',
@@ -77,9 +76,18 @@ export default {
       return res
     }
   },
+  watch: {
+    payload: {
+      deep: true,
+      handler() {
+        this.localPayload = Object.assign({}, this.localPayload, this.payload)
+      }
+    }
+  },
   mounted() {
     console.log('Composant ', this.$options.name)
-    this.$store.dispatch('forms/getAccount')
+    this.$store.dispatch('forms/getBusinessAccount')
+    this.$store.dispatch('forms/getPersonalAccount')
     this.$store.dispatch('forms/getProduct')
     this.$store.dispatch('forms/getOffer')
     this.$store.dispatch('forms/getThirdPartyAccount')
