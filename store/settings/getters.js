@@ -19,8 +19,20 @@ export default {
   accountMenu(state, _getters, _rootStates, rootGetters) {
     if (!state.accountMenu || !state.accountMenu.length) return []
     const accountId = rootGetters['accounts/selected']
+    const account = rootGetters['accounts/findById'](accountId)
+    const accountType = account.type
+    console.log('accountType: ', accountType)
     const res = JSON.parse(JSON.stringify(state.accountMenu))
-    res[0].to = '/accounts/' + accountId
+    const informationsIndex = res.findIndex(
+      (menu) => menu.title === 'accountMenu.information'
+    )
+    res[informationsIndex].to += `/${accountId}`
+    if (accountType === 'Personal') {
+      const membersIndex = res.findIndex(
+        (menu) => menu.title === 'accountMenu.members'
+      )
+      res.splice(membersIndex, 1)
+    }
     return res.filter((m) => m.active)
   },
   buyerMenu(state) {
