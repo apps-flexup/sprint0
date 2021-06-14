@@ -58,6 +58,14 @@ export default {
   },
   addPersonalAccount({ dispatch }, user) {
     console.log('user: ', user)
+    const emailMedia = {
+      description: {
+        type: 'Mail',
+        value: user.email,
+        label: null
+      }
+    }
+    const medias = [emailMedia]
     const account = {
       parent_type: 'User',
       parent_id: user.sub,
@@ -65,7 +73,8 @@ export default {
       name: user.name,
       firstname: user.given_name,
       lastname: user.family_name,
-      country: 'FRA'
+      country: 'FRA',
+      medias
     }
     console.log('account: ', account)
     dispatch('accounts/add', account, { root: true })

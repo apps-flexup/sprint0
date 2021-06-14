@@ -20,13 +20,13 @@ export default {
     if (!state.accountMenu || !state.accountMenu.length) return []
     const accountId = rootGetters['accounts/selected']
     const account = rootGetters['accounts/findById'](accountId)
-    const accountType = account.type
+    const accountType = account ? account.type : undefined
     const res = JSON.parse(JSON.stringify(state.accountMenu))
     const informationsIndex = res.findIndex(
       (menu) => menu.title === 'accountMenu.information'
     )
     res[informationsIndex].to += `/${accountId}`
-    if (accountType === 'Personal') {
+    if (!accountType || accountType === 'Personal') {
       const membersIndex = res.findIndex(
         (menu) => menu.title === 'accountMenu.members'
       )
