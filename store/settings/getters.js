@@ -21,7 +21,6 @@ export default {
     const accountId = rootGetters['accounts/selected']
     const account = rootGetters['accounts/findById'](accountId)
     const accountType = account.type
-    console.log('accountType: ', accountType)
     const res = JSON.parse(JSON.stringify(state.accountMenu))
     const informationsIndex = res.findIndex(
       (menu) => menu.title === 'accountMenu.information'

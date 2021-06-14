@@ -14,6 +14,13 @@ const activeAccount = (ctx) => ({
     const res = ctx.store.getters['accounts/selected']
     return res
   },
+  type() {
+    const accountId = this.get()
+    const account = ctx.store.getters['accounts/findById'](accountId)
+    if (!account) return null
+    const type = account.type
+    return type
+  },
   set(accountId) {
     if (accountId === -1) return
     ctx.store.dispatch('accounts/setCurrent', accountId)
