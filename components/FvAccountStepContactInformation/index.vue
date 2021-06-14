@@ -95,8 +95,6 @@ export default {
     },
     addNewMedia(rule) {
       const media = {
-        entity_type: 'Account',
-        entity_id: this.$activeAccount.get(),
         description: {
           type: rule,
           value: null,

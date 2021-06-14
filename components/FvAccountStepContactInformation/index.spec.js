@@ -1,12 +1,6 @@
 import { shallowMount } from '@vue/test-utils'
 import FvAccountStepContactInformation from './index.vue'
 
-const accountId = 42
-
-const $activeAccount = {
-  get: () => accountId
-}
-
 describe('FvAccountStepContactInformation', () => {
   const factory = (propsData) => {
     return shallowMount(FvAccountStepContactInformation, {
@@ -14,8 +8,7 @@ describe('FvAccountStepContactInformation', () => {
         ...propsData
       },
       mocks: {
-        $t: (msg) => msg,
-        $activeAccount
+        $t: (msg) => msg
       }
     })
   }
@@ -32,8 +25,6 @@ describe('FvAccountStepContactInformation', () => {
     const expectedPayload = {
       medias: [
         {
-          entity_type: 'Account',
-          entity_id: accountId,
           description: {
             label: null,
             value: null,
@@ -50,8 +41,6 @@ describe('FvAccountStepContactInformation', () => {
   it('should send signal when media value is changed', () => {
     const medias = [
       {
-        entity_type: 'Account',
-        entity_id: accountId,
         description: {
           label: null,
           value: 'test@test.com',
@@ -82,8 +71,6 @@ describe('FvAccountStepContactInformation', () => {
   it('should send signal when media label is changed', () => {
     const medias = [
       {
-        entity_type: 'Account',
-        entity_id: accountId,
         description: {
           label: 'perso',
           value: null,
@@ -114,8 +101,6 @@ describe('FvAccountStepContactInformation', () => {
   it('should send signal when media is deleted', () => {
     const medias = [
       {
-        entity_type: 'Account',
-        entity_id: accountId,
         description: {
           label: 'perso',
           value: null,
