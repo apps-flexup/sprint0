@@ -1,4 +1,13 @@
 // Action de base
+
+const setMediaEntities = (accountId, medias) => {
+  const entityType = 'Account'
+  medias.forEach((media) => {
+    media.entity_type = entityType
+    media.entity_id = accountId
+  })
+}
+
 export default {
   get({ commit, dispatch, getters }) {
     if (!this.$auth.loggedIn) return
@@ -34,6 +43,7 @@ export default {
     account.user_id = this.$auth.user.sub
     console.log('on veut creer le compte: ', account)
     this.$repos.accounts.create(account).then((res) => {
+      dispatch('update', res)
       this.$activeAccount.set(res.id)
       const thirdPartyAccount = {
         name: res.name,
@@ -61,6 +71,7 @@ export default {
     dispatch('accounts/add', account, { root: true })
   },
   update({ commit }, account) {
+    setMediaEntities(account.id, account.medias)
     this.$repos.accounts.update(account).then((res) => {
       commit('remove', res)
       commit('add', res)
