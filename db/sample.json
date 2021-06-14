@@ -1,16 +1,5 @@
 {
-  "given-roles": [
-    {
-      "from_type": "Account",
-      "from_id": 1,
-      "to_type": "User",
-      "to_id": "ad276495-e93c-41d4-aeda-a6ffab7fe876",
-      "role": "editor",
-      "data": null,
-      "status": "WaitingConfirmation",
-      "id": 1
-    }
-  ],
+  "given-roles": [],
   "functional-roles": [
     {
       "value": "admin",

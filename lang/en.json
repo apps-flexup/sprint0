@@ -1,4 +1,9 @@
 {
+  "errors": {
+    "access": {
+      "members": "Your current account does not allow to access to members feature."
+    }
+  },
   "functionalRoles": {
     "admin": "Admin",
     "editor": "Editor",

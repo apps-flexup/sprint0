@@ -1,4 +1,9 @@
 {
+  "errors": {
+    "access": {
+      "members": "Votre compte actuel ne permet pas d'accéder à la gestion des membres"
+    }
+  },
   "functionalRoles": {
     "admin": "Admin",
     "editor": "Éditeur",

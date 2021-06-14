@@ -1,45 +1,48 @@
 <template lang="pug">
 .fv-member-index
-  v-row
-    v-col(cols="12")
-      fv-primary-button.text-right(
-        data-testid="inviteMemberButton"
-        @button:click='inviteMember'
-      ) {{ $t('buttons.inviteMember') }}
-  fv-member-list(
-    data-testid="memberList"
-  )
-  fv-modal-slot(
-    data-testid="inviteMemberModal"
-    :dialog="dialog"
-  )
-    template(v-slot:title)
-      fv-modal-header(
-        :title="$t('forms.members.title')"
-        @modal:header:close="close"
-      )
-    template(v-slot:form)
-      fv-user-autocomplete(
-        :user="user"
-        :users="users"
-        @user:selected="userSelected"
-      )
-      fv-role-autocomplete(
-        v-if="user"
-        :role="role"
-        :roles="functionalRoles"
-        @role:selected="roleSelected"
-      )
-    template(v-slot:actions)
-      v-spacer
-      fv-modal-button(
-        data-testid="closeButton"
-        @button:click="close"
-      ) {{ $t('modal.close') }}
-      fv-modal-button(
-        data-testid="sendInvitation"
-        @button:click="sendInvitation"
-      ) {{ $t('modal.sendInvitation') }}
+  div(v-if="accountType === 'Personal'")
+    h2 {{ $t('errors.access.members') }}
+  div(v-else)
+    v-row
+      v-col(cols="12")
+        fv-primary-button.text-right(
+          data-testid="inviteMemberButton"
+          @button:click='inviteMember'
+        ) {{ $t('buttons.inviteMember') }}
+    fv-member-list(
+      data-testid="memberList"
+    )
+    fv-modal-slot(
+      data-testid="inviteMemberModal"
+      :dialog="dialog"
+    )
+      template(v-slot:title)
+        fv-modal-header(
+          :title="$t('forms.members.title')"
+          @modal:header:close="close"
+        )
+      template(v-slot:form)
+        fv-user-autocomplete(
+          :user="user"
+          :users="users"
+          @user:selected="userSelected"
+        )
+        fv-role-autocomplete(
+          v-if="user"
+          :role="role"
+          :roles="functionalRoles"
+          @role:selected="roleSelected"
+        )
+      template(v-slot:actions)
+        v-spacer
+        fv-modal-button(
+          data-testid="closeButton"
+          @button:click="close"
+        ) {{ $t('modal.close') }}
+        fv-modal-button(
+          data-testid="sendInvitation"
+          @button:click="sendInvitation"
+        ) {{ $t('modal.sendInvitation') }}
 
 </template>
 
@@ -54,6 +57,10 @@ export default {
     }
   },
   computed: {
+    accountType() {
+      const type = this.$activeAccount.type() || 'Personal'
+      return type
+    },
     users() {
       const users = this.$store.getters['users/all']
       const activeUserUuid = this.$auth.user.sub

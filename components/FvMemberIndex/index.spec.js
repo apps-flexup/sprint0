@@ -7,12 +7,19 @@ localVue.use(Vuex)
 
 let store
 
+const $activeAccount = {
+  type: () => {
+    return 'Business'
+  }
+}
+
 const factory = () => {
   return shallowMount(FvMemberIndex, {
     localVue,
     store,
     mocks: {
-      $t: (msg) => msg
+      $t: (msg) => msg,
+      $activeAccount
     }
   })
 }
