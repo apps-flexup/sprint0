@@ -1,5 +1,33 @@
 {
-  "given-roles": [],
+  "given-roles": [
+    {
+      "from_type": "Account",
+      "from_id": 3,
+      "to_type": "User",
+      "to_id": "c7e4d104-2e45-4056-94cc-10a87af32693",
+      "role": "Owner",
+      "data": null,
+      "status": "active"
+    },
+    {
+      "from_type": "Account",
+      "from_id": 5,
+      "to_type": "User",
+      "to_id": "c7e4d104-2e45-4056-94cc-10a87af32693",
+      "role": "Owner",
+      "data": null,
+      "status": "active"
+    },
+    {
+      "from_type": "Account",
+      "from_id": 4,
+      "to_type": "User",
+      "to_id": "c7e4d104-2e45-4056-94cc-10a87af32693",
+      "role": "Owner",
+      "data": null,
+      "status": "active"
+    }
+  ],
   "functional-roles": [
     {
       "value": "admin",
