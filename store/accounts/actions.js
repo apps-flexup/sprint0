@@ -2,6 +2,7 @@
 
 const setMediaEntities = (accountId, medias) => {
   const entityType = 'Account'
+  if (!medias) return
   medias.forEach((media) => {
     media.entity_type = entityType
     media.entity_id = accountId
@@ -11,7 +12,8 @@ const setMediaEntities = (accountId, medias) => {
 export default {
   get({ commit, dispatch, getters }) {
     if (!this.$auth.loggedIn) return
-    this.$axios.$get(`accounts?user_id=${this.$auth.user.sub}`).then((data) => {
+    const request = `accounts?parent_type=User&parent_id=${this.$auth.user.sub}`
+    this.$axios.$get(request).then((data) => {
       commit('set', data)
       if (!getters.current && data.length > 0) {
         // if (this.$auth.user.last_account ^ data.length > 0) {
@@ -40,11 +42,12 @@ export default {
     commit('setCurrent', id)
   },
   add({ commit, dispatch }, account) {
-    account.user_id = this.$auth.user.sub
     console.log('on veut creer le compte: ', account)
+    account.parent_type = 'Account'
     this.$repos.accounts.create(account).then((res) => {
+      const newAccountId = parseInt(res.id)
       dispatch('update', res)
-      this.$activeAccount.set(res.id)
+      this.$activeAccount.set(newAccountId)
       const thirdPartyAccount = {
         name: res.name,
         account_id: null
@@ -53,6 +56,16 @@ export default {
         root: true
       })
       dispatch('settings/createSettings', {}, { root: true })
+      const ownerRole = {
+        from_type: 'Account',
+        from_id: newAccountId,
+        to_type: 'User',
+        to_id: this.$auth.user.sub,
+        role: 'Owner',
+        data: null,
+        status: 'Confirmed'
+      }
+      dispatch('members/add', ownerRole, { root: true })
       commit('add', res)
     })
   },

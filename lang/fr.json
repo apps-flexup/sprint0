@@ -551,7 +551,7 @@
     "paymentStructures": "Structures de paiement"
   },
   "userMenu": {
-    "data": "Données personnelles",
+    "profile": "Données personnelles",
     "security": "Connexion & sécurité",
     "management": "Gestion des comptes"
   },

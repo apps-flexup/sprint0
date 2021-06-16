@@ -1037,7 +1037,8 @@
           }
         },
         "payment_conditions_for_payment_structure_form": [],
-        "contracts": []
+        "contracts": [],
+        "members": []
       },
       "id": 2
     },
@@ -1075,14 +1076,14 @@
       "type": "Personal",
       "offers_count": 0,
       "params": {},
-      "parent_id": null,
       "roles": [
         "customer",
         "supplier"
       ],
       "roles_methods": null,
       "supplier": false,
-      "user_id": "c7e4d104-2e45-4056-94cc-10a87af32693",
+      "parent_type": "User",
+      "parent_id": "c7e4d104-2e45-4056-94cc-10a87af32693",
       "medias": [
         {
           "entity_type": "Account",
@@ -1147,18 +1148,18 @@
     {
       "avatar": "/images/avatar-2.png",
       "country_id": 77,
+      "parent_type": "Account",
+      "parent_id": 1,
       "id": 3,
       "type": "Business",
       "name": "Johanna (supplier)",
       "offers_count": 0,
       "params": {},
-      "parent_id": null,
       "roles": [
         "supplier"
       ],
       "roles_methods": null,
       "supplier": false,
-      "user_id": "c7e4d104-2e45-4056-94cc-10a87af32693",
       "currency": "EUR"
     },
     {
@@ -1298,30 +1299,6 @@
       "title": "M.",
       "user_id": "61d4b5f7-8887-474f-b982-253b78ca95f8",
       "currency": "EUR"
-    },
-    {
-      "parent_type": "User",
-      "title": "Mr",
-      "parent_id": "c7e4d104-2e45-4056-94cc-10a87af32693",
-      "type": "Personal",
-      "name": "toto La Riflette",
-      "firstname": "toto",
-      "medias": [
-        {
-          "id": 1,
-          "entity_type": "Account",
-          "entity_id": 13,
-          "description": {
-            "type": "Mail",
-            "value": "test@domain.com",
-            "label": "Pro"
-          }
-        }
-      ],
-      "lastname": "La Riflette",
-      "country": "FRA",
-      "user_id": "c7e4d104-2e45-4056-94cc-10a87af32693",
-      "id": 13
     },
     {
       "parent_type": "User",
@@ -14598,8 +14575,8 @@
     {
       "active": true,
       "icon": "mdi-account-circle-outline",
-      "title": "userMenu.data",
-      "to": "/personaldata"
+      "title": "userMenu.profile",
+      "to": "/profile"
     },
     {
       "active": true,
