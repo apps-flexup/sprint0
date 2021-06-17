@@ -3,7 +3,7 @@
     {
       "id": 1,
       "from_type": "Account",
-      "from_id": 3,
+      "from_id": 1,
       "to_type": "User",
       "to_id": "c7e4d104-2e45-4056-94cc-10a87af32693",
       "role": "Owner",
@@ -24,6 +24,16 @@
       "id": 3,
       "from_type": "Account",
       "from_id": 4,
+      "to_type": "User",
+      "to_id": "c7e4d104-2e45-4056-94cc-10a87af32693",
+      "role": "Owner",
+      "data": null,
+      "status": "active"
+    },
+    {
+      "id": 4,
+      "from_type": "Account",
+      "from_id": 3,
       "to_type": "User",
       "to_id": "c7e4d104-2e45-4056-94cc-10a87af32693",
       "role": "Owner",

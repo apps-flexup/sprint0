@@ -10,30 +10,21 @@ const setMediaEntities = (accountId, medias) => {
 }
 
 export default {
-  get({ commit, dispatch, getters }) {
+  get({ commit, getters }) {
     if (!this.$auth.loggedIn) return
-    const request = `accounts?parent_type=User&parent_id=${this.$auth.user.sub}`
-    this.$axios.$get(request).then((data) => {
-      commit('set', data)
-      if (!getters.current && data.length > 0) {
-        // if (this.$auth.user.last_account ^ data.length > 0) {
-        const account = parseInt(data[0].id)
+    const request = `given-roles?to_id=${this.$auth.user.sub}`
+    this.$axios.$get(request).then((givenRoles) => {
+      if (!getters.current && givenRoles.length > 0) {
+        const account = parseInt(givenRoles[0].from_id)
         this.$activeAccount.set(account)
       }
-      dispatch('getSharedAccounts')
-    })
-  },
-  getSharedAccounts({ commit }) {
-    this.$axios
-      .$get(`given-roles?to_id=${this.$auth.user.sub}`)
-      .then((givenRoles) => {
-        givenRoles.forEach((givenRole) => {
-          const accountId = givenRole.from_id
-          this.$axios.$get(`accounts?id=${accountId}`).then((accounts) => {
-            commit('add', accounts[0])
-          })
+      givenRoles.forEach((givenRole) => {
+        const accountId = givenRole.from_id
+        this.$axios.$get(`accounts?id=${accountId}`).then((accounts) => {
+          commit('add', accounts[0])
         })
       })
+    })
   },
   clear({ commit }) {
     commit('clear')
