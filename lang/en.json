@@ -429,6 +429,9 @@
       },
       "edit": {
         "title": "Edit my account"
+      },
+      "read": {
+        "title": "Account informations"
       }
     },
     "businessAccounts": {

@@ -431,6 +431,9 @@
       },
       "edit": {
         "title": "Modifier mon compte"
+      },
+      "read": {
+        "title": "Informations du compte"
       }
     },
     "businessAccounts": {

@@ -1,7 +1,7 @@
 <template lang="pug">
 .fv-readonly-field
   div(:style="cssVars")
-    div.title {{ title }}
+    h3.font-weight-regular {{ title }}
     div.value {{ value }}
     v-divider.divider
 </template>
@@ -42,10 +42,6 @@ export default {
 </script>
 
 <style scoped>
-.title {
-  color: var(--textColor) !important;
-  font-weight: bold;
-}
 .value {
   color: var(--textColor) !important;
   margin-top: 10px;
