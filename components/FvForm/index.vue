@@ -24,6 +24,7 @@
           data-testid="stepComponent"
           :is="step.component"
           :payload="localPayload"
+          :readonly="readonly"
           @payload:changed="payloadChanged"
         )
   div.btn.mt-10
@@ -73,6 +74,10 @@ export default {
   computed: {
     formSteps() {
       const res = this.$store.getters['forms/' + this.form]
+      return res
+    },
+    readonly() {
+      const res = this.action === 'read'
       return res
     }
   },

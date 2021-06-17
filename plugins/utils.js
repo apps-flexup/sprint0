@@ -13,6 +13,18 @@ export const sortArrayByKey = (arr, key) => {
   })
 }
 
+export const addressToString = (store, address) => {
+  if (!address) return ''
+  const country = store.getters['countries/findByIso3'](address.country)
+  const separator = ', '
+  let res = ''
+  if (address.street) res += address.street + separator
+  if (address.zip) res += address.zip + separator
+  if (address.city) res += address.city + separator
+  if (country) res += country.name
+  return res
+}
+
 export const camelToSnakeCase = (str) => {
   if (!str) return null
   const res = str.replace(/[A-Z]/g, (letter) => `_${letter.toLowerCase()}`)

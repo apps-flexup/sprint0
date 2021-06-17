@@ -21,6 +21,8 @@
 </template>
 
 <script>
+import { addressToString } from '~/plugins/utils'
+
 export default {
   name: 'FvAddressField',
   props: {
@@ -47,16 +49,7 @@ export default {
   },
   computed: {
     mediaValue() {
-      if (!this.address) return ''
-      const country = this.$store.getters['countries/findByIso3'](
-        this.address.country
-      )
-      const separator = ', '
-      let res = ''
-      if (this.address.street) res += this.address.street + separator
-      if (this.address.zip) res += this.address.zip + separator
-      if (this.address.city) res += this.address.city + separator
-      if (country) res += country.name
+      const res = addressToString(this.$store, this.address)
       return res
     }
   },

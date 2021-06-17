@@ -1,28 +1,45 @@
 <template lang="pug">
 .fv-account-step-personal-information
-  v-row
-    v-col(cols='10')
-      fv-text-field(
-        data-testid='nameField'
-        :value="name"
-        :label="$t('forms.personalAccounts.new.name')"
-        @input="nameChanged"
-      )
-  v-row
-    v-col(cols="6")
-      fv-text-field(
-        data-testid='lastnameField'
-        :value="lastname"
-        :label="$t('forms.personalAccounts.new.lastname')"
-        @input="lastnameChanged"
-      )
-    v-col(cols="6")
-      fv-text-field(
-        data-testid='firstnameField'
-        :value="firstname"
-        :label="$t('forms.personalAccounts.new.firstname')"
-        @input="firstnameChanged"
-      )
+  div(v-if="readonly")
+    fv-readonly-field(
+      v-if="name"
+      :title="$t('forms.personalAccounts.new.name')"
+      :value="name"
+    )
+    fv-readonly-field(
+      v-if="lastname"
+      :title="$t('forms.personalAccounts.new.lastname')"
+      :value="lastname"
+    )
+    fv-readonly-field(
+      v-if="firstname"
+      :title="$t('forms.personalAccounts.new.firstname')"
+      :value="firstname"
+    )
+  div(v-else)
+    v-row
+      v-col(cols='10')
+        fv-text-field(
+          data-testid='nameField'
+          :value="name"
+          :label="$t('forms.personalAccounts.new.name')"
+          @input="nameChanged"
+        )
+    v-row
+      v-col(cols="6")
+        fv-text-field(
+          data-testid='lastnameField'
+          :value="lastname"
+          :label="$t('forms.personalAccounts.new.lastname')"
+          @input="lastnameChanged"
+        )
+      v-col(cols="6")
+        fv-text-field(
+          data-testid='firstnameField'
+          :value="firstname"
+          :label="$t('forms.personalAccounts.new.firstname')"
+          @input="firstnameChanged"
+        )
 </template>
 
 <script>
@@ -33,6 +50,12 @@ export default {
       type: Object,
       default() {
         return null
+      }
+    },
+    readonly: {
+      type: Boolean,
+      default() {
+        return false
       }
     }
   },
