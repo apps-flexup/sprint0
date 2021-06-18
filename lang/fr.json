@@ -431,6 +431,9 @@
       },
       "edit": {
         "title": "Modifier mon compte"
+      },
+      "read": {
+        "title": "Informations du compte"
       }
     },
     "businessAccounts": {
@@ -551,7 +554,7 @@
     "paymentStructures": "Structures de paiement"
   },
   "userMenu": {
-    "data": "Données personnelles",
+    "profile": "Données personnelles",
     "security": "Connexion & sécurité",
     "management": "Gestion des comptes"
   },

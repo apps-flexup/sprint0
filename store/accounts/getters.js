@@ -47,5 +47,16 @@ export default {
     const i = res.findIndex((element) => element.id === current)
     res.splice(i, 1)
     return res
+  },
+  findPersonalAccountForUser: (state, getters) => (userUuid) => {
+    if (!state.items) return null
+    const account = state.items.find((v) => {
+      const isPersonalAccount = v.type === 'Personal'
+      const isToUser = v.parent_type === 'User' && v.parent_id === userUuid
+      return isPersonalAccount && isToUser
+    })
+    if (!account) return null
+    const res = getters.findById(account.id)
+    return res
   }
 }

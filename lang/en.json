@@ -429,6 +429,9 @@
       },
       "edit": {
         "title": "Edit my account"
+      },
+      "read": {
+        "title": "Account informations"
       }
     },
     "businessAccounts": {
@@ -548,7 +551,7 @@
     "paymentStructures": "Payment structures"
   },
   "userMenu": {
-    "data": "Personnal data",
+    "profile": "Personnal data",
     "security": "Security & connection",
     "management": "Account management"
   },

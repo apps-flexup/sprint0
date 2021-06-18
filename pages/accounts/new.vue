@@ -13,7 +13,9 @@
 export default {
   data() {
     return {
-      account: {}
+      account: {
+        parent_id: this.$activeAccount.get()
+      }
     }
   },
   mounted() {

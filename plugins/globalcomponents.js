@@ -87,6 +87,7 @@ import FvProductStepDetail from '@/components/FvProductStepDetail'
 import FvQuantitySelector from '@/components/FvQuantitySelector'
 import FvYieldRateParams from '@/components/FvYieldRateParams'
 import FvRating from '@/components/FvRating'
+import FvReadonlyField from '@/components/FvReadonlyField'
 import FvReferenceAutocomplete from '@/components/FvReferenceAutocomplete'
 import FvReview from '@/components/FvReview'
 import FvRoleAutocomplete from '@/components/FvRoleAutocomplete'
@@ -273,6 +274,7 @@ Vue.component('fv-product-index', FvProductIndex)
 Vue.component('fv-quantity-selector', FvQuantitySelector)
 Vue.component('fv-yield-rate-params', FvYieldRateParams)
 Vue.component('fv-rating', FvRating)
+Vue.component('fv-readonly-field', FvReadonlyField)
 Vue.component('fv-reference-autocomplete', FvReferenceAutocomplete)
 Vue.component('fv-review', FvReview)
 Vue.component('fv-role-autocomplete', FvRoleAutocomplete)

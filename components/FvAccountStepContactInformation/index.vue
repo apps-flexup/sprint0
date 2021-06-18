@@ -3,7 +3,11 @@
   div(v-for="(rule, index) in rules" :key="index")
     h3.font-weight-regular(data-testid="mediaName") {{ $t('mediaField.' + rule.toLowerCase() + '.title') }}
     v-row(v-for="(media, index) in getMediasForRule(rule)" :key="index")
-      v-col(cols="12")
+      v-col(v-if="readonly" cols="12")
+        fv-readonly-field(
+          :value="getValueForMedia(media.description)"
+        )
+      v-col(v-else cols="12")
         fv-address-field(
           v-if="media.description.type === 'Address'"
           data-testid='addressField'
@@ -33,6 +37,7 @@
         )
     fv-text-button(
         data-testid="addNewMediaButton"
+        v-if="!readonly"
         @button:click="addNewMedia(rule)"
       )
         template(v-slot:icon)
@@ -44,10 +49,12 @@
           )
         template(v-slot:text)
           | {{ $t('mediaField.new.' + rule.toLowerCase()) }}
-    v-divider.line(v-if="index + 1 !== rules.length")
+    v-divider.line(v-if="!readonly && index + 1 !== rules.length")
 </template>
 
 <script>
+import { addressToString } from '~/plugins/utils'
+
 export default {
   name: 'FvAccountStepContactInformation',
   props: {
@@ -55,6 +62,12 @@ export default {
       type: Object,
       default() {
         return null
+      }
+    },
+    readonly: {
+      type: Boolean,
+      default() {
+        return false
       }
     }
   },
@@ -137,6 +150,15 @@ export default {
         medias
       }
       this.$emit('payload:changed', payload)
+    },
+    getValueForMedia(description) {
+      const type = description.type
+      if (type === 'Address') {
+        const address = description.value
+        const addressString = addressToString(this.$store, address)
+        return addressString
+      }
+      return description.value
     }
   }
 }
