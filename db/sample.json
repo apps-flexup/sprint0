@@ -13,27 +13,7 @@
     {
       "id": 2,
       "from_type": "Account",
-      "from_id": 5,
-      "to_type": "User",
-      "to_id": "c7e4d104-2e45-4056-94cc-10a87af32693",
-      "role": "Owner",
-      "data": null,
-      "status": "active"
-    },
-    {
-      "id": 3,
-      "from_type": "Account",
-      "from_id": 4,
-      "to_type": "User",
-      "to_id": "c7e4d104-2e45-4056-94cc-10a87af32693",
-      "role": "Owner",
-      "data": null,
-      "status": "active"
-    },
-    {
-      "id": 4,
-      "from_type": "Account",
-      "from_id": 3,
+      "from_id": 2,
       "to_type": "User",
       "to_id": "c7e4d104-2e45-4056-94cc-10a87af32693",
       "role": "Owner",
@@ -68,12 +48,12 @@
     },
     {
       "email_verified": false,
-      "name": "grog le jambon",
-      "preferred_username": "grog",
-      "given_name": "grog",
-      "family_name": "le jambon",
-      "email": "grog@grog.com",
-      "uuid": "ad276495-e93c-41d4-aeda-a6ffab7fe876",
+      "name": "test test",
+      "preferred_username": "test",
+      "given_name": "test",
+      "family_name": "test",
+      "email": "test@test.com",
+      "uuid": "cf6815bf-9493-44a3-bad7-abb78c99a039",
       "id": 2
     }
   ],
@@ -1031,7 +1011,7 @@
       }
     },
     {
-      "account_id": "1",
+      "account_id": 1,
       "currency": "USD",
       "headers": {
         "products": [],
@@ -1058,62 +1038,15 @@
       "id": 1
     },
     {
-      "account_id": 13,
-      "headers": {
-        "products": [],
-        "third_party_accounts": [],
-        "payment_conditions": [],
-        "payment_structures": [],
-        "offers": {
-          "main": [],
-          "sub": {
-            "products": [],
-            "offers": []
-          }
-        },
-        "orders": {
-          "main": [],
-          "sub": {
-            "orders": []
-          }
-        },
-        "payment_conditions_for_payment_structure_form": [],
-        "contracts": [],
-        "members": []
-      },
+      "account_id": 4,
       "id": 2
-    },
-    {
-      "account_id": 14,
-      "headers": {
-        "products": [],
-        "third_party_accounts": [],
-        "payment_conditions": [],
-        "payment_structures": [],
-        "offers": {
-          "main": [],
-          "sub": {
-            "products": [],
-            "offers": []
-          }
-        },
-        "orders": {
-          "main": [],
-          "sub": {
-            "orders": []
-          }
-        },
-        "payment_conditions_for_payment_structure_form": [],
-        "contracts": []
-      },
-      "id": 3
     }
   ],
   "accounts": [
     {
       "avatar": "/images/avatar-0.png",
       "country_id": 77,
-      "name": "fred",
+      "name": "Toto",
       "type": "Personal",
       "offers_count": 0,
       "params": {},
@@ -1163,7 +1096,7 @@
           "entity_id": 1,
           "description": {
             "type": "Mail",
-            "value": "fred@email.com",
+            "value": "toto@email.com",
             "label": "super email"
           }
         }
@@ -1171,29 +1104,13 @@
       "id": 1
     },
     {
-      "avatar": "/images/avatar-1.png",
-      "country_id": 77,
-      "id": 2,
-      "name": "fabrizio",
-      "offers_count": 7,
-      "params": {},
-      "parent_id": null,
-      "roles": [
-        "customer"
-      ],
-      "roles_methods": null,
-      "supplier": false,
-      "user_id": "bcecf237-eec9-43c2-b881-2242c554485f",
-      "currency": "EUR"
-    },
-    {
       "avatar": "/images/avatar-2.png",
       "country_id": 77,
       "parent_type": "Account",
       "parent_id": 1,
-      "id": 3,
+      "id": 2,
       "type": "Business",
-      "name": "Johanna (supplier)",
+      "name": "My business (supplier)",
       "offers_count": 0,
       "params": {},
       "roles": [
@@ -1202,155 +1119,6 @@
       "roles_methods": null,
       "supplier": false,
       "currency": "EUR"
-    },
-    {
-      "avatar": "/images/avatar-3.png",
-      "country_id": 77,
-      "id": 4,
-      "type": "Business",
-      "name": "Compte supplier 3",
-      "offers_count": 0,
-      "params": {},
-      "parent_id": null,
-      "roles": [
-        "supplier"
-      ],
-      "roles_methods": null,
-      "supplier": false,
-      "user_id": "c7e4d104-2e45-4056-94cc-10a87af32693",
-      "currency": "EUR"
-    },
-    {
-      "avatar": "/images/avatar-4.png",
-      "country_id": 77,
-      "id": 5,
-      "type": "Business",
-      "name": "Compte supplier 2",
-      "offers_count": 0,
-      "params": {},
-      "parent_id": null,
-      "roles": [
-        "supplier",
-        "admin"
-      ],
-      "roles_methods": null,
-      "supplier": false,
-      "user_id": "c7e4d104-2e45-4056-94cc-10a87af32693",
-      "currency": "EUR"
-    },
-    {
-      "avatar": "/images/avatar-5.png",
-      "country_id": 77,
-      "id": 6,
-      "name": "Compte administration",
-      "offers_count": 0,
-      "params": {},
-      "parent_id": null,
-      "roles": [
-        "admin",
-        "supplier"
-      ],
-      "roles_methods": null,
-      "supplier": false,
-      "user_id": "bcecf237-eec9-43c2-b881-2242c554485f",
-      "currency": "EUR"
-    },
-    {
-      "avatar": "/images/avatar-1.png",
-      "country_id": 77,
-      "id": 7,
-      "name": "Johanna (customer)",
-      "offers_count": 0,
-      "params": {},
-      "parent_id": null,
-      "roles": [
-        "customer",
-        "partner"
-      ],
-      "roles_methods": null,
-      "supplier": false,
-      "user_id": "7bee39f1-e72b-40c7-ac6a-2a22297c68a6",
-      "currency": "EUR"
-    },
-    {
-      "avatar": "/images/avatar-2.png",
-      "country_id": 77,
-      "id": 8,
-      "name": "Partenaire",
-      "offers_count": 0,
-      "params": {},
-      "parent_id": null,
-      "roles": [
-        "partner"
-      ],
-      "roles_methods": null,
-      "supplier": false,
-      "user_id": "7bee39f1-e72b-40c7-ac6a-2a22297c68a6",
-      "currency": "EUR"
-    },
-    {
-      "avatar": "/images/avatar-3.png",
-      "country_id": 77,
-      "id": 9,
-      "name": "Achats et Ventes professionnels",
-      "offers_count": 0,
-      "params": {},
-      "parent_id": null,
-      "roles": [
-        "supplier",
-        "customer"
-      ],
-      "roles_methods": null,
-      "supplier": false,
-      "user_id": "7bee39f1-e72b-40c7-ac6a-2a22297c68a6",
-      "currency": "EUR"
-    },
-    {
-      "avatar": "/images/avatar-4.png",
-      "email": "jeanbon@gmail.com",
-      "country_id": 77,
-      "firstname": "Jean",
-      "id": 10,
-      "lastname": "Bon",
-      "name": "jeanbon",
-      "title": null,
-      "user_id": "8a4fb33f-0864-464f-b085-65afdedf0d77",
-      "currency": "EUR"
-    },
-    {
-      "avatar": "/images/avatar-5.png",
-      "email": "jeanbon@gmail.com",
-      "country_id": 77,
-      "firstname": "Jean",
-      "id": 11,
-      "lastname": "Bon",
-      "name": "jeanbon2",
-      "title": null,
-      "user_id": "8a4fb33f-0864-464f-b085-65afdedf0d77",
-      "currency": "EUR"
-    },
-    {
-      "avatar": "/images/avatar-0.png",
-      "email": "frederic.lasnier@flexup.org",
-      "country_id": 77,
-      "firstname": "frédéric",
-      "id": 12,
-      "lastname": "lasnier",
-      "name": "fredl",
-      "title": "M.",
-      "user_id": "61d4b5f7-8887-474f-b982-253b78ca95f8",
-      "currency": "EUR"
-    },
-    {
-      "parent_type": "User",
-      "parent_id": "ad276495-e93c-41d4-aeda-a6ffab7fe876",
-      "type": "Personal",
-      "name": "grog le jambon",
-      "firstname": "grog",
-      "lastname": "le jambon",
-      "country": "FRA",
-      "user_id": "ad276495-e93c-41d4-aeda-a6ffab7fe876",
-      "id": 14
     }
   ],
   "categories": [
@@ -2297,18 +2065,6 @@
     {
       "id": 1,
       "name": "charter 1"
-    },
-    {
-      "id": 2,
-      "name": "charter 2"
-    },
-    {
-      "id": 3,
-      "name": "charter 3"
-    },
-    {
-      "id": 4,
-      "name": "charter 4"
     }
   ],
   "business-account-steps": [
@@ -2395,86 +2151,6 @@
       },
       "name": "plop",
       "zip": "1574788"
-    },
-    {
-      "account_id": 2,
-      "address": "12 rue de la poupée qui tousse",
-      "avatar": "/images/avatar-1.png",
-      "city": "Braniole de turbeuse",
-      "country_id": 77,
-      "id": 2,
-      "metrics": {
-        "commandes": 1,
-        "contracts": 1,
-        "next": {
-          "amount": 45,
-          "currency": "EUR",
-          "daysRemaining": 5
-        },
-        "products": 1
-      },
-      "name": "toto",
-      "zip": "1574788"
-    },
-    {
-      "account_id": 3,
-      "address": "12 rue de la marjolaine",
-      "avatar": "/images/avatar-2.png",
-      "city": "Courtanche sur Mer",
-      "country_id": 77,
-      "id": 3,
-      "metrics": {
-        "commandes": 0,
-        "contracts": 0,
-        "next": {
-          "amount": 45.55,
-          "currency": "EUR",
-          "daysRemaining": 1
-        },
-        "products": 0
-      },
-      "name": "fred",
-      "zip": "66789"
-    },
-    {
-      "account_id": 3,
-      "address": "21 rue de la marjolaine",
-      "avatar": "/images/avatar-5.png",
-      "city": "Flombard les gazeuses",
-      "country_id": 77,
-      "id": 5,
-      "metrics": {
-        "commandes": 0,
-        "contracts": 0,
-        "next": {
-          "amount": 45.55,
-          "currency": "EUR",
-          "daysRemaining": 1
-        },
-        "products": 0
-      },
-      "name": "pierre",
-      "zip": "897012"
-    },
-    {
-      "account_id": 4,
-      "address": "19 avenue de la venue",
-      "avatar": "/images/avatar-3.png",
-      "city": "Ploutoire les bois",
-      "country_id": 77,
-      "id": 4,
-      "metrics": {
-        "commandes": 5,
-        "contracts": 2,
-        "next": {
-          "amount": 0,
-          "currency": "EUR",
-          "daysRemaining": 0
-        },
-        "products": 5
-      },
-      "name": "grog",
-      "zip": "7478518"
     }
   ],
   "order-line-cart-headers": [
@@ -14766,68 +14442,6 @@
   ],
   "offers": [
     {
-      "account_id": 3,
-      "active": true,
-      "product_id": 17,
-      "dimension": "volume",
-      "unit": "m³",
-      "currency": "EUR",
-      "description": {
-        "en": "True Goat milk",
-        "fr": "Le vrai lait de chèvre"
-      },
-      "elasticity": 20,
-      "evaluation_avg": 6.5,
-      "favorite": true,
-      "id": 1,
-      "illustration_url": "https://placeimg.com/640/480?id=1",
-      "name": {
-        "en": "Goat milk",
-        "fr": "Lait de chêvre"
-      },
-      "offer_at_client": true,
-      "offer_at_supplier": true,
-      "offer_remote": true,
-      "offer_shipping": true,
-      "params": {
-        "offerinfo": "goat milk is offered still"
-      },
-      "price": 100,
-      "reference": "EKWOHX",
-      "status": "reserved"
-    },
-    {
-      "account_id": 5,
-      "active": true,
-      "category_id": 2,
-      "currency": "EUR",
-      "description": {
-        "en": "description of offer which is really beuatyful"
-      },
-      "dimension": "duration",
-      "elasticity": 0,
-      "evaluation_avg": 6.5,
-      "favorite": false,
-      "id": 2,
-      "illustration_url": "https://placeimg.com/640/480?id=2",
-      "name": {
-        "en": "my beautifiul offer"
-      },
-      "offer_at_client": true,
-      "offer_at_supplier": true,
-      "offer_remote": true,
-      "offer_shipping": true,
-      "params": {
-        "identifiant_service": {
-          "fr": "blabla725-924"
-        }
-      },
-      "price": 100,
-      "reference": "LLGVXJ",
-      "status": "draft",
-      "unit": "day"
-    },
-    {
       "account_id": 1,
       "active": true,
       "product_id": 18,
@@ -14895,162 +14509,6 @@
       "status": "archived",
       "vat": "12.0",
       "id": 4
-    },
-    {
-      "account_id": 5,
-      "active": true,
-      "category_id": 8,
-      "currency": "EUR",
-      "description": {
-        "en": "this is a category for baby sitting"
-      },
-      "dimension": null,
-      "elasticity": 20,
-      "evaluation_avg": 6.5,
-      "favorite": true,
-      "id": 6,
-      "illustration_url": "https://placeimg.com/640/480?id=6",
-      "name": {
-        "en": "My nice baby sitter"
-      },
-      "offer_at_client": true,
-      "offer_at_supplier": true,
-      "offer_remote": true,
-      "offer_shipping": true,
-      "params": {
-        "nbr_enfants": 5
-      },
-      "price": 12.75,
-      "reference": "EUXSKQ",
-      "status": "suspended",
-      "unit": null
-    },
-    {
-      "account_id": 5,
-      "active": true,
-      "category_id": 8,
-      "currency": "EUR",
-      "description": {
-        "en": "Your child/children are between 3 and 13 years old, we provide caring services."
-      },
-      "dimension": null,
-      "elasticity": 0,
-      "evaluation_avg": 6.5,
-      "favorite": true,
-      "id": 5,
-      "illustration_url": "https://placeimg.com/640/480?id=5",
-      "name": {
-        "en": "Baby Sitting"
-      },
-      "offer_at_client": true,
-      "offer_at_supplier": true,
-      "offer_remote": true,
-      "offer_shipping": true,
-      "params": {
-        "nbr_enfants": 3
-      },
-      "price": 10,
-      "reference": "FXBTDE",
-      "status": "draft",
-      "unit": "h"
-    },
-    {
-      "account_id": 5,
-      "active": true,
-      "category_id": 9,
-      "currency": "EUR",
-      "description": {
-        "en": "description of offer 187 service actuellement !!!!"
-      },
-      "dimension": "duration",
-      "elasticity": 50,
-      "evaluation_avg": 6.5,
-      "favorite": true,
-      "id": 7,
-      "illustration_url": "https://placeimg.com/640/480?id=7",
-      "name": {
-        "en": "baby sitter home service"
-      },
-      "offer_at_client": true,
-      "offer_at_supplier": true,
-      "offer_remote": true,
-      "offer_shipping": true,
-      "params": {
-        "nbr_enfants": 3
-      },
-      "price": 7.75,
-      "reference": "WUDCSQ",
-      "status": "draft",
-      "unit": "hr"
-    },
-    {
-      "account_id": 10,
-      "currency": 49,
-      "dimension": "dimension",
-      "elasticity": "1",
-      "id": 10,
-      "name": "Minute",
-      "price": 150,
-      "product_id": 5,
-      "status": "draft"
-    },
-    {
-      "currency": "AUD",
-      "dimension": "weight",
-      "name": "un truc du genre des pommes",
-      "price": 2.5,
-      "status": "inactive",
-      "unit": "kg",
-      "product_id": 12,
-      "account_id": 3,
-      "id": 17
-    },
-    {
-      "currency": "EUR",
-      "dimension": "duration",
-      "name": "Appt ",
-      "price": 1752,
-      "status": "draft",
-      "unit": "month",
-      "product_id": 13,
-      "account_id": 13,
-      "id": 18
-    },
-    {
-      "currency": "EUR",
-      "dimension": "weight",
-      "name": "Cerises",
-      "price": 4.98,
-      "status": "draft",
-      "unit": "kg",
-      "product_id": 14,
-      "account_id": 13,
-      "id": 19
-    },
-    {
-      "product_id": 2,
-      "name": "Appartement Paris 19",
-      "dimension": "duration",
-      "unit": "month",
-      "price": 123,
-      "status": "draft",
-      "account_id": 1,
-      "category_id": 22,
-      "currency": "EUR",
-      "vat": "20.0",
-      "id": 20
-    },
-    {
-      "product_id": 15,
-      "name": "Bananes",
-      "dimension": "weight",
-      "unit": "kg",
-      "price": 123,
-      "currency": "USD",
-      "status": "draft",
-      "account_id": 1,
-      "vat": "12.0",
-      "id": 21
     }
   ],
   "order-line-headers": [
@@ -15106,46 +14564,6 @@
       "id": 1
     },
     {
-      "account_id": 2,
-      "address": "98 rue des trucs",
-      "avatar": "/images/avatar-1.png",
-      "city": "Braniole de turbeuse",
-      "country_id": 77,
-      "id": 2,
-      "name": "toto la riflette",
-      "zip": "1574788"
-    },
-    {
-      "account_id": 3,
-      "address": "12 rue de la marjolaine",
-      "avatar": "/images/avatar-2.png",
-      "city": "Courtanche sur Mer",
-      "country_id": 77,
-      "id": 3,
-      "name": "fred",
-      "zip": "66789"
-    },
-    {
-      "account_id": 3,
-      "address": "21 rue de la marjolaine",
-      "avatar": "/images/avatar-5.png",
-      "city": "Flombard les gazeuses",
-      "country_id": 77,
-      "id": 5,
-      "name": "pierre",
-      "zip": "897012"
-    },
-    {
-      "account_id": 4,
-      "address": "19 avenue de la venue",
-      "avatar": "/images/avatar-3.png",
-      "city": "Ploutoire les bois",
-      "country_id": 77,
-      "id": 4,
-      "name": "grog",
-      "zip": "7478518"
-    },
-    {
       "account_id": 1,
       "address": "25 rue de tata janine\n12 etage\nporte gauche",
       "city": "Choublon les croigneuses",
@@ -15154,62 +14572,6 @@
       "zip": "98760103",
       "legal_structure_id": 6,
       "id": 6
-    },
-    {
-      "account_id": 5,
-      "address": "25 rue des grandes rues\nappartement 404",
-      "city": "Flobert les gorgeues",
-      "country_id": 77,
-      "id": 7,
-      "name": "truc",
-      "zip": "15479"
-    },
-    {
-      "account_id": 10,
-      "address": "12 rue de la poupée qui tousse",
-      "city": "Paris",
-      "country_id": 77,
-      "id": 8,
-      "name": "La riflette Toto",
-      "zip": "75800"
-    },
-    {
-      "account_id": 10,
-      "address": "89 rue des avenues",
-      "city": "Une Ville",
-      "country_id": 77,
-      "id": 9,
-      "name": "Marcel Flombard",
-      "zip": "9876541"
-    },
-    {
-      "account_id": 10,
-      "address": "9 rue des longs champs",
-      "city": "Founiard la glaneuse",
-      "country_id": 77,
-      "id": 10,
-      "name": "Si c'estait possible",
-      "zip": "060"
-    },
-    {
-      "name": "ABC",
-      "address": "10 rue ABC",
-      "zip": "75001",
-      "city": "Paris",
-      "country_id": 77,
-      "legal_structure_id": 2,
-      "account_id": 1,
-      "id": 11
-    },
-    {
-      "name": "toto La Riflette",
-      "account_id": null,
-      "id": 12
-    },
-    {
-      "name": "grog le jambon",
-      "account_id": null,
-      "id": 13
     }
   ],
   "products": [
@@ -15238,47 +14600,6 @@
       "id": 2
     },
     {
-      "account_id": 10,
-      "category_id": 2,
-      "currency": "EUR",
-      "id": 6,
-      "name": "test",
-      "status": "draft"
-    },
-    {
-      "category_id": 22,
-      "currency": "AUD",
-      "dimension": "weight",
-      "name": "un truc du genre des pommes",
-      "price": "2.5",
-      "status": "draft",
-      "unit": "kg",
-      "account_id": 3,
-      "id": 12
-    },
-    {
-      "category_id": 55,
-      "currency": "EUR",
-      "dimension": "duration",
-      "name": "Appt ",
-      "price": "1752",
-      "status": "draft",
-      "unit": "month",
-      "account_id": 13,
-      "id": 13
-    },
-    {
-      "category_id": 22,
-      "currency": "EUR",
-      "dimension": "weight",
-      "name": "Cerises",
-      "price": "4.98",
-      "status": "draft",
-      "unit": "kg",
-      "account_id": 13,
-      "id": 14
-    },
-    {
       "category_id": 22,
       "name": "Bananes",
       "unit": "quarter",
@@ -15295,15 +14616,6 @@
       "status": "draft",
       "account_id": 1,
       "id": 16
-    },
-    {
-      "category_id": 25,
-      "name": "Lait de chevre",
-      "unit": "m³",
-      "dimension": "volume",
-      "status": "draft",
-      "account_id": 3,
-      "id": 17
     },
     {
       "category_id": 44,
