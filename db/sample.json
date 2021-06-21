@@ -45,16 +45,6 @@
       "email": "toto@toto.com",
       "uuid": "c7e4d104-2e45-4056-94cc-10a87af32693",
       "id": 1
-    },
-    {
-      "email_verified": false,
-      "name": "test test",
-      "preferred_username": "test",
-      "given_name": "test",
-      "family_name": "test",
-      "email": "test@test.com",
-      "uuid": "cf6815bf-9493-44a3-bad7-abb78c99a039",
-      "id": 2
     }
   ],
   "payment-structures": [
