@@ -1,16 +1,17 @@
 <template lang="pug">
 .fv-readonly-field
-  div(:style="cssVars")
-    h3.font-weight-regular {{ title }}
-    div.value {{ value }}
-    v-divider.divider
+  v-row(:style="cssVars")
+    v-col(cols="2")
+      div.text {{ label + $t('ponctuation.colons') }}
+    v-col(cols="10")
+      div.text {{ value }}
 </template>
 
 <script>
 export default {
   name: 'FvReadonlyField',
   props: {
-    title: {
+    label: {
       type: String,
       default() {
         return null
@@ -42,12 +43,10 @@ export default {
 </script>
 
 <style scoped>
-.value {
+.text {
   color: var(--textColor) !important;
-  margin-top: 10px;
 }
-.divider {
-  margin-top: 10px;
-  margin-bottom: 10px;
+::v-deep .col {
+  padding: 3px;
 }
 </style>

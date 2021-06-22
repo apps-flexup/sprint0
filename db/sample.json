@@ -2073,8 +2073,24 @@
   ],
   "personal-account-steps": [
     {
-      "component": "fv-account-step-personal-information",
-      "title": "forms.account.personal.step.0"
+      "title": "forms.account.personal.step.0",
+      "fields": [
+        {
+          "attribute": "name",
+          "component": "fv-text-field",
+          "size": 12
+        },
+        {
+          "attribute": "lastname",
+          "component": "fv-text-field",
+          "size": 12
+        },
+        {
+          "attribute": "firstname",
+          "component": "fv-text-field",
+          "size": 12
+        }
+      ]
     },
     {
       "component": "fv-account-step-contact-information",
