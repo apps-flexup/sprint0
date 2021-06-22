@@ -32,7 +32,7 @@ export default {
   setCurrent({ commit }, id) {
     commit('setCurrent', id)
   },
-  add({ commit, dispatch }, account) {
+  add({ dispatch }, account) {
     console.log('on veut creer le compte: ', account)
     account.parent_type = 'Account'
     this.$repos.accounts.create(account).then((res) => {
@@ -57,7 +57,6 @@ export default {
         status: 'Confirmed'
       }
       dispatch('members/add', ownerRole, { root: true })
-      commit('add', res)
     })
   },
   addPersonalAccount({ dispatch }, user) {
