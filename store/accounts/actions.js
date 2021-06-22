@@ -34,7 +34,6 @@ export default {
   },
   add({ dispatch }, account) {
     console.log('on veut creer le compte: ', account)
-    account.parent_type = 'Account'
     this.$repos.accounts.create(account).then((res) => {
       const newAccountId = parseInt(res.id)
       dispatch('update', res)

@@ -14,6 +14,7 @@ export default {
   data() {
     return {
       account: {
+        parent_type: 'Account',
         parent_id: this.$activeAccount.get()
       }
     }
