@@ -2097,7 +2097,7 @@
       "fields": [
         {
           "attribute": "medias",
-          "component": "fv-account-step-contact-information",
+          "component": "fv-account-medias",
           "size": 12
         }
       ]

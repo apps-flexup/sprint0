@@ -2,11 +2,11 @@ import Vue from 'vue'
 // Importation des composants utilitaires
 import FvAccount from '@/components/FvAccount'
 import FvAccountCard from '@/components/FvAccountCard'
+import FvAccountMedias from '@/components/FvAccountMedias'
 import FvAccountInfo from '@/components/FvAccountInfo'
 import FvAccountsIndex from '@/components/FvAccountsIndex'
 import FvAddressField from '@/components/FvAddressField'
 import FvAddressModal from '@/components/FvAddressModal'
-import FvAccountStepContactInformation from '@/components/FvAccountStepContactInformation'
 import FvAccountStepPersonalInformation from '@/components/FvAccountStepPersonalInformation'
 import FvAutocomplete from '@/components/FvAutocomplete'
 import FvAvatar from '@/components/FvAvatar'
@@ -161,6 +161,7 @@ import FvOrderTotals from '~/components/FvOrderTotals'
 // Déclarations composants utilitaires
 Vue.component('fv-account', FvAccount)
 Vue.component('fv-account-card', FvAccountCard)
+Vue.component('fv-account-medias', FvAccountMedias)
 Vue.component('fv-account-info', FvAccountInfo)
 Vue.component('fv-accounts-index', FvAccountsIndex)
 Vue.component('fv-address-field', FvAddressField)
@@ -168,10 +169,6 @@ Vue.component('fv-address-modal', FvAddressModal)
 Vue.component(
   'fv-account-step-personal-information',
   FvAccountStepPersonalInformation
-)
-Vue.component(
-  'fv-account-step-contact-information',
-  FvAccountStepContactInformation
 )
 Vue.component('fv-autocomplete', FvAutocomplete)
 Vue.component('fv-avatar', FvAvatar)

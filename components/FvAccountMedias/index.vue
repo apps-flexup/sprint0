@@ -1,5 +1,5 @@
 <template lang="pug">
-.fv-account-step-contact-information
+.fv-account-medias
   div(v-for="(rule, index) in rules" :key="index")
     h3.font-weight-regular(data-testid="mediaName") {{ $t('mediaField.' + rule.toLowerCase() + '.title') }}
     v-row(v-for="(media, index) in getMediasForRule(rule)" :key="index")
@@ -57,7 +57,7 @@
 import { addressToString } from '~/plugins/utils'
 
 export default {
-  name: 'FvAccountStepContactInformation',
+  name: 'FvAccountMedias',
   props: {
     payload: {
       type: Array,

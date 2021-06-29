@@ -1,9 +1,9 @@
 import { shallowMount } from '@vue/test-utils'
-import FvAccountStepContactInformation from './index.vue'
+import FvAccountMedias from './index.vue'
 
-describe('FvAccountStepContactInformation', () => {
+describe('FvAccountMedias', () => {
   const factory = (propsData) => {
-    return shallowMount(FvAccountStepContactInformation, {
+    return shallowMount(FvAccountMedias, {
       propsData: {
         ...propsData
       },
