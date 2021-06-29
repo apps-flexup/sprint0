@@ -446,11 +446,14 @@
         "email": "Email",
         "description": "Description",
         "country": "Pays",
-        "legalStructure": "Statut juridique",
+        "legal-structure-id": "Statut juridique",
         "siret": "SIRET"
       },
       "edit": {
         "title": "Modifier mon compte"
+      },
+      "read": {
+        "title": "Informations du compte"
       }
     },
     "offers": {

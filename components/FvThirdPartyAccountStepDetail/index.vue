@@ -37,7 +37,7 @@
     v-col.md-10.sm-10.lg-10.xl-10(cols='10')
       fv-country-autocomplete(
         data-testid='country'
-        :country="country"
+        :value="country"
         :label="$t('forms.thirdPartyAccounts.new.country')"
         @country:selected="countrySelected"
       )

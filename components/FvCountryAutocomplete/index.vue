@@ -2,10 +2,9 @@
 .fv-country-autocomplete
   fv-autocomplete(
     data-testid="autocomplete"
-    :element="country"
+    :element="value"
     :items="items"
     :filter="filterList"
-    :returnObject="true"
     :itemValue="itemValue"
     @autocomplete:selected="selected"
   )
@@ -25,7 +24,7 @@ export default {
   name: 'FvCountryAutocomplete',
   inheritAttrs: true,
   props: {
-    country: {
+    value: {
       type: String,
       default() {
         return null

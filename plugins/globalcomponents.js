@@ -41,6 +41,8 @@ import FvContractSummaryStepDetail from '@/components/FvContractSummaryStepDetai
 import FvContractSummaryStepOffer from '@/components/FvContractSummaryStepOffer'
 import FvContractSummaryStepPaiement from '@/components/FvContractSummaryStepPaiement'
 import FvContractSummaryStepStructure from '@/components/FvContractSummaryStepStructure'
+import FvCountryAutocomplete from '@/components/FvCountryAutocomplete'
+import FvCountryReadonly from '@/components/FvCountryReadonly'
 import FvDataTable from '@/components/FvDataTable'
 import FvDataTableHeader from '@/components/FvDataTableHeader'
 import FvDataTableSearchBar from '@/components/FvDataTableSearchBar'
@@ -48,6 +50,8 @@ import FvFlexItems from '@/components/FvFlexItems'
 import FvIcon from '@/components/FvIcon'
 import FvIndexTable from '@/components/FvIndexTable'
 import FvLanguageAutocomplete from '@/components/FvLanguageAutocomplete'
+import FvLegalStructureAutocomplete from '~/components/FvLegalStructureAutocomplete'
+import FvLegalStructureReadonly from '~/components/FvLegalStructureReadonly'
 import FvListAccounts from '@/components/FvListAccounts'
 import FvLoginButton from '@/components/FvLoginButton'
 import FvLogoutButton from '@/components/FvLogoutButton'
@@ -146,9 +150,7 @@ import FvProductAutocomplete from '@/components/FvProductAutocomplete'
 import FvCategoryAutocomplete from '@/components/FvCategoryAutocomplete'
 import FvCurrencyAutocomplete from '@/components/FvCurrencyAutocomplete'
 import FvUnitAutocomplete from '@/components/FvUnitAutocomplete'
-import FvCountryAutocomplete from '@/components/FvCountryAutocomplete'
 import FvOfferAutocomplete from '@/components/FvOfferAutocomplete'
-import FvLegalStructureAutocomplete from '~/components/FvLegalStructureAutocomplete'
 import FvProductItem from '@/components/FvProductItem'
 import FvStatusProgress from '~/components/FvStatusProgress'
 import FvFrequence from '@/components/FvFrequence'
@@ -219,6 +221,8 @@ Vue.component(
   'fv-contract-summary-step-paiement',
   FvContractSummaryStepPaiement
 )
+Vue.component('fv-country-autocomplete', FvCountryAutocomplete)
+Vue.component('fv-country-readonly', FvCountryReadonly)
 Vue.component('fv-data-table', FvDataTable)
 Vue.component('fv-data-table-header', FvDataTableHeader)
 Vue.component('fv-data-table-search-bar', FvDataTableSearchBar)
@@ -226,6 +230,8 @@ Vue.component('fv-flex-items', FvFlexItems)
 Vue.component('fv-icon', FvIcon)
 Vue.component('fv-index-table', FvIndexTable)
 Vue.component('fv-language-autocomplete', FvLanguageAutocomplete)
+Vue.component('fv-legal-structure-autocomplete', FvLegalStructureAutocomplete)
+Vue.component('fv-legal-structure-readonly', FvLegalStructureReadonly)
 Vue.component('fv-list-accounts', FvListAccounts)
 Vue.component('fv-login-button', FvLoginButton)
 Vue.component('fv-logout-button', FvLogoutButton)
@@ -335,10 +341,8 @@ Vue.component(
 Vue.component('fv-product-autocomplete', FvProductAutocomplete)
 Vue.component('fv-category-autocomplete', FvCategoryAutocomplete)
 Vue.component('fv-currency-autocomplete', FvCurrencyAutocomplete)
-Vue.component('fv-country-autocomplete', FvCountryAutocomplete)
 Vue.component('fv-offer-autocomplete', FvOfferAutocomplete)
 Vue.component('fv-unit-autocomplete', FvUnitAutocomplete)
-Vue.component('fv-legal-structure-autocomplete', FvLegalStructureAutocomplete)
 Vue.component('fv-product-item', FvProductItem)
 Vue.component('fv-status-progress', FvStatusProgress)
 Vue.component('fv-frequence', FvFrequence)

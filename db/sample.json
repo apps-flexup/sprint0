@@ -1035,7 +1035,7 @@
   "accounts": [
     {
       "avatar": "/images/avatar-0.png",
-      "country_id": 77,
+      "country": "FRA",
       "name": "Toto",
       "type": "Personal",
       "offers_count": 0,
@@ -1095,10 +1095,9 @@
     },
     {
       "avatar": "/images/avatar-2.png",
-      "country_id": 77,
+      "country": "FRA",
       "parent_type": "Account",
       "parent_id": 1,
-      "id": 2,
       "type": "Business",
       "name": "My business (supplier)",
       "offers_count": 0,
@@ -1108,7 +1107,45 @@
       ],
       "roles_methods": null,
       "supplier": false,
-      "currency": "EUR"
+      "currency": "EUR",
+      "description": "Ma super description",
+      "siret": "12345",
+      "legal-structure-id": 3,
+      "medias": [
+        {
+          "description": {
+            "type": "Address",
+            "value": {
+              "street": "12 rue des plopliers",
+              "zip": "12355",
+              "city": "test",
+              "country": "FRA"
+            },
+            "label": null
+          },
+          "entity_type": "Account",
+          "entity_id": 2
+        },
+        {
+          "description": {
+            "type": "Mail",
+            "value": "mybusiness@email.com",
+            "label": null
+          },
+          "entity_type": "Account",
+          "entity_id": 2
+        },
+        {
+          "description": {
+            "type": "Phone",
+            "value": "123632521",
+            "label": null
+          },
+          "entity_type": "Account",
+          "entity_id": 2
+        }
+      ],
+      "id": 2
     }
   ],
   "categories": [
@@ -2059,16 +2096,52 @@
   ],
   "business-account-steps": [
     {
-      "component": "fv-business-account-step-general-information",
-      "title": "forms.account.business.step.0"
+      "title": "forms.account.business.step.0",
+      "fields": [
+        {
+          "attribute": "name",
+          "component": "fv-text-field",
+          "size": 12
+        },
+        {
+          "attribute": "description",
+          "component": "fv-text-field",
+          "size": 12
+        },
+        {
+          "attribute": "country",
+          "component": "fv-country-autocomplete",
+          "readonly-component": "fv-country-readonly",
+          "size": 12
+        }
+      ]
     },
     {
-      "component": "fv-business-account-step-juridical-information",
-      "title": "forms.account.business.step.1"
+      "title": "forms.account.business.step.1",
+      "fields": [
+        {
+          "attribute": "legal-structure-id",
+          "component": "fv-legal-structure-autocomplete",
+          "readonly-component": "fv-legal-structure-readonly",
+          "size": 12
+        },
+        {
+          "attribute": "siret",
+          "component": "fv-text-field",
+          "size": 12
+        }
+      ]
     },
     {
-      "component": "fv-account-step-contact-information",
-      "title": "forms.account.business.step.2"
+      "title": "forms.account.business.step.2",
+      "fields": [
+        {
+          "attribute": "medias",
+          "component": "fv-account-medias",
+          "readonly-component": "fv-account-medias-readonly",
+          "size": 12
+        }
+      ]
     }
   ],
   "personal-account-steps": [

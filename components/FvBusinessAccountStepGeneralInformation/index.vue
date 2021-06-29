@@ -20,7 +20,7 @@
     v-col(cols="12")
       fv-country-autocomplete(
         data-testid='countryField'
-        :country="country"
+        :value="country"
         :label="$t('forms.businessAccounts.new.country')"
         @country:selected="countrySelected"
       )

@@ -444,11 +444,14 @@
         "email": "Email",
         "description": "Description",
         "country": "Country",
-        "legalStructure": "Legal structure",
+        "legal-structure-id": "Legal structure",
         "siret": "SIRET"
       },
       "edit": {
         "title": "Edit my account"
+      },
+      "read": {
+        "title": "Account informations"
       }
     },
     "offers": {

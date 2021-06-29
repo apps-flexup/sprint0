@@ -23,7 +23,7 @@ export default {
   name: 'FvLegalStructureAutocomplete',
   inheritAttrs: true,
   props: {
-    legalStructureId: {
+    value: {
       type: Number,
       default() {
         return null
@@ -39,6 +39,10 @@ export default {
   computed: {
     items() {
       const res = this.$store.getters['contracts/legalStructures']
+      return res
+    },
+    legalStructureId() {
+      const res = this.value
       return res
     }
   },
