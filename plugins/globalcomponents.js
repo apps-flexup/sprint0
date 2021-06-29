@@ -3,6 +3,7 @@ import Vue from 'vue'
 import FvAccount from '@/components/FvAccount'
 import FvAccountCard from '@/components/FvAccountCard'
 import FvAccountMedias from '@/components/FvAccountMedias'
+import FvAccountMediasReadonly from '@/components/FvAccountMediasReadonly'
 import FvAccountInfo from '@/components/FvAccountInfo'
 import FvAccountsIndex from '@/components/FvAccountsIndex'
 import FvAddressField from '@/components/FvAddressField'
@@ -162,6 +163,7 @@ import FvOrderTotals from '~/components/FvOrderTotals'
 Vue.component('fv-account', FvAccount)
 Vue.component('fv-account-card', FvAccountCard)
 Vue.component('fv-account-medias', FvAccountMedias)
+Vue.component('fv-account-medias-readonly', FvAccountMediasReadonly)
 Vue.component('fv-account-info', FvAccountInfo)
 Vue.component('fv-accounts-index', FvAccountsIndex)
 Vue.component('fv-address-field', FvAddressField)

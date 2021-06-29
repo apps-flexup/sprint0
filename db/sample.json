@@ -2098,6 +2098,7 @@
         {
           "attribute": "medias",
           "component": "fv-account-medias",
+          "readonly-component": "fv-account-medias-readonly",
           "size": 12
         }
       ]

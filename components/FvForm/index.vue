@@ -141,7 +141,7 @@ export default {
       const fields = step.fields.map((field) => ({ ...field }))
       fields.forEach((field) => {
         if (!this.hasRightToEdit()) {
-          field.component = 'fv-readonly-field'
+          field.component = field['readonly-component'] || 'fv-readonly-field'
         }
       })
       return fields

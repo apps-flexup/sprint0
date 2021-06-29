@@ -1,0 +1,32 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+import FvAccountMedias from './index.vue'
+
+<Meta title='Molecules/FvAccountMedias' component={ FvAccountMedias } />
+
+# FvAccountMedias
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  components: { FvAccountMedias },
+  data() {
+    return {
+      localPayload: {}
+    }
+  },
+  methods: {
+    payloadChanged(payload) {
+      this.localPayload = Object.assign({}, this.localPayload, payload)
+    }
+  },
+  template: `<FvAccountMedias
+    :payload="localPayload"
+    @payload:changed="payloadChanged"
+  >
+  </FvAccountMedias>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvAccountMedias } />

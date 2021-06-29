@@ -1,7 +1,7 @@
 <template lang="pug">
 .fv-readonly-field
   v-row(:style="cssVars")
-    v-col(cols="2")
+    v-col(v-if="label" cols="2")
       div.text {{ label + $t('ponctuation.colons') }}
     v-col(cols="10")
       div.text {{ value }}
