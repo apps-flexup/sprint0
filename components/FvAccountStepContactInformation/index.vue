@@ -3,11 +3,12 @@
   div(v-for="(rule, index) in rules" :key="index")
     h3.font-weight-regular(data-testid="mediaName") {{ $t('mediaField.' + rule.toLowerCase() + '.title') }}
     v-row(v-for="(media, index) in getMediasForRule(rule)" :key="index")
-      v-col(v-if="readonly" cols="12")
-        fv-readonly-field(
-          :value="getValueForMedia(media.description)"
-        )
-      v-col(v-else cols="12")
+      //- v-col(v-if="readonly" cols="12")
+      //-   fv-readonly-field(
+      //-     :value="getValueForMedia(media.description)"
+      //-   )
+      //- v-col(v-else cols="12")
+      v-col(cols="12")
         fv-address-field(
           v-if="media.description.type === 'Address'"
           data-testid='addressField'
@@ -59,7 +60,7 @@ export default {
   name: 'FvAccountStepContactInformation',
   props: {
     payload: {
-      type: Object,
+      type: Array,
       default() {
         return null
       }
@@ -78,8 +79,7 @@ export default {
   },
   computed: {
     medias() {
-      const medias = this.payload ? this.payload.medias : null
-      const res = medias || []
+      const res = this.payload || []
       return res
     }
   },
@@ -116,40 +116,28 @@ export default {
       }
       const medias = this.medias
       medias.push(media)
-      const payload = {
-        medias
-      }
-      this.$emit('payload:changed', payload)
+      this.$emit('payload:changed', medias)
     },
     valueChanged(indexForRule, rule, description) {
       const index = this.findMediaIndexWithIndexOfRule(indexForRule, rule)
       if (index === undefined) return
       const medias = this.medias
       medias[index].description.value = description.value
-      const payload = {
-        medias
-      }
-      this.$emit('payload:changed', payload)
+      this.$emit('payload:changed', medias)
     },
     labelChanged(indexForRule, rule, description) {
       const index = this.findMediaIndexWithIndexOfRule(indexForRule, rule)
       if (index === undefined) return
       const medias = this.medias
       medias[index].description.label = description.label
-      const payload = {
-        medias
-      }
-      this.$emit('payload:changed', payload)
+      this.$emit('payload:changed', medias)
     },
     deleteClicked(indexForRule, rule) {
       const index = this.findMediaIndexWithIndexOfRule(indexForRule, rule)
       if (index === undefined) return
       const medias = this.medias
       medias.splice(index, 1)
-      const payload = {
-        medias
-      }
-      this.$emit('payload:changed', payload)
+      this.$emit('payload:changed', medias)
     },
     getValueForMedia(description) {
       const type = description.type

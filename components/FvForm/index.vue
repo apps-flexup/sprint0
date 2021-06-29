@@ -35,7 +35,9 @@
               :is="field.component"
               :label="$t(`forms.${form}.new.${field.attribute}`)"
               :value="payload[field.attribute]"
+              :payload="payload[field.attribute]"
               @input="payloadChanged(field.attribute, ...arguments)"
+              @payload:changed="payloadChanged(field.attribute, ...arguments)"
             )
   div.btn.mt-10(v-if="!readonly")
     fv-secondary-button(
@@ -47,6 +49,7 @@
       @button:click="submit"
     ) {{ $t('forms.products.new.validate') }}
 </template>
+
 <script>
 export default {
   name: 'FvForm',

@@ -2093,8 +2093,14 @@
       ]
     },
     {
-      "component": "fv-account-step-contact-information",
-      "title": "forms.account.personal.step.1"
+      "title": "forms.account.personal.step.1",
+      "fields": [
+        {
+          "attribute": "medias",
+          "component": "fv-account-step-contact-information",
+          "size": 12
+        }
+      ]
     }
   ],
   "contact-steps": [
