@@ -449,16 +449,6 @@
           {
             "align": "left",
             "sortable": true,
-            "text": "headers.products.category",
-            "value": "category_id",
-            "order": 1,
-            "customizable": true,
-            "active": true,
-            "displayed": true
-          },
-          {
-            "align": "left",
-            "sortable": true,
             "text": "headers.products.unit",
             "value": "unit",
             "order": 2,
@@ -2294,7 +2284,19 @@
   "product-steps": [
     {
       "component": "fv-product-step-detail",
-      "title": "forms.product.step.0"
+      "title": "forms.product.step.0",
+      "fields": [
+        {
+          "attribute": "name",
+          "component": "fv-text-field",
+          "size": 12
+        },
+        {
+          "attribute": "unit",
+          "component": "fv-unit-autocomplete",
+          "size": 12
+        }
+      ]
     }
   ],
   "offer-steps": [
@@ -14665,31 +14667,37 @@
       "account_id": 1,
       "category_id": 55,
       "currency": "EUR",
-      "dimension": "duration",
+      "unit": {
+        "unit": "month",
+        "dimension": "duration"
+      },
       "name": "Appartement Paris 8",
       "price": "1250",
       "quantity": 1,
       "status": "active",
-      "unit": "month",
       "id": 1
     },
     {
       "account_id": 1,
       "category_id": 55,
       "currency": "EUR",
-      "dimension": "duration",
+      "unit": {
+        "unit": "month",
+        "dimension": "duration"
+      },
       "name": "Appartement Paris 19",
       "price": "300",
       "quantity": 1,
       "status": "inactive",
-      "unit": "month",
       "id": 2
     },
     {
       "category_id": 22,
       "name": "Bananes",
-      "unit": "quarter",
-      "dimension": "duration",
+      "unit": {
+        "unit": "quarter",
+        "dimension": "duration"
+      },
       "status": "draft",
       "account_id": 1,
       "id": 15
@@ -14697,8 +14705,10 @@
     {
       "category_id": 13,
       "name": "Peinture métalisé",
-      "unit": "cl",
-      "dimension": "volume",
+      "unit": {
+        "unit": "cl",
+        "dimension": "volume"
+      },
       "status": "draft",
       "account_id": 1,
       "id": 16
@@ -14706,8 +14716,10 @@
     {
       "category_id": 44,
       "name": "Jeu 7 familles",
-      "unit": "hr",
-      "dimension": "duration",
+      "unit": {
+        "unit": "hr",
+        "dimension": "duration"
+      },
       "status": "draft",
       "account_id": 1,
       "id": 18
@@ -14715,11 +14727,23 @@
     {
       "category_id": 52,
       "name": "PHP",
-      "unit": "hr",
-      "dimension": "duration",
+      "unit": {
+        "unit": "hr",
+        "dimension": "duration"
+      },
       "status": "draft",
       "account_id": 1,
       "id": 19
+    },
+    {
+      "name": "test",
+      "unit": {
+        "unit": "byte",
+        "dimension": "data"
+      },
+      "status": "draft",
+      "account_id": 1,
+      "id": 20
     }
   ],
   "structures": [

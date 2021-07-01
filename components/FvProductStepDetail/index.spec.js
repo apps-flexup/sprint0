@@ -39,23 +39,8 @@ describe('FvProductStepDetail', () => {
   })
   it('should render a product form', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="categoryAutocomplete"]').exists()).toBe(
-      true
-    )
     expect(wrapper.find('[data-testid="productName"]').exists()).toBe(true)
     expect(wrapper.find('[data-testid="unitAutocomplete"]').exists()).toBe(true)
-  })
-  it('should send signal when category is changed', () => {
-    const wrapper = factory()
-    const categoryAutocomplete = wrapper.find(
-      '[data-testid="categoryAutocomplete"]'
-    )
-    const categoryId = 1
-    categoryAutocomplete.vm.$emit('category:selected', categoryId)
-    const submittedCalls = wrapper.emitted('payload:changed')
-    expect(submittedCalls).toBeTruthy()
-    expect(submittedCalls).toHaveLength(1)
-    expect(submittedCalls[0][0].category_id).toBe(categoryId)
   })
   it('should send signal when name is changed', () => {
     const wrapper = factory()

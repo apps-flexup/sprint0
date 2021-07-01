@@ -2,13 +2,6 @@
 .fv-product-step-detail
   v-row
     v-col(cols='12')
-      fv-category-autocomplete(
-        data-testid='categoryAutocomplete'
-        :category_id="categoryId"
-        @category:selected="categorySelected"
-      )
-  v-row
-    v-col(cols='12')
       fv-text-field(
         data-testid='productName'
         :value="name"
@@ -37,10 +30,6 @@ export default {
     }
   },
   computed: {
-    categoryId() {
-      const res = this.payload ? this.payload.category_id : null
-      return res
-    },
     name() {
       const res = this.payload ? this.payload.name : null
       return res
@@ -58,12 +47,6 @@ export default {
     console.log('Composant ', this.$options.name)
   },
   methods: {
-    categorySelected(v) {
-      const payload = {
-        category_id: v
-      }
-      this.$emit('payload:changed', payload)
-    },
     nameChanged(name) {
       const payload = {
         name
