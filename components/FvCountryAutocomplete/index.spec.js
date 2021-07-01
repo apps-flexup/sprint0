@@ -137,4 +137,14 @@ describe('FvCountryAutocomplete', () => {
     expect(selectedCalls).toHaveLength(1)
     expect(selectedCalls[0][0]).toBe(selectedCountry)
   })
+  it('should emit a generic event when country is selected', () => {
+    const wrapper = factory()
+    const autocomplete = wrapper.find('[data-testid=autocomplete]')
+    const selectedCountry = countries[0]
+    autocomplete.vm.$emit('autocomplete:selected', selectedCountry)
+    const selectedCalls = wrapper.emitted('payload:changed')
+    expect(selectedCalls).toBeTruthy()
+    expect(selectedCalls).toHaveLength(1)
+    expect(selectedCalls[0][0]).toBe(selectedCountry)
+  })
 })

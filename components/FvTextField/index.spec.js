@@ -28,4 +28,13 @@ describe('FvTextField', () => {
     expect(inputCalls).toHaveLength(1)
     expect(inputCalls[0][0]).toMatch(text)
   })
+  it('should emit a generic event when input changed', async () => {
+    const text = 'helloWorld'
+    const wrapper = mount(FvTextField)
+    const textField = wrapper.find('[data-testid="textField"]')
+    await textField.setValue(text)
+    const inputCalls = wrapper.emitted('payload:changed')
+    expect(inputCalls).toHaveLength(1)
+    expect(inputCalls[0][0]).toMatch(text)
+  })
 })
