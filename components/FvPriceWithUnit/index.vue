@@ -21,7 +21,7 @@ export default {
       }
     },
     unit: {
-      type: String,
+      type: Object,
       default() {
         return null
       }

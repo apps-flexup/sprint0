@@ -14534,8 +14534,10 @@
       "active": true,
       "product_id": 18,
       "currency": "EUR",
-      "dimension": "unit",
-      "unit": "Unit",
+      "unit": {
+        "dimension": "unit",
+        "unit": "Unit"
+      },
       "description": {
         "en": "description of offer fab",
         "fr": "description of Le jeu des 7 familles"
@@ -14570,8 +14572,10 @@
       "active": true,
       "product_id": 19,
       "currency": "EUR",
-      "dimension": "duration",
-      "unit": "hr",
+      "unit": {
+        "dimension": "duration",
+        "unit": "hr"
+      },
       "description": {
         "en": "description of offer php"
       },
