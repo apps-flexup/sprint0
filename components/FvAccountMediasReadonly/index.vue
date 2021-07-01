@@ -16,7 +16,7 @@ import { addressToString } from '~/plugins/utils'
 export default {
   name: 'FvAccountMediasReadonly',
   props: {
-    payload: {
+    value: {
       type: Array,
       default() {
         return null
@@ -30,7 +30,7 @@ export default {
   },
   computed: {
     medias() {
-      const res = this.payload || []
+      const res = this.value || []
       return res
     }
   },

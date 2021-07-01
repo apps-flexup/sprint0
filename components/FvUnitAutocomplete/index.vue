@@ -68,9 +68,13 @@ export default {
         dimension: v.dimension
       }
       this.$emit('unit:selected', payload)
+      this.emitGenericSignalForForm(payload)
     },
     filter(item, v, it) {
       return filterUnitAutocomplete(item, v, it)
+    },
+    emitGenericSignalForForm(payload) {
+      this.$emit('payload:changed', payload)
     }
   }
 }

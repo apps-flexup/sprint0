@@ -99,6 +99,7 @@ export default {
   methods: {
     inputChanged() {
       this.$emit('input', this.model)
+      this.emitGenericSignalForForm()
     },
     clicked() {
       this.$emit('click')
@@ -108,6 +109,9 @@ export default {
     },
     enterPressed() {
       this.$emit('enterPressed')
+    },
+    emitGenericSignalForForm() {
+      this.$emit('payload:changed', this.model)
     }
   }
 }

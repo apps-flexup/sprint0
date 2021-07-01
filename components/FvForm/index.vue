@@ -36,12 +36,7 @@
               :label="$t(`forms.${form}.new.${field.attribute}`)"
               :value="payload[field.attribute]"
               @value:changed="payloadChanged(field.attribute, ...arguments)"
-              :payload="payload[field.attribute]"
               @payload:changed="payloadChanged(field.attribute, ...arguments)"
-              @input="payloadChanged(field.attribute, ...arguments)"
-              @country:selected="payloadChanged(field.attribute, ...arguments)"
-              @legalstructure:selected="payloadChanged(field.attribute, ...arguments)"
-              @unit:selected="payloadChanged(field.attribute, ...arguments)"
             )
   div.btn.mt-10(v-if="!readonly")
     fv-secondary-button(

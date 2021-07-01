@@ -59,6 +59,10 @@ export default {
     },
     selected(v) {
       this.$emit('country:selected', v)
+      this.emitGenericSignalForForm(v)
+    },
+    emitGenericSignalForForm(payload) {
+      this.$emit('payload:changed', payload)
     }
   }
 }

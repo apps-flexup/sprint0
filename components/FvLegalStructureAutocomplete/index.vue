@@ -53,9 +53,13 @@ export default {
   methods: {
     selected(v) {
       this.$emit('legalstructure:selected', v)
+      this.emitGenericSignalForForm(v)
     },
     filter(item, v, it) {
       return filterLegalStructureAutocomplete(item, v, it)
+    },
+    emitGenericSignalForForm(payload) {
+      this.$emit('payload:changed', payload)
     }
   }
 }

@@ -51,7 +51,7 @@
 export default {
   name: 'FvAccountMedias',
   props: {
-    payload: {
+    value: {
       type: Array,
       default() {
         return null
@@ -65,7 +65,7 @@ export default {
   },
   computed: {
     medias() {
-      const res = this.payload || []
+      const res = this.value || []
       return res
     }
   },
