@@ -69,10 +69,14 @@ describe('FvUnitAutocomplete', () => {
     const wrapper = factory()
     const autocomplete = wrapper.find('[data-testid="autocomplete"]')
     autocomplete.vm.$emit('autocomplete:selected', item)
+    const expectedPayload = {
+      dimension: item.dimension,
+      unit: item.symbole
+    }
     const submittedCalls = wrapper.emitted('unit:selected')
     expect(submittedCalls).toBeTruthy()
     expect(submittedCalls).toHaveLength(1)
-    expect(submittedCalls[0][0]).toBe(item)
+    expect(submittedCalls[0][0]).toEqual(expectedPayload)
   })
   it('should give all unit if no dimension filter', () => {
     const wrapper = factory({ dimensionFilter: null })
