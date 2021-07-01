@@ -46,8 +46,7 @@ describe('FvAccountMedias', () => {
         }
       }
     ]
-    const wrapper = factory({ payload: medias })
-    console.log('wrapper: ', wrapper.html())
+    const wrapper = factory({ value: medias })
     const mailField = wrapper.find('[data-testid="mailField"]')
     const description = {
       type: 'Mail',
@@ -72,7 +71,7 @@ describe('FvAccountMedias', () => {
         }
       }
     ]
-    const wrapper = factory({ payload: medias })
+    const wrapper = factory({ value: medias })
     const mailField = wrapper.find('[data-testid="mailField"]')
     const description = {
       type: 'Mail',
@@ -97,7 +96,7 @@ describe('FvAccountMedias', () => {
         }
       }
     ]
-    const wrapper = factory({ payload: medias })
+    const wrapper = factory({ value: medias })
     const mailField = wrapper.find('[data-testid="mailField"]')
     mailField.vm.$emit('mail:delete:clicked')
     const payloadChangedCalls = wrapper.emitted('payload:changed')
