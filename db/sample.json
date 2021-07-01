@@ -14738,16 +14738,6 @@
       "status": "draft",
       "account_id": 1,
       "id": 19
-    },
-    {
-      "name": "test",
-      "unit": {
-        "unit": "byte",
-        "dimension": "data"
-      },
-      "status": "draft",
-      "account_id": 1,
-      "id": 20
     }
   ],
   "structures": [
