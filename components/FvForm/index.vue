@@ -35,6 +35,7 @@
               :is="field.component"
               :label="$t(`forms.${form}.new.${field.attribute}`)"
               :value="payload[field.attribute]"
+              :search="localPayload"
               @value:changed="payloadChanged(field.attribute, ...arguments)"
               @payload:changed="payloadChanged(field.attribute, ...arguments)"
             )

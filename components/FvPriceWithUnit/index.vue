@@ -9,13 +9,7 @@ export default {
   inheritAttrs: true,
   props: {
     price: {
-      type: [Number, String],
-      default() {
-        return null
-      }
-    },
-    currency: {
-      type: String,
+      type: Object,
       default() {
         return null
       }
@@ -29,9 +23,11 @@ export default {
   },
   asyncComputed: {
     async priceWithUnit() {
+      const amount = this.price ? this.price.amount : 0
+      const currency = this.price ? this.price.currency : null
       const item = {
-        price: this.price,
-        currency: this.currency,
+        price: amount,
+        currency,
         unit: this.unit
       }
       const res = await this.$displayRules.priceWithUnit(item)

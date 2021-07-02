@@ -19,6 +19,15 @@ describe('FvVatField', () => {
     expect(submittedCalls).toHaveLength(1)
     expect(submittedCalls[0][0]).toBe(vat)
   })
+  it('should emit a generic event when vat change', () => {
+    const wrapper = factory()
+    const vatField = wrapper.find('[data-testid="vatField"]')
+    vatField.vm.$emit('input', vat)
+    const submittedCalls = wrapper.emitted('payload:changed')
+    expect(submittedCalls).toBeTruthy()
+    expect(submittedCalls).toHaveLength(1)
+    expect(submittedCalls[0][0]).toBe(vat)
+  })
   it('should change vat when click outside', async () => {
     const wrapper = factory()
     const vatField = wrapper.find('[data-testid="vatField"]')

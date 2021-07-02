@@ -63,9 +63,10 @@ export default {
   },
   methods: {
     selected(v) {
+      const unit = this.getUnitFromValue(v)
       const payload = {
-        unit: v.symbole,
-        dimension: v.dimension
+        unit: unit.symbole,
+        dimension: unit.dimension
       }
       this.$emit('unit:selected', payload)
       this.emitGenericSignalForForm(payload)
@@ -75,6 +76,12 @@ export default {
     },
     emitGenericSignalForForm(payload) {
       this.$emit('payload:changed', payload)
+    },
+    getUnitFromValue(v) {
+      if (typeof v === 'number') {
+        return this.$store.getters['units/find'](v)
+      }
+      return v
     }
   }
 }

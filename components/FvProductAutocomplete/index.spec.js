@@ -53,4 +53,17 @@ describe('FvProductAutocomplete', () => {
     expect(selectedCalls).toHaveLength(1)
     expect(selectedCalls[0][0]).toEqual(product)
   })
+  it('should emit a generic event when a product is selected', () => {
+    const wrapper = factory()
+    const autocomplete = wrapper.find('[data-testid="autocomplete"]')
+    const product = {
+      id: 1,
+      name: 'product'
+    }
+    autocomplete.vm.$emit('autocomplete:selected', product)
+    const selectedCalls = wrapper.emitted('payload:changed')
+    expect(selectedCalls).toBeTruthy()
+    expect(selectedCalls).toHaveLength(1)
+    expect(selectedCalls[0][0]).toEqual(product)
+  })
 })

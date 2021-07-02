@@ -150,6 +150,7 @@ import FvProductAutocomplete from '@/components/FvProductAutocomplete'
 import FvCategoryAutocomplete from '@/components/FvCategoryAutocomplete'
 import FvCurrencyAutocomplete from '@/components/FvCurrencyAutocomplete'
 import FvUnitAutocomplete from '@/components/FvUnitAutocomplete'
+import FvUnitAutocompleteForOffer from '@/components/FvUnitAutocompleteForOffer'
 import FvOfferAutocomplete from '@/components/FvOfferAutocomplete'
 import FvProductItem from '@/components/FvProductItem'
 import FvStatusProgress from '~/components/FvStatusProgress'
@@ -343,6 +344,7 @@ Vue.component('fv-category-autocomplete', FvCategoryAutocomplete)
 Vue.component('fv-currency-autocomplete', FvCurrencyAutocomplete)
 Vue.component('fv-offer-autocomplete', FvOfferAutocomplete)
 Vue.component('fv-unit-autocomplete', FvUnitAutocomplete)
+Vue.component('fv-unit-autocomplete-for-offer', FvUnitAutocompleteForOffer)
 Vue.component('fv-product-item', FvProductItem)
 Vue.component('fv-status-progress', FvStatusProgress)
 Vue.component('fv-frequence', FvFrequence)
