@@ -510,47 +510,6 @@
           },
           {
             "align": "left",
-            "sortable": true,
-            "text": "headers.thirdPartyAccounts.address",
-            "city": "Courtanche sur Mer",
-            "value": "address",
-            "order": 3,
-            "customizable": true,
-            "active": true,
-            "displayed": true
-          },
-          {
-            "align": "right",
-            "sortable": true,
-            "text": "headers.thirdPartyAccounts.zip",
-            "value": "zip",
-            "order": 4,
-            "customizable": true,
-            "active": true,
-            "displayed": true
-          },
-          {
-            "align": "left",
-            "sortable": true,
-            "text": "headers.thirdPartyAccounts.city",
-            "value": "city",
-            "order": 5,
-            "customizable": true,
-            "active": true,
-            "displayed": true
-          },
-          {
-            "align": "left",
-            "sortable": true,
-            "text": "headers.thirdPartyAccounts.country",
-            "value": "country_id",
-            "order": 6,
-            "customizable": true,
-            "active": true,
-            "displayed": true
-          },
-          {
-            "align": "left",
             "sortable": false,
             "text": "headers.actions",
             "value": "actions",
@@ -2333,7 +2292,36 @@
   "third-party-account-steps": [
     {
       "component": "fv-third-party-account-step-detail",
-      "title": "forms.third-party-account.step.0"
+      "title": "forms.third-party-account.step.0",
+      "fields": [
+        {
+          "attribute": "name",
+          "component": "fv-text-field",
+          "size": 12
+        },
+        {
+          "attribute": "legal_structure_id",
+          "component": "fv-legal-structure-autocomplete",
+          "readonly-component": "fv-legal-structure-readonly",
+          "size": 12
+        },
+        {
+          "attribute": "siret",
+          "component": "fv-text-field",
+          "size": 12
+        }
+      ]
+    },
+    {
+      "title": "forms.third-party-account.step.1",
+      "fields": [
+        {
+          "attribute": "medias",
+          "component": "fv-account-medias",
+          "readonly-component": "fv-account-medias-readonly",
+          "size": 12
+        }
+      ]
     }
   ],
   "payment-condition-steps": [
@@ -14669,25 +14657,47 @@
   "third-party-accounts": [
     {
       "account_id": 1,
-      "address": "12 rue de la poupée qui tousse",
       "avatar": "/images/avatar-0.png",
-      "city": "Braniole de turbeuse",
-      "country_id": 157,
       "name": "plop",
-      "zip": "15774",
       "legal_structure_id": 13,
-      "siret": "1231231312",
+      "siret": "123123123",
+      "medias": [
+        {
+          "entity_type": "Alien",
+          "entity_id": 1,
+          "description": {
+            "type": "Address",
+            "value": {
+              "street": "12 rue de la poupée qui tousse",
+              "zip": "15774",
+              "city": "Braniole de turbeuse",
+              "country": "NLD"
+            }
+          }
+        }
+      ],
       "id": 1
     },
     {
       "account_id": 1,
-      "address": "25 rue de tata janine\n12 etage\nporte gauche",
-      "city": "Choublon les croigneuses",
-      "country_id": 77,
       "name": "plip",
-      "zip": "98760103",
       "legal_structure_id": 6,
-      "id": 6
+      "id": 2,
+      "medias": [
+        {
+          "entity_type": "Alien",
+          "entity_id": 1,
+          "description": {
+            "type": "Address",
+            "value": {
+              "street": "25 rue de tata janine",
+              "zip": "98760103",
+              "city": "Choublon les croigneuses",
+              "country": "FRA"
+            }
+          }
+        }
+      ]
     }
   ],
   "products": [

@@ -95,14 +95,6 @@ export default {
       return res
     }
   },
-  watch: {
-    payload: {
-      deep: true,
-      handler() {
-        this.localPayload = Object.assign({}, this.localPayload, this.payload)
-      }
-    }
-  },
   mounted() {
     console.log('Composant ', this.$options.name)
     this.$store.dispatch('forms/getBusinessAccount')
@@ -125,9 +117,7 @@ export default {
       this.$emit('clicked')
     },
     payloadChanged(attribute, value) {
-      const payload = this.localPayload
-      payload[attribute] = value
-      this.localPayload = Object.assign({}, this.localPayload, payload)
+      this.$set(this.localPayload, attribute, value)
     },
     editClicked() {
       this.localAction = 'edit'
