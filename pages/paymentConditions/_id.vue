@@ -30,7 +30,6 @@ export default {
   },
   methods: {
     editPaymentCondition(payload) {
-      console.log('edit: ', payload)
       this.$activeAccount.addPaymentCondition(payload)
     }
   }

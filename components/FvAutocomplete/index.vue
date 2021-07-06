@@ -125,11 +125,6 @@ export default {
       isLoading: false
     }
   },
-  watch: {
-    element() {
-      this.model = this.element
-    }
-  },
   computed: {
     model: {
       get() {

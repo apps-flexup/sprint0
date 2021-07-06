@@ -36,6 +36,7 @@ export default {
       if (!unit) {
         unit = this.product ? this.product.unit : null
       }
+      this.unitSelected(unit)
       return unit
     },
     dimensionFilter() {

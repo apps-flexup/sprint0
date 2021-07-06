@@ -225,7 +225,7 @@
           "value": 100
         }
       },
-      "risk": 45,
+      "risk": 30,
       "label": "Flex simple",
       "account_id": 1,
       "id": 4
@@ -2326,14 +2326,46 @@
   ],
   "payment-condition-steps": [
     {
-      "component": "fv-payment-condition-step-detail",
-      "title": "forms.payment-condition.step.0"
+      "title": "forms.payment-condition.step.0",
+      "fields": [
+        {
+          "attribute": "label",
+          "component": "fv-text-field",
+          "size": 12
+        },
+        {
+          "attribute": "references",
+          "component": "fv-payment-condition-references",
+          "size": 12
+        },
+        {
+          "attribute": "risk",
+          "input": "references",
+          "component": "fv-payment-condition-risk",
+          "size": 12
+        }
+      ]
     }
   ],
   "payment-structure-steps": [
     {
       "component": "fv-payment-structure-step-detail",
-      "title": "forms.payment-structure.step.0"
+      "title": "forms.payment-structure.step.0",
+      "fields": [
+        {
+          "attribute": "label",
+          "component": "fv-text-field",
+          "size": 12
+        },
+        {
+          "attribute": "paymentConditions",
+          "additionalOutputs": [
+            "risk"
+          ],
+          "component": "fv-payment-condition-selection",
+          "size": 12
+        }
+      ]
     }
   ],
   "contract-types": [

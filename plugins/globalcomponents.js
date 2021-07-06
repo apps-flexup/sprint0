@@ -75,6 +75,9 @@ import FvPaymentConditionAutocomplete from '@/components/FvPaymentConditionAutoc
 import FvPaymentConditionDataTable from '@/components/FvPaymentConditionDataTable'
 import FvPaymentConditionIndex from '@/components/FvPaymentConditionIndex'
 import FvPaymentConditionList from '@/components/FvPaymentConditionList'
+import FvPaymentConditionReferences from '@/components/FvPaymentConditionReferences'
+import FvPaymentConditionRisk from '@/components/FvPaymentConditionRisk'
+import FvPaymentConditionSelection from '@/components/FvPaymentConditionSelection'
 import FvPaymentConditionStepDetail from '@/components/FvPaymentConditionStepDetail'
 import FvPaymentStructureDataTable from '@/components/FvPaymentStructureDataTable'
 import FvPaymentStructureIndex from '@/components/FvPaymentStructureIndex'
@@ -262,6 +265,9 @@ Vue.component(
 Vue.component('fv-payment-condition-data-table', FvPaymentConditionDataTable)
 Vue.component('fv-payment-condition-index', FvPaymentConditionIndex)
 Vue.component('fv-payment-condition-list', FvPaymentConditionList)
+Vue.component('fv-payment-condition-references', FvPaymentConditionReferences)
+Vue.component('fv-payment-condition-risk', FvPaymentConditionRisk)
+Vue.component('fv-payment-condition-selection', FvPaymentConditionSelection)
 Vue.component('fv-payment-condition-step-detail', FvPaymentConditionStepDetail)
 Vue.component('fv-payment-structure-data-table', FvPaymentStructureDataTable)
 Vue.component('fv-payment-structure-index', FvPaymentStructureIndex)

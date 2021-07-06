@@ -34,10 +34,10 @@
               data-testid="fieldComponent"
               :is="field.component"
               :label="$t(`forms.${form}.new.${field.attribute}`)"
-              :value="payload[field.attribute]"
+              :value="field.input ? payload[field.input] : payload[field.attribute]"
               :search="localPayload"
-              @value:changed="payloadChanged(field.attribute, ...arguments)"
-              @payload:changed="payloadChanged(field.attribute, ...arguments)"
+              @value:changed="payloadChanged(field.additionalOutputs, field.attribute, ...arguments)"
+              @payload:changed="payloadChanged(field.additionalOutputs, field.attribute, ...arguments)"
             )
   div.btn.mt-10(v-if="!readonly")
     fv-secondary-button(
@@ -116,8 +116,13 @@ export default {
       this.$router.go(-1)
       this.$emit('clicked')
     },
-    payloadChanged(attribute, value) {
-      this.$set(this.localPayload, attribute, value)
+    payloadChanged(additionalOutputs, attribute, value) {
+      if (additionalOutputs) {
+        additionalOutputs.push(attribute)
+        additionalOutputs.forEach((output) => {
+          if (value[output]) this.$set(this.localPayload, output, value[output])
+        })
+      } else this.$set(this.localPayload, attribute, value)
     },
     editClicked() {
       this.localAction = 'edit'
