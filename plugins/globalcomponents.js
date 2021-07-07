@@ -8,13 +8,10 @@ import FvAccountInfo from '@/components/FvAccountInfo'
 import FvAccountsIndex from '@/components/FvAccountsIndex'
 import FvAddressField from '@/components/FvAddressField'
 import FvAddressModal from '@/components/FvAddressModal'
-import FvAccountStepPersonalInformation from '@/components/FvAccountStepPersonalInformation'
 import FvAutocomplete from '@/components/FvAutocomplete'
 import FvAvatar from '@/components/FvAvatar'
 import FvAvatarWithName from '@/components/FvAvatarWithName'
 import FvBreadcrumbs from '@/components/FvBreadcrumbs'
-import FvBusinessAccountStepGeneralInformation from '@/components/FvBusinessAccountStepGeneralInformation'
-import FvBusinessAccountStepJuridicalInformation from '@/components/FvBusinessAccountStepJuridicalInformation'
 import FvCivilityField from '@/components/FvCivilityField'
 import FvContactCard from '@/components/FvContactCard'
 import FvContactDialog from '@/components/FvContactDialog'
@@ -69,7 +66,6 @@ import FvNav from '@/components/FvNav'
 import FvNavBar from '@/components/FvNavBar'
 import FvNavBarBuyer from '@/components/FvNavBarBuyer'
 import FvNavBarManage from '@/components/FvNavBarManage'
-import FvThirdPartyAccountStepDetail from '@/components/FvThirdPartyAccountStepDetail'
 import FvNumberField from '@/components/FvNumberField'
 import FvPaymentConditionAutocomplete from '@/components/FvPaymentConditionAutocomplete'
 import FvPaymentConditionDataTable from '@/components/FvPaymentConditionDataTable'
@@ -78,11 +74,9 @@ import FvPaymentConditionList from '@/components/FvPaymentConditionList'
 import FvPaymentConditionReferences from '@/components/FvPaymentConditionReferences'
 import FvPaymentConditionRisk from '@/components/FvPaymentConditionRisk'
 import FvPaymentConditionSelection from '@/components/FvPaymentConditionSelection'
-import FvPaymentConditionStepDetail from '@/components/FvPaymentConditionStepDetail'
 import FvPaymentStructureDataTable from '@/components/FvPaymentStructureDataTable'
 import FvPaymentStructureIndex from '@/components/FvPaymentStructureIndex'
 import FvPaymentStructureList from '@/components/FvPaymentStructureList'
-import FvPaymentStructureStepDetail from '@/components/FvPaymentStructureStepDetail'
 import FvPaymentTermParams from '@/components/FvPaymentTermParams'
 import FvPhoneField from '@/components/FvPhoneField'
 import FvPriceField from '@/components/FvPriceField'
@@ -91,7 +85,6 @@ import FvPriceWithUnit from '@/components/FvPriceWithUnit'
 import FvPrimaryButton from '@/components/FvPrimaryButton'
 import FvProductDataTable from '@/components/FvProductDataTable'
 import FvForm from '@/components/FvForm'
-import FvProductStepDetail from '@/components/FvProductStepDetail'
 import FvQuantitySelector from '@/components/FvQuantitySelector'
 import FvYieldRateParams from '@/components/FvYieldRateParams'
 import FvRating from '@/components/FvRating'
@@ -124,7 +117,6 @@ import FvContractSummaryVisualisation from '@/components/FvContractSummaryVisual
 import FvContractStepVisualisation from '@/components/FvContractStepVisualisation'
 import FvProductList from '@/components/FvProductList'
 import FvOfferDataTable from '@/components/FvOfferDataTable'
-import FvOfferStepDetail from '@/components/FvOfferStepDetail'
 import FvOfferIndex from '@/components/FvOfferIndex'
 import FvOfferList from '@/components/FvOfferList'
 import FvOfferModal from '@/components/FvOfferModal'
@@ -174,22 +166,10 @@ Vue.component('fv-account-info', FvAccountInfo)
 Vue.component('fv-accounts-index', FvAccountsIndex)
 Vue.component('fv-address-field', FvAddressField)
 Vue.component('fv-address-modal', FvAddressModal)
-Vue.component(
-  'fv-account-step-personal-information',
-  FvAccountStepPersonalInformation
-)
 Vue.component('fv-autocomplete', FvAutocomplete)
 Vue.component('fv-avatar', FvAvatar)
 Vue.component('fv-avatar-with-name', FvAvatarWithName)
 Vue.component('fv-breadcrumbs', FvBreadcrumbs)
-Vue.component(
-  'fv-business-account-step-general-information',
-  FvBusinessAccountStepGeneralInformation
-)
-Vue.component(
-  'fv-business-account-step-juridical-information',
-  FvBusinessAccountStepJuridicalInformation
-)
 Vue.component('fv-civility-field', FvCivilityField)
 Vue.component('fv-contact-dialog', FvContactDialog)
 Vue.component('fv-contact-card', FvContactCard)
@@ -253,10 +233,6 @@ Vue.component('fv-nav', FvNav)
 Vue.component('fv-nav-bar', FvNavBar)
 Vue.component('fv-nav-bar-buyer', FvNavBarBuyer)
 Vue.component('fv-nav-bar-manage', FvNavBarManage)
-Vue.component(
-  'fv-third-party-account-step-detail',
-  FvThirdPartyAccountStepDetail
-)
 Vue.component('fv-number-field', FvNumberField)
 Vue.component(
   'fv-payment-condition-autocomplete',
@@ -268,11 +244,9 @@ Vue.component('fv-payment-condition-list', FvPaymentConditionList)
 Vue.component('fv-payment-condition-references', FvPaymentConditionReferences)
 Vue.component('fv-payment-condition-risk', FvPaymentConditionRisk)
 Vue.component('fv-payment-condition-selection', FvPaymentConditionSelection)
-Vue.component('fv-payment-condition-step-detail', FvPaymentConditionStepDetail)
 Vue.component('fv-payment-structure-data-table', FvPaymentStructureDataTable)
 Vue.component('fv-payment-structure-index', FvPaymentStructureIndex)
 Vue.component('fv-payment-structure-list', FvPaymentStructureList)
-Vue.component('fv-payment-structure-step-detail', FvPaymentStructureStepDetail)
 Vue.component('fv-payment-term-params', FvPaymentTermParams)
 Vue.component('fv-phone-field', FvPhoneField)
 Vue.component('fv-price-field', FvPriceField)
@@ -281,7 +255,6 @@ Vue.component('fv-price-with-unit', FvPriceWithUnit)
 Vue.component('fv-primary-button', FvPrimaryButton)
 Vue.component('fv-product-data-table', FvProductDataTable)
 Vue.component('fv-form', FvForm)
-Vue.component('fv-product-step-detail', FvProductStepDetail)
 Vue.component('fv-product-index', FvProductIndex)
 Vue.component('fv-quantity-selector', FvQuantitySelector)
 Vue.component('fv-yield-rate-params', FvYieldRateParams)
@@ -318,7 +291,6 @@ Vue.component(
 Vue.component('fv-contract-step-visualisation', FvContractStepVisualisation)
 Vue.component('fv-product-list', FvProductList)
 Vue.component('fv-offer-data-table', FvOfferDataTable)
-Vue.component('fv-offer-step-detail', FvOfferStepDetail)
 Vue.component('fv-offer-index', FvOfferIndex)
 Vue.component('fv-offer-list', FvOfferList)
 Vue.component('fv-offer-modal', FvOfferModal)
