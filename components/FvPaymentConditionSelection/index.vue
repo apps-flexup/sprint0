@@ -112,8 +112,7 @@ export default {
   },
   mounted() {
     console.log('Composant ', this.$options.name)
-    this.$store.dispatch('references/get')
-    this.$store.dispatch('settings/getSettings')
+    this.$store.dispatch('paymentConditions/get')
   },
   methods: {
     paymentConditionSelected(v) {
