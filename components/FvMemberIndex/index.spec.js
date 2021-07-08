@@ -10,6 +10,13 @@ let store
 const $activeAccount = {
   type: () => {
     return 'Business'
+  },
+  get: jest.fn()
+}
+
+const $auth = {
+  user: {
+    sub: ''
   }
 }
 
@@ -19,7 +26,8 @@ const factory = () => {
     store,
     mocks: {
       $t: (msg) => msg,
-      $activeAccount
+      $activeAccount,
+      $auth
     }
   })
 }
@@ -44,13 +52,22 @@ beforeEach(() => {
         getters: {
           all: jest.fn()
         }
+      },
+      members: {
+        namespaced: true,
+        actions: {
+          get: jest.fn()
+        },
+        getters: {
+          roleFor: () => () => ['admin']
+        }
       }
     }
   })
 })
 
 describe('FvMembersIndex', () => {
-  it('should render a fv member index', () => {
+  it('should render a fv member index for an admin', () => {
     const wrapper = factory()
     expect(wrapper.find('[data-testid="inviteMemberButton"]').exists()).toBe(
       true
@@ -61,7 +78,7 @@ describe('FvMembersIndex', () => {
     )
     expect(wrapper.vm.dialog).toBe(false)
   })
-  it('should display invite member modal when clicked on invite member button', () => {
+  it('should display invite member modal when clicked on invite member button for an admin', () => {
     const wrapper = factory()
     const inviteMemberButton = wrapper.find(
       '[data-testid="inviteMemberButton"]'
