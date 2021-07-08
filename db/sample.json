@@ -6,7 +6,7 @@
       "from_id": 1,
       "to_type": "User",
       "to_id": "c7e4d104-2e45-4056-94cc-10a87af32693",
-      "role": "Owner",
+      "role": "admin",
       "data": null,
       "status": "active"
     },
@@ -16,7 +16,7 @@
       "from_id": 2,
       "to_type": "User",
       "to_id": "c7e4d104-2e45-4056-94cc-10a87af32693",
-      "role": "Owner",
+      "role": "admin",
       "data": null,
       "status": "active"
     }
