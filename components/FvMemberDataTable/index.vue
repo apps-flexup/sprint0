@@ -12,14 +12,16 @@
       div {{ displayUserName(item) }}
     template(v-slot:item.role="{ item }")
       fv-role-autocomplete.role(
+        v-if="canUpdateRoleFor(item.to_id)"
         :role="item.role"
         :roles="functionalRoles"
         :dense="true"
         :clearable="false"
         @role:selected="roleSelected(item, ...arguments)"
       )
+      p.role(v-else) {{ item.role }}
     template(v-slot:item.actions="{ item }")
-      fv-delete-action(@delete:clicked="deleteItem(item)")
+      fv-delete-action(v-if="canUpdateRoleFor(item.to_id)" @delete:clicked="deleteItem(item)")
 </template>
 
 <script>
@@ -60,8 +62,25 @@ export default {
   mounted() {
     console.log('Composant ', this.$options.name)
     this.$store.dispatch('functionalRoles/get')
+    this.$store.dispatch('members/get')
   },
   methods: {
+    canUpdateRoleFor(userId) {
+      const currentUserId = this.$auth.user.sub
+      const activeAccountId = this.$activeAccount.get()
+      const roles = this.$store.getters['members/roleFor'](
+        activeAccountId,
+        currentUserId
+      )
+      const canIUpdateMyself = this.nbAdmins() <= 1 && currentUserId === userId
+      return roles.includes('admin') && !canIUpdateMyself
+    },
+    nbAdmins() {
+      const allMembers = this.$store.getters['members/all']
+      const allAdmins = allMembers.filter((member) => member.role === 'admin')
+      const nbOfAdmins = allAdmins.length
+      return nbOfAdmins
+    },
     displayUserName(item) {
       const res = this.$displayRules.userNameFromUuid(item)
       return res
