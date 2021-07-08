@@ -72,8 +72,8 @@ export default {
         activeAccountId,
         currentUserId
       )
-      const canIUpdateMyself = this.nbAdmins() <= 1 && currentUserId === userId
-      return roles.includes('admin') && !canIUpdateMyself
+      const canIUpdateMyself = this.nbAdmins() > 1 || currentUserId !== userId
+      return roles.includes('admin') && canIUpdateMyself
     },
     nbAdmins() {
       const allMembers = this.$store.getters['members/all']
