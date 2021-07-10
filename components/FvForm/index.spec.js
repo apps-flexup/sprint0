@@ -106,7 +106,7 @@ describe('FvForm', () => {
   it('should pass in read mode when cancel button is clicked and form is in edit mode', async () => {
     const wrapper = factory({ action: 'edit' })
     const cancelBtn = wrapper.find('[data-testid="cancelBtn"]')
-    cancelBtn.vm.$emit('button:clicked')
+    cancelBtn.vm.$emit('button:click')
     await wrapper.vm.$nextTick()
     expect(wrapper.find('[data-testid="editBtn"]').exists()).toBe(true)
     expect(wrapper.find('[data-testid="cancelBtn"]').exists()).toBe(false)
