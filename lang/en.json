@@ -1,4 +1,7 @@
 {
+  "ponctuation": {
+    "colons": ": "
+  },
   "errors": {
     "access": {
       "members": "Your current account does not allow to access to members feature."
@@ -246,7 +249,8 @@
       "settings": "Settings",
       "settings-new": "New settings",
       "thirdPartyAccounts": "Third party accounts",
-      "thirdPartyAccounts-id": "Edit my third party account"
+      "thirdPartyAccounts-id": "Edit my third party account",
+      "thirdPartyAccounts-new": "New third party account"
     }
   },
   "listAccounts": {
@@ -394,7 +398,8 @@
     },
     "third-party-account": {
       "step": {
-        "0": "General information"
+        "0": "General information",
+        "1": "Private information"
       }
     },
     "thirdPartyAccounts": {
@@ -402,7 +407,7 @@
         "title": "New third party account",
         "subtitle": "Specify your third party account's information",
         "name": "Third party account's name",
-        "legalStructure": "Legal structure",
+        "legal_structure_id": "Legal structure",
         "siret": "SIRET",
         "address": "Address",
         "complement": "Complement",
@@ -442,11 +447,14 @@
         "email": "Email",
         "description": "Description",
         "country": "Country",
-        "legalStructure": "Legal structure",
+        "legal-structure-id": "Legal structure",
         "siret": "SIRET"
       },
       "edit": {
         "title": "Edit my account"
+      },
+      "read": {
+        "title": "Account informations"
       }
     },
     "offers": {

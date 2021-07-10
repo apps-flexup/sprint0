@@ -59,13 +59,27 @@ describe('FvPriceField', () => {
   it('should emit an event when price changed', () => {
     const wrapper = factory()
     const priceField = wrapper.find('[data-testid="priceField"]')
-    const price = 10.42
-    priceField.vm.$emit('input', price)
+    const amount = 10.42
+    priceField.vm.$emit('input', amount)
     const expectedPrice = {
-      price: 10.42,
-      currency: 'EUR'
+      amount,
+      currency: settings.currency
     }
     const priceChangedCalls = wrapper.emitted('price:changed')
+    expect(priceChangedCalls).toBeTruthy()
+    expect(priceChangedCalls).toHaveLength(1)
+    expect(priceChangedCalls[0][0]).toEqual(expectedPrice)
+  })
+  it('should emit a generic event when price changed', () => {
+    const wrapper = factory()
+    const priceField = wrapper.find('[data-testid="priceField"]')
+    const amount = 10.42
+    priceField.vm.$emit('input', amount)
+    const expectedPrice = {
+      amount,
+      currency: settings.currency
+    }
+    const priceChangedCalls = wrapper.emitted('payload:changed')
     expect(priceChangedCalls).toBeTruthy()
     expect(priceChangedCalls).toHaveLength(1)
     expect(priceChangedCalls[0][0]).toEqual(expectedPrice)

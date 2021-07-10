@@ -1,28 +1,60 @@
-import { mount } from '@vue/test-utils'
+import { mount, createLocalVue } from '@vue/test-utils'
 import Vuetify from 'vuetify'
+import Vuex from 'Vuex'
 import FvUserAccount from './index.vue'
 
+const localVue = createLocalVue()
+localVue.use(Vuex)
+
 describe('FvUserAccount', () => {
+  const account = {
+    avatar: '/images/avatar-0.png',
+    country_id: 77,
+    currency: 'EUR',
+    id: 1,
+    name: 'account 1',
+    offers_count: 0,
+    params: {},
+    parent_id: null,
+    roles: ['customer', 'supplier'],
+    roles_methods: null,
+    supplier: false,
+    user_id: '2ae5fcf8-9ed5-480a-89c8-a2f946e72140'
+  }
+  let store
   let vuetify
   const factory = (propsData) => {
     return mount(FvUserAccount, {
+      store,
       vuetify,
+      localVue,
       stubs: {
         FvLoginButton: true,
         FvListAccounts: true
       },
       mocks: {
         $auth: {
-          loggedIn: propsData ? propsData.loggedIn : true,
-          user: {
-            preferred_username: 'toto'
-          }
+          loggedIn: propsData ? propsData.loggedIn : true
+        },
+        $activeAccount: {
+          get: () => jest.fn()
         },
         theme: {}
       }
     })
   }
   beforeEach(() => {
+    store = new Vuex.Store({
+      modules: {
+        accounts: {
+          namespaced: true,
+          getters: {
+            accountId: jest.fn(),
+            findById: () => () => account
+          }
+        }
+      }
+    })
     vuetify = new Vuetify()
   })
   it('should render a fvUserAccount when logged in', () => {

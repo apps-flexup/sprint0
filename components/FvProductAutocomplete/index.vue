@@ -3,7 +3,7 @@
   p {{ $options.name }}
   fv-autocomplete(
     data-testid="autocomplete"
-    :element="product"
+    :element="value"
     :items="items"
     :filter="filter"
     @autocomplete:selected="selected"
@@ -30,7 +30,7 @@ import { filterProductAutocomplete } from '~/plugins/utils'
 export default {
   name: 'FvProductAutocomplete',
   props: {
-    product: {
+    value: {
       type: Number,
       default() {
         return null
@@ -50,9 +50,13 @@ export default {
   methods: {
     selected(v) {
       this.$emit('products:selected', v)
+      this.emitGenericSignalForForm(v)
     },
     filter(item, v, it) {
       return filterProductAutocomplete(item, v, it)
+    },
+    emitGenericSignalForForm(payload) {
+      this.$emit('payload:changed', payload)
     }
   }
 }

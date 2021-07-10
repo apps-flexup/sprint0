@@ -119,7 +119,7 @@ beforeEach(() => {
 })
 
 describe('FvCountryAutocomplete', () => {
-  it('should render a fv category autocomplete', () => {
+  it('should render a fv country autocomplete', () => {
     const wrapper = factory()
     expect(wrapper.find('[data-testid=autocomplete]').exists()).toBe(true)
   })
@@ -127,14 +127,24 @@ describe('FvCountryAutocomplete', () => {
     const wrapper = factory()
     expect(wrapper.vm.items).toEqual(countries)
   })
-  it('should emit an event when category is selected', () => {
+  it('should emit an event when country is selected', () => {
     const wrapper = factory()
     const autocomplete = wrapper.find('[data-testid=autocomplete]')
-    const selectedCategory = countries[0]
-    autocomplete.vm.$emit('autocomplete:selected', selectedCategory)
+    const selectedCountry = countries[0]
+    autocomplete.vm.$emit('autocomplete:selected', selectedCountry)
     const selectedCalls = wrapper.emitted('country:selected')
     expect(selectedCalls).toBeTruthy()
     expect(selectedCalls).toHaveLength(1)
-    expect(selectedCalls[0][0]).toBe(selectedCategory)
+    expect(selectedCalls[0][0]).toBe(selectedCountry)
+  })
+  it('should emit a generic event when country is selected', () => {
+    const wrapper = factory()
+    const autocomplete = wrapper.find('[data-testid=autocomplete]')
+    const selectedCountry = countries[0]
+    autocomplete.vm.$emit('autocomplete:selected', selectedCountry)
+    const selectedCalls = wrapper.emitted('payload:changed')
+    expect(selectedCalls).toBeTruthy()
+    expect(selectedCalls).toHaveLength(1)
+    expect(selectedCalls[0][0]).toBe(selectedCountry)
   })
 })

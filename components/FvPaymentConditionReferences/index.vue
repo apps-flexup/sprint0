@@ -1,11 +1,5 @@
 <template lang="pug">
-.fv-payment-condition-step-detail
-  fv-text-field.label(
-    data-testid="labelField"
-    :value="label"
-    :label="$t('forms.paymentConditions.new.label')"
-    @input="labelChanged"
-  )
+.fv-payment-condition-references
   div(v-for="reference in references" :key="reference.key" :style="cssVars")
     v-row(class="align-center")
       v-col(cols="10")
@@ -28,22 +22,15 @@
           :value="getParamValueForReference(reference)"
           @referenceParams:changed="referenceParamsChanged(reference, ...arguments)"
         )
-  v-divider
-  v-row(class="justify-center align-center" :style="cssVars")
-    v-col(cols="10")
-    v-col.center(cols="1")
-      span.total {{ $t('forms.paymentConditions.new.total') }}
-    v-col.center(cols="1")
-      v-chip.total(:color="avatarColor") {{ total }}%
 </template>
 
 <script>
 import { filterReferenceAutocomplete } from '~/plugins/utils'
 
 export default {
-  name: 'FvPaymentConditionStepDetail',
+  name: 'FvPaymentConditionReferences',
   props: {
-    payload: {
+    value: {
       type: Object,
       default() {
         return {}
@@ -51,31 +38,12 @@ export default {
     }
   },
   computed: {
-    label() {
-      const res = this.payload ? this.payload.label : null
-      return res
-    },
     selectedReferences() {
-      const references = this.payload ? this.payload.references : null
-      const res = references || {}
+      const res = JSON.parse(JSON.stringify(this.value)) || {}
       return res
     },
     references() {
       const res = this.$store.getters['references/all']
-      return res
-    },
-    total() {
-      let res = 0
-      if (!this.selectedReferences) return res
-      const references = this.selectedReferences
-      for (const reference of Object.values(references)) {
-        if (res === 0) {
-          res = reference.value
-        } else {
-          res *= reference.value / 100
-        }
-      }
-      res = Math.round(res * 10) / 10
       return res
     },
     avatarColor() {
@@ -102,20 +70,10 @@ export default {
     this.$store.dispatch('settings/getSettings')
   },
   methods: {
-    labelChanged(v) {
-      const payload = {
-        label: v
-      }
-      this.$emit('payload:changed', payload)
-    },
     referenceSelected(reference, v) {
-      const references = this.selectedReferences
+      const references = JSON.parse(JSON.stringify(this.selectedReferences))
       references[reference.key] = v
-      const payload = {
-        references,
-        risk: this.total
-      }
-      this.$emit('payload:changed', payload)
+      this.$emit('payload:changed', references)
     },
     getElementForReference(reference) {
       const res = this.selectedReferences[reference.key]
@@ -182,12 +140,6 @@ export default {
 </script>
 
 <style scoped>
-::v-deep .v-divider {
-  background-color: darkgray;
-  margin-top: 8px;
-  height: 2px;
-  max-height: initial;
-}
 .label {
   margin-bottom: 8px;
 }
@@ -196,10 +148,5 @@ export default {
 }
 .referenceKey {
   color: var(--fontColor);
-}
-.total {
-  font-weight: bold;
-  color: var(--fontColor);
-  font-size: 1rem;
 }
 </style>

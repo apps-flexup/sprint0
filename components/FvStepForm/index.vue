@@ -60,6 +60,7 @@ export default {
   font-size: 35px;
 }
 ::v-deep .v-list-item {
+  padding: inherit;
   min-height: 30px;
 }
 </style>

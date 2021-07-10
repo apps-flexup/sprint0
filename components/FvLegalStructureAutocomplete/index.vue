@@ -23,7 +23,7 @@ export default {
   name: 'FvLegalStructureAutocomplete',
   inheritAttrs: true,
   props: {
-    legalStructureId: {
+    value: {
       type: Number,
       default() {
         return null
@@ -40,6 +40,10 @@ export default {
     items() {
       const res = this.$store.getters['contracts/legalStructures']
       return res
+    },
+    legalStructureId() {
+      const res = this.value
+      return res
     }
   },
   mounted() {
@@ -49,9 +53,13 @@ export default {
   methods: {
     selected(v) {
       this.$emit('legalstructure:selected', v)
+      this.emitGenericSignalForForm(v)
     },
     filter(item, v, it) {
       return filterLegalStructureAutocomplete(item, v, it)
+    },
+    emitGenericSignalForForm(payload) {
+      this.$emit('payload:changed', payload)
     }
   }
 }

@@ -1,14 +1,14 @@
 import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
 import { action } from '@storybook/addon-actions'
-import FvAccountStepContactInformation from './index.vue'
+import FvAccountMedias from './index.vue'
 
-<Meta title='Molecules/FvAccountStepContactInformation' component={ FvAccountStepContactInformation } />
+<Meta title='Molecules/FvAccountMedias' component={ FvAccountMedias } />
 
-# FvAccountStepContactInformation
+# FvAccountMedias
 
 <Canvas>
 <Story name='Common' height='150px'>{{
-  components: { FvAccountStepContactInformation },
+  components: { FvAccountMedias },
   data() {
     return {
       localPayload: {}
@@ -19,14 +19,14 @@ import FvAccountStepContactInformation from './index.vue'
       this.localPayload = Object.assign({}, this.localPayload, payload)
     }
   },
-  template: `<FvAccountStepContactInformation
+  template: `<FvAccountMedias
     :payload="localPayload"
     @payload:changed="payloadChanged"
   >
-  </FvAccountStepContactInformation>`
+  </FvAccountMedias>`
 }}</Story>
 </Canvas>
 
 ## Props
 
-<Props of={ FvAccountStepContactInformation } />
+<Props of={ FvAccountMedias } />

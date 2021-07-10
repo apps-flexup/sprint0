@@ -1,4 +1,7 @@
 {
+  "ponctuation": {
+    "colons": " : "
+  },
   "errors": {
     "access": {
       "members": "Votre compte actuel ne permet pas d'accéder à la gestion des membres"
@@ -245,7 +248,8 @@
       "settings": "Préférences",
       "settings-new": "Créer préférences",
       "thirdPartyAccounts": "Comptes tiers",
-      "thirdPartyAccounts-id": "Modifier mon compte tiers"
+      "thirdPartyAccounts-id": "Modifier mon compte tiers",
+      "thirdPartyAccounts-new": "Créer mon compte tiers"
     }
   },
   "listAccounts": {
@@ -396,7 +400,8 @@
     },
     "third-party-account": {
       "step": {
-        "0": "Informations générales"
+        "0": "Informations générales",
+        "1": "Informations privées"
       }
     },
     "thirdPartyAccounts": {
@@ -404,7 +409,7 @@
         "title": "Nouveau compte tiers",
         "subtitle": "Précisez les informations de votre compte tiers",
         "name": "Nom du compte tiers",
-        "legalStructure": "Statut juridique",
+        "legal_structure_id": "Statut juridique",
         "siret": "SIRET",
         "address": "Adresse",
         "complement": "Complément",
@@ -444,11 +449,14 @@
         "email": "Email",
         "description": "Description",
         "country": "Pays",
-        "legalStructure": "Statut juridique",
+        "legal-structure-id": "Statut juridique",
         "siret": "SIRET"
       },
       "edit": {
         "title": "Modifier mon compte"
+      },
+      "read": {
+        "title": "Informations du compte"
       }
     },
     "offers": {

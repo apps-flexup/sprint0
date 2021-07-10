@@ -15,7 +15,7 @@
           v-bind='attrs'
           v-on='on'
         )
-          | {{ $auth.user.preferred_username }}
+          | {{ activeAccountName }}
       fv-list-accounts(data-testid="accountList")
 </template>
 
@@ -24,6 +24,14 @@ export default {
   name: 'FvUserAccounts',
   mounted() {
     console.log('Composant ', this.$options.name)
+  },
+  computed: {
+    activeAccountName() {
+      const accountId = this.$activeAccount.get()
+      const account = this.$store.getters['accounts/findById'](accountId)
+      const res = account.name
+      return res
+    }
   }
 }
 </script>

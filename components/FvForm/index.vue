@@ -8,9 +8,17 @@
       icon="mdi-chevron-left"
       @icon:clicked="cancel"
     )
-    h1(data-testid="pageTitle") {{ $t('forms.' + form + '.' + action + '.title') }}
+    h1(data-testid="pageTitle") {{ $t('forms.' + form + '.' + localAction + '.title') }}
+    v-spacer
+    fv-icon(
+      v-if="readonly"
+      data-testid="editBtn"
+      icon="mdi-circle-edit-outline"
+      size="xLarge"
+      @icon:clicked="editClicked"
+    )
   v-list.mt-10(
-    data-testid="listProductStep"
+    data-testid="steps"
     v-for="(step, index) in formSteps"
     :key="index"
   )
@@ -20,14 +28,18 @@
       :title="$t(step.title)"
     )
       template(slot="form")
-        component(
-          data-testid="stepComponent"
-          :is="step.component"
-          :payload="localPayload"
-          :readonly="readonly"
-          @payload:changed="payloadChanged"
-        )
-  div.btn.mt-10
+        v-row(v-for="field in fieldsForStep(step)" :key="field.attribute")
+          v-col(cols="field.size")
+            component(
+              data-testid="fieldComponent"
+              :is="field.component"
+              :label="$t(`forms.${form}.new.${field.attribute}`)"
+              :value="field.input ? payload[field.input] : payload[field.attribute]"
+              :search="localPayload"
+              @value:changed="payloadChanged(field.additionalOutputs, field.attribute, ...arguments)"
+              @payload:changed="payloadChanged(field.additionalOutputs, field.attribute, ...arguments)"
+            )
+  div.btn.mt-10(v-if="!readonly")
     fv-secondary-button(
       data-testid="cancelBtn"
       @button:click="cancel"
@@ -37,6 +49,7 @@
       @button:click="submit"
     ) {{ $t('forms.products.new.validate') }}
 </template>
+
 <script>
 export default {
   name: 'FvForm',
@@ -50,7 +63,7 @@ export default {
     action: {
       type: String,
       default() {
-        return null
+        return 'read'
       }
     },
     url: {
@@ -68,7 +81,8 @@ export default {
   },
   data() {
     return {
-      localPayload: this.payload
+      localPayload: this.payload,
+      localAction: this.action || 'read'
     }
   },
   computed: {
@@ -77,16 +91,8 @@ export default {
       return res
     },
     readonly() {
-      const res = this.action === 'read'
+      const res = this.localAction === 'read'
       return res
-    }
-  },
-  watch: {
-    payload: {
-      deep: true,
-      handler() {
-        this.localPayload = Object.assign({}, this.localPayload, this.payload)
-      }
     }
   },
   mounted() {
@@ -107,11 +113,33 @@ export default {
       this.$nuxt.$loading.finish()
     },
     cancel() {
-      this.$router.go(-1)
-      this.$emit('clicked')
+      if (this.localAction === 'read') this.$router.go(-1)
+      else this.localAction = 'read'
     },
-    payloadChanged(payload) {
-      this.localPayload = Object.assign({}, this.localPayload, payload)
+    payloadChanged(additionalOutputs, attribute, value) {
+      if (additionalOutputs) {
+        additionalOutputs.push(attribute)
+        additionalOutputs.forEach((output) => {
+          if (value[output]) this.$set(this.localPayload, output, value[output])
+        })
+      } else this.$set(this.localPayload, attribute, value)
+    },
+    editClicked() {
+      this.localAction = 'edit'
+    },
+    hasRightToEdit() {
+      const res = !this.readonly
+      return res
+    },
+    fieldsForStep(step) {
+      if (!step.fields) return []
+      const fields = step.fields.map((field) => ({ ...field }))
+      fields.forEach((field) => {
+        if (!this.hasRightToEdit()) {
+          field.component = field['readonly-component'] || 'fv-readonly-field'
+        }
+      })
+      return fields
     }
   }
 }

@@ -1,6 +1,7 @@
 export default {
   set(state, items) {
     state.items = items
+    state.all = items
   },
   setAll(state, items) {
     state.all = items

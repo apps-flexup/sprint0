@@ -225,7 +225,7 @@
           "value": 100
         }
       },
-      "risk": 45,
+      "risk": 30,
       "label": "Flex simple",
       "account_id": 1,
       "id": 4
@@ -449,16 +449,6 @@
           {
             "align": "left",
             "sortable": true,
-            "text": "headers.products.category",
-            "value": "category_id",
-            "order": 1,
-            "customizable": true,
-            "active": true,
-            "displayed": true
-          },
-          {
-            "align": "left",
-            "sortable": true,
             "text": "headers.products.unit",
             "value": "unit",
             "order": 2,
@@ -514,47 +504,6 @@
             "text": "headers.thirdPartyAccounts.legalStructure",
             "value": "legal_structure_id",
             "order": 2,
-            "customizable": true,
-            "active": true,
-            "displayed": true
-          },
-          {
-            "align": "left",
-            "sortable": true,
-            "text": "headers.thirdPartyAccounts.address",
-            "city": "Courtanche sur Mer",
-            "value": "address",
-            "order": 3,
-            "customizable": true,
-            "active": true,
-            "displayed": true
-          },
-          {
-            "align": "right",
-            "sortable": true,
-            "text": "headers.thirdPartyAccounts.zip",
-            "value": "zip",
-            "order": 4,
-            "customizable": true,
-            "active": true,
-            "displayed": true
-          },
-          {
-            "align": "left",
-            "sortable": true,
-            "text": "headers.thirdPartyAccounts.city",
-            "value": "city",
-            "order": 5,
-            "customizable": true,
-            "active": true,
-            "displayed": true
-          },
-          {
-            "align": "left",
-            "sortable": true,
-            "text": "headers.thirdPartyAccounts.country",
-            "value": "country_id",
-            "order": 6,
             "customizable": true,
             "active": true,
             "displayed": true
@@ -1002,7 +951,6 @@
     },
     {
       "account_id": 1,
-      "currency": "USD",
       "headers": {
         "products": [],
         "third_party_accounts": [],
@@ -1035,7 +983,7 @@
   "accounts": [
     {
       "avatar": "/images/avatar-0.png",
-      "country_id": 77,
+      "country": "FRA",
       "name": "Toto",
       "type": "Personal",
       "offers_count": 0,
@@ -1095,10 +1043,9 @@
     },
     {
       "avatar": "/images/avatar-2.png",
-      "country_id": 77,
+      "country": "FRA",
       "parent_type": "Account",
       "parent_id": 1,
-      "id": 2,
       "type": "Business",
       "name": "My business (supplier)",
       "offers_count": 0,
@@ -1108,7 +1055,45 @@
       ],
       "roles_methods": null,
       "supplier": false,
-      "currency": "EUR"
+      "currency": "EUR",
+      "description": "Ma super description",
+      "siret": "12345",
+      "legal-structure-id": 3,
+      "medias": [
+        {
+          "description": {
+            "type": "Address",
+            "value": {
+              "street": "12 rue des plopliers",
+              "zip": "12355",
+              "city": "test",
+              "country": "FRA"
+            },
+            "label": null
+          },
+          "entity_type": "Account",
+          "entity_id": 2
+        },
+        {
+          "description": {
+            "type": "Mail",
+            "value": "mybusiness@email.com",
+            "label": null
+          },
+          "entity_type": "Account",
+          "entity_id": 2
+        },
+        {
+          "description": {
+            "type": "Phone",
+            "value": "123632521",
+            "label": null
+          },
+          "entity_type": "Account",
+          "entity_id": 2
+        }
+      ],
+      "id": 2
     }
   ],
   "categories": [
@@ -2059,26 +2044,85 @@
   ],
   "business-account-steps": [
     {
-      "component": "fv-business-account-step-general-information",
-      "title": "forms.account.business.step.0"
+      "title": "forms.account.business.step.0",
+      "fields": [
+        {
+          "attribute": "name",
+          "component": "fv-text-field",
+          "size": 12
+        },
+        {
+          "attribute": "description",
+          "component": "fv-text-field",
+          "size": 12
+        },
+        {
+          "attribute": "country",
+          "component": "fv-country-autocomplete",
+          "readonly-component": "fv-country-readonly",
+          "size": 12
+        }
+      ]
     },
     {
-      "component": "fv-business-account-step-juridical-information",
-      "title": "forms.account.business.step.1"
+      "title": "forms.account.business.step.1",
+      "fields": [
+        {
+          "attribute": "legal-structure-id",
+          "component": "fv-legal-structure-autocomplete",
+          "readonly-component": "fv-legal-structure-readonly",
+          "size": 12
+        },
+        {
+          "attribute": "siret",
+          "component": "fv-text-field",
+          "size": 12
+        }
+      ]
     },
     {
-      "component": "fv-account-step-contact-information",
-      "title": "forms.account.business.step.2"
+      "title": "forms.account.business.step.2",
+      "fields": [
+        {
+          "attribute": "medias",
+          "component": "fv-account-medias",
+          "readonly-component": "fv-account-medias-readonly",
+          "size": 12
+        }
+      ]
     }
   ],
   "personal-account-steps": [
     {
-      "component": "fv-account-step-personal-information",
-      "title": "forms.account.personal.step.0"
+      "title": "forms.account.personal.step.0",
+      "fields": [
+        {
+          "attribute": "name",
+          "component": "fv-text-field",
+          "size": 12
+        },
+        {
+          "attribute": "lastname",
+          "component": "fv-text-field",
+          "size": 12
+        },
+        {
+          "attribute": "firstname",
+          "component": "fv-text-field",
+          "size": 12
+        }
+      ]
     },
     {
-      "component": "fv-account-step-contact-information",
-      "title": "forms.account.personal.step.1"
+      "title": "forms.account.personal.step.1",
+      "fields": [
+        {
+          "attribute": "medias",
+          "component": "fv-account-medias",
+          "readonly-component": "fv-account-medias-readonly",
+          "size": 12
+        }
+      ]
     }
   ],
   "contact-steps": [
@@ -2197,32 +2241,128 @@
   ],
   "product-steps": [
     {
-      "component": "fv-product-step-detail",
-      "title": "forms.product.step.0"
+      "title": "forms.product.step.0",
+      "fields": [
+        {
+          "attribute": "name",
+          "component": "fv-text-field",
+          "size": 12
+        },
+        {
+          "attribute": "unit",
+          "component": "fv-unit-autocomplete",
+          "size": 12
+        }
+      ]
     }
   ],
   "offer-steps": [
     {
-      "component": "fv-offer-step-detail",
-      "title": "forms.offer.step.0"
+      "title": "forms.offer.step.0",
+      "fields": [
+        {
+          "attribute": "product_id",
+          "component": "fv-product-autocomplete",
+          "size": 12
+        },
+        {
+          "attribute": "name",
+          "component": "fv-text-field",
+          "size": 12
+        },
+        {
+          "attribute": "price",
+          "component": "fv-price-field",
+          "size": 12
+        },
+        {
+          "attribute": "vat",
+          "component": "fv-vat-field",
+          "size": 12
+        },
+        {
+          "attribute": "unit",
+          "component": "fv-unit-autocomplete-for-offer",
+          "size": 12
+        }
+      ]
     }
   ],
   "third-party-account-steps": [
     {
-      "component": "fv-third-party-account-step-detail",
-      "title": "forms.third-party-account.step.0"
+      "title": "forms.third-party-account.step.0",
+      "fields": [
+        {
+          "attribute": "name",
+          "component": "fv-text-field",
+          "size": 12
+        },
+        {
+          "attribute": "legal_structure_id",
+          "component": "fv-legal-structure-autocomplete",
+          "readonly-component": "fv-legal-structure-readonly",
+          "size": 12
+        },
+        {
+          "attribute": "siret",
+          "component": "fv-text-field",
+          "size": 12
+        }
+      ]
+    },
+    {
+      "title": "forms.third-party-account.step.1",
+      "fields": [
+        {
+          "attribute": "medias",
+          "component": "fv-account-medias",
+          "readonly-component": "fv-account-medias-readonly",
+          "size": 12
+        }
+      ]
     }
   ],
   "payment-condition-steps": [
     {
-      "component": "fv-payment-condition-step-detail",
-      "title": "forms.payment-condition.step.0"
+      "title": "forms.payment-condition.step.0",
+      "fields": [
+        {
+          "attribute": "label",
+          "component": "fv-text-field",
+          "size": 12
+        },
+        {
+          "attribute": "references",
+          "component": "fv-payment-condition-references",
+          "size": 12
+        },
+        {
+          "attribute": "risk",
+          "input": "references",
+          "component": "fv-payment-condition-risk",
+          "size": 12
+        }
+      ]
     }
   ],
   "payment-structure-steps": [
     {
-      "component": "fv-payment-structure-step-detail",
-      "title": "forms.payment-structure.step.0"
+      "title": "forms.payment-structure.step.0",
+      "fields": [
+        {
+          "attribute": "label",
+          "component": "fv-text-field",
+          "size": 12
+        },
+        {
+          "attribute": "paymentConditions",
+          "additionalOutputs": [
+            "risk"
+          ],
+          "component": "fv-payment-condition-selection",
+          "size": 12
+        }
+      ]
     }
   ],
   "contract-types": [
@@ -14435,9 +14575,10 @@
       "account_id": 1,
       "active": true,
       "product_id": 18,
-      "currency": "EUR",
-      "dimension": "unit",
-      "unit": "Unit",
+      "unit": {
+        "dimension": "unit",
+        "unit": "Unit"
+      },
       "description": {
         "en": "description of offer fab",
         "fr": "description of Le jeu des 7 familles"
@@ -14446,10 +14587,7 @@
       "evaluation_avg": 6.5,
       "favorite": true,
       "illustration_url": "https://placeimg.com/640/480?id=3",
-      "name": {
-        "en": "7 familly game",
-        "fr": "Le jeu des 7 familles"
-      },
+      "name": "Le jeu des 7 familles",
       "offer_at_client": true,
       "offer_at_supplier": true,
       "offer_remote": true,
@@ -14461,7 +14599,10 @@
         },
         "quantity_of_cards": 52
       },
-      "price": 10,
+      "price": {
+        "amount": 10,
+        "currency": "EUR"
+      },
       "reference": "BAVAFC",
       "status": "active",
       "vat": "20.5",
@@ -14471,9 +14612,10 @@
       "account_id": 1,
       "active": true,
       "product_id": 19,
-      "currency": "EUR",
-      "dimension": "duration",
-      "unit": "hr",
+      "unit": {
+        "dimension": "duration",
+        "unit": "hr"
+      },
       "description": {
         "en": "description of offer php"
       },
@@ -14481,9 +14623,7 @@
       "evaluation_avg": 6.5,
       "favorite": true,
       "illustration_url": "https://placeimg.com/640/480?id=4",
-      "name": {
-        "en": "name of offer php"
-      },
+      "name": "name of offer php",
       "offer_at_client": true,
       "offer_at_supplier": true,
       "offer_remote": true,
@@ -14494,7 +14634,10 @@
         },
         "plop": 2525
       },
-      "price": 100,
+      "price": {
+        "amount": 100,
+        "currency": "EUR"
+      },
       "reference": "EICMNB",
       "status": "archived",
       "vat": "12.0",
@@ -14543,25 +14686,47 @@
   "third-party-accounts": [
     {
       "account_id": 1,
-      "address": "12 rue de la poupée qui tousse",
       "avatar": "/images/avatar-0.png",
-      "city": "Braniole de turbeuse",
-      "country_id": 157,
       "name": "plop",
-      "zip": "15774",
       "legal_structure_id": 13,
-      "siret": "1231231312",
+      "siret": "123123123",
+      "medias": [
+        {
+          "entity_type": "Alien",
+          "entity_id": 1,
+          "description": {
+            "type": "Address",
+            "value": {
+              "street": "12 rue de la poupée qui tousse",
+              "zip": "15774",
+              "city": "Braniole de turbeuse",
+              "country": "NLD"
+            }
+          }
+        }
+      ],
       "id": 1
     },
     {
       "account_id": 1,
-      "address": "25 rue de tata janine\n12 etage\nporte gauche",
-      "city": "Choublon les croigneuses",
-      "country_id": 77,
       "name": "plip",
-      "zip": "98760103",
       "legal_structure_id": 6,
-      "id": 6
+      "id": 2,
+      "medias": [
+        {
+          "entity_type": "Alien",
+          "entity_id": 1,
+          "description": {
+            "type": "Address",
+            "value": {
+              "street": "25 rue de tata janine",
+              "zip": "98760103",
+              "city": "Choublon les croigneuses",
+              "country": "FRA"
+            }
+          }
+        }
+      ]
     }
   ],
   "products": [
@@ -14569,40 +14734,72 @@
       "account_id": 1,
       "category_id": 55,
       "currency": "EUR",
-      "dimension": "duration",
+      "unit": {
+        "unit": "month",
+        "dimension": "duration"
+      },
       "name": "Appartement Paris 8",
       "price": "1250",
       "quantity": 1,
       "status": "active",
-      "unit": "month",
       "id": 1
     },
     {
       "account_id": 1,
       "category_id": 55,
       "currency": "EUR",
-      "dimension": "duration",
+      "unit": {
+        "unit": "month",
+        "dimension": "duration"
+      },
       "name": "Appartement Paris 19",
       "price": "300",
       "quantity": 1,
       "status": "inactive",
-      "unit": "month",
       "id": 2
     },
     {
       "category_id": 22,
       "name": "Bananes",
-      "unit": "quarter",
-      "dimension": "duration",
+      "unit": {
+        "unit": "kg",
+        "dimension": "weight"
+      },
       "status": "draft",
       "account_id": 1,
+      "category": {
+        "active": true,
+        "allow_at_client": true,
+        "allow_at_supplier": true,
+        "allow_remote": false,
+        "allow_shipping": true,
+        "description": {
+          "en": "English",
+          "fr": "French"
+        },
+        "dimension": null,
+        "id": 22,
+        "name": {
+          "en": "Creamery",
+          "fr": "Fruits & Légumes"
+        },
+        "offers_count": 0,
+        "orderable": true,
+        "other_parent": [],
+        "parent_id": 21,
+        "sort_order": 2,
+        "status": "active",
+        "unit": null
+      },
       "id": 15
     },
     {
       "category_id": 13,
       "name": "Peinture métalisé",
-      "unit": "cl",
-      "dimension": "volume",
+      "unit": {
+        "unit": "cl",
+        "dimension": "volume"
+      },
       "status": "draft",
       "account_id": 1,
       "id": 16
@@ -14610,17 +14807,45 @@
     {
       "category_id": 44,
       "name": "Jeu 7 familles",
-      "unit": "hr",
-      "dimension": "duration",
+      "unit": {
+        "unit": "Unit",
+        "dimension": "unit"
+      },
       "status": "draft",
       "account_id": 1,
+      "category": {
+        "active": true,
+        "allow_at_client": true,
+        "allow_at_supplier": true,
+        "allow_remote": false,
+        "allow_shipping": true,
+        "description": {
+          "en": "English",
+          "fr": "French"
+        },
+        "dimension": "number",
+        "id": 44,
+        "name": {
+          "en": "Card Games",
+          "fr": "Jeux de cartes"
+        },
+        "offers_count": 1,
+        "orderable": true,
+        "other_parent": [],
+        "parent_id": 43,
+        "sort_order": 0,
+        "status": "active",
+        "unit": "Nr"
+      },
       "id": 18
     },
     {
       "category_id": 52,
       "name": "PHP",
-      "unit": "hr",
-      "dimension": "duration",
+      "unit": {
+        "unit": "hr",
+        "dimension": "duration"
+      },
       "status": "draft",
       "account_id": 1,
       "id": 19
