@@ -1,16 +1,20 @@
 <template lang="pug">
 .fv-readonly-field
-  div(:style="cssVars")
-    h3.font-weight-regular {{ title }}
-    div.value {{ value }}
-    v-divider.divider
+  v-row(:style="cssVars")
+    v-col(cols="12")
+      fv-text-field.text(
+        :label="label"
+        v-model="value"
+        :clearable="false"
+        readonly
+      )
 </template>
 
 <script>
 export default {
   name: 'FvReadonlyField',
   props: {
-    title: {
+    label: {
       type: String,
       default() {
         return null
@@ -28,8 +32,10 @@ export default {
       const settings = this.$store.getters['settings/settings']
       const theme = settings.theme
       const color = theme === 'light' ? 'black' : 'white'
+      const bgColor = theme === 'light' ? '#E6E6E6' : '#1E1E1E'
       const res = {
-        '--textColor': color
+        '--textColor': color,
+        '--bgColor': bgColor
       }
       return res
     }
@@ -42,12 +48,13 @@ export default {
 </script>
 
 <style scoped>
-.value {
+.text {
   color: var(--textColor) !important;
-  margin-top: 10px;
 }
-.divider {
-  margin-top: 10px;
-  margin-bottom: 10px;
+::v-deep .col {
+  padding: 0 12px;
+}
+::v-deep .v-input__slot {
+  background-color: var(--bgColor) !important;
 }
 </style>

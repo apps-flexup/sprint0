@@ -2,26 +2,28 @@
 .fv-price-field
   fv-number-field(
     data-testid="priceField"
-    :value="price"
+    :value="amount"
     :label="label"
     :outlined="outlined"
     :readonly="readonly"
     :clearable="clearable"
-    :suffix="currency ? currency.symbole : null"
-    @input="priceChanged"
+    :suffix="preferredCurrency ? preferredCurrency.symbole : null"
+    @input="amountChanged"
     @click="onClick"
     @click:outside="onClickOutside"
   )
 </template>
 
 <script>
+import { convert } from '~/plugins/currencies'
+
 export default {
   name: 'FvPriceField',
   props: {
     value: {
-      type: [String, Number],
+      type: Object,
       default() {
-        return ''
+        return null
       }
     },
     label: {
@@ -55,7 +57,7 @@ export default {
     }
   },
   computed: {
-    currency() {
+    preferredCurrency() {
       const iso = this.$activeAccount.settings().currency
       const res = this.$store.getters['currencies/findIso'](iso)
       return res
@@ -66,8 +68,20 @@ export default {
       const res = settings.price_nb_after_decimal_point
       return res
     },
-    price() {
-      let res = this.value
+    currency() {
+      const res = this.value ? this.value.currency : null
+      return res
+    }
+  },
+  asyncComputed: {
+    async amount() {
+      const amount = this.value ? this.value.amount : null
+      if (!amount) return null
+      const fromCurrency = this.currency
+      if (!fromCurrency) return null
+      const toCurrency = this.preferredCurrency.iso3
+      if (!toCurrency) return null
+      let res = await convert(fromCurrency, toCurrency, amount)
       if (this.truncatePrice && this.nbDigitsAfterDecimalPoint) {
         const multiplier = 10 ** this.nbDigitsAfterDecimalPoint
         res = (Math.round(res * multiplier) / multiplier).toFixed(
@@ -82,18 +96,22 @@ export default {
     this.$store.dispatch('currencies/get')
   },
   methods: {
-    priceChanged(v) {
+    amountChanged(v) {
       const payload = {
-        price: parseFloat(v),
-        currency: this.currency ? this.currency.iso3 : null
+        amount: parseFloat(v),
+        currency: this.preferredCurrency ? this.preferredCurrency.iso3 : null
       }
       this.$emit('price:changed', payload)
+      this.emitGenericSignalForForm(payload)
     },
     onClick() {
       this.truncatePrice = false
     },
     onClickOutside() {
       this.truncatePrice = true
+    },
+    emitGenericSignalForForm(payload) {
+      this.$emit('payload:changed', payload)
     }
   }
 }

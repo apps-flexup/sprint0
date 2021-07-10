@@ -11,8 +11,6 @@
   )
     template(v-slot:item.legal_structure_id="{ item }")
       div {{ displayLegalStructure(item) }}
-    template(v-slot:item.country_id="{ item }")
-      div {{ displayCountry(item) }}
     template(v-slot:item.actions="{ item }")
       v-row
         v-icon.mr-2(small='' @click.stop="showContract(item)")
@@ -58,10 +56,6 @@ export default {
   methods: {
     displayLegalStructure(item) {
       const res = this.$displayRules.legalStructure(item)
-      return res
-    },
-    displayCountry(item) {
-      const res = this.$displayRules.country(item)
       return res
     },
     showContract(v) {

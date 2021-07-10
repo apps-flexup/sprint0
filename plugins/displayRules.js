@@ -29,8 +29,8 @@ const displayRules = (ctx) => ({
     const unit = item.unit
     if (!unit) return null
     const i18n = ctx.app.i18n
-    const dimension = i18n.t('units.dimension.' + item.dimension)
-    let res = i18n.t('units.symbol.' + unit)
+    const dimension = i18n.t('units.dimension.' + unit.dimension)
+    let res = i18n.t('units.symbol.' + unit.unit)
     if (dimension) res += ' (' + dimension + ')'
     return res
   },
@@ -85,7 +85,9 @@ const displayRules = (ctx) => ({
     const unit = item.unit
     if (!unit) return null
     const i18n = ctx.app.i18n
-    const res = formatedPrice.toString() + '/' + i18n.t('units.symbol.' + unit)
+    const translatedUnit = i18n.t('units.symbol.' + unit.unit)
+    const priceToString = formatedPrice.toString()
+    const res = `${priceToString}/${translatedUnit}`
     return res
   },
   async priceToPreferredCurrency(item) {

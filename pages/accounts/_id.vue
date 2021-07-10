@@ -5,7 +5,7 @@
     @form:submit="editAccount"
     url='accounts'
     :form='formForAccountType'
-    :action="action"
+    action="read"
   )
 </template>
 
@@ -30,11 +30,6 @@ export default {
       const account = this.account
       const type = account.type.toLowerCase()
       const res = `${type}Accounts`
-      return res
-    },
-    action() {
-      const type = this.accountType
-      const res = type === 'Personal' ? 'read' : 'edit'
       return res
     }
   },

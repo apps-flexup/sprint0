@@ -1,13 +1,9 @@
 <template lang="pug">
-.fv-account-step-contact-information
+.fv-account-medias
   div(v-for="(rule, index) in rules" :key="index")
     h3.font-weight-regular(data-testid="mediaName") {{ $t('mediaField.' + rule.toLowerCase() + '.title') }}
     v-row(v-for="(media, index) in getMediasForRule(rule)" :key="index")
-      v-col(v-if="readonly" cols="12")
-        fv-readonly-field(
-          :value="getValueForMedia(media.description)"
-        )
-      v-col(v-else cols="12")
+      v-col(cols="12")
         fv-address-field(
           v-if="media.description.type === 'Address'"
           data-testid='addressField'
@@ -37,7 +33,6 @@
         )
     fv-text-button(
         data-testid="addNewMediaButton"
-        v-if="!readonly"
         @button:click="addNewMedia(rule)"
       )
         template(v-slot:icon)
@@ -49,25 +44,17 @@
           )
         template(v-slot:text)
           | {{ $t('mediaField.new.' + rule.toLowerCase()) }}
-    v-divider.line(v-if="!readonly && index + 1 !== rules.length")
+    v-divider.line(v-if="index + 1 !== rules.length")
 </template>
 
 <script>
-import { addressToString } from '~/plugins/utils'
-
 export default {
-  name: 'FvAccountStepContactInformation',
+  name: 'FvAccountMedias',
   props: {
-    payload: {
-      type: Object,
+    value: {
+      type: Array,
       default() {
         return null
-      }
-    },
-    readonly: {
-      type: Boolean,
-      default() {
-        return false
       }
     }
   },
@@ -78,8 +65,7 @@ export default {
   },
   computed: {
     medias() {
-      const medias = this.payload ? this.payload.medias : null
-      const res = medias || []
+      const res = this.value || []
       return res
     }
   },
@@ -116,49 +102,28 @@ export default {
       }
       const medias = this.medias
       medias.push(media)
-      const payload = {
-        medias
-      }
-      this.$emit('payload:changed', payload)
+      this.$emit('payload:changed', medias)
     },
     valueChanged(indexForRule, rule, description) {
       const index = this.findMediaIndexWithIndexOfRule(indexForRule, rule)
       if (index === undefined) return
       const medias = this.medias
       medias[index].description.value = description.value
-      const payload = {
-        medias
-      }
-      this.$emit('payload:changed', payload)
+      this.$emit('payload:changed', medias)
     },
     labelChanged(indexForRule, rule, description) {
       const index = this.findMediaIndexWithIndexOfRule(indexForRule, rule)
       if (index === undefined) return
       const medias = this.medias
       medias[index].description.label = description.label
-      const payload = {
-        medias
-      }
-      this.$emit('payload:changed', payload)
+      this.$emit('payload:changed', medias)
     },
     deleteClicked(indexForRule, rule) {
       const index = this.findMediaIndexWithIndexOfRule(indexForRule, rule)
       if (index === undefined) return
       const medias = this.medias
       medias.splice(index, 1)
-      const payload = {
-        medias
-      }
-      this.$emit('payload:changed', payload)
-    },
-    getValueForMedia(description) {
-      const type = description.type
-      if (type === 'Address') {
-        const address = description.value
-        const addressString = addressToString(this.$store, address)
-        return addressString
-      }
-      return description.value
+      this.$emit('payload:changed', medias)
     }
   }
 }

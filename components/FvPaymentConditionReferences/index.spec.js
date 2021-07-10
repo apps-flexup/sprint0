@@ -1,6 +1,6 @@
 import { shallowMount, createLocalVue } from '@vue/test-utils'
 import Vuex from 'Vuex'
-import FvPaymentConditionStepDetail from './index.vue'
+import FvPaymentConditionReferences from './index.vue'
 
 const localVue = createLocalVue()
 localVue.use(Vuex)
@@ -62,25 +62,8 @@ const references = [
   }
 ]
 
-const payload = {
-  label: 'Base simple',
-  references: {
-    r1: {
-      key: 'base',
-      value: 40
-    },
-    r2: {
-      key: 'endOfDeliveryMonth',
-      value: 50
-    }
-  },
-  risk: 20,
-  account_id: 1,
-  id: 3
-}
-
 const factory = (propsData) => {
-  return shallowMount(FvPaymentConditionStepDetail, {
+  return shallowMount(FvPaymentConditionReferences, {
     localVue,
     store,
     propsData: {
@@ -117,34 +100,12 @@ beforeEach(() => {
   })
 })
 
-describe('FvPaymentConditionStepDetail', () => {
-  it('should render a fv payment condition step detail', () => {
+describe('FvPaymentConditionReferences', () => {
+  it('should render a fv payment condition references', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="labelField"]').exists()).toBe(true)
     expect(wrapper.findAll('[data-testid="referenceField"]').length).toBe(
       references.length
     )
-  })
-  it('should emit an event when label change', () => {
-    const wrapper = factory()
-    const labelField = wrapper.find('[data-testid="labelField"]')
-    const label = 'foo'
-    labelField.vm.$emit('input', label)
-    const payloadChangedCalls = wrapper.emitted('payload:changed')
-    expect(payloadChangedCalls).toBeTruthy()
-    expect(payloadChangedCalls).toHaveLength(1)
-    const expectedPayload = {
-      label
-    }
-    expect(payloadChangedCalls[0][0]).toEqual(expectedPayload)
-  })
-  it('should have a total risk of 0 if there is no selected references', () => {
-    const wrapper = factory()
-    expect(wrapper.vm.total).toBe(0)
-  })
-  it('should have a total risk of 20 with defined references', () => {
-    const wrapper = factory({ payload })
-    expect(wrapper.vm.total).toBe(20)
   })
   it('should emit an event when a reference is selected', () => {
     const wrapper = factory()
@@ -156,10 +117,7 @@ describe('FvPaymentConditionStepDetail', () => {
     expect(payloadChangedCalls).toBeTruthy()
     expect(payloadChangedCalls).toHaveLength(1)
     const expectedPayload = {
-      references: {
-        r1: value
-      },
-      risk: 0
+      r1: value
     }
     expect(payloadChangedCalls[0][0]).toEqual(expectedPayload)
   })

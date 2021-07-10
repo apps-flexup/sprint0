@@ -5,7 +5,7 @@
     @form:submit="editAccount"
     url='accounts'
     form='personalAccounts'
-    action='edit'
+    action='read'
   )
 </template>
 

@@ -107,7 +107,6 @@ const activeAccount = (ctx) => ({
         category_id: newProduct.category_id,
         name: newProduct.name,
         unit: newProduct.unit,
-        dimension: newProduct.dimension,
         status: 'draft'
       }
       ctx.$repos.products.createWithAccountId(product).then((_prod) => {
@@ -127,7 +126,6 @@ const activeAccount = (ctx) => ({
         price: newOffer.price,
         currency: preferredCurrency,
         unit: newOffer.unit,
-        dimension: newOffer.dimension,
         vat: newOffer.vat,
         status: 'draft'
       }

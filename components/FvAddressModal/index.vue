@@ -43,7 +43,7 @@
         v-col.md-10.sm-10.lg-10.xl-10(cols='10')
           fv-country-autocomplete(
             data-testid='country'
-            :country="country"
+            :value="country"
             :label="$t('forms.addresses.country')"
             @country:selected="countrySelected"
           )
@@ -112,7 +112,7 @@ export default {
       this.$emit('modal:payload:changed', this.localAddress)
     },
     countrySelected(v) {
-      this.localAddress.country = v.iso3
+      this.localAddress.country = v
       this.$emit('modal:payload:changed', this.localAddress)
     },
     save() {

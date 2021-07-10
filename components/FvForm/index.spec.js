@@ -1,30 +1,32 @@
 import { shallowMount, createLocalVue } from '@vue/test-utils'
-import VueRouter from 'vue-router'
 import Vuex from 'vuex'
 import FvForm from './index.vue'
 
 const localVue = createLocalVue()
 localVue.use(Vuex)
-localVue.use(VueRouter)
-const router = new VueRouter()
+
+const $router = {
+  push: jest.fn(),
+  go: jest.fn()
+}
 
 describe('FvForm', () => {
   let store
   const formSteps = [
     {
-      component: 'fv-product-step-detail',
       title: 'forms.product.step.0'
     }
   ]
+  beforeEach(() => {
+    jest.clearAllMocks()
+  })
 
   const factory = (propsData) => {
     return shallowMount(FvForm, {
       store,
-      router,
       localVue,
       propsData: {
         form: 'products',
-        action: 'new',
         ...propsData
       },
       computed: {
@@ -40,7 +42,8 @@ describe('FvForm', () => {
         },
         $activeAccount: {
           addProduct: jest.fn()
-        }
+        },
+        $router
       }
     })
   }
@@ -55,95 +58,75 @@ describe('FvForm', () => {
             getOffer: jest.fn(),
             getThirdPartyAccount: jest.fn(),
             getPaymentCondition: jest.fn(),
-            getPaymentStructure: jest.fn()
+            getPaymentStructure: jest.fn(),
+            getBusinessAccount: jest.fn(),
+            getPersonalAccount: jest.fn()
           }
         }
       }
     })
   })
-  it('should render a stepForm', () => {
+  it('should render a readonly form by default', () => {
     const wrapper = factory()
     expect(wrapper.find('[data-testid="icon"]').exists()).toBe(true)
     expect(wrapper.find('[data-testid="pageTitle"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="listProductStep"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="editBtn"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="steps"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="stepForm"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="cancelBtn"]').exists()).toBe(false)
+    expect(wrapper.find('[data-testid="submitBtn"]').exists()).toBe(false)
+  })
+  it('should render a writable form', () => {
+    const wrapper = factory({ action: 'edit' })
+    expect(wrapper.find('[data-testid="icon"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="pageTitle"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="editBtn"]').exists()).toBe(false)
+    expect(wrapper.find('[data-testid="steps"]').exists()).toBe(true)
     expect(wrapper.find('[data-testid="stepForm"]').exists()).toBe(true)
     expect(wrapper.find('[data-testid="cancelBtn"]').exists()).toBe(true)
     expect(wrapper.find('[data-testid="submitBtn"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="stepComponent"]').exists()).toBe(true)
   })
-  it('should send signal when back icon is clicked', () => {
+  it('should change page when back icon is clicked and form is in read mode', () => {
     const wrapper = factory()
     const iconBack = wrapper.find('[data-testid="icon"]')
     iconBack.vm.$emit('icon:clicked')
-    const submittedCalls = wrapper.emitted('clicked')
-    expect(submittedCalls).toBeTruthy()
-    expect(submittedCalls).toHaveLength(1)
+    const expectedPath = -1
+    expect($router.go).toHaveBeenCalledTimes(1)
+    expect($router.go).toHaveBeenCalledWith(expectedPath)
   })
-  it('should send signal when cancel button is clicked', () => {
-    const wrapper = factory()
+  it('should pass in read mode when back icon is clicked and form is in edit mode', async () => {
+    const wrapper = factory({ action: 'edit' })
+    const iconBack = wrapper.find('[data-testid="icon"]')
+    iconBack.vm.$emit('icon:clicked')
+    await wrapper.vm.$nextTick()
+    expect(wrapper.find('[data-testid="editBtn"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="cancelBtn"]').exists()).toBe(false)
+    expect(wrapper.find('[data-testid="submitBtn"]').exists()).toBe(false)
+  })
+  it('should pass in read mode when cancel button is clicked and form is in edit mode', async () => {
+    const wrapper = factory({ action: 'edit' })
     const cancelBtn = wrapper.find('[data-testid="cancelBtn"]')
     cancelBtn.vm.$emit('button:click')
-    const submittedCalls = wrapper.emitted('clicked')
-    expect(submittedCalls).toBeTruthy()
-    expect(submittedCalls).toHaveLength(1)
+    await wrapper.vm.$nextTick()
+    expect(wrapper.find('[data-testid="editBtn"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="cancelBtn"]').exists()).toBe(false)
+    expect(wrapper.find('[data-testid="submitBtn"]').exists()).toBe(false)
+  })
+  it('should pass in edit mode when edit button is clicked', async () => {
+    const wrapper = factory({ action: 'read' })
+    const editBtn = wrapper.find('[data-testid="editBtn"]')
+    editBtn.vm.$emit('icon:clicked')
+    await wrapper.vm.$nextTick()
+    expect(wrapper.find('[data-testid="editBtn"]').exists()).toBe(false)
+    expect(wrapper.find('[data-testid="cancelBtn"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="submitBtn"]').exists()).toBe(true)
   })
   it('should send signal when form is submitted', () => {
-    const wrapper = factory({ form: 'offers' })
+    const wrapper = factory({ form: 'offers', action: 'edit' })
     const submitBtn = wrapper.find('[data-testid="submitBtn"]')
     submitBtn.vm.$emit('button:click')
     const submittedCalls = wrapper.emitted('form:submit')
     expect(submittedCalls).toBeTruthy()
     expect(submittedCalls).toHaveLength(1)
-  })
-  it('should send the payload with correct data', () => {
-    const wrapper = factory({
-      payload: {
-        category_id: 13,
-        name: 'Peinture métalisé',
-        unit: 'cl',
-        dimension: 'volume',
-        status: 'draft',
-        account_id: 1,
-        id: 16
-      }
-    })
-
-    const stepForm = wrapper.find('[data-testid="stepComponent"]')
-    expect(stepForm.props().payload).toStrictEqual({
-      category_id: 13,
-      name: 'Peinture métalisé',
-      unit: 'cl',
-      dimension: 'volume',
-      status: 'draft',
-      account_id: 1,
-      id: 16
-    })
-  })
-  it('should update the local payload when step send payload', () => {
-    const initialPayload = {
-      category_id: 13,
-      name: 'Peinture métalisé',
-      unit: 'cl',
-      dimension: 'volume',
-      status: 'draft',
-      account_id: 1,
-      id: 16
-    }
-    const newPayload = {
-      name: 'test'
-    }
-    const expectedPayload = {
-      category_id: 13,
-      name: 'test',
-      unit: 'cl',
-      dimension: 'volume',
-      status: 'draft',
-      account_id: 1,
-      id: 16
-    }
-    const wrapper = factory({ payload: initialPayload })
-    const stepComponent = wrapper.find('[data-testid="stepComponent"]')
-    stepComponent.vm.$emit('payload:changed', newPayload)
-    expect(wrapper.vm.localPayload).toEqual(expectedPayload)
   })
 })

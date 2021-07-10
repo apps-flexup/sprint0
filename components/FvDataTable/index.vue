@@ -134,7 +134,6 @@ export default {
       this.$emit('dataTable:sortBy', payload)
     },
     selected(item) {
-      console.log('coucou on select')
       this.$emit('dataTable:selected', item)
     },
     paginationChanged(pagination) {

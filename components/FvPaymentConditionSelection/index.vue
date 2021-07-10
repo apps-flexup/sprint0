@@ -1,13 +1,5 @@
 <template lang="pug">
-.fv-payment-structure-step-detail
-  v-row
-    v-col(cols='12')
-      fv-text-field(
-        data-testid="labelField"
-        :value="label"
-        :label="$t('forms.paymentStructures.new.label')"
-        @input="labelChanged"
-      )
+.fv-payment-condition-selection
   v-row
     v-col(cols='12')
       fv-payment-condition-autocomplete(
@@ -24,7 +16,6 @@
         :hideDefaultFooter="true"
         @dataTable:portionChanged="portionChanged"
         @dataTable:delete="deleteItem"
-        @dataTable:selected="selected"
       )
         template(v-slot:body.prepend)
           tr(class="totalLine")
@@ -55,12 +46,12 @@
 import { camelToSnakeCase } from '~/plugins/utils'
 
 export default {
-  name: 'FvPaymentStructureStepDetail',
+  name: 'FvPaymentConditionSelection',
   props: {
-    payload: {
-      type: Object,
+    value: {
+      type: Array,
       default() {
-        return {}
+        return []
       }
     }
   },
@@ -70,43 +61,19 @@ export default {
     }
   },
   computed: {
-    globalRisk() {
-      if (!this.paymentConditionsDetails) return 0
-      let res = 0
-      this.paymentConditionsDetails.forEach((paymentCondition) => {
-        const riskForPortion = paymentCondition.risk * paymentCondition.portion
-        if (res === 0) res = riskForPortion
-        else res += riskForPortion
-      })
-      res /= 100
-      return res
-    },
-    totalPortion() {
-      if (!this.paymentConditions) return 0
-      let res = 0
-      this.paymentConditions.forEach((paymentCondition) => {
-        res += paymentCondition.portion
-      })
-      return res
-    },
-    label() {
-      const res = this.payload ? this.payload.label : null
-      return res
-    },
     headers() {
       const snakeCaseTableName = camelToSnakeCase(this.tableName)
       const res = this.$activeAccount.headers(snakeCaseTableName)
       return res
     },
     paymentConditions() {
-      const res = this.payload ? this.payload.paymentConditions : []
+      const res = this.value || []
       return res
     },
     paymentConditionsDetails() {
-      if (!this.payload || !this.payload.paymentConditions) return []
+      if (!this.paymentConditions) return []
       const res = []
-      const paymentConditions = this.payload.paymentConditions
-      paymentConditions.forEach((paymentCondition) => {
+      this.paymentConditions.forEach((paymentCondition) => {
         const tmp = this.$store.getters['paymentConditions/findById'](
           paymentCondition.id
         )
@@ -117,6 +84,30 @@ export default {
         res.push(payload)
       })
       return res
+    },
+    globalRisk() {
+      if (!this.paymentConditionsDetails) return 0
+      let res = 0
+      this.paymentConditionsDetails.forEach((paymentCondition) => {
+        const riskForPortion = paymentCondition.risk * paymentCondition.portion
+        if (res === 0) res = riskForPortion
+        else res += riskForPortion
+      })
+      res /= 100
+      const payload = {
+        paymentConditions: this.paymentConditions,
+        risk: res
+      }
+      this.$emit('payload:changed', payload)
+      return res
+    },
+    totalPortion() {
+      if (!this.paymentConditions) return 0
+      let res = 0
+      this.paymentConditions.forEach((paymentCondition) => {
+        res += paymentCondition.portion
+      })
+      return res
     }
   },
   mounted() {
@@ -124,14 +115,10 @@ export default {
     this.$store.dispatch('paymentConditions/get')
   },
   methods: {
-    labelChanged(v) {
-      const payload = {
-        label: v
-      }
-      this.$emit('payload:changed', payload)
-    },
     paymentConditionSelected(v) {
-      const paymentConditions = this.paymentConditions || []
+      const paymentConditions = JSON.parse(
+        JSON.stringify(this.paymentConditions)
+      )
       const found = paymentConditions.find((paymentCondition) => {
         return paymentCondition.id === v
       })
@@ -142,14 +129,17 @@ export default {
         }
         paymentConditions.push(paymentCondition)
         const payload = {
-          paymentConditions
+          paymentConditions,
+          risk: this.globalRisk
         }
         this.$emit('payload:changed', payload)
       }
     },
     portionChanged(v) {
       if (!this.paymentConditions) return
-      const paymentConditions = this.paymentConditions
+      const paymentConditions = JSON.parse(
+        JSON.stringify(this.paymentConditions)
+      )
       const index = paymentConditions.findIndex((paymentCondition) => {
         return paymentCondition.id === v.item_id
       })
@@ -171,21 +161,16 @@ export default {
     },
     deleteItem(v) {
       if (!this.paymentConditions) return
-      const paymentConditions = this.paymentConditions
+      const paymentConditions = JSON.parse(
+        JSON.stringify(this.paymentConditions)
+      )
       const index = paymentConditions.findIndex((paymentCondition) => {
         return paymentCondition.id === v.id
       })
       if (index >= 0) {
         paymentConditions.splice(index, 1)
-        const payload = {
-          paymentConditions
-        }
-        this.$emit('payload:changed', payload)
+        this.$emit('payload:changed', paymentConditions)
       }
-    },
-    selected(_v) {
-      // const paymentCondition = JSON.parse(JSON.stringify(v))
-      // this.$router.push('/paymentConditions/' + paymentCondition.id)
     },
     addNewPaymentCondition() {
       this.$router.push('/paymentConditions/new')
@@ -195,23 +180,24 @@ export default {
 </script>
 
 <style scoped>
-::v-deep .v-input.theme--light .v-input__slot {
-  background: #ffffff;
-  margin-bottom: initial;
+::v-deep .v-divider {
+  background-color: darkgray;
+  margin-top: 8px;
+  height: 2px;
+  max-height: initial;
 }
-.fv-icon {
-  border: solid 1px;
-  border-radius: 50px;
+.label {
+  margin-bottom: 8px;
 }
-::v-deep .v-btn {
-  text-transform: initial;
+.center {
+  text-align: center;
+}
+.referenceKey {
+  color: var(--fontColor);
+}
+.total {
+  font-weight: bold;
+  color: var(--fontColor);
   font-size: 1rem;
-}
-.totalLine {
-  background-color: #fff8df;
-}
-.errorMsg {
-  margin-top: 10px;
-  color: red;
 }
 </style>

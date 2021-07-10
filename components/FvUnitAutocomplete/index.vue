@@ -5,6 +5,7 @@
     :element="unitId"
     :items="items"
     :filter="filter"
+    :returnObject="true"
     @autocomplete:selected="selected"
   )
     template(v-slot:label)
@@ -18,18 +19,13 @@
 
 <script>
 import { filterUnitAutocomplete } from '~/plugins/utils'
+
 export default {
   name: 'FvUnitAutocomplete',
   inheritAttrs: true,
   props: {
-    unit: {
-      type: String,
-      default() {
-        return null
-      }
-    },
-    dimension: {
-      type: String,
+    value: {
+      type: Object,
       default() {
         return null
       }
@@ -55,10 +51,9 @@ export default {
       return res
     },
     unitId() {
-      const res = this.$store.getters['units/findByDimension'](
-        this.dimension,
-        this.unit
-      )
+      const dimension = this.value ? this.value.dimension : null
+      const unit = this.value ? this.value.unit : null
+      const res = this.$store.getters['units/findByDimension'](dimension, unit)
       return res ? res.id : null
     }
   },
@@ -68,10 +63,25 @@ export default {
   },
   methods: {
     selected(v) {
-      this.$emit('unit:selected', v)
+      const unit = this.getUnitFromValue(v)
+      const payload = {
+        unit: unit.symbole,
+        dimension: unit.dimension
+      }
+      this.$emit('unit:selected', payload)
+      this.emitGenericSignalForForm(payload)
     },
     filter(item, v, it) {
       return filterUnitAutocomplete(item, v, it)
+    },
+    emitGenericSignalForForm(payload) {
+      this.$emit('payload:changed', payload)
+    },
+    getUnitFromValue(v) {
+      if (typeof v === 'number') {
+        return this.$store.getters['units/find'](v)
+      }
+      return v
     }
   }
 }

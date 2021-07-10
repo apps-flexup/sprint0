@@ -79,12 +79,16 @@ export default {
     vatChanged(v) {
       this.vat = v
       this.$emit('vat:changed', this.vat)
+      this.emitGenericSignalForForm(this.vat)
     },
     onClickOutside() {
       if (this.vat) {
         this.vat = (Math.round(this.vat * 100) / 100).toFixed(1)
         this.vatChanged(this.vat)
       }
+    },
+    emitGenericSignalForForm(payload) {
+      this.$emit('payload:changed', payload)
     }
   }
 }
