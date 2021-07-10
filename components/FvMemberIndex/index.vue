@@ -6,6 +6,7 @@
     v-row
       v-col(cols="12")
         fv-primary-button.text-right(
+          v-if="canInvite"
           data-testid="inviteMemberButton"
           @button:click='inviteMember'
         ) {{ $t('buttons.inviteMember') }}
@@ -71,11 +72,21 @@ export default {
     functionalRoles() {
       const res = this.$store.getters['functionalRoles/all']
       return res
+    },
+    canInvite() {
+      const currentUserId = this.$auth.user.sub
+      const activeAccountId = this.$activeAccount.get()
+      const roles = this.$store.getters['members/roleFor'](
+        activeAccountId,
+        currentUserId
+      )
+      return roles.includes('admin')
     }
   },
   mounted() {
     this.$store.dispatch('users/get')
     this.$store.dispatch('functionalRoles/get')
+    this.$store.dispatch('members/get')
     console.log('Composant ', this.$options.name)
   },
   methods: {

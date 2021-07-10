@@ -46,16 +46,16 @@ export default {
         root: true
       })
       dispatch('settings/createSettings', {}, { root: true })
-      const ownerRole = {
+      const adminRole = {
         from_type: 'Account',
         from_id: newAccountId,
         to_type: 'User',
         to_id: this.$auth.user.sub,
-        role: 'Owner',
+        role: 'admin',
         data: null,
         status: 'Confirmed'
       }
-      dispatch('members/add', ownerRole, { root: true })
+      dispatch('members/add', adminRole, { root: true })
     })
   },
   addPersonalAccount({ dispatch }, user) {
