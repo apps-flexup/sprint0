@@ -113,8 +113,8 @@ export default {
       this.$nuxt.$loading.finish()
     },
     cancel() {
-      this.$router.go(-1)
-      this.$emit('clicked')
+      if (this.localAction === 'read') this.$router.go(-1)
+      else this.localAction = 'read'
     },
     payloadChanged(additionalOutputs, attribute, value) {
       if (additionalOutputs) {
