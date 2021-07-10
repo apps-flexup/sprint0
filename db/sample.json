@@ -2241,7 +2241,6 @@
   ],
   "product-steps": [
     {
-      "component": "fv-product-step-detail",
       "title": "forms.product.step.0",
       "fields": [
         {
@@ -2291,7 +2290,6 @@
   ],
   "third-party-account-steps": [
     {
-      "component": "fv-third-party-account-step-detail",
       "title": "forms.third-party-account.step.0",
       "fields": [
         {
@@ -2349,7 +2347,6 @@
   ],
   "payment-structure-steps": [
     {
-      "component": "fv-payment-structure-step-detail",
       "title": "forms.payment-structure.step.0",
       "fields": [
         {

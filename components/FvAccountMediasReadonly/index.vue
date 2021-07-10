@@ -3,9 +3,14 @@
   div(v-for="(rule, index) in rules" :key="index")
     h3.font-weight-regular(data-testid="mediaName") {{ $t('mediaField.' + rule.toLowerCase() + '.title') }}
     v-row(v-for="(media, index) in getMediasForRule(rule)" :key="index")
-      v-col(cols="12")
+      v-col(cols="5")
         fv-readonly-field(
           :value="getValueForMedia(media.description)"
+        )
+      v-col(cols="5")
+        fv-readonly-field(
+          :label="$t('mediaField.label.placeholder')"
+          :value="media.description.label"
         )
     v-divider.line(v-if="index + 1 !== rules.length")
 </template>
