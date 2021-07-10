@@ -29,6 +29,7 @@ export default {
     activeAccountName() {
       const accountId = this.$activeAccount.get()
       const account = this.$store.getters['accounts/findById'](accountId)
+      if (!account) return null
       const res = account.name
       return res
     }

@@ -19,7 +19,10 @@
         :clearable="false"
         @role:selected="roleSelected(item, ...arguments)"
       )
-      p.role(v-else) {{ item.role }}
+      fv-readonly-field.role(
+        v-else
+        :value="item.role"
+      )
     template(v-slot:item.actions="{ item }")
       fv-delete-action(v-if="canUpdateRoleFor(item.to_id)" @delete:clicked="deleteItem(item)")
 </template>
