@@ -23,13 +23,13 @@
           @modal:header:close="close"
         )
       template(v-slot:form)
-        fv-user-autocomplete(
-          :user="user"
-          :users="users"
-          @user:selected="userSelected"
+        fv-directory(
+          :selected="entity"
+          :directory="naturalPersons"
+          @entity:selected="entitySelected"
         )
         fv-role-autocomplete(
-          v-if="user"
+          v-if="entity"
           :role="role"
           :roles="functionalRoles"
           @role:selected="roleSelected"
@@ -53,7 +53,7 @@ export default {
   data() {
     return {
       dialog: false,
-      user: null,
+      entity: null,
       role: null
     }
   },
@@ -62,11 +62,12 @@ export default {
       const type = this.$activeAccount.type() || 'Personal'
       return type
     },
-    users() {
-      const users = this.$store.getters['users/all']
+    naturalPersons() {
+      const naturalPersons = this.$store.getters['directory/naturalPersons']
       const activeUserUuid = this.$auth.user.sub
-      const res = users.filter((user) => user.uuid !== activeUserUuid)
-      // Here we also need to remove users who are already members of the active account
+      const res = naturalPersons.filter((naturalPerson) => {
+        return naturalPerson.parent_id !== activeUserUuid
+      })
       return res
     },
     functionalRoles() {
@@ -84,7 +85,7 @@ export default {
     }
   },
   mounted() {
-    this.$store.dispatch('users/get')
+    this.$store.dispatch('accounts/all')
     this.$store.dispatch('functionalRoles/get')
     this.$store.dispatch('members/get')
     console.log('Composant ', this.$options.name)
@@ -97,17 +98,17 @@ export default {
       this.dialog = false
     },
     sendInvitation() {
-      if (!this.user || !this.role) {
+      if (!this.entity || !this.role) {
         // On affiche une erreur ici
         return
       }
       this.dialog = false
-      this.$activeAccount.inviteUserWithRole(this.user, this.role)
-      this.user = null
+      this.$activeAccount.inviteEntityWithRole(this.entity, this.role)
+      this.entity = null
       this.role = null
     },
-    userSelected(v) {
-      this.user = v
+    entitySelected(v) {
+      this.entity = v
     },
     roleSelected(v) {
       this.role = v

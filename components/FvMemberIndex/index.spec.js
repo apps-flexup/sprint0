@@ -35,15 +35,6 @@ const factory = () => {
 beforeEach(() => {
   store = new Vuex.Store({
     modules: {
-      users: {
-        namespaced: true,
-        actions: {
-          get: jest.fn()
-        },
-        getters: {
-          all: jest.fn()
-        }
-      },
       functionalRoles: {
         namespaced: true,
         actions: {
@@ -60,6 +51,12 @@ beforeEach(() => {
         },
         getters: {
           roleFor: () => () => ['admin']
+        }
+      },
+      accounts: {
+        namespaced: true,
+        actions: {
+          all: jest.fn()
         }
       }
     }

@@ -220,8 +220,8 @@ export const filterReferenceAutocomplete = (item, v, _it) => {
   return res
 }
 
-export const filterUserAutocomplete = (item, v, _it) => {
-  const nameValues = `${item.name} ${item.email}`
+export const filterDirectoryAutocomplete = (item, v, _it) => {
+  const nameValues = item
   const res = String.prototype.filtreAutocomplete.call(nameValues, v)
   return res
 }

@@ -10,6 +10,13 @@ const setMediaEntities = (accountId, medias) => {
 }
 
 export default {
+  all({ commit }) {
+    if (!this.$auth.loggedIn) return
+    const request = `accounts`
+    this.$axios.$get(request).then((accounts) => {
+      commit('setAll', accounts)
+    })
+  },
   get({ commit, getters }) {
     if (!this.$auth.loggedIn) return
     const request = `given-roles?to_id=${this.$auth.user.sub}`

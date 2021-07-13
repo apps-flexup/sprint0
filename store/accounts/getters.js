@@ -58,5 +58,12 @@ export default {
     if (!account) return null
     const res = getters.findById(account.id)
     return res
+  },
+  personalAccounts(state) {
+    if (!state.all) return null
+    const res = state.all.filter((account) => {
+      return account.type === 'Personal'
+    })
+    return res
   }
 }

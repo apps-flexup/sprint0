@@ -140,15 +140,13 @@ const activeAccount = (ctx) => ({
   addPaymentStructure(newPaymentStructure) {
     ctx.store.dispatch('paymentStructures/add', newPaymentStructure)
   },
-  inviteUserWithRole(user, role) {
+  inviteEntityWithRole(entity, role) {
     // Here we need to send a notification. For now, we add the user to the members directly
-    console.log('on invite le user: ', user.name)
-    console.log('avec le role: ', role)
     const givenRole = {
       from_type: 'Account',
       from_id: this.get(),
       to_type: 'User',
-      to_id: user.uuid,
+      to_id: entity.parent_id,
       role,
       data: null,
       status: 'WaitingConfirmation'
