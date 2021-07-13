@@ -21,6 +21,10 @@ const account = {
   id: 1
 }
 
+const $activeAccount = {
+  get: jest.fn()
+}
+
 const loggedInAuth = {
   loggedIn: true,
   user: {
@@ -38,7 +42,8 @@ const loggedInFactory = () => {
     store,
     mocks: {
       $t: (msg) => msg,
-      $auth: loggedInAuth
+      $auth: loggedInAuth,
+      $activeAccount
     }
   })
 }
@@ -66,6 +71,9 @@ beforeEach(() => {
       },
       settings: {
         namespaced: true,
+        actions: {
+          getGlobalMenu: jest.fn()
+        },
         getters: {
           globalMenu: jest.fn()
         }
