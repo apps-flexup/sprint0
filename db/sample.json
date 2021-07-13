@@ -985,6 +985,8 @@
       "avatar": "/images/avatar-0.png",
       "country": "FRA",
       "name": "Toto",
+      "firstname": "toto",
+      "lastname": "La Riflette ",
       "type": "Personal",
       "offers_count": 0,
       "params": {},

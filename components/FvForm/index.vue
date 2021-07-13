@@ -96,7 +96,6 @@ export default {
     }
   },
   mounted() {
-    console.log('Composant ', this.$options.name)
     this.$store.dispatch('forms/getBusinessAccount')
     this.$store.dispatch('forms/getPersonalAccount')
     this.$store.dispatch('forms/getProduct')
@@ -122,7 +121,9 @@ export default {
         additionalOutputs.forEach((output) => {
           if (value[output]) this.$set(this.localPayload, output, value[output])
         })
-      } else this.$set(this.localPayload, attribute, value)
+      } else {
+        this.$set(this.localPayload, attribute, value)
+      }
     },
     editClicked() {
       this.localAction = 'edit'

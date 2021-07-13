@@ -24,6 +24,9 @@ export default {
     editAccount(payload) {
       this.$store.dispatch('accounts/update', payload)
     }
+  },
+  mounted() {
+    this.$store.dispatch('accounts/all')
   }
 }
 </script>
