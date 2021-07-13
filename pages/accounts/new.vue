@@ -15,7 +15,8 @@ export default {
     return {
       account: {
         parent_type: 'Account',
-        parent_id: this.$activeAccount.get()
+        parent_id: this.$activeAccount.get(),
+        type: 'Business'
       }
     }
   },
