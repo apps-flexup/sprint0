@@ -112,7 +112,7 @@ import FvEditAction from '@/components/FvEditAction'
 import FvEtape from '@/components/FvEtape'
 import FvFieldDate from '@/components/FvFieldDate'
 import FvUserAccounts from '@/components/FvUserAccounts'
-import FvUserAutocomplete from '@/components/FvUserAutocomplete'
+import FvDirectory from '@/components/FvDirectory'
 import FvContractSummaryVisualisation from '@/components/FvContractSummaryVisualisation'
 import FvContractStepVisualisation from '@/components/FvContractStepVisualisation'
 import FvProductList from '@/components/FvProductList'
@@ -283,7 +283,7 @@ Vue.component('fv-edit-action', FvEditAction)
 Vue.component('fv-etape', FvEtape)
 Vue.component('fv-field-date', FvFieldDate)
 Vue.component('fv-user-accounts', FvUserAccounts)
-Vue.component('fv-user-autocomplete', FvUserAutocomplete)
+Vue.component('fv-directory', FvDirectory)
 Vue.component(
   'fv-contract-summary-visualisation',
   FvContractSummaryVisualisation

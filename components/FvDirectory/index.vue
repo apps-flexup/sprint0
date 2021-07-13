@@ -1,37 +1,37 @@
 <template lang="pug">
-.fv-user-autocomplete
+.fv-directory
   fv-autocomplete(
     data-testid="autocomplete"
-    :element="user"
-    :items="users"
+    :element="selected"
+    :items="directory"
     :returnObject="true"
     :filter="filter"
-    @autocomplete:selected="selected"
+    @autocomplete:selected="entitySelected"
   )
     template(v-slot:label)
       div {{ label }}
     template(v-slot:item="data")
       v-list-item-content
-        div {{ data.item.name }} ({{ data.item.email }})
+        div {{ $displayRules.directoryInput(data.item) }}
     template(v-slot:selection="data")
       v-list-item-content
-        div {{ data.item.name }} ({{ data.item.email }})
+        div {{ $displayRules.directoryInput(data.item) }}
 </template>
 
 <script>
-import { filterUserAutocomplete } from '~/plugins/utils'
+import { filterDirectoryAutocomplete } from '~/plugins/utils'
 
 export default {
-  name: 'FvUserAutocomplete',
+  name: 'FvDirectory',
   inheritAttrs: true,
   props: {
-    user: {
+    selected: {
       type: Object,
       default() {
         return null
       }
     },
-    users: {
+    directory: {
       type: Array,
       default() {
         return []
@@ -55,10 +55,11 @@ export default {
   },
   methods: {
     filter(item, v, it) {
-      return filterUserAutocomplete(item, v, it)
+      const toFilter = this.$displayRules.directoryInput(item)
+      return filterDirectoryAutocomplete(toFilter, v, it)
     },
-    selected(v) {
-      this.$emit('user:selected', v)
+    entitySelected(v) {
+      this.$emit('entity:selected', v)
     }
   }
 }

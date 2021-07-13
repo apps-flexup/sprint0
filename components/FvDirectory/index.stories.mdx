@@ -1,24 +1,24 @@
 import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
 import { action } from '@storybook/addon-actions'
-import FvUserAutocomplete from './index.vue'
+import FvDirectory from './index.vue'
 
-<Meta title='Atoms/FvUserAutocomplete' component={ FvUserAutocomplete } />
+<Meta title='Atoms/FvDirectory' component={ FvDirectory } />
 
-# FvUserAutocomplete
+# FvDirectory
 
 <Canvas>
 <Story name='Common' height='150px'>{{
-  components: { FvUserAutocomplete },
+  components: { FvDirectory },
   methods: {
     selected: action('selected')
   },
-  template: `<FvUserAutocomplete
+  template: `<FvDirectory
     @user:selected="selected"
   >
-  </FvUserAutocomplete>`
+  </FvDirectory>`
 }}</Story>
 </Canvas>
 
 ## Props
 
-<Props of={ FvUserAutocomplete } />
+<Props of={ FvDirectory } />

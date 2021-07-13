@@ -197,6 +197,12 @@ const displayRules = (ctx) => ({
     const i18n = ctx.app.i18n
     const res = i18n.t('functionalRoles.' + role)
     return res
+  },
+  directoryInput(item) {
+    const email = item.medias.filter((media) => {
+      return media.description.type === 'Mail'
+    })[0]
+    return `${item.name} (${email.description.value})`
   }
 })
 
