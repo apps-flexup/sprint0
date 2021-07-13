@@ -63,8 +63,8 @@ export default {
       return name
     },
     accountSelected() {
-      const selectedAccount = this.$store.getters['accounts/selected']
-      const account = this.$store.getters['accounts/findById'](selectedAccount)
+      const activeAccount = this.$activeAccount.get()
+      const account = this.$store.getters['accounts/findById'](activeAccount)
       const res = account ? account.name : null
       return res
     },

@@ -182,12 +182,15 @@ const displayRules = (ctx) => ({
     const res = item.risk + '%'
     return res
   },
-  userNameFromUuid(item) {
+  memberName(item) {
     if (!item) return null
     const uuid = item.to_id
     if (!uuid) return null
-    const user = ctx.store.getters['users/findByUuId'](uuid)
-    const res = user.name
+    const account = ctx.store.getters['accounts/findPersonalAccountForUser'](
+      uuid
+    )
+    if (!account) return null
+    const res = `${account.firstname} ${account.lastname}`
     return res
   },
   role(item) {
@@ -202,7 +205,7 @@ const displayRules = (ctx) => ({
     const email = item.medias.filter((media) => {
       return media.description.type === 'Mail'
     })[0]
-    return `${item.name} (${email.description.value})`
+    return `${item.firstname} ${item.lastname} (${email.description.value})`
   }
 })
 

@@ -9,7 +9,7 @@
     @dataTable:sortBy="sortBy"
   )
     template(v-slot:item.user="{ item }")
-      div {{ displayUserName(item) }}
+      div {{ displayMemberName(item) }}
     template(v-slot:item.role="{ item }")
       fv-role-autocomplete.role(
         v-if="canUpdateRoleFor(item.to_id)"
@@ -21,7 +21,7 @@
       )
       fv-readonly-field.role(
         v-else
-        :value="item.role"
+        :value="$t(`functionalRoles.${item.role}`)"
       )
     template(v-slot:item.actions="{ item }")
       fv-delete-action(v-if="canUpdateRoleFor(item.to_id)" @delete:clicked="deleteItem(item)")
@@ -84,8 +84,8 @@ export default {
       const nbOfAdmins = allAdmins.length
       return nbOfAdmins
     },
-    displayUserName(item) {
-      const res = this.$displayRules.userNameFromUuid(item)
+    displayMemberName(item) {
+      const res = this.$displayRules.memberName(item)
       return res
     },
     deleteItem(member) {

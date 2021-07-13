@@ -17,7 +17,7 @@ export default {
   data() {
     return {
       rules: {
-        to_id: this.$displayRules.userNameFromUuid,
+        to_id: this.$displayRules.memberName,
         role: this.$displayRules.role
       }
     }
