@@ -48,6 +48,15 @@ export default {
     res.splice(i, 1)
     return res
   },
+  getMyPersonalAccount: (state) => {
+    if (!state.items) return null
+    const account = state.items.find((v) => {
+      return v.type === 'Personal'
+    })
+    if (!account) return null
+    const res = JSON.parse(JSON.stringify(account))
+    return res
+  },
   findPersonalAccountForUser: (state) => (userUuid) => {
     if (!state.all) return null
     const account = state.all.find((v) => {

@@ -13,10 +13,7 @@
 export default {
   computed: {
     account() {
-      const userUuid = this.$auth.user.sub
-      const res = this.$store.getters['accounts/findPersonalAccountForUser'](
-        userUuid
-      )
+      const res = this.$store.getters['accounts/getMyPersonalAccount']
       return res
     }
   },
