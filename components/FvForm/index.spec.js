@@ -94,8 +94,27 @@ describe('FvForm', () => {
     expect($router.go).toHaveBeenCalledTimes(1)
     expect($router.go).toHaveBeenCalledWith(expectedPath)
   })
-  it('should pass in read mode when back icon is clicked and form is in edit mode', async () => {
+  it('should change page when back icon is clicked and form is initially in edit mode', () => {
     const wrapper = factory({ action: 'edit' })
+    const iconBack = wrapper.find('[data-testid="icon"]')
+    iconBack.vm.$emit('icon:clicked')
+    const expectedPath = -1
+    expect($router.go).toHaveBeenCalledTimes(1)
+    expect($router.go).toHaveBeenCalledWith(expectedPath)
+  })
+  it('should change page when back icon is clicked and form is initially in new mode', () => {
+    const wrapper = factory({ action: 'new' })
+    const iconBack = wrapper.find('[data-testid="icon"]')
+    iconBack.vm.$emit('icon:clicked')
+    const expectedPath = -1
+    expect($router.go).toHaveBeenCalledTimes(1)
+    expect($router.go).toHaveBeenCalledWith(expectedPath)
+  })
+  it('should pass in edit mode when back icon is clicked and form is in edit mode but was initially in read mode', async () => {
+    const wrapper = factory({ action: 'read' })
+    const editBtn = wrapper.find('[data-testid="editBtn"]')
+    editBtn.vm.$emit('icon:clicked')
+    await wrapper.vm.$nextTick()
     const iconBack = wrapper.find('[data-testid="icon"]')
     iconBack.vm.$emit('icon:clicked')
     await wrapper.vm.$nextTick()
@@ -103,23 +122,25 @@ describe('FvForm', () => {
     expect(wrapper.find('[data-testid="cancelBtn"]').exists()).toBe(false)
     expect(wrapper.find('[data-testid="submitBtn"]').exists()).toBe(false)
   })
-  it('should pass in read mode when cancel button is clicked and form is in edit mode', async () => {
+  it('should change page when cancel button is clicked and form is initially in edit mode', () => {
     const wrapper = factory({ action: 'edit' })
+    const cancelBtn = wrapper.find('[data-testid="cancelBtn"]')
+    cancelBtn.vm.$emit('button:click')
+    const expectedPath = -1
+    expect($router.go).toHaveBeenCalledTimes(1)
+    expect($router.go).toHaveBeenCalledWith(expectedPath)
+  })
+  it('should pass in edit mode when cancel button is clicked and form is in edit mode but was initially in read mode', async () => {
+    const wrapper = factory({ action: 'read' })
+    const editBtn = wrapper.find('[data-testid="editBtn"]')
+    editBtn.vm.$emit('icon:clicked')
+    await wrapper.vm.$nextTick()
     const cancelBtn = wrapper.find('[data-testid="cancelBtn"]')
     cancelBtn.vm.$emit('button:click')
     await wrapper.vm.$nextTick()
     expect(wrapper.find('[data-testid="editBtn"]').exists()).toBe(true)
     expect(wrapper.find('[data-testid="cancelBtn"]').exists()).toBe(false)
     expect(wrapper.find('[data-testid="submitBtn"]').exists()).toBe(false)
-  })
-  it('should pass in edit mode when edit button is clicked', async () => {
-    const wrapper = factory({ action: 'read' })
-    const editBtn = wrapper.find('[data-testid="editBtn"]')
-    editBtn.vm.$emit('icon:clicked')
-    await wrapper.vm.$nextTick()
-    expect(wrapper.find('[data-testid="editBtn"]').exists()).toBe(false)
-    expect(wrapper.find('[data-testid="cancelBtn"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="submitBtn"]').exists()).toBe(true)
   })
   it('should send signal when form is submitted', () => {
     const wrapper = factory({ form: 'offers', action: 'edit' })
