@@ -93,6 +93,10 @@ export default {
     readonly() {
       const res = this.localAction === 'read'
       return res
+    },
+    isInitiallyReadonly() {
+      const res = this.action === 'edit' || this.action === 'new'
+      return res
     }
   },
   mounted() {
@@ -112,8 +116,11 @@ export default {
       this.$nuxt.$loading.finish()
     },
     cancel() {
-      if (this.localAction === 'read') this.$router.go(-1)
-      else this.localAction = 'read'
+      if (this.localAction === 'read' || this.isInitiallyReadonly) {
+        this.$router.go(-1)
+      } else {
+        this.localAction = 'read'
+      }
     },
     payloadChanged(additionalOutputs, attribute, value) {
       if (additionalOutputs) {
