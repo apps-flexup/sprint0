@@ -2134,6 +2134,7 @@
         {
           "attribute": "parent_id",
           "component": "fv-my-accounts-autocomplete",
+          "readonly-component": "fv-account-readonly",
           "size": 12
         },
         {

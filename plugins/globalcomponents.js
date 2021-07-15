@@ -7,6 +7,7 @@ import FvAccountMediasReadonly from '@/components/FvAccountMediasReadonly'
 import FvAccountInfo from '@/components/FvAccountInfo'
 import FvAccountOwners from '@/components/FvAccountOwners'
 import FvAccountOwnersReadonly from '@/components/FvAccountOwnersReadonly'
+import FvAccountReadonly from '@/components/FvAccountReadonly'
 import FvAccountsIndex from '@/components/FvAccountsIndex'
 import FvAddressField from '@/components/FvAddressField'
 import FvAddressModal from '@/components/FvAddressModal'
@@ -169,6 +170,7 @@ Vue.component('fv-account-medias-readonly', FvAccountMediasReadonly)
 Vue.component('fv-account-info', FvAccountInfo)
 Vue.component('fv-account-owners', FvAccountOwners)
 Vue.component('fv-account-owners-readonly', FvAccountOwnersReadonly)
+Vue.component('fv-account-readonly', FvAccountReadonly)
 Vue.component('fv-accounts-index', FvAccountsIndex)
 Vue.component('fv-address-field', FvAddressField)
 Vue.component('fv-address-modal', FvAddressModal)

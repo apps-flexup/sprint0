@@ -471,7 +471,8 @@
         "name": "Account name",
         "title": "New sub account",
         "description": "Description",
-        "country": "Country"
+        "country": "Country",
+        "parent_id": "Parent account"
       },
       "edit": {
         "title": "Edit my account"

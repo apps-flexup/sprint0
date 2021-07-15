@@ -473,13 +473,19 @@
         "name": "Nom du compte",
         "title": "Nouveau sous-compte",
         "description": "Description",
-        "country": "Pays"
+        "country": "Pays",
+        "parent_id": "Compte parent"
       },
       "edit": {
         "title": "Modifier mon compte"
       },
       "read": {
-        "title": "Informations du compte"
+        "infos": {
+          "title": "Informations du compte"
+        },
+        "owners": {
+          "title": "Proprietaires du compte"
+        }
       }
     },
     "offers": {
