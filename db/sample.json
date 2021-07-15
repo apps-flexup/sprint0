@@ -2132,6 +2132,11 @@
       "title": "forms.account.sub.step.0",
       "fields": [
         {
+          "attribute": "parent_id",
+          "component": "fv-my-accounts-autocomplete",
+          "size": 12
+        },
+        {
           "attribute": "name",
           "component": "fv-text-field",
           "size": 12
