@@ -6,6 +6,7 @@ import FvAccountMedias from '@/components/FvAccountMedias'
 import FvAccountMediasReadonly from '@/components/FvAccountMediasReadonly'
 import FvAccountInfo from '@/components/FvAccountInfo'
 import FvAccountOwners from '@/components/FvAccountOwners'
+import FvAccountOwnersReadonly from '@/components/FvAccountOwnersReadonly'
 import FvAccountsIndex from '@/components/FvAccountsIndex'
 import FvAddressField from '@/components/FvAddressField'
 import FvAddressModal from '@/components/FvAddressModal'
@@ -62,6 +63,7 @@ import FvMenu from '@/components/FvMenu'
 import FvModalActions from '@/components/FvModalActions'
 import FvModalButton from '@/components/FvModalButton'
 import FvModalHeader from '@/components/FvModalHeader'
+import FvMyAccountsAutocomplete from '@/components/FvMyAccountsAutocomplete'
 import FvRecursiveDataTable from '@/components/FvRecursiveDataTable'
 import FvNav from '@/components/FvNav'
 import FvNavBar from '@/components/FvNavBar'
@@ -166,6 +168,7 @@ Vue.component('fv-account-medias', FvAccountMedias)
 Vue.component('fv-account-medias-readonly', FvAccountMediasReadonly)
 Vue.component('fv-account-info', FvAccountInfo)
 Vue.component('fv-account-owners', FvAccountOwners)
+Vue.component('fv-account-owners-readonly', FvAccountOwnersReadonly)
 Vue.component('fv-accounts-index', FvAccountsIndex)
 Vue.component('fv-address-field', FvAddressField)
 Vue.component('fv-address-modal', FvAddressModal)
@@ -231,6 +234,7 @@ Vue.component('fv-menu', FvMenu)
 Vue.component('fv-modal-actions', FvModalActions)
 Vue.component('fv-modal-button', FvModalButton)
 Vue.component('fv-modal-header', FvModalHeader)
+Vue.component('fv-my-accounts-autocomplete', FvMyAccountsAutocomplete)
 Vue.component('fv-recursive-data-table', FvRecursiveDataTable)
 Vue.component('fv-nav', FvNav)
 Vue.component('fv-nav-bar', FvNavBar)

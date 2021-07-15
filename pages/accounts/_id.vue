@@ -29,7 +29,8 @@ export default {
     formForAccountType() {
       const account = this.account
       const type = account.type.toLowerCase()
-      const res = `${type}Accounts`
+      const res =
+        account.type === 'SubAccount' ? 'subAccounts' : `${type}Accounts`
       return res
     }
   },
