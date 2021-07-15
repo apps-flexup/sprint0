@@ -73,5 +73,8 @@ export default {
       return account.type === 'Personal'
     })
     return res
+  },
+  allAccounts(state) {
+    return state.all
   }
 }

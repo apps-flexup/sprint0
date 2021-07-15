@@ -5,6 +5,11 @@ export default {
       .index()
       .then((data) => commit('setBusinessAccountSteps', data))
   },
+  getSubAccount({ commit }) {
+    this.$repos.subAccountSteps
+      .index()
+      .then((data) => commit('setSubAccountSteps', data))
+  },
   getContract({ commit }) {
     // charger les contrat-types
     this.$repos.contractSteps

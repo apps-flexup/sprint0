@@ -227,6 +227,8 @@
       "account": "Account",
       "accounts": "My accounts",
       "accounts-new": "New account",
+      "accounts-newBusinessAccount": "New business account",
+      "accounts-newSubAccount": "New sub account",
       "contacts": "Contacts",
       "dashboard": "Dashboard",
       "index": "Home",
@@ -343,6 +345,13 @@
           "0": "Personal information",
           "1": "Private information"
         }
+      },
+      "sub": {
+        "step": {
+          "0": "Personal information",
+          "1": "Private information",
+          "2": "Owner(s)"
+        }
       }
     },
     "addresses": {
@@ -449,6 +458,20 @@
         "country": "Country",
         "legal-structure-id": "Legal structure",
         "siret": "SIRET"
+      },
+      "edit": {
+        "title": "Edit my account"
+      },
+      "read": {
+        "title": "Account informations"
+      }
+    },
+    "subAccounts": {
+      "new": {
+        "name": "Account name",
+        "title": "New account",
+        "description": "Description",
+        "country": "Country"
       },
       "edit": {
         "title": "Edit my account"

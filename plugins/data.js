@@ -7,6 +7,7 @@ export default (ctx, inject) => {
     accounts: repo('accounts'),
     accountMenu: repo('accountMenu'),
     businessAccountSteps: repo('business-account-steps'),
+    subAccountSteps: repo('sub-account-steps'),
     buyerMenu: repo('buyerMenu'),
     categories: repo('categories'),
     charters: repo('charters'),

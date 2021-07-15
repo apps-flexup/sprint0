@@ -4,6 +4,11 @@ export default {
     const res = JSON.parse(JSON.stringify(state.businessAccounts))
     return res
   },
+  subAccounts(state) {
+    if (!state.subAccounts) return []
+    const res = JSON.parse(JSON.stringify(state.subAccounts))
+    return res
+  },
   contracts(state) {
     if (!state.contracts) return []
     const res = JSON.parse(JSON.stringify(state.contracts))

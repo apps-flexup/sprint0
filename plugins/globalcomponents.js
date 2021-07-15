@@ -5,6 +5,7 @@ import FvAccountCard from '@/components/FvAccountCard'
 import FvAccountMedias from '@/components/FvAccountMedias'
 import FvAccountMediasReadonly from '@/components/FvAccountMediasReadonly'
 import FvAccountInfo from '@/components/FvAccountInfo'
+import FvAccountOwners from '@/components/FvAccountOwners'
 import FvAccountsIndex from '@/components/FvAccountsIndex'
 import FvAddressField from '@/components/FvAddressField'
 import FvAddressModal from '@/components/FvAddressModal'
@@ -67,6 +68,7 @@ import FvNavBar from '@/components/FvNavBar'
 import FvNavBarBuyer from '@/components/FvNavBarBuyer'
 import FvNavBarManage from '@/components/FvNavBarManage'
 import FvNumberField from '@/components/FvNumberField'
+import FvAccountAutocomplete from '@/components/FvAccountAutocomplete'
 import FvPaymentConditionAutocomplete from '@/components/FvPaymentConditionAutocomplete'
 import FvPaymentConditionDataTable from '@/components/FvPaymentConditionDataTable'
 import FvPaymentConditionIndex from '@/components/FvPaymentConditionIndex'
@@ -163,6 +165,7 @@ Vue.component('fv-account-card', FvAccountCard)
 Vue.component('fv-account-medias', FvAccountMedias)
 Vue.component('fv-account-medias-readonly', FvAccountMediasReadonly)
 Vue.component('fv-account-info', FvAccountInfo)
+Vue.component('fv-account-owners', FvAccountOwners)
 Vue.component('fv-accounts-index', FvAccountsIndex)
 Vue.component('fv-address-field', FvAddressField)
 Vue.component('fv-address-modal', FvAddressModal)
@@ -234,6 +237,7 @@ Vue.component('fv-nav-bar', FvNavBar)
 Vue.component('fv-nav-bar-buyer', FvNavBarBuyer)
 Vue.component('fv-nav-bar-manage', FvNavBarManage)
 Vue.component('fv-number-field', FvNumberField)
+Vue.component('fv-account-autocomplete', FvAccountAutocomplete)
 Vue.component(
   'fv-payment-condition-autocomplete',
   FvPaymentConditionAutocomplete

@@ -2127,6 +2127,51 @@
       ]
     }
   ],
+  "sub-account-steps": [
+    {
+      "title": "forms.account.sub.step.0",
+      "fields": [
+        {
+          "attribute": "name",
+          "component": "fv-text-field",
+          "size": 12
+        },
+        {
+          "attribute": "description",
+          "component": "fv-text-field",
+          "size": 12
+        },
+        {
+          "attribute": "country",
+          "component": "fv-country-autocomplete",
+          "readonly-component": "fv-country-readonly",
+          "size": 12
+        }
+      ]
+    },
+    {
+      "title": "forms.account.sub.step.1",
+      "fields": [
+        {
+          "attribute": "medias",
+          "component": "fv-account-medias",
+          "readonly-component": "fv-account-medias-readonly",
+          "size": 12
+        }
+      ]
+    },
+    {
+      "title": "forms.account.sub.step.2",
+      "fields": [
+        {
+          "attribute": "owners",
+          "component": "fv-account-owners",
+          "readonly-component": "fv-account-owners-readonly",
+          "size": 12
+        }
+      ]
+    }
+  ],
   "contact-steps": [
     {
       "composant": "fv-contact-step-detail",

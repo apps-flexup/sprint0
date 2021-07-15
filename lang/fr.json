@@ -227,6 +227,8 @@
       "account": "Compte",
       "accounts": "Mes comptes",
       "accounts-new": "Nouveau compte",
+      "accounts-newBusinessAccount": "Nouveau compte professionnel",
+      "accounts-newSubAccount": "Nouveau sous-compte",
       "contacts": "Contacts",
       "dashboard": "Tableau de bord",
       "index": "Accueil",
@@ -352,6 +354,13 @@
           "0": "Informations personnelles",
           "1": "Informations privées"
         }
+      },
+      "sub": {
+        "step": {
+          "0": "Informations personnelles",
+          "1": "Informations privées",
+          "2": "Propriétaire(s)"
+        }
       }
     },
     "contracts": {
@@ -445,12 +454,26 @@
     "businessAccounts": {
       "new": {
         "name": "Nom du compte",
-        "title": "Nouveau compte",
+        "title": "Nouveau compte professionnel",
         "email": "Email",
         "description": "Description",
         "country": "Pays",
         "legal-structure-id": "Statut juridique",
         "siret": "SIRET"
+      },
+      "edit": {
+        "title": "Modifier mon compte"
+      },
+      "read": {
+        "title": "Informations du compte"
+      }
+    },
+    "subAccounts": {
+      "new": {
+        "name": "Nom du compte",
+        "title": "Nouveau sous-compte",
+        "description": "Description",
+        "country": "Pays"
       },
       "edit": {
         "title": "Modifier mon compte"
