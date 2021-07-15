@@ -738,6 +738,10 @@
     "sendInvitation": "Envoyer une invitation"
   },
   "accounts": {
+    "parentAccount": "Compte parent",
+    "typeOfAccount": {
+      "whatType": "Quel type de compte souhaitez-vous créer ?"
+    },
     "index": {
       "title": "Mes comptes"
     },

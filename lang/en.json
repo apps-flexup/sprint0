@@ -452,7 +452,7 @@
     "businessAccounts": {
       "new": {
         "name": "Account name",
-        "title": "New account",
+        "title": "New business account",
         "email": "Email",
         "description": "Description",
         "country": "Country",
@@ -469,7 +469,7 @@
     "subAccounts": {
       "new": {
         "name": "Account name",
-        "title": "New account",
+        "title": "New sub account",
         "description": "Description",
         "country": "Country"
       },
@@ -735,6 +735,10 @@
     "sendInvitation": "Send invitation"
   },
   "accounts": {
+    "parentAccount": "Parent account",
+    "typeOfAccount": {
+      "whatType": "What type of account do you want to create ?"
+    },
     "index": {
       "title": "My accounts"
     },

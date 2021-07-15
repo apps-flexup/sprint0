@@ -65,6 +65,46 @@ export default {
       dispatch('members/add', adminRole, { root: true })
     })
   },
+  addSubAccount({ dispatch }, account) {
+    this.$repos.accounts.create(account).then((res) => {
+      const newAccountId = parseInt(res.id)
+      dispatch('update', res)
+      this.$activeAccount.set(newAccountId)
+      const thirdPartyAccount = {
+        name: res.name,
+        account_id: null
+      }
+      dispatch('thirdPartyAccounts/addToFlexup', thirdPartyAccount, {
+        root: true
+      })
+      dispatch('settings/createSettings', {}, { root: true })
+      const adminRole = {
+        from_type: 'Account',
+        from_id: newAccountId,
+        to_type: 'User',
+        to_id: null,
+        role: 'admin',
+        data: null,
+        status: 'Confirmed'
+      }
+      const members = []
+      res.owners.forEach((owner) => {
+        if (owner.type === 'Personal') {
+          adminRole.to_id = owner.parent_id
+          members.push(JSON.parse(JSON.stringify(adminRole)))
+        } else {
+        }
+      })
+      if (!members.some((member) => member.to_id === this.$auth.user.sub)) {
+        adminRole.to_id = this.$auth.user.sub
+        members.push(JSON.parse(JSON.stringify(adminRole)))
+      } else {
+      }
+      members.forEach((member) => {
+        dispatch('members/add', member, { root: true })
+      })
+    })
+  },
   addPersonalAccount({ dispatch }, user) {
     console.log('user: ', user)
     const emailMedia = {
