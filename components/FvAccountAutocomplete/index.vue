@@ -1,7 +1,8 @@
 <template lang="pug">
-.fv-account-account
+.fv-account-autocomplete
   fv-autocomplete(
     data-testid="autocomplete"
+    :element="value"
     :items="items"
     :returnObject="true"
     @autocomplete:selected="accountSelected"
@@ -19,6 +20,12 @@
 export default {
   name: 'FvAccountAutocomplete',
   props: {
+    value: {
+      type: Number,
+      default() {
+        return null
+      }
+    },
     label: {
       type: String,
       default() {

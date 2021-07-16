@@ -1,19 +1,26 @@
 <template lang="pug">
 .accounts-id
-  fv-form(
-    :payload='account'
-    @form:submit="editAccount"
-    url='accounts'
-    :form='formForAccountType'
-    action="read"
-  )
+  v-tabs
+    v-tab General
+    v-tab(v-if="accountType === 'SubAccount'") Proprio
+    v-tab-item
+      fv-form(
+        :payload='account'
+        @form:submit="editAccount"
+        url='accounts'
+        :form='formForAccountType'
+        action="read"
+      )
+    v-tab-item(v-if="accountType === 'SubAccount'")
+      p plop
 </template>
 
 <script>
 export default {
   data() {
     return {
-      accountId: this.$route.params.id
+      accountId: this.$route.params.id,
+      tab: null
     }
   },
   computed: {
