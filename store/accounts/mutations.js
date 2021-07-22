@@ -1,7 +1,4 @@
 export default {
-  setAll(state, items) {
-    state.all = items
-  },
   clear(state) {
     state.items = []
     state.current = null

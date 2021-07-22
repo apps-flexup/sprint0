@@ -10,13 +10,6 @@ const setMediaEntities = (accountId, medias) => {
 }
 
 export default {
-  all({ commit }) {
-    if (!this.$auth.loggedIn) return
-    const request = `accounts`
-    this.$axios.$get(request).then((accounts) => {
-      commit('setAll', accounts)
-    })
-  },
   get({ commit, getters }) {
     if (!this.$auth.loggedIn) return
     const request = `given-roles?to_id=${this.$auth.user.sub}`
@@ -41,6 +34,12 @@ export default {
   },
   add({ dispatch }, account) {
     console.log('on veut creer le compte: ', account)
+    let ownersIds = []
+    if (account.owners) {
+      ownersIds = JSON.parse(JSON.stringify(account.owners))
+      console.log('on a des owners: ', ownersIds)
+      delete account.owners
+    }
     this.$repos.accounts.create(account).then((res) => {
       const newAccountId = parseInt(res.id)
       dispatch('update', res)
@@ -63,45 +62,19 @@ export default {
         status: 'Confirmed'
       }
       dispatch('members/add', adminRole, { root: true })
-    })
-  },
-  addSubAccount({ dispatch }, account) {
-    this.$repos.accounts.create(account).then((res) => {
-      const newAccountId = parseInt(res.id)
-      dispatch('update', res)
-      this.$activeAccount.set(newAccountId)
-      const thirdPartyAccount = {
-        name: res.name,
-        account_id: null
-      }
-      dispatch('thirdPartyAccounts/addToFlexup', thirdPartyAccount, {
-        root: true
-      })
-      dispatch('settings/createSettings', {}, { root: true })
-      const adminRole = {
-        from_type: 'Account',
-        from_id: newAccountId,
-        to_type: 'User',
-        to_id: null,
-        role: 'admin',
-        data: null,
-        status: 'Confirmed'
-      }
-      const members = []
-      res.owners.forEach((owner) => {
-        if (owner.type === 'Personal') {
-          adminRole.to_id = owner.parent_id
-          members.push(JSON.parse(JSON.stringify(adminRole)))
-        } else {
+      console.log('les owners: ', ownersIds)
+      ownersIds.forEach((ownerId) => {
+        const ownerRole = {
+          from_type: 'Account',
+          from_id: newAccountId,
+          to_type: 'Account',
+          to_id: ownerId,
+          role: 'owner',
+          data: null,
+          status: 'WaitingConfirmation'
         }
-      })
-      if (!members.some((member) => member.to_id === this.$auth.user.sub)) {
-        adminRole.to_id = this.$auth.user.sub
-        members.push(JSON.parse(JSON.stringify(adminRole)))
-      } else {
-      }
-      members.forEach((member) => {
-        dispatch('members/add', member, { root: true })
+        console.log('on add le role: ', ownerRole)
+        dispatch('members/add', ownerRole, { root: true })
       })
     })
   },
@@ -128,11 +101,20 @@ export default {
     console.log('account: ', account)
     dispatch('accounts/add', account, { root: true })
   },
-  update({ commit }, account) {
+  update({ commit, dispatch }, account) {
     setMediaEntities(account.id, account.medias)
-    this.$repos.accounts.update(account).then((res) => {
-      commit('remove', res)
-      commit('add', res)
+    let ownersIds = []
+    if (account.owners) {
+      ownersIds = JSON.parse(JSON.stringify(account.owners))
+      console.log('on a des owners: ', ownersIds)
+      delete account.owners
+    }
+    dispatch('owners/removeAll', {}, { root: true }).then(() => {
+      dispatch('owners/add', ownersIds, { root: true })
+      this.$repos.accounts.update(account).then((res) => {
+        commit('remove', res)
+        commit('add', res)
+      })
     })
   }
 }

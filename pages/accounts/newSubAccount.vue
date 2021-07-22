@@ -25,7 +25,7 @@ export default {
   },
   methods: {
     createAccount(account) {
-      this.$store.dispatch('accounts/addSubAccount', account)
+      this.$store.dispatch('accounts/add', account)
     }
   }
 }

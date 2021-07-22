@@ -4,7 +4,7 @@
     data-testid="autocomplete"
     :element="value"
     :items="items"
-    :returnObject="true"
+    :returnObject="returnObject"
     @autocomplete:selected="accountSelected"
   )
     template(v-slot:label)
@@ -36,6 +36,12 @@ export default {
       type: Array,
       default() {
         return []
+      }
+    },
+    returnObject: {
+      type: Boolean,
+      default() {
+        return true
       }
     }
   },

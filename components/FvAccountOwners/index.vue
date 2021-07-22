@@ -1,20 +1,17 @@
 <template lang="pug">
 .fv-account-owners
-  fv-account-autocomplete(
+  fv-account-autocomplete.mb-5(
     data-testid="ownerAutocomplete"
-    :items="items"
+    :items="autocompleteItems"
+    :returnObject="false"
     @account:selected="ownerSelected"
   )
-  div(data-testid="ownerList")
-    v-row(v-for="owner in selectedOwners")
-      v-col(cols="12")
-        v-chip(
-          data-testid="owner"
-          :key="owner.name"
-          close
-          color="white"
-          @click:close="removeOwner(owner)"
-        ) {{ owner.name }}
+  fv-owner-data-table(
+    data-testid="ownerList"
+    :headers="headers"
+    :items="items"
+    @dataTable:delete:owner="deleteOwner"
+  )
 </template>
 
 <script>
@@ -30,31 +27,52 @@ export default {
   },
   data() {
     return {
-      selectedOwners: this.value
+      allAccounts: [],
+      selectedOwners: this.value,
+      displayableOwners: {}
     }
   },
   computed: {
-    items() {
-      const allAccounts = this.$store.getters['directory/all']
-      const res = allAccounts.filter((account) => {
-        return !this.selectedOwners.some((a) => {
-          return a.name === account.name
+    headers() {
+      const res = this.$activeAccount.headers('owners')
+      res[res.length - 1].displayed = true
+      return res
+    },
+    autocompleteItems() {
+      const selectedOwnersIds = this.selectedOwners
+      const res = this.allAccounts.filter((account) => {
+        return !selectedOwnersIds.some((ownerId) => {
+          return ownerId === account.id
         })
+      })
+      return res
+    },
+    items() {
+      const selectedOwnersIds = this.selectedOwners
+      const res = selectedOwnersIds.map((ownerId) => {
+        return this.$store.getters['owners/findById'](ownerId)
       })
       return res
     }
   },
   mounted() {
-    this.$store.dispatch('accounts/all')
+    this.$store.dispatch('accounts/get')
     this.addActiveAccountAsDefaultOwner()
+    this.$directory.allAccounts().then((accounts) => {
+      this.allAccounts = accounts
+    })
+    this.value.forEach((ownerId) => {
+      this.addDisplayableOwner(ownerId)
+    })
   },
   methods: {
     ownerSelected(v) {
       this.selectedOwners.push(v)
+      this.addDisplayableOwner(v)
       this.emitOwnersChangedEvent()
     },
-    removeOwner(owner) {
-      const index = this.selectedOwners.indexOf(owner)
+    removeOwner(ownerId) {
+      const index = this.selectedOwners.indexOf(ownerId)
       if (index !== -1) {
         this.selectedOwners.splice(index, 1)
         this.emitOwnersChangedEvent()
@@ -63,14 +81,31 @@ export default {
     addActiveAccountAsDefaultOwner() {
       if (!this.value.length) {
         const accountId = this.$activeAccount.get()
-        const account = this.$store.getters['accounts/findById'](accountId)
-        if (account) {
-          this.ownerSelected(account)
-        }
+        this.ownerSelected(accountId)
       }
     },
     emitOwnersChangedEvent() {
       this.$emit('payload:changed', this.selectedOwners)
+    },
+    addDisplayableOwner(ownerId) {
+      console.log('ownerID: ', ownerId)
+      const account = this.$store.getters['accounts/findById'](ownerId)
+      console.log('account: ', account)
+      if (!account) {
+        this.$directory.getAccountById(ownerId).then((res) => {
+          this.$set(this.displayableOwners, ownerId, res.name)
+        })
+      } else {
+        this.$set(this.displayableOwners, ownerId, account.name)
+      }
+    },
+    deleteOwner(owner) {
+      const index = this.selectedOwners.findIndex(
+        (ownerId) => ownerId === owner.to_id
+      )
+      if (index > -1) {
+        this.selectedOwners.splice(index, 1)
+      }
     }
   }
 }

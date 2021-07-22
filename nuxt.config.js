@@ -71,6 +71,7 @@ export default {
     '~/plugins/activeAccount',
     '~/plugins/globalcomponents',
     '~/plugins/data',
+    '~/plugins/directory',
     '~/plugins/i18n',
     '~/plugins/utils',
     '~/plugins/directives',
@@ -78,6 +79,7 @@ export default {
     '~/plugins/asyncComputed',
     '~/plugins/dataTable',
     '~/plugins/displayRules',
+    '~/plugins/rights',
     '~/plugins/vuedraggable'
   ],
   /*

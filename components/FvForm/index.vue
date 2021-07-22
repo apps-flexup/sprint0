@@ -108,6 +108,7 @@ export default {
     this.$store.dispatch('forms/getThirdPartyAccount')
     this.$store.dispatch('forms/getPaymentCondition')
     this.$store.dispatch('forms/getPaymentStructure')
+    this.$store.dispatch('members/get')
   },
   methods: {
     submit() {
@@ -136,15 +137,20 @@ export default {
     editClicked() {
       this.localAction = 'edit'
     },
-    hasRightToEdit() {
-      const res = !this.readonly
-      return res
+    hasRightToEdit(attribute) {
+      let hasRight = true
+      if (this.action !== 'new') {
+        if (attribute === 'owners') {
+          hasRight = this.$rights.canEditOwners()
+        }
+      }
+      return hasRight && !this.readonly
     },
     fieldsForStep(step) {
       if (!step.fields) return []
       const fields = step.fields.map((field) => ({ ...field }))
       fields.forEach((field) => {
-        if (!this.hasRightToEdit()) {
+        if (!this.hasRightToEdit(field.attribute)) {
           field.component = field['readonly-component'] || 'fv-readonly-field'
         }
       })

@@ -1,4 +1,12 @@
 {
+  "pages": {
+    "accounts": {
+      "_id": {
+        "general": "Général",
+        "owners": "Propriétaires"
+      }
+    }
+  },
   "ponctuation": {
     "colons": " : "
   },
@@ -318,6 +326,10 @@
     },
     "members": {
       "title": "Membres du compte {accountName}",
+      "search": "Rechercher"
+    },
+    "owners": {
+      "title": "Propriétaires du compte {accountName}",
       "search": "Rechercher"
     }
   },
@@ -723,6 +735,9 @@
     "members": {
       "user": "Utilisateur",
       "role": "Rôle"
+    },
+    "owners": {
+      "owner": "Propriétaire"
     }
   },
   "navBar": {

@@ -9,7 +9,7 @@
     @dataTable:sortBy="sortBy"
   )
     template(v-slot:item.user="{ item }")
-      div {{ displayMemberName(item) }}
+      fv-member-name-display(:role="item")
     template(v-slot:item.role="{ item }")
       fv-role-autocomplete.role(
         v-if="canUpdateRoleFor(item.to_id)"
@@ -83,10 +83,6 @@ export default {
       const allAdmins = allMembers.filter((member) => member.role === 'admin')
       const nbOfAdmins = allAdmins.length
       return nbOfAdmins
-    },
-    displayMemberName(item) {
-      const res = this.$displayRules.memberName(item)
-      return res
     },
     deleteItem(member) {
       this.$store.dispatch('members/remove', member)

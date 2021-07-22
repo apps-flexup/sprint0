@@ -182,13 +182,11 @@ const displayRules = (ctx) => ({
     const res = item.risk + '%'
     return res
   },
-  memberName(item) {
+  async memberName(item) {
     if (!item) return null
     const uuid = item.to_id
     if (!uuid) return null
-    const account = ctx.store.getters['accounts/findPersonalAccountForUser'](
-      uuid
-    )
+    const account = await ctx.$directory.personalAccountForUser(uuid)
     if (!account) return null
     const res = `${account.firstname} ${account.lastname}`
     return res
@@ -206,6 +204,11 @@ const displayRules = (ctx) => ({
       return media.description.type === 'Mail'
     })[0]
     return `${item.firstname} ${item.lastname} (${email.description.value})`
+  },
+  async ownerName(owner) {
+    const account = await ctx.$directory.getAccountById(owner.to_id)
+    const res = account.name
+    return res
   }
 })
 

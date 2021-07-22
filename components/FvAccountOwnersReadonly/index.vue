@@ -1,13 +1,9 @@
 <template lang="pug">
 .fv-account-owners
-  div(data-testid="ownerList")
-    v-row(v-for="owner in value")
-      v-col(cols="12")
-        v-chip(
-          data-testid="owner"
-          :key="owner.name"
-          color="white"
-        ) {{ owner.name }}
+  fv-owner-data-table(
+    :headers="headers"
+    :items="items"
+  )
 </template>
 
 <script>
@@ -20,6 +16,21 @@ export default {
         return []
       }
     }
+  },
+  computed: {
+    headers() {
+      const res = this.$activeAccount.headers('owners')
+      return res
+    },
+    items() {
+      const res = this.value.map((ownerId) => {
+        return this.$store.getters['owners/findById'](ownerId)
+      })
+      return res
+    }
+  },
+  mounted() {
+    this.$store.dispatch('owners/get')
   }
 }
 </script>

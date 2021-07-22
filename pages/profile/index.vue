@@ -18,7 +18,7 @@ export default {
     }
   },
   mounted() {
-    this.$store.dispatch('accounts/all')
+    this.$store.dispatch('accounts/get')
   },
   methods: {
     editAccount(payload) {

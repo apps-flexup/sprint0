@@ -60,11 +60,11 @@ import FvMediaField from '@/components/FvMediaField'
 import FvMemberDataTable from '@/components/FvMemberDataTable'
 import FvMemberIndex from '@/components/FvMemberIndex'
 import FvMemberList from '@/components/FvMemberList'
+import FvMemberNameDisplay from '@/components/FvMemberNameDisplay'
 import FvMenu from '@/components/FvMenu'
 import FvModalActions from '@/components/FvModalActions'
 import FvModalButton from '@/components/FvModalButton'
 import FvModalHeader from '@/components/FvModalHeader'
-import FvMyAccountsAutocomplete from '@/components/FvMyAccountsAutocomplete'
 import FvRecursiveDataTable from '@/components/FvRecursiveDataTable'
 import FvNav from '@/components/FvNav'
 import FvNavBar from '@/components/FvNavBar'
@@ -131,6 +131,7 @@ import FvOrderIndex from '@/components/FvOrderIndex'
 import FvOrderListSearch from '@/components/FvOrderListSearch'
 import FvOrderList from '@/components/FvOrderList'
 import FvOrderModal from '@/components/FvOrderModal'
+import FvOwnerDataTable from '@/components/FvOwnerDataTable'
 import FvThirdPartyAccountDataTable from '@/components/FvThirdPartyAccountDataTable'
 import FvThirdPartyAccountList from '@/components/FvThirdPartyAccountList'
 import FvModalSlot from '@/components/FvModalSlot'
@@ -232,11 +233,11 @@ Vue.component('fv-media-field', FvMediaField)
 Vue.component('fv-member-data-table', FvMemberDataTable)
 Vue.component('fv-member-index', FvMemberIndex)
 Vue.component('fv-member-list', FvMemberList)
+Vue.component('fv-member-name-display', FvMemberNameDisplay)
 Vue.component('fv-menu', FvMenu)
 Vue.component('fv-modal-actions', FvModalActions)
 Vue.component('fv-modal-button', FvModalButton)
 Vue.component('fv-modal-header', FvModalHeader)
-Vue.component('fv-my-accounts-autocomplete', FvMyAccountsAutocomplete)
 Vue.component('fv-recursive-data-table', FvRecursiveDataTable)
 Vue.component('fv-nav', FvNav)
 Vue.component('fv-nav-bar', FvNavBar)
@@ -310,6 +311,7 @@ Vue.component('fv-order-index', FvOrderIndex)
 Vue.component('fv-order-list-search', FvOrderListSearch)
 Vue.component('fv-order-list', FvOrderList)
 Vue.component('fv-order-modal', FvOrderModal)
+Vue.component('fv-owner-data-table', FvOwnerDataTable)
 Vue.component('fv-third-party-account-data-table', FvThirdPartyAccountDataTable)
 Vue.component('fv-third-party-account-list', FvThirdPartyAccountList)
 Vue.component('fv-modal-slot', FvModalSlot)
