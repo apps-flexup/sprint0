@@ -28,8 +28,7 @@ export default {
   data() {
     return {
       allAccounts: [],
-      selectedOwners: this.value,
-      displayableOwners: {}
+      selectedOwners: this.value
     }
   },
   computed: {
@@ -50,25 +49,25 @@ export default {
     items() {
       const selectedOwnersIds = this.selectedOwners
       const res = selectedOwnersIds.map((ownerId) => {
-        return this.$store.getters['owners/findById'](ownerId)
+        const storedOwner = this.$store.getters['owners/findById'](ownerId)
+        if (storedOwner) return storedOwner
+        return { to_id: ownerId }
       })
+      console.log('items: ', res)
       return res
     }
   },
   mounted() {
     this.$store.dispatch('accounts/get')
+    this.$store.dispatch('owners/get')
     this.addActiveAccountAsDefaultOwner()
     this.$directory.allAccounts().then((accounts) => {
       this.allAccounts = accounts
-    })
-    this.value.forEach((ownerId) => {
-      this.addDisplayableOwner(ownerId)
     })
   },
   methods: {
     ownerSelected(v) {
       this.selectedOwners.push(v)
-      this.addDisplayableOwner(v)
       this.emitOwnersChangedEvent()
     },
     removeOwner(ownerId) {
@@ -86,18 +85,6 @@ export default {
     },
     emitOwnersChangedEvent() {
       this.$emit('payload:changed', this.selectedOwners)
-    },
-    addDisplayableOwner(ownerId) {
-      console.log('ownerID: ', ownerId)
-      const account = this.$store.getters['accounts/findById'](ownerId)
-      console.log('account: ', account)
-      if (!account) {
-        this.$directory.getAccountById(ownerId).then((res) => {
-          this.$set(this.displayableOwners, ownerId, res.name)
-        })
-      } else {
-        this.$set(this.displayableOwners, ownerId, account.name)
-      }
     },
     deleteOwner(owner) {
       const index = this.selectedOwners.findIndex(
