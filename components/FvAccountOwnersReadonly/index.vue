@@ -1,5 +1,5 @@
 <template lang="pug">
-.fv-account-owners
+.fv-account-owners-readonly
   fv-owner-data-table(
     :headers="headers"
     :items="items"
