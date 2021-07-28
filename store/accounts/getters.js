@@ -58,5 +58,20 @@ export default {
     if (!account) return null
     const res = JSON.parse(JSON.stringify(account))
     return res
+  },
+  allSubAccounts(state) {
+    const res = JSON.parse(JSON.stringify(state.items))
+    let i = 0
+    while (i < res.length) {
+      const account = res[i]
+      console.log('index', i)
+      if (account.type !== 'SubAccount') {
+        console.log('JE TE SUPP', i)
+        res.splice(i, 1)
+        i = -1
+      }
+      i++
+    }
+    return res
   }
 }

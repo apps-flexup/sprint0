@@ -5,12 +5,12 @@
       v-col(cols="4")
         p.title(
           data-testid="title"
-        ) {{ $t('accounts.index.title') }}
+        ) {{ $t(`${accountType}.index.title`) }}
       v-col(cols="8")
         fv-primary-button.text-right(
           data-testid="createButton"
           @button:click="createAccount"
-        ) {{ $t('buttons.create.account') }}
+        ) {{ $t(`buttons.create.account`) }}
   v-row(
     class="d-flex flex-row"
     data-testid="accountList"
@@ -29,9 +29,23 @@
 
 <script>
 export default {
+  props: {
+    accountGetter: {
+      type: String,
+      default() {
+        return null
+      }
+    },
+    accountType: {
+      type: String,
+      default() {
+        return 'accounts'
+      }
+    }
+  },
   computed: {
     accounts() {
-      const res = this.$store.getters['accounts/all']
+      const res = this.$store.getters[`accounts/${this.accountGetter}`]
       return res
     }
   },

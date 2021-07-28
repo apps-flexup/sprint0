@@ -6,7 +6,9 @@
     v-tab {{ $t('pages.accounts._id.general') }}
       v-icon.mb-3 {{ 'mdi-card-account-details-outline' }}
     v-tab(v-if="accountType === 'SubAccount'") {{ $t('pages.accounts._id.owners') }}
-      v-icon.mb-3 {{ 'mdi-account-group-outline' }}
+      v-icon.mb-3 {{ 'mdi-account-tie-outline' }}
+    v-tab(v-if="accountType === 'SubAccount'") {{ $t('pages.accounts._id.subAccounts') }}
+      v-icon.mb-3 {{ 'mdi-account-network-outline' }}
     v-tab-item
       fv-form.mt-5(
         :payload='account'
@@ -22,6 +24,11 @@
         tableComponent="fv-owner-data-table"
         tableName="owners"
         :rules="rules"
+      )
+    v-tab-item(v-if="accountType === 'SubAccount'")
+      fv-accounts-index(
+        accountGetter="allSubAccounts"
+        accountType="subAccounts"
       )
 </template>
 

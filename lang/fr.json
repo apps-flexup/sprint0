@@ -3,7 +3,8 @@
     "accounts": {
       "_id": {
         "general": "Général",
-        "owners": "Propriétaires"
+        "owners": "Propriétaires",
+        "subAccounts": "Sous-comptes"
       }
     }
   },
@@ -331,6 +332,11 @@
     "owners": {
       "title": "Propriétaires du compte {accountName}",
       "search": "Rechercher"
+    }
+  },
+  "subAccounts": {
+    "index": {
+      "title": "Mes sous-compte"
     }
   },
   "forms": {
