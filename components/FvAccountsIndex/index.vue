@@ -30,12 +30,6 @@
 <script>
 export default {
   props: {
-    accountGetter: {
-      type: String,
-      default() {
-        return null
-      }
-    },
     accountType: {
       type: String,
       default() {
@@ -45,13 +39,34 @@ export default {
   },
   computed: {
     accounts() {
-      const res = this.$store.getters[`accounts/${this.accountGetter}`]
+      if (this.accountType === 'subAccounts') {
+        return this.findOwnersOfSubAccount
+      }
+      const res = this.$store.getters['accounts/all']
       return res
+    }
+  },
+  asyncComputed: {
+    findOwnersOfSubAccount() {
+      const accountId = this.$activeAccount.get()
+      this.$repos.givenRoles.index().then((data) => {
+        const res = []
+        data.forEach((givenRole) => {
+          if (accountId === givenRole.to_id && givenRole.role === 'owner') {
+            const subAccount = this.$store.getters['accounts/findById'](
+              givenRole.from_id
+            )
+            res.push(subAccount)
+          }
+        })
+        return res
+      })
     }
   },
   mounted() {
     console.log('Composant ', this.$options.name)
     this.$store.dispatch('accounts/get')
+    this.$store.dispatch('owners/get')
   },
   methods: {
     createAccount() {

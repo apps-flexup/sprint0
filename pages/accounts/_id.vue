@@ -7,7 +7,7 @@
       v-icon.mb-3 {{ 'mdi-card-account-details-outline' }}
     v-tab(v-if="accountType === 'SubAccount'") {{ $t('pages.accounts._id.owners') }}
       v-icon.mb-3 {{ 'mdi-account-tie-outline' }}
-    v-tab(v-if="accountType === 'SubAccount'") {{ $t('pages.accounts._id.subAccounts') }}
+    v-tab(v-if="true") {{ $t('pages.accounts._id.subAccounts') }}
       v-icon.mb-3 {{ 'mdi-account-network-outline' }}
     v-tab-item
       fv-form.mt-5(
@@ -25,9 +25,8 @@
         tableName="owners"
         :rules="rules"
       )
-    v-tab-item(v-if="accountType === 'SubAccount'")
+    v-tab-item()
       fv-accounts-index(
-        accountGetter="allSubAccounts"
         accountType="subAccounts"
       )
 </template>
@@ -82,6 +81,21 @@ export default {
       const res =
         account.type === 'SubAccount' ? 'subAccounts' : `${type}Accounts`
       return res
+    }
+  },
+  asyncComputed: {
+    isOwner() {
+      const accountId = this.$activeAccount.get()
+      let condition = false
+      this.$repos.givenRoles.index().then((data) => {
+        data.forEach((givenRole) => {
+          if (accountId === givenRole.to_id && givenRole.role === 'owner') {
+            condition = true
+            return condition
+          }
+        })
+        return condition
+      })
     }
   },
   mounted() {

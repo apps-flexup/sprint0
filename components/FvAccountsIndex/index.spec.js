@@ -59,9 +59,6 @@ describe('FvAccountsIndex', () => {
     return mount(FvAccountsIndex, {
       localVue,
       store,
-      propsData: {
-        accountGetter: 'all'
-      },
       mocks: {
         $t: (msg) => msg,
         $router
