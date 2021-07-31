@@ -7,7 +7,7 @@
       v-icon.mb-3 {{ 'mdi-card-account-details-outline' }}
     v-tab(v-if="accountType === 'SubAccount'") {{ $t('pages.accounts._id.owners') }}
       v-icon.mb-3 {{ 'mdi-account-tie-outline' }}
-    v-tab(v-if="true") {{ $t('pages.accounts._id.subAccounts') }}
+    v-tab(v-if="isOwner") {{ $t('pages.accounts._id.subAccounts') }}
       v-icon.mb-3 {{ 'mdi-account-network-outline' }}
     v-tab-item
       fv-form.mt-5(
