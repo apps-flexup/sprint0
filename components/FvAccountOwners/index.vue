@@ -56,7 +56,6 @@ export default {
         if (storedOwner) return storedOwner
         return { to_id: ownerId }
       })
-      console.log('items: ', res)
       return res
     }
   },
