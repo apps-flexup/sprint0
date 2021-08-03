@@ -23,6 +23,9 @@ export default {
       return res
     },
     items() {
+      if (typeof this.value[0] !== 'number') {
+        return this.value
+      }
       const res = this.value.map((ownerId) => {
         return this.$store.getters['owners/findById'](ownerId)
       })

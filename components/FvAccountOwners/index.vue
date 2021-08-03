@@ -48,6 +48,9 @@ export default {
     },
     items() {
       const selectedOwnersIds = this.selectedOwners
+      if (typeof this.selectedOwners[0] !== 'number') {
+        return this.selectedOwners
+      }
       const res = selectedOwnersIds.map((ownerId) => {
         const storedOwner = this.$store.getters['owners/findById'](ownerId)
         if (storedOwner) return storedOwner
@@ -70,13 +73,6 @@ export default {
       this.selectedOwners.push(v)
       this.emitOwnersChangedEvent()
     },
-    removeOwner(ownerId) {
-      const index = this.selectedOwners.indexOf(ownerId)
-      if (index !== -1) {
-        this.selectedOwners.splice(index, 1)
-        this.emitOwnersChangedEvent()
-      }
-    },
     addActiveAccountAsDefaultOwner() {
       if (!this.value.length) {
         const accountId = this.$activeAccount.get()
@@ -93,6 +89,7 @@ export default {
       if (index > -1) {
         this.selectedOwners.splice(index, 1)
       }
+      this.$emit('payload:changed', this.selectedOwners)
     }
   }
 }

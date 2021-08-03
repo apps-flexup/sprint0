@@ -48,7 +48,6 @@ export default {
   },
   methods: {
     cardClicked() {
-      this.$activeAccount.set(this.id)
       this.$router.push('/accounts/' + this.id)
     },
     favoriteClicked() {

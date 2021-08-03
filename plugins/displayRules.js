@@ -206,6 +206,7 @@ const displayRules = (ctx) => ({
     return `${item.firstname} ${item.lastname} (${email.description.value})`
   },
   async ownerName(owner) {
+    if (!owner) return null
     const account = await ctx.$directory.getAccountById(owner.to_id)
     const res = account.name
     return res

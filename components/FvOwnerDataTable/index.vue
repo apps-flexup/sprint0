@@ -9,7 +9,7 @@
     @dataTable:sortBy="sortBy"
   )
     template(v-slot:item.to_id="{ item }")
-      div(:key="forceReRender") {{ accountNames[item.to_id] }}
+      div(v-if="item" :key="forceReRender") {{ accountNames[item.to_id] }}
     template(v-slot:item.actions="{ item }")
       fv-delete-action(@delete:clicked="deleteItem(item)")
 
@@ -72,6 +72,7 @@ export default {
       this.$emit('dataTable:sortBy', v)
     },
     addOwnerName(owner) {
+      if (!owner) return
       this.$displayRules.ownerName(owner).then((name) => {
         this.accountNames[owner.to_id] = name
         this.uglyForceReRender()

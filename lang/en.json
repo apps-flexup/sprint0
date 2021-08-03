@@ -4,7 +4,10 @@
       "_id": {
         "general": "General",
         "owners": "Owners",
-        "subAccounts": "Sub-accounts"
+        "subAccounts": {
+          "tabName": "Sub-accounts",
+          "title": "My sub-accounts"
+        }
       }
     }
   },
@@ -330,11 +333,6 @@
     "owners": {
       "title": "{accountName} account owners",
       "search": "Search"
-    }
-  },
-  "subAccounts": {
-    "index": {
-      "title": "My sub-accounts"
     }
   },
   "forms": {

@@ -5,6 +5,7 @@ import FvAccountCard from '@/components/FvAccountCard'
 import FvAccountMedias from '@/components/FvAccountMedias'
 import FvAccountMediasReadonly from '@/components/FvAccountMediasReadonly'
 import FvAccountInfo from '@/components/FvAccountInfo'
+import FvAccountList from '@/components/FvAccountList'
 import FvAccountOwners from '@/components/FvAccountOwners'
 import FvAccountOwnersReadonly from '@/components/FvAccountOwnersReadonly'
 import FvAccountReadonly from '@/components/FvAccountReadonly'
@@ -169,6 +170,7 @@ Vue.component('fv-account-card', FvAccountCard)
 Vue.component('fv-account-medias', FvAccountMedias)
 Vue.component('fv-account-medias-readonly', FvAccountMediasReadonly)
 Vue.component('fv-account-info', FvAccountInfo)
+Vue.component('fv-account-list', FvAccountList)
 Vue.component('fv-account-owners', FvAccountOwners)
 Vue.component('fv-account-owners-readonly', FvAccountOwnersReadonly)
 Vue.component('fv-account-readonly', FvAccountReadonly)

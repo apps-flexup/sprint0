@@ -11,7 +11,7 @@
     h1(data-testid="pageTitle") {{ $t('forms.' + form + '.' + localAction + '.title') }}
     v-spacer
     fv-icon(
-      v-if="readonly"
+      v-if="readonly && allowEdit"
       data-testid="editBtn"
       icon="mdi-circle-edit-outline"
       size="xLarge"
@@ -76,6 +76,12 @@ export default {
       type: String,
       default() {
         return null
+      }
+    },
+    allowEdit: {
+      type: Boolean,
+      default() {
+        return true
       }
     }
   },

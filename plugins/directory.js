@@ -34,10 +34,18 @@ const directory = (ctx) => ({
     return res[0]
   },
   async getAccountById(id) {
-    const request = `/accounts?id=${id}`
-    const res = await ctx.$axios.$get(request)
-    if (!res) return null
-    return res[0]
+    const accountRequest = `/accounts?id=${id}`
+    const accounts = await ctx.$axios.$get(accountRequest)
+    if (!accounts) return null
+    const account = accounts[0]
+    if (account.type === 'SubAccount') {
+      const ownersRequest = '/given-roles?from_id=3&role=owner'
+      const owners = await ctx.$axios.$get(ownersRequest)
+      if (owners) {
+        account.owners = owners
+      }
+    }
+    return account
   }
 })
 
