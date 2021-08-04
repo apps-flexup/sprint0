@@ -57,18 +57,20 @@ export default {
       role: null
     }
   },
-  computed: {
-    accountType() {
-      const type = this.$activeAccount.type() || 'Personal'
-      return type
-    },
-    naturalPersons() {
-      const naturalPersons = this.$store.getters['directory/naturalPersons']
+  asyncComputed: {
+    async naturalPersons() {
+      const naturalPersons = await this.$directory.naturalPersons()
       const activeUserUuid = this.$auth.user.sub
       const res = naturalPersons.filter((naturalPerson) => {
         return naturalPerson.parent_id !== activeUserUuid
       })
       return res
+    }
+  },
+  computed: {
+    accountType() {
+      const type = this.$activeAccount.type() || 'Personal'
+      return type
     },
     functionalRoles() {
       const res = this.$store.getters['functionalRoles/all']
@@ -85,7 +87,6 @@ export default {
     }
   },
   mounted() {
-    this.$store.dispatch('accounts/all')
     this.$store.dispatch('functionalRoles/get')
     this.$store.dispatch('members/get')
     console.log('Composant ', this.$options.name)

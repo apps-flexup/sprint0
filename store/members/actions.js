@@ -6,7 +6,8 @@ export default {
       const activeAccountMembers = data.filter((givenRole) => {
         const isAccount = givenRole.from_type === 'Account'
         const isActiveAccount = givenRole.from_id === activeAccountId
-        return isAccount && isActiveAccount
+        const isOwner = givenRole.role === 'owner'
+        return isAccount && isActiveAccount && !isOwner
       })
       commit('set', activeAccountMembers)
     })

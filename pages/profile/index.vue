@@ -17,13 +17,13 @@ export default {
       return res
     }
   },
+  mounted() {
+    this.$store.dispatch('accounts/get')
+  },
   methods: {
     editAccount(payload) {
       this.$store.dispatch('accounts/update', payload)
     }
-  },
-  mounted() {
-    this.$store.dispatch('accounts/all')
   }
 }
 </script>

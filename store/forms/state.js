@@ -1,5 +1,6 @@
 export default () => ({
   businessAccounts: [],
+  subAccounts: [],
   personalAccounts: [],
   contracts: [],
   contacts: [],

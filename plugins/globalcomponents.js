@@ -5,6 +5,10 @@ import FvAccountCard from '@/components/FvAccountCard'
 import FvAccountMedias from '@/components/FvAccountMedias'
 import FvAccountMediasReadonly from '@/components/FvAccountMediasReadonly'
 import FvAccountInfo from '@/components/FvAccountInfo'
+import FvAccountList from '@/components/FvAccountList'
+import FvAccountOwners from '@/components/FvAccountOwners'
+import FvAccountOwnersReadonly from '@/components/FvAccountOwnersReadonly'
+import FvAccountReadonly from '@/components/FvAccountReadonly'
 import FvAccountsIndex from '@/components/FvAccountsIndex'
 import FvAddressField from '@/components/FvAddressField'
 import FvAddressModal from '@/components/FvAddressModal'
@@ -57,6 +61,7 @@ import FvMediaField from '@/components/FvMediaField'
 import FvMemberDataTable from '@/components/FvMemberDataTable'
 import FvMemberIndex from '@/components/FvMemberIndex'
 import FvMemberList from '@/components/FvMemberList'
+import FvMemberNameDisplay from '@/components/FvMemberNameDisplay'
 import FvMenu from '@/components/FvMenu'
 import FvModalActions from '@/components/FvModalActions'
 import FvModalButton from '@/components/FvModalButton'
@@ -67,6 +72,7 @@ import FvNavBar from '@/components/FvNavBar'
 import FvNavBarBuyer from '@/components/FvNavBarBuyer'
 import FvNavBarManage from '@/components/FvNavBarManage'
 import FvNumberField from '@/components/FvNumberField'
+import FvAccountAutocomplete from '@/components/FvAccountAutocomplete'
 import FvPaymentConditionAutocomplete from '@/components/FvPaymentConditionAutocomplete'
 import FvPaymentConditionDataTable from '@/components/FvPaymentConditionDataTable'
 import FvPaymentConditionIndex from '@/components/FvPaymentConditionIndex'
@@ -126,6 +132,7 @@ import FvOrderIndex from '@/components/FvOrderIndex'
 import FvOrderListSearch from '@/components/FvOrderListSearch'
 import FvOrderList from '@/components/FvOrderList'
 import FvOrderModal from '@/components/FvOrderModal'
+import FvOwnerDataTable from '@/components/FvOwnerDataTable'
 import FvThirdPartyAccountDataTable from '@/components/FvThirdPartyAccountDataTable'
 import FvThirdPartyAccountList from '@/components/FvThirdPartyAccountList'
 import FvModalSlot from '@/components/FvModalSlot'
@@ -163,6 +170,10 @@ Vue.component('fv-account-card', FvAccountCard)
 Vue.component('fv-account-medias', FvAccountMedias)
 Vue.component('fv-account-medias-readonly', FvAccountMediasReadonly)
 Vue.component('fv-account-info', FvAccountInfo)
+Vue.component('fv-account-list', FvAccountList)
+Vue.component('fv-account-owners', FvAccountOwners)
+Vue.component('fv-account-owners-readonly', FvAccountOwnersReadonly)
+Vue.component('fv-account-readonly', FvAccountReadonly)
 Vue.component('fv-accounts-index', FvAccountsIndex)
 Vue.component('fv-address-field', FvAddressField)
 Vue.component('fv-address-modal', FvAddressModal)
@@ -224,6 +235,7 @@ Vue.component('fv-media-field', FvMediaField)
 Vue.component('fv-member-data-table', FvMemberDataTable)
 Vue.component('fv-member-index', FvMemberIndex)
 Vue.component('fv-member-list', FvMemberList)
+Vue.component('fv-member-name-display', FvMemberNameDisplay)
 Vue.component('fv-menu', FvMenu)
 Vue.component('fv-modal-actions', FvModalActions)
 Vue.component('fv-modal-button', FvModalButton)
@@ -234,6 +246,7 @@ Vue.component('fv-nav-bar', FvNavBar)
 Vue.component('fv-nav-bar-buyer', FvNavBarBuyer)
 Vue.component('fv-nav-bar-manage', FvNavBarManage)
 Vue.component('fv-number-field', FvNumberField)
+Vue.component('fv-account-autocomplete', FvAccountAutocomplete)
 Vue.component(
   'fv-payment-condition-autocomplete',
   FvPaymentConditionAutocomplete
@@ -300,6 +313,7 @@ Vue.component('fv-order-index', FvOrderIndex)
 Vue.component('fv-order-list-search', FvOrderListSearch)
 Vue.component('fv-order-list', FvOrderList)
 Vue.component('fv-order-modal', FvOrderModal)
+Vue.component('fv-owner-data-table', FvOwnerDataTable)
 Vue.component('fv-third-party-account-data-table', FvThirdPartyAccountDataTable)
 Vue.component('fv-third-party-account-list', FvThirdPartyAccountList)
 Vue.component('fv-modal-slot', FvModalSlot)

@@ -22,9 +22,6 @@
 <script>
 export default {
   name: 'FvUserAccounts',
-  mounted() {
-    console.log('Composant ', this.$options.name)
-  },
   computed: {
     activeAccountName() {
       const accountId = this.$activeAccount.get()
@@ -33,6 +30,9 @@ export default {
       const res = account.name
       return res
     }
+  },
+  mounted() {
+    console.log('Composant ', this.$options.name)
   }
 }
 </script>

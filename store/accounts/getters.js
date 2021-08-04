@@ -23,9 +23,11 @@ export default {
     const legalStructure = rootGetters['contracts/getLegalStructureById'](
       legalStructureId
     )
+    const owners = rootGetters['owners/ownersIds']
     const payload = {
       ...account,
-      legalStructure
+      legalStructure,
+      owners
     }
     const res = JSON.parse(JSON.stringify(payload))
     return res
@@ -57,21 +59,17 @@ export default {
     const res = JSON.parse(JSON.stringify(account))
     return res
   },
-  findPersonalAccountForUser: (state) => (userUuid) => {
-    if (!state.all) return null
-    const account = state.all.find((v) => {
-      const isPersonalAccount = v.type === 'Personal'
-      const isToUser = v.parent_type === 'User' && v.parent_id === userUuid
-      return isPersonalAccount && isToUser
-    })
-    if (!account) return null
-    return JSON.parse(JSON.stringify(account))
-  },
-  personalAccounts(state) {
-    if (!state.all) return null
-    const res = state.all.filter((account) => {
-      return account.type === 'Personal'
-    })
+  allSubAccounts(state) {
+    const res = JSON.parse(JSON.stringify(state.items))
+    let i = 0
+    while (i < res.length) {
+      const account = res[i]
+      if (account.type !== 'SubAccount') {
+        res.splice(i, 1)
+        i = -1
+      }
+      i++
+    }
     return res
   }
 }

@@ -10,21 +10,10 @@
         fv-primary-button.text-right(
           data-testid="createButton"
           @button:click="createAccount"
-        ) {{ $t('buttons.create.account') }}
-  v-row(
-    class="d-flex flex-row"
-    data-testid="accountList"
+        ) {{ $t(`buttons.create.account`) }}
+  fv-account-list(
+    :accounts="accounts"
   )
-    div(
-      v-for="account in accounts"
-      :key="account.id"
-    )
-      fv-account-card.card(
-        data-testid="accountCard"
-        :id="account.id"
-        :avatar="account.avatar"
-        :name="account.name"
-      )
 </template>
 
 <script>

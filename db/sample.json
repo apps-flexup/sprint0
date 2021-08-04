@@ -946,6 +946,28 @@
             "active": true,
             "displayed": true
           }
+        ],
+        "owners": [
+          {
+            "align": "start",
+            "sortable": true,
+            "text": "headers.owners.owner",
+            "value": "to_id",
+            "order": 0,
+            "customizable": false,
+            "active": true,
+            "displayed": true
+          },
+          {
+            "align": "left",
+            "sortable": false,
+            "text": "headers.actions",
+            "value": "actions",
+            "order": 1,
+            "customizable": false,
+            "active": true,
+            "displayed": false
+          }
         ]
       }
     },
@@ -2122,6 +2144,51 @@
           "attribute": "medias",
           "component": "fv-account-medias",
           "readonly-component": "fv-account-medias-readonly",
+          "size": 12
+        }
+      ]
+    }
+  ],
+  "sub-account-steps": [
+    {
+      "title": "forms.account.sub.step.0",
+      "fields": [
+        {
+          "attribute": "name",
+          "component": "fv-text-field",
+          "size": 12
+        },
+        {
+          "attribute": "description",
+          "component": "fv-text-field",
+          "size": 12
+        },
+        {
+          "attribute": "country",
+          "component": "fv-country-autocomplete",
+          "readonly-component": "fv-country-readonly",
+          "size": 12
+        }
+      ]
+    },
+    {
+      "title": "forms.account.sub.step.1",
+      "fields": [
+        {
+          "attribute": "medias",
+          "component": "fv-account-medias",
+          "readonly-component": "fv-account-medias-readonly",
+          "size": 12
+        }
+      ]
+    },
+    {
+      "title": "forms.account.sub.step.2",
+      "fields": [
+        {
+          "attribute": "owners",
+          "component": "fv-account-owners",
+          "readonly-component": "fv-account-owners-readonly",
           "size": 12
         }
       ]

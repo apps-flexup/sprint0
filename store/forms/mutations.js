@@ -5,6 +5,9 @@ export default {
   setBusinessAccountSteps(state, items) {
     state.businessAccounts = items
   },
+  setSubAccountSteps(state, items) {
+    state.subAccounts = items
+  },
   setPersonalAccountSteps(state, items) {
     state.personalAccounts = items
   },
