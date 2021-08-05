@@ -39,7 +39,7 @@ const directory = (ctx) => ({
     if (!accounts) return null
     const account = accounts[0]
     if (account.type === 'SubAccount') {
-      const ownersRequest = '/given-roles?from_id=3&role=owner'
+      const ownersRequest = `/given-roles?from_id=${id}&role=owner`
       const owners = await ctx.$axios.$get(ownersRequest)
       if (owners) {
         account.owners = owners
