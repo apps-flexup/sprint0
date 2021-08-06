@@ -24,6 +24,12 @@ export default {
       default() {
         return []
       }
+    },
+    isNewObject: {
+      type: Boolean,
+      default() {
+        return false
+      }
     }
   },
   data() {
@@ -53,7 +59,9 @@ export default {
   mounted() {
     this.$store.dispatch('accounts/get')
     this.$store.dispatch('owners/get')
-    this.addActiveAccountAsDefaultOwner()
+    if (this.isNewObject) {
+      this.addActiveAccountAsDefaultOwner()
+    }
     this.$directory.allAccounts().then((accounts) => {
       this.allAccounts = accounts
     })
@@ -77,10 +85,8 @@ export default {
       this.emitOwnersChangedEvent()
     },
     addActiveAccountAsDefaultOwner() {
-      if (!this.value.length) {
-        const accountId = this.$activeAccount.get()
-        this.ownerSelected(accountId)
-      }
+      const accountId = this.$activeAccount.get()
+      this.ownerSelected(accountId)
     },
     emitOwnersChangedEvent() {
       this.$emit('payload:changed', this.selectedOwners)

@@ -36,6 +36,7 @@
               :label="$t(`forms.${form}.new.${field.attribute}`)"
               :value="field.input ? payload[field.input] : payload[field.attribute]"
               :search="localPayload"
+              :isNewObject="isNewObject"
               @value:changed="payloadChanged(field.additionalOutputs, field.attribute, ...arguments)"
               @payload:changed="payloadChanged(field.additionalOutputs, field.attribute, ...arguments)"
             )
@@ -103,6 +104,9 @@ export default {
     isInitiallyReadonly() {
       const res = this.action === 'edit' || this.action === 'new'
       return res
+    },
+    isNewObject() {
+      return this.action === 'new'
     }
   },
   mounted() {
