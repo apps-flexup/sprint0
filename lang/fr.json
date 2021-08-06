@@ -741,7 +741,8 @@
       "role": "Rôle"
     },
     "owners": {
-      "owner": "Propriétaire"
+      "owner": "Propriétaire",
+      "isReferenceOwner": "Proprietaire de référence"
     }
   },
   "navBar": {

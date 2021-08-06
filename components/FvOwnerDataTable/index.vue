@@ -10,6 +10,10 @@
   )
     template(v-slot:item.to_id="{ item }")
       div(v-if="item" :key="forceReRender") {{ accountNames[item.to_id] }}
+    template(v-slot:item.data="{ item }")
+      fv-icon(
+        :icon="iconForOwner(item)"
+      )
     template(v-slot:item.actions="{ item }")
       fv-delete-action(@delete:clicked="deleteItem(item)")
 
@@ -52,22 +56,21 @@ export default {
   },
   watch: {
     items() {
+      this.initItems()
+    }
+  },
+  mounted() {
+    this.$store.dispatch('owners/get')
+    this.initItems()
+  },
+  methods: {
+    initItems() {
       if (this.items) {
         this.items.forEach((owner) => {
           this.addOwnerName(owner)
         })
       }
-    }
-  },
-  mounted() {
-    this.$store.dispatch('owners/get')
-    if (this.items) {
-      this.items.forEach((owner) => {
-        this.addOwnerName(owner)
-      })
-    }
-  },
-  methods: {
+    },
     sortBy(v) {
       this.$emit('dataTable:sortBy', v)
     },
@@ -83,6 +86,10 @@ export default {
     },
     deleteItem(owner) {
       this.$emit('dataTable:delete:owner', owner)
+    },
+    iconForOwner(owner) {
+      const isReferenceOwner = owner.data && owner.data.isReferenceOwner
+      return isReferenceOwner ? 'mdi-star' : 'mdi-star-outline'
     }
   }
 }

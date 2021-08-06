@@ -23,7 +23,7 @@ export default {
     const legalStructure = rootGetters['contracts/getLegalStructureById'](
       legalStructureId
     )
-    const owners = rootGetters['owners/ownersIds']
+    const owners = rootGetters['owners/all']
     const payload = {
       ...account,
       legalStructure,

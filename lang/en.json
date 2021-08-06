@@ -733,7 +733,8 @@
       "role": "Role"
     },
     "owners": {
-      "owner": "Owner"
+      "owner": "Owner",
+      "isReferenceOwner": "Reference owner"
     }
   },
   "navBar": {

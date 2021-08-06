@@ -38,25 +38,15 @@ export default {
       return res
     },
     autocompleteItems() {
-      const selectedOwnersIds = this.selectedOwners
       const res = this.allAccounts.filter((account) => {
-        return !selectedOwnersIds.some((ownerId) => {
-          return ownerId === account.id
+        return !this.selectedOwners.some((owner) => {
+          return owner.to_id === account.id
         })
       })
       return res
     },
     items() {
-      const selectedOwnersIds = this.selectedOwners
-      if (typeof this.selectedOwners[0] !== 'number') {
-        return this.selectedOwners
-      }
-      const res = selectedOwnersIds.map((ownerId) => {
-        const storedOwner = this.$store.getters['owners/findById'](ownerId)
-        if (storedOwner) return storedOwner
-        return { to_id: ownerId }
-      })
-      return res
+      return this.selectedOwners
     }
   },
   mounted() {
@@ -68,8 +58,21 @@ export default {
     })
   },
   methods: {
-    ownerSelected(v) {
-      this.selectedOwners.push(v)
+    ownerSelected(ownerId) {
+      const ownerRole = {
+        from_type: 'Account',
+        from_id: undefined,
+        to_type: 'Account',
+        to_id: ownerId,
+        role: 'owner',
+        data: null,
+        status: 'WaitingConfirmation'
+      }
+      if (this.selectedOwners.length === 0) {
+        ownerRole.data = {}
+        ownerRole.data.isReferenceOwner = true
+      }
+      this.selectedOwners.push(ownerRole)
       this.emitOwnersChangedEvent()
     },
     addActiveAccountAsDefaultOwner() {
@@ -83,10 +86,16 @@ export default {
     },
     deleteOwner(owner) {
       const index = this.selectedOwners.findIndex(
-        (ownerId) => ownerId === owner.to_id
+        (selectedOwner) => selectedOwner.to_id === owner.to_id
       )
       if (index > -1) {
         this.selectedOwners.splice(index, 1)
+        if (this.selectedOwners.length === 1) {
+          const data = {
+            isReferenceOwner: true
+          }
+          this.selectedOwners[0].data = data
+        }
       }
       this.$emit('payload:changed', this.selectedOwners)
     }

@@ -959,11 +959,21 @@
             "displayed": true
           },
           {
+            "align": "start",
+            "sortable": true,
+            "text": "headers.owners.isReferenceOwner",
+            "value": "data",
+            "order": 1,
+            "customizable": false,
+            "active": true,
+            "displayed": true
+          },
+          {
             "align": "left",
             "sortable": false,
             "text": "headers.actions",
             "value": "actions",
-            "order": 1,
+            "order": 2,
             "customizable": false,
             "active": true,
             "displayed": false
