@@ -11,6 +11,7 @@
     :headers="headers"
     :items="items"
     @dataTable:delete:owner="deleteOwner"
+    @dataTable:setReferenceOwner:owner="setReferenceOwner"
   )
 </template>
 
@@ -85,19 +86,42 @@ export default {
       this.$emit('payload:changed', this.selectedOwners)
     },
     deleteOwner(owner) {
-      const index = this.selectedOwners.findIndex(
-        (selectedOwner) => selectedOwner.to_id === owner.to_id
-      )
+      const index = this.findOwnerIndex(owner)
       if (index > -1) {
         this.selectedOwners.splice(index, 1)
         if (this.selectedOwners.length === 1) {
-          const data = {
-            isReferenceOwner: true
-          }
-          this.selectedOwners[0].data = data
+          const singleOwnerIndex = 0
+          this.setOwnerAsReferenceOwner(singleOwnerIndex)
         }
       }
       this.$emit('payload:changed', this.selectedOwners)
+    },
+    setReferenceOwner(owner) {
+      const index = this.findOwnerIndex(owner)
+      if (index > -1) {
+        this.unsetReferenceOwner()
+        this.setOwnerAsReferenceOwner(index)
+        this.emitOwnersChangedEvent()
+      }
+    },
+    findOwnerIndex(owner) {
+      const index = this.selectedOwners.findIndex(
+        (selectedOwner) => selectedOwner.to_id === owner.to_id
+      )
+      return index
+    },
+    unsetReferenceOwner() {
+      this.selectedOwners.forEach((selectedOwner) => {
+        if (selectedOwner.data) {
+          selectedOwner.data.isReferenceOwner = false
+        }
+      })
+    },
+    setOwnerAsReferenceOwner(index) {
+      const data = {
+        isReferenceOwner: true
+      }
+      this.selectedOwners[index].data = data
     }
   }
 }
