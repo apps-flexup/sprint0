@@ -25,19 +25,11 @@ export default {
   removeAll({ dispatch, state }) {
     state.items.forEach((owner) => dispatch('remove', owner))
   },
-  add({ dispatch }, ownersIds) {
+  add({ dispatch }, owners) {
     const accountId = this.$activeAccount.get()
-    ownersIds.forEach((ownerId) => {
-      const ownerRole = {
-        from_type: 'Account',
-        from_id: accountId,
-        to_type: 'Account',
-        to_id: ownerId,
-        role: 'owner',
-        data: null,
-        status: 'WaitingConfirmation'
-      }
-      dispatch('addOne', ownerRole)
+    owners.forEach((owner) => {
+      owner.from_id = accountId
+      dispatch('addOne', owner)
     })
   }
 }

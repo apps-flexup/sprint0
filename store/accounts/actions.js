@@ -33,11 +33,9 @@ export default {
     commit('setCurrent', id)
   },
   add({ dispatch }, account) {
-    console.log('on veut creer le compte: ', account)
-    let ownersIds = []
+    let owners = []
     if (account.owners) {
-      ownersIds = JSON.parse(JSON.stringify(account.owners))
-      console.log('on a des owners: ', ownersIds)
+      owners = JSON.parse(JSON.stringify(account.owners))
       delete account.owners
     }
     this.$repos.accounts.create(account).then((res) => {
@@ -62,20 +60,7 @@ export default {
         status: 'Confirmed'
       }
       dispatch('members/add', adminRole, { root: true })
-      console.log('les owners: ', ownersIds)
-      ownersIds.forEach((ownerId) => {
-        const ownerRole = {
-          from_type: 'Account',
-          from_id: newAccountId,
-          to_type: 'Account',
-          to_id: ownerId,
-          role: 'owner',
-          data: null,
-          status: 'WaitingConfirmation'
-        }
-        console.log('on add le role: ', ownerRole)
-        dispatch('members/add', ownerRole, { root: true })
-      })
+      dispatch('owners/add', owners, { root: true })
     })
   },
   addPersonalAccount({ dispatch }, user) {
