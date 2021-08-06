@@ -13,6 +13,7 @@
     template(v-slot:item.data="{ item }")
       fv-icon(
         :icon="iconForOwner(item)"
+        @icon:clicked="referenceOwnerClicked(item)"
       )
     template(v-slot:item.actions="{ item }")
       fv-delete-action(@delete:clicked="deleteItem(item)")
@@ -90,6 +91,9 @@ export default {
     iconForOwner(owner) {
       const isReferenceOwner = owner.data && owner.data.isReferenceOwner
       return isReferenceOwner ? 'mdi-star' : 'mdi-star-outline'
+    },
+    referenceOwnerClicked(owner) {
+      this.$emit('dataTable:setReferenceOwner:owner', owner)
     }
   }
 }

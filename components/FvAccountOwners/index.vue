@@ -11,6 +11,7 @@
     :headers="headers"
     :items="items"
     @dataTable:delete:owner="deleteOwner"
+    @dataTable:setReferenceOwner:owner="setReferenceOwner"
   )
 </template>
 
@@ -98,6 +99,23 @@ export default {
         }
       }
       this.$emit('payload:changed', this.selectedOwners)
+    },
+    setReferenceOwner(owner) {
+      const index = this.selectedOwners.findIndex(
+        (selectedOwner) => selectedOwner.to_id === owner.to_id
+      )
+      if (index > -1) {
+        this.selectedOwners.forEach((selectedOwner) => {
+          if (selectedOwner.data) {
+            selectedOwner.data.isReferenceOwner = false
+          }
+        })
+        const data = {
+          isReferenceOwner: true
+        }
+        this.selectedOwners[index].data = data
+        this.emitOwnersChangedEvent()
+      }
     }
   }
 }
