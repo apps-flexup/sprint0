@@ -222,6 +222,7 @@ const displayRules = (ctx) => ({
     return res
   },
   accountName(account) {
+    if (!account) return null
     if (account.type === 'Personal') return this.personalAccountName(account)
     return this.businessAndSubAccountName(account)
   }

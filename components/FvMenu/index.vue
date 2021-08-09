@@ -59,8 +59,8 @@ export default {
       return res
     },
     userName() {
-      const name = this.$auth.user.preferred_username
-      return name
+      const account = this.$store.getters['accounts/getMyPersonalAccount']
+      return this.$displayRules.accountName(account)
     },
     accountSelected() {
       const activeAccount = this.$activeAccount.get()
