@@ -9,6 +9,12 @@ const setMediaEntities = (accountId, medias) => {
   })
 }
 
+const setAccountName = (account) => {
+  if (account.type === 'Personal') {
+    account.name = `${account.firstname} ${account.lastname}`
+  }
+}
+
 export default {
   get({ commit, getters }) {
     if (!this.$auth.loggedIn) return
@@ -77,7 +83,7 @@ export default {
       parent_type: 'User',
       parent_id: user.sub,
       type: 'Personal',
-      name: user.name,
+      name: `${user.given_name} ${user.family_name}`,
       firstname: user.given_name,
       lastname: user.family_name,
       country: 'FRA',
@@ -87,6 +93,7 @@ export default {
     dispatch('accounts/add', account, { root: true })
   },
   update({ commit, dispatch }, account) {
+    setAccountName(account)
     setMediaEntities(account.id, account.medias)
     let ownersIds = []
     if (account.owners) {

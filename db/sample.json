@@ -1003,7 +1003,8 @@
         },
         "payment_conditions_for_payment_structure_form": [],
         "contracts": [],
-        "members": []
+        "members": [],
+        "owners": []
       },
       "id": 1
     },
@@ -1016,7 +1017,7 @@
     {
       "avatar": "/images/avatar-0.png",
       "country": "FRA",
-      "name": "Toto",
+      "name": "toto La Riflette ",
       "firstname": "toto",
       "lastname": "La Riflette ",
       "type": "Personal",
