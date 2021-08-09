@@ -467,7 +467,7 @@
     },
     "businessAccounts": {
       "new": {
-        "name": "Account name",
+        "name": "Company name",
         "title": "New business account",
         "email": "Email",
         "description": "Description",
