@@ -188,7 +188,7 @@ const displayRules = (ctx) => ({
     if (!uuid) return null
     const account = await ctx.$directory.personalAccountForUser(uuid)
     if (!account) return null
-    const res = `${account.firstname} ${account.lastname}`
+    const res = `${account.name}`
     return res
   },
   role(item) {
@@ -208,13 +208,27 @@ const displayRules = (ctx) => ({
   async ownerName(owner) {
     if (!owner) return null
     const account = await ctx.$directory.getAccountById(owner.to_id)
-    const res = account.name
+    return this.accountName(account)
+  },
+  personalAccountName(account) {
+    if (!account) return null
+    return account.name
+  },
+  businessAndSubAccountName(account) {
+    if (!account) return null
+    let res = account.name
+    const country = ctx.store.getters['countries/findByIso3'](account.country)
+    if (country) res += `, ${country.name}`
     return res
+  },
+  accountName(account) {
+    if (!account) return null
+    if (account.type === 'Personal') return this.personalAccountName(account)
+    return this.businessAndSubAccountName(account)
   }
 })
 
 export default (ctx, inject) => {
   const res = displayRules(ctx)
-
   inject('displayRules', res)
 }

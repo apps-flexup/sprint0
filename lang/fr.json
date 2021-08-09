@@ -469,7 +469,7 @@
     },
     "businessAccounts": {
       "new": {
-        "name": "Nom du compte",
+        "name": "Nom de l'entreprise",
         "title": "Nouveau compte professionnel",
         "email": "Email",
         "description": "Description",

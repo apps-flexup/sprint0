@@ -2,7 +2,6 @@ const directory = (ctx) => ({
   async naturalPersons() {
     const request = '/accounts?type=Personal'
     const res = await ctx.$axios.$get(request)
-    console.log('res: ', res)
     return res
   },
   async juridicalPersons() {
