@@ -11,9 +11,9 @@
       p {{ label }}
     template(v-slot:item="data")
       v-list-item-content
-        v-list-item-title {{ data.item.name }}
+        v-list-item-title {{ accountName(data.item) }}
     template(v-slot:selection="data")
-      div {{ data.item.name }}
+      div {{ accountName(data.item) }}
 </template>
 
 <script>
@@ -48,6 +48,9 @@ export default {
   methods: {
     accountSelected(v) {
       this.$emit('account:selected', v)
+    },
+    accountName(account) {
+      return this.$displayRules.accountName(account)
     }
   }
 }
