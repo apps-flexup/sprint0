@@ -25,6 +25,10 @@ const $activeAccount = {
   get: jest.fn()
 }
 
+const $displayRules = {
+  accountName: jest.fn()
+}
+
 const loggedInAuth = {
   loggedIn: true,
   user: {
@@ -43,7 +47,8 @@ const loggedInFactory = () => {
     mocks: {
       $t: (msg) => msg,
       $auth: loggedInAuth,
-      $activeAccount
+      $activeAccount,
+      $displayRules
     }
   })
 }
