@@ -2131,11 +2131,6 @@
       "title": "forms.account.personal.step.0",
       "fields": [
         {
-          "attribute": "name",
-          "component": "fv-text-field",
-          "size": 12
-        },
-        {
           "attribute": "lastname",
           "component": "fv-text-field",
           "size": 12
