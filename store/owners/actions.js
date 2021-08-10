@@ -31,5 +31,10 @@ export default {
       owner.from_id = accountId
       dispatch('addOne', owner)
     })
+  },
+  update({ dispatch }, owners) {
+    dispatch('removeAll').then(() => {
+      dispatch('add', owners)
+    })
   }
 }

@@ -95,18 +95,15 @@ export default {
   update({ commit, dispatch }, account) {
     setAccountName(account)
     setMediaEntities(account.id, account.medias)
-    let ownersIds = []
+    let owners = []
     if (account.owners) {
-      ownersIds = JSON.parse(JSON.stringify(account.owners))
-      console.log('on a des owners: ', ownersIds)
+      owners = JSON.parse(JSON.stringify(account.owners))
       delete account.owners
     }
-    dispatch('owners/removeAll', {}, { root: true }).then(() => {
-      dispatch('owners/add', ownersIds, { root: true })
-      this.$repos.accounts.update(account).then((res) => {
-        commit('remove', res)
-        commit('add', res)
-      })
+    this.$repos.accounts.update(account).then((res) => {
+      commit('remove', res)
+      commit('add', res)
+      dispatch('owners/update', owners, { root: true })
     })
   }
 }
