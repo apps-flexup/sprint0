@@ -1,5 +1,11 @@
 # sprint0
 
+[![Netlify Status](
+https://api.netlify.com/api/v1/badges/e5a68325-2905-4083-a1e0-e39781833902/deploy-status
+)](
+https://app.netlify.com/sites/sprint0/deploys
+)
+
 > Version initiale du gestionnaire de contrats
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/e5a68325-2905-4083-a1e0-e39781833902/deploy-status)](https://app.netlify.com/sites/sprint0/deploys)
