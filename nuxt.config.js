@@ -108,9 +108,7 @@ export default {
   axios: {
     responseType: 'json',
     headers: {
-      Accept: 'application/json',
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS'
+      Accept: 'application/json'
     }
   },
   auth: {
