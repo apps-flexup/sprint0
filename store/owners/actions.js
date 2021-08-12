@@ -12,29 +12,40 @@ export default {
       commit('set', activeAccountMembers)
     })
   },
-  addOne({ commit }, givenRole) {
-    this.$repos.givenRoles.create(givenRole).then((res) => {
-      commit('add', res)
-    })
+  async addOne({ commit }, givenRole) {
+    console.log('on ajoute: ', givenRole)
+    const res = await this.$repos.givenRoles.create(givenRole)
+    commit('add', res)
+    console.log('on a ajoute: ', res)
   },
-  remove({ commit }, member) {
-    this.$repos.givenRoles
-      .delete(member.id)
-      .then(() => commit('remove', member))
+  async remove({ commit }, owner) {
+    await this.$repos.givenRoles.delete(owner.id)
+    commit('remove', owner)
+    console.log('on a bien remove le owner: ', owner)
   },
-  removeAll({ dispatch, state }) {
-    state.items.forEach((owner) => dispatch('remove', owner))
+  async removeAll({ dispatch, state }) {
+    console.log('on remove tous les owners')
+    for (const owner of state.items) {
+      const res = await dispatch('remove', owner)
+      await new Promise((resolve) => setTimeout(resolve, 5))
+      console.log('delete res: ', res)
+    }
+    console.log('ok on a tout remove')
   },
-  add({ dispatch }, owners) {
+  async add({ dispatch }, owners) {
+    console.log('on ajoute les nouveaux owners')
     const accountId = this.$activeAccount.get()
-    owners.forEach((owner) => {
+    for (const owner of owners) {
       owner.from_id = accountId
-      dispatch('addOne', owner)
-    })
+      await dispatch('addOne', owner)
+      await new Promise((resolve) => setTimeout(resolve, 5))
+    }
   },
-  update({ dispatch }, owners) {
-    dispatch('removeAll').then(() => {
-      dispatch('add', owners)
-    })
+  async update({ dispatch }, owners) {
+    console.log('on update les owners')
+    await dispatch('removeAll')
+    console.log('maintenant on peut add: ', owners)
+    await dispatch('add', owners)
+    console.log('on a bien fini de add')
   }
 }
