@@ -16,7 +16,7 @@
         url='accounts'
         :form='formForAccountType'
         action="read"
-        :allowEdit="isActiveAccount"
+        :allowEdit="canEdit"
       )
     v-tab-item(v-if="accountType === 'SubAccount'")
       fv-index-table.mt-5(
@@ -84,6 +84,15 @@ export default {
       const res =
         account.type === 'SubAccount' ? 'subAccounts' : `${type}Accounts`
       return res
+    },
+    canEdit() {
+      const currentUserId = this.$auth.user.sub
+      const activeAccountId = this.$activeAccount.get()
+      const roles = this.$store.getters['members/roleFor'](
+        activeAccountId,
+        currentUserId
+      )
+      return roles.includes('admin') && this.isActiveAccount
     },
     isActiveAccount() {
       return this.accountId === this.$activeAccount.get()
