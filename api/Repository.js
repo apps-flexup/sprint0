@@ -26,6 +26,7 @@ export default ($axios, store) => (resource) => ({
     return res
   },
   async update(payload) {
+    if (!payload.id) return
     const id = parseInt(payload.id)
     // on supprime: id, created_at et updated_at
     delete payload.id

@@ -38,39 +38,31 @@ export default {
   setCurrent({ commit }, id) {
     commit('setCurrent', id)
   },
-  add({ dispatch }, account) {
-    let owners = []
-    if (account.owners) {
-      owners = JSON.parse(JSON.stringify(account.owners))
-      delete account.owners
+  async add({ dispatch, commit }, account) {
+    const res = await this.$repos.accounts.create(account)
+    commit('add', res)
+    const newAccountId = parseInt(res.id)
+    this.$activeAccount.set(newAccountId)
+    const adminRole = {
+      from_type: 'Account',
+      from_id: newAccountId,
+      to_type: 'User',
+      to_id: this.$auth.user.sub,
+      role: 'admin',
+      data: null,
+      status: 'Confirmed'
     }
-    this.$repos.accounts.create(account).then((res) => {
-      const newAccountId = parseInt(res.id)
-      dispatch('update', res)
-      this.$activeAccount.set(newAccountId)
-      const thirdPartyAccount = {
-        name: res.name,
-        account_id: null
-      }
-      dispatch('thirdPartyAccounts/addToFlexup', thirdPartyAccount, {
-        root: true
-      })
-      dispatch('settings/createSettings', {}, { root: true })
-      const adminRole = {
-        from_type: 'Account',
-        from_id: newAccountId,
-        to_type: 'User',
-        to_id: this.$auth.user.sub,
-        role: 'admin',
-        data: null,
-        status: 'Confirmed'
-      }
-      dispatch('members/add', adminRole, { root: true })
-      dispatch('owners/add', owners, { root: true })
+    dispatch('members/add', adminRole, { root: true })
+    const thirdPartyAccount = {
+      name: res.name,
+      account_id: null
+    }
+    dispatch('thirdPartyAccounts/addToFlexup', thirdPartyAccount, {
+      root: true
     })
+    dispatch('settings/createSettings', {}, { root: true })
   },
   addPersonalAccount({ dispatch }, user) {
-    console.log('user: ', user)
     const emailMedia = {
       description: {
         type: 'Mail',
@@ -89,21 +81,13 @@ export default {
       country: 'FRA',
       medias
     }
-    console.log('account: ', account)
     dispatch('accounts/add', account, { root: true })
   },
-  update({ commit, dispatch }, account) {
+  async update({ commit }, account) {
     setAccountName(account)
     setMediaEntities(account.id, account.medias)
-    let owners = []
-    if (account.owners) {
-      owners = JSON.parse(JSON.stringify(account.owners))
-      delete account.owners
-    }
-    this.$repos.accounts.update(account).then((res) => {
-      commit('remove', res)
-      commit('add', res)
-      dispatch('owners/update', owners, { root: true })
-    })
+    const res = await this.$repos.accounts.update(account)
+    commit('remove', res)
+    commit('add', res)
   }
 }

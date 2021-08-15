@@ -40,6 +40,8 @@ const activeAccount = (ctx) => ({
       .then((_data) => {
         this.setSettings(this.settings())
       })
+    ctx.store.dispatch('members/get')
+    ctx.store.dispatch('owners/get')
     ctx.app.router.push('/')
   },
   settings() {
