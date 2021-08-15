@@ -23,11 +23,9 @@ export default {
     const legalStructure = rootGetters['contracts/getLegalStructureById'](
       legalStructureId
     )
-    const owners = rootGetters['owners/all']
     const payload = {
       ...account,
-      legalStructure,
-      owners
+      legalStructure
     }
     const res = JSON.parse(JSON.stringify(payload))
     return res

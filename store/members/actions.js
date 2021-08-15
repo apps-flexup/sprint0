@@ -12,10 +12,9 @@ export default {
       commit('set', activeAccountMembers)
     })
   },
-  add({ commit }, givenRole) {
-    this.$repos.givenRoles.create(givenRole).then((res) => {
-      commit('add', res)
-    })
+  async add({ commit }, givenRole) {
+    const res = await this.$repos.givenRoles.create(givenRole)
+    commit('add', res)
   },
   update({ commit }, member) {
     this.$repos.givenRoles.update(member).then((res) => {
