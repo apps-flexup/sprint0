@@ -46,9 +46,12 @@ export default {
     },
     autocompleteItems() {
       const res = this.allAccounts.filter((account) => {
-        return !this.selectedOwners.some((owner) => {
+        const isActiveAccount =
+          !this.isNewObject && account.id === this.$activeAccount.get()
+        const isAlreadyOwner = this.selectedOwners.some((owner) => {
           return owner.to_id === account.id
         })
+        return !isActiveAccount && !isAlreadyOwner
       })
       return res
     },
