@@ -109,15 +109,13 @@ export default {
       return res
     },
     async subAccounts() {
-      const accountId = this.accountId
-      const givenRoles = await this.$repos.givenRoles.index()
+      const accounts = await this.$directory.subAccounts()
       const res = []
-      givenRoles.forEach(async (givenRole) => {
-        if (givenRole.to_id === accountId && givenRole.role === 'owner') {
-          const account = await this.$directory.getAccountById(
-            givenRole.from_id
-          )
-          res.push(account)
+      accounts.forEach((account) => {
+        const owners = account.owners
+        if (owners) {
+          const isOwner = owners.some((owner) => owner.to_id === this.accountId)
+          if (isOwner) res.push(account)
         }
       })
       return res
