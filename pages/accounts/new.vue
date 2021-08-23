@@ -1,7 +1,7 @@
 <template lang="pug">
 .page-account-new
-  h1.mb-8(data-testid="pageTitle") {{ $t('forms.' + lowerCaseFirstLetter(accountForm) + 's.new.title') }}
-  v-radio-group(:label="$t('accounts.typeOfAccount.whatType')" v-model='accountForm' :mandatory="true")
+  h1.mb-8(data-testid="pageTitle") {{ $t('forms.personalAccounts.new.title') }}
+  v-radio-group(:label="$t('accounts.typeOfAccount.whatType')" v-model="accountForm" :mandatory="true")
     v-radio(name='typeAccount' :label="$t('forms.businessAccounts.new.title')" value='BusinessAccount')
     v-radio(name='typeAccount' :label="$t('forms.subAccounts.new.title')" value='SubAccount')
     fv-flex-items
@@ -22,7 +22,7 @@
 export default {
   data() {
     return {
-      accountForm: 'BusinessAccount'
+      accountForm: null
     }
   },
   methods: {
@@ -31,9 +31,6 @@ export default {
     },
     cancel() {
       this.$router.go(-1)
-    },
-    lowerCaseFirstLetter(accountForm) {
-      return accountForm.charAt(0).toLowerCase() + accountForm.slice(1)
     }
   }
 }
