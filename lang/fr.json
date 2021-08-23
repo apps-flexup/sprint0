@@ -454,6 +454,7 @@
         "firstname": "Prénom",
         "email": "Email",
         "civility": "Civilité",
+        "type": "Type de compte",
         "titles": {
           "mr": "M.",
           "ms": "Mme",
@@ -475,7 +476,8 @@
         "description": "Description",
         "country": "Pays",
         "legal-structure-id": "Statut juridique",
-        "siret": "SIRET"
+        "siret": "SIRET",
+        "type": "Type de compte"
       },
       "edit": {
         "title": "Modifier mon compte"
@@ -490,7 +492,8 @@
         "title": "Nouveau sous-compte",
         "description": "Description",
         "country": "Pays",
-        "parent_id": "Compte parent"
+        "parent_id": "Compte parent",
+        "type": "Type de compte"
       },
       "edit": {
         "title": "Modifier mon compte"

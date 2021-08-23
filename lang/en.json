@@ -452,6 +452,7 @@
         "firstname": "Firstname",
         "email": "Email",
         "civility": "Civility",
+        "type": "Type of account",
         "titles": {
           "mr": "Mr",
           "ms": "Ms",
@@ -473,7 +474,8 @@
         "description": "Description",
         "country": "Country",
         "legal-structure-id": "Legal structure",
-        "siret": "SIRET"
+        "siret": "SIRET",
+        "type": "Type of account"
       },
       "edit": {
         "title": "Edit my account"
@@ -488,7 +490,8 @@
         "title": "New sub account",
         "description": "Description",
         "country": "Country",
-        "parent_id": "Parent account"
+        "parent_id": "Parent account",
+        "type": "Type of account"
       },
       "edit": {
         "title": "Edit my account"
