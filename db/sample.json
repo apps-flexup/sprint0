@@ -2083,7 +2083,7 @@
       "fields": [
         {
           "attribute": "type",
-          "component": "fv-text-field",
+          "component": "fv-readonly-field",
           "size": 12
         },
         {
@@ -2138,7 +2138,7 @@
       "fields": [
         {
           "attribute": "type",
-          "component": "fv-text-field",
+          "component": "fv-readonly-field",
           "size": 12
         },
         {
@@ -2171,7 +2171,7 @@
       "fields": [
         {
           "attribute": "type",
-          "component": "fv-text-field",
+          "component": "fv-readonly-field",
           "size": 12
         },
         {
