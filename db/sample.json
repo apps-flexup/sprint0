@@ -2082,6 +2082,11 @@
       "title": "forms.account.business.step.0",
       "fields": [
         {
+          "attribute": "type",
+          "component": "fv-readonly-field",
+          "size": 12
+        },
+        {
           "attribute": "name",
           "component": "fv-text-field",
           "size": 12
@@ -2132,6 +2137,11 @@
       "title": "forms.account.personal.step.0",
       "fields": [
         {
+          "attribute": "type",
+          "component": "fv-readonly-field",
+          "size": 12
+        },
+        {
           "attribute": "lastname",
           "component": "fv-text-field",
           "size": 12
@@ -2159,6 +2169,11 @@
     {
       "title": "forms.account.sub.step.0",
       "fields": [
+        {
+          "attribute": "type",
+          "component": "fv-readonly-field",
+          "size": 12
+        },
         {
           "attribute": "name",
           "component": "fv-text-field",
