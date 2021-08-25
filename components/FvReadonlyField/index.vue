@@ -4,7 +4,7 @@
     v-col(cols="12")
       fv-text-field.text(
         :label="label"
-        v-model="value"
+        v-model="checkValue ? checkValue : value"
         :clearable="false"
         readonly
       )
@@ -38,11 +38,30 @@ export default {
         '--bgColor': bgColor
       }
       return res
+    },
+    checkValue() {
+      return this.isTypeOfAccount()
     }
   },
   mounted() {
     console.log('Composant ', this.$options.name)
     this.$store.dispatch('settings/getSettings')
+  },
+  methods: {
+    lowerCaseFirstLetter(str) {
+      return str.charAt(0).toLowerCase() + str.slice(1)
+    },
+    isTypeOfAccount() {
+      if (
+        this.value === 'Personal' ||
+        this.value === 'Business' ||
+        this.value === 'SubAccounts'
+      ) {
+        return this.$t(`account.${this.lowerCaseFirstLetter(this.value)}.name`)
+      } else {
+        return this.value
+      }
+    }
   }
 }
 </script>

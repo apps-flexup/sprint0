@@ -11,6 +11,17 @@
       }
     }
   },
+  "account": {
+    "personal": {
+      "name": "Compte perso"
+    },
+    "business": {
+      "name": "Compte business"
+    },
+    "subAccount": {
+      "name": "Sous-compte"
+    }
+  },
   "ponctuation": {
     "colons": " : "
   },
