@@ -59,9 +59,6 @@ export default {
   mounted() {
     console.log('Composant ', this.$options.name)
     this.roleOfUser()
-    this.$store.dispatch('accounts/get')
-    this.$store.dispatch('functionalRoles/get')
-    this.$store.dispatch('members/get')
   },
   methods: {
     cardClicked() {
