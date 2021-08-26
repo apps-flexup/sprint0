@@ -55,7 +55,7 @@ export default {
       if (
         this.value === 'Personal' ||
         this.value === 'Business' ||
-        this.value === 'SubAccounts'
+        this.value === 'SubAccount'
       ) {
         return this.$t(`account.${this.lowerCaseFirstLetter(this.value)}.name`)
       } else {
