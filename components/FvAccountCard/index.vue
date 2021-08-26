@@ -17,10 +17,10 @@
       ) {{ name }}
       v-card-text.text-center.pb-0(
         data-testid="accountType"
-      ) Type de compte : {{ $t(`account.${lowerCaseFirstLetter(type)}.name`) }}
+      ) {{ $t('account.type') }} : {{ $t(`account.${lowerCaseFirstLetter(type)}.name`) }}
       v-card-text.text-center.pt-0(
         data-testid="userRole"
-      ) Mon rôle : {{ $t('functionalRoles.' + role) }}
+      ) {{ $t('account.myRole') }} : {{ $t('functionalRoles.' + role) }}
 </template>
 
 <script>
@@ -57,7 +57,6 @@ export default {
     }
   },
   mounted() {
-    console.log('Composant ', this.$options.name)
     this.roleOfUser()
   },
   methods: {

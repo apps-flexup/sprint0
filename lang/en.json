@@ -12,6 +12,8 @@
     }
   },
   "account": {
+    "myRole": "My role",
+    "type": "Account type",
     "personal": {
       "name": "Personal account"
     },
@@ -463,7 +465,7 @@
         "firstname": "Firstname",
         "email": "Email",
         "civility": "Civility",
-        "type": "Type of account",
+        "type": "Account type",
         "titles": {
           "mr": "Mr",
           "ms": "Ms",

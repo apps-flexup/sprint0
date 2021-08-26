@@ -12,6 +12,8 @@
     }
   },
   "account": {
+    "myRole": "Mon role",
+    "type": "Type de compte",
     "personal": {
       "name": "Compte perso"
     },
