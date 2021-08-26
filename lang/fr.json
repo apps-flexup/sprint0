@@ -11,6 +11,19 @@
       }
     }
   },
+  "account": {
+    "myRole": "Mon role",
+    "type": "Type de compte",
+    "personal": {
+      "name": "Compte perso"
+    },
+    "business": {
+      "name": "Compte business"
+    },
+    "subAccount": {
+      "name": "Sous-compte"
+    }
+  },
   "ponctuation": {
     "colons": " : "
   },

@@ -13,6 +13,7 @@
         :id="account.id"
         :avatar="account.avatar"
         :name="account.name"
+        :type="account.type"
       )
 </template>
 

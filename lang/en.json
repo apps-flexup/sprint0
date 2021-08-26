@@ -11,6 +11,19 @@
       }
     }
   },
+  "account": {
+    "myRole": "My role",
+    "type": "Account type",
+    "personal": {
+      "name": "Personal account"
+    },
+    "business": {
+      "name": "Business account"
+    },
+    "subAccount": {
+      "name": "Sub-account"
+    }
+  },
   "ponctuation": {
     "colons": ": "
   },
@@ -452,7 +465,7 @@
         "firstname": "Firstname",
         "email": "Email",
         "civility": "Civility",
-        "type": "Type of account",
+        "type": "Account type",
         "titles": {
           "mr": "Mr",
           "ms": "Ms",

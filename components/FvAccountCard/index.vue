@@ -15,6 +15,12 @@
       v-card-title.justify-center(
         data-testid="name"
       ) {{ name }}
+      v-card-text.text-center.pb-0(
+        data-testid="accountType"
+      ) {{ $t('account.type') }} : {{ $t(`account.${lowerCaseFirstLetter(type)}.name`) }}
+      v-card-text.text-center.pt-0(
+        data-testid="userRole"
+      ) {{ $t('account.myRole') }} : {{ $t('functionalRoles.' + role) }}
 </template>
 
 <script>
@@ -36,15 +42,22 @@ export default {
       default() {
         return null
       }
+    },
+    type: {
+      type: String,
+      default() {
+        return null
+      }
     }
   },
   data() {
     return {
-      avatarSize: 128
+      avatarSize: 128,
+      role: null
     }
   },
   mounted() {
-    console.log('Composant ', this.$options.name)
+    this.roleOfUser()
   },
   methods: {
     cardClicked() {
@@ -52,6 +65,19 @@ export default {
     },
     favoriteClicked() {
       this.$emit('accountCard:favoriteClicked')
+    },
+    roleOfUser() {
+      const uuid = this.$auth.user.sub
+      this.$repos.givenRoles.index().then((data) => {
+        data.forEach((account) => {
+          if (account.to_id === uuid && account.id === this.id) {
+            this.role = account.role
+          }
+        })
+      })
+    },
+    lowerCaseFirstLetter(str) {
+      return str.charAt(0).toLowerCase() + str.slice(1)
     }
   }
 }

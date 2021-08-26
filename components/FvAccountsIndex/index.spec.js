@@ -5,6 +5,24 @@ import FvAccountsIndex from './index'
 const localVue = createLocalVue()
 localVue.use(Vuex)
 
+const $auth = {
+  user: {
+    sub: ''
+  }
+}
+
+const givenRole = 'plop'
+const $repos = {
+  givenRoles: {
+    index: () =>
+      new Promise((resolve) => {
+        setTimeout(() => {
+          resolve([givenRole])
+        }, 300)
+      })
+  }
+}
+
 describe('FvAccountsIndex', () => {
   const accounts = [
     {
@@ -19,6 +37,7 @@ describe('FvAccountsIndex', () => {
       roles: ['customer', 'supplier'],
       roles_methods: null,
       supplier: false,
+      type: 'Personal',
       user_id: '2ae5fcf8-9ed5-480a-89c8-a2f946e72140'
     },
     {
@@ -33,6 +52,7 @@ describe('FvAccountsIndex', () => {
       roles: ['customer', 'supplier'],
       roles_methods: null,
       supplier: false,
+      type: 'Business',
       user_id: '2ae5fcf8-9ed5-480a-89c8-a2f946e72140'
     },
     {
@@ -47,6 +67,7 @@ describe('FvAccountsIndex', () => {
       roles: ['customer', 'supplier'],
       roles_methods: null,
       supplier: false,
+      type: 'SubAccount',
       user_id: '2ae5fcf8-9ed5-480a-89c8-a2f946e72140'
     }
   ]
@@ -61,7 +82,9 @@ describe('FvAccountsIndex', () => {
       store,
       mocks: {
         $t: (msg) => msg,
-        $router
+        $router,
+        $auth,
+        $repos
       }
     })
   }
