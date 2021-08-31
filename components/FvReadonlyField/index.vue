@@ -4,6 +4,8 @@
     v-col(cols="12")
       fv-text-field.text(
         :label="label"
+        :regular="true"
+        :outlined="false"
         v-model="checkValue ? checkValue : value"
         :clearable="false"
         readonly
@@ -25,20 +27,15 @@ export default {
       default() {
         return null
       }
+    },
+    readonly: {
+      type: Boolean,
+      default() {
+        return true
+      }
     }
   },
   computed: {
-    cssVars() {
-      const settings = this.$store.getters['settings/settings']
-      const theme = settings.theme
-      const color = theme === 'light' ? 'black' : 'white'
-      const bgColor = theme === 'light' ? '#E6E6E6' : '#1E1E1E'
-      const res = {
-        '--textColor': color,
-        '--bgColor': bgColor
-      }
-      return res
-    },
     checkValue() {
       return this.isTypeOfAccount()
     }
@@ -67,13 +64,7 @@ export default {
 </script>
 
 <style scoped>
-.text {
-  color: var(--textColor) !important;
-}
 ::v-deep .col {
   padding: 0 12px;
-}
-::v-deep .v-input__slot {
-  background-color: var(--bgColor) !important;
 }
 </style>

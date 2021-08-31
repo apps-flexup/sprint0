@@ -33,6 +33,7 @@
             component(
               data-testid="fieldComponent"
               :is="field.component"
+              :readonly="readonly"
               :label="$t(`forms.${form}.new.${field.attribute}`)"
               :value="field.input ? payload[field.input] : payload[field.attribute]"
               :search="localPayload"
@@ -173,9 +174,6 @@ export default {
 <style scoped>
 ::v-deep .v-sheet {
   border-radius: 15px;
-}
-::v-deep .v-list.mt-10.v-sheet.theme--light {
-  background-color: rgb(241, 241, 241);
 }
 ::v-deep .v-input.theme--light .v-input__slot {
   background: #ffffff;

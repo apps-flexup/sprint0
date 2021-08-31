@@ -67,3 +67,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+::v-deep .v-input__slot {
+  background-color: #e6e6e6 !important;
+}
+</style>

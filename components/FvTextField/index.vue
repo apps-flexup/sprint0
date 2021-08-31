@@ -1,11 +1,13 @@
 <template lang="pug">
 .fv-text-field
   v-text-field(
+    :style="cssVars"
     data-testid="textField"
     v-model="model"
     v-click-outside="onClickOutside"
     :label="label"
     :outlined="outlined"
+    :regular="regular"
     :append-outer-icon="appendOuterIcon"
     :suffix="suffix"
     :readonly="readonly"
@@ -44,6 +46,12 @@ export default {
       type: Boolean,
       default() {
         return true
+      }
+    },
+    regular: {
+      type: Boolean,
+      default() {
+        return false
       }
     },
     value: {
@@ -88,6 +96,22 @@ export default {
       model: this.value
     }
   },
+
+  computed: {
+    cssVars() {
+      const settings = this.$store.getters['settings/settings']
+      const theme = settings.theme
+      const bgColor = theme === 'light' ? '#E6E6E6' : '#1E1E1E'
+      if (!this.readonly) {
+        const bgColor = theme === 'light' ? '#E6E6E6' : '#1E1E1E'
+        const res = {
+          '--bgColor': bgColor
+        }
+        return res
+      }
+      return bgColor
+    }
+  },
   watch: {
     value() {
       this.model = this.value
@@ -116,3 +140,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+::v-deep .v-input__slot {
+  background-color: var(--bgColor) !important;
+}
+</style>
