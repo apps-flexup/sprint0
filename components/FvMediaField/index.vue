@@ -7,6 +7,7 @@
         :label="mediaLabel"
         :value="mediaValue"
         :readonly="isMediaValueReadonly"
+        :backgroundEdit="true"
         @input="valueChanged"
         @click="valueClicked"
       )

@@ -14,6 +14,7 @@
       fv-text-field(
         data-testid="textField"
         :readonly="true"
+        :backgroundEdit="true"
         :clearable="clearable"
         :hideDetails="hideDetails"
         :value="displayDate"
@@ -116,8 +117,3 @@ export default {
   }
 }
 </script>
-<style scoped>
-.fv-field-date {
-  background-color: inherit;
-}
-</style>

@@ -72,6 +72,12 @@ export default {
         return false
       }
     },
+    backgroundEdit: {
+      type: Boolean,
+      default() {
+        return false
+      }
+    },
     clearable: {
       type: Boolean,
       default() {
@@ -96,14 +102,13 @@ export default {
       model: this.value
     }
   },
-
   computed: {
     cssVars() {
       const settings = this.$store.getters['settings/settings']
       const theme = settings.theme
-      const bgColor = theme === 'light' ? '#E6E6E6' : '#1E1E1E'
-      if (!this.readonly) {
-        const bgColor = theme === 'light' ? '#E6E6E6' : '#1E1E1E'
+      const bgColor = theme === 'light' ? '#FFFFFF' : '#1E1E1E'
+      if (!this.readonly || this.backgroundEdit) {
+        const bgColor = theme === 'light' ? '#F9FCFF' : '#1E1E1E'
         const res = {
           '--bgColor': bgColor
         }
