@@ -433,6 +433,7 @@
       "locale": "fr",
       "theme": "light",
       "price_nb_after_decimal_point": 2,
+      "default_vat": 20,
       "vat_nb_after_decimal_point": 1,
       "headers": {
         "products": [

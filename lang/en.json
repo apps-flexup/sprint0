@@ -809,6 +809,7 @@
       "title": "Others",
       "labels": {
         "priceNbDigits": "Price: number of digits after decimal point",
+        "defaultVat": "Default VAT",
         "vatNbDigits": "VAT: number of digits after decimal point"
       }
     }
