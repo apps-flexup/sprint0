@@ -817,6 +817,7 @@
       "title": "Autres",
       "labels": {
         "priceNbDigits": "Prix: nombre de chiffres après la virgule",
+        "defaultVat": "TVA par défaut",
         "vatNbDigits": "TVA: nombre de chiffres après la virgule"
       }
     }
