@@ -29,6 +29,9 @@ describe('FvFieldDate', () => {
           namespaced: true,
           actions: {
             getSettings: jest.fn()
+          },
+          getters: {
+            settings: () => jest.fn()
           }
         }
       }

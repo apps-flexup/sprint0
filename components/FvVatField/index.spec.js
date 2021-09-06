@@ -1,11 +1,36 @@
-import { mount } from '@vue/test-utils'
+import { mount, createLocalVue } from '@vue/test-utils'
+import Vuex from 'Vuex'
 import FvVatField from './index.vue'
 
+const localVue = createLocalVue()
+localVue.use(Vuex)
+
+const vat = 20
+let store
+const factory = () => {
+  return mount(FvVatField, {
+    localVue,
+    store
+  })
+}
+
+beforeEach(() => {
+  store = new Vuex.Store({
+    modules: {
+      settings: {
+        namespaced: true,
+        actions: {
+          getSettings: jest.fn()
+        },
+        getters: {
+          settings: () => jest.fn()
+        }
+      }
+    }
+  })
+})
+
 describe('FvVatField', () => {
-  const vat = 20
-  const factory = () => {
-    return mount(FvVatField)
-  }
   it('should render a vat field', () => {
     const wrapper = factory()
     expect(wrapper.find('[data-testid="vatField"]').exists()).toBe(true)

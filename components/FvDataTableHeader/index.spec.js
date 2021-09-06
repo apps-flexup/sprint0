@@ -1,9 +1,33 @@
-import { mount } from '@vue/test-utils'
+import { mount, createLocalVue } from '@vue/test-utils'
+import Vuex from 'Vuex'
 import FvDataTableHeader from './index.vue'
 
+const localVue = createLocalVue()
+localVue.use(Vuex)
+
+let store
 const factory = () => {
-  return mount(FvDataTableHeader)
+  return mount(FvDataTableHeader, {
+    localVue,
+    store
+  })
 }
+
+beforeEach(() => {
+  store = new Vuex.Store({
+    modules: {
+      settings: {
+        namespaced: true,
+        actions: {
+          getSettings: jest.fn()
+        },
+        getters: {
+          settings: () => jest.fn()
+        }
+      }
+    }
+  })
+})
 
 describe('FvDataTableHeader', () => {
   it('should render a fv data table header', () => {
