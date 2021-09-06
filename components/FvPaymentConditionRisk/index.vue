@@ -5,7 +5,7 @@
     v-col.center(cols="1")
       span.total {{ $t('forms.paymentConditions.new.total') }}
     v-col.center(cols="1")
-      v-chip.total(
+      v-chip.result(
         data-testid="total"
         :color="avatarColor"
       ) {{ total }}%
@@ -80,5 +80,9 @@ export default {
   font-weight: bold;
   color: var(--fontColor);
   font-size: 1rem;
+}
+.result {
+  background: #f9fcff !important;
+  border: lightgray solid 1px !important;
 }
 </style>

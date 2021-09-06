@@ -16,9 +16,10 @@
     template(v-slot:form)
       v-row
         v-col.md-12.sm-12.lg-12.xl-12(cols='12')
-          fv-text-field(
+          v-textarea(
             data-testid='street'
             :value="street"
+            outlined
             :label="$t('forms.addresses.street')"
             rows='3'
             @input="streetChanged"

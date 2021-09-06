@@ -10,10 +10,10 @@
           @reference:selected="referenceSelected(reference, ...arguments)"
         )
       v-col.center(cols="1")
-        v-avatar.center(:color="avatarColor")
+        v-avatar.reference(:color="avatarColor")
           span.referenceKey {{ reference.key }}
       v-col.center(cols="1")
-        v-avatar.center(:color="avatarColor")
+        v-avatar.reference(:color="avatarColor")
           span.referenceKey {{ getValueForReference(reference) }}%
     v-row(v-if="referenceHasParam(reference)")
       v-col(cols="10")
@@ -148,5 +148,10 @@ export default {
 }
 .referenceKey {
   color: var(--fontColor);
+}
+.reference {
+  border: 1px lightgrey solid !important;
+  background: #f9fcff !important;
+  text-align: center;
 }
 </style>

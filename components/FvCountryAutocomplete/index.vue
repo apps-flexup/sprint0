@@ -70,6 +70,6 @@ export default {
 
 <style scoped>
 ::v-deep .v-input__slot {
-  background-color: #e6e6e6 !important;
+  background-color: #f9fcff !important;
 }
 </style>
