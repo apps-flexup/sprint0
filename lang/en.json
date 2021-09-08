@@ -1,4 +1,8 @@
 {
+  "visibility": {
+    "public": "Public",
+    "private": "Private"
+  },
   "pages": {
     "accounts": {
       "_id": {
@@ -522,7 +526,8 @@
         "price": "Price incl. tax",
         "elasticity": "Elasticity",
         "currency": "Currency",
-        "vat": "VAT"
+        "vat": "VAT",
+        "visibility": "Visibility"
       },
       "edit": {
         "title": "Edit my offer"

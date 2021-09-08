@@ -2352,6 +2352,11 @@
       "title": "forms.offer.step.0",
       "fields": [
         {
+          "attribute": "visibility",
+          "component": "fv-visibility-switch",
+          "size": 2
+        },
+        {
           "attribute": "product_id",
           "component": "fv-product-autocomplete",
           "size": 12
@@ -14697,6 +14702,7 @@
       "reference": "BAVAFC",
       "status": "active",
       "vat": "20.5",
+      "visibility": "public",
       "id": 3
     },
     {
@@ -14732,6 +14738,7 @@
       "reference": "EICMNB",
       "status": "archived",
       "vat": "12.0",
+      "visibility": "private",
       "id": 4
     }
   ],

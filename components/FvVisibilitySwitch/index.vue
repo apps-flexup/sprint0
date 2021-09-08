@@ -3,7 +3,7 @@
   v-switch(
     data-testid="switch"
     :input-value="inputValue"
-    :label="`Visibility: ${value}`"
+    :label="`${label}${$t('ponctuation.colons')}${$t(`visibility.${value}`)}`"
     inset
     @change="clicked"
   )
@@ -18,6 +18,12 @@ export default {
       default() {
         return 'public'
       }
+    },
+    label: {
+      type: String,
+      default() {
+        return ''
+      }
     }
   },
   computed: {
@@ -31,7 +37,14 @@ export default {
       if (this.value === 'public') newVisibility = 'private'
       else newVisibility = 'public'
       this.$emit('visibility:changed', newVisibility)
+      this.$emit('payload:changed', newVisibility)
     }
   }
 }
 </script>
+
+<style scoped>
+::v-deep .v-input__slot {
+  background-color: inherit !important;
+}
+</style>
