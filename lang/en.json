@@ -720,6 +720,7 @@
       "price": "Price incl. tax",
       "currency": "Currency",
       "vat": "VAT",
+      "visibility": "Visibility",
       "unit": "Unit",
       "status": "Status"
     },

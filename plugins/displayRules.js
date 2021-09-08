@@ -225,6 +225,14 @@ const displayRules = (ctx) => ({
     if (!account) return null
     if (account.type === 'Personal') return this.personalAccountName(account)
     return this.businessAndSubAccountName(account)
+  },
+  visibility(item) {
+    if (!item) return null
+    const visibility = item.visibility
+    if (!visibility) return null
+    const i18n = ctx.app.i18n
+    const res = i18n.t(`visibility.${visibility}`)
+    return res
   }
 })
 

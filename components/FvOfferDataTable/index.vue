@@ -17,6 +17,8 @@
       )
     template(v-slot:item.vat='{ item }')
       div {{ displayVat(item) }}
+    template(v-slot:item.visibility='{ item }')
+      div {{ displayVisibility(item) }}
     template(v-slot:item.status='{ item }')
       fv-status-progress(:status="item.status")
     template(v-slot:item.actions="{ item }")
@@ -60,6 +62,10 @@ export default {
   methods: {
     displayVat(item) {
       const res = this.$displayRules.vat(item)
+      return res
+    },
+    displayVisibility(item) {
+      const res = this.$displayRules.visibility(item)
       return res
     },
     selected(offer) {

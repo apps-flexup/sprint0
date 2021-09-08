@@ -728,6 +728,7 @@
       "price": "Prix TTC",
       "currency": "Devise",
       "vat": "TVA",
+      "visibility": "Visibilité",
       "unit": "Unité",
       "status": "Statut"
     },
