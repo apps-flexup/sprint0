@@ -702,11 +702,21 @@
                 "displayed": true
               },
               {
+                "align": "left",
+                "sortable": true,
+                "text": "headers.offers.visibility",
+                "value": "visibility",
+                "order": 2,
+                "customizable": true,
+                "active": true,
+                "displayed": true
+              },
+              {
                 "align": "center",
                 "sortable": true,
                 "text": "headers.offers.status",
                 "value": "status",
-                "order": 2,
+                "order": 3,
                 "customizable": true,
                 "active": true,
                 "displayed": true
@@ -2351,6 +2361,11 @@
     {
       "title": "forms.offer.step.0",
       "fields": [
+        {
+          "attribute": "visibility",
+          "component": "fv-visibility-switch",
+          "size": 2
+        },
         {
           "attribute": "product_id",
           "component": "fv-product-autocomplete",
@@ -14697,6 +14712,7 @@
       "reference": "BAVAFC",
       "status": "active",
       "vat": "20.5",
+      "visibility": "public",
       "id": 3
     },
     {
@@ -14732,6 +14748,7 @@
       "reference": "EICMNB",
       "status": "archived",
       "vat": "12.0",
+      "visibility": "private",
       "id": 4
     }
   ],

@@ -22,6 +22,7 @@ export default {
         unit: this.$displayRules.unit,
         price: this.$displayRules.priceWithUnit,
         vat: this.$displayRules.vat,
+        visibility: this.$displayRules.visibility,
         status: this.$displayRules.status
       }
     }

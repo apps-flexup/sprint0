@@ -1,0 +1,22 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+import FvVisibilitySwitch from './index.vue'
+
+<Meta title='Atoms/FvVisibilitySwitch' component={ FvVisibilitySwitch } />
+
+# FvVisibilitySwitch
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  components: { FvVisibilitySwitch },
+  methods: {
+  },
+  template: `<FvVisibilitySwitch
+  >
+  </FvVisibilitySwitch>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvVisibilitySwitch } />

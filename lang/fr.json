@@ -1,4 +1,8 @@
 {
+  "visibility": {
+    "public": "Publique",
+    "private": "Privée"
+  },
   "pages": {
     "accounts": {
       "_id": {
@@ -528,7 +532,8 @@
         "unit": "Unité",
         "price": "Prix TTC",
         "currency": "Devise",
-        "vat": "TVA"
+        "vat": "TVA",
+        "visibility": "Visibilité"
       },
       "edit": {
         "title": "Modifier mon offre"
@@ -723,6 +728,7 @@
       "price": "Prix TTC",
       "currency": "Devise",
       "vat": "TVA",
+      "visibility": "Visibilité",
       "unit": "Unité",
       "status": "Statut"
     },
