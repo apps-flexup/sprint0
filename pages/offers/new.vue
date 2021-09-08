@@ -11,11 +11,14 @@
 
 <script>
 export default {
-  props: {
-    offer: {
-      type: Object,
-      default() {
-        return {}
+  computed: {
+    offer() {
+      const visibility = 'public'
+      const settings = this.$activeAccount.settings()
+      const vat = settings ? settings.default_vat : undefined
+      return {
+        visibility,
+        vat
       }
     }
   },
