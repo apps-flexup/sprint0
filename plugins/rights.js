@@ -4,6 +4,10 @@ const rights = (ctx) => ({
     const accountId = ctx.$activeAccount.get()
     return ctx.store.getters['members/roleFor'](accountId, userId)
   },
+  canInviteMember() {
+    const roles = this.getCurrentRoles()
+    return roles.includes('admin')
+  },
   canEditOwners() {
     const roles = this.getCurrentRoles()
     return roles.includes('admin')

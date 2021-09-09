@@ -20,14 +20,40 @@ const $auth = {
   }
 }
 
-const factory = () => {
+const cannotInviteMemberRights = {
+  canInviteMember: () => {
+    return false
+  }
+}
+
+const canInviteMemberRights = {
+  canInviteMember: () => {
+    return true
+  }
+}
+
+const cannotInviteMemberFactory = () => {
   return shallowMount(FvMemberIndex, {
     localVue,
     store,
     mocks: {
       $t: (msg) => msg,
       $activeAccount,
-      $auth
+      $auth,
+      $rights: cannotInviteMemberRights
+    }
+  })
+}
+
+const canInviteMemberFactory = () => {
+  return shallowMount(FvMemberIndex, {
+    localVue,
+    store,
+    mocks: {
+      $t: (msg) => msg,
+      $activeAccount,
+      $auth,
+      $rights: canInviteMemberRights
     }
   })
 }
@@ -44,15 +70,6 @@ beforeEach(() => {
           all: jest.fn()
         }
       },
-      members: {
-        namespaced: true,
-        actions: {
-          get: jest.fn()
-        },
-        getters: {
-          roleFor: () => () => ['admin']
-        }
-      },
       accounts: {
         namespaced: true,
         actions: {
@@ -64,24 +81,42 @@ beforeEach(() => {
 })
 
 describe('FvMembersIndex', () => {
-  it('should render a fv member index for an admin', () => {
-    const wrapper = factory()
-    expect(wrapper.find('[data-testid="inviteMemberButton"]').exists()).toBe(
-      true
-    )
+  it('should render a fv member index', () => {
+    const wrapper = cannotInviteMemberFactory()
     expect(wrapper.find('[data-testid="memberList"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="inviteMemberModal"]').exists()).toBe(
-      true
-    )
-    expect(wrapper.vm.dialog).toBe(false)
   })
-  it('should display invite member modal when clicked on invite member button for an admin', () => {
-    const wrapper = factory()
-    const inviteMemberButton = wrapper.find(
-      '[data-testid="inviteMemberButton"]'
-    )
-    expect(wrapper.vm.dialog).toBe(false)
-    inviteMemberButton.vm.$emit('button:click')
-    expect(wrapper.vm.dialog).toBe(true)
+  describe('Cannot invite a new member', () => {
+    it('should have an invite button and a invite modal ', () => {
+      const wrapper = cannotInviteMemberFactory()
+      expect(wrapper.find('[data-testid="inviteMemberButton"]').exists()).toBe(
+        false
+      )
+      expect(wrapper.find('[data-testid="inviteMemberModal"]').exists()).toBe(
+        false
+      )
+    })
+  })
+  describe('Can invite a new member', () => {
+    let wrapper
+    beforeEach(() => {
+      wrapper = canInviteMemberFactory()
+    })
+    it('should have an invite button and a invite modal ', () => {
+      expect(wrapper.find('[data-testid="inviteMemberButton"]').exists()).toBe(
+        true
+      )
+      expect(wrapper.find('[data-testid="inviteMemberModal"]').exists()).toBe(
+        true
+      )
+      expect(wrapper.vm.dialog).toBe(false)
+    })
+    it('should display invite member modal when clicked on invite member button', () => {
+      const inviteMemberButton = wrapper.find(
+        '[data-testid="inviteMemberButton"]'
+      )
+      expect(wrapper.vm.dialog).toBe(false)
+      inviteMemberButton.vm.$emit('button:click')
+      expect(wrapper.vm.dialog).toBe(true)
+    })
   })
 })
