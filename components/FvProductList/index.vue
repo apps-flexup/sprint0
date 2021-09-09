@@ -8,6 +8,7 @@
     tableName="products"
     :rules="rules"
     @list:selected="productSelected"
+    @list:edit="editProduct"
   )
 </template>
 
@@ -28,8 +29,11 @@ export default {
     this.$store.dispatch('products/get')
   },
   methods: {
-    productSelected(product) {
-      this.$emit('list:selected', product)
+    productSelected(payload) {
+      this.$emit('list:selected', payload)
+    },
+    editProduct(payload) {
+      this.$emit('list:edit', payload)
     }
   }
 }

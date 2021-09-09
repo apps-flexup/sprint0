@@ -30,7 +30,8 @@ const route = {
     }
   ],
   params: {
-    id: 1
+    id: 1,
+    action: 'read'
   }
 }
 
@@ -108,6 +109,19 @@ describe('FvBreadcrumbs', () => {
     const expectedCrumb = {
       href,
       text: accountFromStore.name,
+      disabled
+    }
+    const crumb = wrapper.vm.createCrumb(href, text, disabled)
+    expect(crumb).toEqual(expectedCrumb)
+  })
+  it('should suffix products-action- text by action name', () => {
+    const wrapper = factory()
+    const href = '/products/action'
+    const text = 'products-action-'
+    const disabled = false
+    const expectedCrumb = {
+      href: '/products',
+      text: `breadcrumbs.route.products-action-${route.params.action}`,
       disabled
     }
     const crumb = wrapper.vm.createCrumb(href, text, disabled)

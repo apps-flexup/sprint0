@@ -273,7 +273,9 @@
       "paymentStructures-id": "Modifier ma structure de paiement",
       "paymentStructures-new": "Nouvelle structure de paiement",
       "products": "Produits",
-      "products-id": "Modifier mon produit",
+      "products-action-read": "Voir",
+      "products-action-edit": "Modifier",
+      "products-action-id": "Mon produit",
       "products-new": "Nouveau produit",
       "profile": "Données personnelles",
       "settings": "Préférences",
@@ -435,6 +437,9 @@
         "elasticity": "Élasticité",
         "validate": "Valider",
         "cancel": "Annuler"
+      },
+      "read": {
+        "title": "Voir mon produit"
       },
       "edit": {
         "title": "Modifier mon produit"
