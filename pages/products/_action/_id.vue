@@ -1,8 +1,10 @@
 <template lang="pug">
+.product-id
   fv-form(
     :payload="getProduct"
     @form:submit="editProduct"
-    action='edit'
+    :action="action"
+    :allowEdit="canEditProduct"
     url='products'
     form='products'
   )
@@ -19,6 +21,13 @@ export default {
     }
   },
   computed: {
+    canEditProduct() {
+      return this.$rights.canEditProduct()
+    },
+    action() {
+      const res = this.$route.params.action
+      return res
+    },
     getProduct() {
       const productId = this.$route.params.id
       const products = this.$store.getters['products/findById'](productId)

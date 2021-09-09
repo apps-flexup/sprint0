@@ -10,6 +10,7 @@
   fv-product-list(
     data-testid="productList"
     @list:selected="selectedProduct"
+    @list:edit="editProduct"
   )
 </template>
 
@@ -23,8 +24,14 @@ export default {
   },
   methods: {
     selectedProduct(product) {
+      const action = 'read'
       product = JSON.parse(JSON.stringify(product))
-      this.$router.push('/products/' + product.id)
+      this.$router.push(`/products/${action}/${product.id}`)
+    },
+    editProduct(product) {
+      const action = 'edit'
+      product = JSON.parse(JSON.stringify(product))
+      this.$router.push(`/products/${action}/${product.id}`)
     },
     createProduct() {
       this.$router.push('/products/new')

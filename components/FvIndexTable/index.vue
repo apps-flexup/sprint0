@@ -15,6 +15,7 @@
       :items="formattedItems"
       @dataTable:selected="selected"
       @dataTable:sortBy="sortBy"
+      @dataTable:edit="editItem"
       @dataTable:delete="deleteItem"
     )
     fv-select-headers(
@@ -135,6 +136,9 @@ export default {
     },
     selected(item) {
       this.$emit('list:selected', item)
+    },
+    editItem(item) {
+      this.$emit('list:edit', item)
     },
     deleteItem(item) {
       this.$emit('list:delete', item)

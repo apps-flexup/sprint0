@@ -19,7 +19,10 @@
       fv-status-progress(:status="item.status")
     template(v-slot:item.actions="{ item }")
       v-row
-        fv-edit-action(@edit:clicked="selected(item)")
+        fv-edit-action(
+          v-if="canEditProduct"
+          @edit:clicked="editItem(item)"
+        )
         fv-delete-action(
           v-if="canDeleteProduct"
           @delete:clicked="deleteItem(item)"
@@ -56,6 +59,9 @@ export default {
     }
   },
   computed: {
+    canEditProduct() {
+      return this.$rights.canEditProduct()
+    },
     canDeleteProduct() {
       return this.$rights.canDeleteProduct()
     }
@@ -79,6 +85,9 @@ export default {
     },
     selected(product) {
       this.$emit('dataTable:selected', product)
+    },
+    editItem(product) {
+      this.$emit('dataTable:edit', product)
     },
     deleteItem(product) {
       this.$store.dispatch('products/remove', product)

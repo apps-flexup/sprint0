@@ -68,7 +68,6 @@ export default {
   },
   mounted() {
     this.$store.dispatch('accounts/get')
-    console.log('Composant ', this.$options.name)
   },
   methods: {
     createCrumb(href, text, disabled) {
@@ -77,6 +76,10 @@ export default {
           this.$route.params.id
         )
         text = account ? account.name : null
+      } else if (text === 'products-action-') {
+        const action = this.$route.params.action
+        href = '/products'
+        text = this.$t(`breadcrumbs.route.${text}${action}`)
       } else {
         text = this.$t('breadcrumbs.route.' + text)
       }
