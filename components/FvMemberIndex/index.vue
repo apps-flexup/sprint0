@@ -14,6 +14,7 @@
       data-testid="memberList"
     )
     fv-modal-slot(
+      v-if="canInvite"
       data-testid="inviteMemberModal"
       :dialog="dialog"
     )
@@ -77,18 +78,11 @@ export default {
       return res
     },
     canInvite() {
-      const currentUserId = this.$auth.user.sub
-      const activeAccountId = this.$activeAccount.get()
-      const roles = this.$store.getters['members/roleFor'](
-        activeAccountId,
-        currentUserId
-      )
-      return roles.includes('admin')
+      return this.$rights.canInviteMember()
     }
   },
   mounted() {
     this.$store.dispatch('functionalRoles/get')
-    this.$store.dispatch('members/get')
     console.log('Composant ', this.$options.name)
   },
   methods: {
