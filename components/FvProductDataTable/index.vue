@@ -20,7 +20,10 @@
     template(v-slot:item.actions="{ item }")
       v-row
         fv-edit-action(@edit:clicked="selected(item)")
-        fv-delete-action(@delete:clicked="deleteItem(item)")
+        fv-delete-action(
+          v-if="canDeleteProduct"
+          @delete:clicked="deleteItem(item)"
+        )
 </template>
 
 <script>
@@ -50,6 +53,11 @@ export default {
       default() {
         return null
       }
+    }
+  },
+  computed: {
+    canDeleteProduct() {
+      return this.$rights.canDeleteProduct()
     }
   },
   mounted() {
