@@ -46,17 +46,23 @@ describe('FvProductIndex', () => {
     const wrapper = cannotCreateProductFactory()
     expect(wrapper.find('[data-testid="productList"]').exists()).toBe(true)
   })
-  it('should redirect to show product when it is selected from list', () => {
-    const wrapper = cannotCreateProductFactory()
-    const list = wrapper.find('[data-testid="productList"]')
-    const product = {
-      id: 42
+  it.each([
+    ['selected', 'read'],
+    ['edit', 'edit']
+  ])(
+    'should redirect to %s product when it is selected for %s from list',
+    (action, expectedPath) => {
+      const wrapper = cannotCreateProductFactory()
+      const list = wrapper.find('[data-testid="productList"]')
+      const product = {
+        id: 42
+      }
+      list.vm.$emit(`list:${action}`, product)
+      expect($router.push).toHaveBeenCalledTimes(1)
+      const expectedRoute = `/products/${expectedPath}/${product.id}`
+      expect($router.push).toHaveBeenCalledWith(expectedRoute)
     }
-    list.vm.$emit('list:selected', product)
-    expect($router.push).toHaveBeenCalledTimes(1)
-    const expectedRoute = `/products/read/${product.id}`
-    expect($router.push).toHaveBeenCalledWith(expectedRoute)
-  })
+  )
   describe('User can create a product', () => {
     let wrapper
     beforeEach(() => {
