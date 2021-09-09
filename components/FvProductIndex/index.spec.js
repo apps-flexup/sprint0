@@ -54,7 +54,7 @@ describe('FvProductIndex', () => {
     }
     list.vm.$emit('list:selected', product)
     expect($router.push).toHaveBeenCalledTimes(1)
-    const expectedRoute = '/products/' + product.id
+    const expectedRoute = `/products/read/${product.id}`
     expect($router.push).toHaveBeenCalledWith(expectedRoute)
   })
   describe('User can create a product', () => {
