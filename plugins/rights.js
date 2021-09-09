@@ -15,6 +15,10 @@ const rights = (ctx) => ({
   canCreateProduct() {
     const roles = this.getCurrentRoles()
     return roles.includes('admin') || roles.includes('editor')
+  },
+  canCreateOffer() {
+    const roles = this.getCurrentRoles()
+    return roles.includes('admin') || roles.includes('editor')
   }
 })
 
