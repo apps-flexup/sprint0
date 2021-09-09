@@ -3,6 +3,7 @@
   v-row
     v-col(cols="12")
       fv-primary-button.text-right(
+        v-if="canCreateProduct"
         data-testid="createButton"
         @button:click='createProduct'
       ) {{ $t('buttons.create.product') }}
@@ -15,6 +16,11 @@
 <script>
 export default {
   name: 'FvProductIndex',
+  computed: {
+    canCreateProduct() {
+      return this.$rights.canCreateProduct()
+    }
+  },
   methods: {
     selectedProduct(product) {
       product = JSON.parse(JSON.stringify(product))

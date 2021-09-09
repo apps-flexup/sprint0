@@ -5,11 +5,34 @@ const $router = {
   push: jest.fn()
 }
 
-const factory = () => {
+const cannotCreateProductRights = {
+  canCreateProduct: () => {
+    return false
+  }
+}
+
+const canCreateProductRights = {
+  canCreateProduct: () => {
+    return true
+  }
+}
+
+const cannotCreateProductFactory = () => {
   return shallowMount(FvProductIndex, {
     mocks: {
       $t: (msg) => msg,
-      $router
+      $router,
+      $rights: cannotCreateProductRights
+    }
+  })
+}
+
+const canCreateProductFactory = () => {
+  return shallowMount(FvProductIndex, {
+    mocks: {
+      $t: (msg) => msg,
+      $router,
+      $rights: canCreateProductRights
     }
   })
 }
@@ -20,20 +43,11 @@ beforeEach(() => {
 
 describe('FvProductIndex', () => {
   it('should render a fv product index', () => {
-    const wrapper = factory()
-    expect(wrapper.find('[data-testid="createButton"]').exists()).toBe(true)
+    const wrapper = cannotCreateProductFactory()
     expect(wrapper.find('[data-testid="productList"]').exists()).toBe(true)
   })
-  it('should redirect to create product when clicked on create button', () => {
-    const wrapper = factory()
-    const createButton = wrapper.find('[data-testid="createButton"]')
-    createButton.vm.$emit('button:click')
-    expect($router.push).toHaveBeenCalledTimes(1)
-    const expectedRoute = '/products/new'
-    expect($router.push).toHaveBeenCalledWith(expectedRoute)
-  })
   it('should redirect to show product when it is selected from list', () => {
-    const wrapper = factory()
+    const wrapper = cannotCreateProductFactory()
     const list = wrapper.find('[data-testid="productList"]')
     const product = {
       id: 42
@@ -42,5 +56,21 @@ describe('FvProductIndex', () => {
     expect($router.push).toHaveBeenCalledTimes(1)
     const expectedRoute = '/products/' + product.id
     expect($router.push).toHaveBeenCalledWith(expectedRoute)
+  })
+  describe('User can create a product', () => {
+    let wrapper
+    beforeEach(() => {
+      wrapper = canCreateProductFactory()
+    })
+    it('should have a create button', () => {
+      expect(wrapper.find('[data-testid="createButton"]').exists()).toBe(true)
+    })
+    it('should redirect to create product when clicked on create button', () => {
+      const createButton = wrapper.find('[data-testid="createButton"]')
+      createButton.vm.$emit('button:click')
+      expect($router.push).toHaveBeenCalledTimes(1)
+      const expectedRoute = '/products/new'
+      expect($router.push).toHaveBeenCalledWith(expectedRoute)
+    })
   })
 })
