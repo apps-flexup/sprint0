@@ -4,29 +4,32 @@ const rights = (ctx) => ({
     const accountId = ctx.$activeAccount.get()
     return ctx.store.getters['members/roleFor'](accountId, userId)
   },
+  isAuthorized(authorizedRoles) {
+    return authorizedRoles.some((role) => this.getCurrentRoles().includes(role))
+  },
   canInviteMember() {
-    const roles = this.getCurrentRoles()
-    return roles.includes('admin')
+    const authorizedRoles = ['admin']
+    return this.isAuthorized(authorizedRoles)
   },
   canEditOwners() {
-    const roles = this.getCurrentRoles()
-    return roles.includes('admin')
+    const authorizedRoles = ['admin']
+    return this.isAuthorized(authorizedRoles)
   },
   canCreateProduct() {
-    const roles = this.getCurrentRoles()
-    return roles.includes('admin') || roles.includes('editor')
+    const authorizedRoles = ['admin', 'editor']
+    return this.isAuthorized(authorizedRoles)
   },
   canEditProduct() {
-    const roles = this.getCurrentRoles()
-    return roles.includes('admin') || roles.includes('editor')
+    const authorizedRoles = ['admin', 'editor']
+    return this.isAuthorized(authorizedRoles)
   },
   canDeleteProduct() {
-    const roles = this.getCurrentRoles()
-    return roles.includes('admin')
+    const authorizedRoles = ['admin', 'editor']
+    return this.isAuthorized(authorizedRoles)
   },
   canCreateOffer() {
-    const roles = this.getCurrentRoles()
-    return roles.includes('admin') || roles.includes('editor')
+    const authorizedRoles = ['admin', 'editor']
+    return this.isAuthorized(authorizedRoles)
   }
 })
 
