@@ -13,7 +13,9 @@
 export default {
   data() {
     return {
-      product: {}
+      product: {
+        status: 'active'
+      }
     }
   },
   mounted() {

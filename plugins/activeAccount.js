@@ -101,20 +101,7 @@ const activeAccount = (ctx) => ({
     return true
   },
   addProduct(newProduct) {
-    if (Object.prototype.hasOwnProperty.call(newProduct, 'id')) {
-      // update du produit
-      ctx.store.dispatch('products/add', newProduct)
-    } else {
-      const product = {
-        category_id: newProduct.category_id,
-        name: newProduct.name,
-        unit: newProduct.unit,
-        status: 'draft'
-      }
-      ctx.$repos.products.createWithAccountId(product).then((_prod) => {
-        ctx.store.dispatch('products/get')
-      })
-    }
+    ctx.store.dispatch('products/add', newProduct)
   },
   addOffer(newOffer) {
     if (Object.prototype.hasOwnProperty.call(newOffer, 'id')) {
