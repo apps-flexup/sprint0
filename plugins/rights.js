@@ -22,7 +22,7 @@ const rights = (ctx) => ({
   },
   canDeleteProduct() {
     const roles = this.getCurrentRoles()
-    return roles.includes('admin')
+    return roles.includes('admin') || roles.includes('editor')
   },
   canCreateOffer() {
     const roles = this.getCurrentRoles()
