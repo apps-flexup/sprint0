@@ -10,13 +10,16 @@ export default {
     commit('set', [])
   },
   remove({ commit }, product) {
-    // charger les contracts
-    this.$repos.products
-      .delete(product.id)
-      .then(() => commit('remove', product))
+    product = {
+      ...product,
+      status: 'archived'
+    }
+    this.$repos.products.update(product).then((res) => {
+      commit('remove', res)
+      commit('add', res)
+    })
   },
   add({ commit }, product) {
-    // charger les contracts
     if (Object.prototype.hasOwnProperty.call(product, 'id')) {
       this.$repos.products.update(product).then((res) => {
         commit('remove', res)
