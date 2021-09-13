@@ -17,10 +17,11 @@
       ) {{ name }}
       v-card-text.text-center.pb-0(
         data-testid="accountType"
-      ) {{ $t('account.type') }} : {{ $t(`account.${lowerCaseFirstLetter(type)}.name`) }}
+      ) {{ displayedAccountType }}
       v-card-text.text-center.pt-0(
         data-testid="userRole"
-      ) {{ $t('account.myRole') }} : {{ $t('functionalRoles.' + role) }}
+        :key="role"
+      ) {{ displayedRole }}
 </template>
 
 <script>
@@ -56,8 +57,24 @@ export default {
       role: null
     }
   },
+  computed: {
+    displayedAccountType() {
+      const accountTypeLabel = this.$t('account.type')
+      const separator = this.$t('ponctuation.colons')
+      const lowerCaseType = this.lowerCaseFirstLetter(this.type)
+      const accountType = this.$t(`account.${lowerCaseType}.name`)
+      return `${accountTypeLabel}${separator}${accountType}`
+    },
+    displayedRole() {
+      if (!this.role) return this.$t('account.noRole')
+      const roleLabel = this.$t('account.myRole')
+      const separator = this.$t('ponctuation.colons')
+      const role = this.$t(`functionalRoles.${this.role}`)
+      return `${roleLabel}${separator}${role}`
+    }
+  },
   mounted() {
-    this.roleOfUser()
+    this.setRoleOfUser()
   },
   methods: {
     cardClicked() {
@@ -66,14 +83,13 @@ export default {
     favoriteClicked() {
       this.$emit('accountCard:favoriteClicked')
     },
-    roleOfUser() {
+    async setRoleOfUser() {
       const uuid = this.$auth.user.sub
-      this.$repos.givenRoles.index().then((data) => {
-        data.forEach((account) => {
-          if (account.to_id === uuid && account.id === this.id) {
-            this.role = account.role
-          }
-        })
+      const givenRoles = await this.$repos.givenRoles.index()
+      givenRoles.forEach((givenRole) => {
+        if (givenRole.to_id === uuid && givenRole.id === this.id) {
+          this.role = givenRole.role
+        }
       })
     },
     lowerCaseFirstLetter(str) {

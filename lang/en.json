@@ -17,6 +17,7 @@
   },
   "account": {
     "myRole": "My role",
+    "noRole": "You do not have any role for this account",
     "type": "Account type",
     "personal": {
       "name": "Personal account"
