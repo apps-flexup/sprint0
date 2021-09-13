@@ -2347,6 +2347,7 @@
         {
           "attribute": "status",
           "component": "fv-status-switch",
+          "readonly-component": "fv-status-switch-readonly",
           "size": 12
         },
         {

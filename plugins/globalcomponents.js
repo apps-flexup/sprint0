@@ -107,6 +107,7 @@ import FvSettingsOthers from '@/components/FvSettingsOthers'
 import FvShowMenu from '@/components/FvShowMenu'
 import FvSlotItemCard from '@/components/FvSlotItemCard'
 import FvStatusSwitch from '@/components/FvStatusSwitch'
+import FvStatusSwitchReadonly from '@/components/FvStatusSwitchReadonly'
 import FvStepper from '@/components/FvStepper'
 import FvStepForm from '@/components/FvStepForm'
 import FvSubMenu from '@/components/FvSubMenu'
@@ -288,6 +289,7 @@ Vue.component('fv-settings-others', FvSettingsOthers)
 Vue.component('fv-show-menu', FvShowMenu)
 Vue.component('fv-slot-item-card', FvSlotItemCard)
 Vue.component('fv-status-switch', FvStatusSwitch)
+Vue.component('fv-status-switch-readonly', FvStatusSwitchReadonly)
 Vue.component('fv-stepper', FvStepper)
 Vue.component('fv-step-form', FvStepForm)
 Vue.component('fv-sub-menu', FvSubMenu)
