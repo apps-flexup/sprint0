@@ -17,19 +17,29 @@ describe('FvStatusSwitch', () => {
     const wrapper = factory()
     expect(wrapper.find('[data-testid=switch]').exists()).toBe(true)
   })
-  it.each([
+  describe.each([
     ['active', 'inactive'],
     ['inactive', 'active']
-  ])(
-    'should emit an event with %s when user click and status was %s',
-    (status, expectedStatus) => {
-      const wrapper = factory({ value: status })
-      const switchBtn = wrapper.find('[data-testid=switch]')
+  ])('When %s, emit an event with %s', (value, expectedValue) => {
+    let wrapper
+    let switchBtn
+    beforeEach(() => {
+      wrapper = factory({ value })
+      switchBtn = wrapper.find('[data-testid=switch]')
       switchBtn.vm.$emit('change')
+    })
+    it('specific', () => {
       const statusChange = wrapper.emitted('status:changed')
-      expect(statusChange).toBeTruthy()
-      expect(statusChange).toHaveLength(1)
-      expect(statusChange[0][0]).toBe(expectedStatus)
+      expectStatusEventToBe(statusChange, expectedValue)
+    })
+    it('generic', () => {
+      const statusChange = wrapper.emitted('payload:changed')
+      expectStatusEventToBe(statusChange, expectedValue)
+    })
+    const expectStatusEventToBe = (event, expectedValue) => {
+      expect(event).toBeTruthy()
+      expect(event).toHaveLength(1)
+      expect(event[0][0]).toBe(expectedValue)
     }
-  )
+  })
 })
