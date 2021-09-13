@@ -2345,6 +2345,12 @@
       "title": "forms.product.step.0",
       "fields": [
         {
+          "attribute": "status",
+          "component": "fv-status-switch",
+          "readonly-component": "fv-status-switch-readonly",
+          "size": 12
+        },
+        {
           "attribute": "name",
           "component": "fv-text-field",
           "size": 12
@@ -14874,7 +14880,7 @@
         "unit": "kg",
         "dimension": "weight"
       },
-      "status": "draft",
+      "status": "active",
       "account_id": 1,
       "category": {
         "active": true,
@@ -14909,7 +14915,7 @@
         "unit": "cl",
         "dimension": "volume"
       },
-      "status": "draft",
+      "status": "active",
       "account_id": 1,
       "id": 16
     },
@@ -14920,7 +14926,7 @@
         "unit": "Unit",
         "dimension": "unit"
       },
-      "status": "draft",
+      "status": "active",
       "account_id": 1,
       "category": {
         "active": true,
@@ -14955,7 +14961,7 @@
         "unit": "hr",
         "dimension": "duration"
       },
-      "status": "draft",
+      "status": "active",
       "account_id": 1,
       "id": 19
     }

@@ -434,7 +434,8 @@
         "currency": "Currency",
         "elasticity": "Elasticity",
         "validate": "Validate",
-        "cancel": "Cancel"
+        "cancel": "Cancel",
+        "status": "Status"
       },
       "read": {
         "title": "See my product"

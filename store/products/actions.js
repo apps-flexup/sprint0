@@ -22,8 +22,7 @@ export default {
   add({ commit }, product) {
     if (Object.prototype.hasOwnProperty.call(product, 'id')) {
       this.$repos.products.update(product).then((res) => {
-        commit('remove', res)
-        commit('add', res)
+        commit('update', res)
       })
     } else {
       this.$repos.products.createWithAccountId(product).then((res) => {

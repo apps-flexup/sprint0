@@ -16,7 +16,13 @@
     template(v-slot:item.unit='{ item }')
       div {{ displayUnit(item) }}
     template(v-slot:item.status='{ item }')
-      fv-status-progress(:status="item.status")
+      fv-status-switch(
+        :value="item.status"
+        dense
+        denseLabel
+        @click.native.stop
+        @status:changed="statusChanged(item, ...arguments)"
+      )
     template(v-slot:item.actions="{ item }")
       v-row
         fv-edit-action(
@@ -94,6 +100,12 @@ export default {
     },
     sortBy(v) {
       this.$emit('dataTable:sortBy', v)
+    },
+    statusChanged(product, status) {
+      if (!product) return
+      status = product.status === 'active' ? 'inactive' : 'active'
+      product.status = status
+      this.$store.dispatch('products/add', product)
     }
   }
 }
