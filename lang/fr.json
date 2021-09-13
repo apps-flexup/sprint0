@@ -436,7 +436,8 @@
         "currency": "Devise",
         "elasticity": "Élasticité",
         "validate": "Valider",
-        "cancel": "Annuler"
+        "cancel": "Annuler",
+        "status": "Statut"
       },
       "read": {
         "title": "Voir mon produit"
