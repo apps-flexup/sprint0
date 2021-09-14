@@ -212,7 +212,7 @@ const displayRules = (ctx) => ({
   },
   userName() {
     const account = ctx.store.getters['accounts/getMyPersonalAccount']
-    return this.accountName(account)
+    return this.personalAccountName(account)
   },
   personalAccountName(account) {
     if (!account) return null
