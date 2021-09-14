@@ -87,7 +87,7 @@ export default {
       const uuid = this.$auth.user.sub
       const givenRoles = await this.$repos.givenRoles.index()
       givenRoles.forEach((givenRole) => {
-        if (givenRole.to_id === uuid && givenRole.id === this.id) {
+        if (givenRole.to_id === uuid && givenRole.from_id === this.id) {
           this.role = givenRole.role
         }
       })
