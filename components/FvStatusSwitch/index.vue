@@ -7,6 +7,7 @@
     :label="displayedLabel"
     :dense="dense"
     :hide-details="hideDetails"
+    :readonly="readonly"
     inset
     @change="clicked"
   )
@@ -45,6 +46,12 @@ export default {
       default() {
         return true
       }
+    },
+    readonly: {
+      type: Boolean,
+      default() {
+        return false
+      }
     }
   },
   computed: {
@@ -61,6 +68,7 @@ export default {
   },
   methods: {
     clicked() {
+      if (this.readonly) return
       let newVisibility
       if (this.value === 'active') newVisibility = 'inactive'
       else newVisibility = 'active'

@@ -17,11 +17,19 @@
       div {{ displayUnit(item) }}
     template(v-slot:item.status='{ item }')
       fv-status-switch(
+        v-if="$rights.canEditProduct()"
         :value="item.status"
         dense
         denseLabel
         @click.native.stop
         @status:changed="statusChanged(item, ...arguments)"
+      )
+      fv-status-switch-readonly(
+        v-else
+        :value="item.status"
+        dense
+        denseLabel
+        @click.native.stop
       )
     template(v-slot:item.actions="{ item }")
       v-row

@@ -1,12 +1,12 @@
 <template lang="pug">
 .fv-status-switch-readonly
-  v-switch(
+  fv-status-switch(
     data-testid="switch"
-    class="ma-0 pa-0"
-    :input-value="inputValue"
-    :label="`${label}${$t('ponctuation.colons')}${$t(`status.${value}`)}`"
+    :value="value"
+    :label="label"
+    :dense="dense"
+    :denseLabel="denseLabel"
     hide-details
-    inset
     readonly
   )
 </template>
@@ -26,20 +26,24 @@ export default {
       default() {
         return ''
       }
-    }
-  },
-  computed: {
-    inputValue() {
-      return this.value === 'active'
+    },
+    dense: {
+      type: Boolean,
+      default() {
+        return false
+      }
+    },
+    denseLabel: {
+      type: Boolean,
+      default() {
+        return false
+      }
     }
   }
 }
 </script>
 
 <style scoped>
-::v-deep .v-input__slot {
-  background-color: inherit !important;
-}
 ::v-deep .v-input--selection-controls__ripple {
   cursor: not-allowed !important;
 }
@@ -48,8 +52,5 @@ export default {
 }
 ::v-deep input {
   cursor: default !important;
-}
-.v-input--switch {
-  display: inline-block;
 }
 </style>
