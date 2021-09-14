@@ -18,7 +18,6 @@ export default {
     return {
       rules: {
         name: this.$displayRules.name,
-        category_id: this.$displayRules.category,
         unit: this.$displayRules.unit,
         price: this.$displayRules.priceWithUnit,
         vat: this.$displayRules.vat,
