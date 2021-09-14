@@ -210,6 +210,10 @@ const displayRules = (ctx) => ({
     const account = await ctx.$directory.getAccountById(owner.to_id)
     return this.accountName(account)
   },
+  userName() {
+    const account = ctx.store.getters['accounts/getMyPersonalAccount']
+    return this.personalAccountName(account)
+  },
   personalAccountName(account) {
     if (!account) return null
     return account.name

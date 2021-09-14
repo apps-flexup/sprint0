@@ -59,8 +59,7 @@ export default {
       return res
     },
     userName() {
-      const account = this.$store.getters['accounts/getMyPersonalAccount']
-      return this.$displayRules.accountName(account)
+      return this.$displayRules.userName()
     },
     accountSelected() {
       const activeAccount = this.$activeAccount.get()
