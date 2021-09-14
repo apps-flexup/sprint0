@@ -72,6 +72,11 @@ export default {
       this.emitGenericSignalForForm(payload)
     },
     filter(item, v, it) {
+      item = {
+        ...item,
+        symbole: this.$t(`units.symbol.${item.symbole}`),
+        dimension: this.$t(`units.dimension.${item.dimension}`)
+      }
       return filterUnitAutocomplete(item, v, it)
     },
     emitGenericSignalForForm(payload) {
