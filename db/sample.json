@@ -662,16 +662,6 @@
               {
                 "align": "left",
                 "sortable": true,
-                "text": "headers.products.category",
-                "value": "category_id",
-                "order": 1,
-                "customizable": true,
-                "active": true,
-                "displayed": true
-              },
-              {
-                "align": "left",
-                "sortable": true,
                 "text": "headers.products.unit",
                 "value": "unit",
                 "order": 2,
