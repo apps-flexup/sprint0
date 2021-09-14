@@ -28,6 +28,7 @@ const displayRules = (ctx) => ({
     if (!item) return null
     const unit = item.unit
     if (!unit) return null
+    if (!unit.unit) return null
     const i18n = ctx.app.i18n
     const dimension = i18n.t('units.dimension.' + unit.dimension)
     let res = i18n.t('units.symbol.' + unit.unit)

@@ -65,8 +65,8 @@ export default {
     selected(v) {
       const unit = this.getUnitFromValue(v)
       const payload = {
-        unit: unit.symbole,
-        dimension: unit.dimension
+        unit: unit ? unit.symbole : null,
+        dimension: unit ? unit.dimension : null
       }
       this.$emit('unit:selected', payload)
       this.emitGenericSignalForForm(payload)
@@ -86,6 +86,7 @@ export default {
     displayedUnit(item) {
       if (!item) return ''
       const symbole = this.$t(`units.symbol.${item.symbole}`)
+      if (!symbole) return ''
       const dimension = this.$t(`units.dimension.${item.dimension}`)
       const res = `${symbole} (${dimension})`
       return res
