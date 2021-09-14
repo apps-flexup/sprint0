@@ -983,7 +983,6 @@
       }
     },
     {
-      "id": 1,
       "account_id": 1,
       "headers": {
         "products": [],
@@ -1007,7 +1006,8 @@
         "contracts": [],
         "members": [],
         "owners": []
-      }
+      },
+      "id": 1
     },
     {
       "account_id": 4,
