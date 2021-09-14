@@ -26,7 +26,8 @@ const $activeAccount = {
 }
 
 const $displayRules = {
-  accountName: jest.fn()
+  accountName: jest.fn(),
+  userName: jest.fn()
 }
 
 const loggedInAuth = {

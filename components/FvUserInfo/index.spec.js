@@ -8,11 +8,15 @@ describe('FvUserInfo', () => {
       email: 'test'
     }
   }
+  const $displayRules = {
+    userName: jest.fn()
+  }
   it('should render a FvUserInfo', () => {
     const wrapper = shallowMount(FvUserInfo, {
       mocks: {
         $t: (msg) => msg,
-        $auth
+        $auth,
+        $displayRules
       }
     })
     expect(wrapper.find('[data-testid="userInfo"]').exists()).toBe(true)
