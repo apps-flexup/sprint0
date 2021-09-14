@@ -12,9 +12,9 @@
       p {{ $t('forms.products.new.unit') }}
     template(v-slot:item="data")
       v-list-item-content
-        v-list-item-title {{ `${data.item.symbole} (${data.item.dimension})` }}
+        v-list-item-title {{ displayedUnit(data.item) }}
     template(v-slot:selection="data")
-      div {{ `${data.item.symbole} (${data.item.dimension})` }}
+      div {{ displayedUnit(data.item) }}
 </template>
 
 <script>
@@ -82,6 +82,13 @@ export default {
         return this.$store.getters['units/find'](v)
       }
       return v
+    },
+    displayedUnit(item) {
+      if (!item) return ''
+      const symbole = this.$t(`units.symbol.${item.symbole}`)
+      const dimension = this.$t(`units.dimension.${item.dimension}`)
+      const res = `${symbole} (${dimension})`
+      return res
     }
   }
 }
