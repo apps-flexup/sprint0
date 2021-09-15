@@ -332,6 +332,9 @@
     },
     "products": {
       "title": "My products",
+      "archived": {
+        "title": "My archived products"
+      },
       "search": "Search"
     },
     "thirdPartyAccounts": {

@@ -2,7 +2,7 @@
 .fv-product-list
   fv-index-table(
     data-testid="table"
-    :title="$t('table.products.title')"
+    :title="findTitle"
     :searchLabel="$t('table.products.search')"
     tableComponent="fv-product-data-table"
     tableName="products"
@@ -15,6 +15,14 @@
 <script>
 export default {
   name: 'FvProductList',
+  props: {
+    archivedProductPage: {
+      type: Boolean,
+      default() {
+        return false
+      }
+    }
+  },
   data() {
     return {
       rules: {
@@ -22,6 +30,14 @@ export default {
         category_id: this.$displayRules.category,
         unit: this.$displayRules.unit
       }
+    }
+  },
+  computed: {
+    findTitle() {
+      const productTitle = this.$t('table.products.title')
+      const archivedTitle = this.$t('table.products.archived.title')
+      if (this.archivedProductPage) return archivedTitle
+      return productTitle
     }
   },
   mounted() {
