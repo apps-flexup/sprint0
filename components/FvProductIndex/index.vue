@@ -9,16 +9,32 @@
       ) {{ $t('buttons.create.product') }}
   fv-product-list(
     data-testid="productList"
+    :archivedProductPage="archivedProductPage"
     @list:selected="selectedProduct"
     @list:edit="editProduct"
   )
+  v-row
+    fv-icon(
+      data-testid="archivedIcon"
+      icon="mdi-archive-arrow-up-outline"
+      @icon:clicked="archivedProduct"
+    )
 </template>
 
 <script>
 export default {
   name: 'FvProductIndex',
+  props: {
+    archivedProductPage: {
+      type: Boolean,
+      default() {
+        return false
+      }
+    }
+  },
   computed: {
     canCreateProduct() {
+      if (this.archivedProductPage) return false
       return this.$rights.canCreateProduct()
     }
   },
@@ -35,6 +51,9 @@ export default {
     },
     createProduct() {
       this.$router.push('/products/new')
+    },
+    archivedProduct() {
+      this.$router.push('/products/archived')
     }
   }
 }

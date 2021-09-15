@@ -3,7 +3,7 @@
   fv-data-table(
     data-testid="fvDataTable"
     :headers='headers'
-    :items='items'
+    :items='productsArchived ? productsArchived : items'
     :hide-default-footer="hideDefaultFooter"
     :options="options"
     @dataTable:sortBy="sortBy"
@@ -78,6 +78,19 @@ export default {
     },
     canDeleteProduct() {
       return this.$rights.canDeleteProduct()
+    },
+    productsArchived() {
+      if (this.$route.name === 'products-archived') {
+        const products = this.$activeAccount.items('products')
+        const productArchived = []
+        products.forEach((product) => {
+          if (product.archived === true) {
+            productArchived.push(product)
+          }
+        })
+        return productArchived
+      }
+      return null
     }
   },
   mounted() {
