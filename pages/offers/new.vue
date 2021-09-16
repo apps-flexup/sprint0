@@ -30,7 +30,6 @@ export default {
   },
   methods: {
     createOffer(payload) {
-      console.log('on cree loffre: ', payload)
       this.$activeAccount.addOffer(payload)
     }
   }
