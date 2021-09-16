@@ -530,7 +530,7 @@
         "dimension": "Dimension",
         "name": "Offer name",
         "unit": "Unit",
-        "price": "Price incl. tax",
+        "price": "Price excl. tax",
         "elasticity": "Elasticity",
         "currency": "Currency",
         "vat": "VAT",
