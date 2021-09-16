@@ -16,9 +16,12 @@ export default {
       const visibility = 'public'
       const settings = this.$activeAccount.settings()
       const vat = settings ? settings.default_vat : undefined
+      const currency = settings.currency
       return {
         visibility,
-        vat
+        vat,
+        currency,
+        status: 'draft'
       }
     }
   },

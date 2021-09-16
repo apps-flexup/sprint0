@@ -104,24 +104,7 @@ const activeAccount = (ctx) => ({
     ctx.store.dispatch('products/add', newProduct)
   },
   addOffer(newOffer) {
-    if (Object.prototype.hasOwnProperty.call(newOffer, 'id')) {
-      // update de l'offre
-      ctx.store.dispatch('offers/add', newOffer)
-    } else {
-      const preferredCurrency = this.settings().currency
-      const offer = {
-        product_id: newOffer.product_id,
-        name: newOffer.name,
-        price: newOffer.price,
-        currency: preferredCurrency,
-        unit: newOffer.unit,
-        vat: newOffer.vat,
-        status: 'draft'
-      }
-      ctx.$repos.offers.createWithAccountId(offer).then((_off) => {
-        ctx.store.dispatch('offers/get')
-      })
-    }
+    ctx.store.dispatch('offers/add', newOffer)
   },
   addPaymentCondition(newPaymentCondition) {
     ctx.store.dispatch('paymentConditions/add', newPaymentCondition)
