@@ -16,12 +16,21 @@
     @list:edit="editProduct"
   )
   v-row
-    fv-icon(
-      data-testid="archivedIcon"
-      v-if="!archivedProductPage"
-      icon="mdi-archive-outline"
-      @icon:clicked="archivedProduct"
-    )
+    v-col(cols="12")
+      fv-text-button(
+        data-testid="productsArchivedButton"
+        @button:click="archivedProduct"
+      )
+        template(v-slot:icon)
+          fv-icon(
+            data-testid="archivedIcon"
+            v-if="!archivedProductPage"
+            icon="mdi-archive-outline"
+            color="#2A83C3"
+            @icon:clicked="archivedProduct"
+          )
+        template(v-slot:text v-if="!archivedProductPage")
+          | {{ $t('table.products.archivedButton') }}
 </template>
 
 <script>

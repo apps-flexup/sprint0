@@ -335,6 +335,7 @@
     },
     "products": {
       "title": "Mes produits",
+      "archivedButton": "Voir mes produits archivés",
       "archived": {
         "title": "Mes produits archivés"
       },

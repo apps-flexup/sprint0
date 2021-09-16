@@ -333,6 +333,7 @@
     },
     "products": {
       "title": "My products",
+      "archivedButton": "See my archived products",
       "archived": {
         "title": "My archived products"
       },
