@@ -537,7 +537,7 @@
         "dimension": "Dimension",
         "name": "Nom de l'offre",
         "unit": "Unité",
-        "price": "Prix TTC",
+        "price": "Prix HT",
         "currency": "Devise",
         "vat": "TVA",
         "visibility": "Visibilité"
@@ -732,7 +732,7 @@
       "elasticity": "Élasticité",
       "label": "Label",
       "products": "Produit(s)",
-      "price": "Prix TTC",
+      "price": "Prix HT",
       "currency": "Devise",
       "vat": "TVA",
       "visibility": "Visibilité",
