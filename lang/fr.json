@@ -732,7 +732,7 @@
       "elasticity": "Élasticité",
       "label": "Label",
       "products": "Produit(s)",
-      "price": "Prix TTC",
+      "price": "Prix HT",
       "currency": "Devise",
       "vat": "TVA",
       "visibility": "Visibilité",
