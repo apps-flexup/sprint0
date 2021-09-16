@@ -11,6 +11,7 @@
     data-testid="productList"
     :archivedProductPage="archivedProductPage"
     :tableName="tableName"
+    :tableComponent="tableComponent"
     @list:selected="selectedProduct"
     @list:edit="editProduct"
   )
@@ -34,6 +35,12 @@ export default {
       }
     },
     tableName: {
+      type: String,
+      default() {
+        return null
+      }
+    },
+    tableComponent: {
       type: String,
       default() {
         return null

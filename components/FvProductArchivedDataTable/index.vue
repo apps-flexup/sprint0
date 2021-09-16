@@ -1,5 +1,5 @@
 <template lang="pug">
-.fv-product-data-table
+.fv-product-archived-data-table
   fv-data-table(
     data-testid="fvDataTable"
     :headers='headers'
@@ -15,37 +15,18 @@
       div {{ displayCategory(item) }}
     template(v-slot:item.unit='{ item }')
       div {{ displayUnit(item) }}
-    template(v-slot:item.status='{ item }')
-      fv-status-switch(
-        v-if="canEditProduct"
-        :value="item.status"
-        dense
-        denseLabel
-        @click.native.stop
-        @status:changed="statusChanged(item, ...arguments)"
-      )
-      fv-status-switch-readonly(
-        v-else
-        :value="item.status"
-        dense
-        denseLabel
-        @click.native.stop
-      )
     template(v-slot:item.actions="{ item }")
       v-row
-        fv-edit-action(
-          v-if="canEditProduct"
-          @edit:clicked="editItem(item)"
-        )
-        fv-delete-action(
-          v-if="canDeleteProduct"
-          @delete:clicked="deleteItem(item)"
+        fv-remove-from-archive-action(
+          v-if="canRemoveArchiveProduct"
+          @click.native.stop
+          @archive:clicked="removeArchiveItem(item)"
         )
 </template>
 
 <script>
 export default {
-  name: 'FvProductDataTable',
+  name: 'FvProductArchivedDataTable',
   props: {
     hideDefaultFooter: {
       type: Boolean,
@@ -73,11 +54,8 @@ export default {
     }
   },
   computed: {
-    canEditProduct() {
-      return this.$rights.canEditProduct()
-    },
-    canDeleteProduct() {
-      return this.$rights.canDeleteProduct()
+    canRemoveArchiveProduct() {
+      return this.$rights.canRemoveArchiveProduct()
     }
   },
   mounted() {
@@ -99,20 +77,11 @@ export default {
     selected(product) {
       this.$emit('dataTable:selected', product)
     },
-    editItem(product) {
-      this.$emit('dataTable:edit', product)
-    },
-    deleteItem(product) {
-      this.$store.dispatch('products/remove', product)
+    removeArchiveItem(product) {
+      this.$store.dispatch('products/removeFromArchive', product)
     },
     sortBy(v) {
       this.$emit('dataTable:sortBy', v)
-    },
-    statusChanged(product, status) {
-      if (!product) return
-      status = product.status === 'active' ? 'inactive' : 'active'
-      product.status = status
-      this.$store.dispatch('products/add', product)
     }
   }
 }

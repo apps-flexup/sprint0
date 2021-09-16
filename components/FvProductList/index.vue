@@ -4,7 +4,7 @@
     data-testid="table"
     :title="title"
     :searchLabel="$t('table.products.search')"
-    tableComponent="fv-product-data-table"
+    :tableComponent="tableComponent"
     :tableName="tableName"
     :rules="rules"
     @list:selected="productSelected"
@@ -23,6 +23,12 @@ export default {
       }
     },
     tableName: {
+      type: String,
+      default() {
+        return null
+      }
+    },
+    tableComponent: {
       type: String,
       default() {
         return null
