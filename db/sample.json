@@ -478,6 +478,38 @@
             "displayed": true
           }
         ],
+        "archived_products": [
+          {
+            "align": "left",
+            "sortable": true,
+            "text": "headers.products.name",
+            "value": "name",
+            "order": 0,
+            "customizable": false,
+            "active": true,
+            "displayed": true
+          },
+          {
+            "align": "left",
+            "sortable": true,
+            "text": "headers.products.unit",
+            "value": "unit",
+            "order": 2,
+            "customizable": true,
+            "active": true,
+            "displayed": true
+          },
+          {
+            "align": "left",
+            "sortable": false,
+            "text": "headers.actions",
+            "value": "actions",
+            "order": 4,
+            "customizable": false,
+            "active": true,
+            "displayed": true
+          }
+        ],
         "third_party_accounts": [
           {
             "align": "left",

@@ -10,13 +10,15 @@
   fv-product-list(
     data-testid="productList"
     :archivedProductPage="archivedProductPage"
+    :tableName="tableName"
     @list:selected="selectedProduct"
     @list:edit="editProduct"
   )
   v-row
     fv-icon(
       data-testid="archivedIcon"
-      icon="mdi-archive-arrow-up-outline"
+      v-if="!archivedProductPage"
+      icon="mdi-archive-outline"
       @icon:clicked="archivedProduct"
     )
 </template>
@@ -29,6 +31,12 @@ export default {
       type: Boolean,
       default() {
         return false
+      }
+    },
+    tableName: {
+      type: String,
+      default() {
+        return null
       }
     }
   },

@@ -96,6 +96,7 @@ import FvYieldRateParams from '@/components/FvYieldRateParams'
 import FvRating from '@/components/FvRating'
 import FvReadonlyField from '@/components/FvReadonlyField'
 import FvReferenceAutocomplete from '@/components/FvReferenceAutocomplete'
+import FvRemoveFromArchiveAction from '@/components/FvRemoveFromArchiveAction'
 import FvReview from '@/components/FvReview'
 import FvRoleAutocomplete from '@/components/FvRoleAutocomplete'
 import FvSearchAutocomplete from '@/components/FvSearchAutocomplete'
@@ -181,6 +182,7 @@ Vue.component('fv-account-readonly', FvAccountReadonly)
 Vue.component('fv-accounts-index', FvAccountsIndex)
 Vue.component('fv-address-field', FvAddressField)
 Vue.component('fv-address-modal', FvAddressModal)
+Vue.component('fv-remove-from-archive-action', FvRemoveFromArchiveAction)
 Vue.component('fv-autocomplete', FvAutocomplete)
 Vue.component('fv-avatar', FvAvatar)
 Vue.component('fv-avatar-with-name', FvAvatarWithName)

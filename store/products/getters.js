@@ -7,6 +7,14 @@ export default {
     const res = JSON.parse(JSON.stringify(notArchivedItems))
     return res
   },
+  allArchivedProducts(state) {
+    if (!state.items) return []
+    const archivedItems = state.items.filter(
+      (item) => item.status === 'archived'
+    )
+    const res = JSON.parse(JSON.stringify(archivedItems))
+    return res
+  },
   findById: (state, _getters, _rootStates, rootGetters) => (productId) => {
     if (!state.items) return null
     const id = parseInt(productId)

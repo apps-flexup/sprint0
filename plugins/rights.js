@@ -30,6 +30,10 @@ const rights = (ctx) => ({
   canCreateOffer() {
     const authorizedRoles = ['admin', 'editor']
     return this.isAuthorized(authorizedRoles)
+  },
+  canRemoveArchiveProduct() {
+    const authorizedRoles = ['admin', 'editor']
+    return this.isAuthorized(authorizedRoles)
   }
 })
 

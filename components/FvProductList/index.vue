@@ -2,10 +2,10 @@
 .fv-product-list
   fv-index-table(
     data-testid="table"
-    :title="findTitle"
+    :title="title"
     :searchLabel="$t('table.products.search')"
     tableComponent="fv-product-data-table"
-    tableName="products"
+    :tableName="tableName"
     :rules="rules"
     @list:selected="productSelected"
     @list:edit="editProduct"
@@ -21,6 +21,12 @@ export default {
       default() {
         return false
       }
+    },
+    tableName: {
+      type: String,
+      default() {
+        return null
+      }
     }
   },
   data() {
@@ -33,7 +39,7 @@ export default {
     }
   },
   computed: {
-    findTitle() {
+    title() {
       const productTitle = this.$t('table.products.title')
       const archivedTitle = this.$t('table.products.archived.title')
       if (this.archivedProductPage) return archivedTitle
@@ -41,7 +47,6 @@ export default {
     }
   },
   mounted() {
-    console.log('Composant ', this.$options.name)
     this.$store.dispatch('products/get')
   },
   methods: {

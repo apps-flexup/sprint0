@@ -3,7 +3,7 @@
   fv-data-table(
     data-testid="fvDataTable"
     :headers='headers'
-    :items='productsArchived ? productsArchived : items'
+    :items='items'
     :hide-default-footer="hideDefaultFooter"
     :options="options"
     @dataTable:sortBy="sortBy"
@@ -17,7 +17,7 @@
       div {{ displayUnit(item) }}
     template(v-slot:item.status='{ item }')
       fv-status-switch(
-        v-if="$rights.canEditProduct()"
+        v-if="canEditProduct"
         :value="item.status"
         dense
         denseLabel
@@ -36,6 +36,10 @@
         fv-edit-action(
           v-if="canEditProduct"
           @edit:clicked="editItem(item)"
+        )
+        fv-remove-from-archive-action(
+          @click.native.stop
+          @archive:clicked="removeArchiveItem(item)"
         )
         fv-delete-action(
           v-if="canDeleteProduct"
@@ -74,23 +78,22 @@ export default {
   },
   computed: {
     canEditProduct() {
+      if (this.isArchived) return false
       return this.$rights.canEditProduct()
     },
     canDeleteProduct() {
+      if (this.isArchived) return false
       return this.$rights.canDeleteProduct()
     },
-    productsArchived() {
-      if (this.$route.name === 'products-archived') {
-        const products = this.$activeAccount.items('products')
-        const productArchived = []
-        products.forEach((product) => {
-          if (product.archived === true) {
-            productArchived.push(product)
-          }
-        })
-        return productArchived
-      }
-      return null
+    canRemoveArchiveProduct() {
+      if (this.isArchived) return true
+      return this.$rights.canRemoveArchiveProduct()
+    },
+    isArchived() {
+      if (!this.items) return null
+      const product = this.items[0]
+      const condition = product.status === 'archived'
+      return condition
     }
   },
   mounted() {
@@ -115,6 +118,9 @@ export default {
     },
     editItem(product) {
       this.$emit('dataTable:edit', product)
+    },
+    removeArchiveItem(product) {
+      this.$store.dispatch('products/removeFromArchive', product)
     },
     deleteItem(product) {
       this.$store.dispatch('products/remove', product)
