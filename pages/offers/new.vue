@@ -21,7 +21,7 @@ export default {
         visibility,
         vat,
         currency,
-        status: 'draft'
+        status: 'active'
       }
     }
   },
