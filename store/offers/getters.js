@@ -10,6 +10,7 @@ export default {
       if (product) {
         payload = {
           ...payload,
+          product_name: product.name,
           category_id: product.category_id
         }
       }

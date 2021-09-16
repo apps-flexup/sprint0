@@ -652,9 +652,19 @@
               {
                 "align": "left",
                 "sortable": true,
-                "text": "headers.products.name",
+                "text": "headers.offers.name",
                 "value": "name",
                 "order": 0,
+                "customizable": false,
+                "active": true,
+                "displayed": true
+              },
+              {
+                "align": "left",
+                "sortable": true,
+                "text": "headers.products.name",
+                "value": "product_name",
+                "order": 1,
                 "customizable": false,
                 "active": true,
                 "displayed": true
