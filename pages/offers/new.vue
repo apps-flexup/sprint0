@@ -1,16 +1,21 @@
 <template lang="pug">
-  .page-offer-new
-    fv-form(
-      :payload="offer"
-      @form:submit="createOffer"
-      url='offers'
-      form='offers'
-      action='new'
-    )
+.page-offer-new
+  fv-form(
+    :payload="offer"
+    @form:submit="createOffer"
+    url='offers'
+    form='offers'
+    action='new'
+  )
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      localOffer: this.offer
+    }
+  },
   computed: {
     offer() {
       const visibility = 'public'
@@ -24,9 +29,6 @@ export default {
         status: 'active'
       }
     }
-  },
-  mounted() {
-    console.log('Composant ', this.$options.name)
   },
   methods: {
     createOffer(payload) {

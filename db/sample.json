@@ -2394,6 +2394,12 @@
           "size": 12
         },
         {
+          "attribute": "price_ttc",
+          "computeFunction": "offerPriceWithTax",
+          "readonly-component": "fv-price-field-readonly",
+          "size": 12
+        },
+        {
           "attribute": "unit",
           "component": "fv-unit-autocomplete-for-offer",
           "size": 12

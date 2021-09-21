@@ -5,6 +5,20 @@ String.prototype.filtreAutocomplete = function(filtre) {
   return str.includes(v)
 }
 
+export const formComputeFunction = {
+  offerPriceWithTax(payload) {
+    if (!payload) return {}
+    if (!payload.price) return {}
+    const amount = payload.price.amount
+    const vat = payload.vat
+    const currency = payload.price.currency
+    return {
+      amount: amount + (amount * vat) / 100,
+      currency
+    }
+  }
+}
+
 export const sortArrayByKey = (arr, key) => {
   arr.sort((a, b) => {
     if (a[key] < b[key]) return -1

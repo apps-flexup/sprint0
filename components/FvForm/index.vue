@@ -34,7 +34,7 @@
               data-testid="fieldComponent"
               :is="field.component"
               :label="$t(`forms.${form}.new.${field.attribute}`)"
-              :value="field.input ? payload[field.input] : payload[field.attribute]"
+              :value="fieldValue(field)"
               :search="localPayload"
               :isNewObject="isNewObject"
               @value:changed="payloadChanged(field.additionalOutputs, field.attribute, ...arguments)"
@@ -52,6 +52,8 @@
 </template>
 
 <script>
+import { formComputeFunction } from '~/plugins/utils'
+
 export default {
   name: 'FvForm',
   props: {
@@ -160,11 +162,18 @@ export default {
       if (!step.fields) return []
       const fields = step.fields.map((field) => ({ ...field }))
       fields.forEach((field) => {
-        if (!this.hasRightToEdit(field.attribute)) {
+        if (!this.hasRightToEdit(field.attribute) || field.computeFunction) {
           field.component = field['readonly-component'] || 'fv-readonly-field'
         }
       })
       return fields
+    },
+    fieldValue(field) {
+      if (field.computeFunction) {
+        return formComputeFunction[field.computeFunction](this.localPayload)
+      }
+      if (field.input) return this.localPayload[field.input]
+      return this.localPayload[`${field.attribute}`]
     }
   }
 }

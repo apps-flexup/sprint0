@@ -3,8 +3,9 @@
   v-row(:style="cssVars")
     v-col(cols="12")
       fv-text-field.text(
-        :label="label"
         v-model="checkValue ? checkValue : value"
+        :label="label"
+        :suffix="suffix"
         :clearable="false"
         readonly
       )
@@ -24,6 +25,12 @@ export default {
       type: String,
       default() {
         return null
+      }
+    },
+    suffix: {
+      type: String,
+      default() {
+        return ''
       }
     }
   },
