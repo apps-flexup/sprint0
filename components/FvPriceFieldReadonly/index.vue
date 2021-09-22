@@ -1,8 +1,8 @@
 <template lang="pug">
 .fv-price-field-readonly
   fv-readonly-field(
-    :key="value.amount"
     data-testid="priceField"
+    class="right-input"
     :value="amount"
     :label="label"
     :suffix="preferredCurrency ? preferredCurrency.symbole : null"
@@ -66,6 +66,25 @@ export default {
   mounted() {
     console.log('Composant', this.$options.name)
     this.$store.dispatch('currencies/get')
+  },
+  methods: {
+    amountChanged(v) {
+      const payload = {
+        amount: parseFloat(v),
+        currency: this.preferredCurrency ? this.preferredCurrency.iso3 : null
+      }
+      this.$emit('price:changed', payload)
+      this.emitGenericSignalForForm(payload)
+    },
+    onClick() {
+      this.truncatePrice = false
+    },
+    onClickOutside() {
+      this.truncatePrice = true
+    },
+    emitGenericSignalForForm(payload) {
+      this.$emit('payload:changed', payload)
+    }
   }
 }
 </script>

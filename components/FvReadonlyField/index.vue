@@ -1,14 +1,13 @@
 <template lang="pug">
 .fv-readonly-field
-  v-row(:style="cssVars")
-    v-col(cols="12")
-      fv-text-field.text(
-        v-model="checkValue ? checkValue : value"
-        :label="label"
-        :suffix="suffix"
-        :clearable="false"
-        readonly
-      )
+  fv-text-field.text(
+    v-model="checkValue ? checkValue : value"
+    :style="cssVars"
+    :label="label"
+    :suffix="suffix"
+    :clearable="false"
+    readonly
+  )
 </template>
 
 <script>
@@ -82,5 +81,11 @@ export default {
 }
 ::v-deep .v-input__slot {
   background-color: var(--bgColor) !important;
+}
+</style>
+
+<style scoped>
+.right-input >>> input {
+  text-align: right;
 }
 </style>
