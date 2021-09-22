@@ -1,7 +1,7 @@
 <template lang="pug">
 .fv-product-data-table
-  fv-data-table(
-    data-testid="fvDataTable"
+  fv-generic-product-data-table(
+    data-testid="fvGenericProductDataTable"
     :headers='headers'
     :items='items'
     :hide-default-footer="hideDefaultFooter"
@@ -9,13 +9,7 @@
     @dataTable:sortBy="sortBy"
     @dataTable:selected="selected"
   )
-    template(v-slot:item.name="{ item }")
-      div {{ displayName(item) }}
-    template(v-slot:item.category_id="{ item }")
-      div {{ displayCategory(item) }}
-    template(v-slot:item.unit='{ item }')
-      div {{ displayUnit(item) }}
-    template(v-slot:item.status='{ item }')
+    template(v-slot:status="item")
       fv-status-switch(
         v-if="canEditProduct"
         :value="item.status"
@@ -31,10 +25,11 @@
         denseLabel
         @click.native.stop
       )
-    template(v-slot:item.actions="{ item }")
+    template(v-slot:action="item")
       v-row
         fv-edit-action(
           v-if="canEditProduct"
+          @click.native.stop
           @edit:clicked="editItem(item)"
         )
         fv-delete-action(
@@ -80,22 +75,7 @@ export default {
       return this.$rights.canDeleteProduct()
     }
   },
-  mounted() {
-    this.$store.dispatch('categories/get')
-  },
   methods: {
-    displayName(item) {
-      const res = this.$displayRules.name(item)
-      return res
-    },
-    displayCategory(item) {
-      const res = this.$displayRules.category(item)
-      return res
-    },
-    displayUnit(item) {
-      const res = this.$displayRules.unit(item)
-      return res
-    },
     selected(product) {
       this.$emit('dataTable:selected', product)
     },

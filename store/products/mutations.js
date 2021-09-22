@@ -7,7 +7,7 @@ export default {
   },
   update(state, item) {
     const index = state.items.findIndex((v) => v.id === item.id)
-    state.items[index] = item
+    this._vm.$set(state.items, index, item)
   },
   remove(state, item) {
     state.items = state.items.filter((v) => v.id !== item.id)
