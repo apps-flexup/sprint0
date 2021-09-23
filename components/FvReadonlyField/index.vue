@@ -1,13 +1,13 @@
 <template lang="pug">
 .fv-readonly-field
-  v-row(:style="cssVars")
-    v-col(cols="12")
-      fv-text-field.text(
-        :label="label"
-        v-model="checkValue ? checkValue : value"
-        :clearable="false"
-        readonly
-      )
+  fv-text-field.text(
+    v-model="checkValue ? checkValue : value"
+    :style="cssVars"
+    :label="label"
+    :suffix="suffix"
+    :clearable="false"
+    readonly
+  )
 </template>
 
 <script>
@@ -21,9 +21,15 @@ export default {
       }
     },
     value: {
-      type: String,
+      type: [Number, String],
       default() {
         return null
+      }
+    },
+    suffix: {
+      type: String,
+      default() {
+        return ''
       }
     }
   },
@@ -44,7 +50,6 @@ export default {
     }
   },
   mounted() {
-    console.log('Composant ', this.$options.name)
     this.$store.dispatch('settings/getSettings')
   },
   methods: {
@@ -75,5 +80,8 @@ export default {
 }
 ::v-deep .v-input__slot {
   background-color: var(--bgColor) !important;
+}
+.right-input >>> input {
+  text-align: right;
 }
 </style>
