@@ -3,13 +3,14 @@
   fv-readonly-field(
     data-testid="priceField"
     class="right-input"
-    :value="value.amount"
+    :value="amount"
     :label="label"
-    :suffix="currencySymbol ? currencySymbol.symbole : null"
+    :suffix="preferredCurrency ? preferredCurrency.symbole : null"
   )
 </template>
 
 <script>
+import { convert } from '~/plugins/currencies'
 export default {
   name: 'FvPriceFieldReadonly',
   props: {
@@ -27,8 +28,33 @@ export default {
     }
   },
   computed: {
-    currencySymbol() {
-      const res = this.$store.getters['currencies/findIso'](this.value.currency)
+    preferredCurrency() {
+      const iso = this.$activeAccount.settings().currency
+      const res = this.$store.getters['currencies/findIso'](iso)
+      return res
+    },
+    nbDigitsAfterDecimalPoint() {
+      const settings = this.$activeAccount.settings()
+      if (!settings) return null
+      const res = settings.price_nb_after_decimal_point
+      return res
+    }
+  },
+  asyncComputed: {
+    async amount() {
+      const amount = this.value ? this.value.amount : null
+      if (!amount) return null
+      const fromCurrency = this.value.currency
+      if (!fromCurrency) return null
+      const toCurrency = this.preferredCurrency.iso3
+      if (!toCurrency) return null
+      let res = await convert(fromCurrency, toCurrency, amount)
+      if (this.nbDigitsAfterDecimalPoint) {
+        const multiplier = 10 ** this.nbDigitsAfterDecimalPoint
+        res = (Math.round(res * multiplier) / multiplier).toFixed(
+          this.nbDigitsAfterDecimalPoint
+        )
+      }
       return res
     }
   },

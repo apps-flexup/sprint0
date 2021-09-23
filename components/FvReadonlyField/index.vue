@@ -50,7 +50,6 @@ export default {
     }
   },
   mounted() {
-    console.log('Composant ', this.$options.name)
     this.$store.dispatch('settings/getSettings')
   },
   methods: {
@@ -82,9 +81,6 @@ export default {
 ::v-deep .v-input__slot {
   background-color: var(--bgColor) !important;
 }
-</style>
-
-<style scoped>
 .right-input >>> input {
   text-align: right;
 }
