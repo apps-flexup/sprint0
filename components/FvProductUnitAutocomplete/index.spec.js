@@ -1,0 +1,101 @@
+import { shallowMount, createLocalVue } from '@vue/test-utils'
+import Vuex from 'Vuex'
+import FvProductUnitAutocomplete from './index.vue'
+
+const localVue = createLocalVue()
+localVue.use(Vuex)
+
+let store
+let vuetify
+
+const factory = () => {
+  return shallowMount(FvProductUnitAutocomplete, {
+    localVue,
+    store,
+    vuetify,
+    mocks: {
+      $t: (msg) => msg
+    }
+  })
+}
+
+describe('FvProductUnitAutocomplete', () => {
+  beforeEach(() => {
+    store = new Vuex.Store({
+      modules: {
+        offers: {
+          namespaced: true,
+          actions: {
+            get: jest.fn()
+          },
+          getters: {
+            getForProduct: (_productId) => () => {
+              return []
+            }
+          }
+        }
+      }
+    })
+  })
+  it('should render a fv product unit autocomplete', () => {
+    const wrapper = factory()
+    expect(wrapper.find('[data-testid="unitAutocomplete"]').exists()).toBe(true)
+  })
+  it('should emit an event when a row is selected', () => {
+    const wrapper = factory()
+    const unitAutocomplete = wrapper.find('[data-testid="unitAutocomplete"]')
+    unitAutocomplete.vm.$emit('unit:selected')
+    const selectedCalls = wrapper.emitted('unit:selected')
+    expect(selectedCalls).toBeTruthy()
+    expect(selectedCalls).toHaveLength(1)
+  })
+  describe('Without offer existing for product', () => {
+    beforeEach(() => {
+      store = new Vuex.Store({
+        modules: {
+          offers: {
+            namespaced: true,
+            actions: {
+              get: jest.fn()
+            },
+            getters: {
+              getForProduct: (_productId) => () => {
+                return []
+              }
+            }
+          }
+        }
+      })
+    })
+    it('should not apply dimension filter', () => {
+      const wrapper = factory()
+      const unitAutocomplete = wrapper.find('[data-testid="unitAutocomplete"]')
+      expect(unitAutocomplete.props().dimensionFilter).toBe(null)
+    })
+  })
+  describe('With offer existing for product', () => {
+    const dimension = 'test'
+    beforeEach(() => {
+      store = new Vuex.Store({
+        modules: {
+          offers: {
+            namespaced: true,
+            actions: {
+              get: jest.fn()
+            },
+            getters: {
+              getForProduct: (_productId) => () => {
+                return [{ unit: { dimension } }]
+              }
+            }
+          }
+        }
+      })
+    })
+    it('should apply dimension filter', () => {
+      const wrapper = factory()
+      const unitAutocomplete = wrapper.find('[data-testid="unitAutocomplete"]')
+      expect(unitAutocomplete.props().dimensionFilter).toBe(dimension)
+    })
+  })
+})

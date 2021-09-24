@@ -2357,7 +2357,7 @@
         },
         {
           "attribute": "unit",
-          "component": "fv-unit-autocomplete",
+          "component": "fv-product-unit-autocomplete",
           "readonly-component": "fv-unit-readonly",
           "size": 12
         }
