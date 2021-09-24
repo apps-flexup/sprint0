@@ -1,7 +1,7 @@
 <template lang="pug">
 .fv-product-data-table
   fv-generic-product-data-table(
-    data-testid="fvGenericProductDataTable"
+    data-testid="FvGenericProductDataTable"
     :headers='headers'
     :items='items'
     :hide-default-footer="hideDefaultFooter"
