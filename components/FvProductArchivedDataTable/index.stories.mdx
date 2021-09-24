@@ -1,0 +1,84 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+import FvProductArchivedDataTable from './index.vue'
+
+<Meta title='Molecules/FvProductArchivedDataTable' component={ FvProductArchivedDataTable } />
+
+# FvProductArchivedDataTable
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  components: { FvProductArchivedDataTable },
+  data() {
+    return {
+      headers: [
+        {
+          align: "start",
+          sortable: true,
+          text: "Nom",
+          value: "name"
+        },
+        {
+          align: "start",
+          sortable: true,
+          text: "Catégorie",
+          value: "category"
+        },
+        {
+          align: "start",
+          sortable: true,
+          text: "Unité",
+          value: "unit"
+        },
+        {
+          align: "start",
+          sortable: true,
+          text: "Statut",
+          value: "status"
+        }
+      ],
+      items: [
+        {
+          account_id: 1,
+          category_id: 55,
+          currency: "EUR",
+          dimension: "duration",
+          name: "Appartement Paris 8",
+          price: "1250",
+          quantity: 1,
+          status: "archived",
+          unit: "month",
+          id: 1
+        },
+        {
+          account_id: 1,
+          category_id: 55,
+          currency: "EUR",
+          dimension: "duration",
+          name: "Appartement Paris 19",
+          price: "300",
+          quantity: 1,
+          status: "archived",
+          unit: "month",
+          id: 2
+        }
+      ]
+    }
+  },
+  methods: {
+    sortBy: action('sortBy'),
+    selected: action('selected')
+  },
+  template: `<FvProductArchivedDataTable
+    :headers="headers"
+    :items="items"
+    @dataTable:sortBy="sortBy"
+    @dataTable:selected="selected"
+  >
+  </FvProductArchivedDataTable>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvProductArchivedDataTable } />

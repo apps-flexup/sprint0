@@ -41,7 +41,7 @@ describe('FvProductDataTable', () => {
     })
     vuetify = new Vuetify()
   })
-  it('should render a fv product data table', () => {
+  it('should render a fv generic product data table', () => {
     const wrapper = factory()
     expect(
       wrapper.find('[data-testid="fvGenericProductDataTable"]').exists()
