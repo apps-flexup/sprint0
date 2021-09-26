@@ -1,7 +1,4 @@
 <template lang="pug">
 .fv-product-page-index
-  fv-product-index(
-    tableName="products"
-    tableComponent="fv-product-data-table"
-  )
+  fv-product-index
 </template>

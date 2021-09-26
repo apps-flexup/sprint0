@@ -9,9 +9,6 @@
       ) {{ $t('buttons.create.product') }}
   fv-product-list(
     data-testid="productList"
-    :archivedProductPage="archivedProductPage"
-    :tableName="tableName"
-    :tableComponent="tableComponent"
     @list:selected="selectedProduct"
     @list:edit="editProduct"
   )
@@ -24,41 +21,19 @@
         template(v-slot:icon)
           fv-icon(
             data-testid="archivedIcon"
-            v-if="!archivedProductPage"
             icon="mdi-archive-outline"
             color="#2A83C3"
             @icon:clicked="archivedProduct"
           )
-        template(v-slot:text v-if="!archivedProductPage")
+        template(v-slot:text)
           | {{ $t('table.products.archivedButton') }}
 </template>
 
 <script>
 export default {
   name: 'FvProductIndex',
-  props: {
-    archivedProductPage: {
-      type: Boolean,
-      default() {
-        return false
-      }
-    },
-    tableName: {
-      type: String,
-      default() {
-        return null
-      }
-    },
-    tableComponent: {
-      type: String,
-      default() {
-        return null
-      }
-    }
-  },
   computed: {
     canCreateProduct() {
-      if (this.archivedProductPage) return false
       return this.$rights.canCreateProduct()
     }
   },

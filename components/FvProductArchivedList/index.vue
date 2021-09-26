@@ -1,24 +1,22 @@
 <template lang="pug">
-.fv-product-list
+.fv-product-archived-list
   fv-index-table(
     data-testid="table"
     :title="title"
     :searchLabel="$t('table.products.search')"
-    tableComponent="fv-product-data-table"
-    tableName="products"
+    tableComponent="fv-product-archived-data-table"
+    tableName="productsArchived"
     :rules="rules"
     @list:selected="productSelected"
-    @list:edit="editProduct"
   )
 </template>
 
 <script>
 export default {
-  name: 'FvProductList',
+  name: 'FvProductArchivedList',
   data() {
     return {
       rules: {
-        status: this.$displayRules.status,
         category_id: this.$displayRules.category,
         unit: this.$displayRules.unit
       }
@@ -26,19 +24,16 @@ export default {
   },
   computed: {
     title() {
-      const productTitle = this.$t('table.products.title')
-      return productTitle
+      const archivedTitle = this.$t('table.products.archived.title')
+      return archivedTitle
     }
   },
   mounted() {
-    this.$store.dispatch('products/get')
+    this.$store.dispatch('productsArchived/get')
   },
   methods: {
     productSelected(payload) {
       this.$emit('list:selected', payload)
-    },
-    editProduct(payload) {
-      this.$emit('list:edit', payload)
     }
   }
 }

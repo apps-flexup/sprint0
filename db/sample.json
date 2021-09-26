@@ -478,7 +478,7 @@
             "displayed": true
           }
         ],
-        "archived_products": [
+        "products_archived": [
           {
             "align": "left",
             "sortable": true,

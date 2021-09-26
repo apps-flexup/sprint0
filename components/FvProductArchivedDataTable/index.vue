@@ -57,7 +57,7 @@ export default {
       this.$emit('dataTable:selected', product)
     },
     removeArchiveItem(product) {
-      this.$store.dispatch('products/removeFromArchive', product)
+      this.$store.dispatch('productsArchived/removeFromArchive', product)
     },
     sortBy(v) {
       this.$emit('dataTable:sortBy', v)

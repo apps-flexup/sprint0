@@ -80,10 +80,6 @@ export default {
       return res
     },
     items() {
-      if (this.tableName === 'archivedProducts') {
-        const res = this.$store.getters['products/allArchivedProducts']
-        return res
-      }
       const res = this.$activeAccount.items(this.tableName)
       return res
     },
