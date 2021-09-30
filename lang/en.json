@@ -531,6 +531,7 @@
         "name": "Offer name",
         "unit": "Unit",
         "price": "Price excl. tax",
+        "price_ttc": "Price incl. tax",
         "elasticity": "Elasticity",
         "currency": "Currency",
         "vat": "VAT",

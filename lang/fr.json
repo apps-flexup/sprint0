@@ -538,6 +538,7 @@
         "name": "Nom de l'offre",
         "unit": "Unité",
         "price": "Prix HT",
+        "price_ttc": "Prix TTC",
         "currency": "Devise",
         "vat": "TVA",
         "visibility": "Visibilité"
