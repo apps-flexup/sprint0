@@ -15,6 +15,12 @@
         :currency="item.currency"
         :unit="item.unit"
       )
+    template(v-slot:item.price_ttc='{ item }')
+      fv-price-with-unit(
+        :price="priceWithTax(item)"
+        :currency="item.currency"
+        :unit="item.unit"
+      )
     template(v-slot:item.vat='{ item }')
       div {{ displayVat(item) }}
     template(v-slot:item.visibility='{ item }')
@@ -56,10 +62,16 @@ export default {
       }
     }
   },
-  mounted() {
-    console.log('Composant ', this.$options.name)
-  },
   methods: {
+    priceWithTax(item) {
+      const amountWithoutTax = item.price.amount
+      const vat = item.vat
+      const amountWithTax = amountWithoutTax + (amountWithoutTax * vat) / 100
+      return {
+        amount: amountWithTax,
+        currency: item.price.currency
+      }
+    },
     displayVat(item) {
       const res = this.$displayRules.vat(item)
       return res

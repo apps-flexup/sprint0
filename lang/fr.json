@@ -734,6 +734,7 @@
       "label": "Label",
       "products": "Produit(s)",
       "price": "Prix HT",
+      "price_ttc": "Prix TTC",
       "currency": "Devise",
       "vat": "TVA",
       "visibility": "Visibilité",
