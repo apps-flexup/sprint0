@@ -34,6 +34,8 @@
 </template>
 
 <script>
+import { applyVatToAmount } from '~/plugins/utils'
+
 export default {
   name: 'FvOfferDataTable',
   props: {
@@ -64,11 +66,10 @@ export default {
   },
   methods: {
     priceWithTax(item) {
-      const amountWithoutTax = item.price.amount
+      const amount = item.price.amount
       const vat = item.vat
-      const amountWithTax = amountWithoutTax + (amountWithoutTax * vat) / 100
       return {
-        amount: amountWithTax,
+        amount: applyVatToAmount(amount, vat),
         currency: item.price.currency
       }
     },

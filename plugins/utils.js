@@ -11,12 +11,15 @@ export const formComputeFunction = {
     if (!payload.price) return {}
     const amount = payload.price.amount
     const vat = payload.vat
-    const currency = payload.price.currency
     return {
-      amount: amount + (amount * vat) / 100,
-      currency
+      amount: applyVatToAmount(amount, vat),
+      currency: payload.currency
     }
   }
+}
+
+export const applyVatToAmount = (amount, vat) => {
+  return amount + (amount * vat) / 100
 }
 
 export const sortArrayByKey = (arr, key) => {
