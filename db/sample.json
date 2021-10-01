@@ -694,6 +694,16 @@
               {
                 "align": "right",
                 "sortable": true,
+                "text": "headers.offers.price_ttc",
+                "value": "price_ttc",
+                "order": 0,
+                "customizable": true,
+                "active": true,
+                "displayed": true
+              },
+              {
+                "align": "right",
+                "sortable": true,
                 "text": "headers.offers.vat",
                 "value": "vat",
                 "order": 1,

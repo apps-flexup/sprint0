@@ -15,6 +15,12 @@
         :currency="item.currency"
         :unit="item.unit"
       )
+    template(v-slot:item.price_ttc='{ item }')
+      fv-price-with-unit(
+        :price="priceWithTax(item)"
+        :currency="item.currency"
+        :unit="item.unit"
+      )
     template(v-slot:item.vat='{ item }')
       div {{ displayVat(item) }}
     template(v-slot:item.visibility='{ item }')
@@ -28,6 +34,8 @@
 </template>
 
 <script>
+import { applyVatToAmount } from '~/plugins/utils'
+
 export default {
   name: 'FvOfferDataTable',
   props: {
@@ -56,10 +64,15 @@ export default {
       }
     }
   },
-  mounted() {
-    console.log('Composant ', this.$options.name)
-  },
   methods: {
+    priceWithTax(item) {
+      const amount = item.price.amount
+      const vat = item.vat
+      return {
+        amount: applyVatToAmount(amount, vat),
+        currency: item.price.currency
+      }
+    },
     displayVat(item) {
       const res = this.$displayRules.vat(item)
       return res
