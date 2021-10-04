@@ -1,14 +1,14 @@
 import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
 import { action } from '@storybook/addon-actions'
-import FvProductArchivedDataTable from './index.vue'
+import FvArchivedProductDataTable from './index.vue'
 
-<Meta title='Molecules/FvProductArchivedDataTable' component={ FvProductArchivedDataTable } />
+<Meta title='Molecules/FvArchivedProductDataTable' component={ FvArchivedProductDataTable } />
 
-# FvProductArchivedDataTable
+# FvArchivedProductDataTable
 
 <Canvas>
 <Story name='Common' height='150px'>{{
-  components: { FvProductArchivedDataTable },
+  components: { FvArchivedProductDataTable },
   data() {
     return {
       headers: [
@@ -69,16 +69,16 @@ import FvProductArchivedDataTable from './index.vue'
     sortBy: action('sortBy'),
     selected: action('selected')
   },
-  template: `<FvProductArchivedDataTable
+  template: `<FvArchivedProductDataTable
     :headers="headers"
     :items="items"
     @dataTable:sortBy="sortBy"
     @dataTable:selected="selected"
   >
-  </FvProductArchivedDataTable>`
+  </FvArchivedProductDataTable>`
 }}</Story>
 </Canvas>
 
 ## Props
 
-<Props of={ FvProductArchivedDataTable } />
+<Props of={ FvArchivedProductDataTable } />

@@ -1,10 +1,10 @@
 <template lang="pug">
-.fv-product-archived-list
+.fv-archived-product-list
   fv-index-table(
     data-testid="table"
-    :title="title"
+    :title="$t('table.products.archived.title')"
     :searchLabel="$t('table.products.search')"
-    tableComponent="fv-product-archived-data-table"
+    tableComponent="fv-archived-product-data-table"
     tableName="productsArchived"
     :rules="rules"
     @list:selected="productSelected"
@@ -13,19 +13,13 @@
 
 <script>
 export default {
-  name: 'FvProductArchivedList',
+  name: 'FvArchivedProductList',
   data() {
     return {
       rules: {
         category_id: this.$displayRules.category,
         unit: this.$displayRules.unit
       }
-    }
-  },
-  computed: {
-    title() {
-      const archivedTitle = this.$t('table.products.archived.title')
-      return archivedTitle
     }
   },
   mounted() {

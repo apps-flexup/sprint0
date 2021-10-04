@@ -1,5 +1,5 @@
 <template lang="pug">
-.fv-product-archived-data-table
+.fv-archived-product-data-table
   fv-generic-product-data-table(
     data-testid="FvGenericProductDataTable"
     :headers='headers'
@@ -20,7 +20,7 @@
 
 <script>
 export default {
-  name: 'FvProductArchivedDataTable',
+  name: 'FvArchivedProductDataTable',
   props: {
     hideDefaultFooter: {
       type: Boolean,
@@ -49,7 +49,7 @@ export default {
   },
   computed: {
     canRemoveArchiveProduct() {
-      return this.$rights.canRemoveArchiveProduct()
+      return this.$rights.canRemovedArchivedProduct()
     }
   },
   methods: {

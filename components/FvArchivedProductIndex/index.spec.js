@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils'
-import FvProductArchivedIndex from './index'
+import FvArchivedProductIndex from './index'
 
 const $router = {
   push: jest.fn()
@@ -12,7 +12,7 @@ const cannotCreateProductRights = {
 }
 
 const cannotCreateProductFactory = () => {
-  return shallowMount(FvProductArchivedIndex, {
+  return shallowMount(FvArchivedProductIndex, {
     mocks: {
       $t: (msg) => msg,
       $router,
@@ -25,7 +25,7 @@ beforeEach(() => {
   jest.clearAllMocks()
 })
 
-describe('FvProductArchivedIndex', () => {
+describe('FvArchivedProductIndex', () => {
   it('should render a fv product index', () => {
     const wrapper = cannotCreateProductFactory()
     expect(wrapper.find('[data-testid="productArchivedList"]').exists()).toBe(

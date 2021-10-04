@@ -1,6 +1,6 @@
 <template lang="pug">
-.fv-product-archived-index
-  fv-product-archived-list(
+.fv-archived-product-index
+  fv-archived-product-list(
     data-testid="productArchivedList"
     @list:selected="selectedProduct"
   )
@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: 'FvProductArchivedIndex',
+  name: 'FvArchivedProductIndex',
   computed: {
     canCreateProduct() {
       return this.$rights.canCreateProduct()

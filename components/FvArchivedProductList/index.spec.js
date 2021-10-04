@@ -1,15 +1,15 @@
 import { shallowMount, createLocalVue } from '@vue/test-utils'
 import Vuex from 'vuex'
-import FvProductArchivedList from './index.vue'
+import FvArchivedProductList from './index.vue'
 
 const localVue = createLocalVue()
 localVue.use(Vuex)
 
-describe('FvProductArchivedList', () => {
+describe('FvArchivedProductList', () => {
   let store
 
   const factory = () => {
-    return shallowMount(FvProductArchivedList, {
+    return shallowMount(FvArchivedProductList, {
       localVue,
       store,
       mocks: {

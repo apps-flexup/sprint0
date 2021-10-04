@@ -91,9 +91,9 @@ import FvPriceToPreferredCurrency from '@/components/FvPriceToPreferredCurrency'
 import FvPriceWithUnit from '@/components/FvPriceWithUnit'
 import FvPrimaryButton from '@/components/FvPrimaryButton'
 import FvProductDataTable from '@/components/FvProductDataTable'
-import FvProductArchivedDataTable from '@/components/FvProductArchivedDataTable'
-import FvProductArchivedIndex from '@/components/FvProductArchivedIndex'
-import FvProductArchivedList from '@/components/FvProductArchivedList'
+import FvArchivedProductDataTable from '@/components/FvArchivedProductDataTable'
+import FvArchivedProductIndex from '@/components/FvArchivedProductIndex'
+import FvArchivedProductList from '@/components/FvArchivedProductList'
 import FvForm from '@/components/FvForm'
 import FvQuantitySelector from '@/components/FvQuantitySelector'
 import FvYieldRateParams from '@/components/FvYieldRateParams'
@@ -278,11 +278,11 @@ Vue.component('fv-price-to-preferred-currency', FvPriceToPreferredCurrency)
 Vue.component('fv-price-with-unit', FvPriceWithUnit)
 Vue.component('fv-primary-button', FvPrimaryButton)
 Vue.component('fv-product-data-table', FvProductDataTable)
-Vue.component('fv-product-archived-data-table', FvProductArchivedDataTable)
-Vue.component('fv-product-archived-list', FvProductArchivedList)
+Vue.component('fv-archived-product-data-table', FvArchivedProductDataTable)
+Vue.component('fv-archived-product-list', FvArchivedProductList)
 Vue.component('fv-form', FvForm)
 Vue.component('fv-product-index', FvProductIndex)
-Vue.component('fv-product-archived-index', FvProductArchivedIndex)
+Vue.component('fv-archived-product-index', FvArchivedProductIndex)
 Vue.component('fv-quantity-selector', FvQuantitySelector)
 Vue.component('fv-yield-rate-params', FvYieldRateParams)
 Vue.component('fv-rating', FvRating)
