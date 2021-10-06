@@ -16,19 +16,11 @@
     template(v-slot:item.unit='{ item }')
       div {{ displayUnit(item) }}
     template(v-slot:item.status='{ item }')
-      fv-status-switch(
+      fv-status-progress(
         v-if="$rights.canEditProduct()"
-        :value="item.status"
-        dense
-        denseLabel
-        @click.native.stop
-        @status:changed="statusChanged(item, ...arguments)"
-      )
-      fv-status-switch-readonly(
-        v-else
-        :value="item.status"
-        dense
-        denseLabel
+        :status="item.status"
+        @status:clicked="statusChanged(item)"
+        @status:changed="status = $event"
         @click.native.stop
       )
     template(v-slot:item.actions="{ item }")
@@ -72,6 +64,11 @@ export default {
       }
     }
   },
+  data() {
+    return {
+      status: ''
+    }
+  },
   computed: {
     canEditProduct() {
       return this.$rights.canEditProduct()
@@ -109,11 +106,13 @@ export default {
     sortBy(v) {
       this.$emit('dataTable:sortBy', v)
     },
-    statusChanged(product, status) {
+    statusChanged(product) {
       if (!product) return
-      status = product.status === 'active' ? 'inactive' : 'active'
-      product.status = status
+      product.status = this.status
       this.$store.dispatch('products/add', product)
+    },
+    test(item) {
+      this.$emit('test', item)
     }
   }
 }
