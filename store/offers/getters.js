@@ -1,8 +1,14 @@
 export default {
-  all(state, _getters, _rootStates, rootGetters) {
+  all: (state, _getters, _rootStates, rootGetters) => (statusFilters) => {
     if (!state.items) return []
-    const offers = JSON.parse(JSON.stringify(state.items))
-    const res = offers.map((offer) => {
+    const filteredItems = state.items.filter((item) => {
+      const insensitiveFilters = statusFilters.map((status) =>
+        status.toLowerCase()
+      )
+      return insensitiveFilters.includes(item.status.toLowerCase())
+    })
+
+    const res = filteredItems.map((offer) => {
       let payload = {
         ...offer
       }
@@ -63,5 +69,8 @@ export default {
       name
     }
     return payload
+  },
+  availableStatus(_state) {
+    return ['active', 'inactive', 'archived']
   }
 }

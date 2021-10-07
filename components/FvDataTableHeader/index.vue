@@ -16,6 +16,11 @@
       @dataTableSearchBar:changed="searchChanged"
       @dataTableSearchBar:filterValidated="filterValidated"
     )
+    fv-status-filter.status-filter(
+      data-testid="statusFilters"
+      :tableName="tableName"
+      @statusFilter:filtersChanged="statusFiltersChanged"
+    )
     fv-icon.settings(
       data-testid="settings"
       icon="mdi-cog"
@@ -38,6 +43,12 @@ export default {
       default() {
         return 'Search'
       }
+    },
+    tableName: {
+      type: String,
+      default() {
+        return null
+      }
     }
   },
   data() {
@@ -45,9 +56,6 @@ export default {
       filters: [],
       colors: []
     }
-  },
-  mounted() {
-    console.log('Composant', this.$options.name)
   },
   methods: {
     searchChanged(v) {
@@ -63,6 +71,9 @@ export default {
         this.colors.push(color)
         this.$emit('dataTableSearch:filtersChanged', this.filters)
       }
+    },
+    statusFiltersChanged(filters) {
+      this.$emit('dataTableSearch:statusFiltersChanged', filters)
     },
     removeFilter(filter) {
       const index = this.filters.indexOf(filter)
@@ -101,5 +112,12 @@ export default {
 }
 .settings {
   margin-left: 25px;
+}
+.status-filter {
+  margin: 10px;
+}
+.filters {
+  display: flex;
+  align-items: center;
 }
 </style>

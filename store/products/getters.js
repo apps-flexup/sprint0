@@ -1,10 +1,13 @@
 export default {
-  all(state) {
+  all: (state) => (statusFilters = []) => {
     if (!state.items) return []
-    const notArchivedItems = state.items.filter(
-      (item) => item.status !== 'archived'
-    )
-    const res = JSON.parse(JSON.stringify(notArchivedItems))
+    const filteredItems = state.items.filter((item) => {
+      const insensitiveFilters = statusFilters.map((status) =>
+        status.toLowerCase()
+      )
+      return insensitiveFilters.includes(item.status.toLowerCase())
+    })
+    const res = JSON.parse(JSON.stringify(filteredItems))
     return res
   },
   findById: (state, _getters, _rootStates, rootGetters) => (productId) => {
@@ -23,5 +26,8 @@ export default {
       name
     }
     return payload
+  },
+  availableStatus(_state) {
+    return ['active', 'inactive', 'archived']
   }
 }
