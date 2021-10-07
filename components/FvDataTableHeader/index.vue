@@ -17,6 +17,7 @@
       @dataTableSearchBar:filterValidated="filterValidated"
     )
     fv-status-filter.status-filter(
+      data-testid="statusFilters"
       :tableName="tableName"
       @statusFilter:filtersChanged="statusFiltersChanged"
     )

@@ -11,7 +11,7 @@
         template(v-slot:activator="{on, attrs }")
           div.box.flex-sb.flex-ai-c(v-bind="attrs", v-on="on")
             div.text {{ selectedFilters }}
-            div v
+            fv-icon(icon="mdi-chevron-down")
         v-list.list
           fv-text-button(
             @button:click="toggleAllSelection"
@@ -51,8 +51,7 @@ export default {
   },
   computed: {
     selectedFilters() {
-      if (this.selected.length === this.filtersAvailable.length)
-        return this.$t('statusFilters.all')
+      if (this.areAllSelected) return this.$t('statusFilters.all')
       let res = null
       this.selected.forEach((filter) => {
         const translatedFilter = this.$t(`status.${filter}`)
@@ -66,9 +65,11 @@ export default {
       return this.$store.getters[`${this.tableName}/availableStatus`]
     },
     buttonLabel() {
-      if (this.selected.length === this.filtersAvailable.length)
-        return 'statusFilters.unselectAll'
+      if (this.areAllSelected) return 'statusFilters.unselectAll'
       return 'statusFilters.selectAll'
+    },
+    areAllSelected() {
+      return this.selected.length === this.filtersAvailable.length
     }
   },
   mounted() {
@@ -79,7 +80,7 @@ export default {
       this.$emit('statusFilter:filtersChanged', filters)
     },
     toggleAllSelection() {
-      if (this.selected.length === this.filtersAvailable.length) {
+      if (this.areAllSelected) {
         this.selected = []
       } else {
         this.selected = this.filtersAvailable

@@ -1,16 +1,40 @@
-import { mount } from '@vue/test-utils'
+import { shallowMount, createLocalVue } from '@vue/test-utils'
+import Vuex from 'Vuex'
 import FvDataTableHeader from './index.vue'
 
+const localVue = createLocalVue()
+localVue.use(Vuex)
+
+let store
+
+const availableStatus = ['active', 'inactive', 'archived']
+
 const factory = () => {
-  return mount(FvDataTableHeader)
+  return shallowMount(FvDataTableHeader, {
+    localVue,
+    store
+  })
 }
 
 describe('FvDataTableHeader', () => {
+  beforeEach(() => {
+    store = new Vuex.Store({
+      modules: {
+        products: {
+          namespaced: true,
+          getters: {
+            availableStatus: () => availableStatus
+          }
+        }
+      }
+    })
+  })
   it('should render a fv data table header', () => {
     const wrapper = factory()
     expect(wrapper.find('[data-testid=title]').exists()).toBe(true)
     expect(wrapper.find('[data-testid=filters]').exists()).toBe(false)
     expect(wrapper.find('[data-testid=searchBar]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid=statusFilters]').exists()).toBe(true)
     expect(wrapper.find('[data-testid=settings]').exists()).toBe(true)
   })
   it('should display filters when available', async () => {
