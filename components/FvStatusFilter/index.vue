@@ -85,6 +85,7 @@ export default {
       } else {
         this.selected = this.filtersAvailable
       }
+      this.filtersChanged(this.selected)
     }
   }
 }
