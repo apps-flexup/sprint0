@@ -16,6 +16,7 @@
       @dataTableSearchBar:changed="searchChanged"
       @dataTableSearchBar:filterValidated="filterValidated"
     )
+    fv-status-filter.status-filter
     fv-icon.settings(
       data-testid="settings"
       icon="mdi-cog"
@@ -101,5 +102,12 @@ export default {
 }
 .settings {
   margin-left: 25px;
+}
+.status-filter {
+  margin: 10px;
+}
+.filters {
+  display: flex;
+  align-items: center;
 }
 </style>
