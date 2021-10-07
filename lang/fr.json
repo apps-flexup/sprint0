@@ -1,4 +1,10 @@
 {
+  "statusFilters": {
+    "selectAll": "Tout sélectionner",
+    "unselectAll": "Tout désélectionner",
+    "none": "Aucun",
+    "all": "Tous"
+  },
   "visibility": {
     "public": "Publique",
     "private": "Privée"

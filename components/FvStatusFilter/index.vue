@@ -10,21 +10,89 @@
       )
         template(v-slot:activator="{on, attrs }")
           div.box.flex-sb.flex-ai-c(v-bind="attrs", v-on="on")
-            div.text coucou
+            div.text {{ selectedFilters }}
             div v
-        v-list
-          v-checkbox(label='choix 1')
-          v-checkbox(label='choix 2')
-          v-checkbox(label='choix 3')
+        v-list.list
+          fv-text-button(
+            @button:click="toggleAllSelection"
+          )
+            template(v-slot:text)
+              | {{ $t(buttonLabel) }}
+          v-checkbox(
+            v-model="selected"
+            v-for="filter in filtersAvailable" :key="filter"
+            :label="$t(`status.${filter}`)"
+            :value="filter"
+            @change="filtersChanged"
+          )
 </template>
 
 <script>
 export default {
-  name: 'FvStatusFilter'
+  name: 'FvStatusFilter',
+  props: {
+    tableName: {
+      type: String,
+      default() {
+        return null
+      }
+    },
+    filtersSelected: {
+      type: Array,
+      default() {
+        return ['active', 'inactive']
+      }
+    }
+  },
+  data() {
+    return {
+      selected: this.filtersSelected
+    }
+  },
+  computed: {
+    selectedFilters() {
+      if (this.selected.length === this.filtersAvailable.length)
+        return this.$t('statusFilters.all')
+      let res = null
+      this.selected.forEach((filter) => {
+        const translatedFilter = this.$t(`status.${filter}`)
+        if (!res) res = translatedFilter
+        else res += `, ${translatedFilter}`
+      })
+      if (!res) return this.$t('statusFilters.none')
+      return res
+    },
+    filtersAvailable() {
+      return this.$store.getters[`${this.tableName}/availableStatus`]
+    },
+    buttonLabel() {
+      if (this.selected.length === this.filtersAvailable.length)
+        return 'statusFilters.unselectAll'
+      return 'statusFilters.selectAll'
+    }
+  },
+  mounted() {
+    this.filtersChanged(this.selected)
+  },
+  methods: {
+    filtersChanged(filters) {
+      this.$emit('statusFilter:filtersChanged', filters)
+    },
+    toggleAllSelection() {
+      if (this.selected.length === this.filtersAvailable.length) {
+        this.selected = []
+      } else {
+        this.selected = this.filtersAvailable
+      }
+    }
+  }
 }
 </script>
 
 <style scoped>
+.list {
+  padding: 10px 40px 10px 10px;
+}
 .box {
   display: flex;
   height: 100%;
@@ -59,7 +127,7 @@ export default {
   border-bottom-right-radius: 5px;
 }
 .text {
-  padding-right: 100px;
+  padding-right: 50px;
 }
 ::v-deep .v-messages {
   display: none;

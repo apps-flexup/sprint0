@@ -5,7 +5,9 @@
       data-testid='header'
       :title="title"
       :searchLabel="searchLabel"
+      :tableName="tableName"
       @dataTableSearch:filtersChanged="filtersChanged"
+      @dataTableSearch:statusFiltersChanged="statusFiltersChanged"
       @dataTableHeader:settingsClicked="settingsClicked"
     )
     component(
@@ -68,6 +70,7 @@ export default {
   data() {
     return {
       filters: [],
+      statusFilters: [],
       sortKey: null,
       shouldSortDesc: false,
       dialog: false
@@ -80,7 +83,7 @@ export default {
       return res
     },
     items() {
-      const res = this.$activeAccount.items(this.tableName)
+      const res = this.$activeAccount.items(this.tableName, this.statusFilters)
       return res
     },
     formattedHeaders() {
@@ -127,12 +130,12 @@ export default {
       return res
     }
   },
-  mounted() {
-    console.log('Composant ', this.$options.name)
-  },
   methods: {
     filtersChanged(v) {
       this.filters = v
+    },
+    statusFiltersChanged(v) {
+      this.statusFilters = v
     },
     selected(item) {
       this.$emit('list:selected', item)
