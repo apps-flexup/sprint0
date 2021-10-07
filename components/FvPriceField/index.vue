@@ -7,7 +7,7 @@
     :outlined="outlined"
     :readonly="readonly"
     :clearable="clearable"
-    :suffix="preferredCurrency ? preferredCurrency.symbole : null"
+    :suffix="suffix"
     @input="amountChanged"
     @click="onClick"
     @click:outside="onClickOutside"
@@ -49,6 +49,12 @@ export default {
       default() {
         return true
       }
+    },
+    search: {
+      type: Object,
+      default() {
+        return {}
+      }
     }
   },
   data() {
@@ -57,6 +63,12 @@ export default {
     }
   },
   computed: {
+    suffix() {
+      const unit = this.search?.unit
+      let translatedUnit = ''
+      if (unit) translatedUnit = this.$t('units.symbol.' + unit.unit)
+      return `${this.preferredCurrency?.symbole}/${translatedUnit}`
+    },
     preferredCurrency() {
       const iso = this.$activeAccount.settings().currency
       const res = this.$store.getters['currencies/findIso'](iso)

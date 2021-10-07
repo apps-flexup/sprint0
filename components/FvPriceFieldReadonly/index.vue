@@ -5,7 +5,7 @@
     class="right-input"
     :value="amount"
     :label="label"
-    :suffix="preferredCurrency ? preferredCurrency.symbole : null"
+    :suffix="suffix"
   )
 </template>
 
@@ -25,9 +25,21 @@ export default {
       default() {
         return ''
       }
+    },
+    search: {
+      type: Object,
+      default() {
+        return {}
+      }
     }
   },
   computed: {
+    suffix() {
+      const unit = this.search?.unit
+      let translatedUnit = ''
+      if (unit) translatedUnit = this.$t('units.symbol.' + unit.unit)
+      return `${this.preferredCurrency?.symbole}/${translatedUnit}`
+    },
     preferredCurrency() {
       const iso = this.$activeAccount.settings().currency
       const res = this.$store.getters['currencies/findIso'](iso)
