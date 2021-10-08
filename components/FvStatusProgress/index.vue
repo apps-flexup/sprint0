@@ -6,32 +6,31 @@
         :value="config.value"
         :color="config.color"
         :striped="config.striped"
+        :key="theme"
         height="20"
         rounded=''
         v-bind="attrs"
-        @click.native.stop
         v-on="on"
-        :key="theme"
       )
         template(v-slot="data")
           strong {{ statusDisplay }}
     v-radio-group(
-      v-model="statusData"
-      v-for="(status, index) in statusAvailable" :key="index"
+      v-model="status"
+      v-for="(item, index) in statusAvailable" :key="index"
     )
       v-radio(
-        :value="status.name"
+        :value="item.name"
       )
       v-progress-linear(
-        :value="status.value"
-        :color="status.color"
-        :striped="status.striped"
+        :value="item.value"
+        :color="item.color"
+        :striped="item.striped"
         height="20"
         rounded=''
         :key="theme"
       )
         template(v-slot="data")
-          strong {{ status.name }}
+          strong {{ item.name }}
 </template>
 
 <script>
@@ -39,7 +38,7 @@ import { statusProgress } from '~/plugins/colorMaps'
 export default {
   name: 'FvStatusProgress',
   props: {
-    status: {
+    value: {
       type: String,
       default: 'draft'
     }
@@ -66,12 +65,12 @@ export default {
         },
         {
           name: 'archived',
-          color: 'blue',
+          color: 'grey',
           value: 100,
           striped: true
         }
       ],
-      statusData: this.status
+      status: this.value
     }
   },
   computed: {
@@ -81,27 +80,31 @@ export default {
     },
     statusDisplay() {
       const item = {
-        status: this.statusData
+        status: this.status
       }
       const res = this.$displayRules.status(item)
       return res
     }
   },
   watch: {
-    statusData() {
-      this.config = statusProgress(this.$vuetify, this.statusData)
-      this.$emit('status:changed', this.statusData)
+    status() {
+      this.config = statusProgress(this.$vuetify, this.status)
+      this.$emit('status:changed', this.status)
       this.$emit('status:clicked')
+      this.$emit('value:changed', this.status)
+    },
+    value() {
+      this.status = this.value
     },
     theme: {
       deep: true,
       handler() {
-        this.config = statusProgress(this.$vuetify, this.statusData)
+        this.config = statusProgress(this.$vuetify, this.status)
       }
     }
   },
   mounted() {
-    this.config = statusProgress(this.$vuetify, this.statusData)
+    this.config = statusProgress(this.$vuetify, this.status)
     this.$store.dispatch('settings/getSettings')
   }
 }

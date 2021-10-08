@@ -18,7 +18,7 @@
     template(v-slot:item.status='{ item }')
       fv-status-progress(
         v-if="$rights.canEditProduct()"
-        :status="item.status"
+        :value="item.status"
         @status:clicked="statusChanged(item)"
         @status:changed="status = $event"
         @click.native.stop
@@ -110,9 +110,6 @@ export default {
       if (!product) return
       product.status = this.status
       this.$store.dispatch('products/add', product)
-    },
-    test(item) {
-      this.$emit('test', item)
     }
   }
 }
