@@ -111,6 +111,11 @@ export default {
       return this.action === 'new'
     }
   },
+  watch: {
+    payload() {
+      this.localPayload = this.payload
+    }
+  },
   mounted() {
     this.$store.dispatch('forms/getBusinessAccount')
     this.$store.dispatch('forms/getSubAccount')
@@ -173,6 +178,7 @@ export default {
         return formComputeFunction[field.computeFunction](this.localPayload)
       }
       if (field.input) return this.localPayload[field.input]
+      if (!this.localPayload) return null
       return this.localPayload[`${field.attribute}`]
     }
   }
