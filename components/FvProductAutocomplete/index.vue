@@ -1,6 +1,5 @@
 <template lang="pug">
 .fv-product-autocomplete
-  p {{ $options.name }}
   fv-autocomplete(
     data-testid="autocomplete"
     :element="value"
@@ -39,13 +38,13 @@ export default {
   },
   computed: {
     items() {
-      const res = this.$activeAccount.items('products')
+      const statusFilters = ['active']
+      const res = this.$activeAccount.items('products', statusFilters)
       return res
     }
   },
   mounted() {
     this.$store.dispatch('products/get')
-    console.log('Composant ', this.$options.name)
   },
   methods: {
     selected(v) {
