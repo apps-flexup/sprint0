@@ -17,10 +17,8 @@
       div {{ displayUnit(item) }}
     template(v-slot:item.status='{ item }')
       fv-status-progress(
-        v-if="$rights.canEditProduct()"
         :value="item.status"
-        @status:clicked="statusChanged(item)"
-        @status:changed="status = $event"
+        @status:clicked="statusChanged(item, ...arguments)"
         @click.native.stop
       )
     template(v-slot:item.actions="{ item }")
@@ -106,9 +104,9 @@ export default {
     sortBy(v) {
       this.$emit('dataTable:sortBy', v)
     },
-    statusChanged(product) {
+    statusChanged(product, newStatus) {
       if (!product) return
-      product.status = this.status
+      product.status = newStatus
       this.$store.dispatch('products/add', product)
     }
   }
