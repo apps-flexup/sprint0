@@ -2,7 +2,7 @@
 .fv-status-filter
   div.box
     div.titleContainer
-      p.title.verticalCenter Status
+      p.title.verticalCenter {{ $t(`statusFilters.title`) }}
     div.filterContainer
       v-menu(
         offset-y
@@ -112,7 +112,6 @@ export default {
   transform: translateY(-50%);
 }
 .title {
-  text-transform: uppercase;
   opacity: 0.5;
   padding: 5px 20px 5px 20px;
 }

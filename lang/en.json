@@ -1,5 +1,6 @@
 {
   "statusFilters": {
+    "title": "STATUS",
     "selectAll": "Select All",
     "unselectAll": "Unselect All",
     "none": "None",
