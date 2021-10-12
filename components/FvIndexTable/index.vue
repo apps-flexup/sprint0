@@ -70,7 +70,7 @@ export default {
   data() {
     return {
       filters: [],
-      statusFilters: [],
+      statusFilters: null,
       sortKey: null,
       shouldSortDesc: false,
       dialog: false

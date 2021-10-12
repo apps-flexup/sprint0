@@ -1,5 +1,10 @@
 export default {
-  all: (state) => (statusFilters = []) => {
+  all(state) {
+    if (!state.items) return []
+    const res = JSON.parse(JSON.stringify(state.items))
+    return res
+  },
+  allWithFilters: (state) => (statusFilters) => {
     if (!state.items) return []
     const filteredItems = state.items.filter((item) => {
       const insensitiveFilters = statusFilters.map((status) =>
@@ -27,7 +32,10 @@ export default {
     }
     return payload
   },
-  availableStatus(_state) {
-    return ['active', 'inactive', 'archived']
+  availableStatus(state) {
+    return state.availableStatus
+  },
+  availableFilters(state) {
+    return state.availableFilters
   }
 }
