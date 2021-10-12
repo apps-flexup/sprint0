@@ -1,14 +1,7 @@
 export default {
-  all: (state, _getters, _rootStates, rootGetters) => (statusFilters) => {
+  all(state, _getters, _rootStates, rootGetters) {
     if (!state.items) return []
-    const filteredItems = state.items.filter((item) => {
-      const insensitiveFilters = statusFilters.map((status) =>
-        status.toLowerCase()
-      )
-      return insensitiveFilters.includes(item.status.toLowerCase())
-    })
-
-    const res = filteredItems.map((offer) => {
+    const res = state.items.map((offer) => {
       let payload = {
         ...offer
       }
@@ -22,6 +15,17 @@ export default {
       }
       return payload
     })
+    return res
+  },
+  allWithFilters: (state, getters) => (statusFilters) => {
+    if (!state.items) return []
+    const filteredItems = getters.all.filter((item) => {
+      const insensitiveFilters = statusFilters.map((status) =>
+        status.toLowerCase()
+      )
+      return insensitiveFilters.includes(item.status.toLowerCase())
+    })
+    const res = JSON.parse(JSON.stringify(filteredItems))
     return res
   },
   getForAccount: (state) => (id) => {
@@ -70,7 +74,10 @@ export default {
     }
     return payload
   },
-  availableStatus(_state) {
-    return ['active', 'inactive', 'archived']
+  availableStatus(state) {
+    return state.availableStatus
+  },
+  availableFilters(state) {
+    return state.availableFilters
   }
 }

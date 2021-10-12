@@ -84,8 +84,9 @@ const activeAccount = (ctx) => ({
     const res = ctx.store.getters['settings/headers'](tableName)
     return res
   },
-  items(tableName, statusFilters = []) {
-    const res = ctx.store.getters[tableName + '/all'](statusFilters)
+  items(tableName, statusFilters = null) {
+    if (!statusFilters) return ctx.store.getters[tableName + '/all']
+    const res = ctx.store.getters[tableName + '/allWithFilters'](statusFilters)
     return res
   },
   headersOrderLines(addActions = false) {

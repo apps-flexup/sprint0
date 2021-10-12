@@ -34,7 +34,6 @@ describe('FvDataTableHeader', () => {
     expect(wrapper.find('[data-testid=title]').exists()).toBe(true)
     expect(wrapper.find('[data-testid=filters]').exists()).toBe(false)
     expect(wrapper.find('[data-testid=searchBar]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid=statusFilters]').exists()).toBe(true)
     expect(wrapper.find('[data-testid=settings]').exists()).toBe(true)
   })
   it('should display filters when available', async () => {

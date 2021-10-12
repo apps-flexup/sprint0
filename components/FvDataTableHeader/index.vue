@@ -17,6 +17,7 @@
       @dataTableSearchBar:filterValidated="filterValidated"
     )
     fv-status-filter.status-filter(
+      v-if="isStatusFilterAvailable"
       data-testid="statusFilters"
       :tableName="tableName"
       @statusFilter:filtersChanged="statusFiltersChanged"
@@ -55,6 +56,19 @@ export default {
     return {
       filters: [],
       colors: []
+    }
+  },
+  computed: {
+    availableFilters() {
+      const availableFilters =
+        this.$store.getters[`${this.tableName}/availableFilters`] || []
+      const res = availableFilters.map((availableFilter) => {
+        return availableFilter.toLowerCase()
+      })
+      return res
+    },
+    isStatusFilterAvailable() {
+      return this.availableFilters.includes('status')
     }
   },
   methods: {

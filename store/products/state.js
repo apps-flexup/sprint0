@@ -1,3 +1,5 @@
 export default () => ({
-  items: []
+  items: [],
+  availableStatus: ['active', 'inactive', 'archived'],
+  availableFilters: ['status']
 })
