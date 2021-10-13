@@ -52,12 +52,11 @@ export default {
     }
   },
   mounted() {
-    console.log('Composant ', this.$options.name)
     this.$store.dispatch('accounts/get')
   },
   methods: {
     logout() {
-      this.$auth.logout()
+      this.$router.push('/logout')
     },
     setCurrentAccount(a) {
       // envoyer dans le store l'account qui va bien

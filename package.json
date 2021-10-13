@@ -39,7 +39,7 @@
     "@babel/runtime-corejs3": "^7.10.5",
     "@mdi/font": "^5.4.55",
     "@nuxt/typescript-runtime": "^0.4.0",
-    "@nuxtjs/auth": "^4.9.1",
+    "@nuxtjs/auth-next": "^5.0.0-1624817847.21691f1",
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/dotenv": "^1.4.0",
     "@nuxtjs/pwa": "^3.0.0-0",
