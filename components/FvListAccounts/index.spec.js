@@ -36,9 +36,10 @@ const others = [
   }
 ]
 
-const logoutFn = jest.fn()
 const setFn = jest.fn()
-const pushFn = jest.fn()
+const $router = {
+  push: jest.fn()
+}
 
 const factory = () => {
   return shallowMount(FvListAccounts, {
@@ -46,15 +47,10 @@ const factory = () => {
     store,
     mocks: {
       $t: (msg) => msg,
-      $auth: {
-        logout: logoutFn
-      },
       $activeAccount: {
         set: setFn
       },
-      $router: {
-        push: pushFn
-      }
+      $router
     }
   })
 }
@@ -77,6 +73,9 @@ beforeEach(() => {
 })
 
 describe('FvListAccounts', () => {
+  beforeEach(() => {
+    jest.clearAllMocks()
+  })
   it('should render a fv list accounts', () => {
     const wrapper = factory()
     expect(wrapper.find('[data-testid="userInfo"]').exists()).toBe(true)
@@ -93,7 +92,9 @@ describe('FvListAccounts', () => {
     const wrapper = factory()
     const logoutButton = wrapper.find('[data-testid="logout"]')
     logoutButton.vm.$emit('click')
-    expect(logoutFn).toHaveBeenCalledTimes(1)
+    const expectedPath = '/logout'
+    expect($router.push).toHaveBeenCalledTimes(1)
+    expect($router.push).toHaveBeenCalledWith(expectedPath)
   })
   it('should set current account in active account when an account is clicked', () => {
     const wrapper = factory()
@@ -106,8 +107,8 @@ describe('FvListAccounts', () => {
     const wrapper = factory()
     const manageAccounts = wrapper.find('[data-testid="manageAccounts"]')
     manageAccounts.vm.$emit('click')
-    expect(pushFn).toHaveBeenCalledTimes(1)
-    const accountsRoute = '/accounts'
-    expect(pushFn).toHaveBeenCalledWith(accountsRoute)
+    const expectedPath = '/accounts'
+    expect($router.push).toHaveBeenCalledTimes(1)
+    expect($router.push).toHaveBeenCalledWith(expectedPath)
   })
 })
