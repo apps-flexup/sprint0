@@ -16,7 +16,8 @@
     template(v-slot:item.unit='{ item }')
       div {{ displayUnit(item) }}
     template(v-slot:item.status='{ item }')
-      fv-status-progress(
+      fv-status-progress.mx-auto(
+        class="status-progress"
         :value="item.status"
         @status:clicked="statusChanged(item, ...arguments)"
         @click.native.stop
@@ -112,3 +113,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.status-progress {
+  max-width: 130px !important;
+}
+</style>

@@ -3,7 +3,7 @@
   v-menu(
     max-width=200
     rounded="xl"
-    offset-y
+    offset-x
   )
     template(v-slot:activator="{on, attrs}")
       div(
