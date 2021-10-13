@@ -1,15 +1,13 @@
-import colors from 'vuetify/es5/util/colors'
-
 export const statusProgress = (vuetify, status) => {
   const themeColors = vuetify.theme.currentTheme
   const styleMap = {
     active: {
-      color: themeColors.success,
+      color: '#9FE4A6',
       value: 100,
       striped: true
     },
     archived: {
-      color: colors.grey.darken1,
+      color: '#EDEDED',
       value: 100,
       striped: true
     },
@@ -19,7 +17,7 @@ export const statusProgress = (vuetify, status) => {
       striped: true
     },
     inactive: {
-      color: colors.blueGrey.lighten1,
+      color: '#FFCD92',
       value: 50,
       striped: true
     },

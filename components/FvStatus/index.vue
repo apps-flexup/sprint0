@@ -1,0 +1,48 @@
+<template lang="pug">
+.fv-status
+  v-btn(
+    data-testid="statusBtn"
+    :color="colorConfig"
+    :rounded="true"
+    :readonly="true"
+    :depressed="true"
+    min-width=130
+    @click="statusClicked"
+  )
+    |{{ status }}
+    slot(name="icon")
+</template>
+
+<script>
+export default {
+  name: 'FvStatus',
+  props: {
+    status: {
+      type: String,
+      default() {
+        return null
+      }
+    }
+  },
+  data() {
+    return {
+      colors: {
+        active: '#9FE4A6',
+        inactive: '#FFCD92',
+        archived: '#EDEDED'
+      }
+    }
+  },
+  computed: {
+    colorConfig() {
+      const color = this.colors[this.status]
+      return color
+    }
+  },
+  methods: {
+    statusClicked() {
+      this.$emit('status:clicked')
+    }
+  }
+}
+</script>

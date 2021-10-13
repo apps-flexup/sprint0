@@ -7,7 +7,7 @@
     :outlined="outlined"
     :readonly="readonly"
     :clearable="clearable"
-    :suffix="preferredCurrency ? preferredCurrency.symbole : null"
+    :suffix="suffix"
     @input="amountChanged"
     @click="onClick"
     @click:outside="onClickOutside"
@@ -15,10 +15,11 @@
 </template>
 
 <script>
-import { convert } from '~/plugins/currencies'
+import priceMixin from '~/mixins/price'
 
 export default {
   name: 'FvPriceField',
+  mixins: [priceMixin],
   props: {
     value: {
       type: Object,
@@ -49,6 +50,12 @@ export default {
       default() {
         return true
       }
+    },
+    search: {
+      type: Object,
+      default() {
+        return {}
+      }
     }
   },
   data() {
@@ -56,44 +63,17 @@ export default {
       truncatePrice: true
     }
   },
-  computed: {
-    preferredCurrency() {
-      const iso = this.$activeAccount.settings().currency
-      const res = this.$store.getters['currencies/findIso'](iso)
-      return res
-    },
-    nbDigitsAfterDecimalPoint() {
-      const settings = this.$activeAccount.settings()
-      if (!settings) return null
-      const res = settings.price_nb_after_decimal_point
-      return res
-    },
-    currency() {
-      const res = this.value ? this.value.currency : null
-      return res
-    }
-  },
   asyncComputed: {
     async amount() {
-      const amount = this.value ? this.value.amount : null
-      if (!amount) return null
-      const fromCurrency = this.currency
-      if (!fromCurrency) return null
-      const toCurrency = this.preferredCurrency.iso3
-      if (!toCurrency) return null
-      let res = await convert(fromCurrency, toCurrency, amount)
-      if (this.truncatePrice && this.nbDigitsAfterDecimalPoint) {
-        const multiplier = 10 ** this.nbDigitsAfterDecimalPoint
-        res = (Math.round(res * multiplier) / multiplier).toFixed(
-          this.nbDigitsAfterDecimalPoint
-        )
-      }
+      const amount = this.value?.amount
+      const fromCurrency = this.value?.currency
+      const res = await this.convertToPreferredCurrency(
+        amount,
+        fromCurrency,
+        this.truncatePrice
+      )
       return res
     }
-  },
-  mounted() {
-    console.log('Composant', this.$options.name)
-    this.$store.dispatch('currencies/get')
   },
   methods: {
     amountChanged(v) {

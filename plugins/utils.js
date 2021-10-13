@@ -13,7 +13,7 @@ export const formComputeFunction = {
     const vat = payload.vat
     return {
       amount: applyVatToAmount(amount, vat),
-      currency: payload.currency
+      currency: payload.price.currency
     }
   }
 }
