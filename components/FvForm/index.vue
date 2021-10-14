@@ -199,6 +199,9 @@ export default {
 ::v-deep .v-text-field__details {
   display: none;
 }
+.fv-status-progress {
+  max-width: 130px;
+}
 .btn {
   display: flex;
   justify-content: space-between;

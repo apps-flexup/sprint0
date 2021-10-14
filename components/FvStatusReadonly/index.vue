@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: 'FvStatusProgress',
+  name: 'FvStatusReadonly',
   props: {
     value: {
       type: String,

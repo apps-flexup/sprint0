@@ -19,9 +19,7 @@ export default {
   props: {
     status: {
       type: String,
-      default() {
-        return null
-      }
+      default: null
     }
   },
   data() {

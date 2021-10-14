@@ -16,11 +16,16 @@
     template(v-slot:item.unit='{ item }')
       div {{ displayUnit(item) }}
     template(v-slot:item.status='{ item }')
-      fv-status-progress.mx-auto(
+      fv-status-select.mx-auto(
         class="status-progress"
         :value="item.status"
+        v-if="canEditStatus"
         @status:clicked="statusChanged(item, ...arguments)"
         @click.native.stop
+      )
+      fv-status-readonly(
+        :value="item.status"
+        v-else
       )
     template(v-slot:item.actions="{ item }")
       v-row
@@ -69,6 +74,9 @@ export default {
     }
   },
   computed: {
+    canEditStatus() {
+      return this.$rights.canEditStatus()
+    },
     canEditProduct() {
       return this.$rights.canEditProduct()
     },
@@ -116,6 +124,6 @@ export default {
 
 <style scoped>
 .status-progress {
-  max-width: 130px !important;
+  max-width: 130px;
 }
 </style>

@@ -1,5 +1,5 @@
 <template lang="pug">
-.fv-status-progress
+.fv-status-select
   v-menu(
     max-width=200
     rounded="xl"
@@ -37,9 +37,8 @@
 </template>
 
 <script>
-import { statusProgress } from '~/plugins/colorMaps'
 export default {
-  name: 'FvStatusProgress',
+  name: 'FvStatusSelect',
   props: {
     value: {
       type: String,
@@ -53,11 +52,6 @@ export default {
         value: 50,
         striped: true
       }
-    }
-  },
-  watch: {
-    value() {
-      this.config = statusProgress(this.$vuetify, this.value)
     }
   },
   computed: {

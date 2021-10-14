@@ -26,7 +26,7 @@
     template(v-slot:item.structure='{ item }')
       div {{ paymentStructure(item) }}
     template(v-slot:item.status ='{ item }')
-      fv-status-progress(:status="item.status")
+      fv-status-select(:status="item.status")
     template(v-slot:item.actions="{ item }")
       v-row
         fv-edit-action(@edit:clicked="selected(item)")

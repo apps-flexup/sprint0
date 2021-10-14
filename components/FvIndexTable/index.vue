@@ -95,7 +95,7 @@ export default {
       return res
     },
     formattedItems() {
-      const items = this.items
+      const items = this.sortedItems
       let res = items
       if (!Array.isArray(this.headers)) {
         const headers = this.headers
