@@ -1,15 +1,15 @@
 import { mount } from '@vue/test-utils'
 import FvLogoutButton from './index.vue'
 
-const logoutFn = jest.fn()
+const $router = {
+  push: jest.fn()
+}
 
 const factory = () => {
   return mount(FvLogoutButton, {
     mocks: {
       $t: (msg) => msg,
-      $auth: {
-        logout: logoutFn
-      }
+      $router
     }
   })
 }
@@ -23,6 +23,8 @@ describe('FvLogoutButton', () => {
     const wrapper = factory()
     const button = wrapper.find('[data-testid="button"]')
     button.vm.$emit('click')
-    expect(logoutFn).toHaveBeenCalledTimes(1)
+    const expectedPath = '/logout'
+    expect($router.push).toHaveBeenCalledTimes(1)
+    expect($router.push).toHaveBeenCalledWith(expectedPath)
   })
 })

@@ -1,6 +1,8 @@
 import colors from 'vuetify/es5/util/colors'
 require('dotenv').config()
 
+const homeUrl = encodeURIComponent(process.env.HOME_URL)
+
 export default {
   mode: 'spa',
   /*
@@ -93,7 +95,12 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/axios', '@nuxtjs/auth', '@nuxtjs/pwa', '@nuxtjs/dotenv'],
+  modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/auth-next',
+    '@nuxtjs/pwa',
+    '@nuxtjs/dotenv'
+  ],
   // i18n: {
   //   locales: ['en', 'fr'],
   //   defaultLocale: 'en',
@@ -112,14 +119,39 @@ export default {
     }
   },
   auth: {
+    redirect: {
+      login: '/login',
+      logout: '/',
+      home: '/'
+    },
     strategies: {
+      local: false,
       keycloak: {
-        _scheme: 'oauth2',
-        client_id: process.env.KEYCLOAK_CLIENT_ID,
-        authorization_endpoint: process.env.OAUTH_ENDPOINT,
-        access_type: 'public',
-        userinfo_endpoint: process.env.OAUTH_USER_ENDPOINT,
-        access_token_endpoint: process.env.OAUTH_ENDPOINT_TOKEN
+        scheme: 'oauth2',
+        endpoints: {
+          authorization: process.env.OAUTH_ENDPOINT,
+          userInfo: process.env.OAUTH_USER_ENDPOINT,
+          token: process.env.OAUTH_ENDPOINT_TOKEN,
+          logout: `${process.env.OAUTH_ENDPOINT_LOGOUT}?redirect_uri=${homeUrl}`
+        },
+        user: {
+          property: false
+        },
+        token: {
+          property: 'access_token',
+          type: 'Bearer',
+          name: 'Authorization',
+          maxAge: 300
+        },
+        refreshToken: {
+          property: 'refresh_token',
+          maxAge: 60 * 60 * 24 * 30
+        },
+        responseType: 'code',
+        grantType: 'authorization_code',
+        clientId: process.env.KEYCLOAK_CLIENT_ID,
+        scope: ['openid', 'profile', 'email'],
+        codeChallengeMethod: 'S256'
       }
     },
     plugins: ['~/plugins/auth.js']

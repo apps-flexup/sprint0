@@ -2,7 +2,7 @@
 .fv-logout-button
   v-list-item(
     data-testid="button"
-    @click="click"
+    @click="logout"
   )
     v-list-item-action
       v-icon {{ 'mdi-logout' }}
@@ -13,12 +13,9 @@
 <script>
 export default {
   name: 'FvLogoutButton',
-  mounted() {
-    console.log('Composant ', this.$options.name)
-  },
   methods: {
-    click() {
-      this.$auth.logout()
+    logout() {
+      this.$router.push('/logout')
     }
   }
 }
