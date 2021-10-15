@@ -17,24 +17,24 @@
       div {{ displayUnit(item) }}
     template(v-slot:item.status='{ item }')
       fv-status-select.mx-auto(
+        v-if="canEdit"
         class="status-progress"
         :value="item.status"
-        v-if="canEditStatus"
         @status:clicked="statusChanged(item, ...arguments)"
         @click.native.stop
       )
       fv-status-readonly(
-        :value="item.status"
         v-else
+        :value="item.status"
       )
     template(v-slot:item.actions="{ item }")
       v-row
         fv-edit-action(
-          v-if="canEditProduct"
+          v-if="canEdit"
           @edit:clicked="editItem(item)"
         )
         fv-delete-action(
-          v-if="canDeleteProduct"
+          v-if="canDelete"
           @delete:clicked="deleteItem(item)"
         )
 </template>
@@ -68,19 +68,11 @@ export default {
       }
     }
   },
-  data() {
-    return {
-      status: ''
-    }
-  },
   computed: {
-    canEditStatus() {
-      return this.$rights.canEditStatus()
-    },
-    canEditProduct() {
+    canEdit() {
       return this.$rights.canEditProduct()
     },
-    canDeleteProduct() {
+    canDelete() {
       return this.$rights.canDeleteProduct()
     }
   },
@@ -122,8 +114,8 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .status-progress {
-  max-width: 130px;
+  max-width: $status-btn-width;
 }
 </style>

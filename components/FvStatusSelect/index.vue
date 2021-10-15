@@ -7,7 +7,6 @@
   )
     template(v-slot:activator="{on, attrs}")
       div(
-        max-width=130
         v-on="on"
         v-bind="attrs"
       )
@@ -43,15 +42,6 @@ export default {
     value: {
       type: String,
       default: 'draft'
-    }
-  },
-  data() {
-    return {
-      config: {
-        color: 'purple',
-        value: 50,
-        striped: true
-      }
     }
   },
   computed: {

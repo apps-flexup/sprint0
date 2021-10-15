@@ -2,7 +2,7 @@
 .fv-status
   v-btn(
     data-testid="statusBtn"
-    :color="colorConfig"
+    :color="color"
     :rounded="true"
     :readonly="true"
     :depressed="true"
@@ -32,7 +32,7 @@ export default {
     }
   },
   computed: {
-    colorConfig() {
+    color() {
       const color = this.colors[this.status]
       return color
     }
