@@ -185,7 +185,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 ::v-deep .v-sheet {
   border-radius: 15px;
 }
@@ -198,6 +198,9 @@ export default {
 }
 ::v-deep .v-text-field__details {
   display: none;
+}
+.fv-status-select {
+  max-width: $status-btn-width;
 }
 .btn {
   display: flex;

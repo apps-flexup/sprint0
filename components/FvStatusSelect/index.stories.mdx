@@ -1,0 +1,33 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import { statusAvailable, defaultValue } from '@/.storybook/data/statusAvailable'
+import FvStatusSelect from './index.vue'
+
+<Meta title='Atoms/FvStatusSelect' component={ FvStatusSelect } argTypes={{
+  status: {
+    control: {
+      type: 'select',
+      options: statusAvailable
+    }
+  }
+}}/>
+
+# FvStatusSelect
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  props: {
+    status: {
+      default: defaultValue
+    }
+  },
+  components: { FvStatusSelect },
+  template: `<FvStatusSelect
+    :status="status"
+  >
+  </FvStatusSelect>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvStatusSelect } />

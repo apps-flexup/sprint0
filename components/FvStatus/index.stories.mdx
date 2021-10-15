@@ -1,8 +1,8 @@
 import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
 import { statusAvailable, defaultValue } from '@/.storybook/data/statusAvailable'
-import FvStatusProgress from './index.vue'
+import FvStatus from './index.vue'
 
-<Meta title='Atoms/FvStatusProgress' component={ FvStatusProgress } argTypes={{
+<Meta title='Atoms/FvStatus' component={ FvStatus } argTypes={{
   status: {
     control: {
       type: 'select',
@@ -11,7 +11,7 @@ import FvStatusProgress from './index.vue'
   }
 }}/>
 
-# FvStatusProgress
+# FvStatus
 
 <Canvas>
 <Story name='Common' height='150px'>{{
@@ -20,14 +20,14 @@ import FvStatusProgress from './index.vue'
       default: defaultValue
     }
   },
-  components: { FvStatusProgress },
-  template: `<FvStatusProgress
+  components: { FvStatus },
+  template: `<FvStatus
     :status="status"
   >
-  </FvStatusProgress>`
+  </FvStatus>`
 }}</Story>
 </Canvas>
 
 ## Props
 
-<Props of={ FvStatusProgress } />
+<Props of={ FvStatus } />

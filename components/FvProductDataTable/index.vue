@@ -16,29 +16,25 @@
     template(v-slot:item.unit='{ item }')
       div {{ displayUnit(item) }}
     template(v-slot:item.status='{ item }')
-      fv-status-switch(
-        v-if="$rights.canEditProduct()"
+      fv-status-select.mx-auto(
+        v-if="canEdit"
+        class="status-progress"
         :value="item.status"
-        dense
-        denseLabel
+        @status:clicked="statusChanged(item, ...arguments)"
         @click.native.stop
-        @status:changed="statusChanged(item, ...arguments)"
       )
-      fv-status-switch-readonly(
+      fv-status-readonly(
         v-else
         :value="item.status"
-        dense
-        denseLabel
-        @click.native.stop
       )
     template(v-slot:item.actions="{ item }")
       v-row
         fv-edit-action(
-          v-if="canEditProduct"
+          v-if="canEdit"
           @edit:clicked="editItem(item)"
         )
         fv-delete-action(
-          v-if="canDeleteProduct"
+          v-if="canDelete"
           @delete:clicked="deleteItem(item)"
         )
 </template>
@@ -73,10 +69,10 @@ export default {
     }
   },
   computed: {
-    canEditProduct() {
+    canEdit() {
       return this.$rights.canEditProduct()
     },
-    canDeleteProduct() {
+    canDelete() {
       return this.$rights.canDeleteProduct()
     }
   },
@@ -109,12 +105,17 @@ export default {
     sortBy(v) {
       this.$emit('dataTable:sortBy', v)
     },
-    statusChanged(product, status) {
+    statusChanged(product, newStatus) {
       if (!product) return
-      status = product.status === 'active' ? 'inactive' : 'active'
-      product.status = status
+      product.status = newStatus
       this.$store.dispatch('products/add', product)
     }
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.status-progress {
+  max-width: $status-btn-width;
+}
+</style>

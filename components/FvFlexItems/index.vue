@@ -20,6 +20,6 @@ export default {
 <style scoped>
 .flex {
   display: flex !important;
-  align-items: baseline;
+  align-items: center;
 }
 </style>

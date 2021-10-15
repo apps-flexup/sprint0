@@ -108,6 +108,8 @@ import FvSettingsIndex from '@/components/FvSettingsIndex'
 import FvSettingsOthers from '@/components/FvSettingsOthers'
 import FvShowMenu from '@/components/FvShowMenu'
 import FvSlotItemCard from '@/components/FvSlotItemCard'
+import FvStatus from '@/components/FvStatus'
+import FvStatusReadonly from '@/components/FvStatusReadonly'
 import FvStatusFilter from '@/components/FvStatusFilter'
 import FvStatusSwitch from '@/components/FvStatusSwitch'
 import FvStatusSwitchReadonly from '@/components/FvStatusSwitchReadonly'
@@ -162,7 +164,7 @@ import FvUnitAutocompleteForOffer from '@/components/FvUnitAutocompleteForOffer'
 import FvUnitReadonly from '@/components/FvUnitReadonly'
 import FvOfferAutocomplete from '@/components/FvOfferAutocomplete'
 import FvProductItem from '@/components/FvProductItem'
-import FvStatusProgress from '~/components/FvStatusProgress'
+import FvStatusSelect from '~/components/FvStatusSelect'
 import FvFrequence from '@/components/FvFrequence'
 import FvPartnerItem from '@/components/FvPartnerItem'
 import FvOrderStepSelectPartner from '~/components/FvOrderStepSelectPartner'
@@ -293,6 +295,8 @@ Vue.component('fv-settings-index', FvSettingsIndex)
 Vue.component('fv-settings-others', FvSettingsOthers)
 Vue.component('fv-show-menu', FvShowMenu)
 Vue.component('fv-slot-item-card', FvSlotItemCard)
+Vue.component('fv-status', FvStatus)
+Vue.component('fv-status-readonly', FvStatusReadonly)
 Vue.component('fv-status-filter', FvStatusFilter)
 Vue.component('fv-status-switch', FvStatusSwitch)
 Vue.component('fv-status-switch-readonly', FvStatusSwitchReadonly)
@@ -352,7 +356,7 @@ Vue.component('fv-unit-autocomplete', FvUnitAutocomplete)
 Vue.component('fv-unit-autocomplete-for-offer', FvUnitAutocompleteForOffer)
 Vue.component('fv-unit-readonly', FvUnitReadonly)
 Vue.component('fv-product-item', FvProductItem)
-Vue.component('fv-status-progress', FvStatusProgress)
+Vue.component('fv-status-select', FvStatusSelect)
 Vue.component('fv-frequence', FvFrequence)
 Vue.component('fv-partner-item', FvPartnerItem)
 Vue.component('fv-order-step-select-partner', FvOrderStepSelectPartner)
