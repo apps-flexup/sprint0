@@ -27,7 +27,7 @@ describe('FvStatus', () => {
   })
   it('should return the color of the status', () => {
     const wrapper = factory({ status: 'inactive' })
-    expect(wrapper.vm.colorConfig).toBe('#FFCD92')
+    expect(wrapper.vm.color).toBe('#FFCD92')
   })
   it('should render an icon slot', () => {
     const slot = 'plop'
