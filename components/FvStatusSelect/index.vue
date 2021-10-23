@@ -25,8 +25,8 @@
       fv-flex-items
         template(v-slot:left)
           v-radio.mb-0(
-            @click="changeStatus(item)"
             :value="item"
+            @click="changeStatus(item)"
           )
         template(v-slot:right)
           fv-status(
@@ -42,6 +42,12 @@ export default {
     value: {
       type: String,
       default: 'draft'
+    },
+    availableStatus: {
+      type: Array,
+      default() {
+        return []
+      }
     }
   },
   computed: {
@@ -52,15 +58,12 @@ export default {
       set(newStatus) {
         this.changeStatus(newStatus)
       }
-    },
-    availableStatus() {
-      return this.$store.getters['products/availableStatus']
     }
   },
   methods: {
     changeStatus(newStatus) {
       this.$emit('payload:changed', newStatus)
-      this.$emit('status:clicked', newStatus)
+      this.$emit('status:changed', newStatus)
     }
   }
 }

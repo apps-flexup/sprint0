@@ -16,11 +16,11 @@
     template(v-slot:item.unit='{ item }')
       div {{ displayUnit(item) }}
     template(v-slot:item.status='{ item }')
-      fv-status-select.mx-auto(
+      fv-product-status-select.mx-auto(
         v-if="canEdit"
         class="status-progress"
         :value="item.status"
-        @status:clicked="statusChanged(item, ...arguments)"
+        @status:changed="statusChanged(item, ...arguments)"
         @click.native.stop
       )
       fv-status-readonly(

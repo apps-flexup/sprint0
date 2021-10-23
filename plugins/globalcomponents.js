@@ -91,6 +91,7 @@ import FvPriceToPreferredCurrency from '@/components/FvPriceToPreferredCurrency'
 import FvPriceWithUnit from '@/components/FvPriceWithUnit'
 import FvPrimaryButton from '@/components/FvPrimaryButton'
 import FvProductDataTable from '@/components/FvProductDataTable'
+import FvProductStatusSelect from '@/components/FvProductStatusSelect'
 import FvProductUnitAutocomplete from '@/components/FvProductUnitAutocomplete'
 import FvForm from '@/components/FvForm'
 import FvQuantitySelector from '@/components/FvQuantitySelector'
@@ -134,6 +135,7 @@ import FvOfferDataTable from '@/components/FvOfferDataTable'
 import FvOfferIndex from '@/components/FvOfferIndex'
 import FvOfferList from '@/components/FvOfferList'
 import FvOfferModal from '@/components/FvOfferModal'
+import FvOfferStatusSelect from '@/components/FvOfferStatusSelect'
 import FvOrderDataTable from '@/components/FvOrderDataTable'
 import FvOrderDetails from '@/components/FvOrderDetails'
 import FvOrderIndex from '@/components/FvOrderIndex'
@@ -277,6 +279,7 @@ Vue.component('fv-price-to-preferred-currency', FvPriceToPreferredCurrency)
 Vue.component('fv-price-with-unit', FvPriceWithUnit)
 Vue.component('fv-primary-button', FvPrimaryButton)
 Vue.component('fv-product-data-table', FvProductDataTable)
+Vue.component('fv-product-status-select', FvProductStatusSelect)
 Vue.component('fv-product-unit-autocomplete', FvProductUnitAutocomplete)
 Vue.component('fv-form', FvForm)
 Vue.component('fv-product-index', FvProductIndex)
@@ -324,6 +327,7 @@ Vue.component('fv-offer-data-table', FvOfferDataTable)
 Vue.component('fv-offer-index', FvOfferIndex)
 Vue.component('fv-offer-list', FvOfferList)
 Vue.component('fv-offer-modal', FvOfferModal)
+Vue.component('fv-offer-status-select', FvOfferStatusSelect)
 Vue.component('fv-order-data-table', FvOrderDataTable)
 Vue.component('fv-order-details', FvOrderDetails)
 Vue.component('fv-order-index', FvOrderIndex)

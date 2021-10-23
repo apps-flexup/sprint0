@@ -31,7 +31,7 @@ const rights = (ctx) => ({
     const authorizedRoles = ['admin', 'editor']
     return this.isAuthorized(authorizedRoles)
   },
-  canEditStatus() {
+  canEditOffer() {
     const authorizedRoles = ['admin', 'editor']
     return this.isAuthorized(authorizedRoles)
   }
