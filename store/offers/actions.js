@@ -23,8 +23,7 @@ export default {
     // charger les contracts
     if (Object.prototype.hasOwnProperty.call(offer, 'id')) {
       this.$repos.offers.update(offer).then((res) => {
-        commit('remove', res)
-        commit('add', res)
+        commit('update', res)
       })
     } else {
       this.$repos.offers.createWithAccountId(offer).then((res) => {

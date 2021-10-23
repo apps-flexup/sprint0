@@ -26,7 +26,17 @@
     template(v-slot:item.visibility='{ item }')
       div {{ displayVisibility(item) }}
     template(v-slot:item.status='{ item }')
-      fv-status-select(:status="item.status")
+      fv-offer-status-select.mx-auto(
+        v-if="canEdit"
+        class="status-progress"
+        :value="item.status"
+        @status:changed="statusChanged(item, ...arguments)"
+        @click.native.stop
+      )
+      fv-status-readonly(
+        v-else
+        :value="item.status"
+      )
     template(v-slot:item.actions="{ item }")
       v-row
         fv-edit-action(@edit:clicked="selected(item)")
@@ -64,6 +74,11 @@ export default {
       }
     }
   },
+  computed: {
+    canEdit() {
+      return this.$rights.canEditOffer()
+    }
+  },
   methods: {
     priceWithTax(item) {
       const amount = item.price.amount
@@ -89,7 +104,18 @@ export default {
     },
     sortBy(v) {
       this.$emit('dataTable:sortBy', v)
+    },
+    statusChanged(offer, newStatus) {
+      if (!offer) return
+      offer.status = newStatus
+      this.$store.dispatch('offers/add', offer)
     }
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.status-progress {
+  max-width: $status-btn-width;
+}
+</style>

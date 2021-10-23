@@ -2356,7 +2356,7 @@
       "fields": [
         {
           "attribute": "status",
-          "component": "fv-status-select",
+          "component": "fv-product-status-select",
           "readonly-component": "fv-status-readonly",
           "size": 12
         },
@@ -2378,6 +2378,12 @@
     {
       "title": "forms.offer.step.0",
       "fields": [
+        {
+          "attribute": "status",
+          "component": "fv-offer-status-select",
+          "readonly-component": "fv-status-readonly",
+          "size": 12
+        },
         {
           "attribute": "visibility",
           "component": "fv-visibility-switch",
