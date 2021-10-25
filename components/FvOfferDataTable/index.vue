@@ -111,9 +111,6 @@ export default {
     statusChanged(offer, newStatus) {
       if (!offer) return
       offer.status = newStatus
-      if (window.confirm('coucou')) {
-        console.log('ca marche')
-      }
       this.$store.dispatch('offers/add', offer)
     }
   }

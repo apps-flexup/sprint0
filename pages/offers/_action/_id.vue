@@ -31,7 +31,6 @@ export default {
       const offerId = this.$route.params.id
       const offers = this.$store.getters['offers/findById'](offerId)
       const payload = JSON.parse(JSON.stringify(offers))
-      console.log('loffre', payload)
       return payload
     }
   },

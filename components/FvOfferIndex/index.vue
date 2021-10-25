@@ -23,9 +23,8 @@ export default {
   },
   methods: {
     selectedOffer(offer) {
-      const action = 'read'
       offer = JSON.parse(JSON.stringify(offer))
-      this.$router.push(`/offers/${action}/${offer.id}`)
+      this.$router.push(`/offers/read/${offer.id}`)
     },
     editOffer(offer) {
       offer = JSON.parse(JSON.stringify(offer))
