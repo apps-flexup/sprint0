@@ -270,7 +270,9 @@
       "dashboard": "Tableau de bord",
       "index": "Accueil",
       "offers": "Offres",
-      "offers-id": "Modifier mon offre",
+      "offers-action-id": "Mon offre",
+      "offers-action-read": "Voir",
+      "offers-action-edit": "Modifier",
       "offers-new": "Nouvelle offre",
       "orders": "Commandes",
       "orders-new": "Nouvelle commande",
@@ -552,6 +554,9 @@
       },
       "edit": {
         "title": "Modifier mon offre"
+      },
+      "read": {
+        "title": "Voir mon offre"
       },
       "metrics": {
         "opinion": "aucun avis | un avis | {n} avis"

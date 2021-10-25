@@ -2402,11 +2402,13 @@
         {
           "attribute": "unit",
           "component": "fv-unit-autocomplete-for-offer",
+          "readonly-component": "fv-unit-readonly",
           "size": 12
         },
         {
           "attribute": "price",
           "component": "fv-price-field",
+          "readonly-component": "fv-price-field-readonly",
           "size": 12
         },
         {

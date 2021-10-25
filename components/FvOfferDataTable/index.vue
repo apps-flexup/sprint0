@@ -39,7 +39,7 @@
       )
     template(v-slot:item.actions="{ item }")
       v-row
-        fv-edit-action(@edit:clicked="selected(item)")
+        fv-edit-action(@edit:clicked="editItem(item)" @click.native.stop)
         fv-delete-action(@delete:clicked="deleteItem(item)")
 </template>
 
@@ -99,6 +99,9 @@ export default {
     selected(offer) {
       this.$emit('dataTable:selected', offer)
     },
+    editItem(offer) {
+      this.$emit('dataTable:edit', offer)
+    },
     deleteItem(offer) {
       this.$store.dispatch('offers/remove', offer)
     },
@@ -108,6 +111,9 @@ export default {
     statusChanged(offer, newStatus) {
       if (!offer) return
       offer.status = newStatus
+      if (window.confirm('coucou')) {
+        console.log('ca marche')
+      }
       this.$store.dispatch('offers/add', offer)
     }
   }

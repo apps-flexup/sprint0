@@ -34,7 +34,7 @@ export default {
       )
       const symbole = this.$t(`units.symbol.${res.symbole}`)
       const dimension = this.$t(`units.dimension.${res.dimension}`)
-      return `${symbole} ${dimension}`
+      return `${symbole} (${dimension})`
     }
   },
   mounted() {
