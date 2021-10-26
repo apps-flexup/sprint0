@@ -29,7 +29,7 @@
     )
       template(slot="form")
         v-row(v-for="field in fieldsForStep(step)" :key="field.attribute")
-          v-col(cols="field.size")
+          v-col(:cols="field.size")
             component(
               data-testid="fieldComponent"
               :is="field.component"

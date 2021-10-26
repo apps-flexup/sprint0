@@ -271,7 +271,9 @@
       "index": "Home",
       "members": "Members",
       "offers": "Offers",
-      "offers-id": "Edit my offer",
+      "offers-action-id": "My offer",
+      "offers-action-read": "See",
+      "offers-action-edit": "Edit",
       "offers-new": "New offer",
       "orders": "Orders",
       "orders-new": "New order",
@@ -539,6 +541,7 @@
         "unit": "Unit",
         "price": "Price excl. tax",
         "price_ttc": "Price incl. tax",
+        "product_id": "Product name",
         "elasticity": "Elasticity",
         "currency": "Currency",
         "vat": "VAT",
@@ -546,6 +549,9 @@
       },
       "edit": {
         "title": "Edit my offer"
+      },
+      "read": {
+        "title": "See my offer"
       },
       "metrics": {
         "opinion": "no opinion | one opinion | {n} opinions"

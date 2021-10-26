@@ -2379,19 +2379,9 @@
       "title": "forms.offer.step.0",
       "fields": [
         {
-          "attribute": "status",
-          "component": "fv-offer-status-select",
-          "readonly-component": "fv-status-readonly",
-          "size": 12
-        },
-        {
-          "attribute": "visibility",
-          "component": "fv-visibility-switch",
-          "size": 2
-        },
-        {
           "attribute": "product_id",
           "component": "fv-product-autocomplete",
+          "readonly-component": "fv-product-readonly",
           "size": 12
         },
         {
@@ -2402,22 +2392,37 @@
         {
           "attribute": "unit",
           "component": "fv-unit-autocomplete-for-offer",
-          "size": 12
-        },
-        {
-          "attribute": "price",
-          "component": "fv-price-field",
+          "readonly-component": "fv-unit-readonly",
           "size": 12
         },
         {
           "attribute": "vat",
           "component": "fv-vat-field",
+          "readonly-component": "fv-vat-field-readonly",
+          "size": 12
+        },
+        {
+          "attribute": "price",
+          "component": "fv-price-field",
+          "readonly-component": "fv-price-field-readonly",
           "size": 12
         },
         {
           "attribute": "price_ttc",
           "computeFunction": "offerPriceWithTax",
           "readonly-component": "fv-price-field-readonly",
+          "size": 12
+        },
+        {
+          "attribute": "visibility",
+          "component": "fv-visibility-switch",
+          "readonly-component": "fv-visibility-switch-readonly",
+          "size": 2
+        },
+        {
+          "attribute": "status",
+          "component": "fv-offer-status-select",
+          "readonly-component": "fv-status-readonly",
           "size": 12
         }
       ]

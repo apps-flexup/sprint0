@@ -91,6 +91,7 @@ import FvPriceToPreferredCurrency from '@/components/FvPriceToPreferredCurrency'
 import FvPriceWithUnit from '@/components/FvPriceWithUnit'
 import FvPrimaryButton from '@/components/FvPrimaryButton'
 import FvProductDataTable from '@/components/FvProductDataTable'
+import FvProductReadonly from '@/components/FvProductReadonly'
 import FvProductStatusSelect from '@/components/FvProductStatusSelect'
 import FvProductUnitAutocomplete from '@/components/FvProductUnitAutocomplete'
 import FvForm from '@/components/FvForm'
@@ -121,7 +122,9 @@ import FvTextButton from '@/components/FvTextButton'
 import FvTh from '@/components/FvTh'
 import FvThemeAutocomplete from '@/components/FvThemeAutocomplete'
 import FvVatField from '@/components/FvVatField'
+import FvVatFieldReadonly from '@/components/FvVatFieldReadonly'
 import FvVisibilitySwitch from '@/components/FvVisibilitySwitch'
+import FvVisibilitySwitchReadonly from '@/components/FvVisibilitySwitchReadonly'
 import FvDeleteAction from '@/components/FvDeleteAction'
 import FvEditAction from '@/components/FvEditAction'
 import FvEtape from '@/components/FvEtape'
@@ -279,6 +282,7 @@ Vue.component('fv-price-to-preferred-currency', FvPriceToPreferredCurrency)
 Vue.component('fv-price-with-unit', FvPriceWithUnit)
 Vue.component('fv-primary-button', FvPrimaryButton)
 Vue.component('fv-product-data-table', FvProductDataTable)
+Vue.component('fv-product-readonly', FvProductReadonly)
 Vue.component('fv-product-status-select', FvProductStatusSelect)
 Vue.component('fv-product-unit-autocomplete', FvProductUnitAutocomplete)
 Vue.component('fv-form', FvForm)
@@ -310,7 +314,9 @@ Vue.component('fv-text-button', FvTextButton)
 Vue.component('fv-th', FvTh)
 Vue.component('fv-theme-autocomplete', FvThemeAutocomplete)
 Vue.component('fv-vat-field', FvVatField)
+Vue.component('fv-vat-field-readonly', FvVatFieldReadonly)
 Vue.component('fv-visibility-switch', FvVisibilitySwitch)
+Vue.component('fv-visibility-switch-readonly', FvVisibilitySwitchReadonly)
 Vue.component('fv-delete-action', FvDeleteAction)
 Vue.component('fv-edit-action', FvEditAction)
 Vue.component('fv-etape', FvEtape)

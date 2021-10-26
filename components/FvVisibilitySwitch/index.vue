@@ -4,6 +4,7 @@
     data-testid="switch"
     :input-value="inputValue"
     :label="`${label}${$t('ponctuation.colons')}${$t(`visibility.${value}`)}`"
+    :readonly="readonly"
     inset
     @change="clicked"
   )
@@ -23,6 +24,12 @@ export default {
       type: String,
       default() {
         return ''
+      }
+    },
+    readonly: {
+      type: Boolean,
+      default() {
+        return false
       }
     }
   },

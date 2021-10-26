@@ -54,7 +54,9 @@ describe('FvOfferIndex', () => {
     }
     offerList.vm.$emit('list:selected', offerSelected)
     expect($router.push).toHaveBeenCalledTimes(1)
-    expect($router.push).toHaveBeenCalledWith('/offers/' + offerSelected.id)
+    expect($router.push).toHaveBeenCalledWith(
+      '/offers/read/' + offerSelected.id
+    )
   })
   describe('Cannot create an offer', () => {
     it('should not render create offer button', () => {

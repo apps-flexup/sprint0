@@ -80,6 +80,10 @@ export default {
         const action = this.$route.params.action
         href = '/products'
         text = this.$t(`breadcrumbs.route.${text}${action}`)
+      } else if (text === 'offers-action-') {
+        const action = this.$route.params.action
+        href = '/offers'
+        text = this.$t(`breadcrumbs.route.${text}${action}`)
       } else {
         text = this.$t('breadcrumbs.route.' + text)
       }

@@ -21,6 +21,7 @@
         :options="options"
         @dataTable:sortBy="sortBy"
         @dataTable:selected="selected"
+        @dataTable:edit="editItem"
       )
 </template>
 
@@ -96,6 +97,9 @@ export default {
     },
     selected(v) {
       this.$emit('dataTable:selected', v)
+    },
+    editItem(v) {
+      this.$emit('dataTable:edit', v)
     }
   }
 }

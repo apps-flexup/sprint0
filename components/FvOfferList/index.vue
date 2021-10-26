@@ -8,6 +8,7 @@
     tableName="offers"
     :rules="rules"
     @list:selected="offerSelected"
+    @list:edit="editOffer"
   )
 </template>
 
@@ -32,6 +33,9 @@ export default {
   methods: {
     offerSelected(offer) {
       this.$emit('list:selected', offer)
+    },
+    editOffer(payload) {
+      this.$emit('list:edit', payload)
     }
   }
 }
