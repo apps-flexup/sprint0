@@ -548,6 +548,7 @@
         "unit": "Unité",
         "price": "Prix HT",
         "price_ttc": "Prix TTC",
+        "product_id": "Nom du produit",
         "currency": "Devise",
         "vat": "TVA",
         "visibility": "Visibilité"

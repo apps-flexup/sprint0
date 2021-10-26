@@ -541,6 +541,7 @@
         "unit": "Unit",
         "price": "Price excl. tax",
         "price_ttc": "Price incl. tax",
+        "product_id": "Product name",
         "elasticity": "Elasticity",
         "currency": "Currency",
         "vat": "VAT",

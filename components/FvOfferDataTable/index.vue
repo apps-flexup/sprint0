@@ -85,7 +85,7 @@ export default {
       return this.$rights.canEditOffer()
     },
     canDelete() {
-      return this.$rights.canEditOffer()
+      return this.$rights.canDeleteOffer()
     }
   },
   methods: {
