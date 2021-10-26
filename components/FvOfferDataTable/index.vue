@@ -106,7 +106,7 @@ export default {
       return res
     },
     selected(offer) {
-      this.$emit('dataTable:seected', offer)
+      this.$emit('dataTable:selected', offer)
     },
     editItem(offer) {
       this.$emit('dataTable:edit', offer)
