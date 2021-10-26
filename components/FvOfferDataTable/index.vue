@@ -39,8 +39,14 @@
       )
     template(v-slot:item.actions="{ item }")
       v-row
-        fv-edit-action(@edit:clicked="editItem(item)" @click.native.stop)
-        fv-delete-action(@delete:clicked="deleteItem(item)")
+        fv-edit-action(
+          v-if="canEdit"
+          @edit:clicked="editItem(item)"
+        )
+        fv-delete-action(
+          v-if="canDelete"
+          @delete:clicked="deleteItem(item)"
+        )
 </template>
 
 <script>
@@ -77,6 +83,9 @@ export default {
   computed: {
     canEdit() {
       return this.$rights.canEditOffer()
+    },
+    canDelete() {
+      return this.$rights.canEditOffer()
     }
   },
   methods: {
@@ -97,7 +106,7 @@ export default {
       return res
     },
     selected(offer) {
-      this.$emit('dataTable:selected', offer)
+      this.$emit('dataTable:seected', offer)
     },
     editItem(offer) {
       this.$emit('dataTable:edit', offer)
