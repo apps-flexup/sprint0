@@ -3,6 +3,7 @@
   fv-vat-field(
     :value="value"
     :label="label"
+    :clearable="false"
     readonly
   )
 </template>
