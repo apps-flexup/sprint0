@@ -343,7 +343,8 @@
     },
     "products": {
       "title": "Mes Produits",
-      "search": "Rechercher"
+      "search": "Rechercher",
+      "warningMessage": "Vous êtes sur le point d'archiver ou désactiver votre produit cette modification impactera la visibilité des offres et des commandes liés à ce produit, souhaitez-vous continuez ?"
     },
     "thirdPartyAccounts": {
       "title": "Mes comptes tiers",
