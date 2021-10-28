@@ -2417,7 +2417,7 @@
           "attribute": "visibility",
           "component": "fv-visibility-switch",
           "readonly-component": "fv-visibility-switch-readonly",
-          "size": 2
+          "size": 6
         },
         {
           "attribute": "status",
