@@ -2393,13 +2393,13 @@
           "attribute": "unit",
           "component": "fv-unit-autocomplete-for-offer",
           "readonly-component": "fv-unit-readonly",
-          "size": 12
+          "size": 6
         },
         {
           "attribute": "vat",
           "component": "fv-vat-field",
           "readonly-component": "fv-vat-field-readonly",
-          "size": 12
+          "size": 6
         },
         {
           "attribute": "price",
@@ -2417,7 +2417,7 @@
           "attribute": "visibility",
           "component": "fv-visibility-switch",
           "readonly-component": "fv-visibility-switch-readonly",
-          "size": 2
+          "size": 6
         },
         {
           "attribute": "status",
