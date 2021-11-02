@@ -23,8 +23,15 @@ export default {
   },
   methods: {
     changeStatus(newStatus) {
-      this.$emit('payload:changed', newStatus)
-      this.$emit('status:changed', newStatus)
+      if (this.value === 'active') {
+        if (window.confirm(this.$t('table.products.warningMessage'))) {
+          this.$emit('payload:changed', newStatus)
+          this.$emit('status:changed', newStatus)
+        }
+      } else {
+        this.$emit('payload:changed', newStatus)
+        this.$emit('status:changed', newStatus)
+      }
     }
   }
 }

@@ -341,7 +341,8 @@
     },
     "products": {
       "title": "My products",
-      "search": "Search"
+      "search": "Search",
+      "warningMessage": "You are about to archive or desactivate your product, change if needed the offers and orders related to this product before continuing."
     },
     "thirdPartyAccounts": {
       "title": "My third party accounts",
