@@ -463,6 +463,11 @@
     "thirdPartyAccounts": {
       "new": {
         "title": "New third party account",
+        "choices": {
+          "personal": "New personal third party",
+          "business": "New business third party",
+          "sub": "New sub account third party"
+        },
         "subtitle": "Specify your third party account's information",
         "name": "Third party account's name",
         "legal_structure_id": "Legal structure",

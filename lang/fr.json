@@ -465,6 +465,11 @@
     "thirdPartyAccounts": {
       "new": {
         "title": "Nouveau compte tiers",
+        "choices": {
+          "personal": "Nouveau tiers personnel",
+          "business": "Nouveau tiers entreprise",
+          "sub": "Nouveau tiers sous-compte"
+        },
         "subtitle": "Précisez les informations de votre compte tiers",
         "name": "Nom du compte tiers",
         "legal_structure_id": "Statut juridique",

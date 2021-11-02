@@ -20,9 +20,6 @@ export default {
       }
     }
   },
-  mounted() {
-    console.log('Composant ', this.$options.name)
-  },
   methods: {
     createAccount(account) {
       this.$store.dispatch('accounts/add', account)
