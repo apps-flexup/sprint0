@@ -1,5 +1,5 @@
 <template lang="pug">
-.fv-product-status-select
+.fv-status-select
   fv-status-select(
     :value="value"
     :availableStatus="availableStatus"

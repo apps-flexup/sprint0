@@ -344,7 +344,7 @@
     "products": {
       "title": "Mes Produits",
       "search": "Rechercher",
-      "warningMessage": "Vous êtes sur le point d'archiver ou désactiver votre produit cette modification impactera la visibilité des offres et des commandes liés à ce produit, souhaitez-vous continuez ?"
+      "warningMessage": "Vous êtes sur le point d'archiver ou désactiver votre produit, changer si besoin les offres et commandes liés à ce produit avant de continuer."
     },
     "thirdPartyAccounts": {
       "title": "Mes comptes tiers",
