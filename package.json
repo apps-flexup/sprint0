@@ -62,8 +62,7 @@
     "vue-loader": "^15.9.3",
     "vue-style-loader": "^4.1.2",
     "vuedraggable": "^2.24.3",
-    "vuetify": "2.3.4",
-    "vuex": "^3.6.2"
+    "vuetify": "2.3.4"
   },
   "devDependencies": {
     "@nuxt/types": "^2.15.8",

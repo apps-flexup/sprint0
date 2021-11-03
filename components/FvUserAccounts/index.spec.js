@@ -1,6 +1,6 @@
 import { mount, createLocalVue } from '@vue/test-utils'
 import Vuetify from 'vuetify'
-import Vuex from 'Vuex'
+import Vuex from 'vuex'
 import FvUserAccount from './index.vue'
 
 const localVue = createLocalVue()

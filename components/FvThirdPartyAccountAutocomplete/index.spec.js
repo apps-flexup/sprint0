@@ -1,5 +1,5 @@
 import { mount, createLocalVue } from '@vue/test-utils'
-import Vuex from 'Vuex'
+import Vuex from 'vuex'
 import FvThirdPartyAccountAutocomplete from './index.vue'
 
 const localVue = createLocalVue()

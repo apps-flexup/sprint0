@@ -1,5 +1,5 @@
 import { shallowMount, createLocalVue } from '@vue/test-utils'
-import Vuex from 'Vuex'
+import Vuex from 'vuex'
 import FvNavBarManage from './index.vue'
 
 const localVue = createLocalVue()
