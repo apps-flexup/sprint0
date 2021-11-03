@@ -1,33 +1,35 @@
 <template lang="pug">
 .page-account-new
-  h1.mb-8(data-testid="pageTitle") {{ $t('forms.personalAccounts.new.title') }}
-  v-radio-group(:label="$t('accounts.typeOfAccount.whatType')" v-model="accountForm" :mandatory="true")
-    v-radio(name='typeAccount' :label="$t('forms.businessAccounts.new.title')" value='BusinessAccount')
-    v-radio(name='typeAccount' :label="$t('forms.subAccounts.new.title')" value='SubAccount')
-    fv-flex-items
-      template(v-slot:left)
-        fv-secondary-button(
-          data-testid="cancelBtn"
-          @button:click="cancel"
-        ) {{ $t('buttons.previous') }}
-      template(v-slot:separator)
-        v-spacer
-      template(v-slot:right)
-        fv-primary-button(
-          @button:click="createAccount()"
-        ) {{ $t('buttons.next') }}
+  fv-radio-group(
+    :title="$t('forms.personalAccounts.new.title')"
+    :label="$t('accounts.typeOfAccount.whatType')"
+    :availableOptions="availableOptions"
+    @radio-group:validated="createAccount"
+  )
 </template>
 
 <script>
 export default {
   data() {
     return {
-      accountForm: null
+      accountForm: null,
+      availableOptions: [
+        {
+          name: 'businessAccount',
+          label: this.$t('forms.businessAccounts.new.title'),
+          value: 'BusinessAccount'
+        },
+        {
+          name: 'subAccount',
+          label: this.$t('forms.subAccounts.new.title'),
+          value: 'SubAccount'
+        }
+      ]
     }
   },
   methods: {
-    createAccount() {
-      this.$router.push(`/accounts/new${this.accountForm}`)
+    createAccount(type) {
+      this.$router.push(`/accounts/new${type}`)
     },
     cancel() {
       this.$router.go(-1)

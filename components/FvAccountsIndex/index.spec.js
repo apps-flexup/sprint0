@@ -1,5 +1,5 @@
 import { mount, createLocalVue } from '@vue/test-utils'
-import Vuex from 'Vuex'
+import Vuex from 'vuex'
 import FvAccountsIndex from './index'
 
 const localVue = createLocalVue()

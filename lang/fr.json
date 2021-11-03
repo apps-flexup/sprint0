@@ -292,7 +292,10 @@
       "settings-new": "Créer préférences",
       "thirdPartyAccounts": "Comptes tiers",
       "thirdPartyAccounts-id": "Modifier mon compte tiers",
-      "thirdPartyAccounts-new": "Créer mon compte tiers"
+      "thirdPartyAccounts-new": "Nouveau compte tiers",
+      "thirdPartyAccounts-newPersonalThirdParty": "Nouveau compte tiers personnel",
+      "thirdPartyAccounts-newBusinessThirdParty": "Nouveau compte tiers professionel",
+      "thirdPartyAccounts-newSubAccountThirdParty": "Nouveau sous-compte tiers"
     }
   },
   "listAccounts": {
@@ -466,6 +469,11 @@
     "thirdPartyAccounts": {
       "new": {
         "title": "Nouveau compte tiers",
+        "choices": {
+          "personal": "Nouveau tiers personnel",
+          "business": "Nouveau tiers entreprise",
+          "sub": "Nouveau tiers sous-compte"
+        },
         "subtitle": "Précisez les informations de votre compte tiers",
         "name": "Nom du compte tiers",
         "legal_structure_id": "Statut juridique",
@@ -533,6 +541,7 @@
         "title": "Modifier mon compte"
       },
       "read": {
+        "title": "Informations du compte",
         "infos": {
           "title": "Informations du compte"
         },
@@ -757,12 +766,8 @@
     },
     "thirdPartyAccounts": {
       "name": "Nom",
-      "siret": "SIRET",
-      "legalStructure": "Statut juridique",
-      "address": "Adresse",
-      "zip": "Code postal",
-      "city": "Ville",
-      "country": "Pays"
+      "type": "Type de tiers",
+      "directory": "Annuaire"
     },
     "paymentConditions": {
       "label": "Libellé",

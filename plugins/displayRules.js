@@ -238,6 +238,14 @@ const displayRules = (ctx) => ({
     const i18n = ctx.app.i18n
     const res = i18n.t(`visibility.${visibility}`)
     return res
+  },
+  accountType(account) {
+    if (!account) return null
+    const i18n = ctx.app.i18n
+    const type = account.type
+    if (!type) return null
+    const formattedType = type[0].toLowerCase() + type.slice(1)
+    return i18n.t(`account.${formattedType}.name`)
   }
 })
 

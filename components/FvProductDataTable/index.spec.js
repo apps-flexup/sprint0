@@ -1,6 +1,6 @@
 import { shallowMount, createLocalVue } from '@vue/test-utils'
 import Vuetify from 'vuetify'
-import Vuex from 'Vuex'
+import Vuex from 'vuex'
 import FvProductDataTable from './index.vue'
 
 const localVue = createLocalVue()
