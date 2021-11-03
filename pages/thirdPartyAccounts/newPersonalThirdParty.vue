@@ -21,6 +21,7 @@ export default {
   },
   methods: {
     createThirdParty(payload) {
+      payload.name = `${payload.firstname} ${payload.lastname}`
       this.$store.dispatch('thirdPartyAccounts/add', payload)
     }
   }

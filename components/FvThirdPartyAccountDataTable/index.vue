@@ -9,8 +9,10 @@
     @dataTable:sortBy="sortBy"
     @dataTable:selected="selected"
   )
-    template(v-slot:item.legal_structure_id="{ item }")
-      div {{ displayLegalStructure(item) }}
+    template(v-slot:item.name="{ item }")
+      div {{ displayName(item) }}
+    template(v-slot:item.type="{ item }")
+      div {{ displayType(item) }}
     template(v-slot:item.actions="{ item }")
       v-row
         v-icon.mr-2(small='' @click.stop="showContract(item)")
@@ -49,18 +51,16 @@ export default {
     }
   },
   mounted() {
-    console.log('Composant ', this.$options.name)
     this.$store.dispatch('countries/get')
     this.$store.dispatch('contracts/getLegalStructures')
   },
   methods: {
-    displayLegalStructure(item) {
-      const res = this.$displayRules.legalStructure(item)
+    displayName(item) {
+      const res = this.$displayRules.accountName(item)
       return res
     },
-    showContract(v) {
-      const res = v.account_id
-      this.$router.push(`/thirdPartyAccounts/contracts/${res}`)
+    displayType(item) {
+      return this.$displayRules.accountType(item)
     },
     selected(v) {
       this.$emit('dataTable:selected', v)

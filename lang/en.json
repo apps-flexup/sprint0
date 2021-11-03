@@ -753,12 +753,8 @@
     },
     "thirdPartyAccounts": {
       "name": "Name",
-      "siret": "SIRET",
-      "legalStructure": "Legal structure",
-      "address": "Address",
-      "zip": "ZIP",
-      "city": "City",
-      "country": "Country"
+      "type": "Type of third party",
+      "directory": "Directory"
     },
     "paymentConditions": {
       "label": "Label",

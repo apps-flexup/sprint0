@@ -761,12 +761,8 @@
     },
     "thirdPartyAccounts": {
       "name": "Nom",
-      "siret": "SIRET",
-      "legalStructure": "Statut juridique",
-      "address": "Adresse",
-      "zip": "Code postal",
-      "city": "Ville",
-      "country": "Pays"
+      "type": "Type de tiers",
+      "directory": "Annuaire"
     },
     "paymentConditions": {
       "label": "Libellé",
