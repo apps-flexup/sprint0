@@ -3,7 +3,7 @@
   fv-form.mt-5(
     :payload='thirdParty'
     @form:submit="editThirdParty"
-    url='accounts'
+    url='thirdPartyAccounts'
     :form='formForThirdPartyAccountType'
     action="read"
     :allowEdit="canEdit"
