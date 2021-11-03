@@ -5,16 +5,6 @@ import FvMemberList from './index.vue'
 const localVue = createLocalVue()
 localVue.use(Vuex)
 
-const account = {
-  name: 'Hello World'
-}
-
-const $activeAccount = {
-  get: () => {
-    return 42
-  }
-}
-
 const $displayRules = {
   userNameFromUuid: jest.fn(),
   role: jest.fn()
@@ -28,7 +18,6 @@ const factory = () => {
     store,
     mocks: {
       $t: (msg) => msg,
-      $activeAccount,
       $displayRules
     }
   })
@@ -41,9 +30,6 @@ beforeEach(() => {
         namespaced: true,
         actions: {
           get: jest.fn()
-        },
-        getters: {
-          findById: () => () => account
         }
       },
       members: {

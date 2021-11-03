@@ -1,5 +1,6 @@
 <template lang="pug">
-.fv-member-index
+.fv-member
+
   div(v-if="accountType === 'Personal'")
     h2 {{ $t('errors.access.members') }}
   div(v-else)

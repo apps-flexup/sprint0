@@ -7,11 +7,17 @@ localVue.use(Vuex)
 
 let store
 
+const account = {
+  name: 'Hello World'
+}
+
 const $activeAccount = {
   type: () => {
     return 'Business'
   },
-  get: jest.fn()
+  get: () => {
+    return 42
+  }
 }
 
 const $auth = {
@@ -74,6 +80,9 @@ beforeEach(() => {
         namespaced: true,
         actions: {
           all: jest.fn()
+        },
+        getters: {
+          findById: () => () => account
         }
       }
     }
