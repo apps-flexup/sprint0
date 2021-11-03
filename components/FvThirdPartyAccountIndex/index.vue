@@ -1,7 +1,9 @@
 <template lang="pug">
 .fv-third-party-account-index
   v-row
-    v-col(cols="12")
+    v-col(cols="6")
+      h1 {{ $t('table.thirdPartyAccounts.title') }}
+    v-col(cols="6")
       fv-primary-button.text-right(
         data-testid='createBtn'
         @button:click='createThirdPartyAccount'
@@ -27,3 +29,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.row {
+  align-items: center;
+}
+</style>

@@ -1,7 +1,9 @@
 <template lang="pug">
 .fv-order-index
   v-row
-    v-col(cols="12")
+    v-col(cols="6")
+      h1 {{ $t('table.orders.title') }}
+    v-col(cols="6")
       fv-primary-button.text-right(
         data-testid="createButton"
         @button:click='createOrder'
@@ -59,3 +61,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.row {
+  align-items: center;
+}
+</style>

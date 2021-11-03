@@ -2,7 +2,6 @@
 .fv-third-party-account-list
   fv-index-table(
     data-testid="table"
-    :title="$t('table.thirdPartyAccounts.title')"
     :searchLabel="$t('table.thirdPartyAccounts.search')"
     tableComponent="fv-third-party-account-data-table"
     tableName="thirdPartyAccounts"
@@ -21,9 +20,6 @@ export default {
         country_id: this.$displayRules.country
       }
     }
-  },
-  mounted() {
-    console.log('Composant ', this.$options.name)
   },
   methods: {
     thirdPartyAccountSelected(thirdParty) {

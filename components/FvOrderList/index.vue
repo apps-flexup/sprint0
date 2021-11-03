@@ -2,7 +2,6 @@
 .fv-order-list
   fv-index-table(
     data-testid="indexTable"
-    :title="$t('table.orders.title')"
     :searchLabel="$t('table.orders.search')"
     tableComponent="fv-recursive-data-table"
     tableName="orders"
@@ -23,9 +22,6 @@ export default {
         status: this.$displayRules.status
       }
     }
-  },
-  mounted() {
-    console.log('Composant ', this.$options.name)
   },
   methods: {
     orderSelected(order) {

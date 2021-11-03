@@ -3,7 +3,7 @@
   v-row
     v-col.headBar(cols="12")
       v-col(cols="4")
-        p.title(
+        h1(
           data-testid="title"
         ) {{ $t('accounts.index.title') }}
       v-col(cols="8")
@@ -41,9 +41,6 @@ export default {
 .headBar {
   display: flex;
   align-items: center;
-}
-.title {
-  font-weight: bold;
 }
 .card {
   margin-left: 10px;

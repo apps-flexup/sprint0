@@ -4,7 +4,9 @@
     h2 {{ $t('errors.access.members') }}
   div(v-else)
     v-row
-      v-col(cols="12")
+      v-col(cols="6")
+        h1 {{ $t('table.members.title', { accountName }) }}
+      v-col(cols="6")
         fv-primary-button.text-right(
           v-if="canInvite"
           data-testid="inviteMemberButton"
@@ -73,6 +75,12 @@ export default {
       const type = this.$activeAccount.type() || 'Personal'
       return type
     },
+    accountName() {
+      const activeAccountId = this.$activeAccount.get()
+      const account = this.$store.getters['accounts/findById'](activeAccountId)
+      const res = account ? account.name : null
+      return res
+    },
     functionalRoles() {
       const res = this.$store.getters['functionalRoles/all']
       return res
@@ -83,7 +91,6 @@ export default {
   },
   mounted() {
     this.$store.dispatch('functionalRoles/get')
-    console.log('Composant ', this.$options.name)
   },
   methods: {
     inviteMember() {
@@ -111,3 +118,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.row {
+  align-items: center;
+}
+</style>

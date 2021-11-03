@@ -1,7 +1,9 @@
 <template lang="pug">
 .fv-payment-condition-index
   v-row
-    v-col(cols="12")
+    v-col(cols="6")
+      h1 {{ $t('table.paymentConditions.title') }}
+    v-col(cols="6")
       fv-primary-button.text-right(
         data-testid="createButton"
         @button:click='createPaymentCondition'
@@ -25,3 +27,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.row {
+  align-items: center;
+}
+</style>
