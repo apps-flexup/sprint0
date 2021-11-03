@@ -1,0 +1,49 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import FvPartnerModal from './index.vue'
+
+<Meta title='Organism/FvPartnerModal' component={ FvPartnerModal } argTypes={{
+  showModal: { control: 'boolean' }
+}}/>
+
+# FvPartnerModal
+
+<Canvas>
+<Story name='Common' height='150px' args={{
+  showModal: true
+}}>{{
+  props: {
+    showModal: {}
+  },
+  components: { FvPartnerModal },
+  data() {
+    return {
+      partner: {}
+    }
+  },
+  methods: {
+    close() {
+      this.partner = {}
+      this.showModal = false
+    },
+    save() {
+      this.partner = {}
+      this.showModal = false
+    },
+    partnerChanged(partner) {
+      this.partner = partner
+    }
+  },
+  template: `<FvPartnerModal
+    :show="showModal"
+    :partner="partner"
+    @modal:close="close"
+    @modal:save="save"
+    @partner:changed="partnerChanged"
+  >
+  </FvPartnerModal>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvPartnerModal } />

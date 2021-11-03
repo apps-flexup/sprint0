@@ -1,0 +1,18 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import FvListAccounts from './index.vue'
+
+<Meta title='Molecules/FvListAccounts' component={ FvListAccounts } />
+
+# FvListAccounts
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  components: { FvListAccounts },
+  template: `<FvListAccounts>
+  </FvListAccounts>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvListAccounts } />

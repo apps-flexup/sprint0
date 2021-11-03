@@ -1,0 +1,28 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import { fakeList } from '@/.storybook/data/menusAvailable'
+import FvShowMenu from './index.vue'
+
+<Meta title='Molecules/FvShowMenu' component={ FvShowMenu } argTypes={{
+  list: { control: 'array' }
+}}/>
+
+# FvShowMenu
+
+<Canvas>
+<Story name='Common' height='150px' args={{
+  list: fakeList
+}}>{{
+  components: { FvShowMenu },
+  props: {
+    list: {}
+  },
+  template: `<FvShowMenu
+    :list='list'
+  >
+  </FvShowMenu>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvShowMenu } />

@@ -1,0 +1,35 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import FvAvatarWithName from './index.vue'
+
+<Meta title='Atoms/FvAvatarWithName' component={ FvAvatarWithName } argTypes={{
+  name: { control: 'text' },
+  familyName: { control: 'text' },
+  email: { control: 'text' }
+}}/>
+
+# FvAvatarWithName
+
+<Canvas>
+<Story name='Common' height='150px' args={{
+  name: 'Toto',
+  familyName: 'La riflette',
+  email: 'toto@lariflette.com'
+}}>{{
+  components: { FvAvatarWithName },
+  props: {
+    name: {},
+    familyName: {},
+    email: {}
+  },
+  template: `<FvAvatarWithName
+    :name="name"
+    :familyName="familyName"
+    :email="email"
+  >
+  </FvAvatarWithName>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvAvatarWithName } />

@@ -1,0 +1,39 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import FvQuantitySelector from './index.vue'
+
+<Meta title='Molecules/FvQuantitySelector' component={ FvQuantitySelector } argTypes={{
+  dense: { control: 'boolean' }
+}}/>
+
+# FvQuantitySelector
+
+<Canvas>
+<Story name='Common' height='150px' args={{
+  dense: true
+}}>{{
+  components: { FvQuantitySelector },
+  props: {
+    dense: {},
+  },
+  data() {
+    return {
+      quantity: 1
+    }
+  },
+  methods: {
+    quantityChanged(v) {
+      this.quantity = v
+    }
+  },
+  template: `<FvQuantitySelector
+    :quantity="quantity"
+    :dense="dense"
+    @quantitySelector:changed="quantityChanged"
+  >
+  </FvQuantitySelector>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvQuantitySelector } />

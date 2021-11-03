@@ -1,3 +1,5 @@
 export default () => ({
-  items: []
+  items: [],
+  typeContrat: [],
+  legalStructures: []
 })

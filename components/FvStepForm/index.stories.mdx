@@ -1,0 +1,33 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import FvStepForm from './index.vue'
+
+<Meta title='Molecules/FvStepForm' component={ FvStepForm } argTypes={{
+  title: { control: 'text' },
+  formId: { control: 'number' }
+}}/>
+
+# FvStepForm
+
+<Canvas>
+<Story name='Common' height='150px' args={{
+  title: 'title',
+  formId: '1'
+}}>{{
+  props: {
+    title: {},
+    formId: {}
+  },
+  components: { FvStepForm },
+  template: `<FvStepForm
+    :title="title"
+    :formId="formId"
+  >
+  <template slot='form'>
+      <li> Beautiful form </li>
+  </FvStepForm>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvStepForm } />

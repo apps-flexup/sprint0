@@ -1,0 +1,25 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import FvThirdPartyAccountList from './index.vue'
+
+<Meta title='Organism/FvThirdPartyAccountList' component={ FvThirdPartyAccountList } />
+
+# FvThirdPartyAccountList
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  components: { FvThirdPartyAccountList },
+  data() {
+    return {
+      search: ''
+    }
+  },
+  template: `<FvThirdPartyAccountList
+    :search="search"
+  >
+  </FvThirdPartyAccountList>`
+}}</Story>
+</Canvas>
+
+## ArgsTable
+
+<ArgsTable of={ FvThirdPartyAccountList } />

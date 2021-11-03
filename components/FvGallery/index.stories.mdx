@@ -1,0 +1,43 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import FvGallery from './index.vue'
+
+<Meta title='Molecules/FvGallery' component={ FvGallery } />
+
+# FvGallery
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  components: { FvGallery },
+  data() {
+    return {
+      images: [
+        {
+          alt: "image 1",
+          src: "/images/storybook/productA.png"
+        },
+        {
+          alt: "image 2",
+          src: "/images/storybook/productB.jpg"
+        },
+        {
+          alt: "image 3",
+          src: "/images/storybook/productA.png"
+        }
+      ]
+    }
+  },
+  template: `
+  <v-col
+    :cols="5"
+  >
+    <FvGallery
+      :images="images"
+    >
+    </FvGallery>
+  </v-col>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvGallery } />

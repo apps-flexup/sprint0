@@ -1,0 +1,33 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import { spaces, defaultSpace } from '@/.storybook/data/menusAvailable'
+import FvMenu from './index.vue'
+
+<Meta title='Molecules/FvMenu' component={ FvMenu } argTypes={{
+  space: {
+    control: {
+      type: 'select',
+      options: spaces
+    }
+  }
+}}/>
+
+# FvMenu
+
+<Canvas>
+<Story name='Common' height='150px' args={{
+  space: defaultSpace
+}}>{{
+  components: { FvMenu },
+  props: {
+    space: {}
+  },
+  template: `<FvMenu
+    :space="space"
+  >
+  </FvMenu>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvMenu } />

@@ -1,0 +1,46 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import { categories, defaultCategory, menus, defaultMenu } from '@/.storybook/data/menusAvailable'
+import FvSubMenu from './index.vue'
+
+<Meta title='Molecules/FvSubMenu' component={ FvSubMenu } argTypes={{
+  category: {
+    control: {
+      type: 'select',
+      options: categories
+    }
+  },
+  title: { control: 'text' },
+  menu: {
+    control: {
+      type: 'select',
+      options: menus
+    }
+  }
+}}/>
+
+# FvSubMenu
+
+<Canvas>
+<Story name='Common' height='150px' args={{
+  category: defaultCategory,
+  title: 'test',
+  menu: defaultMenu
+}}>{{
+  components: { FvSubMenu },
+  props: {
+    category: {},
+    title: {},
+    menu: {}
+  },
+  template: `<FvSubMenu
+    :categoryName='category'
+    :title='title'
+    :menuName='menu'
+  >
+  </FvSubMenu>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvSubMenu } />

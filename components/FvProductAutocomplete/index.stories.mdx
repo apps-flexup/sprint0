@@ -1,0 +1,24 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+import FvProductAutocomplete from './index.vue'
+
+<Meta title='Atoms/FvProductAutocomplete' component={ FvProductAutocomplete } />
+
+# FvProductAutocomplete
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  components: { FvProductAutocomplete },
+  methods: {
+    selected: action('Selected')
+  },
+  template: `<FvProductAutocomplete
+    @products:selected="selected"
+  >
+  </FvProductAutocomplete>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvProductAutocomplete } />

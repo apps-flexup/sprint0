@@ -1,0 +1,36 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+import FvTextField from './index.vue'
+
+<Meta title='Atoms/FvTextField' component={ FvTextField } argTypes={{
+  label: { control: 'text' },
+  outlined: { control: 'boolean' }
+}}/>
+
+# FvTextField
+
+<Canvas>
+<Story name='Common' height='150px' args={{
+  label: 'Label',
+  outlined: true
+}}>{{
+  props: {
+    label: {},
+    outlined: {}
+  },
+  components: { FvTextField },
+  methods: {
+    inputChanged: action('Input changed')
+  },
+  template: `<FvTextField
+    :label="label"
+    :outlined="outlined"
+    @input="inputChanged"
+  >
+  </FvTextField>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvTextField } />

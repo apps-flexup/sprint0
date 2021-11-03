@@ -1,0 +1,25 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import FvOfferList from './index.vue'
+
+<Meta title='Organism/FvOfferList' component={ FvOfferList } />
+
+# FvOfferList
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  components: { FvOfferList },
+  data() {
+    return {
+      search: ''
+    }
+  },
+  template: `<FvOfferList
+    :search="search"
+  >
+  </FvOfferList>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvOfferList } />

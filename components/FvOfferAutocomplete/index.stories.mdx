@@ -1,0 +1,28 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+import FvOfferAutocomplete from './index.vue'
+
+<Meta title='Atoms/FvOfferAutocomplete' component={ FvOfferAutocomplete } />
+
+# FvOfferAutocomplete
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  components: { FvOfferAutocomplete },
+  methods: {
+    selected: action('Selected')
+  },
+  template: `
+  <div>
+    <FvOfferAutocomplete
+      :thirdPartyAccountId="5"
+      @offers:selected="selected"
+    >
+    </FvOfferAutocomplete>
+  </div>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvOfferAutocomplete } />

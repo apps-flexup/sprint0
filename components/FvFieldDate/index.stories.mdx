@@ -1,0 +1,47 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import FvFieldDate from './index.vue'
+
+<Meta title='Atoms/FvFieldDate' component={ FvFieldDate } argTypes={{
+  minDate: { control: 'date' },
+  maxDate: { control: 'date' },
+  label: { control: 'text' }
+}}/>
+
+# FvFieldDate
+
+<Canvas>
+<Story name='Common' height='150px' args={{
+  minDate: new Date(2020, 8, 20),
+  maxDate: new Date(2020, 9, 20),
+  label: 'Date label'
+}}>{{
+  props: {
+    minDate: {},
+    maxDate: {},
+    label: {}
+  },
+  data() {
+    return {
+      dateRef: new Date()
+    }
+  },
+  components: { FvFieldDate },
+  methods: {
+    dateChange(v) {
+      this.selectedDate = v
+    }
+  },
+  template: `<FvFieldDate
+      :minDate="minDate"
+      :maxDate="maxDate"
+      :dateRef="dateRef"
+      :label="label"
+      @date:changed="dateChange"
+    >
+    </FvFieldDate>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvFieldDate } />

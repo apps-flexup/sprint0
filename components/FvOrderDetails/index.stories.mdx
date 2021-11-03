@@ -1,0 +1,51 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import FvOrderDetails from './index.vue'
+
+<Meta title='Organism/FvOrderDetails' component={ FvOrderDetails } />
+
+# FvOrderDetails
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  components: { FvOrderDetails },
+  data() {
+    return {
+      order: {
+        third_party_account_id: 1,
+        date: "2020-08-20T00:00:00.000Z",
+        label: "du bon lait",
+        order_lines: [
+          {
+            offer_id: 1,
+            offer: {
+              en: "Goat milk",
+              fr: "Lait de chêvre"
+            },
+            status: "draft",
+            quantity: 3,
+            pas: 1,
+            vat: "10",
+            dimension: "volume",
+            unit: "m³",
+            currency: "EUR",
+            price: 100
+          }
+        ],
+        structure: 2,
+        amount: 300,
+        currency: "EUR",
+        account_id: 1,
+        id: 1
+      }
+    }
+  },
+  template: `<FvOrderDetails
+    :order="order"
+    >
+    </FvOrderDetails>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvOrderDetails } />

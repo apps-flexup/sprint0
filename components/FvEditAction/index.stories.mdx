@@ -1,0 +1,24 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+import FvEditAction from './index.vue'
+
+<Meta title='Atoms/FvEditAction' component={ FvEditAction } />
+
+# FvEditAction
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  components: { FvEditAction },
+  methods: {
+    clicked: action('Clicked')
+  },
+  template: `<FvEditAction
+    @edit:clicked="clicked"
+  >
+  </FvEditAction>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvEditAction } />

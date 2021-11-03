@@ -1,0 +1,21 @@
+import { Meta, Story, ArgsTable } from '@storybook/addon-docs/blocks'
+import FvUnitAutocomplete from './index.vue'
+
+<Meta title='Atoms/FvUnitAutocomplete' component={ FvUnitAutocomplete } />
+
+# FvUnitAutocomplete
+
+<Story name='Common' height='250px'>{{
+  components: { FvUnitAutocomplete },
+  methods: {
+    selected: action('Selected')
+  },
+  template: `<FvUnitAutocomplete
+    @unit:selected="selected"
+  >
+  </FvUnitAutocomplete>`
+}}</Story>
+
+## ArgsTable
+
+<ArgsTable of={ FvUnitAutocomplete } />

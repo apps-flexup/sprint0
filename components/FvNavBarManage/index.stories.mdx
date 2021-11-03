@@ -1,0 +1,33 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import { spaces, defaultSpace } from '@/.storybook/data/menusAvailable'
+import FvNavBarManage from './index.vue'
+
+<Meta title='Atoms/FvNavBarManage' component={ FvNavBarManage } argTypes={{
+  space: {
+    control: {
+      type: 'select',
+      options: spaces
+    }
+  }
+}}/>
+
+# FvNavBarManage
+
+<Canvas>
+<Story name='Common' height='150px' args={{
+  space: defaultSpace
+}}>{{
+  props: {
+    space: {}
+  },
+  components: { FvNavBarManage },
+  template: `<FvNavBarManage
+    :space="space"
+  >
+  </FvNavBarManage>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvNavBarManage } />

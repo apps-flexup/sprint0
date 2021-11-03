@@ -1,0 +1,102 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+import { iconsAvailable, defaultIcon } from '@/.storybook/data/iconsAvailable'
+import { sizesAvailable, defaultSize } from '@/.storybook/data/sizesAvailable'
+import FvIcon from './index.vue'
+
+<Meta title='Atoms/FvIcon' component={ FvIcon } argTypes={{
+  icon: {
+    control: {
+      type: 'select',
+      options: iconsAvailable
+    }
+  },
+  color: { control: 'color' },
+  size: {
+    control: {
+      type: 'select',
+      options: sizesAvailable
+    }
+  }
+}}/>
+
+# FvIcon
+
+<Canvas>
+<Story name='Common' args={{
+  icon: defaultIcon,
+  color: '#000000',
+  size: defaultSize
+}}>{{
+  props: {
+    icon: {},
+    color: {},
+    size: {}
+  },
+  components: { FvIcon },
+  methods: {
+    clicked: action('click')
+  },
+  template: `<FvIcon
+    :icon="icon"
+    :color="color"
+    :size="size"
+    @icon:clicked="clicked"
+  >
+  </FvIcon>`
+}}</Story>
+</Canvas>
+
+<Canvas>
+<Story name='Available icons'> {{
+  data() {
+    return {
+      icons: iconsAvailable
+    }
+  },
+  components: { FvIcon },
+  template: `
+  <div
+    :style="{
+      display: 'flex',
+      flexWrap: 'wrap'
+    }"
+  >
+    <div
+      v-for="icon in icons"
+      :key="icon"
+      :style="{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        margin: '.5rem',
+        flex: '0 0 50px',
+        height: '120px',
+        font: '300 12px Raleway'
+      }"
+    >
+      <FvIcon
+        :icon="icon"
+        :style="{margin: '0 0 8px 0'}"
+      />
+      <div>
+        <span
+          :style="{
+            textOverflow: 'ellipsis',
+            whiteSpace: 'nowrap',
+            overflow: 'hidden',
+            width: '70px',
+            textAlign: 'center'
+          }"
+        >
+          {{ icon.slice(4) }}
+        </span>
+      </div>
+    </div>
+  </div>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvIcon} />

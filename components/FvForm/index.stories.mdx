@@ -1,0 +1,43 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import { actionsAvailable, defaultAction } from '@/.storybook/data/actionsAvailable'
+import { forms, defaultForm } from '@/.storybook/data/formsAvailable'
+import FvForm from './index.vue'
+
+<Meta title='organism/FvForm' component={ FvForm } argTypes={{
+  action: {
+    control: {
+      type: 'select',
+      options: actionsAvailable
+    }
+  },
+  form: {
+    control: {
+      type: 'select',
+      options: formsAvailable
+    }
+  }
+}}/>
+
+# FvForm
+
+<Canvas>
+<Story name='Common' height='150px' args={{
+  action: defaultAction,
+  form: defaultForm
+}}>{{
+  props: {
+    action: {},
+    form: {}
+  },
+  components: { FvForm },
+  template: `<FvForm
+    :action=action
+    :form=form
+  >
+  </FvForm>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvForm } />

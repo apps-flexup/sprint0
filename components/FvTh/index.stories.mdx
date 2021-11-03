@@ -1,0 +1,55 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import FvTh from './index.vue'
+
+<Meta title='Atoms/FvTh' component={ FvTh } argTypes={{
+  text: { control: 'text' },
+  sortable: { control: 'boolean' }
+}}/>
+
+# FvTh
+
+<Canvas>
+<Story name='Common' args={{
+  text: 'header',
+  sortable: 'true'
+}}>{{
+  components: { FvTh },
+  data() {
+    return {
+      sortKey: 'test',
+      isSorted: false,
+      isSortedDesc: false
+    }
+  },
+  props: {
+    text: {},
+    sortable: {}
+  },
+  methods: {
+    thSort(v) {
+      if (this.isSorted && this.isSortedDesc) {
+        this.isSorted = false
+        this.isSortedDesc = false
+      } else if (this.isSorted) {
+        this.isSortedDesc = true
+      } else {
+        this.isSorted = true
+        this.isSortedDesc = false
+      }
+    }
+  },
+  template: `<FvTh
+    :text="text"
+    :sortKey="sortKey"
+    :sortable="sortable"
+    :isSorted="isSorted"
+    :isSortedDesc="isSortedDesc"
+    @th:sort="thSort"
+  >
+  </FvTh>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvTh} />

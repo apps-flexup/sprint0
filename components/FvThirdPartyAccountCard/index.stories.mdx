@@ -1,0 +1,33 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import { thirdPartyAccountsAvailable, defaultValue } from '@/.storybook/data/thirdPartyAccountsAvailable'
+import FvThirdPartyAccountCard from './index.vue'
+
+<Meta title='Atoms/FvThirdPartyAccountCard' component={ FvThirdPartyAccountCard } argTypes={{
+  thirdPartyAccountId: {
+    control: {
+      type: 'select',
+      options: thirdPartyAccountsAvailable
+    }
+  }
+}}/>
+
+# FvThirdPartyAccountCard
+
+<Canvas>
+<Story name='Common' height='150px' args={{
+  thirdPartyAccountId: defaultValue
+}}>{{
+  props: {
+    thirdPartyAccountId: {}
+  },
+  components: { FvThirdPartyAccountCard },
+  template: `<FvThirdPartyAccountCard
+    :thirdPartyAccountId="thirdPartyAccountId"
+  >
+  </FvThirdPartyAccountCard>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvThirdPartyAccountCard } />

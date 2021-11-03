@@ -1,0 +1,24 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+import FvCategoryAutocomplete from './index.vue'
+
+<Meta title='Atoms/FvCategoryAutocomplete' component={ FvCategoryAutocomplete } />
+
+# FvCategoryAutocomplete
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  components: { FvCategoryAutocomplete },
+  methods: {
+    selected: action('Selected')
+  },
+  template: `<FvCategoryAutocomplete
+    @category:selected="selected"
+  >
+  </FvCategoryAutocomplete>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvCategoryAutocomplete } />

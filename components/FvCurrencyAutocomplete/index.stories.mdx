@@ -1,0 +1,27 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+import FvCurrencyAutocomplete from './index.vue'
+
+<Meta title='Atoms/FvCurrencyAutocomplete' component={ FvCurrencyAutocomplete } />
+
+# FvCurrencyAutocomplete
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  components: { FvCurrencyAutocomplete },
+  methods: {
+    selected: action('currency selected')
+  },
+  template: `
+  <div>
+    <FvCurrencyAutocomplete
+      @currency:selected="selected"
+    >
+    </FvCurrencyAutocomplete>
+  </div>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvCurrencyAutocomplete } />

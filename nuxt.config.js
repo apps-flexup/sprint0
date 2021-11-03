@@ -1,6 +1,8 @@
 import colors from 'vuetify/es5/util/colors'
 require('dotenv').config()
 
+const homeUrl = encodeURIComponent(process.env.HOME_URL)
+
 export default {
   mode: 'spa',
   /*
@@ -20,10 +22,45 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
+  env: {
+    baseURL: process.env.API_URL
+  },
+  manifest: {
+    name: 'Flexup - Sprint 0',
+    short_name: 'sprint0',
+    lang: 'en',
+    start_url: '/',
+    icons: [
+      {
+        src: '/logo.svg',
+        sizes: '150x150'
+      }
+    ]
+    // display: 'standalone'
+  },
+  workbox: {
+    runtimeCaching: [
+      {
+        urlPattern: 'https://fonts.googleapis.com/.*',
+        handler: 'cacheFirst',
+        method: 'GET',
+        strategyOptions: { cacheableResponse: { statuses: [0, 200] } }
+      },
+      {
+        urlPattern: 'https://fonts.gstatic.com/.*',
+        handler: 'cacheFirst',
+        method: 'GET',
+        strategyOptions: { cacheableResponse: { statuses: [0, 200] } }
+      }
+    ]
+  },
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#fff' },
+  loading: {
+    color: '#ff0000',
+    height: '15px'
+  },
   /*
    ** Global CSS
    */
@@ -31,13 +68,27 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/globalcomponents'],
+  plugins: [
+    '~/plugins/axios',
+    '~/plugins/activeAccount',
+    '~/plugins/globalcomponents',
+    '~/plugins/data',
+    '~/plugins/directory',
+    '~/plugins/i18n',
+    '~/plugins/utils',
+    '~/plugins/directives',
+    '~/plugins/currencies',
+    '~/plugins/asyncComputed',
+    '~/plugins/dataTable',
+    '~/plugins/displayRules',
+    '~/plugins/rights',
+    '~/plugins/vuedraggable'
+  ],
   /*
    ** Nuxt.js dev-modules
    */
   buildModules: [
     '@nuxt/typescript-build',
-    // Doc: https://github.com/nuxt-community/stylelint-module
     '@nuxtjs/stylelint-module',
     '@nuxtjs/vuetify'
   ],
@@ -45,21 +96,68 @@ export default {
    ** Nuxt.js modules
    */
   modules: [
-    // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    'nuxt-i18n',
+    '@nuxtjs/auth-next',
     '@nuxtjs/pwa',
-    // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv'
   ],
+  // i18n: {
+  //   locales: ['en', 'fr'],
+  //   defaultLocale: 'en',
+  //   vueI18n: {
+  //     fallbackLocale: 'en'
+  //   }
+  // },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    baseURL: process.env.baseURL || 'https://api.tchoo.xyz',
-    headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
-    responseType: 'json'
+    responseType: 'json',
+    headers: {
+      Accept: 'application/json'
+    }
+  },
+  auth: {
+    redirect: {
+      login: '/login',
+      logout: '/',
+      home: '/'
+    },
+    strategies: {
+      local: false,
+      keycloak: {
+        scheme: 'oauth2',
+        endpoints: {
+          authorization: process.env.OAUTH_ENDPOINT,
+          userInfo: process.env.OAUTH_USER_ENDPOINT,
+          token: process.env.OAUTH_ENDPOINT_TOKEN,
+          logout: `${process.env.OAUTH_ENDPOINT_LOGOUT}?redirect_uri=${homeUrl}`
+        },
+        user: {
+          property: false
+        },
+        token: {
+          property: 'access_token',
+          type: 'Bearer',
+          name: 'Authorization',
+          maxAge: 300
+        },
+        refreshToken: {
+          property: 'refresh_token',
+          maxAge: 60 * 60 * 24 * 30
+        },
+        responseType: 'code',
+        grantType: 'authorization_code',
+        clientId: process.env.KEYCLOAK_CLIENT_ID,
+        scope: ['openid', 'profile', 'email'],
+        codeChallengeMethod: 'S256'
+      }
+    },
+    plugins: ['~/plugins/auth.js']
+  },
+  router: {
+    middleware: ['auth']
   },
   /*
    ** vuetify module configuration
@@ -68,7 +166,7 @@ export default {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: true,
+      dark: false,
       themes: {
         dark: {
           primary: colors.blue.darken2,
@@ -90,5 +188,20 @@ export default {
      ** You can extend webpack config here
      */
     // extend(config, ctx) {}
+    transpile: ['@nuxtjs/auth'],
+    babel: {
+      presets({ isServer }) {
+        return [
+          [
+            require.resolve('@nuxt/babel-preset-app'),
+            // require.resolve('@nuxt/babel-preset-app-edge'), // For nuxt-edge users
+            {
+              buildTarget: isServer ? 'server' : 'client',
+              corejs: { version: 3 }
+            }
+          ]
+        ]
+      }
+    }
   }
 }

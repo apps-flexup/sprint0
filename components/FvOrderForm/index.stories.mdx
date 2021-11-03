@@ -1,0 +1,29 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import FvOrderForm from './index.vue'
+
+<Meta title='Organism/FvOrderForm' component={ FvOrderForm } />
+
+# FvOrderForm
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  components: { FvOrderForm },
+  data() {
+    return {
+      order: {}
+    }
+  },
+  methods: {
+    orderChanged(_v) {}
+  },
+  template: `<FvOrderForm
+    :order="order"
+    @order:changed="orderChanged"
+    >
+    </FvOrderForm>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvOrderForm } />

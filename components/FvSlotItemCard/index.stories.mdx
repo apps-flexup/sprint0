@@ -1,0 +1,42 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+import FvSlotItemCard from './index.vue'
+
+<Meta title='Atoms/FvSlotItemCard' component={ FvSlotItemCard } argTypes={{
+  cardWidth: { control: 'number' },
+  cardHeight: { control: 'number' },
+  favoriteIconColor: { control: 'color' }
+}}/>
+
+# FvSlotItemCard
+
+<Canvas>
+<Story name='Common' height='150px' args={{
+  cardWidth: 300,
+  cardHeight: 370,
+  favoriteIconColor: '#000000'
+}}>{{
+  components: { FvSlotItemCard },
+  props: {
+    cardWidth: {},
+    cardHeight: {},
+    favoriteIconColor: {}
+  },
+  methods: {
+    cardClicked: action('card clicked'),
+    favoriteClicked: action('favorite clicked')
+  },
+  template: `<FvSlotItemCard
+    :cardWidth="cardWidth"
+    :cardHeight="cardHeight"
+    :favoriteIconColor="favoriteIconColor"
+    @card:clicked="cardClicked"
+    @favorite:clicked="favoriteClicked"
+  >
+  </FvSlotItemCard>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvSlotItemCard } />

@@ -1,0 +1,36 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import FvModalSlot from './index.vue'
+
+<Meta title='Molecules/FvModalSlot' component={ FvModalSlot } argTypes={{
+  show: { control: 'boolean' }
+}}/>
+
+# FvModalSlot
+
+<Canvas>
+<Story name='Common' height='150px' args={{
+  show: true
+}}>{{
+  components: { FvModalSlot },
+  props: {
+    show: {}
+  },
+  template: `<FvModalSlot
+    :dialog="show"
+  >
+    <template slot='title'>
+      <p> Beautiful title </p>
+    </template>
+    <template slot='form'>
+      <p> Beautiful form </p>
+    </template>
+    <template slot='actions'>
+      <p> Beautiful actions </p>
+    </template>
+  </FvModalSlot>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvModalSlot } />

@@ -1,0 +1,25 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import FvOrderDataTable from './index.vue'
+
+<Meta title='Molecules/FvOrderDataTable' component={ FvOrderDataTable } />
+
+# FvOrderDataTable
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  components: { FvOrderDataTable },
+  data() {
+    return {
+      search: ''
+    }
+  },
+  template: `<FvOrderDataTable
+    :search="search"
+  >
+  </FvOrderDataTable>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvOrderDataTable } />
