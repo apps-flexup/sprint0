@@ -537,6 +537,7 @@
         "title": "Modifier mon compte"
       },
       "read": {
+        "title": "Informations du compte",
         "infos": {
           "title": "Informations du compte"
         },
