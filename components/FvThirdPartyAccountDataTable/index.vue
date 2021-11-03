@@ -15,8 +15,6 @@
       div {{ displayType(item) }}
     template(v-slot:item.actions="{ item }")
       v-row
-        v-icon.mr-2(small='' @click.stop="showContract(item)")
-          | mdi-briefcase
         fv-edit-action(@edit:clicked="selected(item)")
         fv-delete-action(@delete:clicked="deleteItem(item)")
 </template>
