@@ -20,6 +20,8 @@ export default {
       .then(() => commit('remove', thirdParty))
   },
   add({ commit }, thirdParty) {
+    if (thirdParty.type === 'Personal')
+      thirdParty.name = `${thirdParty.firstname} ${thirdParty.lastname}`
     if (Object.prototype.hasOwnProperty.call(thirdParty, 'id')) {
       this.$repos.thirdPartyAccounts.update(thirdParty).then((res) => {
         commit('remove', res)

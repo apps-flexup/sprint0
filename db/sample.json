@@ -492,8 +492,8 @@
           {
             "align": "left",
             "sortable": true,
-            "text": "headers.thirdPartyAccounts.siret",
-            "value": "siret",
+            "text": "headers.thirdPartyAccounts.type",
+            "value": "type",
             "order": 1,
             "customizable": true,
             "active": true,
@@ -502,8 +502,8 @@
           {
             "align": "left",
             "sortable": true,
-            "text": "headers.thirdPartyAccounts.legalStructure",
-            "value": "legal_structure_id",
+            "text": "headers.thirdPartyAccounts.directory",
+            "value": "directory",
             "order": 2,
             "customizable": true,
             "active": true,
@@ -14827,48 +14827,28 @@
   "orders": [],
   "third-party-accounts": [
     {
+      "type": "Personal",
+      "directory": "Local",
+      "lastname": "Personal",
+      "firstname": "Third-Party",
+      "name": "Personal Third-Party",
       "account_id": 1,
-      "avatar": "/images/avatar-0.png",
-      "name": "plop",
-      "legal_structure_id": 13,
-      "siret": "123123123",
-      "medias": [
-        {
-          "entity_type": "Alien",
-          "entity_id": 1,
-          "description": {
-            "type": "Address",
-            "value": {
-              "street": "12 rue de la poupée qui tousse",
-              "zip": "15774",
-              "city": "Braniole de turbeuse",
-              "country": "NLD"
-            }
-          }
-        }
-      ],
-      "id": 1
+      "id": 3
     },
     {
+      "type": "Business",
+      "directory": "Local",
+      "name": "Business",
       "account_id": 1,
-      "name": "plip",
-      "legal_structure_id": 6,
-      "id": 2,
-      "medias": [
-        {
-          "entity_type": "Alien",
-          "entity_id": 1,
-          "description": {
-            "type": "Address",
-            "value": {
-              "street": "25 rue de tata janine",
-              "zip": "98760103",
-              "city": "Choublon les croigneuses",
-              "country": "FRA"
-            }
-          }
-        }
-      ]
+      "id": 4
+    },
+    {
+      "type": "SubAccount",
+      "directory": "Local",
+      "owners": [],
+      "name": "Sub third-party",
+      "account_id": 1,
+      "id": 5
     }
   ],
   "products": [

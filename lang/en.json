@@ -293,7 +293,10 @@
       "settings-new": "New settings",
       "thirdPartyAccounts": "Third party accounts",
       "thirdPartyAccounts-id": "Edit my third party account",
-      "thirdPartyAccounts-new": "New third party account"
+      "thirdPartyAccounts-new": "New third party account",
+      "thirdPartyAccounts-newPersonalThirdParty": "New personal third party account",
+      "thirdPartyAccounts-newBusinessThirdParty": "New business third party account",
+      "thirdPartyAccounts-newSubAccountThirdParty": "New third party sub account"
     }
   },
   "listAccounts": {
@@ -464,6 +467,11 @@
     "thirdPartyAccounts": {
       "new": {
         "title": "New third party account",
+        "choices": {
+          "personal": "New personal third party",
+          "business": "New business third party",
+          "sub": "New sub account third party"
+        },
         "subtitle": "Specify your third party account's information",
         "name": "Third party account's name",
         "legal_structure_id": "Legal structure",
@@ -749,12 +757,8 @@
     },
     "thirdPartyAccounts": {
       "name": "Name",
-      "siret": "SIRET",
-      "legalStructure": "Legal structure",
-      "address": "Address",
-      "zip": "ZIP",
-      "city": "City",
-      "country": "Country"
+      "type": "Type of third party",
+      "directory": "Directory"
     },
     "paymentConditions": {
       "label": "Label",

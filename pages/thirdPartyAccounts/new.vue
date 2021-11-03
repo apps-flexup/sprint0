@@ -1,11 +1,10 @@
 <template lang="pug">
 .page.third-party-account-new
-  fv-form(
-    :payload="thirdPartyAccount"
-    @form:submit="createThirdPartyAccount"
-    action='new'
-    url='thirdPartyAccounts'
-    form='thirdPartyAccounts'
+  fv-radio-group(
+    :title="$t('forms.thirdPartyAccounts.new.title')"
+    :label="$t('accounts.typeOfAccount.whatType')"
+    :availableOptions="availableOptions"
+    @radio-group:validated="createThirdParty"
   )
 </template>
 
@@ -13,15 +12,29 @@
 export default {
   data() {
     return {
-      thirdPartyAccount: {}
+      thirdPartyForm: null,
+      availableOptions: [
+        {
+          name: 'personalThirdParty',
+          label: this.$t('forms.thirdPartyAccounts.new.choices.personal'),
+          value: 'PersonalThirdParty'
+        },
+        {
+          name: 'businessThirdParty',
+          label: this.$t('forms.thirdPartyAccounts.new.choices.business'),
+          value: 'BusinessThirdParty'
+        },
+        {
+          name: 'subAccountThirdParty',
+          label: this.$t('forms.thirdPartyAccounts.new.choices.sub'),
+          value: 'SubAccountThirdParty'
+        }
+      ]
     }
   },
-  mounted() {
-    console.log('Composant ', this.$options.name)
-  },
   methods: {
-    createThirdPartyAccount(payload) {
-      this.$store.dispatch('thirdPartyAccounts/add', payload)
+    createThirdParty(type) {
+      this.$router.push(`/thirdPartyAccounts/new${type}`)
     }
   }
 }
