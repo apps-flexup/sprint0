@@ -293,7 +293,10 @@
       "settings-new": "New settings",
       "thirdPartyAccounts": "Third party accounts",
       "thirdPartyAccounts-id": "Edit my third party account",
-      "thirdPartyAccounts-new": "New third party account"
+      "thirdPartyAccounts-new": "New third party account",
+      "thirdPartyAccounts-newPersonalThirdParty": "New personal third party account",
+      "thirdPartyAccounts-newBusinessThirdParty": "New business third party account",
+      "thirdPartyAccounts-newSubAccountThirdParty": "New third party sub account"
     }
   },
   "listAccounts": {

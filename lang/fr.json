@@ -292,7 +292,10 @@
       "settings-new": "Créer préférences",
       "thirdPartyAccounts": "Comptes tiers",
       "thirdPartyAccounts-id": "Modifier mon compte tiers",
-      "thirdPartyAccounts-new": "Créer mon compte tiers"
+      "thirdPartyAccounts-new": "Nouveau compte tiers",
+      "thirdPartyAccounts-newPersonalThirdParty": "Nouveau compte tiers personnel",
+      "thirdPartyAccounts-newBusinessThirdParty": "Nouveau compte tiers professionel",
+      "thirdPartyAccounts-newSubAccountThirdParty": "Nouveau sous-compte tiers"
     }
   },
   "listAccounts": {
