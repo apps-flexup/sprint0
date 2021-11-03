@@ -21,4 +21,4 @@ jobs:
             - ./node_modules
       - run:
           name: test
-          command: yarn test -w 1
+          command: yarn test
