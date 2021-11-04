@@ -1,40 +1,25 @@
 <template lang="pug">
 .page.third-party-account-new
-  fv-radio-group(
-    :title="$t('forms.thirdPartyAccounts.new.title')"
-    :label="$t('accounts.typeOfAccount.whatType')"
-    :availableOptions="availableOptions"
-    @radio-group:validated="createThirdParty"
-  )
+    fv-text-button(
+        data-testid="addNewLocalThirdParty"
+        @button:click="addNewLocalThirdParty"
+      )
+        template(v-slot:icon)
+          fv-icon(
+            size="small"
+            icon="mdi-plus"
+            color="#1976d2"
+            @icon:clicked="addNewLocalThirdParty"
+          )
+        template(v-slot:text)
+          | {{ $t('forms.thirdPartyAccounts.new.title') }}
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      thirdPartyForm: null,
-      availableOptions: [
-        {
-          name: 'personalThirdParty',
-          label: this.$t('forms.thirdPartyAccounts.new.choices.personal'),
-          value: 'PersonalThirdParty'
-        },
-        {
-          name: 'businessThirdParty',
-          label: this.$t('forms.thirdPartyAccounts.new.choices.business'),
-          value: 'BusinessThirdParty'
-        },
-        {
-          name: 'subAccountThirdParty',
-          label: this.$t('forms.thirdPartyAccounts.new.choices.sub'),
-          value: 'SubAccountThirdParty'
-        }
-      ]
-    }
-  },
   methods: {
-    createThirdParty(type) {
-      this.$router.push(`/thirdPartyAccounts/new${type}`)
+    addNewLocalThirdParty() {
+      this.$router.push('/thirdPartyAccounts/newLocalThirdParty')
     }
   }
 }
