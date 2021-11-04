@@ -1,21 +1,19 @@
 <template lang="pug">
 .fv-order-index
-  v-row
-    v-col(cols="6")
-      h1 {{ $t('table.orders.title') }}
-    v-col(cols="6")
-      fv-primary-button.text-right(
-        data-testid="createButton"
-        @button:click='createOrder'
-      ) {{ $t('buttons.create.order') }}
-      fv-order-modal(
-        data-testid="orderModal"
-        :show="showModal"
-        :order="order"
-        @modal:close="close"
-        @modal:save="save"
-        @order:changed="orderChanged"
-      )
+  fv-header-index(
+    data-testid="headerIndex"
+    :title="$t('table.orders.title')"
+    :titleButton="$t('buttons.create.order')"
+    @button:click="createOrder"
+  )
+    fv-order-modal(
+      data-testid="orderModal"
+      :show="showModal"
+      :order="order"
+      @modal:close="close"
+      @modal:save="save"
+      @order:changed="orderChanged"
+    )
   fv-order-list(
     data-testid="orderList"
     @list:selected="selectedOrder"

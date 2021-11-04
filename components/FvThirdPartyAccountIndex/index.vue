@@ -1,13 +1,11 @@
 <template lang="pug">
 .fv-third-party-account-index
-  v-row
-    v-col(cols="6")
-      h1 {{ $t('table.thirdPartyAccounts.title') }}
-    v-col(cols="6")
-      fv-primary-button.text-right(
-        data-testid='createBtn'
-        @button:click='createThirdPartyAccount'
-      ) {{ $t('buttons.create.thirdPartyAccount') }}
+  fv-header-index(
+    data-testid="headerIndex"
+    :title="$t('table.thirdPartyAccounts.title')"
+    :titleButton="$t('buttons.create.thirdPartyAccount')"
+    @button:click="createThirdPartyAccount"
+  )
   fv-third-party-account-list(
     data-testid='thirdPartyAccountList'
     @list:selected="selectedThirdPartyAccount"

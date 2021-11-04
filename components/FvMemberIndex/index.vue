@@ -1,18 +1,15 @@
 <template lang="pug">
-.fv-member
-
+.fv-member-index
   div(v-if="accountType === 'Personal'")
     h2 {{ $t('errors.access.members') }}
   div(v-else)
-    v-row
-      v-col(cols="6")
-        h1 {{ $t('table.members.title', { accountName }) }}
-      v-col(cols="6")
-        fv-primary-button.text-right(
-          v-if="canInvite"
-          data-testid="inviteMemberButton"
-          @button:click='inviteMember'
-        ) {{ $t('buttons.inviteMember') }}
+    fv-header-index(
+      data-testid="headerIndex"
+      :title="$t('table.members.title', { accountName })"
+      :titleButton="$t('buttons.inviteMember')"
+      :condition="canInvite"
+      @button:click="inviteMember"
+    )
     fv-member-list(
       data-testid="memberList"
     )

@@ -69,11 +69,11 @@ describe('FvProductIndex', () => {
       wrapper = canCreateProductFactory()
     })
     it('should have a create button', () => {
-      expect(wrapper.find('[data-testid="createButton"]').exists()).toBe(true)
+      expect(wrapper.find('[data-testid="headerIndex"]').exists()).toBe(true)
     })
     it('should redirect to create product when clicked on create button', () => {
-      const createButton = wrapper.find('[data-testid="createButton"]')
-      createButton.vm.$emit('button:click')
+      const headerIndex = wrapper.find('[data-testid="headerIndex"]')
+      headerIndex.vm.$emit('button:click')
       expect($router.push).toHaveBeenCalledTimes(1)
       const expectedRoute = '/products/new'
       expect($router.push).toHaveBeenCalledWith(expectedRoute)

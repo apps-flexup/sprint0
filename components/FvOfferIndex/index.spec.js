@@ -58,29 +58,14 @@ describe('FvOfferIndex', () => {
       '/offers/read/' + offerSelected.id
     )
   })
-  describe('Cannot create an offer', () => {
-    it('should not render create offer button', () => {
-      const wrapper = cannotCreateOfferFactory()
-      expect(wrapper.find('[data-testid="createOfferButton"]').exists()).toBe(
-        false
-      )
-    })
-  })
   describe('Can create an offer', () => {
     let wrapper
     beforeEach(() => {
       wrapper = canCreateOfferFactory()
     })
-    it('should render create offer button', () => {
-      expect(wrapper.find('[data-testid="createOfferButton"]').exists()).toBe(
-        true
-      )
-    })
     it('should push to create offer page when create offer button is clicked', () => {
-      const createOfferButton = wrapper.find(
-        '[data-testid="createOfferButton"]'
-      )
-      createOfferButton.vm.$emit('button:click')
+      const headerIndex = wrapper.find('[data-testid="headerIndex"]')
+      headerIndex.vm.$emit('button:click')
       expect($router.push).toHaveBeenCalledTimes(1)
       expect($router.push).toHaveBeenCalledWith('/offers/new')
     })

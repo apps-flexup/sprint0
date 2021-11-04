@@ -1,13 +1,11 @@
 <template lang="pug">
 .fv-payment-structure-index
-  v-row
-    v-col(cols="6")
-      h1 {{ $t('table.paymentStructures.title') }}
-    v-col(cols="6")
-      fv-primary-button.text-right(
-        data-testid="createButton"
-        @button:click='createPaymentStructure'
-      ) {{ $t('buttons.create.paymentStructure') }}
+  fv-header-index(
+    data-testid="headerIndex"
+    :title="$t('table.paymentStructures.title')"
+    :titleButton="$t('buttons.create.paymentStructure')"
+    @button:click="createPaymentStructure"
+  )
   fv-payment-structure-list(
     data-testid="paymentStructureList"
     @list:selected="selectedPaymentStructure"
