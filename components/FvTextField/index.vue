@@ -7,6 +7,7 @@
     :label="label"
     :outlined="outlined"
     :append-outer-icon="appendOuterIcon"
+    :append-icon="appendIcon"
     :suffix="suffix"
     :readonly="readonly"
     :clearable="clearable"
@@ -35,6 +36,12 @@ export default {
       }
     },
     appendOuterIcon: {
+      type: String,
+      default() {
+        return ''
+      }
+    },
+    appendIcon: {
       type: String,
       default() {
         return ''

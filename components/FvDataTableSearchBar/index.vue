@@ -4,8 +4,8 @@
     data-testid="textField"
     :value="search"
     :label="label"
-    :outlined="false"
-    appendOuterIcon="mdi-magnify"
+    dense
+    appendIcon="mdi-magnify"
     @input="inputChanged"
     @enterPressed="enterPressed"
   )
