@@ -123,3 +123,12 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+::v-deep .v-text-field__details {
+  display: none;
+}
+::v-deep .v-input--dense > .v-input__control > .v-input__slot {
+  margin: inherit;
+}
+</style>
