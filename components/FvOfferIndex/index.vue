@@ -36,9 +36,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.row {
-  align-items: center;
-}
-</style>
