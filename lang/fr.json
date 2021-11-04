@@ -471,7 +471,7 @@
         "title": "Nouveau compte tiers",
         "choices": {
           "personal": "Nouveau tiers personnel",
-          "business": "Nouveau tiers entreprise",
+          "business": "Nouveau tiers professionnel",
           "sub": "Nouveau tiers sous-compte"
         },
         "subtitle": "Précisez les informations de votre compte tiers",
