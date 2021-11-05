@@ -21,7 +21,7 @@ export default {
   },
   add({ commit }, thirdParty) {
     if (thirdParty.type === 'Personal')
-      thirdParty.name = `${thirdParty.firstname} ${thirdParty.lastname}`
+      thirdParty.name = [thirdParty.firstname, thirdParty.lastname].join(' ')
     if (Object.prototype.hasOwnProperty.call(thirdParty, 'id')) {
       this.$repos.thirdPartyAccounts.update(thirdParty).then((res) => {
         commit('remove', res)
