@@ -75,7 +75,7 @@ export default {
       parent_type: 'User',
       parent_id: user.sub,
       type: 'Personal',
-      name: `${user.given_name} ${user.family_name}`,
+      name: [user.given_name, user.family_name].join(' '),
       firstname: user.given_name,
       lastname: user.family_name,
       country: 'FRA',
