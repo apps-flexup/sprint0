@@ -2355,12 +2355,6 @@
       "title": "forms.product.step.0",
       "fields": [
         {
-          "attribute": "status",
-          "component": "fv-product-status-select",
-          "readonly-component": "fv-status-readonly",
-          "size": 12
-        },
-        {
           "attribute": "name",
           "component": "fv-text-field",
           "size": 12
@@ -2369,6 +2363,12 @@
           "attribute": "unit",
           "component": "fv-product-unit-autocomplete",
           "readonly-component": "fv-unit-readonly",
+          "size": 3
+        },
+        {
+          "attribute": "status",
+          "component": "fv-product-status-select",
+          "readonly-component": "fv-status-readonly",
           "size": 12
         }
       ]
