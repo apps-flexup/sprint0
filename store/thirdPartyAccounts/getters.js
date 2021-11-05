@@ -1,7 +1,14 @@
 export default {
   all(state) {
     if (!state.items) return []
-    const res = JSON.parse(JSON.stringify(state.items))
+    let res = JSON.parse(JSON.stringify(state.items))
+    res = await Promise.all(res.map((thirdParty) => {
+      if (thirdParty.flexup_account_id) {
+        const account = await this.$repos.accounts.show(thirdParty.flexup_account_id)
+        thirdParty = {...thirdParty, type: account.type, name: account.name }
+        return thirdParty
+      }
+    }))
     return res
   },
   ids(state) {

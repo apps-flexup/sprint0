@@ -35,6 +35,12 @@ export default {
         })
     }
   },
+  addFlexupAccount({ commit }, flexupAccountId) {
+    const payload = { flexup_account_id: flexupAccountId, directory: 'Flexup' }
+    this.$repos.thirdPartyAccounts.createWithAccountId(payload).then((res) => {
+      commit('add', res)
+    })
+  },
   addToFlexup({ _commit }, thirdParty) {
     this.$repos.thirdPartyAccounts.create(thirdParty)
   }
