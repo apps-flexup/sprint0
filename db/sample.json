@@ -1003,6 +1003,7 @@
       }
     },
     {
+      "id": 1,
       "account_id": 1,
       "headers": {
         "products": [],
@@ -1026,8 +1027,7 @@
         "contracts": [],
         "members": [],
         "owners": []
-      },
-      "id": 1
+      }
     },
     {
       "account_id": 4,
@@ -14829,9 +14829,9 @@
     {
       "type": "Personal",
       "directory": "Local",
-      "lastname": "Personal",
-      "firstname": "Third-Party",
-      "name": "Personal Third-Party",
+      "lastname": "Third-party",
+      "firstname": "Personal",
+      "name": "Personal Third-party",
       "account_id": 1,
       "id": 3
     },
