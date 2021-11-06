@@ -17,13 +17,9 @@ export default {
   data() {
     return {
       rules: {
-        legal_structure_id: this.$displayRules.legalStructure,
-        country_id: this.$displayRules.country
+        type: this.$displayRules.accountType
       }
     }
-  },
-  mounted() {
-    console.log('Composant ', this.$options.name)
   },
   methods: {
     thirdPartyAccountSelected(thirdParty) {
