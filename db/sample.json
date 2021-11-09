@@ -1003,6 +1003,7 @@
       }
     },
     {
+      "id": 1,
       "account_id": 1,
       "headers": {
         "products": [],
@@ -1026,8 +1027,7 @@
         "contracts": [],
         "members": [],
         "owners": []
-      },
-      "id": 1
+      }
     },
     {
       "account_id": 4,
@@ -2355,12 +2355,6 @@
       "title": "forms.product.step.0",
       "fields": [
         {
-          "attribute": "status",
-          "component": "fv-product-status-select",
-          "readonly-component": "fv-status-readonly",
-          "size": 12
-        },
-        {
           "attribute": "name",
           "component": "fv-text-field",
           "size": 12
@@ -2369,6 +2363,12 @@
           "attribute": "unit",
           "component": "fv-product-unit-autocomplete",
           "readonly-component": "fv-unit-readonly",
+          "size": 3
+        },
+        {
+          "attribute": "status",
+          "component": "fv-product-status-select",
+          "readonly-component": "fv-status-readonly",
           "size": 12
         }
       ]
@@ -14829,9 +14829,9 @@
     {
       "type": "Personal",
       "directory": "Local",
-      "lastname": "Personal",
-      "firstname": "Third-Party",
-      "name": "Personal Third-Party",
+      "lastname": "Third-party",
+      "firstname": "Personal",
+      "name": "Personal Third-party",
       "account_id": 1,
       "id": 3
     },
