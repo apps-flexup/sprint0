@@ -11,10 +11,9 @@
       div {{ $t('forms.orders.new.thirdPartyAccount') }}
     template(v-slot:item="data")
       template(v-if="data.item")
-        v-list-item-avatar
-          v-img(:src="data.item.avatar")
-        v-list-item-content
-          div {{ data.item.name }}
+        fv-directory-entry(
+          :entry="data.item"
+        )
     template(v-slot:selection="data")
       template(v-if="data.item")
         v-list-item-avatar
@@ -29,8 +28,11 @@
 </template>
 
 <script>
+import availableThirdPartyAccounts from '../../mixins/availableThirdPartyAccounts'
+
 export default {
   name: 'FvThirdPartyAccountAutocomplete',
+  mixins: [availableThirdPartyAccounts],
   props: {
     thirdPartyAccountId: {
       type: Number,
@@ -41,14 +43,40 @@ export default {
   },
   data() {
     return {
-      items: []
+      allItems: []
+    }
+  },
+  computed: {
+    items() {
+      const res = []
+      if (this.allItems.localThirdParties?.length > 0) {
+        res.push({ header: this.$t('third-parties.local') })
+        this.allItems.localThirdParties.forEach((thirdParty) => {
+          res.push(thirdParty)
+        })
+        res.push({ divider: true })
+      }
+      if (this.allItems.flexupThirdParties?.length > 0) {
+        res.push({ header: this.$t('third-parties.flexup') })
+        this.allItems.flexupThirdParties.forEach((thirdParty) => {
+          res.push(thirdParty)
+        })
+        res.push({ divider: true })
+      }
+      if (this.allItems.flexupAccounts?.length > 0) {
+        res.push({ header: this.$t('third-parties.others') })
+        this.allItems.flexupAccounts.forEach((account) => {
+          res.push(account)
+        })
+      }
+      return res
     }
   },
   mounted() {
     console.log('Composant ', this.$options.name)
     this.$store.dispatch('thirdPartyAccounts/get')
-    this.$activeAccount.allThirdPartyAccounts().then((data) => {
-      this.items = data
+    this.getAvailableThirdParties().then((data) => {
+      this.allItems = data
     })
   },
   methods: {
@@ -57,6 +85,7 @@ export default {
     },
     filter(item, queryText, _itemText) {
       if (Object.prototype.hasOwnProperty.call(item, 'header')) return true
+      if (Object.prototype.hasOwnProperty.call(item, 'divider')) return true
       const res = item.name.toLowerCase().includes(queryText.toLowerCase())
       return res
     },

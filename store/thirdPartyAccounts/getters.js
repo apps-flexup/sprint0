@@ -16,5 +16,17 @@ export default {
     const recordId = parseInt(id)
     const res = state.all.find((v) => v.id === recordId)
     return res
+  },
+  local(state) {
+    if (!state.items) return []
+    let res = JSON.parse(JSON.stringify(state.items))
+    res = res.filter((thirdParty) => thirdParty.directory === 'Local')
+    return res
+  },
+  flexup(state) {
+    if (!state.items) return []
+    let res = JSON.parse(JSON.stringify(state.items))
+    res = res.filter((thirdParty) => thirdParty.directory === 'Flexup')
+    return res
   }
 }

@@ -21,6 +21,9 @@ export default {
       }
     }
   },
+  mounted() {
+    this.$store.dispatch('thirdPartyAccounts/get')
+  },
   methods: {
     thirdPartyAccountSelected(thirdParty) {
       this.$emit('list:selected', thirdParty)

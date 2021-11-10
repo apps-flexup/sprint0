@@ -1,4 +1,12 @@
 {
+  "third-parties": {
+    "local": "My third-parties - Local Directory",
+    "flexup": "My third-parties - Flexup Directory",
+    "others": "Others third-parties - Flexup Directories",
+    "placeholder": "Find a third-party",
+    "add": "ADD",
+    "added": "Added"
+  },
   "statusFilters": {
     "title": "STATUS",
     "selectAll": "Select All",
@@ -294,6 +302,7 @@
       "thirdPartyAccounts": "Third party accounts",
       "thirdPartyAccounts-id": "Edit my third party account",
       "thirdPartyAccounts-new": "New third party account",
+      "thirdPartyAccounts-newLocalThirdParty": "New local third party account",
       "thirdPartyAccounts-newPersonalThirdParty": "New personal third party account",
       "thirdPartyAccounts-newBusinessThirdParty": "New business third party account",
       "thirdPartyAccounts-newSubAccountThirdParty": "New third party sub account"
@@ -471,16 +480,7 @@
           "personal": "New personal third party",
           "business": "New business third party",
           "sub": "New sub account third party"
-        },
-        "subtitle": "Specify your third party account's information",
-        "name": "Third party account's name",
-        "legal_structure_id": "Legal structure",
-        "siret": "SIRET",
-        "address": "Address",
-        "complement": "Complement",
-        "zip": "ZIP",
-        "city": "City",
-        "country": "Country"
+        }
       },
       "edit": {
         "title": "Edit my third party account"

@@ -13,6 +13,7 @@ import FvAccountsIndex from '@/components/FvAccountsIndex'
 import FvAddressField from '@/components/FvAddressField'
 import FvAddressModal from '@/components/FvAddressModal'
 import FvAutocomplete from '@/components/FvAutocomplete'
+import FvAvailableThirdPartyAccountList from '@/components/FvAvailableThirdPartyAccountList'
 import FvAvatar from '@/components/FvAvatar'
 import FvAvatarWithName from '@/components/FvAvatarWithName'
 import FvBreadcrumbs from '@/components/FvBreadcrumbs'
@@ -47,6 +48,7 @@ import FvCountryReadonly from '@/components/FvCountryReadonly'
 import FvDataTable from '@/components/FvDataTable'
 import FvDataTableHeader from '@/components/FvDataTableHeader'
 import FvDataTableSearchBar from '@/components/FvDataTableSearchBar'
+import FvDirectoryEntry from '@/components/FvDirectoryEntry'
 import FvFlexItems from '@/components/FvFlexItems'
 import FvIcon from '@/components/FvIcon'
 import FvIndexTable from '@/components/FvIndexTable'
@@ -194,6 +196,10 @@ Vue.component('fv-address-field', FvAddressField)
 Vue.component('fv-address-modal', FvAddressModal)
 Vue.component('fv-autocomplete', FvAutocomplete)
 Vue.component('fv-avatar', FvAvatar)
+Vue.component(
+  'fv-available-third-party-account-list',
+  FvAvailableThirdPartyAccountList
+)
 Vue.component('fv-avatar-with-name', FvAvatarWithName)
 Vue.component('fv-breadcrumbs', FvBreadcrumbs)
 Vue.component('fv-civility-field', FvCivilityField)
@@ -236,6 +242,7 @@ Vue.component('fv-country-readonly', FvCountryReadonly)
 Vue.component('fv-data-table', FvDataTable)
 Vue.component('fv-data-table-header', FvDataTableHeader)
 Vue.component('fv-data-table-search-bar', FvDataTableSearchBar)
+Vue.component('fv-directory-entry', FvDirectoryEntry)
 Vue.component('fv-flex-items', FvFlexItems)
 Vue.component('fv-icon', FvIcon)
 Vue.component('fv-index-table', FvIndexTable)

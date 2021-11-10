@@ -1,10 +1,17 @@
 // Action de base
 export default {
-  get({ commit }) {
-    // charger les contracts
-    this.$repos.thirdPartyAccounts
-      .indexWithAccountId()
-      .then((data) => commit('set', data))
+  async get({ commit }) {
+    let data = await this.$repos.thirdPartyAccounts.indexWithAccountId()
+    data = await Promise.all(
+      data.map(async (thirdParty) => {
+        if (thirdParty.flexup_id) {
+          const account = await this.$repos.accounts.show(thirdParty.flexup_id)
+          thirdParty = { ...thirdParty, type: account.type, name: account.name }
+        }
+        return thirdParty
+      })
+    )
+    commit('set', data)
   },
   getAll({ commit }) {
     this.$repos.thirdPartyAccounts.index().then((data) => {
@@ -37,6 +44,12 @@ export default {
           commit('add', res)
         })
     }
+  },
+  addFlexupAccount({ commit }, flexupAccountId) {
+    const payload = { flexup_id: flexupAccountId, directory: 'Flexup' }
+    this.$repos.thirdPartyAccounts.createWithAccountId(payload).then((res) => {
+      commit('add', res)
+    })
   },
   addToFlexup({ _commit }, thirdParty) {
     this.$repos.thirdPartyAccounts.create(thirdParty)

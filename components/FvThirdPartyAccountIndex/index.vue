@@ -14,9 +14,6 @@
 
 <script>
 export default {
-  mounted() {
-    console.log('Composant ', this.$options.name)
-  },
   methods: {
     selectedThirdPartyAccount(thirdParty) {
       this.$router.push('/thirdPartyAccounts/' + thirdParty.id)
