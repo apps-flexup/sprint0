@@ -44,14 +44,6 @@ import availableThirdPartyAccounts from '../../mixins/availableThirdPartyAccount
 export default {
   name: 'FvAvailableThirdPartyAccountList',
   mixins: [availableThirdPartyAccounts],
-  props: {
-    thirdPartyAccountId: {
-      type: Number,
-      default() {
-        return null
-      }
-    }
-  },
   data() {
     return {
       allItems: [],

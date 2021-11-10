@@ -1,30 +1,29 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
 import { action } from '@storybook/addon-actions'
-import FvThirdPartyAccountAutocomplete from './index.vue'
+import FvDirectoryEntry from './index.vue'
 
-<Meta title='Atoms/FvThirdPartyAccountAutocomplete' component={ FvThirdPartyAccountAutocomplete } />
+<Meta title='Atoms/FvDirectoryEntry' component={ FvDirectoryEntry } />
 
-# FvThirdPartyAccountAutocomplete
+# FvDirectoryEntry
 
 <Canvas>
 <Story name='Common' height='150px'>{{
-  components: { FvThirdPartyAccountAutocomplete },
+  components: { FvDirectoryEntry },
   data() {
     return {
-      thirdPartyAccountId: null
+      entry: { avatar: "/images/avatar-0.png", name: 'Toto la riflette'}
     }
   },
   methods: {
     thirdPartyAccountSelected: action('Selected')
   },
-  template: `<FvThirdPartyAccountAutocomplete
-    :thirdPartyAccountId="thirdPartyAccountId"
-    @thirdPartyAccount:selected='thirdPartyAccountSelected'
+  template: `<FvDirectoryEntry
+    :entry="entry"
   >
-  </FvThirdPartyAccountAutocomplete>`
+  </FvDirectoryEntry>`
 }}</Story>
 </Canvas>
 
 ## ArgsTable
 
-<ArgsTable of={ FvThirdPartyAccountAutocomplete } />
+<ArgsTable of={ FvDirectoryEntry } />
