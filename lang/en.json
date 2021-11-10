@@ -1,4 +1,12 @@
 {
+  "third-parties": {
+    "local": "My third-parties - Local Directory",
+    "flexup": "My third-parties - Flexup Directory",
+    "others": "Others third-parties - Flexup Directories",
+    "placeholder": "Find a third-party",
+    "add": "ADD",
+    "added": "Added"
+  },
   "statusFilters": {
     "title": "STATUS",
     "selectAll": "Select All",

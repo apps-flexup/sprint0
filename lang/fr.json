@@ -1,4 +1,12 @@
 {
+  "third-parties": {
+    "local": "Mes tiers - Annuaire Local",
+    "flexup": "Mes tiers - Annuaire Flexup",
+    "others": "Autres tiers - Annuaires Flexup",
+    "placeholder": "Recherchez un tiers",
+    "add": "AJOUTER",
+    "added": "Ajouté"
+  },
   "statusFilters": {
     "title": "STATUT",
     "selectAll": "Tout sélectionner",

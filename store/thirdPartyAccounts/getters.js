@@ -1,14 +1,7 @@
 export default {
   all(state) {
     if (!state.items) return []
-    let res = JSON.parse(JSON.stringify(state.items))
-    res = await Promise.all(res.map((thirdParty) => {
-      if (thirdParty.flexup_account_id) {
-        const account = await this.$repos.accounts.show(thirdParty.flexup_account_id)
-        thirdParty = {...thirdParty, type: account.type, name: account.name }
-        return thirdParty
-      }
-    }))
+    const res = JSON.parse(JSON.stringify(state.items))
     return res
   },
   ids(state) {
@@ -22,6 +15,18 @@ export default {
     if (!state.all.length) return null
     const recordId = parseInt(id)
     const res = state.all.find((v) => v.id === recordId)
+    return res
+  },
+  local(state) {
+    if (!state.items) return []
+    let res = JSON.parse(JSON.stringify(state.items))
+    res = res.filter((thirdParty) => thirdParty.directory === 'Local')
+    return res
+  },
+  flexup(state) {
+    if (!state.items) return []
+    let res = JSON.parse(JSON.stringify(state.items))
+    res = res.filter((thirdParty) => thirdParty.directory === 'Flexup')
     return res
   }
 }
