@@ -9,7 +9,7 @@
     min-width=130
     @click="statusClicked"
   )
-    |{{ status }}
+    |{{ $t(`status.${status}`) }}
     slot(name="icon")
 </template>
 

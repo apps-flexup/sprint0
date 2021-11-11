@@ -767,7 +767,8 @@
     "thirdPartyAccounts": {
       "name": "Nom",
       "type": "Type de tiers",
-      "directory": "Annuaire"
+      "directory": "Annuaire",
+      "status": "Statut"
     },
     "paymentConditions": {
       "label": "Libellé",

@@ -13,6 +13,13 @@
       div {{ displayName(item) }}
     template(v-slot:item.type="{ item }")
       div {{ displayType(item) }}
+    template(v-slot:item.status="{ item }")
+      fv-third-party-status-select.mx-auto(
+        class="status-progress"
+        :value="item.status"
+        @status:changed="statusChanged(item, ...arguments)"
+        @click.native.stop
+      )
     template(v-slot:item.actions="{ item }")
       v-row
         fv-edit-action(@edit:clicked="selected(item)")
@@ -68,7 +75,18 @@ export default {
     },
     sortBy(v) {
       this.$emit('dataTable:sortBy', v)
+    },
+    statusChanged(thirdParty, newStatus) {
+      if (!thirdParty) return
+      thirdParty.status = newStatus
+      this.$store.dispatch('thirdPartyAccounts/add', thirdParty)
     }
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.status-progress {
+  max-width: $status-btn-width;
+}
+</style>
