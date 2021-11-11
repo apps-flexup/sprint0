@@ -1,8 +1,8 @@
 import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
 import { statusAvailable, defaultValue } from '@/.storybook/data/statusAvailable'
-import FvProductStatusSelect from './index.vue'
+import FvThirdPartyStatusSelect from './index.vue'
 
-<Meta title='Atoms/FvProductStatusSelect' component={ FvProductStatusSelect } argTypes={{
+<Meta title='Atoms/FvThirdPartyStatusSelect' component={ FvThirdPartyStatusSelect } argTypes={{
   status: {
     control: {
       type: 'select',
@@ -11,7 +11,7 @@ import FvProductStatusSelect from './index.vue'
   }
 }}/>
 
-# FvProductStatusSelect
+# FvThirdPartyStatusSelect
 
 <Canvas>
 <Story name='Common' height='150px'>{{
@@ -20,14 +20,14 @@ import FvProductStatusSelect from './index.vue'
       default: defaultValue
     }
   },
-  components: { FvProductStatusSelect },
-  template: `<FvProductStatusSelect
+  components: { FvThirdPartyStatusSelect },
+  template: `<FvThirdPartyStatusSelect
     :status="status"
   >
-  </FvProductStatusSelect>`
+  </FvThirdPartyStatusSelect>`
 }}</Story>
 </Canvas>
 
 ## Props
 
-<Props of={ FvProductStatusSelect } />
+<Props of={ FvThirdPartyStatusSelect } />
