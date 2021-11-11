@@ -39,7 +39,15 @@ const rights = (ctx) => ({
     const authorizedRoles = ['admin', 'editor']
     return this.isAuthorized(authorizedRoles)
   },
+  canCreateThirdParty() {
+    const authorizedRoles = ['admin', 'editor']
+    return this.isAuthorized(authorizedRoles)
+  },
   canEditThirdParty() {
+    const authorizedRoles = ['admin', 'editor']
+    return this.isAuthorized(authorizedRoles)
+  },
+  canDeleteThirdParty() {
     const authorizedRoles = ['admin', 'editor']
     return this.isAuthorized(authorizedRoles)
   }
