@@ -758,7 +758,8 @@
     "thirdPartyAccounts": {
       "name": "Name",
       "type": "Type of third party",
-      "directory": "Directory"
+      "directory": "Directory",
+      "status": "Status"
     },
     "paymentConditions": {
       "label": "Label",

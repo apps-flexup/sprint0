@@ -20,6 +20,7 @@
       v-if="isStatusFilterAvailable"
       data-testid="statusFilters"
       :tableName="tableName"
+      :filtersSelected="statusFiltersSelected"
       @statusFilter:filtersChanged="statusFiltersChanged"
     )
     fv-icon.settings(
@@ -49,6 +50,12 @@ export default {
       type: String,
       default() {
         return null
+      }
+    },
+    statusFiltersSelected: {
+      type: Array,
+      default() {
+        return ['active', 'inactive']
       }
     }
   },

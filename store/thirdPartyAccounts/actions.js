@@ -34,10 +34,10 @@ export default {
     }
     if (Object.prototype.hasOwnProperty.call(thirdParty, 'id')) {
       this.$repos.thirdPartyAccounts.update(thirdParty).then((res) => {
-        commit('remove', res)
-        commit('add', res)
+        commit('update', res)
       })
     } else {
+      thirdParty.status = 'active'
       this.$repos.thirdPartyAccounts
         .createWithAccountId(thirdParty)
         .then((res) => {

@@ -151,6 +151,7 @@ import FvOrderModal from '@/components/FvOrderModal'
 import FvOwnerDataTable from '@/components/FvOwnerDataTable'
 import FvThirdPartyAccountDataTable from '@/components/FvThirdPartyAccountDataTable'
 import FvThirdPartyAccountList from '@/components/FvThirdPartyAccountList'
+import FvThirdPartyStatusSelect from '@/components/FvThirdPartyStatusSelect'
 import FvModalSlot from '@/components/FvModalSlot'
 import FvThirdPartyAccountIndex from '@/components/FvThirdPartyAccountIndex'
 import FvPartnerModal from '@/components/FvPartnerModal'
@@ -352,6 +353,7 @@ Vue.component('fv-order-modal', FvOrderModal)
 Vue.component('fv-owner-data-table', FvOwnerDataTable)
 Vue.component('fv-third-party-account-data-table', FvThirdPartyAccountDataTable)
 Vue.component('fv-third-party-account-list', FvThirdPartyAccountList)
+Vue.component('fv-third-party-status-select', FvThirdPartyStatusSelect)
 Vue.component('fv-modal-slot', FvModalSlot)
 Vue.component('fv-third-party-account-index', FvThirdPartyAccountIndex)
 Vue.component('fv-partner-modal', FvPartnerModal)
