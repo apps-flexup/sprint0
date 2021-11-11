@@ -5,6 +5,8 @@ export default {
     return res
   },
   allWithFilters: (state) => (statusFilters) => {
+    console.log('les items: ', state.items)
+    console.log('les filtres: ', statusFilters)
     if (!state.items) return []
     const filteredItems = state.items.filter((item) => {
       const insensitiveFilters = statusFilters.map((status) =>
@@ -12,6 +14,7 @@ export default {
       )
       return insensitiveFilters.includes(item.status.toLowerCase())
     })
+    console.log('les items filtres: ', filteredItems)
     const res = JSON.parse(JSON.stringify(filteredItems))
     return res
   },

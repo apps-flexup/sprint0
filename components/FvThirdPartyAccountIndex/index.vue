@@ -3,6 +3,7 @@
   v-row
     v-col(cols="12")
       fv-primary-button.text-right(
+        v-if="canCreateThirdParty"
         data-testid='createBtn'
         @button:click='createThirdPartyAccount'
       ) {{ $t('buttons.create.thirdPartyAccount') }}
@@ -14,9 +15,18 @@
 
 <script>
 export default {
+  computed: {
+    canCreateThirdParty() {
+      return this.$rights.canCreateThirdParty()
+    }
+  },
   methods: {
     selectedThirdPartyAccount(thirdParty) {
-      this.$router.push('/thirdPartyAccounts/' + thirdParty.id)
+      if (thirdParty.directory === 'Local') {
+        this.$router.push('/thirdPartyAccounts/' + thirdParty.id)
+      } else {
+        this.$router.push('/accounts/' + thirdParty.flexup_id)
+      }
     },
     createThirdPartyAccount() {
       this.$router.push('thirdPartyAccounts/new')
