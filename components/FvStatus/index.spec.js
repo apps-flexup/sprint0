@@ -8,6 +8,11 @@ const factory = (propsData) => {
     },
     slots: {
       icon: 'plop'
+    },
+    mocks: {
+      $t: (msg) => {
+        return msg
+      }
     }
   })
 }
@@ -28,11 +33,5 @@ describe('FvStatus', () => {
   it('should return the color of the status', () => {
     const wrapper = factory({ status: 'inactive' })
     expect(wrapper.vm.color).toBe('#FFCD92')
-  })
-  it('should render an icon slot', () => {
-    const slot = 'plop'
-    const wrapper = factory()
-    const statusBtn = wrapper.find('[data-testid="statusBtn"')
-    expect(statusBtn.text()).toBe(slot)
   })
 })
