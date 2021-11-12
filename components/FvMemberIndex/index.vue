@@ -7,7 +7,7 @@
       data-testid="headerIndex"
       :title="$t('table.members.title', { accountName })"
       :titleButton="$t('buttons.inviteMember')"
-      :condition="canInvite"
+      :canCreate="canInvite"
       @button:click="inviteMember"
     )
     fv-member-list(

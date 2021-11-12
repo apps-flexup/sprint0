@@ -5,7 +5,7 @@
       h1(data-testid="title") {{ title }}
     v-col(cols="6")
       fv-primary-button.text-right(
-        v-if="condition"
+        v-if="canCreate"
         data-testid="createButton"
         @button:click='clicked'
       ) {{ titleButton }}
@@ -27,7 +27,7 @@ export default {
         return null
       }
     },
-    condition: {
+    canCreate: {
       type: Boolean,
       default() {
         return true

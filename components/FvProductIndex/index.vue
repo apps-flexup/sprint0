@@ -4,6 +4,7 @@
     data-testid="headerIndex"
     :title="$t('table.products.title')"
     :titleButton="$t('buttons.create.product')"
+    :canCreate="canCreateProduct"
     @button:click="createProduct"
   )
   fv-product-list(

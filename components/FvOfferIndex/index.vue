@@ -4,7 +4,7 @@
     data-testid="headerIndex"
     :title="$t('table.offers.title')"
     :titleButton="$t('buttons.create.offer')"
-    :condition="canCreateOffer"
+    :canCreate="canCreateOffer"
     @button:click="createOffer"
   )
   fv-offer-list(
