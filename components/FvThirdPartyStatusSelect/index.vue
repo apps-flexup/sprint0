@@ -13,33 +13,30 @@
 
 <script>
 export default {
-  name: 'FvProductStatusSelect',
+  name: 'FvThirdPartyStatusSelect',
   props: {
     value: {
       type: String,
-      default: 'draft'
+      default() {
+        return 'draft'
+      }
     },
     label: {
       type: String,
-      default: null
+      default() {
+        return ''
+      }
     }
   },
   computed: {
     availableStatus() {
-      return this.$store.getters['products/availableStatus']
+      return this.$store.getters['thirdPartyAccounts/availableStatus']
     }
   },
   methods: {
     changeStatus(newStatus) {
-      if (this.value === 'active') {
-        if (window.confirm(this.$t('table.products.warningMessage'))) {
-          this.$emit('payload:changed', newStatus)
-          this.$emit('status:changed', newStatus)
-        }
-      } else {
-        this.$emit('payload:changed', newStatus)
-        this.$emit('status:changed', newStatus)
-      }
+      this.$emit('payload:changed', newStatus)
+      this.$emit('status:changed', newStatus)
     }
   }
 }

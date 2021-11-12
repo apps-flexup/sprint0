@@ -6,6 +6,7 @@
     tableComponent="fv-third-party-account-data-table"
     tableName="thirdPartyAccounts"
     :rules="rules"
+    :statusFiltersSelected="defaultStatusFiltersSelected"
     @list:selected="thirdPartyAccountSelected"
   )
 </template>
@@ -16,10 +17,14 @@ export default {
   data() {
     return {
       rules: {
-        legal_structure_id: this.$displayRules.legalStructure,
-        country_id: this.$displayRules.country
-      }
+        type: this.$displayRules.accountType,
+        status: this.$displayRules.status
+      },
+      defaultStatusFiltersSelected: ['active']
     }
+  },
+  mounted() {
+    this.$store.dispatch('thirdPartyAccounts/get')
   },
   methods: {
     thirdPartyAccountSelected(thirdParty) {

@@ -510,11 +510,21 @@
             "displayed": true
           },
           {
+            "align": "center",
+            "sortable": true,
+            "text": "headers.thirdPartyAccounts.status",
+            "value": "status",
+            "order": 3,
+            "customizable": true,
+            "active": true,
+            "displayed": true
+          },
+          {
             "align": "left",
             "sortable": false,
             "text": "headers.actions",
             "value": "actions",
-            "order": 7,
+            "order": 4,
             "customizable": false,
             "active": true,
             "displayed": true
@@ -1003,6 +1013,7 @@
       }
     },
     {
+      "id": 1,
       "account_id": 1,
       "headers": {
         "products": [],
@@ -1026,8 +1037,7 @@
         "contracts": [],
         "members": [],
         "owners": []
-      },
-      "id": 1
+      }
     },
     {
       "account_id": 4,
@@ -2355,12 +2365,6 @@
       "title": "forms.product.step.0",
       "fields": [
         {
-          "attribute": "status",
-          "component": "fv-product-status-select",
-          "readonly-component": "fv-status-readonly",
-          "size": 12
-        },
-        {
           "attribute": "name",
           "component": "fv-text-field",
           "size": 12
@@ -2369,6 +2373,12 @@
           "attribute": "unit",
           "component": "fv-product-unit-autocomplete",
           "readonly-component": "fv-unit-readonly",
+          "size": 3
+        },
+        {
+          "attribute": "status",
+          "component": "fv-product-status-select",
+          "readonly-component": "fv-status-readonly",
           "size": 12
         }
       ]
@@ -14829,9 +14839,10 @@
     {
       "type": "Personal",
       "directory": "Local",
-      "lastname": "Personal",
-      "firstname": "Third-Party",
-      "name": "Personal Third-Party",
+      "lastname": "Third-party",
+      "firstname": "Personal",
+      "name": "Personal Third-party",
+      "status": "archived",
       "account_id": 1,
       "id": 3
     },
@@ -14839,6 +14850,7 @@
       "type": "Business",
       "directory": "Local",
       "name": "Business",
+      "status": "active",
       "account_id": 1,
       "id": 4
     },
@@ -14847,6 +14859,7 @@
       "directory": "Local",
       "owners": [],
       "name": "Sub third-party",
+      "status": "active",
       "account_id": 1,
       "id": 5
     }
@@ -14863,7 +14876,7 @@
       "name": "Appartement Paris 8",
       "price": "1250",
       "quantity": 1,
-      "status": "active",
+      "status": "archived",
       "id": 1
     },
     {

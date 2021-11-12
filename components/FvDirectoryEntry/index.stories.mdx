@@ -1,0 +1,29 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+import FvDirectoryEntry from './index.vue'
+
+<Meta title='Atoms/FvDirectoryEntry' component={ FvDirectoryEntry } />
+
+# FvDirectoryEntry
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  components: { FvDirectoryEntry },
+  data() {
+    return {
+      entry: { avatar: "/images/avatar-0.png", name: 'Toto la riflette'}
+    }
+  },
+  methods: {
+    thirdPartyAccountSelected: action('Selected')
+  },
+  template: `<FvDirectoryEntry
+    :entry="entry"
+  >
+  </FvDirectoryEntry>`
+}}</Story>
+</Canvas>
+
+## ArgsTable
+
+<ArgsTable of={ FvDirectoryEntry } />

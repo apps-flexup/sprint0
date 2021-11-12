@@ -13,10 +13,28 @@
       div {{ displayName(item) }}
     template(v-slot:item.type="{ item }")
       div {{ displayType(item) }}
+    template(v-slot:item.status="{ item }")
+      fv-third-party-status-select.mx-auto(
+        v-if="canEdit"
+        class="status-progress"
+        :value="item.status"
+        @status:changed="statusChanged(item, ...arguments)"
+        @click.native.stop
+      )
+      fv-status-readonly(
+        v-else
+        :value="item.status"
+      )
     template(v-slot:item.actions="{ item }")
       v-row
-        fv-edit-action(@edit:clicked="selected(item)")
-        fv-delete-action(@delete:clicked="deleteItem(item)")
+        fv-edit-action(
+          v-if="canEdit"
+          @edit:clicked="selected(item)"
+        )
+        fv-delete-action(
+          v-if="canDelete"
+          @delete:clicked="deleteItem(item)"
+        )
 </template>
 
 <script>
@@ -48,6 +66,14 @@ export default {
       }
     }
   },
+  computed: {
+    canEdit() {
+      return this.$rights.canEditThirdParty()
+    },
+    canDelete() {
+      return this.$rights.canDeleteThirdParty()
+    }
+  },
   mounted() {
     this.$store.dispatch('countries/get')
     this.$store.dispatch('contracts/getLegalStructures')
@@ -68,7 +94,18 @@ export default {
     },
     sortBy(v) {
       this.$emit('dataTable:sortBy', v)
+    },
+    statusChanged(thirdParty, newStatus) {
+      if (!thirdParty) return
+      thirdParty.status = newStatus
+      this.$store.dispatch('thirdPartyAccounts/add', thirdParty)
     }
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.status-progress {
+  max-width: $status-btn-width;
+}
+</style>

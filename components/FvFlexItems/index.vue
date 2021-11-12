@@ -21,5 +21,6 @@ export default {
 .flex {
   display: flex !important;
   align-items: center;
+  justify-content: center;
 }
 </style>

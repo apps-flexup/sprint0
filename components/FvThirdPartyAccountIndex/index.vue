@@ -4,6 +4,7 @@
     data-testid="headerIndex"
     :title="$t('table.thirdPartyAccounts.title')"
     :titleButton="$t('buttons.create.thirdPartyAccount')"
+    :canCreate="canCreateThirdParty"
     @button:click="createThirdPartyAccount"
   )
   fv-third-party-account-list(
@@ -14,12 +15,18 @@
 
 <script>
 export default {
-  mounted() {
-    console.log('Composant ', this.$options.name)
+  computed: {
+    canCreateThirdParty() {
+      return this.$rights.canCreateThirdParty()
+    }
   },
   methods: {
     selectedThirdPartyAccount(thirdParty) {
-      this.$router.push('/thirdPartyAccounts/' + thirdParty.id)
+      if (thirdParty.directory === 'Local') {
+        this.$router.push('/thirdPartyAccounts/' + thirdParty.id)
+      } else {
+        this.$router.push('/accounts/' + thirdParty.flexup_id)
+      }
     },
     createThirdPartyAccount() {
       this.$router.push('thirdPartyAccounts/new')

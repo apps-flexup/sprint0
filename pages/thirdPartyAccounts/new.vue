@@ -1,40 +1,44 @@
 <template lang="pug">
 .page.third-party-account-new
-  fv-radio-group(
-    :title="$t('forms.thirdPartyAccounts.new.title')"
-    :label="$t('accounts.typeOfAccount.whatType')"
-    :availableOptions="availableOptions"
-    @radio-group:validated="createThirdParty"
-  )
+  v-col.mx-auto(cols="8")
+    h3.text-center.mb-5 Ajouter depuis l'annuaire flexup
+    fv-available-third-party-account-list
+    h3.text-center.mb-5 Ajouter un tiers localement
+    fv-text-button.justify-center(
+        data-testid="addNewLocalThirdParty"
+        @button:click="addNewLocalThirdParty"
+      )
+        template(v-slot:icon)
+          fv-icon(
+            size="small"
+            icon="mdi-plus"
+            color="#1976d2"
+            @icon:clicked="addNewLocalThirdParty"
+          )
+        template(v-slot:text)
+          | {{ $t('forms.thirdPartyAccounts.new.title') }}
 </template>
 
 <script>
 export default {
   data() {
     return {
-      thirdPartyForm: null,
-      availableOptions: [
-        {
-          name: 'personalThirdParty',
-          label: this.$t('forms.thirdPartyAccounts.new.choices.personal'),
-          value: 'PersonalThirdParty'
-        },
-        {
-          name: 'businessThirdParty',
-          label: this.$t('forms.thirdPartyAccounts.new.choices.business'),
-          value: 'BusinessThirdParty'
-        },
-        {
-          name: 'subAccountThirdParty',
-          label: this.$t('forms.thirdPartyAccounts.new.choices.sub'),
-          value: 'SubAccountThirdParty'
-        }
-      ]
+      items: []
     }
   },
+  mounted() {
+    this.$repos.accounts.index().then((accounts) => {
+      const activeAccountId = this.$activeAccount.get()
+      accounts = accounts.filter((account) => account.id !== activeAccountId)
+      this.items = accounts
+    })
+  },
   methods: {
-    createThirdParty(type) {
-      this.$router.push(`/thirdPartyAccounts/new${type}`)
+    addThirdParty(id) {
+      this.$store.dispatch('thirdPartyAccounts/addFlexupAccount', id)
+    },
+    addNewLocalThirdParty() {
+      this.$router.push('/thirdPartyAccounts/newLocalThirdParty')
     }
   }
 }

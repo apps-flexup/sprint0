@@ -1,4 +1,12 @@
 {
+  "third-parties": {
+    "local": "Mes tiers - Annuaire Local",
+    "flexup": "Mes tiers - Annuaire Flexup",
+    "others": "Autres tiers - Annuaires Flexup",
+    "placeholder": "Recherchez un tiers",
+    "add": "AJOUTER",
+    "added": "Ajouté"
+  },
   "statusFilters": {
     "title": "STATUT",
     "selectAll": "Tout sélectionner",
@@ -293,6 +301,7 @@
       "thirdPartyAccounts": "Comptes tiers",
       "thirdPartyAccounts-id": "Modifier mon compte tiers",
       "thirdPartyAccounts-new": "Nouveau compte tiers",
+      "thirdPartyAccounts-newLocalThirdParty": "Nouveau compte tiers local",
       "thirdPartyAccounts-newPersonalThirdParty": "Nouveau compte tiers personnel",
       "thirdPartyAccounts-newBusinessThirdParty": "Nouveau compte tiers professionel",
       "thirdPartyAccounts-newSubAccountThirdParty": "Nouveau sous-compte tiers"
@@ -451,7 +460,7 @@
         "elasticity": "Élasticité",
         "validate": "Valider",
         "cancel": "Annuler",
-        "status": "Statut"
+        "status": "Statut :"
       },
       "read": {
         "title": "Voir mon produit"
@@ -468,21 +477,12 @@
     },
     "thirdPartyAccounts": {
       "new": {
-        "title": "Nouveau compte tiers",
+        "title": "Nouveau tiers local",
         "choices": {
           "personal": "Nouveau tiers personnel",
-          "business": "Nouveau tiers entreprise",
+          "business": "Nouveau tiers professionnel",
           "sub": "Nouveau tiers sous-compte"
-        },
-        "subtitle": "Précisez les informations de votre compte tiers",
-        "name": "Nom du compte tiers",
-        "legal_structure_id": "Statut juridique",
-        "siret": "SIRET",
-        "address": "Adresse",
-        "complement": "Complément",
-        "zip": "Code postal",
-        "city": "Ville",
-        "country": "Pays"
+        }
       },
       "edit": {
         "title": "Modifier mon compte tiers"
@@ -767,7 +767,8 @@
     "thirdPartyAccounts": {
       "name": "Nom",
       "type": "Type de tiers",
-      "directory": "Annuaire"
+      "directory": "Annuaire",
+      "status": "Statut"
     },
     "paymentConditions": {
       "label": "Libellé",

@@ -1,10 +1,17 @@
 // Action de base
 export default {
-  get({ commit }) {
-    // charger les contracts
-    this.$repos.thirdPartyAccounts
-      .indexWithAccountId()
-      .then((data) => commit('set', data))
+  async get({ commit }) {
+    let data = await this.$repos.thirdPartyAccounts.indexWithAccountId()
+    data = await Promise.all(
+      data.map(async (thirdParty) => {
+        if (thirdParty.flexup_id) {
+          const account = await this.$repos.accounts.show(thirdParty.flexup_id)
+          thirdParty = { ...thirdParty, type: account.type, name: account.name }
+        }
+        return thirdParty
+      })
+    )
+    commit('set', data)
   },
   getAll({ commit }) {
     this.$repos.thirdPartyAccounts.index().then((data) => {
@@ -20,20 +27,33 @@ export default {
       .then(() => commit('remove', thirdParty))
   },
   add({ commit }, thirdParty) {
-    if (thirdParty.type === 'Personal')
-      thirdParty.name = `${thirdParty.firstname} ${thirdParty.lastname}`
+    if (thirdParty.type === 'Personal') {
+      const firstname = thirdParty.firstname
+      const lastname = thirdParty.lastname
+      thirdParty.name = [firstname, lastname].join(' ').trim()
+    }
     if (Object.prototype.hasOwnProperty.call(thirdParty, 'id')) {
       this.$repos.thirdPartyAccounts.update(thirdParty).then((res) => {
-        commit('remove', res)
-        commit('add', res)
+        commit('update', res)
       })
     } else {
+      thirdParty.status = 'active'
       this.$repos.thirdPartyAccounts
         .createWithAccountId(thirdParty)
         .then((res) => {
           commit('add', res)
         })
     }
+  },
+  addFlexupAccount({ commit }, flexupAccountId) {
+    const payload = {
+      flexup_id: flexupAccountId,
+      directory: 'Flexup',
+      status: 'active'
+    }
+    this.$repos.thirdPartyAccounts.createWithAccountId(payload).then((res) => {
+      commit('add', res)
+    })
   },
   addToFlexup({ _commit }, thirdParty) {
     this.$repos.thirdPartyAccounts.create(thirdParty)

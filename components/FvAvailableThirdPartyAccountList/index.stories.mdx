@@ -1,0 +1,19 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+import FvAvailableThirdPartyAccountList from './index.vue'
+
+<Meta title='Atoms/FvAvailableThirdPartyAccountList' component={ FvAvailableThirdPartyAccountList } />
+
+# FvAvailableThirdPartyAccountList
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  components: { FvAvailableThirdPartyAccountList },
+  template: `<FvAvailableThirdPartyAccountList>
+  </FvAvailableThirdPartyAccountList>`
+}}</Story>
+</Canvas>
+
+## ArgsTable
+
+<ArgsTable of={ FvAvailableThirdPartyAccountList } />

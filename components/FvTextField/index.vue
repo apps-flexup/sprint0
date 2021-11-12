@@ -107,9 +107,6 @@ export default {
       this.model = this.value
     }
   },
-  mounted() {
-    console.log('Composant', this.$options.name)
-  },
   methods: {
     inputChanged() {
       this.$emit('input', this.model)

@@ -6,6 +6,7 @@
       :title="title"
       :searchLabel="searchLabel"
       :tableName="tableName"
+      :statusFiltersSelected="statusFiltersSelected"
       @dataTableSearch:filtersChanged="filtersChanged"
       @dataTableSearch:statusFiltersChanged="statusFiltersChanged"
       @dataTableHeader:settingsClicked="settingsClicked"
@@ -64,6 +65,12 @@ export default {
       type: Object,
       default() {
         return null
+      }
+    },
+    statusFiltersSelected: {
+      type: Array,
+      default() {
+        return ['active', 'inactive']
       }
     }
   },
