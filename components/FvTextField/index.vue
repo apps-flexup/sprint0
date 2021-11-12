@@ -9,6 +9,7 @@
     :append-outer-icon="appendOuterIcon"
     :append-icon="appendIcon"
     :suffix="suffix"
+    :placeholder="placeholder"
     :readonly="readonly"
     :clearable="clearable"
     :hide-details="hideDetails"
@@ -87,6 +88,12 @@ export default {
       type: Boolean,
       default() {
         return false
+      }
+    },
+    placeholder: {
+      type: String,
+      default() {
+        return null
       }
     }
   },
