@@ -50,6 +50,7 @@ import FvDataTableHeader from '@/components/FvDataTableHeader'
 import FvDataTableSearchBar from '@/components/FvDataTableSearchBar'
 import FvDirectoryEntry from '@/components/FvDirectoryEntry'
 import FvFlexItems from '@/components/FvFlexItems'
+import FvHeaderIndex from '@/components/FvHeaderIndex'
 import FvIcon from '@/components/FvIcon'
 import FvIndexTable from '@/components/FvIndexTable'
 import FvLanguageAutocomplete from '@/components/FvLanguageAutocomplete'
@@ -245,6 +246,7 @@ Vue.component('fv-data-table-header', FvDataTableHeader)
 Vue.component('fv-data-table-search-bar', FvDataTableSearchBar)
 Vue.component('fv-directory-entry', FvDirectoryEntry)
 Vue.component('fv-flex-items', FvFlexItems)
+Vue.component('fv-header-index', FvHeaderIndex)
 Vue.component('fv-icon', FvIcon)
 Vue.component('fv-index-table', FvIndexTable)
 Vue.component('fv-language-autocomplete', FvLanguageAutocomplete)

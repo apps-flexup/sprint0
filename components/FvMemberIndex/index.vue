@@ -3,13 +3,13 @@
   div(v-if="accountType === 'Personal'")
     h2 {{ $t('errors.access.members') }}
   div(v-else)
-    v-row
-      v-col(cols="12")
-        fv-primary-button.text-right(
-          v-if="canInvite"
-          data-testid="inviteMemberButton"
-          @button:click='inviteMember'
-        ) {{ $t('buttons.inviteMember') }}
+    fv-header-index(
+      data-testid="headerIndex"
+      :title="$t('table.members.title', { accountName })"
+      :titleButton="$t('buttons.inviteMember')"
+      :canCreate="canInvite"
+      @button:click="inviteMember"
+    )
     fv-member-list(
       data-testid="memberList"
     )
@@ -73,6 +73,12 @@ export default {
       const type = this.$activeAccount.type() || 'Personal'
       return type
     },
+    accountName() {
+      const activeAccountId = this.$activeAccount.get()
+      const account = this.$store.getters['accounts/findById'](activeAccountId)
+      const res = account ? account.name : null
+      return res
+    },
     functionalRoles() {
       const res = this.$store.getters['functionalRoles/all']
       return res
@@ -83,7 +89,6 @@ export default {
   },
   mounted() {
     this.$store.dispatch('functionalRoles/get')
-    console.log('Composant ', this.$options.name)
   },
   methods: {
     inviteMember() {

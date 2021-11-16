@@ -21,15 +21,15 @@ beforeEach(() => {
 describe('FvPaymentStructureIndex', () => {
   it('should render a fv payment structure index', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="createButton"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="headerIndex"]').exists()).toBe(true)
     expect(wrapper.find('[data-testid="paymentStructureList"]').exists()).toBe(
       true
     )
   })
   it('should redirect to create payment structure when clicked on create button', () => {
     const wrapper = factory()
-    const createButton = wrapper.find('[data-testid="createButton"]')
-    createButton.vm.$emit('button:click')
+    const headerIndex = wrapper.find('[data-testid="headerIndex"]')
+    headerIndex.vm.$emit('button:click')
     expect($router.push).toHaveBeenCalledTimes(1)
     const expectedRoute = '/paymentStructures/new'
     expect($router.push).toHaveBeenCalledWith(expectedRoute)

@@ -1,16 +1,11 @@
 <template lang="pug">
 .fv-accounts-index
-  v-row
-    v-col.headBar(cols="12")
-      v-col(cols="4")
-        p.title(
-          data-testid="title"
-        ) {{ $t('accounts.index.title') }}
-      v-col(cols="8")
-        fv-primary-button.text-right(
-          data-testid="createButton"
-          @button:click="createAccount"
-        ) {{ $t(`buttons.create.account`) }}
+  fv-header-index(
+    data-testid="headerIndex"
+    :title="$t('accounts.index.title')"
+    :titleButton="$t(`buttons.create.account`)"
+    @button:click="createAccount"
+  )
   fv-account-list(
     :accounts="accounts"
   )
@@ -38,13 +33,6 @@ export default {
 </script>
 
 <style scoped>
-.headBar {
-  display: flex;
-  align-items: center;
-}
-.title {
-  font-weight: bold;
-}
 .card {
   margin-left: 10px;
   margin-right: 10px;

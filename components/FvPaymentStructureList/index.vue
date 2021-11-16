@@ -2,7 +2,6 @@
 .fv-payment-structure-list
   fv-index-table(
     data-testid="table"
-    :title="$t('table.paymentStructures.title')"
     :searchLabel="$t('table.paymentStructures.search')"
     tableComponent="fv-payment-structure-data-table"
     tableName="paymentStructures"
@@ -23,7 +22,6 @@ export default {
     }
   },
   mounted() {
-    console.log('Composant ', this.$options.name)
     this.$store.dispatch('paymentStructures/get')
   },
   methods: {

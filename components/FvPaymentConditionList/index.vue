@@ -2,7 +2,6 @@
 .fv-payment-condition-list
   fv-index-table(
     data-testid="table"
-    :title="$t('table.paymentConditions.title')"
     :searchLabel="$t('table.paymentConditions.search')"
     tableComponent="fv-payment-condition-data-table"
     tableName="paymentConditions"
@@ -28,7 +27,6 @@ export default {
     }
   },
   mounted() {
-    console.log('Composant ', this.$options.name)
     this.$store.dispatch('paymentConditions/get')
   },
   methods: {

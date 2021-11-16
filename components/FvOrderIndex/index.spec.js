@@ -60,13 +60,13 @@ beforeEach(() => {
 describe('FvOrderIndex', () => {
   it('should render a fv order index', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="createButton"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="headerIndex"]').exists()).toBe(true)
     expect(wrapper.find('[data-testid="orderModal"]').exists()).toBe(true)
     expect(wrapper.find('[data-testid="orderList"]').exists()).toBe(true)
   })
   it('should push new order page when clicked on create button', () => {
     const wrapper = factory()
-    const button = wrapper.find('[data-testid="createButton"]')
+    const button = wrapper.find('[data-testid="headerIndex"]')
     button.vm.$emit('button:click')
     expect($router.push).toHaveBeenCalledTimes(1)
     expect($router.push).toHaveBeenCalledWith('/orders/new')

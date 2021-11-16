@@ -2,7 +2,6 @@
 .fv-offer-list
   fv-index-table(
     data-testid="table"
-    :title="$t('table.offers.title')"
     :searchLabel="$t('table.offers.search')"
     tableComponent="fv-recursive-data-table"
     tableName="offers"
@@ -26,9 +25,6 @@ export default {
         status: this.$displayRules.status
       }
     }
-  },
-  mounted() {
-    console.log('Composant ', this.$options.name)
   },
   methods: {
     offerSelected(offer) {

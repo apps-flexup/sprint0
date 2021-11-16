@@ -7,7 +7,9 @@
     :label="label"
     :outlined="outlined"
     :append-outer-icon="appendOuterIcon"
+    :append-icon="appendIcon"
     :suffix="suffix"
+    :placeholder="placeholder"
     :readonly="readonly"
     :clearable="clearable"
     :hide-details="hideDetails"
@@ -35,6 +37,12 @@ export default {
       }
     },
     appendOuterIcon: {
+      type: String,
+      default() {
+        return ''
+      }
+    },
+    appendIcon: {
       type: String,
       default() {
         return ''
@@ -81,6 +89,12 @@ export default {
       default() {
         return false
       }
+    },
+    placeholder: {
+      type: String,
+      default() {
+        return null
+      }
     }
   },
   data() {
@@ -113,3 +127,12 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+::v-deep .v-text-field__details {
+  display: none;
+}
+::v-deep .v-input--dense > .v-input__control > .v-input__slot {
+  margin: inherit;
+}
+</style>

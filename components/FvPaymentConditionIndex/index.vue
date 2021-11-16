@@ -1,11 +1,11 @@
 <template lang="pug">
 .fv-payment-condition-index
-  v-row
-    v-col(cols="12")
-      fv-primary-button.text-right(
-        data-testid="createButton"
-        @button:click='createPaymentCondition'
-      ) {{ $t('buttons.create.paymentCondition') }}
+  fv-header-index(
+    data-testid="headerIndex"
+    :title="$t('table.paymentConditions.title')"
+    :titleButton="$t('buttons.create.paymentCondition')"
+    @button:click="createPaymentCondition"
+  )
   fv-payment-condition-list(
     data-testid="paymentConditionList"
     @list:selected="selectedPaymentCondition"

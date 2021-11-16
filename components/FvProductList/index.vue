@@ -2,7 +2,6 @@
 .fv-product-list
   fv-index-table(
     data-testid="table"
-    :title="$t('table.products.title')"
     :searchLabel="$t('table.products.search')"
     tableComponent="fv-product-data-table"
     tableName="products"
@@ -25,7 +24,6 @@ export default {
     }
   },
   mounted() {
-    console.log('Composant ', this.$options.name)
     this.$store.dispatch('products/get')
   },
   methods: {

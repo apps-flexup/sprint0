@@ -1,8 +1,12 @@
 <template lang="pug">
 .fv-data-table-header
   v-card-title(data-testid="title")
-    | {{ title }}
-    v-spacer
+    fv-data-table-search-bar(
+      data-testid="searchBar"
+      :label="searchLabel"
+      @dataTableSearchBar:changed="searchChanged"
+      @dataTableSearchBar:filterValidated="filterValidated"
+    )
     v-chip.chip(
       data-testid="filters"
       v-for="filter in filters" :key="filter"
@@ -10,12 +14,7 @@
       :color="getColorForFilter(filter)"
       @click:close="removeFilter(filter)"
     ) {{ filter }}
-    fv-data-table-search-bar(
-      data-testid="searchBar"
-      :label="searchLabel"
-      @dataTableSearchBar:changed="searchChanged"
-      @dataTableSearchBar:filterValidated="filterValidated"
-    )
+    v-spacer
     fv-status-filter.status-filter(
       v-if="isStatusFilterAvailable"
       data-testid="statusFilters"

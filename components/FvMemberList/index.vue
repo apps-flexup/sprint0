@@ -2,7 +2,6 @@
 .fv-member-list
   fv-index-table(
     data-testid="table"
-    :title="$t('table.members.title', { accountName })"
     :searchLabel="$t('table.members.search')"
     tableComponent="fv-member-data-table"
     tableName="members"
@@ -22,16 +21,7 @@ export default {
       }
     }
   },
-  computed: {
-    accountName() {
-      const activeAccountId = this.$activeAccount.get()
-      const account = this.$store.getters['accounts/findById'](activeAccountId)
-      const res = account ? account.name : null
-      return res
-    }
-  },
   mounted() {
-    console.log('Composant ', this.$options.name)
     this.$store.dispatch('members/get')
   },
   methods: {

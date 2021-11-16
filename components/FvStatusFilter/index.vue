@@ -1,18 +1,18 @@
 <template lang="pug">
 .fv-status-filter
-  div.box
+  div.d-flex
     div.titleContainer
-      p.title.verticalCenter {{ $t(`statusFilters.title`) }}
+      p.title.pa-3.mb-0 {{ $t(`statusFilters.title`) }}
     div.filterContainer
       v-menu(
         offset-y
         :close-on-content-click="false"
       )
         template(v-slot:activator="{on, attrs }")
-          div.box.flex-sb.flex-ai-c(v-bind="attrs", v-on="on")
-            div.text {{ selectedFilters }}
+          div.d-flex.justify-center.align-center.pa-3(v-bind="attrs", v-on="on")
+            div.pr-10 {{ selectedFilters }}
             fv-icon(icon="mdi-chevron-down")
-        v-list.list
+        v-list.pa-4
           fv-text-button(
             @button:click="toggleAllSelection"
           )
@@ -91,44 +91,20 @@ export default {
 }
 </script>
 
-<style scoped>
-.list {
-  padding: 10px 40px 10px 10px;
-}
-.box {
-  display: flex;
-  height: 100%;
-}
-.flex-sb {
-  justify-content: space-between;
-}
-.flex-ai-c {
-  align-items: center;
-}
-.verticalCenter {
-  position: relative;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
+<style scoped lang="scss">
 .title {
   opacity: 0.5;
-  padding: 5px 20px 5px 20px;
 }
 .titleContainer {
-  border: solid #dddee2;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+  border: $datatable-header-border-style $datatable-header-border-color;
+  border-radius: $datatable-header-border-radius 0 0
+    $datatable-header-border-radius;
 }
 .filterContainer {
-  padding: 5px 20px 5px 20px;
-  border: solid #dddee2;
+  border: $datatable-header-border-style $datatable-header-border-color;
   border-left: transparent;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-.text {
-  padding-right: 50px;
+  border-radius: 0 $datatable-header-border-radius
+    $datatable-header-border-radius 0;
 }
 ::v-deep .v-messages {
   display: none;

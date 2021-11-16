@@ -1,12 +1,12 @@
 <template lang="pug">
 .fv-product-index
-  v-row
-    v-col(cols="12")
-      fv-primary-button.text-right(
-        v-if="canCreateProduct"
-        data-testid="createButton"
-        @button:click='createProduct'
-      ) {{ $t('buttons.create.product') }}
+  fv-header-index(
+    data-testid="headerIndex"
+    :title="$t('table.products.title')"
+    :titleButton="$t('buttons.create.product')"
+    :canCreate="canCreateProduct"
+    @button:click="createProduct"
+  )
   fv-product-list(
     data-testid="productList"
     @list:selected="selectedProduct"

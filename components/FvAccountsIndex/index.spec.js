@@ -106,7 +106,7 @@ describe('FvAccountsIndex', () => {
   it('should render an accounts index component', () => {
     const wrapper = factory()
     expect(wrapper.find('[data-testid="title"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="createButton"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="headerIndex"]').exists()).toBe(true)
     expect(wrapper.find('[data-testid="accountList"]').exists()).toBe(true)
   })
   it('should display account cards', () => {
@@ -115,8 +115,8 @@ describe('FvAccountsIndex', () => {
   })
   it('should emit an event when click on create account button', () => {
     const wrapper = factory()
-    const createButton = wrapper.find('[data-testid="createButton"]')
-    createButton.vm.$emit('button:click')
+    const headerIndex = wrapper.find('[data-testid="headerIndex"]')
+    headerIndex.vm.$emit('button:click')
     const createCalls = wrapper.emitted('accounts:create')
     expect(createCalls).toBeTruthy()
     expect(createCalls).toHaveLength(1)

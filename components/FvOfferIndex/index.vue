@@ -1,12 +1,12 @@
 <template lang="pug">
 .fv-offer-index
-  v-row
-    v-col(cols="12")
-      fv-primary-button.text-right(
-        v-if="canCreateOffer"
-        data-testid="createOfferButton"
-        @button:click='createOffer'
-      ) {{ $t('buttons.create.offer') }}
+  fv-header-index(
+    data-testid="headerIndex"
+    :title="$t('table.offers.title')"
+    :titleButton="$t('buttons.create.offer')"
+    :canCreate="canCreateOffer"
+    @button:click="createOffer"
+  )
   fv-offer-list(
     data-testid="offerList"
     @list:selected="selectedOffer"
