@@ -17,9 +17,6 @@
 <script>
 export default {
   name: 'FvTextButton',
-  mounted() {
-    console.log('Composant', this.$options.name)
-  },
   methods: {
     click() {
       this.$emit('button:click')

@@ -49,7 +49,6 @@ export default {
     }
   },
   mounted() {
-    console.log('Composant ', this.$options.name)
     this.setSize()
   },
   methods: {

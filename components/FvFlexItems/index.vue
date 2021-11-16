@@ -10,10 +10,7 @@
 
 <script>
 export default {
-  name: 'FvFlexItems',
-  mounted() {
-    console.log('Composant ', this.$options.name)
-  }
+  name: 'FvFlexItems'
 }
 </script>
 

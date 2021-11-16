@@ -1,8 +1,9 @@
 {
   "third-parties": {
-    "local": "Mes tiers - Annuaire Local",
-    "flexup": "Mes tiers - Annuaire Flexup",
-    "others": "Autres tiers - Annuaires Flexup",
+    "activeAccount": "Mon compte actif",
+    "localThirdParties": "Mes tiers - Annuaire Local",
+    "flexupThirdParties": "Mes tiers - Annuaire Flexup",
+    "flexupAccounts": "Autres tiers - Annuaires Flexup",
     "placeholder": "Recherchez un tiers",
     "add": "AJOUTER",
     "added": "Ajouté"

@@ -208,7 +208,12 @@ const displayRules = (ctx) => ({
   },
   async ownerName(owner) {
     if (!owner) return null
-    const account = await ctx.$directory.getAccountById(owner.to_id)
+    let account
+    if (owner.to_type === 'Account') {
+      account = await ctx.$directory.getAccountById(owner.to_id)
+    } else {
+      account = await ctx.$directory.getThirdPartyById(owner.to_id)
+    }
     return this.accountName(account)
   },
   userName() {

@@ -5,6 +5,7 @@
     :element="thirdPartyAccountId"
     :items="items"
     :filter="filter"
+    :returnObject="true"
     @autocomplete:selected="selected"
   )
     template(v-slot:label)
@@ -39,44 +40,54 @@ export default {
       default() {
         return null
       }
+    },
+    toRemove: {
+      type: Object,
+      default() {
+        return {}
+      }
+    },
+    showActiveAccount: {
+      type: Boolean,
+      default() {
+        return false
+      }
     }
   },
   data() {
     return {
-      allItems: []
+      allItems: {}
     }
   },
   computed: {
     items() {
       const res = []
-      if (this.allItems.localThirdParties?.length > 0) {
-        res.push({ header: this.$t('third-parties.local') })
-        this.allItems.localThirdParties.forEach((thirdParty) => {
-          res.push(thirdParty)
-        })
-        res.push({ divider: true })
-      }
-      if (this.allItems.flexupThirdParties?.length > 0) {
-        res.push({ header: this.$t('third-parties.flexup') })
-        this.allItems.flexupThirdParties.forEach((thirdParty) => {
-          res.push(thirdParty)
-        })
-        res.push({ divider: true })
-      }
-      if (this.allItems.flexupAccounts?.length > 0) {
-        res.push({ header: this.$t('third-parties.others') })
-        this.allItems.flexupAccounts.forEach((account) => {
-          res.push(account)
-        })
-      }
+      const allItems = this.removeAskedForRemoveItems()
+      Object.keys(allItems).forEach((key, index) => {
+        if (allItems[key]?.length) {
+          res.push({ header: this.$t(`third-parties.${key}`) })
+          allItems[key].forEach((item) => {
+            res.push(item)
+          })
+          if (index < Object.keys(allItems).length - 1) {
+            res.push({ divider: true })
+          }
+        }
+      })
       return res
     }
   },
   mounted() {
-    console.log('Composant ', this.$options.name)
     this.$store.dispatch('thirdPartyAccounts/get')
     this.getAvailableThirdParties().then((data) => {
-      this.allItems = data
+      if (this.showActiveAccount) {
+        const activeAccountId = this.$activeAccount.get()
+        const activeAccount = this.$store.getters['accounts/findById'](
+          activeAccountId
+        )
+        this.allItems.activeAccount = [activeAccount]
+      }
+      this.allItems = { ...this.allItems, ...data }
     })
   },
   methods: {
@@ -91,6 +102,17 @@ export default {
     },
     addThirdPartyAccount() {
       console.log('Ajouter nouveau compte tiers')
+    },
+    removeAskedForRemoveItems() {
+      const res = JSON.parse(JSON.stringify(this.allItems))
+      Object.keys(res).forEach((key) => {
+        res[key] = res[key]?.filter((thirdParty) => {
+          if (this.toRemove[key])
+            return !this.toRemove[key].includes(thirdParty.id)
+          return true
+        })
+      })
+      return res
     }
   }
 }

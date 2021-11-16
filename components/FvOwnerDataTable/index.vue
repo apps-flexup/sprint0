@@ -9,7 +9,7 @@
     @dataTable:sortBy="sortBy"
   )
     template(v-slot:item.to_id="{ item }")
-      div(v-if="item" :key="forceReRender") {{ accountNames[item.to_id] }}
+      div(v-if="item" :key="forceReRender") {{ accountNames[item.to_type + item.to_id] }}
     template(v-slot:item.data="{ item }")
       fv-icon(
         :icon="iconForOwner(item)"
@@ -17,7 +17,6 @@
       )
     template(v-slot:item.actions="{ item }")
       fv-delete-action(@delete:clicked="deleteItem(item)")
-
 </template>
 
 <script>
@@ -78,7 +77,7 @@ export default {
     addOwnerName(owner) {
       if (!owner) return
       this.$displayRules.ownerName(owner).then((name) => {
-        this.accountNames[owner.to_id] = name
+        this.accountNames[owner.to_type + owner.to_id] = name
         this.uglyForceReRender()
       })
     },

@@ -39,6 +39,11 @@ export default {
     commit('setCurrent', id)
   },
   async add({ dispatch, commit }, account) {
+    if (account.type === 'SubAccount') {
+      account.owners.forEach((owner) => {
+        owner.from_type = 'Account'
+      })
+    }
     const res = await this.$repos.accounts.create(account)
     commit('add', res)
     const newAccountId = parseInt(res.id)
