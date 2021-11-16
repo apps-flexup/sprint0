@@ -54,21 +54,13 @@ export default {
   computed: {
     items() {
       const res = {}
-      if (this.allItems.flexupThirdParties?.length > 0) {
-        const key = this.$t('third-parties.flexup')
-        res[key] = this.applyFilterAndAddable(this.allItems.flexupThirdParties)
-      }
-      if (this.allItems.localThirdParties?.length > 0) {
-        const key = this.$t('third-parties.local')
-        res[key] = this.applyFilterAndAddable(this.allItems.localThirdParties)
-      }
-      if (this.allItems.flexupAccounts?.length > 0) {
-        const key = this.$t('third-parties.others')
-        res[key] = this.applyFilterAndAddable(
-          this.allItems.flexupAccounts,
-          true
-        )
-      }
+      Object.keys(this.allItems).forEach((key) => {
+        if (this.allItems[key]?.length) {
+          const header = this.$t(`third-parties.${key}`)
+          const addable = key === 'flexupAccounts'
+          res[header] = this.applyFilterAndAddable(this.allItems[key], addable)
+        }
+      })
       return res
     }
   },
@@ -80,12 +72,14 @@ export default {
   },
   methods: {
     addThirdParty(account) {
-      const index = this.allItems.flexupAccounts.indexOf(
+      const index = this.allItems.flexupAccounts.findIndex(
         (flexupAccount) => flexupAccount.id === account.id
       )
-      account.added = true
-      this.$set(this.allItems.flexupAccounts, index, account)
-      this.$store.dispatch('thirdPartyAccounts/addFlexupAccount', account.id)
+      if (index > -1) {
+        account.added = true
+        this.$set(this.allItems.flexupAccounts, index, account)
+        this.$store.dispatch('thirdPartyAccounts/addFlexupAccount', account.id)
+      }
     },
     setFilter(filter) {
       this.filter = filter
