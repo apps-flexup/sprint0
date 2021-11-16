@@ -20,7 +20,6 @@ export default {
     commit('set', [])
   },
   add({ commit }, offer) {
-    // charger les contracts
     if (Object.prototype.hasOwnProperty.call(offer, 'id')) {
       this.$repos.offers.update(offer).then((res) => {
         commit('update', res)

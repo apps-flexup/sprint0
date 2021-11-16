@@ -33,13 +33,8 @@ export default {
     },
     items() {
       const res = this.$activeAccount.contacts()
-      console.log('res: ', res)
       return res
     }
-  },
-  mounted() {
-    console.log('Composant ', this.$options.name)
-    // this.$store.dispatch('contacts/get')
   }
 }
 </script>

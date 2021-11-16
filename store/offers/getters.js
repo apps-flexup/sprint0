@@ -1,31 +1,35 @@
+const getFullOffer = (offer, rootGetters) => {
+  let payload = {
+    ...offer
+  }
+  const product = rootGetters['products/findById'](offer.product_id)
+  if (product) {
+    payload = {
+      ...payload,
+      product_name: product.name,
+      category_id: product.category_id
+    }
+  }
+  return payload
+}
+
 export default {
   all(state, _getters, _rootStates, rootGetters) {
     if (!state.items) return []
-    const res = state.items.map((offer) => {
-      let payload = {
-        ...offer
-      }
-      const product = rootGetters['products/findById'](offer.product_id)
-      if (product) {
-        payload = {
-          ...payload,
-          product_name: product.name,
-          category_id: product.category_id
-        }
-      }
-      return payload
-    })
+    const res = state.items.map((offer) => getFullOffer(offer, rootGetters))
     return res
   },
-  allWithFilters: (state, getters) => (statusFilters) => {
+  allWithFilters: (state, _getters, _rootStates, rootGetters) => (
+    statusFilters
+  ) => {
     if (!state.items) return []
-    const filteredItems = getters.all.filter((item) => {
+    const filteredItems = state.items.filter((item) => {
       const insensitiveFilters = statusFilters.map((status) =>
         status.toLowerCase()
       )
       return insensitiveFilters.includes(item.status.toLowerCase())
     })
-    const res = JSON.parse(JSON.stringify(filteredItems))
+    const res = filteredItems.map((offer) => getFullOffer(offer, rootGetters))
     return res
   },
   getForAccount: (state) => (id) => {
