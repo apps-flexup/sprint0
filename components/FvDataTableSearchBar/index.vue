@@ -27,9 +27,6 @@ export default {
       search: null
     }
   },
-  mounted() {
-    console.log('Composant', this.$options.name)
-  },
   methods: {
     inputChanged(v) {
       this.search = v

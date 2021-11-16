@@ -9,8 +9,8 @@ export default {
         allFlexupAccounts
       )
       return {
-        localThirdParties,
         flexupThirdParties,
+        localThirdParties,
         flexupAccounts
       }
     },

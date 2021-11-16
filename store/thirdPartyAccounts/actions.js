@@ -31,7 +31,12 @@ export default {
       const firstname = thirdParty.firstname
       const lastname = thirdParty.lastname
       thirdParty.name = [firstname, lastname].join(' ').trim()
+    } else if (thirdParty.type === 'SubAccount') {
+      thirdParty.owners.forEach((owner) => {
+        owner.from_type = 'ThirdParty'
+      })
     }
+
     if (Object.prototype.hasOwnProperty.call(thirdParty, 'id')) {
       this.$repos.thirdPartyAccounts.update(thirdParty).then((res) => {
         commit('update', res)

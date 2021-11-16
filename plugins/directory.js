@@ -37,6 +37,7 @@ const directory = (ctx) => ({
     const accounts = await ctx.$axios.$get(accountRequest)
     if (!accounts) return null
     const account = accounts[0]
+    if (!account) return null
     if (account.type === 'SubAccount') {
       const ownersRequest = `/given-roles?from_id=${id}&role=owner`
       const owners = await ctx.$axios.$get(ownersRequest)
@@ -45,6 +46,13 @@ const directory = (ctx) => ({
       }
     }
     return account
+  },
+  async getThirdPartyById(id) {
+    const thirdPartyRequest = `/third-party-accounts?id=${id}`
+    const thirdPartys = await ctx.$axios.$get(thirdPartyRequest)
+    if (!thirdPartys) return null
+    const thirdParty = thirdPartys[0]
+    return thirdParty
   }
 })
 
