@@ -54,21 +54,13 @@ export default {
   computed: {
     items() {
       const res = {}
-      if (this.allItems.flexupThirdParties?.length > 0) {
-        const key = this.$t('third-parties.flexup')
-        res[key] = this.applyFilterAndAddable(this.allItems.flexupThirdParties)
-      }
-      if (this.allItems.localThirdParties?.length > 0) {
-        const key = this.$t('third-parties.local')
-        res[key] = this.applyFilterAndAddable(this.allItems.localThirdParties)
-      }
-      if (this.allItems.flexupAccounts?.length > 0) {
-        const key = this.$t('third-parties.others')
-        res[key] = this.applyFilterAndAddable(
-          this.allItems.flexupAccounts,
-          true
-        )
-      }
+      Object.keys(this.allItems).forEach((key) => {
+        if (this.allItems[key]?.length) {
+          const header = this.$t(`third-parties.${key}`)
+          const addable = key === 'flexupAccounts'
+          res[header] = this.applyFilterAndAddable(this.allItems[key], addable)
+        }
+      })
       return res
     }
   },
