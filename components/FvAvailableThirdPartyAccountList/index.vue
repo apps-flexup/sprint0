@@ -72,12 +72,14 @@ export default {
   },
   methods: {
     addThirdParty(account) {
-      const index = this.allItems.flexupAccounts.indexOf(
+      const index = this.allItems.flexupAccounts.findIndex(
         (flexupAccount) => flexupAccount.id === account.id
       )
-      account.added = true
-      this.$set(this.allItems.flexupAccounts, index, account)
-      this.$store.dispatch('thirdPartyAccounts/addFlexupAccount', account.id)
+      if (index > -1) {
+        account.added = true
+        this.$set(this.allItems.flexupAccounts, index, account)
+        this.$store.dispatch('thirdPartyAccounts/addFlexupAccount', account.id)
+      }
     },
     setFilter(filter) {
       this.filter = filter
