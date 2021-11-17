@@ -1,0 +1,44 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+import { avatarsAvailable, defaultAvatar } from '@/.storybook/data/avatarsAvailable'
+import FvAccountCard from './index.vue'
+
+<Meta title='Molecules/FvAccountCard' component={ FvAccountCard } argTypes={{
+  name: { control: 'text' },
+  avatar: {
+    control: {
+      type: 'select',
+      options: avatarsAvailable
+    }
+  }
+}}/>
+
+# FvAccountCard
+
+<Canvas>
+<Story name='Common' height='150px' args={{
+  name: 'Fred',
+  avatar: defaultAvatar
+}}>{{
+  components: { FvAccountCard },
+  props: {
+    name: {},
+    avatar: {}
+  },
+  methods: {
+    clicked: action('card clicked'),
+    favoriteClicked: action('favorite clicked')
+  },
+  template: `<FvAccountCard
+    :name="name"
+    :avatar="avatar"
+    @accountCard:clicked="clicked"
+    @accountCard:favoriteClicked="favoriteClicked"
+  >
+  </FvAccountCard>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvAccountCard } />

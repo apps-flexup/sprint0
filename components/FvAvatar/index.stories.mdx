@@ -1,0 +1,37 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import FvAvatar from './index.vue'
+import { avatarsAvailable, defaultAvatar } from '@/.storybook/data/avatarsAvailable'
+
+<Meta title='Atoms/FvAvatar' component={ FvAvatar } argTypes={{
+  avatar: {
+    control: {
+      type: 'select',
+      options: avatarsAvailable
+    }
+  },
+  size: { control: 'number' }
+}}/>
+
+# FvAvatar
+
+<Canvas>
+<Story name='Common' height='150px' args={{
+  avatar: defaultAvatar,
+  size: 48
+}}>{{
+  props: {
+    avatar: {},
+    size: {}
+  },
+  components: { FvAvatar },
+  template: `<FvAvatar
+    :avatar="avatar"
+    :size="size"
+  >
+  </FvAvatar>`
+}}</Story>
+</Canvas>
+
+## ArgsTable
+
+<ArgsTable of={ FvAvatar } />

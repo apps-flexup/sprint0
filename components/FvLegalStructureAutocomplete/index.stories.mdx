@@ -1,0 +1,27 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+import FvLegalStructureAutocomplete from './index.vue'
+
+<Meta title='Atoms/FvLegalStructureAutocomplete' component={ FvLegalStructureAutocomplete } />
+
+# FvLegalStructureAutocomplete
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  components: { FvLegalStructureAutocomplete },
+  methods: {
+    selected: action('Selected')
+  },
+  template: `
+  <div>
+    <FvLegalStructureAutocomplete
+      @legalstructure:selected="selected"
+    >
+    </FvLegalStructureAutocomplete>
+  </div>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvLegalStructureAutocomplete } />

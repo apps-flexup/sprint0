@@ -1,0 +1,41 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import FvAccount from './index.vue'
+import { avatarsAvailable, defaultAvatar } from '@/.storybook/data/avatarsAvailable'
+
+<Meta title='Molecules/FvAccount' component={ FvAccount } argTypes={{
+  name: { control: 'text' },
+  avatar: {
+    control: {
+      type: 'select',
+      options: avatarsAvailable
+    }
+  },
+  size: { control: 'number' }
+}}/>
+
+# FvAccount
+
+<Canvas>
+<Story name='Common' height='150px' args={{
+  name: 'Fred',
+  avatar: defaultAvatar,
+  size: 24
+}}>{{
+  props: {
+    name: {},
+    avatar: {},
+    size: {}
+  },
+  components: { FvAccount },
+  template: `<FvAccount
+    :name="name"
+    :avatar="avatar"
+    :size="size"
+  >
+  </FvAccount>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvAccount } />

@@ -1,0 +1,22 @@
+<template lang="pug">
+.fv-contract-summary-visualisation
+</template>
+
+<script>
+export default {
+  name: 'FvContractSummaryVisualisation',
+  computed: {
+    machin() {
+      return 42
+    }
+  },
+  mounted() {
+    console.log('Composant ', this.$options.name)
+  }
+}
+</script>
+<style scoped>
+.fv-contract-summary-visualisation {
+  background-color: inherit;
+}
+</style>

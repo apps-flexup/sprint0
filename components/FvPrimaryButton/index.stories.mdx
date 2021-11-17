@@ -1,0 +1,32 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+import FvPrimaryButton from './index.vue'
+
+<Meta title='Atoms/FvPrimaryButton' component={ FvPrimaryButton } argTypes={{
+  label: { control: 'text' }
+}}/>
+
+# FvPrimaryButton
+
+<Canvas>
+<Story name='Common' height='150px' args={{
+  label: 'Primary button'
+}}>{{
+  props: {
+    label: {}
+  },
+  methods: {
+    clicked: action('clicked')
+  },
+  components: { FvPrimaryButton },
+  template: `<FvPrimaryButton
+    @button:click="clicked"
+  >
+    {{ label }}
+  </FvPrimaryButton>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvPrimaryButton } />

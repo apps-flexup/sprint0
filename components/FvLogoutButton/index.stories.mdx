@@ -1,0 +1,19 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+import FvLogoutButton from './index.vue'
+
+<Meta title='Atoms/FvLogoutButton' component={ FvLogoutButton } />
+
+# FvLogoutButton
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  components: { FvLogoutButton },
+  template: `<FvLogoutButton>
+  </FvLogoutButton>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvLogoutButton } />

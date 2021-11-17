@@ -1,0 +1,28 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import FvPriceWithUnit from './index.vue'
+
+<Meta title='Atoms/FvPriceWithUnit' component={ FvPriceWithUnit } argTypes={{
+  price: { control: 'number' },
+  currency: { control: 'text' }
+}}/>
+
+# FvPriceWithUnit
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  props: {
+    price: {},
+    currency: {}
+  },
+  components: { FvPriceWithUnit },
+  template: `<FvPriceWithUnit
+    :price="price"
+    :currency="currency"
+  >
+  </FvPriceWithUnit>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvPriceWithUnit } />

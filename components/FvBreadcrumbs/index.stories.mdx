@@ -1,0 +1,21 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import FvBreadcrumbs from './index.vue'
+
+<Meta title='Atoms/FvBreadcrumbs' component={ FvBreadcrumbs } />
+
+# FvBreadcrumbs
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  components: { FvBreadcrumbs },
+  template: `<FvBreadcrumbs
+    account="Toto"
+    space="sell"
+  >
+  </FvBreadcrumbs>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvBreadcrumbs } />

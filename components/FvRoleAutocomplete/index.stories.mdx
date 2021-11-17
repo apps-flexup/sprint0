@@ -1,0 +1,24 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+import FvRoleAutocomplete from './index.vue'
+
+<Meta title='Atoms/FvRoleAutocomplete' component={ FvRoleAutocomplete } />
+
+# FvRoleAutocomplete
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  components: { FvRoleAutocomplete },
+  methods: {
+    selected: action('selected')
+  },
+  template: `<FvRoleAutocomplete
+    @user:selected="selected"
+  >
+  </FvRoleAutocomplete>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvRoleAutocomplete } />

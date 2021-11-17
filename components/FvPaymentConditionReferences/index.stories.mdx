@@ -1,0 +1,31 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import FvPaymentConditionReferences from './index.vue'
+
+<Meta title='Molecules/FvPaymentConditionReferences' component={ FvPaymentConditionReferences } />
+
+# FvPaymentConditionReferences
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  components: { FvPaymentConditionReferences },
+  data() {
+    return {
+      localPayload: null
+    }
+  },
+  methods: {
+    payloadChanged(payload) {
+      this.localPayload = Object.assign({}, this.localPayload, payload)
+    }
+  },
+  template: `<FvPaymentConditionReferences
+    :value="localPayload"
+    @payload:changed="payloadChanged"
+  >
+  </FvPaymentConditionReferences>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvPaymentConditionReferences } />

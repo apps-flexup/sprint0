@@ -1,0 +1,49 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import FvProductModal from './index.vue'
+
+<Meta title='Organism/FvProductModal' component={ FvProductModal } argTypes={{
+  showModal: { control: 'boolean' }
+}}/>
+
+# FvProductModal
+
+<Canvas>
+<Story name='Common' height='150px' args={{
+  showModal: true
+}}>{{
+  props: {
+    showModal: {}
+  },
+  components: { FvProductModal },
+  data() {
+    return {
+      product: {}
+    }
+  },
+  methods: {
+    close() {
+      this.product = {}
+      this.showModal = false
+    },
+    save() {
+      this.product = {}
+      this.showModal = false
+    },
+    productChanged(product) {
+      this.product = product
+    }
+  },
+  template: `<FvProductModal
+    :show="showModal"
+    :product="product"
+    @modal:close="close"
+    @modal:save="save"
+    @payload:changed="productChanged"
+  >
+  </FvProductModal>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvProductModal } />

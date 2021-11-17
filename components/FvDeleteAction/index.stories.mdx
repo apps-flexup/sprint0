@@ -1,0 +1,24 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+import FvDeleteAction from './index.vue'
+
+<Meta title='Atoms/FvDeleteAction' component={ FvDeleteAction } />
+
+# FvDeleteAction
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  components: { FvDeleteAction },
+  methods: {
+    clicked: action('Clicked')
+  },
+  template: `<FvDeleteAction
+    @delete:clicked="clicked"
+  >
+  </FvDeleteAction>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvDeleteAction } />

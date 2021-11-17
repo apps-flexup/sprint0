@@ -1,0 +1,36 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+import FvPriceField from './index.vue'
+
+<Meta title='Atoms/FvPriceField' component={ FvPriceField } argTypes={{
+  label: { control: 'text' },
+  outlined: { control: 'boolean' }
+}}/>
+
+# FvPriceField
+
+<Canvas>
+<Story name='Common' height='150px' args={{
+  label: 'Label',
+  outlined: true
+}}>{{
+  props: {
+    label: {},
+    outlined: {}
+  },
+  components: { FvPriceField },
+  methods: {
+    priceChanged: action('Price changed')
+  },
+  template: `<FvPriceField
+    :label="label"
+    :outlined="outlined"
+    @price:changed="priceChanged"
+  >
+  </FvPriceField>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvPriceField } />

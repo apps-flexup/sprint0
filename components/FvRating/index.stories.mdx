@@ -1,0 +1,55 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+import FvRating from './index.vue'
+
+<Meta title='Atoms/FvRating' component={ FvRating } argTypes={{
+  rating: {
+    control: {
+      type: 'range',
+      min: 0,
+      max: 5,
+      step: 0.5
+    }
+  },
+  readonly: { control: 'boolean' },
+  dense: { control: 'boolean' },
+  size: { control: 'number' },
+  color: { control: 'color' }
+}}/>
+
+# FvRating
+
+<Canvas>
+<Story name='Common' height='150px' args={{
+  rating: 4,
+  readonly: true,
+  dense: true,
+  size: 16,
+  color: 'primary'
+}}>{{
+  props: {
+    rating: {},
+    readonly: {},
+    dense: {},
+    size: {},
+    color: {}
+  },
+  components: { FvRating },
+  methods: {
+    input: action('input')
+  },
+  template: `<FvRating
+    :rating="rating"
+    :readonly="readonly"
+    :dense="dense"
+    :size="size"
+    :color="color"
+    @input=input
+  >
+  </FvRating>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvRating } />

@@ -1,9 +1,870 @@
 {
-  "menus": {
-    "contracts": "Contracts",
-    "partners": "Partenrs"
+  "third-parties": {
+    "activeAccount": "My active account",
+    "localThirdParties": "My third-parties - Local Directory",
+    "flexupThirdParties": "My third-parties - Flexup Directory",
+    "flexupAccounts": "Others third-parties - Flexup Directories",
+    "placeholder": "Find a third-party",
+    "add": "ADD",
+    "added": "Added"
+  },
+  "statusFilters": {
+    "title": "STATUS",
+    "selectAll": "Select All",
+    "unselectAll": "Unselect All",
+    "none": "None",
+    "all": "All"
+  },
+  "visibility": {
+    "public": "Public",
+    "private": "Private"
+  },
+  "pages": {
+    "accounts": {
+      "_id": {
+        "general": "General",
+        "owners": "Owners",
+        "subAccounts": {
+          "tabName": "Sub-accounts",
+          "title": "My sub-accounts"
+        }
+      }
+    }
+  },
+  "account": {
+    "myRole": "My role",
+    "noRole": "You do not have any role for this account",
+    "type": "Account type",
+    "personal": {
+      "name": "Personal account"
+    },
+    "business": {
+      "name": "Business account"
+    },
+    "subAccount": {
+      "name": "Sub-account"
+    }
+  },
+  "ponctuation": {
+    "colons": ": "
+  },
+  "errors": {
+    "access": {
+      "members": "Your current account does not allow to access to members feature."
+    }
+  },
+  "functionalRoles": {
+    "admin": "Admin",
+    "editor": "Editor",
+    "guest": "Guest"
+  },
+  "mediaField": {
+    "label": {
+      "placeholder": "Label"
+    },
+    "address": {
+      "placeholder": "Addresse",
+      "title": "Addresses"
+    },
+    "mail": {
+      "placeholder": "Email",
+      "title": "Emails"
+    },
+    "phone": {
+      "placeholder": "Phone",
+      "title": "Phones"
+    },
+    "new": {
+      "address": "Add new address",
+      "mail": "Add new email",
+      "phone": "Add new phone"
+    }
+  },
+  "selectHeaders": {
+    "title": {
+      "products": "Customize your product table",
+      "offers": "Customize your offer table",
+      "orders": "Customize your order table",
+      "thirdPartyAccounts": "Customize your third party table",
+      "paymentConditions": "Customize your payment condition table",
+      "paymentStructures": "Customize your payment structure table",
+      "members": "Customize your member table"
+    },
+    "subHeaders": {
+      "mainHeaders": {
+        "product": "Products",
+        "offer": "Offers"
+      }
+    },
+    "columnName": "Column name",
+    "settings": {
+      "displayed": "Displayed ?"
+    }
+  },
+  "references": {
+    "r1": {
+      "base": "Base",
+      "flex": "Flex",
+      "superFlex": "SuperFlex",
+      "equity": "Equity"
+    },
+    "r2": {
+      "equity": "None (Equity)",
+      "beforeDeliveryDate": "Before delivery date",
+      "beginningOfDeliveryMonth": "Beginning of delivery month",
+      "endOfDeliveryMonth": "End of delivery month",
+      "later": "Later"
+    },
+    "r3": {
+      "none": "None",
+      "moreThan15": "More than 15%",
+      "lessThan15": "Less than 15%"
+    },
+    "r4": {
+      "none": "No yield",
+      "base": "Base",
+      "flex": "Flex",
+      "superFlex": "SuperFlex",
+      "equity": "Equity"
+    },
+    "r5": {
+      "none": "No yield",
+      "convertToEquity": "Yield calculated every year and convert to equity",
+      "principal": "Yield calculated and paid at the same time of the principal",
+      "everyYear": "Yield calculated and scheduled every year",
+      "everyQuarter": "Yield calculated and scheduled every quarter",
+      "everyMonth": "Yield calculated and scheduled every month"
+    },
+    "r6": {
+      "thirdParty": "At the request of the third party only",
+      "projectOrThirdParty": "At the request of the project or third party",
+      "projectAndThirdParty": "At the request of the project and third party",
+      "project": "At the request of the project only"
+    },
+    "r7": {
+      "none": "Not applicable",
+      "equity": "Equity (no reprogramming)",
+      "superFlex": "SuperFlex",
+      "flex": "Flex",
+      "base": "Base"
+    },
+    "r8": {
+      "none": "Not applicable",
+      "equity": "Convert to equity (no reprogramming)",
+      "nextYear": "Re-scheduled to the following year (on the same date)",
+      "nextQuarter": "Rescheduled at the end of the next quarter",
+      "nextMonth": "Rescheduled at the end of the following month"
+    }
+  },
+  "units": {
+    "symbol": {
+      "year": "year",
+      "Gb/s": "Gb/s",
+      "byte": "byte",
+      "hr": "hr",
+      "m": "m",
+      "km/hr": "km/hr",
+      "Unit": "Unit",
+      "l": "l",
+      "kg": "kg",
+      "work": "work",
+      "month": "month",
+      "bit/s": "bit/s",
+      "byte/s": "byte/s",
+      "kb/s": "kb/s",
+      "Mb/s": "Mb/s",
+      "Tb/s": "Tb/s",
+      "bit": "bit",
+      "GB": "GB",
+      "kB": "kB",
+      "MB": "MB",
+      "TB": "TB",
+      "day": "day",
+      "min": "min",
+      "quarter": "quarter",
+      "sec": "sec",
+      "week": "week",
+      "cm": "cm",
+      "foot": "foot",
+      "inch": "inch",
+      "km": "km",
+      "mile": "mile",
+      "mm": "mm",
+      "nautical mile": "nautical mile",
+      "yard": "yard",
+      "Nr": "Nr",
+      "m/s": "m/s",
+      "mile/hr": "mile/hr",
+      "dozen": "dozen",
+      "tens": "tens",
+      "barrel": "barrel",
+      "cl": "cl",
+      "dl": "dl",
+      "fl oz (UK)": "fl oz (UK)",
+      "fl oz (US)": "fl oz (US)",
+      "ft³": "ft³",
+      "gal (UK)": "gal (UK)",
+      "gal (US)": "gal (US)",
+      "inch³": "inch³",
+      "m³": "m³",
+      "ml": "ml",
+      "pint (UK)": "pint (UK)",
+      "pint (US dry)": "pint (US dry)",
+      "pint (US liquid)": "pint (US liquid)",
+      "yard³": "yard³",
+      "g": "g",
+      "mg": "mg",
+      "t": "t"
+    },
+    "dimension": {
+      "age": "age",
+      "bandwith": "bandwith",
+      "data": "data",
+      "duration": "duration",
+      "length": "length",
+      "speed": "speed",
+      "unit": "unit",
+      "volume": "volume",
+      "weight": "weight",
+      "word": "word",
+      "number": "number"
+    }
+  },
+  "status": {
+    "active": "Active",
+    "archived": "Archived",
+    "draft": "Draft",
+    "inactive": "Inactive",
+    "reserved": "Reserved",
+    "suspended": "Suspended"
+  },
+  "dataTable": {
+    "footer": {
+      "rowsPerPage": "Rows per page",
+      "all": "All",
+      "of": "of"
+    }
+  },
+  "total": "Total",
+  "mainHeaders": {
+    "product": "Product",
+    "offer": "Offer",
+    "order": "Order"
+  },
+  "languages": {
+    "language": "Language",
+    "en": "English",
+    "fr": "Français"
+  },
+  "themes": {
+    "theme": "Theme",
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "spaces": {
+    "sell": "Sell",
+    "buy": "Buy",
+    "manage": "Manage"
+  },
+  "breadcrumbs": {
+    "account": "Account: ",
+    "space": "Space: ",
+    "route": {
+      "account": "Account",
+      "accounts": "My accounts",
+      "accounts-new": "New account",
+      "accounts-newBusinessAccount": "New business account",
+      "accounts-newSubAccount": "New sub account",
+      "contacts": "Contacts",
+      "dashboard": "Dashboard",
+      "index": "Home",
+      "members": "Members",
+      "offers": "Offers",
+      "offers-action-id": "My offer",
+      "offers-action-read": "See",
+      "offers-action-edit": "Edit",
+      "offers-new": "New offer",
+      "orders": "Orders",
+      "orders-new": "New order",
+      "paymentConditions": "Payment conditions",
+      "paymentConditions-id": "Edit my payment condition",
+      "paymentConditions-new": "New payment condition",
+      "paymentStructures": "Payment structures",
+      "paymentStructures-id": "Edit my payment structure",
+      "paymentStructures-new": "New payment structure",
+      "products": "Products",
+      "products-action-read": "See",
+      "products-action-edit": "Edit",
+      "products-action-id": "My product",
+      "products-new": "New product",
+      "profile": "Personnal data",
+      "settings": "Settings",
+      "settings-new": "New settings",
+      "thirdPartyAccounts": "Third party accounts",
+      "thirdPartyAccounts-id": "Edit my third party account",
+      "thirdPartyAccounts-new": "New third party account",
+      "thirdPartyAccounts-newLocalThirdParty": "New local third party account",
+      "thirdPartyAccounts-newPersonalThirdParty": "New personal third party account",
+      "thirdPartyAccounts-newBusinessThirdParty": "New business third party account",
+      "thirdPartyAccounts-newSubAccountThirdParty": "New third party sub account"
+    }
+  },
+  "listAccounts": {
+    "user": "User",
+    "activeAccount": "Active account",
+    "createAccount": "Create account",
+    "manageAccounts": "Manage accounts",
+    "help": "Help",
+    "logout": "Logout"
+  },
+  "frequences": {
+    "periods": {
+      "days": "day",
+      "weeks": "week",
+      "months": "month",
+      "quarters": "quarter",
+      "years": "year"
+    }
   },
   "title": {
     "index": "Contract management service"
+  },
+  "table": {
+    "contacts": {
+      "next": {
+        "payment": "Next settlement",
+        "days-remaining": "none | one day | {n} days"
+      },
+      "metrics": {
+        "contracts": "no contract | one contract | {n} contracts",
+        "products": "no product | one product | {n} products",
+        "offers": "no offer | one offer | {n} offers",
+        "orders": "no order | one order | {n} orders",
+        "commandes": "no order | one order | {n} orders"
+      }
+    },
+    "offers": {
+      "title": "My offers",
+      "search": "Search"
+    },
+    "orders": {
+      "title": "My orders",
+      "search": "Search",
+      "name": "Order without name"
+    },
+    "products": {
+      "title": "My products",
+      "search": "Search",
+      "warningMessage": "You are about to archive or desactivate your product, change if needed the offers and orders related to this product before continuing."
+    },
+    "thirdPartyAccounts": {
+      "title": "My third party accounts",
+      "search": "Search"
+    },
+    "paymentConditions": {
+      "title": "My payment conditions",
+      "search": "Search"
+    },
+    "paymentStructures": {
+      "title": "My payment structures",
+      "search": "Search"
+    },
+    "members": {
+      "title": "{accountName} account members",
+      "search": "Search"
+    },
+    "owners": {
+      "title": "{accountName} account owners",
+      "search": "Search"
+    }
+  },
+  "forms": {
+    "title": "Step {n}",
+    "duration": "- | 1 second | {n} seconds",
+    "product": {
+      "step": {
+        "0": "General information"
+      }
+    },
+    "offer": {
+      "step": {
+        "0": "General information"
+      }
+    },
+    "account": {
+      "business": {
+        "step": {
+          "0": "General information",
+          "1": "Juridical information",
+          "2": "Private Information"
+        }
+      },
+      "personal": {
+        "step": {
+          "0": "Personal information",
+          "1": "Private information"
+        }
+      },
+      "sub": {
+        "step": {
+          "0": "Personal information",
+          "1": "Private information",
+          "2": "Owner(s)"
+        }
+      }
+    },
+    "addresses": {
+      "title": "Address",
+      "street": "Address",
+      "zip": "ZIP",
+      "city": "City",
+      "country": "Country"
+    },
+    "contracts": {
+      "step": {
+        "0": "-",
+        "1": "Detail",
+        "2": "Offers",
+        "3": "Structure",
+        "4": "Pre render contract"
+      },
+      "detail": {
+        "partner": "Partner",
+        "charter": "Charter",
+        "dateOfSignature": "Date of signature",
+        "effectiveDate": "Effective date",
+        "endDate": "End date",
+        "type": "Type of contract"
+      },
+      "structure": {
+        "structureType": "Structure type"
+      }
+    },
+    "contacts": {
+      "step": {
+        "1": "Detail",
+        "2": "Products",
+        "3": "Offers"
+      }
+    },
+    "products": {
+      "new": {
+        "title": "New product",
+        "category": "Category",
+        "periodicity": "Periodicity",
+        "name": "Product name",
+        "unit": "Unit",
+        "price": "Price",
+        "currency": "Currency",
+        "elasticity": "Elasticity",
+        "validate": "Validate",
+        "cancel": "Cancel",
+        "status": "Status :"
+      },
+      "read": {
+        "title": "See my product"
+      },
+      "edit": {
+        "title": "Edit my product"
+      }
+    },
+    "third-party-account": {
+      "step": {
+        "0": "General information",
+        "1": "Private information"
+      }
+    },
+    "thirdPartyAccounts": {
+      "new": {
+        "title": "New third party account",
+        "choices": {
+          "personal": "New personal third party",
+          "business": "New business third party",
+          "sub": "New sub account third party"
+        }
+      },
+      "edit": {
+        "title": "Edit my third party account"
+      }
+    },
+    "personalAccounts": {
+      "new": {
+        "name": "Account name",
+        "title": "New account",
+        "lastname": "Lastname",
+        "firstname": "Firstname",
+        "email": "Email",
+        "civility": "Civility",
+        "type": "Account type",
+        "titles": {
+          "mr": "Mr",
+          "ms": "Ms",
+          "miss": "Mrs"
+        }
+      },
+      "edit": {
+        "title": "Edit my account"
+      },
+      "read": {
+        "title": "Account informations"
+      }
+    },
+    "businessAccounts": {
+      "new": {
+        "name": "Company name",
+        "title": "New business account",
+        "email": "Email",
+        "description": "Description",
+        "country": "Country",
+        "legal-structure-id": "Legal structure",
+        "siret": "SIRET",
+        "type": "Type of account"
+      },
+      "edit": {
+        "title": "Edit my account"
+      },
+      "read": {
+        "title": "Account informations"
+      }
+    },
+    "subAccounts": {
+      "new": {
+        "name": "Account name",
+        "title": "New sub account",
+        "description": "Description",
+        "country": "Country",
+        "parent_id": "Parent account",
+        "type": "Type of account"
+      },
+      "edit": {
+        "title": "Edit my account"
+      },
+      "read": {
+        "title": "Account informations"
+      }
+    },
+    "offers": {
+      "new": {
+        "title": "New offer",
+        "dimension": "Dimension",
+        "name": "Offer name",
+        "unit": "Unit",
+        "price": "Price excl. tax",
+        "price_ttc": "Price incl. tax",
+        "product_id": "Product name",
+        "elasticity": "Elasticity",
+        "currency": "Currency",
+        "vat": "VAT",
+        "visibility": "Visibility"
+      },
+      "edit": {
+        "title": "Edit my offer"
+      },
+      "read": {
+        "title": "See my offer"
+      },
+      "metrics": {
+        "opinion": "no opinion | one opinion | {n} opinions"
+      }
+    },
+    "orders": {
+      "step": {
+        "0": "Select partner",
+        "1": "Select offers",
+        "2": "Summary"
+      },
+      "new": {
+        "thirdPartyAccount": "Third party account",
+        "offer": "Offer",
+        "structure": "Structure",
+        "product": "Product",
+        "label": "Label (optional)",
+        "date": "Order date",
+        "totals": {
+          "withoutVat": "Subtotal excl. tax",
+          "total": "Total incl. tax",
+          "vat": "VAT",
+          "of": "of"
+        },
+        "addThirdPartyAccount": "Add order for new third party account",
+        "validate": "Validate"
+      }
+    },
+    "payment-condition": {
+      "step": {
+        "0": "Details"
+      }
+    },
+    "paymentConditions": {
+      "new": {
+        "title": "New payment condition",
+        "label": "Label",
+        "days": "Days",
+        "yieldRate": "Yield rate",
+        "total": "Total:",
+        "references": {
+          "r1": "Payment priority",
+          "r2": "Payment term",
+          "r3": "Yield rate",
+          "r4": "Yield priority",
+          "r5": "Yield periodicity",
+          "r6": "Terms of Prepayment",
+          "r7": "New priority in case of reprogramming",
+          "r8": "Reprogramming"
+        }
+      },
+      "edit": {
+        "title": "Edit my payment condition"
+      }
+    },
+    "paymentStructures": {
+      "new": {
+        "title": "New payment structure",
+        "label": "Label",
+        "paymentConditions": "Payment conditions",
+        "globalRisk": "Global risk",
+        "totalPortionMustBe100": "The total must be equal to 100%",
+        "addNewPaymentCondition": "Create new payment condition"
+      },
+      "edit": {
+        "title": "Edit my payment structure"
+      }
+    },
+    "payment-structure": {
+      "step": {
+        "0": "Details"
+      }
+    },
+    "members": {
+      "title": "Add a member"
+    }
+  },
+  "manageMenu": {
+    "title": "Manage",
+    "home": "Home",
+    "orders": "Orders",
+    "offers": "Offers",
+    "contracts": "Contracts",
+    "products": "Products",
+    "contacts": "Contacts",
+    "thirdPartyAccounts": "Third party",
+    "paymentConditions": "Payment conditions",
+    "paymentStructures": "Payment structures"
+  },
+  "userMenu": {
+    "profile": "Personnal data",
+    "security": "Security & connection",
+    "management": "My accounts"
+  },
+  "accountMenu": {
+    "information": "Account information",
+    "settings": "Preferences",
+    "members": "Members"
+  },
+  "buyerMenu": {
+    "title": "Buy",
+    "search": "Search",
+    "orders": "Orders",
+    "favorite": "Favorite",
+    "deliveries": "Adresses and delivery",
+    "payments": "Payments"
+  },
+  "sellerMenu": {
+    "title": "Sell",
+    "dashboard": "Dashboard",
+    "orders": "Orders",
+    "products": "Products",
+    "offers": "Offers",
+    "deliveries": "Deliveries option",
+    "payments": "Payments",
+    "start": "Start"
+  },
+  "globalMenu": {
+    "question": "FAQ",
+    "contact": "Contact"
+  },
+  "category": {
+    "space": "Space :",
+    "account": "Account :",
+    "user": "User :"
+  },
+  "buttons": {
+    "create": {
+      "account": "CREATE ACCOUNT",
+      "product": "CREATE PRODUCT",
+      "contract": "CREATE CONTRACT",
+      "thirdPartyAccount": "CREATE THIRD PARTY ACCOUNT",
+      "offer": "CREATE OFFER",
+      "order": "CREATE ORDER",
+      "paymentCondition": "CREATE PAYMENT CONDITION",
+      "paymentStructure": "CREATE PAYMENT STRUCTURE"
+    },
+    "inviteMember": "INVITE MEMBER",
+    "submit": "Submit",
+    "previous": "Previous",
+    "next": "Next",
+    "login": "Login",
+    "logout": "Logout"
+  },
+  "headers": {
+    "actions": "Actions",
+    "products": {
+      "name": "Product name",
+      "category": "Category",
+      "periodicity": "Periodicity",
+      "unit": "Unit",
+      "status": "Status"
+    },
+    "contracts": {
+      "effectiveDate": "Effective date",
+      "dateOfSignature": "Date of signature",
+      "endDate": "End date",
+      "contact": "Contact",
+      "name": "Nom",
+      "type": "Type of partnership",
+      "structure": "Structure",
+      "offer": "Offer",
+      "order": "Order"
+    },
+    "orders": {
+      "date": "Date",
+      "amount": "Amount incl. tax",
+      "currency": "Currency",
+      "label": "Label",
+      "structure": "Structure",
+      "status": "Status"
+    },
+    "orderLines": {
+      "offer": "Offer",
+      "quantity": "Quantity",
+      "unit": "Unit",
+      "price": "Price incl. tax",
+      "total": "Total incl. tax",
+      "vat": "VAT",
+      "status": "Status"
+    },
+    "offers": {
+      "name": "Name of the offer",
+      "elasticity": "Elasticity",
+      "label": "Label",
+      "products": "Product(s)",
+      "price": "Price excl. tax",
+      "price_ttc": "Price incl. tax",
+      "currency": "Currency",
+      "vat": "VAT",
+      "visibility": "Visibility",
+      "unit": "Unit",
+      "status": "Status"
+    },
+    "thirdPartyAccounts": {
+      "name": "Name",
+      "type": "Type of third party",
+      "directory": "Directory",
+      "status": "Status"
+    },
+    "paymentConditions": {
+      "label": "Label",
+      "priority": "Priority",
+      "paymentTerm": "Payment term",
+      "interestRate": "Interest rate",
+      "risk": "Risk"
+    },
+    "paymentStructures": {
+      "label": "Label",
+      "risk": "Risk",
+      "nbPortions": "Number of portions"
+    },
+    "paymentConditionsForPaymentStructureForm": {
+      "portion": "Portion %",
+      "label": "Label",
+      "risk": "Risk"
+    },
+    "members": {
+      "user": "User",
+      "role": "Role"
+    },
+    "owners": {
+      "owner": "Owner",
+      "isReferenceOwner": "Reference owner"
+    }
+  },
+  "navBar": {
+    "manage": {
+      "0": "Dashboard",
+      "1": "Current gestion",
+      "2": "FlexUp gestion"
+    },
+    "seller": {
+      "0": "Dashboard",
+      "1": "Orders",
+      "2": "My offers"
+    }
+  },
+  "modal": {
+    "close": "Close",
+    "save": "Save",
+    "resetDefault": "Reset defaults",
+    "sendInvitation": "Send invitation"
+  },
+  "accounts": {
+    "parentAccount": "Parent account",
+    "typeOfAccount": {
+      "whatType": "What type of account do you want to create ?"
+    },
+    "index": {
+      "title": "My accounts"
+    },
+    "new": {
+      "title": "Welcome to FlexUp, let's create your first account"
+    }
+  },
+  "products": {
+    "new": {
+      "title": "Let's create your first product"
+    }
+  },
+  "autocomplete": {
+    "partners": {
+      "mine": "My partners",
+      "flexup": "Flexup partners"
+    },
+    "user": {
+      "label": "User"
+    },
+    "role": {
+      "label": "Role"
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "default": {
+      "title": "Default"
+    },
+    "others": {
+      "title": "Others",
+      "labels": {
+        "priceNbDigits": "Price: number of digits after decimal point",
+        "defaultVat": "Default VAT",
+        "vatNbDigits": "VAT: number of digits after decimal point"
+      }
+    }
+  },
+  "shop": {
+    "buyer": {
+      "review": "review",
+      "products": {
+        "details": {
+          "title": "Customer's opinion"
+        }
+      },
+      "cart": {
+        "orderLines": {
+          "product": "Product",
+          "price": "Price",
+          "quantity": "Quantity",
+          "totalPrice": "Total price"
+        }
+      }
+    }
   }
 }

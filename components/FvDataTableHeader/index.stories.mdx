@@ -1,0 +1,37 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+import FvDataTableHeader from './index.vue'
+
+<Meta title='Molecules/FvDataTableHeader' component={ FvDataTableHeader } argTypes={{
+  label: { control: 'text' },
+  title: { control: 'text' }
+}}/>
+
+# FvDataTableHeader
+
+<Canvas>
+<Story name='Common' height='150px' args={{
+  label: 'Label',
+  title: 'Title'
+}}>{{
+  components: { FvDataTableHeader },
+  props: {
+    label: {},
+    title: {}
+  },
+  components: { FvDataTableHeader },
+  methods: {
+    searchChanged: action('Search changed')
+  },
+  template: `<FvDataTableHeader
+    :searchLabel="label"
+    :title="title"
+    @dataTableSearch:changed="searchChanged"
+  >
+  </FvDataTableHeader>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvDataTableHeader } />

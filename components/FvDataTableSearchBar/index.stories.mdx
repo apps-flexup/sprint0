@@ -1,0 +1,33 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+import FvDataTableSearchBar from './index.vue'
+
+<Meta title='Atoms/FvDataTableSearchBar' component={ FvDataTableSearchBar } argTypes={{
+  label: { control: 'text' }
+}}/>
+
+# FvDataTableSearchBar
+
+<Canvas>
+<Story name='Common' height='150px' args={{
+  label: 'Label'
+}}>{{
+  components: { FvDataTableSearchBar },
+  props: {
+    label: {}
+  },
+  components: { FvDataTableSearchBar },
+  methods: {
+    searchChanged: action('Search changed')
+  },
+  template: `<FvDataTableSearchBar
+    :label="label"
+    @dataTableSearchBar:changed="searchChanged"
+  >
+  </FvDataTableSearchBar>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvDataTableSearchBar } />

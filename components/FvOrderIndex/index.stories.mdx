@@ -1,0 +1,18 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks'
+import FvOrderIndex from './index.vue'
+
+<Meta title='Pages/FvOrderIndex' component={ FvOrderIndex } />
+
+# FvOrderIndex
+
+<Canvas>
+<Story name='Common' height='150px'>{{
+  components: { FvOrderIndex },
+  template: `<FvOrderIndex>
+  </FvOrderIndex>`
+}}</Story>
+</Canvas>
+
+## Props
+
+<Props of={ FvOrderIndex } />
