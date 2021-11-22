@@ -20,7 +20,6 @@
           item-text="name"
           item-value="id"
           label="Type de contrat"
-          clearable=''
           outlined=''
         )
     v-row
@@ -34,7 +33,6 @@
           :label="$t('forms.contracts.detail.partner')"
           item-text="name"
           item-value="id"
-          clearable=''
           outlined=''
           @click:append='addContact'
         )
@@ -45,7 +43,6 @@
           item-text="name"
           item-value="id"
           :label="$t('forms.contracts.detail.charter')"
-          clearable=''
           outlined=''
         )
     v-row

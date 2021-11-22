@@ -7,7 +7,6 @@
       item-text="name"
       item-value="id"
       :label="$t('forms.contracts.structure.structureType')"
-      clearable=''
       outlined=''
     )
 </template>

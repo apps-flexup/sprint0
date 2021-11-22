@@ -7,7 +7,6 @@
     :label="label"
     :outlined="outlined"
     :readonly="readonly"
-    :clearable="clearable"
     :suffix="suffix"
     :hideDetails="hideDetails"
     :dense="dense"
@@ -43,12 +42,6 @@ export default {
       type: Boolean,
       default() {
         return false
-      }
-    },
-    clearable: {
-      type: Boolean,
-      default() {
-        return true
       }
     },
     suffix: {

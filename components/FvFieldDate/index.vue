@@ -14,7 +14,6 @@
       fv-text-field(
         data-testid="textField"
         :readonly="true"
-        :clearable="clearable"
         :hideDetails="hideDetails"
         :value="displayDate"
         :label="label"
@@ -57,12 +56,6 @@ export default {
       type: Date,
       default() {
         return null
-      }
-    },
-    clearable: {
-      type: Boolean,
-      default() {
-        return true
       }
     },
     hideDetails: {
