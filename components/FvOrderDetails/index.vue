@@ -14,7 +14,6 @@
             data-testid="date"
             :dateRef="new Date(orderDate)"
             :label="$t('forms.orders.new.date')"
-            :clearable="false"
             :hideDetails="true"
             :readonly="true"
             class="align"
@@ -22,7 +21,6 @@
           fv-text-field(
             data-testid="paymentStructure"
             v-model="structure"
-            :clearable="false"
             :readonly="true"
             :hideDetails="true"
           )

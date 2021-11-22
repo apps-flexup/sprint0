@@ -6,7 +6,6 @@
     :label="label"
     :outlined="outlined"
     :readonly="readonly"
-    :clearable="clearable"
     :suffix="suffix"
     @input="amountChanged"
     @click="onClick"
@@ -43,12 +42,6 @@ export default {
       type: Boolean,
       default() {
         return false
-      }
-    },
-    clearable: {
-      type: Boolean,
-      default() {
-        return true
       }
     },
     search: {

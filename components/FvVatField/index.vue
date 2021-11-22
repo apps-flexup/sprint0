@@ -5,7 +5,6 @@
     :label="label"
     :outlined="outlined"
     :readonly="readonly"
-    :clearable="clearable"
     :hideDetails="hideDetails"
     :dense="dense"
     data-testid="vatField"
@@ -41,12 +40,6 @@ export default {
       type: Boolean,
       default() {
         return false
-      }
-    },
-    clearable: {
-      type: Boolean,
-      default() {
-        return true
       }
     },
     hideDetails: {
