@@ -555,7 +555,8 @@
         "elasticity": "Elasticity",
         "currency": "Currency",
         "vat": "VAT",
-        "visibility": "Visibility"
+        "visibility": "Visibility",
+        "status": "Status :"
       },
       "edit": {
         "title": "Edit my offer"

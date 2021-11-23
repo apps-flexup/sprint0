@@ -3,7 +3,7 @@
   v-switch(
     data-testid="switch"
     :input-value="inputValue"
-    :label="`${label}${$t('ponctuation.colons')}${$t(`visibility.${value}`)}`"
+    :label="`${$t(`visibility.${value}`)}`"
     :readonly="readonly"
     inset
     @change="clicked"
@@ -53,5 +53,12 @@ export default {
 <style scoped>
 ::v-deep .v-input__slot {
   background-color: inherit !important;
+}
+::v-deep .v-input--selection-controls {
+  margin: 0;
+  padding: 0;
+}
+::v-deep .v-messages {
+  display: none;
 }
 </style>

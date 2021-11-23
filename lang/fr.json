@@ -562,7 +562,8 @@
         "product_id": "Nom du produit",
         "currency": "Devise",
         "vat": "TVA",
-        "visibility": "Visibilité"
+        "visibility": "Visibilité",
+        "status": "Statut :"
       },
       "edit": {
         "title": "Modifier mon offre"

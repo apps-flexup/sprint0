@@ -1,10 +1,14 @@
 <template lang="pug">
 .fv-status-select
-  fv-status-select(
-    :value="value"
-    :availableStatus="availableStatus"
-    @status:changed="changeStatus"
-  )
+  fv-flex-items
+    template(v-slot:left)
+      div.mr-5 {{ label }}
+    template(v-slot:right)
+      fv-status-select(
+        :value="value"
+        :availableStatus="availableStatus"
+        @status:changed="changeStatus"
+      )
 </template>
 
 <script>
@@ -14,6 +18,10 @@ export default {
     value: {
       type: String,
       default: 'draft'
+    },
+    label: {
+      type: String,
+      default: null
     }
   },
   computed: {
@@ -29,3 +37,12 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+::v-deep .mr-5 {
+  color: black;
+}
+::v-deep .flex {
+  justify-content: inherit;
+}
+</style>
