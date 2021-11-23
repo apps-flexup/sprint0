@@ -2415,19 +2415,22 @@
           "attribute": "price",
           "component": "fv-price-field",
           "readonly-component": "fv-price-field-readonly",
-          "size": 12
+          "size": 6
+        },
+        {
+          "component": "v-spacer"
         },
         {
           "attribute": "price_ttc",
           "computeFunction": "offerPriceWithTax",
           "readonly-component": "fv-price-field-readonly",
-          "size": 12
+          "size": 6
         },
         {
           "attribute": "visibility",
-          "component": "fv-visibility-switch",
+          "component": "fv-offer-visibility-switch",
           "readonly-component": "fv-visibility-switch-readonly",
-          "size": 6
+          "size": 7
         },
         {
           "attribute": "status",

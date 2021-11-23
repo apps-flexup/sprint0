@@ -143,6 +143,7 @@ import FvOfferIndex from '@/components/FvOfferIndex'
 import FvOfferList from '@/components/FvOfferList'
 import FvOfferModal from '@/components/FvOfferModal'
 import FvOfferStatusSelect from '@/components/FvOfferStatusSelect'
+import FvOfferVisibilitySwitch from '@/components/FvOfferVisiblitySwitch'
 import FvOrderDataTable from '@/components/FvOrderDataTable'
 import FvOrderDetails from '@/components/FvOrderDetails'
 import FvOrderIndex from '@/components/FvOrderIndex'
@@ -346,6 +347,7 @@ Vue.component('fv-offer-index', FvOfferIndex)
 Vue.component('fv-offer-list', FvOfferList)
 Vue.component('fv-offer-modal', FvOfferModal)
 Vue.component('fv-offer-status-select', FvOfferStatusSelect)
+Vue.component('fv-offer-visibility-switch', FvOfferVisibilitySwitch)
 Vue.component('fv-order-data-table', FvOrderDataTable)
 Vue.component('fv-order-details', FvOrderDetails)
 Vue.component('fv-order-index', FvOrderIndex)
