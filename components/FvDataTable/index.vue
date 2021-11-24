@@ -8,7 +8,8 @@
     disable-sort
     :footer-props="{ \
       itemsPerPageText: $t('dataTable.footer.rowsPerPage'), \
-      itemsPerPageAllText: $t('dataTable.footer.all') \
+      itemsPerPageAllText: $t('dataTable.footer.all'), \
+      itemsPerPageOptions :[20, 50, 100, -1] \
     }"
     :server-items-length="itemsLength"
     :options="options"
