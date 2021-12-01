@@ -534,7 +534,8 @@
         "description": "Description",
         "country": "Country",
         "parent_id": "Parent account",
-        "type": "Type of account"
+        "type": "Type of account",
+        "warningMessage": "You must have at least one owner"
       },
       "edit": {
         "title": "Edit my account"
