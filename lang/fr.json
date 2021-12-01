@@ -536,7 +536,8 @@
         "description": "Description",
         "country": "Pays",
         "parent_id": "Compte parent",
-        "type": "Type de compte"
+        "type": "Type de compte",
+        "warningMessage": "Vous devez avoir au moins un propriétaire"
       },
       "edit": {
         "title": "Modifier mon compte"
