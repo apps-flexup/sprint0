@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
-    "target": "es2018",
+    "target": "es5",
     "module": "esnext",
     "moduleResolution": "node",
     "lib": [
       "esnext",
       "esnext.asynciterable",
-      "dom"
+      "dom",
+      "es6"
     ],
     "esModuleInterop": true,
     "allowJs": true,
@@ -14,6 +15,8 @@
     "strict": true,
     "noEmit": true,
     "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "noImplicitAny": false,
     "baseUrl": ".",
     "paths": {
       "~/*": [
@@ -25,6 +28,7 @@
     },
     "types": [
       "@types/node",
+      "@types/jest",
       "@nuxt/types",
       "nuxt-i18n"
     ]
