@@ -209,4 +209,8 @@ export default {
 .head {
   align-items: center;
 }
+.fv-form {
+  width: 67%;
+  margin: auto;
+}
 </style>

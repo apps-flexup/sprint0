@@ -97,3 +97,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.fv-breadcrumbs {
+  width: 70%;
+  margin: auto;
+}
+</style>
