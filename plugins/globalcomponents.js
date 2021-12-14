@@ -45,7 +45,6 @@ import FvContractSummaryStepPaiement from '@/components/FvContractSummaryStepPai
 import FvContractSummaryStepStructure from '@/components/FvContractSummaryStepStructure'
 import FvCountryAutocomplete from '@/components/FvCountryAutocomplete'
 import FvCountryReadonly from '@/components/FvCountryReadonly'
-import FvCreateButton from '@/components/FvCreateButton'
 import FvDataTable from '@/components/FvDataTable'
 import FvDataTableHeader from '@/components/FvDataTableHeader'
 import FvDataTableSearchBar from '@/components/FvDataTableSearchBar'
@@ -243,7 +242,6 @@ Vue.component(
 )
 Vue.component('fv-country-autocomplete', FvCountryAutocomplete)
 Vue.component('fv-country-readonly', FvCountryReadonly)
-Vue.component('fv-create-button', FvCreateButton)
 Vue.component('fv-data-table', FvDataTable)
 Vue.component('fv-data-table-header', FvDataTableHeader)
 Vue.component('fv-data-table-search-bar', FvDataTableSearchBar)
