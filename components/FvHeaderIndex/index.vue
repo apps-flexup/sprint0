@@ -4,13 +4,16 @@
     v-col(cols="6")
       h1(data-testid="title") {{ title }}
     v-col(cols="6")
-      fv-create-button.text-right(
+      fv-primary-button.text-right(
         v-if="canCreate"
         data-testid="createButton"
-        :icon="icon"
-        :titleButton="titleButton"
         @button:click='clicked'
       )
+        fv-icon(
+          icon="mdi-plus"
+          color="#ffffff"
+        )
+        | {{ titleButton }}
 </template>
 
 <script>
@@ -34,12 +37,6 @@ export default {
       default() {
         return true
       }
-    },
-    icon: {
-      type: String,
-      default() {
-        return null
-      }
     }
   },
   methods: {
@@ -54,5 +51,10 @@ export default {
 .row {
   align-items: center;
   margin-bottom: 25px;
+}
+
+.fv-icon {
+  position: relative;
+  right: 5%;
 }
 </style>

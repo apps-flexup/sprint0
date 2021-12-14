@@ -12,14 +12,6 @@
 <script>
 export default {
   name: 'FvPrimaryButton',
-  props: {
-    icon: {
-      type: String,
-      default() {
-        return null
-      }
-    }
-  },
   methods: {
     click() {
       this.$emit('button:click')

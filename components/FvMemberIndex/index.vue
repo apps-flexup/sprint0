@@ -5,7 +5,6 @@
   div(v-else)
     fv-header-index(
       data-testid="headerIndex"
-      icon="mdi-plus"
       :title="$t('table.members.title', { accountName })"
       :titleButton="$t('buttons.inviteMember')"
       :canCreate="canInvite"

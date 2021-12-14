@@ -2,7 +2,6 @@
 .fv-third-party-account-index
   fv-header-index(
     data-testid="headerIndex"
-    icon="mdi-plus"
     :title="$t('table.thirdPartyAccounts.title')"
     :titleButton="$t('buttons.create.thirdPartyAccount')"
     :canCreate="canCreateThirdParty"

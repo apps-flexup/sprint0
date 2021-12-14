@@ -2,7 +2,6 @@
 .fv-payment-structure-index
   fv-header-index(
     data-testid="headerIndex"
-    icon="mdi-plus"
     :title="$t('table.paymentStructures.title')"
     :titleButton="$t('buttons.create.paymentStructure')"
     @button:click="createPaymentStructure"
