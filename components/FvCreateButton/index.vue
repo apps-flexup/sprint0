@@ -1,7 +1,7 @@
 <template lang="pug">
 .fv-create-button
   fv-primary-button(
-    data-testid="button"
+    data-testid="createButton"
     @button:click='clicked'
   )
     fv-icon(
