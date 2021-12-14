@@ -2,6 +2,7 @@
 .fv-product-index
   fv-header-index(
     data-testid="headerIndex"
+    icon="mdi-plus"
     :title="$t('table.products.title')"
     :titleButton="$t('buttons.create.product')"
     :canCreate="canCreateProduct"

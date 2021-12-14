@@ -4,11 +4,13 @@
     v-col(cols="6")
       h1(data-testid="title") {{ title }}
     v-col(cols="6")
-      fv-primary-button.text-right(
+      fv-create-button.text-right(
         v-if="canCreate"
         data-testid="createButton"
+        :icon="icon"
+        :titleButton="titleButton"
         @button:click='clicked'
-      ) {{ titleButton }}
+      )
 </template>
 
 <script>
@@ -31,6 +33,12 @@ export default {
       type: Boolean,
       default() {
         return true
+      }
+    },
+    icon: {
+      type: String,
+      default() {
+        return null
       }
     }
   },

@@ -2,6 +2,7 @@
 .fv-accounts-index
   fv-header-index(
     data-testid="headerIndex"
+    icon="mdi-plus"
     :title="$t('accounts.index.title')"
     :titleButton="$t(`buttons.create.account`)"
     @button:click="createAccount"

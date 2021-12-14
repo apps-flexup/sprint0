@@ -2,6 +2,7 @@
 .fv-order-index
   fv-header-index(
     data-testid="headerIndex"
+    icon="mdi-plus"
     :title="$t('table.orders.title')"
     :titleButton="$t('buttons.create.order')"
     @button:click="createOrder"

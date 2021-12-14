@@ -2,6 +2,7 @@
 .fv-payment-condition-index
   fv-header-index(
     data-testid="headerIndex"
+    icon="mdi-plus"
     :title="$t('table.paymentConditions.title')"
     :titleButton="$t('buttons.create.paymentCondition')"
     @button:click="createPaymentCondition"

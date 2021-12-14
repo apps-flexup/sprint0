@@ -2,6 +2,7 @@
 .fv-offer-index
   fv-header-index(
     data-testid="headerIndex"
+    icon="mdi-plus"
     :title="$t('table.offers.title')"
     :titleButton="$t('buttons.create.offer')"
     :canCreate="canCreateOffer"

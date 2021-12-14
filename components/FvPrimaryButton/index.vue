@@ -3,7 +3,7 @@
   v-btn(
     data-testid="button"
     x-large
-    color="#FCB71C"
+    color="#FCBF1E"
     @click.prevent="click"
   )
     slot
@@ -12,6 +12,14 @@
 <script>
 export default {
   name: 'FvPrimaryButton',
+  props: {
+    icon: {
+      type: String,
+      default() {
+        return null
+      }
+    }
+  },
   methods: {
     click() {
       this.$emit('button:click')
@@ -19,3 +27,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.v-btn {
+  border-radius: 10px;
+  color: #ffffff;
+}
+</style>
