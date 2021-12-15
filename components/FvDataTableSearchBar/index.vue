@@ -1,6 +1,6 @@
 <template lang="pug">
 .fv-data-table-search-bar
-  fv-text-field.filterContainer.pa-3(
+  fv-text-field.filterContainer(
     data-testid="textField"
     :value="search"
     :outlined="false"
@@ -52,10 +52,11 @@ export default {
   margin-top: 0;
 }
 ::v-deep .v-input input {
-  font-size: 20px;
+  font-size: 1rem;
 }
 .filterContainer {
   border: $datatable-header-border-style $datatable-header-border-color;
   border-radius: $datatable-header-border-radius;
+  padding: $datatable-header-padding;
 }
 </style>

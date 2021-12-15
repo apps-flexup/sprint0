@@ -2,14 +2,14 @@
 .fv-status-filter
   div.d-flex
     div.titleContainer
-      p.title.pa-3.mb-0 {{ $t(`statusFilters.title`) }}
+      p.title.mb-0 {{ $t(`statusFilters.title`) }}
     div.filterContainer
       v-menu(
         offset-y
         :close-on-content-click="false"
       )
         template(v-slot:activator="{on, attrs }")
-          div.d-flex.justify-center.align-center.pa-3(v-bind="attrs", v-on="on")
+          div.d-flex.justify-center.align-center(v-bind="attrs", v-on="on")
             div.pr-10 {{ selectedFilters }}
             fv-icon(icon="mdi-chevron-down")
         v-list.pa-4
@@ -94,6 +94,8 @@ export default {
 <style scoped lang="scss">
 .title {
   opacity: 0.5;
+  padding: $datatable-header-padding;
+  font-size: 1rem !important;
 }
 .titleContainer {
   border: $datatable-header-border-style $datatable-header-border-color;
@@ -105,6 +107,8 @@ export default {
   border-left: transparent;
   border-radius: 0 $datatable-header-border-radius
     $datatable-header-border-radius 0;
+  font-size: 1rem;
+  padding: $datatable-header-padding;
 }
 ::v-deep .v-messages {
   display: none;
