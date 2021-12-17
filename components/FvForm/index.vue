@@ -210,7 +210,7 @@ export default {
   align-items: center;
 }
 .fv-form {
-  width: 67%;
+  width: 70%;
   margin: auto;
 }
 </style>
