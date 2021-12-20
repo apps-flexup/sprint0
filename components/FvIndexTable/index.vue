@@ -1,34 +1,33 @@
 <template lang="pug">
 .fv-index-table
-  v-card
-    fv-data-table-header(
-      data-testid='header'
-      :title="title"
-      :searchLabel="searchLabel"
-      :tableName="tableName"
-      :statusFiltersSelected="statusFiltersSelected"
-      @dataTableSearch:filtersChanged="filtersChanged"
-      @dataTableSearch:statusFiltersChanged="statusFiltersChanged"
-      @dataTableHeader:settingsClicked="settingsClicked"
-    )
-    component(
-      data-testid="table"
-      :is="tableComponent"
-      :headers="formattedHeaders"
-      :items="formattedItems"
-      @dataTable:selected="selected"
-      @dataTable:sortBy="sortBy"
-      @dataTable:edit="editItem"
-      @dataTable:delete="deleteItem"
-    )
-    fv-select-headers(
-      data-testid="selectHeaders"
-      :dialog="dialog"
-      :headers="headers"
-      :tableName="tableName"
-      @selectHeaders:close="close"
-      @selectHeaders:save="save"
-    )
+  fv-data-table-header(
+    data-testid='header'
+    :title="title"
+    :searchLabel="searchLabel"
+    :tableName="tableName"
+    :statusFiltersSelected="statusFiltersSelected"
+    @dataTableSearch:filtersChanged="filtersChanged"
+    @dataTableSearch:statusFiltersChanged="statusFiltersChanged"
+    @dataTableHeader:settingsClicked="settingsClicked"
+  )
+  component.table(
+    data-testid="table"
+    :is="tableComponent"
+    :headers="formattedHeaders"
+    :items="formattedItems"
+    @dataTable:selected="selected"
+    @dataTable:sortBy="sortBy"
+    @dataTable:edit="editItem"
+    @dataTable:delete="deleteItem"
+  )
+  fv-select-headers(
+    data-testid="selectHeaders"
+    :dialog="dialog"
+    :headers="headers"
+    :tableName="tableName"
+    @selectHeaders:close="close"
+    @selectHeaders:save="save"
+  )
 </template>
 
 <script>
@@ -174,3 +173,12 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.fv-index-table > .table {
+  border: #e1e2e6 1px solid;
+  border-radius: 10px;
+  box-shadow: inherit !important;
+  overflow: hidden;
+}
+</style>
