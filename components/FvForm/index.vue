@@ -200,7 +200,7 @@ export default {
   display: none;
 }
 .fv-status-select {
-  max-width: $status-btn-width;
+  display: flex;
 }
 .btn {
   display: flex;
