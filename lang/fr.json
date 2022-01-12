@@ -646,6 +646,29 @@
     },
     "members": {
       "title": "Ajouter un membre"
+    },
+    "sales": {
+      "step": {
+        "0": "Informations Générales",
+        "1": "Éléments de la commande"
+      },
+      "new": {
+        "title": "Nouvelle vente",
+        "date": "Date",
+        "label": "Libellé"
+      }
+    },
+    "purchases": {
+      "step": {
+        "0": "Informations Générales",
+        "1": "Éléments de la commande"
+      },
+      "new": {
+        "title": "Nouvel achat",
+        "date": "Date",
+        "label": "Libellé",
+        "newCustomOrderItem": "Ajouter un nouvel élément de commande"
+      }
     }
   },
   "manageMenu": {
@@ -745,12 +768,14 @@
       "structure": "Structure",
       "status": "Statut"
     },
-    "orderLines": {
-      "offer": "Offre",
+    "orderItems": {
+      "productName": "Nom du produit",
+      "offerName": "Nom de l'Offre",
       "quantity": "Quantité",
       "unit": "Unité",
-      "price": "Prix TTC",
-      "total": "Total TTC",
+      "unitPrice": "Prix unitaire HT",
+      "valueWithoutTax": "Total HT",
+      "valueWithTax": "Total TTC",
       "vat": "TVA",
       "status": "Statut"
     },

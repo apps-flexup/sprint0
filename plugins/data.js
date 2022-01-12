@@ -28,7 +28,7 @@ export default (ctx, inject) => {
     medias: repo('medias'),
     offers: repo('offers'),
     offerSteps: repo('offer-steps'),
-    orderLineHeaders: repo('order-line-headers'),
+    orderItemHeaders: repo('order-item-headers'),
     orders: repo('orders'),
     orderSteps: repo('order-steps'),
     paymentConditions: repo('payment-conditions'),

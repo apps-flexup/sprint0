@@ -7,7 +7,7 @@
       v-col(cols="4")
         fv-price-to-preferred-currency.rightTotal(
           data-testid="totalWithoutVat"
-          :price="totalWithoutVat"
+          :price="totalWithoutTax"
           :currency="preferredCurrency"
         )
     v-divider
@@ -34,70 +34,42 @@
       v-col(cols="4")
         fv-price-to-preferred-currency.rightTotal(
           data-testid="total"
-          :price="total"
+          :price="totalWithTax"
           :currency="preferredCurrency"
         )
 
 </template>
 
 <script>
-import { convert } from '~/plugins/currencies'
-
 export default {
   name: 'FvOrderTotals',
   props: {
-    orderLines: {
-      type: Array,
+    totalWithoutTax: {
+      type: Number,
       default() {
-        return []
+        return 0
       }
-    }
-  },
-  asyncComputed: {
-    async totalsByVat() {
-      const res = await this.orderLines.reduce(async (acc, orderLine) => {
-        const accumulator = await acc
-        if (!accumulator[orderLine.vat]) {
-          accumulator[orderLine.vat] = {}
-          accumulator[orderLine.vat].total = 0
-          accumulator[orderLine.vat].vatTotal = 0
-        }
-        const total = orderLine.price * orderLine.quantity
-        const amount = await convert(
-          orderLine.currency,
-          this.preferredCurrency,
-          total
-        )
-        accumulator[orderLine.vat].total += amount
-        accumulator[orderLine.vat].vatTotal += (amount * orderLine.vat) / 100
-        return Promise.resolve(accumulator)
-      }, Promise.resolve({}))
-      return res
+    },
+    totalWithTax: {
+      type: Number,
+      default() {
+        return 0
+      }
+    },
+    totalsByVat: {
+      type: Object,
+      default() {
+        return {}
+      }
     }
   },
   computed: {
     preferredCurrency() {
       const res = this.$activeAccount.settings().currency
       return res
-    },
-    totalWithoutVat() {
-      let total = 0
-      for (const property in this.totalsByVat) {
-        total +=
-          this.totalsByVat[property].total - this.totalsByVat[property].vatTotal
-      }
-      return total
-    },
-    total() {
-      let total = 0
-      for (const property in this.totalsByVat) {
-        total += this.totalsByVat[property].total
-      }
-      return total
     }
   },
   mounted() {
-    console.log('Composant', this.$options.name)
     this.$store.dispatch('accounts/get')
     this.$store.dispatch('settings/getSettings')
   }

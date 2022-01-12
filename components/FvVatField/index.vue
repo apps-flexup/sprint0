@@ -65,9 +65,6 @@ export default {
       this.vat = this.value
     }
   },
-  mounted() {
-    console.log('Composant', this.$options.name)
-  },
   methods: {
     vatChanged(v) {
       this.vat = v

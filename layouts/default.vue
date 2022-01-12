@@ -1,23 +1,32 @@
 <template lang="pug">
-  v-app(dark)
-    component(
-      :is="findSpace"
-      :title="title"
-      :space='space'
-    )
-    v-main
-      v-container
-        fv-breadcrumbs(
-          :account="account"
-          :space="space"
-        )
-        nuxt
-    v-footer(:fixed="fixed" app)
-      span &copy; {{ new Date().getFullYear() }}
+  provider(
+    :store="store"
+  )
+    v-app(dark)
+      component(
+        :is="findSpace"
+        :title="title"
+        :space='space'
+      )
+      v-main
+        v-container.plop
+          fv-breadcrumbs(
+            :account="account"
+            :space="space"
+          )
+          nuxt
+      v-footer(:fixed="fixed" app)
+        span &copy; {{ new Date().getFullYear() }}
 </template>
 
 <script>
+import Provider from 'vuejs-redux'
+import { store } from '~/container'
+
 export default {
+  components: {
+    Provider
+  },
   props: {
     space: {
       type: String,
@@ -28,6 +37,7 @@ export default {
   },
   data() {
     return {
+      store,
       title: 'Flexup - Sprint 0',
       fixed: true
     }
@@ -60,3 +70,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.plop {
+  width: 70% !important;
+  margin: auto;
+}
+</style>

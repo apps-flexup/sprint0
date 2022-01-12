@@ -2,10 +2,10 @@ export default {
   set(state, items) {
     state.items = items
   },
-  setOrderLineHeaders(state, items) {
-    state.orderLines = items
+  setOrderItemHeaders(state, items) {
+    state.orderItems = items
   },
-  setOrderLineCartHeaders(state, items) {
-    state.orderLinesCart = items
+  setOrderItemCartHeaders(state, items) {
+    state.orderItemsCart = items
   }
 }

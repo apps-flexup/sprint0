@@ -4,6 +4,7 @@
     data-testid='autocomplete'
     :element="unitId"
     :items="items"
+    :dense="dense"
     :filter="filter"
     :returnObject="true"
     @autocomplete:selected="selected"
@@ -35,6 +36,12 @@ export default {
       default() {
         return null
       }
+    },
+    dense: {
+      type: Boolean,
+      default() {
+        return false
+      }
     }
   },
   data() {
@@ -59,7 +66,6 @@ export default {
   },
   mounted() {
     this.$store.dispatch('units/get')
-    console.log('Composant ', this.$options.name)
   },
   methods: {
     selected(v) {
