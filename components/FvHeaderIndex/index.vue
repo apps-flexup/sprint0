@@ -8,7 +8,12 @@
         v-if="canCreate"
         data-testid="createButton"
         @button:click='clicked'
-      ) {{ titleButton }}
+      )
+        fv-icon(
+          icon="mdi-plus"
+          color="#ffffff"
+        )
+        | {{ titleButton }}
 </template>
 
 <script>
@@ -46,5 +51,10 @@ export default {
 .row {
   align-items: center;
   margin-bottom: 25px;
+}
+
+.fv-icon {
+  position: relative;
+  right: 5%;
 }
 </style>

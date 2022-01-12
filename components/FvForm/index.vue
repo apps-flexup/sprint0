@@ -200,7 +200,7 @@ export default {
   display: none;
 }
 .fv-status-select {
-  max-width: $status-btn-width;
+  display: flex;
 }
 .btn {
   display: flex;
@@ -208,5 +208,9 @@ export default {
 }
 .head {
   align-items: center;
+}
+.fv-form {
+  width: 70%;
+  margin: auto;
 }
 </style>

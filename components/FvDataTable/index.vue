@@ -102,7 +102,7 @@ export default {
     cssVars() {
       const settings = this.$store.getters['settings/settings']
       const theme = settings.theme
-      let color = '#f5f6f7'
+      let color = '#DBEDFF'
       if (theme === 'dark') color = '#656667'
       const res = {
         '--theadColor': color
