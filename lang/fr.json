@@ -667,7 +667,9 @@
         "title": "Nouvel achat",
         "date": "Date",
         "label": "Libellé",
-        "newCustomOrderItem": "Ajouter un nouvel élément de commande"
+        "newCustomOrderItem": "Ajouter un nouvel élément de commande",
+        "cancel": "Annuler",
+        "saveAsDraft": "Sauvegarder le brouillon"
       }
     }
   },

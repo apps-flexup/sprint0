@@ -1,32 +1,25 @@
 <template lang="pug">
-  provider(
-    :store="store"
+v-app(dark)
+  component(
+    :is="findSpace"
+    :title="title"
+    :space='space'
   )
-    v-app(dark)
-      component(
-        :is="findSpace"
-        :title="title"
-        :space='space'
+  v-main
+    v-container.plop
+      fv-breadcrumbs(
+        :account="account"
+        :space="space"
       )
-      v-main
-        v-container.plop
-          fv-breadcrumbs(
-            :account="account"
-            :space="space"
-          )
-          nuxt
-      v-footer(:fixed="fixed" app)
-        span &copy; {{ new Date().getFullYear() }}
+      nuxt
+  v-footer(:fixed="fixed" app)
+    span &copy; {{ new Date().getFullYear() }}
 </template>
 
 <script>
-import Provider from 'vuejs-redux'
 import { store } from '~/container'
 
 export default {
-  components: {
-    Provider
-  },
   props: {
     space: {
       type: String,
