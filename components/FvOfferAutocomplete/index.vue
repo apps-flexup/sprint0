@@ -67,7 +67,6 @@ export default {
     }
   },
   mounted() {
-    console.log('Composant ', this.$options.name)
     this.$store.dispatch('thirdPartyAccounts/getAll')
     this.$store.dispatch('offers/getAll')
     this.items = []
@@ -81,8 +80,13 @@ export default {
     }
   },
   methods: {
-    selected(v) {
-      this.$emit('offers:selected', v)
+    async selected(v) {
+      const product = await this.$repos.products.show(v.product_id)
+      this.$emit('offers:selected', {
+        offerName: v.name,
+        productName: product.name,
+        ...v
+      })
     },
     filter(item, queryText, itemText) {
       return filterOfferAutocomplete(item, queryText, itemText)

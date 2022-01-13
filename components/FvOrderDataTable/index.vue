@@ -9,27 +9,23 @@
     @dataTable:sortBy="sortBy"
     @dataTable:selected="selected"
   )
-    template(v-slot:body.prepend)
-      tr(class="totalLine")
-        td.text-left {{ $t('total') }}
-        td.text-right(v-to-currency="{ amount: total, currency: preferredCurrency }")
-        td(
-          v-for="i in displayedHeaders.length - 2"
-        )
+    //template(v-slot:body.prepend)
+    //  tr(class="totalLine")
+    //    td.text-left {{ $t('total') }}
+    //    td
+    //    td.text-right(v-to-currency="{ amount: total, currency: preferredCurrency }")
+    //    td(
+    //      v-for="i in displayedHeaders.length - 3"
+    //    )
     template(v-slot:item.date='{ item }')
       div {{ localeDate(item) }}
-    template(v-slot:item.amount='{ item }')
+    template(v-slot:item.value='{ item }')
       fv-price-to-preferred-currency(
-        :price="item.amount"
-        :currency="item.currency"
+        :price="item.value.amount"
+        :currency="item.value.currency"
       )
-    template(v-slot:item.structure='{ item }')
-      div {{ paymentStructure(item) }}
     template(v-slot:item.status ='{ item }')
-      fv-status-select(:status="item.status")
-    template(v-slot:item.actions="{ item }")
-      v-row
-        fv-edit-action(@edit:clicked="selected(item)")
+      fv-status-readonly(:status="item.status")
 </template>
 
 <script>
@@ -73,16 +69,7 @@ export default {
     preferredCurrency() {
       const res = this.$store.getters['settings/settings']
       return res.currency
-    },
-    displayedHeaders() {
-      const res = this.headers.filter(
-        (header) => header.active && header.displayed
-      )
-      return res
     }
-  },
-  mounted() {
-    console.log('Composant ', this.$options.name)
   },
   methods: {
     localeDate(item) {

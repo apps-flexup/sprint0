@@ -639,6 +639,31 @@
     },
     "members": {
       "title": "Add a member"
+    },
+    "sales": {
+      "step": {
+        "0": "General informations",
+        "1": "Elements of the order"
+      },
+      "new": {
+        "title": "New sale",
+        "date": "Date",
+        "label": "Label"
+      }
+    },
+    "purchases": {
+      "step": {
+        "0": "General informations",
+        "1": "Elements of the order"
+      },
+      "new": {
+        "title": "New purchase",
+        "date": "Date",
+        "label": "Label",
+        "newCustomOrderItem": "Add a new order item",
+        "cancel": "Cancel",
+        "saveAsDraft": "Save as draft"
+      }
     }
   },
   "manageMenu": {
@@ -729,19 +754,19 @@
       "order": "Order"
     },
     "orders": {
+      "thirdParty": "Third party",
       "date": "Date",
-      "amount": "Amount incl. tax",
-      "currency": "Currency",
-      "label": "Label",
-      "structure": "Structure",
+      "value": "Value incl. tax",
       "status": "Status"
     },
-    "orderLines": {
-      "offer": "Offer",
+    "orderItem": {
+      "productName": "Product name",
+      "offerName": "Offer name",
       "quantity": "Quantity",
       "unit": "Unit",
-      "price": "Price incl. tax",
-      "total": "Total incl. tax",
+      "unitPrice": "Unit price excl. tax",
+      "valueWithoutTax": "Total excl. tax",
+      "valueWithTax": "Total incl. tax",
       "vat": "VAT",
       "status": "Status"
     },

@@ -7,6 +7,7 @@
     :outlined="outlined"
     :readonly="readonly"
     :suffix="suffix"
+    :dense="dense"
     @input="amountChanged"
     @click="onClick"
     @click:outside="onClickOutside"
@@ -48,6 +49,12 @@ export default {
       type: Object,
       default() {
         return {}
+      }
+    },
+    dense: {
+      type: Boolean,
+      default() {
+        return false
       }
     }
   },

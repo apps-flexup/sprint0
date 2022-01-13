@@ -45,11 +45,13 @@ import FvContractSummaryStepPaiement from '@/components/FvContractSummaryStepPai
 import FvContractSummaryStepStructure from '@/components/FvContractSummaryStepStructure'
 import FvCountryAutocomplete from '@/components/FvCountryAutocomplete'
 import FvCountryReadonly from '@/components/FvCountryReadonly'
+import FvCreatePurchase from '~/src/flexup/adapters/primary/nuxt-components/FvCreatePurchase.component'
 import FvDataTable from '@/components/FvDataTable'
 import FvDataTableHeader from '@/components/FvDataTableHeader'
 import FvDataTableSearchBar from '@/components/FvDataTableSearchBar'
 import FvDirectoryEntry from '@/components/FvDirectoryEntry'
 import FvFlexItems from '@/components/FvFlexItems'
+import FvGetIdThirdPartyAutocomplete from '@/components/FvGetIdThirdPartyAutocomplete'
 import FvHeaderIndex from '@/components/FvHeaderIndex'
 import FvIcon from '@/components/FvIcon'
 import FvIndexTable from '@/components/FvIndexTable'
@@ -69,6 +71,7 @@ import FvMenu from '@/components/FvMenu'
 import FvModalActions from '@/components/FvModalActions'
 import FvModalButton from '@/components/FvModalButton'
 import FvModalHeader from '@/components/FvModalHeader'
+import FvMyOrdersListing from '~/src/flexup/adapters/primary/nuxt-components/FvMyOrdersListing.component'
 import FvRecursiveDataTable from '@/components/FvRecursiveDataTable'
 import FvNav from '@/components/FvNav'
 import FvNavBar from '@/components/FvNavBar'
@@ -76,6 +79,7 @@ import FvNavBarBuyer from '@/components/FvNavBarBuyer'
 import FvNavBarManage from '@/components/FvNavBarManage'
 import FvNumberField from '@/components/FvNumberField'
 import FvAccountAutocomplete from '@/components/FvAccountAutocomplete'
+import FvOrderItemsSelector from '@/components/FvOrderItemsSelector'
 import FvPaymentConditionAutocomplete from '@/components/FvPaymentConditionAutocomplete'
 import FvPaymentConditionDataTable from '@/components/FvPaymentConditionDataTable'
 import FvPaymentConditionIndex from '@/components/FvPaymentConditionIndex'
@@ -242,11 +246,16 @@ Vue.component(
 )
 Vue.component('fv-country-autocomplete', FvCountryAutocomplete)
 Vue.component('fv-country-readonly', FvCountryReadonly)
+Vue.component('fv-create-purchase', FvCreatePurchase)
 Vue.component('fv-data-table', FvDataTable)
 Vue.component('fv-data-table-header', FvDataTableHeader)
 Vue.component('fv-data-table-search-bar', FvDataTableSearchBar)
 Vue.component('fv-directory-entry', FvDirectoryEntry)
 Vue.component('fv-flex-items', FvFlexItems)
+Vue.component(
+  'fv-get-id-third-party-autocomplete',
+  FvGetIdThirdPartyAutocomplete
+)
 Vue.component('fv-header-index', FvHeaderIndex)
 Vue.component('fv-icon', FvIcon)
 Vue.component('fv-index-table', FvIndexTable)
@@ -266,6 +275,7 @@ Vue.component('fv-menu', FvMenu)
 Vue.component('fv-modal-actions', FvModalActions)
 Vue.component('fv-modal-button', FvModalButton)
 Vue.component('fv-modal-header', FvModalHeader)
+Vue.component('fv-my-orders-listing', FvMyOrdersListing)
 Vue.component('fv-recursive-data-table', FvRecursiveDataTable)
 Vue.component('fv-nav', FvNav)
 Vue.component('fv-nav-bar', FvNavBar)
@@ -273,6 +283,7 @@ Vue.component('fv-nav-bar-buyer', FvNavBarBuyer)
 Vue.component('fv-nav-bar-manage', FvNavBarManage)
 Vue.component('fv-number-field', FvNumberField)
 Vue.component('fv-account-autocomplete', FvAccountAutocomplete)
+Vue.component('fv-order-items-selector', FvOrderItemsSelector)
 Vue.component(
   'fv-payment-condition-autocomplete',
   FvPaymentConditionAutocomplete

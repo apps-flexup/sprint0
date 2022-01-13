@@ -13,14 +13,14 @@ export default {
     const res = JSON.parse(JSON.stringify(state.contacts))
     return res
   },
-  orderLines(state) {
-    if (!state.orderLines) return []
-    const res = JSON.parse(JSON.stringify(state.orderLines))
+  orderItems(state) {
+    if (!state.orderItems) return []
+    const res = JSON.parse(JSON.stringify(state.orderItems))
     return res
   },
-  orderLinesCart(state) {
-    if (!state.orderLinesCart) return []
-    const res = JSON.parse(JSON.stringify(state.orderLinesCart))
+  orderItemsCart(state) {
+    if (!state.orderItemsCart) return []
+    const res = JSON.parse(JSON.stringify(state.orderItemsCart))
     return res
   },
   etapes(state) {

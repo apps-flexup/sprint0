@@ -1,9 +1,9 @@
 // Action de base
 export default {
-  getOrderLineHeaders({ commit }) {
+  getOrderItemHeaders({ commit }) {
     // charger les structures
-    this.$repos.orderLineHeaders
+    this.$repos.orderItemHeaders
       .index()
-      .then((data) => commit('setOrderLineHeaders', data))
+      .then((data) => commit('setOrderItemHeaders', data))
   }
 }

@@ -71,6 +71,18 @@ export default {
       default() {
         return ['active', 'inactive']
       }
+    },
+    defaultHeaders: {
+      type: Array,
+      default() {
+        return null
+      }
+    },
+    defaultItems: {
+      type: Array,
+      default() {
+        return null
+      }
     }
   },
   data() {
@@ -84,11 +96,16 @@ export default {
   },
   computed: {
     headers() {
+      if (this.defaultHeaders) {
+        const settings = this.$store.getters['settings/settings']
+        return settings.headers[this.tableName] || this.defaultHeaders
+      }
       const snakeCaseTableName = camelToSnakeCase(this.tableName)
       const res = this.$activeAccount.headers(snakeCaseTableName)
       return res
     },
     items() {
+      if (this.defaultItems) return this.defaultItems
       const res = this.$activeAccount.items(this.tableName, this.statusFilters)
       return res
     },

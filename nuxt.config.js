@@ -1,4 +1,5 @@
 import colors from 'vuetify/es5/util/colors'
+import 'reflect-metadata'
 require('dotenv').config()
 
 const homeUrl = encodeURIComponent(process.env.HOME_URL)
