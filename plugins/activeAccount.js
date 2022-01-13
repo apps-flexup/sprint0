@@ -1,4 +1,4 @@
-import { store } from '~/container'
+import { jsonServerOrderGateway, store } from '~/container'
 import { getMyOrdersVM } from '~/src/flexup/adapters/primary/view-models-generator/my-orders-screen/myOrdersViewModelGenerator'
 
 const activeAccount = (ctx) => ({
@@ -25,6 +25,8 @@ const activeAccount = (ctx) => ({
     return type
   },
   set(accountId) {
+    jsonServerOrderGateway.setActiveAccountId(accountId)
+    jsonServerOrderGateway.setAxios(ctx.$axios)
     if (accountId === -1) return
     ctx.store.dispatch('accounts/setCurrent', accountId)
     ctx.store.dispatch('charters/get', {}, { root: true })

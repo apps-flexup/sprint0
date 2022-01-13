@@ -1,9 +1,16 @@
 import { DateProvider } from './src/flexup/corelogic/usecases/creating-order/DateProvider'
-import { configureReduxStore, ReduxStore } from '~/src/flexup/store/configureStore'
+import {
+  configureReduxStore,
+  ReduxStore
+} from '~/src/flexup/store/configureStore'
 import { InMemoryOrderGateway } from '~/src/flexup/adapters/secondary/inMemoryOrderGateway'
+import { JsonServerOrderGateway } from '~/src/flexup/adapters/secondary/JsonServerOrderGateway'
 import { InMemoryThirdPartyGateway } from '~/src/flexup/adapters/secondary/inMemoryThirdPartyGateway'
 import { RealDateProvider } from '~/src/flexup/adapters/secondary/RealDateProvider'
-import { OrderItem, OrderStatus } from '~/src/flexup/corelogic/usecases/my-orders-listing/order.interface'
+import {
+  OrderItem,
+  OrderStatus
+} from '~/src/flexup/corelogic/usecases/my-orders-listing/order.interface'
 
 export const dateProvider: DateProvider = new RealDateProvider()
 
@@ -18,7 +25,8 @@ const socks: OrderItem = {
   offerName: 'Christmas Socks',
   price: { amount: 10, currency: 'EUR' },
   vat: 0.2,
-  quantity: 1
+  unit: 'unit',
+  quantity: 2
 }
 
 const bag: OrderItem = {
@@ -26,11 +34,12 @@ const bag: OrderItem = {
   offerName: '',
   price: { amount: 45, currency: 'EUR' },
   vat: 0.1,
+  unit: 'unit',
   quantity: 1
 }
 
-const orderGateway = new InMemoryOrderGateway()
-orderGateway.feedWith(
+const inMemoryOrderGateway = new InMemoryOrderGateway()
+inMemoryOrderGateway.feedWith(
   {
     id: 'abc',
     thirdPartyId: 1,
@@ -49,7 +58,9 @@ orderGateway.feedWith(
   }
 )
 
+export const jsonServerOrderGateway = new JsonServerOrderGateway()
+
 export const store: ReduxStore = configureReduxStore({
-  orderGateway,
+  orderGateway: jsonServerOrderGateway,
   thirdPartyGateway
 })

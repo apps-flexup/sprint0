@@ -752,11 +752,9 @@
       "order": "Order"
     },
     "orders": {
+      "thirdParty": "Third party",
       "date": "Date",
-      "amount": "Amount incl. tax",
-      "currency": "Currency",
-      "label": "Label",
-      "structure": "Structure",
+      "value": "Value incl. tax",
       "status": "Status"
     },
     "orderItem": {

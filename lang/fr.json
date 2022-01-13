@@ -761,11 +761,9 @@
       "order": "Commande"
     },
     "orders": {
+      "thirdParty": "Tiers",
       "date": "Date",
-      "amount": "Montant TTC",
-      "currency": "Devise",
-      "label": "Label",
-      "structure": "Structure",
+      "value": "Total TTC",
       "status": "Statut"
     },
     "orderItems": {

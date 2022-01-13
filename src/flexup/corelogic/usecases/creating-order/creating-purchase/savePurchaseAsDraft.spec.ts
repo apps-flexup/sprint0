@@ -1,10 +1,14 @@
-import { configureReduxStore, ReduxStore } from '~/src/flexup/store/configureStore'
-import { InMemoryOrderGateway } from '~/src/flexup/adapters/secondary/inMemoryOrderGateway'
-import { Order, OrderStatus } from '~/src/flexup/corelogic/usecases/my-orders-listing/order.interface'
-import { getMyOrders } from '~/src/flexup/store/reducers/ordersList.reducer'
 import {
-  savePurchaseAsDraft
-} from '~/src/flexup/corelogic/usecases/creating-order/creating-purchase/savePurchaseAsDraft'
+  configureReduxStore,
+  ReduxStore
+} from '~/src/flexup/store/configureStore'
+import { InMemoryOrderGateway } from '~/src/flexup/adapters/secondary/inMemoryOrderGateway'
+import {
+  Order,
+  OrderStatus
+} from '~/src/flexup/corelogic/usecases/my-orders-listing/order.interface'
+import { getMyOrders } from '~/src/flexup/store/reducers/ordersList.reducer'
+import { savePurchaseAsDraft } from '~/src/flexup/corelogic/usecases/creating-order/creating-purchase/savePurchaseAsDraft'
 
 describe('Saving purchase as draft', () => {
   let store: ReduxStore
@@ -28,6 +32,7 @@ describe('Saving purchase as draft', () => {
           offerName: 'Christmas socks',
           price: { amount: 10, currency: 'EUR' },
           vat: 0.2,
+          unit: 'unit',
           quantity: 2
         },
         {
@@ -35,6 +40,7 @@ describe('Saving purchase as draft', () => {
           offerName: '',
           price: { amount: 45, currency: 'EUR' },
           vat: 0.2,
+          unit: 'unit',
           quantity: 1
         }
       ]

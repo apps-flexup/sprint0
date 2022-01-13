@@ -774,74 +774,48 @@
             ]
           }
         },
-        "orders": {
-          "main": [
-            {
-              "text": "mainHeaders.order",
-              "value": "orders",
-              "align": "center",
-              "sortable": false,
-              "order": 0,
-              "customizable": false,
-              "active": true,
-              "displayed": true
-            }
-          ],
-          "sub": {
-            "orders": [
-              {
-                "align": "left",
-                "sortable": true,
-                "text": "headers.orders.date",
-                "value": "date",
-                "order": 0,
-                "customizable": true,
-                "active": true,
-                "displayed": true
-              },
-              {
-                "align": "right",
-                "sortable": true,
-                "text": "headers.orders.amount",
-                "value": "amount",
-                "order": 1,
-                "customizable": true,
-                "active": true,
-                "displayed": true
-              },
-              {
-                "align": "left",
-                "sortable": true,
-                "text": "headers.orders.label",
-                "value": "label",
-                "order": 2,
-                "customizable": true,
-                "active": true,
-                "displayed": true
-              },
-              {
-                "align": "left",
-                "sortable": true,
-                "text": "headers.orders.structure",
-                "value": "structure",
-                "order": 3,
-                "customizable": true,
-                "active": true,
-                "displayed": true
-              },
-              {
-                "align": "center",
-                "sortable": true,
-                "text": "headers.orders.status",
-                "value": "status",
-                "order": 4,
-                "customizable": true,
-                "active": true,
-                "displayed": true
-              }
-            ]
+        "orders": [
+          {
+            "align": "left",
+            "sortable": true,
+            "text": "headers.orders.thirdParty",
+            "value": "thirdParty",
+            "order": 0,
+            "customizable": true,
+            "active": true,
+            "displayed": true
+          },
+          {
+            "align": "left",
+            "sortable": true,
+            "text": "headers.orders.date",
+            "value": "date",
+            "order": 0,
+            "customizable": true,
+            "active": true,
+            "displayed": true
+          },
+          {
+            "align": "right",
+            "sortable": true,
+            "text": "headers.orders.value",
+            "value": "value",
+            "order": 0,
+            "customizable": true,
+            "active": true,
+            "displayed": true
+          },
+          {
+            "align": "center",
+            "sortable": true,
+            "text": "headers.orders.status",
+            "value": "status",
+            "order": 0,
+            "customizable": true,
+            "active": true,
+            "displayed": true
           }
-        },
+        ],
         "payment_conditions_for_payment_structure_form": [
           {
             "align": "start",
@@ -1047,16 +1021,53 @@
             "offers": []
           }
         },
-        "orders": {
-          "main": [],
-          "sub": {
-            "orders": []
-          }
-        },
+        "orders": [],
         "payment_conditions_for_payment_structure_form": [],
         "contracts": [],
         "members": [],
-        "owners": []
+        "owners": [],
+        "fvOrderDataTable": [
+          {
+            "align": "left",
+            "sortable": true,
+            "text": "headers.orders.thirdParty",
+            "value": "thirdParty",
+            "order": 0,
+            "customizable": true,
+            "active": true,
+            "displayed": true
+          },
+          {
+            "align": "left",
+            "sortable": true,
+            "text": "headers.orders.date",
+            "value": "date",
+            "order": 0,
+            "customizable": true,
+            "active": true,
+            "displayed": true
+          },
+          {
+            "align": "right",
+            "sortable": true,
+            "text": "headers.orders.value",
+            "value": "value",
+            "order": 0,
+            "customizable": true,
+            "active": true,
+            "displayed": true
+          },
+          {
+            "align": "center",
+            "sortable": true,
+            "text": "headers.orders.status",
+            "value": "status",
+            "order": 0,
+            "customizable": true,
+            "active": true,
+            "displayed": true
+          }
+        ]
       }
     },
     {

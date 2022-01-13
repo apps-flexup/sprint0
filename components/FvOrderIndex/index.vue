@@ -7,10 +7,6 @@
     @button:click="createOrder"
   )
   fv-my-orders-listing
-  fv-order-list(
-    data-testid="orderList"
-    @list:selected="selectedOrder"
-  )
 </template>
 
 <script>

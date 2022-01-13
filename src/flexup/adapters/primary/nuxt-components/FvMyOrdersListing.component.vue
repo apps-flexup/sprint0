@@ -1,7 +1,14 @@
 <template lang="pug">
 .fv-my-orders-listing
-  h1 coucou
-  pre my orders: {{ orders }}
+  fv-index-table(
+    :searchLabel="$t('table.orders.search')"
+    tableComponent='fv-order-data-table'
+    tableName='orders'
+    :rules='rules'
+    :defaultHeaders='headers'
+    :defaultItems='orders'
+  )
+
 </template>
 <script>
 import { listMyOrders } from '~/src/flexup/corelogic/usecases/my-orders-listing/listMyOrders'
@@ -13,14 +20,24 @@ export default {
   name: 'FvMyOrdersListing',
   data() {
     return {
-      orders: []
+      headers: [],
+      orders: [],
+      rules: {}
     }
   },
-  mounted() {
-    store.dispatch(listMyThirdParties)
-    store.dispatch(listMyOrders).then(() => {
-      this.orders = getMyOrdersVM(store.getState())
-    })
+  async mounted() {
+    await store.dispatch(listMyThirdParties)
+    await store.dispatch(listMyOrders)
+    this.headers = getMyOrdersVM(store.getState()).headers
+    this.orders = await Promise.all(
+      getMyOrdersVM(store.getState()).orders.map(async (o) => {
+        const thirdParty = await this.$directory.getThirdPartyById(o.thirdParty)
+        return {
+          ...o,
+          thirdParty: !+o.thirdParty ? o.thirdParty : thirdParty.name
+        }
+      })
+    )
   }
 }
 </script>

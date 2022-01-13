@@ -17,5 +17,6 @@ export interface OrderItem {
   offerName: string
   price: any
   vat: number
+  unit: string
   quantity: number
 }

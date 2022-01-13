@@ -70,7 +70,7 @@
                 )
               template(v-slot:text)
                 | {{ $t('forms.purchases.new.newCustomOrderItem') }}
-  v-row()
+  v-row
     v-spacer
     v-col(cols="5")
       fv-order-totals(
@@ -78,11 +78,22 @@
         :totalWithTax="purchaseVM.totalWithTax"
         :totalsByVat="purchaseVM.totalsByVat"
       )
+  div.btn.mt-10
+    fv-secondary-button(
+      @button:click="cancel"
+    ) {{ $t('forms.purchases.new.cancel') }}
+    fv-primary-button(
+      @button:click="saveAsDraft"
+    ) {{ $t('forms.purchases.new.saveAsDraft') }}
 
 </template>
 <script>
 import { createPurchaseVM } from '~/src/flexup/adapters/primary/view-models-generator/create-order-screen/create-purchase-screen/createPurchaseViewModelGenerator'
 import { dateProvider } from '~/container'
+import { savePurchaseAsDraft } from '~/src/flexup/corelogic/usecases/creating-order/creating-purchase/savePurchaseAsDraft'
+import { store } from '~/container'
+import { getMyOrders } from '~/src/flexup/store/reducers/ordersList.reducer'
+
 export default {
   name: 'FvCreatePurchase',
   data() {
@@ -117,6 +128,26 @@ export default {
     },
     deleteOrderItem(index) {
       this.purchaseVM.removeOrderItem(index)
+    },
+    async saveAsDraft() {
+      const res = {
+        thirdPartyId: this.purchaseVM.thirdPartyId,
+        date: this.purchaseVM.date,
+        label: this.purchaseVM.label,
+        orderItems: this.purchaseVM.orderItems.map((oi) => {
+          return {
+            productName: oi.productName,
+            offerName: oi.offerName,
+            price: oi.price,
+            vat: oi.vat,
+            unit: oi.unit,
+            quantity: oi.quantity
+          }
+        })
+      }
+      await store.dispatch(savePurchaseAsDraft(res))
+      console.log('orders: ', getMyOrders(store.getState()).data)
+      this.$router.go(-1)
     }
   }
 }

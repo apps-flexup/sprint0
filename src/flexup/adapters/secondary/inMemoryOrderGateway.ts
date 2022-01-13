@@ -9,7 +9,7 @@ export class InMemoryOrderGateway implements OrderGateway {
   }
 
   listMyOrders(): Promise<Order[]> {
-    return Promise.resolve(this.orders)
+    return Promise.resolve(JSON.parse(JSON.stringify(this.orders)))
   }
 
   feedWith(...orders: Order[]) {
