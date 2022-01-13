@@ -790,7 +790,7 @@
             "sortable": true,
             "text": "headers.orders.date",
             "value": "date",
-            "order": 0,
+            "order": 1,
             "customizable": true,
             "active": true,
             "displayed": true
@@ -800,7 +800,7 @@
             "sortable": true,
             "text": "headers.orders.value",
             "value": "value",
-            "order": 0,
+            "order": 2,
             "customizable": true,
             "active": true,
             "displayed": true
@@ -810,7 +810,7 @@
             "sortable": true,
             "text": "headers.orders.status",
             "value": "status",
-            "order": 0,
+            "order": 3,
             "customizable": true,
             "active": true,
             "displayed": true
@@ -1021,7 +1021,28 @@
             "offers": []
           }
         },
-        "orders": [],
+        "orders": [
+          {
+            "align": "center",
+            "sortable": true,
+            "text": "headers.orders.status",
+            "value": "status",
+            "order": 2,
+            "customizable": true,
+            "active": true,
+            "displayed": true
+          },
+          {
+            "align": "right",
+            "sortable": true,
+            "text": "headers.orders.value",
+            "value": "value",
+            "order": 3,
+            "customizable": true,
+            "active": true,
+            "displayed": false
+          }
+        ],
         "payment_conditions_for_payment_structure_form": [],
         "contracts": [],
         "members": [],
