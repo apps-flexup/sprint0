@@ -97,8 +97,10 @@ export default {
   computed: {
     headers() {
       if (this.defaultHeaders) {
-        const settings = this.$store.getters['settings/settings']
-        return settings.headers[this.tableName] || this.defaultHeaders
+        const customHeaders = this.$store.getters['settings/headers'](
+          this.tableName
+        )
+        return customHeaders.length ? customHeaders : this.defaultHeaders
       }
       const snakeCaseTableName = camelToSnakeCase(this.tableName)
       const res = this.$activeAccount.headers(snakeCaseTableName)
