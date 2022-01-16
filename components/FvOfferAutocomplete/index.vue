@@ -6,10 +6,11 @@
     :filter="filter"
     :disabled="disabled"
     :returnObject="returnObject"
+    :dense="dense"
     @autocomplete:selected="selected"
   )
     template(v-slot:label)
-      div {{ $t('forms.orders.new.offer') }}
+      div {{ label }}
     template(v-slot:item="data")
       v-list-item-avatar
         v-img(:src="data.item.illustration_url")
@@ -22,6 +23,21 @@
           v-list-item-title(v-to-locale="data.item.name")
     template(v-slot:no-data)
       div Aucune donnée disponible
+    template(v-slot:append-item)
+      v-list-item-content
+        fv-text-button(
+          @button:click="addCustomOrderItem"
+        )
+          template(v-slot:icon)
+            fv-icon(
+              size="small"
+              icon="mdi-plus"
+              color="#1976d2"
+              @icon:clicked="addCustomOrderItem"
+            )
+          template(v-slot:text)
+            | {{ $t('forms.purchases.new.newCustomOrderItem') }}
+
 </template>
 
 <script>
@@ -29,6 +45,12 @@ import { filterOfferAutocomplete } from '~/plugins/utils'
 export default {
   name: 'FvOfferAutocomplete',
   props: {
+    label: {
+      type: String,
+      default() {
+        return this.$t('forms.orders.new.offer')
+      }
+    },
     thirdPartyAccountId: {
       type: Number,
       default() {
@@ -46,6 +68,12 @@ export default {
       default() {
         return false
       }
+    },
+    dense: {
+      type: Boolean,
+      default() {
+        return false
+      }
     }
   },
   data() {
@@ -54,28 +82,25 @@ export default {
     }
   },
   watch: {
-    thirdPartyAccountId() {
+    async thirdPartyAccountId() {
       this.items = []
       if (this.thirdPartyAccountId > 0) {
-        const thirdPartyAccount = this.$store.getters[
-          'thirdPartyAccounts/find'
-        ](this.thirdPartyAccountId)
-        const accountId = thirdPartyAccount.account_id
-        const res = this.$store.getters['offers/getForAccount'](accountId)
+        const res = await this.$axios.$get(
+          `offers/?account_id=${this.thirdPartyAccountId}`
+        )
         this.items = res
       }
     }
   },
-  mounted() {
-    this.$store.dispatch('thirdPartyAccounts/getAll')
-    this.$store.dispatch('offers/getAll')
+  async mounted() {
+    await this.$store.dispatch('thirdPartyAccounts/getAll')
     this.items = []
     if (this.thirdPartyAccountId > 0) {
       const thirdPartyAccount = this.$store.getters['thirdPartyAccounts/find'](
         this.thirdPartyAccountId
       )
-      const accountId = thirdPartyAccount.account_id
-      const res = this.$store.getters['offers/getForAccount'](accountId)
+      const accountId = thirdPartyAccount.id
+      const res = await this.$axios.$get(`offers/?account_id=${accountId}`)
       this.items = res
     }
   },
@@ -90,6 +115,9 @@ export default {
     },
     filter(item, queryText, itemText) {
       return filterOfferAutocomplete(item, queryText, itemText)
+    },
+    addCustomOrderItem() {
+      this.$emit('offers:addCustomOrderItem')
     }
   }
 }

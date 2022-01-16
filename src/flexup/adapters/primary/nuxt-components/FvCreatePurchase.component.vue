@@ -45,9 +45,12 @@
         v-row
           v-col(cols="12")
             fv-order-items-selector(
+              :thirdPartyId="purchaseVM.thirdPartyId"
               :value="purchaseVM.orderItems"
               @orderItem:quantityChanged='quantityChanged'
               @orderItem:delete='deleteOrderItem'
+              @orderItem:selected='orderItemSelected'
+              @orderItem:addCustom='purchaseVM.addCustomOrderItem()'
             )
         v-row
           v-col(cols="12")

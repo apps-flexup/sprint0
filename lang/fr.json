@@ -667,6 +667,7 @@
         "title": "Nouvel achat",
         "date": "Date",
         "label": "Libellé",
+        "selectOffer": "Sélectionner une offre",
         "newCustomOrderItem": "Ajouter un nouvel élément de commande",
         "cancel": "Annuler",
         "saveAsDraft": "Sauvegarder le brouillon"
@@ -774,8 +775,8 @@
       "quantity": "Quantité",
       "unit": "Unité",
       "unitPrice": "Prix unitaire HT",
-      "valueWithoutTax": "Total HT",
-      "valueWithTax": "Total TTC",
+      "valueWithoutTax": "Total\u00a0HT",
+      "valueWithTax": "Total\u00a0TTC",
       "vat": "TVA",
       "status": "Statut"
     },

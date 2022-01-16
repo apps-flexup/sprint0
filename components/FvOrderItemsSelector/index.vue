@@ -67,6 +67,16 @@
           fv-delete-action(
             @delete:clicked="deleteOrderItem(item.id)"
           )
+        template(v-slot:body.append)
+          th(colspan="3")
+            fv-offer-autocomplete.pl-4.py-3(
+              :thirdPartyAccountId="thirdPartyId"
+              :return-object="true"
+              :dense="true"
+              :label="$t('forms.purchases.new.selectOffer')"
+              @offers:selected="orderItemSelected"
+              @offers:addCustomOrderItem='addCustomOrderItem'
+            )
 </template>
 
 <script>
@@ -75,6 +85,12 @@ import { translateHeaders } from '~/plugins/utils'
 export default {
   name: 'FvOrderItemsSelector',
   props: {
+    thirdPartyId: {
+      type: Number,
+      default() {
+        return -1
+      }
+    },
     value: {
       type: Array,
       default() {
@@ -126,6 +142,12 @@ export default {
     },
     deleteOrderItem(index) {
       this.$emit('orderItem:delete', index)
+    },
+    orderItemSelected(orderItem) {
+      this.$emit('orderItem:selected', orderItem)
+    },
+    addCustomOrderItem() {
+      this.$emit('orderItem:addCustom')
     }
   }
 }

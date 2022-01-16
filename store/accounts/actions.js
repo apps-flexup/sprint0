@@ -94,5 +94,49 @@ export default {
     const res = await this.$repos.accounts.update(account)
     commit('remove', res)
     commit('add', res)
+  },
+  async addLocalThirdParty({ _commit }, thirdParty) {
+    const account = {
+      type: 'ThirdParty',
+      name: thirdParty.name,
+      medias: thirdParty.medias,
+      owners: thirdParty.owners
+    }
+    if (thirdParty.type === 'Personal') {
+      account.firstname = thirdParty.firstname
+      account.lastname = thirdParty.lastname
+    } else if (thirdParty.type === 'Business') {
+      account.country = thirdParty.country
+      account.description = thirdParty.description
+      account['legal-structure-id'] = thirdParty['legal-structure-id']
+      account.siret = thirdParty.siret
+    }
+    const res = await this.$repos.accounts.createWithAccountId(account)
+    return res
+  },
+  async updateLocalThirdParty({ _commit }, payload) {
+    const account = await this.$repos.accounts.show(payload.id)
+    if (payload.data.type === 'Personal') {
+      const { firstname, lastname } = payload.data
+      account.name = [firstname, lastname].join(' ').trim()
+      account.firstname = firstname
+      account.lastname = lastname
+    } else {
+      const { name, description, country } = payload.data
+      account.name = name
+      account.description = description
+      account.country = country
+      if (payload.data.type === 'Business') {
+        const { 'legal-structure-id': legalStructureId, siret } = payload.data
+        account['legal-structure-id'] = legalStructureId
+        account.siret = siret
+      } else {
+        const { owners } = payload.data
+        account.owners = owners
+      }
+    }
+    account.medias = payload.data.medias
+    const res = await this.$repos.accounts.update(account)
+    return res
   }
 }

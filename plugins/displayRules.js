@@ -93,8 +93,8 @@ const displayRules = (ctx) => ({
   },
   async priceToPreferredCurrency(item) {
     if (!item) return null
-    const price = item.price
-    if (!price) return null
+    let price = item.price
+    if (!price) price = 0
     const fromCurrency = item.currency
     if (!fromCurrency) return null
     const settings = ctx.store.getters['settings/settings']

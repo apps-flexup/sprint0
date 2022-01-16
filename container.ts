@@ -15,10 +15,10 @@ import {
 export const dateProvider: DateProvider = new RealDateProvider()
 
 const thirdPartyGateway = new InMemoryThirdPartyGateway()
-thirdPartyGateway.feedWith(
-  { id: 1, name: 'Domaine Parvis' },
-  { id: 2, name: 'Cosys' }
-)
+// thirdPartyGateway.feedWith(
+//   { id: 1, name: 'Domaine Parvis' },
+//   { id: 2, name: 'Cosys' }
+// )
 
 const socks: OrderItem = {
   productName: 'Socks',
