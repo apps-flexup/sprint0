@@ -1,8 +1,10 @@
 import { FakeDateProvider } from '~/src/flexup/adapters/secondary/FakeDateProvider'
 import {
-  createPurchaseVM,
-  CreatePurchaseVM
+  createPurchaseVM
 } from '~/src/flexup/adapters/primary/view-models-generator/create-order-screen/create-purchase-screen/createPurchaseViewModelGenerator'
+import {
+  CreatePurchaseVM
+} from '~/src/flexup/adapters/primary/view-models-generator/create-order-screen/create-purchase-screen/createPurchaseVM'
 
 describe('Create purchase view model generator', () => {
   const today = '2022-01-04'
@@ -275,31 +277,31 @@ describe('Create purchase view model generator', () => {
         it('should allow to edit product name', () => {
           purchaseVM.orderItems[0].setProductName('t-shirt')
           const expectedOrderItem = createCustomOrderItemVM()
-          expectedOrderItem.productName = 't-shirt'
+          expectedOrderItem.orderItem.productName = 't-shirt'
           expect(purchaseVM.orderItems).toEqual([expectedOrderItem])
         })
         it('should allow to edit offer name', () => {
           purchaseVM.orderItems[0].setOfferName('t-shirt')
           const expectedOrderItem = createCustomOrderItemVM()
-          expectedOrderItem.offerName = 't-shirt'
+          expectedOrderItem.orderItem.offerName = 't-shirt'
           expect(purchaseVM.orderItems).toEqual([expectedOrderItem])
         })
         it('should allow to edit price', () => {
           purchaseVM.orderItems[0].setPrice(42)
           const expectedOrderItem = createCustomOrderItemVM()
-          expectedOrderItem.price.amount = 42
+          expectedOrderItem.orderItem.price.amount = 42
           expect(purchaseVM.orderItems).toEqual([expectedOrderItem])
         })
         it('should allow to edit vat', () => {
           purchaseVM.orderItems[0].setVat(50)
           const expectedOrderItem = createCustomOrderItemVM()
-          expectedOrderItem.vat = 50
+          expectedOrderItem.orderItem.vat = 50
           expect(purchaseVM.orderItems).toEqual([expectedOrderItem])
         })
         it('should allow to edit unit', () => {
           purchaseVM.orderItems[0].setUnit('kg')
           const expectedOrderItem = createCustomOrderItemVM()
-          expectedOrderItem.unit = 'kg'
+          expectedOrderItem.orderItem.unit = 'kg'
           expect(purchaseVM.orderItems).toEqual([expectedOrderItem])
         })
       })
@@ -315,7 +317,7 @@ describe('Create purchase view model generator', () => {
     unit
   ) => {
     return {
-      item: {
+      orderItem: {
         productName,
         offerName,
         price,
@@ -323,12 +325,6 @@ describe('Create purchase view model generator', () => {
         quantity,
         unit
       },
-      productName,
-      offerName,
-      price,
-      vat,
-      quantity,
-      unit,
       canEditProductName: false,
       canEditOfferName: false,
       canEditPrice: false,
@@ -339,7 +335,7 @@ describe('Create purchase view model generator', () => {
 
   const createCustomOrderItemVM = () => {
     return {
-      item: {
+      orderItem: {
         productName: '',
         offerName: '',
         price: { amount: 0, currency: 'EUR' },
@@ -347,12 +343,6 @@ describe('Create purchase view model generator', () => {
         quantity: 1,
         unit: ''
       },
-      productName: '',
-      offerName: '',
-      price: { amount: 0, currency: 'EUR' },
-      vat: 0,
-      quantity: 1,
-      unit: '',
       canEditProductName: true,
       canEditOfferName: true,
       canEditPrice: true,
