@@ -25,6 +25,8 @@ export class OrderItem {
   }
 }
 
+export class CustomOrderItem extends OrderItem {}
+
 export class Order {
   thirdPartyId: number
   date: string
@@ -89,6 +91,18 @@ export class CreatePurchaseVM {
     return res
   }
 
+  // get orderItems(): Array<OrderItemVM> {
+  //   const res = []
+  //   this.order.orderItems.forEach((oi) => {
+  //     if (oi instanceof CustomOrderItem) {
+  //       res.push(new CustomOrderItemVM(oi))
+  //     } else {
+  //       res.push(new OrderItemVM(oi))
+  //     }
+  //   })
+  //   return res
+  // }
+
   get totalsByVat(): Object {
     const totalsByVat = {}
     this.orderItems!.forEach((orderItem) => {
@@ -150,6 +164,9 @@ export class CreatePurchaseVM {
   addCustomOrderItem() {
     const oi = new CustomOrderItemVM()
     this.orderItems.push(oi)
+    // ---
+    const oi2 = new CustomOrderItem()
+    this.order.orderItems.push(oi2)
   }
 }
 
