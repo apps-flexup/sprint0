@@ -52,27 +52,6 @@
               @orderItem:selected='orderItemSelected'
               @orderItem:addCustom='purchaseVM.addCustomOrderItem()'
             )
-        v-row
-          v-col(cols="12")
-            fv-offer-autocomplete(
-              :thirdPartyAccountId="purchaseVM.thirdPartyId"
-              :return-object="true"
-              @offers:selected="orderItemSelected"
-            )
-        v-row
-          v-col(cols="12")
-            fv-text-button(
-              @button:click="purchaseVM.addCustomOrderItem()"
-            )
-              template(v-slot:icon)
-                fv-icon(
-                  size="small"
-                  icon="mdi-plus"
-                  color="#1976d2"
-                  @icon:clicked="purchaseVM.addCustomOrderItem()"
-                )
-              template(v-slot:text)
-                | {{ $t('forms.purchases.new.newCustomOrderItem') }}
   v-row
     v-spacer
     v-col(cols="5")
@@ -109,13 +88,13 @@ export default {
       this.$router.go(-1)
     },
     thirdPartyIdChanged(id) {
-      this.purchaseVM.thirdPartyIdChanged(id)
+      this.purchaseVM.thirdPartyId = id
     },
     labelChanged(label) {
-      this.purchaseVM.labelChanged(label)
+      this.purchaseVM.label = label
     },
     dateChanged(date) {
-      this.purchaseVM.dateChanged(date)
+      this.purchaseVM.date = date
     },
     orderItemSelected(orderItem) {
       this.purchaseVM.addOrderItem({

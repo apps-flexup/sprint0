@@ -1,15 +1,84 @@
 import { DateProvider } from '~/src/flexup/corelogic/usecases/creating-order/DateProvider'
 
-export class PurchaseVM {
+export class OrderItem {
+  productName: string
+  offerName: string
+  price: any
+  vat: number
+  unit: string
+  quantity: number
+
+  constructor(
+    productName: string = '',
+    offerName: string = '',
+    price: any = { amount: 0, currency: 'EUR' },
+    vat: number = 0,
+    unit: string = '',
+    quantity: number = 1
+  ) {
+    this.productName = productName
+    this.offerName = offerName
+    this.price = price
+    this.vat = vat
+    this.unit = unit
+    this.quantity = quantity
+  }
+}
+
+export class Order {
   thirdPartyId: number
   date: string
   label?: string
+  orderItems: Array<OrderItem>
+
+  constructor(
+    thirdPartyId: number = -1,
+    date: string = '',
+    label: string = '',
+    orderItem: Array<OrderItem> = []
+  ) {
+    this.thirdPartyId = thirdPartyId
+    this.date = date
+    this.label = label
+    this.orderItems = orderItem
+  }
+}
+
+export class CreatePurchaseVM {
   orderItems: OrderItemVM[]
 
+  private order: Order
+
   constructor(date: string) {
-    this.thirdPartyId = -1
-    this.date = date
+    this.order = new Order(-1, date, '', [])
     this.orderItems = []
+  }
+
+  get thirdPartyId(): number {
+    return this.order.thirdPartyId
+  }
+
+  set thirdPartyId(thirdPartyId: number) {
+    if (this.order.thirdPartyId !== thirdPartyId) {
+      this.order.thirdPartyId = thirdPartyId
+      this.orderItems = []
+    }
+  }
+
+  get date(): string {
+    return this.order.date
+  }
+
+  set date(date: string) {
+    this.order.date = date
+  }
+
+  get label(): string | undefined {
+    return this.order.label
+  }
+
+  set label(label: string | undefined) {
+    this.order.label = label
   }
 
   get totalWithoutTax(): number {
@@ -42,23 +111,19 @@ export class PurchaseVM {
     return res
   }
 
-  thirdPartyIdChanged(thirdPartyId: number) {
-    if (this.thirdPartyId !== thirdPartyId) {
-      this.thirdPartyId = thirdPartyId
-      this.orderItems = []
-    }
-  }
-
-  dateChanged(date: string) {
-    this.date = date
-  }
-
-  labelChanged(label: string) {
-    this.label = label
-  }
-
   addOrderItem(orderItem) {
+    const oi2 = new OrderItem(
+      orderItem.productName,
+      orderItem.offerName,
+      orderItem.price,
+      orderItem.vat,
+      orderItem.unit.unit,
+      1
+    )
+    this.order.orderItems.push(oi2)
+
     const oi = new OrderItemVM(
+      oi2,
       orderItem.productName,
       orderItem.offerName,
       orderItem.price,
@@ -67,14 +132,19 @@ export class PurchaseVM {
       1
     )
     this.orderItems.push(oi)
+    // ------
   }
 
   removeOrderItem(index) {
     this.orderItems.splice(index, 1)
+    // ---
+    this.order.orderItems.splice(index, 1)
   }
 
   orderItemQuantityChanged(quantity, index) {
     this.orderItems[index].quantity = quantity
+    // ---
+    this.order.orderItems[index].quantity = quantity
   }
 
   addCustomOrderItem() {
@@ -90,6 +160,7 @@ export class OrderItemVM {
   vat: number
   unit: string
   quantity: number
+  item: OrderItem
 
   canEditProductName: boolean = false
   canEditOfferName: boolean = false
@@ -98,6 +169,7 @@ export class OrderItemVM {
   canEditUnit: boolean = false
 
   constructor(
+    item: OrderItem,
     productName: string,
     offerName: string,
     price: any,
@@ -105,6 +177,7 @@ export class OrderItemVM {
     unit: string,
     quantity: number = 1
   ) {
+    this.item = item
     this.productName = productName
     this.offerName = offerName || ''
     this.price = price
@@ -150,7 +223,7 @@ export class CustomOrderItemVM extends OrderItemVM {
   canEditUnit: boolean = true
 
   constructor() {
-    super('', '', { amount: 0, currency: 'EUR' }, 0, '', 1)
+    super(new OrderItem(), '', '', { amount: 0, currency: 'EUR' }, 0, '', 1)
   }
 
   setProductName(name: string): void {
@@ -174,6 +247,8 @@ export class CustomOrderItemVM extends OrderItemVM {
   }
 }
 
-export const createPurchaseVM = (dateProvider: DateProvider): PurchaseVM => {
-  return new PurchaseVM(dateProvider.now())
+export const createPurchaseVM = (
+  dateProvider: DateProvider
+): CreatePurchaseVM => {
+  return new CreatePurchaseVM(dateProvider.now())
 }

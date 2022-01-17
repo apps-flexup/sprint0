@@ -1,13 +1,13 @@
 import { FakeDateProvider } from '~/src/flexup/adapters/secondary/FakeDateProvider'
 import {
   createPurchaseVM,
-  PurchaseVM
+  CreatePurchaseVM
 } from '~/src/flexup/adapters/primary/view-models-generator/create-order-screen/create-purchase-screen/createPurchaseViewModelGenerator'
 
 describe('Create purchase view model generator', () => {
   const today = '2022-01-04'
   const dateProvider: FakeDateProvider = new FakeDateProvider(today)
-  let purchaseVM: PurchaseVM
+  let purchaseVM: CreatePurchaseVM
 
   beforeEach(() => {
     purchaseVM = createPurchaseVM(dateProvider)
@@ -21,15 +21,15 @@ describe('Create purchase view model generator', () => {
 
   describe('Manage inputs', () => {
     it('should allow to change third party id', () => {
-      purchaseVM.thirdPartyIdChanged(1)
+      purchaseVM.thirdPartyId = 1
       expect(purchaseVM.thirdPartyId).toBe(1)
     })
     it('should allow to change date', () => {
-      purchaseVM.dateChanged('2022-01-05')
+      purchaseVM.date = '2022-01-05'
       expect(purchaseVM.date).toBe('2022-01-05')
     })
     it('should allow to set a label', () => {
-      purchaseVM.labelChanged('Super label')
+      purchaseVM.label = 'Super label'
       expect(purchaseVM.label).toBe('Super label')
     })
 
@@ -216,7 +216,7 @@ describe('Create purchase view model generator', () => {
         })
         describe('Changing third party', () => {
           it('should clear order items', () => {
-            purchaseVM.thirdPartyIdChanged(2)
+            purchaseVM.thirdPartyId = 2
             expect(purchaseVM.orderItems).toEqual([])
             expect(purchaseVM.totalWithoutTax).toBe(0)
             expect(purchaseVM.totalWithTax).toBe(0)
@@ -315,6 +315,14 @@ describe('Create purchase view model generator', () => {
     unit
   ) => {
     return {
+      item: {
+        productName,
+        offerName,
+        price,
+        vat,
+        quantity,
+        unit
+      },
       productName,
       offerName,
       price,
@@ -331,6 +339,14 @@ describe('Create purchase view model generator', () => {
 
   const createCustomOrderItemVM = () => {
     return {
+      item: {
+        productName: '',
+        offerName: '',
+        price: { amount: 0, currency: 'EUR' },
+        vat: 0,
+        quantity: 1,
+        unit: ''
+      },
       productName: '',
       offerName: '',
       price: { amount: 0, currency: 'EUR' },
