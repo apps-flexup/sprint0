@@ -1,24 +1,14 @@
-import {
-  OrderItemVM
-} from '~/src/flexup/adapters/primary/view-models-generator/create-order-screen/create-purchase-screen/orderItemVM'
-import {
-  CustomOrderItemVM
-} from '~/src/flexup/adapters/primary/view-models-generator/create-order-screen/create-purchase-screen/customOrderItemVM'
-import {
-  OrderItem
-} from '~/src/flexup/corelogic/entities/orders/orderItem'
-import {
-  CustomOrderItem
-} from '~/src/flexup/corelogic/entities/orders/customOrderItem'
-import {
-  Order
-} from '~/src/flexup/corelogic/entities/orders/order'
+import { OrderItemVM } from '~/src/flexup/adapters/primary/view-models-generator/create-order-screen/create-purchase-screen/orderItemVM'
+import { CustomOrderItemVM } from '~/src/flexup/adapters/primary/view-models-generator/create-order-screen/create-purchase-screen/customOrderItemVM'
+import { OrderItem } from '~/src/flexup/corelogic/entities/orders/orderItem'
+import { CustomOrderItem } from '~/src/flexup/corelogic/entities/orders/customOrderItem'
+import { Order } from '~/src/flexup/corelogic/entities/orders/order'
 
 export class CreatePurchaseVM {
   private order: Order
 
   constructor(date: string) {
-    this.order = new Order(-1, date, '', [])
+    this.order = new Order('', -1, date, '', [])
   }
 
   get thirdPartyId(): number {

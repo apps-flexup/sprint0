@@ -7,10 +7,8 @@ import { InMemoryOrderGateway } from '~/src/flexup/adapters/secondary/inMemoryOr
 import { JsonServerOrderGateway } from '~/src/flexup/adapters/secondary/JsonServerOrderGateway'
 import { InMemoryThirdPartyGateway } from '~/src/flexup/adapters/secondary/inMemoryThirdPartyGateway'
 import { RealDateProvider } from '~/src/flexup/adapters/secondary/RealDateProvider'
-import {
-  OrderItem,
-  OrderStatus
-} from '~/src/flexup/corelogic/usecases/my-orders-listing/order.interface'
+import { OrderItem } from '~/src/flexup/corelogic/entities/orders/orderItem'
+import { OrderStatus } from '~/src/flexup/corelogic/entities/orders/order'
 
 export const dateProvider: DateProvider = new RealDateProvider()
 
@@ -20,23 +18,23 @@ const thirdPartyGateway = new InMemoryThirdPartyGateway()
 //   { id: 2, name: 'Cosys' }
 // )
 
-const socks: OrderItem = {
-  productName: 'Socks',
-  offerName: 'Christmas Socks',
-  price: { amount: 10, currency: 'EUR' },
-  vat: 0.2,
-  unit: 'unit',
-  quantity: 2
-}
+const socks: OrderItem = new OrderItem(
+  'Socks',
+  'Christmas Socks',
+  { amount: 10, currency: 'EUR' },
+  0.2,
+  'unit',
+  2
+)
 
-const bag: OrderItem = {
-  productName: 'Bag',
-  offerName: '',
-  price: { amount: 45, currency: 'EUR' },
-  vat: 0.1,
-  unit: 'unit',
-  quantity: 1
-}
+const bag: OrderItem = new OrderItem(
+  'Bag',
+  '',
+  { amount: 45, currency: 'EUR' },
+  0.1,
+  'unit',
+  1
+)
 
 const inMemoryOrderGateway = new InMemoryOrderGateway()
 inMemoryOrderGateway.feedWith(

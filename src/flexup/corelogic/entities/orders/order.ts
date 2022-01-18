@@ -1,21 +1,32 @@
 import { OrderItem } from '~/src/flexup/corelogic/entities/orders/orderItem'
 
+export enum OrderStatus {
+  NEW = 'NEW',
+  DRAFT = 'DRAFT'
+}
+
 export class Order {
+  id: string
   thirdPartyId: number
   date: string
   label?: string
   orderItems: Array<OrderItem>
+  status: OrderStatus
 
   constructor(
+    id: string,
     thirdPartyId: number = -1,
     date: string = '',
     label: string = '',
-    orderItem: Array<OrderItem> = []
+    orderItem: Array<OrderItem> = [],
+    status: OrderStatus = OrderStatus.NEW
   ) {
+    this.id = id
     this.thirdPartyId = thirdPartyId
     this.date = date
     this.label = label
     this.orderItems = orderItem
+    this.status = status
   }
 
   get totalWithoutTax(): number {

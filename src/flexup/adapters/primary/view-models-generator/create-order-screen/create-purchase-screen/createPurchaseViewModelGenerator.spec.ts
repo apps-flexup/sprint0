@@ -1,10 +1,6 @@
 import { FakeDateProvider } from '~/src/flexup/adapters/secondary/FakeDateProvider'
-import {
-  createPurchaseVM
-} from '~/src/flexup/adapters/primary/view-models-generator/create-order-screen/create-purchase-screen/createPurchaseViewModelGenerator'
-import {
-  CreatePurchaseVM
-} from '~/src/flexup/adapters/primary/view-models-generator/create-order-screen/create-purchase-screen/createPurchaseVM'
+import { createPurchaseVM } from '~/src/flexup/adapters/primary/view-models-generator/create-order-screen/create-purchase-screen/createPurchaseViewModelGenerator'
+import { CreatePurchaseVM } from '~/src/flexup/adapters/primary/view-models-generator/create-order-screen/create-purchase-screen/createPurchaseVM'
 
 describe('Create purchase view model generator', () => {
   const today = '2022-01-04'

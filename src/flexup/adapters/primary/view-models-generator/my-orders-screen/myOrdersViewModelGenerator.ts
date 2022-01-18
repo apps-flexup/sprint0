@@ -1,7 +1,7 @@
 import { AppState } from '~/src/flexup/store/appState.interface'
 import { getMyOrders } from '~/src/flexup/store/reducers/ordersList.reducer'
 import { getMyThirdParties } from '~/src/flexup/store/reducers/thirdPartiesList.reducer'
-import { Order } from '~/src/flexup/corelogic/usecases/my-orders-listing/order.interface'
+import { Order } from '~/src/flexup/corelogic/entities/orders/order'
 
 export interface MyOrdersVM {
   headers: Header[]
