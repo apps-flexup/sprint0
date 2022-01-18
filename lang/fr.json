@@ -668,7 +668,7 @@
         "date": "Date",
         "label": "Libellé",
         "selectOffer": "Sélectionner une offre",
-        "newCustomOrderItem": "Ajouter un nouvel élément de commande",
+        "newCustomOrderItem": "Créer un nouveau produit",
         "cancel": "Annuler",
         "saveAsDraft": "Sauvegarder le brouillon"
       }

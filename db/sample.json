@@ -14897,49 +14897,49 @@
   "order-item-headers": [
     {
       "align": "start",
-      "sortable": true,
+      "sortable": false,
       "text": "headers.orderItems.productName",
       "value": "productName"
     },
     {
       "align": "start",
-      "sortable": true,
+      "sortable": false,
       "text": "headers.orderItems.offerName",
       "value": "offerName"
     },
     {
       "align": "end",
-      "sortable": true,
+      "sortable": false,
       "text": "headers.orderItems.quantity",
       "value": "quantity"
     },
     {
       "align": "start",
-      "sortable": true,
+      "sortable": false,
       "text": "headers.orderItems.unit",
       "value": "unit"
     },
     {
       "align": "end",
-      "sortable": true,
+      "sortable": false,
       "text": "headers.orderItems.unitPrice",
       "value": "price"
     },
     {
       "align": "end",
-      "sortable": true,
+      "sortable": false,
       "text": "headers.orderItems.vat",
       "value": "vat"
     },
     {
       "align": "end",
-      "sortable": true,
+      "sortable": false,
       "text": "headers.orderItems.valueWithoutTax",
       "value": "valueWithoutTax"
     },
     {
       "align": "end",
-      "sortable": true,
+      "sortable": false,
       "text": "headers.orderItems.valueWithTax",
       "value": "valueWithTax"
     },

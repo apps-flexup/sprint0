@@ -661,7 +661,7 @@
         "date": "Date",
         "label": "Label",
         "selectOffer": "Select an offer",
-        "newCustomOrderItem": "Add a new blank order item",
+        "newCustomOrderItem": "Add a new product",
         "cancel": "Cancel",
         "saveAsDraft": "Save as draft"
       }
