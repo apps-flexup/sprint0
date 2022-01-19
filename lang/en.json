@@ -760,7 +760,7 @@
       "value": "Value incl. tax",
       "status": "Status"
     },
-    "orderItem": {
+    "orderItems": {
       "productName": "Product name",
       "offerName": "Offer name",
       "quantity": "Quantity",
