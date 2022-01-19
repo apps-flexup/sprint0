@@ -76,16 +76,6 @@ const headers = [
   }
 ]
 
-const totalWithTax = (o: Order) => {
-  let amount = 0
-  o.orderItems.forEach((oi) => {
-    const oiAmount = oi.price.amount * oi.quantity
-    const oiTax = oi.price.amount * oi.quantity * oi.vat
-    amount += oiAmount + oiTax
-  })
-  return { amount, currency: 'EUR' }
-}
-
 const getThirdPartyName = (thirdPartyId: number, state: AppState) => {
   const myThirdPartiesSelector = getMyThirdParties(state).data
   const thirdParty = myThirdPartiesSelector.find((tp) => thirdPartyId === tp.id)
@@ -95,13 +85,13 @@ const getThirdPartyName = (thirdPartyId: number, state: AppState) => {
 export const getMyOrdersVM = (state: AppState): MyOrdersVM => {
   const myOrdersSelector = getMyOrders(state)
   return {
-    orders: myOrdersSelector.data.map((o) => {
+    orders: myOrdersSelector.data.map((o: Order) => {
       return {
         id: o.id,
         thirdParty: getThirdPartyName(o.thirdPartyId, state),
         date: o.date,
         label: o.label,
-        value: totalWithTax(o)
+        value: { amount: o.totalWithTax, currency: 'EUR' }
       }
     }),
     headers

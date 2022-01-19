@@ -1,5 +1,5 @@
 import { OrderGateway } from '~/src/flexup/corelogic/gateways/orderGateway.interface'
-import { Order } from '~/src/flexup/corelogic/usecases/my-orders-listing/order.interface'
+import { Order } from '~/src/flexup/corelogic/entities/orders/order'
 
 export class InMemoryOrderGateway implements OrderGateway {
   private orders: Order[]
@@ -9,7 +9,7 @@ export class InMemoryOrderGateway implements OrderGateway {
   }
 
   listMyOrders(): Promise<Order[]> {
-    return Promise.resolve(JSON.parse(JSON.stringify(this.orders)))
+    return Promise.resolve(Object.assign([], this.orders))
   }
 
   feedWith(...orders: Order[]) {

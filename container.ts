@@ -8,7 +8,7 @@ import { JsonServerOrderGateway } from '~/src/flexup/adapters/secondary/JsonServ
 import { InMemoryThirdPartyGateway } from '~/src/flexup/adapters/secondary/inMemoryThirdPartyGateway'
 import { RealDateProvider } from '~/src/flexup/adapters/secondary/RealDateProvider'
 import { OrderItem } from '~/src/flexup/corelogic/entities/orders/orderItem'
-import { OrderStatus } from '~/src/flexup/corelogic/entities/orders/order'
+import { Order, OrderStatus } from '~/src/flexup/corelogic/entities/orders/order'
 
 export const dateProvider: DateProvider = new RealDateProvider()
 
@@ -38,22 +38,8 @@ const bag: OrderItem = new OrderItem(
 
 const inMemoryOrderGateway = new InMemoryOrderGateway()
 inMemoryOrderGateway.feedWith(
-  {
-    id: 'abc',
-    thirdPartyId: 1,
-    date: '2022-01-03',
-    label: 'order 1',
-    status: OrderStatus.DRAFT,
-    orderItems: [socks, bag]
-  },
-  {
-    id: 'def',
-    thirdPartyId: 2,
-    date: '2022-01-02',
-    label: 'order 2',
-    status: OrderStatus.DRAFT,
-    orderItems: [socks]
-  }
+  new Order('abc', 1, '2022-01-03', 'order 1', [socks, bag], OrderStatus.DRAFT),
+  new Order('def', 2, '2022-01-02', 'order 2', [socks], OrderStatus.DRAFT)
 )
 
 export const jsonServerOrderGateway = new JsonServerOrderGateway()

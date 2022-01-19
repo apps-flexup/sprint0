@@ -1,7 +1,7 @@
 import { ThunkResult } from '../../../../store/configureStore'
 import { Actions } from '../../my-orders-listing/actionCreators'
-import { Order } from '~/src/flexup/corelogic/usecases/my-orders-listing/order.interface'
 import { OrderGateway } from '~/src/flexup/corelogic/gateways/orderGateway.interface'
+import { Order } from '~/src/flexup/corelogic/entities/orders/order'
 
 export const createPurchase: (purchase: Order) => ThunkResult<Promise<void>> = (
   purchase

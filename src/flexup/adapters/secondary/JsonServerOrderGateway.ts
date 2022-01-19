@@ -1,5 +1,6 @@
 import { OrderGateway } from '~/src/flexup/corelogic/gateways/orderGateway.interface'
-import { Order } from '~/src/flexup/corelogic/usecases/my-orders-listing/order.interface'
+import { Order } from '~/src/flexup/corelogic/entities/orders/order'
+import { OrderItem } from '~/src/flexup/corelogic/entities/orders/orderItem'
 
 export class JsonServerOrderGateway implements OrderGateway {
   private activeAccountId: number = -1
@@ -18,7 +19,27 @@ export class JsonServerOrderGateway implements OrderGateway {
     const orders = await this.axios.$get(
       `/${this.resource}?account_id=${this.activeAccountId}`
     )
-    return Promise.resolve(JSON.parse(JSON.stringify(orders)))
+    const res = orders.map((o) => {
+      const orderItems = o.orderItems.map((oi) => {
+        return new OrderItem(
+          oi.productName,
+          oi.offerName,
+          oi.price,
+          oi.vat,
+          oi.unit,
+          oi.quantity
+        )
+      })
+      return new Order(
+        o.id,
+        o.thirdPartyId,
+        o.date,
+        o.label,
+        orderItems,
+        o.status
+      )
+    })
+    return Promise.resolve(Object.assign([], res))
   }
 
   createOrder(order: Order): Promise<void> {

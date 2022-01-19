@@ -15,12 +15,12 @@
       v-list-item-avatar
         v-img(:src="data.item.illustration_url")
       v-list-item-content
-        v-list-item-title(v-to-locale="data.item.name")
+        v-list-item-title(v-to-locale="data.item.name || data.item.productName")
     template(v-slot:selection="data")
         v-list-item-avatar
           v-img(:src="data.item.illustration_url")
         v-list-item-content
-          v-list-item-title(v-to-locale="data.item.name")
+          v-list-item-title(v-to-locale="data.item.name || data.item.productName")
     template(v-slot:no-data)
       div Aucune donnée disponible
     template(v-slot:append-item)
@@ -85,8 +85,19 @@ export default {
     async thirdPartyAccountId() {
       this.items = []
       if (this.thirdPartyAccountId > 0) {
-        const res = await this.$axios.$get(
+        const offers = await this.$axios.$get(
           `offers/?account_id=${this.thirdPartyAccountId}`
+        )
+        const res = await Promise.all(
+          offers.map(async (o) => {
+            const product = await this.$axios.$get(
+              `products/?id=${o.product_id}`
+            )
+            return {
+              ...o,
+              productName: product[0]?.name || ''
+            }
+          })
         )
         this.items = res
       }
@@ -100,7 +111,16 @@ export default {
         this.thirdPartyAccountId
       )
       const accountId = thirdPartyAccount.id
-      const res = await this.$axios.$get(`offers/?account_id=${accountId}`)
+      const offers = await this.$axios.$get(`offers/?account_id=${accountId}`)
+      const res = await Promise.all(
+        offers.map(async (o) => {
+          const product = await this.$axios.$get(`products/?id=${o.product_id}`)
+          return {
+            ...o,
+            productName: product.name || ''
+          }
+        })
+      )
       this.items = res
     }
   },

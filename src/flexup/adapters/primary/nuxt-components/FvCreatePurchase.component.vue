@@ -74,7 +74,6 @@ import { createPurchaseVM } from '~/src/flexup/adapters/primary/view-models-gene
 import { dateProvider } from '~/container'
 import { savePurchaseAsDraft } from '~/src/flexup/corelogic/usecases/creating-order/creating-purchase/savePurchaseAsDraft'
 import { store } from '~/container'
-import { getMyOrders } from '~/src/flexup/store/reducers/ordersList.reducer'
 
 export default {
   name: 'FvCreatePurchase',
@@ -128,7 +127,6 @@ export default {
         })
       }
       await store.dispatch(savePurchaseAsDraft(res))
-      console.log('orders: ', getMyOrders(store.getState()).data)
       this.$router.go(-1)
     }
   }

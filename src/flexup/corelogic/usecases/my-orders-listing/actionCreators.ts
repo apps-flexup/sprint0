@@ -1,5 +1,5 @@
 import { ActionsUnion, createAction } from '../../../store/configureStore'
-import { Order } from './order.interface'
+import { Order } from '~/src/flexup/corelogic/entities/orders/order'
 
 export const Actions = {
   myOrdersListed: (orders: Order[]) =>

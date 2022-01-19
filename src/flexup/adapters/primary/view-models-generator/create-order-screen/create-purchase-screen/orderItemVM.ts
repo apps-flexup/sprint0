@@ -1,6 +1,4 @@
-import {
-  OrderItem
-} from '~/src/flexup/corelogic/entities/orders/orderItem'
+import { OrderItem } from '~/src/flexup/corelogic/entities/orders/orderItem'
 
 export class OrderItemVM {
   orderItem: OrderItem
@@ -40,22 +38,22 @@ export class OrderItemVM {
   }
 
   setProductName(_name: string): void {
-    throw new Error('Can\'t set product name of order item')
+    throw new Error("Can't set product name of order item")
   }
 
   setOfferName(_name: string): void {
-    throw new Error('Can\'t set offer name of order item')
+    throw new Error("Can't set offer name of order item")
   }
 
   setPrice(_price: number): void {
-    throw new Error('Can\'t set price of order item')
+    throw new Error("Can't set price of order item")
   }
 
   setVat(_vat: number): void {
-    throw new Error('Can\'t set vat of order item')
+    throw new Error("Can't set vat of order item")
   }
 
   setUnit(_unit: string): void {
-    throw new Error('Can\'t set unit of order item')
+    throw new Error("Can't set unit of order item")
   }
 }
