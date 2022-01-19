@@ -1,13 +1,11 @@
 import { FakeDateProvider } from '~/src/flexup/adapters/secondary/FakeDateProvider'
-import {
-  createPurchaseVM,
-  PurchaseVM
-} from '~/src/flexup/adapters/primary/view-models-generator/create-order-screen/create-purchase-screen/createPurchaseViewModelGenerator'
+import { createPurchaseVM } from '~/src/flexup/adapters/primary/view-models-generator/create-order-screen/create-purchase-screen/createPurchaseViewModelGenerator'
+import { CreatePurchaseVM } from '~/src/flexup/adapters/primary/view-models-generator/create-order-screen/create-purchase-screen/createPurchaseVM'
 
 describe('Create purchase view model generator', () => {
   const today = '2022-01-04'
   const dateProvider: FakeDateProvider = new FakeDateProvider(today)
-  let purchaseVM: PurchaseVM
+  let purchaseVM: CreatePurchaseVM
 
   beforeEach(() => {
     purchaseVM = createPurchaseVM(dateProvider)
@@ -21,15 +19,15 @@ describe('Create purchase view model generator', () => {
 
   describe('Manage inputs', () => {
     it('should allow to change third party id', () => {
-      purchaseVM.thirdPartyIdChanged(1)
+      purchaseVM.thirdPartyId = 1
       expect(purchaseVM.thirdPartyId).toBe(1)
     })
     it('should allow to change date', () => {
-      purchaseVM.dateChanged('2022-01-05')
+      purchaseVM.date = '2022-01-05'
       expect(purchaseVM.date).toBe('2022-01-05')
     })
     it('should allow to set a label', () => {
-      purchaseVM.labelChanged('Super label')
+      purchaseVM.label = 'Super label'
       expect(purchaseVM.label).toBe('Super label')
     })
 
@@ -216,7 +214,7 @@ describe('Create purchase view model generator', () => {
         })
         describe('Changing third party', () => {
           it('should clear order items', () => {
-            purchaseVM.thirdPartyIdChanged(2)
+            purchaseVM.thirdPartyId = 2
             expect(purchaseVM.orderItems).toEqual([])
             expect(purchaseVM.totalWithoutTax).toBe(0)
             expect(purchaseVM.totalWithTax).toBe(0)
@@ -275,31 +273,31 @@ describe('Create purchase view model generator', () => {
         it('should allow to edit product name', () => {
           purchaseVM.orderItems[0].setProductName('t-shirt')
           const expectedOrderItem = createCustomOrderItemVM()
-          expectedOrderItem.productName = 't-shirt'
+          expectedOrderItem.orderItem.productName = 't-shirt'
           expect(purchaseVM.orderItems).toEqual([expectedOrderItem])
         })
         it('should allow to edit offer name', () => {
           purchaseVM.orderItems[0].setOfferName('t-shirt')
           const expectedOrderItem = createCustomOrderItemVM()
-          expectedOrderItem.offerName = 't-shirt'
+          expectedOrderItem.orderItem.offerName = 't-shirt'
           expect(purchaseVM.orderItems).toEqual([expectedOrderItem])
         })
         it('should allow to edit price', () => {
           purchaseVM.orderItems[0].setPrice(42)
           const expectedOrderItem = createCustomOrderItemVM()
-          expectedOrderItem.price.amount = 42
+          expectedOrderItem.orderItem.price.amount = 42
           expect(purchaseVM.orderItems).toEqual([expectedOrderItem])
         })
         it('should allow to edit vat', () => {
           purchaseVM.orderItems[0].setVat(50)
           const expectedOrderItem = createCustomOrderItemVM()
-          expectedOrderItem.vat = 50
+          expectedOrderItem.orderItem.vat = 50
           expect(purchaseVM.orderItems).toEqual([expectedOrderItem])
         })
         it('should allow to edit unit', () => {
           purchaseVM.orderItems[0].setUnit('kg')
           const expectedOrderItem = createCustomOrderItemVM()
-          expectedOrderItem.unit = 'kg'
+          expectedOrderItem.orderItem.unit = 'kg'
           expect(purchaseVM.orderItems).toEqual([expectedOrderItem])
         })
       })
@@ -315,12 +313,14 @@ describe('Create purchase view model generator', () => {
     unit
   ) => {
     return {
-      productName,
-      offerName,
-      price,
-      vat,
-      quantity,
-      unit,
+      orderItem: {
+        productName,
+        offerName,
+        price,
+        vat,
+        quantity,
+        unit
+      },
       canEditProductName: false,
       canEditOfferName: false,
       canEditPrice: false,
@@ -331,12 +331,14 @@ describe('Create purchase view model generator', () => {
 
   const createCustomOrderItemVM = () => {
     return {
-      productName: '',
-      offerName: '',
-      price: { amount: 0, currency: 'EUR' },
-      vat: 0,
-      quantity: 1,
-      unit: '',
+      orderItem: {
+        productName: '',
+        offerName: '',
+        price: { amount: 0, currency: 'EUR' },
+        vat: 0,
+        quantity: 1,
+        unit: ''
+      },
       canEditProductName: true,
       canEditOfferName: true,
       canEditPrice: true,

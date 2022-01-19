@@ -660,7 +660,8 @@
         "title": "New purchase",
         "date": "Date",
         "label": "Label",
-        "newCustomOrderItem": "Add a new order item",
+        "selectOffer": "Select an offer",
+        "newCustomOrderItem": "Add a new product",
         "cancel": "Cancel",
         "saveAsDraft": "Save as draft"
       }

@@ -3,15 +3,15 @@ import {
   ReduxStore
 } from '~/src/flexup/store/configureStore'
 import {
-  Order,
-  OrderItem,
-  OrderStatus
-} from '~/src/flexup/corelogic/usecases/my-orders-listing/order.interface'
-import {
   getMyOrdersVM,
   OrderVM
 } from '~/src/flexup/adapters/primary/view-models-generator/my-orders-screen/myOrdersViewModelGenerator'
 import { ThirdParty } from '~/src/flexup/corelogic/usecases/my-third-parties-listing/thirdParty.interface'
+import { OrderItem } from '~/src/flexup/corelogic/entities/orders/orderItem'
+import {
+  Order,
+  OrderStatus
+} from '~/src/flexup/corelogic/entities/orders/order'
 
 describe('My orders view model generation', () => {
   let store: ReduxStore
@@ -73,38 +73,38 @@ describe('My orders view model generation', () => {
         thirdParties: [domaineParvis, cosys]
       }
     })
-    const socks: OrderItem = {
-      productName: 'Socks',
-      offerName: 'Christmas socks',
-      price: { amount: 10, currency: 'EUR' },
-      vat: 0.1,
-      unit: 'unit',
-      quantity: 2
-    }
-    const bag: OrderItem = {
-      productName: 'Bag',
-      offerName: '',
-      price: { amount: 45, currency: 'EUR' },
-      vat: 0.2,
-      unit: 'unit',
-      quantity: 1
-    }
-    const order1: Order = {
-      id: 'abc',
-      thirdPartyId: 1,
-      date: '2022-01-03',
-      label: 'Order 1',
-      status: OrderStatus.DRAFT,
-      orderItems: [socks, bag]
-    }
-    const order2: Order = {
-      id: 'def',
-      thirdPartyId: 2,
-      date: '2022-01-02',
-      label: 'Order 2',
-      status: OrderStatus.DRAFT,
-      orderItems: [bag]
-    }
+    const socks: OrderItem = new OrderItem(
+      'Socks',
+      'Christmas socks',
+      { amount: 10, currency: 'EUR' },
+      0.1,
+      'unit',
+      2
+    )
+    const bag: OrderItem = new OrderItem(
+      'Bag',
+      '',
+      { amount: 45, currency: 'EUR' },
+      0.2,
+      'unit',
+      1
+    )
+    const order1: Order = new Order(
+      'abc',
+      1,
+      '2022-01-03',
+      'Order 1',
+      [socks, bag],
+      OrderStatus.DRAFT
+    )
+    const order2: Order = new Order(
+      'def',
+      2,
+      '2022-01-02',
+      'Order 2',
+      [bag],
+      OrderStatus.DRAFT
+    )
     store.dispatch({
       type: 'MY_ORDERS_LISTED',
       payload: {

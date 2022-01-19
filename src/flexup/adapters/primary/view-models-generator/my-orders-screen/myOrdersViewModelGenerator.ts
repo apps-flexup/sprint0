@@ -1,7 +1,7 @@
 import { AppState } from '~/src/flexup/store/appState.interface'
 import { getMyOrders } from '~/src/flexup/store/reducers/ordersList.reducer'
 import { getMyThirdParties } from '~/src/flexup/store/reducers/thirdPartiesList.reducer'
-import { Order } from '~/src/flexup/corelogic/usecases/my-orders-listing/order.interface'
+import { Order } from '~/src/flexup/corelogic/entities/orders/order'
 
 export interface MyOrdersVM {
   headers: Header[]
@@ -76,16 +76,6 @@ const headers = [
   }
 ]
 
-const totalWithTax = (o: Order) => {
-  let amount = 0
-  o.orderItems.forEach((oi) => {
-    const oiAmount = oi.price.amount * oi.quantity
-    const oiTax = oi.price.amount * oi.quantity * oi.vat
-    amount += oiAmount + oiTax
-  })
-  return { amount, currency: 'EUR' }
-}
-
 const getThirdPartyName = (thirdPartyId: number, state: AppState) => {
   const myThirdPartiesSelector = getMyThirdParties(state).data
   const thirdParty = myThirdPartiesSelector.find((tp) => thirdPartyId === tp.id)
@@ -95,13 +85,13 @@ const getThirdPartyName = (thirdPartyId: number, state: AppState) => {
 export const getMyOrdersVM = (state: AppState): MyOrdersVM => {
   const myOrdersSelector = getMyOrders(state)
   return {
-    orders: myOrdersSelector.data.map((o) => {
+    orders: myOrdersSelector.data.map((o: Order) => {
       return {
         id: o.id,
         thirdParty: getThirdPartyName(o.thirdPartyId, state),
         date: o.date,
         label: o.label,
-        value: totalWithTax(o)
+        value: { amount: o.totalWithTax, currency: 'EUR' }
       }
     }),
     headers

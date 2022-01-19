@@ -7,55 +7,39 @@ import { InMemoryOrderGateway } from '~/src/flexup/adapters/secondary/inMemoryOr
 import { JsonServerOrderGateway } from '~/src/flexup/adapters/secondary/JsonServerOrderGateway'
 import { InMemoryThirdPartyGateway } from '~/src/flexup/adapters/secondary/inMemoryThirdPartyGateway'
 import { RealDateProvider } from '~/src/flexup/adapters/secondary/RealDateProvider'
-import {
-  OrderItem,
-  OrderStatus
-} from '~/src/flexup/corelogic/usecases/my-orders-listing/order.interface'
+import { OrderItem } from '~/src/flexup/corelogic/entities/orders/orderItem'
+import { Order, OrderStatus } from '~/src/flexup/corelogic/entities/orders/order'
 
 export const dateProvider: DateProvider = new RealDateProvider()
 
 const thirdPartyGateway = new InMemoryThirdPartyGateway()
-thirdPartyGateway.feedWith(
-  { id: 1, name: 'Domaine Parvis' },
-  { id: 2, name: 'Cosys' }
+// thirdPartyGateway.feedWith(
+//   { id: 1, name: 'Domaine Parvis' },
+//   { id: 2, name: 'Cosys' }
+// )
+
+const socks: OrderItem = new OrderItem(
+  'Socks',
+  'Christmas Socks',
+  { amount: 10, currency: 'EUR' },
+  0.2,
+  'unit',
+  2
 )
 
-const socks: OrderItem = {
-  productName: 'Socks',
-  offerName: 'Christmas Socks',
-  price: { amount: 10, currency: 'EUR' },
-  vat: 0.2,
-  unit: 'unit',
-  quantity: 2
-}
-
-const bag: OrderItem = {
-  productName: 'Bag',
-  offerName: '',
-  price: { amount: 45, currency: 'EUR' },
-  vat: 0.1,
-  unit: 'unit',
-  quantity: 1
-}
+const bag: OrderItem = new OrderItem(
+  'Bag',
+  '',
+  { amount: 45, currency: 'EUR' },
+  0.1,
+  'unit',
+  1
+)
 
 const inMemoryOrderGateway = new InMemoryOrderGateway()
 inMemoryOrderGateway.feedWith(
-  {
-    id: 'abc',
-    thirdPartyId: 1,
-    date: '2022-01-03',
-    label: 'order 1',
-    status: OrderStatus.DRAFT,
-    orderItems: [socks, bag]
-  },
-  {
-    id: 'def',
-    thirdPartyId: 2,
-    date: '2022-01-02',
-    label: 'order 2',
-    status: OrderStatus.DRAFT,
-    orderItems: [socks]
-  }
+  new Order('abc', 1, '2022-01-03', 'order 1', [socks, bag], OrderStatus.DRAFT),
+  new Order('def', 2, '2022-01-02', 'order 2', [socks], OrderStatus.DRAFT)
 )
 
 export const jsonServerOrderGateway = new JsonServerOrderGateway()

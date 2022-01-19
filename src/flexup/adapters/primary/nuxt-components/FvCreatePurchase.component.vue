@@ -45,31 +45,13 @@
         v-row
           v-col(cols="12")
             fv-order-items-selector(
+              :thirdPartyId="purchaseVM.thirdPartyId"
               :value="purchaseVM.orderItems"
               @orderItem:quantityChanged='quantityChanged'
               @orderItem:delete='deleteOrderItem'
+              @orderItem:selected='orderItemSelected'
+              @orderItem:addCustom='purchaseVM.addCustomOrderItem()'
             )
-        v-row
-          v-col(cols="12")
-            fv-offer-autocomplete(
-              :thirdPartyAccountId="purchaseVM.thirdPartyId"
-              :return-object="true"
-              @offers:selected="orderItemSelected"
-            )
-        v-row
-          v-col(cols="12")
-            fv-text-button(
-              @button:click="purchaseVM.addCustomOrderItem()"
-            )
-              template(v-slot:icon)
-                fv-icon(
-                  size="small"
-                  icon="mdi-plus"
-                  color="#1976d2"
-                  @icon:clicked="purchaseVM.addCustomOrderItem()"
-                )
-              template(v-slot:text)
-                | {{ $t('forms.purchases.new.newCustomOrderItem') }}
   v-row
     v-spacer
     v-col(cols="5")
@@ -92,7 +74,6 @@ import { createPurchaseVM } from '~/src/flexup/adapters/primary/view-models-gene
 import { dateProvider } from '~/container'
 import { savePurchaseAsDraft } from '~/src/flexup/corelogic/usecases/creating-order/creating-purchase/savePurchaseAsDraft'
 import { store } from '~/container'
-import { getMyOrders } from '~/src/flexup/store/reducers/ordersList.reducer'
 
 export default {
   name: 'FvCreatePurchase',
@@ -106,13 +87,13 @@ export default {
       this.$router.go(-1)
     },
     thirdPartyIdChanged(id) {
-      this.purchaseVM.thirdPartyIdChanged(id)
+      this.purchaseVM.thirdPartyId = id
     },
     labelChanged(label) {
-      this.purchaseVM.labelChanged(label)
+      this.purchaseVM.label = label
     },
     dateChanged(date) {
-      this.purchaseVM.dateChanged(date)
+      this.purchaseVM.date = date
     },
     orderItemSelected(orderItem) {
       this.purchaseVM.addOrderItem({
@@ -146,7 +127,6 @@ export default {
         })
       }
       await store.dispatch(savePurchaseAsDraft(res))
-      console.log('orders: ', getMyOrders(store.getState()).data)
       this.$router.go(-1)
     }
   }

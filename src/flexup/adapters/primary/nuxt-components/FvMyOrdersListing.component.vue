@@ -31,7 +31,7 @@ export default {
     this.headers = getMyOrdersVM(store.getState()).headers
     this.orders = await Promise.all(
       getMyOrdersVM(store.getState()).orders.map(async (o) => {
-        const thirdParty = await this.$directory.getThirdPartyById(o.thirdParty)
+        const thirdParty = await this.$directory.getAccountById(o.thirdParty)
         return {
           ...o,
           thirdParty: !+o.thirdParty ? o.thirdParty : thirdParty.name

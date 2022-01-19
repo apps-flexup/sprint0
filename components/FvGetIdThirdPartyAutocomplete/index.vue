@@ -20,7 +20,7 @@ export default {
   methods: {
     selected(v) {
       if (v) {
-        this.$emit('payload:changed', v.id)
+        this.$emit('payload:changed', v.flexup_id || v.id)
       }
     }
   }

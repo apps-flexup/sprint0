@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
 import { AppState } from '../appState.interface'
 import * as actionCreators from '../../corelogic/usecases/my-orders-listing/actionCreators'
-import { Order } from '~/src/flexup/corelogic/usecases/my-orders-listing/order.interface'
+import { Order } from '~/src/flexup/corelogic/entities/orders/order'
 
 const data = (state: Order[] = [], action: actionCreators.Actions) => {
   if (action.type === 'MY_ORDERS_LISTED') {
