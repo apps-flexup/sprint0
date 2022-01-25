@@ -99,7 +99,6 @@ export default {
    */
   buildModules: [
     '@nuxt/typescript-build',
-    '@nuxtjs/stylelint-module',
     '@nuxtjs/vuetify'
   ],
   /*
