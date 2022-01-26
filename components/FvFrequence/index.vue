@@ -6,7 +6,6 @@
     v-model="periode"
     :items="periodes"
     item-value="offset"
-    clearable=''
     outlined=''
   )
     template(v-slot:label)

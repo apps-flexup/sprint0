@@ -14,7 +14,6 @@
       fv-text-field(
         data-testid="textField"
         :readonly="true"
-        :clearable="clearable"
         :hideDetails="hideDetails"
         :value="displayDate"
         :label="label"
@@ -54,15 +53,9 @@ export default {
       }
     },
     dateRef: {
-      type: Date,
+      type: String,
       default() {
         return null
-      }
-    },
-    clearable: {
-      type: Boolean,
-      default() {
-        return true
       }
     },
     hideDetails: {
@@ -81,7 +74,7 @@ export default {
   data() {
     return {
       fromDateMenu: false,
-      pickingDate: this.dateRef ? this.dateRef.toISOString() : null
+      pickingDate: this.dateRef
     }
   },
   computed: {
@@ -97,11 +90,10 @@ export default {
   },
   watch: {
     dateRef() {
-      this.pickingDate = this.dateRef ? this.dateRef.toISOString() : null
+      this.pickingDate = this.dateRef
     }
   },
   mounted() {
-    console.log('Composant ', this.$options.name)
     this.$store.dispatch('settings/getSettings')
   },
   methods: {

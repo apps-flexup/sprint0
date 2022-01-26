@@ -85,7 +85,11 @@ export default {
       this.forceReRender++
     },
     deleteItem(owner) {
-      this.$emit('dataTable:delete:owner', owner)
+      if (this.items.length === 1) {
+        window.confirm(this.$t('forms.subAccounts.new.warningMessage'))
+      } else {
+        this.$emit('dataTable:delete:owner', owner)
+      }
     },
     iconForOwner(owner) {
       const isReferenceOwner = owner.data && owner.data.isReferenceOwner

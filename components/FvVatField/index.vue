@@ -5,7 +5,6 @@
     :label="label"
     :outlined="outlined"
     :readonly="readonly"
-    :clearable="clearable"
     :hideDetails="hideDetails"
     :dense="dense"
     data-testid="vatField"
@@ -43,12 +42,6 @@ export default {
         return false
       }
     },
-    clearable: {
-      type: Boolean,
-      default() {
-        return true
-      }
-    },
     hideDetails: {
       type: Boolean,
       default() {
@@ -71,9 +64,6 @@ export default {
     value() {
       this.vat = this.value
     }
-  },
-  mounted() {
-    console.log('Composant', this.$options.name)
   },
   methods: {
     vatChanged(v) {

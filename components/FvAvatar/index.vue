@@ -8,7 +8,7 @@
     )
 </template>
 
-<script>
+<script lang="ts">
 export default {
   name: 'FvAvatar',
   props: {
@@ -24,9 +24,6 @@ export default {
         return 48
       }
     }
-  },
-  mounted() {
-    console.log('Composant ', this.$options.name)
   }
 }
 </script>

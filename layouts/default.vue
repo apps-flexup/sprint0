@@ -1,22 +1,24 @@
 <template lang="pug">
-  v-app(dark)
-    component(
-      :is="findSpace"
-      :title="title"
-      :space='space'
-    )
-    v-main
-      v-container
-        fv-breadcrumbs(
-          :account="account"
-          :space="space"
-        )
-        nuxt
-    v-footer(:fixed="fixed" app)
-      span &copy; {{ new Date().getFullYear() }}
+v-app(dark)
+  component(
+    :is="findSpace"
+    :title="title"
+    :space='space'
+  )
+  v-main
+    v-container.plop
+      fv-breadcrumbs(
+        :account="account"
+        :space="space"
+      )
+      nuxt
+  v-footer(:fixed="fixed" app)
+    span &copy; {{ new Date().getFullYear() }}
 </template>
 
 <script>
+import { store } from '~/container'
+
 export default {
   props: {
     space: {
@@ -28,6 +30,7 @@ export default {
   },
   data() {
     return {
+      store,
       title: 'Flexup - Sprint 0',
       fixed: true
     }
@@ -60,3 +63,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.plop {
+  width: 70% !important;
+  margin: auto;
+}
+</style>

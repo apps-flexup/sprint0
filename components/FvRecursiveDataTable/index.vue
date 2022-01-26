@@ -1,6 +1,6 @@
 <template lang="pug">
 .fv-recursive-data-table
-  fv-data-table.elevation-2(
+  fv-data-table(
     data-testid="dataTable"
     :headers="headers"
     :items="mainItems"
@@ -72,7 +72,7 @@ export default {
     cssVars() {
       const settings = this.$store.getters['settings/settings']
       const theme = settings.theme
-      let color = '#eaebee'
+      let color = '#9ECFFF'
       if (theme === 'dark') color = '#4a4b4e'
       const res = {
         '--mainTheadColor': color

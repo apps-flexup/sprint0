@@ -16,7 +16,6 @@
         :role="item.role"
         :roles="functionalRoles"
         :dense="true"
-        :clearable="false"
         @role:selected="roleSelected(item, ...arguments)"
       )
       fv-readonly-field.role(

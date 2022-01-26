@@ -1,3 +1,6 @@
+import { jsonServerOrderGateway, store } from '~/container'
+import { getMyOrdersVM } from '~/src/flexup/adapters/primary/view-models-generator/my-orders-screen/myOrdersViewModelGenerator'
+
 const activeAccount = (ctx) => ({
   clear() {
     ctx.store.dispatch('accounts/clear', {}, { root: true })
@@ -22,6 +25,8 @@ const activeAccount = (ctx) => ({
     return type
   },
   set(accountId) {
+    jsonServerOrderGateway.setActiveAccountId(accountId)
+    jsonServerOrderGateway.setAxios(ctx.$axios)
     if (accountId === -1) return
     ctx.store.dispatch('accounts/setCurrent', accountId)
     ctx.store.dispatch('charters/get', {}, { root: true })
@@ -85,15 +90,13 @@ const activeAccount = (ctx) => ({
     return res
   },
   items(tableName, statusFilters = null) {
+    if (tableName === 'orders') {
+      const res = getMyOrdersVM(store.getState())
+      console.log('on veut les orders: ', res)
+      return res
+    }
     if (!statusFilters) return ctx.store.getters[tableName + '/all']
     const res = ctx.store.getters[tableName + '/allWithFilters'](statusFilters)
-    return res
-  },
-  headersOrderLines(addActions = false) {
-    const res = ctx.store.getters['headers/orderLines']
-    if (addActions) {
-      res.push({ text: 'headers.actions', value: 'actions', sortable: false })
-    }
     return res
   },
   hasRole(role) {

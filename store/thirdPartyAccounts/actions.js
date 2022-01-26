@@ -4,10 +4,8 @@ export default {
     let data = await this.$repos.thirdPartyAccounts.indexWithAccountId()
     data = await Promise.all(
       data.map(async (thirdParty) => {
-        if (thirdParty.flexup_id) {
-          const account = await this.$repos.accounts.show(thirdParty.flexup_id)
-          thirdParty = { ...thirdParty, type: account.type, name: account.name }
-        }
+        const account = await this.$repos.accounts.show(thirdParty.flexup_id)
+        thirdParty = { ...account, ...thirdParty, name: account.name }
         return thirdParty
       })
     )
@@ -26,28 +24,45 @@ export default {
       .delete(thirdParty.id)
       .then(() => commit('remove', thirdParty))
   },
-  add({ commit }, thirdParty) {
-    if (thirdParty.type === 'Personal') {
-      const firstname = thirdParty.firstname
-      const lastname = thirdParty.lastname
-      thirdParty.name = [firstname, lastname].join(' ').trim()
-    } else if (thirdParty.type === 'SubAccount') {
-      thirdParty.owners.forEach((owner) => {
-        owner.from_type = 'ThirdParty'
-      })
-    }
-
+  async add({ dispatch, commit }, thirdParty) {
     if (Object.prototype.hasOwnProperty.call(thirdParty, 'id')) {
-      this.$repos.thirdPartyAccounts.update(thirdParty).then((res) => {
+      await dispatch(
+        'accounts/updateLocalThirdParty',
+        { id: thirdParty.flexup_id, data: thirdParty },
+        {
+          root: true
+        }
+      )
+      const payload = {
+        id: thirdParty.id,
+        type: thirdParty.type,
+        flexup_id: thirdParty.flexup_id,
+        directory: thirdParty.directory,
+        account_id: thirdParty.account_id,
+        status: thirdParty.status
+      }
+      this.$repos.thirdPartyAccounts.update(payload).then((res) => {
         commit('update', res)
       })
     } else {
       thirdParty.status = 'active'
-      this.$repos.thirdPartyAccounts
-        .createWithAccountId(thirdParty)
-        .then((res) => {
-          commit('add', res)
-        })
+      if (thirdParty.directory === 'Local') {
+        const accountAdded = await dispatch(
+          'accounts/addLocalThirdParty',
+          thirdParty,
+          {
+            root: true
+          }
+        )
+        thirdParty.flexup_id = accountAdded.id
+      }
+      const res = await this.$repos.thirdPartyAccounts.createWithAccountId({
+        type: thirdParty.type,
+        flexup_id: thirdParty.flexup_id,
+        directory: thirdParty.directory,
+        status: 'active'
+      })
+      commit('add', res)
     }
   },
   addFlexupAccount({ commit }, flexupAccountId) {

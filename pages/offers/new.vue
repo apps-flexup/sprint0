@@ -1,5 +1,5 @@
 <template lang="pug">
-.page-offer-new
+.page-offer-new.form
   fv-form(
     :payload="offer"
     @form:submit="createOffer"
@@ -37,3 +37,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.form {
+  width: 70%;
+  margin: auto;
+}
+</style>

@@ -15,7 +15,6 @@
     :append-icon="appendIcon"
     :placeholder="placeholder"
     :dense="dense"
-    :clearable="clearable"
     outlined
   )
     template(v-slot:label)
@@ -111,12 +110,6 @@ export default {
       type: Boolean,
       default() {
         return null
-      }
-    },
-    clearable: {
-      type: Boolean,
-      default() {
-        return true
       }
     }
   },

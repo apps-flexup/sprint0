@@ -3,7 +3,7 @@
   v-btn(
     data-testid="button"
     x-large
-    color="#FCB71C"
+    color="#FCBF1E"
     @click.prevent="click"
   )
     slot
@@ -19,3 +19,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.v-btn {
+  border-radius: 10px;
+  color: #ffffff;
+}
+</style>

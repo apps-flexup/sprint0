@@ -536,7 +536,8 @@
         "description": "Description",
         "country": "Pays",
         "parent_id": "Compte parent",
-        "type": "Type de compte"
+        "type": "Type de compte",
+        "warningMessage": "Vous devez avoir au moins un propriétaire"
       },
       "edit": {
         "title": "Modifier mon compte"
@@ -562,7 +563,8 @@
         "product_id": "Nom du produit",
         "currency": "Devise",
         "vat": "TVA",
-        "visibility": "Visibilité"
+        "visibility": "Visibilité",
+        "status": "Statut :"
       },
       "edit": {
         "title": "Modifier mon offre"
@@ -644,6 +646,32 @@
     },
     "members": {
       "title": "Ajouter un membre"
+    },
+    "sales": {
+      "step": {
+        "0": "Informations Générales",
+        "1": "Éléments de la commande"
+      },
+      "new": {
+        "title": "Nouvelle vente",
+        "date": "Date",
+        "label": "Libellé"
+      }
+    },
+    "purchases": {
+      "step": {
+        "0": "Informations Générales",
+        "1": "Éléments de la commande"
+      },
+      "new": {
+        "title": "Nouvel achat",
+        "date": "Date",
+        "label": "Libellé",
+        "selectOffer": "Sélectionner une offre",
+        "newCustomOrderItem": "Créer un nouveau produit",
+        "cancel": "Annuler",
+        "saveAsDraft": "Sauvegarder le brouillon"
+      }
     }
   },
   "manageMenu": {
@@ -736,19 +764,19 @@
       "order": "Commande"
     },
     "orders": {
+      "thirdParty": "Tiers",
       "date": "Date",
-      "amount": "Montant TTC",
-      "currency": "Devise",
-      "label": "Label",
-      "structure": "Structure",
+      "value": "Total TTC",
       "status": "Statut"
     },
-    "orderLines": {
-      "offer": "Offre",
+    "orderItems": {
+      "productName": "Nom du produit",
+      "offerName": "Nom de l'Offre",
       "quantity": "Quantité",
       "unit": "Unité",
-      "price": "Prix TTC",
-      "total": "Total TTC",
+      "unitPrice": "Prix unitaire HT",
+      "valueWithoutTax": "Total\u00a0HT",
+      "valueWithTax": "Total\u00a0TTC",
       "vat": "TVA",
       "status": "Statut"
     },

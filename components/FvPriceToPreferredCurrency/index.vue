@@ -30,9 +30,6 @@ export default {
       const res = await this.$displayRules.priceToPreferredCurrency(item)
       return res
     }
-  },
-  mounted() {
-    console.log('Composant', this.$options.name)
   }
 }
 </script>

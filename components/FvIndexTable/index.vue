@@ -1,34 +1,33 @@
 <template lang="pug">
 .fv-index-table
-  v-card
-    fv-data-table-header(
-      data-testid='header'
-      :title="title"
-      :searchLabel="searchLabel"
-      :tableName="tableName"
-      :statusFiltersSelected="statusFiltersSelected"
-      @dataTableSearch:filtersChanged="filtersChanged"
-      @dataTableSearch:statusFiltersChanged="statusFiltersChanged"
-      @dataTableHeader:settingsClicked="settingsClicked"
-    )
-    component(
-      data-testid="table"
-      :is="tableComponent"
-      :headers="formattedHeaders"
-      :items="formattedItems"
-      @dataTable:selected="selected"
-      @dataTable:sortBy="sortBy"
-      @dataTable:edit="editItem"
-      @dataTable:delete="deleteItem"
-    )
-    fv-select-headers(
-      data-testid="selectHeaders"
-      :dialog="dialog"
-      :headers="headers"
-      :tableName="tableName"
-      @selectHeaders:close="close"
-      @selectHeaders:save="save"
-    )
+  fv-data-table-header(
+    data-testid='header'
+    :title="title"
+    :searchLabel="searchLabel"
+    :tableName="tableName"
+    :statusFiltersSelected="statusFiltersSelected"
+    @dataTableSearch:filtersChanged="filtersChanged"
+    @dataTableSearch:statusFiltersChanged="statusFiltersChanged"
+    @dataTableHeader:settingsClicked="settingsClicked"
+  )
+  component.table(
+    data-testid="table"
+    :is="tableComponent"
+    :headers="formattedHeaders"
+    :items="formattedItems"
+    @dataTable:selected="selected"
+    @dataTable:sortBy="sortBy"
+    @dataTable:edit="editItem"
+    @dataTable:delete="deleteItem"
+  )
+  fv-select-headers(
+    data-testid="selectHeaders"
+    :dialog="dialog"
+    :headers="headers"
+    :tableName="tableName"
+    @selectHeaders:close="close"
+    @selectHeaders:save="save"
+  )
 </template>
 
 <script>
@@ -72,6 +71,18 @@ export default {
       default() {
         return ['active', 'inactive']
       }
+    },
+    defaultHeaders: {
+      type: Array,
+      default() {
+        return null
+      }
+    },
+    defaultItems: {
+      type: Array,
+      default() {
+        return null
+      }
     }
   },
   data() {
@@ -85,11 +96,18 @@ export default {
   },
   computed: {
     headers() {
+      if (this.defaultHeaders) {
+        const customHeaders = this.$store.getters['settings/headers'](
+          this.tableName
+        )
+        return customHeaders.length ? customHeaders : this.defaultHeaders
+      }
       const snakeCaseTableName = camelToSnakeCase(this.tableName)
       const res = this.$activeAccount.headers(snakeCaseTableName)
       return res
     },
     items() {
+      if (this.defaultItems) return this.defaultItems
       const res = this.$activeAccount.items(this.tableName, this.statusFilters)
       return res
     },
@@ -174,3 +192,12 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.fv-index-table > .table {
+  border: #e1e2e6 1px solid;
+  border-radius: 10px;
+  box-shadow: inherit !important;
+  overflow: hidden;
+}
+</style>

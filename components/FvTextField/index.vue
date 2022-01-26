@@ -11,7 +11,6 @@
     :suffix="suffix"
     :placeholder="placeholder"
     :readonly="readonly"
-    :clearable="clearable"
     :hide-details="hideDetails"
     :dense="dense"
     @input="inputChanged"
@@ -70,12 +69,6 @@ export default {
       type: Boolean,
       default() {
         return false
-      }
-    },
-    clearable: {
-      type: Boolean,
-      default() {
-        return true
       }
     },
     hideDetails: {

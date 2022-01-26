@@ -5,7 +5,6 @@
     :style="cssVars"
     :label="label"
     :suffix="suffix"
-    :clearable="false"
     readonly
   )
 </template>

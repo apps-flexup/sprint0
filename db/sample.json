@@ -19,6 +19,26 @@
       "role": "admin",
       "data": null,
       "status": "active"
+    },
+    {
+      "from_type": "Account",
+      "from_id": 3,
+      "to_type": "User",
+      "to_id": "c7e4d104-2e45-4056-94cc-10a87af32693",
+      "role": "admin",
+      "data": null,
+      "status": "Confirmed",
+      "id": 3
+    },
+    {
+      "from_type": "Account",
+      "from_id": 4,
+      "to_type": "User",
+      "to_id": "c7e4d104-2e45-4056-94cc-10a87af32693",
+      "role": "admin",
+      "data": null,
+      "status": "Confirmed",
+      "id": 4
     }
   ],
   "functional-roles": [
@@ -662,16 +682,6 @@
               {
                 "align": "left",
                 "sortable": true,
-                "text": "headers.offers.name",
-                "value": "name",
-                "order": 0,
-                "customizable": false,
-                "active": true,
-                "displayed": true
-              },
-              {
-                "align": "left",
-                "sortable": true,
                 "text": "headers.products.name",
                 "value": "product_name",
                 "order": 1,
@@ -691,6 +701,16 @@
               }
             ],
             "offers": [
+              {
+                "align": "left",
+                "sortable": true,
+                "text": "headers.offers.name",
+                "value": "name",
+                "order": 0,
+                "customizable": false,
+                "active": true,
+                "displayed": true
+              },
               {
                 "align": "right",
                 "sortable": true,
@@ -754,74 +774,48 @@
             ]
           }
         },
-        "orders": {
-          "main": [
-            {
-              "text": "mainHeaders.order",
-              "value": "orders",
-              "align": "center",
-              "sortable": false,
-              "order": 0,
-              "customizable": false,
-              "active": true,
-              "displayed": true
-            }
-          ],
-          "sub": {
-            "orders": [
-              {
-                "align": "left",
-                "sortable": true,
-                "text": "headers.orders.date",
-                "value": "date",
-                "order": 0,
-                "customizable": true,
-                "active": true,
-                "displayed": true
-              },
-              {
-                "align": "right",
-                "sortable": true,
-                "text": "headers.orders.amount",
-                "value": "amount",
-                "order": 1,
-                "customizable": true,
-                "active": true,
-                "displayed": true
-              },
-              {
-                "align": "left",
-                "sortable": true,
-                "text": "headers.orders.label",
-                "value": "label",
-                "order": 2,
-                "customizable": true,
-                "active": true,
-                "displayed": true
-              },
-              {
-                "align": "left",
-                "sortable": true,
-                "text": "headers.orders.structure",
-                "value": "structure",
-                "order": 3,
-                "customizable": true,
-                "active": true,
-                "displayed": true
-              },
-              {
-                "align": "center",
-                "sortable": true,
-                "text": "headers.orders.status",
-                "value": "status",
-                "order": 4,
-                "customizable": true,
-                "active": true,
-                "displayed": true
-              }
-            ]
+        "orders": [
+          {
+            "align": "left",
+            "sortable": true,
+            "text": "headers.orders.thirdParty",
+            "value": "thirdParty",
+            "order": 0,
+            "customizable": true,
+            "active": true,
+            "displayed": true
+          },
+          {
+            "align": "left",
+            "sortable": true,
+            "text": "headers.orders.date",
+            "value": "date",
+            "order": 1,
+            "customizable": true,
+            "active": true,
+            "displayed": true
+          },
+          {
+            "align": "right",
+            "sortable": true,
+            "text": "headers.orders.value",
+            "value": "value",
+            "order": 2,
+            "customizable": true,
+            "active": true,
+            "displayed": true
+          },
+          {
+            "align": "center",
+            "sortable": true,
+            "text": "headers.orders.status",
+            "value": "status",
+            "order": 3,
+            "customizable": true,
+            "active": true,
+            "displayed": true
           }
-        },
+        ],
         "payment_conditions_for_payment_structure_form": [
           {
             "align": "start",
@@ -1027,12 +1021,71 @@
             "offers": []
           }
         },
-        "orders": {
+        "orders": [],
+        "payment_conditions_for_payment_structure_form": [],
+        "contracts": [],
+        "members": [],
+        "owners": [],
+        "fvOrderDataTable": [
+          {
+            "align": "left",
+            "sortable": true,
+            "text": "headers.orders.thirdParty",
+            "value": "thirdParty",
+            "order": 0,
+            "customizable": true,
+            "active": true,
+            "displayed": true
+          },
+          {
+            "align": "left",
+            "sortable": true,
+            "text": "headers.orders.date",
+            "value": "date",
+            "order": 0,
+            "customizable": true,
+            "active": true,
+            "displayed": true
+          },
+          {
+            "align": "right",
+            "sortable": true,
+            "text": "headers.orders.value",
+            "value": "value",
+            "order": 0,
+            "customizable": true,
+            "active": true,
+            "displayed": true
+          },
+          {
+            "align": "center",
+            "sortable": true,
+            "text": "headers.orders.status",
+            "value": "status",
+            "order": 0,
+            "customizable": true,
+            "active": true,
+            "displayed": true
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "account_id": 4,
+      "headers": {
+        "products": [],
+        "third_party_accounts": [],
+        "payment_conditions": [],
+        "payment_structures": [],
+        "offers": {
           "main": [],
           "sub": {
-            "orders": []
+            "products": [],
+            "offers": []
           }
         },
+        "orders": [],
         "payment_conditions_for_payment_structure_form": [],
         "contracts": [],
         "members": [],
@@ -1040,8 +1093,12 @@
       }
     },
     {
+      "account_id": 3,
+      "id": 3
+    },
+    {
       "account_id": 4,
-      "id": 2
+      "id": 4
     }
   ],
   "accounts": [
@@ -1160,6 +1217,44 @@
         }
       ],
       "id": 2
+    },
+    {
+      "parent_type": "Account",
+      "parent_id": 1,
+      "type": "SubAccount",
+      "owners": [
+        {
+          "to_type": "Account",
+          "to_id": 1,
+          "role": "owner",
+          "data": {
+            "isReferenceOwner": true
+          },
+          "status": "WaitingConfirmation",
+          "from_type": "Account"
+        }
+      ],
+      "name": "Sub 1",
+      "id": 3
+    },
+    {
+      "parent_type": "Account",
+      "parent_id": 3,
+      "type": "SubAccount",
+      "owners": [
+        {
+          "to_type": "Account",
+          "to_id": 1,
+          "role": "owner",
+          "data": {
+            "isReferenceOwner": true
+          },
+          "status": "WaitingConfirmation",
+          "from_type": "Account"
+        }
+      ],
+      "name": "Sub2",
+      "id": 4
     }
   ],
   "categories": [
@@ -2173,12 +2268,12 @@
           "size": 12
         },
         {
-          "attribute": "lastname",
+          "attribute": "firstname",
           "component": "fv-text-field",
           "size": 12
         },
         {
-          "attribute": "firstname",
+          "attribute": "lastname",
           "component": "fv-text-field",
           "size": 12
         }
@@ -2415,19 +2510,22 @@
           "attribute": "price",
           "component": "fv-price-field",
           "readonly-component": "fv-price-field-readonly",
-          "size": 12
+          "size": 6
+        },
+        {
+          "component": "v-spacer"
         },
         {
           "attribute": "price_ttc",
           "computeFunction": "offerPriceWithTax",
           "readonly-component": "fv-price-field-readonly",
-          "size": 12
+          "size": 6
         },
         {
           "attribute": "visibility",
-          "component": "fv-visibility-switch",
+          "component": "fv-offer-visibility-switch",
           "readonly-component": "fv-visibility-switch-readonly",
-          "size": 6
+          "size": 7
         },
         {
           "attribute": "status",
@@ -14796,42 +14894,60 @@
       "id": 4
     }
   ],
-  "order-line-headers": [
+  "order-item-headers": [
     {
       "align": "start",
-      "sortable": true,
-      "text": "headers.orderLines.offer",
-      "value": "offer"
+      "sortable": false,
+      "text": "headers.orderItems.productName",
+      "value": "productName"
+    },
+    {
+      "align": "start",
+      "sortable": false,
+      "text": "headers.orderItems.offerName",
+      "value": "offerName"
     },
     {
       "align": "end",
-      "sortable": true,
-      "text": "headers.orderLines.quantity",
+      "sortable": false,
+      "text": "headers.orderItems.quantity",
       "value": "quantity"
     },
     {
+      "align": "start",
+      "sortable": false,
+      "text": "headers.orderItems.unit",
+      "value": "unit"
+    },
+    {
       "align": "end",
-      "sortable": true,
-      "text": "headers.orderLines.price",
+      "sortable": false,
+      "text": "headers.orderItems.unitPrice",
       "value": "price"
     },
     {
       "align": "end",
-      "sortable": true,
-      "text": "headers.orderLines.total",
-      "value": "total"
-    },
-    {
-      "align": "end",
-      "sortable": true,
-      "text": "headers.orderLines.vat",
+      "sortable": false,
+      "text": "headers.orderItems.vat",
       "value": "vat"
     },
     {
+      "align": "end",
+      "sortable": false,
+      "text": "headers.orderItems.valueWithoutTax",
+      "value": "valueWithoutTax"
+    },
+    {
+      "align": "end",
+      "sortable": false,
+      "text": "headers.orderItems.valueWithTax",
+      "value": "valueWithTax"
+    },
+    {
       "align": "start",
-      "sortable": true,
-      "text": "headers.orderLines.status",
-      "value": "status"
+      "sortable": false,
+      "text": "headers.actions",
+      "value": "actions"
     }
   ],
   "orders": [],
@@ -14862,6 +14978,16 @@
       "status": "active",
       "account_id": 1,
       "id": 5
+    },
+    {
+      "name": "Sub 1",
+      "account_id": null,
+      "id": 6
+    },
+    {
+      "name": "Sub2",
+      "account_id": null,
+      "id": 7
     }
   ],
   "products": [

@@ -534,7 +534,8 @@
         "description": "Description",
         "country": "Country",
         "parent_id": "Parent account",
-        "type": "Type of account"
+        "type": "Type of account",
+        "warningMessage": "You must have at least one owner"
       },
       "edit": {
         "title": "Edit my account"
@@ -555,7 +556,8 @@
         "elasticity": "Elasticity",
         "currency": "Currency",
         "vat": "VAT",
-        "visibility": "Visibility"
+        "visibility": "Visibility",
+        "status": "Status :"
       },
       "edit": {
         "title": "Edit my offer"
@@ -637,6 +639,32 @@
     },
     "members": {
       "title": "Add a member"
+    },
+    "sales": {
+      "step": {
+        "0": "General informations",
+        "1": "Elements of the order"
+      },
+      "new": {
+        "title": "New sale",
+        "date": "Date",
+        "label": "Label"
+      }
+    },
+    "purchases": {
+      "step": {
+        "0": "General informations",
+        "1": "Elements of the order"
+      },
+      "new": {
+        "title": "New purchase",
+        "date": "Date",
+        "label": "Label",
+        "selectOffer": "Select an offer",
+        "newCustomOrderItem": "Add a new product",
+        "cancel": "Cancel",
+        "saveAsDraft": "Save as draft"
+      }
     }
   },
   "manageMenu": {
@@ -727,19 +755,19 @@
       "order": "Order"
     },
     "orders": {
+      "thirdParty": "Third party",
       "date": "Date",
-      "amount": "Amount incl. tax",
-      "currency": "Currency",
-      "label": "Label",
-      "structure": "Structure",
+      "value": "Value incl. tax",
       "status": "Status"
     },
-    "orderLines": {
-      "offer": "Offer",
+    "orderItems": {
+      "productName": "Product name",
+      "offerName": "Offer name",
       "quantity": "Quantity",
       "unit": "Unit",
-      "price": "Price incl. tax",
-      "total": "Total incl. tax",
+      "unitPrice": "Unit price excl. tax",
+      "valueWithoutTax": "Total excl. tax",
+      "valueWithTax": "Total incl. tax",
       "vat": "VAT",
       "status": "Status"
     },

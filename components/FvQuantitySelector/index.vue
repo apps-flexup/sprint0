@@ -3,7 +3,6 @@
   fv-text-field(
     data-testid="quantitySelector"
     :value="quantity.toString()"
-    :clearable="false"
     :hideDetails="true"
     :dense="dense"
     @input="input"

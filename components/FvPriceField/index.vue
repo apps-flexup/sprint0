@@ -6,8 +6,8 @@
     :label="label"
     :outlined="outlined"
     :readonly="readonly"
-    :clearable="clearable"
     :suffix="suffix"
+    :dense="dense"
     @input="amountChanged"
     @click="onClick"
     @click:outside="onClickOutside"
@@ -45,16 +45,16 @@ export default {
         return false
       }
     },
-    clearable: {
-      type: Boolean,
-      default() {
-        return true
-      }
-    },
     search: {
       type: Object,
       default() {
         return {}
+      }
+    },
+    dense: {
+      type: Boolean,
+      default() {
+        return false
       }
     }
   },

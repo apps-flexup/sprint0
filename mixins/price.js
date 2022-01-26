@@ -16,7 +16,9 @@ export default {
     suffix() {
       const unit = this.search?.unit
       let translatedUnit = ''
-      if (unit) translatedUnit = this.$t('units.symbol.' + unit.unit)
+      if (unit) {
+        translatedUnit = this.$t(`units.symbol.${unit.unit || unit}`)
+      }
       return `${this.preferredCurrency?.symbole}/${translatedUnit}`
     }
   },
