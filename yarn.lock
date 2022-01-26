@@ -18284,11 +18284,6 @@ vuedraggable@^2.24.3:
   dependencies:
     sortablejs "1.10.2"
 
-vuejs-redux@^2.4.1:
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/vuejs-redux/-/vuejs-redux-2.4.1.tgz#1aafdacb887fba26f7505ab16d3d73642453c38d"
-  integrity sha512-6oMpEW2wFWOAyixcJHTOjV60ZLX+UhjYt0MTOr5obi0wedon0giYvIzroXg+AWMVJLZaE/uyhRQalqo2YwQrjA==
-
 vuetify-loader@^1.4.3:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/vuetify-loader/-/vuetify-loader-1.6.0.tgz#05df0805b3ab2ff0de198109d34f9da3f69da667"
