@@ -2268,12 +2268,12 @@
           "size": 12
         },
         {
-          "attribute": "lastname",
+          "attribute": "firstname",
           "component": "fv-text-field",
           "size": 12
         },
         {
-          "attribute": "firstname",
+          "attribute": "lastname",
           "component": "fv-text-field",
           "size": 12
         }
