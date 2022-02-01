@@ -16,14 +16,6 @@
             @input='orderItems[item.id].setProductName(arguments[0])'
           )
           div(v-else) {{ item.orderItem.productName }}
-        template(v-slot:item.offerName="{ item }")
-          fv-text-field(
-            v-if='item.canEditOfferName'
-            :value='item.offerName'
-            :dense='true'
-            @input='orderItems[item.id].setOfferName(arguments[0])'
-          )
-          div(v-else) {{ item.orderItem.offerName }}
         template(v-slot:item.quantity="{ item }")
           fv-quantity-selector.quantity-selector-input(
             :quantity="item.orderItem.quantity"
@@ -69,13 +61,13 @@
           )
         template(v-slot:body.append)
           th(colspan="3")
-            fv-offer-autocomplete.pl-4.py-3(
+            fv-product-autocomplete.pl-4.py-3(
               :thirdPartyAccountId="thirdPartyId"
               :return-object="true"
               :dense="true"
               :label="$t('forms.purchases.new.selectOffer')"
-              @offers:selected="orderItemSelected"
-              @offers:addCustomOrderItem='addCustomOrderItem'
+              @products:selected="orderItemSelected"
+              @products:addCustomOrderItem='addCustomOrderItem'
             )
 </template>
 

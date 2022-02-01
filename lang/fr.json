@@ -456,8 +456,11 @@
         "periodicity": "Périodicité",
         "name": "Nom du produit",
         "unit": "Unité",
-        "price": "Prix",
         "currency": "Devise",
+        "price": "Prix HT",
+        "price_ttc": "Prix TTC",
+        "vat": "TVA",
+        "visibility": "Visibilité",
         "elasticity": "Élasticité",
         "validate": "Valider",
         "cancel": "Annuler",
@@ -750,6 +753,10 @@
       "category": "Categorie",
       "periodicity": "Périodicité",
       "unit": "Unité",
+      "price": "Prix HT",
+      "price_ttc": "Prix TTC",
+      "vat": "TVA",
+      "visibility": "Visibilité",
       "status": "Statut"
     },
     "contracts": {
