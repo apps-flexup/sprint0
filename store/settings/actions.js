@@ -41,9 +41,14 @@ export default {
     })
   },
   getDefaultSettings({ commit }) {
-    return this.$repos.settings.show(0).then((data) => {
-      commit('setDefaultSettings', data)
-    }).catch((err) => { console.log('ERREUR: ', err) })
+    return this.$repos.settings
+      .show(0)
+      .then((data) => {
+        commit('setDefaultSettings', data)
+      })
+      .catch((err) => {
+        console.log('ERREUR: ', err)
+      })
   },
   updateSettings({ commit, state }, settings) {
     const defaultSettings = state.defaultSettings

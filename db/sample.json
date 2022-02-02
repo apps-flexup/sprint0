@@ -694,126 +694,6 @@
             "displayed": true
           }
         ],
-        "offers": {
-          "main": [
-            {
-              "text": "mainHeaders.product",
-              "value": "products",
-              "align": "center",
-              "sortable": false,
-              "order": 0,
-              "customizable": false,
-              "active": true,
-              "displayed": true
-            },
-            {
-              "text": "mainHeaders.offer",
-              "value": "offers",
-              "align": "center",
-              "sortable": false,
-              "order": 1,
-              "customizable": false,
-              "active": true,
-              "displayed": true
-            }
-          ],
-          "sub": {
-            "products": [
-              {
-                "align": "left",
-                "sortable": true,
-                "text": "headers.products.name",
-                "value": "product_name",
-                "order": 1,
-                "customizable": false,
-                "active": true,
-                "displayed": true
-              },
-              {
-                "align": "left",
-                "sortable": true,
-                "text": "headers.products.unit",
-                "value": "unit",
-                "order": 2,
-                "customizable": true,
-                "active": true,
-                "displayed": true
-              }
-            ],
-            "offers": [
-              {
-                "align": "left",
-                "sortable": true,
-                "text": "headers.offers.name",
-                "value": "name",
-                "order": 0,
-                "customizable": false,
-                "active": true,
-                "displayed": true
-              },
-              {
-                "align": "right",
-                "sortable": true,
-                "text": "headers.offers.price",
-                "value": "price",
-                "order": 0,
-                "customizable": true,
-                "active": true,
-                "displayed": true
-              },
-              {
-                "align": "right",
-                "sortable": true,
-                "text": "headers.offers.price_ttc",
-                "value": "price_ttc",
-                "order": 0,
-                "customizable": true,
-                "active": true,
-                "displayed": true
-              },
-              {
-                "align": "right",
-                "sortable": true,
-                "text": "headers.offers.vat",
-                "value": "vat",
-                "order": 1,
-                "customizable": true,
-                "active": true,
-                "displayed": true
-              },
-              {
-                "align": "left",
-                "sortable": true,
-                "text": "headers.offers.visibility",
-                "value": "visibility",
-                "order": 2,
-                "customizable": true,
-                "active": true,
-                "displayed": true
-              },
-              {
-                "align": "center",
-                "sortable": true,
-                "text": "headers.offers.status",
-                "value": "status",
-                "order": 3,
-                "customizable": true,
-                "active": true,
-                "displayed": true
-              },
-              {
-                "align": "left",
-                "sortable": false,
-                "text": "headers.actions",
-                "value": "actions",
-                "order": 3,
-                "customizable": false,
-                "active": true,
-                "displayed": true
-              }
-            ]
-          }
-        },
         "orders": [
           {
             "align": "left",
@@ -1054,13 +934,6 @@
         "third_party_accounts": [],
         "payment_conditions": [],
         "payment_structures": [],
-        "offers": {
-          "main": [],
-          "sub": {
-            "products": [],
-            "offers": []
-          }
-        },
         "orders": [],
         "payment_conditions_for_payment_structure_form": [],
         "contracts": [],
@@ -2528,13 +2401,13 @@
         },
         {
           "attribute": "price_ttc",
-          "computeFunction": "offerPriceWithTax",
+          "computeFunction": "productPriceWithTax",
           "readonly-component": "fv-price-field-readonly",
           "size": 6
         },
         {
           "attribute": "visibility",
-          "component": "fv-offer-visibility-switch",
+          "component": "fv-product-visibility-switch",
           "readonly-component": "fv-visibility-switch-readonly",
           "size": 7
         },
@@ -2755,7 +2628,7 @@
       "dteEnd": "10/02/2022",
       "dteSignature": "05/02/2020",
       "id": 1,
-      "offers": [
+      "products": [
         {
           "id": 2,
           "name": "offre 1"
@@ -2786,7 +2659,7 @@
       "dteEnd": "13/02/2022",
       "dteSignature": "11/02/2020",
       "id": 2,
-      "offers": [
+      "products": [
         {
           "id": 2,
           "name": "offre 1"
@@ -2817,7 +2690,7 @@
       "dteEnd": "19/02/2022",
       "dteSignature": "15/02/2020",
       "id": 3,
-      "offers": [
+      "products": [
         {
           "id": 2,
           "name": "offre 1"
@@ -2848,7 +2721,7 @@
       "dteEnd": "13/02/2022",
       "dteSignature": "11/02/2020",
       "id": 4,
-      "offers": [
+      "products": [
         {
           "id": 2,
           "name": "offre 1"
@@ -14705,12 +14578,6 @@
     },
     {
       "active": true,
-      "icon": "mdi-tag-multiple-outline",
-      "title": "manageMenu.offers",
-      "to": "/offers"
-    },
-    {
-      "active": true,
       "icon": "mdi-email-outline",
       "title": "manageMenu.contacts",
       "to": "/contacts"
@@ -14821,12 +14688,6 @@
     },
     {
       "active": true,
-      "icon": "mdi-tag-multiple-outline",
-      "title": "sellerMenu.offers",
-      "to": "/offers"
-    },
-    {
-      "active": true,
       "icon": "mdi-truck-fast-outline",
       "title": "sellerMenu.deliveries",
       "to": "/deliveries"
@@ -14862,11 +14723,6 @@
       "active": true,
       "title": "navBar.seller.1",
       "to": "/orders"
-    },
-    {
-      "active": true,
-      "title": "navBar.seller.2",
-      "to": "/offers"
     }
   ],
   "manageNavbar": [
@@ -14884,100 +14740,6 @@
       "active": true,
       "title": "navBar.manage.2",
       "to": "/FlexUpGestion"
-    }
-  ],
-  "offers": [
-    {
-      "account_id": 1,
-      "active": true,
-      "product_id": 18,
-      "unit": {
-        "dimension": "unit",
-        "unit": "Unit"
-      },
-      "description": {
-        "en": "description of offer fab",
-        "fr": "description of Le jeu des 7 familles"
-      },
-      "elasticity": 0,
-      "evaluation_avg": 6.5,
-      "favorite": true,
-      "illustration_url": "https://placeimg.com/640/480?id=3",
-      "name": "Le jeu des 7 familles",
-      "offer_at_client": true,
-      "offer_at_supplier": true,
-      "offer_remote": true,
-      "offer_shipping": true,
-      "params": {
-        "game_name": {
-          "en": "Tintin version",
-          "fr": "version Tintin"
-        },
-        "quantity_of_cards": 52
-      },
-      "price": {
-        "amount": 10,
-        "currency": "EUR"
-      },
-      "reference": "BAVAFC",
-      "status": "active",
-      "vat": "20.5",
-      "visibility": "public",
-      "id": 3
-    },
-    {
-      "account_id": 1,
-      "active": true,
-      "product_id": 19,
-      "unit": {
-        "dimension": "duration",
-        "unit": "hr"
-      },
-      "description": {
-        "en": "description of offer php"
-      },
-      "elasticity": 20,
-      "evaluation_avg": 6.5,
-      "favorite": true,
-      "illustration_url": "https://placeimg.com/640/480?id=4",
-      "name": "name of offer php",
-      "offer_at_client": true,
-      "offer_at_supplier": true,
-      "offer_remote": true,
-      "offer_shipping": true,
-      "params": {
-        "condition": {
-          "en": "default conditionvg"
-        },
-        "plop": 2525
-      },
-      "price": {
-        "amount": 100,
-        "currency": "EUR"
-      },
-      "reference": "EICMNB",
-      "status": "archived",
-      "vat": "12.0",
-      "visibility": "private",
-      "id": 4
-    },
-    {
-      "visibility": "public",
-      "vat": "20.0",
-      "currency": "EUR",
-      "status": "active",
-      "unit": {
-        "unit": "kg",
-        "dimension": "weight"
-      },
-      "product_id": 15,
-      "name": "rtth",
-      "price": {
-        "amount": 10,
-        "currency": "EUR"
-      },
-      "account_id": 1,
-      "id": 5
     }
   ],
   "order-item-headers": [
