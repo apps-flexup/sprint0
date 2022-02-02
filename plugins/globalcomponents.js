@@ -100,6 +100,7 @@ import FvPrimaryButton from '@/components/FvPrimaryButton'
 import FvProductDataTable from '@/components/FvProductDataTable'
 import FvProductReadonly from '@/components/FvProductReadonly'
 import FvProductStatusSelect from '@/components/FvProductStatusSelect'
+import FvProductVisibilitySwitch from '@/components/FvProductVisibilitySwitch'
 import FvProductUnitAutocomplete from '@/components/FvProductUnitAutocomplete'
 import FvForm from '@/components/FvForm'
 import FvQuantitySelector from '@/components/FvQuantitySelector'
@@ -142,12 +143,6 @@ import FvDirectory from '@/components/FvDirectory'
 import FvContractSummaryVisualisation from '@/components/FvContractSummaryVisualisation'
 import FvContractStepVisualisation from '@/components/FvContractStepVisualisation'
 import FvProductList from '@/components/FvProductList'
-import FvOfferDataTable from '@/components/FvOfferDataTable'
-import FvOfferIndex from '@/components/FvOfferIndex'
-import FvOfferList from '@/components/FvOfferList'
-import FvOfferModal from '@/components/FvOfferModal'
-import FvOfferStatusSelect from '@/components/FvOfferStatusSelect'
-import FvOfferVisibilitySwitch from '@/components/FvOfferVisiblitySwitch'
 import FvOrderDataTable from '@/components/FvOrderDataTable'
 import FvOrderDetails from '@/components/FvOrderDetails'
 import FvOrderIndex from '@/components/FvOrderIndex'
@@ -177,7 +172,6 @@ import FvCurrencyAutocomplete from '@/components/FvCurrencyAutocomplete'
 import FvUnitAutocomplete from '@/components/FvUnitAutocomplete'
 import FvUnitAutocompleteForOffer from '@/components/FvUnitAutocompleteForOffer'
 import FvUnitReadonly from '@/components/FvUnitReadonly'
-import FvOfferAutocomplete from '@/components/FvOfferAutocomplete'
 import FvProductItem from '@/components/FvProductItem'
 import FvStatusSelect from '~/components/FvStatusSelect'
 import FvFrequence from '@/components/FvFrequence'
@@ -307,6 +301,7 @@ Vue.component('fv-primary-button', FvPrimaryButton)
 Vue.component('fv-product-data-table', FvProductDataTable)
 Vue.component('fv-product-readonly', FvProductReadonly)
 Vue.component('fv-product-status-select', FvProductStatusSelect)
+Vue.component('fv-product-visibility-switch', FvProductVisibilitySwitch)
 Vue.component('fv-product-unit-autocomplete', FvProductUnitAutocomplete)
 Vue.component('fv-form', FvForm)
 Vue.component('fv-product-index', FvProductIndex)
@@ -353,12 +348,6 @@ Vue.component(
 )
 Vue.component('fv-contract-step-visualisation', FvContractStepVisualisation)
 Vue.component('fv-product-list', FvProductList)
-Vue.component('fv-offer-data-table', FvOfferDataTable)
-Vue.component('fv-offer-index', FvOfferIndex)
-Vue.component('fv-offer-list', FvOfferList)
-Vue.component('fv-offer-modal', FvOfferModal)
-Vue.component('fv-offer-status-select', FvOfferStatusSelect)
-Vue.component('fv-offer-visibility-switch', FvOfferVisibilitySwitch)
 Vue.component('fv-order-data-table', FvOrderDataTable)
 Vue.component('fv-order-details', FvOrderDetails)
 Vue.component('fv-order-index', FvOrderIndex)
@@ -387,7 +376,6 @@ Vue.component(
 Vue.component('fv-product-autocomplete', FvProductAutocomplete)
 Vue.component('fv-category-autocomplete', FvCategoryAutocomplete)
 Vue.component('fv-currency-autocomplete', FvCurrencyAutocomplete)
-Vue.component('fv-offer-autocomplete', FvOfferAutocomplete)
 Vue.component('fv-unit-autocomplete', FvUnitAutocomplete)
 Vue.component('fv-unit-autocomplete-for-offer', FvUnitAutocompleteForOffer)
 Vue.component('fv-unit-readonly', FvUnitReadonly)

@@ -65,7 +65,7 @@
               :thirdPartyAccountId="thirdPartyId"
               :return-object="true"
               :dense="true"
-              :label="$t('forms.purchases.new.selectOffer')"
+              :label="$t('forms.purchases.new.selectProduct')"
               @products:selected="orderItemSelected"
               @products:addCustomOrderItem='addCustomOrderItem'
             )
@@ -136,6 +136,7 @@ export default {
       this.$emit('orderItem:delete', index)
     },
     orderItemSelected(orderItem) {
+      console.log('order item', orderItem)
       this.$emit('orderItem:selected', orderItem)
     },
     addCustomOrderItem() {

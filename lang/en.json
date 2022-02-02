@@ -663,7 +663,7 @@
         "title": "New purchase",
         "date": "Date",
         "label": "Label",
-        "selectOffer": "Select an offer",
+        "selectProduct": "Select a product",
         "newCustomOrderItem": "Add a new product",
         "cancel": "Cancel",
         "saveAsDraft": "Save as draft"

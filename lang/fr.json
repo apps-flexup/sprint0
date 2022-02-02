@@ -670,7 +670,7 @@
         "title": "Nouvel achat",
         "date": "Date",
         "label": "Libellé",
-        "selectOffer": "Sélectionner une offre",
+        "selectProduct": "Sélectionner un produit",
         "newCustomOrderItem": "Créer un nouveau produit",
         "cancel": "Annuler",
         "saveAsDraft": "Sauvegarder le brouillon"
