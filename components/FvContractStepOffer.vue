@@ -1,5 +1,5 @@
 <template lang="pug">
-.fv-contract-step-offer
+.fv-contract-step-product
   v-row
     v-col(cols="12") {{ values.contractType }}
   v-row
@@ -28,7 +28,7 @@ export default {
       type: Object,
       default() {
         return {
-          offers: [],
+          products: [],
           contractType: null
         }
       }
@@ -45,25 +45,24 @@ export default {
       return this.$translateHeaders(res)
     },
     items() {
-      const res = this.$store.getters['offers/all']
+      const res = this.$store.getters['products/all']
       const id = parseInt(this.values.contractType)
       const filteredRes = res.filter((v) => parseInt(v.contractType) === id)
       return filteredRes
     },
     selected: {
       get() {
-        return this.local_selected || this.values.offers || []
+        return this.local_selected || this.values.products || []
       },
       set(v) {
         this.local_selected = v
         const res = v.map((i) => i.id)
-        this.$emit('wizard', { offers: res })
+        this.$emit('wizard', { products: res })
       }
     }
   },
   mounted() {
-    console.log('Composant ', this.$options.name)
-    this.$store.dispatch('headers/getOfferHeaders')
+    this.$store.dispatch('headers/getProductHeaders')
   }
 }
 </script>

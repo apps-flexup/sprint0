@@ -19,6 +19,7 @@ export default {
   name: 'FvProductIndex',
   computed: {
     canCreateProduct() {
+      console.log('le droit', this.$rights.canCreateProduct())
       return this.$rights.canCreateProduct()
     }
   },

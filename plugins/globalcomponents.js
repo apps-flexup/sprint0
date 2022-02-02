@@ -101,7 +101,6 @@ import FvProductDataTable from '@/components/FvProductDataTable'
 import FvProductReadonly from '@/components/FvProductReadonly'
 import FvProductStatusSelect from '@/components/FvProductStatusSelect'
 import FvProductVisibilitySwitch from '@/components/FvProductVisibilitySwitch'
-import FvProductUnitAutocomplete from '@/components/FvProductUnitAutocomplete'
 import FvForm from '@/components/FvForm'
 import FvQuantitySelector from '@/components/FvQuantitySelector'
 import FvYieldRateParams from '@/components/FvYieldRateParams'
@@ -302,7 +301,6 @@ Vue.component('fv-product-data-table', FvProductDataTable)
 Vue.component('fv-product-readonly', FvProductReadonly)
 Vue.component('fv-product-status-select', FvProductStatusSelect)
 Vue.component('fv-product-visibility-switch', FvProductVisibilitySwitch)
-Vue.component('fv-product-unit-autocomplete', FvProductUnitAutocomplete)
 Vue.component('fv-form', FvForm)
 Vue.component('fv-product-index', FvProductIndex)
 Vue.component('fv-quantity-selector', FvQuantitySelector)

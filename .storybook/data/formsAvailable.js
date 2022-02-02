@@ -1,6 +1,5 @@
 export const formsAvailable = [
-  'products',
-  'offers'
+  'products'
 ]
 
 export const defaultForm = 'products'

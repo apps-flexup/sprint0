@@ -1,6 +1,5 @@
 export const tablesAvailable = [
   'products',
-  'offers',
   'orders',
   'thirdPartyAccounts',
   'paymentConditions',

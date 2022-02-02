@@ -1,10 +1,8 @@
 // Action de base
 
 const setMediaEntities = (accountId, medias) => {
-  const entityType = 'Account'
   if (!medias) return
   medias.forEach((media) => {
-    media.entity_type = entityType
     media.entity_id = accountId
   })
 }
@@ -19,6 +17,7 @@ export default {
   get({ commit, getters }) {
     if (!this.$auth.loggedIn) return
     const request = `given-roles?to_id=${this.$auth.user.sub}`
+    console.log('given-roles', getters.current)
     this.$axios.$get(request).then((givenRoles) => {
       if (!getters.current && givenRoles.length > 0) {
         const account = parseInt(givenRoles[0].from_id)

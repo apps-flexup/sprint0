@@ -3,13 +3,6 @@
     fv-contact-list
 </template>
 
-<script>
-export default {
-  mounted() {
-    console.log('Composant ', this.$options.name)
-  }
-}
-</script>
 <style scoped>
 .contacts-index {
   background-color: inherit;
