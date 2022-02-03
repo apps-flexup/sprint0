@@ -47,6 +47,7 @@
     ) {{ $t('forms.products.new.cancel') }}
     fv-primary-button(
       data-testid="submitBtn"
+      :disabled="!isValid"
       @button:click="submit"
     ) {{ $t('forms.products.new.validate') }}
 </template>
@@ -96,19 +97,24 @@ export default {
   },
   computed: {
     formSteps() {
-      const res = this.$store.getters['forms/' + this.form]
-      return res
+      return this.$store.getters['forms/' + this.form]
     },
     readonly() {
-      const res = this.localAction === 'read'
-      return res
+      return this.localAction === 'read'
     },
     isInitiallyReadonly() {
-      const res = this.action === 'edit' || this.action === 'new'
-      return res
+      return this.action === 'edit' || this.action === 'new'
     },
     isNewObject() {
       return this.action === 'new'
+    },
+    isValid() {
+      // const requiredValidatedFields = ['name', 'unit', 'price', 'vat']
+      // requiredValidatedFields.forEach((field) => {
+      //  if(Object.prototype.hasOwnProperty.call(this.localPayload, field)) {
+      //  }
+      // })
+      return true
     }
   },
   watch: {
@@ -121,7 +127,6 @@ export default {
     this.$store.dispatch('forms/getSubAccount')
     this.$store.dispatch('forms/getPersonalAccount')
     this.$store.dispatch('forms/getProduct')
-    this.$store.dispatch('forms/getOffer')
     this.$store.dispatch('forms/getThirdPartyAccount')
     this.$store.dispatch('forms/getPaymentCondition')
     this.$store.dispatch('forms/getPaymentStructure')
@@ -130,6 +135,9 @@ export default {
   methods: {
     submit() {
       this.$nuxt.$loading.start()
+      if (!this.localPayload.visibility) {
+        this.localPayload.visibility = 'private'
+      }
       this.$emit('form:submit', this.localPayload)
       this.$router.push('/' + this.url, () => {})
       this.$nuxt.$loading.finish()

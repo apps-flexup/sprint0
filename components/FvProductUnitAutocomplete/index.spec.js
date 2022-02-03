@@ -92,10 +92,5 @@ describe('FvProductUnitAutocomplete', () => {
         }
       })
     })
-    it('should apply dimension filter', () => {
-      const wrapper = factory()
-      const unitAutocomplete = wrapper.find('[data-testid="unitAutocomplete"]')
-      expect(unitAutocomplete.props().dimensionFilter).toBe(dimension)
-    })
   })
 })
