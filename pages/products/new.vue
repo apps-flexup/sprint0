@@ -18,9 +18,6 @@ export default {
       }
     }
   },
-  mounted() {
-    console.log('Composant ', this.$options.name)
-  },
   methods: {
     createProduct(payload) {
       this.$activeAccount.addProduct(payload)

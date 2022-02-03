@@ -30,6 +30,12 @@ beforeEach(() => {
         actions: {
           get: jest.fn()
         }
+      },
+      thirdPartyAccounts: {
+        namespaced: true,
+        actions: {
+          getAll: jest.fn()
+        }
       }
     }
   })
@@ -45,7 +51,7 @@ describe('FvProductAutocomplete', () => {
     const autocomplete = wrapper.find('[data-testid="autocomplete"]')
     const product = {
       id: 1,
-      name: 'product'
+      productName: 'product'
     }
     autocomplete.vm.$emit('autocomplete:selected', product)
     const selectedCalls = wrapper.emitted('products:selected')

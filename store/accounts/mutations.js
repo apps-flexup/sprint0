@@ -4,6 +4,7 @@ export default {
     state.current = null
   },
   setCurrent(state, id) {
+    console.log('changement detat', id)
     state.current = id
   },
   add(state, item) {

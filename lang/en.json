@@ -454,8 +454,11 @@
         "periodicity": "Periodicity",
         "name": "Product name",
         "unit": "Unit",
-        "price": "Price",
+        "price": "Price excl. tax",
+        "price_ttc": "Price incl. tax",
         "currency": "Currency",
+        "vat": "VAT",
+        "visibility": "Visibility",
         "elasticity": "Elasticity",
         "validate": "Validate",
         "cancel": "Cancel",
@@ -660,7 +663,7 @@
         "title": "New purchase",
         "date": "Date",
         "label": "Label",
-        "selectOffer": "Select an offer",
+        "selectProduct": "Select a product",
         "newCustomOrderItem": "Add a new product",
         "cancel": "Cancel",
         "saveAsDraft": "Save as draft"
@@ -741,6 +744,10 @@
       "category": "Category",
       "periodicity": "Periodicity",
       "unit": "Unit",
+      "price": "Price excl. tax",
+      "price_ttc": "Price incl. tax",
+      "vat": "VAT",
+      "visibility": "Visibility",
       "status": "Status"
     },
     "contracts": {
