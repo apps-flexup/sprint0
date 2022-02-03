@@ -47,6 +47,7 @@
     ) {{ $t('forms.products.new.cancel') }}
     fv-primary-button(
       data-testid="submitBtn"
+      :disabled="!isValid"
       @button:click="submit"
     ) {{ $t('forms.products.new.validate') }}
 </template>
@@ -106,6 +107,14 @@ export default {
     },
     isNewObject() {
       return this.action === 'new'
+    },
+    isValid() {
+      // const requiredValidatedFields = ['name', 'unit', 'price', 'vat']
+      // requiredValidatedFields.forEach((field) => {
+      //  if(Object.prototype.hasOwnProperty.call(this.localPayload, field)) {
+      //  }
+      // })
+      return true
     }
   },
   watch: {
@@ -126,6 +135,9 @@ export default {
   methods: {
     submit() {
       this.$nuxt.$loading.start()
+      if (!this.localPayload.visibility) {
+        this.localPayload.visibility = 'private'
+      }
       this.$emit('form:submit', this.localPayload)
       this.$router.push('/' + this.url, () => {})
       this.$nuxt.$loading.finish()
