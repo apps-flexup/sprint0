@@ -5,7 +5,8 @@ require('dotenv').config()
 const homeUrl = encodeURIComponent(process.env.HOME_URL)
 
 export default {
-  mode: 'spa',
+  ssr: false,
+  components: true,
   /*
    ** Headers of the page
    */
@@ -81,7 +82,6 @@ export default {
   plugins: [
     '~/plugins/axios',
     '~/plugins/activeAccount',
-    '~/plugins/globalcomponents',
     '~/plugins/data',
     '~/plugins/directory',
     '~/plugins/i18n',
@@ -97,7 +97,7 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: ['@nuxt/typescript-build', '@nuxtjs/vuetify'],
+  buildModules: ['@nuxt/typescript-build', '@nuxt/components', '@nuxtjs/vuetify'],
   /*
    ** Nuxt.js modules
    */
