@@ -21,7 +21,6 @@ module.exports = {
     }
   },
   setupFiles: [
-    '<rootDir>/test/setup.js',
-    '<rootDir>/plugins/globalcomponents.js'
+    '<rootDir>/test/setup.js'
   ]
 }
