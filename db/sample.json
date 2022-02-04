@@ -700,6 +700,16 @@
           {
             "align": "left",
             "sortable": true,
+            "text": "headers.orders.label",
+            "value": "label",
+            "order": 0,
+            "customizable": true,
+            "active": true,
+            "displayed": true
+          },
+          {
+            "align": "left",
+            "sortable": true,
             "text": "headers.orders.date",
             "value": "date",
             "order": 1,

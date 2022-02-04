@@ -760,6 +760,7 @@
     "orders": {
       "thirdParty": "Third party",
       "date": "Date",
+      "label": "Label",
       "value": "Value incl. tax",
       "status": "Status"
     },
