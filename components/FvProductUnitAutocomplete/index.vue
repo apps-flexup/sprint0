@@ -3,14 +3,13 @@
   fv-unit-autocomplete(
     data-testid='unitAutocomplete'
     :value="unit"
-    :dimensionFilter="dimensionFilter"
     @unit:selected="unitSelected"
   )
 </template>
 
 <script>
 export default {
-  name: 'FvUnitAutocompleteForOffer',
+  name: 'FvProductUnitAutocomplete',
   props: {
     value: {
       type: Object,
@@ -26,19 +25,9 @@ export default {
     }
   },
   computed: {
-    dimensionFilter() {
-      const productId = this.search ? this.search.id : null
-      const offers = this.$store.getters['offers/getForProduct'](productId)
-      const dimension = offers[0] ? offers[0].unit.dimension : null
-      return dimension
-    },
     unit() {
-      const unit = this.value || null
-      return unit
+      return this.value || null
     }
-  },
-  mounted() {
-    this.$store.dispatch('offers/get')
   },
   methods: {
     unitSelected(v) {

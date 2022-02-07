@@ -8,8 +8,8 @@
         :items='orderLines'
         item-key='id'
       )
-        template(v-slot:item.offer="{ item }")
-          div(v-to-locale="item.offer")
+        template(v-slot:item.product="{ item }")
+          div(v-to-locale="item.product")
         template(v-slot:item.unit="{ item }")
           div(v-to-unit="item")
         template(v-slot:item.quantity="{ item }")

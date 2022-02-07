@@ -26,8 +26,6 @@ export default (ctx, inject) => {
     manageMenu: repo('manageMenu'),
     manageNavBar: repo('manageNavBar'),
     medias: repo('medias'),
-    offers: repo('offers'),
-    offerSteps: repo('offer-steps'),
     orderItemHeaders: repo('order-item-headers'),
     orders: repo('orders'),
     orderSteps: repo('order-steps'),

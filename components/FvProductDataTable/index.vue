@@ -27,6 +27,22 @@
         v-else
         :value="item.status"
       )
+    template(v-slot:item.price='{ item }')
+      fv-price-with-unit(
+        :price="item.price"
+        :currency="item.currency"
+        :unit="item.unit"
+      )
+    template(v-slot:item.price_ttc='{ item }')
+      fv-price-with-unit(
+        :price="priceWithTax(item)"
+        :currency="item.currency"
+        :unit="item.unit"
+      )
+    template(v-slot:item.vat='{ item }')
+      div {{ displayVat(item) }}
+    template(v-slot:item.visibility='{ item }')
+      div {{ displayVisibility(item) }}
     template(v-slot:item.actions="{ item }")
       v-row
         fv-edit-action(
@@ -40,6 +56,8 @@
 </template>
 
 <script>
+import { applyVatToAmount } from '~/plugins/utils'
+
 export default {
   name: 'FvProductDataTable',
   props: {
@@ -80,12 +98,28 @@ export default {
     this.$store.dispatch('categories/get')
   },
   methods: {
+    priceWithTax(item) {
+      const amount = item.price.amount
+      const vat = item.vat
+      return {
+        amount: applyVatToAmount(amount, vat),
+        currency: item.price.currency
+      }
+    },
     displayName(item) {
       const res = this.$displayRules.name(item)
       return res
     },
     displayCategory(item) {
       const res = this.$displayRules.category(item)
+      return res
+    },
+    displayVat(item) {
+      const res = this.$displayRules.vat(item)
+      return res
+    },
+    displayVisibility(item) {
+      const res = this.$displayRules.visibility(item)
       return res
     },
     displayUnit(item) {

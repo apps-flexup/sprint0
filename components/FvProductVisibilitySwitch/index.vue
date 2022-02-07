@@ -12,11 +12,11 @@
 
 <script>
 export default {
-  name: 'FvProductStatusSelect',
+  name: 'FvProductVisibilitySwitch',
   props: {
     value: {
       type: String,
-      default: 'draft'
+      default: 'private'
     },
     label: {
       type: String,

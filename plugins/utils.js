@@ -6,7 +6,7 @@ String.prototype.filtreAutocomplete = function(filtre) {
 }
 
 export const formComputeFunction = {
-  offerPriceWithTax(payload) {
+  productPriceWithTax(payload) {
     if (!payload) return {}
     if (!payload.price) return {}
     const amount = payload.price.amount

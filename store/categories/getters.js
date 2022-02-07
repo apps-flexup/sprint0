@@ -10,18 +10,18 @@ export default {
     const res = state.items.find((v) => v.id === categoryId)
     return res
   },
-  offers: (state, _getters, _rootStates, rootGetters) => (id) => {
+  products: (state, _getters, _rootStates, rootGetters) => (id) => {
     if (!state.current) return null
     const categoryId = parseInt(id)
-    const res = rootGetters['offers/category'](categoryId)
+    const res = rootGetters['products/category'](categoryId)
     return res
   },
-  offersGeneral: (state) => (id) => {
+  productsGeneral: (state) => (id) => {
     if (!state.current) return null
     let res = []
     this.$axios
-      .$get(`/offers?category_id=${id}`)
-      .then((offers) => (res = offers))
+      .$get(`/products?category_id=${id}`)
+      .then((products) => (res = products))
     return res
   }
 }

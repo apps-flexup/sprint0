@@ -8,7 +8,6 @@ const activeAccount = (ctx) => ({
     ctx.store.dispatch('contacts/clear', {}, { root: true })
     ctx.store.dispatch('contracts/clear', {}, { root: true })
     ctx.store.dispatch('currencies/clear', {}, { root: true })
-    ctx.store.dispatch('offers/clear', {}, { root: true })
     ctx.store.dispatch('orders/clear', {}, { root: true })
     ctx.store.dispatch('thirdPartyAccounts/clear', {}, { root: true })
     ctx.store.dispatch('products/clear', {}, { root: true })
@@ -34,7 +33,6 @@ const activeAccount = (ctx) => ({
     ctx.store.dispatch('contracts/getContracts', {}, { root: true })
     ctx.store.dispatch('contracts/getLegalStructures', {}, { root: true })
     ctx.store.dispatch('currencies/get', {}, { root: true })
-    ctx.store.dispatch('offers/get', {}, { root: true })
     ctx.store.dispatch('orders/get', {}, { root: true })
     ctx.store.dispatch('thirdPartyAccounts/get', {}, { root: true })
     ctx.store.dispatch('products/get', {}, { root: true })
@@ -106,9 +104,6 @@ const activeAccount = (ctx) => ({
   },
   addProduct(newProduct) {
     ctx.store.dispatch('products/add', newProduct)
-  },
-  addOffer(newOffer) {
-    ctx.store.dispatch('offers/add', newOffer)
   },
   addPaymentCondition(newPaymentCondition) {
     ctx.store.dispatch('paymentConditions/add', newPaymentCondition)

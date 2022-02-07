@@ -48,12 +48,6 @@ export const fakeList = [
   },
   {
     "active": true,
-    "icon": "mdi-barcode",
-    "title": "manageMenu.offers",
-    "to": "/offers"
-  },
-  {
-    "active": true,
     "icon": "mdi-email-outline",
     "title": "manageMenu.contacts",
     "to": "/contacts"
