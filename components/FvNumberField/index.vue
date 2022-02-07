@@ -10,6 +10,7 @@
     :suffix="suffix"
     :hideDetails="hideDetails"
     :dense="dense"
+    type="number"
     @input="input"
     @click="onClick"
     @click:outside="onClickOutside"
@@ -72,9 +73,6 @@ export default {
     value() {
       this.inputValue = this.value
     }
-  },
-  mounted() {
-    console.log('Composant', this.$options.name)
   },
   methods: {
     input(v) {

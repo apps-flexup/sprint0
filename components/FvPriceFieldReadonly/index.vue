@@ -35,12 +35,20 @@ export default {
       }
     }
   },
+  data() {
+    return {
+      truncatePrice: true
+    }
+  },
   asyncComputed: {
     async amount() {
       const amount = this.value?.amount
       const fromCurrency = this.value?.currency
-      const res = await this.convertToPreferredCurrency(amount, fromCurrency)
-      return res
+      return await this.convertToPreferredCurrency(
+        amount,
+        fromCurrency,
+        this.truncatePrice
+      )
     }
   }
 }

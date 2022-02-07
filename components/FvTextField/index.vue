@@ -13,6 +13,7 @@
     :readonly="readonly"
     :hide-details="hideDetails"
     :dense="dense"
+    :type="type"
     @input="inputChanged"
     @click="clicked"
     @keydown.enter="enterPressed"
@@ -87,6 +88,12 @@ export default {
       type: String,
       default() {
         return null
+      }
+    },
+    type: {
+      type: String,
+      default() {
+        return 'text'
       }
     }
   },
