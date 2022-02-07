@@ -69,7 +69,7 @@ export class CreatePurchaseVM {
       orderItem.price,
       orderItem.vat,
       orderItem.unit.unit,
-      1
+      1,
     )
     this.order.addOrderItem(oi)
   }

@@ -14,7 +14,9 @@
       v-list-item-avatar
         v-img(:src="data.item.avatar")
       v-list-item-content
-        div {{ data.item.name }}
+        .d-inline-flex.justify-space-between
+          span {{ data.item.name }}
+          span {{ price(data.item) }}
     template(v-slot:selection="data")
       v-list-item-avatar
         v-img(:src="data.item.avatar")
@@ -81,14 +83,13 @@ export default {
         const products = await this.$axios.$get(
           `products/?status=active&account_id=${this.thirdPartyAccountId}`
         )
-        const res = await Promise.all(
+        this.items = await Promise.all(
           products.map((o) => {
             return {
               ...o
             }
           })
         )
-        this.items = res
       }
     }
   },
@@ -103,14 +104,13 @@ export default {
       const products = await this.$axios.$get(
         `products/?status=active&account_id=${accountId}`
       )
-      const res = await Promise.all(
+      this.items = await Promise.all(
         products.map((o) => {
           return {
             ...o
           }
         })
       )
-      this.items = res
     }
     await this.$store.dispatch('products/get')
   },
@@ -130,6 +130,16 @@ export default {
     },
     addCustomOrderItem() {
       this.$emit('products:addCustomOrderItem')
+    },
+    price(item) {
+      const { unit, price } = item
+      const { unit: unitStr } = unit
+      const { amount, currency } = price
+      return amount.toLocaleString(this.$locale, {
+          style: 'currency',
+          currency,
+          minimumSignificantDigits: 3
+        }) + ` ${unitStr} `
     }
   }
 }

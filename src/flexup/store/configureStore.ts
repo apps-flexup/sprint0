@@ -1,10 +1,4 @@
-import {
-  Action,
-  applyMiddleware,
-  combineReducers,
-  createStore,
-  Store
-} from 'redux'
+import { Action, applyMiddleware, combineReducers, createStore, Store } from 'redux'
 import thunk, { ThunkAction, ThunkDispatch, ThunkMiddleware } from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import { AppState } from './appState.interface'
@@ -17,22 +11,14 @@ interface Dependencies {
   thirdPartyGateway: ThirdPartyGateway
 }
 
-export const configureReduxStore = (
-  dependencies: Partial<Dependencies>
-): Store<AppState> =>
+export const configureReduxStore = (dependencies: Partial<Dependencies>): Store<AppState> =>
   createStore(
     combineReducers({
-      coreLogic
+      coreLogic,
     }),
     composeWithDevTools(
-      applyMiddleware(
-        thunk.withExtraArgument(dependencies) as ThunkMiddleware<
-          AppState,
-          Action,
-          Dependencies
-        >
-      )
-    )
+      applyMiddleware(thunk.withExtraArgument(dependencies) as ThunkMiddleware<AppState, Action, Dependencies>),
+    ),
   )
 
 export type ReduxStore = Store<AppState> & {
@@ -45,10 +31,7 @@ export interface ActionWithPayload<T extends string, P> extends Action<T> {
 }
 
 export function createAction<T extends string>(type: T): Action<T>
-export function createAction<T extends string, P>(
-  type: T,
-  payload?: P
-): ActionWithPayload<T, P>
+export function createAction<T extends string, P>(type: T, payload?: P): ActionWithPayload<T, P>
 export function createAction<T extends string, P>(type: T, payload?: P) {
   return payload === undefined ? { type } : { type, payload }
 }

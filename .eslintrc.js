@@ -1,4 +1,9 @@
 module.exports = {
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    project: 'tsconfig.json',
+    sourceType: 'module',
+  },
   root: true,
   env: {
     browser: true,
@@ -7,11 +12,13 @@ module.exports = {
   extends: [
     '@nuxtjs/eslint-config-typescript',
     'prettier',
-    'prettier/vue',
     'plugin:prettier/recommended',
-    'plugin:nuxt/recommended'
+    'plugin:nuxt/recommended',
+    'plugin:typescript-eslint/recommended',
   ],
+  ignorePatterns: ['.eslintrc.js'],
   plugins: [
+    '@typescript-eslint/eslint-plugin',
     'prettier'
   ],
   // add your custom rules here

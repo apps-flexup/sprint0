@@ -1,9 +1,7 @@
 import { configureReduxStore, ReduxStore } from '~/src/flexup/store/configureStore'
 import { getMyThirdParties } from '~/src/flexup/store/reducers/thirdPartiesList.reducer'
 import { listMyThirdParties } from '~/src/flexup/corelogic/usecases/my-third-parties-listing/listMyThirdParties'
-import {
-  InMemoryThirdPartyGateway
-} from '~/src/flexup/adapters/secondary/inMemoryThirdPartyGateway'
+import { InMemoryThirdPartyGateway } from '~/src/flexup/adapters/secondary/inMemoryThirdPartyGateway'
 
 describe('Listing of my third parties', () => {
   let store: ReduxStore
