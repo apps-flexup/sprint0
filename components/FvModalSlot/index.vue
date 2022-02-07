@@ -23,12 +23,9 @@ export default {
       type: Boolean,
       default() {
         return false
-      }
-    }
+      },
+    },
   },
-  mounted() {
-    console.log('Composant ', this.$options.name)
-  }
 }
 </script>
 

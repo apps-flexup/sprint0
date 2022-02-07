@@ -35,18 +35,18 @@ export default {
       type: String,
       default() {
         return null
-      }
+      },
     },
     filtersSelected: {
       type: Array,
       default() {
         return ['active', 'inactive']
-      }
-    }
+      },
+    },
   },
   data() {
     return {
-      selected: this.filtersSelected
+      selected: this.filtersSelected,
     }
   },
   computed: {
@@ -70,7 +70,7 @@ export default {
     },
     areAllSelected() {
       return this.selected.length === this.filtersAvailable.length
-    }
+    },
   },
   mounted() {
     this.filtersChanged(this.selected)
@@ -86,8 +86,8 @@ export default {
         this.selected = this.filtersAvailable
       }
       this.filtersChanged(this.selected)
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -99,14 +99,12 @@ export default {
 }
 .titleContainer {
   border: $datatable-header-border-style $datatable-header-border-color;
-  border-radius: $datatable-header-border-radius 0 0
-    $datatable-header-border-radius;
+  border-radius: $datatable-header-border-radius 0 0 $datatable-header-border-radius;
 }
 .filterContainer {
   border: $datatable-header-border-style $datatable-header-border-color;
   border-left: transparent;
-  border-radius: 0 $datatable-header-border-radius
-    $datatable-header-border-radius 0;
+  border-radius: 0 $datatable-header-border-radius $datatable-header-border-radius 0;
   font-size: 1rem;
   padding: $datatable-header-padding;
 }

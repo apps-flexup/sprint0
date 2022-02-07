@@ -14,8 +14,8 @@ export default {
       type: Array,
       default() {
         return []
-      }
-    }
+      },
+    },
   },
   computed: {
     headers() {
@@ -30,10 +30,10 @@ export default {
         return this.$store.getters['owners/findById'](ownerId)
       })
       return res
-    }
+    },
   },
   mounted() {
     this.$store.dispatch('owners/get')
-  }
+  },
 }
 </script>

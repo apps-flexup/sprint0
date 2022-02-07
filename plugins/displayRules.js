@@ -13,7 +13,7 @@ const displayRules = (ctx) => ({
   },
   category(item) {
     if (!item) return null
-    const categoryId = item.category_id
+    const categoryId = item.categoryId
     if (!categoryId) return null
     const category = ctx.store.getters['categories/find'](categoryId)
     if (!category) return null
@@ -47,9 +47,7 @@ const displayRules = (ctx) => ({
     if (!item) return null
     const legalStructureId = item.legal_structure_id
     if (!legalStructureId) return null
-    const legalStructure = ctx.store.getters['contracts/getLegalStructureById'](
-      legalStructureId
-    )
+    const legalStructure = ctx.store.getters['contracts/getLegalStructureById'](legalStructureId)
     if (!legalStructure) return null
     const res = legalStructure.name
     return res
@@ -76,12 +74,10 @@ const displayRules = (ctx) => ({
     const options = {
       style: 'currency',
       currency: toCurrency,
-      minimumFractionDigits
+      minimumFractionDigits,
     }
     const convertedPrice = await convert(fromCurrency, toCurrency, price)
-    const formatedPrice = new Intl.NumberFormat(locale, options).format(
-      convertedPrice
-    )
+    const formatedPrice = new Intl.NumberFormat(locale, options).format(convertedPrice)
     if (!formatedPrice) return null
     const unit = item.unit
     if (!unit) return null
@@ -104,7 +100,7 @@ const displayRules = (ctx) => ({
     const options = {
       style: 'currency',
       currency: toCurrency,
-      minimumFractionDigits
+      minimumFractionDigits,
     }
     const convertedPrice = await convert(fromCurrency, toCurrency, price)
     const res = new Intl.NumberFormat(locale, options).format(convertedPrice)
@@ -119,7 +115,7 @@ const displayRules = (ctx) => ({
     const minimumFractionDigits = settings.vat_nb_after_decimal_point
     const options = {
       style: 'percent',
-      minimumFractionDigits
+      minimumFractionDigits,
     }
     const res = new Intl.NumberFormat(locale, options).format(vat)
     return res
@@ -251,7 +247,7 @@ const displayRules = (ctx) => ({
     if (!type) return null
     const formattedType = type[0].toLowerCase() + type.slice(1)
     return i18n.t(`account.${formattedType}.name`)
-  }
+  },
 })
 
 export default (ctx, inject) => {

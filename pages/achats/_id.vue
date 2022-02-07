@@ -24,12 +24,9 @@ export default {
     return {
       total: 3600,
       basePerc: 40,
-      equityPerc: 60
+      equityPerc: 60,
     }
   },
-  mounted() {
-    console.log('Composant ', this.$options.name)
-  }
 }
 </script>
 <style scoped>

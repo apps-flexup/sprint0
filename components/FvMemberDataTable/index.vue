@@ -34,35 +34,34 @@ export default {
       type: Boolean,
       default() {
         return false
-      }
+      },
     },
     headers: {
       type: Array,
       default() {
         return []
-      }
+      },
     },
     items: {
       type: Array,
       default() {
         return []
-      }
+      },
     },
     options: {
       type: Object,
       default() {
         return null
-      }
-    }
+      },
+    },
   },
   computed: {
     functionalRoles() {
       const res = this.$store.getters['functionalRoles/all']
       return res
-    }
+    },
   },
   mounted() {
-    console.log('Composant ', this.$options.name)
     this.$store.dispatch('functionalRoles/get')
     this.$store.dispatch('members/get')
   },
@@ -70,10 +69,7 @@ export default {
     canUpdateRoleFor(userId) {
       const currentUserId = this.$auth.user.sub
       const activeAccountId = this.$activeAccount.get()
-      const roles = this.$store.getters['members/roleFor'](
-        activeAccountId,
-        currentUserId
-      )
+      const roles = this.$store.getters['members/roleFor'](activeAccountId, currentUserId)
       const canIUpdateMyself = this.nbAdmins() > 1 || currentUserId !== userId
       return roles.includes('admin') && canIUpdateMyself
     },
@@ -92,8 +88,8 @@ export default {
     roleSelected(member, newRole) {
       member.role = newRole
       this.$store.dispatch('members/update', member)
-    }
-  }
+    },
+  },
 }
 </script>
 

@@ -16,8 +16,8 @@ describe('FvThirdPartyAccountDataTable', () => {
       store,
       vuetify,
       mocks: {
-        $t: (msg) => msg
-      }
+        $t: (msg) => msg,
+      },
     })
   }
   beforeEach(() => {
@@ -27,22 +27,22 @@ describe('FvThirdPartyAccountDataTable', () => {
         thirdPartyAccounts: {
           namespaced: true,
           actions: {
-            getAll: jest.fn()
-          }
+            getAll: jest.fn(),
+          },
         },
         countries: {
           namespaced: true,
           actions: {
-            get: jest.fn()
-          }
+            get: jest.fn(),
+          },
         },
         contracts: {
           namespaced: true,
           actions: {
-            getLegalStructures: jest.fn()
-          }
-        }
-      }
+            getLegalStructures: jest.fn(),
+          },
+        },
+      },
     })
   })
   it('should render a fv third party account data table', () => {

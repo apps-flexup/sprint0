@@ -25,39 +25,36 @@ export default {
       periodes: [
         {
           text: 'frequences.periods.days',
-          offset: 'days'
+          offset: 'days',
         },
         {
           text: 'frequences.periods.weeks',
-          offset: 'weeks'
+          offset: 'weeks',
         },
         {
           text: 'frequences.periods.months',
-          offset: 'months'
+          offset: 'months',
         },
         {
           text: 'frequences.periods.quarters',
-          offset: 'quarters'
+          offset: 'quarters',
         },
         {
           text: 'frequences.periods.years',
-          offset: 'years'
+          offset: 'years',
         },
         {
           text: 'frequences.periods.days',
-          offset: 'days'
-        }
-      ]
+          offset: 'days',
+        },
+      ],
     }
   },
   computed: {
     machin() {
       return 42
-    }
+    },
   },
-  mounted() {
-    console.log('Composant ', this.$options.name)
-  }
 }
 </script>
 <style scoped>

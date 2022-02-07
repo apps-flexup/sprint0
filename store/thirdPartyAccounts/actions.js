@@ -7,7 +7,7 @@ export default {
         const account = await this.$repos.accounts.show(thirdParty.flexup_id)
         thirdParty = { ...account, ...thirdParty, name: account.name }
         return thirdParty
-      })
+      }),
     )
     commit('set', data)
   },
@@ -20,9 +20,7 @@ export default {
     commit('set', [])
   },
   remove({ commit }, thirdParty) {
-    this.$repos.thirdPartyAccounts
-      .delete(thirdParty.id)
-      .then(() => commit('remove', thirdParty))
+    this.$repos.thirdPartyAccounts.delete(thirdParty.id).then(() => commit('remove', thirdParty))
   },
   async add({ dispatch, commit }, thirdParty) {
     if (Object.prototype.hasOwnProperty.call(thirdParty, 'id')) {
@@ -30,8 +28,8 @@ export default {
         'accounts/updateLocalThirdParty',
         { id: thirdParty.flexup_id, data: thirdParty },
         {
-          root: true
-        }
+          root: true,
+        },
       )
       const payload = {
         id: thirdParty.id,
@@ -39,7 +37,7 @@ export default {
         flexup_id: thirdParty.flexup_id,
         directory: thirdParty.directory,
         account_id: thirdParty.account_id,
-        status: thirdParty.status
+        status: thirdParty.status,
       }
       this.$repos.thirdPartyAccounts.update(payload).then((res) => {
         commit('update', res)
@@ -47,20 +45,16 @@ export default {
     } else {
       thirdParty.status = 'active'
       if (thirdParty.directory === 'Local') {
-        const accountAdded = await dispatch(
-          'accounts/addLocalThirdParty',
-          thirdParty,
-          {
-            root: true
-          }
-        )
+        const accountAdded = await dispatch('accounts/addLocalThirdParty', thirdParty, {
+          root: true,
+        })
         thirdParty.flexup_id = accountAdded.id
       }
       const res = await this.$repos.thirdPartyAccounts.createWithAccountId({
         type: thirdParty.type,
         flexup_id: thirdParty.flexup_id,
         directory: thirdParty.directory,
-        status: 'active'
+        status: 'active',
       })
       commit('add', res)
     }
@@ -69,7 +63,7 @@ export default {
     const payload = {
       flexup_id: flexupAccountId,
       directory: 'Flexup',
-      status: 'active'
+      status: 'active',
     }
     this.$repos.thirdPartyAccounts.createWithAccountId(payload).then((res) => {
       commit('add', res)
@@ -77,5 +71,5 @@ export default {
   },
   addToFlexup({ _commit }, thirdParty) {
     this.$repos.thirdPartyAccounts.create(thirdParty)
-  }
+  },
 }

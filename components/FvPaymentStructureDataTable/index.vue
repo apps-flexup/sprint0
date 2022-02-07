@@ -25,29 +25,26 @@ export default {
       type: Boolean,
       default() {
         return false
-      }
+      },
     },
     headers: {
       type: Array,
       default() {
         return []
-      }
+      },
     },
     items: {
       type: Array,
       default() {
         return []
-      }
+      },
     },
     options: {
       type: Object,
       default() {
         return null
-      }
-    }
-  },
-  mounted() {
-    console.log('Composant ', this.$options.name)
+      },
+    },
   },
   methods: {
     displayRisk(item) {
@@ -62,7 +59,7 @@ export default {
     },
     sortBy(v) {
       this.$emit('dataTable:sortBy', v)
-    }
-  }
+    },
+  },
 }
 </script>

@@ -39,24 +39,24 @@ export default {
       type: Number,
       default() {
         return null
-      }
+      },
     },
     toRemove: {
       type: Object,
       default() {
         return {}
-      }
+      },
     },
     showActiveAccount: {
       type: Boolean,
       default() {
         return false
-      }
-    }
+      },
+    },
   },
   data() {
     return {
-      allItems: {}
+      allItems: {},
     }
   },
   computed: {
@@ -75,16 +75,14 @@ export default {
         }
       })
       return res
-    }
+    },
   },
   mounted() {
     this.$store.dispatch('thirdPartyAccounts/get')
     this.getAvailableThirdParties().then((data) => {
       if (this.showActiveAccount) {
         const activeAccountId = this.$activeAccount.get()
-        const activeAccount = this.$store.getters['accounts/findById'](
-          activeAccountId
-        )
+        const activeAccount = this.$store.getters['accounts/findById'](activeAccountId)
         this.allItems.activeAccount = [activeAccount]
       }
       this.allItems = { ...this.allItems, ...data }
@@ -107,13 +105,12 @@ export default {
       const res = JSON.parse(JSON.stringify(this.allItems))
       Object.keys(res).forEach((key) => {
         res[key] = res[key]?.filter((thirdParty) => {
-          if (this.toRemove[key])
-            return !this.toRemove[key].includes(thirdParty.id)
+          if (this.toRemove[key]) return !this.toRemove[key].includes(thirdParty.id)
           return true
         })
       })
       return res
-    }
-  }
+    },
+  },
 }
 </script>

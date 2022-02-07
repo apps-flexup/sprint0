@@ -47,26 +47,26 @@ export default {
       type: Boolean,
       default() {
         return false
-      }
+      },
     },
     headers: {
       type: Array,
       default() {
         return []
-      }
+      },
     },
     items: {
       type: Array,
       default() {
         return []
-      }
+      },
     },
     options: {
       type: Object,
       default() {
         return null
-      }
-    }
+      },
+    },
   },
   computed: {
     canEdit() {
@@ -74,7 +74,7 @@ export default {
     },
     canDelete() {
       return this.$rights.canDeleteProduct()
-    }
+    },
   },
   methods: {
     displayName(item) {
@@ -105,8 +105,8 @@ export default {
       if (!product) return
       product.status = newStatus
       this.$store.dispatch('products/add', product)
-    }
-  }
+    },
+  },
 }
 </script>
 

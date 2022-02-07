@@ -1,12 +1,12 @@
 <template lang="pug">
-.fv-order-index
-  fv-header-index(
-    data-testid="headerIndex"
-    :title="$t('table.orders.title')"
-    :titleButton="$t('buttons.create.order')"
-    @button:click="createOrder"
-  )
-  fv-my-orders-listing
+  .fv-order-index
+    fv-header-index(
+      data-testid="headerIndex"
+      :title="$t('table.orders.title')"
+      :titleButton="$t('buttons.create.order')"
+      @button:click="createOrder"
+    )
+    fv-my-orders-listing
 </template>
 
 <script>
@@ -18,11 +18,6 @@ export default {
     createOrder() {
       this.$router.push('/orders/new')
     },
-    selectedOrder(order) {
-      const orderId = order.id
-      const tmp = this.$store.getters['orders/find'](orderId)
-      console.log('Show order: ', tmp)
-    }
-  }
+  },
 }
 </script>

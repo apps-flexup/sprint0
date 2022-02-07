@@ -46,7 +46,7 @@ const directory = (ctx) => ({
     if (!thirdPartys) return null
     const thirdParty = thirdPartys[0]
     return thirdParty
-  }
+  },
 })
 
 export default (ctx, inject) => {

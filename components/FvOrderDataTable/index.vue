@@ -38,26 +38,26 @@ export default {
       type: Boolean,
       default() {
         return false
-      }
+      },
     },
     headers: {
       type: Array,
       default() {
         return []
-      }
+      },
     },
     items: {
       type: Array,
       default() {
         return []
-      }
+      },
     },
     options: {
       type: Object,
       default() {
         return null
-      }
-    }
+      },
+    },
   },
   computed: {
     total() {
@@ -71,7 +71,7 @@ export default {
     preferredCurrency() {
       const res = this.$store.getters['settings/settings']
       return res.currency
-    }
+    },
   },
   methods: {
     localeDate(item) {
@@ -87,8 +87,8 @@ export default {
     },
     sortBy(v) {
       this.$emit('dataTable:sortBy', v)
-    }
-  }
+    },
+  },
 }
 </script>
 

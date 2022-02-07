@@ -4,8 +4,8 @@ import FvModalActions from './index'
 const factory = () => {
   return shallowMount(FvModalActions, {
     mocks: {
-      $t: (msg) => msg
-    }
+      $t: (msg) => msg,
+    },
   })
 }
 

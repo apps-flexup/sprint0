@@ -14,12 +14,9 @@ export default {
   name: 'FvContactDialog',
   props: {
     show: {
-      type: Boolean
-    }
+      type: Boolean,
+    },
   },
-  mounted() {
-    console.log('Composant ', this.$options.name)
-  }
 }
 </script>
 <style scoped>

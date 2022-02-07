@@ -19,9 +19,7 @@ export default {
   productsGeneral: (state) => (id) => {
     if (!state.current) return null
     let res = []
-    this.$axios
-      .$get(`/products?category_id=${id}`)
-      .then((products) => (res = products))
+    this.$axios.$get(`/products?categoryId=${id}`).then((products) => (res = products))
     return res
-  }
+  },
 }

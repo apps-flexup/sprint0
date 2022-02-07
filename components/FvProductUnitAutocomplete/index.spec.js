@@ -14,8 +14,8 @@ const factory = () => {
     store,
     vuetify,
     mocks: {
-      $t: (msg) => msg
-    }
+      $t: (msg) => msg,
+    },
   })
 }
 
@@ -26,15 +26,15 @@ describe('FvProductUnitAutocomplete', () => {
         offers: {
           namespaced: true,
           actions: {
-            get: jest.fn()
+            get: jest.fn(),
           },
           getters: {
             getForProduct: (_productId) => () => {
               return []
-            }
-          }
-        }
-      }
+            },
+          },
+        },
+      },
     })
   })
   it('should render a fv product unit autocomplete', () => {
@@ -56,15 +56,15 @@ describe('FvProductUnitAutocomplete', () => {
           offers: {
             namespaced: true,
             actions: {
-              get: jest.fn()
+              get: jest.fn(),
             },
             getters: {
               getForProduct: (_productId) => () => {
                 return []
-              }
-            }
-          }
-        }
+              },
+            },
+          },
+        },
       })
     })
     it('should not apply dimension filter', () => {
@@ -81,15 +81,15 @@ describe('FvProductUnitAutocomplete', () => {
           offers: {
             namespaced: true,
             actions: {
-              get: jest.fn()
+              get: jest.fn(),
             },
             getters: {
               getForProduct: (_productId) => () => {
                 return [{ unit: { dimension } }]
-              }
-            }
-          }
-        }
+              },
+            },
+          },
+        },
       })
     })
   })

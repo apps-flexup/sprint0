@@ -25,14 +25,12 @@ export default {
       type: Number,
       default() {
         return null
-      }
-    }
+      },
+    },
   },
   computed: {
     thirdPartyAccount() {
-      const res = this.$store.getters['thirdPartyAccounts/find'](
-        this.thirdPartyAccountId
-      )
+      const res = this.$store.getters['thirdPartyAccounts/find'](this.thirdPartyAccountId)
       return res
     },
     country() {
@@ -44,16 +42,13 @@ export default {
     legalStructure() {
       if (!this.thirdPartyAccount) return null
       const legalStructureId = this.thirdPartyAccount.legal_structure_id
-      const res = this.$store.getters['contracts/getLegalStructureById'](
-        legalStructureId
-      )
+      const res = this.$store.getters['contracts/getLegalStructureById'](legalStructureId)
       return res
-    }
+    },
   },
   mounted() {
-    console.log('Composant ', this.$options.name)
     this.$store.dispatch('thirdPartyAccounts/getAll')
     this.$store.dispatch('countries/get')
-  }
+  },
 }
 </script>

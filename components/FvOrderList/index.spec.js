@@ -5,15 +5,15 @@ const $displayRules = {
   localeDate: jest.fn(),
   priceToPreferredCurrency: jest.fn(),
   paymentStructure: jest.fn(),
-  status: jest.fn()
+  status: jest.fn(),
 }
 
 const factory = () => {
   return shallowMount(FvOrderList, {
     mocks: {
       $t: (msg) => msg,
-      $displayRules
-    }
+      $displayRules,
+    },
   })
 }
 

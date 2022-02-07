@@ -15,13 +15,12 @@
 export default {
   data() {
     return {
-      items: []
+      items: [],
     }
   },
   mounted() {
-    console.log('Composant ', this.$options.name)
     this.$repos.offers.index().then((res) => (this.items = res))
-  }
+  },
 }
 </script>
 <style scoped>

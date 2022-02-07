@@ -19,28 +19,28 @@ export default {
   props: {
     status: {
       type: String,
-      default: null
-    }
+      default: null,
+    },
   },
   data() {
     return {
       colors: {
         active: '#9FE4A6',
         inactive: '#FFCD92',
-        archived: '#EDEDED'
-      }
+        archived: '#EDEDED',
+      },
     }
   },
   computed: {
     color() {
       const color = this.colors[this.status]
       return color
-    }
+    },
   },
   methods: {
     statusClicked() {
       this.$emit('status:clicked')
-    }
-  }
+    },
+  },
 }
 </script>

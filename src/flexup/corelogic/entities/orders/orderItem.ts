@@ -12,7 +12,7 @@ export class OrderItem {
     price: any = { amount: 0, currency: 'EUR' },
     vat: number = 0,
     unit: string = '',
-    quantity: number = 1
+    quantity: number = 1,
   ) {
     this.productName = productName
     this.offerName = offerName

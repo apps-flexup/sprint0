@@ -28,18 +28,17 @@ export default {
       type: Number,
       default() {
         return null
-      }
-    }
+      },
+    },
   },
   computed: {
     items() {
       const res = this.$store.getters['paymentConditions/all']
       return res
-    }
+    },
   },
   mounted() {
     this.$store.dispatch('paymentConditions/get')
-    console.log('Composant ', this.$options.name)
   },
   methods: {
     filterList(item, v, it) {
@@ -47,7 +46,7 @@ export default {
     },
     selected(v) {
       this.$emit('paymentCondition:selected', v)
-    }
-  }
+    },
+  },
 }
 </script>

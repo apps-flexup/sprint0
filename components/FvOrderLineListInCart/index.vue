@@ -41,26 +41,25 @@ export default {
       type: Array,
       default() {
         return []
-      }
-    }
+      },
+    },
   },
   computed: {
     headers() {
       const res = this.$store.getters['headers/orderLinesCart']
       return translateHeaders(this.$i18n, res)
-    }
+    },
   },
   mounted() {
     this.$store.dispatch('accounts/get')
     this.$store.dispatch('headers/getOrderLineCartHeaders')
-    console.log('Composant ', this.$options.name)
   },
   methods: {
     quantityChanged(values, item) {
       const quantity = values[0]
       this.$emit('orderLinesInCart:quantityChanged', item, quantity)
-    }
-  }
+    },
+  },
 }
 </script>
 <style scoped>

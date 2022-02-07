@@ -50,14 +50,14 @@ describe('Create purchase view model generator', () => {
           price: { amount: 10, currency: 'EUR' },
           vat: 0.1,
           quantity: 1,
-          unit: { dimension: 'unit', unit: 'dozen' }
+          unit: { dimension: 'unit', unit: 'dozen' },
         }
         const bag = {
           productName: 'Bag',
           price: { amount: 45, currency: 'EUR' },
           vat: 0.2,
           quantity: 0,
-          unit: { dimension: 'unit', unit: 'unit' }
+          unit: { dimension: 'unit', unit: 'unit' },
         }
 
         beforeEach(() => {
@@ -73,16 +73,9 @@ describe('Create purchase view model generator', () => {
               { amount: 10, currency: 'EUR' },
               0.1,
               1,
-              'dozen'
+              'dozen',
             )
-            const expectedBag = createOrderItemVM(
-              'Bag',
-              '',
-              { amount: 45, currency: 'EUR' },
-              0.2,
-              1,
-              'unit'
-            )
+            const expectedBag = createOrderItemVM('Bag', '', { amount: 45, currency: 'EUR' }, 0.2, 1, 'unit')
             expect(purchaseVM.orderItems).toEqual([expectedSocks, expectedBag])
           })
 
@@ -114,7 +107,7 @@ describe('Create purchase view model generator', () => {
           it('should compute total of tax by vat', () => {
             const expectedTotalByVat = {
               '10': { total: 10, vatTotal: 1 },
-              '20': { total: 45, vatTotal: 9 }
+              '20': { total: 45, vatTotal: 9 },
             }
             expect(purchaseVM.totalsByVat).toEqual(expectedTotalByVat)
           })
@@ -131,16 +124,9 @@ describe('Create purchase view model generator', () => {
               { amount: 10, currency: 'EUR' },
               0.1,
               2,
-              'dozen'
+              'dozen',
             )
-            const expectedBag = createOrderItemVM(
-              'Bag',
-              '',
-              { amount: 45, currency: 'EUR' },
-              0.2,
-              1,
-              'unit'
-            )
+            const expectedBag = createOrderItemVM('Bag', '', { amount: 45, currency: 'EUR' }, 0.2, 1, 'unit')
             expect(purchaseVM.orderItems).toEqual([expectedSocks, expectedBag])
           })
 
@@ -165,7 +151,7 @@ describe('Create purchase view model generator', () => {
           it('should compute total of tax by vat', () => {
             const expectedTotalByVat = {
               '10': { total: 20, vatTotal: 2 },
-              '20': { total: 45, vatTotal: 9 }
+              '20': { total: 45, vatTotal: 9 },
             }
             expect(purchaseVM.totalsByVat).toEqual(expectedTotalByVat)
           })
@@ -183,16 +169,9 @@ describe('Create purchase view model generator', () => {
               { amount: 10, currency: 'EUR' },
               0.1,
               1,
-              'dozen'
+              'dozen',
             )
-            const expectedBag = createOrderItemVM(
-              'Bag',
-              '',
-              { amount: 45, currency: 'EUR' },
-              0.2,
-              1,
-              'unit'
-            )
+            const expectedBag = createOrderItemVM('Bag', '', { amount: 45, currency: 'EUR' }, 0.2, 1, 'unit')
             expect(purchaseVM.orderItems).toEqual([expectedSocks, expectedBag])
           })
 
@@ -207,7 +186,7 @@ describe('Create purchase view model generator', () => {
           it('should compute total of tax by vat', () => {
             const expectedTotalByVat = {
               '10': { total: 10, vatTotal: 1 },
-              '20': { total: 45, vatTotal: 9 }
+              '20': { total: 45, vatTotal: 9 },
             }
             expect(purchaseVM.totalsByVat).toEqual(expectedTotalByVat)
           })
@@ -223,14 +202,7 @@ describe('Create purchase view model generator', () => {
         describe('Removing an order item', () => {
           it('should remove the order item', () => {
             purchaseVM.removeOrderItem(0)
-            const expectedBag = createOrderItemVM(
-              'Bag',
-              '',
-              { amount: 45, currency: 'EUR' },
-              0.2,
-              1,
-              'unit'
-            )
+            const expectedBag = createOrderItemVM('Bag', '', { amount: 45, currency: 'EUR' }, 0.2, 1, 'unit')
             expect(purchaseVM.orderItems).toEqual([expectedBag])
           })
         })
@@ -304,14 +276,7 @@ describe('Create purchase view model generator', () => {
     })
   })
 
-  const createOrderItemVM = (
-    productName,
-    offerName,
-    price,
-    vat,
-    quantity,
-    unit
-  ) => {
+  const createOrderItemVM = (productName, offerName, price, vat, quantity, unit) => {
     return {
       orderItem: {
         productName,
@@ -319,13 +284,13 @@ describe('Create purchase view model generator', () => {
         price,
         vat,
         quantity,
-        unit
+        unit,
       },
       canEditProductName: false,
       canEditOfferName: false,
       canEditPrice: false,
       canEditVat: false,
-      canEditUnit: false
+      canEditUnit: false,
     }
   }
 
@@ -337,13 +302,13 @@ describe('Create purchase view model generator', () => {
         price: { amount: 0, currency: 'EUR' },
         vat: 0,
         quantity: 1,
-        unit: ''
+        unit: '',
       },
       canEditProductName: true,
       canEditOfferName: true,
       canEditPrice: true,
       canEditVat: true,
-      canEditUnit: true
+      canEditUnit: true,
     }
   }
 })

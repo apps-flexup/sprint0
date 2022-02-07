@@ -8,5 +8,5 @@ export default () => ({
   offers: [],
   thirdPartyAccounts: [],
   paymentConditions: [],
-  paymentStructures: []
+  paymentStructures: [],
 })

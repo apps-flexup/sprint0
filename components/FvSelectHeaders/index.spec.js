@@ -5,8 +5,8 @@ describe('FvSelectHeaders', () => {
   const factory = () => {
     return shallowMount(FvSelectHeaders, {
       propsData: {
-        dialog: true
-      }
+        dialog: true,
+      },
     })
   }
   it('should render a fv select headers', () => {

@@ -25,22 +25,19 @@ export default {
       type: Array,
       default() {
         return null
-      }
-    }
+      },
+    },
   },
   data() {
     return {
-      rules: ['Address', 'Mail', 'Phone']
+      rules: ['Address', 'Mail', 'Phone'],
     }
   },
   computed: {
     medias() {
       const res = this.value || []
       return res
-    }
-  },
-  mounted() {
-    console.log('Composant ', this.$options.name)
+    },
   },
   methods: {
     getMediasForRule(rule) {
@@ -58,8 +55,8 @@ export default {
         return addressString
       }
       return description.value
-    }
-  }
+    },
+  },
 }
 </script>
 

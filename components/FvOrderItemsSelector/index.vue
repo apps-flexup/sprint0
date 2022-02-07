@@ -81,42 +81,42 @@ export default {
       type: Number,
       default() {
         return -1
-      }
+      },
     },
     value: {
       type: Array,
       default() {
         return []
-      }
+      },
     },
     details: {
       type: Boolean,
       default() {
         return false
-      }
-    }
+      },
+    },
   },
   data() {
     return {
-      orderItems: [...this.value]
+      orderItems: [...this.value],
     }
   },
   computed: {
     indexedItems() {
       return this.orderItems.map((item, index) => ({
         id: index,
-        ...item
+        ...item,
       }))
     },
     headers() {
       const res = this.$store.getters['headers/orderItems']
       return translateHeaders(this.$i18n, res)
-    }
+    },
   },
   watch: {
     value() {
       this.orderItems = [...this.value]
-    }
+    },
   },
   mounted() {
     this.$store.dispatch('headers/getOrderItemHeaders')
@@ -136,13 +136,12 @@ export default {
       this.$emit('orderItem:delete', index)
     },
     orderItemSelected(orderItem) {
-      console.log('order item', orderItem)
       this.$emit('orderItem:selected', orderItem)
     },
     addCustomOrderItem() {
       this.$emit('orderItem:addCustom')
-    }
-  }
+    },
+  },
 }
 </script>
 

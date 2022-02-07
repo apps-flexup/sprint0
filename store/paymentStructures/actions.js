@@ -4,9 +4,7 @@ export default {
     this.$repos.paymentStructures.index().then((data) => commit('set', data))
   },
   remove({ commit }, paymentStructure) {
-    this.$repos.paymentStructures
-      .delete(paymentStructure.id)
-      .then(() => commit('remove', paymentStructure))
+    this.$repos.paymentStructures.delete(paymentStructure.id).then(() => commit('remove', paymentStructure))
   },
   add({ commit }, paymentStructure) {
     if (Object.prototype.hasOwnProperty.call(paymentStructure, 'id')) {
@@ -15,11 +13,9 @@ export default {
         commit('add', res)
       })
     } else {
-      this.$repos.paymentStructures
-        .createWithAccountId(paymentStructure)
-        .then((res) => {
-          commit('add', res)
-        })
+      this.$repos.paymentStructures.createWithAccountId(paymentStructure).then((res) => {
+        commit('add', res)
+      })
     }
-  }
+  },
 }

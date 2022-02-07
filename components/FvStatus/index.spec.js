@@ -4,16 +4,16 @@ import FvStatus from './index.vue'
 const factory = (propsData) => {
   return mount(FvStatus, {
     propsData: {
-      ...propsData
+      ...propsData,
     },
     slots: {
-      icon: 'plop'
+      icon: 'plop',
     },
     mocks: {
       $t: (msg) => {
         return msg
-      }
-    }
+      },
+    },
   })
 }
 

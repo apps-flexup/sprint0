@@ -52,12 +52,12 @@ export default {
       type: Array,
       default() {
         return []
-      }
-    }
+      },
+    },
   },
   data() {
     return {
-      tableName: 'paymentConditionsForPaymentStructureForm'
+      tableName: 'paymentConditionsForPaymentStructureForm',
     }
   },
   computed: {
@@ -74,12 +74,10 @@ export default {
       if (!this.paymentConditions) return []
       const res = []
       this.paymentConditions.forEach((paymentCondition) => {
-        const tmp = this.$store.getters['paymentConditions/findById'](
-          paymentCondition.id
-        )
+        const tmp = this.$store.getters['paymentConditions/findById'](paymentCondition.id)
         const payload = {
           ...tmp,
-          portion: paymentCondition.portion
+          portion: paymentCondition.portion,
         }
         res.push(payload)
       })
@@ -96,7 +94,7 @@ export default {
       res /= 100
       const payload = {
         paymentConditions: this.paymentConditions,
-        risk: res
+        risk: res,
       }
       this.$emit('payload:changed', payload)
       return res
@@ -108,38 +106,33 @@ export default {
         res += paymentCondition.portion
       })
       return res
-    }
+    },
   },
   mounted() {
-    console.log('Composant ', this.$options.name)
     this.$store.dispatch('paymentConditions/get')
   },
   methods: {
     paymentConditionSelected(v) {
-      const paymentConditions = JSON.parse(
-        JSON.stringify(this.paymentConditions)
-      )
+      const paymentConditions = JSON.parse(JSON.stringify(this.paymentConditions))
       const found = paymentConditions.find((paymentCondition) => {
         return paymentCondition.id === v
       })
       if (!found) {
         const paymentCondition = {
           id: v,
-          portion: 0
+          portion: 0,
         }
         paymentConditions.push(paymentCondition)
         const payload = {
           paymentConditions,
-          risk: this.globalRisk
+          risk: this.globalRisk,
         }
         this.$emit('payload:changed', payload)
       }
     },
     portionChanged(v) {
       if (!this.paymentConditions) return
-      const paymentConditions = JSON.parse(
-        JSON.stringify(this.paymentConditions)
-      )
+      const paymentConditions = JSON.parse(JSON.stringify(this.paymentConditions))
       const index = paymentConditions.findIndex((paymentCondition) => {
         return paymentCondition.id === v.item_id
       })
@@ -147,23 +140,21 @@ export default {
         paymentConditions[index].portion = v.portion
         const payload = {
           paymentConditions,
-          risk: this.globalRisk
+          risk: this.globalRisk,
         }
         this.$emit('payload:changed', payload)
       }
     },
     displayGlobalRisk() {
       const item = {
-        risk: this.globalRisk
+        risk: this.globalRisk,
       }
       const res = this.$displayRules.paymentConditionRisk(item)
       return res
     },
     deleteItem(v) {
       if (!this.paymentConditions) return
-      const paymentConditions = JSON.parse(
-        JSON.stringify(this.paymentConditions)
-      )
+      const paymentConditions = JSON.parse(JSON.stringify(this.paymentConditions))
       const index = paymentConditions.findIndex((paymentCondition) => {
         return paymentCondition.id === v.id
       })
@@ -174,8 +165,8 @@ export default {
     },
     addNewPaymentCondition() {
       this.$router.push('/paymentConditions/new')
-    }
-  }
+    },
+  },
 }
 </script>
 

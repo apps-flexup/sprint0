@@ -14,14 +14,14 @@ export default {
       type: Number,
       default() {
         return null
-      }
+      },
     },
     label: {
       type: String,
       default() {
         return null
-      }
-    }
+      },
+    },
   },
   computed: {
     product() {
@@ -29,7 +29,7 @@ export default {
       if (!product) return null
       const res = product.name
       return res
-    }
-  }
+    },
+  },
 }
 </script>

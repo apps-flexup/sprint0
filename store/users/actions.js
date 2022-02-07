@@ -12,5 +12,5 @@ export default {
     this.$repos.users.create(user).then((res) => {
       commit('add', res)
     })
-  }
+  },
 }

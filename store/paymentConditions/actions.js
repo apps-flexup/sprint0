@@ -2,18 +2,14 @@
 export default {
   get({ commit }) {
     // charger les produits
-    this.$repos.paymentConditions
-      .indexWithAccountId()
-      .then((data) => commit('set', data))
+    this.$repos.paymentConditions.indexWithAccountId().then((data) => commit('set', data))
   },
   clear({ commit }) {
     commit('set', [])
   },
   remove({ commit }, paymentCondition) {
     // charger les contracts
-    this.$repos.paymentConditions
-      .delete(paymentCondition.id)
-      .then(() => commit('remove', paymentCondition))
+    this.$repos.paymentConditions.delete(paymentCondition.id).then(() => commit('remove', paymentCondition))
   },
   add({ commit }, paymentCondition) {
     // charger les contracts
@@ -23,11 +19,9 @@ export default {
         commit('add', res)
       })
     } else {
-      this.$repos.paymentConditions
-        .createWithAccountId(paymentCondition)
-        .then((res) => {
-          commit('add', res)
-        })
+      this.$repos.paymentConditions.createWithAccountId(paymentCondition).then((res) => {
+        commit('add', res)
+      })
     }
-  }
+  },
 }

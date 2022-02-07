@@ -26,23 +26,22 @@ export default {
       type: Number,
       default() {
         return null
-      }
-    }
+      },
+    },
   },
   computed: {
     items() {
       const res = this.$store.getters['paymentStructures/all']
       return res
-    }
+    },
   },
   mounted() {
-    console.log('Composant ', this.$options.name)
     this.$store.dispatch('paymentStructures/get')
   },
   methods: {
     selected(v) {
       this.$emit('structures:selected', v)
-    }
-  }
+    },
+  },
 }
 </script>

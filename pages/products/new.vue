@@ -14,14 +14,14 @@ export default {
   data() {
     return {
       product: {
-        status: 'active'
-      }
+        status: 'active',
+      },
     }
   },
   methods: {
     createProduct(payload) {
       this.$activeAccount.addProduct(payload)
-    }
-  }
+    },
+  },
 }
 </script>

@@ -25,5 +25,5 @@ export default {
     const id = parseInt(legalStructureId)
     const res = state.legalStructures.find((v) => parseInt(v.id) === id)
     return res
-  }
+  },
 }

@@ -12,7 +12,7 @@ const availableStatus = ['active', 'inactive', 'archived']
 const factory = () => {
   return shallowMount(FvDataTableHeader, {
     localVue,
-    store
+    store,
   })
 }
 
@@ -23,10 +23,10 @@ describe('FvDataTableHeader', () => {
         products: {
           namespaced: true,
           getters: {
-            availableStatus: () => availableStatus
-          }
-        }
-      }
+            availableStatus: () => availableStatus,
+          },
+        },
+      },
     })
   })
   it('should render a fv data table header', () => {

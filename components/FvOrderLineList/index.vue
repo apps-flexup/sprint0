@@ -72,25 +72,23 @@ export default {
       type: Array,
       default() {
         return []
-      }
+      },
     },
     details: {
       type: Boolean,
       default() {
         return false
-      }
-    }
+      },
+    },
   },
   computed: {
     headers() {
       const addAction = !this.details
       const res = this.$activeAccount.headersOrderLines(addAction)
-      console.log(res)
       return translateHeaders(this.$i18n, res)
-    }
+    },
   },
   mounted() {
-    console.log('Composant ', this.$options.name)
     this.$store.dispatch('headers/getOrderLineHeaders')
     this.$store.dispatch('accounts/get')
     this.$store.dispatch('settings/getSettings')
@@ -106,8 +104,8 @@ export default {
     },
     deleteOrderLine(v) {
       this.$emit('orderLines:delete', v)
-    }
-  }
+    },
+  },
 }
 </script>
 

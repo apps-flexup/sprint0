@@ -11,13 +11,10 @@
 <script>
 export default {
   name: 'FvEditAction',
-  mounted() {
-    console.log('Composant', this.$options.name)
-  },
   methods: {
     clicked() {
       this.$emit('edit:clicked')
-    }
-  }
+    },
+  },
 }
 </script>

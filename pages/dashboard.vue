@@ -57,14 +57,11 @@
 </template>
 <script>
 export default {
-  mounted() {
-    console.log('Composant ', this.$options.name)
-  },
   methods: {
     buttonClick() {
       console.log('coucou')
-    }
-  }
+    },
+  },
 }
 </script>
 

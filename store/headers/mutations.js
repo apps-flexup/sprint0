@@ -7,5 +7,5 @@ export default {
   },
   setOrderItemCartHeaders(state, items) {
     state.orderItemsCart = items
-  }
+  },
 }

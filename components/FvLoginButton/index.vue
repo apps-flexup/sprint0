@@ -13,13 +13,10 @@
 <script>
 export default {
   name: 'FvLoginButton',
-  mounted() {
-    console.log('Composant ', this.$options.name)
-  },
   methods: {
     click() {
       this.$auth.loginWith('keycloak')
-    }
-  }
+    },
+  },
 }
 </script>

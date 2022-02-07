@@ -18,27 +18,27 @@ const account = {
   roles_methods: null,
   supplier: false,
   user_id: '2ae5fcf8-9ed5-480a-89c8-a2f946e72140',
-  id: 1
+  id: 1,
 }
 
 const $activeAccount = {
-  get: jest.fn()
+  get: jest.fn(),
 }
 
 const $displayRules = {
   accountName: jest.fn(),
-  userName: jest.fn()
+  userName: jest.fn(),
 }
 
 const loggedInAuth = {
   loggedIn: true,
   user: {
-    preferred_username: 'toto'
-  }
+    preferred_username: 'toto',
+  },
 }
 
 const loggedOutAuth = {
-  loggedIn: false
+  loggedIn: false,
 }
 
 const loggedInFactory = () => {
@@ -49,8 +49,8 @@ const loggedInFactory = () => {
       $t: (msg) => msg,
       $auth: loggedInAuth,
       $activeAccount,
-      $displayRules
-    }
+      $displayRules,
+    },
   })
 }
 
@@ -60,8 +60,8 @@ const loggedOutFactory = () => {
     store,
     mocks: {
       $t: (msg) => msg,
-      $auth: loggedOutAuth
-    }
+      $auth: loggedOutAuth,
+    },
   })
 }
 
@@ -72,19 +72,19 @@ beforeEach(() => {
         namespaced: true,
         getters: {
           selected: jest.fn(),
-          findById: () => () => account
-        }
+          findById: () => () => account,
+        },
       },
       settings: {
         namespaced: true,
         actions: {
-          getGlobalMenu: jest.fn()
+          getGlobalMenu: jest.fn(),
         },
         getters: {
-          globalMenu: jest.fn()
-        }
-      }
-    }
+          globalMenu: jest.fn(),
+        },
+      },
+    },
   })
 })
 

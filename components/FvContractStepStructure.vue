@@ -19,20 +19,20 @@ export default {
       type: Object,
       default() {
         return 3
-      }
+      },
     },
     values: {
       type: Object,
       default() {
         return {
-          selected: []
+          selected: [],
         }
-      }
-    }
+      },
+    },
   },
   data() {
     return {
-      local_selected: []
+      local_selected: [],
     }
   },
   computed: {
@@ -44,17 +44,16 @@ export default {
       set(v) {
         this.local_selected = v
         this.$emit('wizard', { structContract: v })
-      }
+      },
     },
     structContractList() {
       const res = this.$store.getters['contracts/structures']
       return res
-    }
+    },
   },
   mounted() {
-    console.log('Composant ', this.$options.name)
     this.$store.dispatch('contracts/getStructures')
-  }
+  },
 }
 </script>
 

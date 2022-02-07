@@ -1,85 +1,84 @@
 <template lang="pug">
-.fv-create-purchase
-  v-row.head
-    fv-icon.mr-11(
-      data-testid="icon"
-      color="inherit"
-      size="xLarge"
-      icon="mdi-chevron-left"
-      @icon:clicked="cancel"
-    )
-    h1(data-testid="pageTitle") {{ $t('forms.purchases.new.title') }}
-  v-list.mt-10(
-  )
-    fv-step-form(
-      data-testid="stepForm"
-      :formId="1"
-      :title="$t('forms.purchases.step.0')"
-    )
-      template(slot="form")
-        v-row
-          v-col(cols="12")
-            fv-get-id-third-party-autocomplete(
-              :label="$t('forms.purchases.new.thirdParty')"
-              @payload:changed="thirdPartyIdChanged"
-            )
-          v-col(cols="12")
-            fv-text-field(
-              :label="$t('forms.purchases.new.label')"
-              @payload:changed="labelChanged"
-            )
-          v-col(cols="12")
-            fv-field-date(
-              :label="$t('forms.purchases.new.date')"
-              :date-ref="purchaseVM.date"
-              @date:changed="dateChanged"
-            )
-  v-list.mt-10(
-  )
-    fv-step-form(
-      data-testid="stepForm"
-      :formId="2"
-      :title="$t('forms.purchases.step.1')"
-    )
-      template(slot="form")
-        v-row
-          v-col(cols="12")
-            fv-order-items-selector(
-              :thirdPartyId="purchaseVM.thirdPartyId"
-              :value="purchaseVM.orderItems"
-              @orderItem:quantityChanged='quantityChanged'
-              @orderItem:delete='deleteOrderItem'
-              @orderItem:selected='orderItemSelected'
-              @orderItem:addCustom='purchaseVM.addCustomOrderItem()'
-            )
-  v-row
-    v-spacer
-    v-col(cols="5")
-      fv-order-totals(
-        :totalWithoutTax="purchaseVM.totalWithoutTax"
-        :totalWithTax="purchaseVM.totalWithTax"
-        :totalsByVat="purchaseVM.totalsByVat"
+  .fv-create-purchase
+    v-row.head
+      fv-icon.mr-11(
+        data-testid="icon"
+        color="inherit"
+        size="xLarge"
+        icon="mdi-chevron-left"
+        @icon:clicked="cancel"
       )
-  div.btn.mt-10
-    fv-secondary-button(
-      @button:click="cancel"
-    ) {{ $t('forms.purchases.new.cancel') }}
-    fv-primary-button(
-      @button:click="saveAsDraft"
-    ) {{ $t('forms.purchases.new.saveAsDraft') }}
+      h1(data-testid="pageTitle") {{ $t("forms.purchases.new.title") }}
+    v-list.mt-10(
+    )
+      fv-step-form(
+        data-testid="stepForm"
+        :formId="1"
+        :title="$t('forms.purchases.step.0')"
+      )
+        template(slot="form")
+          v-row
+            v-col(cols="12")
+              fv-get-id-third-party-autocomplete(
+                :label="$t('forms.purchases.new.thirdParty')"
+                @payload:changed="thirdPartyIdChanged"
+              )
+            v-col(cols="12")
+              fv-text-field(
+                :label="$t('forms.purchases.new.label')"
+                @payload:changed="labelChanged"
+              )
+            v-col(cols="12")
+              fv-field-date(
+                :label="$t('forms.purchases.new.date')"
+                :date-ref="purchaseVM.date"
+                @date:changed="dateChanged"
+              )
+    v-list.mt-10(
+    )
+      fv-step-form(
+        data-testid="stepForm"
+        :formId="2"
+        :title="$t('forms.purchases.step.1')"
+      )
+        template(slot="form")
+          v-row
+            v-col(cols="12")
+              fv-order-items-selector(
+                :thirdPartyId="purchaseVM.thirdPartyId"
+                :value="purchaseVM.orderItems"
+                @orderItem:quantityChanged='quantityChanged'
+                @orderItem:delete='deleteOrderItem'
+                @orderItem:selected='orderItemSelected'
+                @orderItem:addCustom='purchaseVM.addCustomOrderItem()'
+              )
+    v-row
+      v-spacer
+      v-col(cols="5")
+        fv-order-totals(
+          :totalWithoutTax="purchaseVM.totalWithoutTax"
+          :totalWithTax="purchaseVM.totalWithTax"
+          :totalsByVat="purchaseVM.totalsByVat"
+        )
+    div.btn.mt-10
+      fv-secondary-button(
+        @button:click="cancel"
+      ) {{ $t('forms.purchases.new.cancel') }}
+      fv-primary-button(
+        @button:click="saveAsDraft"
+      ) {{ $t('forms.purchases.new.saveAsDraft') }}
 
 </template>
 <script>
 import { createPurchaseVM } from '~/src/flexup/adapters/primary/view-models-generator/create-order-screen/create-purchase-screen/createPurchaseViewModelGenerator'
-import { dateProvider } from '~/container'
+import { dateProvider, store } from '~/container'
 import { savePurchaseAsDraft } from '~/src/flexup/corelogic/usecases/creating-order/creating-purchase/savePurchaseAsDraft'
-import { store } from '~/container'
 
 export default {
   name: 'FvCreatePurchase',
   data() {
     return {
-      purchaseVM: createPurchaseVM(dateProvider)
+      purchaseVM: createPurchaseVM(dateProvider),
     }
   },
   methods: {
@@ -101,7 +100,7 @@ export default {
         offerName: orderItem.offerName,
         price: orderItem.price,
         vat: orderItem.vat / 100,
-        unit: orderItem.unit
+        unit: orderItem.unit,
       })
     },
     quantityChanged(payload) {
@@ -122,14 +121,14 @@ export default {
             price: oi.price,
             vat: oi.vat,
             unit: oi.unit,
-            quantity: oi.quantity
+            quantity: oi.quantity,
           }
-        })
+        }),
       }
       await store.dispatch(savePurchaseAsDraft(res))
       this.$router.go(-1)
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -137,23 +136,29 @@ export default {
 ::v-deep .v-sheet {
   border-radius: 15px;
 }
+
 ::v-deep .v-list.mt-10.v-sheet.theme--light {
   background-color: rgb(241, 241, 241);
 }
+
 ::v-deep .v-input.theme--light .v-input__slot {
   background: #ffffff;
   margin-bottom: initial;
 }
+
 ::v-deep .v-text-field__details {
   display: none;
 }
+
 .fv-status-select {
   max-width: $status-btn-width;
 }
+
 .btn {
   display: flex;
   justify-content: space-between;
 }
+
 .head {
   align-items: center;
 }

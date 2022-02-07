@@ -6,11 +6,11 @@ const valueType = 'Phone'
 const factory = (propsData) => {
   return shallowMount(FvPhoneField, {
     propsData: {
-      ...propsData
+      ...propsData,
     },
     mocks: {
-      $t: (msg) => msg
-    }
+      $t: (msg) => msg,
+    },
   })
 }
 
@@ -27,7 +27,7 @@ describe('FvPhoneField', () => {
     const phoneChangedCalls = wrapper.emitted('phone:value:changed')
     const expectedPayload = {
       value_type: valueType,
-      value: phone
+      value: phone,
     }
     expect(phoneChangedCalls).toBeTruthy()
     expect(phoneChangedCalls).toHaveLength(1)
@@ -41,7 +41,7 @@ describe('FvPhoneField', () => {
     const labelChangedCalls = wrapper.emitted('phone:label:changed')
     const expectedPayload = {
       value_type: valueType,
-      label
+      label,
     }
     expect(labelChangedCalls).toBeTruthy()
     expect(labelChangedCalls).toHaveLength(1)

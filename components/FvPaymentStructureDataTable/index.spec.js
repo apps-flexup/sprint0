@@ -2,14 +2,14 @@ import { shallowMount } from '@vue/test-utils'
 import FvPaymentStructureDataTable from './index.vue'
 
 const $displayRules = {
-  paymentStructureRisk: jest.fn()
+  paymentStructureRisk: jest.fn(),
 }
 
 const factory = () => {
   return shallowMount(FvPaymentStructureDataTable, {
     mocks: {
-      $displayRules
-    }
+      $displayRules,
+    },
   })
 }
 
@@ -22,7 +22,7 @@ describe('FvPaymentStructureDataTable', () => {
     const wrapper = factory()
     const dataTable = wrapper.find('[data-testid="dataTable"]')
     const paymentStructure = {
-      foo: 'foo'
+      foo: 'foo',
     }
     dataTable.vm.$emit('dataTable:selected', paymentStructure)
     const selectedCalls = wrapper.emitted('dataTable:selected')
@@ -34,7 +34,7 @@ describe('FvPaymentStructureDataTable', () => {
     const wrapper = factory()
     const dataTable = wrapper.find('[data-testid="dataTable"]')
     const sortBy = {
-      foo: 'foo'
+      foo: 'foo',
     }
     dataTable.vm.$emit('dataTable:sortBy', sortBy)
     const sortByCalls = wrapper.emitted('dataTable:sortBy')
