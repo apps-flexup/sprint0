@@ -11,9 +11,9 @@ export default {
   props: {
     value: {
       type: String,
-      default: 'draft'
-    }
-  }
+      default: 'draft',
+    },
+  },
 }
 </script>
 

@@ -17,7 +17,7 @@ describe('FvAccountAutocomplete', () => {
       name: 'Toto',
       firstname: 'toto',
       lastname: 'La Riflette ',
-      type: 'Personal'
+      type: 'Personal',
     }
     autocomplete.vm.$emit('autocomplete:selected', selectedAccount)
     const selectedCalls = wrapper.emitted('account:selected')

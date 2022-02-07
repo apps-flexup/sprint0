@@ -17,14 +17,14 @@ export default {
         {
           name: 'businessAccount',
           label: this.$t('forms.businessAccounts.new.title'),
-          value: 'BusinessAccount'
+          value: 'BusinessAccount',
         },
         {
           name: 'subAccount',
           label: this.$t('forms.subAccounts.new.title'),
-          value: 'SubAccount'
-        }
-      ]
+          value: 'SubAccount',
+        },
+      ],
     }
   },
   methods: {
@@ -33,8 +33,8 @@ export default {
     },
     cancel() {
       this.$router.go(-1)
-    }
-  }
+    },
+  },
 }
 </script>
 

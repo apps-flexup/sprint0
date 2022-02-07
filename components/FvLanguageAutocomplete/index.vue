@@ -26,17 +26,14 @@ export default {
       type: String,
       default() {
         return null
-      }
-    }
+      },
+    },
   },
   computed: {
     items() {
       const res = this.$store.getters['settings/locales']
       return res
-    }
-  },
-  mounted() {
-    console.log('Composant ', this.$options.name)
+    },
   },
   methods: {
     selected(v) {
@@ -45,10 +42,10 @@ export default {
     filter(item, v, it) {
       const language = {
         iso2: item,
-        name: this.$t('languages.' + item)
+        name: this.$t('languages.' + item),
       }
       return filterLanguageAutocomplete(language, v, it)
-    }
-  }
+    },
+  },
 }
 </script>

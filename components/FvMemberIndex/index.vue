@@ -55,7 +55,7 @@ export default {
     return {
       dialog: false,
       entity: null,
-      role: null
+      role: null,
     }
   },
   asyncComputed: {
@@ -66,7 +66,7 @@ export default {
         return naturalPerson.parent_id !== activeUserUuid
       })
       return res
-    }
+    },
   },
   computed: {
     accountType() {
@@ -85,7 +85,7 @@ export default {
     },
     canInvite() {
       return this.$rights.canInviteMember()
-    }
+    },
   },
   mounted() {
     this.$store.dispatch('functionalRoles/get')
@@ -112,7 +112,7 @@ export default {
     },
     roleSelected(v) {
       this.role = v
-    }
-  }
+    },
+  },
 }
 </script>

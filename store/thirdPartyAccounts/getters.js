@@ -7,9 +7,7 @@ export default {
   allWithFilters: (state) => (statusFilters) => {
     if (!state.items) return []
     const filteredItems = state.items.filter((item) => {
-      const insensitiveFilters = statusFilters.map((status) =>
-        status.toLowerCase()
-      )
+      const insensitiveFilters = statusFilters.map((status) => status.toLowerCase())
       return insensitiveFilters.includes(item.status.toLowerCase())
     })
     const res = JSON.parse(JSON.stringify(filteredItems))
@@ -45,5 +43,5 @@ export default {
   },
   availableFilters(state) {
     return state.availableFilters
-  }
+  },
 }

@@ -11,11 +11,11 @@ const headers = ['1', '2']
 
 const $activeAccount = {
   headers: () => headers,
-  items: jest.fn()
+  items: jest.fn(),
 }
 
 const settings = {
-  headers: []
+  headers: [],
 }
 
 const factory = () => {
@@ -23,11 +23,11 @@ const factory = () => {
     localVue,
     store,
     propsData: {
-      tableComponent: 'fv-product-data-table'
+      tableComponent: 'fv-product-data-table',
     },
     mocks: {
-      $activeAccount
-    }
+      $activeAccount,
+    },
   })
 }
 
@@ -37,13 +37,13 @@ beforeEach(() => {
       settings: {
         namespaced: true,
         actions: {
-          updateSettings: jest.fn()
+          updateSettings: jest.fn(),
         },
         getters: {
-          settings: () => settings
-        }
-      }
-    }
+          settings: () => settings,
+        },
+      },
+    },
   })
 })
 
@@ -86,7 +86,7 @@ describe('FvIndexTable', () => {
     const table = wrapper.find('[data-testid="table"]')
     const sortBy = {
       key: 'plop',
-      desc: true
+      desc: true,
     }
     table.vm.$emit('dataTable:sortBy', sortBy)
     expect(wrapper.vm.sortKey).toBe(sortBy.key)
@@ -96,7 +96,7 @@ describe('FvIndexTable', () => {
     const table = wrapper.find('[data-testid="table"]')
     const sortBy = {
       key: 'plop',
-      desc: true
+      desc: true,
     }
     table.vm.$emit('dataTable:sortBy', sortBy)
     expect(wrapper.vm.shouldSortDesc).toBe(sortBy.desc)

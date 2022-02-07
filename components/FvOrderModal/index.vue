@@ -31,17 +31,14 @@ export default {
       type: Boolean,
       default() {
         return false
-      }
+      },
     },
     order: {
       type: Object,
       default() {
         return {}
-      }
-    }
-  },
-  mounted() {
-    console.log('Composant ', this.$options.name)
+      },
+    },
   },
   methods: {
     close() {
@@ -52,7 +49,7 @@ export default {
     },
     orderChanged(order) {
       this.$emit('order:changed', order)
-    }
-  }
+    },
+  },
 }
 </script>

@@ -12,10 +12,10 @@ export default {
       default() {
         return {
           id: -175,
-          name: 'forms.contracts.step.0'
+          name: 'forms.contracts.step.0',
         }
-      }
-    }
-  }
+      },
+    },
+  },
 }
 </script>

@@ -8,7 +8,7 @@ localVue.use(Vuex)
 let store
 
 const account = {
-  id: 1
+  id: 1,
 }
 
 const factory = () => {
@@ -16,8 +16,8 @@ const factory = () => {
     localVue,
     store,
     mocks: {
-      $t: (msg) => msg
-    }
+      $t: (msg) => msg,
+    },
   })
 }
 
@@ -27,14 +27,14 @@ beforeEach(() => {
       accounts: {
         namespaced: true,
         actions: {
-          get: jest.fn()
+          get: jest.fn(),
         },
         getters: {
           selected: () => 1,
-          findById: () => () => account
-        }
-      }
-    }
+          findById: () => () => account,
+        },
+      },
+    },
   })
 })
 

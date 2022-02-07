@@ -13,9 +13,9 @@ export const formComputeFunction = {
     const vat = payload.vat
     return {
       amount: applyVatToAmount(amount, vat),
-      currency: payload.price.currency
+      currency: payload.price.currency,
     }
-  }
+  },
 }
 
 export const applyVatToAmount = (amount, vat) => {
@@ -61,24 +61,19 @@ export const deepDiff = (o1, o2) => {
     if (Array.isArray(o1[key]) && Array.isArray(o2[key])) {
       return {
         ...diff,
-        [key]: arrayDiff(o1[key], o2[key])
+        [key]: arrayDiff(o1[key], o2[key]),
       }
-    } else if (
-      o1[key] &&
-      typeof o1[key] === 'object' &&
-      o2[key] &&
-      typeof o2[key] === 'object'
-    ) {
+    } else if (o1[key] && typeof o1[key] === 'object' && o2[key] && typeof o2[key] === 'object') {
       return {
         ...diff,
-        [key]: deepDiff(o1[key], o2[key])
+        [key]: deepDiff(o1[key], o2[key]),
       }
     } else if (o1[key] === o2[key]) {
       return diff
     } else {
       return {
         ...diff,
-        [key]: o2[key]
+        [key]: o2[key],
       }
     }
   }, {})
@@ -106,12 +101,7 @@ export const mergeObjects = (dst, src) => {
     Object.keys(src).forEach((key) => {
       if (Array.isArray(dst[key]) && Array.isArray(src[key])) {
         mergeArrays(dst[key], src[key])
-      } else if (
-        typeof src[key] === 'object' &&
-        src[key] &&
-        typeof dst[key] === 'object' &&
-        dst[key]
-      ) {
+      } else if (typeof src[key] === 'object' && src[key] && typeof dst[key] === 'object' && dst[key]) {
         mergeObjects(dst[key], src[key])
       } else {
         dst[key] = src[key]
@@ -141,7 +131,7 @@ export const translateHeaders = (i18n, items) => {
     const translated = i18n.t(item.text)
     return {
       ...item,
-      text: translated
+      text: translated,
     }
   })
   return res

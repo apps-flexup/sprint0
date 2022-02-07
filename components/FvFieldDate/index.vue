@@ -38,43 +38,43 @@ export default {
       type: Date,
       default() {
         return null
-      }
+      },
     },
     maxDate: {
       type: Date,
       default() {
         return null
-      }
+      },
     },
     label: {
       type: String,
       default() {
         return 'Date label'
-      }
+      },
     },
     dateRef: {
       type: String,
       default() {
         return null
-      }
+      },
     },
     hideDetails: {
       type: Boolean,
       default() {
         return false
-      }
+      },
     },
     readonly: {
       type: Boolean,
       default() {
         return false
-      }
-    }
+      },
+    },
   },
   data() {
     return {
       fromDateMenu: false,
-      pickingDate: this.dateRef
+      pickingDate: this.dateRef,
     }
   },
   computed: {
@@ -86,12 +86,12 @@ export default {
       const dte = new Date(this.pickingDate)
       const res = dte.toLocaleDateString(this.locale)
       return res
-    }
+    },
   },
   watch: {
     dateRef() {
       this.pickingDate = this.dateRef
-    }
+    },
   },
   mounted() {
     this.$store.dispatch('settings/getSettings')
@@ -104,8 +104,8 @@ export default {
     },
     click() {
       this.fromDateMenu = !this.readonly
-    }
-  }
+    },
+  },
 }
 </script>
 <style scoped>

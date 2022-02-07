@@ -12,8 +12,8 @@ describe('FvSlotItemCard', () => {
     const defaultSlot = 'helloWorld'
     const wrapper = mount(FvSlotItemCard, {
       slots: {
-        default: defaultSlot
-      }
+        default: defaultSlot,
+      },
     })
     expect(wrapper.html()).toContain(defaultSlot)
   })
@@ -62,8 +62,8 @@ describe('FvSlotItemCard', () => {
     const color = '#FFFFFF'
     const wrapper = mount(FvSlotItemCard, {
       propsData: {
-        favoriteIconColor: color
-      }
+        favoriteIconColor: color,
+      },
     })
     const favoriteIcon = wrapper.find('[data-testid="favoriteIcon"]')
     expect(favoriteIcon.props().color).toBe(color)

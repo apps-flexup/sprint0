@@ -11,24 +11,24 @@ const legalStructures = [
   {
     id: 1,
     name: 'Auto-entrepreneur',
-    sigle: 'AE'
+    sigle: 'AE',
   },
   {
     id: 2,
     name: 'Entreprise agricole à responsabilité limitée',
-    sigle: 'EARL'
+    sigle: 'EARL',
   },
   {
     id: 3,
     name: 'Entreprise individuelle',
-    sigle: 'EI'
-  }
+    sigle: 'EI',
+  },
 ]
 
 const factory = () => {
   return shallowMount(FvLegalStructureAutocomplete, {
     localVue,
-    store
+    store,
   })
 }
 beforeEach(() => {
@@ -37,13 +37,13 @@ beforeEach(() => {
       contracts: {
         namespaced: true,
         actions: {
-          getLegalStructures: jest.fn()
+          getLegalStructures: jest.fn(),
         },
         getters: {
-          legalStructures: () => legalStructures
-        }
-      }
-    }
+          legalStructures: () => legalStructures,
+        },
+      },
+    },
   })
 })
 

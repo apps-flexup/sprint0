@@ -26,31 +26,28 @@ export default {
       type: String,
       default() {
         return 'Flex Up - Sprint 0'
-      }
-    }
+      },
+    },
   },
   data() {
     return {
       icons: [
         {
           icon: 'mdi-map-marker-outline',
-          to: '/adresses'
+          to: '/adresses',
         },
         {
           icon: 'mdi-heart-outline',
-          to: '/favorite'
+          to: '/favorite',
         },
         {
           icon: 'mdi-basket-outline',
-          to: '/shop'
-        }
+          to: '/shop',
+        },
       ],
-      space: 'buyer'
+      space: 'buyer',
     }
   },
-  mounted() {
-    console.log('Composant ', this.$options.name)
-  }
 }
 </script>
 

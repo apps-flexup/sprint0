@@ -50,66 +50,60 @@ export default {
       type: String,
       default() {
         return this.$t('forms.orders.new.product')
-      }
+      },
     },
     thirdPartyAccountId: {
       type: Number,
       default() {
         return null
-      }
+      },
     },
     disabled: {
       type: Boolean,
       default() {
         return false
-      }
+      },
     },
     returnObject: {
       type: Boolean,
       default() {
         return false
-      }
-    }
+      },
+    },
   },
   data() {
     return {
-      items: []
+      items: [],
     }
   },
   watch: {
     async thirdPartyAccountId() {
       this.items = []
       if (this.thirdPartyAccountId > 0) {
-        const products = await this.$axios.$get(
-          `products/?status=active&account_id=${this.thirdPartyAccountId}`
-        )
+        const products = await this.$axios.$get(`products/?status=active&account_id=${this.thirdPartyAccountId}`)
         this.items = await Promise.all(
           products.map((o) => {
             return {
-              ...o
+              ...o,
             }
-          })
+          }),
         )
       }
-    }
+    },
   },
   async mounted() {
     await this.$store.dispatch('thirdPartyAccounts/getAll')
     this.items = []
     if (this.thirdPartyAccountId > 0) {
-      const thirdPartyAccount = this.$store.getters['thirdPartyAccounts/find'](
-        this.thirdPartyAccountId
-      )
+      const thirdPartyAccount = this.$store.getters['thirdPartyAccounts/find'](this.thirdPartyAccountId)
       const accountId = thirdPartyAccount.id
-      const products = await this.$axios.$get(
-        `products/?status=active&account_id=${accountId}`
-      )
+      const products = await this.$axios.$get(`products/?status=active&account_id=${accountId}`)
       this.items = await Promise.all(
         products.map((o) => {
           return {
-            ...o
+            ...o,
           }
-        })
+        }),
       )
     }
     await this.$store.dispatch('products/get')
@@ -118,7 +112,7 @@ export default {
     selected(v) {
       this.$emit('products:selected', {
         productName: v.name,
-        ...v
+        ...v,
       })
       this.emitGenericSignalForForm(v)
     },
@@ -135,12 +129,14 @@ export default {
       const { unit, price } = item
       const { unit: unitStr } = unit
       const { amount, currency } = price
-      return amount.toLocaleString(this.$locale, {
+      return (
+        amount.toLocaleString(this.$locale, {
           style: 'currency',
           currency,
-          minimumSignificantDigits: 3
+          minimumSignificantDigits: 3,
         }) + ` ${unitStr} `
-    }
-  }
+      )
+    },
+  },
 }
 </script>

@@ -27,37 +27,37 @@ export default {
       type: Boolean,
       default() {
         return false
-      }
+      },
     },
     headers: {
       type: Array,
       default() {
         return []
-      }
+      },
     },
     items: {
       type: Array,
       default() {
         return []
-      }
+      },
     },
     options: {
       type: Object,
       default() {
         return null
-      }
-    }
+      },
+    },
   },
   data() {
     return {
       forceReRender: 0,
-      accountNames: {}
+      accountNames: {},
     }
   },
   watch: {
     items() {
       this.initItems()
-    }
+    },
   },
   mounted() {
     this.$store.dispatch('owners/get')
@@ -97,7 +97,7 @@ export default {
     },
     referenceOwnerClicked(owner) {
       this.$emit('dataTable:setReferenceOwner:owner', owner)
-    }
-  }
+    },
+  },
 }
 </script>

@@ -1,14 +1,14 @@
 <template lang="pug">
-.fv-product-list
-  fv-index-table(
-    data-testid="table"
-    :searchLabel="$t('table.products.search')"
-    tableComponent="fv-product-data-table"
-    tableName="products"
-    :rules="rules"
-    @list:selected="productSelected"
-    @list:edit="editProduct"
-  )
+  .fv-product-list
+    fv-index-table(
+      data-testid="table"
+      :searchLabel="$t('table.products.search')"
+      tableComponent="fv-product-data-table"
+      tableName="products"
+      :rules="rules"
+      @list:selected="productSelected"
+      @list:edit="editProduct"
+    )
 </template>
 
 <script>
@@ -18,9 +18,9 @@ export default {
     return {
       rules: {
         status: this.$displayRules.status,
-        category_id: this.$displayRules.category,
-        unit: this.$displayRules.unit
-      }
+        categoryId: this.$displayRules.category,
+        unit: this.$displayRules.unit,
+      },
     }
   },
   mounted() {
@@ -32,7 +32,7 @@ export default {
     },
     editProduct(payload) {
       this.$emit('list:edit', payload)
-    }
-  }
+    },
+  },
 }
 </script>

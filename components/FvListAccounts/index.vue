@@ -49,7 +49,7 @@ export default {
     otherAccounts() {
       const res = this.$store.getters['accounts/others']
       return res
-    }
+    },
   },
   mounted() {
     this.$store.dispatch('accounts/get')
@@ -67,12 +67,11 @@ export default {
     },
     manageAccounts() {
       this.$router.push('/accounts')
-      console.log('manage accounts')
     },
     help() {
       console.log('help')
-    }
-  }
+    },
+  },
 }
 </script>
 

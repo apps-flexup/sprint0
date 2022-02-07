@@ -11,13 +11,10 @@
 <script>
 export default {
   name: 'FvModalButton',
-  mounted() {
-    console.log('Composant', this.$options.name)
-  },
   methods: {
     click() {
       this.$emit('button:click')
-    }
-  }
+    },
+  },
 }
 </script>

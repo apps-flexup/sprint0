@@ -13,17 +13,14 @@
 export default {
   data() {
     return {
-      paymentStructure: {}
+      paymentStructure: {},
     }
-  },
-  mounted() {
-    console.log('Composant ', this.$options.name)
   },
   methods: {
     createPaymentStructure(payload) {
       console.log('Create payment structure: ', payload)
       this.$activeAccount.addPaymentStructure(payload)
-    }
-  }
+    },
+  },
 }
 </script>

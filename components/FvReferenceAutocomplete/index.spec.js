@@ -4,11 +4,11 @@ import FvReferenceAutocomplete from './index.vue'
 const factory = (propsData) => {
   return shallowMount(FvReferenceAutocomplete, {
     propsData: {
-      ...propsData
+      ...propsData,
     },
     mocks: {
-      $t: (msg) => msg
-    }
+      $t: (msg) => msg,
+    },
   })
 }
 

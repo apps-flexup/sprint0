@@ -12,7 +12,7 @@ const locales = ['en', 'fr']
 const factory = () => {
   return shallowMount(FvLanguageAutocomplete, {
     localVue,
-    store
+    store,
   })
 }
 beforeEach(() => {
@@ -21,10 +21,10 @@ beforeEach(() => {
       settings: {
         namespaced: true,
         getters: {
-          locales: () => locales
-        }
-      }
-    }
+          locales: () => locales,
+        },
+      },
+    },
   })
 })
 

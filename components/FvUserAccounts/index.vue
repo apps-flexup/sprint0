@@ -29,10 +29,7 @@ export default {
       if (!account) return null
       const res = account.name
       return res
-    }
+    },
   },
-  mounted() {
-    console.log('Composant ', this.$options.name)
-  }
 }
 </script>

@@ -21,7 +21,7 @@ export default {
     },
     createPaymentStructure() {
       this.$router.push('/paymentStructures/new')
-    }
-  }
+    },
+  },
 }
 </script>

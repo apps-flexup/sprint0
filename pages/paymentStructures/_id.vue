@@ -15,24 +15,22 @@ export default {
       type: Object,
       default() {
         return {}
-      }
-    }
+      },
+    },
   },
   computed: {
     getPaymentStructure() {
       const paymentStructureId = this.$route.params.id
-      const paymentStructure = this.$store.getters[
-        'paymentStructures/findById'
-      ](paymentStructureId)
+      const paymentStructure = this.$store.getters['paymentStructures/findById'](paymentStructureId)
       const payload = JSON.parse(JSON.stringify(paymentStructure))
       return payload
-    }
+    },
   },
   methods: {
     editPaymentStructure(payload) {
       console.log('edit: ', payload)
       this.$activeAccount.addPaymentStructure(payload)
-    }
-  }
+    },
+  },
 }
 </script>

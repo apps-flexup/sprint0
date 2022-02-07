@@ -13,8 +13,5 @@
 <script>
 export default {
   name: 'FvPartnerItem',
-  mounted() {
-    console.log('Composant ', this.$options.name)
-  }
 }
 </script>

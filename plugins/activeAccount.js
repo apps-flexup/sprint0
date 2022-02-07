@@ -38,11 +38,9 @@ const activeAccount = (ctx) => ({
     ctx.store.dispatch('products/get', {}, { root: true })
     ctx.store.dispatch('paymentConditions/get', {}, { root: true })
     ctx.store.dispatch('paymentStructures/get', {}, { root: true })
-    ctx.store
-      .dispatch('settings/getSettings', {}, { root: true })
-      .then((_data) => {
-        this.setSettings(this.settings())
-      })
+    ctx.store.dispatch('settings/getSettings', {}, { root: true }).then((_data) => {
+      this.setSettings(this.settings())
+    })
     ctx.store.dispatch('members/get')
     ctx.store.dispatch('owners/get')
     ctx.app.router.push('/')
@@ -120,11 +118,11 @@ const activeAccount = (ctx) => ({
       to_id: entity.parent_id,
       role,
       data: null,
-      status: 'WaitingConfirmation'
+      status: 'WaitingConfirmation',
     }
     console.log('given role: ', givenRole)
     ctx.store.dispatch('members/add', givenRole)
-  }
+  },
 })
 
 export default (ctx, inject) => {

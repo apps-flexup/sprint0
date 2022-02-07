@@ -16,14 +16,14 @@ export default {
       type: String,
       default() {
         return ''
-      }
+      },
     },
     size: {
       type: Number,
       default() {
         return 48
-      }
-    }
-  }
+      },
+    },
+  },
 }
 </script>

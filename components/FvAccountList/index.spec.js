@@ -9,13 +9,12 @@ describe('FvAccountList', () => {
       currency: 'EUR',
       id: 1,
       name: 'account 1',
-      offers_count: 0,
       params: {},
       parent_id: null,
       roles: ['customer', 'supplier'],
       roles_methods: null,
       supplier: false,
-      user_id: '2ae5fcf8-9ed5-480a-89c8-a2f946e72140'
+      user_id: '2ae5fcf8-9ed5-480a-89c8-a2f946e72140',
     },
     {
       avatar: '/images/avatar-1.png',
@@ -23,13 +22,12 @@ describe('FvAccountList', () => {
       currency: 'EUR',
       id: 2,
       name: 'account 2',
-      offers_count: 0,
       params: {},
       parent_id: null,
       roles: ['customer', 'supplier'],
       roles_methods: null,
       supplier: false,
-      user_id: '2ae5fcf8-9ed5-480a-89c8-a2f946e72140'
+      user_id: '2ae5fcf8-9ed5-480a-89c8-a2f946e72140',
     },
     {
       avatar: '/images/avatar-2.png',
@@ -37,20 +35,19 @@ describe('FvAccountList', () => {
       currency: 'EUR',
       id: 3,
       name: 'account 3',
-      offers_count: 0,
       params: {},
       parent_id: null,
       roles: ['customer', 'supplier'],
       roles_methods: null,
       supplier: false,
-      user_id: '2ae5fcf8-9ed5-480a-89c8-a2f946e72140'
-    }
+      user_id: '2ae5fcf8-9ed5-480a-89c8-a2f946e72140',
+    },
   ]
   const factory = () => {
     return shallowMount(FvAccountList, {
       propsData: {
-        accounts
-      }
+        accounts,
+      },
     })
   }
   it('should render an accounts index component', () => {

@@ -4,11 +4,11 @@ import FvVisibilitySwitch from './index'
 const factory = (propsData) => {
   return shallowMount(FvVisibilitySwitch, {
     propsData: {
-      ...propsData
+      ...propsData,
     },
     mocks: {
-      $t: (msg) => msg
-    }
+      $t: (msg) => msg,
+    },
   })
 }
 
@@ -19,17 +19,14 @@ describe('FvVisibilitySwitch', () => {
   })
   it.each([
     ['private', 'public'],
-    ['public', 'private']
-  ])(
-    'should emit an event with %s when user click and visibility was %s',
-    (visibility, expectedVisibility) => {
-      const wrapper = factory({ value: visibility })
-      const switchBtn = wrapper.find('[data-testid=switch]')
-      switchBtn.vm.$emit('change')
-      const visibilityChange = wrapper.emitted('visibility:changed')
-      expect(visibilityChange).toBeTruthy()
-      expect(visibilityChange).toHaveLength(1)
-      expect(visibilityChange[0][0]).toBe(expectedVisibility)
-    }
-  )
+    ['public', 'private'],
+  ])('should emit an event with %s when user click and visibility was %s', (visibility, expectedVisibility) => {
+    const wrapper = factory({ value: visibility })
+    const switchBtn = wrapper.find('[data-testid=switch]')
+    switchBtn.vm.$emit('change')
+    const visibilityChange = wrapper.emitted('visibility:changed')
+    expect(visibilityChange).toBeTruthy()
+    expect(visibilityChange).toHaveLength(1)
+    expect(visibilityChange[0][0]).toBe(expectedVisibility)
+  })
 })

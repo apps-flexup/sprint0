@@ -8,7 +8,7 @@ localVue.use(Vuex)
 let store
 
 const settings = {
-  theme: 'light'
+  theme: 'light',
 }
 
 const references = [
@@ -17,49 +17,49 @@ const references = [
     value: [
       {
         key: 'base',
-        value: 40
+        value: 40,
       },
       {
         key: 'flex',
-        value: 60
+        value: 60,
       },
       {
         key: 'superFlex',
-        value: 80
+        value: 80,
       },
       {
         key: 'equity',
-        value: 100
-      }
-    ]
+        value: 100,
+      },
+    ],
   },
   {
     key: 'r2',
     value: [
       {
         key: 'equity',
-        value: 100
+        value: 100,
       },
       {
         key: 'beforeDeliveryDate',
-        value: 40
+        value: 40,
       },
       {
         key: 'beginningOfDeliveryMonth',
-        value: 45
+        value: 45,
       },
       {
         key: 'endOfDeliveryMonth',
-        value: 50
+        value: 50,
       },
       {
         key: 'later',
         params: {
-          key: 'fv-payment-term-params'
-        }
-      }
-    ]
-  }
+          key: 'fv-payment-term-params',
+        },
+      },
+    ],
+  },
 ]
 
 const factory = (propsData) => {
@@ -67,11 +67,11 @@ const factory = (propsData) => {
     localVue,
     store,
     propsData: {
-      ...propsData
+      ...propsData,
     },
     mocks: {
-      $t: (msg) => msg
-    }
+      $t: (msg) => msg,
+    },
   })
 }
 
@@ -81,31 +81,29 @@ beforeEach(() => {
       references: {
         namespaced: true,
         actions: {
-          get: jest.fn()
+          get: jest.fn(),
         },
         getters: {
-          all: () => references
-        }
+          all: () => references,
+        },
       },
       settings: {
         namespaced: true,
         actions: {
-          getSettings: jest.fn()
+          getSettings: jest.fn(),
         },
         getters: {
-          settings: () => settings
-        }
-      }
-    }
+          settings: () => settings,
+        },
+      },
+    },
   })
 })
 
 describe('FvPaymentConditionReferences', () => {
   it('should render a fv payment condition references', () => {
     const wrapper = factory()
-    expect(wrapper.findAll('[data-testid="referenceField"]').length).toBe(
-      references.length
-    )
+    expect(wrapper.findAll('[data-testid="referenceField"]').length).toBe(references.length)
   })
   it('should emit an event when a reference is selected', () => {
     const wrapper = factory()
@@ -117,7 +115,7 @@ describe('FvPaymentConditionReferences', () => {
     expect(payloadChangedCalls).toBeTruthy()
     expect(payloadChangedCalls).toHaveLength(1)
     const expectedPayload = {
-      r1: value
+      r1: value,
     }
     expect(payloadChangedCalls[0][0]).toEqual(expectedPayload)
   })

@@ -12,9 +12,7 @@ export default {
     this.$repos.userMenu.index().then((data) => commit('setUserMenu', data))
   },
   getAccountMenu({ commit }) {
-    return this.$repos.accountMenu
-      .index()
-      .then((data) => commit('setAccountMenu', data))
+    return this.$repos.accountMenu.index().then((data) => commit('setAccountMenu', data))
   },
   getBuyerMenu({ commit }) {
     this.$repos.buyerMenu.index().then((data) => commit('setBuyerMenu', data))
@@ -26,14 +24,10 @@ export default {
     this.$repos.globalMenu.index().then((data) => commit('setGlobalMenu', data))
   },
   getSellerNavBar({ commit }) {
-    this.$repos.sellerNavBar
-      .index()
-      .then((data) => commit('setSellerNavBar', data))
+    this.$repos.sellerNavBar.index().then((data) => commit('setSellerNavBar', data))
   },
   getManageNavBar({ commit }) {
-    this.$repos.manageNavBar
-      .index()
-      .then((data) => commit('setManageNavBar', data))
+    this.$repos.manageNavBar.index().then((data) => commit('setManageNavBar', data))
   },
   getSettings({ commit }) {
     return this.$repos.settings.indexWithAccountId().then((data) => {
@@ -61,5 +55,5 @@ export default {
     this.$repos.settings.createWithAccountId(settings).then((data) => {
       commit('setSettings', data)
     })
-  }
+  },
 }

@@ -29,9 +29,7 @@ export default {
       return res
     },
     priceNbDigits() {
-      const res = this.settings
-        ? this.settings.price_nb_after_decimal_point
-        : null
+      const res = this.settings ? this.settings.price_nb_after_decimal_point : null
       return res
     },
     defaultVat() {
@@ -39,14 +37,9 @@ export default {
       return res
     },
     vatNbDigits() {
-      const res = this.settings
-        ? this.settings.vat_nb_after_decimal_point
-        : null
+      const res = this.settings ? this.settings.vat_nb_after_decimal_point : null
       return res
-    }
-  },
-  mounted() {
-    console.log('Composant ', this.$options.name)
+    },
   },
   methods: {
     priceNbDigitsChanged(n) {
@@ -63,7 +56,7 @@ export default {
       const newSettings = this.settings
       newSettings.vat_nb_after_decimal_point = n
       this.$activeAccount.setSettings(newSettings)
-    }
-  }
+    },
+  },
 }
 </script>

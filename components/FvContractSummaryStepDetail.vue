@@ -5,7 +5,7 @@
 
 <script>
 export default {
-  name: 'FvContractSummaryStepDetail'
+  name: 'FvContractSummaryStepDetail',
 }
 </script>
 <style scoped>

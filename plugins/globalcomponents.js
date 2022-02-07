@@ -197,10 +197,7 @@ Vue.component('fv-address-field', FvAddressField)
 Vue.component('fv-address-modal', FvAddressModal)
 Vue.component('fv-autocomplete', FvAutocomplete)
 Vue.component('fv-avatar', FvAvatar)
-Vue.component(
-  'fv-available-third-party-account-list',
-  FvAvailableThirdPartyAccountList
-)
+Vue.component('fv-available-third-party-account-list', FvAvailableThirdPartyAccountList)
 Vue.component('fv-avatar-with-name', FvAvatarWithName)
 Vue.component('fv-breadcrumbs', FvBreadcrumbs)
 Vue.component('fv-civility-field', FvCivilityField)
@@ -226,18 +223,9 @@ Vue.component('fv-contract-step-commande', FvContractStepCommande)
 Vue.component('fv-contract-step-paiement', FvContractStepPaiement)
 Vue.component('fv-contract-summary-step-detail', FvContractSummaryStepDetail)
 Vue.component('fv-contract-summary-step-offer', FvContractSummaryStepOffer)
-Vue.component(
-  'fv-contract-summary-step-structure',
-  FvContractSummaryStepStructure
-)
-Vue.component(
-  'fv-contract-summary-step-commande',
-  FvContractSummaryStepCommande
-)
-Vue.component(
-  'fv-contract-summary-step-paiement',
-  FvContractSummaryStepPaiement
-)
+Vue.component('fv-contract-summary-step-structure', FvContractSummaryStepStructure)
+Vue.component('fv-contract-summary-step-commande', FvContractSummaryStepCommande)
+Vue.component('fv-contract-summary-step-paiement', FvContractSummaryStepPaiement)
 Vue.component('fv-country-autocomplete', FvCountryAutocomplete)
 Vue.component('fv-country-readonly', FvCountryReadonly)
 Vue.component('fv-create-purchase', FvCreatePurchase)
@@ -246,10 +234,7 @@ Vue.component('fv-data-table-header', FvDataTableHeader)
 Vue.component('fv-data-table-search-bar', FvDataTableSearchBar)
 Vue.component('fv-directory-entry', FvDirectoryEntry)
 Vue.component('fv-flex-items', FvFlexItems)
-Vue.component(
-  'fv-get-id-third-party-autocomplete',
-  FvGetIdThirdPartyAutocomplete
-)
+Vue.component('fv-get-id-third-party-autocomplete', FvGetIdThirdPartyAutocomplete)
 Vue.component('fv-header-index', FvHeaderIndex)
 Vue.component('fv-icon', FvIcon)
 Vue.component('fv-index-table', FvIndexTable)
@@ -278,10 +263,7 @@ Vue.component('fv-nav-bar-manage', FvNavBarManage)
 Vue.component('fv-number-field', FvNumberField)
 Vue.component('fv-account-autocomplete', FvAccountAutocomplete)
 Vue.component('fv-order-items-selector', FvOrderItemsSelector)
-Vue.component(
-  'fv-payment-condition-autocomplete',
-  FvPaymentConditionAutocomplete
-)
+Vue.component('fv-payment-condition-autocomplete', FvPaymentConditionAutocomplete)
 Vue.component('fv-payment-condition-data-table', FvPaymentConditionDataTable)
 Vue.component('fv-payment-condition-index', FvPaymentConditionIndex)
 Vue.component('fv-payment-condition-list', FvPaymentConditionList)
@@ -342,10 +324,7 @@ Vue.component('fv-etape', FvEtape)
 Vue.component('fv-field-date', FvFieldDate)
 Vue.component('fv-user-accounts', FvUserAccounts)
 Vue.component('fv-directory', FvDirectory)
-Vue.component(
-  'fv-contract-summary-visualisation',
-  FvContractSummaryVisualisation
-)
+Vue.component('fv-contract-summary-visualisation', FvContractSummaryVisualisation)
 Vue.component('fv-contract-step-visualisation', FvContractStepVisualisation)
 Vue.component('fv-product-list', FvProductList)
 Vue.component('fv-order-data-table', FvOrderDataTable)
@@ -369,10 +348,7 @@ Vue.component('fv-order-form', FvOrderForm)
 Vue.component('fv-order-for-third-party-account', FvOrderForThirdPartyAccount)
 Vue.component('fv-order-line-list', FvOrderLineList)
 Vue.component('fv-structure-autocomplete', FvStructureAutocomplete)
-Vue.component(
-  'fv-third-party-account-autocomplete',
-  FvThirdPartyAccountAutocomplete
-)
+Vue.component('fv-third-party-account-autocomplete', FvThirdPartyAccountAutocomplete)
 Vue.component('fv-product-autocomplete', FvProductAutocomplete)
 Vue.component('fv-category-autocomplete', FvCategoryAutocomplete)
 Vue.component('fv-currency-autocomplete', FvCurrencyAutocomplete)

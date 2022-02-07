@@ -20,12 +20,12 @@ export default {
   props: {
     current: {
       type: Number,
-      required: true
+      required: true,
     },
     steps: {
       type: Array,
-      required: true
-    }
+      required: true,
+    },
   },
   computed: {
     step() {
@@ -34,10 +34,7 @@ export default {
         return parseInt(v.id) === indice
       })
       return res
-    }
-  },
-  mounted() {
-    console.log('Composant ', this.$options.name)
+    },
   },
   methods: {
     moveTo(etape) {
@@ -46,8 +43,8 @@ export default {
     active(v) {
       const res = parseInt(this.current) > parseInt(v)
       return res
-    }
-  }
+    },
+  },
 }
 </script>
 <style scoped>

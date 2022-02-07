@@ -14,16 +14,16 @@ const factory = (propsData) => {
     localVue,
     store,
     propsData: {
-      ...propsData
+      ...propsData,
     },
     mocks: {
-      $t: (msg) => msg
-    }
+      $t: (msg) => msg,
+    },
   })
 }
 
 const country = {
-  name: 'France'
+  name: 'France',
 }
 
 beforeEach(() => {
@@ -32,13 +32,13 @@ beforeEach(() => {
       countries: {
         namespaced: true,
         actions: {
-          get: jest.fn()
+          get: jest.fn(),
         },
         getters: {
-          findByIso3: () => () => country
-        }
-      }
-    }
+          findByIso3: () => () => country,
+        },
+      },
+    },
   })
 })
 
@@ -53,7 +53,7 @@ describe('FvAddressField', () => {
       street: '10 rue des plopliers',
       zip: '12345',
       city: 'PlopLand',
-      country: 'FRA'
+      country: 'FRA',
     }
     const wrapper = factory({ address })
     const addressField = wrapper.find('[data-testid="addressField"]')
@@ -65,7 +65,7 @@ describe('FvAddressField', () => {
       street: '10 rue des plopliers',
       zip: '12345',
       city: 'PlopLand',
-      country: 'FRA'
+      country: 'FRA',
     }
     const wrapper = factory({ address })
     const modal = wrapper.find('[data-testid="modal"]')
@@ -94,7 +94,7 @@ describe('FvAddressField', () => {
       street: '10 rue des plopliers',
       zip: '12345',
       city: 'PlopLand',
-      country: 'FRA'
+      country: 'FRA',
     }
     const wrapper = factory({ address })
     const addressField = wrapper.find('[data-testid="addressField"]')
@@ -121,7 +121,7 @@ describe('FvAddressField', () => {
       street: '10 rue des plopliers',
       zip: '12345',
       city: 'PlopLand',
-      country: 'FRA'
+      country: 'FRA',
     }
     const wrapper = factory()
     const modal = wrapper.find('[data-testid="modal"]')
@@ -133,7 +133,7 @@ describe('FvAddressField', () => {
       street: '10 rue des plopliers',
       zip: '12345',
       city: 'PlopLand',
-      country: 'FRA'
+      country: 'FRA',
     }
     const wrapper = factory()
     const modal = wrapper.find('[data-testid="modal"]')
@@ -141,7 +141,7 @@ describe('FvAddressField', () => {
     const addressChangedCalls = wrapper.emitted('address:value:changed')
     const expectedPayload = {
       value_type: valueType,
-      value: address
+      value: address,
     }
     expect(addressChangedCalls).toBeTruthy()
     expect(addressChangedCalls).toHaveLength(1)
@@ -155,7 +155,7 @@ describe('FvAddressField', () => {
     const labelChangedCalls = wrapper.emitted('address:label:changed')
     const expectedPayload = {
       value_type: valueType,
-      label
+      label,
     }
     expect(labelChangedCalls).toBeTruthy()
     expect(labelChangedCalls).toHaveLength(1)

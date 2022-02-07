@@ -15,9 +15,9 @@ describe('FvSearchAutocomplete', () => {
       localVue,
       store,
       computed: {
-        items: () => ['test', 'test', 'searchBar']
+        items: () => ['test', 'test', 'searchBar'],
       },
-      vuetify
+      vuetify,
     })
   }
   beforeEach(() => {
@@ -26,13 +26,13 @@ describe('FvSearchAutocomplete', () => {
         categories: {
           namespaced: true,
           actions: {
-            get: jest.fn()
+            get: jest.fn(),
           },
           getters: {
-            all: jest.fn()
-          }
-        }
-      }
+            all: jest.fn(),
+          },
+        },
+      },
     })
     vuetify = new Vuetify()
   })
@@ -44,12 +44,7 @@ describe('FvSearchAutocomplete', () => {
   it('should receive items in data', () => {
     const wrapper = factory()
     const selector = wrapper.find('[data-testid="selector"]')
-    expect(selector.props().items).toStrictEqual([
-      'Catégories',
-      'Produits',
-      'Offres',
-      'Services'
-    ])
+    expect(selector.props().items).toStrictEqual(['Catégories', 'Produits', 'Offres', 'Services'])
   })
   it('should receive items in data', () => {
     const wrapper = factory()

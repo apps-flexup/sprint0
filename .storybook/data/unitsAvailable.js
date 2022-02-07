@@ -1,15 +1,4 @@
-export const unitsAvailable = [
-  'year',
-  'Gb/s',
-  'byte',
-  'hr',
-  'm',
-  'km/hr',
-  'Unit',
-  'l',
-  'kg',
-  'work'
-]
+export const unitsAvailable = ['year', 'Gb/s', 'byte', 'hr', 'm', 'km/hr', 'Unit', 'l', 'kg', 'work']
 export const defaultUnit = 'year'
 
 export const dimensionsAvailable = [
@@ -22,6 +11,6 @@ export const dimensionsAvailable = [
   'unit',
   'volume',
   'weight',
-  'word'
+  'word',
 ]
 export const defaultDimension = 'age'
