@@ -769,6 +769,7 @@
     "orders": {
       "thirdParty": "Tiers",
       "date": "Date",
+      "label": "Libellé",
       "value": "Total TTC",
       "status": "Statut"
     },

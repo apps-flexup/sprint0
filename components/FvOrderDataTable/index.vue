@@ -17,6 +17,8 @@
     //    td(
     //      v-for="i in displayedHeaders.length - 3"
     //    )
+    template(v-slot:item.label='{ item }')
+      div {{ item.label }}
     template(v-slot:item.date='{ item }')
       div {{ localeDate(item) }}
     template(v-slot:item.value='{ item }')
