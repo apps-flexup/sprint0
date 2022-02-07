@@ -10,29 +10,29 @@ localVue.use(Vuex)
 let store
 
 const settings = {
-  currency: 'EUR'
+  currency: 'EUR',
 }
 
 const $activeAccount = {
-  settings: () => settings
+  settings: () => settings,
 }
 
 const orderLines = [
   {
     vat: 10,
     price: 12,
-    quantity: 5
+    quantity: 5,
   },
   {
     vat: 10,
     price: 5,
-    quantity: 10
+    quantity: 10,
   },
   {
     vat: 25,
     price: 18,
-    quantity: 1
-  }
+    quantity: 1,
+  },
 ]
 
 const factory = () => {
@@ -40,12 +40,12 @@ const factory = () => {
     localVue,
     store,
     propsData: {
-      orderLines
+      orderLines,
     },
     mocks: {
       $t: (msg) => msg,
-      $activeAccount
-    }
+      $activeAccount,
+    },
   })
 }
 
@@ -55,16 +55,16 @@ beforeEach(() => {
       accounts: {
         namespaced: true,
         actions: {
-          get: jest.fn()
-        }
+          get: jest.fn(),
+        },
       },
       settings: {
         namespaced: true,
         actions: {
-          getSettings: jest.fn()
-        }
-      }
-    }
+          getSettings: jest.fn(),
+        },
+      },
+    },
   })
 })
 

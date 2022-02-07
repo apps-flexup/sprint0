@@ -19,7 +19,7 @@ const others = [
     roles_methods: null,
     supplier: false,
     user_id: '2ae5fcf8-9ed5-480a-89c8-a2f946e72140',
-    id: 1
+    id: 1,
   },
   {
     avatar: '/images/avatar-2.png',
@@ -32,13 +32,13 @@ const others = [
     roles: ['supplier'],
     roles_methods: null,
     supplier: false,
-    user_id: '2ae5fcf8-9ed5-480a-89c8-a2f946e72140'
-  }
+    user_id: '2ae5fcf8-9ed5-480a-89c8-a2f946e72140',
+  },
 ]
 
 const setFn = jest.fn()
 const $router = {
-  push: jest.fn()
+  push: jest.fn(),
 }
 
 const factory = () => {
@@ -48,10 +48,10 @@ const factory = () => {
     mocks: {
       $t: (msg) => msg,
       $activeAccount: {
-        set: setFn
+        set: setFn,
       },
-      $router
-    }
+      $router,
+    },
   })
 }
 
@@ -61,14 +61,14 @@ beforeEach(() => {
       accounts: {
         namespaced: true,
         actions: {
-          get: jest.fn()
+          get: jest.fn(),
         },
         getters: {
           others: () => others,
-          findById: () => () => {}
-        }
-      }
-    }
+          findById: () => () => {},
+        },
+      },
+    },
   })
 })
 
@@ -80,9 +80,7 @@ describe('FvListAccounts', () => {
     const wrapper = factory()
     expect(wrapper.find('[data-testid="userInfo"]').exists()).toBe(true)
     expect(wrapper.find('[data-testid="accountInfo"]').exists()).toBe(true)
-    expect(wrapper.findAll('[data-testid="otherAccount"]').length).toBe(
-      others.length
-    )
+    expect(wrapper.findAll('[data-testid="otherAccount"]').length).toBe(others.length)
     expect(wrapper.find('[data-testid="createAccount"]').exists()).toBe(true)
     expect(wrapper.find('[data-testid="manageAccounts"]').exists()).toBe(true)
     expect(wrapper.find('[data-testid="help"]').exists()).toBe(true)

@@ -19,18 +19,15 @@ export default {
       type: Number,
       default() {
         return null
-      }
+      },
     },
     title: {
       type: String,
       default() {
         return null
-      }
-    }
+      },
+    },
   },
-  mounted() {
-    console.log('Composant ', this.$options.name)
-  }
 }
 </script>
 

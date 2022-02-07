@@ -44,10 +44,7 @@ export default {
     legalStructure() {
       const res = this.$store.getters['contracts/legalStructures']
       return res
-    }
+    },
   },
-  mounted() {
-    console.log('Composant ', this.$options.name)
-  }
 }
 </script>

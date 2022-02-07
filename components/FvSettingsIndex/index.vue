@@ -26,31 +26,28 @@ export default {
   name: 'FvSettingsIndex',
   data() {
     return {
-      tab: null
+      tab: null,
     }
   },
   computed: {
     items() {
       const selectedAccountId = this.$store.getters['accounts/selected']
-      const account = this.$store.getters['accounts/findById'](
-        selectedAccountId
-      )
+      const account = this.$store.getters['accounts/findById'](selectedAccountId)
       const res = [
         {
           tab: 'settings.default.title',
           content: 'fv-settings-default',
           props: {
-            account
-          }
+            account,
+          },
         },
-        { tab: 'settings.others.title', content: 'fv-settings-others' }
+        { tab: 'settings.others.title', content: 'fv-settings-others' },
       ]
       return res
-    }
+    },
   },
   mounted() {
     this.$store.dispatch('accounts/get')
-    console.log('Composant ', this.$options.name)
-  }
+  },
 }
 </script>

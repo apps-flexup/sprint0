@@ -19,7 +19,7 @@ describe('FvUserAccount', () => {
     roles: ['customer', 'supplier'],
     roles_methods: null,
     supplier: false,
-    user_id: '2ae5fcf8-9ed5-480a-89c8-a2f946e72140'
+    user_id: '2ae5fcf8-9ed5-480a-89c8-a2f946e72140',
   }
   let store
   let vuetify
@@ -30,17 +30,17 @@ describe('FvUserAccount', () => {
       localVue,
       stubs: {
         FvLoginButton: true,
-        FvListAccounts: true
+        FvListAccounts: true,
       },
       mocks: {
         $auth: {
-          loggedIn: propsData ? propsData.loggedIn : true
+          loggedIn: propsData ? propsData.loggedIn : true,
         },
         $activeAccount: {
-          get: () => jest.fn()
+          get: () => jest.fn(),
         },
-        theme: {}
-      }
+        theme: {},
+      },
     })
   }
   beforeEach(() => {
@@ -50,10 +50,10 @@ describe('FvUserAccount', () => {
           namespaced: true,
           getters: {
             accountId: jest.fn(),
-            findById: () => () => account
-          }
-        }
-      }
+            findById: () => () => account,
+          },
+        },
+      },
     })
     vuetify = new Vuetify()
   })

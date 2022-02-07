@@ -15,11 +15,8 @@ export default {
       type: [Number, String],
       default() {
         return null
-      }
-    }
-  },
-  mounted() {
-    console.log('Composant', this.$options.name)
+      },
+    },
   },
   methods: {
     inputChanged(v) {
@@ -31,7 +28,7 @@ export default {
       const rate = parseInt(v)
       const res = 100 - 6 * rate
       return res
-    }
-  }
+    },
+  },
 }
 </script>

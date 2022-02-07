@@ -36,17 +36,14 @@ export default {
       type: Boolean,
       default() {
         return false
-      }
+      },
     },
     product: {
       type: Object,
       default() {
         return {}
-      }
-    }
-  },
-  mounted() {
-    console.log('Composant ', this.$options.name)
+      },
+    },
   },
   methods: {
     close() {
@@ -57,7 +54,7 @@ export default {
     },
     productChanged(product) {
       this.$emit('product:changed', product)
-    }
-  }
+    },
+  },
 }
 </script>

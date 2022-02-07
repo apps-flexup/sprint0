@@ -11,13 +11,10 @@
 <script>
 export default {
   name: 'FvDeleteAction',
-  mounted() {
-    console.log('Composant', this.$options.name)
-  },
   methods: {
     clicked() {
       this.$emit('delete:clicked')
-    }
-  }
+    },
+  },
 }
 </script>

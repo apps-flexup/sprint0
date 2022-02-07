@@ -13,16 +13,16 @@ const currency = {
   iso3: 'EUR',
   ison: 978,
   minor: 2,
-  name: 'Euro'
+  name: 'Euro',
 }
 
 const settings = {
   currency: 'EUR',
-  price_nb_after_decimal_point: 2
+  price_nb_after_decimal_point: 2,
 }
 
 const $activeAccount = {
-  settings: () => settings
+  settings: () => settings,
 }
 
 const factory = () => {
@@ -30,8 +30,8 @@ const factory = () => {
     localVue,
     store,
     mocks: {
-      $activeAccount
-    }
+      $activeAccount,
+    },
   })
 }
 
@@ -41,13 +41,13 @@ beforeEach(() => {
       currencies: {
         namespaced: true,
         actions: {
-          get: jest.fn()
+          get: jest.fn(),
         },
         getters: {
-          findIso: () => () => currency
-        }
-      }
-    }
+          findIso: () => () => currency,
+        },
+      },
+    },
   })
 })
 
@@ -63,7 +63,7 @@ describe('FvPriceField', () => {
     priceField.vm.$emit('input', amount)
     const expectedPrice = {
       amount,
-      currency: settings.currency
+      currency: settings.currency,
     }
     const priceChangedCalls = wrapper.emitted('price:changed')
     expect(priceChangedCalls).toBeTruthy()
@@ -77,7 +77,7 @@ describe('FvPriceField', () => {
     priceField.vm.$emit('input', amount)
     const expectedPrice = {
       amount,
-      currency: settings.currency
+      currency: settings.currency,
     }
     const priceChangedCalls = wrapper.emitted('payload:changed')
     expect(priceChangedCalls).toBeTruthy()

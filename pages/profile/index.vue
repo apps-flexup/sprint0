@@ -15,7 +15,7 @@ export default {
     account() {
       const res = this.$store.getters['accounts/getMyPersonalAccount']
       return res
-    }
+    },
   },
   mounted() {
     this.$store.dispatch('accounts/get')
@@ -23,7 +23,7 @@ export default {
   methods: {
     editAccount(payload) {
       this.$store.dispatch('accounts/update', payload)
-    }
-  }
+    },
+  },
 }
 </script>

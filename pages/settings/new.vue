@@ -17,7 +17,7 @@ export default {
   methods: {
     submit() {
       this.$router.push('/products/new')
-    }
-  }
+    },
+  },
 }
 </script>

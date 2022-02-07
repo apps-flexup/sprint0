@@ -20,40 +20,37 @@ export default {
       type: Number,
       default() {
         return 0
-      }
+      },
     },
     readonly: {
       type: Boolean,
       default() {
         return false
-      }
+      },
     },
     dense: {
       type: Boolean,
       default() {
         return false
-      }
+      },
     },
     size: {
       type: Number,
       default() {
         return 16
-      }
+      },
     },
     color: {
       type: String,
       default() {
         return 'primary'
-      }
-    }
-  },
-  mounted() {
-    console.log('Composant', this.$options.name)
+      },
+    },
   },
   methods: {
     input(v) {
       this.$emit('input', v)
-    }
-  }
+    },
+  },
 }
 </script>

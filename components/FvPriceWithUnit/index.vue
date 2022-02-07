@@ -12,14 +12,14 @@ export default {
       type: Object,
       default() {
         return null
-      }
+      },
     },
     unit: {
       type: Object,
       default() {
         return null
-      }
-    }
+      },
+    },
   },
   asyncComputed: {
     async priceWithUnit() {
@@ -28,14 +28,11 @@ export default {
       const item = {
         price: amount,
         currency,
-        unit: this.unit
+        unit: this.unit,
       }
       const res = await this.$displayRules.priceWithUnit(item)
       return res
-    }
+    },
   },
-  mounted() {
-    console.log('Composant', this.$options.name)
-  }
 }
 </script>

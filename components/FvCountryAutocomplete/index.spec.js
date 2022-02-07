@@ -19,8 +19,8 @@ const countries = [
         iso3: 'EUR',
         ison: 978,
         minor: 2,
-        name: 'Euro'
-      }
+        name: 'Euro',
+      },
     ],
     id: 77,
     iso2: 'FR',
@@ -32,17 +32,17 @@ const countries = [
         id: 47,
         iso2: 'fr',
         name: null,
-        native: null
-      }
+        native: null,
+      },
     ],
     name: 'France',
     sovereignty: {
       countries_count: 193,
       description: 'UN member state',
       id: 13,
-      name: 'UN'
+      name: 'UN',
     },
-    sovereignty_id: 13
+    sovereignty_id: 13,
   },
   {
     active: true,
@@ -55,8 +55,8 @@ const countries = [
         iso3: 'EUR',
         ison: 978,
         minor: 2,
-        name: 'Euro'
-      }
+        name: 'Euro',
+      },
     ],
     id: 22,
     iso2: 'BE',
@@ -68,38 +68,38 @@ const countries = [
         id: 114,
         iso2: 'nl',
         name: null,
-        native: null
+        native: null,
       },
       {
         active: true,
         id: 32,
         iso2: 'de',
         name: null,
-        native: null
+        native: null,
       },
       {
         active: true,
         id: 47,
         iso2: 'fr',
         name: null,
-        native: null
-      }
+        native: null,
+      },
     ],
     name: 'Belgium',
     sovereignty: {
       countries_count: 193,
       description: 'UN member state',
       id: 13,
-      name: 'UN'
+      name: 'UN',
     },
-    sovereignty_id: 13
-  }
+    sovereignty_id: 13,
+  },
 ]
 
 const factory = () => {
   return shallowMount(FvCountryAutocomplete, {
     localVue,
-    store
+    store,
   })
 }
 beforeEach(() => {
@@ -108,13 +108,13 @@ beforeEach(() => {
       countries: {
         namespaced: true,
         actions: {
-          get: jest.fn()
+          get: jest.fn(),
         },
         getters: {
-          all: () => countries
-        }
-      }
-    }
+          all: () => countries,
+        },
+      },
+    },
   })
 })
 

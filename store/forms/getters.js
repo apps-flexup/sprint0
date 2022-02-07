@@ -48,5 +48,5 @@ export default {
     if (!state.paymentStructures) return []
     const res = JSON.parse(JSON.stringify(state.paymentStructures))
     return res
-  }
+  },
 }

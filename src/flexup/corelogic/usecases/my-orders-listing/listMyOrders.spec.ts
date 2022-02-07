@@ -1,13 +1,7 @@
-import {
-  configureReduxStore,
-  ReduxStore
-} from '~/src/flexup/store/configureStore'
+import { configureReduxStore, ReduxStore } from '~/src/flexup/store/configureStore'
 import { InMemoryOrderGateway } from '~/src/flexup/adapters/secondary/inMemoryOrderGateway'
 import { listMyOrders } from '~/src/flexup/corelogic/usecases/my-orders-listing/listMyOrders'
-import {
-  Order,
-  OrderStatus
-} from '~/src/flexup/corelogic/entities/orders/order'
+import { Order, OrderStatus } from '~/src/flexup/corelogic/entities/orders/order'
 
 describe('Listing of my orders', () => {
   let store: ReduxStore
@@ -26,14 +20,7 @@ describe('Listing of my orders', () => {
   })
 
   describe('Some orders', () => {
-    const order: Order = new Order(
-      'abc',
-      1,
-      '2022-01-03',
-      'Super order',
-      [],
-      OrderStatus.DRAFT
-    )
+    const order: Order = new Order('abc', 1, '2022-01-03', 'Super order', [], OrderStatus.DRAFT)
 
     it('should list all of them', async () => {
       givenSomeAvailableOrders(order)

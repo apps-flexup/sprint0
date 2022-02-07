@@ -25,61 +25,57 @@ export default {
       type: Object,
       default() {
         return null
-      }
+      },
     },
     label: {
       type: String,
       default() {
         return ''
-      }
+      },
     },
     outlined: {
       type: Boolean,
       default() {
         return true
-      }
+      },
     },
     readonly: {
       type: Boolean,
       default() {
         return false
-      }
+      },
     },
     search: {
       type: Object,
       default() {
         return {}
-      }
+      },
     },
     dense: {
       type: Boolean,
       default() {
         return false
-      }
-    }
+      },
+    },
   },
   data() {
     return {
-      truncatePrice: true
+      truncatePrice: true,
     }
   },
   asyncComputed: {
     async amount() {
       const amount = this.value?.amount
       const fromCurrency = this.value?.currency
-      const res = await this.convertToPreferredCurrency(
-        amount,
-        fromCurrency,
-        this.truncatePrice
-      )
+      const res = await this.convertToPreferredCurrency(amount, fromCurrency, this.truncatePrice)
       return res
-    }
+    },
   },
   methods: {
     amountChanged(v) {
       const payload = {
         amount: parseFloat(v),
-        currency: this.preferredCurrency ? this.preferredCurrency.iso3 : null
+        currency: this.preferredCurrency ? this.preferredCurrency.iso3 : null,
       }
       this.$emit('price:changed', payload)
       this.emitGenericSignalForForm(payload)
@@ -92,7 +88,7 @@ export default {
     },
     emitGenericSignalForForm(payload) {
       this.$emit('payload:changed', payload)
-    }
-  }
+    },
+  },
 }
 </script>

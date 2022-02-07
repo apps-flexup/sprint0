@@ -20,17 +20,13 @@ export default {
         translatedUnit = this.$t(`units.symbol.${unit.unit || unit}`)
       }
       return `${this.preferredCurrency?.symbole}/${translatedUnit}`
-    }
+    },
   },
   mounted() {
     this.$store.dispatch('currencies/get')
   },
   methods: {
-    async convertToPreferredCurrency(
-      amount,
-      fromCurrency,
-      truncatePrice = false
-    ) {
+    async convertToPreferredCurrency(amount, fromCurrency, truncatePrice = false) {
       if (!amount) return null
       if (!fromCurrency) return null
       const toCurrency = this.preferredCurrency.iso3
@@ -38,11 +34,9 @@ export default {
       let res = await convert(fromCurrency, toCurrency, amount)
       if (truncatePrice && this.nbDigitsAfterDecimalPoint) {
         const multiplier = 10 ** this.nbDigitsAfterDecimalPoint
-        res = (Math.round(res * multiplier) / multiplier).toFixed(
-          this.nbDigitsAfterDecimalPoint
-        )
+        res = (Math.round(res * multiplier) / multiplier).toFixed(this.nbDigitsAfterDecimalPoint)
       }
       return res
-    }
-  }
+    },
+  },
 }

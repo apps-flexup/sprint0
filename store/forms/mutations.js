@@ -31,5 +31,5 @@ export default {
   },
   setPaymentStructureSteps(state, items) {
     state.paymentStructures = items
-  }
+  },
 }

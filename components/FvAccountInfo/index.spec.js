@@ -9,7 +9,7 @@ let storeWithAccount
 let storeWithoutAccount
 const account = {
   name: 'toto',
-  avatar: 'avatarPath'
+  avatar: 'avatarPath',
 }
 
 const factoryWithAccount = () => {
@@ -17,8 +17,8 @@ const factoryWithAccount = () => {
     localVue,
     store: storeWithAccount,
     mocks: {
-      $t: (msg) => msg
-    }
+      $t: (msg) => msg,
+    },
   })
 }
 
@@ -27,8 +27,8 @@ const factoryWithoutAccount = () => {
     localVue,
     store: storeWithoutAccount,
     mocks: {
-      $t: (msg) => msg
-    }
+      $t: (msg) => msg,
+    },
   })
 }
 
@@ -38,28 +38,28 @@ beforeEach(() => {
       accounts: {
         namespaced: true,
         actions: {
-          get: jest.fn()
+          get: jest.fn(),
         },
         getters: {
           current: jest.fn(),
-          findById: () => () => account
-        }
-      }
-    }
+          findById: () => () => account,
+        },
+      },
+    },
   })
   storeWithoutAccount = new Vuex.Store({
     modules: {
       accounts: {
         namespaced: true,
         actions: {
-          get: jest.fn()
+          get: jest.fn(),
         },
         getters: {
           current: jest.fn(),
-          findById: () => () => null
-        }
-      }
-    }
+          findById: () => () => null,
+        },
+      },
+    },
   })
 })
 

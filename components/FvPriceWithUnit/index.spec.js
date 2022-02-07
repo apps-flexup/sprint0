@@ -6,15 +6,15 @@ const localVue = createLocalVue()
 localVue.use(AsyncComputed)
 
 const $displayRules = {
-  priceWithUnit: () => 'priceWithUnit'
+  priceWithUnit: () => 'priceWithUnit',
 }
 
 const factory = () => {
   return mount(FvPriceWithUnit, {
     localVue,
     mocks: {
-      $displayRules
-    }
+      $displayRules,
+    },
   })
 }
 

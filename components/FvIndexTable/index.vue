@@ -40,50 +40,50 @@ export default {
       type: String,
       default() {
         return null
-      }
+      },
     },
     searchLabel: {
       type: String,
       default() {
         return null
-      }
+      },
     },
     tableComponent: {
       type: String,
       default() {
         return null
-      }
+      },
     },
     tableName: {
       type: String,
       default() {
         return null
-      }
+      },
     },
     rules: {
       type: Object,
       default() {
         return null
-      }
+      },
     },
     statusFiltersSelected: {
       type: Array,
       default() {
         return ['active', 'inactive']
-      }
+      },
     },
     defaultHeaders: {
       type: Array,
       default() {
         return null
-      }
+      },
     },
     defaultItems: {
       type: Array,
       default() {
         return null
-      }
-    }
+      },
+    },
   },
   data() {
     return {
@@ -91,15 +91,13 @@ export default {
       statusFilters: null,
       sortKey: null,
       shouldSortDesc: false,
-      dialog: false
+      dialog: false,
     }
   },
   computed: {
     headers() {
       if (this.defaultHeaders) {
-        const customHeaders = this.$store.getters['settings/headers'](
-          this.tableName
-        )
+        const customHeaders = this.$store.getters['settings/headers'](this.tableName)
         return customHeaders.length ? customHeaders : this.defaultHeaders
       }
       const snakeCaseTableName = camelToSnakeCase(this.tableName)
@@ -129,12 +127,12 @@ export default {
         res = [
           {
             headers: subHeaders,
-            items
-          }
+            items,
+          },
         ]
       }
       return res
-    }
+    },
   },
   asyncComputed: {
     async sortedItems() {
@@ -145,15 +143,10 @@ export default {
       let res = await this.$dataTable.filter(items, filters, this.rules)
       if (sortKey) {
         const rule = this.rules[sortKey]
-        res = await this.$dataTable.sortByRule(
-          res,
-          sortKey,
-          shouldSortDesc,
-          rule
-        )
+        res = await this.$dataTable.sortByRule(res, sortKey, shouldSortDesc, rule)
       }
       return res
-    }
+    },
   },
   methods: {
     filtersChanged(v) {
@@ -188,8 +181,8 @@ export default {
       settings.headers[snakeCaseTableName] = customHeaders
       this.$store.dispatch('settings/updateSettings', settings)
       this.dialog = false
-    }
-  }
+    },
+  },
 }
 </script>
 

@@ -37,8 +37,8 @@ export default {
       type: Array,
       default() {
         return []
-      }
-    }
+      },
+    },
   },
   computed: {
     averageRating() {
@@ -52,11 +52,8 @@ export default {
     numberOfReviews() {
       const res = this.reviews.length
       return res
-    }
+    },
   },
-  mounted() {
-    console.log('Composant ', this.$options.name)
-  }
 }
 </script>
 

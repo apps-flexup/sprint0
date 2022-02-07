@@ -48,7 +48,7 @@ export default {
     return {
       allItems: [],
       filter: '',
-      placeholder: this.$t('third-parties.placeholder')
+      placeholder: this.$t('third-parties.placeholder'),
     }
   },
   computed: {
@@ -62,7 +62,7 @@ export default {
         }
       })
       return res
-    }
+    },
   },
   mounted() {
     this.$store.dispatch('thirdPartyAccounts/get')
@@ -72,9 +72,7 @@ export default {
   },
   methods: {
     addThirdParty(account) {
-      const index = this.allItems.flexupAccounts.findIndex(
-        (flexupAccount) => flexupAccount.id === account.id
-      )
+      const index = this.allItems.flexupAccounts.findIndex((flexupAccount) => flexupAccount.id === account.id)
       if (index > -1) {
         account.added = true
         this.$set(this.allItems.flexupAccounts, index, account)
@@ -99,7 +97,7 @@ export default {
         }
       })
       return res
-    }
-  }
+    },
+  },
 }
 </script>

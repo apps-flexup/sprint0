@@ -27,53 +27,50 @@ export default {
       type: String,
       default() {
         return ''
-      }
+      },
     },
     username: {
       type: String,
       default() {
         return ''
-      }
+      },
     },
     date: {
       type: Date,
       default() {
         return null
-      }
+      },
     },
     review: {
       type: String,
       default() {
         return ''
-      }
+      },
     },
     rating: {
       type: Number,
       default() {
         return null
-      }
-    }
+      },
+    },
   },
   data() {
     return {
-      displayDate: this.setDate(this.date)
+      displayDate: this.setDate(this.date),
     }
   },
   watch: {
     date() {
       this.displayDate = this.setDate(this.date)
-    }
-  },
-  mounted() {
-    console.log('Composant', this.$options.name)
+    },
   },
   methods: {
     setDate(date) {
       if (!date) return null
       const res = date.toLocaleString().substring(0, 10)
       return res
-    }
-  }
+    },
+  },
 }
 </script>
 

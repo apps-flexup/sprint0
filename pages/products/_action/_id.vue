@@ -17,8 +17,8 @@ export default {
       type: Object,
       default() {
         return {}
-      }
-    }
+      },
+    },
   },
   computed: {
     canEditProduct() {
@@ -33,12 +33,12 @@ export default {
       const products = this.$store.getters['products/findById'](productId)
       const payload = JSON.parse(JSON.stringify(products))
       return payload
-    }
+    },
   },
   methods: {
     editProduct(payload) {
       this.$activeAccount.addProduct(payload)
-    }
-  }
+    },
+  },
 }
 </script>

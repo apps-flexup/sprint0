@@ -15,5 +15,5 @@ export default {
         commit('add', res)
       })
     }
-  }
+  },
 }

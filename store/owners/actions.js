@@ -11,5 +11,5 @@ export default {
         commit('set', owners)
       }
     }
-  }
+  },
 }

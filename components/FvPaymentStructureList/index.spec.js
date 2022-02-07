@@ -8,7 +8,7 @@ localVue.use(Vuex)
 let store
 
 const $displayRules = {
-  paymentStructureRisk: jest.fn()
+  paymentStructureRisk: jest.fn(),
 }
 
 const removeFn = jest.fn()
@@ -19,8 +19,8 @@ const factory = () => {
     store,
     mocks: {
       $t: (msg) => msg,
-      $displayRules
-    }
+      $displayRules,
+    },
   })
 }
 
@@ -31,10 +31,10 @@ beforeEach(() => {
         namespaced: true,
         actions: {
           get: jest.fn(),
-          remove: removeFn
-        }
-      }
-    }
+          remove: removeFn,
+        },
+      },
+    },
   })
 })
 
@@ -47,7 +47,7 @@ describe('FvPaymentStructureList', () => {
     const wrapper = factory()
     const table = wrapper.find('[data-testid="table"]')
     const paymentStructure = {
-      id: 45
+      id: 45,
     }
     table.vm.$emit('list:selected', paymentStructure)
     const selectedCalls = wrapper.emitted('list:selected')
@@ -59,7 +59,7 @@ describe('FvPaymentStructureList', () => {
     const wrapper = factory()
     const table = wrapper.find('[data-testid="table"]')
     const paymentStructure = {
-      foo: 'foo'
+      foo: 'foo',
     }
     table.vm.$emit('list:delete', paymentStructure)
     expect(removeFn).toHaveBeenCalledTimes(1)

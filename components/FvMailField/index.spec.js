@@ -6,11 +6,11 @@ const valueType = 'Mail'
 const factory = (propsData) => {
   return shallowMount(FvMailField, {
     propsData: {
-      ...propsData
+      ...propsData,
     },
     mocks: {
-      $t: (msg) => msg
-    }
+      $t: (msg) => msg,
+    },
   })
 }
 
@@ -27,7 +27,7 @@ describe('FvMailField', () => {
     const mailChangedCalls = wrapper.emitted('mail:value:changed')
     const expectedPayload = {
       value_type: valueType,
-      value: mail
+      value: mail,
     }
     expect(mailChangedCalls).toBeTruthy()
     expect(mailChangedCalls).toHaveLength(1)
@@ -41,7 +41,7 @@ describe('FvMailField', () => {
     const labelChangedCalls = wrapper.emitted('mail:label:changed')
     const expectedPayload = {
       value_type: valueType,
-      label
+      label,
     }
     expect(labelChangedCalls).toBeTruthy()
     expect(labelChangedCalls).toHaveLength(1)

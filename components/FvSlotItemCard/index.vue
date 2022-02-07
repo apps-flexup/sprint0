@@ -32,23 +32,20 @@ export default {
       type: Number,
       default() {
         return 300
-      }
+      },
     },
     cardHeight: {
       type: Number,
       default() {
         return 370
-      }
+      },
     },
     favoriteIconColor: {
       type: String,
       default() {
         return 'black'
-      }
-    }
-  },
-  mounted() {
-    console.log('Composant ', this.$options.name)
+      },
+    },
   },
   methods: {
     cardClicked() {
@@ -62,8 +59,8 @@ export default {
     },
     mouseleave() {
       this.$emit('card:mouseover', false)
-    }
-  }
+    },
+  },
 }
 </script>
 

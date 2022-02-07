@@ -13,28 +13,28 @@ describe('FvStructureAutocomplete', () => {
       paymentConditions: [
         {
           id: 3,
-          portion: 25
+          portion: 25,
         },
         {
           id: 2,
-          portion: 75
-        }
+          portion: 75,
+        },
       ],
       risk: 80,
       account_id: 1,
-      id: 1
-    }
+      id: 1,
+    },
   ]
   const factory = () => {
     return mount(FvStructureAutocomplete, {
       localVue,
       store,
       stubs: {
-        FvAutocomplete: true
+        FvAutocomplete: true,
       },
       mocks: {
-        $t: (msg) => msg
-      }
+        $t: (msg) => msg,
+      },
     })
   }
   beforeEach(() => {
@@ -43,13 +43,13 @@ describe('FvStructureAutocomplete', () => {
         paymentStructures: {
           namespaced: true,
           actions: {
-            get: jest.fn()
+            get: jest.fn(),
           },
           getters: {
-            all: () => paymentStructures
-          }
-        }
-      }
+            all: () => paymentStructures,
+          },
+        },
+      },
     })
   })
   it('should render a structure autocomplete', () => {

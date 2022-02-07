@@ -10,6 +10,7 @@
     :suffix="suffix"
     :hideDetails="hideDetails"
     :dense="dense"
+    type="number"
     @input="input"
     @click="onClick"
     @click:outside="onClickOutside"
@@ -24,57 +25,54 @@ export default {
       type: [Number, String],
       default() {
         return ''
-      }
+      },
     },
     label: {
       type: String,
       default() {
         return ''
-      }
+      },
     },
     outlined: {
       type: Boolean,
       default() {
         return true
-      }
+      },
     },
     readonly: {
       type: Boolean,
       default() {
         return false
-      }
+      },
     },
     suffix: {
       type: String,
       default() {
         return ''
-      }
+      },
     },
     hideDetails: {
       type: Boolean,
       default() {
         return false
-      }
+      },
     },
     dense: {
       type: Boolean,
       default() {
         return false
-      }
-    }
+      },
+    },
   },
   data() {
     return {
-      inputValue: this.value
+      inputValue: this.value,
     }
   },
   watch: {
     value() {
       this.inputValue = this.value
-    }
-  },
-  mounted() {
-    console.log('Composant', this.$options.name)
+    },
   },
   methods: {
     input(v) {
@@ -86,8 +84,8 @@ export default {
     },
     onClickOutside() {
       this.$emit('click:outside')
-    }
-  }
+    },
+  },
 }
 </script>
 

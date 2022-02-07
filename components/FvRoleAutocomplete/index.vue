@@ -30,47 +30,44 @@ export default {
       type: String,
       default() {
         return null
-      }
+      },
     },
     roles: {
       type: Array,
       default() {
         return []
-      }
+      },
     },
     label: {
       type: String,
       default() {
         return this.$t('autocomplete.role.label')
-      }
+      },
     },
     dense: {
       type: Boolean,
       default() {
         return false
-      }
-    }
+      },
+    },
   },
   computed: {
     items() {
       const res = []
       return res
-    }
-  },
-  mounted() {
-    console.log('Composant ', this.$options.name)
+    },
   },
   methods: {
     filter(item, v, it) {
       const role = {
         ...item,
-        value: this.$t('functionalRoles.' + item.value)
+        value: this.$t('functionalRoles.' + item.value),
       }
       return filterRoleAutocomplete(role, v, it)
     },
     selected(v) {
       this.$emit('role:selected', v)
-    }
-  }
+    },
+  },
 }
 </script>

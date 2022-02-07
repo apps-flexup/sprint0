@@ -13,16 +13,13 @@
 export default {
   data() {
     return {
-      paymentCondition: {}
+      paymentCondition: {},
     }
-  },
-  mounted() {
-    console.log('Composant ', this.$options.name)
   },
   methods: {
     createPaymentCondition(payload) {
       this.$activeAccount.addPaymentCondition(payload)
-    }
-  }
+    },
+  },
 }
 </script>

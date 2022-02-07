@@ -2,11 +2,11 @@ import { shallowMount } from '@vue/test-utils'
 import FvThirdPartyAccountIndex from './index.vue'
 
 const $router = {
-  push: jest.fn()
+  push: jest.fn(),
 }
 
 let $rights = {
-  canCreateThirdParty: jest.fn()
+  canCreateThirdParty: jest.fn(),
 }
 
 const localThirdParty = { id: 1, directory: 'Local' }
@@ -17,8 +17,8 @@ const factory = () => {
     mocks: {
       $t: (msg) => msg,
       $router,
-      $rights
-    }
+      $rights,
+    },
   })
 }
 afterEach(() => {
@@ -29,9 +29,7 @@ describe('FvThirdPartyAccountIndex', () => {
   it('should render a FvThirdPartyAccountIndex', () => {
     const wrapper = factory()
     expect(wrapper.find('[data-testid="headerIndex"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="thirdPartyAccountList"]').exists()).toBe(
-      true
-    )
+    expect(wrapper.find('[data-testid="thirdPartyAccountList"]').exists()).toBe(true)
   })
   it('should push the route of new third party account', () => {
     const wrapper = factory()
@@ -46,22 +44,18 @@ describe('FvThirdPartyAccountIndex', () => {
       $rights = {
         canCreateThirdParty: () => {
           return false
-        }
+        },
       }
     })
     it('should render a FvThirdPartyAccountIndex', () => {
       const wrapper = factory()
       expect(wrapper.find('[data-testid="createBtn"]').exists()).toBe(false)
-      expect(
-        wrapper.find('[data-testid="thirdPartyAccountList"]').exists()
-      ).toBe(true)
+      expect(wrapper.find('[data-testid="thirdPartyAccountList"]').exists()).toBe(true)
     })
   })
   it('should push the route of the selected local third party account', () => {
     const wrapper = factory()
-    const thirdPartyAccountList = wrapper.find(
-      '[data-testid="thirdPartyAccountList"]'
-    )
+    const thirdPartyAccountList = wrapper.find('[data-testid="thirdPartyAccountList"]')
     thirdPartyAccountList.vm.$emit('list:selected', localThirdParty)
     expect($router.push).toHaveBeenCalledTimes(1)
     const thirdPartyAccountIdRoute = '/thirdPartyAccounts/' + localThirdParty.id
@@ -69,9 +63,7 @@ describe('FvThirdPartyAccountIndex', () => {
   })
   it('should push the route of the selected flexup third party account', () => {
     const wrapper = factory()
-    const thirdPartyAccountList = wrapper.find(
-      '[data-testid="thirdPartyAccountList"]'
-    )
+    const thirdPartyAccountList = wrapper.find('[data-testid="thirdPartyAccountList"]')
     thirdPartyAccountList.vm.$emit('list:selected', flexupThirdParty)
     expect($router.push).toHaveBeenCalledTimes(1)
     const thirdPartyAccountIdRoute = '/accounts/' + flexupThirdParty.flexup_id

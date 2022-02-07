@@ -17,17 +17,17 @@ export default {
   props: {
     value: {
       type: String,
-      default: 'draft'
+      default: 'draft',
     },
     label: {
       type: String,
-      default: null
-    }
+      default: null,
+    },
   },
   computed: {
     availableStatus() {
       return this.$store.getters['products/availableStatus']
-    }
+    },
   },
   methods: {
     changeStatus(newStatus) {
@@ -40,8 +40,8 @@ export default {
         this.$emit('payload:changed', newStatus)
         this.$emit('status:changed', newStatus)
       }
-    }
-  }
+    },
+  },
 }
 </script>
 

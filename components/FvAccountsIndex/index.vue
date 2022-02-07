@@ -17,18 +17,17 @@ export default {
     accounts() {
       const res = this.$store.getters['accounts/all']
       return res
-    }
+    },
   },
   mounted() {
-    console.log('Composant ', this.$options.name)
     this.$store.dispatch('accounts/get')
   },
   methods: {
     createAccount() {
       this.$router.push('/accounts/new')
       this.$emit('accounts:create')
-    }
-  }
+    },
+  },
 }
 </script>
 

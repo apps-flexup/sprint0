@@ -10,10 +10,7 @@ export default {
     contracts() {
       const res = []
       return res
-    }
+    },
   },
-  mounted() {
-    console.log('Composant ', this.$options.name)
-  }
 }
 </script>

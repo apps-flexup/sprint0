@@ -16,14 +16,14 @@ export default {
       type: Object,
       default() {
         return null
-      }
+      },
     },
     search: {
       type: Object,
       default() {
         return null
-      }
-    }
+      },
+    },
   },
   computed: {
     product() {
@@ -42,11 +42,10 @@ export default {
     dimensionFilter() {
       const res = this.unit ? this.unit.dimension : null
       return res
-    }
+    },
   },
   mounted() {
     this.$store.dispatch('products/get')
-    console.log('Composant ', this.$options.name)
   },
   methods: {
     unitSelected(v) {
@@ -55,7 +54,7 @@ export default {
     },
     emitGenericSignalForForm(payload) {
       this.$emit('payload:changed', payload)
-    }
-  }
+    },
+  },
 }
 </script>

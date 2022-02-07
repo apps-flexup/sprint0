@@ -19,17 +19,14 @@ export default {
       type: String,
       default() {
         return null
-      }
-    }
-  },
-  mounted() {
-    console.log('Composant ', this.$options.name)
+      },
+    },
   },
   methods: {
     close() {
       this.$emit('modal:header:close')
-    }
-  }
+    },
+  },
 }
 </script>
 

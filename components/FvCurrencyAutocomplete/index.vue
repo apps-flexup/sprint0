@@ -25,12 +25,12 @@ export default {
       type: String,
       default() {
         return null
-      }
-    }
+      },
+    },
   },
   data() {
     return {
-      isLoading: false
+      isLoading: false,
     }
   },
   computed: {
@@ -39,14 +39,12 @@ export default {
       return res
     },
     currencyId() {
-      console.log('Find by iso: ', this.currency)
       const currency = this.$store.getters['currencies/findIso'](this.currency)
       return currency ? currency.id : null
-    }
+    },
   },
   mounted() {
     this.$store.dispatch('currencies/get')
-    console.log('Composant ', this.$options.name)
   },
   methods: {
     selected(v) {
@@ -56,7 +54,7 @@ export default {
     },
     filter(item, v, it) {
       return filterCurrencyAutocomplete(item, v, it)
-    }
-  }
+    },
+  },
 }
 </script>

@@ -37,37 +37,36 @@ export default {
       type: String,
       default() {
         return 'Title'
-      }
+      },
     },
     searchLabel: {
       type: String,
       default() {
         return 'Search'
-      }
+      },
     },
     tableName: {
       type: String,
       default() {
         return null
-      }
+      },
     },
     statusFiltersSelected: {
       type: Array,
       default() {
         return ['active', 'inactive']
-      }
-    }
+      },
+    },
   },
   data() {
     return {
       filters: [],
-      colors: []
+      colors: [],
     }
   },
   computed: {
     availableFilters() {
-      const availableFilters =
-        this.$store.getters[`${this.tableName}/availableFilters`] || []
+      const availableFilters = this.$store.getters[`${this.tableName}/availableFilters`] || []
       const res = availableFilters.map((availableFilter) => {
         return availableFilter.toLowerCase()
       })
@@ -75,7 +74,7 @@ export default {
     },
     isStatusFilterAvailable() {
       return this.availableFilters.includes('status')
-    }
+    },
   },
   methods: {
     searchChanged(v) {
@@ -121,8 +120,8 @@ export default {
     },
     settingsClicked() {
       this.$emit('dataTableHeader:settingsClicked')
-    }
-  }
+    },
+  },
 }
 </script>
 

@@ -6,24 +6,24 @@ const menu = [
     active: true,
     icon: 'mdi-apps',
     title: 'manageMenu.home',
-    to: '/'
+    to: '/',
   },
   {
     active: true,
     icon: 'mdi-inbox-arrow-down-outline',
     title: 'manageMenu.orders',
-    to: '/orders'
-  }
+    to: '/orders',
+  },
 ]
 
 const factory = () => {
   return mount(FvShowMenu, {
     propsData: {
-      list: menu
+      list: menu,
     },
     mocks: {
-      $t: (msg) => msg
-    }
+      $t: (msg) => msg,
+    },
   })
 }
 

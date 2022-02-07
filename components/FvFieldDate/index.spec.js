@@ -17,8 +17,8 @@ describe('FvFieldDate', () => {
       vuetify,
       store,
       computed: {
-        locale: () => locale
-      }
+        locale: () => locale,
+      },
     })
   }
   beforeEach(() => {
@@ -28,10 +28,10 @@ describe('FvFieldDate', () => {
         settings: {
           namespaced: true,
           actions: {
-            getSettings: jest.fn()
-          }
-        }
-      }
+            getSettings: jest.fn(),
+          },
+        },
+      },
     })
   })
   it('should render a fv field date', () => {

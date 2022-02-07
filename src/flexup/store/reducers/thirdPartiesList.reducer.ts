@@ -11,8 +11,7 @@ const data = (state: ThirdParty[] = [], action: actionCreators.Actions) => {
 }
 
 export const thirdPartiesList = combineReducers({
-  data
+  data,
 })
 
-export const getMyThirdParties = (state: AppState) =>
-  state.coreLogic.thirdPartiesList
+export const getMyThirdParties = (state: AppState) => state.coreLogic.thirdPartiesList

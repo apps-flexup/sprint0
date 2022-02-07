@@ -12,9 +12,7 @@ export default {
   },
   findByDimension: (state) => (dimension, unit) => {
     if (!state.items || !dimension || !unit) return null
-    const res = state.items.find(
-      (v) => v.dimension === dimension && v.symbole === unit
-    )
+    const res = state.items.find((v) => v.dimension === dimension && v.symbole === unit)
     return res
-  }
+  },
 }

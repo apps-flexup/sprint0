@@ -16,28 +16,12 @@ export class JsonServerOrderGateway implements OrderGateway {
   }
 
   async listMyOrders(): Promise<Order[]> {
-    const orders = await this.axios.$get(
-      `/${this.resource}?account_id=${this.activeAccountId}`
-    )
+    const orders = await this.axios.$get(`/${this.resource}?account_id=${this.activeAccountId}`)
     const res = orders.map((o) => {
       const orderItems = o.orderItems.map((oi) => {
-        return new OrderItem(
-          oi.productName,
-          oi.offerName,
-          oi.price,
-          oi.vat,
-          oi.unit,
-          oi.quantity
-        )
+        return new OrderItem(oi.productName, oi.offerName, oi.price, oi.vat, oi.unit, oi.quantity)
       })
-      return new Order(
-        o.id,
-        o.thirdPartyId,
-        o.date,
-        o.label,
-        orderItems,
-        o.status
-      )
+      return new Order(o.id, o.thirdPartyId, o.date, o.label, orderItems, o.status)
     })
     return Promise.resolve(Object.assign([], res))
   }
@@ -45,7 +29,7 @@ export class JsonServerOrderGateway implements OrderGateway {
   createOrder(order: Order): Promise<void> {
     const payload = {
       ...order,
-      account_id: this.activeAccountId
+      account_id: this.activeAccountId,
     }
     this.axios.$post(`/${this.resource}`, payload)
     return Promise.resolve()

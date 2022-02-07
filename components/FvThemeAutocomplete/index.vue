@@ -27,17 +27,14 @@ export default {
       type: String,
       default() {
         return null
-      }
-    }
+      },
+    },
   },
   computed: {
     items() {
       const res = ['light', 'dark']
       return res
-    }
-  },
-  mounted() {
-    console.log('Composant ', this.$options.name)
+    },
   },
   methods: {
     selected(v) {
@@ -46,7 +43,7 @@ export default {
     filter(item, v, it) {
       item = this.$t('themes.' + item)
       return filterThemeAutocomplete(item, v, it)
-    }
-  }
+    },
+  },
 }
 </script>
