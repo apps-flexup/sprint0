@@ -79,7 +79,7 @@ export default {
       this.items = []
       if (this.thirdPartyAccountId > 0) {
         const products = await this.$axios.$get(
-          `products/?account_id=${this.thirdPartyAccountId}`
+          `products/?status=active&account_id=${this.thirdPartyAccountId}`
         )
         const res = await Promise.all(
           products.map((o) => {
@@ -101,7 +101,7 @@ export default {
       )
       const accountId = thirdPartyAccount.id
       const products = await this.$axios.$get(
-        `products/?account_id=${accountId}`
+        `products/?status=active&account_id=${accountId}`
       )
       const res = await Promise.all(
         products.map((o) => {
