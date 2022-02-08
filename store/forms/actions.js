@@ -16,9 +16,6 @@ export default {
   getProduct({ commit }) {
     this.$repos.productSteps.index().then((data) => commit('setProductSteps', data))
   },
-  getOffer({ commit }) {
-    this.$repos.offerSteps.index().then((data) => commit('setOfferSteps', data))
-  },
   getPersonalAccount({ commit }) {
     this.$repos.personalAccountSteps.index().then((data) => commit('setPersonalAccountSteps', data))
   },

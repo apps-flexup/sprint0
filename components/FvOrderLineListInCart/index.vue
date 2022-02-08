@@ -17,7 +17,7 @@
                 :aspect-ratio="1"
               )
             v-col(cols="8")
-              div.productName(v-to-locale="item.offer")
+              div.productName(v-to-locale="item.product")
         template(v-slot:item.price="{ item }")
           div(v-to-preferred-currency="{amount: item.price, currency: item.currency}")
         template(v-slot:item.quantity="{ item }")
