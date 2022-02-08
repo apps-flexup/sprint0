@@ -39,12 +39,12 @@
         )
     v-row
       v-col(cols="8")
-        fv-offer-autocomplete(
+        fv-product-autocomplete(
           data-testid="offerAutocomplete"
           :disabled="!thirdPartyAccountId"
           :thirdPartyAccountId="thirdPartyAccountId"
           :returnObject="true"
-          @offers:selected="offerSelected"
+          @products:selected="productSelected"
         )
       v-col(cols="4")
         fv-structure-autocomplete(
@@ -124,23 +124,20 @@ export default {
       }
       this.$emit('order:thirdPartyAccountSelected', this.i, this.thirdPartyAccountId)
     },
-    offerSelected(offer) {
-      if (!offer) return
+    productSelected(product) {
+      if (!product) return
       const payload = {
-        offer_id: offer.id,
-        offer: offer.name || 'absence de description',
-        status: 'draft',
-        quantity: 1,
-        pas: 1,
-        vat: offer.vat,
-        dimension: offer.dimension,
-        unit: offer.unit,
-        currency: offer.currency,
+        id: product.id,
+        name: product.name || 'absence de description',
+        status: product.status,
+        vat: product.vat,
+        dimension: product.unit.dimension,
+        unit: product.unit.unit,
+        currency: product.price.currency,
         amount() {
           const res = parseFloat(this.quantity) * parseFloat(this.price)
           return res
         },
-        price: offer.price,
       }
       this.orderLines.push(payload)
       this.$emit('order:orderLinesChanged', this.i, this.orderLines)
