@@ -31,6 +31,36 @@
       "data": null,
       "status": "Confirmed",
       "id": 4
+    },
+    {
+      "from_type": "Account",
+      "from_id": 6,
+      "to_type": "User",
+      "to_id": "9a019cd2-4b90-401e-8646-f149a6d436d4",
+      "role": "admin",
+      "data": null,
+      "status": "Confirmed",
+      "id": 5
+    },
+    {
+      "from_type": "Account",
+      "from_id": 7,
+      "to_type": "User",
+      "to_id": "9a019cd2-4b90-401e-8646-f149a6d436d4",
+      "role": "admin",
+      "data": null,
+      "status": "Confirmed",
+      "id": 6
+    },
+    {
+      "from_type": "Account",
+      "from_id": 8,
+      "to_type": "User",
+      "to_id": "b1d3f861-5c77-4788-9bf3-070bd9b836f7",
+      "role": "admin",
+      "data": null,
+      "status": "Confirmed",
+      "id": 7
     }
   ],
   "functional-roles": [
@@ -57,6 +87,26 @@
       "email": "toto@toto.com",
       "uuid": "c7e4d104-2e45-4056-94cc-10a87af32693",
       "id": 1
+    },
+    {
+      "email_verified": false,
+      "name": "Fabrizio Nastri",
+      "preferred_username": "fabrizio_nastri@hotmail.com",
+      "given_name": "Fabrizio",
+      "family_name": "Nastri",
+      "email": "fabrizio_nastri@hotmail.com",
+      "uuid": "9a019cd2-4b90-401e-8646-f149a6d436d4",
+      "id": 2
+    },
+    {
+      "email_verified": false,
+      "name": "Fra bu",
+      "preferred_username": "frabu",
+      "given_name": "Fra",
+      "family_name": "bu",
+      "email": "fbullo@gmail.com",
+      "uuid": "b1d3f861-5c77-4788-9bf3-070bd9b836f7",
+      "id": 3
     }
   ],
   "payment-structures": [
@@ -241,6 +291,102 @@
       "label": "Flex simple",
       "account_id": 1,
       "id": 4
+    },
+    {
+      "risk": 7.7,
+      "label": "Base 5% 1an",
+      "references": {
+        "r1": {
+          "key": "base",
+          "value": 40
+        },
+        "r2": {
+          "key": "later",
+          "params": {
+            "key": "fv-payment-term-params",
+            "value": "365"
+          },
+          "value": 62.56777860100623
+        },
+        "r3": {
+          "key": "lessThan15",
+          "params": {
+            "key": "fv-yield-rate-params",
+            "value": "5%"
+          },
+          "value": 70
+        },
+        "r4": {
+          "key": "base",
+          "value": 70
+        },
+        "r5": {
+          "key": "principal",
+          "value": 100
+        },
+        "r6": {
+          "key": "projectAndThirdParty",
+          "value": 100
+        },
+        "r7": {
+          "key": "base",
+          "value": 70
+        },
+        "r8": {
+          "key": "nextYear",
+          "value": 90
+        }
+      },
+      "visibility": "private",
+      "account_id": 6,
+      "id": 5
+    },
+    {
+      "risk": 20,
+      "label": "Base (simple, 30j fin de mois)",
+      "references": {
+        "r1": {
+          "key": "base",
+          "value": 40
+        },
+        "r2": {
+          "key": "endOfDeliveryMonth",
+          "value": 50
+        },
+        "r3": {
+          "key": "none",
+          "value": 100
+        },
+        "r4": {
+          "key": "none",
+          "value": 100
+        },
+        "r5": {
+          "key": "none",
+          "value": 100
+        },
+        "r6": {
+          "key": "projectAndThirdParty",
+          "value": 100
+        },
+        "r7": {
+          "key": "equity",
+          "value": 100
+        },
+        "r8": {
+          "key": "equity",
+          "value": 100
+        }
+      },
+      "visibility": "private",
+      "account_id": 6,
+      "id": 6
+    },
+    {
+      "risk": 0,
+      "visibility": "private",
+      "account_id": 6,
+      "id": 7
     }
   ],
   "references": [
@@ -1014,6 +1160,36 @@
     {
       "account_id": 4,
       "id": 4
+    },
+    {
+      "id": 5,
+      "account_id": 6,
+      "headers": {
+        "products": [],
+        "third_party_accounts": [],
+        "payment_conditions": [],
+        "payment_structures": [],
+        "orders": [],
+        "payment_conditions_for_payment_structure_form": [],
+        "contracts": [],
+        "members": [],
+        "owners": []
+      }
+    },
+    {
+      "id": 6,
+      "account_id": 8,
+      "headers": {
+        "products": [],
+        "third_party_accounts": [],
+        "payment_conditions": [],
+        "payment_structures": [],
+        "orders": [],
+        "payment_conditions_for_payment_structure_form": [],
+        "contracts": [],
+        "members": [],
+        "owners": []
+      }
     }
   ],
   "accounts": [
@@ -14854,6 +15030,84 @@
       "status": "DRAFT",
       "account_id": 1,
       "id": 3
+    },
+    {
+      "thirdPartyId": 1,
+      "date": "2022-02-03",
+      "label": "Hello",
+      "orderItems": [
+        {
+          "price": {
+            "amount": 60,
+            "currency": "EUR"
+          },
+          "vat": 0.5,
+          "quantity": 3
+        },
+        {
+          "price": {
+            "amount": 98,
+            "currency": "EUR"
+          },
+          "vat": 0.1,
+          "quantity": 3
+        }
+      ],
+      "status": "DRAFT",
+      "account_id": 6,
+      "id": 4
+    },
+    {
+      "thirdPartyId": 6,
+      "date": "2022-02-03",
+      "label": "Chaussette + Poulet",
+      "orderItems": [
+        {
+          "price": {
+            "amount": 12.2545,
+            "currency": "EUR"
+          },
+          "vat": 0.2,
+          "quantity": 5
+        },
+        {
+          "price": {
+            "amount": 6,
+            "currency": "EUR"
+          },
+          "vat": 0.2,
+          "quantity": 1
+        }
+      ],
+      "status": "DRAFT",
+      "account_id": 7,
+      "id": 5
+    },
+    {
+      "thirdPartyId": 6,
+      "date": "2022-02-03",
+      "label": "",
+      "orderItems": [
+        {
+          "price": {
+            "amount": 12.2545,
+            "currency": "EUR"
+          },
+          "vat": 0.2,
+          "quantity": 1564
+        },
+        {
+          "price": {
+            "amount": 6,
+            "currency": "EUR"
+          },
+          "vat": 0.2,
+          "quantity": -5445
+        }
+      ],
+      "status": "DRAFT",
+      "account_id": 7,
+      "id": 6
     }
   ],
   "third-party-accounts": [
@@ -14901,6 +15155,21 @@
       "status": "active",
       "account_id": 1,
       "id": 8
+    },
+    {
+      "name": "Fabrizio Nastri",
+      "account_id": null,
+      "id": 9
+    },
+    {
+      "name": "Cosys",
+      "account_id": null,
+      "id": 10
+    },
+    {
+      "name": "Fra bu",
+      "account_id": null,
+      "id": 11
     }
   ],
   "products": [
@@ -14967,6 +15236,70 @@
       "visibility": "public",
       "account_id": 1,
       "id": 25
+    },
+    {
+      "status": "inactive",
+      "name": "Chaussettes",
+      "unit": {
+        "unit": "Unit",
+        "dimension": "unit"
+      },
+      "vat": "20.0",
+      "price": {
+        "amount": 12.2545,
+        "currency": "EUR"
+      },
+      "visibility": "public",
+      "account_id": 6,
+      "id": 26
+    },
+    {
+      "status": "active",
+      "name": "Poulet",
+      "unit": {
+        "unit": "kg",
+        "dimension": "weight"
+      },
+      "vat": "20.0",
+      "price": {
+        "amount": 6,
+        "currency": "EUR"
+      },
+      "visibility": "private",
+      "account_id": 6,
+      "id": 27
+    },
+    {
+      "status": "archived",
+      "name": "Très vieux",
+      "unit": {
+        "unit": "year",
+        "dimension": "age"
+      },
+      "vat": "5.5",
+      "price": {
+        "amount": 15,
+        "currency": "EUR"
+      },
+      "visibility": "private",
+      "account_id": 6,
+      "id": 28
+    },
+    {
+      "status": "active",
+      "name": "Plop en bottes",
+      "unit": {
+        "unit": "dozen",
+        "dimension": "unit"
+      },
+      "vat": "5.5",
+      "price": {
+        "amount": 9.76,
+        "currency": "EUR"
+      },
+      "visibility": "public",
+      "account_id": 1,
+      "id": 29
     }
   ],
   "structures": [
