@@ -14964,12 +14964,6 @@
       "value": "valueWithoutTax"
     },
     {
-      "align": "end",
-      "sortable": false,
-      "text": "headers.orderItems.valueWithTax",
-      "value": "valueWithTax"
-    },
-    {
       "align": "start",
       "sortable": false,
       "text": "headers.actions",

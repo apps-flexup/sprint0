@@ -20,3 +20,7 @@ $datatable-header-padding: 5px 1rem;
 ::v-deep input[type='number'] {
   -moz-appearance: textfield;
 }
+
+::v-deep .v-autocomplete.v-select input {
+  position: absolute;
+}

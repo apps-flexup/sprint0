@@ -11,17 +11,19 @@
     template(v-slot:label)
       div {{ label }}
     template(v-slot:item="data")
-      v-list-item-avatar
+      v-list-item-avatar(v-if="data.item.avatar")
         v-img(:src="data.item.avatar")
       v-list-item-content
         .d-inline-flex.justify-space-between
           span {{ data.item.name }}
           span {{ price(data.item) }}
     template(v-slot:selection="data")
-      v-list-item-avatar
+      v-list-item-avatar(v-if="data.item.avatar")
         v-img(:src="data.item.avatar")
       v-list-item-content
-        div {{ data.item.name }}
+        .d-inline-flex.justify-space-between
+          span {{ data.item.name }}
+          span {{ price(data.item) }}
     template(v-slot:no-data)
       div Aucune donnée disponible
     template(v-slot:append-item)
