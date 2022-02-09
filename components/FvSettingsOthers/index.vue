@@ -18,6 +18,12 @@
     :label="$t('settings.others.labels.vatNbDigits')"
     @input="vatNbDigitsChanged"
   )
+  fv-number-field(
+    data-testid="rowsPerPage"
+    :value="rowsPerPage"
+    :label="$t('settings.others.labels.rowsPerPage')"
+    @input="rowsPerPageChanged"
+  )
 </template>
 
 <script>
@@ -40,6 +46,9 @@ export default {
       const res = this.settings ? this.settings.vat_nb_after_decimal_point : null
       return res
     },
+    rowsPerPage() {
+      return this.settings ? this.settings.rows_per_page : null
+    },
   },
   methods: {
     priceNbDigitsChanged(n) {
@@ -55,6 +64,11 @@ export default {
     vatNbDigitsChanged(n) {
       const newSettings = this.settings
       newSettings.vat_nb_after_decimal_point = n
+      this.$activeAccount.setSettings(newSettings)
+    },
+    rowsPerPageChanged(n) {
+      const newSettings = this.settings
+      newSettings.rows_per_page = n
       this.$activeAccount.setSettings(newSettings)
     },
   },
