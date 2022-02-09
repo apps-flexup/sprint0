@@ -5,6 +5,7 @@
       v-data-table.elevation-2(
         data-testid="dataTable"
         :headers='headers'
+        :items-per-page="$activeAccount.itemPerPage()"
         :items='indexedItems'
         item-key='id'
       )

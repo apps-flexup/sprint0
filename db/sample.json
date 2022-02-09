@@ -589,6 +589,7 @@
       "account_id": null,
       "currency": "EUR",
       "locale": "fr",
+      "rows_per_page": -1,
       "theme": "light",
       "price_nb_after_decimal_point": 2,
       "default_vat": 20,
@@ -1077,6 +1078,9 @@
     {
       "id": 1,
       "account_id": 1,
+      "rows_per_page": "-1",
+      "default_vat": "10",
+      "vat_nb_after_decimal_point": "3",
       "headers": {
         "products": [],
         "third_party_accounts": [],

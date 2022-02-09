@@ -6,6 +6,7 @@
     :items='items ? items : []'
     :hide-default-footer="hideDefaultFooter"
     disable-sort
+    :items-per-page="$store.getters['settings/itemPerPage']"
     :footer-props="{ \
       itemsPerPageText: $t('dataTable.footer.rowsPerPage'), \
       itemsPerPageAllText: $t('dataTable.footer.all'), \
@@ -85,7 +86,7 @@ export default {
     return {
       sortKey: null,
       sortDesc: false,
-      rowsPerPageOption: [20, 50, 100, -1],
+      rowsPerPageOption: [this.$store.getters['settings/itemPerPage'], 20, 50, 100, -1],
     }
   },
   computed: {
