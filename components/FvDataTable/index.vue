@@ -5,7 +5,6 @@
     :headers='translatedHeaders'
     :items='items ? items : []'
     :hide-default-footer="hideDefaultFooter"
-    disable-sort
     :items-per-page="$store.getters['settings/itemPerPage']"
     :footer-props="{ \
       itemsPerPageText: $t('dataTable.footer.rowsPerPage'), \
@@ -15,6 +14,7 @@
     :server-items-length="itemsLength"
     :options="options"
     :style="cssVars"
+    disable-sort
     @click:row='selected'
     @pagination='paginationChanged'
   )
@@ -91,12 +91,10 @@ export default {
   },
   computed: {
     displayedHeaders() {
-      const res = this.headers.filter((header) => header.active && header.displayed)
-      return res
+      return this.headers.filter((header) => header.active && header.displayed)
     },
     translatedHeaders() {
-      const res = translateHeaders(this.$i18n, this.displayedHeaders)
-      return res
+      return translateHeaders(this.$i18n, this.displayedHeaders)
     },
     cssVars() {
       const settings = this.$store.getters['settings/settings']

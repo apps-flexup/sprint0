@@ -1,4 +1,4 @@
-import { mount, createLocalVue } from '@vue/test-utils'
+import { createLocalVue, mount } from '@vue/test-utils'
 import Vuetify from 'vuetify'
 import Vuex from 'vuex'
 import FvDataTable from './index.vue'
@@ -64,6 +64,9 @@ beforeEach(() => {
           getSettings: jest.fn(),
         },
         getters: {
+          itemPerPage() {
+            return -1
+          },
           settings() {
             return {
               theme: 'light',
