@@ -1,4 +1,4 @@
-import { shallowMount, createLocalVue } from '@vue/test-utils'
+import { createLocalVue, shallowMount } from '@vue/test-utils'
 import Vuex from 'vuex'
 import FvForm from './index.vue'
 
@@ -50,6 +50,11 @@ describe('FvForm', () => {
   beforeEach(() => {
     store = new Vuex.Store({
       modules: {
+        members: {
+          actions: {
+            get: jest.fn(),
+          },
+        },
         forms: {
           namespaced: true,
           state: {},
@@ -61,7 +66,6 @@ describe('FvForm', () => {
             getPaymentStructure: jest.fn(),
             getBusinessAccount: jest.fn(),
             getPersonalAccount: jest.fn(),
-            get: jest.fn(),
           },
         },
       },
