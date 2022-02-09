@@ -49,6 +49,9 @@ const activeAccount = (ctx) => ({
     const res = ctx.store.getters['settings/settings']
     return res
   },
+  itemPerPage() {
+    return ctx.store.getters['settings/itemPerPage']
+  },
   setSettings(settings) {
     ctx.app.i18n.locale = settings.locale
     ctx.$vuetify.theme.dark = settings.theme === 'dark'

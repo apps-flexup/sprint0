@@ -78,6 +78,9 @@ export default {
     if (customSettings) mergeObjects(res, customSettings)
     return res
   },
+  itemPerPage(state) {
+    return parseInt(state.settings.rows_per_page || state.defaultSettings.rows_per_page)
+  },
   defaultHeaders: (state) => (tableName) => {
     if (!state.defaultSettings) return {}
     const res = JSON.parse(JSON.stringify(state.defaultSettings.headers[tableName]))

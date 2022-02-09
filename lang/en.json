@@ -877,7 +877,8 @@
       "labels": {
         "priceNbDigits": "Price: number of digits after decimal point",
         "defaultVat": "Default VAT",
-        "vatNbDigits": "VAT: number of digits after decimal point"
+        "vatNbDigits": "VAT: number of digits after decimal point",
+        "rowsPerPage": "Rows per page"
       }
     }
   },
