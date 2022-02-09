@@ -91,12 +91,10 @@ export default {
   },
   computed: {
     displayedHeaders() {
-      const res = this.headers.filter((header) => header.active && header.displayed)
-      return res
+      return this.headers.filter((header) => header.active && header.displayed)
     },
     translatedHeaders() {
-      const res = translateHeaders(this.$i18n, this.displayedHeaders)
-      return res
+      return translateHeaders(this.$i18n, this.displayedHeaders)
     },
     cssVars() {
       const settings = this.$store.getters['settings/settings']
