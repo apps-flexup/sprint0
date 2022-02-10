@@ -31,7 +31,7 @@ export default {
   },
   methods: {
     changeStatus(newStatus) {
-      if (this.value === 'active') {
+      if (this.value === 'active' && this.$route.name !== 'products-new') {
         if (window.confirm(this.$t('table.products.warningMessage'))) {
           this.$emit('payload:changed', newStatus)
           this.$emit('status:changed', newStatus)
