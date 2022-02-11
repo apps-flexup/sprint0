@@ -58,4 +58,10 @@ describe('FvAccountList', () => {
     const wrapper = factory()
     expect(wrapper.findAll('[data-testid="accountCard"]').length).toBe(3)
   })
+  it('should display an empty array of accounts', () => {
+    const wrapper = shallowMount(FvAccountList, {
+      propsData: {},
+    })
+    expect(wrapper.findAll('[data-testid="accountCard"]').length).toBe(0)
+  })
 })

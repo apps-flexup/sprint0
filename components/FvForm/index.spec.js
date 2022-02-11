@@ -1,4 +1,4 @@
-import { shallowMount, createLocalVue } from '@vue/test-utils'
+import { createLocalVue, shallowMount } from '@vue/test-utils'
 import Vuex from 'vuex'
 import FvForm from './index.vue'
 
@@ -61,6 +61,12 @@ describe('FvForm', () => {
             getPaymentStructure: jest.fn(),
             getBusinessAccount: jest.fn(),
             getPersonalAccount: jest.fn(),
+          },
+        },
+        members: {
+          namespaced: true,
+          state: {},
+          actions: {
             get: jest.fn(),
           },
         },

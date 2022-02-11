@@ -50,8 +50,8 @@ const factory = (propsData) => {
 describe('FvAccountCard', () => {
   it('should render a fv account card', () => {
     const wrapper = factory({ id: 1 })
-    expect(wrapper.find('[data-testid="card"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="avatar"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="card"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="avatar"]').exists()).toBeTruthy()
     expect(wrapper.find('[data-testid="name"]').exists()).toBe(true)
   })
   it('should display avatar prop', () => {
@@ -74,4 +74,12 @@ describe('FvAccountCard', () => {
     expect(favoriteCalls).toBeTruthy()
     expect(favoriteCalls).toHaveLength(1)
   })
+  // WIP flas, add missing tests
+  // it('should display the required role', () => {
+  //   const wrapper = factory({ id: 1 })
+  //   const expectedResult = ''
+  //   const result = wrapper.vm.cardClicked()
+  //   console.log('result :', result)
+  //   // expect(result).toEqual(expectedResult)
+  // })
 })

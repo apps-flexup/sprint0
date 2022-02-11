@@ -1,8 +1,25 @@
-import { shallowMount } from '@vue/test-utils'
+import { createLocalVue, shallowMount } from '@vue/test-utils'
+import Vuex from 'vuex'
 import FvAccountAutocomplete from './index'
 
+const localVue = createLocalVue()
+localVue.use(Vuex)
+
+let store
+
+const $displayRules = {
+  accountName: jest.fn((value) => value),
+}
+
 const factory = () => {
-  return shallowMount(FvAccountAutocomplete)
+  return shallowMount(FvAccountAutocomplete, {
+    localVue,
+    store,
+    mocks: {
+      $t: (msg) => msg,
+      $displayRules,
+    },
+  })
 }
 
 describe('FvAccountAutocomplete', () => {
@@ -24,5 +41,7 @@ describe('FvAccountAutocomplete', () => {
     expect(selectedCalls).toBeTruthy()
     expect(selectedCalls).toHaveLength(1)
     expect(selectedCalls[0][0]).toBe(selectedAccount)
+    const wrapperResult = wrapper.vm.accountName(selectedAccount)
+    expect(wrapperResult).toEqual(selectedAccount)
   })
 })
