@@ -52,7 +52,7 @@ describe('FvAccountList', () => {
   }
   it('should render an accounts index component', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="accountList"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="accountList"]').exists()).toBeTruthy()
   })
   it('should display account cards', () => {
     const wrapper = factory()

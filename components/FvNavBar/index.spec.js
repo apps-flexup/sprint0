@@ -54,9 +54,9 @@ describe('FvNavBar', () => {
   })
   it('should render a fv nav bar clean when user is disconnected', () => {
     const wrapper = factory({ loggedIn: false })
-    expect(wrapper.find('[data-testid="navbar"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="icon-navbar"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="title-navbar"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="navbar"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="icon-navbar"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="title-navbar"]').exists()).toBeTruthy()
     expect(wrapper.find('[data-testid="slot-left"]').exists()).toBe(false)
     expect(wrapper.find('[data-testid="slot-right"]').exists()).toBe(false)
   })

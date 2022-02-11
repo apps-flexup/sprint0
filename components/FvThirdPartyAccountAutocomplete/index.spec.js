@@ -87,7 +87,7 @@ describe('FvThirdPartyAccountAutocomplete', () => {
   })
   it('should render a third party autocomplete', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="autocomplete"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="autocomplete"]').exists()).toBeTruthy()
   })
   it('should emit an event when third party account is selected', () => {
     const wrapper = factory()

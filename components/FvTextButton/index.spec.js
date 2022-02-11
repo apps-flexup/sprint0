@@ -16,8 +16,8 @@ const factory = () => {
 describe('FvTextButton', () => {
   it('should render a fv text button', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid=button]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid=slot-icon]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid=button]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid=slot-icon]').exists()).toBeTruthy()
   })
   it('should emit an event when button is clicked', () => {
     const wrapper = factory()

@@ -15,7 +15,7 @@ describe('FvThemeAutocomplete', () => {
   }
   it('should render a theme autocomplete', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="autocomplete"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="autocomplete"]').exists()).toBeTruthy()
   })
   it('should emit an event when theme is selected', () => {
     const wrapper = factory()

@@ -41,7 +41,7 @@ beforeEach(() => {
 describe('FvPaymentStructureList', () => {
   it('should render a fv payment structure list', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="table"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="table"]').exists()).toBeTruthy()
   })
   it('should emit an event when payment structure is selected', () => {
     const wrapper = factory()

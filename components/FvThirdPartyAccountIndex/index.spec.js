@@ -28,8 +28,8 @@ afterEach(() => {
 describe('FvThirdPartyAccountIndex', () => {
   it('should render a FvThirdPartyAccountIndex', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="headerIndex"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="thirdPartyAccountList"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="headerIndex"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="thirdPartyAccountList"]').exists()).toBeTruthy()
   })
   it('should push the route of new third party account', () => {
     const wrapper = factory()
@@ -50,7 +50,7 @@ describe('FvThirdPartyAccountIndex', () => {
     it('should render a FvThirdPartyAccountIndex', () => {
       const wrapper = factory()
       expect(wrapper.find('[data-testid="createBtn"]').exists()).toBe(false)
-      expect(wrapper.find('[data-testid="thirdPartyAccountList"]').exists()).toBe(true)
+      expect(wrapper.find('[data-testid="thirdPartyAccountList"]').exists()).toBeTruthy()
     })
   })
   it('should push the route of the selected local third party account', () => {

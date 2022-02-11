@@ -4,7 +4,7 @@ import FvSecondaryButton from './index.vue'
 describe('FvSecondaryButton', () => {
   it('should render a fv secondary button', () => {
     const wrapper = mount(FvSecondaryButton)
-    expect(wrapper.find('[data-testid="button"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="button"]').exists()).toBeTruthy()
   })
   it('should use default slot as button text', () => {
     const text = 'HelloWorld'

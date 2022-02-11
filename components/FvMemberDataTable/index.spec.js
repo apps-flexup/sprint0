@@ -50,7 +50,7 @@ describe('FvMemberDataTable', () => {
   })
   it('should render a fv product data table', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="fvDataTable"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="fvDataTable"]').exists()).toBeTruthy()
   })
   it('should emit an event when need to sort', () => {
     const wrapper = factory()

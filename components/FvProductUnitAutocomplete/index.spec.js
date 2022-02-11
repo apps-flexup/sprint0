@@ -39,7 +39,7 @@ describe('FvProductUnitAutocomplete', () => {
   })
   it('should render a fv product unit autocomplete', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="unitAutocomplete"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="unitAutocomplete"]').exists()).toBeTruthy()
   })
   it('should emit an event when a row is selected', () => {
     const wrapper = factory()

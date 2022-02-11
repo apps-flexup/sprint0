@@ -17,7 +17,7 @@ const factory = (propsData) => {
 describe('FvMailField', () => {
   it('should render a fv mail field', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="mailField"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="mailField"]').exists()).toBeTruthy()
   })
   it('should emit an event when media value changed', () => {
     const wrapper = factory()

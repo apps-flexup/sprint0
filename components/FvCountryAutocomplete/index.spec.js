@@ -121,7 +121,7 @@ beforeEach(() => {
 describe('FvCountryAutocomplete', () => {
   it('should render a fv country autocomplete', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid=autocomplete]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid=autocomplete]').exists()).toBeTruthy()
   })
   it('should get all countries from the store', () => {
     const wrapper = factory()

@@ -67,12 +67,12 @@ describe('FvThirdPartyAccountCard', () => {
   })
   it('should render FvThirdPartyAccountCard', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="thirdPartyAccountAvatar"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="thirdPartyAccountName"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="thirdPartyAccountAddress"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="thirdPartyAccountCity"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="thirdPartyAccountCountry"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="thirdPartyAccountLegalStructure"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="thirdPartyAccountAvatar"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="thirdPartyAccountName"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="thirdPartyAccountAddress"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="thirdPartyAccountCity"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="thirdPartyAccountCountry"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="thirdPartyAccountLegalStructure"]').exists()).toBeTruthy()
   })
   it('should get a third party account', () => {
     const wrapper = factory()

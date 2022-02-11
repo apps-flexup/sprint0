@@ -52,7 +52,7 @@ describe('FvAccountCard', () => {
     const wrapper = factory({ id: 1 })
     expect(wrapper.find('[data-testid="card"]').exists()).toBeTruthy()
     expect(wrapper.find('[data-testid="avatar"]').exists()).toBeTruthy()
-    expect(wrapper.find('[data-testid="name"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="name"]').exists()).toBeTruthy()
   })
   it('should display avatar prop', () => {
     const img = '/images/avatar-1.png'

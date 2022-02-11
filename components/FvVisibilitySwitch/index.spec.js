@@ -15,7 +15,7 @@ const factory = (propsData) => {
 describe('FvVisibilitySwitch', () => {
   it('should render a fv visibility switch', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid=switch]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid=switch]').exists()).toBeTruthy()
   })
   it.each([
     ['private', 'public'],

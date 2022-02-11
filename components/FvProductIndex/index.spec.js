@@ -44,7 +44,7 @@ beforeEach(() => {
 describe('FvProductIndex', () => {
   it('should render a fv product index', () => {
     const wrapper = cannotCreateProductFactory()
-    expect(wrapper.find('[data-testid="productList"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="productList"]').exists()).toBeTruthy()
   })
   it.each([
     ['selected', 'read'],
@@ -66,7 +66,7 @@ describe('FvProductIndex', () => {
       wrapper = canCreateProductFactory()
     })
     it('should have a create button', () => {
-      expect(wrapper.find('[data-testid="headerIndex"]').exists()).toBe(true)
+      expect(wrapper.find('[data-testid="headerIndex"]').exists()).toBeTruthy()
     })
     it('should redirect to create product when clicked on create button', () => {
       const headerIndex = wrapper.find('[data-testid="headerIndex"]')

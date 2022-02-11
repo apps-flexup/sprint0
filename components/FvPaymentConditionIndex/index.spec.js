@@ -21,8 +21,8 @@ beforeEach(() => {
 describe('FvPaymentConditionIndex', () => {
   it('should render a fv payment condition index', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="headerIndex"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="paymentConditionList"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="headerIndex"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="paymentConditionList"]').exists()).toBeTruthy()
   })
   it('should redirect to create payment condition when clicked on create button', () => {
     const wrapper = factory()

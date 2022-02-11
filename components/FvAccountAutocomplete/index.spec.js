@@ -25,7 +25,7 @@ const factory = () => {
 describe('FvAccountAutocomplete', () => {
   it('should render a fv account autocomplete', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid=autocomplete]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid=autocomplete]').exists()).toBeTruthy()
   })
   it('should emit an event when account is selected', () => {
     const wrapper = factory()

@@ -21,8 +21,8 @@ beforeEach(() => {
 describe('FvPaymentStructureIndex', () => {
   it('should render a fv payment structure index', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="headerIndex"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="paymentStructureList"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="headerIndex"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="paymentStructureList"]').exists()).toBeTruthy()
   })
   it('should redirect to create payment structure when clicked on create button', () => {
     const wrapper = factory()

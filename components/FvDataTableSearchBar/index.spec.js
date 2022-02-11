@@ -8,7 +8,7 @@ const factory = () => {
 describe('FvDataTableSearchBar', () => {
   it('should render a fv data table header', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid=textField]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid=textField]').exists()).toBeTruthy()
   })
   it('should emit an event when the input changed', () => {
     const wrapper = factory()

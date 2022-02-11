@@ -20,7 +20,7 @@ const factory = (propsData) => {
 describe('FvStatus', () => {
   it('should render a status btn', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="statusBtn"').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="statusBtn"').exists()).toBeTruthy()
   })
   it('should emit an event when clicked', () => {
     const wrapper = factory()

@@ -45,9 +45,9 @@ beforeEach(() => {
 describe('FvSettingsDefault', () => {
   it('should render a fv settings default', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="languageAutocomplete"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="currencyAutocomplete"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="themeAutocomplete"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="languageAutocomplete"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="currencyAutocomplete"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="themeAutocomplete"]').exists()).toBeTruthy()
   })
   it('should call active account set settings with new settings when language is selected', () => {
     const wrapper = factory()

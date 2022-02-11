@@ -47,7 +47,7 @@ describe('FvThirdPartyAccountDataTable', () => {
   })
   it('should render a fv third party account data table', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="dataTable"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="dataTable"]').exists()).toBeTruthy()
   })
   it('should emit an event when a row is selected', () => {
     const wrapper = factory()

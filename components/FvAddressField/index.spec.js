@@ -45,8 +45,8 @@ beforeEach(() => {
 describe('FvAddressField', () => {
   it('should render a fv address field', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="addressField"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="modal"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="addressField"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="modal"]').exists()).toBeTruthy()
   })
   it('should display address with format "street, zip, city, country"', () => {
     const address = {
@@ -77,7 +77,7 @@ describe('FvAddressField', () => {
     addressField.vm.$emit('media:value:clicked')
     await wrapper.vm.$nextTick()
     const modal = wrapper.find('[data-testid="modal"]')
-    expect(modal.props().dialog).toBe(true)
+    expect(modal.props().dialog).toBeTruthy()
   })
   it('should close address modal when modal is closed', async () => {
     const wrapper = factory()

@@ -44,11 +44,11 @@ describe('FvOrderDetails', () => {
   })
   it('should render a fv order details', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="thirdPartyAccount"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="date"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="paymentStructure"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="orderLines"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="total"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="thirdPartyAccount"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="date"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="paymentStructure"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="orderLines"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="total"]').exists()).toBeTruthy()
   })
   it('should init third party account id with order', () => {
     const order = {

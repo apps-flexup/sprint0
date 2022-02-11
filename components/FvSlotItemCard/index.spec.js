@@ -4,9 +4,9 @@ import FvSlotItemCard from './index.vue'
 describe('FvSlotItemCard', () => {
   it('should render a slot item card', () => {
     const wrapper = mount(FvSlotItemCard)
-    expect(wrapper.find('[data-testid="card"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="cardDiv"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="favoriteIcon"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="card"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="cardDiv"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="favoriteIcon"]').exists()).toBeTruthy()
   })
   it('should render default slot', () => {
     const defaultSlot = 'helloWorld'
@@ -25,7 +25,7 @@ describe('FvSlotItemCard', () => {
     const emitted = wrapper.emitted('card:mouseover')
     expect(emitted).toBeTruthy()
     expect(emitted).toHaveLength(1)
-    expect(emitted[0][0]).toBe(true)
+    expect(emitted[0][0]).toBeTruthy()
   })
   it('should emit an event when mouse leave', async () => {
     const wrapper = mount(FvSlotItemCard)
