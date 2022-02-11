@@ -13,16 +13,16 @@ const currency = {
   iso3: 'EUR',
   ison: 978,
   minor: 2,
-  name: 'Euro'
+  name: 'Euro',
 }
 
 const settings = {
   currency: 'EUR',
-  price_nb_after_decimal_point: 2
+  price_nb_after_decimal_point: 2,
 }
 
 const $activeAccount = {
-  settings: () => settings
+  settings: () => settings,
 }
 
 const factory = () => {
@@ -30,8 +30,8 @@ const factory = () => {
     localVue,
     store,
     mocks: {
-      $activeAccount
-    }
+      $activeAccount,
+    },
   })
 }
 
@@ -41,20 +41,20 @@ beforeEach(() => {
       currencies: {
         namespaced: true,
         actions: {
-          get: jest.fn()
+          get: jest.fn(),
         },
         getters: {
-          findIso: () => () => currency
-        }
-      }
-    }
+          findIso: () => () => currency,
+        },
+      },
+    },
   })
 })
 
 describe('FvPriceField', () => {
   it('should render a fv price field', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="priceField"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="priceField"]').exists()).toBeTruthy()
   })
   it('should emit an event when price changed', () => {
     const wrapper = factory()
@@ -63,7 +63,7 @@ describe('FvPriceField', () => {
     priceField.vm.$emit('input', amount)
     const expectedPrice = {
       amount,
-      currency: settings.currency
+      currency: settings.currency,
     }
     const priceChangedCalls = wrapper.emitted('price:changed')
     expect(priceChangedCalls).toBeTruthy()
@@ -77,7 +77,7 @@ describe('FvPriceField', () => {
     priceField.vm.$emit('input', amount)
     const expectedPrice = {
       amount,
-      currency: settings.currency
+      currency: settings.currency,
     }
     const priceChangedCalls = wrapper.emitted('payload:changed')
     expect(priceChangedCalls).toBeTruthy()
@@ -96,6 +96,6 @@ describe('FvPriceField', () => {
     await wrapper.setData({ truncatePrice: false })
     const priceField = wrapper.find('[data-testid="priceField"]')
     priceField.vm.$emit('click:outside')
-    expect(wrapper.vm.truncatePrice).toBe(true)
+    expect(wrapper.vm.truncatePrice).toBeTruthy()
   })
 })

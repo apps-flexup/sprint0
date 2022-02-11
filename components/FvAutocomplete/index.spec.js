@@ -6,7 +6,7 @@ let vuetify
 
 const factory = () => {
   return mount(FvAutocomplete, {
-    vuetify
+    vuetify,
   })
 }
 
@@ -17,7 +17,7 @@ beforeEach(() => {
 describe('FvAutocomplete', () => {
   it('should render a fv autocomplete', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="autocomplete"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="autocomplete"]').exists()).toBeTruthy()
   })
   it('should emit an event when element is selected', () => {
     const value = 'testValue'

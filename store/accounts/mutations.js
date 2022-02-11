@@ -4,6 +4,7 @@ export default {
     state.current = null
   },
   setCurrent(state, id) {
+    console.log('changement detat', id)
     state.current = id
   },
   add(state, item) {
@@ -14,5 +15,5 @@ export default {
   },
   remove(state, item) {
     state.items = state.items.filter((v) => v.id !== item.id)
-  }
+  },
 }

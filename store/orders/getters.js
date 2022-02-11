@@ -10,5 +10,5 @@ export default {
     const recordId = parseInt(id)
     const res = state.items.find((v) => v.id === recordId)
     return res
-  }
+  },
 }

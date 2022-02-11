@@ -10,7 +10,7 @@ let store
 let vuetify
 
 const $displayRules = {
-  userNameFromUuid: jest.fn()
+  userNameFromUuid: jest.fn(),
 }
 
 describe('FvMemberDataTable', () => {
@@ -21,8 +21,8 @@ describe('FvMemberDataTable', () => {
       vuetify,
       mocks: {
         $t: (msg) => msg,
-        $displayRules
-      }
+        $displayRules,
+      },
     })
   }
   beforeEach(() => {
@@ -31,26 +31,26 @@ describe('FvMemberDataTable', () => {
         functionalRoles: {
           namespaced: true,
           actions: {
-            get: jest.fn()
+            get: jest.fn(),
           },
           getters: {
-            all: jest.fn()
-          }
+            all: jest.fn(),
+          },
         },
         members: {
           namespaced: true,
           actions: {
             remove: jest.fn(),
-            update: jest.fn()
-          }
-        }
-      }
+            update: jest.fn(),
+          },
+        },
+      },
     })
     vuetify = new Vuetify()
   })
   it('should render a fv product data table', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="fvDataTable"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="fvDataTable"]').exists()).toBeTruthy()
   })
   it('should emit an event when need to sort', () => {
     const wrapper = factory()

@@ -20,33 +20,33 @@ export default {
       type: String,
       default() {
         return null
-      }
+      },
     },
     color: {
       type: String,
       default() {
         return '#000000'
-      }
+      },
     },
     size: {
       type: String,
       default() {
         return null
-      }
-    }
+      },
+    },
   },
   data() {
     return {
       xSmall: false,
       small: false,
       large: false,
-      xLarge: false
+      xLarge: false,
     }
   },
   watch: {
     size() {
       this.setSize()
-    }
+    },
   },
   mounted() {
     this.setSize()
@@ -87,7 +87,7 @@ export default {
           this.large = false
           this.small = false
       }
-    }
-  }
+    },
+  },
 }
 </script>

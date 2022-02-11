@@ -5,12 +5,12 @@ describe('FvSelectHeaders', () => {
   const factory = () => {
     return shallowMount(FvSelectHeaders, {
       propsData: {
-        dialog: true
-      }
+        dialog: true,
+      },
     })
   }
   it('should render a fv select headers', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="modal"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="modal"]').exists()).toBeTruthy()
   })
 })

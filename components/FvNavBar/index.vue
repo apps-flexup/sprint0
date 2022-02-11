@@ -36,28 +36,27 @@ export default {
       type: String,
       default() {
         return ''
-      }
+      },
     },
     space: {
       type: String,
       default() {
         return null
-      }
-    }
+      },
+    },
   },
   data() {
     return {
       clipped: false,
       drawer: true,
       fixed: false,
-      miniVariant: false
+      miniVariant: false,
     }
   },
   mounted() {
-    console.log('Composant ', this.$options.name)
     this.$store.dispatch('settings/getSellerNavBar')
     this.$store.dispatch('settings/getManageNavBar')
-  }
+  },
 }
 </script>
 

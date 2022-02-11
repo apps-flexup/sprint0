@@ -14,5 +14,5 @@ export default {
     if (!state.items.length) return null
     const res = state.items.find((v) => v.iso3 === iso3)
     return res
-  }
+  },
 }

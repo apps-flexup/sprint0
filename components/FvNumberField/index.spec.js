@@ -4,7 +4,7 @@ import FvNumberField from './index.vue'
 describe('FvNumberField', () => {
   it('should render a fv number field', () => {
     const wrapper = shallowMount(FvNumberField)
-    expect(wrapper.find('[data-testid="numberField"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="numberField"]').exists()).toBeTruthy()
   })
   it('should emit an event when click inside', () => {
     const wrapper = shallowMount(FvNumberField)

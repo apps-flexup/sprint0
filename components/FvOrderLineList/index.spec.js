@@ -8,7 +8,7 @@ localVue.use(Vuex)
 let store
 
 const $activeAccount = {
-  headersOrderLines: jest.fn()
+  headersOrderLines: jest.fn(),
 }
 
 const factory = () => {
@@ -16,8 +16,8 @@ const factory = () => {
     localVue,
     store,
     mocks: {
-      $activeAccount
-    }
+      $activeAccount,
+    },
   })
 }
 
@@ -27,28 +27,28 @@ beforeEach(() => {
       headers: {
         namespaced: true,
         actions: {
-          getOrderLineHeaders: jest.fn()
-        }
+          getOrderLineHeaders: jest.fn(),
+        },
       },
       accounts: {
         namespaced: true,
         actions: {
-          get: jest.fn()
-        }
+          get: jest.fn(),
+        },
       },
       settings: {
         namespaced: true,
         actions: {
-          getSettings: jest.fn()
-        }
-      }
-    }
+          getSettings: jest.fn(),
+        },
+      },
+    },
   })
 })
 
 describe('FvOrderLineList', () => {
   it('should render a fv order line list', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="dataTable"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="dataTable"]').exists()).toBeTruthy()
   })
 })

@@ -2,9 +2,7 @@
   "given-roles": [
     {
       "id": 1,
-      "from_type": "Account",
       "from_id": 1,
-      "to_type": "User",
       "to_id": "c7e4d104-2e45-4056-94cc-10a87af32693",
       "role": "admin",
       "data": null,
@@ -12,18 +10,14 @@
     },
     {
       "id": 2,
-      "from_type": "Account",
       "from_id": 2,
-      "to_type": "User",
       "to_id": "c7e4d104-2e45-4056-94cc-10a87af32693",
       "role": "admin",
       "data": null,
       "status": "active"
     },
     {
-      "from_type": "Account",
       "from_id": 3,
-      "to_type": "User",
       "to_id": "c7e4d104-2e45-4056-94cc-10a87af32693",
       "role": "admin",
       "data": null,
@@ -31,14 +25,42 @@
       "id": 3
     },
     {
-      "from_type": "Account",
       "from_id": 4,
-      "to_type": "User",
       "to_id": "c7e4d104-2e45-4056-94cc-10a87af32693",
       "role": "admin",
       "data": null,
       "status": "Confirmed",
       "id": 4
+    },
+    {
+      "from_type": "Account",
+      "from_id": 6,
+      "to_type": "User",
+      "to_id": "9a019cd2-4b90-401e-8646-f149a6d436d4",
+      "role": "admin",
+      "data": null,
+      "status": "Confirmed",
+      "id": 5
+    },
+    {
+      "from_type": "Account",
+      "from_id": 7,
+      "to_type": "User",
+      "to_id": "9a019cd2-4b90-401e-8646-f149a6d436d4",
+      "role": "admin",
+      "data": null,
+      "status": "Confirmed",
+      "id": 6
+    },
+    {
+      "from_type": "Account",
+      "from_id": 8,
+      "to_type": "User",
+      "to_id": "b1d3f861-5c77-4788-9bf3-070bd9b836f7",
+      "role": "admin",
+      "data": null,
+      "status": "Confirmed",
+      "id": 7
     }
   ],
   "functional-roles": [
@@ -65,6 +87,26 @@
       "email": "toto@toto.com",
       "uuid": "c7e4d104-2e45-4056-94cc-10a87af32693",
       "id": 1
+    },
+    {
+      "email_verified": false,
+      "name": "Fabrizio Nastri",
+      "preferred_username": "fabrizio_nastri@hotmail.com",
+      "given_name": "Fabrizio",
+      "family_name": "Nastri",
+      "email": "fabrizio_nastri@hotmail.com",
+      "uuid": "9a019cd2-4b90-401e-8646-f149a6d436d4",
+      "id": 2
+    },
+    {
+      "email_verified": false,
+      "name": "Fra bu",
+      "preferred_username": "frabu",
+      "given_name": "Fra",
+      "family_name": "bu",
+      "email": "fbullo@gmail.com",
+      "uuid": "b1d3f861-5c77-4788-9bf3-070bd9b836f7",
+      "id": 3
     }
   ],
   "payment-structures": [
@@ -249,6 +291,102 @@
       "label": "Flex simple",
       "account_id": 1,
       "id": 4
+    },
+    {
+      "risk": 7.7,
+      "label": "Base 5% 1an",
+      "references": {
+        "r1": {
+          "key": "base",
+          "value": 40
+        },
+        "r2": {
+          "key": "later",
+          "params": {
+            "key": "fv-payment-term-params",
+            "value": "365"
+          },
+          "value": 62.56777860100623
+        },
+        "r3": {
+          "key": "lessThan15",
+          "params": {
+            "key": "fv-yield-rate-params",
+            "value": "5%"
+          },
+          "value": 70
+        },
+        "r4": {
+          "key": "base",
+          "value": 70
+        },
+        "r5": {
+          "key": "principal",
+          "value": 100
+        },
+        "r6": {
+          "key": "projectAndThirdParty",
+          "value": 100
+        },
+        "r7": {
+          "key": "base",
+          "value": 70
+        },
+        "r8": {
+          "key": "nextYear",
+          "value": 90
+        }
+      },
+      "visibility": "private",
+      "account_id": 6,
+      "id": 5
+    },
+    {
+      "risk": 20,
+      "label": "Base (simple, 30j fin de mois)",
+      "references": {
+        "r1": {
+          "key": "base",
+          "value": 40
+        },
+        "r2": {
+          "key": "endOfDeliveryMonth",
+          "value": 50
+        },
+        "r3": {
+          "key": "none",
+          "value": 100
+        },
+        "r4": {
+          "key": "none",
+          "value": 100
+        },
+        "r5": {
+          "key": "none",
+          "value": 100
+        },
+        "r6": {
+          "key": "projectAndThirdParty",
+          "value": 100
+        },
+        "r7": {
+          "key": "equity",
+          "value": 100
+        },
+        "r8": {
+          "key": "equity",
+          "value": 100
+        }
+      },
+      "visibility": "private",
+      "account_id": 6,
+      "id": 6
+    },
+    {
+      "risk": 0,
+      "visibility": "private",
+      "account_id": 6,
+      "id": 7
     }
   ],
   "references": [
@@ -451,6 +589,7 @@
       "account_id": null,
       "currency": "EUR",
       "locale": "fr",
+      "rows_per_page": -1,
       "theme": "light",
       "price_nb_after_decimal_point": 2,
       "default_vat": 20,
@@ -472,6 +611,46 @@
             "sortable": true,
             "text": "headers.products.unit",
             "value": "unit",
+            "order": 2,
+            "customizable": true,
+            "active": true,
+            "displayed": true
+          },
+          {
+            "align": "right",
+            "sortable": true,
+            "text": "headers.products.price",
+            "value": "price",
+            "order": 0,
+            "customizable": true,
+            "active": true,
+            "displayed": true
+          },
+          {
+            "align": "right",
+            "sortable": true,
+            "text": "headers.products.price_ttc",
+            "value": "price_ttc",
+            "order": 0,
+            "customizable": true,
+            "active": true,
+            "displayed": true
+          },
+          {
+            "align": "right",
+            "sortable": true,
+            "text": "headers.products.vat",
+            "value": "vat",
+            "order": 1,
+            "customizable": true,
+            "active": true,
+            "displayed": true
+          },
+          {
+            "align": "left",
+            "sortable": true,
+            "text": "headers.products.visibility",
+            "value": "visibility",
             "order": 2,
             "customizable": true,
             "active": true,
@@ -654,132 +833,22 @@
             "displayed": true
           }
         ],
-        "offers": {
-          "main": [
-            {
-              "text": "mainHeaders.product",
-              "value": "products",
-              "align": "center",
-              "sortable": false,
-              "order": 0,
-              "customizable": false,
-              "active": true,
-              "displayed": true
-            },
-            {
-              "text": "mainHeaders.offer",
-              "value": "offers",
-              "align": "center",
-              "sortable": false,
-              "order": 1,
-              "customizable": false,
-              "active": true,
-              "displayed": true
-            }
-          ],
-          "sub": {
-            "products": [
-              {
-                "align": "left",
-                "sortable": true,
-                "text": "headers.products.name",
-                "value": "product_name",
-                "order": 1,
-                "customizable": false,
-                "active": true,
-                "displayed": true
-              },
-              {
-                "align": "left",
-                "sortable": true,
-                "text": "headers.products.unit",
-                "value": "unit",
-                "order": 2,
-                "customizable": true,
-                "active": true,
-                "displayed": true
-              }
-            ],
-            "offers": [
-              {
-                "align": "left",
-                "sortable": true,
-                "text": "headers.offers.name",
-                "value": "name",
-                "order": 0,
-                "customizable": false,
-                "active": true,
-                "displayed": true
-              },
-              {
-                "align": "right",
-                "sortable": true,
-                "text": "headers.offers.price",
-                "value": "price",
-                "order": 0,
-                "customizable": true,
-                "active": true,
-                "displayed": true
-              },
-              {
-                "align": "right",
-                "sortable": true,
-                "text": "headers.offers.price_ttc",
-                "value": "price_ttc",
-                "order": 0,
-                "customizable": true,
-                "active": true,
-                "displayed": true
-              },
-              {
-                "align": "right",
-                "sortable": true,
-                "text": "headers.offers.vat",
-                "value": "vat",
-                "order": 1,
-                "customizable": true,
-                "active": true,
-                "displayed": true
-              },
-              {
-                "align": "left",
-                "sortable": true,
-                "text": "headers.offers.visibility",
-                "value": "visibility",
-                "order": 2,
-                "customizable": true,
-                "active": true,
-                "displayed": true
-              },
-              {
-                "align": "center",
-                "sortable": true,
-                "text": "headers.offers.status",
-                "value": "status",
-                "order": 3,
-                "customizable": true,
-                "active": true,
-                "displayed": true
-              },
-              {
-                "align": "left",
-                "sortable": false,
-                "text": "headers.actions",
-                "value": "actions",
-                "order": 3,
-                "customizable": false,
-                "active": true,
-                "displayed": true
-              }
-            ]
-          }
-        },
         "orders": [
           {
             "align": "left",
             "sortable": true,
             "text": "headers.orders.thirdParty",
             "value": "thirdParty",
+            "order": 0,
+            "customizable": true,
+            "active": true,
+            "displayed": true
+          },
+          {
+            "align": "left",
+            "sortable": true,
+            "text": "headers.orders.label",
+            "value": "label",
             "order": 0,
             "customizable": true,
             "active": true,
@@ -1009,18 +1078,14 @@
     {
       "id": 1,
       "account_id": 1,
+      "rows_per_page": "-1",
+      "default_vat": "10",
+      "vat_nb_after_decimal_point": "3",
       "headers": {
         "products": [],
         "third_party_accounts": [],
         "payment_conditions": [],
         "payment_structures": [],
-        "offers": {
-          "main": [],
-          "sub": {
-            "products": [],
-            "offers": []
-          }
-        },
         "orders": [],
         "payment_conditions_for_payment_structure_form": [],
         "contracts": [],
@@ -1073,18 +1138,35 @@
     {
       "id": 2,
       "account_id": 4,
+      "rows_per_page": "-1",
       "headers": {
         "products": [],
         "third_party_accounts": [],
         "payment_conditions": [],
         "payment_structures": [],
+        "orders": [],
+        "payment_conditions_for_payment_structure_form": [],
+        "contracts": [],
+        "members": [],
+        "owners": [],
         "offers": {
           "main": [],
           "sub": {
             "products": [],
             "offers": []
           }
-        },
+        }
+      }
+    },
+    {
+      "id": 3,
+      "account_id": 3,
+      "rows_per_page": "-1",
+      "headers": {
+        "products": [],
+        "third_party_accounts": [],
+        "payment_conditions": [],
+        "payment_structures": [],
         "orders": [],
         "payment_conditions_for_payment_structure_form": [],
         "contracts": [],
@@ -1093,12 +1175,64 @@
       }
     },
     {
-      "account_id": 3,
-      "id": 3
+      "account_id": 4,
+      "rows_per_page": "-1",
+      "id": 4
     },
     {
-      "account_id": 4,
-      "id": 4
+      "id": 5,
+      "rows_per_page": "-1",
+      "account_id": 6,
+      "headers": {
+        "products": [],
+        "third_party_accounts": [],
+        "payment_conditions": [],
+        "payment_structures": [],
+        "orders": [],
+        "payment_conditions_for_payment_structure_form": [],
+        "contracts": [],
+        "members": [],
+        "owners": []
+      }
+    },
+    {
+      "id": 6,
+      "rows_per_page": "-1",
+      "account_id": 8,
+      "headers": {
+        "products": [],
+        "third_party_accounts": [],
+        "payment_conditions": [],
+        "payment_structures": [],
+        "orders": [],
+        "payment_conditions_for_payment_structure_form": [],
+        "contracts": [],
+        "members": [],
+        "owners": []
+      }
+    },
+    {
+      "id": 7,
+      "account_id": 2,
+      "rows_per_page": "-1",
+      "headers": {
+        "products": [],
+        "third_party_accounts": [],
+        "payment_conditions": [],
+        "payment_structures": [],
+        "orders": [],
+        "payment_conditions_for_payment_structure_form": [],
+        "contracts": [],
+        "members": [],
+        "owners": [],
+        "offers": {
+          "main": [],
+          "sub": {
+            "products": [],
+            "offers": []
+          }
+        }
+      }
     }
   ],
   "accounts": [
@@ -1255,6 +1389,12 @@
       ],
       "name": "Sub2",
       "id": 4
+    },
+    {
+      "type": "ThirdParty",
+      "firstname": "ploooop",
+      "account_id": 1,
+      "id": 5
     }
   ],
   "categories": [
@@ -2468,7 +2608,35 @@
           "attribute": "unit",
           "component": "fv-product-unit-autocomplete",
           "readonly-component": "fv-unit-readonly",
-          "size": 3
+          "size": 6
+        },
+        {
+          "attribute": "vat",
+          "component": "fv-vat-field",
+          "readonly-component": "fv-vat-field-readonly",
+          "size": 6
+        },
+        {
+          "attribute": "price",
+          "component": "fv-price-field",
+          "readonly-component": "fv-price-field-readonly",
+          "size": 6
+        },
+        {
+          "component": "v-spacer",
+          "readonly-component": "v-spacer"
+        },
+        {
+          "attribute": "price_ttc",
+          "computeFunction": "productPriceWithTax",
+          "readonly-component": "fv-price-field-readonly",
+          "size": 6
+        },
+        {
+          "attribute": "visibility",
+          "component": "fv-product-visibility-switch",
+          "readonly-component": "fv-visibility-switch-readonly",
+          "size": 7
         },
         {
           "attribute": "status",
@@ -2687,7 +2855,7 @@
       "dteEnd": "10/02/2022",
       "dteSignature": "05/02/2020",
       "id": 1,
-      "offers": [
+      "products": [
         {
           "id": 2,
           "name": "offre 1"
@@ -2718,7 +2886,7 @@
       "dteEnd": "13/02/2022",
       "dteSignature": "11/02/2020",
       "id": 2,
-      "offers": [
+      "products": [
         {
           "id": 2,
           "name": "offre 1"
@@ -2749,7 +2917,7 @@
       "dteEnd": "19/02/2022",
       "dteSignature": "15/02/2020",
       "id": 3,
-      "offers": [
+      "products": [
         {
           "id": 2,
           "name": "offre 1"
@@ -2780,7 +2948,7 @@
       "dteEnd": "13/02/2022",
       "dteSignature": "11/02/2020",
       "id": 4,
-      "offers": [
+      "products": [
         {
           "id": 2,
           "name": "offre 1"
@@ -14637,12 +14805,6 @@
     },
     {
       "active": true,
-      "icon": "mdi-tag-multiple-outline",
-      "title": "manageMenu.offers",
-      "to": "/offers"
-    },
-    {
-      "active": true,
       "icon": "mdi-email-outline",
       "title": "manageMenu.contacts",
       "to": "/contacts"
@@ -14753,12 +14915,6 @@
     },
     {
       "active": true,
-      "icon": "mdi-tag-multiple-outline",
-      "title": "sellerMenu.offers",
-      "to": "/offers"
-    },
-    {
-      "active": true,
       "icon": "mdi-truck-fast-outline",
       "title": "sellerMenu.deliveries",
       "to": "/deliveries"
@@ -14794,11 +14950,6 @@
       "active": true,
       "title": "navBar.seller.1",
       "to": "/orders"
-    },
-    {
-      "active": true,
-      "title": "navBar.seller.2",
-      "to": "/offers"
     }
   ],
   "manageNavbar": [
@@ -14818,94 +14969,12 @@
       "to": "/FlexUpGestion"
     }
   ],
-  "offers": [
-    {
-      "account_id": 1,
-      "active": true,
-      "product_id": 18,
-      "unit": {
-        "dimension": "unit",
-        "unit": "Unit"
-      },
-      "description": {
-        "en": "description of offer fab",
-        "fr": "description of Le jeu des 7 familles"
-      },
-      "elasticity": 0,
-      "evaluation_avg": 6.5,
-      "favorite": true,
-      "illustration_url": "https://placeimg.com/640/480?id=3",
-      "name": "Le jeu des 7 familles",
-      "offer_at_client": true,
-      "offer_at_supplier": true,
-      "offer_remote": true,
-      "offer_shipping": true,
-      "params": {
-        "game_name": {
-          "en": "Tintin version",
-          "fr": "version Tintin"
-        },
-        "quantity_of_cards": 52
-      },
-      "price": {
-        "amount": 10,
-        "currency": "EUR"
-      },
-      "reference": "BAVAFC",
-      "status": "active",
-      "vat": "20.5",
-      "visibility": "public",
-      "id": 3
-    },
-    {
-      "account_id": 1,
-      "active": true,
-      "product_id": 19,
-      "unit": {
-        "dimension": "duration",
-        "unit": "hr"
-      },
-      "description": {
-        "en": "description of offer php"
-      },
-      "elasticity": 20,
-      "evaluation_avg": 6.5,
-      "favorite": true,
-      "illustration_url": "https://placeimg.com/640/480?id=4",
-      "name": "name of offer php",
-      "offer_at_client": true,
-      "offer_at_supplier": true,
-      "offer_remote": true,
-      "offer_shipping": true,
-      "params": {
-        "condition": {
-          "en": "default conditionvg"
-        },
-        "plop": 2525
-      },
-      "price": {
-        "amount": 100,
-        "currency": "EUR"
-      },
-      "reference": "EICMNB",
-      "status": "archived",
-      "vat": "12.0",
-      "visibility": "private",
-      "id": 4
-    }
-  ],
   "order-item-headers": [
     {
       "align": "start",
       "sortable": false,
       "text": "headers.orderItems.productName",
       "value": "productName"
-    },
-    {
-      "align": "start",
-      "sortable": false,
-      "text": "headers.orderItems.offerName",
-      "value": "offerName"
     },
     {
       "align": "end",
@@ -14938,19 +15007,146 @@
       "value": "valueWithoutTax"
     },
     {
-      "align": "end",
-      "sortable": false,
-      "text": "headers.orderItems.valueWithTax",
-      "value": "valueWithTax"
-    },
-    {
       "align": "start",
       "sortable": false,
       "text": "headers.actions",
       "value": "actions"
     }
   ],
-  "orders": [],
+  "orders": [
+    {
+      "thirdPartyId": 2,
+      "date": "2022-02-01",
+      "label": "",
+      "orderItems": [
+        {
+          "price": {
+            "amount": 50,
+            "currency": "EUR"
+          },
+          "vat": 0.1,
+          "quantity": 1
+        }
+      ],
+      "status": "DRAFT",
+      "account_id": 1,
+      "id": 1
+    },
+    {
+      "thirdPartyId": 2,
+      "date": "2022-02-02",
+      "label": "",
+      "orderItems": [
+        {
+          "price": {
+            "amount": 102,
+            "currency": "EUR"
+          },
+          "vat": 0.25,
+          "quantity": 1
+        }
+      ],
+      "status": "DRAFT",
+      "account_id": 1,
+      "id": 2
+    },
+    {
+      "thirdPartyId": 2,
+      "date": "2022-02-02",
+      "label": "",
+      "orderItems": [
+        {
+          "price": {
+            "amount": 102,
+            "currency": "EUR"
+          },
+          "vat": 0.25,
+          "quantity": 1
+        }
+      ],
+      "status": "DRAFT",
+      "account_id": 1,
+      "id": 3
+    },
+    {
+      "thirdPartyId": 1,
+      "date": "2022-02-03",
+      "label": "Hello",
+      "orderItems": [
+        {
+          "price": {
+            "amount": 60,
+            "currency": "EUR"
+          },
+          "vat": 0.5,
+          "quantity": 3
+        },
+        {
+          "price": {
+            "amount": 98,
+            "currency": "EUR"
+          },
+          "vat": 0.1,
+          "quantity": 3
+        }
+      ],
+      "status": "DRAFT",
+      "account_id": 6,
+      "id": 4
+    },
+    {
+      "thirdPartyId": 6,
+      "date": "2022-02-03",
+      "label": "Chaussette + Poulet",
+      "orderItems": [
+        {
+          "price": {
+            "amount": 12.2545,
+            "currency": "EUR"
+          },
+          "vat": 0.2,
+          "quantity": 5
+        },
+        {
+          "price": {
+            "amount": 6,
+            "currency": "EUR"
+          },
+          "vat": 0.2,
+          "quantity": 1
+        }
+      ],
+      "status": "DRAFT",
+      "account_id": 7,
+      "id": 5
+    },
+    {
+      "thirdPartyId": 6,
+      "date": "2022-02-03",
+      "label": "",
+      "orderItems": [
+        {
+          "price": {
+            "amount": 12.2545,
+            "currency": "EUR"
+          },
+          "vat": 0.2,
+          "quantity": 1564
+        },
+        {
+          "price": {
+            "amount": 6,
+            "currency": "EUR"
+          },
+          "vat": 0.2,
+          "quantity": -5445
+        }
+      ],
+      "status": "DRAFT",
+      "account_id": 7,
+      "id": 6
+    }
+  ],
   "third-party-accounts": [
     {
       "type": "Personal",
@@ -14988,128 +15184,159 @@
       "name": "Sub2",
       "account_id": null,
       "id": 7
+    },
+    {
+      "type": "Personal",
+      "flexup_id": 5,
+      "directory": "Local",
+      "status": "active",
+      "account_id": 1,
+      "id": 8
+    },
+    {
+      "name": "Fabrizio Nastri",
+      "account_id": null,
+      "id": 9
+    },
+    {
+      "name": "Cosys",
+      "account_id": null,
+      "id": 10
+    },
+    {
+      "name": "Fra bu",
+      "account_id": null,
+      "id": 11
     }
   ],
   "products": [
     {
-      "account_id": 1,
-      "category_id": 55,
-      "currency": "EUR",
+      "status": "active",
+      "name": "Produit nouvelle spec EDIT",
       "unit": {
-        "unit": "month",
-        "dimension": "duration"
+        "unit": "m",
+        "dimension": "length"
       },
-      "name": "Appartement Paris 8",
-      "price": "1250",
-      "quantity": 1,
-      "status": "archived",
-      "id": 1
+      "vat": "10.0",
+      "price": {
+        "amount": 98,
+        "currency": "EUR"
+      },
+      "visibility": "private",
+      "account_id": 1,
+      "id": 22
     },
     {
-      "account_id": 1,
-      "category_id": 55,
-      "currency": "EUR",
+      "status": "active",
+      "name": "le giga test de ledit",
       "unit": {
-        "unit": "month",
-        "dimension": "duration"
+        "unit": "km/hr",
+        "dimension": "speed"
       },
-      "name": "Appartement Paris 19",
-      "price": "300",
-      "quantity": 1,
+      "vat": "25.0",
+      "price": {
+        "amount": 102,
+        "currency": "EUR"
+      },
+      "visibility": "public",
+      "account_id": 2,
+      "id": 23
+    },
+    {
+      "status": "active",
+      "name": "le deuxieme test",
+      "unit": {
+        "unit": "year",
+        "dimension": "age"
+      },
+      "vat": "50.0",
+      "price": {
+        "amount": 60,
+        "currency": "EUR"
+      },
+      "visibility": "private",
+      "account_id": 1,
+      "id": 24
+    },
+    {
+      "status": "active",
+      "name": "plop public",
+      "unit": {
+        "unit": "m/s",
+        "dimension": "speed"
+      },
+      "vat": "90.0",
+      "price": {
+        "amount": 5,
+        "currency": "EUR"
+      },
+      "visibility": "public",
+      "account_id": 1,
+      "id": 25
+    },
+    {
       "status": "inactive",
-      "id": 2
-    },
-    {
-      "category_id": 22,
-      "name": "Bananes",
-      "unit": {
-        "unit": "kg",
-        "dimension": "weight"
-      },
-      "status": "active",
-      "account_id": 1,
-      "category": {
-        "active": true,
-        "allow_at_client": true,
-        "allow_at_supplier": true,
-        "allow_remote": false,
-        "allow_shipping": true,
-        "description": {
-          "en": "English",
-          "fr": "French"
-        },
-        "dimension": null,
-        "id": 22,
-        "name": {
-          "en": "Creamery",
-          "fr": "Fruits & Légumes"
-        },
-        "offers_count": 0,
-        "orderable": true,
-        "other_parent": [],
-        "parent_id": 21,
-        "sort_order": 2,
-        "status": "active",
-        "unit": null
-      },
-      "id": 15
-    },
-    {
-      "category_id": 13,
-      "name": "Peinture métalisé",
-      "unit": {
-        "unit": "cl",
-        "dimension": "volume"
-      },
-      "status": "active",
-      "account_id": 1,
-      "id": 16
-    },
-    {
-      "category_id": 44,
-      "name": "Jeu 7 familles",
+      "name": "Chaussettes",
       "unit": {
         "unit": "Unit",
         "dimension": "unit"
       },
-      "status": "active",
-      "account_id": 1,
-      "category": {
-        "active": true,
-        "allow_at_client": true,
-        "allow_at_supplier": true,
-        "allow_remote": false,
-        "allow_shipping": true,
-        "description": {
-          "en": "English",
-          "fr": "French"
-        },
-        "dimension": "number",
-        "id": 44,
-        "name": {
-          "en": "Card Games",
-          "fr": "Jeux de cartes"
-        },
-        "offers_count": 1,
-        "orderable": true,
-        "other_parent": [],
-        "parent_id": 43,
-        "sort_order": 0,
-        "status": "active",
-        "unit": "Nr"
+      "vat": "20.0",
+      "price": {
+        "amount": 12.2545,
+        "currency": "EUR"
       },
-      "id": 18
+      "visibility": "public",
+      "account_id": 6,
+      "id": 26
     },
     {
-      "category_id": 52,
-      "name": "PHP",
-      "unit": {
-        "unit": "hr",
-        "dimension": "duration"
-      },
       "status": "active",
+      "name": "Poulet",
+      "unit": {
+        "unit": "kg",
+        "dimension": "weight"
+      },
+      "vat": "20.0",
+      "price": {
+        "amount": 6,
+        "currency": "EUR"
+      },
+      "visibility": "private",
+      "account_id": 6,
+      "id": 27
+    },
+    {
+      "status": "archived",
+      "name": "Très vieux",
+      "unit": {
+        "unit": "year",
+        "dimension": "age"
+      },
+      "vat": "5.5",
+      "price": {
+        "amount": 15,
+        "currency": "EUR"
+      },
+      "visibility": "private",
+      "account_id": 6,
+      "id": 28
+    },
+    {
+      "status": "active",
+      "name": "Plop en bottes",
+      "unit": {
+        "unit": "dozen",
+        "dimension": "unit"
+      },
+      "vat": "5.5",
+      "price": {
+        "amount": 9.76,
+        "currency": "EUR"
+      },
+      "visibility": "public",
       "account_id": 1,
-      "id": 19
+      "id": 29
     }
   ],
   "structures": [

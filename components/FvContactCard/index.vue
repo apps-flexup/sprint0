@@ -33,12 +33,9 @@ export default {
       type: Object,
       default() {
         return {}
-      }
-    }
+      },
+    },
   },
-  mounted() {
-    console.log('Composant ', this.$options.name)
-  }
 }
 </script>
 <style scoped>

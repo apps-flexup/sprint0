@@ -24,26 +24,26 @@ export default {
       type: String,
       default() {
         return null
-      }
+      },
     },
     titleButton: {
       type: String,
       default() {
         return null
-      }
+      },
     },
     canCreate: {
       type: Boolean,
       default() {
         return true
-      }
-    }
+      },
+    },
   },
   methods: {
     clicked() {
       this.$emit('button:click')
-    }
-  }
+    },
+  },
 }
 </script>
 

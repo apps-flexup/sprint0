@@ -26,11 +26,10 @@ export default {
       if (!this.account) return null
       const res = this.account.avatar
       return res
-    }
+    },
   },
   mounted() {
-    console.log('Composant ', this.$options.name)
     this.$store.dispatch('accounts/get')
-  }
+  },
 }
 </script>

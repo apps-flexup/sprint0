@@ -45,8 +45,8 @@ export default {
       type: Array,
       default() {
         return []
-      }
-    }
+      },
+    },
   },
   data() {
     return {
@@ -65,8 +65,8 @@ export default {
         },
         status: () => {
           return ''
-        }
-      }
+        },
+      },
     }
   },
   computed: {
@@ -81,22 +81,18 @@ export default {
       const account = this.account
       if (!this.account) return 'PersonalAccount'
       const type = account.type.toLowerCase()
-      const res =
-        account.type === 'SubAccount' ? 'subAccounts' : `${type}Accounts`
+      const res = account.type === 'SubAccount' ? 'subAccounts' : `${type}Accounts`
       return res
     },
     canEdit() {
       const currentUserId = this.$auth.user.sub
       const activeAccountId = this.$activeAccount.get()
-      const roles = this.$store.getters['members/roleFor'](
-        activeAccountId,
-        currentUserId
-      )
+      const roles = this.$store.getters['members/roleFor'](activeAccountId, currentUserId)
       return roles.includes('admin') && this.isActiveAccount
     },
     isActiveAccount() {
       return this.accountId === this.$activeAccount.get()
-    }
+    },
   },
   asyncComputed: {
     async account() {
@@ -119,7 +115,7 @@ export default {
         }
       })
       return res
-    }
+    },
   },
   mounted() {
     this.$store.dispatch('accounts/get')
@@ -129,8 +125,8 @@ export default {
   methods: {
     editAccount(payload) {
       this.$store.dispatch('accounts/update', payload)
-    }
-  }
+    },
+  },
 }
 </script>
 

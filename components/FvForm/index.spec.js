@@ -1,4 +1,4 @@
-import { shallowMount, createLocalVue } from '@vue/test-utils'
+import { createLocalVue, shallowMount } from '@vue/test-utils'
 import Vuex from 'vuex'
 import FvForm from './index.vue'
 
@@ -7,15 +7,15 @@ localVue.use(Vuex)
 
 const $router = {
   push: jest.fn(),
-  go: jest.fn()
+  go: jest.fn(),
 }
 
 describe('FvForm', () => {
   let store
   const formSteps = [
     {
-      title: 'forms.product.step.0'
-    }
+      title: 'forms.product.step.0',
+    },
   ]
   beforeEach(() => {
     jest.clearAllMocks()
@@ -27,24 +27,24 @@ describe('FvForm', () => {
       localVue,
       propsData: {
         form: 'products',
-        ...propsData
+        ...propsData,
       },
       computed: {
-        formSteps: () => formSteps
+        formSteps: () => formSteps,
       },
       mocks: {
         $t: (msg) => msg,
         $nuxt: {
           $loading: {
             start: jest.fn(),
-            finish: jest.fn()
-          }
+            finish: jest.fn(),
+          },
         },
         $activeAccount: {
-          addProduct: jest.fn()
+          addProduct: jest.fn(),
         },
-        $router
-      }
+        $router,
+      },
     })
   }
   beforeEach(() => {
@@ -55,36 +55,43 @@ describe('FvForm', () => {
           state: {},
           actions: {
             getProduct: jest.fn(),
-            getOffer: jest.fn(),
+            getSubAccount: jest.fn(),
             getThirdPartyAccount: jest.fn(),
             getPaymentCondition: jest.fn(),
             getPaymentStructure: jest.fn(),
             getBusinessAccount: jest.fn(),
-            getPersonalAccount: jest.fn()
-          }
-        }
-      }
+            getPersonalAccount: jest.fn(),
+          },
+        },
+        members: {
+          namespaced: true,
+          state: {},
+          actions: {
+            get: jest.fn(),
+          },
+        },
+      },
     })
   })
   it('should render a readonly form by default', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="icon"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="pageTitle"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="editBtn"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="steps"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="stepForm"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="icon"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="pageTitle"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="editBtn"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="steps"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="stepForm"]').exists()).toBeTruthy()
     expect(wrapper.find('[data-testid="cancelBtn"]').exists()).toBe(false)
     expect(wrapper.find('[data-testid="submitBtn"]').exists()).toBe(false)
   })
   it('should render a writable form', () => {
     const wrapper = factory({ action: 'edit' })
-    expect(wrapper.find('[data-testid="icon"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="pageTitle"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="icon"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="pageTitle"]').exists()).toBeTruthy()
     expect(wrapper.find('[data-testid="editBtn"]').exists()).toBe(false)
-    expect(wrapper.find('[data-testid="steps"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="stepForm"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="cancelBtn"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="submitBtn"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="steps"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="stepForm"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="cancelBtn"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="submitBtn"]').exists()).toBeTruthy()
   })
   it('should change page when back icon is clicked and form is in read mode', () => {
     const wrapper = factory()
@@ -118,7 +125,7 @@ describe('FvForm', () => {
     const iconBack = wrapper.find('[data-testid="icon"]')
     iconBack.vm.$emit('icon:clicked')
     await wrapper.vm.$nextTick()
-    expect(wrapper.find('[data-testid="editBtn"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="editBtn"]').exists()).toBeTruthy()
     expect(wrapper.find('[data-testid="cancelBtn"]').exists()).toBe(false)
     expect(wrapper.find('[data-testid="submitBtn"]').exists()).toBe(false)
   })
@@ -138,7 +145,7 @@ describe('FvForm', () => {
     const cancelBtn = wrapper.find('[data-testid="cancelBtn"]')
     cancelBtn.vm.$emit('button:click')
     await wrapper.vm.$nextTick()
-    expect(wrapper.find('[data-testid="editBtn"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="editBtn"]').exists()).toBeTruthy()
     expect(wrapper.find('[data-testid="cancelBtn"]').exists()).toBe(false)
     expect(wrapper.find('[data-testid="submitBtn"]').exists()).toBe(false)
   })

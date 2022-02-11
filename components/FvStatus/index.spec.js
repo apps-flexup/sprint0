@@ -4,23 +4,23 @@ import FvStatus from './index.vue'
 const factory = (propsData) => {
   return mount(FvStatus, {
     propsData: {
-      ...propsData
+      ...propsData,
     },
     slots: {
-      icon: 'plop'
+      icon: 'plop',
     },
     mocks: {
       $t: (msg) => {
         return msg
-      }
-    }
+      },
+    },
   })
 }
 
 describe('FvStatus', () => {
   it('should render a status btn', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="statusBtn"').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="statusBtn"').exists()).toBeTruthy()
   })
   it('should emit an event when clicked', () => {
     const wrapper = factory()

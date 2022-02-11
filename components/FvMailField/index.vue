@@ -19,43 +19,40 @@ export default {
       type: String,
       default() {
         return null
-      }
+      },
     },
     labelValue: {
       type: String,
       default() {
         return null
-      }
-    }
+      },
+    },
   },
   data() {
     return {
       valueType: 'Mail',
-      mailLabel: this.$t('mediaField.mail.placeholder')
+      mailLabel: this.$t('mediaField.mail.placeholder'),
     }
-  },
-  mounted() {
-    console.log('Composant ', this.$options.name)
   },
   methods: {
     mailChanged(v) {
       const payload = {
         value_type: this.valueType,
-        value: v
+        value: v,
       }
       this.$emit('mail:value:changed', payload)
     },
     labelChanged(v) {
       const payload = {
         value_type: this.valueType,
-        label: v
+        label: v,
       }
       this.$emit('mail:label:changed', payload)
     },
     deleteClicked() {
       this.$emit('mail:delete:clicked')
-    }
-  }
+    },
+  },
 }
 </script>
 

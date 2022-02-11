@@ -4,23 +4,23 @@ import FvMediaField from './index.vue'
 const factory = (propsData) => {
   return mount(FvMediaField, {
     propsData: {
-      ...propsData
+      ...propsData,
     },
     mocks: {
-      $t: (msg) => msg
+      $t: (msg) => msg,
     },
     stubs: {
-      FvTextField: true
-    }
+      FvTextField: true,
+    },
   })
 }
 
 describe('FvMediaField', () => {
   it('should render a fv media field', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="valueField"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="labelField"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="deleteIcon"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="valueField"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="labelField"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="deleteIcon"]').exists()).toBeTruthy()
   })
   it('should display media value in value field', () => {
     const value = 'value'

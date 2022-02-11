@@ -39,12 +39,12 @@
         )
     v-row
       v-col(cols="8")
-        fv-offer-autocomplete(
+        fv-product-autocomplete(
           data-testid="offerAutocomplete"
           :disabled="!thirdPartyAccountId"
           :thirdPartyAccountId="thirdPartyAccountId"
           :returnObject="true"
-          @offers:selected="offerSelected"
+          @products:selected="productSelected"
         )
       v-col(cols="4")
         fv-structure-autocomplete(
@@ -75,35 +75,33 @@ export default {
       type: Number,
       default() {
         return null
-      }
+      },
     },
     order: {
       type: Object,
       default() {
         return {}
-      }
-    }
+      },
+    },
   },
   data() {
     return {
       localOrder: {},
       thirdPartyAccountId: null,
       orderDate: null,
-      orderLines: []
+      orderLines: [],
     }
   },
   watch: {
     order() {
-      console.log('Order changed: ', this.order)
       if (Object.entries(this.order).length === 0) {
         this.clearOrder()
       } else {
         this.fillFieldsWithOrder()
       }
-    }
+    },
   },
   mounted() {
-    console.log('Composant ', this.$options.name)
     this.fillFieldsWithOrder()
     this.$emit('order:dateChanged', this.i, this.orderDate)
   },
@@ -116,9 +114,7 @@ export default {
       this.$emit('order:labelChanged', this.i, label)
     },
     structureSelected(structureId) {
-      const structure = this.$store.getters['paymentStructures/getDetailsById'](
-        structureId
-      )
+      const structure = this.$store.getters['paymentStructures/getDetailsById'](structureId)
       this.$emit('order:structureSelected', this.i, structure)
     },
     thirdPartyAccountSelected(thirdPartyAccountId) {
@@ -126,52 +122,38 @@ export default {
         this.thirdPartyAccountId = thirdPartyAccountId
         this.orderLines = []
       }
-      this.$emit(
-        'order:thirdPartyAccountSelected',
-        this.i,
-        this.thirdPartyAccountId
-      )
+      this.$emit('order:thirdPartyAccountSelected', this.i, this.thirdPartyAccountId)
     },
-    offerSelected(offer) {
-      console.log('offer selected: ', offer)
-      if (!offer) return
+    productSelected(product) {
+      if (!product) return
       const payload = {
-        offer_id: offer.id,
-        offer: offer.name || 'absence de description',
-        status: 'draft',
-        quantity: 1,
-        pas: 1,
-        vat: offer.vat,
-        dimension: offer.dimension,
-        unit: offer.unit,
-        currency: offer.currency,
+        id: product.id,
+        name: product.name || 'absence de description',
+        status: product.status,
+        vat: product.vat,
+        dimension: product.unit.dimension,
+        unit: product.unit.unit,
+        currency: product.price.currency,
         amount() {
           const res = parseFloat(this.quantity) * parseFloat(this.price)
           return res
         },
-        price: offer.price
       }
       this.orderLines.push(payload)
       this.$emit('order:orderLinesChanged', this.i, this.orderLines)
     },
     deleteOrderLine(orderLine) {
-      this.orderLines = this.orderLines.filter(
-        (v) => v.offer_id !== orderLine.offer_id
-      )
+      this.orderLines = this.orderLines.filter((v) => v.offer_id !== orderLine.offer_id)
       this.$emit('order:orderLinesChanged', this.i, this.orderLines)
     },
     quantityChanged(orderLine, quantity) {
-      const i = this.orderLines.findIndex(
-        (element) => element.offer_id === orderLine.offer_id
-      )
+      const i = this.orderLines.findIndex((element) => element.offer_id === orderLine.offer_id)
       const tmp = this.orderLines[i]
       tmp.quantity = quantity
       this.$set(this.orderLines, i, tmp)
     },
     vatChanged(orderLine, vat) {
-      const i = this.orderLines.findIndex(
-        (element) => element.offer_id === orderLine.offer_id
-      )
+      const i = this.orderLines.findIndex((element) => element.offer_id === orderLine.offer_id)
       const tmp = this.orderLines[i]
       tmp.vat = vat
       this.$set(this.orderLines, i, tmp)
@@ -190,8 +172,8 @@ export default {
       this.thirdPartyAccountId = null
       this.orderLines = []
       this.localOrder = {}
-    }
-  }
+    },
+  },
 }
 </script>
 <style scoped>

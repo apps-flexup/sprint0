@@ -14,7 +14,7 @@ const currencies = [
     iso3: 'EUR',
     ison: 978,
     minor: 2,
-    name: 'Euro'
+    name: 'Euro',
   },
   {
     active: true,
@@ -22,8 +22,8 @@ const currencies = [
     iso3: 'USD',
     ison: 840,
     minor: 2,
-    name: 'US Dollar'
-  }
+    name: 'US Dollar',
+  },
 ]
 
 const factory = () => {
@@ -31,8 +31,8 @@ const factory = () => {
     localVue,
     store,
     mocks: {
-      $t: (msg) => msg
-    }
+      $t: (msg) => msg,
+    },
   })
 }
 beforeEach(() => {
@@ -41,22 +41,22 @@ beforeEach(() => {
       currencies: {
         namespaced: true,
         actions: {
-          get: jest.fn()
+          get: jest.fn(),
         },
         getters: {
           all: () => currencies,
           findIso: () => () => currencies[0],
-          find: () => () => currencies[0]
-        }
-      }
-    }
+          find: () => () => currencies[0],
+        },
+      },
+    },
   })
 })
 
 describe('FvCurrencyAutocomplete', () => {
   it('should render a fv currency autocomplete', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid=autocomplete]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid=autocomplete]').exists()).toBeTruthy()
   })
   it('should get all currencies from the store', () => {
     const wrapper = factory()

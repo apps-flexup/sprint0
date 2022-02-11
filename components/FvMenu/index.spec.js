@@ -18,27 +18,27 @@ const account = {
   roles_methods: null,
   supplier: false,
   user_id: '2ae5fcf8-9ed5-480a-89c8-a2f946e72140',
-  id: 1
+  id: 1,
 }
 
 const $activeAccount = {
-  get: jest.fn()
+  get: jest.fn(),
 }
 
 const $displayRules = {
   accountName: jest.fn(),
-  userName: jest.fn()
+  userName: jest.fn(),
 }
 
 const loggedInAuth = {
   loggedIn: true,
   user: {
-    preferred_username: 'toto'
-  }
+    preferred_username: 'toto',
+  },
 }
 
 const loggedOutAuth = {
-  loggedIn: false
+  loggedIn: false,
 }
 
 const loggedInFactory = () => {
@@ -49,8 +49,8 @@ const loggedInFactory = () => {
       $t: (msg) => msg,
       $auth: loggedInAuth,
       $activeAccount,
-      $displayRules
-    }
+      $displayRules,
+    },
   })
 }
 
@@ -60,8 +60,8 @@ const loggedOutFactory = () => {
     store,
     mocks: {
       $t: (msg) => msg,
-      $auth: loggedOutAuth
-    }
+      $auth: loggedOutAuth,
+    },
   })
 }
 
@@ -72,30 +72,30 @@ beforeEach(() => {
         namespaced: true,
         getters: {
           selected: jest.fn(),
-          findById: () => () => account
-        }
+          findById: () => () => account,
+        },
       },
       settings: {
         namespaced: true,
         actions: {
-          getGlobalMenu: jest.fn()
+          getGlobalMenu: jest.fn(),
         },
         getters: {
-          globalMenu: jest.fn()
-        }
-      }
-    }
+          globalMenu: jest.fn(),
+        },
+      },
+    },
   })
 })
 
 describe('FvMenu', () => {
   test('should display all menus if user is connected', () => {
     const wrapper = loggedInFactory()
-    expect(wrapper.find('[data-testid="spaceMenu"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="accountMenu"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="userMenu"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="spaceMenu"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="accountMenu"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="userMenu"]').exists()).toBeTruthy()
     expect(wrapper.findAll('[data-testid="globalMenu"]').length).toBe(1)
-    expect(wrapper.find('[data-testid="logoutButton"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="logoutButton"]').exists()).toBeTruthy()
     expect(wrapper.find('[data-testid="loginButton"]').exists()).toBe(false)
   })
   test('should display global menu and login button if user is not connected', () => {
@@ -105,6 +105,6 @@ describe('FvMenu', () => {
     expect(wrapper.find('[data-testid="userMenu"]').exists()).toBe(false)
     expect(wrapper.findAll('[data-testid="globalMenu"]').length).toBe(1)
     expect(wrapper.find('[data-testid="logoutButton"]').exists()).toBe(false)
-    expect(wrapper.find('[data-testid="loginButton"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="loginButton"]').exists()).toBeTruthy()
   })
 })

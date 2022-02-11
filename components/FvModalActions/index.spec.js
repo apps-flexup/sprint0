@@ -4,16 +4,16 @@ import FvModalActions from './index'
 const factory = () => {
   return shallowMount(FvModalActions, {
     mocks: {
-      $t: (msg) => msg
-    }
+      $t: (msg) => msg,
+    },
   })
 }
 
 describe('FvModalActions', () => {
   it('should render a fv modal action', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="closeButton"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="saveButton"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="closeButton"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="saveButton"]').exists()).toBeTruthy()
   })
   it('should emit an event when clicked on close button', () => {
     const wrapper = factory()

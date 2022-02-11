@@ -13,81 +13,81 @@ const paymentConditions = [
     references: {
       r1: {
         key: 'equity',
-        value: 100
+        value: 100,
       },
       r2: {
         key: 'equity',
-        value: 100
+        value: 100,
       },
       r3: {
         key: 'none',
-        value: 100
+        value: 100,
       },
       r4: {
         key: 'none',
-        value: 100
+        value: 100,
       },
       r5: {
         key: 'none',
-        value: 100
+        value: 100,
       },
       r6: {
         key: 'projectOrThirdParty',
-        value: 100
+        value: 100,
       },
       r7: {
         key: 'none',
-        value: 100
+        value: 100,
       },
       r8: {
         key: 'none',
-        value: 100
-      }
+        value: 100,
+      },
     },
     risk: 100,
     account_id: 1,
-    id: 2
+    id: 2,
   },
   {
     label: 'Base simple',
     references: {
       r1: {
         key: 'base',
-        value: 40
+        value: 40,
       },
       r2: {
         key: 'endOfDeliveryMonth',
-        value: 50
+        value: 50,
       },
       r3: {
         key: 'none',
-        value: 100
+        value: 100,
       },
       r4: {
         key: 'none',
-        value: 100
+        value: 100,
       },
       r5: {
         key: 'none',
-        value: 100
+        value: 100,
       },
       r6: {
         key: 'projectOrThirdParty',
-        value: 100
+        value: 100,
       },
       r7: {
         key: 'equity',
-        value: 100
+        value: 100,
       },
       r8: {
         key: 'equity',
-        value: 100
-      }
+        value: 100,
+      },
     },
     risk: 20,
     account_id: 1,
-    id: 3
-  }
+    id: 3,
+  },
 ]
 
 const factory = () => {
@@ -95,8 +95,8 @@ const factory = () => {
     localVue,
     store,
     mocks: {
-      $t: (msg) => msg
-    }
+      $t: (msg) => msg,
+    },
   })
 }
 
@@ -106,20 +106,20 @@ beforeEach(() => {
       paymentConditions: {
         namespaced: true,
         actions: {
-          get: jest.fn()
+          get: jest.fn(),
         },
         getters: {
-          all: () => paymentConditions
-        }
-      }
-    }
+          all: () => paymentConditions,
+        },
+      },
+    },
   })
 })
 
 describe('FvPaymentConditionAutocomplete', () => {
   it('should render a fv payment condition autocomplete', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="autocomplete"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="autocomplete"]').exists()).toBeTruthy()
   })
   it('should emit an event when a payment condition is selected', () => {
     const wrapper = factory()

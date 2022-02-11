@@ -10,44 +10,43 @@ describe('FvThirdPartyAccountAutocomplete', () => {
   let store
   const activeAccount = {
     id: 2,
-    name: 'Active account'
+    name: 'Active account',
   }
   const localThirdPartyAccounts = [
     {
       id: 1,
       directory: 'Local',
       name: 'fred',
-      avatar: 'avatar-fred'
-    }
+      avatar: 'avatar-fred',
+    },
   ]
   const flexupThirdPartyAccounts = [
     {
       name: 'Cosys',
       flexup_id: 3,
       directory: 'Flexup',
-      id: 2
-    }
+      id: 2,
+    },
   ]
   const flexupAccounts = [
     {
       name: 'Flexup',
-      id: 1
-    }
+      id: 1,
+    },
   ]
   const allItems = {
     flexupThirdParties: flexupThirdPartyAccounts,
     localThirdParties: localThirdPartyAccounts,
-    flexupAccounts
+    flexupAccounts,
   }
-  const thirdPartyAccounts =
-    localThirdPartyAccounts + flexupThirdPartyAccounts + flexupAccounts
+  const thirdPartyAccounts = localThirdPartyAccounts + flexupThirdPartyAccounts + flexupAccounts
   const $activeAccount = {
     allThirdPartyAccounts: () =>
       new Promise((resolve) => {
         setTimeout(() => {
           resolve([thirdPartyAccounts])
         }, 300)
-      })
+      }),
   }
   const factory = (propsData) => {
     return mount(FvThirdPartyAccountAutocomplete, {
@@ -55,15 +54,15 @@ describe('FvThirdPartyAccountAutocomplete', () => {
       vuetify,
       store,
       propsData: {
-        ...propsData
+        ...propsData,
       },
       stubs: {
-        FvAutocomplete: true
+        FvAutocomplete: true,
       },
       mocks: {
         $activeAccount,
-        $t: (msg) => msg
-      }
+        $t: (msg) => msg,
+      },
     })
   }
   beforeEach(() => {
@@ -72,23 +71,23 @@ describe('FvThirdPartyAccountAutocomplete', () => {
         thirdPartyAccounts: {
           namespaced: true,
           actions: {
-            get: jest.fn()
-          }
+            get: jest.fn(),
+          },
         },
         accounts: {
           namespaced: true,
           getters: {
             findById: () => () => {
               return activeAccount
-            }
-          }
-        }
-      }
+            },
+          },
+        },
+      },
     })
   })
   it('should render a third party autocomplete', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="autocomplete"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="autocomplete"]').exists()).toBeTruthy()
   })
   it('should emit an event when third party account is selected', () => {
     const wrapper = factory()
@@ -110,13 +109,13 @@ describe('FvThirdPartyAccountAutocomplete', () => {
       localThirdPartyAccounts[0],
       { divider: true },
       { header: 'third-parties.flexupAccounts' },
-      flexupAccounts[0]
+      flexupAccounts[0],
     ]
     expect(wrapper.vm.items).toEqual(expectedItems)
   })
   it('should remove transmitted local third parties', async () => {
     const toRemove = {
-      localThirdParties: [1]
+      localThirdParties: [1],
     }
     const wrapper = factory({ toRemove })
     await wrapper.setData({ allItems })
@@ -125,13 +124,13 @@ describe('FvThirdPartyAccountAutocomplete', () => {
       flexupThirdPartyAccounts[0],
       { divider: true },
       { header: 'third-parties.flexupAccounts' },
-      flexupAccounts[0]
+      flexupAccounts[0],
     ]
     expect(wrapper.vm.items).toEqual(expectedItems)
   })
   it('should remove transmitted flexup third parties', async () => {
     const toRemove = {
-      flexupThirdParties: [2]
+      flexupThirdParties: [2],
     }
     const wrapper = factory({ toRemove })
     await wrapper.setData({ allItems })
@@ -140,13 +139,13 @@ describe('FvThirdPartyAccountAutocomplete', () => {
       localThirdPartyAccounts[0],
       { divider: true },
       { header: 'third-parties.flexupAccounts' },
-      flexupAccounts[0]
+      flexupAccounts[0],
     ]
     expect(wrapper.vm.items).toEqual(expectedItems)
   })
   it('should remove transmitted flexup account with same id as third party', async () => {
     const toRemove = {
-      flexupAccounts: [1]
+      flexupAccounts: [1],
     }
     const wrapper = factory({ toRemove })
     await wrapper.setData({ allItems })
@@ -156,7 +155,7 @@ describe('FvThirdPartyAccountAutocomplete', () => {
       { divider: true },
       { header: 'third-parties.localThirdParties' },
       localThirdPartyAccounts[0],
-      { divider: true }
+      { divider: true },
     ]
     expect(wrapper.vm.items).toEqual(expectedItems)
   })

@@ -2,19 +2,19 @@ import { shallowMount } from '@vue/test-utils'
 import FvProductIndex from './index'
 
 const $router = {
-  push: jest.fn()
+  push: jest.fn(),
 }
 
 const cannotCreateProductRights = {
   canCreateProduct: () => {
     return false
-  }
+  },
 }
 
 const canCreateProductRights = {
   canCreateProduct: () => {
     return true
-  }
+  },
 }
 
 const cannotCreateProductFactory = () => {
@@ -22,8 +22,8 @@ const cannotCreateProductFactory = () => {
     mocks: {
       $t: (msg) => msg,
       $router,
-      $rights: cannotCreateProductRights
-    }
+      $rights: cannotCreateProductRights,
+    },
   })
 }
 
@@ -32,8 +32,8 @@ const canCreateProductFactory = () => {
     mocks: {
       $t: (msg) => msg,
       $router,
-      $rights: canCreateProductRights
-    }
+      $rights: canCreateProductRights,
+    },
   })
 }
 
@@ -44,32 +44,29 @@ beforeEach(() => {
 describe('FvProductIndex', () => {
   it('should render a fv product index', () => {
     const wrapper = cannotCreateProductFactory()
-    expect(wrapper.find('[data-testid="productList"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="productList"]').exists()).toBeTruthy()
   })
   it.each([
     ['selected', 'read'],
-    ['edit', 'edit']
-  ])(
-    'should redirect to %s product when it is selected for %s from list',
-    (action, expectedPath) => {
-      const wrapper = cannotCreateProductFactory()
-      const list = wrapper.find('[data-testid="productList"]')
-      const product = {
-        id: 42
-      }
-      list.vm.$emit(`list:${action}`, product)
-      expect($router.push).toHaveBeenCalledTimes(1)
-      const expectedRoute = `/products/${expectedPath}/${product.id}`
-      expect($router.push).toHaveBeenCalledWith(expectedRoute)
+    ['edit', 'edit'],
+  ])('should redirect to %s product when it is selected for %s from list', (action, expectedPath) => {
+    const wrapper = cannotCreateProductFactory()
+    const list = wrapper.find('[data-testid="productList"]')
+    const product = {
+      id: 42,
     }
-  )
+    list.vm.$emit(`list:${action}`, product)
+    expect($router.push).toHaveBeenCalledTimes(1)
+    const expectedRoute = `/products/${expectedPath}/${product.id}`
+    expect($router.push).toHaveBeenCalledWith(expectedRoute)
+  })
   describe('User can create a product', () => {
     let wrapper
     beforeEach(() => {
       wrapper = canCreateProductFactory()
     })
     it('should have a create button', () => {
-      expect(wrapper.find('[data-testid="headerIndex"]').exists()).toBe(true)
+      expect(wrapper.find('[data-testid="headerIndex"]').exists()).toBeTruthy()
     })
     it('should redirect to create product when clicked on create button', () => {
       const headerIndex = wrapper.find('[data-testid="headerIndex"]')

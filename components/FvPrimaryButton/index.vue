@@ -2,6 +2,7 @@
 .fv-primary-button
   v-btn(
     data-testid="button"
+    :disabled="disabled"
     x-large
     color="#FCBF1E"
     @click.prevent="click"
@@ -12,11 +13,17 @@
 <script>
 export default {
   name: 'FvPrimaryButton',
+  props: {
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
+  },
   methods: {
     click() {
       this.$emit('button:click')
-    }
-  }
+    },
+  },
 }
 </script>
 

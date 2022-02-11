@@ -17,6 +17,8 @@
     //    td(
     //      v-for="i in displayedHeaders.length - 3"
     //    )
+    template(v-slot:item.label='{ item }')
+      div {{ item.label }}
     template(v-slot:item.date='{ item }')
       div {{ localeDate(item) }}
     template(v-slot:item.value='{ item }')
@@ -36,26 +38,26 @@ export default {
       type: Boolean,
       default() {
         return false
-      }
+      },
     },
     headers: {
       type: Array,
       default() {
         return []
-      }
+      },
     },
     items: {
       type: Array,
       default() {
         return []
-      }
+      },
     },
     options: {
       type: Object,
       default() {
         return null
-      }
-    }
+      },
+    },
   },
   computed: {
     total() {
@@ -69,7 +71,7 @@ export default {
     preferredCurrency() {
       const res = this.$store.getters['settings/settings']
       return res.currency
-    }
+    },
   },
   methods: {
     localeDate(item) {
@@ -85,8 +87,8 @@ export default {
     },
     sortBy(v) {
       this.$emit('dataTable:sortBy', v)
-    }
-  }
+    },
+  },
 }
 </script>
 

@@ -14,17 +14,14 @@ export default {
   data() {
     return {
       product: {
-        status: 'active'
-      }
+        status: 'active',
+      },
     }
-  },
-  mounted() {
-    console.log('Composant ', this.$options.name)
   },
   methods: {
     createProduct(payload) {
       this.$activeAccount.addProduct(payload)
-    }
-  }
+    },
+  },
 }
 </script>

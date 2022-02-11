@@ -13,11 +13,11 @@ describe('FvTh', () => {
       localVue,
       store,
       computed: {
-        sortIconColor: () => 'black'
+        sortIconColor: () => 'black',
       },
       propsData: {
-        ...propsData
-      }
+        ...propsData,
+      },
     })
   }
   beforeEach(() => {
@@ -27,21 +27,21 @@ describe('FvTh', () => {
           namespaced: true,
           state: {},
           actions: {
-            getSettings: jest.fn()
-          }
-        }
-      }
+            getSettings: jest.fn(),
+          },
+        },
+      },
     })
   })
   it('should render a fv th', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="div"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="text"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="div"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="text"]').exists()).toBeTruthy()
     expect(wrapper.find('[data-testid="sortIcon"]').exists()).toBe(false)
   })
   it('should render a sort icon if sortable', () => {
     const wrapper = factory({ sortable: true })
-    expect(wrapper.find('[data-testid="sortIcon"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="sortIcon"]').exists()).toBeTruthy()
   })
   it('should do nothing when clicked and not sortable', () => {
     const wrapper = factory()

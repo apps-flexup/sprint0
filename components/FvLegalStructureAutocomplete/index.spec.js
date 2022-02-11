@@ -11,24 +11,24 @@ const legalStructures = [
   {
     id: 1,
     name: 'Auto-entrepreneur',
-    sigle: 'AE'
+    sigle: 'AE',
   },
   {
     id: 2,
     name: 'Entreprise agricole à responsabilité limitée',
-    sigle: 'EARL'
+    sigle: 'EARL',
   },
   {
     id: 3,
     name: 'Entreprise individuelle',
-    sigle: 'EI'
-  }
+    sigle: 'EI',
+  },
 ]
 
 const factory = () => {
   return shallowMount(FvLegalStructureAutocomplete, {
     localVue,
-    store
+    store,
   })
 }
 beforeEach(() => {
@@ -37,20 +37,20 @@ beforeEach(() => {
       contracts: {
         namespaced: true,
         actions: {
-          getLegalStructures: jest.fn()
+          getLegalStructures: jest.fn(),
         },
         getters: {
-          legalStructures: () => legalStructures
-        }
-      }
-    }
+          legalStructures: () => legalStructures,
+        },
+      },
+    },
   })
 })
 
 describe('FvLegalStructureAutocomplete', () => {
   it('should render a fv legal structure autocomplete', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid=autocomplete]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid=autocomplete]').exists()).toBeTruthy()
   })
   it('should get all legal structures from the store', () => {
     const wrapper = factory()

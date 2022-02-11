@@ -6,22 +6,22 @@ const localVue = createLocalVue()
 localVue.use(AsyncComputed)
 
 const $displayRules = {
-  priceToPreferredCurrency: () => 'convertedPrice'
+  priceToPreferredCurrency: () => 'convertedPrice',
 }
 
 const factory = () => {
   return mount(FvPriceToPreferredCurrency, {
     localVue,
     mocks: {
-      $displayRules
-    }
+      $displayRules,
+    },
   })
 }
 
 describe('FvPriceToPreferredCurrency', () => {
   it('should render a fv price to preferred currency', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="price"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="price"]').exists()).toBeTruthy()
   })
   it('should display the converted price', async () => {
     const wrapper = factory()

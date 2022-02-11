@@ -1,7 +1,5 @@
 import { OrderItemVM } from '~/src/flexup/adapters/primary/view-models-generator/create-order-screen/create-purchase-screen/orderItemVM'
-import {
-  OrderItem
-} from '~/src/flexup/corelogic/entities/orders/orderItem'
+import { OrderItem } from '~/src/flexup/corelogic/entities/orders/orderItem'
 
 export class CustomOrderItemVM extends OrderItemVM {
   canEditProductName: boolean = true

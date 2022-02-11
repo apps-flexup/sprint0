@@ -8,8 +8,8 @@
         :items='orderLines'
         item-key='id'
       )
-        template(v-slot:item.offer="{ item }")
-          div(v-to-locale="item.offer")
+        template(v-slot:item.product="{ item }")
+          div(v-to-locale="item.product")
         template(v-slot:item.unit="{ item }")
           div(v-to-unit="item")
         template(v-slot:item.quantity="{ item }")
@@ -72,25 +72,23 @@ export default {
       type: Array,
       default() {
         return []
-      }
+      },
     },
     details: {
       type: Boolean,
       default() {
         return false
-      }
-    }
+      },
+    },
   },
   computed: {
     headers() {
       const addAction = !this.details
       const res = this.$activeAccount.headersOrderLines(addAction)
-      console.log(res)
       return translateHeaders(this.$i18n, res)
-    }
+    },
   },
   mounted() {
-    console.log('Composant ', this.$options.name)
     this.$store.dispatch('headers/getOrderLineHeaders')
     this.$store.dispatch('accounts/get')
     this.$store.dispatch('settings/getSettings')
@@ -106,8 +104,8 @@ export default {
     },
     deleteOrderLine(v) {
       this.$emit('orderLines:delete', v)
-    }
-  }
+    },
+  },
 }
 </script>
 

@@ -1,10 +1,8 @@
 // Action de base
 
 const setMediaEntities = (accountId, medias) => {
-  const entityType = 'Account'
   if (!medias) return
   medias.forEach((media) => {
-    media.entity_type = entityType
     media.entity_id = accountId
   })
 }
@@ -19,6 +17,7 @@ export default {
   get({ commit, getters }) {
     if (!this.$auth.loggedIn) return
     const request = `given-roles?to_id=${this.$auth.user.sub}`
+    console.log('given-roles', getters.current)
     this.$axios.$get(request).then((givenRoles) => {
       if (!getters.current && givenRoles.length > 0) {
         const account = parseInt(givenRoles[0].from_id)
@@ -55,15 +54,15 @@ export default {
       to_id: this.$auth.user.sub,
       role: 'admin',
       data: null,
-      status: 'Confirmed'
+      status: 'Confirmed',
     }
     dispatch('members/add', adminRole, { root: true })
     const thirdPartyAccount = {
       name: res.name,
-      account_id: null
+      account_id: null,
     }
     dispatch('thirdPartyAccounts/addToFlexup', thirdPartyAccount, {
-      root: true
+      root: true,
     })
     dispatch('settings/createSettings', {}, { root: true })
   },
@@ -72,8 +71,8 @@ export default {
       description: {
         type: 'Mail',
         value: user.email,
-        label: null
-      }
+        label: null,
+      },
     }
     const medias = [emailMedia]
     const account = {
@@ -84,7 +83,7 @@ export default {
       firstname: user.given_name,
       lastname: user.family_name,
       country: 'FRA',
-      medias
+      medias,
     }
     dispatch('accounts/add', account, { root: true })
   },
@@ -100,7 +99,7 @@ export default {
       type: 'ThirdParty',
       name: thirdParty.name,
       medias: thirdParty.medias,
-      owners: thirdParty.owners
+      owners: thirdParty.owners,
     }
     if (thirdParty.type === 'Personal') {
       account.firstname = thirdParty.firstname
@@ -138,5 +137,5 @@ export default {
     account.medias = payload.data.medias
     const res = await this.$repos.accounts.update(account)
     return res
-  }
+  },
 }

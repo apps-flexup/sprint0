@@ -276,13 +276,9 @@
       "accounts-newBusinessAccount": "Nouveau compte professionnel",
       "accounts-newSubAccount": "Nouveau sous-compte",
       "contacts": "Contacts",
+      "contracts": "Contrats",
       "dashboard": "Tableau de bord",
       "index": "Accueil",
-      "offers": "Offres",
-      "offers-action-id": "Mon offre",
-      "offers-action-read": "Voir",
-      "offers-action-edit": "Modifier",
-      "offers-new": "Nouvelle offre",
       "orders": "Commandes",
       "orders-new": "Nouvelle commande",
       "paymentConditions": "Conditions de paiement",
@@ -456,8 +452,11 @@
         "periodicity": "Périodicité",
         "name": "Nom du produit",
         "unit": "Unité",
-        "price": "Prix",
         "currency": "Devise",
+        "price": "Prix HT",
+        "price_ttc": "Prix TTC",
+        "vat": "TVA",
+        "visibility": "Visibilité",
         "elasticity": "Élasticité",
         "validate": "Valider",
         "cancel": "Annuler",
@@ -667,7 +666,7 @@
         "title": "Nouvel achat",
         "date": "Date",
         "label": "Libellé",
-        "selectOffer": "Sélectionner une offre",
+        "selectProduct": "Sélectionner un produit",
         "newCustomOrderItem": "Créer un nouveau produit",
         "cancel": "Annuler",
         "saveAsDraft": "Sauvegarder le brouillon"
@@ -750,6 +749,10 @@
       "category": "Categorie",
       "periodicity": "Périodicité",
       "unit": "Unité",
+      "price": "Prix HT",
+      "price_ttc": "Prix TTC",
+      "vat": "TVA",
+      "visibility": "Visibilité",
       "status": "Statut"
     },
     "contracts": {
@@ -766,6 +769,7 @@
     "orders": {
       "thirdParty": "Tiers",
       "date": "Date",
+      "label": "Libellé",
       "value": "Total TTC",
       "status": "Statut"
     },
@@ -882,7 +886,8 @@
       "labels": {
         "priceNbDigits": "Prix: nombre de chiffres après la virgule",
         "defaultVat": "TVA par défaut",
-        "vatNbDigits": "TVA: nombre de chiffres après la virgule"
+        "vatNbDigits": "TVA: nombre de chiffres après la virgule",
+        "rowsPerPage": "Lignes par page"
       }
     }
   },

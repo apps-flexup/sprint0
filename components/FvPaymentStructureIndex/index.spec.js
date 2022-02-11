@@ -2,15 +2,15 @@ import { shallowMount } from '@vue/test-utils'
 import FvPaymentStructureIndex from './index'
 
 const $router = {
-  push: jest.fn()
+  push: jest.fn(),
 }
 
 const factory = () => {
   return shallowMount(FvPaymentStructureIndex, {
     mocks: {
       $t: (msg) => msg,
-      $router
-    }
+      $router,
+    },
   })
 }
 
@@ -21,10 +21,8 @@ beforeEach(() => {
 describe('FvPaymentStructureIndex', () => {
   it('should render a fv payment structure index', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="headerIndex"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="paymentStructureList"]').exists()).toBe(
-      true
-    )
+    expect(wrapper.find('[data-testid="headerIndex"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="paymentStructureList"]').exists()).toBeTruthy()
   })
   it('should redirect to create payment structure when clicked on create button', () => {
     const wrapper = factory()
@@ -38,7 +36,7 @@ describe('FvPaymentStructureIndex', () => {
     const wrapper = factory()
     const list = wrapper.find('[data-testid="paymentStructureList"]')
     const paymentStructure = {
-      id: 42
+      id: 42,
     }
     list.vm.$emit('list:selected', paymentStructure)
     expect($router.push).toHaveBeenCalledTimes(1)

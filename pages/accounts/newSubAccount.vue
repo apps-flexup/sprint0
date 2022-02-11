@@ -16,14 +16,14 @@ export default {
       account: {
         parent_type: 'Account',
         parent_id: this.$activeAccount.get(),
-        type: 'SubAccount'
-      }
+        type: 'SubAccount',
+      },
     }
   },
   methods: {
     createAccount(account) {
       this.$store.dispatch('accounts/add', account)
-    }
-  }
+    },
+  },
 }
 </script>

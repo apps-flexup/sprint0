@@ -20,15 +20,15 @@ describe('FvNavBar', () => {
         $auth: {
           loggedIn: payload ? payload.loggedIn : true,
           user: {
-            preferred_username: 'HelloWorld'
-          }
+            preferred_username: 'HelloWorld',
+          },
         },
-        $t: (msg) => msg
+        $t: (msg) => msg,
       },
       slots: {
         left: slot,
-        right: slot
-      }
+        right: slot,
+      },
     })
   }
   beforeEach(() => {
@@ -38,25 +38,25 @@ describe('FvNavBar', () => {
           namespaced: true,
           actions: {
             getSellerNavBar: jest.fn(),
-            getManageNavBar: jest.fn()
-          }
+            getManageNavBar: jest.fn(),
+          },
         },
         accounts: {
           namespaced: true,
           getters: {
             selected: jest.fn(),
-            findById: () => () => account
-          }
-        }
-      }
+            findById: () => () => account,
+          },
+        },
+      },
     })
     vuetify = new Vuetify()
   })
   it('should render a fv nav bar clean when user is disconnected', () => {
     const wrapper = factory({ loggedIn: false })
-    expect(wrapper.find('[data-testid="navbar"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="icon-navbar"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="title-navbar"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="navbar"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="icon-navbar"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="title-navbar"]').exists()).toBeTruthy()
     expect(wrapper.find('[data-testid="slot-left"]').exists()).toBe(false)
     expect(wrapper.find('[data-testid="slot-right"]').exists()).toBe(false)
   })

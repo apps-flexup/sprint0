@@ -17,25 +17,25 @@ export default {
         {
           name: 'personalThirdParty',
           label: this.$t('forms.thirdPartyAccounts.new.choices.personal'),
-          value: 'PersonalThirdParty'
+          value: 'PersonalThirdParty',
         },
         {
           name: 'businessThirdParty',
           label: this.$t('forms.thirdPartyAccounts.new.choices.business'),
-          value: 'BusinessThirdParty'
+          value: 'BusinessThirdParty',
         },
         {
           name: 'subAccountThirdParty',
           label: this.$t('forms.thirdPartyAccounts.new.choices.sub'),
-          value: 'SubAccountThirdParty'
-        }
-      ]
+          value: 'SubAccountThirdParty',
+        },
+      ],
     }
   },
   methods: {
     createThirdParty(type) {
       this.$router.push(`/thirdPartyAccounts/new${type}`)
-    }
-  }
+    },
+  },
 }
 </script>

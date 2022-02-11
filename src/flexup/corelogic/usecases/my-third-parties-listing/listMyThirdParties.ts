@@ -5,7 +5,7 @@ import { ThirdPartyGateway } from '~/src/flexup/corelogic/gateways/thirdPartyGat
 export const listMyThirdParties: ThunkResult<Promise<void>> = async (
   dispatch,
   _getState,
-  { thirdPartyGateway }: { thirdPartyGateway: ThirdPartyGateway }
+  { thirdPartyGateway }: { thirdPartyGateway: ThirdPartyGateway },
 ) => {
   const orders = await thirdPartyGateway.listMyThirdParties()
   dispatch(Actions.myThirdPartiesListed(orders))

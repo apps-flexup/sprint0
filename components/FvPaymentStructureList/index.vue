@@ -17,8 +17,8 @@ export default {
   data() {
     return {
       rules: {
-        risk: this.$displayRules.paymentStructureRisk
-      }
+        risk: this.$displayRules.paymentStructureRisk,
+      },
     }
   },
   mounted() {
@@ -30,7 +30,7 @@ export default {
     },
     deletePaymentStructure(paymentStructure) {
       this.$store.dispatch('paymentStructures/remove', paymentStructure)
-    }
-  }
+    },
+  },
 }
 </script>

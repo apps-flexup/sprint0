@@ -6,18 +6,18 @@ const valueType = 'Mail'
 const factory = (propsData) => {
   return shallowMount(FvMailField, {
     propsData: {
-      ...propsData
+      ...propsData,
     },
     mocks: {
-      $t: (msg) => msg
-    }
+      $t: (msg) => msg,
+    },
   })
 }
 
 describe('FvMailField', () => {
   it('should render a fv mail field', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="mailField"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="mailField"]').exists()).toBeTruthy()
   })
   it('should emit an event when media value changed', () => {
     const wrapper = factory()
@@ -27,7 +27,7 @@ describe('FvMailField', () => {
     const mailChangedCalls = wrapper.emitted('mail:value:changed')
     const expectedPayload = {
       value_type: valueType,
-      value: mail
+      value: mail,
     }
     expect(mailChangedCalls).toBeTruthy()
     expect(mailChangedCalls).toHaveLength(1)
@@ -41,7 +41,7 @@ describe('FvMailField', () => {
     const labelChangedCalls = wrapper.emitted('mail:label:changed')
     const expectedPayload = {
       value_type: valueType,
-      label
+      label,
     }
     expect(labelChangedCalls).toBeTruthy()
     expect(labelChangedCalls).toHaveLength(1)

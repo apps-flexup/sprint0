@@ -4,15 +4,15 @@ import FvModalButton from './index'
 const factory = () => {
   return mount(FvModalButton, {
     slots: {
-      default: 'HelloWorld'
-    }
+      default: 'HelloWorld',
+    },
   })
 }
 
 describe('FvModalButton', () => {
   it('should render a fv modal button', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid=modal-button]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid=modal-button]').exists()).toBeTruthy()
   })
   it('should emit an event when button is clicked', () => {
     const wrapper = factory()

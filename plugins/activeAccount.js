@@ -8,7 +8,6 @@ const activeAccount = (ctx) => ({
     ctx.store.dispatch('contacts/clear', {}, { root: true })
     ctx.store.dispatch('contracts/clear', {}, { root: true })
     ctx.store.dispatch('currencies/clear', {}, { root: true })
-    ctx.store.dispatch('offers/clear', {}, { root: true })
     ctx.store.dispatch('orders/clear', {}, { root: true })
     ctx.store.dispatch('thirdPartyAccounts/clear', {}, { root: true })
     ctx.store.dispatch('products/clear', {}, { root: true })
@@ -34,17 +33,14 @@ const activeAccount = (ctx) => ({
     ctx.store.dispatch('contracts/getContracts', {}, { root: true })
     ctx.store.dispatch('contracts/getLegalStructures', {}, { root: true })
     ctx.store.dispatch('currencies/get', {}, { root: true })
-    ctx.store.dispatch('offers/get', {}, { root: true })
     ctx.store.dispatch('orders/get', {}, { root: true })
     ctx.store.dispatch('thirdPartyAccounts/get', {}, { root: true })
     ctx.store.dispatch('products/get', {}, { root: true })
     ctx.store.dispatch('paymentConditions/get', {}, { root: true })
     ctx.store.dispatch('paymentStructures/get', {}, { root: true })
-    ctx.store
-      .dispatch('settings/getSettings', {}, { root: true })
-      .then((_data) => {
-        this.setSettings(this.settings())
-      })
+    ctx.store.dispatch('settings/getSettings', {}, { root: true }).then((_data) => {
+      this.setSettings(this.settings())
+    })
     ctx.store.dispatch('members/get')
     ctx.store.dispatch('owners/get')
     ctx.app.router.push('/')
@@ -52,6 +48,9 @@ const activeAccount = (ctx) => ({
   settings() {
     const res = ctx.store.getters['settings/settings']
     return res
+  },
+  itemPerPage() {
+    return ctx.store.getters['settings/itemPerPage']
   },
   setSettings(settings) {
     ctx.app.i18n.locale = settings.locale
@@ -107,9 +106,6 @@ const activeAccount = (ctx) => ({
   addProduct(newProduct) {
     ctx.store.dispatch('products/add', newProduct)
   },
-  addOffer(newOffer) {
-    ctx.store.dispatch('offers/add', newOffer)
-  },
   addPaymentCondition(newPaymentCondition) {
     ctx.store.dispatch('paymentConditions/add', newPaymentCondition)
   },
@@ -125,11 +121,11 @@ const activeAccount = (ctx) => ({
       to_id: entity.parent_id,
       role,
       data: null,
-      status: 'WaitingConfirmation'
+      status: 'WaitingConfirmation',
     }
     console.log('given role: ', givenRole)
     ctx.store.dispatch('members/add', givenRole)
-  }
+  },
 })
 
 export default (ctx, inject) => {

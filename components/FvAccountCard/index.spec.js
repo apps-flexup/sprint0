@@ -7,8 +7,8 @@ beforeEach(() => {
 
 const $auth = {
   user: {
-    sub: ''
-  }
+    sub: '',
+  },
 }
 
 const givenRole = {
@@ -19,7 +19,7 @@ const givenRole = {
   to_id: 'c7e4d104-2e45-4056-94cc-10a87af32693',
   role: 'admin',
   data: null,
-  status: 'active'
+  status: 'active',
 }
 
 const $repos = {
@@ -29,30 +29,30 @@ const $repos = {
         setTimeout(() => {
           resolve([givenRole])
         }, 300)
-      })
-  }
+      }),
+  },
 }
 
 const factory = (propsData) => {
   return mount(FvAccountCard, {
     propsData: {
       ...propsData,
-      type: 'Personal'
+      type: 'Personal',
     },
     mocks: {
       $t: (msg) => msg,
       $auth,
-      $repos
-    }
+      $repos,
+    },
   })
 }
 
 describe('FvAccountCard', () => {
   it('should render a fv account card', () => {
     const wrapper = factory({ id: 1 })
-    expect(wrapper.find('[data-testid="card"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="avatar"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="name"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="card"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="avatar"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="name"]').exists()).toBeTruthy()
   })
   it('should display avatar prop', () => {
     const img = '/images/avatar-1.png'
@@ -74,4 +74,12 @@ describe('FvAccountCard', () => {
     expect(favoriteCalls).toBeTruthy()
     expect(favoriteCalls).toHaveLength(1)
   })
+  // WIP flas, add missing tests
+  // it('should display the required role', () => {
+  //   const wrapper = factory({ id: 1 })
+  //   const expectedResult = ''
+  //   const result = wrapper.vm.cardClicked()
+  //   console.log('result :', result)
+  //   // expect(result).toEqual(expectedResult)
+  // })
 })

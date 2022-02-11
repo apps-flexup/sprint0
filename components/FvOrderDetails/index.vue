@@ -46,21 +46,21 @@ export default {
       type: Number,
       default() {
         return null
-      }
+      },
     },
     order: {
       type: Object,
       default() {
         return null
-      }
-    }
+      },
+    },
   },
   data() {
     return {
       structure: null,
       thirdPartyAccountId: null,
       orderDate: null,
-      orderLines: []
+      orderLines: [],
     }
   },
   watch: {
@@ -70,10 +70,9 @@ export default {
       } else {
         this.fillFieldsWithOrder()
       }
-    }
+    },
   },
   mounted() {
-    console.log('Composant ', this.$options.name)
     this.fillFieldsWithOrder()
   },
   methods: {
@@ -89,8 +88,8 @@ export default {
       this.thirdPartyAccountId = null
       this.orderDate = null
       this.orderLines = []
-    }
-  }
+    },
+  },
 }
 </script>
 

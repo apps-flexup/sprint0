@@ -13,9 +13,7 @@ export default {
     const res = state.items.find((v) => parseInt(v.id) === id)
     return res
   },
-  getDetailsById: (state, _getters, _rootStates, rootGetters) => (
-    structureId
-  ) => {
+  getDetailsById: (state, _getters, _rootStates, rootGetters) => (structureId) => {
     if (!state.items) return null
     const id = parseInt(structureId)
     const structure = state.items.find((v) => parseInt(v.id) === id)
@@ -26,5 +24,5 @@ export default {
       structure.paymentConditions[i] = paymentCondition
     }
     return structure
-  }
+  },
 }

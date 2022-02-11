@@ -6,22 +6,22 @@ const localVue = createLocalVue()
 localVue.use(AsyncComputed)
 
 const $displayRules = {
-  priceWithUnit: () => 'priceWithUnit'
+  priceWithUnit: () => 'priceWithUnit',
 }
 
 const factory = () => {
   return mount(FvPriceWithUnit, {
     localVue,
     mocks: {
-      $displayRules
-    }
+      $displayRules,
+    },
   })
 }
 
 describe('FvPriceWithUnit', () => {
   it('should render a price with unit', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="price"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="price"]').exists()).toBeTruthy()
   })
   it('should display the result of display rule price with unit', async () => {
     const wrapper = factory()

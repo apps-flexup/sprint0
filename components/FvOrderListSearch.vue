@@ -29,23 +29,18 @@ export default {
       type: Array,
       default() {
         return []
-      }
+      },
     },
     filterFunction: {
       type: Function,
       default() {
         return this.items.filter((item) => {
-          // console.log('cherche :', v, ', item :', item)
           const name = item.name || ''
-          // return name.toLowerCase().includes((v || '').toLowerCase()) > -1
           return name
         })
-      }
-    }
+      },
+    },
   },
-  mounted() {
-    console.log('Composant ', this.$options.name)
-  }
 }
 </script>
 <style scoped>

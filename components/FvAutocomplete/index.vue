@@ -44,78 +44,78 @@ export default {
       type: undefined,
       default() {
         return null
-      }
+      },
     },
     items: {
       type: Array,
       default() {
         return []
-      }
+      },
     },
     itemValue: {
       type: String,
       default() {
         return 'id'
-      }
+      },
     },
     filter: {
       type: Function,
       default() {
         return null
-      }
+      },
     },
     disabled: {
       type: Boolean,
       default() {
         return false
-      }
+      },
     },
     returnObject: {
       type: Boolean,
       default() {
         return false
-      }
+      },
     },
     chips: {
       type: Boolean,
       default() {
         return false
-      }
+      },
     },
     autoSelectFirst: {
       type: Boolean,
       default() {
         return false
-      }
+      },
     },
     multiple: {
       type: Boolean,
       default() {
         return false
-      }
+      },
     },
     appendIcon: {
       type: String,
       default() {
         return null
-      }
+      },
     },
     placeholder: {
       type: String,
       default() {
         return null
-      }
+      },
     },
     dense: {
       type: Boolean,
       default() {
         return null
-      }
-    }
+      },
+    },
   },
   data() {
     return {
-      isLoading: false
+      isLoading: false,
     }
   },
   computed: {
@@ -125,11 +125,8 @@ export default {
       },
       set(v) {
         this.$emit('autocomplete:selected', v)
-      }
-    }
+      },
+    },
   },
-  mounted() {
-    console.log('Composant', this.$options.name)
-  }
 }
 </script>

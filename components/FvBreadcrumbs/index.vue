@@ -16,20 +16,20 @@ export default {
       type: String,
       default() {
         return null
-      }
+      },
     },
     space: {
       type: String,
       default() {
         return null
-      }
+      },
     },
     divider: {
       type: String,
       default() {
         return '>'
-      }
-    }
+      },
+    },
   },
   computed: {
     crumbs() {
@@ -43,7 +43,7 @@ export default {
           ' ' +
           this.$t('spaces.' + this.space),
         href: '/',
-        disabled: false
+        disabled: false,
       }
       crumbs.push(prefixCrumb)
       this.$route.matched.map((item) => {
@@ -51,11 +51,7 @@ export default {
         while (previousIndex > 0) {
           const index = item.path.indexOf('/', previousIndex)
           if (index > 0) {
-            const crumb = this.createCrumb(
-              item.path.substring(0, index),
-              item.name.substring(0, index - 1),
-              false
-            )
+            const crumb = this.createCrumb(item.path.substring(0, index), item.name.substring(0, index - 1), false)
             crumbs.push(crumb)
           }
           previousIndex = index + 1
@@ -64,7 +60,7 @@ export default {
         crumbs.push(crumb)
       })
       return crumbs
-    }
+    },
   },
   mounted() {
     this.$store.dispatch('accounts/get')
@@ -72,17 +68,11 @@ export default {
   methods: {
     createCrumb(href, text, disabled) {
       if (text === 'accounts-id') {
-        const account = this.$store.getters['accounts/findById'](
-          this.$route.params.id
-        )
+        const account = this.$store.getters['accounts/findById'](this.$route.params.id)
         text = account ? account.name : null
       } else if (text === 'products-action-') {
         const action = this.$route.params.action
         href = '/products'
-        text = this.$t(`breadcrumbs.route.${text}${action}`)
-      } else if (text === 'offers-action-') {
-        const action = this.$route.params.action
-        href = '/offers'
         text = this.$t(`breadcrumbs.route.${text}${action}`)
       } else {
         text = this.$t('breadcrumbs.route.' + text)
@@ -90,10 +80,10 @@ export default {
       const crumb = {
         href,
         text,
-        disabled
+        disabled,
       }
       return crumb
-    }
-  }
+    },
+  },
 }
 </script>

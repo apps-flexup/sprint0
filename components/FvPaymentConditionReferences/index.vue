@@ -34,8 +34,8 @@ export default {
       type: Object,
       default() {
         return {}
-      }
-    }
+      },
+    },
   },
   computed: {
     selectedReferences() {
@@ -59,13 +59,12 @@ export default {
       let color = 'black'
       if (theme === 'dark') color = 'white'
       const res = {
-        '--fontColor': color
+        '--fontColor': color,
       }
       return res
-    }
+    },
   },
   mounted() {
-    console.log('Composant ', this.$options.name)
     this.$store.dispatch('references/get')
     this.$store.dispatch('settings/getSettings')
   },
@@ -102,11 +101,7 @@ export default {
       if (!reference || !this.selectedReferences) return false
       const key = reference.key
       const selectedReference = this.selectedReferences[key]
-      if (
-        selectedReference &&
-        Object.prototype.hasOwnProperty.call(selectedReference, 'params')
-      )
-        return true
+      if (selectedReference && Object.prototype.hasOwnProperty.call(selectedReference, 'params')) return true
       return false
     },
     getComponentForReference(reference) {
@@ -122,9 +117,7 @@ export default {
     referenceParamsChanged(reference, v, value) {
       if (this.referenceHasParam(reference)) {
         const key = reference.key
-        const selectedReference = JSON.parse(
-          JSON.stringify(this.selectedReferences[key])
-        )
+        const selectedReference = JSON.parse(JSON.stringify(this.selectedReferences[key]))
         const params = JSON.parse(JSON.stringify(selectedReference.params))
         params.value = v
         selectedReference.params = params
@@ -134,8 +127,8 @@ export default {
     },
     filter(item, v, it) {
       return filterReferenceAutocomplete(item, v, it)
-    }
-  }
+    },
+  },
 }
 </script>
 

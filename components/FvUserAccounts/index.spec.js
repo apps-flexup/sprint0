@@ -19,7 +19,7 @@ describe('FvUserAccount', () => {
     roles: ['customer', 'supplier'],
     roles_methods: null,
     supplier: false,
-    user_id: '2ae5fcf8-9ed5-480a-89c8-a2f946e72140'
+    user_id: '2ae5fcf8-9ed5-480a-89c8-a2f946e72140',
   }
   let store
   let vuetify
@@ -30,17 +30,17 @@ describe('FvUserAccount', () => {
       localVue,
       stubs: {
         FvLoginButton: true,
-        FvListAccounts: true
+        FvListAccounts: true,
       },
       mocks: {
         $auth: {
-          loggedIn: propsData ? propsData.loggedIn : true
+          loggedIn: propsData ? propsData.loggedIn : true,
         },
         $activeAccount: {
-          get: () => jest.fn()
+          get: () => jest.fn(),
         },
-        theme: {}
-      }
+        theme: {},
+      },
     })
   }
   beforeEach(() => {
@@ -50,23 +50,23 @@ describe('FvUserAccount', () => {
           namespaced: true,
           getters: {
             accountId: jest.fn(),
-            findById: () => () => account
-          }
-        }
-      }
+            findById: () => () => account,
+          },
+        },
+      },
     })
     vuetify = new Vuetify()
   })
   it('should render a fvUserAccount when logged in', () => {
     const wrapper = factory()
     expect(wrapper.find('[data-testid="loginBtn"]').exists()).toBe(false)
-    expect(wrapper.find('[data-testid="menu"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="accountBtn"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="menu"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="accountBtn"]').exists()).toBeTruthy()
     expect(wrapper.find('[data-testid="accountList"]').exists()).toBe(false)
   })
   it('should render a loggedIn button when logged out', () => {
     const wrapper = factory({ loggedIn: false })
-    expect(wrapper.find('[data-testid="loginBtn"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="loginBtn"]').exists()).toBeTruthy()
     expect(wrapper.find('[data-testid="menu"]').exists()).toBe(false)
     expect(wrapper.find('[data-testid="accountBtn"]').exists()).toBe(false)
     expect(wrapper.find('[data-testid="accountList"]').exists()).toBe(false)
@@ -74,6 +74,6 @@ describe('FvUserAccount', () => {
   it('should show the account list when button is clicked', async () => {
     const wrapper = factory()
     await wrapper.find('[data-testid="accountBtn"]').trigger('click')
-    expect(wrapper.find('[data-testid="accountList"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="accountList"]').exists()).toBeTruthy()
   })
 })

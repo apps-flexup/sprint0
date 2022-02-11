@@ -20,7 +20,7 @@ export default {
   computed: {
     canCreateProduct() {
       return this.$rights.canCreateProduct()
-    }
+    },
   },
   methods: {
     selectedProduct(product) {
@@ -35,7 +35,7 @@ export default {
     },
     createProduct() {
       this.$router.push('/products/new')
-    }
-  }
+    },
+  },
 }
 </script>

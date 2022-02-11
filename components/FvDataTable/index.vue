@@ -5,7 +5,7 @@
     :headers='translatedHeaders'
     :items='items ? items : []'
     :hide-default-footer="hideDefaultFooter"
-    disable-sort
+    :items-per-page="$store.getters['settings/itemPerPage']"
     :footer-props="{ \
       itemsPerPageText: $t('dataTable.footer.rowsPerPage'), \
       itemsPerPageAllText: $t('dataTable.footer.all'), \
@@ -14,6 +14,7 @@
     :server-items-length="itemsLength"
     :options="options"
     :style="cssVars"
+    disable-sort
     @click:row='selected'
     @pagination='paginationChanged'
   )
@@ -54,50 +55,46 @@ export default {
       type: Boolean,
       default() {
         return false
-      }
+      },
     },
     headers: {
       type: Array,
       default() {
         return []
-      }
+      },
     },
     items: {
       type: Array,
       default() {
         return []
-      }
+      },
     },
     itemsLength: {
       type: Number,
       default() {
         return undefined
-      }
+      },
     },
     options: {
       type: Object,
       default() {
         return null
-      }
-    }
+      },
+    },
   },
   data() {
     return {
       sortKey: null,
       sortDesc: false,
-      rowsPerPageOption: [20, 50, 100, -1]
+      rowsPerPageOption: [this.$store.getters['settings/itemPerPage'], 20, 50, 100, -1],
     }
   },
   computed: {
     displayedHeaders() {
-      const res = this.headers.filter(
-        (header) => header.active && header.displayed
-      )
-      return res
+      return this.headers.filter((header) => header.active && header.displayed)
     },
     translatedHeaders() {
-      const res = translateHeaders(this.$i18n, this.displayedHeaders)
-      return res
+      return translateHeaders(this.$i18n, this.displayedHeaders)
     },
     cssVars() {
       const settings = this.$store.getters['settings/settings']
@@ -105,13 +102,12 @@ export default {
       let color = '#DBEDFF'
       if (theme === 'dark') color = '#656667'
       const res = {
-        '--theadColor': color
+        '--theadColor': color,
       }
       return res
-    }
+    },
   },
   mounted() {
-    console.log('Composant ', this.$options.name)
     this.$store.dispatch('settings/getSettings')
   },
   methods: {
@@ -131,7 +127,7 @@ export default {
       }
       const payload = {
         key: this.sortKey,
-        desc: this.sortDesc
+        desc: this.sortDesc,
       }
       this.$emit('dataTable:sortBy', payload)
     },
@@ -148,8 +144,8 @@ export default {
       if (flexAlignment === 'right') flexAlignment = 'end'
       const res = 'd-flex justify-' + flexAlignment
       return res
-    }
-  }
+    },
+  },
 }
 </script>
 

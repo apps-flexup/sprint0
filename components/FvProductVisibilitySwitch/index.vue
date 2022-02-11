@@ -12,16 +12,16 @@
 
 <script>
 export default {
-  name: 'FvProductStatusSelect',
+  name: 'FvProductVisibilitySwitch',
   props: {
     value: {
       type: String,
-      default: 'draft'
+      default: 'private',
     },
     label: {
       type: String,
-      default: null
-    }
+      default: null,
+    },
   },
   methods: {
     clicked() {
@@ -30,8 +30,8 @@ export default {
       else newVisibility = 'public'
       this.$emit('visibility:changed', newVisibility)
       this.$emit('payload:changed', newVisibility)
-    }
-  }
+    },
+  },
 }
 </script>
 

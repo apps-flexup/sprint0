@@ -1,4 +1,4 @@
-import { mount, createLocalVue } from '@vue/test-utils'
+import { createLocalVue, mount } from '@vue/test-utils'
 import Vuetify from 'vuetify'
 import Vuex from 'vuex'
 import FvDataTable from './index.vue'
@@ -17,7 +17,7 @@ const headers = [
     order: 0,
     customizable: true,
     active: true,
-    displayed: true
+    displayed: true,
   },
   {
     text: 'column2',
@@ -26,7 +26,7 @@ const headers = [
     order: 1,
     customizable: true,
     active: true,
-    displayed: true
+    displayed: true,
   },
   {
     text: 'column3',
@@ -35,8 +35,8 @@ const headers = [
     order: 2,
     customizable: true,
     active: true,
-    displayed: true
-  }
+    displayed: true,
+  },
 ]
 
 const factory = () => {
@@ -45,14 +45,14 @@ const factory = () => {
     store,
     vuetify,
     stubs: {
-      FvTh: true
+      FvTh: true,
     },
     propsData: {
-      headers
+      headers,
     },
     mocks: {
-      $t: (msg) => msg
-    }
+      $t: (msg) => msg,
+    },
   })
 }
 beforeEach(() => {
@@ -61,17 +61,20 @@ beforeEach(() => {
       settings: {
         namespaced: true,
         actions: {
-          getSettings: jest.fn()
+          getSettings: jest.fn(),
         },
         getters: {
+          itemPerPage() {
+            return -1
+          },
           settings() {
             return {
-              theme: 'light'
+              theme: 'light',
             }
-          }
-        }
-      }
-    }
+          },
+        },
+      },
+    },
   })
 })
 
@@ -81,7 +84,7 @@ describe('FvDataTable', () => {
   })
   it('should render a fv data table', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="dataTable"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="dataTable"]').exists()).toBeTruthy()
   })
   it('should display headers', () => {
     const wrapper = factory()
@@ -113,7 +116,7 @@ describe('FvDataTable', () => {
     expect(sortCalls).toHaveLength(1)
     const expectedPayload = {
       key,
-      desc: false
+      desc: false,
     }
     expect(sortCalls[0][0]).toEqual(expectedPayload)
   })
@@ -128,7 +131,7 @@ describe('FvDataTable', () => {
     expect(sortCalls).toHaveLength(1)
     const expectedPayload = {
       key,
-      desc: true
+      desc: true,
     }
     expect(sortCalls[0][0]).toEqual(expectedPayload)
   })
@@ -143,7 +146,7 @@ describe('FvDataTable', () => {
     expect(sortCalls).toHaveLength(1)
     const expectedPayload = {
       key: null,
-      desc: false
+      desc: false,
     }
     expect(sortCalls[0][0]).toEqual(expectedPayload)
   })

@@ -33,7 +33,7 @@ export const iconsAvailable = [
   'mdi-check-circle-outline',
   'mdi-toggle-switch',
   'mdi-inbox-arrow-down-outline',
-  'mdi-cog'
+  'mdi-cog',
 ]
 
 export const defaultIcon = 'mdi-plus'

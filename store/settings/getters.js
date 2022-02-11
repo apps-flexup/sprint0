@@ -22,14 +22,10 @@ export default {
     const account = rootGetters['accounts/findById'](accountId)
     const accountType = account ? account.type : undefined
     const res = JSON.parse(JSON.stringify(state.accountMenu))
-    const informationsIndex = res.findIndex(
-      (menu) => menu.title === 'accountMenu.information'
-    )
+    const informationsIndex = res.findIndex((menu) => menu.title === 'accountMenu.information')
     res[informationsIndex].to += `/${accountId}`
     if (!accountType || accountType === 'Personal') {
-      const membersIndex = res.findIndex(
-        (menu) => menu.title === 'accountMenu.members'
-      )
+      const membersIndex = res.findIndex((menu) => menu.title === 'accountMenu.members')
       res.splice(membersIndex, 1)
     }
     return res.filter((m) => m.active)
@@ -82,20 +78,19 @@ export default {
     if (customSettings) mergeObjects(res, customSettings)
     return res
   },
+  itemPerPage(state) {
+    return parseInt(state.settings.rows_per_page || state.defaultSettings.rows_per_page)
+  },
   defaultHeaders: (state) => (tableName) => {
     if (!state.defaultSettings) return {}
-    const res = JSON.parse(
-      JSON.stringify(state.defaultSettings.headers[tableName])
-    )
+    const res = JSON.parse(JSON.stringify(state.defaultSettings.headers[tableName]))
     return res
   },
   headers: (state) => (tableName) => {
     if (!state.defaultSettings) return []
     if (!state.defaultSettings.headers) return []
     if (!state.defaultSettings.headers[tableName]) return []
-    const res = JSON.parse(
-      JSON.stringify(state.defaultSettings.headers[tableName])
-    )
+    const res = JSON.parse(JSON.stringify(state.defaultSettings.headers[tableName]))
     if (!state.settings) return res
     const customHeaders = state.settings.headers
     if (!customHeaders) return res
@@ -110,5 +105,5 @@ export default {
       })
     }
     return res
-  }
+  },
 }

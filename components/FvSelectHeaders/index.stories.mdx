@@ -26,7 +26,6 @@ import { tablesAvailable, defaultTable } from '@/.storybook/data/tablesAvailable
   computed: {
     headers() {
       const res = this.$activeAccount.headers(this.tableName)
-      console.log('RES: ', res)
       return res
     }
   },

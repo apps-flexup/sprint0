@@ -8,7 +8,7 @@ localVue.use(Vuex)
 let store
 
 const $activeAccount = {
-  items: () => ['1', '2', '3']
+  items: () => ['1', '2', '3'],
 }
 
 const factory = () => {
@@ -17,8 +17,8 @@ const factory = () => {
     store,
     mocks: {
       $t: (msg) => msg,
-      $activeAccount
-    }
+      $activeAccount,
+    },
   })
 }
 
@@ -28,24 +28,30 @@ beforeEach(() => {
       products: {
         namespaced: true,
         actions: {
-          get: jest.fn()
-        }
-      }
-    }
+          get: jest.fn(),
+        },
+      },
+      thirdPartyAccounts: {
+        namespaced: true,
+        actions: {
+          getAll: jest.fn(),
+        },
+      },
+    },
   })
 })
 
 describe('FvProductAutocomplete', () => {
   it('should render a fv product autocomplete', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="autocomplete"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="autocomplete"]').exists()).toBeTruthy()
   })
   it('should emit an event when a product is selected', () => {
     const wrapper = factory()
     const autocomplete = wrapper.find('[data-testid="autocomplete"]')
     const product = {
       id: 1,
-      name: 'product'
+      productName: 'product',
     }
     autocomplete.vm.$emit('autocomplete:selected', product)
     const selectedCalls = wrapper.emitted('products:selected')
@@ -58,7 +64,7 @@ describe('FvProductAutocomplete', () => {
     const autocomplete = wrapper.find('[data-testid="autocomplete"]')
     const product = {
       id: 1,
-      name: 'product'
+      name: 'product',
     }
     autocomplete.vm.$emit('autocomplete:selected', product)
     const selectedCalls = wrapper.emitted('payload:changed')

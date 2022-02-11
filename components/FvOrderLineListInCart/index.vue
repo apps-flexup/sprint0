@@ -17,7 +17,7 @@
                 :aspect-ratio="1"
               )
             v-col(cols="8")
-              div.productName(v-to-locale="item.offer")
+              div.productName(v-to-locale="item.product")
         template(v-slot:item.price="{ item }")
           div(v-to-preferred-currency="{amount: item.price, currency: item.currency}")
         template(v-slot:item.quantity="{ item }")
@@ -41,26 +41,25 @@ export default {
       type: Array,
       default() {
         return []
-      }
-    }
+      },
+    },
   },
   computed: {
     headers() {
       const res = this.$store.getters['headers/orderLinesCart']
       return translateHeaders(this.$i18n, res)
-    }
+    },
   },
   mounted() {
     this.$store.dispatch('accounts/get')
     this.$store.dispatch('headers/getOrderLineCartHeaders')
-    console.log('Composant ', this.$options.name)
   },
   methods: {
     quantityChanged(values, item) {
       const quantity = values[0]
       this.$emit('orderLinesInCart:quantityChanged', item, quantity)
-    }
-  }
+    },
+  },
 }
 </script>
 <style scoped>

@@ -4,20 +4,20 @@ import FvTextButton from './index'
 const factory = () => {
   return mount(FvTextButton, {
     propsData: {
-      text: 'HelloWorld'
+      text: 'HelloWorld',
     },
     slots: {
       icon: 'mdi-plus',
-      text: 'HelloWorld'
-    }
+      text: 'HelloWorld',
+    },
   })
 }
 
 describe('FvTextButton', () => {
   it('should render a fv text button', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid=button]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid=slot-icon]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid=button]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid=slot-icon]').exists()).toBeTruthy()
   })
   it('should emit an event when button is clicked', () => {
     const wrapper = factory()

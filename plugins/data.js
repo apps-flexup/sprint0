@@ -26,15 +26,11 @@ export default (ctx, inject) => {
     manageMenu: repo('manageMenu'),
     manageNavBar: repo('manageNavBar'),
     medias: repo('medias'),
-    offers: repo('offers'),
-    offerSteps: repo('offer-steps'),
     orderItemHeaders: repo('order-item-headers'),
     orders: repo('orders'),
     orderSteps: repo('order-steps'),
     paymentConditions: repo('payment-conditions'),
-    paymentConditionsForPaymentStructureForm: repo(
-      'payment-conditions-for-payment-structure-form'
-    ),
+    paymentConditionsForPaymentStructureForm: repo('payment-conditions-for-payment-structure-form'),
     paymentConditionsSteps: repo('payment-condition-steps'),
     paymentStructures: repo('payment-structures'),
     paymentStructureSteps: repo('payment-structure-steps'),
@@ -50,7 +46,7 @@ export default (ctx, inject) => {
     thirdPartyAccountSteps: repo('third-party-account-steps'),
     units: repo('units'),
     userMenu: repo('userMenu'),
-    users: repo('users')
+    users: repo('users'),
   }
 
   inject('repos', repos)

@@ -8,5 +8,5 @@ export default {
   },
   clear({ commit }) {
     commit('clear')
-  }
+  },
 }

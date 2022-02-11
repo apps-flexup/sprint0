@@ -65,67 +65,54 @@ export default {
       type: Boolean,
       default() {
         return false
-      }
+      },
     },
     tableName: {
       type: String,
       default() {
         return null
-      }
+      },
     },
     headers: {
       type: [Array, Object],
       default() {
         return []
-      }
-    }
+      },
+    },
   },
   data() {
     return {
-      customHeaders: this.headers
-        ? JSON.parse(JSON.stringify(this.headers))
-        : []
+      customHeaders: this.headers ? JSON.parse(JSON.stringify(this.headers)) : [],
     }
   },
   watch: {
     headers() {
-      this.customHeaders = this.headers
-        ? JSON.parse(JSON.stringify(this.headers))
-        : []
-    }
-  },
-  mounted() {
-    console.log('Composant ', this.$options.name)
+      this.customHeaders = this.headers ? JSON.parse(JSON.stringify(this.headers)) : []
+    },
   },
   methods: {
     toggleDisplayed(header) {
       if (header.customizable) header.displayed = !header.displayed
     },
     update(headerGroup, _v) {
-      const arr = this.customHeaders.sub
-        ? this.customHeaders.sub[headerGroup]
-        : this.customHeaders
+      const arr = this.customHeaders.sub ? this.customHeaders.sub[headerGroup] : this.customHeaders
       for (let i = 0; i < arr.length; i++) {
         arr[i].order = i
       }
     },
     close() {
-      this.customHeaders = this.headers
-        ? JSON.parse(JSON.stringify(this.headers))
-        : []
+      this.customHeaders = this.headers ? JSON.parse(JSON.stringify(this.headers)) : []
       this.$emit('selectHeaders:close')
     },
     resetToDefaultHeaders() {
       let headerName = this.tableName
       headerName = camelToSnakeCase(headerName)
-      const defaultHeader = this.$store.getters['settings/defaultHeaders'](
-        headerName
-      )
+      const defaultHeader = this.$store.getters['settings/defaultHeaders'](headerName)
       this.customHeaders = defaultHeader
     },
     save() {
       this.$emit('selectHeaders:save', this.customHeaders)
-    }
-  }
+    },
+  },
 }
 </script>

@@ -55,22 +55,19 @@ export default {
       type: Array,
       default() {
         return null
-      }
-    }
+      },
+    },
   },
   data() {
     return {
-      rules: ['Address', 'Mail', 'Phone']
+      rules: ['Address', 'Mail', 'Phone'],
     }
   },
   computed: {
     medias() {
       const res = this.value || []
       return res
-    }
-  },
-  mounted() {
-    console.log('Composant ', this.$options.name)
+    },
   },
   methods: {
     findMediaIndexWithIndexOfRule(indexForRule, rule) {
@@ -97,8 +94,8 @@ export default {
         description: {
           type: rule,
           value: null,
-          label: null
-        }
+          label: null,
+        },
       }
       const medias = this.medias
       medias.push(media)
@@ -124,8 +121,8 @@ export default {
       const medias = this.medias
       medias.splice(index, 1)
       this.$emit('payload:changed', medias)
-    }
-  }
+    },
+  },
 }
 </script>
 

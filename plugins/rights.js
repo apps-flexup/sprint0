@@ -27,18 +27,6 @@ const rights = (ctx) => ({
     const authorizedRoles = ['admin', 'editor']
     return this.isAuthorized(authorizedRoles)
   },
-  canCreateOffer() {
-    const authorizedRoles = ['admin', 'editor']
-    return this.isAuthorized(authorizedRoles)
-  },
-  canEditOffer() {
-    const authorizedRoles = ['admin', 'editor']
-    return this.isAuthorized(authorizedRoles)
-  },
-  canDeleteOffer() {
-    const authorizedRoles = ['admin', 'editor']
-    return this.isAuthorized(authorizedRoles)
-  },
   canCreateThirdParty() {
     const authorizedRoles = ['admin', 'editor']
     return this.isAuthorized(authorizedRoles)
@@ -50,7 +38,7 @@ const rights = (ctx) => ({
   canDeleteThirdParty() {
     const authorizedRoles = ['admin', 'editor']
     return this.isAuthorized(authorizedRoles)
-  }
+  },
 })
 
 export default (ctx, inject) => {

@@ -17,20 +17,20 @@ export default {
       type: String,
       default() {
         return null
-      }
+      },
     },
     value: {
       type: [Number, String],
       default() {
         return null
-      }
+      },
     },
     suffix: {
       type: String,
       default() {
         return ''
-      }
-    }
+      },
+    },
   },
   computed: {
     cssVars() {
@@ -40,13 +40,13 @@ export default {
       const bgColor = theme === 'light' ? '#E6E6E6' : '#1E1E1E'
       const res = {
         '--textColor': color,
-        '--bgColor': bgColor
+        '--bgColor': bgColor,
       }
       return res
     },
     checkValue() {
       return this.isTypeOfAccount()
-    }
+    },
   },
   mounted() {
     this.$store.dispatch('settings/getSettings')
@@ -56,17 +56,13 @@ export default {
       return str.charAt(0).toLowerCase() + str.slice(1)
     },
     isTypeOfAccount() {
-      if (
-        this.value === 'Personal' ||
-        this.value === 'Business' ||
-        this.value === 'SubAccount'
-      ) {
+      if (this.value === 'Personal' || this.value === 'Business' || this.value === 'SubAccount') {
         return this.$t(`account.${this.lowerCaseFirstLetter(this.value)}.name`)
       } else {
         return this.value
       }
-    }
-  }
+    },
+  },
 }
 </script>
 

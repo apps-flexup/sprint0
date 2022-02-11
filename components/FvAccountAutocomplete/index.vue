@@ -24,26 +24,26 @@ export default {
       type: Number,
       default() {
         return null
-      }
+      },
     },
     label: {
       type: String,
       default() {
         return null
-      }
+      },
     },
     items: {
       type: Array,
       default() {
         return []
-      }
+      },
     },
     returnObject: {
       type: Boolean,
       default() {
         return true
-      }
-    }
+      },
+    },
   },
   methods: {
     accountSelected(v) {
@@ -51,7 +51,7 @@ export default {
     },
     accountName(account) {
       return this.$displayRules.accountName(account)
-    }
-  }
+    },
+  },
 }
 </script>

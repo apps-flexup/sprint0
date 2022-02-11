@@ -19,12 +19,12 @@ export default {
       type: Object,
       default() {
         return 5
-      }
-    }
+      },
+    },
   },
   data() {
     return {
-      selected: []
+      selected: [],
     }
   },
   computed: {
@@ -35,11 +35,8 @@ export default {
     items() {
       const res = this.$store.getters['orders/all']
       return res
-    }
+    },
   },
-  mounted() {
-    console.log('Composant ', this.$options.name)
-  }
 }
 </script>
 <style scoped>

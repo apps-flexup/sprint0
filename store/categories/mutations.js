@@ -11,5 +11,5 @@ export default {
   },
   add(state, item) {
     state.items.push(item)
-  }
+  },
 }

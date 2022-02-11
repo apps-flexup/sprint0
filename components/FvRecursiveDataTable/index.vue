@@ -32,53 +32,50 @@ export default {
       type: Array,
       default() {
         return []
-      }
+      },
     },
     items: {
       type: Array,
       default() {
         return []
-      }
+      },
     },
     filters: {
       type: Array,
       default() {
         return []
-      }
+      },
     },
     rules: {
       type: Object,
       default() {
         return {}
-      }
-    }
+      },
+    },
   },
   data() {
     return {
       sortKey: null,
       shouldSortDesc: false,
-      options: null
+      options: null,
     }
   },
   computed: {
     mainItems() {
-      const res = this.items ? this.items : []
-      return res
+      return this.items ? this.items : []
     },
     subItems() {
-      const res = this.items ? this.items[0].items : []
-      return res
+      return this.items ? this.items[0].items : []
     },
     cssVars() {
       const settings = this.$store.getters['settings/settings']
       const theme = settings.theme
       let color = '#9ECFFF'
       if (theme === 'dark') color = '#4a4b4e'
-      const res = {
-        '--mainTheadColor': color
+      return {
+        '--mainTheadColor': color,
       }
-      return res
-    }
+    },
   },
   mounted() {
     this.$store.dispatch('settings/getSettings')
@@ -99,62 +96,29 @@ export default {
     },
     editItem(v) {
       this.$emit('dataTable:edit', v)
-    }
-  }
+    },
+  },
 }
 </script>
 
 <style scoped>
-::v-deep
-  .main-data-table
-  > .v-data-table
-  > .v-data-table__wrapper
-  > table
-  > thead {
+::v-deep .main-data-table > .v-data-table > .v-data-table__wrapper > table > thead {
   background-color: var(--mainTheadColor);
 }
 ::v-deep .v-data-table {
   border-radius: 0;
 }
-::v-deep
-  .main-data-table
-  > .v-data-table
-  > .v-data-table__wrapper
-  > table
-  > tbody
-  > tr
-  > td {
+::v-deep .main-data-table > .v-data-table > .v-data-table__wrapper > table > tbody > tr > td {
   border-right: #0e0e0e0e solid 1px;
   padding: 0;
 }
-::v-deep
-  .main-data-table
-  > .v-data-table
-  > .v-data-table__wrapper
-  > table
-  > tbody
-  > tr
-  > td:last-child {
+::v-deep .main-data-table > .v-data-table > .v-data-table__wrapper > table > tbody > tr > td:last-child {
   border-right: 0;
 }
-::v-deep
-  .main-data-table
-  > .v-data-table
-  > .v-data-table__wrapper
-  > table
-  > .v-data-table-header
-  > tr
-  > th {
+::v-deep .main-data-table > .v-data-table > .v-data-table__wrapper > table > .v-data-table-header > tr > th {
   border-right: #0e0e0e0e solid 1px;
 }
-::v-deep
-  .main-data-table
-  > .v-data-table
-  > .v-data-table__wrapper
-  > table
-  > .v-data-table-header
-  > tr
-  > th:last-child {
+::v-deep .main-data-table > .v-data-table > .v-data-table__wrapper > table > .v-data-table-header > tr > th:last-child {
   border-right: 0;
 }
 </style>

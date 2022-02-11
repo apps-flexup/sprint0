@@ -16,8 +16,8 @@ describe('FvThirdPartyAccountDataTable', () => {
       store,
       vuetify,
       mocks: {
-        $t: (msg) => msg
-      }
+        $t: (msg) => msg,
+      },
     })
   }
   beforeEach(() => {
@@ -27,27 +27,27 @@ describe('FvThirdPartyAccountDataTable', () => {
         thirdPartyAccounts: {
           namespaced: true,
           actions: {
-            getAll: jest.fn()
-          }
+            getAll: jest.fn(),
+          },
         },
         countries: {
           namespaced: true,
           actions: {
-            get: jest.fn()
-          }
+            get: jest.fn(),
+          },
         },
         contracts: {
           namespaced: true,
           actions: {
-            getLegalStructures: jest.fn()
-          }
-        }
-      }
+            getLegalStructures: jest.fn(),
+          },
+        },
+      },
     })
   })
   it('should render a fv third party account data table', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="dataTable"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="dataTable"]').exists()).toBeTruthy()
   })
   it('should emit an event when a row is selected', () => {
     const wrapper = factory()

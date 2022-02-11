@@ -8,7 +8,7 @@ localVue.use(Vuex)
 let store
 
 const account = {
-  id: 1
+  id: 1,
 }
 
 const factory = () => {
@@ -16,8 +16,8 @@ const factory = () => {
     localVue,
     store,
     mocks: {
-      $t: (msg) => msg
-    }
+      $t: (msg) => msg,
+    },
   })
 }
 
@@ -27,21 +27,21 @@ beforeEach(() => {
       accounts: {
         namespaced: true,
         actions: {
-          get: jest.fn()
+          get: jest.fn(),
         },
         getters: {
           selected: () => 1,
-          findById: () => () => account
-        }
-      }
-    }
+          findById: () => () => account,
+        },
+      },
+    },
   })
 })
 
 describe('FvSettingsIndex', () => {
   it('should render a fv settings index', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="title"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="title"]').exists()).toBeTruthy()
     expect(wrapper.findAll('[data-testid="tab"]').length).toBe(2)
     expect(wrapper.findAll('[data-testid="tabItem"]').length).toBe(2)
   })

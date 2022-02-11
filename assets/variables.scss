@@ -2,6 +2,7 @@
 //
 // The variables you want to modify
 // $font-size-root: 20px;
+
 $status-btn-width: 210px;
 $body-font-family: 'Montserrat', sans-serif;
 
@@ -9,3 +10,17 @@ $datatable-header-border-radius: 5px;
 $datatable-header-border-color: #dddee2;
 $datatable-header-border-style: solid 2px;
 $datatable-header-padding: 5px 1rem;
+
+::v-deep input[type='number']::-webkit-outer-spin-button,
+::v-deep input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+::v-deep input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+::v-deep .v-autocomplete.v-select input {
+  position: absolute;
+}

@@ -31,7 +31,7 @@ export default {
       type: Array,
       default() {
         return []
-      }
+      },
     },
     filterFunction: {
       type: Function,
@@ -40,11 +40,8 @@ export default {
           const name = item.name || ''
           return name
         })
-      }
-    }
+      },
+    },
   },
-  mounted() {
-    console.log('Composant ', this.$options.name)
-  }
 }
 </script>

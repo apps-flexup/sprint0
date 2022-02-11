@@ -15,9 +15,9 @@ describe('FvSearchAutocomplete', () => {
       localVue,
       store,
       computed: {
-        items: () => ['test', 'test', 'searchBar']
+        items: () => ['test', 'test', 'searchBar'],
       },
-      vuetify
+      vuetify,
     })
   }
   beforeEach(() => {
@@ -26,30 +26,25 @@ describe('FvSearchAutocomplete', () => {
         categories: {
           namespaced: true,
           actions: {
-            get: jest.fn()
+            get: jest.fn(),
           },
           getters: {
-            all: jest.fn()
-          }
-        }
-      }
+            all: jest.fn(),
+          },
+        },
+      },
     })
     vuetify = new Vuetify()
   })
   it('should render a fv search autocomplete', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="selector"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="searchBar"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="selector"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="searchBar"]').exists()).toBeTruthy()
   })
   it('should receive items in data', () => {
     const wrapper = factory()
     const selector = wrapper.find('[data-testid="selector"]')
-    expect(selector.props().items).toStrictEqual([
-      'Catégories',
-      'Produits',
-      'Offres',
-      'Services'
-    ])
+    expect(selector.props().items).toStrictEqual(['Catégories', 'Produits', 'Offres', 'Services'])
   })
   it('should receive items in data', () => {
     const wrapper = factory()

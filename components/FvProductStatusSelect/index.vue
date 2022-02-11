@@ -17,21 +17,21 @@ export default {
   props: {
     value: {
       type: String,
-      default: 'draft'
+      default: 'draft',
     },
     label: {
       type: String,
-      default: null
-    }
+      default: null,
+    },
   },
   computed: {
     availableStatus() {
       return this.$store.getters['products/availableStatus']
-    }
+    },
   },
   methods: {
     changeStatus(newStatus) {
-      if (this.value === 'active') {
+      if (this.value === 'active' && this.$route.name !== 'products-new') {
         if (window.confirm(this.$t('table.products.warningMessage'))) {
           this.$emit('payload:changed', newStatus)
           this.$emit('status:changed', newStatus)
@@ -40,8 +40,8 @@ export default {
         this.$emit('payload:changed', newStatus)
         this.$emit('status:changed', newStatus)
       }
-    }
-  }
+    },
+  },
 }
 </script>
 

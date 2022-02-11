@@ -21,21 +21,18 @@
 export default {
   data() {
     return {
-      employes: []
+      employes: [],
     }
   },
   computed: {
     tousLesEmployes() {
-      const res = this.employes
-        .filter((i) => i.job !== 'all')
-        .sort((a, b) => a.ordre < b.ordre)
+      const res = this.employes.filter((i) => i.job !== 'all').sort((a, b) => a.ordre < b.ordre)
       return res
-    }
+    },
   },
   mounted() {
-    console.log('Composant ', this.$options.name)
     this.$repos.employes.index().then((res) => (this.employes = res))
-  }
+  },
 }
 </script>
 <style scoped>

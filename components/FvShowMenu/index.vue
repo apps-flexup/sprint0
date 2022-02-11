@@ -25,11 +25,8 @@ export default {
       type: [Array, Promise],
       default() {
         return []
-      }
-    }
+      },
+    },
   },
-  mounted() {
-    console.log('Composant ', this.$options.name)
-  }
 }
 </script>

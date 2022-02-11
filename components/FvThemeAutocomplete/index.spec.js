@@ -6,16 +6,16 @@ describe('FvThemeAutocomplete', () => {
   const factory = () => {
     return mount(FvThemeAutocomplete, {
       stubs: {
-        FvAutocomplete: true
+        FvAutocomplete: true,
       },
       mocks: {
-        $t: (msg) => msg
-      }
+        $t: (msg) => msg,
+      },
     })
   }
   it('should render a theme autocomplete', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="autocomplete"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="autocomplete"]').exists()).toBeTruthy()
   })
   it('should emit an event when theme is selected', () => {
     const wrapper = factory()

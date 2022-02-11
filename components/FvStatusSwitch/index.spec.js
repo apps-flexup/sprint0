@@ -4,22 +4,22 @@ import FvStatusSwitch from './index'
 const factory = (propsData) => {
   return shallowMount(FvStatusSwitch, {
     propsData: {
-      ...propsData
+      ...propsData,
     },
     mocks: {
-      $t: (msg) => msg
-    }
+      $t: (msg) => msg,
+    },
   })
 }
 
 describe('FvStatusSwitch', () => {
   it('should render a fv status switch', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid=switch]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid=switch]').exists()).toBeTruthy()
   })
   describe.each([
     ['active', 'inactive'],
-    ['inactive', 'active']
+    ['inactive', 'active'],
   ])('When %s, emit an event with %s', (value, expectedValue) => {
     let wrapper
     let switchBtn

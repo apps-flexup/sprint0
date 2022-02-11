@@ -4,10 +4,9 @@ export default {
     return this.$repos.givenRoles.index().then((data) => {
       const activeAccountId = this.$activeAccount.get()
       const activeAccountMembers = data.filter((givenRole) => {
-        const isAccount = givenRole.from_type === 'Account'
         const isActiveAccount = givenRole.from_id === activeAccountId
         const isOwner = givenRole.role === 'owner'
-        return isAccount && isActiveAccount && !isOwner
+        return isActiveAccount && !isOwner
       })
       commit('set', activeAccountMembers)
     })
@@ -23,8 +22,6 @@ export default {
     })
   },
   remove({ commit }, member) {
-    this.$repos.givenRoles
-      .delete(member.id)
-      .then(() => commit('remove', member))
-  }
+    this.$repos.givenRoles.delete(member.id).then(() => commit('remove', member))
+  },
 }

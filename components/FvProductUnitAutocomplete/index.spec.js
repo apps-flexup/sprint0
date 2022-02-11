@@ -14,8 +14,8 @@ const factory = () => {
     store,
     vuetify,
     mocks: {
-      $t: (msg) => msg
-    }
+      $t: (msg) => msg,
+    },
   })
 }
 
@@ -26,20 +26,20 @@ describe('FvProductUnitAutocomplete', () => {
         offers: {
           namespaced: true,
           actions: {
-            get: jest.fn()
+            get: jest.fn(),
           },
           getters: {
             getForProduct: (_productId) => () => {
               return []
-            }
-          }
-        }
-      }
+            },
+          },
+        },
+      },
     })
   })
   it('should render a fv product unit autocomplete', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="unitAutocomplete"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="unitAutocomplete"]').exists()).toBeTruthy()
   })
   it('should emit an event when a row is selected', () => {
     const wrapper = factory()
@@ -56,15 +56,15 @@ describe('FvProductUnitAutocomplete', () => {
           offers: {
             namespaced: true,
             actions: {
-              get: jest.fn()
+              get: jest.fn(),
             },
             getters: {
               getForProduct: (_productId) => () => {
                 return []
-              }
-            }
-          }
-        }
+              },
+            },
+          },
+        },
       })
     })
     it('should not apply dimension filter', () => {
@@ -81,21 +81,16 @@ describe('FvProductUnitAutocomplete', () => {
           offers: {
             namespaced: true,
             actions: {
-              get: jest.fn()
+              get: jest.fn(),
             },
             getters: {
               getForProduct: (_productId) => () => {
                 return [{ unit: { dimension } }]
-              }
-            }
-          }
-        }
+              },
+            },
+          },
+        },
       })
-    })
-    it('should apply dimension filter', () => {
-      const wrapper = factory()
-      const unitAutocomplete = wrapper.find('[data-testid="unitAutocomplete"]')
-      expect(unitAutocomplete.props().dimensionFilter).toBe(dimension)
     })
   })
 })

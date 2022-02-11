@@ -11,7 +11,7 @@ const $displayRules = {
   paymentConditionRisk: jest.fn(),
   paymentConditionPriority: jest.fn(),
   paymentConditionPaymentTerm: jest.fn(),
-  paymentConditionInterestRate: jest.fn()
+  paymentConditionInterestRate: jest.fn(),
 }
 
 const factory = () => {
@@ -20,8 +20,8 @@ const factory = () => {
     store,
     mocks: {
       $t: (msg) => msg,
-      $displayRules
-    }
+      $displayRules,
+    },
   })
 }
 
@@ -34,23 +34,23 @@ beforeEach(() => {
         namespaced: true,
         actions: {
           get: jest.fn(),
-          remove: removeFn
-        }
-      }
-    }
+          remove: removeFn,
+        },
+      },
+    },
   })
 })
 
 describe('FvPaymentConditionList', () => {
   it('should render a fv payment condition list', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="table"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="table"]').exists()).toBeTruthy()
   })
   it('should emit an event when payment condition is selected', () => {
     const wrapper = factory()
     const table = wrapper.find('[data-testid="table"]')
     const paymentCondition = {
-      foo: 'foo'
+      foo: 'foo',
     }
     table.vm.$emit('list:selected', paymentCondition)
     const selectedCalls = wrapper.emitted('list:selected')
@@ -62,7 +62,7 @@ describe('FvPaymentConditionList', () => {
     const wrapper = factory()
     const table = wrapper.find('[data-testid="table"]')
     const paymentCondition = {
-      foo: 'foo'
+      foo: 'foo',
     }
     table.vm.$emit('list:delete', paymentCondition)
     expect(removeFn).toHaveBeenCalledTimes(1)

@@ -5,20 +5,20 @@ describe('FvUserInfo', () => {
   const $auth = {
     user: {
       name: 'test',
-      email: 'test'
-    }
+      email: 'test',
+    },
   }
   const $displayRules = {
-    userName: jest.fn()
+    userName: jest.fn(),
   }
   it('should render a FvUserInfo', () => {
     const wrapper = shallowMount(FvUserInfo, {
       mocks: {
         $t: (msg) => msg,
         $auth,
-        $displayRules
-      }
+        $displayRules,
+      },
     })
-    expect(wrapper.find('[data-testid="userInfo"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="userInfo"]').exists()).toBeTruthy()
   })
 })

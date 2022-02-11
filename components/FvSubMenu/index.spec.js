@@ -12,34 +12,34 @@ describe('FvSubMenu', () => {
       active: true,
       icon: 'mdi-account-circle-outline',
       title: 'userMenu.data',
-      to: '/personaldata'
+      to: '/personaldata',
     },
     {
       active: true,
       icon: 'mdi-shield-lock-outline',
       title: 'userMenu.security',
-      to: '/security'
+      to: '/security',
     },
     {
       active: true,
       icon: 'mdi-account-switch-outline',
       title: 'userMenu.management',
-      to: '/accounts'
-    }
+      to: '/accounts',
+    },
   ]
   const factory = (propsData) => {
     return mount(FvSubMenu, {
       localVue,
       store,
       propsData: {
-        ...propsData
+        ...propsData,
       },
       stubs: {
-        FvShowMenu: true
+        FvShowMenu: true,
       },
       mocks: {
-        $t: (msg) => msg
-      }
+        $t: (msg) => msg,
+      },
     })
   }
   beforeEach(() => {
@@ -48,17 +48,17 @@ describe('FvSubMenu', () => {
         settings: {
           namespaced: true,
           getters: {
-            userMenu: () => userMenu
-          }
-        }
-      }
+            userMenu: () => userMenu,
+          },
+        },
+      },
     })
   })
   it('should render a sub menu', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="categoryMenu"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="menuList"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="menu"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="categoryMenu"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="menuList"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="menu"]').exists()).toBeTruthy()
   })
   it('should return the menu name', () => {
     const wrapper = factory({ menuName: 'user' })

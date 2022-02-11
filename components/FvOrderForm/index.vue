@@ -41,11 +41,8 @@ export default {
     return {
       orderList: [],
       allOrderLines: [],
-      nbOrders: 1
+      nbOrders: 1,
     }
-  },
-  mounted() {
-    console.log('Composant ', this.$options.name)
   },
   methods: {
     addNewOrder() {
@@ -108,14 +105,13 @@ export default {
             structure: order.structureId,
             amount: totalAmount,
             status: 'draft',
-            currency: 'EUR'
+            currency: 'EUR',
           }
-          console.log('Payload:', payload)
           this.$store.dispatch('orders/add', payload)
         }
       })
       this.$router.push('/orders')
-    }
-  }
+    },
+  },
 }
 </script>

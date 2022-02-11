@@ -4,14 +4,14 @@ import FvFlexItems from './index.vue'
 describe('FvFlexItems', () => {
   it('should render a fv flex items', () => {
     const wrapper = mount(FvFlexItems)
-    expect(wrapper.find('[data-testid="div"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="div"]').exists()).toBeTruthy()
   })
   it('should render left slot', () => {
     const slot = 'HelloWorld'
     const wrapper = mount(FvFlexItems, {
       slots: {
-        left: slot
-      }
+        left: slot,
+      },
     })
     const div = wrapper.find('[data-testid="div"]')
     expect(div.text()).toBe(slot)
@@ -20,8 +20,8 @@ describe('FvFlexItems', () => {
     const slot = 'HelloWorld'
     const wrapper = mount(FvFlexItems, {
       slots: {
-        separator: slot
-      }
+        separator: slot,
+      },
     })
     const div = wrapper.find('[data-testid="div"]')
     expect(div.text()).toBe(slot)
@@ -30,8 +30,8 @@ describe('FvFlexItems', () => {
     const slot = 'HelloWorld'
     const wrapper = mount(FvFlexItems, {
       slots: {
-        right: slot
-      }
+        right: slot,
+      },
     })
     const div = wrapper.find('[data-testid="div"]')
     expect(div.text()).toBe(slot)

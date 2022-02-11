@@ -5,6 +5,7 @@
       v-data-table.elevation-2(
         data-testid="dataTable"
         :headers='headers'
+        :items-per-page="$activeAccount.itemPerPage()"
         :items='indexedItems'
         item-key='id'
       )
@@ -16,14 +17,6 @@
             @input='orderItems[item.id].setProductName(arguments[0])'
           )
           div(v-else) {{ item.orderItem.productName }}
-        template(v-slot:item.offerName="{ item }")
-          fv-text-field(
-            v-if='item.canEditOfferName'
-            :value='item.offerName'
-            :dense='true'
-            @input='orderItems[item.id].setOfferName(arguments[0])'
-          )
-          div(v-else) {{ item.orderItem.offerName }}
         template(v-slot:item.quantity="{ item }")
           fv-quantity-selector.quantity-selector-input(
             :quantity="item.orderItem.quantity"
@@ -69,13 +62,13 @@
           )
         template(v-slot:body.append)
           th(colspan="3")
-            fv-offer-autocomplete.pl-4.py-3(
+            fv-product-autocomplete.pl-4.py-3(
               :thirdPartyAccountId="thirdPartyId"
               :return-object="true"
               :dense="true"
-              :label="$t('forms.purchases.new.selectOffer')"
-              @offers:selected="orderItemSelected"
-              @offers:addCustomOrderItem='addCustomOrderItem'
+              :label="$t('forms.purchases.new.selectProduct')"
+              @products:selected="orderItemSelected"
+              @products:addCustomOrderItem='addCustomOrderItem'
             )
 </template>
 
@@ -89,42 +82,42 @@ export default {
       type: Number,
       default() {
         return -1
-      }
+      },
     },
     value: {
       type: Array,
       default() {
         return []
-      }
+      },
     },
     details: {
       type: Boolean,
       default() {
         return false
-      }
-    }
+      },
+    },
   },
   data() {
     return {
-      orderItems: [...this.value]
+      orderItems: [...this.value],
     }
   },
   computed: {
     indexedItems() {
       return this.orderItems.map((item, index) => ({
         id: index,
-        ...item
+        ...item,
       }))
     },
     headers() {
       const res = this.$store.getters['headers/orderItems']
       return translateHeaders(this.$i18n, res)
-    }
+    },
   },
   watch: {
     value() {
       this.orderItems = [...this.value]
-    }
+    },
   },
   mounted() {
     this.$store.dispatch('headers/getOrderItemHeaders')
@@ -148,8 +141,8 @@ export default {
     },
     addCustomOrderItem() {
       this.$emit('orderItem:addCustom')
-    }
-  }
+    },
+  },
 }
 </script>
 

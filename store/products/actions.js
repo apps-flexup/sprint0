@@ -2,9 +2,7 @@
 export default {
   get({ commit }) {
     // charger les produits
-    this.$repos.products
-      .indexWithAccountId()
-      .then((data) => commit('set', data))
+    this.$repos.products.indexWithAccountId().then((data) => commit('set', data))
   },
   clear({ commit }) {
     commit('set', [])
@@ -12,7 +10,7 @@ export default {
   remove({ commit }, product) {
     product = {
       ...product,
-      status: 'archived'
+      status: 'archived',
     }
     this.$repos.products.update(product).then((res) => {
       commit('remove', res)
@@ -29,5 +27,5 @@ export default {
         commit('add', res)
       })
     }
-  }
+  },
 }

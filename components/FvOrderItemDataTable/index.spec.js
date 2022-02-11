@@ -16,8 +16,8 @@ describe('FvProductDataTable', () => {
       store,
       vuetify,
       mocks: {
-        $t: (msg) => msg
-      }
+        $t: (msg) => msg,
+      },
     })
   }
   beforeEach(() => {
@@ -27,23 +27,23 @@ describe('FvProductDataTable', () => {
           namespaced: true,
           state: {},
           actions: {
-            remove: jest.fn()
-          }
+            remove: jest.fn(),
+          },
         },
         categories: {
           namespaced: true,
           state: {},
           actions: {
-            get: jest.fn()
-          }
-        }
-      }
+            get: jest.fn(),
+          },
+        },
+      },
     })
     vuetify = new Vuetify()
   })
   it('should render a fv product data table', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="fvDataTable"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="fvDataTable"]').exists()).toBeTruthy()
   })
   it('should emit an event when a row is selected', () => {
     const wrapper = factory()

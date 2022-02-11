@@ -47,21 +47,17 @@ export default {
   name: 'FvSpeedDial',
   data() {
     return {
-      fab: true
+      fab: true,
     }
-  },
-  mounted() {
-    console.log('Composant ', this.$options.name)
   },
   methods: {
     selection(v) {
-      console.log('on emet :', v)
       const payload = {
         src: this.$options.name,
-        event: v
+        event: v,
       }
       this.$emit('action:selected', payload)
-    }
-  }
+    },
+  },
 }
 </script>
