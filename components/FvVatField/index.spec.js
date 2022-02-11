@@ -8,7 +8,7 @@ describe('FvVatField', () => {
   }
   it('should render a vat field', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="vatField"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="vatField"]').exists()).toBeTruthy()
   })
   it('should emit an event when vat change', () => {
     const wrapper = factory()

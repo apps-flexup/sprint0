@@ -12,8 +12,8 @@ const factory = (propsData) => {
 describe('FvHeaderIndex', () => {
   it('should render a fv header index', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="title"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="createButton"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="title"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="createButton"]').exists()).toBeTruthy()
   })
   it('should display the title', () => {
     const wrapper = factory({ title: 'plop' })

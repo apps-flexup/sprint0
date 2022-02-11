@@ -119,7 +119,7 @@ beforeEach(() => {
 describe('FvPaymentConditionAutocomplete', () => {
   it('should render a fv payment condition autocomplete', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="autocomplete"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="autocomplete"]').exists()).toBeTruthy()
   })
   it('should emit an event when a payment condition is selected', () => {
     const wrapper = factory()

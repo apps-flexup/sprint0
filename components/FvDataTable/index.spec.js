@@ -84,7 +84,7 @@ describe('FvDataTable', () => {
   })
   it('should render a fv data table', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="dataTable"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="dataTable"]').exists()).toBeTruthy()
   })
   it('should display headers', () => {
     const wrapper = factory()

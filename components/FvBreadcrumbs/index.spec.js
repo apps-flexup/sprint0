@@ -86,7 +86,7 @@ describe('FvBreadcrumbs', () => {
   })
   it('should render a fv breadcrumbs', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="breadcrumbs"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="breadcrumbs"]').exists()).toBeTruthy()
   })
   it('should create a crumb', () => {
     const wrapper = factory()

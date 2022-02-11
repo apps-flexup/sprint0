@@ -43,6 +43,6 @@ describe('FvRecursiveDataTable', () => {
   })
   it('should render a fv recursive data table', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="dataTable"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="dataTable"]').exists()).toBeTruthy()
   })
 })

@@ -88,7 +88,7 @@ beforeEach(() => {
 describe('FvCategoryAutocomplete', () => {
   it('should render a fv category autocomplete', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid=autocomplete]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid=autocomplete]').exists()).toBeTruthy()
   })
   it('should get all categories from the store', () => {
     const wrapper = factory()

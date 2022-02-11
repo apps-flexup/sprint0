@@ -4,9 +4,9 @@ import FvQuantitySelector from './index.vue'
 describe('FvQuantitySelector', () => {
   it('should render a quantity selector', () => {
     const wrapper = mount(FvQuantitySelector)
-    expect(wrapper.find('[data-testid="quantitySelector"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="buttonMinus"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="buttonPlus"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="quantitySelector"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="buttonMinus"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="buttonPlus"]').exists()).toBeTruthy()
   })
   it('should display a quantity of 1 by default', () => {
     const wrapper = mount(FvQuantitySelector)

@@ -50,9 +50,9 @@ beforeEach(() => {
 describe('FvIndexTable', () => {
   it('should render a fv index table', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="header"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="table"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="selectHeaders"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="header"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="table"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="selectHeaders"]').exists()).toBeTruthy()
   })
   it('should update filters when filters changed', () => {
     const wrapper = factory()

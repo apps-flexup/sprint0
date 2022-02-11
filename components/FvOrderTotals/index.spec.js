@@ -71,8 +71,8 @@ beforeEach(() => {
 describe('FvOrderTotals', () => {
   it('should render a fv order totals', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="totalWithoutVat"]').exists()).toBe(true)
-    // expect(wrapper.find('[data-testid="totalByVat"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="total"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="totalWithoutVat"]').exists()).toBeTruthy()
+    // expect(wrapper.find('[data-testid="totalByVat"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="total"]').exists()).toBeTruthy()
   })
 })

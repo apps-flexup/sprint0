@@ -12,7 +12,7 @@ const factory = (propsData) => {
 describe('FvIcon', () => {
   it('should render a fv icon', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid=icon]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid=icon]').exists()).toBeTruthy()
   })
   it('should emit an event when clicked', () => {
     const wrapper = factory()

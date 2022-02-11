@@ -102,9 +102,9 @@ describe('FvAccountsIndex', () => {
   })
   it('should render an accounts index component', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="title"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="headerIndex"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="accountList"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="title"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="headerIndex"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="accountList"]').exists()).toBeTruthy()
   })
   it('should display account cards', () => {
     const wrapper = factory()

@@ -49,6 +49,6 @@ beforeEach(() => {
 describe('FvOrderLineList', () => {
   it('should render a fv order line list', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="dataTable"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="dataTable"]').exists()).toBeTruthy()
   })
 })

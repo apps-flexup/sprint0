@@ -44,7 +44,7 @@ beforeEach(() => {
 describe('FvProductAutocomplete', () => {
   it('should render a fv product autocomplete', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="autocomplete"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="autocomplete"]').exists()).toBeTruthy()
   })
   it('should emit an event when a product is selected', () => {
     const wrapper = factory()

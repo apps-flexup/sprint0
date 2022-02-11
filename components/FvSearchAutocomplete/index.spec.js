@@ -38,8 +38,8 @@ describe('FvSearchAutocomplete', () => {
   })
   it('should render a fv search autocomplete', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="selector"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="searchBar"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="selector"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="searchBar"]').exists()).toBeTruthy()
   })
   it('should receive items in data', () => {
     const wrapper = factory()

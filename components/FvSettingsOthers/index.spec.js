@@ -28,9 +28,9 @@ beforeEach(() => {
 describe('FvSettingsOthers', () => {
   it('should render a fv settings others', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="priceNbDigits"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="vatNbDigits"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="defaultVat"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="priceNbDigits"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="vatNbDigits"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="defaultVat"]').exists()).toBeTruthy()
   })
   it('should call active account set settings with new settings when price nb digits is selected', () => {
     const wrapper = factory()

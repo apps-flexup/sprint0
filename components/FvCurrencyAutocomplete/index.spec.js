@@ -56,7 +56,7 @@ beforeEach(() => {
 describe('FvCurrencyAutocomplete', () => {
   it('should render a fv currency autocomplete', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid=autocomplete]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid=autocomplete]').exists()).toBeTruthy()
   })
   it('should get all currencies from the store', () => {
     const wrapper = factory()

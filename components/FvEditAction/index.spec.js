@@ -8,7 +8,7 @@ const factory = () => {
 describe('FvEditAction', () => {
   it('should render a fv delete action', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid=editIcon]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid=editIcon]').exists()).toBeTruthy()
   })
   it('should emit an event when clicked', () => {
     const wrapper = factory()

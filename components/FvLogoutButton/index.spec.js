@@ -17,7 +17,7 @@ const factory = () => {
 describe('FvLogoutButton', () => {
   it('should render a fv logout button', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="button"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="button"]').exists()).toBeTruthy()
   })
   it('should logout with keycloak when button is clicked', () => {
     const wrapper = factory()
