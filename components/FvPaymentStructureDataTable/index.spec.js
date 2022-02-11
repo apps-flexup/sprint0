@@ -16,7 +16,7 @@ const factory = () => {
 describe('FvPaymentStructureDataTable', () => {
   it('should render a fv payment structure data table', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="dataTable"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="dataTable"]').exists()).toBeTruthy()
   })
   it('should emit an event when payment structure is selected', () => {
     const wrapper = factory()

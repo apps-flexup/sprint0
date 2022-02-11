@@ -56,9 +56,9 @@ describe('FvSubMenu', () => {
   })
   it('should render a sub menu', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="categoryMenu"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="menuList"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="menu"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="categoryMenu"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="menuList"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="menu"]').exists()).toBeTruthy()
   })
   it('should return the menu name', () => {
     const wrapper = factory({ menuName: 'user' })

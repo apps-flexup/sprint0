@@ -63,7 +63,7 @@ describe('FvUnitAutocomplete', () => {
   })
   it('should render a FvUnitAutocomplete', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="autocomplete"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="autocomplete"]').exists()).toBeTruthy()
   })
   it('should send a signal when unit is selected', () => {
     const wrapper = factory()

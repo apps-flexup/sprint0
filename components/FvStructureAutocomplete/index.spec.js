@@ -54,7 +54,7 @@ describe('FvStructureAutocomplete', () => {
   })
   it('should render a structure autocomplete', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="autocomplete"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="autocomplete"]').exists()).toBeTruthy()
   })
   it('should emit an event when a structure is selected', () => {
     const wrapper = factory()

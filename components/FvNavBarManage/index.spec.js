@@ -73,8 +73,8 @@ beforeEach(() => {
 describe('FvNavBarManage', () => {
   it('should render a nav bar buyer', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="navBar"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="navBar"]').exists()).toBeTruthy()
     expect(wrapper.findAll('[data-testid="links"]').length).toBe(manageLinks.length)
-    expect(wrapper.find('[data-testid="createButton"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="createButton"]').exists()).toBeTruthy()
   })
 })

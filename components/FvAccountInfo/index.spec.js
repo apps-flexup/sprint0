@@ -67,7 +67,7 @@ describe('FvAccountInfo', () => {
   it('should render an fv account info', () => {
     const wrapper = factoryWithAccount()
     const accountInfo = wrapper.find('[data-testid="accountInfo"]')
-    expect(accountInfo.exists()).toBe(true)
+    expect(accountInfo.exists()).toBeTruthy()
   })
   it('should compute account name when account is set', () => {
     const wrapper = factoryWithAccount()

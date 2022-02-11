@@ -10,9 +10,9 @@ const factory = (propsData) => {
 describe('FvAvatarWithName', () => {
   it('should render a fv avatar with name', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="avatar"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="name"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="email"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="avatar"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="name"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="email"]').exists()).toBeTruthy()
   })
   it('should display name and family name', () => {
     const name = 'toto'

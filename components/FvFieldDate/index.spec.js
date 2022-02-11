@@ -36,14 +36,14 @@ describe('FvFieldDate', () => {
   })
   it('should render a fv field date', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="textField"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="menu"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="textField"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="menu"]').exists()).toBeTruthy()
     expect(wrapper.find('[data-testid="datePicker"]').exists()).toBe(false)
   })
   it('should display date picker when click on text field', () => {
     const wrapper = factory()
     const textField = wrapper.find('[data-testid="textField"]')
     textField.vm.$emit('click')
-    expect(wrapper.vm.fromDateMenu).toBe(true)
+    expect(wrapper.vm.fromDateMenu).toBeTruthy()
   })
 })

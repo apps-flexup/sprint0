@@ -92,7 +92,7 @@ beforeEach(() => {
 describe('FvMembersIndex', () => {
   it('should render a fv member index', () => {
     const wrapper = cannotInviteMemberFactory()
-    expect(wrapper.find('[data-testid="memberList"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="memberList"]').exists()).toBeTruthy()
   })
   describe('Cannot invite a new member', () => {
     it('should have an invite button and a invite modal ', () => {
@@ -106,14 +106,14 @@ describe('FvMembersIndex', () => {
       wrapper = canInviteMemberFactory()
     })
     it('should have an invite button and a invite modal ', () => {
-      expect(wrapper.find('[data-testid="headerIndex"]').exists()).toBe(true)
+      expect(wrapper.find('[data-testid="headerIndex"]').exists()).toBeTruthy()
       expect(wrapper.vm.dialog).toBe(false)
     })
     it('should display invite member modal when clicked on invite member button', () => {
       const headerIndex = wrapper.find('[data-testid="headerIndex"]')
       expect(wrapper.vm.dialog).toBe(false)
       headerIndex.vm.$emit('button:click')
-      expect(wrapper.vm.dialog).toBe(true)
+      expect(wrapper.vm.dialog).toBeTruthy()
     })
   })
 })

@@ -4,9 +4,9 @@ import FvStepForm from './index.vue'
 describe('FvStepForm', () => {
   it('should render a title, a index and a slot of a form', () => {
     const wrapper = mount(FvStepForm)
-    expect(wrapper.find('[data-testid="formId"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="formTitle"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="formSlot"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="formId"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="formTitle"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="formSlot"]').exists()).toBeTruthy()
   })
   it('should show the number of props formId', () => {
     const wrapper = mount(FvStepForm, {

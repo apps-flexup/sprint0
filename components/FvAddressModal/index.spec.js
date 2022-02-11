@@ -15,6 +15,6 @@ const factory = (propsData) => {
 describe('FvAddressModal', () => {
   it('should render a fv address modal', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="modal"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="modal"]').exists()).toBeTruthy()
   })
 })

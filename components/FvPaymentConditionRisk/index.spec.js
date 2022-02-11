@@ -54,7 +54,7 @@ beforeEach(() => {
 describe('FvPaymentConditionRisk', () => {
   it('should render a fv payment condition risk', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="total"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="total"]').exists()).toBeTruthy()
   })
   it('should have a total risk of 0 if there is no selected references', () => {
     const wrapper = factory()

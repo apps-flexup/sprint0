@@ -4,7 +4,7 @@ import FvPrimaryButton from './index.vue'
 describe('FvPrimaryButton', () => {
   it('should render a button', () => {
     const wrapper = mount(FvPrimaryButton)
-    expect(wrapper.find('[data-testid="button"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="button"]').exists()).toBeTruthy()
   })
   it('should render default slot text when passed', () => {
     const message = 'HelloWorld'

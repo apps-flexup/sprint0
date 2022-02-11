@@ -17,7 +17,7 @@ const factory = () => {
 describe('FvLoginButton', () => {
   it('should render a fv login button', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="button"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="button"]').exists()).toBeTruthy()
   })
   it('should login with keycloak when button is clicked', () => {
     const wrapper = factory()

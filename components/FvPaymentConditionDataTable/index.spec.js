@@ -4,7 +4,7 @@ import FvPaymentConditionDataTable from './index.vue'
 describe('FvPaymentConditionDataTable', () => {
   it('should render a fv payment condition data table', () => {
     const wrapper = shallowMount(FvPaymentConditionDataTable)
-    expect(wrapper.find('[data-testid="dataTable"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="dataTable"]').exists()).toBeTruthy()
   })
   it('should emit an event when a row is selected', () => {
     const wrapper = shallowMount(FvPaymentConditionDataTable)

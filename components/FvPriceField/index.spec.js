@@ -54,7 +54,7 @@ beforeEach(() => {
 describe('FvPriceField', () => {
   it('should render a fv price field', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="priceField"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="priceField"]').exists()).toBeTruthy()
   })
   it('should emit an event when price changed', () => {
     const wrapper = factory()
@@ -96,6 +96,6 @@ describe('FvPriceField', () => {
     await wrapper.setData({ truncatePrice: false })
     const priceField = wrapper.find('[data-testid="priceField"]')
     priceField.vm.$emit('click:outside')
-    expect(wrapper.vm.truncatePrice).toBe(true)
+    expect(wrapper.vm.truncatePrice).toBeTruthy()
   })
 })

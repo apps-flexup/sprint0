@@ -15,7 +15,7 @@ const factory = (propsData) => {
 describe('FvStatusSwitch', () => {
   it('should render a fv status switch', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid=switch]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid=switch]').exists()).toBeTruthy()
   })
   describe.each([
     ['active', 'inactive'],

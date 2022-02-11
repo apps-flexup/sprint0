@@ -41,7 +41,7 @@ beforeEach(() => {
 describe('FvSettingsIndex', () => {
   it('should render a fv settings index', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="title"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="title"]').exists()).toBeTruthy()
     expect(wrapper.findAll('[data-testid="tab"]').length).toBe(2)
     expect(wrapper.findAll('[data-testid="tabItem"]').length).toBe(2)
   })

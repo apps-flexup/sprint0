@@ -4,7 +4,7 @@ import FvTextField from './index.vue'
 describe('FvTextField', () => {
   it('should render a text field', () => {
     const wrapper = mount(FvTextField)
-    expect(wrapper.find('[data-testid="textField"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="textField"]').exists()).toBeTruthy()
   })
   it('should emit an event when click', () => {
     const wrapper = mount(FvTextField)

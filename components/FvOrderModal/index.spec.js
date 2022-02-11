@@ -12,6 +12,6 @@ const factory = () => {
 describe('FvOrderModal', () => {
   it('should render a fv order modal', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="modal"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="modal"]').exists()).toBeTruthy()
   })
 })

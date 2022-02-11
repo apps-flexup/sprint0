@@ -38,7 +38,7 @@ describe('FvThirdPartyAccountList', () => {
   })
   it('should render a fv third party account list', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="table"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="table"]').exists()).toBeTruthy()
   })
   it('should emit an event when third party account is selected', () => {
     const wrapper = factory()

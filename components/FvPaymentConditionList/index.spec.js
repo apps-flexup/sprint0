@@ -44,7 +44,7 @@ beforeEach(() => {
 describe('FvPaymentConditionList', () => {
   it('should render a fv payment condition list', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="table"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="table"]').exists()).toBeTruthy()
   })
   it('should emit an event when payment condition is selected', () => {
     const wrapper = factory()

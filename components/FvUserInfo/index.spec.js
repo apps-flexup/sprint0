@@ -19,6 +19,6 @@ describe('FvUserInfo', () => {
         $displayRules,
       },
     })
-    expect(wrapper.find('[data-testid="userInfo"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="userInfo"]').exists()).toBeTruthy()
   })
 })

@@ -35,6 +35,7 @@ $ yarn generate
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
 
-TODO: Order form:
+# branches
 
-- Add periodicity (hidden per default)
+* [master](https://gestion.flexup.org)
+* [dev](https://qualif.flexup.org)

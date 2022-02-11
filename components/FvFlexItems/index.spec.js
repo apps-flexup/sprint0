@@ -4,7 +4,7 @@ import FvFlexItems from './index.vue'
 describe('FvFlexItems', () => {
   it('should render a fv flex items', () => {
     const wrapper = mount(FvFlexItems)
-    expect(wrapper.find('[data-testid="div"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="div"]').exists()).toBeTruthy()
   })
   it('should render left slot', () => {
     const slot = 'HelloWorld'

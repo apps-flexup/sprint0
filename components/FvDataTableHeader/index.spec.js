@@ -31,16 +31,16 @@ describe('FvDataTableHeader', () => {
   })
   it('should render a fv data table header', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid=title]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid=title]').exists()).toBeTruthy()
     expect(wrapper.find('[data-testid=filters]').exists()).toBe(false)
-    expect(wrapper.find('[data-testid=searchBar]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid=settings]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid=searchBar]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid=settings]').exists()).toBeTruthy()
   })
   it('should display filters when available', async () => {
     const filters = ['filter1', 'filter2']
     const wrapper = factory()
     await wrapper.setData({ filters })
-    expect(wrapper.find('[data-testid=filters]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid=filters]').exists()).toBeTruthy()
   })
   it('should emit an event when filter changed', () => {
     const filters = ['filter 1']

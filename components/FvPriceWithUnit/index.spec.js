@@ -21,7 +21,7 @@ const factory = () => {
 describe('FvPriceWithUnit', () => {
   it('should render a price with unit', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="price"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="price"]').exists()).toBeTruthy()
   })
   it('should display the result of display rule price with unit', async () => {
     const wrapper = factory()

@@ -21,7 +21,7 @@ const factory = () => {
 describe('FvPriceToPreferredCurrency', () => {
   it('should render a fv price to preferred currency', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="price"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="price"]').exists()).toBeTruthy()
   })
   it('should display the converted price', async () => {
     const wrapper = factory()

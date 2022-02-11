@@ -15,7 +15,7 @@ const factory = (propsData) => {
 describe('FvReferenceAutocomplete', () => {
   it('should render a fv reference autocomplete', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="autocomplete"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="autocomplete"]').exists()).toBeTruthy()
   })
   it('should emit an event when a reference is selected', () => {
     const wrapper = factory()

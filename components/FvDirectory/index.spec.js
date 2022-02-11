@@ -12,6 +12,6 @@ const factory = () => {
 describe('FvDirectory', () => {
   it('should render a fv directory', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid=autocomplete]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid=autocomplete]').exists()).toBeTruthy()
   })
 })

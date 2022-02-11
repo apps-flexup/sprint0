@@ -20,7 +20,7 @@ const factory = () => {
 describe('FvOrderList', () => {
   it('should render a fv order list', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="indexTable"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="indexTable"]').exists()).toBeTruthy()
   })
   it('should emit an event when an order is selected', () => {
     const wrapper = factory()

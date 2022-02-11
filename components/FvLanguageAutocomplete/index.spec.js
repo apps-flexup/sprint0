@@ -31,7 +31,7 @@ beforeEach(() => {
 describe('FvLanguageAutocomplete', () => {
   it('should render a fv language autocomplete', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid=autocomplete]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid=autocomplete]').exists()).toBeTruthy()
   })
   it('should get all locales from the store', () => {
     const wrapper = factory()

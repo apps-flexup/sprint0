@@ -57,13 +57,13 @@ beforeEach(() => {
 describe('FvPaymentConditionSelection', () => {
   it('should render a fv payment condition step detail', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="autocomplete"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="autocomplete"]').exists()).toBeTruthy()
     expect(wrapper.find('[data-testid="table"]').exists()).toBe(false)
   })
   it('should display table if there is payment conditions', () => {
     const wrapper = factory({ value: payload })
-    expect(wrapper.find('[data-testid="autocomplete"]').exists()).toBe(true)
-    expect(wrapper.find('[data-testid="table"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="autocomplete"]').exists()).toBeTruthy()
+    expect(wrapper.find('[data-testid="table"]').exists()).toBeTruthy()
   })
   it('should have a total risk of 0 if there is no selected payment condition', () => {
     const wrapper = factory()
