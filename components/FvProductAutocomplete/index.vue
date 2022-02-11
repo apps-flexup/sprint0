@@ -132,7 +132,7 @@ export default {
       const { unit: unitStr } = unit
       const { amount, currency } = price
       return (
-        amount.toLocaleString(this.$locale, {
+        amount.toLocaleString(this.$store.getters['settings/locale'], {
           style: 'currency',
           currency,
           minimumSignificantDigits: 3,
