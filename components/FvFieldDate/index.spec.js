@@ -1,4 +1,4 @@
-import { mount, createLocalVue } from '@vue/test-utils'
+import { createLocalVue, mount } from '@vue/test-utils'
 import Vuetify from 'vuetify'
 import Vuex from 'vuex'
 import FvFieldDate from './index.vue'
@@ -38,7 +38,7 @@ describe('FvFieldDate', () => {
     const wrapper = factory()
     expect(wrapper.find('[data-testid="textField"]').exists()).toBeTruthy()
     expect(wrapper.find('[data-testid="menu"]').exists()).toBeTruthy()
-    expect(wrapper.find('[data-testid="datePicker"]').exists()).toBe(false)
+    expect(wrapper.find('[data-testid="datePicker"]').exists()).toBeFalsy()
   })
   it('should display date picker when click on text field', () => {
     const wrapper = factory()
