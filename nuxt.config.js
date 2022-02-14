@@ -1,5 +1,6 @@
 import colors from 'vuetify/es5/util/colors'
 import 'reflect-metadata'
+
 require('dotenv').config()
 
 const homeUrl = encodeURIComponent(process.env.HOME_URL)
@@ -80,6 +81,7 @@ export default {
    ** Plugins to load before mounting the App
    */
   plugins: [
+    '~/plugins/globalcomponents',
     '~/plugins/axios',
     '~/plugins/activeAccount',
     '~/plugins/data',

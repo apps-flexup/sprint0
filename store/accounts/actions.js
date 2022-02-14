@@ -17,7 +17,6 @@ export default {
   get({ commit, getters }) {
     if (!this.$auth.loggedIn) return
     const request = `given-roles?to_id=${this.$auth.user.sub}`
-    console.log('given-roles', getters.current)
     this.$axios.$get(request).then((givenRoles) => {
       if (!getters.current && givenRoles.length > 0) {
         const account = parseInt(givenRoles[0].from_id)
@@ -110,8 +109,7 @@ export default {
       account['legal-structure-id'] = thirdParty['legal-structure-id']
       account.siret = thirdParty.siret
     }
-    const res = await this.$repos.accounts.createWithAccountId(account)
-    return res
+    return await this.$repos.accounts.createWithAccountId(account)
   },
   async updateLocalThirdParty({ _commit }, payload) {
     const account = await this.$repos.accounts.show(payload.id)
@@ -135,7 +133,6 @@ export default {
       }
     }
     account.medias = payload.data.medias
-    const res = await this.$repos.accounts.update(account)
-    return res
+    return await this.$repos.accounts.update(account)
   },
 }
