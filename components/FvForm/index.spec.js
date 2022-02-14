@@ -48,9 +48,12 @@ describe('FvForm', () => {
     })
   }
   beforeEach(() => {
+    // eslint-disable-next-line import/no-named-as-default-member
     store = new Vuex.Store({
       modules: {
         members: {
+          namespaced: true,
+          state: {},
           actions: {
             get: jest.fn(),
           },
