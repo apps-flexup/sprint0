@@ -1,4 +1,4 @@
-import { shallowMount, createLocalVue } from '@vue/test-utils'
+import { createLocalVue, shallowMount } from '@vue/test-utils'
 import Vuex from 'vuex'
 import FvDataTableHeader from './index.vue'
 
@@ -32,7 +32,7 @@ describe('FvDataTableHeader', () => {
   it('should render a fv data table header', () => {
     const wrapper = factory()
     expect(wrapper.find('[data-testid=title]').exists()).toBeTruthy()
-    expect(wrapper.find('[data-testid=filters]').exists()).toBe(false)
+    expect(wrapper.find('[data-testid=filters]').exists()).toBeFalsy()
     expect(wrapper.find('[data-testid=searchBar]').exists()).toBeTruthy()
     expect(wrapper.find('[data-testid=settings]').exists()).toBeTruthy()
   })

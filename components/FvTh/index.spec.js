@@ -1,4 +1,4 @@
-import { mount, createLocalVue } from '@vue/test-utils'
+import { createLocalVue, mount } from '@vue/test-utils'
 import Vuex from 'vuex'
 import FvTh from './index.vue'
 
@@ -37,7 +37,7 @@ describe('FvTh', () => {
     const wrapper = factory()
     expect(wrapper.find('[data-testid="div"]').exists()).toBeTruthy()
     expect(wrapper.find('[data-testid="text"]').exists()).toBeTruthy()
-    expect(wrapper.find('[data-testid="sortIcon"]').exists()).toBe(false)
+    expect(wrapper.find('[data-testid="sortIcon"]').exists()).toBeFalsy()
   })
   it('should render a sort icon if sortable', () => {
     const wrapper = factory({ sortable: true })

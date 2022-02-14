@@ -1,4 +1,4 @@
-import { shallowMount, createLocalVue } from '@vue/test-utils'
+import { createLocalVue, shallowMount } from '@vue/test-utils'
 import Vuex from 'vuex'
 import FvAddressField from './index.vue'
 
@@ -87,7 +87,7 @@ describe('FvAddressField', () => {
     const modal = wrapper.find('[data-testid="modal"]')
     modal.vm.$emit('modal:actions:close')
     await wrapper.vm.$nextTick()
-    expect(modal.props().dialog).toBe(false)
+    expect(modal.props().dialog).toBeFalsy()
   })
   it('should reset address to default value when modal is closed', async () => {
     const address = {
@@ -114,7 +114,7 @@ describe('FvAddressField', () => {
     const modal = wrapper.find('[data-testid="modal"]')
     modal.vm.$emit('modal:actions:save')
     await wrapper.vm.$nextTick()
-    expect(modal.props().dialog).toBe(false)
+    expect(modal.props().dialog).toBeFalsy()
   })
   it('should set local address when modal payload change', () => {
     const address = {
