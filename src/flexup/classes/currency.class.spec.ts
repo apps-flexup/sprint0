@@ -1,4 +1,13 @@
+// @ts-ignore
+import fetch from 'cross-fetch/polyfill'
 import { Currency } from './currency.class'
+
+jest.mock('cross-fetch', () => {
+  return {
+    __esModule: true,
+    default: jest.fn(),
+  }
+})
 
 describe('Currency', () => {
   it('should create an instance by default to EUR', () => {
@@ -6,6 +15,7 @@ describe('Currency', () => {
     expect(result).toBeInstanceOf(Currency)
     expect(result).toBeDefined()
   })
+
   it('should create an instance of USD', () => {
     const currency = 'USD'
     const expectedMinor = 2
@@ -15,6 +25,7 @@ describe('Currency', () => {
     expect(result.active).toBeTruthy()
     expect(result).toBeDefined()
   })
+
   it('should create an instance of LEK', () => {
     const currency = 'LEK'
     const expectedMinor = 5
@@ -25,39 +36,89 @@ describe('Currency', () => {
     expect(result.active).toBeFalsy()
     expect(result).toBeDefined()
   })
+
   it('should raise an exception when minor less than 0', () => {
     const currency = 'CHF'
     const expectedMinor = -1
     const expectedActive = false
     try {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const _uselessVariable = new Currency(currency, expectedMinor, expectedActive)
+      const _uselessVariable: Currency = new Currency(currency, expectedMinor, expectedActive)
     } catch (error) {
       const expectedError = new Error('Minor must be greater or equal to 0 and less or equal to 9')
       expect(error).toEqual(expectedError)
     }
   })
+
   it('should raise an exception when minor less than 0', () => {
     const currency = 'BGN'
     const expectedMinor = 10
     const expectedActive = false
     try {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const _uselessVariable = new Currency(currency, expectedMinor, expectedActive)
+      const _uselessVariable: Currency = new Currency(currency, expectedMinor, expectedActive)
     } catch (error) {
       const expectedError = new Error('Minor must be greater or equal to 0 and less or equal to 9')
       expect(error).toEqual(expectedError)
     }
   })
-  /*it('should return 1 if currencies are the same', () => {
+
+  it('should return 1 if destination currency is void', async () => {
     const currency = 'EUR'
     const currentCurrency = new Currency(currency)
-    expect(currentCurrency.converTo(currency)).toEqual(1)
+    const expectedResult = 1
+    const result = await currentCurrency.convertTo()
+    expect(result).toEqual(expectedResult)
   })
-  it('should return 1,13 if currencies are EUR / USD', () => {
+
+  it('should return 1 if currencies are the same', async () => {
     const currency = 'EUR'
-    const destinationCurrency = 'USD'
     const currentCurrency = new Currency(currency)
-    expect(currentCurrency.converTo(destinationCurrency)).toEqual(1)
-  })*/
+    const expectedResult = 1
+    const result = await currentCurrency.convertTo(currency)
+    expect(result).toEqual(expectedResult)
+  })
+
+  it('should return 1.13 if currencies are EUR / USD', async () => {
+    const fromCurrency = 'EUR'
+    const destinationCurrency = 'USD'
+    const expectedResult = {
+      date: '2022-02-15',
+      historical: false,
+      info: {
+        rate: 1.13217,
+      },
+      query: {
+        amount: 1,
+        from: fromCurrency,
+        to: destinationCurrency,
+      },
+      result: 1.13217,
+      success: true,
+    }
+
+    global.fetch = jest.fn(() =>
+      Promise.resolve({
+        json: () => Promise.resolve(JSON.stringify(expectedResult)),
+      }),
+    ) as jest.Mock
+    const currentCurrency = new Currency(fromCurrency)
+    const result = await currentCurrency.convertTo(destinationCurrency)
+    expect(result).toEqual(expectedResult.result)
+  })
+
+  it('should return 0 if currency request failed', async () => {
+    const fromCurrency = 'EUR'
+    const destinationCurrency = 'USD'
+
+    global.fetch = jest.fn(() =>
+      Promise.reject({
+        json: () => Promise.resolve(''),
+      }),
+    ) as jest.Mock
+
+    const currentCurrency = new Currency(fromCurrency)
+    const result = await currentCurrency.convertTo(destinationCurrency)
+    expect(result).toEqual(0)
+  })
 })

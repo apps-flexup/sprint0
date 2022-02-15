@@ -1,10 +1,12 @@
+// @ts-ignore
+import fetch from 'cross-fetch'
 import { Currency as CurrencyInterface } from './currency.interface'
 
 export class Currency implements CurrencyInterface {
   private _iso3: string = 'EUR'
   private _minor: number = 2
   private _active: boolean = true
-  private locale: string = 'fr'
+  private readonly locale: string = 'fr'
 
   constructor(iso3: string = 'EUR', minor: number = 2, active: boolean = true, locale: string = 'fr') {
     this.iso3 = iso3
@@ -58,12 +60,31 @@ export class Currency implements CurrencyInterface {
     })
   }
 
-  async converTo(deviseConvert: string = '') {
-    if ((this.iso3 === deviseConvert) || (deviseConvert === '')) return +1.0
-    const amount = 1
-    const currencyApiUrl = `https://api.exchangerate.host/convert?amount=${amount}&from=${this.iso3}&to=${deviseConvert}`
-    const res = await fetch(currencyApiUrl)
-    const result = await res.json()
+  async convertTo(toCurrency: string = '') {
+    let result = 0
+    if (this.iso3 === toCurrency || toCurrency === '') {
+      result = 1
+    } else {
+      const amount = 1
+      const currencyApiUrl = `https://api.exchangerate.host/convert?amount=${amount}&from=${this.iso3}&to=${toCurrency}`
+      const initConfig = {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+      }
+      result = await fetch(currencyApiUrl, initConfig)
+        .then((res) => {
+          console.log('then 1 res :', res)
+          return res.json()
+        })
+        .then((res) => {
+          console.log('then 2res :', res)
+          return res.result
+        })
+        .catch(() => 0)
+    }
     return result
   }
 }
