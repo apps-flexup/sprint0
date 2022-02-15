@@ -1,4 +1,4 @@
-import { mount, createLocalVue } from '@vue/test-utils'
+import { createLocalVue, mount } from '@vue/test-utils'
 import Vuetify from 'vuetify'
 import Vuex from 'vuex'
 import FvUserAccount from './index.vue'
@@ -59,17 +59,17 @@ describe('FvUserAccount', () => {
   })
   it('should render a fvUserAccount when logged in', () => {
     const wrapper = factory()
-    expect(wrapper.find('[data-testid="loginBtn"]').exists()).toBe(false)
+    expect(wrapper.find('[data-testid="loginBtn"]').exists()).toBeFalsy()
     expect(wrapper.find('[data-testid="menu"]').exists()).toBeTruthy()
     expect(wrapper.find('[data-testid="accountBtn"]').exists()).toBeTruthy()
-    expect(wrapper.find('[data-testid="accountList"]').exists()).toBe(false)
+    expect(wrapper.find('[data-testid="accountList"]').exists()).toBeFalsy()
   })
   it('should render a loggedIn button when logged out', () => {
     const wrapper = factory({ loggedIn: false })
     expect(wrapper.find('[data-testid="loginBtn"]').exists()).toBeTruthy()
-    expect(wrapper.find('[data-testid="menu"]').exists()).toBe(false)
-    expect(wrapper.find('[data-testid="accountBtn"]').exists()).toBe(false)
-    expect(wrapper.find('[data-testid="accountList"]').exists()).toBe(false)
+    expect(wrapper.find('[data-testid="menu"]').exists()).toBeFalsy()
+    expect(wrapper.find('[data-testid="accountBtn"]').exists()).toBeFalsy()
+    expect(wrapper.find('[data-testid="accountList"]').exists()).toBeFalsy()
   })
   it('should show the account list when button is clicked', async () => {
     const wrapper = factory()

@@ -27,7 +27,7 @@ describe('FvHeaderIndex', () => {
   })
   it('should not display the button when condition is false', () => {
     const wrapper = factory({ canCreate: false })
-    expect(wrapper.find('[data-testid="createButton"]').exists()).toBe(false)
+    expect(wrapper.find('[data-testid="createButton"]').exists()).toBeFalsy()
   })
   it('should send an event when button is clicked', () => {
     const wrapper = factory()

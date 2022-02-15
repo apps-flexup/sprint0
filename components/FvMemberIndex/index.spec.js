@@ -1,4 +1,4 @@
-import { shallowMount, createLocalVue } from '@vue/test-utils'
+import { createLocalVue, shallowMount } from '@vue/test-utils'
 import Vuex from 'vuex'
 import FvMemberIndex from './index.vue'
 
@@ -97,7 +97,7 @@ describe('FvMembersIndex', () => {
   describe('Cannot invite a new member', () => {
     it('should have an invite button and a invite modal ', () => {
       const wrapper = cannotInviteMemberFactory()
-      expect(wrapper.find('[data-testid="inviteMemberModal"]').exists()).toBe(false)
+      expect(wrapper.find('[data-testid="inviteMemberModal"]').exists()).toBeFalsy()
     })
   })
   describe('Can invite a new member', () => {
@@ -107,11 +107,11 @@ describe('FvMembersIndex', () => {
     })
     it('should have an invite button and a invite modal ', () => {
       expect(wrapper.find('[data-testid="headerIndex"]').exists()).toBeTruthy()
-      expect(wrapper.vm.dialog).toBe(false)
+      expect(wrapper.vm.dialog).toBeFalsy()
     })
     it('should display invite member modal when clicked on invite member button', () => {
       const headerIndex = wrapper.find('[data-testid="headerIndex"]')
-      expect(wrapper.vm.dialog).toBe(false)
+      expect(wrapper.vm.dialog).toBeFalsy()
       headerIndex.vm.$emit('button:click')
       expect(wrapper.vm.dialog).toBeTruthy()
     })

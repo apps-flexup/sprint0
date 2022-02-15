@@ -1,6 +1,6 @@
 import { createLocalVue, shallowMount } from '@vue/test-utils'
 import Vuex from 'vuex'
-import FvAccountAutocomplete from './index'
+import FvAccountAutocomplete from './FvAccountAutocomplete'
 
 const localVue = createLocalVue()
 localVue.use(Vuex)
