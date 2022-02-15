@@ -136,7 +136,7 @@ export default {
           style: 'currency',
           currency,
           minimumSignificantDigits: 3,
-        }) + ` ${unitStr} `
+        }) + ' /' + ` ${unitStr} `
       )
     },
   },

@@ -57,4 +57,13 @@ export class Currency implements CurrencyInterface {
       minimumSignificantDigits: this.minor + 1,
     })
   }
+
+  async converTo(deviseConvert: string = '') {
+    if ((this.iso3 === deviseConvert) || (deviseConvert === '')) return +1.0
+    const amount = 1
+    const currencyApiUrl = `https://api.exchangerate.host/convert?amount=${amount}&from=${this.iso3}&to=${deviseConvert}`
+    const res = await fetch(currencyApiUrl)
+    const result = await res.json()
+    return result
+  }
 }

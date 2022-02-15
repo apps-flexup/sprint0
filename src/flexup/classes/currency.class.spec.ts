@@ -49,4 +49,15 @@ describe('Currency', () => {
       expect(error).toEqual(expectedError)
     }
   })
+  it('should return 1 if currencies are the same', () => {
+    const currency = 'EUR'
+    const currentCurrency = new Currency(currency)
+    expect(currentCurrency.converTo(currency)).toEqual(1)
+  })
+  it('should return 1,13 if currencies are EUR / USD', () => {
+    const currency = 'EUR'
+    const destinationCurrency = 'USD'
+    const currentCurrency = new Currency(currency)
+    expect(currentCurrency.converTo(destinationCurrency)).toEqual(1)
+  })
 })
