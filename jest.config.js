@@ -20,5 +20,6 @@ module.exports = {
       pug: { doctype: 'html' },
     },
   },
+  automock: false,
   setupFiles: ['<rootDir>/test/setup.js', '<rootDir>/plugins/globalcomponents.js'],
 }

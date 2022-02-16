@@ -79,11 +79,12 @@ export class Currency implements CurrencyInterface {
           console.log('then 1 res :', res)
           return res.json()
         })
-        .then((res) => {
-          console.log('then 2res :', res)
-          return res.result
-        })
+        // .then((res) => {
+        //   console.log('then 2res :', res)
+        //   return res.result
+        // })
         .catch(() => 0)
+      console.log('RESULT :', result)
     }
     return result
   }
