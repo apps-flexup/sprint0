@@ -1,12 +1,8 @@
-import fetchMock from 'jest-fetch-mock'
 import { Currency } from './currency.class'
 
+jest.mock('./services/convertTo')
+
 describe('Currency', () => {
-
-  beforeEach(() => {
-    fetchMock.enableMocks()
-  })
-
   it('should create an instance by default to EUR', () => {
     const result = new Currency()
     expect(result).toBeInstanceOf(Currency)
@@ -80,38 +76,10 @@ describe('Currency', () => {
     const fromCurrency = 'EUR'
     const destinationCurrency = 'USD'
     const expectedResult = {
-      date: '2022-02-15',
-      historical: false,
-      info: {
-        rate: 1.13217,
-      },
-      query: {
-        amount: 1,
-        from: fromCurrency,
-        to: destinationCurrency,
-      },
       result: 1.13217,
-      success: true,
     }
-
-    fetchMock.mockResponse(JSON.stringify(expectedResult))
     const currentCurrency = new Currency(fromCurrency)
-    const result = currentCurrency.convertTo(destinationCurrency)
+    const result = await currentCurrency.convertTo(destinationCurrency)
     expect(result).toEqual(expectedResult.result)
-  })
-
-  it.skip('should return 0 if currency request failed', async () => {
-    const fromCurrency = 'EUR'
-    const destinationCurrency = 'USD'
-
-    global.fetch = jest.fn(() =>
-      Promise.reject({
-        json: () => Promise.resolve(''),
-      }),
-    ) as jest.Mock
-
-    const currentCurrency = new Currency(fromCurrency)
-    const result = currentCurrency.convertTo(destinationCurrency)
-    expect(result).toEqual(0)
   })
 })

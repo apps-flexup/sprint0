@@ -1,6 +1,5 @@
-// @ts-ignore
-import fetch from 'cross-fetch'
 import { Currency as CurrencyInterface } from './currency.interface'
+import converTo from './services/convertTo'
 
 export class Currency implements CurrencyInterface {
   private _iso3: string = 'EUR'
@@ -61,31 +60,10 @@ export class Currency implements CurrencyInterface {
   }
 
   async convertTo(toCurrency: string = '') {
-    let result = 0
     if (this.iso3 === toCurrency || toCurrency === '') {
-      result = 1
+      return 1
     } else {
-      const amount = 1
-      const currencyApiUrl = `https://api.exchangerate.host/convert?amount=${amount}&from=${this.iso3}&to=${toCurrency}`
-      const initConfig = {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-      }
-      result = await fetch(currencyApiUrl, initConfig)
-        .then((res) => {
-          console.log('then 1 res :', res)
-          return res.json()
-        })
-        // .then((res) => {
-        //   console.log('then 2res :', res)
-        //   return res.result
-        // })
-        .catch(() => 0)
-      console.log('RESULT :', result)
+      return await converTo(this.iso3, toCurrency)
     }
-    return result
   }
 }
