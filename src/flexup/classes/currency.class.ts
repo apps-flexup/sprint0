@@ -51,12 +51,13 @@ export class Currency implements CurrencyInterface {
 
   toLocaleString(amountValue: number): string {
     const amount = this.toAmount(amountValue)
-    // const amount = amountValue / this.facteur
-    return amount.toLocaleString(this.locale, {
+    const res = amount.toLocaleString(this.locale, {
       style: 'currency',
       currency: this._iso3,
-      minimumSignificantDigits: this.minor + 1,
+      minimumFractionDigits: this.minor,
+      maximumFractionDigits: this.minor,
     })
+    return res
   }
 
   async convertTo(toCurrency: string = '') {
