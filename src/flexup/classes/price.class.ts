@@ -119,7 +119,7 @@ export class Price implements PriceInterface {
 
   async amountVATCvString(toCurrency: string) {
     const cv = await this.currency.convertTo(toCurrency)
-    return this.currency.toLocaleString('EN', this.amountVAT * cv)
+    return this.currency.toLocaleString(this.amountVAT * cv)
   }
 
   async amountTTCCvString(toCurrency: string) {

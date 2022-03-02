@@ -35,7 +35,7 @@ describe('Currency', () => {
     const expectedMinor = -1
     const expectedActive = false
     try {
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars,no-unused-vars
       const _uselessVariable: Currency = new Currency(currency, expectedMinor, expectedActive)
     } catch (error) {
       const expectedError = new Error('Minor must be greater or equal to 0 and less or equal to 9')
@@ -48,7 +48,7 @@ describe('Currency', () => {
     const expectedMinor = 10
     const expectedActive = false
     try {
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars,no-unused-vars
       const _uselessVariable: Currency = new Currency(currency, expectedMinor, expectedActive)
     } catch (error) {
       const expectedError = new Error('Minor must be greater or equal to 0 and less or equal to 9')

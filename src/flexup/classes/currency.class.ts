@@ -54,8 +54,7 @@ export class Currency implements CurrencyInterface {
     const res = amount.toLocaleString(this.locale, {
       style: 'currency',
       currency: this._iso3,
-      minimumFractionDigits: this.minor,
-      maximumFractionDigits: this.minor,
+      minimumSignificantDigits: this.minor + 1,
     })
     return res
   }

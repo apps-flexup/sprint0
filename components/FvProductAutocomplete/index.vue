@@ -11,29 +11,13 @@
     template(v-slot:label)
       div {{ label }}
     template(v-slot:item="data")
-      v-list-item-avatar(v-if="data.item.avatar")
-        v-img(:src="data.item.avatar")
-      v-list-item-content
-        .d-inline-flex.justify-space-between
-          span {{ data.item.name }}
-          div.d-flex
-            fv-price-to-preferred-currency(
-              :price="data.item.price.amount"
-              :currency="data.item.price.currency"
-            )
-            span.ml-1 / {{ data.item.unit.unit }}
+      fv-product-list-item(
+        :product="data.item"
+      )
     template(v-slot:selection="data")
-      v-list-item-avatar(v-if="data.item.avatar")
-        v-img(:src="data.item.avatar")
-      v-list-item-content
-        .d-inline-flex.justify-space-between
-          span {{ data.item.name }}
-          div.d-flex
-            fv-price-to-preferred-currency(
-              :price="data.item.price.amount"
-              :currency="data.item.price.currency"
-            )
-            span.ml-1 / {{ data.item.unit.unit }}
+      fv-product-list-item(
+        :product="data.item"
+      )
     template(v-slot:no-data)
       div Aucune donnée disponible
     template(v-slot:append-item)

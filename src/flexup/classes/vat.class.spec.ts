@@ -33,7 +33,7 @@ describe('VAT', () => {
   })
   it('Should get an error when input negative number', () => {
     try {
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars,no-unused-vars
       const _uselessVariable = new VAT(-20)
     } catch (error) {
       const expectedResult = new Error('Incorrect VAT rate')
@@ -42,7 +42,7 @@ describe('VAT', () => {
   })
   it('Should get an error when input an excessive VAT value', () => {
     try {
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars,no-unused-vars
       const _uselessVariable = new VAT(101)
     } catch (error) {
       const expectedResult = new Error('Incorrect VAT rate')
@@ -52,7 +52,7 @@ describe('VAT', () => {
   it('Should get an error when input an incorrect VAT precision low range', () => {
     const precision = -1
     try {
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars,no-unused-vars
       const _uselessVariable = new VAT(5.5, precision)
     } catch (error) {
       const expectedResult = new Error('Incorrect VAT precision')
@@ -62,7 +62,7 @@ describe('VAT', () => {
   it('Should get an error when input an incorrect VAT precision high range', () => {
     const precision = 10
     try {
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars,no-unused-vars
       const _uselessVariable = new VAT(5.5, precision)
     } catch (error) {
       const expectedResult = new Error('Incorrect VAT precision')
