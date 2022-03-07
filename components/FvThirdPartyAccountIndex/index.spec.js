@@ -49,7 +49,7 @@ describe('FvThirdPartyAccountIndex', () => {
     })
     it('should render a FvThirdPartyAccountIndex', () => {
       const wrapper = factory()
-      expect(wrapper.find('[data-testid="createBtn"]').exists()).toBeFalsy()
+      expect(wrapper.find('[data-testid="createBtn"]').exists()).toBe(false)
       expect(wrapper.find('[data-testid="thirdPartyAccountList"]').exists()).toBeTruthy()
     })
   })

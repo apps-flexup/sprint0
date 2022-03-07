@@ -1,6 +1,4 @@
-// eslint-disable-next-line import/named
 import { Action, applyMiddleware, combineReducers, createStore, Store } from 'redux'
-// eslint-disable-next-line import/named
 import thunk, { ThunkAction, ThunkDispatch, ThunkMiddleware } from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import { AppState } from './appState.interface'

@@ -1,4 +1,4 @@
-import { createLocalVue, shallowMount } from '@vue/test-utils'
+import { shallowMount, createLocalVue } from '@vue/test-utils'
 import Vuex from 'vuex'
 import FvPriceField from './index.vue'
 
@@ -89,7 +89,7 @@ describe('FvPriceField', () => {
     await wrapper.setData({ truncatePrice: true })
     const priceField = wrapper.find('[data-testid="priceField"]')
     priceField.vm.$emit('click')
-    expect(wrapper.vm.truncatePrice).toBeFalsy()
+    expect(wrapper.vm.truncatePrice).toBe(false)
   })
   it('should set truncate price to true if click inside', async () => {
     const wrapper = factory()

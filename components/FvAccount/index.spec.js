@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import FvAccount from './FvAccount.vue'
+import FvAccount from './index.vue'
 
 describe('FvAccount', () => {
   it('should render an avatar and display account name', () => {

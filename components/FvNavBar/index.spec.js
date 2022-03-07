@@ -1,4 +1,4 @@
-import { createLocalVue, shallowMount } from '@vue/test-utils'
+import { shallowMount, createLocalVue } from '@vue/test-utils'
 import Vuetify from 'vuetify'
 import Vuex from 'vuex'
 import FvNavBar from './index.vue'
@@ -57,8 +57,8 @@ describe('FvNavBar', () => {
     expect(wrapper.find('[data-testid="navbar"]').exists()).toBeTruthy()
     expect(wrapper.find('[data-testid="icon-navbar"]').exists()).toBeTruthy()
     expect(wrapper.find('[data-testid="title-navbar"]').exists()).toBeTruthy()
-    expect(wrapper.find('[data-testid="slot-left"]').exists()).toBeFalsy()
-    expect(wrapper.find('[data-testid="slot-right"]').exists()).toBeFalsy()
+    expect(wrapper.find('[data-testid="slot-left"]').exists()).toBe(false)
+    expect(wrapper.find('[data-testid="slot-right"]').exists()).toBe(false)
   })
   it('should have data in slot left', () => {
     const wrapper = factory()

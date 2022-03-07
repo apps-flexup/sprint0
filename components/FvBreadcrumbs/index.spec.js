@@ -1,4 +1,4 @@
-import { createLocalVue, mount } from '@vue/test-utils'
+import { mount, createLocalVue } from '@vue/test-utils'
 import Vuex from 'vuex'
 import FvBreadcrumbs from './index'
 
@@ -82,7 +82,7 @@ beforeEach(() => {
 describe('FvBreadcrumbs', () => {
   it('should not render a fv breadcrumbs if the user is not logged in', () => {
     const wrapper = loggedOutfactory()
-    expect(wrapper.find('[data-testid="breadcrumbs"]').exists()).toBeFalsy()
+    expect(wrapper.find('[data-testid="breadcrumbs"]').exists()).toBe(false)
   })
   it('should render a fv breadcrumbs', () => {
     const wrapper = factory()

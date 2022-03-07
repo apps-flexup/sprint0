@@ -1,4 +1,4 @@
-import { createLocalVue, shallowMount } from '@vue/test-utils'
+import { shallowMount, createLocalVue } from '@vue/test-utils'
 import Vuex from 'vuex'
 import FvPaymentConditionSelection from './index.vue'
 
@@ -58,7 +58,7 @@ describe('FvPaymentConditionSelection', () => {
   it('should render a fv payment condition step detail', () => {
     const wrapper = factory()
     expect(wrapper.find('[data-testid="autocomplete"]').exists()).toBeTruthy()
-    expect(wrapper.find('[data-testid="table"]').exists()).toBeFalsy()
+    expect(wrapper.find('[data-testid="table"]').exists()).toBe(false)
   })
   it('should display table if there is payment conditions', () => {
     const wrapper = factory({ value: payload })

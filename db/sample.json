@@ -1479,6 +1479,27 @@
       "name": "Discovery",
       "visibility": "private",
       "id": 8
+    },
+    {
+      "parent_type": "User",
+      "parent_id": "9a019cd2-4b90-401e-8646-f149a6d436d4",
+      "type": "Personal",
+      "name": "Fabrizio Nastri",
+      "firstname": "Fabrizio",
+      "lastname": "Nastri",
+      "country": "FRA",
+      "medias": [
+        {
+          "description": {
+            "type": "Mail",
+            "value": "fabrizio_nastri@hotmail.com",
+            "label": null
+          },
+          "entity_type": "Account",
+          "entity_id": 3
+        }
+      ],
+      "id": 9
     }
   ],
   "categories": [

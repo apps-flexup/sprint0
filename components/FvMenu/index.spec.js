@@ -1,4 +1,4 @@
-import { createLocalVue, shallowMount } from '@vue/test-utils'
+import { shallowMount, createLocalVue } from '@vue/test-utils'
 import Vuex from 'vuex'
 import FvMenu from './index.vue'
 
@@ -96,15 +96,15 @@ describe('FvMenu', () => {
     expect(wrapper.find('[data-testid="userMenu"]').exists()).toBeTruthy()
     expect(wrapper.findAll('[data-testid="globalMenu"]').length).toBe(1)
     expect(wrapper.find('[data-testid="logoutButton"]').exists()).toBeTruthy()
-    expect(wrapper.find('[data-testid="loginButton"]').exists()).toBeFalsy()
+    expect(wrapper.find('[data-testid="loginButton"]').exists()).toBe(false)
   })
   test('should display global menu and login button if user is not connected', () => {
     const wrapper = loggedOutFactory()
-    expect(wrapper.find('[data-testid="spaceMenu"]').exists()).toBeFalsy()
-    expect(wrapper.find('[data-testid="accountMenu"]').exists()).toBeFalsy()
-    expect(wrapper.find('[data-testid="userMenu"]').exists()).toBeFalsy()
+    expect(wrapper.find('[data-testid="spaceMenu"]').exists()).toBe(false)
+    expect(wrapper.find('[data-testid="accountMenu"]').exists()).toBe(false)
+    expect(wrapper.find('[data-testid="userMenu"]').exists()).toBe(false)
     expect(wrapper.findAll('[data-testid="globalMenu"]').length).toBe(1)
-    expect(wrapper.find('[data-testid="logoutButton"]').exists()).toBeFalsy()
+    expect(wrapper.find('[data-testid="logoutButton"]').exists()).toBe(false)
     expect(wrapper.find('[data-testid="loginButton"]').exists()).toBeTruthy()
   })
 })

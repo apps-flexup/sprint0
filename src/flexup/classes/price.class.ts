@@ -109,21 +109,4 @@ export class Price implements PriceInterface {
   get amountTTCString(): string {
     return this.currency.toLocaleString(this.amountTTC)
   }
-
-  async amountHTCvString(toCurrency: string) {
-    const cv = await this.currency.convertTo(toCurrency)
-    this.currency.iso3 = toCurrency
-    console.log('currency: ', this.currency.iso3)
-    return this.currency.toLocaleString(this.amountHT * cv)
-  }
-
-  async amountVATCvString(toCurrency: string) {
-    const cv = await this.currency.convertTo(toCurrency)
-    return this.currency.toLocaleString(this.amountVAT * cv)
-  }
-
-  async amountTTCCvString(toCurrency: string) {
-    const cv = await this.currency.convertTo(toCurrency)
-    return this.currency.toLocaleString(this.amountTTC * cv)
-  }
 }

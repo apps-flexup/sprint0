@@ -11,13 +11,19 @@
     template(v-slot:label)
       div {{ label }}
     template(v-slot:item="data")
-      fv-product-list-item(
-        :product="data.item"
-      )
+      v-list-item-avatar(v-if="data.item.avatar")
+        v-img(:src="data.item.avatar")
+      v-list-item-content
+        .d-inline-flex.justify-space-between
+          span {{ data.item.name }}
+          span {{ price(data.item) }}
     template(v-slot:selection="data")
-      fv-product-list-item(
-        :product="data.item"
-      )
+      v-list-item-avatar(v-if="data.item.avatar")
+        v-img(:src="data.item.avatar")
+      v-list-item-content
+        .d-inline-flex.justify-space-between
+          span {{ data.item.name }}
+          span {{ price(data.item) }}
     template(v-slot:no-data)
       div Aucune donnée disponible
     template(v-slot:append-item)
@@ -70,15 +76,7 @@ export default {
   data() {
     return {
       items: [],
-      prices: [],
     }
-  },
-  computed: {
-    preferredCurrency() {
-      const iso = this.$activeAccount.settings().currency
-      const res = this.$store.getters['currencies/findIso'](iso)
-      return res
-    },
   },
   watch: {
     async thirdPartyAccountId() {
@@ -128,6 +126,18 @@ export default {
     },
     addCustomOrderItem() {
       this.$emit('products:addCustomOrderItem')
+    },
+    price(item) {
+      const { unit, price } = item
+      const { unit: unitStr } = unit
+      const { amount, currency } = price
+      return (
+        amount.toLocaleString(this.$store.getters['settings/locale'], {
+          style: 'currency',
+          currency,
+          minimumSignificantDigits: 3,
+        }) + ` ${unitStr} `
+      )
     },
   },
 }

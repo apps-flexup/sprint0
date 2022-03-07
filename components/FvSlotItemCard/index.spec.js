@@ -35,7 +35,7 @@ describe('FvSlotItemCard', () => {
     const emitted = wrapper.emitted('card:mouseover')
     expect(emitted).toBeTruthy()
     expect(emitted).toHaveLength(1)
-    expect(emitted[0][0]).toBeFalsy()
+    expect(emitted[0][0]).toBe(false)
   })
   it('should emit an event when card clicked', () => {
     const wrapper = mount(FvSlotItemCard)

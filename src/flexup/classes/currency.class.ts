@@ -1,11 +1,10 @@
 import { Currency as CurrencyInterface } from './currency.interface'
-import converTo from './services/convertTo'
 
 export class Currency implements CurrencyInterface {
   private _iso3: string = 'EUR'
   private _minor: number = 2
   private _active: boolean = true
-  private readonly locale: string = 'fr'
+  private locale: string = 'fr'
 
   constructor(iso3: string = 'EUR', minor: number = 2, active: boolean = true, locale: string = 'fr') {
     this.iso3 = iso3
@@ -51,19 +50,11 @@ export class Currency implements CurrencyInterface {
 
   toLocaleString(amountValue: number): string {
     const amount = this.toAmount(amountValue)
-    const res = amount.toLocaleString(this.locale, {
+    // const amount = amountValue / this.facteur
+    return amount.toLocaleString(this.locale, {
       style: 'currency',
       currency: this._iso3,
       minimumSignificantDigits: this.minor + 1,
     })
-    return res
-  }
-
-  async convertTo(toCurrency: string = '') {
-    if (this.iso3 === toCurrency || toCurrency === '') {
-      return 1
-    } else {
-      return await converTo(this.iso3, toCurrency)
-    }
   }
 }
