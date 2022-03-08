@@ -15,9 +15,7 @@
         :product="data.item"
       )
     template(v-slot:selection="data")
-      fv-product-list-item(
-        :product="data.item"
-      )
+      div
     template(v-slot:no-data)
       div Aucune donnée disponible
     template(v-slot:append-item)
