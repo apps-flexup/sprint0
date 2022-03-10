@@ -1,7 +1,5 @@
 import Vue from 'vue'
 // Importation des composants utilitaires
-import FvAccount from '@/components/FvAccount'
-import FvAccountAutocomplete from '@/components/FvAccountAutocomplete'
 import FvAccountCard from '@/components/FvAccountCard'
 import FvAccountInfo from '@/components/FvAccountInfo'
 import FvAccountList from '@/components/FvAccountList'
@@ -179,7 +177,6 @@ import FvVisibilitySwitchReadonly from '@/components/FvVisibilitySwitchReadonly'
 import FvYieldRateParams from '@/components/FvYieldRateParams'
 
 // Déclarations composants utilitaires
-Vue.component('FvAccount', FvAccount)
 Vue.component('FvAccountCard', FvAccountCard)
 Vue.component('FvAccountMedias', FvAccountMedias)
 Vue.component('FvAccountMediasReadonly', FvAccountMediasReadonly)
@@ -253,7 +250,6 @@ Vue.component('FvNavBar', FvNavBar)
 Vue.component('FvNavBarBuyer', FvNavBarBuyer)
 Vue.component('FvNavBarManage', FvNavBarManage)
 Vue.component('FvNumberField', FvNumberField)
-Vue.component('FvAccountAutocomplete', FvAccountAutocomplete)
 Vue.component('FvOrderItemsSelector', FvOrderItemsSelector)
 Vue.component('FvPaymentConditionAutocomplete', FvPaymentConditionAutocomplete)
 Vue.component('FvPaymentConditionDataTable', FvPaymentConditionDataTable)
