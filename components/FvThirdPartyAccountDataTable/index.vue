@@ -76,6 +76,7 @@ export default {
   },
   mounted() {
     this.$store.dispatch('countries/get')
+    this.$store.dispatch('thirdPartyAccounts/get')
     this.$store.dispatch('contracts/getLegalStructures')
   },
   methods: {

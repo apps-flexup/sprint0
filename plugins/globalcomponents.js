@@ -1,7 +1,5 @@
 import Vue from 'vue'
 // Importation des composants utilitaires
-import FvAccount from '@/components/FvAccount'
-import FvAccountAutocomplete from '@/components/FvAccountAutocomplete'
 import FvAccountCard from '@/components/FvAccountCard'
 import FvAccountInfo from '@/components/FvAccountInfo'
 import FvAccountList from '@/components/FvAccountList'
@@ -28,18 +26,14 @@ import FvContactModal from '~/components/FvContactModal'
 import FvContactNew from '~/components/FvContactNew'
 import FvContactStepDetail from '~/components/FvContactStepDetail'
 import FvContactStepOffer from '~/components/FvContactStepOffer'
-import FvContactStepProduct from '~/components/FvContactStepProduct'
 import FvContactSummaryStepDetail from '~/components/FvContactSummaryStepDetail'
 import FvContactSummaryStepOffer from '@/components/FvContactSummaryStepOffer'
-import FvContactSummaryStepProduct from '@/components/FvContactSummaryStepProduct'
 import FvContractList from '@/components/FvContractList'
 import FvContractListSearch from '@/components/FvContractListSearch'
 import FvContractNew from '@/components/FvContractNew'
-import FvContractStepCommande from '@/components/FvContractStepCommande'
 import FvContractStepDetail from '@/components/FvContractStepDetail'
 import FvContractStepOffer from '@/components/FvContractStepOffer'
 import FvContractStepPaiement from '@/components/FvContractStepPaiement'
-import FvContractStepStructure from '@/components/FvContractStepStructure'
 import FvContractStepVisualisation from '@/components/FvContractStepVisualisation'
 import FvContractSummaryStepCommande from '@/components/FvContractSummaryStepCommande'
 import FvContractSummaryStepDetail from '@/components/FvContractSummaryStepDetail'
@@ -183,7 +177,6 @@ import FvVisibilitySwitchReadonly from '@/components/FvVisibilitySwitchReadonly'
 import FvYieldRateParams from '@/components/FvYieldRateParams'
 
 // Déclarations composants utilitaires
-Vue.component('FvAccount', FvAccount)
 Vue.component('FvAccountCard', FvAccountCard)
 Vue.component('FvAccountMedias', FvAccountMedias)
 Vue.component('FvAccountMediasReadonly', FvAccountMediasReadonly)
@@ -209,17 +202,13 @@ Vue.component('FvContactModal', FvContactModal)
 Vue.component('FvContactNew', FvContactNew)
 Vue.component('FvContactStepDetail', FvContactStepDetail)
 Vue.component('FvContactStepOffer', FvContactStepOffer)
-Vue.component('FvContactStepProduct', FvContactStepProduct)
 Vue.component('FvContactSummaryStepDetail', FvContactSummaryStepDetail)
 Vue.component('FvContactSummaryStepOffer', FvContactSummaryStepOffer)
-Vue.component('FvContactSummaryStepProduct', FvContactSummaryStepProduct)
 Vue.component('FvContractList', FvContractList)
 Vue.component('FvContractListSearch', FvContractListSearch)
 Vue.component('FvContractNew', FvContractNew)
 Vue.component('FvContractStepDetail', FvContractStepDetail)
 Vue.component('FvContractStepOffer', FvContractStepOffer)
-Vue.component('FvContractStepStructure', FvContractStepStructure)
-Vue.component('FvContractStepCommande', FvContractStepCommande)
 Vue.component('FvContractStepPaiement', FvContractStepPaiement)
 Vue.component('FvContractSummaryStepDetail', FvContractSummaryStepDetail)
 Vue.component('FvContractSummaryStepOffer', FvContractSummaryStepOffer)
@@ -261,7 +250,6 @@ Vue.component('FvNavBar', FvNavBar)
 Vue.component('FvNavBarBuyer', FvNavBarBuyer)
 Vue.component('FvNavBarManage', FvNavBarManage)
 Vue.component('FvNumberField', FvNumberField)
-Vue.component('FvAccountAutocomplete', FvAccountAutocomplete)
 Vue.component('FvOrderItemsSelector', FvOrderItemsSelector)
 Vue.component('FvPaymentConditionAutocomplete', FvPaymentConditionAutocomplete)
 Vue.component('FvPaymentConditionDataTable', FvPaymentConditionDataTable)
