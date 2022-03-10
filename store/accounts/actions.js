@@ -103,6 +103,7 @@ export default {
     if (thirdParty.type === 'Personal') {
       account.firstname = thirdParty.firstname
       account.lastname = thirdParty.lastname
+      account.name = [thirdParty.firstname, thirdParty.lastname].join(' ').trim()
     } else if (thirdParty.type === 'Business') {
       account.country = thirdParty.country
       account.description = thirdParty.description
