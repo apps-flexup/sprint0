@@ -15377,68 +15377,7 @@
       "id": 11
     }
   ],
-  "third-party-accounts": [
-    {
-      "type": "Personal",
-      "directory": "Local",
-      "lastname": "Third-party",
-      "firstname": "Personal",
-      "name": "Personal Third-party",
-      "status": "archived",
-      "account_id": 1,
-      "id": 3
-    },
-    {
-      "type": "Business",
-      "directory": "Local",
-      "name": "Business",
-      "status": "active",
-      "account_id": 1,
-      "id": 4
-    },
-    {
-      "type": "SubAccount",
-      "directory": "Local",
-      "owners": [],
-      "name": "Sub third-party",
-      "status": "active",
-      "account_id": 1,
-      "id": 5
-    },
-    {
-      "name": "Sub 1",
-      "account_id": null,
-      "id": 6
-    },
-    {
-      "name": "Sub2",
-      "account_id": null,
-      "id": 7
-    },
-    {
-      "type": "Personal",
-      "flexup_id": 5,
-      "directory": "Local",
-      "status": "active",
-      "account_id": 1,
-      "id": 8
-    },
-    {
-      "name": "Fabrizio Nastri",
-      "account_id": null,
-      "id": 9
-    },
-    {
-      "name": "Cosys",
-      "account_id": null,
-      "id": 10
-    },
-    {
-      "name": "Fra bu",
-      "account_id": null,
-      "id": 11
-    }
-  ],
+  "third-party-accounts": [],
   "products": [
     {
       "status": "active",
