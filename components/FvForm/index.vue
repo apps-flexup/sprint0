@@ -82,6 +82,12 @@ export default {
         return null
       },
     },
+    isModal: {
+      type: Boolean,
+      default() {
+        return false
+      },
+    },
     allowEdit: {
       type: Boolean,
       default() {
@@ -139,7 +145,7 @@ export default {
         this.localPayload.visibility = 'private'
       }
       this.$emit('form:submit', this.localPayload)
-      this.$router.push('/' + this.url, () => {})
+      if (!this.isModal) this.$router.push('/' + this.url, () => {})
       this.$nuxt.$loading.finish()
     },
     cancel() {
