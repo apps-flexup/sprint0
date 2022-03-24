@@ -10,7 +10,7 @@
           :price="product.price.amount"
           :currency="product.price.currency"
         )
-        span.ml-1 / {{ product.unit.unit }}
+        span /{{ product.unit.unit }}
 </template>
 
 <script>
