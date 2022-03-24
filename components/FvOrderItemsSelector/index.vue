@@ -139,8 +139,8 @@ export default {
     orderItemSelected(orderItem) {
       this.$emit('orderItem:selected', orderItem)
     },
-    addCustomOrderItem() {
-      this.$emit('orderItem:addCustom')
+    addCustomOrderItem(payload) {
+      this.$emit('orderItem:addCustom', payload)
     },
   },
 }

@@ -124,6 +124,7 @@ import FvProductIndex from '~/components/FvProductIndex'
 import FvProductItem from '@/components/FvProductItem'
 import FvProductList from '@/components/FvProductList'
 import FvProductModal from '@/components/FvProductModal'
+import FvProductFormModal from '@/components/FvProductFormModal'
 import FvProductReadonly from '@/components/FvProductReadonly'
 import FvProductStatusSelect from '@/components/FvProductStatusSelect'
 import FvProductUnitAutocomplete from '~/components/FvProductUnitAutocomplete'
@@ -269,6 +270,7 @@ Vue.component('FvPriceToPreferredCurrency', FvPriceToPreferredCurrency)
 Vue.component('FvPriceWithUnit', FvPriceWithUnit)
 Vue.component('FvPrimaryButton', FvPrimaryButton)
 Vue.component('FvProductDataTable', FvProductDataTable)
+Vue.component('FvProductFormModal', FvProductFormModal)
 Vue.component('FvProductReadonly', FvProductReadonly)
 Vue.component('FvProductStatusSelect', FvProductStatusSelect)
 Vue.component('FvProductUnitAutocomplete', FvProductUnitAutocomplete)
