@@ -50,7 +50,7 @@
                 @orderItem:quantityChanged='quantityChanged'
                 @orderItem:delete='deleteOrderItem'
                 @orderItem:selected='orderItemSelected'
-                @orderItem:addCustom='purchaseVM.addCustomOrderItem()'
+                @orderItem:addCustom='orderItemSelected'
               )
     v-row
       v-spacer
@@ -96,7 +96,7 @@ export default {
     },
     orderItemSelected(orderItem) {
       this.purchaseVM.addOrderItem({
-        productName: orderItem.productName,
+        productName: orderItem.productName || orderItem.name,
         offerName: orderItem.offerName,
         price: orderItem.price,
         vat: orderItem.vat / 100,

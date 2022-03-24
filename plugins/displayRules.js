@@ -68,7 +68,7 @@ const displayRules = (ctx) => ({
     const fromCurrency = item.currency
     if (!fromCurrency) return null
     const settings = ctx.store.getters['settings/settings']
-    const locale = ctx.store.getters['settings/locale']
+    const locale = 'FR'
     const toCurrency = settings.currency
     const minimumFractionDigits = settings.price_nb_after_decimal_point
     const options = {
@@ -94,7 +94,7 @@ const displayRules = (ctx) => ({
     const fromCurrency = item.currency
     if (!fromCurrency) return null
     const settings = ctx.store.getters['settings/settings']
-    const locale = ctx.store.getters['settings/locale']
+    const locale = 'FR'
     const toCurrency = settings.currency
     const minimumFractionDigits = settings.price_nb_after_decimal_point
     const options = {

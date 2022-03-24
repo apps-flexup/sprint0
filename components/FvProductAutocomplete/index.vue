@@ -20,18 +20,9 @@
       div Aucune donnée disponible
     template(v-slot:append-item)
       v-list-item-content
-        fv-text-button(
-          @button:click="addCustomOrderItem"
-        )
-          template(v-slot:icon)
-            fv-icon(
-              size="small"
-              icon="mdi-plus"
-              color="#1976d2"
-              @icon:clicked="addCustomOrderItem"
-            )
-          template(v-slot:text)
-            | {{ $t('forms.purchases.new.newCustomOrderItem') }}
+  fv-product-form-modal(
+      @modal:submit="addCustomOrderItem"
+    ).mt-2
 </template>
 
 <script>
@@ -124,8 +115,8 @@ export default {
     emitGenericSignalForForm(payload) {
       this.$emit('payload:changed', payload)
     },
-    addCustomOrderItem() {
-      this.$emit('products:addCustomOrderItem')
+    addCustomOrderItem(payload) {
+      this.$emit('products:addCustomOrderItem', payload)
     },
   },
 }
