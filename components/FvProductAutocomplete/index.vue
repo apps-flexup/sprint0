@@ -20,7 +20,9 @@
       div Aucune donnée disponible
     template(v-slot:append-item)
       v-list-item-content
-        fv-product-form-modal
+  fv-product-form-modal(
+      @modal:submit="addCustomOrderItem"
+    ).mt-2
 </template>
 
 <script>
@@ -113,8 +115,8 @@ export default {
     emitGenericSignalForForm(payload) {
       this.$emit('payload:changed', payload)
     },
-    addCustomOrderItem() {
-      this.$emit('products:addCustomOrderItem')
+    addCustomOrderItem(payload) {
+      this.$emit('products:addCustomOrderItem', payload)
     },
   },
 }

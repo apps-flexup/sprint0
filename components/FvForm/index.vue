@@ -2,13 +2,14 @@
 .fv-form
   v-row.head
     fv-icon.mr-11(
+    v-if="!isModal"
       data-testid="icon"
       color="inherit"
       size="xLarge"
       icon="mdi-chevron-left"
       @icon:clicked="cancel"
     )
-    h1(data-testid="pageTitle") {{ $t('forms.' + form + '.' + localAction + '.title') }}
+    h1(data-testid="pageTitle" v-if="!isModal") {{ $t('forms.' + form + '.' + localAction + '.title') }}
     v-spacer
     fv-icon(
       v-if="readonly && allowEdit"
@@ -149,7 +150,9 @@ export default {
       this.$nuxt.$loading.finish()
     },
     cancel() {
-      if (this.localAction === 'read' || this.isInitiallyReadonly) {
+      if (this.isModal) {
+        this.$emit('cancel:modal')
+      } else if (this.localAction === 'read' || this.isInitiallyReadonly) {
         this.$router.go(-1)
       } else {
         this.localAction = 'read'

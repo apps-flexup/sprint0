@@ -1,17 +1,19 @@
 <template lang="pug">
   .fv-product-form-modal
     v-row(justify='center')
-      v-dialog(v-model='dialog' persistent='' max-width='900px')
+      v-dialog(v-model='dialog' persistent='' max-width='800px')
         template(v-slot:activator='{ on, attrs }')
           v-btn(color='primary' dark='' v-bind='attrs' v-on='on')
-            | Open Dialog
-        fv-form(
-          :payload='product'
-          @form:submit="createProduct"
-          :isModal='true'
-          form='products'
-          action='new'
-        )
+            | {{ $t('buttons.create.product') }}
+        v-card
+          fv-form(
+            :payload='product'
+            @form:submit="createProduct"
+            @cancel:modal="dialog = false"
+            :isModal='true'
+            form='products'
+            action='new'
+          )
 </template>
 
 <script>
@@ -27,8 +29,15 @@ export default {
   },
   methods: {
     createProduct(payload) {
-      this.$activeAccount.addProduct(payload)
+      this.$emit('modal:submit', payload)
+      this.dialog = false
     },
   },
 }
 </script>
+
+<style scoped>
+::v-deep .v-card {
+  padding-bottom: 20px;
+}
+</style>
