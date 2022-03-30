@@ -8,8 +8,8 @@ export default () => ({
   globalMenu: [],
   manageNavBar: [],
   sellerNavBar: [],
-  locales: ['en', 'fr'],
-  fallbackLocale: 'en',
+  locales: ['en-GB', 'fr'],
+  fallbackLocale: 'en-GB',
   settings: {},
   defaultSettings: {},
 })
