@@ -15,7 +15,7 @@
         div {{ item.channel }}
       template(v-slot:item.status="{ item }")
         fv-status-readonly(
-          :value="item.status"
+          :value="item.status.toLowerCase()"
         )
 </template>
 

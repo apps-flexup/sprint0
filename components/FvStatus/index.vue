@@ -40,7 +40,7 @@ export default {
   },
   computed: {
     color() {
-      const color = this.colors[this.status.toLowerCase()]
+      const color = this.colors[this.status]
       return color
     },
   },
