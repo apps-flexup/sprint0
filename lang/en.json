@@ -253,8 +253,8 @@
   },
   "languages": {
     "language": "Language",
-    "en": "English",
-    "fr": "Français"
+    "en-GB": "English (british)",
+    "fr": "French"
   },
   "themes": {
     "theme": "Theme",

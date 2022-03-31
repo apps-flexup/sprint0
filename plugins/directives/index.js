@@ -58,7 +58,7 @@ Vue.directive('to-currency', (el, binding, vnode) => {
 })
 
 Vue.directive('to-preferred-currency', async (el, binding, vnode) => {
-  const locale = vnode.context.$i18n.locale
+  const locale = 'FR'
   const value = binding.value
   const amount = value.amount
   const fromCurrency = value.currency
