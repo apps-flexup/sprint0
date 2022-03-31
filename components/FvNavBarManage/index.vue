@@ -22,6 +22,16 @@
         class="navRightBtn"
       )
         | button
+      v-badge(
+        :content='messages'
+        :value='messages'
+        color='green'
+        overlap=''
+      )
+        v-icon(
+          @click="seeNotification"
+        )
+          | mdi-bell
 </template>
 
 <script>
@@ -41,10 +51,20 @@ export default {
       },
     },
   },
+  data() {
+    return {
+      messages: 2,
+    }
+  },
   computed: {
     links() {
       const res = this.$store.getters['settings/' + this.space + 'NavBar']
       return res
+    },
+  },
+  methods: {
+    seeNotification() {
+      this.$router.push('/notifications')
     },
   },
 }

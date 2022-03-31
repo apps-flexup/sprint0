@@ -1100,6 +1100,58 @@
             "active": true,
             "displayed": false
           }
+        ],
+        "messages": [
+          {
+            "align": "start",
+            "sortable": true,
+            "text": "headers.messages.from",
+            "value": "from",
+            "order": 0,
+            "customizable": false,
+            "active": true,
+            "displayed": true
+          },
+          {
+            "align": "start",
+            "sortable": true,
+            "text": "headers.messages.subject",
+            "value": "subject",
+            "order": 0,
+            "customizable": false,
+            "active": true,
+            "displayed": true
+          },
+          {
+            "align": "start",
+            "sortable": true,
+            "text": "headers.messages.description",
+            "value": "description",
+            "order": 0,
+            "customizable": false,
+            "active": true,
+            "displayed": true
+          },
+          {
+            "align": "start",
+            "sortable": true,
+            "text": "headers.messages.channel",
+            "value": "channel",
+            "order": 0,
+            "customizable": false,
+            "active": true,
+            "displayed": true
+          },
+          {
+            "align": "start",
+            "sortable": true,
+            "text": "headers.messages.status",
+            "value": "status",
+            "order": 0,
+            "customizable": false,
+            "active": true,
+            "displayed": true
+          }
         ]
       }
     },

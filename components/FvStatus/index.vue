@@ -25,6 +25,13 @@ export default {
   data() {
     return {
       colors: {
+        new: '#9FE4A6',
+        changerequested: '#FF6FE2',
+        rejected: '#FF4B4B',
+        confirmed: '#2552CF',
+        cancelled: '#B36518',
+        suspended: '#5AD0E0',
+        pending: '#EEA50C',
         active: '#9FE4A6',
         inactive: '#FFCD92',
         archived: '#EDEDED',
@@ -33,7 +40,7 @@ export default {
   },
   computed: {
     color() {
-      const color = this.colors[this.status]
+      const color = this.colors[this.status.toLowerCase()]
       return color
     },
   },
