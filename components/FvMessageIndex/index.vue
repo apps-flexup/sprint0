@@ -4,9 +4,7 @@
     :title="$t('table.messages.title')"
     :canCreate="false"
   )
-  fv-message-list(
-
-  )
+  fv-message-list
 </template>
 
 <script>
