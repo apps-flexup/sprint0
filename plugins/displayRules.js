@@ -122,11 +122,20 @@ const displayRules = (ctx) => ({
   },
   localeDate(item) {
     if (!item) return null
-    const date = item.date
+    const date = item
     if (!date) return null
     const locale = ctx.store.getters['settings/locale']
     const dte = new Date(date)
     const res = dte.toLocaleDateString(locale)
+    return res
+  },
+  localeDateTime(item, options = {year: "numeric", month: "numeric", day: "numeric"}) {
+    if (!item) return null
+    const date = item
+    if (!date) return null
+    const locale = ctx.store.getters['settings/locale']
+    const dte = new Date(date)
+    const res = dte.toLocaleTimeString(locale, options)
     return res
   },
   paymentStructure(item) {

@@ -16,9 +16,10 @@ export default {
       })
     }
   },
-  send({ commit }, id) {
+  async send({ commit }, id) {
     console.log('ID', id)
-    const res = this.$axios.$post(`https://serverless-api.ou-et-quand.workers.dev/api/orders/${id}/PENDING`)
+    const res = await fetch(`https://serverless-api.ou-et-quand.workers.dev/api/orders/${id}/PENDING`, { method: 'POST', 'Content-Type': 'application/json' })
+      .then((res) => res.json())
     console.log('RESULTAT', res)
   }
 }
