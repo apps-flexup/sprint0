@@ -836,6 +836,8 @@
     },
     "messages": {
       "from": "De",
+      "sendDate": "Date d'envoi",
+      "readDate": "Date de lecture",
       "subject": "Sujet",
       "description": "Description",
       "channel": "Canal",

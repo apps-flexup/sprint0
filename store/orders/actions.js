@@ -16,4 +16,9 @@ export default {
       })
     }
   },
+  send({ commit }, id) {
+    console.log('ID', id)
+    const res = this.$axios.$post(`https://serverless-api.ou-et-quand.workers.dev/api/orders/${id}/PENDING`)
+    console.log('RESULTAT', res)
+  }
 }

@@ -7,6 +7,10 @@
     )
       template(v-slot:item.from="{ item }")
         div {{ item.from }}
+      template(v-slot:item.sendDate="{ item }")
+        div {{ localeDateTime(item.sendDate) }}
+      template(v-slot:item.readDate="{ item }")
+        div {{ localeDateTime(item.readDate) }}
       template(v-slot:item.subject="{ item }")
         div {{ item.subject }}
       template(v-slot:item.description="{ item }")
@@ -52,6 +56,10 @@ export default {
     sortBy(v) {
       this.$emit('dataTable:sortBy', v)
     },
+    localeDateTime(item) {
+      const res = this.$displayRules.localeDateTime(item)
+      return res
+    }
   },
 }
 </script>

@@ -26,8 +26,8 @@ export default {
   },
   computed: {
     headers() {
-      const res = this.$$activeAccount.headers('contracts')
-      return this.$translateHeaders(res)
+      const res = this.$activeAccount.headers('contracts')
+      return res
     },
     items() {
       const res = this.$activeAccount.contracts()

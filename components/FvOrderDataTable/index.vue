@@ -20,7 +20,7 @@
     template(v-slot:item.label='{ item }')
       div {{ item.label }}
     template(v-slot:item.date='{ item }')
-      div {{ localeDate(item) }}
+      div {{ localeDate(item.date) }}
     template(v-slot:item.value='{ item }')
       fv-price-to-preferred-currency(
         :price="item.value.amount"
@@ -28,6 +28,11 @@
       )
     template(v-slot:item.status ='{ item }')
       fv-status-readonly(:status="item.status")
+      v-btn(
+        @click.prevent="sendOrder(item.id)"
+      )
+        | SEND ORDER
+
 </template>
 
 <script>
@@ -87,6 +92,10 @@ export default {
     },
     sortBy(v) {
       this.$emit('dataTable:sortBy', v)
+    },
+    sendOrder(id) {
+      console.log('orderID', id)
+      this.$store.dispatch('orders/send', id)
     },
   },
 }

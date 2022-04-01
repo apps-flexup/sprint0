@@ -828,6 +828,8 @@
     },
     "messages": {
       "from": "From",
+      "sendDate": "Sent Date",
+      "readDate": "Read Date",
       "subject": "Subject",
       "description": "Description",
       "channel": "Channel",
