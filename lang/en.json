@@ -233,7 +233,7 @@
   "status": {
     "active": "Active",
     "archived": "Archived",
-    "changeRequested": "Change requested",
+    "changerequested": "Change requested",
     "cancelled": "Cancelled",
     "confirmed": "Confirmed",
     "draft": "Draft",
