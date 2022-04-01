@@ -64,7 +64,7 @@ export default {
   },
   methods: {
     seeNotification() {
-      this.$router.push('/notifications')
+      this.$router.push('/messages')
     },
   },
 }

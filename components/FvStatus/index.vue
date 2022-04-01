@@ -26,7 +26,7 @@ export default {
     return {
       colors: {
         new: '#9FE4A6',
-        changerequested: '#FF6FE2',
+        changeRequested: '#FF6FE2',
         rejected: '#FF4B4B',
         confirmed: '#2552CF',
         cancelled: '#B36518',

@@ -233,8 +233,14 @@
   "status": {
     "active": "Actif",
     "archived": "Archivé",
+    "changeRequested": "Change requested",
+    "cancelled": "Annuler",
+    "confirmed": "Confirmer",
     "draft": "Brouillon",
     "inactive": "Inactif",
+    "new": "Nouveau",
+    "pending": "En attente",
+    "rejected": "Rejeter",
     "reserved": "Réservé",
     "suspended": "Suspendu"
   },
@@ -369,6 +375,10 @@
     },
     "members": {
       "title": "Membres du compte {accountName}",
+      "search": "Rechercher"
+    },
+    "messages": {
+      "title": "Mes messages",
       "search": "Rechercher"
     },
     "owners": {
@@ -823,6 +833,13 @@
     "members": {
       "user": "Utilisateur",
       "role": "Rôle"
+    },
+    "messages": {
+      "from": "De",
+      "subject": "Sujet",
+      "description": "Description",
+      "channel": "Canal",
+      "status": "Status"
     },
     "owners": {
       "owner": "Propriétaire",

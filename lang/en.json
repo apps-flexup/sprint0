@@ -233,8 +233,14 @@
   "status": {
     "active": "Active",
     "archived": "Archived",
+    "changeRequested": "Change requested",
+    "cancelled": "Cancelled",
+    "confirmed": "Confirmed",
     "draft": "Draft",
     "inactive": "Inactive",
+    "new": "New",
+    "pending": "Pending",
+    "rejected": "Rejected",
     "reserved": "Reserved",
     "suspended": "Suspended"
   },
@@ -280,6 +286,7 @@
       "dashboard": "Dashboard",
       "index": "Home",
       "members": "Members",
+      "messages": "Messages",
       "orders": "Orders",
       "orders-new": "New order",
       "paymentConditions": "Payment conditions",
@@ -367,6 +374,10 @@
     },
     "members": {
       "title": "{accountName} account members",
+      "search": "Search"
+    },
+    "messages": {
+      "title": "My messages",
       "search": "Search"
     },
     "owners": {
@@ -814,6 +825,13 @@
     "members": {
       "user": "User",
       "role": "Role"
+    },
+    "messages": {
+      "from": "From",
+      "subject": "Subject",
+      "description": "Description",
+      "channel": "Channel",
+      "status": "Status"
     },
     "owners": {
       "owner": "Owner",

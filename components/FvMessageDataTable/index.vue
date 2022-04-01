@@ -21,7 +21,7 @@
 
 <script>
 export default {
-  name: "index",
+  name: 'FvMessageDataTable',
   props: {
     hideDefaultFooter: {
       type: Boolean,

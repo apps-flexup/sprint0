@@ -2,6 +2,7 @@
 .fv-message-index
   fv-header-index(
     :title="$t('table.messages.title')"
+    :canCreate="false"
   )
   fv-message-list(
 
@@ -10,8 +11,8 @@
 
 <script>
 export default {
-  name: "index"
-};
+  name: 'FvMessageIndex',
+}
 </script>
 
 <style scoped>
