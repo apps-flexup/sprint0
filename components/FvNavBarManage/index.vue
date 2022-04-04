@@ -53,7 +53,7 @@ export default {
   },
   computed: {
     messages() {
-      return this.$store.getters['messages/to'].length
+      return this.$store.getters['messages/to']?.length
     },
     links() {
       const res = this.$store.getters['settings/' + this.space + 'NavBar']
