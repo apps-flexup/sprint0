@@ -8,6 +8,16 @@ export default ($axios, store) => (resource) => ({
     const res = await $axios.$get(`/${resource}?account_id=${accountId}`)
     return res
   },
+  async indexFrom() {
+    const accountId = store.getters['accounts/selected']
+    const res = await $axios.$get(`/${resource}?from=${accountId}`)
+    return res
+  },
+  async indexTo() {
+    const accountId = store.getters['accounts/selected']
+    const res = await $axios.$get(`/${resource}?recipient=${accountId}`)
+    return res
+  },
   async show(id) {
     const res = await $axios.$get(`/${resource}/${id}`)
     return res

@@ -51,12 +51,10 @@ export default {
       },
     },
   },
-  data() {
-    return {
-      messages: 2,
-    }
-  },
   computed: {
+    messages() {
+      return this.$store.getters['messages/to'].length
+    },
     links() {
       const res = this.$store.getters['settings/' + this.space + 'NavBar']
       return res

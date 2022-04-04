@@ -11,11 +11,9 @@
 export default {
   name: 'FvMessageList',
   mounted() {
-    this.$store.dispatch('messages/get')
+    this.$store.dispatch('messages/to')
   },
 }
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

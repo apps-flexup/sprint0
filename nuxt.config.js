@@ -36,6 +36,7 @@ export default {
   },
   env: {
     baseURL: process.env.API_URL,
+    apiURL: process.env.API_BASE,
   },
   manifest: {
     name: 'Flexup - Sprint 0',

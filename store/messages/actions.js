@@ -1,5 +1,8 @@
 export default {
-  get({ commit }) {
-    this.$repos.messages.indexWithAccountId().then((data) => commit('set', data))
+  From({ commit }) {
+    this.$repos.messages.indexFrom().then((data) => commit('setFrom', data))
+  },
+  to({ commit }) {
+    this.$repos.messages.indexTo().then((data) => commit('setTo', data))
   },
 }

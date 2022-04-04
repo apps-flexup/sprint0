@@ -129,7 +129,7 @@ const displayRules = (ctx) => ({
     const res = dte.toLocaleDateString(locale)
     return res
   },
-  localeDateTime(item, options = {year: "numeric", month: "numeric", day: "numeric"}) {
+  localeDateTime(item, options = { year: 'numeric', month: 'numeric', day: 'numeric' }) {
     if (!item) return null
     const date = item
     if (!date) return null

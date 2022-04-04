@@ -74,9 +74,9 @@ import FvMemberIndex from '@/components/FvMemberIndex'
 import FvMemberList from '@/components/FvMemberList'
 import FvMemberNameDisplay from '@/components/FvMemberNameDisplay'
 import FvMenu from '@/components/FvMenu'
-import FvMessagesDataTable from '~/components/FvMessageDataTable';
-import FvMessageIndex from '~/components/FvMessageIndex';
-import FvMessageList from '~/components/FvMessageList';
+import FvMessagesDataTable from '~/components/FvMessageDataTable'
+import FvMessageIndex from '~/components/FvMessageIndex'
+import FvMessageList from '~/components/FvMessageList'
 import FvModalActions from '@/components/FvModalActions'
 import FvModalButton from '@/components/FvModalButton'
 import FvModalHeader from '@/components/FvModalHeader'

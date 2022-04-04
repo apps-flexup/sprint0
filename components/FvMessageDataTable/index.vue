@@ -59,11 +59,9 @@ export default {
     localeDateTime(item) {
       const res = this.$displayRules.localeDateTime(item)
       return res
-    }
+    },
   },
 }
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

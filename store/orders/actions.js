@@ -16,10 +16,12 @@ export default {
       })
     }
   },
-  async send({ commit }, id) {
+  async send({ _commit }, id) {
     console.log('ID', id)
-    const res = await fetch(`https://serverless-api.ou-et-quand.workers.dev/api/orders/${id}/PENDING`, { method: 'POST', 'Content-Type': 'application/json' })
-      .then((res) => res.json())
+    const res = await fetch(`${process.env.API_BASE}/api/orders/${id}/PENDING`, {
+      method: 'POST',
+      'Content-Type': 'application/json',
+    }).then((res) => res.json())
     console.log('RESULTAT', res)
-  }
+  },
 }
