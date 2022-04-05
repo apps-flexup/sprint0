@@ -1,8 +1,8 @@
 export default {
-  all(state) {
-    if (!state.items) return []
-    const res = JSON.parse(JSON.stringify(state.items))
-    return res
+  all(state) {n
+    const to = JSON.parse(JSON.stringify(state.to))
+    const from = JSON.parse(JSON.stringify(state.from))
+    return [...to, ...from]
   },
   to(state) {
     if (!state.to) return []
