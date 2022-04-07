@@ -83,6 +83,7 @@ describe('My orders view model generation', () => {
       date: '2022-01-03',
       label: 'Order 1',
       value: { amount: 76, currency: 'EUR' },
+      status: 'DRAFT',
     }
     const expectedOrder2: OrderVM = {
       id: 'def',
@@ -90,6 +91,7 @@ describe('My orders view model generation', () => {
       date: '2022-01-02',
       label: 'Order 2',
       value: { amount: 54, currency: 'EUR' },
+      status: 'DRAFT',
     }
     expect(getMyOrdersVM(store.getState()).orders).toEqual([expectedOrder1, expectedOrder2])
   })

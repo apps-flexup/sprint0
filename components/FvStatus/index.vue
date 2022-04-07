@@ -9,7 +9,7 @@
     min-width=130
     @click="statusClicked"
   )
-    |{{ $t(`status.${status}`.toLowerCase()) }}
+    |{{ $t(`status.${status}`?.toLowerCase()) }}
     slot(name="icon")
 </template>
 
@@ -19,7 +19,7 @@ export default {
   props: {
     status: {
       type: String,
-      default: null,
+      default: 'draft',
     },
   },
   data() {
@@ -40,7 +40,7 @@ export default {
   },
   computed: {
     color() {
-      const color = this.colors[this.status.toLowerCase()]
+      const color = this.colors[this.status?.toLowerCase()]
       return color
     },
   },

@@ -31,6 +31,7 @@ export interface OrderVM {
   date: string
   label?: string
   value: any
+  status: string
 }
 
 const headers = [
