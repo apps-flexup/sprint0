@@ -43,6 +43,7 @@
     "luxon": "^1.24.1",
     "nuxt": "^2.14.3",
     "nuxt-i18n": "^6.12.0",
+    "nuxt-socket-io": "^2.0.3",
     "scss-loader": "^0.0.1",
     "style-loader": "^1.2.1",
     "stylus-loader": "^3.0.2",

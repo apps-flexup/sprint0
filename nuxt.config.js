@@ -1,5 +1,5 @@
 import colors from 'vuetify/es5/util/colors'
-import 'reflect-metadata'
+import 'reflect-metadata' 
 
 require('dotenv').config()
 
@@ -104,7 +104,31 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/axios', '@nuxtjs/auth-next', '@nuxtjs/pwa', '@nuxtjs/dotenv'],
+  modules: ['nuxt-socket-io', '@nuxtjs/axios', '@nuxtjs/auth-next', '@nuxtjs/pwa', '@nuxtjs/dotenv'],
+  io: {
+    sockets: [{
+      name: 'messages',
+      url: 'http://localhost:8787',
+      default: true,
+      vuex: {
+        mutations: [{
+          progress: 'messages/set'
+        }],
+        actions: [
+          'chatMessage --> message/format',
+        ],
+        emitBacks: [
+          // When "examples/sample" state changes,
+          // emit back the event "examples/sample"
+          'messages/sample',
+          // When "messages/sample2" state changes,
+          // emit back the event "sample2"
+          'sample2 <-- messages/sample2'
+        ]
+      }
+    }]
+  },
+
   // i18n: {
   //   locales: ['en', 'fr'],
   //   defaultLocale: 'en',

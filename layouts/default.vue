@@ -60,6 +60,8 @@ export default {
     this.$store.dispatch('countries/get')
     this.$store.dispatch('contracts/getLegalStructures')
     this.$store.dispatch('accounts/get')
+    this.$store.dispatch('messages/from')
+    this.$store.dispatch('messages/to')
   },
 }
 </script>

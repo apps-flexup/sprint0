@@ -10,6 +10,11 @@
 <script>
 export default {
   name: 'FvMessageList',
+  computed: {
+    messages() {
+      return this.$store.getters["messages/to"]
+    }
+  },
   mounted() {
     this.$store.dispatch('messages/to')
   },

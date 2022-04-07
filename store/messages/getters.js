@@ -1,5 +1,5 @@
 export default {
-  all(state) {n
+  all(state) {
     const to = JSON.parse(JSON.stringify(state.to))
     const from = JSON.parse(JSON.stringify(state.from))
     return [...to, ...from]

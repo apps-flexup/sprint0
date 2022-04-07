@@ -57,8 +57,7 @@ export default {
       this.$emit('dataTable:sortBy', v)
     },
     localeDateTime(item) {
-      const res = this.$displayRules.localeDateTime(item)
-      return res
+      return this.$displayRules.localeDateTime(item)
     },
   },
 }
