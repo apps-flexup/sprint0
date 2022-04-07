@@ -9,7 +9,7 @@
     min-width=130
     @click="statusClicked"
   )
-    |{{ $t(`status.${status}`?.toLowerCase()) }}
+    |{{ statusTranslation }}
     slot(name="icon")
 </template>
 
@@ -39,6 +39,11 @@ export default {
     }
   },
   computed: {
+    statusTranslation() {
+      const readStatus = this.status?.toLowerCase()
+      const res = this.$t(`status.${readStatus}`)
+      return res
+    },
     color() {
       const color = this.colors[this.status?.toLowerCase()]
       return color
