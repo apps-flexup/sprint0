@@ -2,7 +2,7 @@
 .fv-order-list-search
   v-row
     v-col(cols="8")
-      fv-auto-complete(
+      fv-autocomplete(
         :items="orders"
         v-bind='$attrs'
       )

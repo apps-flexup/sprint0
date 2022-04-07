@@ -92,6 +92,7 @@ export const getMyOrdersVM = (state: AppState): MyOrdersVM => {
         date: o.date,
         label: o.label,
         value: { amount: o.totalWithTax, currency: 'EUR' },
+        status: o.status
       }
     }),
     headers,

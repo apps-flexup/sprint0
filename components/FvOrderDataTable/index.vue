@@ -29,6 +29,7 @@
     template(v-slot:item.status ='{ item }')
       fv-status-readonly(:status="item.status")
       v-btn(
+      v-if="item.status === 'draft'"
         @click.prevent="sendOrder(item.id)"
       )
         | SEND ORDER

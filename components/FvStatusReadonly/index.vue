@@ -1,7 +1,7 @@
 <template lang="pug">
 .fv-status-readonly
   fv-status(
-    :status="value"
+    :status="status"
   )
 </template>
 
@@ -9,7 +9,7 @@
 export default {
   name: 'FvStatusReadonly',
   props: {
-    value: {
+    status: {
       type: String,
       default: 'draft',
     },

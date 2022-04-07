@@ -2,7 +2,7 @@
 .fv-contract-list-search
   v-row
     v-col(cols="4")
-      fv-auto-complete(
+      fv-autocomplete(
         :items="contracts"
         v-bind='$attrs'
       )

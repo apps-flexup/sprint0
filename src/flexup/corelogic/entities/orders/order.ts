@@ -3,6 +3,13 @@ import { OrderItem } from '~/src/flexup/corelogic/entities/orders/orderItem'
 export enum OrderStatus {
   NEW = 'NEW',
   DRAFT = 'DRAFT',
+  PENDING = 'PENDING',
+  CHANGEREQUESTED = 'CHANGEREQUESTED',
+  ONHOLD = 'ONHOLD',
+  REJECTED = 'REJECTED',
+  CONFIRMED = 'CONFIRMED',
+  CANCELLED = 'CANCELLED',
+  ARCHIVED = 'ARCHIVED',
 }
 
 export class Order {
@@ -26,7 +33,7 @@ export class Order {
     this.date = date
     this.label = label
     this.orderItems = orderItem
-    this.status = status
+    this.status = status 
   }
 
   get totalWithoutTax(): number {
