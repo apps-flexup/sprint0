@@ -8,7 +8,7 @@ localVue.use(Vuex)
 const $activeAccount = {
   get() {
     return 1
-  },
+  }
 }
 
 const $directory = {
@@ -25,12 +25,12 @@ const $directory = {
   },
   allAccounts() {
     return []
-  },
+  }
 }
 
 const TestComponent = {
   render() {},
-  mixins: [availableThirdPartyAccounts],
+  mixins: [availableThirdPartyAccounts]
 }
 
 const localThirdParties = [
@@ -42,7 +42,7 @@ const localThirdParties = [
     name: 'Personal Third-party',
     account_id: 1,
     id: 3,
-    avatar: 'avatarLocalPersonal',
+    avatar: 'avatarLocalPersonal'
   },
   {
     type: 'Business',
@@ -50,7 +50,7 @@ const localThirdParties = [
     name: 'Business',
     account_id: 1,
     id: 4,
-    avatar: 'avatarLocalBusiness',
+    avatar: 'avatarLocalBusiness'
   },
   {
     type: 'SubAccount',
@@ -59,8 +59,8 @@ const localThirdParties = [
     name: 'Sub third-party',
     account_id: 1,
     id: 5,
-    avatar: 'avatarLocalSubThirdParty',
-  },
+    avatar: 'avatarLocalSubThirdParty'
+  }
 ]
 
 const flexupThirdParties = [
@@ -68,14 +68,14 @@ const flexupThirdParties = [
     directory: 'Flexup',
     account_id: 1,
     flexup_id: 2,
-    id: 4,
+    id: 4
   },
   {
     directory: 'Flexup',
     account_id: 1,
     flexup_id: 3,
-    id: 5,
-  },
+    id: 5
+  }
 ]
 
 const flexupAccounts = [
@@ -86,14 +86,14 @@ const flexupAccounts = [
     name: 'Active account',
     type: 'Personal',
     medias: [],
-    avatar: 'avatarActiveAccount',
+    avatar: 'avatarActiveAccount'
   },
   {
     id: '2',
     name: 'Cosys',
     type: 'Business',
     medias: [],
-    avatar: 'avatarCosys',
+    avatar: 'avatarCosys'
   },
   {
     id: '3',
@@ -101,7 +101,7 @@ const flexupAccounts = [
     type: 'SubAccount',
     medias: [],
     owners: [],
-    avatar: 'avatarFlexup',
+    avatar: 'avatarFlexup'
   },
   {
     id: '4',
@@ -110,8 +110,8 @@ const flexupAccounts = [
     name: 'Gaston Lagaffe',
     type: 'Personal',
     medias: [],
-    avatar: 'avatarGaston',
-  },
+    avatar: 'avatarGaston'
+  }
 ]
 
 describe('Available third party accounts', () => {
@@ -125,24 +125,24 @@ describe('Available third party accounts', () => {
             namespaced: true,
             getters: {
               local: () => [],
-              flexup: () => [],
-            },
-          },
-        },
+              flexup: () => []
+            }
+          }
+        }
       })
       wrapper = mount(TestComponent, {
         localVue,
         store,
         mocks: {
-          $directory,
-        },
+          $directory
+        }
       })
     })
     it('should return an empty list', async () => {
       const expectedList = {
         localThirdParties: [],
         flexupThirdParties: [],
-        flexupAccounts: [],
+        flexupAccounts: []
       }
       expect(await wrapper.vm.getAvailableThirdParties()).toEqual(expectedList)
     })
@@ -155,24 +155,24 @@ describe('Available third party accounts', () => {
             namespaced: true,
             getters: {
               local: () => localThirdParties,
-              flexup: () => [],
-            },
-          },
-        },
+              flexup: () => []
+            }
+          }
+        }
       })
       wrapper = mount(TestComponent, {
         localVue,
         store,
         mocks: {
-          $directory,
-        },
+          $directory
+        }
       })
     })
     it('should return list of local third parties and empty list for flexup third parties and flexup accounts', async () => {
       const expectedList = {
         localThirdParties,
         flexupThirdParties: [],
-        flexupAccounts: [],
+        flexupAccounts: []
       }
       expect(await wrapper.vm.getAvailableThirdParties()).toEqual(expectedList)
     })
@@ -185,17 +185,17 @@ describe('Available third party accounts', () => {
             namespaced: true,
             getters: {
               local: () => [],
-              flexup: () => flexupThirdParties,
-            },
-          },
-        },
+              flexup: () => flexupThirdParties
+            }
+          }
+        }
       })
       wrapper = mount(TestComponent, {
         localVue,
         store,
         mocks: {
-          $directory,
-        },
+          $directory
+        }
       })
     })
     it('should return the list of flexup third-parties', async () => {
@@ -207,7 +207,7 @@ describe('Available third party accounts', () => {
           account_id: 1,
           flexup_id: 2,
           id: 4,
-          avatar: 'avatarCosys',
+          avatar: 'avatarCosys'
         },
         {
           type: 'SubAccount',
@@ -216,13 +216,13 @@ describe('Available third party accounts', () => {
           account_id: 1,
           flexup_id: 3,
           id: 5,
-          avatar: 'avatarFlexup',
-        },
+          avatar: 'avatarFlexup'
+        }
       ]
       const expectedList = {
         localThirdParties: [],
         flexupThirdParties: expectedFlexupThirdParties,
-        flexupAccounts: [],
+        flexupAccounts: []
       }
       expect(await wrapper.vm.getAvailableThirdParties()).toEqual(expectedList)
     })
@@ -235,10 +235,10 @@ describe('Available third party accounts', () => {
             namespaced: true,
             getters: {
               local: () => [],
-              flexup: () => [],
-            },
-          },
-        },
+              flexup: () => []
+            }
+          }
+        }
       })
       $directory.allAccounts = () => {
         return flexupAccounts
@@ -248,8 +248,8 @@ describe('Available third party accounts', () => {
         store,
         mocks: {
           $directory,
-          $activeAccount,
-        },
+          $activeAccount
+        }
       })
     })
     it('should return the list of flexup accounts without active account', async () => {
@@ -258,26 +258,26 @@ describe('Available third party accounts', () => {
           id: 2,
           type: 'Business',
           name: 'Cosys',
-          avatar: 'avatarCosys',
+          avatar: 'avatarCosys'
         },
         {
           id: 3,
           type: 'SubAccount',
           name: 'Flexup',
-          avatar: 'avatarFlexup',
+          avatar: 'avatarFlexup'
         },
         {
           id: 4,
           type: 'Personal',
           name: 'Gaston Lagaffe',
-          avatar: 'avatarGaston',
-        },
+          avatar: 'avatarGaston'
+        }
       ]
 
       const expectedList = {
         localThirdParties: [],
         flexupThirdParties: [],
-        flexupAccounts: expectedFlexupAccounts,
+        flexupAccounts: expectedFlexupAccounts
       }
       expect(await wrapper.vm.getAvailableThirdParties()).toEqual(expectedList)
     })
@@ -290,10 +290,10 @@ describe('Available third party accounts', () => {
             namespaced: true,
             getters: {
               local: () => [],
-              flexup: () => flexupThirdParties,
-            },
-          },
-        },
+              flexup: () => flexupThirdParties
+            }
+          }
+        }
       })
       $directory.allAccounts = () => {
         return flexupAccounts
@@ -303,8 +303,8 @@ describe('Available third party accounts', () => {
         store,
         mocks: {
           $directory,
-          $activeAccount,
-        },
+          $activeAccount
+        }
       })
     })
     it('should remove flexup third parties from flexup accounts list', async () => {
@@ -316,7 +316,7 @@ describe('Available third party accounts', () => {
           account_id: 1,
           flexup_id: 2,
           id: 4,
-          avatar: 'avatarCosys',
+          avatar: 'avatarCosys'
         },
         {
           type: 'SubAccount',
@@ -325,22 +325,22 @@ describe('Available third party accounts', () => {
           account_id: 1,
           flexup_id: 3,
           id: 5,
-          avatar: 'avatarFlexup',
-        },
+          avatar: 'avatarFlexup'
+        }
       ]
       const expectedFlexupAccounts = [
         {
           id: 4,
           type: 'Personal',
           name: 'Gaston Lagaffe',
-          avatar: 'avatarGaston',
-        },
+          avatar: 'avatarGaston'
+        }
       ]
 
       const expectedList = {
         localThirdParties: [],
         flexupThirdParties: expectedFlexupThirdParties,
-        flexupAccounts: expectedFlexupAccounts,
+        flexupAccounts: expectedFlexupAccounts
       }
       expect(await wrapper.vm.getAvailableThirdParties()).toEqual(expectedList)
     })

@@ -19,8 +19,8 @@ export default {
   props: {
     status: {
       type: String,
-      default: 'draft',
-    },
+      default: 'draft'
+    }
   },
   data() {
     return {
@@ -34,8 +34,8 @@ export default {
         pending: '#EEA50C',
         active: '#9FE4A6',
         inactive: '#FFCD92',
-        archived: '#EDEDED',
-      },
+        archived: '#EDEDED'
+      }
     }
   },
   computed: {
@@ -47,12 +47,12 @@ export default {
     color() {
       const color = this.colors[this.status?.toLowerCase()]
       return color
-    },
+    }
   },
   methods: {
     statusClicked() {
       this.$emit('status:clicked')
-    },
-  },
+    }
+  }
 }
 </script>

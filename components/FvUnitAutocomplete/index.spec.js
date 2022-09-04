@@ -9,7 +9,7 @@ describe('FvUnitAutocomplete', () => {
   const item = {
     dimension: 'length',
     symbole: 'm',
-    id: 5,
+    id: 5
   }
   const units = [
     {
@@ -18,7 +18,7 @@ describe('FvUnitAutocomplete', () => {
       dimension: 'data',
       id: 3,
       symbole: 'byte',
-      unit_per_base: 1,
+      unit_per_base: 1
     },
     {
       base: 'hr',
@@ -26,8 +26,8 @@ describe('FvUnitAutocomplete', () => {
       dimension: 'duration',
       id: 4,
       symbole: 'hr',
-      unit_per_base: 1,
-    },
+      unit_per_base: 1
+    }
   ]
   let store
   const factory = (propsData) => {
@@ -35,14 +35,14 @@ describe('FvUnitAutocomplete', () => {
       localVue,
       store,
       propsData: {
-        ...propsData,
+        ...propsData
       },
       stubs: {
-        FvAutocomplete: true,
+        FvAutocomplete: true
       },
       mocks: {
-        $t: (msg) => msg,
-      },
+        $t: (msg) => msg
+      }
     })
   }
   beforeEach(() => {
@@ -51,14 +51,14 @@ describe('FvUnitAutocomplete', () => {
         units: {
           namespaced: true,
           actions: {
-            get: jest.fn(),
+            get: jest.fn()
           },
           getters: {
             findByDimension: () => () => item,
-            all: () => units,
-          },
-        },
-      },
+            all: () => units
+          }
+        }
+      }
     })
   })
   it('should render a FvUnitAutocomplete', () => {
@@ -71,7 +71,7 @@ describe('FvUnitAutocomplete', () => {
     autocomplete.vm.$emit('autocomplete:selected', item)
     const expectedPayload = {
       dimension: item.dimension,
-      unit: item.symbole,
+      unit: item.symbole
     }
     const submittedCalls = wrapper.emitted('unit:selected')
     expect(submittedCalls).toBeTruthy()
@@ -84,7 +84,7 @@ describe('FvUnitAutocomplete', () => {
     autocomplete.vm.$emit('autocomplete:selected', item)
     const expectedPayload = {
       dimension: item.dimension,
-      unit: item.symbole,
+      unit: item.symbole
     }
     const submittedCalls = wrapper.emitted('payload:changed')
     expect(submittedCalls).toBeTruthy()

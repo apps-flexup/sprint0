@@ -36,14 +36,14 @@ export default {
       type: Boolean,
       default() {
         return false
-      },
+      }
     },
     partner: {
       type: Object,
       default() {
         return {}
-      },
-    },
+      }
+    }
   },
   methods: {
     close() {
@@ -54,7 +54,7 @@ export default {
     },
     partnerChanged(partner) {
       this.$emit('partner:changed', partner)
-    },
-  },
+    }
+  }
 }
 </script>

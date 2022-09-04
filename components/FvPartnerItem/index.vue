@@ -12,6 +12,6 @@
 
 <script>
 export default {
-  name: 'FvPartnerItem',
+  name: 'FvPartnerItem'
 }
 </script>

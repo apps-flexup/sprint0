@@ -8,5 +8,5 @@ export default {
     if (!(idA && idB)) return []
     const res = state.items.filter((c) => c.account_id === idA || c.account_id === idB)
     return res
-  },
+  }
 }

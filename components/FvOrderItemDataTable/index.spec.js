@@ -16,8 +16,8 @@ describe('FvProductDataTable', () => {
       store,
       vuetify,
       mocks: {
-        $t: (msg) => msg,
-      },
+        $t: (msg) => msg
+      }
     })
   }
   beforeEach(() => {
@@ -27,17 +27,17 @@ describe('FvProductDataTable', () => {
           namespaced: true,
           state: {},
           actions: {
-            remove: jest.fn(),
-          },
+            remove: jest.fn()
+          }
         },
         categories: {
           namespaced: true,
           state: {},
           actions: {
-            get: jest.fn(),
-          },
-        },
-      },
+            get: jest.fn()
+          }
+        }
+      }
     })
     vuetify = new Vuetify()
   })

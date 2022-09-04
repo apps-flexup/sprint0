@@ -30,31 +30,31 @@ export default {
   props: {
     id: {
       type: Number,
-      required: true,
+      required: true
     },
     avatar: {
       type: String,
       default() {
         return null
-      },
+      }
     },
     name: {
       type: String,
       default() {
         return null
-      },
+      }
     },
     type: {
       type: String,
       default() {
         return null
-      },
-    },
+      }
+    }
   },
   data() {
     return {
       avatarSize: 128,
-      role: null,
+      role: null
     }
   },
   computed: {
@@ -71,7 +71,7 @@ export default {
       const separator = this.$t('ponctuation.colons')
       const role = this.$t(`functionalRoles.${this.role}`)
       return `${roleLabel}${separator}${role}`
-    },
+    }
   },
   mounted() {
     this.setRoleOfUser()
@@ -94,7 +94,7 @@ export default {
     },
     lowerCaseFirstLetter(str) {
       return str.charAt(0).toLowerCase() + str.slice(1)
-    },
-  },
+    }
+  }
 }
 </script>

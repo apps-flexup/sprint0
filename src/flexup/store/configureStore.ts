@@ -16,11 +16,11 @@ interface Dependencies {
 export const configureReduxStore = (dependencies: Partial<Dependencies>): Store<AppState> =>
   createStore(
     combineReducers({
-      coreLogic,
+      coreLogic
     }),
     composeWithDevTools(
-      applyMiddleware(thunk.withExtraArgument(dependencies) as ThunkMiddleware<AppState, Action, Dependencies>),
-    ),
+      applyMiddleware(thunk.withExtraArgument(dependencies) as ThunkMiddleware<AppState, Action, Dependencies>)
+    )
   )
 
 export type ReduxStore = Store<AppState> & {

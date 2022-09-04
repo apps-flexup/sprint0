@@ -20,10 +20,10 @@ export default {
     console.log('ID', id)
     const res = await fetch(`${process.env.API_BASE}/api/orders/${id}/PENDING`, {
       method: 'POST',
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/json'
     }).then((res) => res.json())
     commit('remove', res)
     commit('add', res)
     console.log('RESULTAT', res)
-  },
+  }
 }

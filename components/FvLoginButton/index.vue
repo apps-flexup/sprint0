@@ -16,7 +16,7 @@ export default {
   methods: {
     click() {
       this.$auth.loginWith('keycloak')
-    },
-  },
+    }
+  }
 }
 </script>

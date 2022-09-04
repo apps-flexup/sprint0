@@ -6,11 +6,11 @@ describe('FvThemeAutocomplete', () => {
   const factory = () => {
     return mount(FvThemeAutocomplete, {
       stubs: {
-        FvAutocomplete: true,
+        FvAutocomplete: true
       },
       mocks: {
-        $t: (msg) => msg,
-      },
+        $t: (msg) => msg
+      }
     })
   }
   it('should render a theme autocomplete', () => {

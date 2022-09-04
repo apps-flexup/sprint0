@@ -13,5 +13,5 @@ export default {
     if (!state.from) return []
     const res = JSON.parse(JSON.stringify(state.from))
     return res
-  },
+  }
 }

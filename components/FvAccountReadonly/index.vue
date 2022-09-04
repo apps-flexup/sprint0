@@ -14,14 +14,14 @@ export default {
       type: Number,
       default() {
         return null
-      },
+      }
     },
     label: {
       type: String,
       default() {
         return null
-      },
-    },
+      }
+    }
   },
   computed: {
     accountName() {
@@ -29,10 +29,10 @@ export default {
       if (!account) return ''
       const res = account.name
       return res
-    },
+    }
   },
   mounted() {
     this.$store.dispatch('accounts/get')
-  },
+  }
 }
 </script>

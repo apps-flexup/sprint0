@@ -2,15 +2,15 @@ import { mount } from '@vue/test-utils'
 import FvLogoutButton from './index.vue'
 
 const $router = {
-  push: jest.fn(),
+  push: jest.fn()
 }
 
 const factory = () => {
   return mount(FvLogoutButton, {
     mocks: {
       $t: (msg) => msg,
-      $router,
-    },
+      $router
+    }
   })
 }
 

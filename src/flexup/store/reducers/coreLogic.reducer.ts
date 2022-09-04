@@ -4,5 +4,5 @@ import { thirdPartiesList } from '~/src/flexup/store/reducers/thirdPartiesList.r
 
 export const coreLogic = combineReducers({
   ordersList,
-  thirdPartiesList,
+  thirdPartiesList
 })

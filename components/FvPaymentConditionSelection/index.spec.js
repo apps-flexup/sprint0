@@ -10,16 +10,16 @@ let store
 const payload = [
   {
     id: 3,
-    portion: 50,
+    portion: 50
   },
   {
     id: 2,
-    portion: 50,
-  },
+    portion: 50
+  }
 ]
 
 const $activeAccount = {
-  headers: () => [],
+  headers: () => []
 }
 
 const factory = (propsData) => {
@@ -27,12 +27,12 @@ const factory = (propsData) => {
     localVue,
     store,
     propsData: {
-      ...propsData,
+      ...propsData
     },
     mocks: {
       $t: (msg) => msg,
-      $activeAccount,
-    },
+      $activeAccount
+    }
   })
 }
 
@@ -42,15 +42,15 @@ beforeEach(() => {
       paymentConditions: {
         namespaced: true,
         actions: {
-          get: jest.fn(),
+          get: jest.fn()
         },
         getters: {
           findById: () => () => {
             return { risk: 20, portion: 50 }
-          },
-        },
-      },
-    },
+          }
+        }
+      }
+    }
   })
 })
 

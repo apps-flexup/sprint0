@@ -43,5 +43,5 @@ export default {
   },
   availableFilters(state) {
     return state.availableFilters
-  },
+  }
 }

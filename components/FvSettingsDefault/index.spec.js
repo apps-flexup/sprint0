@@ -10,12 +10,12 @@ let store
 const settings = {
   currency: 'EUR',
   locale: 'fr',
-  theme: 'light',
+  theme: 'light'
 }
 
 const $activeAccount = {
   settings: () => settings,
-  setSettings: jest.fn(),
+  setSettings: jest.fn()
 }
 
 const factory = () => {
@@ -23,8 +23,8 @@ const factory = () => {
     localVue,
     store,
     mocks: {
-      $activeAccount,
-    },
+      $activeAccount
+    }
   })
 }
 
@@ -35,10 +35,10 @@ beforeEach(() => {
       settings: {
         namespaced: true,
         actions: {
-          getSettings: jest.fn(),
-        },
-      },
-    },
+          getSettings: jest.fn()
+        }
+      }
+    }
   })
 })
 
@@ -56,7 +56,7 @@ describe('FvSettingsDefault', () => {
     const expectedSettings = {
       locale,
       currency: settings.currency,
-      theme: settings.theme,
+      theme: settings.theme
     }
     languageAutocomplete.vm.$emit('language:selected', locale)
     expect($activeAccount.setSettings).toHaveBeenCalledTimes(1)
@@ -69,7 +69,7 @@ describe('FvSettingsDefault', () => {
     const expectedSettings = {
       locale: settings.locale,
       currency,
-      theme: settings.theme,
+      theme: settings.theme
     }
     currencyAutocomplete.vm.$emit('currency:selected', currency)
     expect($activeAccount.setSettings).toHaveBeenCalledTimes(1)
@@ -82,7 +82,7 @@ describe('FvSettingsDefault', () => {
     const expectedSettings = {
       locale: settings.locale,
       currency: settings.currency,
-      theme,
+      theme
     }
     themeAutocomplete.vm.$emit('theme:selected', theme)
     expect($activeAccount.setSettings).toHaveBeenCalledTimes(1)

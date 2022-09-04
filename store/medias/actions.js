@@ -4,5 +4,5 @@ export default {
     this.$repos.medias.index().then((data) => {
       commit('set', data)
     })
-  },
+  }
 }

@@ -48,7 +48,7 @@ export default {
     },
     rowsPerPage() {
       return this.settings ? this.settings.rows_per_page : null
-    },
+    }
   },
   methods: {
     priceNbDigitsChanged(n) {
@@ -70,7 +70,7 @@ export default {
       const newSettings = this.settings
       newSettings.rows_per_page = n
       this.$activeAccount.setSettings(newSettings)
-    },
-  },
+    }
+  }
 }
 </script>

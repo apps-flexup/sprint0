@@ -28,19 +28,19 @@ export default {
       type: Number,
       default() {
         return null
-      },
-    },
+      }
+    }
   },
   data() {
     return {
-      isLoading: false,
+      isLoading: false
     }
   },
   computed: {
     items() {
       const res = this.$store.getters['categories/all']
       return res
-    },
+    }
   },
   mounted() {
     this.$store.dispatch('categories/get')
@@ -51,7 +51,7 @@ export default {
     },
     selected(v) {
       this.$emit('category:selected', v)
-    },
-  },
+    }
+  }
 }
 </script>

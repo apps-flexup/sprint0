@@ -16,12 +16,12 @@ describe('FvThirdPartyAccountList', () => {
         $t: (msg) => msg,
         $activeAccount: {
           headersThirdPartyAccounts: jest.fn(),
-          thirdPartyAccounts: jest.fn(),
+          thirdPartyAccounts: jest.fn()
         },
         $displayRules: {
-          legalStructure: jest.fn(),
-        },
-      },
+          legalStructure: jest.fn()
+        }
+      }
     })
   }
   beforeEach(() => {
@@ -30,10 +30,10 @@ describe('FvThirdPartyAccountList', () => {
         thirdPartyAccounts: {
           namespaced: true,
           actions: {
-            get: jest.fn(),
-          },
-        },
-      },
+            get: jest.fn()
+          }
+        }
+      }
     })
   })
   it('should render a fv third party account list', () => {

@@ -16,20 +16,20 @@ export default {
       type: String,
       default() {
         return null
-      },
+      }
     },
     space: {
       type: String,
       default() {
         return null
-      },
+      }
     },
     divider: {
       type: String,
       default() {
         return '>'
-      },
-    },
+      }
+    }
   },
   computed: {
     crumbs() {
@@ -43,7 +43,7 @@ export default {
           ' ' +
           this.$t('spaces.' + this.space),
         href: '/',
-        disabled: false,
+        disabled: false
       }
       crumbs.push(prefixCrumb)
       this.$route.matched.map((item) => {
@@ -60,7 +60,7 @@ export default {
         crumbs.push(crumb)
       })
       return crumbs
-    },
+    }
   },
   mounted() {
     this.$store.dispatch('accounts/get')
@@ -80,10 +80,10 @@ export default {
       const crumb = {
         href,
         text,
-        disabled,
+        disabled
       }
       return crumb
-    },
-  },
+    }
+  }
 }
 </script>

@@ -9,5 +9,5 @@ export default {
     const id = parseInt(paymentConditionId)
     const res = state.items.find((v) => parseInt(v.id) === id)
     return res
-  },
+  }
 }

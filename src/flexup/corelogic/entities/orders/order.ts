@@ -9,7 +9,7 @@ export enum OrderStatus {
   REJECTED = 'REJECTED',
   CONFIRMED = 'CONFIRMED',
   CANCELLED = 'CANCELLED',
-  ARCHIVED = 'ARCHIVED',
+  ARCHIVED = 'ARCHIVED'
 }
 
 export class Order {
@@ -26,14 +26,14 @@ export class Order {
     date: string = '',
     label: string = '',
     orderItem: Array<OrderItem> = [],
-    status: OrderStatus = OrderStatus.NEW,
+    status: OrderStatus = OrderStatus.NEW
   ) {
     this.id = id
     this.thirdPartyId = thirdPartyId
     this.date = date
     this.label = label
     this.orderItems = orderItem
-    this.status = status 
+    this.status = status
   }
 
   get totalWithoutTax(): number {

@@ -14,7 +14,7 @@ describe('FvAccountList', () => {
       roles: ['customer', 'supplier'],
       roles_methods: null,
       supplier: false,
-      user_id: '2ae5fcf8-9ed5-480a-89c8-a2f946e72140',
+      user_id: '2ae5fcf8-9ed5-480a-89c8-a2f946e72140'
     },
     {
       avatar: '/images/avatar-1.png',
@@ -27,7 +27,7 @@ describe('FvAccountList', () => {
       roles: ['customer', 'supplier'],
       roles_methods: null,
       supplier: false,
-      user_id: '2ae5fcf8-9ed5-480a-89c8-a2f946e72140',
+      user_id: '2ae5fcf8-9ed5-480a-89c8-a2f946e72140'
     },
     {
       avatar: '/images/avatar-2.png',
@@ -40,14 +40,14 @@ describe('FvAccountList', () => {
       roles: ['customer', 'supplier'],
       roles_methods: null,
       supplier: false,
-      user_id: '2ae5fcf8-9ed5-480a-89c8-a2f946e72140',
-    },
+      user_id: '2ae5fcf8-9ed5-480a-89c8-a2f946e72140'
+    }
   ]
   const factory = () => {
     return shallowMount(FvAccountList, {
       propsData: {
-        accounts,
-      },
+        accounts
+      }
     })
   }
   it('should render an accounts index component', () => {
@@ -60,7 +60,7 @@ describe('FvAccountList', () => {
   })
   it('should display an empty array of accounts', () => {
     const wrapper = shallowMount(FvAccountList, {
-      propsData: {},
+      propsData: {}
     })
     expect(wrapper.findAll('[data-testid="accountCard"]').length).toBe(0)
   })

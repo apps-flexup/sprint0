@@ -15,8 +15,8 @@ export default {
       type: [Number, String],
       default() {
         return null
-      },
-    },
+      }
+    }
   },
   methods: {
     inputChanged(v) {
@@ -28,7 +28,7 @@ export default {
       const rate = parseInt(v)
       const res = 100 - 6 * rate
       return res
-    },
-  },
+    }
+  }
 }
 </script>

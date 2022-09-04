@@ -22,7 +22,7 @@ export default {
     return {
       headers: [],
       orders: [],
-      rules: {},
+      rules: {}
     }
   },
   async mounted() {
@@ -34,10 +34,10 @@ export default {
         const thirdParty = await this.$directory.getAccountById(o.thirdParty)
         return {
           ...o,
-          thirdParty: !+o.thirdParty ? o.thirdParty : thirdParty.name,
+          thirdParty: !+o.thirdParty ? o.thirdParty : thirdParty.name
         }
-      }),
+      })
     )
-  },
+  }
 }
 </script>

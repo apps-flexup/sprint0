@@ -19,8 +19,8 @@ export default {
       type: Array,
       default() {
         return []
-      },
-    },
+      }
+    }
   },
   computed: {
     total() {
@@ -51,16 +51,16 @@ export default {
       let color = 'black'
       if (theme === 'dark') color = 'white'
       return {
-        '--fontColor': color,
+        '--fontColor': color
       }
-    },
+    }
   },
   watch: {
     deep: true,
     handler() {
       console.log('value changed: ', this.value)
-    },
-  },
+    }
+  }
 }
 </script>
 

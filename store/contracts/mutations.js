@@ -7,5 +7,5 @@ export default {
   },
   setLegalStructures(state, items) {
     state.legalStructures = items
-  },
+  }
 }

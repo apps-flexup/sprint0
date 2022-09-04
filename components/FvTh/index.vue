@@ -27,36 +27,36 @@ export default {
       type: String,
       default() {
         return null
-      },
+      }
     },
     sortKey: {
       type: String,
       default() {
         return null
-      },
+      }
     },
     sortable: {
       type: Boolean,
       default() {
         return false
-      },
+      }
     },
     isSorted: {
       type: Boolean,
       default() {
         return false
-      },
+      }
     },
     isSortedDesc: {
       type: Boolean,
       default() {
         return false
-      },
-    },
+      }
+    }
   },
   data() {
     return {
-      over: false,
+      over: false
     }
   },
   computed: {
@@ -73,7 +73,7 @@ export default {
       if (!this.isSorted && this.over) res = '#B8B8B8'
       else if (!this.isSorted && !this.over) res = 'transparent'
       return res
-    },
+    }
   },
   mounted() {
     this.$store.dispatch('settings/getSettings')
@@ -87,8 +87,8 @@ export default {
     },
     mouseleave() {
       this.over = false
-    },
-  },
+    }
+  }
 }
 </script>
 

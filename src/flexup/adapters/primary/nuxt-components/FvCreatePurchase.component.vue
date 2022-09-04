@@ -78,7 +78,7 @@ export default {
   name: 'FvCreatePurchase',
   data() {
     return {
-      purchaseVM: createPurchaseVM(dateProvider),
+      purchaseVM: createPurchaseVM(dateProvider)
     }
   },
   methods: {
@@ -100,7 +100,7 @@ export default {
         offerName: orderItem.offerName,
         price: orderItem.price,
         vat: orderItem.vat / 100,
-        unit: orderItem.unit,
+        unit: orderItem.unit
       })
     },
     quantityChanged(payload) {
@@ -121,14 +121,14 @@ export default {
             price: oi.price,
             vat: oi.vat,
             unit: oi.unit,
-            quantity: oi.quantity,
+            quantity: oi.quantity
           }
-        }),
+        })
       }
       await store.dispatch(savePurchaseAsDraft(res))
       this.$router.go(-1)
-    },
-  },
+    }
+  }
 }
 </script>
 

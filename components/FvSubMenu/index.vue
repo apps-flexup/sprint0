@@ -23,26 +23,26 @@ export default {
       type: String,
       default() {
         return null
-      },
+      }
     },
     menuName: {
       type: String,
       default() {
         return null
-      },
+      }
     },
     title: {
       type: String,
       default() {
         return null
-      },
-    },
+      }
+    }
   },
   computed: {
     findMenu() {
       const res = this.$store.getters['settings/' + this.menuName + 'Menu']
       return res
-    },
+    }
   },
   mounted() {
     this.$store.dispatch('settings/getUserMenu')
@@ -50,7 +50,7 @@ export default {
     this.$store.dispatch('settings/getBuyerMenu')
     this.$store.dispatch('settings/getManageMenu')
     this.$store.dispatch('settings/getSellerMenu')
-  },
+  }
 }
 </script>
 

@@ -34,8 +34,8 @@ export default {
       type: Object,
       default() {
         return {}
-      },
-    },
+      }
+    }
   },
   computed: {
     selectedReferences() {
@@ -59,10 +59,10 @@ export default {
       let color = 'black'
       if (theme === 'dark') color = 'white'
       const res = {
-        '--fontColor': color,
+        '--fontColor': color
       }
       return res
-    },
+    }
   },
   mounted() {
     this.$store.dispatch('references/get')
@@ -127,8 +127,8 @@ export default {
     },
     filter(item, v, it) {
       return filterReferenceAutocomplete(item, v, it)
-    },
-  },
+    }
+  }
 }
 </script>
 

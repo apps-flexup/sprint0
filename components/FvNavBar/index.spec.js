@@ -20,15 +20,15 @@ describe('FvNavBar', () => {
         $auth: {
           loggedIn: payload ? payload.loggedIn : true,
           user: {
-            preferred_username: 'HelloWorld',
-          },
+            preferred_username: 'HelloWorld'
+          }
         },
-        $t: (msg) => msg,
+        $t: (msg) => msg
       },
       slots: {
         left: slot,
-        right: slot,
-      },
+        right: slot
+      }
     })
   }
   beforeEach(() => {
@@ -38,17 +38,17 @@ describe('FvNavBar', () => {
           namespaced: true,
           actions: {
             getSellerNavBar: jest.fn(),
-            getManageNavBar: jest.fn(),
-          },
+            getManageNavBar: jest.fn()
+          }
         },
         accounts: {
           namespaced: true,
           getters: {
             selected: jest.fn(),
-            findById: () => () => account,
-          },
-        },
-      },
+            findById: () => () => account
+          }
+        }
+      }
     })
     vuetify = new Vuetify()
   })

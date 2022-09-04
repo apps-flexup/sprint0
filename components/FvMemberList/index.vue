@@ -17,8 +17,8 @@ export default {
     return {
       rules: {
         to_id: this.$displayRules.memberName,
-        role: this.$displayRules.role,
-      },
+        role: this.$displayRules.role
+      }
     }
   },
   mounted() {
@@ -27,7 +27,7 @@ export default {
   methods: {
     memberSelected(member) {
       this.$emit('list:selected', member)
-    },
-  },
+    }
+  }
 }
 </script>

@@ -10,7 +10,7 @@ let store
 let vuetify
 
 const $displayRules = {
-  userNameFromUuid: jest.fn(),
+  userNameFromUuid: jest.fn()
 }
 
 describe('FvMemberDataTable', () => {
@@ -21,8 +21,8 @@ describe('FvMemberDataTable', () => {
       vuetify,
       mocks: {
         $t: (msg) => msg,
-        $displayRules,
-      },
+        $displayRules
+      }
     })
   }
   beforeEach(() => {
@@ -31,20 +31,20 @@ describe('FvMemberDataTable', () => {
         functionalRoles: {
           namespaced: true,
           actions: {
-            get: jest.fn(),
+            get: jest.fn()
           },
           getters: {
-            all: jest.fn(),
-          },
+            all: jest.fn()
+          }
         },
         members: {
           namespaced: true,
           actions: {
             remove: jest.fn(),
-            update: jest.fn(),
-          },
-        },
-      },
+            update: jest.fn()
+          }
+        }
+      }
     })
     vuetify = new Vuetify()
   })

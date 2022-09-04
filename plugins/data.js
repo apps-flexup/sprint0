@@ -47,7 +47,7 @@ export default (ctx, inject) => {
     thirdPartyAccountSteps: repo('third-party-account-steps'),
     units: repo('units'),
     userMenu: repo('userMenu'),
-    users: repo('users'),
+    users: repo('users')
   }
 
   inject('repos', repos)

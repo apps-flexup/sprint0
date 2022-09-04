@@ -42,14 +42,14 @@ export default {
       type: String,
       default() {
         return null
-      },
+      }
     },
     title: {
       type: String,
       default() {
         return 'Flex Up - Sprint 0'
-      },
-    },
+      }
+    }
   },
   computed: {
     messages() {
@@ -58,13 +58,13 @@ export default {
     links() {
       const res = this.$store.getters['settings/' + this.space + 'NavBar']
       return res
-    },
+    }
   },
   methods: {
     seeNotification() {
       this.$router.push('/messages')
-    },
-  },
+    }
+  }
 }
 </script>
 

@@ -31,5 +31,5 @@ export default {
   },
   setDefaultSettings(state, item) {
     state.defaultSettings = item
-  },
+  }
 }

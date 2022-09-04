@@ -11,9 +11,9 @@ export default {
   props: {
     status: {
       type: String,
-      default: 'draft',
-    },
-  },
+      default: 'draft'
+    }
+  }
 }
 </script>
 

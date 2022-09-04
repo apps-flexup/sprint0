@@ -20,7 +20,7 @@ export class Product implements ProductInterface {
     currency: any = new Currency('EUR', 2, true, 'fr'),
     description: string = '',
     vatIncluded: boolean = true,
-    locale: string = 'fr',
+    locale: string = 'fr'
   ) {
     this.locale = locale
     this.vatIncluded = vatIncluded

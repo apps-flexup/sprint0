@@ -19,14 +19,14 @@ export default {
         date: this.$displayRules.localeDate,
         amount: this.$displayRules.priceToPreferredCurrency,
         structure: this.$displayRules.paymentStructure,
-        status: this.$displayRules.status,
-      },
+        status: this.$displayRules.status
+      }
     }
   },
   methods: {
     orderSelected(order) {
       this.$emit('list:selected', order)
-    },
-  },
+    }
+  }
 }
 </script>

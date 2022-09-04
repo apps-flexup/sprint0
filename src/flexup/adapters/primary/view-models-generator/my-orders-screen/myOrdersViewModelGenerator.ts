@@ -11,7 +11,7 @@ export interface MyOrdersVM {
 export enum Alignment {
   LEFT = 'left',
   CENTER = 'center',
-  RIGHT = 'right',
+  RIGHT = 'right'
 }
 
 export interface Header {
@@ -43,7 +43,7 @@ const headers = [
     order: 0,
     customizable: true,
     active: true,
-    displayed: true,
+    displayed: true
   },
   {
     align: Alignment.LEFT,
@@ -53,7 +53,7 @@ const headers = [
     order: 0,
     customizable: true,
     active: true,
-    displayed: true,
+    displayed: true
   },
   {
     align: Alignment.RIGHT,
@@ -63,7 +63,7 @@ const headers = [
     order: 0,
     customizable: true,
     active: true,
-    displayed: true,
+    displayed: true
   },
   {
     align: Alignment.CENTER,
@@ -73,8 +73,8 @@ const headers = [
     order: 0,
     customizable: true,
     active: true,
-    displayed: true,
-  },
+    displayed: true
+  }
 ]
 
 const getThirdPartyName = (thirdPartyId: number, state: AppState) => {
@@ -96,6 +96,6 @@ export const getMyOrdersVM = (state: AppState): MyOrdersVM => {
         status: o.status
       }
     }),
-    headers,
+    headers
   }
 }

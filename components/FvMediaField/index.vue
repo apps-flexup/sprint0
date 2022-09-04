@@ -33,26 +33,26 @@ export default {
       type: Boolean,
       default() {
         return false
-      },
+      }
     },
     mediaValue: {
       type: [Number, String],
       default() {
         return null
-      },
+      }
     },
     mediaLabel: {
       type: String,
       default() {
         return null
-      },
+      }
     },
     labelValue: {
       type: String,
       default() {
         return null
-      },
-    },
+      }
+    }
   },
   methods: {
     valueChanged(v) {
@@ -66,8 +66,8 @@ export default {
     },
     deleteClicked() {
       this.$emit('media:delete:clicked')
-    },
-  },
+    }
+  }
 }
 </script>
 

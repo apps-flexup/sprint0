@@ -6,5 +6,5 @@ export default {
   },
   clear({ commit }) {
     commit('set', [])
-  },
+  }
 }

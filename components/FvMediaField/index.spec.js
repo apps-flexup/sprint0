@@ -4,14 +4,14 @@ import FvMediaField from './index.vue'
 const factory = (propsData) => {
   return mount(FvMediaField, {
     propsData: {
-      ...propsData,
+      ...propsData
     },
     mocks: {
-      $t: (msg) => msg,
+      $t: (msg) => msg
     },
     stubs: {
-      FvTextField: true,
-    },
+      FvTextField: true
+    }
   })
 }
 

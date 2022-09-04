@@ -4,11 +4,11 @@ import FvStatusSwitch from './index'
 const factory = (propsData) => {
   return shallowMount(FvStatusSwitch, {
     propsData: {
-      ...propsData,
+      ...propsData
     },
     mocks: {
-      $t: (msg) => msg,
-    },
+      $t: (msg) => msg
+    }
   })
 }
 
@@ -19,7 +19,7 @@ describe('FvStatusSwitch', () => {
   })
   describe.each([
     ['active', 'inactive'],
-    ['inactive', 'active'],
+    ['inactive', 'active']
   ])('When %s, emit an event with %s', (value, expectedValue) => {
     let wrapper
     let switchBtn

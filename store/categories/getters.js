@@ -21,5 +21,5 @@ export default {
     let res = []
     this.$axios.$get(`/products?categoryId=${id}`).then((products) => (res = products))
     return res
-  },
+  }
 }

@@ -11,6 +11,6 @@ export const dimensionsAvailable = [
   'unit',
   'volume',
   'weight',
-  'word',
+  'word'
 ]
 export const defaultDimension = 'age'

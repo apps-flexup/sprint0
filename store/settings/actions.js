@@ -55,5 +55,5 @@ export default {
     this.$repos.settings.createWithAccountId(settings).then((data) => {
       commit('setSettings', data)
     })
-  },
+  }
 }

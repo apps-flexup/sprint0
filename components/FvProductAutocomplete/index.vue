@@ -35,31 +35,31 @@ export default {
       type: String,
       default() {
         return this.$t('forms.orders.new.product')
-      },
+      }
     },
     thirdPartyAccountId: {
       type: Number,
       default() {
         return null
-      },
+      }
     },
     disabled: {
       type: Boolean,
       default() {
         return false
-      },
+      }
     },
     returnObject: {
       type: Boolean,
       default() {
         return false
-      },
-    },
+      }
+    }
   },
   data() {
     return {
       items: [],
-      prices: [],
+      prices: []
     }
   },
   computed: {
@@ -67,7 +67,7 @@ export default {
       const iso = this.$activeAccount.settings().currency
       const res = this.$store.getters['currencies/findIso'](iso)
       return res
-    },
+    }
   },
   watch: {
     async thirdPartyAccountId() {
@@ -77,12 +77,12 @@ export default {
         this.items = await Promise.all(
           products.map((o) => {
             return {
-              ...o,
+              ...o
             }
-          }),
+          })
         )
       }
-    },
+    }
   },
   async mounted() {
     await this.$store.dispatch('thirdPartyAccounts/getAll')
@@ -94,9 +94,9 @@ export default {
       this.items = await Promise.all(
         products.map((o) => {
           return {
-            ...o,
+            ...o
           }
-        }),
+        })
       )
     }
     await this.$store.dispatch('products/get')
@@ -105,7 +105,7 @@ export default {
     selected(v) {
       this.$emit('products:selected', {
         productName: v.name,
-        ...v,
+        ...v
       })
       this.emitGenericSignalForForm(v)
     },
@@ -117,7 +117,7 @@ export default {
     },
     addCustomOrderItem(payload) {
       this.$emit('products:addCustomOrderItem', payload)
-    },
-  },
+    }
+  }
 }
 </script>

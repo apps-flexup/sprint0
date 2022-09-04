@@ -14,9 +14,9 @@ export default {
   name: 'FvContactDialog',
   props: {
     show: {
-      type: Boolean,
-    },
-  },
+      type: Boolean
+    }
+  }
 }
 </script>
 <style scoped>

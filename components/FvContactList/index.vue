@@ -34,8 +34,8 @@ export default {
     items() {
       const res = this.$activeAccount.contacts()
       return res
-    },
-  },
+    }
+  }
 }
 </script>
 <style scoped>

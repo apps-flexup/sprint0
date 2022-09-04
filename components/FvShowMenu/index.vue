@@ -25,8 +25,8 @@ export default {
       type: [Array, Promise],
       default() {
         return []
-      },
-    },
-  },
+      }
+    }
+  }
 }
 </script>

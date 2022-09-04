@@ -34,32 +34,32 @@ export default {
       type: Boolean,
       default() {
         return false
-      },
+      }
     },
     headers: {
       type: Array,
       default() {
         return []
-      },
+      }
     },
     items: {
       type: Array,
       default() {
         return []
-      },
+      }
     },
     options: {
       type: Object,
       default() {
         return null
-      },
-    },
+      }
+    }
   },
   computed: {
     functionalRoles() {
       const res = this.$store.getters['functionalRoles/all']
       return res
-    },
+    }
   },
   mounted() {
     this.$store.dispatch('functionalRoles/get')
@@ -88,8 +88,8 @@ export default {
     roleSelected(member, newRole) {
       member.role = newRole
       this.$store.dispatch('members/update', member)
-    },
-  },
+    }
+  }
 }
 </script>
 

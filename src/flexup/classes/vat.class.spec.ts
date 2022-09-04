@@ -6,7 +6,7 @@ describe('VAT', () => {
     const expectedValue = 0
     const expectedString = expectedValue.toLocaleString('fr', {
       style: 'percent',
-      minimumSignificantDigits: precision,
+      minimumSignificantDigits: precision
     })
     const result = new VAT()
     expect(result).toBeInstanceOf(VAT)
@@ -22,7 +22,7 @@ describe('VAT', () => {
     const locale = 'en'
     const expectedString = expectedValue.toLocaleString(locale, {
       style: 'percent',
-      minimumSignificantDigits: precision,
+      minimumSignificantDigits: precision
     })
     const result = new VAT(expectedRate, precision, locale)
     expect(result).toBeInstanceOf(VAT)

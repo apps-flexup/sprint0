@@ -23,5 +23,5 @@ export default {
   },
   remove({ commit }, member) {
     this.$repos.givenRoles.delete(member.id).then(() => commit('remove', member))
-  },
+  }
 }

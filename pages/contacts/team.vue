@@ -11,14 +11,14 @@
 export default {
   data() {
     return {
-      items: [],
+      items: []
     }
   },
   mounted() {
     this.$repos.team.index().then((res) => {
       this.items = res
     })
-  },
+  }
 }
 </script>
 

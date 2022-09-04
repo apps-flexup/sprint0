@@ -78,9 +78,9 @@ export default {
       type: Object,
       default() {
         return {
-          id: 1,
+          id: 1
         }
-      },
+      }
     },
     values: {
       type: Object,
@@ -91,10 +91,10 @@ export default {
           contractType: null,
           dteSignature: null,
           dteEffect: null,
-          dteEnd: null,
+          dteEnd: null
         }
-      },
-    },
+      }
+    }
   },
   data() {
     return {
@@ -108,8 +108,8 @@ export default {
         contractType: null,
         dteSignature: null,
         dteEffect: null,
-        dteEnd: null,
-      },
+        dteEnd: null
+      }
     }
   },
   computed: {
@@ -120,7 +120,7 @@ export default {
       set(v) {
         this.payload.contact = v
         this.$emit('wizard', this.payload)
-      },
+      }
     },
     charter: {
       get() {
@@ -129,7 +129,7 @@ export default {
       set(v) {
         this.payload.charter = v
         this.$emit('wizard', this.payload)
-      },
+      }
     },
     contractType: {
       get() {
@@ -138,7 +138,7 @@ export default {
       set(v) {
         this.payload.contractType = v
         this.$emit('wizard', this.payload)
-      },
+      }
     },
     dteSignature: {
       get() {
@@ -147,7 +147,7 @@ export default {
       set(v) {
         this.payload.dteSignature = v
         this.$emit('wizard', this.payload)
-      },
+      }
     },
     dteEffect: {
       get() {
@@ -156,7 +156,7 @@ export default {
       set(v) {
         this.payload.dteEffect = v
         this.$emit('wizard', this.payload)
-      },
+      }
     },
     dteEnd: {
       get() {
@@ -165,7 +165,7 @@ export default {
       set(v) {
         this.payload.dteEnd = v
         this.$emit('wizard', this.payload)
-      },
+      }
     },
     contractTypeList() {
       const res = this.$store.getters['contracts/getTypes'](1)
@@ -190,13 +190,13 @@ export default {
       },
       set(v) {
         console.log('Valeur de durée :', v)
-      },
-    },
+      }
+    }
   },
   watch: {
     search(val) {
       val && val !== this.contact && this.contactList(val)
-    },
+    }
   },
   methods: {
     addContact() {
@@ -227,8 +227,8 @@ export default {
     },
     modalSaved(payload) {
       console.log('saved: ', payload)
-    },
-  },
+    }
+  }
 }
 </script>
 <style scoped>

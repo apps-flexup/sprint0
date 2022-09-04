@@ -7,8 +7,8 @@ export default {
   asyncComputed: {
     async getMessages() {
       return await this.$repos.messages.index()
-    },
-  },
+    }
+  }
 }
 </script>
 

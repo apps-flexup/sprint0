@@ -28,9 +28,9 @@ const theme = create({
   inputBorderRadius: 4,
 
   brandTitle: 'FlexupUI',
-  brandImage: '/logo.svg',
+  brandImage: '/logo.svg'
 })
 
 addons.setConfig({
-  theme,
+  theme
 })

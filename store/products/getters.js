@@ -26,7 +26,7 @@ export default {
       ...res,
       unit,
       category,
-      name,
+      name
     }
     return payload
   },
@@ -35,5 +35,5 @@ export default {
   },
   availableFilters(state) {
     return state.availableFilters
-  },
+  }
 }

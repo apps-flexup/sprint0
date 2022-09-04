@@ -773,7 +773,8 @@
       "date": "Date",
       "label": "Label",
       "value": "Value incl. tax",
-      "status": "Status"
+      "status": "Status",
+      "actions": "Actions"
     },
     "orderItems": {
       "productName": "Product name",

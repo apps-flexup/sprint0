@@ -44,14 +44,14 @@ export default {
       type: String,
       default() {
         return null
-      },
+      }
     },
     space: {
       type: String,
       default() {
         return null
-      },
-    },
+      }
+    }
   },
   computed: {
     connected() {
@@ -74,11 +74,11 @@ export default {
     spaceTitle() {
       const res = this.$t(this.space + 'Menu.title')
       return res
-    },
+    }
   },
   mounted() {
     this.$store.dispatch('settings/getGlobalMenu')
-  },
+  }
 }
 </script>
 

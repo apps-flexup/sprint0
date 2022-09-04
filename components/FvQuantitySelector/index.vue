@@ -29,14 +29,14 @@ export default {
       type: Number,
       default() {
         return 1
-      },
+      }
     },
     dense: {
       type: Boolean,
       default() {
         return true
-      },
-    },
+      }
+    }
   },
   methods: {
     minus() {
@@ -47,8 +47,8 @@ export default {
     },
     input(v) {
       this.$emit('quantitySelector:changed', parseInt(v))
-    },
-  },
+    }
+  }
 }
 </script>
 

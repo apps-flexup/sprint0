@@ -20,7 +20,7 @@ export default {
     },
     save() {
       this.$emit('modal:actions:save')
-    },
-  },
+    }
+  }
 }
 </script>

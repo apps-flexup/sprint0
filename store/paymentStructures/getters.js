@@ -24,5 +24,5 @@ export default {
       structure.paymentConditions[i] = paymentCondition
     }
     return structure
-  },
+  }
 }

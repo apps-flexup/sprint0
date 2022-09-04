@@ -75,21 +75,21 @@ export default {
       type: Number,
       default() {
         return null
-      },
+      }
     },
     order: {
       type: Object,
       default() {
         return {}
-      },
-    },
+      }
+    }
   },
   data() {
     return {
       localOrder: {},
       thirdPartyAccountId: null,
       orderDate: null,
-      orderLines: [],
+      orderLines: []
     }
   },
   watch: {
@@ -99,7 +99,7 @@ export default {
       } else {
         this.fillFieldsWithOrder()
       }
-    },
+    }
   },
   mounted() {
     this.fillFieldsWithOrder()
@@ -137,7 +137,7 @@ export default {
         amount() {
           const res = parseFloat(this.quantity) * parseFloat(this.price)
           return res
-        },
+        }
       }
       this.orderLines.push(payload)
       this.$emit('order:orderLinesChanged', this.i, this.orderLines)
@@ -172,8 +172,8 @@ export default {
       this.thirdPartyAccountId = null
       this.orderLines = []
       this.localOrder = {}
-    },
-  },
+    }
+  }
 }
 </script>
 <style scoped>

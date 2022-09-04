@@ -19,21 +19,21 @@ export default {
       type: String,
       default() {
         return null
-      },
+      }
     },
     avatar: {
       type: String,
       default() {
         return null
-      },
+      }
     },
     size: {
       type: Number,
       default() {
         return 24
-      },
-    },
-  },
+      }
+    }
+  }
 }
 </script>
 

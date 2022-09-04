@@ -6,6 +6,7 @@ export default {
     state.to = items
   },
   set(state, message) {
-    console.log('Message :',message)
+    console.log('State :', state)
+    console.log('Message :', message)
   }
 }

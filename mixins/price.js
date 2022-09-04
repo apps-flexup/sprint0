@@ -20,7 +20,7 @@ export default {
         translatedUnit = this.$t(`units.symbol.${unit.unit || unit}`)
       }
       return `${this.preferredCurrency?.symbole}/${translatedUnit}`
-    },
+    }
   },
   mounted() {
     this.$store.dispatch('currencies/get')
@@ -37,6 +37,6 @@ export default {
         res = (Math.round(res * multiplier) / multiplier).toFixed(this.nbDigitsAfterDecimalPoint)
       }
       return res
-    },
-  },
+    }
+  }
 }

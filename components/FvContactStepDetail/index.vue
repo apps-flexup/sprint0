@@ -44,7 +44,7 @@ export default {
     legalStructure() {
       const res = this.$store.getters['contracts/legalStructures']
       return res
-    },
-  },
+    }
+  }
 }
 </script>

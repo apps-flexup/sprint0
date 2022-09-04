@@ -11,14 +11,14 @@ export default {
       type: Object,
       default() {
         return {}
-      },
-    },
+      }
+    }
   },
   asyncComputed: {
     async accountName() {
       const res = await this.$displayRules.memberName(this.role)
       return res
-    },
-  },
+    }
+  }
 }
 </script>

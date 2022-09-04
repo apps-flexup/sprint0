@@ -26,10 +26,10 @@ export default {
       if (!this.account) return null
       const res = this.account.avatar
       return res
-    },
+    }
   },
   mounted() {
     this.$store.dispatch('accounts/get')
-  },
+  }
 }
 </script>

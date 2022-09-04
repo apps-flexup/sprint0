@@ -14,14 +14,14 @@ export default {
       type: String,
       default() {
         return null
-      },
+      }
     },
     label: {
       type: String,
       default() {
         return null
-      },
-    },
+      }
+    }
   },
   computed: {
     country() {
@@ -29,10 +29,10 @@ export default {
       if (!country) return null
       const res = country.name
       return res
-    },
+    }
   },
   mounted() {
     this.$store.dispatch('countries/get')
-  },
+  }
 }
 </script>

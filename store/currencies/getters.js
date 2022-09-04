@@ -6,7 +6,7 @@ export default {
       const symbole = state.symboles[currency.iso3]
       return {
         ...currency,
-        symbole,
+        symbole
       }
     })
     return res
@@ -22,7 +22,7 @@ export default {
     const symbole = state.symboles[res.iso3]
     return {
       ...res,
-      symbole,
+      symbole
     }
   },
   findIso: (state) => (iso) => {
@@ -32,7 +32,7 @@ export default {
     const symbole = state.symboles[res.iso3]
     return {
       ...res,
-      symbole,
+      symbole
     }
-  },
+  }
 }

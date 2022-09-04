@@ -21,8 +21,8 @@ export default {
       type: Array,
       default() {
         return []
-      },
-    },
+      }
+    }
   },
   computed: {
     headers() {
@@ -32,7 +32,7 @@ export default {
     items() {
       const res = this.$activeAccount.contracts()
       return res
-    },
-  },
+    }
+  }
 }
 </script>

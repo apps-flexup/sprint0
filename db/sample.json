@@ -1074,6 +1074,16 @@
             "customizable": true,
             "active": true,
             "displayed": true
+          },
+          {
+            "align": "center",
+            "sortable": true,
+            "text": "headers.orders.actions",
+            "value": "actions",
+            "order": 3,
+            "customizable": true,
+            "active": true,
+            "displayed": true
           }
         ],
         "payment_conditions_for_payment_structure_form": [

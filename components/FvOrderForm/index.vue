@@ -41,7 +41,7 @@ export default {
     return {
       orderList: [],
       allOrderLines: [],
-      nbOrders: 1,
+      nbOrders: 1
     }
   },
   methods: {
@@ -105,13 +105,13 @@ export default {
             structure: order.structureId,
             amount: totalAmount,
             status: 'draft',
-            currency: 'EUR',
+            currency: 'EUR'
           }
           this.$store.dispatch('orders/add', payload)
         }
       })
       this.$router.push('/orders')
-    },
-  },
+    }
+  }
 }
 </script>

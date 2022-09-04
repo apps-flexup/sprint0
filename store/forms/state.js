@@ -7,5 +7,5 @@ export default () => ({
   products: [],
   thirdPartyAccounts: [],
   paymentConditions: [],
-  paymentStructures: [],
+  paymentStructures: []
 })

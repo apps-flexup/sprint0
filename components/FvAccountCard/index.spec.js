@@ -7,8 +7,8 @@ beforeEach(() => {
 
 const $auth = {
   user: {
-    sub: '',
-  },
+    sub: ''
+  }
 }
 
 const givenRole = {
@@ -19,7 +19,7 @@ const givenRole = {
   to_id: 'c7e4d104-2e45-4056-94cc-10a87af32693',
   role: 'admin',
   data: null,
-  status: 'active',
+  status: 'active'
 }
 
 const $repos = {
@@ -29,21 +29,21 @@ const $repos = {
         setTimeout(() => {
           resolve([givenRole])
         }, 300)
-      }),
-  },
+      })
+  }
 }
 
 const factory = (propsData) => {
   return mount(FvAccountCard, {
     propsData: {
       ...propsData,
-      type: 'Personal',
+      type: 'Personal'
     },
     mocks: {
       $t: (msg) => msg,
       $auth,
-      $repos,
-    },
+      $repos
+    }
   })
 }
 
