@@ -72,21 +72,21 @@ export default {
       type: Array,
       default() {
         return []
-      },
+      }
     },
     details: {
       type: Boolean,
       default() {
         return false
-      },
-    },
+      }
+    }
   },
   computed: {
     headers() {
       const addAction = !this.details
       const res = this.$activeAccount.headersOrderLines(addAction)
       return translateHeaders(this.$i18n, res)
-    },
+    }
   },
   mounted() {
     this.$store.dispatch('headers/getOrderLineHeaders')
@@ -104,8 +104,8 @@ export default {
     },
     deleteOrderLine(v) {
       this.$emit('orderLines:delete', v)
-    },
-  },
+    }
+  }
 }
 </script>
 

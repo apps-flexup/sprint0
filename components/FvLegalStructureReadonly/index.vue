@@ -15,14 +15,14 @@ export default {
       type: Number,
       default() {
         return null
-      },
+      }
     },
     label: {
       type: String,
       default() {
         return null
-      },
-    },
+      }
+    }
   },
   computed: {
     legalStructureName() {
@@ -30,10 +30,10 @@ export default {
       if (!legalStructure) return null
       const res = legalStructure.name
       return res
-    },
+    }
   },
   mounted() {
     this.$store.dispatch('contracts/getLegalStructures')
-  },
+  }
 }
 </script>

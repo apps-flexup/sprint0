@@ -4,8 +4,8 @@ import FvRoleAutocomplete from './index'
 const factory = () => {
   return shallowMount(FvRoleAutocomplete, {
     mocks: {
-      $t: (msg) => msg,
-    },
+      $t: (msg) => msg
+    }
   })
 }
 

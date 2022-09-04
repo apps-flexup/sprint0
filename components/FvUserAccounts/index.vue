@@ -29,7 +29,7 @@ export default {
       if (!account) return null
       const res = account.name
       return res
-    },
-  },
+    }
+  }
 }
 </script>

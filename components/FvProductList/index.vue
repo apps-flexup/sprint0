@@ -19,8 +19,8 @@ export default {
       rules: {
         status: this.$displayRules.status,
         categoryId: this.$displayRules.category,
-        unit: this.$displayRules.unit,
-      },
+        unit: this.$displayRules.unit
+      }
     }
   },
   mounted() {
@@ -32,7 +32,7 @@ export default {
     },
     editProduct(payload) {
       this.$emit('list:edit', payload)
-    },
-  },
+    }
+  }
 }
 </script>

@@ -14,7 +14,7 @@ export default {
   methods: {
     clicked() {
       this.$emit('delete:clicked')
-    },
-  },
+    }
+  }
 }
 </script>

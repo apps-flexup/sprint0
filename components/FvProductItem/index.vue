@@ -16,9 +16,9 @@ export default {
       type: Object,
       default() {
         return {}
-      },
-    },
-  },
+      }
+    }
+  }
 }
 </script>
 <style scoped>

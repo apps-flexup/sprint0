@@ -6,5 +6,5 @@ export default {
   locales(state) {
     const res = state.locales
     return res
-  },
+  }
 }

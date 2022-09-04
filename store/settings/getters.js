@@ -105,5 +105,5 @@ export default {
       })
     }
     return res
-  },
+  }
 }

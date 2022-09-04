@@ -29,5 +29,5 @@ export default {
     this.$repos.currencies.index().then((res) => {
       commit('set', res)
     })
-  },
+  }
 }

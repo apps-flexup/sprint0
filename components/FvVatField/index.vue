@@ -22,48 +22,48 @@ export default {
       type: [String, Number],
       default() {
         return ''
-      },
+      }
     },
     label: {
       type: String,
       default() {
         return ''
-      },
+      }
     },
     outlined: {
       type: Boolean,
       default() {
         return true
-      },
+      }
     },
     readonly: {
       type: Boolean,
       default() {
         return false
-      },
+      }
     },
     hideDetails: {
       type: Boolean,
       default() {
         return false
-      },
+      }
     },
     dense: {
       type: Boolean,
       default() {
         return false
-      },
-    },
+      }
+    }
   },
   data() {
     return {
-      vat: this.value,
+      vat: this.value
     }
   },
   watch: {
     value() {
       this.vat = this.value
-    },
+    }
   },
   methods: {
     vatChanged(v) {
@@ -79,7 +79,7 @@ export default {
     },
     emitGenericSignalForForm(payload) {
       this.$emit('payload:changed', payload)
-    },
-  },
+    }
+  }
 }
 </script>

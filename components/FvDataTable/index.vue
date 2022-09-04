@@ -55,38 +55,38 @@ export default {
       type: Boolean,
       default() {
         return false
-      },
+      }
     },
     headers: {
       type: Array,
       default() {
         return []
-      },
+      }
     },
     items: {
       type: Array,
       default() {
         return []
-      },
+      }
     },
     itemsLength: {
       type: Number,
       default() {
         return undefined
-      },
+      }
     },
     options: {
       type: Object,
       default() {
         return null
-      },
-    },
+      }
+    }
   },
   data() {
     return {
       sortKey: null,
       sortDesc: false,
-      rowsPerPageOption: [this.$store.getters['settings/itemPerPage'], 20, 50, 100, -1],
+      rowsPerPageOption: [this.$store.getters['settings/itemPerPage'], 20, 50, 100, -1]
     }
   },
   computed: {
@@ -102,10 +102,10 @@ export default {
       let color = '#DBEDFF'
       if (theme === 'dark') color = '#656667'
       const res = {
-        '--theadColor': color,
+        '--theadColor': color
       }
       return res
-    },
+    }
   },
   mounted() {
     this.$store.dispatch('settings/getSettings')
@@ -127,7 +127,7 @@ export default {
       }
       const payload = {
         key: this.sortKey,
-        desc: this.sortDesc,
+        desc: this.sortDesc
       }
       this.$emit('dataTable:sortBy', payload)
     },
@@ -144,8 +144,8 @@ export default {
       if (flexAlignment === 'right') flexAlignment = 'end'
       const res = 'd-flex justify-' + flexAlignment
       return res
-    },
-  },
+    }
+  }
 }
 </script>
 

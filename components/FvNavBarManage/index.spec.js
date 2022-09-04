@@ -11,36 +11,36 @@ const manageLinks = [
   {
     active: true,
     title: 'navBar.manage.0',
-    to: '/dashboard',
+    to: '/dashboard'
   },
   {
     active: true,
     title: 'navBar.manage.1',
-    to: '/currentGestion',
+    to: '/currentGestion'
   },
   {
     active: true,
     title: 'navBar.manage.2',
-    to: '/FlexUpGestion',
-  },
+    to: '/FlexUpGestion'
+  }
 ]
 
 const sellLinks = [
   {
     active: true,
     title: 'navBar.seller.0',
-    to: '/dashboard',
+    to: '/dashboard'
   },
   {
     active: true,
     title: 'navBar.seller.1',
-    to: '/orders',
+    to: '/orders'
   },
   {
     active: true,
     title: 'navBar.seller.2',
-    to: '/offers',
-  },
+    to: '/offers'
+  }
 ]
 
 const factory = () => {
@@ -48,11 +48,11 @@ const factory = () => {
     localVue,
     store,
     propsData: {
-      space: 'manage',
+      space: 'manage'
     },
     mocks: {
-      $t: (msg) => msg,
-    },
+      $t: (msg) => msg
+    }
   })
 }
 
@@ -63,10 +63,10 @@ beforeEach(() => {
         namespaced: true,
         getters: {
           manageNavBar: () => manageLinks,
-          sellNavBar: () => sellLinks,
-        },
-      },
-    },
+          sellNavBar: () => sellLinks
+        }
+      }
+    }
   })
 })
 

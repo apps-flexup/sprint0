@@ -2,11 +2,11 @@ import { shallowMount } from '@vue/test-utils'
 import FvThirdPartyAccountIndex from './index.vue'
 
 const $router = {
-  push: jest.fn(),
+  push: jest.fn()
 }
 
 let $rights = {
-  canCreateThirdParty: jest.fn(),
+  canCreateThirdParty: jest.fn()
 }
 
 const localThirdParty = { id: 1, directory: 'Local' }
@@ -17,8 +17,8 @@ const factory = () => {
     mocks: {
       $t: (msg) => msg,
       $router,
-      $rights,
-    },
+      $rights
+    }
   })
 }
 afterEach(() => {
@@ -44,7 +44,7 @@ describe('FvThirdPartyAccountIndex', () => {
       $rights = {
         canCreateThirdParty: () => {
           return false
-        },
+        }
       }
     })
     it('should render a FvThirdPartyAccountIndex', () => {

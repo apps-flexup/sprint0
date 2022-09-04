@@ -11,5 +11,5 @@ export default () => ({
   locales: ['en-GB', 'fr'],
   fallbackLocale: 'en-GB',
   settings: {},
-  defaultSettings: {},
+  defaultSettings: {}
 })

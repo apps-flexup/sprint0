@@ -27,14 +27,14 @@ export default {
       type: String,
       default() {
         return null
-      },
-    },
+      }
+    }
   },
   computed: {
     items() {
       const res = ['light', 'dark']
       return res
-    },
+    }
   },
   methods: {
     selected(v) {
@@ -43,7 +43,7 @@ export default {
     filter(item, v, it) {
       item = this.$t('themes.' + item)
       return filterThemeAutocomplete(item, v, it)
-    },
-  },
+    }
+  }
 }
 </script>

@@ -22,6 +22,16 @@
         class="navRightBtn"
       )
         | button
+      v-badge(
+        :content='messages'
+        :value='messages'
+        color='green'
+        overlap=''
+      )
+        v-icon(
+          @click="seeNotification"
+        )
+          | mdi-bell
 </template>
 
 <script>
@@ -32,21 +42,29 @@ export default {
       type: String,
       default() {
         return null
-      },
+      }
     },
     title: {
       type: String,
       default() {
         return 'Flex Up - Sprint 0'
-      },
-    },
+      }
+    }
   },
   computed: {
+    messages() {
+      return this.$store.getters['messages/to']?.length
+    },
     links() {
       const res = this.$store.getters['settings/' + this.space + 'NavBar']
       return res
-    },
+    }
   },
+  methods: {
+    seeNotification() {
+      this.$router.push('/messages')
+    }
+  }
 }
 </script>
 

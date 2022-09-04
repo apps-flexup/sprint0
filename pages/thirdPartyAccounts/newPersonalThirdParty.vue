@@ -15,14 +15,14 @@ export default {
     return {
       thirdParty: {
         type: 'Personal',
-        directory: 'Local',
-      },
+        directory: 'Local'
+      }
     }
   },
   methods: {
     createThirdParty(payload) {
       this.$store.dispatch('thirdPartyAccounts/add', payload)
-    },
-  },
+    }
+  }
 }
 </script>

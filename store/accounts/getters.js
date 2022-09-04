@@ -23,7 +23,7 @@ export default {
     const legalStructure = rootGetters['contracts/getLegalStructureById'](legalStructureId)
     const payload = {
       ...account,
-      legalStructure,
+      legalStructure
     }
     const res = JSON.parse(JSON.stringify(payload))
     return res
@@ -67,5 +67,5 @@ export default {
       i++
     }
     return res
-  },
+  }
 }

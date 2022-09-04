@@ -10,8 +10,8 @@ export default {
   computed: {
     machin() {
       return 42
-    },
-  },
+    }
+  }
 }
 </script>
 <style scoped>

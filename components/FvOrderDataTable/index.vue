@@ -1,33 +1,40 @@
 <template lang="pug">
-.fv-order-data-table
-  fv-data-table(
-    data-testid="dataTable"
-    :headers='headers'
-    :items='items'
-    :hide-default-footer="hideDefaultFooter"
-    :options="options"
-    @dataTable:sortBy="sortBy"
-    @dataTable:selected="selected"
-  )
-    //template(v-slot:body.prepend)
-    //  tr(class="totalLine")
-    //    td.text-left {{ $t('total') }}
-    //    td
-    //    td.text-right(v-to-currency="{ amount: total, currency: preferredCurrency }")
-    //    td(
-    //      v-for="i in displayedHeaders.length - 3"
-    //    )
-    template(v-slot:item.label='{ item }')
-      div {{ item.label }}
-    template(v-slot:item.date='{ item }')
-      div {{ localeDate(item) }}
-    template(v-slot:item.value='{ item }')
-      fv-price-to-preferred-currency(
-        :price="item.value.amount"
-        :currency="item.value.currency"
-      )
-    template(v-slot:item.status ='{ item }')
-      fv-status-readonly(:status="item.status")
+  .fv-order-data-table
+    fv-data-table(
+      data-testid="dataTable"
+      :headers='headers'
+      :items='items'
+      :hide-default-footer="hideDefaultFooter"
+      :options="options"
+      @dataTable:sortBy="sortBy"
+      @dataTable:selected="selected"
+    )
+      //template(v-slot:body.prepend)
+      //  tr(class="totalLine")
+      //    td.text-left {{ $t('total') }}
+      //    td
+      //    td.text-right(v-to-currency="{ amount: total, currency: preferredCurrency }")
+      //    td(
+      //      v-for="i in displayedHeaders.length - 3"
+      //    )
+      template(v-slot:item.label='{ item }')
+        div {{ item.label }}
+      template(v-slot:item.date='{ item }')
+        div {{ localeDate(item.date) }}
+      template(v-slot:item.value='{ item }')
+        fv-price-to-preferred-currency(
+          :price="item.value.amount"
+          :currency="item.value.currency"
+        )
+      template(v-slot:item.status ='{ item }')
+        fv-status-readonly(:status="item.status")
+      template(v-slot:item.actions ='{ item }')
+        v-btn(
+          v-if="item.status === 'DRAFT'"
+          @click.prevent="sendOrder(item.id)"
+        )
+          | SEND ORDER
+
 </template>
 
 <script>
@@ -38,26 +45,26 @@ export default {
       type: Boolean,
       default() {
         return false
-      },
+      }
     },
     headers: {
       type: Array,
       default() {
         return []
-      },
+      }
     },
     items: {
       type: Array,
       default() {
         return []
-      },
+      }
     },
     options: {
       type: Object,
       default() {
         return null
-      },
-    },
+      }
+    }
   },
   computed: {
     total() {
@@ -71,7 +78,7 @@ export default {
     preferredCurrency() {
       const res = this.$store.getters['settings/settings']
       return res.currency
-    },
+    }
   },
   methods: {
     localeDate(item) {
@@ -88,12 +95,10 @@ export default {
     sortBy(v) {
       this.$emit('dataTable:sortBy', v)
     },
-  },
+    sendOrder(id) {
+      console.log('orderID', id)
+      this.$store.dispatch('orders/send', id)
+    }
+  }
 }
 </script>
-
-<style scoped>
-.totalLine {
-  background-color: #fff8df;
-}
-</style>

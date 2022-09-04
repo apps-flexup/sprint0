@@ -12,24 +12,24 @@ export default {
       type: [Number, String],
       default() {
         return null
-      },
+      }
     },
     currency: {
       type: String,
       default() {
         return null
-      },
-    },
+      }
+    }
   },
   asyncComputed: {
     async convertedPrice() {
       const item = {
         price: this.price,
-        currency: this.currency,
+        currency: this.currency
       }
       const res = await this.$displayRules.priceToPreferredCurrency(item)
       return res
-    },
-  },
+    }
+  }
 }
 </script>

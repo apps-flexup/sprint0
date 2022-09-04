@@ -6,8 +6,8 @@ export default async (fromCurrency: string, toCurrency: string) => {
   const headers = {
     headers: {
       'Content-Type': 'application/json',
-      Accept: 'application/json',
-    },
+      Accept: 'application/json'
+    }
   }
   try {
     const data = await axios.get(currencyApiUrl, headers)

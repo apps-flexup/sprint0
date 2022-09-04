@@ -74,7 +74,7 @@ const displayRules = (ctx) => ({
     const options = {
       style: 'currency',
       currency: toCurrency,
-      minimumFractionDigits,
+      minimumFractionDigits
     }
     const convertedPrice = await convert(fromCurrency, toCurrency, price)
     const formatedPrice = new Intl.NumberFormat(locale, options).format(convertedPrice)
@@ -100,7 +100,7 @@ const displayRules = (ctx) => ({
     const options = {
       style: 'currency',
       currency: toCurrency,
-      minimumFractionDigits,
+      minimumFractionDigits
     }
     const convertedPrice = await convert(fromCurrency, toCurrency, price)
     const res = new Intl.NumberFormat(locale, options).format(convertedPrice)
@@ -115,18 +115,27 @@ const displayRules = (ctx) => ({
     const minimumFractionDigits = settings.vat_nb_after_decimal_point
     const options = {
       style: 'percent',
-      minimumFractionDigits,
+      minimumFractionDigits
     }
     const res = new Intl.NumberFormat(locale, options).format(vat)
     return res
   },
   localeDate(item) {
     if (!item) return null
-    const date = item.date
+    const date = item
     if (!date) return null
     const locale = ctx.store.getters['settings/locale']
     const dte = new Date(date)
     const res = dte.toLocaleDateString(locale)
+    return res
+  },
+  localeDateTime(item, options = { year: 'numeric', month: 'numeric', day: 'numeric' }) {
+    if (!item) return null
+    const date = item
+    if (!date) return null
+    const locale = ctx.store.getters['settings/locale']
+    const dte = new Date(date)
+    const res = dte.toLocaleTimeString(locale, options)
     return res
   },
   paymentStructure(item) {
@@ -247,7 +256,7 @@ const displayRules = (ctx) => ({
     if (!type) return null
     const formattedType = type[0].toLowerCase() + type.slice(1)
     return i18n.t(`account.${formattedType}.name`)
-  },
+  }
 })
 
 export default (ctx, inject) => {

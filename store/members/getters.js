@@ -8,5 +8,5 @@ export default {
       return item.from_id === accountId && item.to_id === userId
     })
     return members.map((member) => member.role)
-  },
+  }
 }

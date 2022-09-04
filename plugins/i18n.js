@@ -9,8 +9,8 @@ export default ({ app, store }) => {
     fallbackLocale: store.getters['settings/fallbackLocale'],
     messages: {
       fr: require('@/lang/fr.json'),
-      en: require('@/lang/en.json'),
-    },
+      en: require('@/lang/en.json')
+    }
   })
 
   app.i18n.path = (link) => {

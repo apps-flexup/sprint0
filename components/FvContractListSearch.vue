@@ -2,7 +2,7 @@
 .fv-contract-list-search
   v-row
     v-col(cols="4")
-      fv-auto-complete(
+      fv-autocomplete(
         :items="contracts"
         v-bind='$attrs'
       )
@@ -31,7 +31,7 @@ export default {
       type: Array,
       default() {
         return []
-      },
+      }
     },
     filterFunction: {
       type: Function,
@@ -40,8 +40,8 @@ export default {
           const name = item.name || ''
           return name
         })
-      },
-    },
-  },
+      }
+    }
+  }
 }
 </script>

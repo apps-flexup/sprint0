@@ -48,7 +48,7 @@ export default {
     return {
       allItems: [],
       filter: '',
-      placeholder: this.$t('third-parties.placeholder'),
+      placeholder: this.$t('third-parties.placeholder')
     }
   },
   computed: {
@@ -62,7 +62,7 @@ export default {
         }
       })
       return res
-    },
+    }
   },
   mounted() {
     this.$store.dispatch('thirdPartyAccounts/get')
@@ -97,7 +97,7 @@ export default {
         }
       })
       return res
-    },
-  },
+    }
+  }
 }
 </script>

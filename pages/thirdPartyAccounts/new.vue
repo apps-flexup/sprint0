@@ -23,7 +23,7 @@
 export default {
   data() {
     return {
-      items: [],
+      items: []
     }
   },
   mounted() {
@@ -39,7 +39,7 @@ export default {
     },
     addNewLocalThirdParty() {
       this.$router.push('/thirdPartyAccounts/newLocalThirdParty')
-    },
-  },
+    }
+  }
 }
 </script>

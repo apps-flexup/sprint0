@@ -8,7 +8,7 @@ localVue.use(Vuex)
 let store
 
 const $displayRules = {
-  accountName: jest.fn((value) => value),
+  accountName: jest.fn((value) => value)
 }
 
 const factory = () => {
@@ -17,8 +17,8 @@ const factory = () => {
     store,
     mocks: {
       $t: (msg) => msg,
-      $displayRules,
-    },
+      $displayRules
+    }
   })
 }
 
@@ -34,7 +34,7 @@ describe('FvAccountAutocomplete', () => {
       name: 'Toto',
       firstname: 'toto',
       lastname: 'La Riflette ',
-      type: 'Personal',
+      type: 'Personal'
     }
     autocomplete.vm.$emit('autocomplete:selected', selectedAccount)
     const selectedCalls = wrapper.emitted('account:selected')

@@ -65,26 +65,26 @@ export default {
       type: Boolean,
       default() {
         return false
-      },
+      }
     },
     headers: {
       type: Array,
       default() {
         return []
-      },
+      }
     },
     items: {
       type: Array,
       default() {
         return []
-      },
+      }
     },
     options: {
       type: Object,
       default() {
         return null
-      },
-    },
+      }
+    }
   },
   computed: {
     canEdit() {
@@ -92,7 +92,7 @@ export default {
     },
     canDelete() {
       return this.$rights.canDeleteProduct()
-    },
+    }
   },
   mounted() {
     this.$store.dispatch('categories/get')
@@ -103,7 +103,7 @@ export default {
       const vat = item.vat
       return {
         amount: applyVatToAmount(amount, vat),
-        currency: item.price.currency,
+        currency: item.price.currency
       }
     },
     displayName(item) {
@@ -142,8 +142,8 @@ export default {
       if (!product) return
       product.status = newStatus
       this.$store.dispatch('products/add', product)
-    },
-  },
+    }
+  }
 }
 </script>
 

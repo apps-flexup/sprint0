@@ -4,8 +4,8 @@ import FvHeaderIndex from './index.vue'
 const factory = (propsData) => {
   return shallowMount(FvHeaderIndex, {
     propsData: {
-      ...propsData,
-    },
+      ...propsData
+    }
   })
 }
 

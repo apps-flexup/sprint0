@@ -15,8 +15,8 @@ export default {
       type: [Number, String],
       default() {
         return null
-      },
-    },
+      }
+    }
   },
   methods: {
     inputChanged(v) {
@@ -28,7 +28,7 @@ export default {
       let res = (Math.log10(nbDays + 60) + 0.5) / 5
       res *= 100
       return res
-    },
-  },
+    }
+  }
 }
 </script>

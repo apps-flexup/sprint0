@@ -11,28 +11,28 @@ const account = 'test'
 const space = 'space'
 
 const accountFromStore = {
-  name: 'accountFromStore',
+  name: 'accountFromStore'
 }
 
 const auth = {
-  loggedIn: true,
+  loggedIn: true
 }
 
 const loggedOutAuth = {
-  loggedIn: false,
+  loggedIn: false
 }
 
 const route = {
   matched: [
     {
       name: 'products-id',
-      path: '/products/:id',
-    },
+      path: '/products/:id'
+    }
   ],
   params: {
     id: 1,
-    action: 'read',
-  },
+    action: 'read'
+  }
 }
 
 const factory = () => {
@@ -41,13 +41,13 @@ const factory = () => {
     store,
     propsData: {
       account,
-      space,
+      space
     },
     mocks: {
       $t: (msg) => msg,
       $auth: auth,
-      $route: route,
-    },
+      $route: route
+    }
   })
 }
 
@@ -58,8 +58,8 @@ const loggedOutfactory = () => {
     mocks: {
       $t: (msg) => msg,
       $auth: loggedOutAuth,
-      $route: route,
-    },
+      $route: route
+    }
   })
 }
 
@@ -69,13 +69,13 @@ beforeEach(() => {
       accounts: {
         namespaced: true,
         actions: {
-          get: jest.fn(),
+          get: jest.fn()
         },
         getters: {
-          findById: () => () => accountFromStore,
-        },
-      },
-    },
+          findById: () => () => accountFromStore
+        }
+      }
+    }
   })
 })
 
@@ -96,7 +96,7 @@ describe('FvBreadcrumbs', () => {
     const expectedCrumb = {
       href,
       text: 'breadcrumbs.route.' + text,
-      disabled,
+      disabled
     }
     const crumb = wrapper.vm.createCrumb(href, text, disabled)
     expect(crumb).toEqual(expectedCrumb)
@@ -109,7 +109,7 @@ describe('FvBreadcrumbs', () => {
     const expectedCrumb = {
       href,
       text: accountFromStore.name,
-      disabled,
+      disabled
     }
     const crumb = wrapper.vm.createCrumb(href, text, disabled)
     expect(crumb).toEqual(expectedCrumb)
@@ -122,7 +122,7 @@ describe('FvBreadcrumbs', () => {
     const expectedCrumb = {
       href: '/products',
       text: `breadcrumbs.route.products-action-${route.params.action}`,
-      disabled,
+      disabled
     }
     const crumb = wrapper.vm.createCrumb(href, text, disabled)
     expect(crumb).toEqual(expectedCrumb)
@@ -132,7 +132,7 @@ describe('FvBreadcrumbs', () => {
     const expectedCrumb = {
       disabled: false,
       href: '/',
-      text: 'breadcrumbs.account' + account + ' / breadcrumbs.space spaces.' + space,
+      text: 'breadcrumbs.account' + account + ' / breadcrumbs.space spaces.' + space
     }
     expect(wrapper.vm.crumbs[0]).toEqual(expectedCrumb)
   })
@@ -142,18 +142,18 @@ describe('FvBreadcrumbs', () => {
       {
         disabled: false,
         href: '/',
-        text: 'breadcrumbs.account' + account + ' / breadcrumbs.space spaces.' + space,
+        text: 'breadcrumbs.account' + account + ' / breadcrumbs.space spaces.' + space
       },
       {
         disabled: false,
         href: '/products',
-        text: 'breadcrumbs.route.products',
+        text: 'breadcrumbs.route.products'
       },
       {
         disabled: true,
         href: '/products/:id',
-        text: 'breadcrumbs.route.products-id',
-      },
+        text: 'breadcrumbs.route.products-id'
+      }
     ]
     expect(wrapper.vm.crumbs).toEqual(expectedCrumbs)
   })

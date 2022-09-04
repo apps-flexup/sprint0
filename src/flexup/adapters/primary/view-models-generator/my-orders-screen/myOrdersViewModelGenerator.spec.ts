@@ -1,7 +1,7 @@
 import { configureReduxStore, ReduxStore } from '~/src/flexup/store/configureStore'
 import {
   getMyOrdersVM,
-  OrderVM,
+  OrderVM
 } from '~/src/flexup/adapters/primary/view-models-generator/my-orders-screen/myOrdersViewModelGenerator'
 import { ThirdParty } from '~/src/flexup/corelogic/usecases/my-third-parties-listing/thirdParty.interface'
 import { OrderItem } from '~/src/flexup/corelogic/entities/orders/orderItem'
@@ -24,7 +24,7 @@ describe('My orders view model generation', () => {
         order: 0,
         customizable: true,
         active: true,
-        displayed: true,
+        displayed: true
       },
       {
         align: 'left',
@@ -34,7 +34,7 @@ describe('My orders view model generation', () => {
         order: 0,
         customizable: true,
         active: true,
-        displayed: true,
+        displayed: true
       },
       {
         align: 'right',
@@ -44,7 +44,7 @@ describe('My orders view model generation', () => {
         order: 0,
         customizable: true,
         active: true,
-        displayed: true,
+        displayed: true
       },
       {
         align: 'center',
@@ -54,8 +54,8 @@ describe('My orders view model generation', () => {
         order: 0,
         customizable: true,
         active: true,
-        displayed: true,
-      },
+        displayed: true
+      }
     ])
   })
   it('should view my orders', () => {
@@ -64,8 +64,8 @@ describe('My orders view model generation', () => {
     store.dispatch({
       type: 'MY_THIRD_PARTIES_LISTED',
       payload: {
-        thirdParties: [domaineParvis, cosys],
-      },
+        thirdParties: [domaineParvis, cosys]
+      }
     })
     const socks: OrderItem = new OrderItem('Socks', 'Christmas socks', { amount: 10, currency: 'EUR' }, 0.1, 'unit', 2)
     const bag: OrderItem = new OrderItem('Bag', '', { amount: 45, currency: 'EUR' }, 0.2, 'unit', 1)
@@ -74,8 +74,8 @@ describe('My orders view model generation', () => {
     store.dispatch({
       type: 'MY_ORDERS_LISTED',
       payload: {
-        orders: [order1, order2],
-      },
+        orders: [order1, order2]
+      }
     })
     const expectedOrder1: OrderVM = {
       id: 'abc',
@@ -83,6 +83,7 @@ describe('My orders view model generation', () => {
       date: '2022-01-03',
       label: 'Order 1',
       value: { amount: 76, currency: 'EUR' },
+      status: 'DRAFT'
     }
     const expectedOrder2: OrderVM = {
       id: 'def',
@@ -90,6 +91,7 @@ describe('My orders view model generation', () => {
       date: '2022-01-02',
       label: 'Order 2',
       value: { amount: 54, currency: 'EUR' },
+      status: 'DRAFT'
     }
     expect(getMyOrdersVM(store.getState()).orders).toEqual([expectedOrder1, expectedOrder2])
   })

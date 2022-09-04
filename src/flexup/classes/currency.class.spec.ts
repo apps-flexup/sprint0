@@ -76,7 +76,7 @@ describe('Currency', () => {
     const fromCurrency = 'EUR'
     const destinationCurrency = 'USD'
     const expectedResult = {
-      result: 1.13217,
+      result: 1.13217
     }
     const currentCurrency = new Currency(fromCurrency)
     const result = await currentCurrency.convertTo(destinationCurrency)

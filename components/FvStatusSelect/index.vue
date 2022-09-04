@@ -41,14 +41,14 @@ export default {
   props: {
     value: {
       type: String,
-      default: 'draft',
+      default: 'draft'
     },
     availableStatus: {
       type: Array,
       default() {
         return []
-      },
-    },
+      }
+    }
   },
   computed: {
     status: {
@@ -57,15 +57,15 @@ export default {
       },
       set(newStatus) {
         this.changeStatus(newStatus)
-      },
-    },
+      }
+    }
   },
   methods: {
     changeStatus(newStatus) {
       this.$emit('payload:changed', newStatus)
       this.$emit('status:changed', newStatus)
-    },
-  },
+    }
+  }
 }
 </script>
 

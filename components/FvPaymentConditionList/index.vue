@@ -21,9 +21,9 @@ export default {
         references: {
           r1: this.$displayRules.paymentConditionPriority,
           r2: this.$displayRules.paymentConditionPaymentTerm,
-          r3: this.$displayRules.paymentConditionInterestRate,
-        },
-      },
+          r3: this.$displayRules.paymentConditionInterestRate
+        }
+      }
     }
   },
   mounted() {
@@ -35,7 +35,7 @@ export default {
     },
     deletePaymentCondition(paymentCondition) {
       this.$store.dispatch('paymentConditions/remove', paymentCondition)
-    },
-  },
+    }
+  }
 }
 </script>

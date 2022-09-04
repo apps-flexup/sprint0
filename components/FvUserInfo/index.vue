@@ -13,13 +13,13 @@ export default {
   name: 'FvUserInfo',
   data() {
     return {
-      email: this.$auth.user.email,
+      email: this.$auth.user.email
     }
   },
   computed: {
     name() {
       return this.$displayRules.userName()
-    },
-  },
+    }
+  }
 }
 </script>

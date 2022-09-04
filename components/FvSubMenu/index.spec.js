@@ -12,34 +12,34 @@ describe('FvSubMenu', () => {
       active: true,
       icon: 'mdi-account-circle-outline',
       title: 'userMenu.data',
-      to: '/personaldata',
+      to: '/personaldata'
     },
     {
       active: true,
       icon: 'mdi-shield-lock-outline',
       title: 'userMenu.security',
-      to: '/security',
+      to: '/security'
     },
     {
       active: true,
       icon: 'mdi-account-switch-outline',
       title: 'userMenu.management',
-      to: '/accounts',
-    },
+      to: '/accounts'
+    }
   ]
   const factory = (propsData) => {
     return mount(FvSubMenu, {
       localVue,
       store,
       propsData: {
-        ...propsData,
+        ...propsData
       },
       stubs: {
-        FvShowMenu: true,
+        FvShowMenu: true
       },
       mocks: {
-        $t: (msg) => msg,
-      },
+        $t: (msg) => msg
+      }
     })
   }
   beforeEach(() => {
@@ -48,10 +48,10 @@ describe('FvSubMenu', () => {
         settings: {
           namespaced: true,
           getters: {
-            userMenu: () => userMenu,
-          },
-        },
-      },
+            userMenu: () => userMenu
+          }
+        }
+      }
     })
   })
   it('should render a sub menu', () => {

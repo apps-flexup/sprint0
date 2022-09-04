@@ -4,8 +4,8 @@ import FvModalButton from './index'
 const factory = () => {
   return mount(FvModalButton, {
     slots: {
-      default: 'HelloWorld',
-    },
+      default: 'HelloWorld'
+    }
   })
 }
 

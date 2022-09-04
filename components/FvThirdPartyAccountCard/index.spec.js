@@ -12,17 +12,17 @@ describe('FvThirdPartyAccountCard', () => {
     address: '13 rue des plops',
     city: 'bourg la reine',
     zip: '14775',
-    id: 1,
+    id: 1
   }
   const country = {
     name: 'France',
     iso2: 'FR',
-    id: 45,
+    id: 45
   }
   const legalStructure = {
     name: 'Société par actions simplifiée unipersonnelle',
     sigle: 'SASU',
-    id: 1,
+    id: 1
   }
   let store
   const factory = (propsData) => {
@@ -31,8 +31,8 @@ describe('FvThirdPartyAccountCard', () => {
       store,
       propsData: {
         thirdPartyAccountId: 1,
-        ...propsData,
-      },
+        ...propsData
+      }
     })
   }
   beforeEach(() => {
@@ -41,28 +41,28 @@ describe('FvThirdPartyAccountCard', () => {
         thirdPartyAccounts: {
           namespaced: true,
           actions: {
-            getAll: jest.fn(),
+            getAll: jest.fn()
           },
           getters: {
-            find: () => (id) => (id ? thirdPartyAccount : null),
-          },
+            find: () => (id) => (id ? thirdPartyAccount : null)
+          }
         },
         countries: {
           namespaced: true,
           actions: {
-            get: jest.fn(),
+            get: jest.fn()
           },
           getters: {
-            find: () => () => country,
-          },
+            find: () => () => country
+          }
         },
         contracts: {
           namespaced: true,
           getters: {
-            getLegalStructureById: () => () => legalStructure,
-          },
-        },
-      },
+            getLegalStructureById: () => () => legalStructure
+          }
+        }
+      }
     })
   })
   it('should render FvThirdPartyAccountCard', () => {

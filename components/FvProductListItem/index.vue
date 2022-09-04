@@ -21,9 +21,9 @@ export default {
       type: Object,
       default() {
         return undefined
-      },
-    },
-  },
+      }
+    }
+  }
 }
 </script>
 

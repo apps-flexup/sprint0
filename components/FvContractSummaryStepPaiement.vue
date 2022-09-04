@@ -5,7 +5,7 @@
 
 <script>
 export default {
-  name: 'FvContractSummaryStepPaiment',
+  name: 'FvContractSummaryStepPaiment'
 }
 </script>
 <style scoped>

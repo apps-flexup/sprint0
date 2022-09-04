@@ -32,32 +32,32 @@ export default {
       type: Array,
       default() {
         return []
-      },
+      }
     },
     items: {
       type: Array,
       default() {
         return []
-      },
+      }
     },
     filters: {
       type: Array,
       default() {
         return []
-      },
+      }
     },
     rules: {
       type: Object,
       default() {
         return {}
-      },
-    },
+      }
+    }
   },
   data() {
     return {
       sortKey: null,
       shouldSortDesc: false,
-      options: null,
+      options: null
     }
   },
   computed: {
@@ -73,9 +73,9 @@ export default {
       let color = '#9ECFFF'
       if (theme === 'dark') color = '#4a4b4e'
       return {
-        '--mainTheadColor': color,
+        '--mainTheadColor': color
       }
-    },
+    }
   },
   mounted() {
     this.$store.dispatch('settings/getSettings')
@@ -96,8 +96,8 @@ export default {
     },
     editItem(v) {
       this.$emit('dataTable:edit', v)
-    },
-  },
+    }
+  }
 }
 </script>
 

@@ -11,10 +11,10 @@ export default {
     accounts() {
       const res = this.$store.getters['accounts/all']
       return res
-    },
+    }
   },
   mounted() {
     this.$store.dispatch('accounts/get')
-  },
+  }
 }
 </script>

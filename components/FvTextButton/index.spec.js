@@ -4,12 +4,12 @@ import FvTextButton from './index'
 const factory = () => {
   return mount(FvTextButton, {
     propsData: {
-      text: 'HelloWorld',
+      text: 'HelloWorld'
     },
     slots: {
       icon: 'mdi-plus',
-      text: 'HelloWorld',
-    },
+      text: 'HelloWorld'
+    }
   })
 }
 

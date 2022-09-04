@@ -29,24 +29,24 @@ export default {
       type: Object,
       default() {
         return null
-      },
+      }
     },
     dimensionFilter: {
       type: String,
       default() {
         return null
-      },
+      }
     },
     dense: {
       type: Boolean,
       default() {
         return false
-      },
-    },
+      }
+    }
   },
   data() {
     return {
-      isLoading: false,
+      isLoading: false
     }
   },
   computed: {
@@ -62,7 +62,7 @@ export default {
       const unit = this.value ? this.value.unit : null
       const res = this.$store.getters['units/findByDimension'](dimension, unit)
       return res ? res.id : null
-    },
+    }
   },
   mounted() {
     this.$store.dispatch('units/get')
@@ -72,7 +72,7 @@ export default {
       const unit = this.getUnitFromValue(v)
       const payload = {
         unit: unit ? unit.symbole : null,
-        dimension: unit ? unit.dimension : null,
+        dimension: unit ? unit.dimension : null
       }
       this.$emit('unit:selected', payload)
       this.emitGenericSignalForForm(payload)
@@ -81,7 +81,7 @@ export default {
       item = {
         ...item,
         symbole: this.$t(`units.symbol.${item.symbole}`),
-        dimension: this.$t(`units.dimension.${item.dimension}`),
+        dimension: this.$t(`units.dimension.${item.dimension}`)
       }
       return filterUnitAutocomplete(item, v, it)
     },
@@ -101,7 +101,7 @@ export default {
       const dimension = this.$t(`units.dimension.${item.dimension}`)
       const res = `${symbole} (${dimension})`
       return res
-    },
-  },
+    }
+  }
 }
 </script>

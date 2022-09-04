@@ -2,7 +2,7 @@
 .fv-order-list-search
   v-row
     v-col(cols="8")
-      fv-auto-complete(
+      fv-autocomplete(
         :items="orders"
         v-bind='$attrs'
       )
@@ -29,7 +29,7 @@ export default {
       type: Array,
       default() {
         return []
-      },
+      }
     },
     filterFunction: {
       type: Function,
@@ -38,9 +38,9 @@ export default {
           const name = item.name || ''
           return name
         })
-      },
-    },
-  },
+      }
+    }
+  }
 }
 </script>
 <style scoped>

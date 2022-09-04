@@ -16,14 +16,14 @@ export default {
       type: Object,
       default() {
         return null
-      },
+      }
     },
     search: {
       type: Object,
       default() {
         return null
-      },
-    },
+      }
+    }
   },
   computed: {
     product() {
@@ -42,7 +42,7 @@ export default {
     dimensionFilter() {
       const res = this.unit ? this.unit.dimension : null
       return res
-    },
+    }
   },
   mounted() {
     this.$store.dispatch('products/get')
@@ -54,7 +54,7 @@ export default {
     },
     emitGenericSignalForForm(payload) {
       this.$emit('payload:changed', payload)
-    },
-  },
+    }
+  }
 }
 </script>

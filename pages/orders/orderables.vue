@@ -15,12 +15,12 @@
 export default {
   data() {
     return {
-      items: [],
+      items: []
     }
   },
   mounted() {
     this.$repos.offers.index().then((res) => (this.items = res))
-  },
+  }
 }
 </script>
 <style scoped>

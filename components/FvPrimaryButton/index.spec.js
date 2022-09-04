@@ -10,8 +10,8 @@ describe('FvPrimaryButton', () => {
     const message = 'HelloWorld'
     const wrapper = mount(FvPrimaryButton, {
       slots: {
-        default: message,
-      },
+        default: message
+      }
     })
     const button = wrapper.find('[data-testid="button"]')
     expect(button.text()).toMatch(message)

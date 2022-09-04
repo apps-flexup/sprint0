@@ -18,9 +18,9 @@ export default {
     return {
       rules: {
         type: this.$displayRules.accountType,
-        status: this.$displayRules.status,
+        status: this.$displayRules.status
       },
-      defaultStatusFiltersSelected: ['active'],
+      defaultStatusFiltersSelected: ['active']
     }
   },
   mounted() {
@@ -29,7 +29,7 @@ export default {
   methods: {
     thirdPartyAccountSelected(thirdParty) {
       this.$emit('list:selected', thirdParty)
-    },
-  },
+    }
+  }
 }
 </script>

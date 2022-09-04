@@ -27,7 +27,7 @@ export default {
     },
     canEdit() {
       return this.$rights.canEditThirdParty()
-    },
+    }
   },
   mounted() {
     this.$store.dispatch('thirdPartyAccounts/get')
@@ -35,7 +35,7 @@ export default {
   methods: {
     editThirdParty(payload) {
       this.$store.dispatch('thirdPartyAccounts/add', payload)
-    },
-  },
+    }
+  }
 }
 </script>

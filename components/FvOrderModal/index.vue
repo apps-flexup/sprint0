@@ -31,14 +31,14 @@ export default {
       type: Boolean,
       default() {
         return false
-      },
+      }
     },
     order: {
       type: Object,
       default() {
         return {}
-      },
-    },
+      }
+    }
   },
   methods: {
     close() {
@@ -49,7 +49,7 @@ export default {
     },
     orderChanged(order) {
       this.$emit('order:changed', order)
-    },
-  },
+    }
+  }
 }
 </script>

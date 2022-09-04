@@ -7,8 +7,8 @@ localVue.use(Vuex)
 
 const $auth = {
   user: {
-    sub: '',
-  },
+    sub: ''
+  }
 }
 
 const givenRole = 'plop'
@@ -19,8 +19,8 @@ const $repos = {
         setTimeout(() => {
           resolve([givenRole])
         }, 300)
-      }),
-  },
+      })
+  }
 }
 
 describe('FvAccountsIndex', () => {
@@ -37,7 +37,7 @@ describe('FvAccountsIndex', () => {
       roles_methods: null,
       supplier: false,
       type: 'Personal',
-      user_id: '2ae5fcf8-9ed5-480a-89c8-a2f946e72140',
+      user_id: '2ae5fcf8-9ed5-480a-89c8-a2f946e72140'
     },
     {
       avatar: '/images/avatar-1.png',
@@ -51,7 +51,7 @@ describe('FvAccountsIndex', () => {
       roles_methods: null,
       supplier: false,
       type: 'Business',
-      user_id: '2ae5fcf8-9ed5-480a-89c8-a2f946e72140',
+      user_id: '2ae5fcf8-9ed5-480a-89c8-a2f946e72140'
     },
     {
       avatar: '/images/avatar-2.png',
@@ -65,11 +65,11 @@ describe('FvAccountsIndex', () => {
       roles_methods: null,
       supplier: false,
       type: 'SubAccount',
-      user_id: '2ae5fcf8-9ed5-480a-89c8-a2f946e72140',
-    },
+      user_id: '2ae5fcf8-9ed5-480a-89c8-a2f946e72140'
+    }
   ]
   const $router = {
-    push: jest.fn(),
+    push: jest.fn()
   }
   let store
 
@@ -81,8 +81,8 @@ describe('FvAccountsIndex', () => {
         $t: (msg) => msg,
         $router,
         $auth,
-        $repos,
-      },
+        $repos
+      }
     })
   }
   beforeEach(() => {
@@ -91,13 +91,13 @@ describe('FvAccountsIndex', () => {
         accounts: {
           namespaced: true,
           actions: {
-            get: jest.fn(),
+            get: jest.fn()
           },
           getters: {
-            all: () => accounts,
-          },
-        },
-      },
+            all: () => accounts
+          }
+        }
+      }
     })
   })
   it('should render an accounts index component', () => {

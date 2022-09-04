@@ -20,7 +20,7 @@ export default {
   methods: {
     click() {
       this.$emit('button:click')
-    },
-  },
+    }
+  }
 }
 </script>

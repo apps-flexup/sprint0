@@ -27,14 +27,14 @@ export default {
       type: Number,
       default() {
         return null
-      },
+      }
     },
     label: {
       type: String,
       default() {
         return null
-      },
-    },
+      }
+    }
   },
   computed: {
     items() {
@@ -44,7 +44,7 @@ export default {
     legalStructureId() {
       const res = this.value
       return res
-    },
+    }
   },
   mounted() {
     this.$store.dispatch('contracts/getLegalStructures')
@@ -59,7 +59,7 @@ export default {
     },
     emitGenericSignalForForm(payload) {
       this.$emit('payload:changed', payload)
-    },
-  },
+    }
+  }
 }
 </script>

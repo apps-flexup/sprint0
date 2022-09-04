@@ -28,26 +28,26 @@ export default {
       type: String,
       default() {
         return null
-      },
+      }
     },
     itemValue: {
       type: String,
       default() {
         return 'iso3'
-      },
+      }
     },
     label: {
       type: String,
       default() {
         return null
-      },
-    },
+      }
+    }
   },
   computed: {
     items() {
       const res = this.$store.getters['countries/all']
       return res
-    },
+    }
   },
   mounted() {
     this.$store.dispatch('countries/get')
@@ -62,7 +62,7 @@ export default {
     },
     emitGenericSignalForForm(payload) {
       this.$emit('payload:changed', payload)
-    },
-  },
+    }
+  }
 }
 </script>

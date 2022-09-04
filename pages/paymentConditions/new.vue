@@ -13,13 +13,13 @@
 export default {
   data() {
     return {
-      paymentCondition: {},
+      paymentCondition: {}
     }
   },
   methods: {
     createPaymentCondition(payload) {
       this.$activeAccount.addPaymentCondition(payload)
-    },
-  },
+    }
+  }
 }
 </script>

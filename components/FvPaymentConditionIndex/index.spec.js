@@ -2,15 +2,15 @@ import { shallowMount } from '@vue/test-utils'
 import FvPaymentConditionIndex from './index.vue'
 
 const $router = {
-  push: jest.fn(),
+  push: jest.fn()
 }
 
 const factory = () => {
   return shallowMount(FvPaymentConditionIndex, {
     mocks: {
       $t: (msg) => msg,
-      $router,
-    },
+      $router
+    }
   })
 }
 
@@ -36,7 +36,7 @@ describe('FvPaymentConditionIndex', () => {
     const wrapper = factory()
     const list = wrapper.find('[data-testid="paymentConditionList"]')
     const paymentCondition = {
-      id: 42,
+      id: 42
     }
     list.vm.$emit('list:selected', paymentCondition)
     expect($router.push).toHaveBeenCalledTimes(1)

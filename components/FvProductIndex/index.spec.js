@@ -2,19 +2,19 @@ import { shallowMount } from '@vue/test-utils'
 import FvProductIndex from './index'
 
 const $router = {
-  push: jest.fn(),
+  push: jest.fn()
 }
 
 const cannotCreateProductRights = {
   canCreateProduct: () => {
     return false
-  },
+  }
 }
 
 const canCreateProductRights = {
   canCreateProduct: () => {
     return true
-  },
+  }
 }
 
 const cannotCreateProductFactory = () => {
@@ -22,8 +22,8 @@ const cannotCreateProductFactory = () => {
     mocks: {
       $t: (msg) => msg,
       $router,
-      $rights: cannotCreateProductRights,
-    },
+      $rights: cannotCreateProductRights
+    }
   })
 }
 
@@ -32,8 +32,8 @@ const canCreateProductFactory = () => {
     mocks: {
       $t: (msg) => msg,
       $router,
-      $rights: canCreateProductRights,
-    },
+      $rights: canCreateProductRights
+    }
   })
 }
 
@@ -48,12 +48,12 @@ describe('FvProductIndex', () => {
   })
   it.each([
     ['selected', 'read'],
-    ['edit', 'edit'],
+    ['edit', 'edit']
   ])('should redirect to %s product when it is selected for %s from list', (action, expectedPath) => {
     const wrapper = cannotCreateProductFactory()
     const list = wrapper.find('[data-testid="productList"]')
     const product = {
-      id: 42,
+      id: 42
     }
     list.vm.$emit(`list:${action}`, product)
     expect($router.push).toHaveBeenCalledTimes(1)

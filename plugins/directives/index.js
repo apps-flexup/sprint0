@@ -34,7 +34,7 @@ Vue.directive('to-currency-quantity', (el, binding, vnode) => {
   const valeur = binding.value
   const options = {
     style: 'currency',
-    currency: valeur.currency,
+    currency: valeur.currency
   }
   const amount = parseFloat(valeur.price) * parseFloat(valeur.quantity)
   const valueToDisplay = new Intl.NumberFormat(locale, options).format(amount)
@@ -47,7 +47,7 @@ Vue.directive('to-currency', (el, binding, vnode) => {
   const valeur = binding.value
   const options = {
     style: 'currency',
-    currency: valeur.currency,
+    currency: valeur.currency
   }
   let valueToDisplay = valeur.amount
   if (valeur.currency) {
@@ -65,7 +65,7 @@ Vue.directive('to-preferred-currency', async (el, binding, vnode) => {
   const toCurrency = vnode.context.$store.getters['settings/settings'].currency
   const options = {
     style: 'currency',
-    currency: toCurrency,
+    currency: toCurrency
   }
   let convertedAmount = amount
   if (fromCurrency !== toCurrency) {

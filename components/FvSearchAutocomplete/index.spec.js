@@ -15,9 +15,9 @@ describe('FvSearchAutocomplete', () => {
       localVue,
       store,
       computed: {
-        items: () => ['test', 'test', 'searchBar'],
+        items: () => ['test', 'test', 'searchBar']
       },
-      vuetify,
+      vuetify
     })
   }
   beforeEach(() => {
@@ -26,13 +26,13 @@ describe('FvSearchAutocomplete', () => {
         categories: {
           namespaced: true,
           actions: {
-            get: jest.fn(),
+            get: jest.fn()
           },
           getters: {
-            all: jest.fn(),
-          },
-        },
-      },
+            all: jest.fn()
+          }
+        }
+      }
     })
     vuetify = new Vuetify()
   })

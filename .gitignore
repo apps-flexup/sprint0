@@ -91,5 +91,6 @@ sw.*
 .bitmap
 
 # Storybook
+.storybook
 .nuxt-storybook
 storybook-static

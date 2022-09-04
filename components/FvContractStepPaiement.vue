@@ -20,7 +20,7 @@ export default {
           percentage: 40,
           total: 3600.0,
           currency: '€',
-          message: '12/05/2024',
+          message: '12/05/2024'
         },
         {
           id: 2,
@@ -28,10 +28,10 @@ export default {
           percentage: 60,
           total: 3600.0,
           currency: '€',
-          message: 'plop - barCentrale -',
-        },
-      ],
+          message: 'plop - barCentrale -'
+        }
+      ]
     }
-  },
+  }
 }
 </script>

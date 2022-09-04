@@ -47,17 +47,17 @@ export default {
   name: 'FvSpeedDial',
   data() {
     return {
-      fab: true,
+      fab: true
     }
   },
   methods: {
     selection(v) {
       const payload = {
         src: this.$options.name,
-        event: v,
+        event: v
       }
       this.$emit('action:selected', payload)
-    },
-  },
+    }
+  }
 }
 </script>

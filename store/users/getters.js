@@ -11,5 +11,5 @@ export default {
       return user.uuid === uuid
     })
     return res
-  },
+  }
 }

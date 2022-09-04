@@ -28,14 +28,14 @@ export default {
       type: Object,
       default() {
         return {}
-      },
+      }
     },
     element: {
       type: Object,
       default() {
         return null
-      },
-    },
+      }
+    }
   },
   computed: {
     key() {
@@ -45,7 +45,7 @@ export default {
     items() {
       const res = this.reference ? this.reference.value : null
       return res
-    },
+    }
   },
   methods: {
     referenceSelected(v) {
@@ -53,7 +53,7 @@ export default {
     },
     filter(item, v, it) {
       return filterReferenceAutocomplete(item, v, it)
-    },
-  },
+    }
+  }
 }
 </script>

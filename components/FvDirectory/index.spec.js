@@ -4,8 +4,8 @@ import FvDirectory from './index'
 const factory = () => {
   return shallowMount(FvDirectory, {
     mocks: {
-      $t: (msg) => msg,
-    },
+      $t: (msg) => msg
+    }
   })
 }
 

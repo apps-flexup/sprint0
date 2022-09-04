@@ -63,18 +63,18 @@ export default {
       type: Boolean,
       default() {
         return false
-      },
+      }
     },
     address: {
       type: Object,
       default() {
         return null
-      },
-    },
+      }
+    }
   },
   data() {
     return {
-      localAddress: this.address ? JSON.parse(JSON.stringify(this.address)) : {},
+      localAddress: this.address ? JSON.parse(JSON.stringify(this.address)) : {}
     }
   },
   computed: {
@@ -93,7 +93,7 @@ export default {
     country() {
       const res = this.localAddress.country
       return res
-    },
+    }
   },
   methods: {
     streetChanged(v) {
@@ -118,8 +118,8 @@ export default {
     close() {
       this.localAddress = JSON.parse(JSON.stringify(this.address))
       this.$emit('modal:actions:close')
-    },
-  },
+    }
+  }
 }
 </script>
 

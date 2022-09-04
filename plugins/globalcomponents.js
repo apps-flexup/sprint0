@@ -74,6 +74,9 @@ import FvMemberIndex from '@/components/FvMemberIndex'
 import FvMemberList from '@/components/FvMemberList'
 import FvMemberNameDisplay from '@/components/FvMemberNameDisplay'
 import FvMenu from '@/components/FvMenu'
+import FvMessagesDataTable from '~/components/FvMessageDataTable'
+import FvMessageIndex from '~/components/FvMessageIndex'
+import FvMessageList from '~/components/FvMessageList'
 import FvModalActions from '@/components/FvModalActions'
 import FvModalButton from '@/components/FvModalButton'
 import FvModalHeader from '@/components/FvModalHeader'
@@ -241,6 +244,9 @@ Vue.component('FvMemberIndex', FvMemberIndex)
 Vue.component('FvMemberList', FvMemberList)
 Vue.component('FvMemberNameDisplay', FvMemberNameDisplay)
 Vue.component('FvMenu', FvMenu)
+Vue.component('FvMessagesDataTable', FvMessagesDataTable)
+Vue.component('FvMessageList', FvMessageList)
+Vue.component('FvMessageIndex', FvMessageIndex)
 Vue.component('FvModalActions', FvModalActions)
 Vue.component('FvModalButton', FvModalButton)
 Vue.component('FvModalHeader', FvModalHeader)

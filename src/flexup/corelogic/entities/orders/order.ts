@@ -3,6 +3,13 @@ import { OrderItem } from '~/src/flexup/corelogic/entities/orders/orderItem'
 export enum OrderStatus {
   NEW = 'NEW',
   DRAFT = 'DRAFT',
+  PENDING = 'PENDING',
+  CHANGEREQUESTED = 'CHANGEREQUESTED',
+  ONHOLD = 'ONHOLD',
+  REJECTED = 'REJECTED',
+  CONFIRMED = 'CONFIRMED',
+  CANCELLED = 'CANCELLED',
+  ARCHIVED = 'ARCHIVED'
 }
 
 export class Order {
@@ -19,7 +26,7 @@ export class Order {
     date: string = '',
     label: string = '',
     orderItem: Array<OrderItem> = [],
-    status: OrderStatus = OrderStatus.NEW,
+    status: OrderStatus = OrderStatus.NEW
   ) {
     this.id = id
     this.thirdPartyId = thirdPartyId

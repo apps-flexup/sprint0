@@ -9,7 +9,7 @@
     min-width=130
     @click="statusClicked"
   )
-    |{{ $t(`status.${status}`) }}
+    |{{ statusTranslation }}
     slot(name="icon")
 </template>
 
@@ -19,28 +19,40 @@ export default {
   props: {
     status: {
       type: String,
-      default: null,
-    },
+      default: 'draft'
+    }
   },
   data() {
     return {
       colors: {
+        new: '#9FE4A6',
+        changerequested: '#FF6FE2',
+        rejected: '#FF4B4B',
+        confirmed: '#2552CF',
+        cancelled: '#B36518',
+        suspended: '#5AD0E0',
+        pending: '#EEA50C',
         active: '#9FE4A6',
         inactive: '#FFCD92',
-        archived: '#EDEDED',
-      },
+        archived: '#EDEDED'
+      }
     }
   },
   computed: {
-    color() {
-      const color = this.colors[this.status]
-      return color
+    statusTranslation() {
+      const readStatus = this.status?.toLowerCase()
+      const res = this.$t(`status.${readStatus}`)
+      return res
     },
+    color() {
+      const color = this.colors[this.status?.toLowerCase()]
+      return color
+    }
   },
   methods: {
     statusClicked() {
       this.$emit('status:clicked')
-    },
-  },
+    }
+  }
 }
 </script>

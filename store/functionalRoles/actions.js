@@ -4,5 +4,5 @@ export default {
     return this.$repos.functionalRoles.index().then((data) => {
       commit('set', data)
     })
-  },
+  }
 }

@@ -17,14 +17,14 @@ const categories = [
     description: {
       en: 'en desc',
       fr: 'fr desc',
-      it: 'it desc',
+      it: 'it desc'
     },
     dimension: null,
     id: 1,
     name: {
       en: 'All (root)',
       fr: 'Tous (catégorie racine)',
-      it: 'Tutti (radice)',
+      it: 'Tutti (radice)'
     },
     offers_count: 0,
     orderable: false,
@@ -32,7 +32,7 @@ const categories = [
     parent_id: null,
     sort_order: 0,
     status: 'active',
-    unit: null,
+    unit: null
   },
   {
     active: false,
@@ -42,13 +42,13 @@ const categories = [
     allow_shipping: true,
     description: {
       en: 'Services category',
-      fr: 'Catégorie chapeau pour les services (en français)',
+      fr: 'Catégorie chapeau pour les services (en français)'
     },
     dimension: 'duration',
     id: 2,
     name: {
       en: 'Services',
-      fr: 'Services (en français)',
+      fr: 'Services (en français)'
     },
     offers_count: 1,
     orderable: true,
@@ -56,8 +56,8 @@ const categories = [
     parent_id: 1,
     sort_order: 0,
     status: 'active',
-    unit: 'day',
-  },
+    unit: 'day'
+  }
 ]
 
 const factory = () => {
@@ -65,8 +65,8 @@ const factory = () => {
     localVue,
     store,
     mocks: {
-      $t: (msg) => msg,
-    },
+      $t: (msg) => msg
+    }
   })
 }
 beforeEach(() => {
@@ -75,13 +75,13 @@ beforeEach(() => {
       categories: {
         namespaced: true,
         actions: {
-          get: jest.fn(),
+          get: jest.fn()
         },
         getters: {
-          all: () => categories,
-        },
-      },
-    },
+          all: () => categories
+        }
+      }
+    }
   })
 })
 

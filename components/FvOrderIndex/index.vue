@@ -17,7 +17,7 @@ export default {
   methods: {
     createOrder() {
       this.$router.push('/orders/new')
-    },
-  },
+    }
+  }
 }
 </script>

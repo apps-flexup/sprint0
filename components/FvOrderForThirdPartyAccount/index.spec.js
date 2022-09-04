@@ -4,11 +4,11 @@ import FvOrderForThirdPartyAccount from './index'
 const factory = (propsData) => {
   return shallowMount(FvOrderForThirdPartyAccount, {
     propsData: {
-      ...propsData,
+      ...propsData
     },
     mocks: {
-      $t: (msg) => msg,
-    },
+      $t: (msg) => msg
+    }
   })
 }
 

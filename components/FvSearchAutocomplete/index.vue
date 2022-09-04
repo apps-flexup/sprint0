@@ -41,25 +41,25 @@ export default {
       type: Number,
       default() {
         return null
-      },
+      }
     },
     defaultSelect: {
       type: String,
       default() {
         return 'Catégories'
-      },
-    },
+      }
+    }
   },
   data() {
     return {
-      item: ['Catégories', 'Produits', 'Offres', 'Services'],
+      item: ['Catégories', 'Produits', 'Offres', 'Services']
     }
   },
   computed: {
     items() {
       const res = this.$store.getters['categories/all']
       return res
-    },
+    }
   },
   mounted() {
     this.$store.dispatch('categories/get')
@@ -70,8 +70,8 @@ export default {
     },
     selected(v) {
       this.$emit('category:selected', v)
-    },
-  },
+    }
+  }
 }
 </script>
 

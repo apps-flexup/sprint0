@@ -15,14 +15,14 @@ export default {
       type: Object,
       default() {
         return null
-      },
+      }
     },
     label: {
       type: String,
       default() {
         return null
-      },
-    },
+      }
+    }
   },
   computed: {
     unit() {
@@ -32,10 +32,10 @@ export default {
       const symbole = this.$t(`units.symbol.${res.symbole}`)
       const dimension = this.$t(`units.dimension.${res.dimension}`)
       return `${symbole} (${dimension})`
-    },
+    }
   },
   mounted() {
     this.$store.dispatch('units/get')
-  },
+  }
 }
 </script>

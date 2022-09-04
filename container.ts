@@ -22,12 +22,12 @@ const bag: OrderItem = new OrderItem('Bag', '', { amount: 45, currency: 'EUR' },
 const inMemoryOrderGateway = new InMemoryOrderGateway()
 inMemoryOrderGateway.feedWith(
   new Order('abc', 1, '2022-01-03', 'order 1', [socks, bag], OrderStatus.DRAFT),
-  new Order('def', 2, '2022-01-02', 'order 2', [socks], OrderStatus.DRAFT),
+  new Order('def', 2, '2022-01-02', 'order 2', [socks], OrderStatus.DRAFT)
 )
 
 export const jsonServerOrderGateway = new JsonServerOrderGateway()
 
 export const store: ReduxStore = configureReduxStore({
   orderGateway: jsonServerOrderGateway,
-  thirdPartyGateway,
+  thirdPartyGateway
 })

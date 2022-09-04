@@ -7,7 +7,7 @@ localVue.use(Vuex)
 
 const $displayRules = {
   userNameFromUuid: jest.fn(),
-  role: jest.fn(),
+  role: jest.fn()
 }
 
 let store
@@ -18,8 +18,8 @@ const factory = () => {
     store,
     mocks: {
       $t: (msg) => msg,
-      $displayRules,
-    },
+      $displayRules
+    }
   })
 }
 
@@ -29,16 +29,16 @@ beforeEach(() => {
       accounts: {
         namespaced: true,
         actions: {
-          get: jest.fn(),
-        },
+          get: jest.fn()
+        }
       },
       members: {
         namespaced: true,
         actions: {
-          get: jest.fn(),
-        },
-      },
-    },
+          get: jest.fn()
+        }
+      }
+    }
   })
 })
 
@@ -51,7 +51,7 @@ describe('FvMemberIndex', () => {
     const wrapper = factory()
     const table = wrapper.find('[data-testid="table"]')
     const member = {
-      name: 'member',
+      name: 'member'
     }
     table.vm.$emit('list:selected', member)
     const selectedCalls = wrapper.emitted('list:selected')

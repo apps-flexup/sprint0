@@ -12,7 +12,7 @@ function checkProduct(
   HT: number,
   TVA: number,
   TTC: number,
-  defaultLocal: string,
+  defaultLocal: string
 ) {
   const facteur = 100
   const precision = 3
@@ -24,21 +24,21 @@ function checkProduct(
   const expectedStringResultHT = (HT / facteur).toLocaleString(defaultLocal, {
     style: 'currency',
     currency: currencyStr,
-    minimumSignificantDigits: precision,
+    minimumSignificantDigits: precision
   })
   const expectedStringResultVAT = (TVA / facteur).toLocaleString(defaultLocal, {
     style: 'currency',
     currency: currencyStr,
-    minimumSignificantDigits: precision,
+    minimumSignificantDigits: precision
   })
   const expectedStringResultTTC = (TTC / facteur).toLocaleString(defaultLocal, {
     style: 'currency',
     currency: currencyStr,
-    minimumSignificantDigits: precision,
+    minimumSignificantDigits: precision
   })
   const expectedStringVAT = (vatRate / 100).toLocaleString(defaultLocal, {
     style: 'percent',
-    minimumSignificantDigits: precision,
+    minimumSignificantDigits: precision
   })
   expect(result).toBeInstanceOf(Product)
   expect(result).toBeDefined()
@@ -84,6 +84,6 @@ describe('Product', () => {
       checkProduct(name, amount, rateObj, currency, includedVAT, HT, TVA, TTC, defaultLocale)
       checkProduct(name, amount, rateObj, currencyObj, includedVAT, HT, TVA, TTC, defaultLocale)
       checkProduct(name, price, rateObj, currencyObj, includedVAT, HT, TVA, TTC, defaultLocale)
-    },
+    }
   )
 })

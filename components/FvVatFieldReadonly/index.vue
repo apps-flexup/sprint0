@@ -15,15 +15,15 @@ export default {
       type: [String, Number],
       default() {
         return ''
-      },
+      }
     },
     label: {
       type: String,
       default() {
         return ''
-      },
-    },
-  },
+      }
+    }
+  }
 }
 </script>
 

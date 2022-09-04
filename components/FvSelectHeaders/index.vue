@@ -65,30 +65,30 @@ export default {
       type: Boolean,
       default() {
         return false
-      },
+      }
     },
     tableName: {
       type: String,
       default() {
         return null
-      },
+      }
     },
     headers: {
       type: [Array, Object],
       default() {
         return []
-      },
-    },
+      }
+    }
   },
   data() {
     return {
-      customHeaders: this.headers ? JSON.parse(JSON.stringify(this.headers)) : [],
+      customHeaders: this.headers ? JSON.parse(JSON.stringify(this.headers)) : []
     }
   },
   watch: {
     headers() {
       this.customHeaders = this.headers ? JSON.parse(JSON.stringify(this.headers)) : []
-    },
+    }
   },
   methods: {
     toggleDisplayed(header) {
@@ -112,7 +112,7 @@ export default {
     },
     save() {
       this.$emit('selectHeaders:save', this.customHeaders)
-    },
-  },
+    }
+  }
 }
 </script>

@@ -8,7 +8,7 @@ export default {
       return {
         flexupThirdParties,
         localThirdParties,
-        flexupAccounts,
+        flexupAccounts
       }
     },
     getLocalThirdParties() {
@@ -24,9 +24,9 @@ export default {
             type: account.type,
             name: account.name,
             avatar: account.avatar,
-            ...thirdParty,
+            ...thirdParty
           }
-        }),
+        })
       )
       return flexupThirdParties
     },
@@ -37,7 +37,7 @@ export default {
           id: parseInt(account.id),
           type: account.type,
           name: account.name,
-          avatar: account.avatar,
+          avatar: account.avatar
         }
       })
       return allAccounts.filter((account) => account.id !== this.$activeAccount.get())
@@ -47,6 +47,6 @@ export default {
         return !thirdParties.filter((thirdParty) => thirdParty.flexup_id === account.id).length
       })
       return res
-    },
-  },
+    }
+  }
 }

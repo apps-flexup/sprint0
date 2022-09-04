@@ -20,23 +20,23 @@ export default {
       type: Object,
       default() {
         return {
-          id: 1,
+          id: 1
         }
-      },
+      }
     },
     values: {
       type: Object,
       default() {
         return {
           products: [],
-          contractType: null,
+          contractType: null
         }
-      },
-    },
+      }
+    }
   },
   data() {
     return {
-      local_selected: [],
+      local_selected: []
     }
   },
   computed: {
@@ -58,11 +58,11 @@ export default {
         this.local_selected = v
         const res = v.map((i) => i.id)
         this.$emit('wizard', { products: res })
-      },
-    },
+      }
+    }
   },
   mounted() {
     this.$store.dispatch('headers/getProductHeaders')
-  },
+  }
 }
 </script>

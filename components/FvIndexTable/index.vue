@@ -40,50 +40,50 @@ export default {
       type: String,
       default() {
         return null
-      },
+      }
     },
     searchLabel: {
       type: String,
       default() {
         return null
-      },
+      }
     },
     tableComponent: {
       type: String,
       default() {
         return null
-      },
+      }
     },
     tableName: {
       type: String,
       default() {
         return null
-      },
+      }
     },
     rules: {
       type: Object,
       default() {
         return null
-      },
+      }
     },
     statusFiltersSelected: {
       type: Array,
       default() {
         return ['active', 'inactive']
-      },
+      }
     },
     defaultHeaders: {
       type: Array,
       default() {
         return null
-      },
+      }
     },
     defaultItems: {
       type: Array,
       default() {
         return null
-      },
-    },
+      }
+    }
   },
   data() {
     return {
@@ -91,7 +91,7 @@ export default {
       statusFilters: null,
       sortKey: null,
       shouldSortDesc: false,
-      dialog: false,
+      dialog: false
     }
   },
   computed: {
@@ -127,12 +127,12 @@ export default {
         res = [
           {
             headers: subHeaders,
-            items,
-          },
+            items
+          }
         ]
       }
       return res
-    },
+    }
   },
   asyncComputed: {
     async sortedItems() {
@@ -146,7 +146,7 @@ export default {
         res = await this.$dataTable.sortByRule(res, sortKey, shouldSortDesc, rule)
       }
       return res
-    },
+    }
   },
   methods: {
     filtersChanged(v) {
@@ -181,8 +181,8 @@ export default {
       settings.headers[snakeCaseTableName] = customHeaders
       this.$store.dispatch('settings/updateSettings', settings)
       this.dialog = false
-    },
-  },
+    }
+  }
 }
 </script>
 

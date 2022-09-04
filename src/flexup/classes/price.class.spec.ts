@@ -19,21 +19,21 @@ it.each`
     const expectedStringResultHT = (HT / facteur).toLocaleString(localeExpectedResult, {
       style: 'currency',
       currency,
-      minimumSignificantDigits: precision,
+      minimumSignificantDigits: precision
     })
     const expectedStringResultVAT = (TVA / facteur).toLocaleString(localeExpectedResult, {
       style: 'currency',
       currency,
-      minimumSignificantDigits: precision,
+      minimumSignificantDigits: precision
     })
     const expectedStringResultTTC = (TTC / facteur).toLocaleString(localeExpectedResult, {
       style: 'currency',
       currency,
-      minimumSignificantDigits: precision,
+      minimumSignificantDigits: precision
     })
     const expectedStringVAT = (rate / 100).toLocaleString(localeExpectedResult, {
       style: 'percent',
-      minimumSignificantDigits: precision,
+      minimumSignificantDigits: precision
     })
     expect(result).toBeInstanceOf(Price)
     expect(result).toBeDefined()
@@ -45,5 +45,5 @@ it.each`
     expect(result.amountVATString).toEqual(expectedStringResultVAT)
     expect(result.amountTTCString).toEqual(expectedStringResultTTC)
     expect(result.vatString).toEqual(expectedStringVAT)
-  },
+  }
 )

@@ -17,7 +17,7 @@ const headers = [
     order: 0,
     customizable: true,
     active: true,
-    displayed: true,
+    displayed: true
   },
   {
     text: 'column2',
@@ -26,7 +26,7 @@ const headers = [
     order: 1,
     customizable: true,
     active: true,
-    displayed: true,
+    displayed: true
   },
   {
     text: 'column3',
@@ -35,8 +35,8 @@ const headers = [
     order: 2,
     customizable: true,
     active: true,
-    displayed: true,
-  },
+    displayed: true
+  }
 ]
 
 const factory = () => {
@@ -45,14 +45,14 @@ const factory = () => {
     store,
     vuetify,
     stubs: {
-      FvTh: true,
+      FvTh: true
     },
     propsData: {
-      headers,
+      headers
     },
     mocks: {
-      $t: (msg) => msg,
-    },
+      $t: (msg) => msg
+    }
   })
 }
 beforeEach(() => {
@@ -61,7 +61,7 @@ beforeEach(() => {
       settings: {
         namespaced: true,
         actions: {
-          getSettings: jest.fn(),
+          getSettings: jest.fn()
         },
         getters: {
           itemPerPage() {
@@ -69,12 +69,12 @@ beforeEach(() => {
           },
           settings() {
             return {
-              theme: 'light',
+              theme: 'light'
             }
-          },
-        },
-      },
-    },
+          }
+        }
+      }
+    }
   })
 })
 
@@ -116,7 +116,7 @@ describe('FvDataTable', () => {
     expect(sortCalls).toHaveLength(1)
     const expectedPayload = {
       key,
-      desc: false,
+      desc: false
     }
     expect(sortCalls[0][0]).toEqual(expectedPayload)
   })
@@ -131,7 +131,7 @@ describe('FvDataTable', () => {
     expect(sortCalls).toHaveLength(1)
     const expectedPayload = {
       key,
-      desc: true,
+      desc: true
     }
     expect(sortCalls[0][0]).toEqual(expectedPayload)
   })
@@ -146,7 +146,7 @@ describe('FvDataTable', () => {
     expect(sortCalls).toHaveLength(1)
     const expectedPayload = {
       key: null,
-      desc: false,
+      desc: false
     }
     expect(sortCalls[0][0]).toEqual(expectedPayload)
   })

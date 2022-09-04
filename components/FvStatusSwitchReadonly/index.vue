@@ -19,27 +19,27 @@ export default {
       type: String,
       default() {
         return 'active'
-      },
+      }
     },
     label: {
       type: String,
       default() {
         return ''
-      },
+      }
     },
     dense: {
       type: Boolean,
       default() {
         return false
-      },
+      }
     },
     denseLabel: {
       type: Boolean,
       default() {
         return false
-      },
-    },
-  },
+      }
+    }
+  }
 }
 </script>
 

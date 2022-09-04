@@ -26,6 +26,7 @@ export default (ctx, inject) => {
     manageMenu: repo('manageMenu'),
     manageNavBar: repo('manageNavBar'),
     medias: repo('medias'),
+    messages: repo('messages'),
     orderItemHeaders: repo('order-item-headers'),
     orders: repo('orders'),
     orderSteps: repo('order-steps'),
@@ -46,7 +47,7 @@ export default (ctx, inject) => {
     thirdPartyAccountSteps: repo('third-party-account-steps'),
     units: repo('units'),
     userMenu: repo('userMenu'),
-    users: repo('users'),
+    users: repo('users')
   }
 
   inject('repos', repos)

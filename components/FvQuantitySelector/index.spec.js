@@ -16,8 +16,8 @@ describe('FvQuantitySelector', () => {
   it('should display passed quantity', () => {
     const wrapper = mount(FvQuantitySelector, {
       propsData: {
-        quantity: 5,
-      },
+        quantity: 5
+      }
     })
     const textField = wrapper.find('[data-testid="quantitySelector"]')
     expect(textField.props().value).toBe('5')

@@ -6,7 +6,7 @@ let vuetify
 
 const factory = () => {
   return mount(FvAutocomplete, {
-    vuetify,
+    vuetify
   })
 }
 
