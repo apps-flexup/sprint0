@@ -128,7 +128,7 @@ export default {
       home: '/',
     },
     strategies: {
-      local: false,
+      local: true,
       keycloak: {
         scheme: 'oauth2',
         endpoints: {
