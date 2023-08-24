@@ -103,7 +103,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/axios', '@nuxtjs/auth-next', '@nuxtjs/pwa', '@nuxtjs/dotenv'],
+  modules: ['@nuxtjs/axios', '@nuxtjs/auth', '@nuxtjs/pwa', '@nuxtjs/dotenv'],
   // i18n: {
   //   locales: ['en', 'fr'],
   //   defaultLocale: 'en',
