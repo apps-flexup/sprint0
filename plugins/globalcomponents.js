@@ -176,6 +176,7 @@ import FvVatFieldReadonly from '@/components/FvVatFieldReadonly'
 import FvVisibilitySwitch from '@/components/FvVisibilitySwitch'
 import FvVisibilitySwitchReadonly from '@/components/FvVisibilitySwitchReadonly'
 import FvYieldRateParams from '@/components/FvYieldRateParams'
+import FvLogin from '@/components/FvLogin'
 
 // Déclarations composants utilitaires
 Vue.component('FvAccountCard', FvAccountCard)
@@ -354,3 +355,4 @@ Vue.component('FvOrderStepSelectOffers', FvOrderStepSelectOffers)
 Vue.component('FvOrderStepResume', FvOrderStepResume)
 Vue.component('FvThirdPartyAccountCard', FvThirdPartyAccountCard)
 Vue.component('FvOrderTotals', FvOrderTotals)
+Vue.component('FvLogin', FvLogin)

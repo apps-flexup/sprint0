@@ -103,7 +103,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/axios', '@nuxtjs/auth', '@nuxtjs/pwa', '@nuxtjs/dotenv'],
+  modules: ['@nuxtjs/axios', '@nuxtjs/auth-next', '@nuxtjs/pwa', '@nuxtjs/dotenv'],
   // i18n: {
   //   locales: ['en', 'fr'],
   //   defaultLocale: 'en',
@@ -128,7 +128,26 @@ export default {
       home: '/'
     },
     strategies: {
-      local: true,
+      local: {
+        scheme: 'local',
+        endpoints: {
+          login: {
+            url: 'sessions',
+            method: 'POST'
+          },
+          logout: {
+            url: 'sessions',
+            method: 'DELETE'
+          },
+          user: {
+            url: 'users',
+            method: 'get'
+          }
+        },
+        token: {
+          type: ''
+        }
+      },
       keycloak: {
         scheme: 'oauth2',
         endpoints: {
@@ -162,10 +181,6 @@ export default {
   router: {
     middleware: ['auth']
   },
-  /*
-   ** vuetify module configuration
-   ** https://github.com/nuxt-community/vuetify-module
-   */
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
