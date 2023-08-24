@@ -52,12 +52,12 @@ export default {
       type: Array,
       default() {
         return []
-      },
-    },
+      }
+    }
   },
   data() {
     return {
-      tableName: 'paymentConditionsForPaymentStructureForm',
+      tableName: 'paymentConditionsForPaymentStructureForm'
     }
   },
   computed: {
@@ -77,7 +77,7 @@ export default {
         const tmp = this.$store.getters['paymentConditions/findById'](paymentCondition.id)
         const payload = {
           ...tmp,
-          portion: paymentCondition.portion,
+          portion: paymentCondition.portion
         }
         res.push(payload)
       })
@@ -94,7 +94,7 @@ export default {
       res /= 100
       const payload = {
         paymentConditions: this.paymentConditions,
-        risk: res,
+        risk: res
       }
       this.$emit('payload:changed', payload)
       return res
@@ -106,7 +106,7 @@ export default {
         res += paymentCondition.portion
       })
       return res
-    },
+    }
   },
   mounted() {
     this.$store.dispatch('paymentConditions/get')
@@ -120,12 +120,12 @@ export default {
       if (!found) {
         const paymentCondition = {
           id: v,
-          portion: 0,
+          portion: 0
         }
         paymentConditions.push(paymentCondition)
         const payload = {
           paymentConditions,
-          risk: this.globalRisk,
+          risk: this.globalRisk
         }
         this.$emit('payload:changed', payload)
       }
@@ -140,14 +140,14 @@ export default {
         paymentConditions[index].portion = v.portion
         const payload = {
           paymentConditions,
-          risk: this.globalRisk,
+          risk: this.globalRisk
         }
         this.$emit('payload:changed', payload)
       }
     },
     displayGlobalRisk() {
       const item = {
-        risk: this.globalRisk,
+        risk: this.globalRisk
       }
       const res = this.$displayRules.paymentConditionRisk(item)
       return res
@@ -165,8 +165,8 @@ export default {
     },
     addNewPaymentCondition() {
       this.$router.push('/paymentConditions/new')
-    },
-  },
+    }
+  }
 }
 </script>
 

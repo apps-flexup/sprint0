@@ -45,8 +45,8 @@ export default {
       type: Array,
       default() {
         return []
-      },
-    },
+      }
+    }
   },
   data() {
     return {
@@ -65,8 +65,8 @@ export default {
         },
         status: () => {
           return ''
-        },
-      },
+        }
+      }
     }
   },
   computed: {
@@ -92,7 +92,7 @@ export default {
     },
     isActiveAccount() {
       return this.accountId === this.$activeAccount.get()
-    },
+    }
   },
   asyncComputed: {
     async account() {
@@ -115,7 +115,7 @@ export default {
         }
       })
       return res
-    },
+    }
   },
   mounted() {
     this.$store.dispatch('accounts/get')
@@ -125,8 +125,8 @@ export default {
   methods: {
     editAccount(payload) {
       this.$store.dispatch('accounts/update', payload)
-    },
-  },
+    }
+  }
 }
 </script>
 

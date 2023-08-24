@@ -12,5 +12,5 @@ export default {
   findById: (state) => (ownerId) => {
     const res = state.items.find((owner) => owner.to_id === ownerId)
     return res
-  },
+  }
 }

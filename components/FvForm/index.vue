@@ -63,43 +63,43 @@ export default {
       type: Object,
       default() {
         return {}
-      },
+      }
     },
     action: {
       type: String,
       default() {
         return 'read'
-      },
+      }
     },
     url: {
       type: String,
       default() {
         return null
-      },
+      }
     },
     form: {
       type: String,
       default() {
         return null
-      },
+      }
     },
     isModal: {
       type: Boolean,
       default() {
         return false
-      },
+      }
     },
     allowEdit: {
       type: Boolean,
       default() {
         return true
-      },
-    },
+      }
+    }
   },
   data() {
     return {
       localPayload: this.payload,
-      localAction: this.action || 'read',
+      localAction: this.action || 'read'
     }
   },
   computed: {
@@ -122,12 +122,12 @@ export default {
       //  }
       // })
       return true
-    },
+    }
   },
   watch: {
     payload() {
       this.localPayload = this.payload
-    },
+    }
   },
   mounted() {
     this.$store.dispatch('forms/getBusinessAccount')
@@ -197,8 +197,8 @@ export default {
       if (field.input) return this.localPayload[field.input]
       if (!this.localPayload) return null
       return this.localPayload[`${field.attribute}`]
-    },
-  },
+    }
+  }
 }
 </script>
 

@@ -26,23 +26,23 @@ export default {
       type: String,
       default() {
         return 'Base (simple)'
-      },
+      }
     },
     percentage: {
       type: Number,
-      required: true,
+      required: true
     },
     total: {
       type: Number,
-      required: true,
+      required: true
     },
     payDate: {
       type: String,
       default() {
         return ''
-      },
-    },
-  },
+      }
+    }
+  }
 }
 </script>
 

@@ -40,26 +40,26 @@ export default {
       type: Boolean,
       default() {
         return false
-      },
+      }
     },
     headers: {
       type: Array,
       default() {
         return []
-      },
+      }
     },
     items: {
       type: Array,
       default() {
         return []
-      },
+      }
     },
     options: {
       type: Object,
       default() {
         return null
-      },
-    },
+      }
+    }
   },
   methods: {
     displayPriority(item) {
@@ -81,7 +81,7 @@ export default {
     portionChanged(itemId, v) {
       const payload = {
         item_id: itemId,
-        portion: parseInt(v),
+        portion: parseInt(v)
       }
       this.$emit('dataTable:portionChanged', payload)
     },
@@ -93,8 +93,8 @@ export default {
     },
     sortBy(v) {
       this.$emit('dataTable:sortBy', v)
-    },
-  },
+    }
+  }
 }
 </script>
 

@@ -15,19 +15,19 @@ export default {
       type: Object,
       default() {
         return null
-      },
+      }
     },
     search: {
       type: Object,
       default() {
         return null
-      },
-    },
+      }
+    }
   },
   computed: {
     unit() {
       return this.value || null
-    },
+    }
   },
   methods: {
     unitSelected(v) {
@@ -36,7 +36,7 @@ export default {
     },
     emitGenericSignalForForm(payload) {
       this.$emit('payload:changed', payload)
-    },
-  },
+    }
+  }
 }
 </script>

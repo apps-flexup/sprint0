@@ -13,7 +13,7 @@ const data = (state: Order[] = [], action: actionCreators.Actions) => {
 }
 
 export const ordersList = combineReducers({
-  data,
+  data
 })
 
 export const getMyOrders = (state: AppState) => state.coreLogic.ordersList

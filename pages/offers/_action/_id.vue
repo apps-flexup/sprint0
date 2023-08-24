@@ -16,8 +16,8 @@ export default {
       type: Object,
       default() {
         return {}
-      },
-    },
+      }
+    }
   },
   computed: {
     canEditOffer() {
@@ -32,12 +32,12 @@ export default {
       const offers = this.$store.getters['offers/findById'](offerId)
       const payload = JSON.parse(JSON.stringify(offers))
       return payload
-    },
+    }
   },
   methods: {
     editOffer(payload) {
       this.$activeAccount.addOffer(payload)
-    },
-  },
+    }
+  }
 }
 </script>

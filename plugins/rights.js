@@ -38,7 +38,7 @@ const rights = (ctx) => ({
   canDeleteThirdParty() {
     const authorizedRoles = ['admin', 'editor']
     return this.isAuthorized(authorizedRoles)
-  },
+  }
 })
 
 export default (ctx, inject) => {

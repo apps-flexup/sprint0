@@ -4,8 +4,8 @@ import FvOrderModal from './index.vue'
 const factory = () => {
   return shallowMount(FvOrderModal, {
     mocks: {
-      $t: (msg) => msg,
-    },
+      $t: (msg) => msg
+    }
   })
 }
 

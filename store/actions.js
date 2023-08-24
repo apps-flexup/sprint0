@@ -2,5 +2,5 @@
 export default {
   setLocale({ commit }, locale) {
     commit('setLocale', locale)
-  },
+  }
 }

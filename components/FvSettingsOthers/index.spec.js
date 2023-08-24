@@ -4,20 +4,20 @@ import FvSettingsOthers from './index.vue'
 const settings = {
   price_nb_after_decimal_point: 2,
   default_vat: 20,
-  vat_nb_after_decimal_point: 1,
+  vat_nb_after_decimal_point: 1
 }
 
 const $activeAccount = {
   settings: () => settings,
-  setSettings: jest.fn(),
+  setSettings: jest.fn()
 }
 
 const factory = () => {
   return shallowMount(FvSettingsOthers, {
     mocks: {
       $t: (msg) => msg,
-      $activeAccount,
-    },
+      $activeAccount
+    }
   })
 }
 
@@ -39,7 +39,7 @@ describe('FvSettingsOthers', () => {
     const expectedSettings = {
       price_nb_after_decimal_point: nbDigits,
       default_vat: settings.default_vat,
-      vat_nb_after_decimal_point: settings.vat_nb_after_decimal_point,
+      vat_nb_after_decimal_point: settings.vat_nb_after_decimal_point
     }
     priceNbDigits.vm.$emit('input', nbDigits)
     expect($activeAccount.setSettings).toHaveBeenCalledTimes(1)
@@ -52,7 +52,7 @@ describe('FvSettingsOthers', () => {
     const expectedSettings = {
       price_nb_after_decimal_point: settings.price_nb_after_decimal_point,
       default_vat: defaultVat,
-      vat_nb_after_decimal_point: settings.vat_nb_after_decimal_point,
+      vat_nb_after_decimal_point: settings.vat_nb_after_decimal_point
     }
     vatNbDigits.vm.$emit('input', defaultVat)
     expect($activeAccount.setSettings).toHaveBeenCalledTimes(1)
@@ -65,7 +65,7 @@ describe('FvSettingsOthers', () => {
     const expectedSettings = {
       price_nb_after_decimal_point: settings.price_nb_after_decimal_point,
       default_vat: settings.default_vat,
-      vat_nb_after_decimal_point: nbDigits,
+      vat_nb_after_decimal_point: nbDigits
     }
     vatNbDigits.vm.$emit('input', nbDigits)
     expect($activeAccount.setSettings).toHaveBeenCalledTimes(1)

@@ -19,14 +19,14 @@ export default {
       type: String,
       default() {
         return null
-      },
-    },
+      }
+    }
   },
   methods: {
     close() {
       this.$emit('modal:header:close')
-    },
-  },
+    }
+  }
 }
 </script>
 

@@ -32,21 +32,21 @@ export default {
       type: String,
       default() {
         return null
-      },
+      }
     },
     title: {
       type: String,
       default() {
         return 'Flex Up - Sprint 0'
-      },
-    },
+      }
+    }
   },
   computed: {
     links() {
       const res = this.$store.getters['settings/' + this.space + 'NavBar']
       return res
-    },
-  },
+    }
+  }
 }
 </script>
 

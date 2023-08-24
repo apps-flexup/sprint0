@@ -5,7 +5,7 @@ import { Actions } from '~/src/flexup/corelogic/usecases/my-orders-listing/actio
 export const listMyOrders: ThunkResult<Promise<void>> = async (
   dispatch,
   _getState,
-  { orderGateway }: { orderGateway: OrderGateway },
+  { orderGateway }: { orderGateway: OrderGateway }
 ) => {
   const orders = await orderGateway.listMyOrders()
   dispatch(Actions.myOrdersListed(orders))

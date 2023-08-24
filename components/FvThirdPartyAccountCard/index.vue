@@ -25,8 +25,8 @@ export default {
       type: Number,
       default() {
         return null
-      },
-    },
+      }
+    }
   },
   computed: {
     thirdPartyAccount() {
@@ -44,11 +44,11 @@ export default {
       const legalStructureId = this.thirdPartyAccount.legal_structure_id
       const res = this.$store.getters['contracts/getLegalStructureById'](legalStructureId)
       return res
-    },
+    }
   },
   mounted() {
     this.$store.dispatch('thirdPartyAccounts/getAll')
     this.$store.dispatch('countries/get')
-  },
+  }
 }
 </script>

@@ -26,7 +26,7 @@ export default {
   name: 'FvSettingsIndex',
   data() {
     return {
-      tab: null,
+      tab: null
     }
   },
   computed: {
@@ -38,16 +38,16 @@ export default {
           tab: 'settings.default.title',
           content: 'fv-settings-default',
           props: {
-            account,
-          },
+            account
+          }
         },
-        { tab: 'settings.others.title', content: 'fv-settings-others' },
+        { tab: 'settings.others.title', content: 'fv-settings-others' }
       ]
       return res
-    },
+    }
   },
   mounted() {
     this.$store.dispatch('accounts/get')
-  },
+  }
 }
 </script>

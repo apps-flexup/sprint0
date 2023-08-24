@@ -21,7 +21,7 @@ export default {
     },
     createPaymentCondition() {
       this.$router.push('/paymentConditions/new')
-    },
-  },
+    }
+  }
 }
 </script>

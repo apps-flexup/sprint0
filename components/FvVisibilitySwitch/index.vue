@@ -18,25 +18,25 @@ export default {
       type: String,
       default() {
         return 'public'
-      },
+      }
     },
     label: {
       type: String,
       default() {
         return ''
-      },
+      }
     },
     readonly: {
       type: Boolean,
       default() {
         return false
-      },
-    },
+      }
+    }
   },
   computed: {
     inputValue() {
       return this.value === 'public'
-    },
+    }
   },
   methods: {
     clicked() {
@@ -45,8 +45,8 @@ export default {
       else newVisibility = 'public'
       this.$emit('visibility:changed', newVisibility)
       this.$emit('payload:changed', newVisibility)
-    },
-  },
+    }
+  }
 }
 </script>
 

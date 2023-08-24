@@ -27,5 +27,5 @@ export default {
   },
   getPaymentStructure({ commit }) {
     this.$repos.paymentStructureSteps.index().then((data) => commit('setPaymentStructureSteps', data))
-  },
+  }
 }

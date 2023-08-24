@@ -21,38 +21,38 @@ export default {
       type: String,
       default() {
         return 'active'
-      },
+      }
     },
     label: {
       type: String,
       default() {
         return ''
-      },
+      }
     },
     dense: {
       type: Boolean,
       default() {
         return false
-      },
+      }
     },
     denseLabel: {
       type: Boolean,
       default() {
         return false
-      },
+      }
     },
     hideDetails: {
       type: Boolean,
       default() {
         return true
-      },
+      }
     },
     readonly: {
       type: Boolean,
       default() {
         return false
-      },
-    },
+      }
+    }
   },
   computed: {
     inputValue() {
@@ -63,7 +63,7 @@ export default {
       if (!this.denseLabel) res += `${this.label}${this.$t('ponctuation.colons')}`
       res += this.$t(`status.${this.value}`)
       return res
-    },
+    }
   },
   methods: {
     clicked() {
@@ -73,8 +73,8 @@ export default {
       else newVisibility = 'active'
       this.$emit('status:changed', newVisibility)
       this.$emit('payload:changed', newVisibility)
-    },
-  },
+    }
+  }
 }
 </script>
 

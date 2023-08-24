@@ -25,12 +25,12 @@ export default {
       type: String,
       default() {
         return null
-      },
-    },
+      }
+    }
   },
   data() {
     return {
-      isLoading: false,
+      isLoading: false
     }
   },
   computed: {
@@ -41,7 +41,7 @@ export default {
     currencyId() {
       const currency = this.$store.getters['currencies/findIso'](this.currency)
       return currency ? currency.id : null
-    },
+    }
   },
   mounted() {
     this.$store.dispatch('currencies/get')
@@ -54,7 +54,7 @@ export default {
     },
     filter(item, v, it) {
       return filterCurrencyAutocomplete(item, v, it)
-    },
-  },
+    }
+  }
 }
 </script>

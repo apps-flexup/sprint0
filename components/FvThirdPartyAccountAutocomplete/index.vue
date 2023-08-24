@@ -39,24 +39,24 @@ export default {
       type: Number,
       default() {
         return null
-      },
+      }
     },
     toRemove: {
       type: Object,
       default() {
         return {}
-      },
+      }
     },
     showActiveAccount: {
       type: Boolean,
       default() {
         return false
-      },
-    },
+      }
+    }
   },
   data() {
     return {
-      allItems: {},
+      allItems: {}
     }
   },
   computed: {
@@ -75,7 +75,7 @@ export default {
         }
       })
       return res
-    },
+    }
   },
   mounted() {
     this.$store.dispatch('thirdPartyAccounts/get')
@@ -110,7 +110,7 @@ export default {
         })
       })
       return res
-    },
-  },
+    }
+  }
 }
 </script>

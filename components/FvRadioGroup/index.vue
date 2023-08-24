@@ -29,24 +29,24 @@ export default {
       type: String,
       default() {
         return 'Title'
-      },
+      }
     },
     label: {
       type: String,
       default() {
         return 'Label'
-      },
+      }
     },
     availableOptions: {
       type: Array,
       default() {
         return []
-      },
-    },
+      }
+    }
   },
   data() {
     return {
-      model: null,
+      model: null
     }
   },
   methods: {
@@ -55,8 +55,8 @@ export default {
     },
     cancel() {
       this.$router.go(-1)
-    },
-  },
+    }
+  }
 }
 </script>
 

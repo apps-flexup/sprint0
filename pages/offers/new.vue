@@ -21,15 +21,15 @@ export default {
         visibility,
         vat,
         currency,
-        status: 'active',
+        status: 'active'
       }
-    },
+    }
   },
   methods: {
     createOffer(payload) {
       this.$activeAccount.addOffer(payload)
-    },
-  },
+    }
+  }
 }
 </script>
 

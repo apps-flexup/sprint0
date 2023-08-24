@@ -35,5 +35,5 @@ export default {
     if (reference > state.etapes.length) return 'Étape inconnue'
     const res = state.etapes[reference]
     return res
-  },
+  }
 }

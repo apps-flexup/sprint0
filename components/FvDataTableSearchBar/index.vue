@@ -19,12 +19,12 @@ export default {
       type: String,
       default() {
         return 'Default label'
-      },
-    },
+      }
+    }
   },
   data() {
     return {
-      search: null,
+      search: null
     }
   },
   methods: {
@@ -35,8 +35,8 @@ export default {
     enterPressed() {
       this.$emit('dataTableSearchBar:filterValidated', this.search)
       this.search = null
-    },
-  },
+    }
+  }
 }
 </script>
 

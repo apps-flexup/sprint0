@@ -21,7 +21,7 @@ describe('Saving purchase as draft', () => {
     await store.dispatch(savePurchaseAsDraft(order))
     const expectedOrder = {
       ...order,
-      status: OrderStatus.DRAFT,
+      status: OrderStatus.DRAFT
     }
     expect(getMyOrders(store.getState()).data).toEqual([expectedOrder])
   })

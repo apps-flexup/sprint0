@@ -46,12 +46,12 @@ export default {
       type: Number,
       default() {
         return 1
-      },
+      }
     },
     steps: {
       type: Array,
-      required: true,
-    },
+      required: true
+    }
   },
   computed: {
     step: {
@@ -60,7 +60,7 @@ export default {
       },
       set(v) {
         this.$emit('moveTo', v)
-      },
+      }
     },
     nbSteps() {
       const res = this.steps.length
@@ -69,13 +69,13 @@ export default {
     etape() {
       const res = this.steps.find((v) => parseInt(v.id) === this.step)
       return res
-    },
+    }
   },
   methods: {
     moveTo(v) {
       console.log('changement :', v)
-    },
-  },
+    }
+  }
 }
 </script>
 <style scoped>

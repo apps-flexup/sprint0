@@ -19,15 +19,15 @@ export default {
       type: Number,
       default() {
         return null
-      },
+      }
     },
     title: {
       type: String,
       default() {
         return null
-      },
-    },
-  },
+      }
+    }
+  }
 }
 </script>
 

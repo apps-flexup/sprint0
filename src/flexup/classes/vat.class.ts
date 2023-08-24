@@ -45,7 +45,7 @@ export class VAT implements VATInterface {
   toString() {
     return this.value.toLocaleString(this.locale, {
       style: 'percent',
-      minimumSignificantDigits: this.precision,
+      minimumSignificantDigits: this.precision
     })
   }
 }

@@ -3,8 +3,8 @@ import convertTo from './convertTo'
 
 const expectedResult = {
   data: {
-    result: 1.13217,
-  },
+    result: 1.13217
+  }
 }
 
 describe('ConvertTo', () => {

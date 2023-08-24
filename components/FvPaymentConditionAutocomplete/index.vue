@@ -28,14 +28,14 @@ export default {
       type: Number,
       default() {
         return null
-      },
-    },
+      }
+    }
   },
   computed: {
     items() {
       const res = this.$store.getters['paymentConditions/all']
       return res
-    },
+    }
   },
   mounted() {
     this.$store.dispatch('paymentConditions/get')
@@ -46,7 +46,7 @@ export default {
     },
     selected(v) {
       this.$emit('paymentCondition:selected', v)
-    },
-  },
+    }
+  }
 }
 </script>

@@ -13,8 +13,8 @@ describe('FvAccount', () => {
     const name = 'toto'
     const wrapper = mount(FvAccount, {
       propsData: {
-        name,
-      },
+        name
+      }
     })
     const accountName = wrapper.find('[data-testid="accountName"]')
     expect(accountName.text()).toBe(name)

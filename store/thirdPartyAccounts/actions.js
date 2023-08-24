@@ -7,7 +7,7 @@ export default {
         const account = await this.$repos.accounts.show(thirdParty.flexup_id)
         thirdParty = { ...account, ...thirdParty, name: account.name }
         return thirdParty
-      }),
+      })
     )
     commit('set', data)
   },
@@ -28,8 +28,8 @@ export default {
         'accounts/updateLocalThirdParty',
         { id: thirdParty.flexup_id, data: thirdParty },
         {
-          root: true,
-        },
+          root: true
+        }
       )
       const payload = {
         id: thirdParty.id,
@@ -37,7 +37,7 @@ export default {
         flexup_id: thirdParty.flexup_id,
         directory: thirdParty.directory,
         account_id: thirdParty.account_id,
-        status: thirdParty.status,
+        status: thirdParty.status
       }
       this.$repos.thirdPartyAccounts.update(payload).then((res) => {
         commit('update', res)
@@ -46,7 +46,7 @@ export default {
       thirdParty.status = 'active'
       if (thirdParty.directory === 'Local') {
         const accountAdded = await dispatch('accounts/addLocalThirdParty', thirdParty, {
-          root: true,
+          root: true
         })
         thirdParty.flexup_id = accountAdded.id
       }
@@ -54,7 +54,7 @@ export default {
         type: thirdParty.type,
         flexup_id: thirdParty.flexup_id,
         directory: thirdParty.directory,
-        status: 'active',
+        status: 'active'
       })
       commit('add', res)
     }
@@ -63,7 +63,7 @@ export default {
     const payload = {
       flexup_id: flexupAccountId,
       directory: 'Flexup',
-      status: 'active',
+      status: 'active'
     }
     this.$repos.thirdPartyAccounts.createWithAccountId(payload).then((res) => {
       commit('add', res)
@@ -71,5 +71,5 @@ export default {
   },
   addToFlexup({ _commit }, thirdParty) {
     this.$repos.thirdPartyAccounts.create(thirdParty)
-  },
+  }
 }

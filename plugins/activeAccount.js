@@ -121,11 +121,11 @@ const activeAccount = (ctx) => ({
       to_id: entity.parent_id,
       role,
       data: null,
-      status: 'WaitingConfirmation',
+      status: 'WaitingConfirmation'
     }
     console.log('given role: ', givenRole)
     ctx.store.dispatch('members/add', givenRole)
-  },
+  }
 })
 
 export default (ctx, inject) => {

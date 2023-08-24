@@ -23,16 +23,16 @@ export default {
     return {
       dialog: false,
       product: {
-        status: 'active',
-      },
+        status: 'active'
+      }
     }
   },
   methods: {
     createProduct(payload) {
       this.$emit('modal:submit', payload)
       this.dialog = false
-    },
-  },
+    }
+  }
 }
 </script>
 

@@ -3,7 +3,7 @@ import FvAvatarWithName from './index'
 
 const factory = (propsData) => {
   return mount(FvAvatarWithName, {
-    propsData,
+    propsData
   })
 }
 

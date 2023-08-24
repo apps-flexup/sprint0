@@ -9,7 +9,7 @@ export default {
   methods: {
     login() {
       this.$auth.loginWith('keycloak')
-    },
-  },
+    }
+  }
 }
 </script>

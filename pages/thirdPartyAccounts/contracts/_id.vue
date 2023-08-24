@@ -10,7 +10,7 @@ export default {
     contracts() {
       const res = []
       return res
-    },
-  },
+    }
+  }
 }
 </script>

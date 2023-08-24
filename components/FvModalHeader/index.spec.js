@@ -4,8 +4,8 @@ import FvModalHeader from './index.vue'
 const factory = () => {
   return shallowMount(FvModalHeader, {
     mocks: {
-      $t: (msg) => msg,
-    },
+      $t: (msg) => msg
+    }
   })
 }
 

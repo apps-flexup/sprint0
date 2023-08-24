@@ -25,8 +25,8 @@ export default {
       type: Object,
       default() {
         return null
-      },
-    },
+      }
+    }
   },
   computed: {
     settings() {
@@ -44,7 +44,7 @@ export default {
     theme() {
       const res = this.settings ? this.settings.theme : null
       return res
-    },
+    }
   },
   mounted() {
     this.$store.dispatch('settings/getSettings')
@@ -64,7 +64,7 @@ export default {
       const newSettings = this.settings
       newSettings.theme = v
       this.$activeAccount.setSettings(newSettings)
-    },
-  },
+    }
+  }
 }
 </script>

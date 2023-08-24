@@ -6,12 +6,12 @@ export const decorators = [
     beforeCreate() {
       this.$activeAccount.set(1)
     },
-    template: '<v-app><story/></v-app>',
-  }),
+    template: '<v-app><story/></v-app>'
+  })
 ]
 
 export const parameters = {
   options: {
-    sortStoriesByKind: true,
-  },
+    sortStoriesByKind: true
+  }
 }

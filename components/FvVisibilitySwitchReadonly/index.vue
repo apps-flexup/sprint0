@@ -17,15 +17,15 @@ export default {
       type: String,
       default() {
         return null
-      },
+      }
     },
     label: {
       type: String,
       default() {
         return ''
-      },
-    },
-  },
+      }
+    }
+  }
 }
 </script>
 

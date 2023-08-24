@@ -18,7 +18,7 @@ export default {
   computed: {
     canCreateThirdParty() {
       return this.$rights.canCreateThirdParty()
-    },
+    }
   },
   methods: {
     selectedThirdPartyAccount(thirdParty) {
@@ -30,7 +30,7 @@ export default {
     },
     createThirdPartyAccount() {
       this.$router.push('thirdPartyAccounts/new')
-    },
-  },
+    }
+  }
 }
 </script>

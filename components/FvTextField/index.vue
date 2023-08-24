@@ -34,78 +34,78 @@ export default {
       type: String,
       default() {
         return ''
-      },
+      }
     },
     appendOuterIcon: {
       type: String,
       default() {
         return ''
-      },
+      }
     },
     appendIcon: {
       type: String,
       default() {
         return ''
-      },
+      }
     },
     outlined: {
       type: Boolean,
       default() {
         return true
-      },
+      }
     },
     value: {
       type: [Number, String],
       default() {
         return ''
-      },
+      }
     },
     suffix: {
       type: String,
       default() {
         return ''
-      },
+      }
     },
     readonly: {
       type: Boolean,
       default() {
         return false
-      },
+      }
     },
     hideDetails: {
       type: Boolean,
       default() {
         return false
-      },
+      }
     },
     dense: {
       type: Boolean,
       default() {
         return false
-      },
+      }
     },
     placeholder: {
       type: String,
       default() {
         return null
-      },
+      }
     },
     type: {
       type: String,
       default() {
         return 'text'
-      },
-    },
+      }
+    }
   },
   data() {
     return {
-      model: this.value,
+      model: this.value
     }
   },
   watch: {
     value() {
       this.model = this.value
-    },
+    }
   },
   methods: {
     inputChanged() {
@@ -123,8 +123,8 @@ export default {
     },
     emitGenericSignalForForm() {
       this.$emit('payload:changed', this.model)
-    },
-  },
+    }
+  }
 }
 </script>
 

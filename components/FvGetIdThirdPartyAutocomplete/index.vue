@@ -14,15 +14,15 @@ export default {
       type: Number,
       default() {
         return null
-      },
-    },
+      }
+    }
   },
   methods: {
     selected(v) {
       if (v) {
         this.$emit('payload:changed', v.flexup_id || v.id)
       }
-    },
-  },
+    }
+  }
 }
 </script>

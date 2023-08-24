@@ -8,18 +8,18 @@ localVue.use(Vuex)
 let store
 
 const settings = {
-  theme: 'light',
+  theme: 'light'
 }
 
 const value = {
   r1: {
     key: 'base',
-    value: 40,
+    value: 40
   },
   r2: {
     key: 'endOfDeliveryMonth',
-    value: 50,
-  },
+    value: 50
+  }
 }
 
 const factory = (propsData) => {
@@ -27,11 +27,11 @@ const factory = (propsData) => {
     localVue,
     store,
     propsData: {
-      ...propsData,
+      ...propsData
     },
     mocks: {
-      $t: (msg) => msg,
-    },
+      $t: (msg) => msg
+    }
   })
 }
 
@@ -41,13 +41,13 @@ beforeEach(() => {
       settings: {
         namespaced: true,
         actions: {
-          getSettings: jest.fn(),
+          getSettings: jest.fn()
         },
         getters: {
-          settings: () => settings,
-        },
-      },
-    },
+          settings: () => settings
+        }
+      }
+    }
   })
 })
 

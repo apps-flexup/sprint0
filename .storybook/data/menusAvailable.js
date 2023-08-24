@@ -12,30 +12,30 @@ export const fakeList = [
     active: true,
     icon: 'mdi-circle',
     title: 'titre test',
-    to: '/',
+    to: '/'
   },
   {
     active: true,
     icon: 'mdi-store-outline',
     title: 'deuxieme titre',
-    to: '/orders',
+    to: '/orders'
   },
   {
     active: true,
     icon: 'mdi-briefcase-check',
     title: 'manageMenu.contracts',
-    to: '/contracts',
+    to: '/contracts'
   },
   {
     active: true,
     icon: 'mdi-flask-empty',
     title: 'manageMenu.products',
-    to: '/products',
+    to: '/products'
   },
   {
     active: true,
     icon: 'mdi-email-outline',
     title: 'manageMenu.contacts',
-    to: '/contacts',
-  },
+    to: '/contacts'
+  }
 ]

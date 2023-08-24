@@ -19,7 +19,7 @@ export default {
   name: 'FvContactNew',
   data() {
     return {
-      step: 1,
+      step: 1
     }
   },
   computed: {
@@ -32,7 +32,7 @@ export default {
       const indice = parseInt(this.step)
       const res = this.steps.find((v) => parseInt(v.id) === indice)
       return res
-    },
+    }
   },
   mounted() {
     this.$store.dispatch('form/getContact')
@@ -43,7 +43,7 @@ export default {
     },
     submitSteps() {
       console.log('Submit steps')
-    },
-  },
+    }
+  }
 }
 </script>

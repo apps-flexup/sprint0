@@ -35,18 +35,18 @@ export default {
       type: String,
       default() {
         return null
-      },
+      }
     },
     filtersSelected: {
       type: Array,
       default() {
         return ['active', 'inactive']
-      },
-    },
+      }
+    }
   },
   data() {
     return {
-      selected: this.filtersSelected,
+      selected: this.filtersSelected
     }
   },
   computed: {
@@ -70,7 +70,7 @@ export default {
     },
     areAllSelected() {
       return this.selected.length === this.filtersAvailable.length
-    },
+    }
   },
   mounted() {
     this.filtersChanged(this.selected)
@@ -86,8 +86,8 @@ export default {
         this.selected = this.filtersAvailable
       }
       this.filtersChanged(this.selected)
-    },
-  },
+    }
+  }
 }
 </script>
 

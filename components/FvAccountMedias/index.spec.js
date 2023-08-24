@@ -5,11 +5,11 @@ describe('FvAccountMedias', () => {
   const factory = (propsData) => {
     return shallowMount(FvAccountMedias, {
       propsData: {
-        ...propsData,
+        ...propsData
       },
       mocks: {
-        $t: (msg) => msg,
-      },
+        $t: (msg) => msg
+      }
     })
   }
   it('should render a fv account medias', () => {
@@ -27,9 +27,9 @@ describe('FvAccountMedias', () => {
         description: {
           label: null,
           value: null,
-          type: 'Address',
-        },
-      },
+          type: 'Address'
+        }
+      }
     ]
     const payloadChangedCalls = wrapper.emitted('payload:changed')
     expect(payloadChangedCalls).toBeTruthy()
@@ -42,16 +42,16 @@ describe('FvAccountMedias', () => {
         description: {
           label: null,
           value: 'test@test.com',
-          type: 'Mail',
-        },
-      },
+          type: 'Mail'
+        }
+      }
     ]
     const wrapper = factory({ value: medias })
     const mailField = wrapper.find('[data-testid="mailField"]')
     const description = {
       type: 'Mail',
       value: 'super@test.com',
-      label: null,
+      label: null
     }
     mailField.vm.$emit('mail:value:changed', description)
     const payloadChangedCalls = wrapper.emitted('payload:changed')
@@ -67,16 +67,16 @@ describe('FvAccountMedias', () => {
         description: {
           label: 'perso',
           value: null,
-          type: 'Mail',
-        },
-      },
+          type: 'Mail'
+        }
+      }
     ]
     const wrapper = factory({ value: medias })
     const mailField = wrapper.find('[data-testid="mailField"]')
     const description = {
       type: 'Mail',
       value: null,
-      label: 'pro',
+      label: 'pro'
     }
     mailField.vm.$emit('mail:label:changed', description)
     const payloadChangedCalls = wrapper.emitted('payload:changed')
@@ -92,9 +92,9 @@ describe('FvAccountMedias', () => {
         description: {
           label: 'perso',
           value: null,
-          type: 'Mail',
-        },
-      },
+          type: 'Mail'
+        }
+      }
     ]
     const wrapper = factory({ value: medias })
     const mailField = wrapper.find('[data-testid="mailField"]')

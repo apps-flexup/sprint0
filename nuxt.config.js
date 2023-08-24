@@ -20,8 +20,8 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || '',
-      },
+        content: process.env.npm_package_description || ''
+      }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -30,12 +30,12 @@ export default {
       {
         href:
           'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,500&display=swap',
-        rel: 'stylesheet',
-      },
-    ],
+        rel: 'stylesheet'
+      }
+    ]
   },
   env: {
-    baseURL: process.env.API_URL,
+    baseURL: process.env.API_URL
   },
   manifest: {
     name: 'Flexup - Sprint 0',
@@ -45,9 +45,9 @@ export default {
     icons: [
       {
         src: '/logo.svg',
-        sizes: '150x150',
-      },
-    ],
+        sizes: '150x150'
+      }
+    ]
     // display: 'standalone'
   },
   workbox: {
@@ -56,22 +56,22 @@ export default {
         urlPattern: 'https://fonts.googleapis.com/.*',
         handler: 'cacheFirst',
         method: 'GET',
-        strategyOptions: { cacheableResponse: { statuses: [0, 200] } },
+        strategyOptions: { cacheableResponse: { statuses: [0, 200] } }
       },
       {
         urlPattern: 'https://fonts.gstatic.com/.*',
         handler: 'cacheFirst',
         method: 'GET',
-        strategyOptions: { cacheableResponse: { statuses: [0, 200] } },
-      },
-    ],
+        strategyOptions: { cacheableResponse: { statuses: [0, 200] } }
+      }
+    ]
   },
   /*
    ** Customize the progress-bar color
    */
   loading: {
     color: '#ff0000',
-    height: '15px',
+    height: '15px'
   },
   /*
    ** Global CSS
@@ -94,7 +94,7 @@ export default {
     '~/plugins/dataTable',
     '~/plugins/displayRules',
     '~/plugins/rights',
-    '~/plugins/vuedraggable',
+    '~/plugins/vuedraggable'
   ],
   /*
    ** Nuxt.js dev-modules
@@ -118,14 +118,14 @@ export default {
   axios: {
     responseType: 'json',
     headers: {
-      Accept: 'application/json',
-    },
+      Accept: 'application/json'
+    }
   },
   auth: {
     redirect: {
       login: '/login',
       logout: '/',
-      home: '/',
+      home: '/'
     },
     strategies: {
       local: true,
@@ -135,32 +135,32 @@ export default {
           authorization: process.env.OAUTH_ENDPOINT,
           userInfo: process.env.OAUTH_USER_ENDPOINT,
           token: process.env.OAUTH_ENDPOINT_TOKEN,
-          logout: `${process.env.OAUTH_ENDPOINT_LOGOUT}?redirect_uri=${homeUrl}`,
+          logout: `${process.env.OAUTH_ENDPOINT_LOGOUT}?redirect_uri=${homeUrl}`
         },
         user: {
-          property: false,
+          property: false
         },
         token: {
           property: 'access_token',
           type: 'Bearer',
           name: 'Authorization',
-          maxAge: 300,
+          maxAge: 300
         },
         refreshToken: {
           property: 'refresh_token',
-          maxAge: 60 * 60 * 24 * 30,
+          maxAge: 60 * 60 * 24 * 30
         },
         responseType: 'code',
         grantType: 'authorization_code',
         clientId: process.env.KEYCLOAK_CLIENT_ID,
         scope: ['openid', 'profile', 'email'],
-        codeChallengeMethod: 'S256',
-      },
+        codeChallengeMethod: 'S256'
+      }
     },
-    plugins: ['~/plugins/auth.js'],
+    plugins: ['~/plugins/auth.js']
   },
   router: {
-    middleware: ['auth'],
+    middleware: ['auth']
   },
   /*
    ** vuetify module configuration
@@ -178,10 +178,10 @@ export default {
           info: colors.teal.lighten1,
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
-          success: colors.green.accent3,
-        },
-      },
-    },
+          success: colors.green.accent3
+        }
+      }
+    }
   },
   /*
    ** Build configuration
@@ -200,11 +200,11 @@ export default {
             // require.resolve('@nuxt/babel-preset-app-edge'), // For nuxt-edge users
             {
               buildTarget: isServer ? 'server' : 'client',
-              corejs: { version: 3 },
-            },
-          ],
+              corejs: { version: 3 }
+            }
+          ]
         ]
-      },
-    },
-  },
+      }
+    }
+  }
 }

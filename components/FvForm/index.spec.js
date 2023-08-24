@@ -7,15 +7,15 @@ localVue.use(Vuex)
 
 const $router = {
   push: jest.fn(),
-  go: jest.fn(),
+  go: jest.fn()
 }
 
 describe('FvForm', () => {
   let store
   const formSteps = [
     {
-      title: 'forms.product.step.0',
-    },
+      title: 'forms.product.step.0'
+    }
   ]
   beforeEach(() => {
     jest.clearAllMocks()
@@ -27,24 +27,24 @@ describe('FvForm', () => {
       localVue,
       propsData: {
         form: 'products',
-        ...propsData,
+        ...propsData
       },
       computed: {
-        formSteps: () => formSteps,
+        formSteps: () => formSteps
       },
       mocks: {
         $t: (msg) => msg,
         $nuxt: {
           $loading: {
             start: jest.fn(),
-            finish: jest.fn(),
-          },
+            finish: jest.fn()
+          }
         },
         $activeAccount: {
-          addProduct: jest.fn(),
+          addProduct: jest.fn()
         },
-        $router,
-      },
+        $router
+      }
     })
   }
   beforeEach(() => {
@@ -55,8 +55,8 @@ describe('FvForm', () => {
           namespaced: true,
           state: {},
           actions: {
-            get: jest.fn(),
-          },
+            get: jest.fn()
+          }
         },
         forms: {
           namespaced: true,
@@ -68,10 +68,10 @@ describe('FvForm', () => {
             getPaymentCondition: jest.fn(),
             getPaymentStructure: jest.fn(),
             getBusinessAccount: jest.fn(),
-            getPersonalAccount: jest.fn(),
-          },
-        },
-      },
+            getPersonalAccount: jest.fn()
+          }
+        }
+      }
     })
   })
   it('should render a readonly form by default', () => {

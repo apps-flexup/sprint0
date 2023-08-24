@@ -29,26 +29,26 @@ export default {
       type: Object,
       default() {
         return null
-      },
+      }
     },
     directory: {
       type: Array,
       default() {
         return []
-      },
+      }
     },
     label: {
       type: String,
       default() {
         return this.$t('autocomplete.user.label')
-      },
-    },
+      }
+    }
   },
   computed: {
     items() {
       const res = []
       return res
-    },
+    }
   },
   methods: {
     filter(item, v, it) {
@@ -57,7 +57,7 @@ export default {
     },
     entitySelected(v) {
       this.$emit('entity:selected', v)
-    },
-  },
+    }
+  }
 }
 </script>

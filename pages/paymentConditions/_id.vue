@@ -15,8 +15,8 @@ export default {
       type: Object,
       default() {
         return {}
-      },
-    },
+      }
+    }
   },
   computed: {
     getPaymentCondition() {
@@ -24,12 +24,12 @@ export default {
       const paymentCondition = this.$store.getters['paymentConditions/findById'](paymentConditionId)
       const payload = JSON.parse(JSON.stringify(paymentCondition))
       return payload
-    },
+    }
   },
   methods: {
     editPaymentCondition(payload) {
       this.$activeAccount.addPaymentCondition(payload)
-    },
-  },
+    }
+  }
 }
 </script>

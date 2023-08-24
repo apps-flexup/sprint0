@@ -17,5 +17,5 @@ export default {
   getLegalStructures({ commit }) {
     // charger les formes juridiques
     this.$repos.legalStructure.index().then((data) => commit('setLegalStructures', data))
-  },
+  }
 }

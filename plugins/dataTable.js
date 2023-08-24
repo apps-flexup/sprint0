@@ -67,7 +67,7 @@ const dataTable = (_ctx) => ({
       array.map(async (item) => {
         const res = await this.asyncArrayEvery(filters, itemKeys, item, rules)
         return res
-      }),
+      })
     )
     return array.filter((_v, index) => res[index])
   },
@@ -75,7 +75,7 @@ const dataTable = (_ctx) => ({
     if (!array || !array[0]) return []
     const res = await this.asyncArrayFilter(array, filters, rules)
     return res
-  },
+  }
 })
 
 export default (ctx, inject) => {

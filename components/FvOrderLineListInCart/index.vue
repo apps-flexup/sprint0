@@ -41,14 +41,14 @@ export default {
       type: Array,
       default() {
         return []
-      },
-    },
+      }
+    }
   },
   computed: {
     headers() {
       const res = this.$store.getters['headers/orderLinesCart']
       return translateHeaders(this.$i18n, res)
-    },
+    }
   },
   mounted() {
     this.$store.dispatch('accounts/get')
@@ -58,8 +58,8 @@ export default {
     quantityChanged(values, item) {
       const quantity = values[0]
       this.$emit('orderLinesInCart:quantityChanged', item, quantity)
-    },
-  },
+    }
+  }
 }
 </script>
 <style scoped>

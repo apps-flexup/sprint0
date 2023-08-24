@@ -33,19 +33,19 @@ export default {
       type: Array,
       default() {
         return []
-      },
-    },
+      }
+    }
   },
   data() {
     return {
-      selected: this.images.length > 0 ? this.images[0] : {},
+      selected: this.images.length > 0 ? this.images[0] : {}
     }
   },
   methods: {
     select(image) {
       this.selected = image
-    },
-  },
+    }
+  }
 }
 </script>
 

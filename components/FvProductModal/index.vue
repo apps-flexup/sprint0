@@ -36,14 +36,14 @@ export default {
       type: Boolean,
       default() {
         return false
-      },
+      }
     },
     product: {
       type: Object,
       default() {
         return {}
-      },
-    },
+      }
+    }
   },
   methods: {
     close() {
@@ -54,7 +54,7 @@ export default {
     },
     productChanged(product) {
       this.$emit('product:changed', product)
-    },
-  },
+    }
+  }
 }
 </script>

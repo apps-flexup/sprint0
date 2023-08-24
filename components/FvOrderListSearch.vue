@@ -29,7 +29,7 @@ export default {
       type: Array,
       default() {
         return []
-      },
+      }
     },
     filterFunction: {
       type: Function,
@@ -38,9 +38,9 @@ export default {
           const name = item.name || ''
           return name
         })
-      },
-    },
-  },
+      }
+    }
+  }
 }
 </script>
 <style scoped>

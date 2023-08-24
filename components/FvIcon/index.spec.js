@@ -4,8 +4,8 @@ import FvIcon from './index.vue'
 const factory = (propsData) => {
   return mount(FvIcon, {
     propsData: {
-      ...propsData,
-    },
+      ...propsData
+    }
   })
 }
 

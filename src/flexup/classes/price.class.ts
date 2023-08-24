@@ -16,7 +16,7 @@ export class Price implements PriceInterface {
     currency: any = new Currency('EUR', 2, true, 'fr'),
     vatIncluded: boolean = true,
     locale: string = 'fr',
-    precision: number = 3,
+    precision: number = 3
   ) {
     this.vatIncluded = vatIncluded
     this.locale = locale
@@ -94,7 +94,7 @@ export class Price implements PriceInterface {
   get vatString(): string {
     return this.vat.toLocaleString(this.locale, {
       style: 'percent',
-      minimumSignificantDigits: 3,
+      minimumSignificantDigits: 3
     })
   }
 

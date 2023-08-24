@@ -35,8 +35,8 @@ export default {
         dteEffect: null,
         dteEnd: null,
         offers: [],
-        structContract: null,
-      },
+        structContract: null
+      }
     }
   },
   computed: {
@@ -49,7 +49,7 @@ export default {
       const indice = parseInt(this.step)
       const res = this.steps.find((v) => parseInt(v.id) === indice)
       return res
-    },
+    }
   },
   mounted() {
     this.$store.dispatch('forms/getContract')
@@ -65,8 +65,8 @@ export default {
       const values = this.values
       const res = Object.assign(values, payload)
       this.values = res
-    },
-  },
+    }
+  }
 }
 </script>
 <style scoped>

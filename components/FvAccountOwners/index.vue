@@ -22,14 +22,14 @@ export default {
       type: Array,
       default() {
         return []
-      },
+      }
     },
     isNewObject: {
       type: Boolean,
       default() {
         return false
-      },
-    },
+      }
+    }
   },
   data() {
     return {
@@ -38,8 +38,8 @@ export default {
         activeAccount: [],
         localThirdParties: [],
         flexupThirdParties: [],
-        flexupAccounts: [],
-      },
+        flexupAccounts: []
+      }
     }
   },
   computed: {
@@ -58,7 +58,7 @@ export default {
         res[key] = list.map((owner) => owner.id)
       })
       return res
-    },
+    }
   },
   mounted() {
     this.$store.dispatch('accounts/get')
@@ -75,7 +75,7 @@ export default {
         to_id: owner.directory === 'Flexup' ? owner.flexup_id : owner.id,
         role: 'owner',
         data: null,
-        status: owner.directory === 'Local' ? 'Confirmed' : 'WaitingConfirmation',
+        status: owner.directory === 'Local' ? 'Confirmed' : 'WaitingConfirmation'
       }
       if (this.selectedOwners.length === 0) {
         ownerRole.data = {}
@@ -123,7 +123,7 @@ export default {
     },
     findOwnerIndex(owner) {
       const index = this.selectedOwners.findIndex(
-        (selectedOwner) => selectedOwner.to_id === owner.to_id && selectedOwner.to_type === owner.to_type,
+        (selectedOwner) => selectedOwner.to_id === owner.to_id && selectedOwner.to_type === owner.to_type
       )
       return index
     },
@@ -136,7 +136,7 @@ export default {
     },
     setOwnerAsReferenceOwner(index) {
       const data = {
-        isReferenceOwner: true,
+        isReferenceOwner: true
       }
       this.selectedOwners[index].data = data
     },
@@ -166,7 +166,7 @@ export default {
         return true
       }
       return false
-    },
-  },
+    }
+  }
 }
 </script>

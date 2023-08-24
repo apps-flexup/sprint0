@@ -19,40 +19,40 @@ export default {
       type: [Number, String],
       default() {
         return null
-      },
+      }
     },
     labelValue: {
       type: String,
       default() {
         return null
-      },
-    },
+      }
+    }
   },
   data() {
     return {
       valueType: 'Phone',
-      phoneLabel: this.$t('mediaField.phone.placeholder'),
+      phoneLabel: this.$t('mediaField.phone.placeholder')
     }
   },
   methods: {
     phoneChanged(v) {
       const payload = {
         value_type: this.valueType,
-        value: v,
+        value: v
       }
       this.$emit('phone:value:changed', payload)
     },
     labelChanged(v) {
       const payload = {
         value_type: this.valueType,
-        label: v,
+        label: v
       }
       this.$emit('phone:label:changed', payload)
     },
     deleteClicked() {
       this.$emit('phone:delete:clicked')
-    },
-  },
+    }
+  }
 }
 </script>
 

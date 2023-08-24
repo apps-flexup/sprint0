@@ -37,5 +37,5 @@ export default ($axios, store) => (resource) => ({
   async delete(id) {
     const res = await $axios.$delete(`/${resource}/${id}`)
     return res
-  },
+  }
 })

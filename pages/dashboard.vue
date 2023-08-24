@@ -60,8 +60,8 @@ export default {
   methods: {
     buttonClick() {
       console.log('coucou')
-    },
-  },
+    }
+  }
 }
 </script>
 

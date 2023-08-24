@@ -14,7 +14,7 @@ export default {
   methods: {
     clicked() {
       this.$emit('edit:clicked')
-    },
-  },
+    }
+  }
 }
 </script>

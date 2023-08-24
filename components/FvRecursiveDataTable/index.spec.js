@@ -15,8 +15,8 @@ const factory = () => {
     store,
     vuetify,
     mocks: {
-      $t: (msg) => msg,
-    },
+      $t: (msg) => msg
+    }
   })
 }
 
@@ -28,17 +28,17 @@ describe('FvRecursiveDataTable', () => {
         settings: {
           namespaced: true,
           actions: {
-            getSettings: jest.fn(),
+            getSettings: jest.fn()
           },
           getters: {
             settings() {
               return {
-                theme: 'light',
+                theme: 'light'
               }
-            },
-          },
-        },
-      },
+            }
+          }
+        }
+      }
     })
   })
   it('should render a fv recursive data table', () => {

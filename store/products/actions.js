@@ -10,7 +10,7 @@ export default {
   remove({ commit }, product) {
     product = {
       ...product,
-      status: 'archived',
+      status: 'archived'
     }
     this.$repos.products.update(product).then((res) => {
       commit('remove', res)
@@ -27,5 +27,5 @@ export default {
         commit('add', res)
       })
     }
-  },
+  }
 }

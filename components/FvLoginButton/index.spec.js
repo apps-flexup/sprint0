@@ -8,9 +8,9 @@ const factory = () => {
     mocks: {
       $t: (msg) => msg,
       $auth: {
-        loginWith: loginFn,
-      },
-    },
+        loginWith: loginFn
+      }
+    }
   })
 }
 

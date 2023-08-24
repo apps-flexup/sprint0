@@ -25,14 +25,14 @@ export default {
       type: String,
       default() {
         return 'manage'
-      },
-    },
+      }
+    }
   },
   data() {
     return {
       store,
       title: 'Flexup - Sprint 0',
-      fixed: true,
+      fixed: true
     }
   },
   computed: {
@@ -49,7 +49,7 @@ export default {
       } else {
         return 'fv-nav-bar-' + space
       }
-    },
+    }
   },
   mounted() {
     // charger tous les éléments unitaires de configuration
@@ -60,7 +60,7 @@ export default {
     this.$store.dispatch('countries/get')
     this.$store.dispatch('contracts/getLegalStructures')
     this.$store.dispatch('accounts/get')
-  },
+  }
 }
 </script>
 

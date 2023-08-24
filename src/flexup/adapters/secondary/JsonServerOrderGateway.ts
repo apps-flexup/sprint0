@@ -29,7 +29,7 @@ export class JsonServerOrderGateway implements OrderGateway {
   createOrder(order: Order): Promise<void> {
     const payload = {
       ...order,
-      account_id: this.activeAccountId,
+      account_id: this.activeAccountId
     }
     this.axios.$post(`/${this.resource}`, payload)
     return Promise.resolve()

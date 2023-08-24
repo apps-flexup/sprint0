@@ -45,26 +45,26 @@ export default {
       type: Boolean,
       default() {
         return false
-      },
+      }
     },
     headers: {
       type: Array,
       default() {
         return []
-      },
+      }
     },
     items: {
       type: Array,
       default() {
         return []
-      },
+      }
     },
     options: {
       type: Object,
       default() {
         return null
-      },
-    },
+      }
+    }
   },
   computed: {
     canEdit() {
@@ -72,7 +72,7 @@ export default {
     },
     canDelete() {
       return this.$rights.canDeleteThirdParty()
-    },
+    }
   },
   mounted() {
     this.$store.dispatch('countries/get')
@@ -100,8 +100,8 @@ export default {
       if (!thirdParty) return
       thirdParty.status = newStatus
       this.$store.dispatch('thirdPartyAccounts/add', thirdParty)
-    },
-  },
+    }
+  }
 }
 </script>
 

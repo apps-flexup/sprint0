@@ -48,31 +48,31 @@ export default {
       type: Number,
       default() {
         return 0
-      },
+      }
     },
     totalWithTax: {
       type: Number,
       default() {
         return 0
-      },
+      }
     },
     totalsByVat: {
       type: Object,
       default() {
         return {}
-      },
-    },
+      }
+    }
   },
   computed: {
     preferredCurrency() {
       const res = this.$activeAccount.settings().currency
       return res
-    },
+    }
   },
   mounted() {
     this.$store.dispatch('accounts/get')
     this.$store.dispatch('settings/getSettings')
-  },
+  }
 }
 </script>
 <style scoped>

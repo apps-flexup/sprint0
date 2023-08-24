@@ -30,33 +30,33 @@ export default {
       type: Object,
       default() {
         return {}
-      },
+      }
     },
     labelValue: {
       type: String,
       default() {
         return null
-      },
-    },
+      }
+    }
   },
   data() {
     return {
       localAddress: JSON.parse(JSON.stringify(this.address)),
       displayModal: false,
       valueType: 'Address',
-      addressLabel: this.$t('mediaField.address.placeholder'),
+      addressLabel: this.$t('mediaField.address.placeholder')
     }
   },
   computed: {
     mediaValue() {
       const res = addressToString(this.$store, this.address)
       return res
-    },
+    }
   },
   watch: {
     address() {
       this.localAddress = JSON.parse(JSON.stringify(this.address))
-    },
+    }
   },
   mounted() {
     this.$store.dispatch('countries/get')
@@ -68,7 +68,7 @@ export default {
     labelChanged(v) {
       const payload = {
         value_type: this.valueType,
-        label: v,
+        label: v
       }
       this.$emit('address:label:changed', payload)
     },
@@ -87,11 +87,11 @@ export default {
       this.localAddress = v
       const payload = {
         value_type: this.valueType,
-        value: this.localAddress,
+        value: this.localAddress
       }
       this.$emit('address:value:changed', payload)
-    },
-  },
+    }
+  }
 }
 </script>
 

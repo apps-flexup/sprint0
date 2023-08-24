@@ -17,12 +17,12 @@ export default {
       type: Object,
       default() {
         return null
-      },
-    },
+      }
+    }
   },
   data() {
     return {
-      titles_trad: ['mr', 'ms', 'miss'],
+      titles_trad: ['mr', 'ms', 'miss']
     }
   },
   computed: {
@@ -36,15 +36,15 @@ export default {
         return { text, value }
       })
       return res
-    },
+    }
   },
   methods: {
     civilityChanged(title) {
       const payload = {
-        title,
+        title
       }
       this.$emit('payload:changed', payload)
-    },
-  },
+    }
+  }
 }
 </script>

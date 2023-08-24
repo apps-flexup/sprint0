@@ -24,9 +24,9 @@ export default {
     return {
       total: 3600,
       basePerc: 40,
-      equityPerc: 60,
+      equityPerc: 60
     }
-  },
+  }
 }
 </script>
 <style scoped>
