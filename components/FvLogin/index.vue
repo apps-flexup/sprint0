@@ -1,19 +1,14 @@
-<template>
-  <div>
-    <form @submit.prevent="userLogin">
-      <div>
-        <label>Username</label>
-        <input type="text" v-model="login.username" />
-      </div>
-      <div>
-        <label>Password</label>
-        <input type="text" v-model="login.password" />
-      </div>
-      <div>
-        <button type="submit">Submit</button>
-      </div>
-    </form>
-  </div>
+<template lang="pug">
+  div
+    form(@submit.prevent='userLogin')
+      div
+        label(for='username') Username
+        input#username(type='text' v-model='login.username')
+      div
+        label(for='password') Password
+        input#password(type='text' v-model='login.password')
+      div
+        button(type='submit') Submit
 </template>
 
 <script>
@@ -29,7 +24,9 @@ export default {
   methods: {
     async userLogin() {
       try {
-        const response = await this.$auth.loginWith('local', { data: this.login })
+        const response = await this.$auth.loginWith('local', {
+          data: this.login
+        })
         console.log(response)
       } catch (err) {
         console.log(err)

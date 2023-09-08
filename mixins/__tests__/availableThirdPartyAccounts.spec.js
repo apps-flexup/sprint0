@@ -1,4 +1,4 @@
-import { mount, createLocalVue } from '@vue/test-utils'
+import { createLocalVue, mount } from '@vue/test-utils'
 import Vuex from 'vuex'
 import availableThirdPartyAccounts from '../availableThirdPartyAccounts'
 
@@ -119,6 +119,7 @@ describe('Available third party accounts', () => {
   let store
   describe('No flexup accounts, no third parties', () => {
     beforeEach(() => {
+      // eslint-disable-next-line import/no-named-as-default-member
       store = new Vuex.Store({
         modules: {
           thirdPartyAccounts: {
@@ -149,6 +150,7 @@ describe('Available third party accounts', () => {
   })
   describe('Only local third parties', () => {
     beforeEach(() => {
+      // eslint-disable-next-line import/no-named-as-default-member
       store = new Vuex.Store({
         modules: {
           thirdPartyAccounts: {
@@ -179,6 +181,7 @@ describe('Available third party accounts', () => {
   })
   describe('Only flexup third-parties', () => {
     beforeEach(() => {
+      // eslint-disable-next-line import/no-named-as-default-member
       store = new Vuex.Store({
         modules: {
           thirdPartyAccounts: {
@@ -229,6 +232,7 @@ describe('Available third party accounts', () => {
   })
   describe('Only flexup accounts', () => {
     beforeEach(() => {
+      // eslint-disable-next-line import/no-named-as-default-member
       store = new Vuex.Store({
         modules: {
           thirdPartyAccounts: {
@@ -284,6 +288,7 @@ describe('Available third party accounts', () => {
   })
   describe('Flexup account already added', () => {
     beforeEach(() => {
+      // eslint-disable-next-line import/no-named-as-default-member
       store = new Vuex.Store({
         modules: {
           thirdPartyAccounts: {

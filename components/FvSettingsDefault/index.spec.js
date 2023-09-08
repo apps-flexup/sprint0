@@ -1,4 +1,4 @@
-import { shallowMount, createLocalVue } from '@vue/test-utils'
+import { createLocalVue, shallowMount } from '@vue/test-utils'
 import Vuex from 'vuex'
 import FvSettingsDefault from './index.vue'
 
@@ -30,6 +30,7 @@ const factory = () => {
 
 beforeEach(() => {
   jest.clearAllMocks()
+  // eslint-disable-next-line import/no-named-as-default-member
   store = new Vuex.Store({
     modules: {
       settings: {

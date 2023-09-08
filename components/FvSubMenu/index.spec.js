@@ -1,4 +1,4 @@
-import { mount, createLocalVue } from '@vue/test-utils'
+import { createLocalVue, mount } from '@vue/test-utils'
 import Vuex from 'vuex'
 import FvSubMenu from './index.vue'
 
@@ -43,6 +43,7 @@ describe('FvSubMenu', () => {
     })
   }
   beforeEach(() => {
+    // eslint-disable-next-line import/no-named-as-default-member
     store = new Vuex.Store({
       modules: {
         settings: {

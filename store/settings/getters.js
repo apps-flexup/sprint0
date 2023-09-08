@@ -3,8 +3,7 @@ import { mergeObjects, sortArrayByKey } from '~/plugins/utils'
 export default {
   all(state) {
     if (!state.items) return []
-    const res = JSON.parse(JSON.stringify(state.items))
-    return res
+    return JSON.parse(JSON.stringify(state.items))
   },
   manageMenu(state) {
     if (!state.manageMenu) return []
@@ -32,33 +31,33 @@ export default {
   },
   buyerMenu(state) {
     if (!state.buyerMenu) return []
-    const res = JSON.parse(JSON.stringify(state.buyerMenu))
+    const res = JSON.parse(JSON.stringify(state.buyerMenu)) || []
     return res.filter((m) => m.active)
   },
   sellerMenu(state) {
     if (!state.sellerMenu) return []
-    const res = JSON.parse(JSON.stringify(state.sellerMenu))
+    const res = JSON.parse(JSON.stringify(state.sellerMenu)) || []
     return res.filter((m) => m.active)
   },
   globalMenu(state) {
     if (!state.globalMenu) return []
-    const res = JSON.parse(JSON.stringify(state.globalMenu))
+    const res = JSON.parse(JSON.stringify(state.globalMenu)) || []
+    console.log('globalMenu', JSON.stringify(res, null, 2))
     return res.filter((m) => m.active)
   },
   manageNavBar(state) {
     if (!state.manageNavBar) return []
-    const res = JSON.parse(JSON.stringify(state.manageNavBar))
+    const res = JSON.parse(JSON.stringify(state.manageNavBar)) || []
     return res.filter((m) => m.active)
   },
   sellerNavBar(state) {
     if (!state.sellerNavBar) return []
-    const res = JSON.parse(JSON.stringify(state.sellerNavBar))
+    const res = JSON.parse(JSON.stringify(state.sellerNavBar)) || []
     return res.filter((m) => m.active)
   },
   locales(state) {
     if (!state.locales) return []
-    const res = JSON.parse(JSON.stringify(state.locales))
-    return res
+    return JSON.parse(JSON.stringify(state.locales))
   },
   locale(state) {
     let res = state.defaultSettings.locale
@@ -68,8 +67,7 @@ export default {
     return res
   },
   fallbackLocale(state) {
-    const res = JSON.parse(JSON.stringify(state.fallbackLocale))
-    return res
+    return JSON.parse(JSON.stringify(state.fallbackLocale))
   },
   settings(state) {
     if (!state.defaultSettings) return {}
@@ -83,8 +81,7 @@ export default {
   },
   defaultHeaders: (state) => (tableName) => {
     if (!state.defaultSettings) return {}
-    const res = JSON.parse(JSON.stringify(state.defaultSettings.headers[tableName]))
-    return res
+    return JSON.parse(JSON.stringify(state.defaultSettings.headers[tableName]))
   },
   headers: (state) => (tableName) => {
     if (!state.defaultSettings) return []

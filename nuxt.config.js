@@ -132,20 +132,20 @@ export default {
         scheme: 'local',
         endpoints: {
           login: {
-            url: 'sessions',
+            url: 'https://api.staging.last3lier.xyz/login',
             method: 'POST'
           },
-          logout: {
-            url: 'sessions',
-            method: 'DELETE'
-          },
+          // logout: {
+          //   url: "sessions",
+          //   method: "DELETE"
+          // },
           user: {
-            url: 'users',
+            url: 'https://api.staging.last3lier.xyz/api',
             method: 'get'
           }
         },
         token: {
-          type: ''
+          type: 'Bearer'
         }
       },
       keycloak: {

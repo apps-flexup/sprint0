@@ -1,4 +1,4 @@
-import { shallowMount, createLocalVue } from '@vue/test-utils'
+import { createLocalVue, shallowMount } from '@vue/test-utils'
 import Vuex from 'vuex'
 import FvProductUnitAutocomplete from './index.vue'
 
@@ -21,6 +21,7 @@ const factory = () => {
 
 describe('FvProductUnitAutocomplete', () => {
   beforeEach(() => {
+    // eslint-disable-next-line import/no-named-as-default-member
     store = new Vuex.Store({
       modules: {
         offers: {
@@ -51,6 +52,7 @@ describe('FvProductUnitAutocomplete', () => {
   })
   describe('Without offer existing for product', () => {
     beforeEach(() => {
+      // eslint-disable-next-line import/no-named-as-default-member
       store = new Vuex.Store({
         modules: {
           offers: {
@@ -76,6 +78,7 @@ describe('FvProductUnitAutocomplete', () => {
   describe('With offer existing for product', () => {
     const dimension = 'test'
     beforeEach(() => {
+      // eslint-disable-next-line import/no-named-as-default-member
       store = new Vuex.Store({
         modules: {
           offers: {

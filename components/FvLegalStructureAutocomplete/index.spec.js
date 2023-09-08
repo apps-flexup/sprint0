@@ -1,4 +1,4 @@
-import { shallowMount, createLocalVue } from '@vue/test-utils'
+import { createLocalVue, shallowMount } from '@vue/test-utils'
 import Vuex from 'vuex'
 import FvLegalStructureAutocomplete from './index'
 
@@ -32,6 +32,7 @@ const factory = () => {
   })
 }
 beforeEach(() => {
+  // eslint-disable-next-line import/no-named-as-default-member
   store = new Vuex.Store({
     modules: {
       contracts: {
