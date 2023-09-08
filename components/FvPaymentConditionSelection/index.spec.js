@@ -37,6 +37,7 @@ const factory = (propsData) => {
 }
 
 beforeEach(() => {
+  // eslint-disable-next-line import/no-named-as-default-member
   store = new Vuex.Store({
     modules: {
       paymentConditions: {

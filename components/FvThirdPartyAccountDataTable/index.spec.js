@@ -1,4 +1,4 @@
-import { shallowMount, createLocalVue } from '@vue/test-utils'
+import { createLocalVue, shallowMount } from '@vue/test-utils'
 import Vuetify from 'vuetify'
 import Vuex from 'vuex'
 import FvThirdPartyAccountDataTable from './index.vue'
@@ -22,6 +22,7 @@ describe('FvThirdPartyAccountDataTable', () => {
   }
   beforeEach(() => {
     vuetify = new Vuetify()
+    // eslint-disable-next-line import/no-named-as-default-member
     store = new Vuex.Store({
       modules: {
         thirdPartyAccounts: {

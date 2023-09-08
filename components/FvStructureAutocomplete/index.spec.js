@@ -1,4 +1,4 @@
-import { mount, createLocalVue } from '@vue/test-utils'
+import { createLocalVue, mount } from '@vue/test-utils'
 import Vuex from 'vuex'
 import FvStructureAutocomplete from './index.vue'
 
@@ -38,6 +38,7 @@ describe('FvStructureAutocomplete', () => {
     })
   }
   beforeEach(() => {
+    // eslint-disable-next-line import/no-named-as-default-member
     store = new Vuex.Store({
       modules: {
         paymentStructures: {

@@ -1,4 +1,4 @@
-import { mount, createLocalVue } from '@vue/test-utils'
+import { createLocalVue, mount } from '@vue/test-utils'
 import Vuex from 'vuex'
 import FvAccountInfo from './index.vue'
 
@@ -33,6 +33,7 @@ const factoryWithoutAccount = () => {
 }
 
 beforeEach(() => {
+  // eslint-disable-next-line import/no-named-as-default-member
   storeWithAccount = new Vuex.Store({
     modules: {
       accounts: {
@@ -47,6 +48,7 @@ beforeEach(() => {
       }
     }
   })
+  // eslint-disable-next-line import/no-named-as-default-member
   storeWithoutAccount = new Vuex.Store({
     modules: {
       accounts: {

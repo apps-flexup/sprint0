@@ -1,4 +1,4 @@
-import { shallowMount, createLocalVue } from '@vue/test-utils'
+import { createLocalVue, shallowMount } from '@vue/test-utils'
 import Vuex from 'vuex'
 import FvPaymentConditionList from './index.vue'
 
@@ -28,6 +28,7 @@ const factory = () => {
 const removeFn = jest.fn()
 
 beforeEach(() => {
+  // eslint-disable-next-line import/no-named-as-default-member
   store = new Vuex.Store({
     modules: {
       paymentConditions: {
