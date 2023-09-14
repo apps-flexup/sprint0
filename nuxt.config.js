@@ -4,6 +4,8 @@ import "reflect-metadata";
 require("dotenv").config();
 
 const homeUrl = encodeURIComponent(process.env.HOME_URL);
+let authUrl = 'https://api.staging.last3lier.xyz/api'
+if (process.env.NODE_ENV === "production") authUrl = 'https://api.flexup.org'
 
 export default {
   ssr: false,
@@ -132,13 +134,13 @@ export default {
         scheme: "local",
         endpoints: {
           login: {
-            url: "https://api.staging.last3lier.xyz/login",
+            url: `https://${authUrl}/login`,
             method: "POST",
             propertyName: "token"
           },
           logout: false,
           user: {
-            url: "https://api.staging.last3lier.xyz/api",
+            url: `https://${authUrl}/api`,
             method: "get",
             propertyName: ""
           }
