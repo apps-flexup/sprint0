@@ -2,7 +2,7 @@
   .fv-login-button
     v-list-item(
       data-testid="button"
-      @click="click"
+      @click="login"
     )
       v-list-item-action
         v-icon {{ "mdi-login" }}
@@ -14,7 +14,7 @@
 export default {
   name: 'FvLoginButton',
   methods: {
-    click() {
+    login() {
       // this.$auth.loginWith('keycloak')
       console.log('keykloak login')
     }

@@ -25,7 +25,12 @@ const activeAccount = (ctx) => ({
   },
   set(accountId) {
     jsonServerOrderGateway.setActiveAccountId(accountId)
+    console.log(
+      '► plugins/activeAccount.js - activeAccount.set jsonServerOrderGateway.setActiveAccountId(accountId): ',
+      accountId
+    )
     jsonServerOrderGateway.setAxios(ctx.$axios)
+    console.log('► plugins/activeAccount.js - activeAccount.set jsonServerOrderGateway.setAxios(ctx): ', ctx)
     if (accountId === -1) return
     ctx.store.dispatch('accounts/setCurrent', accountId)
     ctx.store.dispatch('charters/get', {}, { root: true })
