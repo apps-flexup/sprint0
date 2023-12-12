@@ -145,7 +145,7 @@
   "users": [
     {
       "email_verified": false,
-      "name": "toto La Riflette",
+      "name": "Toto La Riflette",
       "preferred_username": "toto",
       "given_name": "toto",
       "family_name": "La Riflette",
@@ -159,24 +159,19 @@
       "preferred_username": "fabrizio_nastri@hotmail.com",
       "given_name": "Fabrizio",
       "family_name": "Nastri",
-      "email": "fabrizio_nastri@hotmail.com",
+      "email": "fabrizio@gmail.com",
       "uuid": "9a019cd2-4b90-401e-8646-f149a6d436d4",
       "id": 2
     },
     {
       "email_verified": false,
-      "name": "Fra bu",
-      "preferred_username": "frabu",
-      "given_name": "Fra",
-      "family_name": "bu",
-      "email": "fbullo@gmail.com",
+      "name": "test",
+      "preferred_username": "test",
+      "given_name": "test",
+      "family_name": "test",
+      "email": "test@gmail.com",
       "uuid": "b1d3f861-5c77-4788-9bf3-070bd9b836f7",
       "id": 3
-    },
-    {
-      "username": "Xavier Galmed",
-      "email": "xgalactica@yahoo.com",
-      "id": 4
     }
   ],
   "payment-structures": [

@@ -16,6 +16,9 @@ export class JsonServerOrderGateway implements OrderGateway {
   }
 
   async listMyOrders(): Promise<Order[]> {
+    console.log(
+      `► src/flexup/adapters/secondary/JsonServerOrderGateway.ts - listMyOrders: this.resource: ${this.resource}`
+    )
     const orders = await this.axios.$get(`/${this.resource}?account_id=${this.activeAccountId}`)
     const res = orders.map((o) => {
       const orderItems = o.orderItems.map((oi) => {
