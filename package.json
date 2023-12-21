@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "db": "json-server -w -p 3008 db/sample.json",
-    "all": "concurrently \"yarn db\" \"yarn dev\"",
+    "all": "concurrently \"pnpm db\" \"pnpm dev\"",
     "dev": "nuxt-ts",
     "format": "prettier --write \"**/*.{ts|js|vue}\" \"**/*.js\" \"**/*.ts\" \"**/*.vue\"",
     "build": "nuxt-ts build",
@@ -14,7 +14,7 @@
     "start": "nuxt-ts start",
     "lint": "eslint --ext .ts,.js,.vue --ignore-path .gitignore .",
     "test": "jest",
-    "storybook": "concurrently \"yarn db\" \"yarn nuxt storybook\""
+    "storybook": "concurrently \"pnpm db\" \"pnpm nuxt storybook\""
   },
   "lint-staged": {
     "*.{js,vue}": "yarn lint",
@@ -107,7 +107,7 @@
     "pug-plain-loader": "^1.0.0"
   },
   "volta": {
-    "node": "14.17.0",
-    "yarn": "1.22.19"
+    "node": "18.18.0",
+    "pnpm": "8.10.5"
   }
 }
